@@ -25,7 +25,11 @@ export class Igdb {
     private readonly clientId: string,
     private readonly clientSecret: string,
     private readonly fetchFn: FetchFn = fetch,
-  ) {}
+  ) {
+    // Pasted secrets often carry a trailing newline or space, which Twitch rejects.
+    this.clientId = clientId.trim()
+    this.clientSecret = clientSecret.trim()
+  }
 
   private async auth() {
     if (this.token && Date.now() < this.token.expiresAt - 60_000) return this.token.value
@@ -33,7 +37,7 @@ export class Igdb {
       `https://id.twitch.tv/oauth2/token?client_id=${encodeURIComponent(this.clientId)}&client_secret=${encodeURIComponent(this.clientSecret)}&grant_type=client_credentials`,
       { method: 'POST', headers: { 'user-agent': USER_AGENT } },
     )
-    if (!r.ok) throw new Error(`Twitch token ${r.status}`)
+    if (!r.ok) throw new Error(`Twitch token ${r.status}: ${await r.text()}`)
     const t = (await r.json()) as { access_token: string; expires_in: number }
     this.token = { value: t.access_token, expiresAt: Date.now() + t.expires_in * 1000 }
     return t.access_token
