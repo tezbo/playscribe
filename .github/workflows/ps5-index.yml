@@ -1,7 +1,7 @@
 name: PS5 index
 
 # Rebuilds the app's bundled PS5 catalogue from IGDB and pushes it to the ps5-index-update branch
-# for review. Needs the TWITCH_CLIENT_ID and TWITCH_CLIENT_SECRET repository secrets.
+# for review. Needs TWITCH_CLIENT_ID and TWITCH_CLIENT_SECRET in the "development" environment.
 on:
   workflow_dispatch:
     inputs:
@@ -16,6 +16,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # The Twitch keys live in the repository's "development" environment.
+    environment: development
     timeout-minutes: 20
     env:
       TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
@@ -31,7 +33,7 @@ jobs:
         working-directory: backend
       - name: Check secrets
         run: |
-          if [ -z "$TWITCH_CLIENT_ID" ] || [ -z "$TWITCH_CLIENT_SECRET" ]; then echo "::error::Set TWITCH_CLIENT_ID and TWITCH_CLIENT_SECRET as repository secrets"; exit 1; fi
+          if [ -z "$TWITCH_CLIENT_ID" ] || [ -z "$TWITCH_CLIENT_SECRET" ]; then echo "::error::Set TWITCH_CLIENT_ID and TWITCH_CLIENT_SECRET in the development environment"; exit 1; fi
       - name: Inspect
         if: inputs.inspect
         working-directory: backend
