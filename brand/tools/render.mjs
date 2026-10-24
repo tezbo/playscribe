@@ -18,9 +18,8 @@ const jobs = [
   ['splash/closed.svg', 'splash/png/closed.png', 393 * 3, 852 * 3, false],
   ['splash/flat.svg', 'splash/png/flat.png', 1024 * 2, 820 * 2, false],
   ['splash/book.svg', 'splash/png/book.png', 1024 * 2, 820 * 2, false],
+  ['library/closed-hero.svg', 'library/png/closed-hero.png', 393 * 3, 520 * 3, false],
   ['splash/tabletop.svg', 'splash/png/tabletop.png', 820 * 2, 1024 * 2, false],
-  ['cover/bug-rest.svg', 'cover/png/bug-rest@3x.png', null, 120, true],
-  ['cover/bug-open.svg', 'cover/png/bug-open@3x.png', null, 120, true],
 ]
 
 const browser = await chromium.launch()

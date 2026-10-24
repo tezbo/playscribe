@@ -21,7 +21,12 @@ iOS icons are one 1024x1024 layered design. Appearances are default, dark, clear
 - The native launch screen is plain Ink 900, with no logo (HIG, Launching).
 - The branded splash plays on the first launch after install only: 0.8 s hold, 0.3 s fade, plain fade under Reduce Motion, and never when the app opens from a notification. `splash/*.svg` shows each posture. In Book posture "Play" and the tagline sit on the left page, "scribe" on the right, and nothing crosses the hinge.
 - **No open-device outer cover.** iPhone Duo gives apps no way to draw on or take touches from the outer display while the device is open. The only outer-display content while open is the rear-camera capture preview for registered camera accessories ("Preparing your app for iPhone Duo"), and the simulator reports the outer panel as inactive.
-- **Closed Library hero (the native equivalent).** The closed Library leads with the Continue game's key art, full-bleed across the top. The glass badge (`cover/bug-*.svg`) sits on that art at its bottom-leading corner, 14 pt in and 12 pt above the art's bottom edge, 40 pt tall, clear of the top-right camera. It marks the screen as Playscribe rather than the game. On first appearance per launch it opens (`bug-open`) for 2 s, then settles to the mark (`bug-rest`) with a spring (response 0.35, damping 0.85). Reduce Motion keeps it settled with no slide. It is decoration, not a control: hide it from accessibility, and let the hero itself open the game's book.
+- **Closed Library hero: framed, not badged.** The closed Library leads with the Continue game's key art. Playscribe's own frame around the art is what says "this is the app, not the game". There is no logo or badge on the art, because HIG Branding advises against repeating your logo or app name in the UI.
+  - The art sits in a card inset 14 pt from both edges, below the large title, with 14 pt continuous corners at the top.
+  - The card's bottom edge follows the open book's lower silhouette: straight at both sides, dipping 16 pt to the centre like the pages meeting at the spine. Draw it as two quad curves (see `library/closed-hero.svg`).
+  - A 1 pt vellum 300 hairline at 35% opacity outlines the card.
+  - Below the art, on ink: "CONTINUE" in Instrument Sans caption with ember and tracking, then the game title in Literata title2, then the update line in the body style. The game's own logo stays inside its art and is never redrawn by us.
+  - The large title "Library" in Literata and the ink and vellum chrome carry the brand everywhere else.
 
 ## PlayStation
 

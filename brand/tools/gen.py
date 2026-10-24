@@ -279,20 +279,16 @@ def splash_and_cover():
     W, H = 1024, 820
     write('splash/flat.svg', svg(W, H, bg + stacked(W, H, 190, 84, H * 0.42, 'f'), mark_defs('f')))
 
-    # Outer-cover brand bug: a glass capsule at the bottom-leading corner (camera is top-right).
-    # Rest state = mark only. On wake it opens to show the wordmark for 2 s, then closes.
-    for state in ('rest', 'open'):
-        h = 40
-        m = f'<g transform="translate(8 6) scale({28 / 64:.4f})">{mark_body("g", nib=False)}</g>'
-        if state == 'open':
-            body, ww, _ = wordmark(20, 0, 0, paper, 'g')
-            w = 8 + 28 + 8 + ww + 14
-            inner = m + f'<g transform="translate(44 27)">{body}</g>'
-        else:
-            w, inner = 44, m
-        cap = (f'<rect x=".5" y=".5" width="{w - 1:.1f}" height="{h - 1}" rx="{(h - 1) / 2}" '
-               f'fill="{C["glass"]["fill"]}" stroke="{C["glass"]["stroke"]}"/>')
-        write(f'cover/bug-{state}.svg', svg(round(w), h, cap + inner, mark_defs('g')))
+    # Closed Library hero: the Continue game's art, framed by Playscribe rather than badged.
+    # The bottom edge follows the open book's lower silhouette (dipping to the spine at the centre).
+    W, H = 393, 852
+    art_h, dip = 300, 16
+    frame = (f'<path d="M14 64Q14 50 28 50H{W - 28}Q{W - 14} 50 {W - 14} 64V{art_h + 50 - dip}'
+             f'Q{W * 0.75:.1f} {art_h + 50 - dip} {W / 2} {art_h + 50}Q{W * 0.25:.1f} {art_h + 50 - dip} 14 {art_h + 50 - dip}Z"'
+             f' fill="{C["ink"]["700"]}" stroke="{C["vellum"]["300"]}" stroke-opacity=".35"/>')
+    lab, _ = text(SANS, 'CONTINUE', 12, 18, art_h + 84, C['accent']['base'], tracking=0.08)
+    ttl, _ = text(DISPLAY, 'The Blood of Dawnwalker', 26, 18, art_h + 116, paper)
+    write('library/closed-hero.svg', svg(W, 520, f'<rect width="100%" height="100%" fill="{ink}"/>' + frame + lab + ttl))
 
 
 def css():
