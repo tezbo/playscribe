@@ -1,4 +1,4 @@
-# Gamebook UX flows and acceptance criteria (v1)
+# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v1.1, 2026-10-24: G-12 and G-13 added)
 
 Owner: UX/CX QA thread. Decided 2026-10-24 under Terry's delegation. This is the contract the SwiftUI app builds against and QA tests against. Put it in the repo as `docs/ux-acceptance.md`. IDs are stable: cite them in commits and test names.
 
@@ -30,6 +30,8 @@ Apple sources (read 2026-10-24): Designing for iPhone Duo, Preparing your app fo
 - **G-9** Reduce Motion: no parallax, zoom or animated key art. Transitions become cross-fades. Key-art video and animation do not autoplay when Reduce Motion is on or Video Autoplay is off.
 - **G-10** VoiceOver: every control has a label. Covers are announced as "<Game> cover". Unread dots are announced as "Unread". Verification tags are read out ("Reported on PS5").
 - **G-11** The app is dark by default and supports light mode. The accent colour is used only for interactive elements and unread state.
+- **G-12** No outer-cover content while open. No API lets an app draw on the outer display while the device is open (confirmed by the Xcode build, 2026-10-24). Nothing in the app may depend on a cover, badge or hint there. The brand's cover badge is a design reference only. Re-check if Apple adds an API.
+- **G-13** Accent fills (buttons, badges, unread counts) draw text in accent.on #2A1600, never white. Tertiary text is #A39BAE (at least 4.5:1 on every ink surface).
 
 ## 1. Pose changes (continuity)
 
@@ -41,7 +43,7 @@ Apple sources (read 2026-10-24): Designing for iPhone Duo, Preparing your app fo
 
 ## 2. Launch and first run
 
-Decision: the native launch screen is a plain background colour matching the Library (no logo or text, per HIG Launching). The branded Gamebook splash plays **only on the first launch after install**. It is posture-aware ("Game | book" across the hinge in Book), lasts 0.8 s plus a 0.3 s fade, and under Reduce Motion it is a 0.3 s fade with no movement. Later launches go straight to the restored state.
+Decision: the native launch screen is a plain background colour matching the Library (no logo or text, per HIG Launching). The branded Playscribe splash plays **only on the first launch after install**. It is posture-aware ("Game | book" across the hinge in Book), lasts 0.8 s plus a 0.3 s fade, and under Reduce Motion it is a 0.3 s fade with no movement. Later launches go straight to the restored state.
 
 - **L-1** Cold launch to an interactive first screen takes 1.0 s or less, excluding the first-run splash.
 - **L-2** Later launches restore the last tab, game, chapter and scroll anchor (HIG Launching: restore previous state).
