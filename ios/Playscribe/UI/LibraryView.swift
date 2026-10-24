@@ -248,9 +248,11 @@ struct ContinueText: View {
 struct HeroFrame: View {
     var asset: String?
     var game: CatalogGame?
+    @Environment(\.duo) private var duo
     var body: some View {
         ArtView(asset: asset, game: game)
-            .aspectRatio(365 / 300, contentMode: .fit)
+            // Closed: 16:9 so the library rows stay on screen; larger displays keep the taller page.
+            .aspectRatio(duo.pose == .closed ? 16 / 9 : 365 / 300, contentMode: .fit)
             .clipShape(BookEdgeShape())
             .overlay(BookEdgeShape().stroke(PlayscribeColor.vellum300.opacity(0.35), lineWidth: 1))
             .accessibilityHidden(true)

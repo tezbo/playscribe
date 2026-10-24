@@ -169,7 +169,8 @@ struct PlayerControls: View {
 
     var body: some View {
         VStack(spacing: 12) {
-            if duo.pose != .tabletop { Spacer() }
+            // Closed: the controls sit right under the top-aligned video, not at the bottom.
+            if duo.pose == .closed { Spacer().frame(height: closedVideoHeight) } else if duo.pose != .tabletop { Spacer() }
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(title).font(PlayscribeFont.headline)
@@ -204,7 +205,7 @@ struct PlayerControls: View {
                 Spacer()
                 Text(Self.time(controller.duration)).font(PlayscribeFont.caption.monospacedDigit())
             }
-            if duo.pose == .tabletop { Spacer() }
+            if duo.pose == .tabletop || duo.pose == .closed { Spacer() }
         }
         .padding(20)
         .foregroundStyle(.white)
@@ -214,6 +215,9 @@ struct PlayerControls: View {
             }
         }
     }
+
+    /// Height of the 16:9 video at the top of the closed display, plus a gap.
+    private var closedVideoHeight: CGFloat { duo.size.width * 9 / 16 + 8 }
 
     static func time(_ t: Double) -> String {
         let s = Int(t.rounded())
