@@ -2,7 +2,7 @@
 
 Polls official patch sources, keeps releases in the model from [docs/ps5-patch-data.md](../docs/ps5-patch-data.md), holds a review queue where a person confirms PS5 releases, and sends APNs pushes. API: [docs/api.md](../docs/api.md).
 
-TypeScript on Node 22, run directly with `tsx`. Storage is one SQLite file (`node:sqlite`, no native modules). Hosting is one Fly.io machine with a volume.
+TypeScript on Node 22, run directly with `tsx`. Storage is one SQLite file (`node:sqlite`, no native modules). It costs nothing to run. An hourly GitHub Actions job polls the sources and publishes a static JSON feed to the `feed` branch (see [docs/api.md](../docs/api.md)). The same code also runs as a local server for development.
 
 ```
 src/
@@ -25,6 +25,7 @@ npm ci
 npm test
 NODE_USE_ENV_PROXY=1 npm run ingest        # one poll into ./data/playscribe.db
 ADMIN_TOKEN=dev npm start                  # API on :8080, polls hourly
+npm run confirm -- dawnwalker@1.1 --source dawnwalker-news --version 01.004.000
 ```
 
 ## Configuration
@@ -35,22 +36,26 @@ ADMIN_TOKEN=dev npm start                  # API on :8080, polls hourly
 | `APNS_KEY_ID`, `APNS_TEAM_ID`, `APNS_KEY_P8` | APNs token auth. `APNS_KEY_P8` is the .p8 file as base64 (`base64 -i AuthKey_X.p8`). |
 | `APNS_TOPIC` | Bundle id, default `co.codeconnectors.playscribe` |
 | `ADMIN_TOKEN` | Bearer token for `/v1/admin` (`openssl rand -base64 32`) |
-| `DATABASE_PATH` | Default `./data/playscribe.db`; `/data/playscribe.db` on Fly |
-| `INGEST_INTERVAL_MINUTES` | Default 30 locally, 60 on Fly. Each source is polled at most hourly whatever this says. |
+| `DATABASE_PATH` | Default `./data/playscribe.db`. The feed job keeps it at `state/playscribe.db` on the `feed` branch. |
+| `INGEST_INTERVAL_MINUTES` | Local server only, default 30. Each source is polled at most once an hour, whatever this is set to. |
+| `PUSH_ENABLED` | `1` turns APNs on. Off by default, because APNs needs the paid Apple Developer Program. |
 | `PUSH_MAX_AGE_HOURS` | Default 72 |
 
-## Deploy (Fly.io)
+## The free feed
 
-One-time, from `backend/`:
+`.github/workflows/feed.yml` runs at 17 minutes past every hour. Each run:
+1. Restores `state/playscribe.db` from the `feed` branch.
+2. Polls the sources.
+3. Writes `v1/*.json`.
+4. Force-pushes the branch as a single commit, so it never grows.
 
-```sh
-fly launch --no-deploy --copy-config --name playscribe-api
-fly volumes create playscribe_data --size 1 --region lhr
-fly secrets set ADMIN_TOKEN=... TWITCH_CLIENT_ID=... TWITCH_CLIENT_SECRET=... APNS_KEY_ID=... APNS_TEAM_ID=... APNS_KEY_P8="$(base64 -i AuthKey_X.p8)"
-fly tokens create deploy -x 999999h        # put this in the GitHub secret FLY_API_TOKEN
-```
+Running it by hand (Actions → Feed → Run workflow) gives three actions: `poll`, `confirm` (the person-confirm step) and `dismiss`.
 
-After that every merge to main that touches `backend/` deploys through `.github/workflows/backend.yml`, then checks `/v1/health`.
+Optional repository secrets:
+- `TWITCH_CLIENT_ID` and `TWITCH_CLIENT_SECRET` add covers and PS5 release dates from IGDB.
+- When the Apple Developer Program is paid for, set `PUSH_ENABLED=1` (repository variable) and the `APNS_*` secrets.
+
+GitHub turns off scheduled workflows after 60 days without repository activity. If the feed goes quiet, re-enable it from the Actions tab.
 
 ## Rules the code keeps
 

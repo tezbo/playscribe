@@ -1,5 +1,5 @@
-// All runtime settings come from the environment. Secrets (Twitch, APNs, admin token) are set on
-// the host (`fly secrets set …`) and never live in the repo.
+// All runtime settings come from the environment. Secrets (Twitch, APNs, admin token) are
+// repository secrets for the feed workflow, or exported locally, and never live in the repo.
 const env = process.env
 
 const int = (name: string, fallback: number) => {

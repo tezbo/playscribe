@@ -1,23 +1,51 @@
 # Playscribe API v1
 
-Base URL: `https://playscribe-api.fly.dev` (once deployed). JSON in and out. Times are ISO 8601 UTC. Every type below is the one in [ps5-patch-data.md](ps5-patch-data.md); the server adds `revision` and `updatedAt` to `Release`. The app-only fields on `Release` (`headline`, `summary`, `keyChanges`, `video`, `videoNote`) and `NoteItem.spoiler` are not sent yet, so decode them as optional.
+Everything is free for now. There are two ways to read the same data:
 
-## Reading
+1. **Static feed (what the app uses).** An hourly GitHub Actions job (`.github/workflows/feed.yml`) polls the sources and publishes JSON to the `feed` branch:
+   - Base URL: `https://raw.githubusercontent.com/tezbo/playscribe/feed/v1/`
+   - Responses can be up to about 5 minutes stale (GitHub's cache).
+2. **Local server (development on the Mac).** `cd backend && npm ci && ADMIN_TOKEN=dev npm start` serves the dynamic API below on `http://localhost:8080`. The simulator can reach it.
+
+Every type below is defined in [ps5-patch-data.md](ps5-patch-data.md). The server adds `revision` and `updatedAt` to `Release`. The app-only fields on `Release` (`headline`, `summary`, `keyChanges`, `video`, `videoNote`) and `NoteItem.spoiler` are not sent yet, so decode them as optional.
+
+`Game` is `{ id, igdbId, name, cover: { imageId, url } | null, ps5Release, ps5TitleIds }`.
+
+A release is **On PS5** only when its `ps5` platform row has `status == "live"` and `verification == "official"`. This rule comes from the app rules in ps5-patch-data.md.
+
+## Static feed
+
+| File | Contents |
+|---|---|
+| `index.json` | `{ version: 1, updatedAt, games: [Game & { latestReleaseId, releaseCount, updatedAt }] }`. Fetch this first. If `updatedAt` hasn't changed, nothing has. |
+| `games/<id>.json` | `{ game: Game, releases: Release[] }`, newest announcement first. |
+| `latest.json` | `{ updatedAt, releases: Release[] }`. The 100 most recently changed releases, for a background refresh check. |
+| `review.json` | `{ items }`. Open review items (see Admin). This is for people, not the app. |
+
+Without push (it needs the paid Apple Developer Program), the app tells players itself:
+1. On launch and in a `BGAppRefreshTask`, it fetches `latest.json`.
+2. It posts a local notification for each release of a followed game that has newly become On PS5.
+3. That notification uses the same content and `userInfo` (`gameId`, `releaseId`) as the push payload below.
+
+To test the notification UI in the simulator: `xcrun simctl push booted co.codeconnectors.playscribe docs/sample-push.apns`.
+
+Games covered: the registry games (`backend/src/sources/registry.json`). Covering a new game takes one entry added to the registry.
+
+## Local server: reading
 
 | Call | Returns |
 |---|---|
 | `GET /v1/health` | `{ ok, time }` |
-| `GET /v1/feed?games=dawnwalker,kcd2&since=<cursor>` | `{ releases: Release[], cursor }`. Releases that changed after `since`, newest announcement first, at most 200. Store `cursor` and send it next time. Leave `since` out for a full sync. |
+| `GET /v1/feed?games=dawnwalker,kcd2&since=<cursor>` | `{ releases: Release[], cursor }`. Releases that changed after `since`, newest announcement first, at most 200. |
 | `GET /v1/games/:id` | `Game` |
 | `GET /v1/games/:id/releases?limit=50` | `{ releases: Release[] }` |
 | `GET /v1/releases/:id` | `Release` (ids look like `dawnwalker@1.1`) |
-| `GET /v1/games/search?q=dawn` | `{ games: [{ igdbId, name, cover, ps5Release }] }`, PS5 games from IGDB. 503 until IGDB keys are set on the server. |
+| `GET /v1/games/search?q=dawn` | `{ games: [{ igdbId, name, cover, ps5Release }] }`. Returns 503 without Twitch keys. The app searches its bundled PS5 index instead. |
 
-`Game` is `{ id, igdbId, name, cover: { imageId, url } | null, ps5Release, ps5TitleIds }`.
+## Device and follows (parked until push is paid for)
 
-What the app shows follows the app rules in ps5-patch-data.md: a release is **On PS5** only when its `ps5` platform row has `status == "live"` and `verification == "official"`.
+These only matter once APNs is on. For now the app keeps follows on the device.
 
-## Device and follows
 
 1. `POST /v1/devices` with
    ```json
@@ -34,7 +62,7 @@ What the app shows follows the app rules in ps5-patch-data.md: a release is **On
 
 Errors are `{ error: "<message>" }` with 400, 401 (bad or missing device key), 404 or 503.
 
-## Push
+## Push (parked)
 
 Sent once per release, when its PS5 row becomes live and official, to followers whose `notify` allows it. Releases more than 72 hours old by the time they are confirmed do not push.
 
@@ -52,7 +80,11 @@ Sent once per release, when its PS5 row becomes live and official, to followers 
 
 ## Admin (review queue)
 
-All under `/v1/admin`, with `Authorization: Bearer <ADMIN_TOKEN>`.
+On the free setup, people work the review queue from GitHub. Go to Actions → Feed → Run workflow and pick an action:
+- `confirm` with a release id and the official source you checked. This makes it official.
+- `dismiss` with a review item id from `review.json`.
+
+The local server has the same operations under `/v1/admin`, with `Authorization: Bearer <ADMIN_TOKEN>`.
 
 | Call | What it does |
 |---|---|
