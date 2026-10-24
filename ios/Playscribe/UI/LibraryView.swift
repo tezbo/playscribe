@@ -47,7 +47,6 @@ struct LibraryStage: View {
             ArtView(asset: game?.keyArtAsset, game: game, drift: true)
             LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 8) {
-                Wordmark()
                 if let game {
                     Text(game.name).font(PlayscribeFont.title2.bold()).lineLimit(3)
                     if let c = model.continueItem, c.game.id == game.id {
@@ -420,7 +419,6 @@ struct FeatureBanner: View {
             ArtView(asset: game.keyArtAsset, game: game)
             LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .top, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
-                Wordmark()
                 Text(game.name).font(PlayscribeFont.title3.bold())
             }
             .padding(16)

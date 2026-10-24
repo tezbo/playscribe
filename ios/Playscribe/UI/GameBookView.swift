@@ -65,7 +65,6 @@ struct TabletopStageTitle: View {
     var gameID: String
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Wordmark()
             Text(model.game(gameID)?.name ?? "").font(PlayscribeFont.title2.bold())
             if let r = model.ps5Releases(gameID).first {
                 Text(r.displayName).font(PlayscribeFont.headline).foregroundStyle(.secondary)
@@ -232,7 +231,6 @@ struct CompactHero: View {
         ArtView(asset: model.backdrop(gameID, chapter: model.nav.chapter, tall: false), game: model.game(gameID))
             .frame(height: 150)
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .overlay(alignment: .bottomLeading) { Wordmark().padding(10) }
     }
 }
 
