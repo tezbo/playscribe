@@ -61,7 +61,7 @@ struct StatusPill: View {
 
 struct UnreadDot: View {
     var body: some View {
-        Circle().fill(Color.accentColor).frame(width: 8, height: 8)
+        Circle().fill(PlayscribeColor.accent).frame(width: 8, height: 8)
             .accessibilityLabel("Unread")
     }
 }

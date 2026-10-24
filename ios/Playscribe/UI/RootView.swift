@@ -163,7 +163,7 @@ struct TabletopRail: View {
             Image(systemName: symbol)
                 .font(PlayscribeFont.title3)
                 .symbolVariant(model.nav.tab == t ? .fill : .none)
-                .foregroundStyle(model.nav.tab == t ? Color.accentColor : .secondary)
+                .foregroundStyle(model.nav.tab == t ? PlayscribeColor.accent : .secondary)
                 .frame(width: 48, height: 48)
                 .overlay(alignment: .topTrailing) {
                     if badge > 0 {

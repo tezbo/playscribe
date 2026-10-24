@@ -8,12 +8,24 @@ struct PlayscribeApp: App {
     @State private var model = AppModel()
     @Environment(\.scenePhase) private var phase
 
+    init() {
+        // Bar titles in the brand faces (Literata for large titles, Instrument Sans inline).
+        let bar = UINavigationBar.appearance()
+        if let large = UIFont(name: "Literata72pt-SemiBold", size: 34) {
+            bar.largeTitleTextAttributes = [.font: UIFontMetrics(forTextStyle: .largeTitle).scaledFont(for: large)]
+        }
+        if let inline = UIFont(name: "InstrumentSans-SemiBold", size: 17) {
+            bar.titleTextAttributes = [.font: UIFontMetrics(forTextStyle: .headline).scaledFont(for: inline)]
+        }
+    }
+
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environment(model)
                 .preferredColorScheme(.dark)
                 .font(PlayscribeFont.body)
+                .tint(PlayscribeColor.accent)
                 .foregroundStyle(PlayscribeColor.textPrimary)
                 .onAppear {
                     NotificationService.shared.attach(model)

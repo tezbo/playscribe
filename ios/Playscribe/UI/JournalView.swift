@@ -13,7 +13,9 @@ struct JournalView: View {
         let groupKey = "pconly:\(gameID)"
         let groupOpen = model.isExpanded(groupKey, default: pc.contains { $0.id == model.focusReleaseID })
 
-        VStack(alignment: .leading, spacing: 14) {
+        // A Group, not a stack: each release is a direct child of the reading panel's lazy stack,
+        // so deep links can scroll it to the top (R-1, N-6).
+        Group {
             if !announced.isEmpty {
                 SectionHeader(title: "Coming to PS5")
                 ForEach(announced) { ReleaseEntry(release: $0, defaultOpen: false).id("rel-\($0.id)") }
@@ -119,7 +121,7 @@ struct ReleaseEntry: View {
             }
         }
         .padding(14)
-        .background(model.highlight == r.id ? Color.accentColor.opacity(0.18) : Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .background(model.highlight == r.id ? PlayscribeColor.accent.opacity(0.18) : Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .task(id: model.highlight) {
             guard model.highlight == r.id else { return }
             try? await Task.sleep(for: .milliseconds(300))

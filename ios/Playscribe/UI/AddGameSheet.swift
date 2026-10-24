@@ -170,7 +170,7 @@ struct OnboardingView: View {
         List {
             Section {
                 VStack(alignment: .leading, spacing: 12) {
-                    Image(systemName: "book.closed").font(PlayscribeFont.largeTitle).foregroundStyle(Color.accentColor)
+                    Image(systemName: "book.closed").font(PlayscribeFont.largeTitle).foregroundStyle(PlayscribeColor.accent)
                     Text("Add your PS5 games").font(PlayscribeFont.title2.bold())
                     Text("Follow a game to get its PS5 patch notes in one place.").foregroundStyle(.secondary)
                 }
@@ -189,5 +189,6 @@ struct OnboardingView: View {
             }
         }
         .contentMargins(.trailing, railWidth, for: .scrollContent)
+        .scrollContentBackground(.hidden)
     }
 }

@@ -14,6 +14,8 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     var current: Double = 0
     var failed = false
     var ready = false
+    /// True once playback has begun at least once.
+    var started = false
 
     init(videoID: String) {
         let config = WKWebViewConfiguration()
@@ -39,7 +41,7 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
             let duration = body["duration"] as? Double
             switch event {
             case "ready": self.ready = true; self.duration = duration ?? 0
-            case "state": self.isPlaying = state == 1
+            case "state": self.isPlaying = state == 1; if state == 1 { self.started = true }
             case "time": self.current = time ?? 0; if let duration, duration > 0 { self.duration = duration }
             case "error": self.failed = true
             default: break
@@ -104,6 +106,16 @@ struct PlayerView: View {
                                 .padding(.trailing, duo.pose == .tabletop ? 8 : 0)
                         } secondary: {
                             WebSurface(webView: controller.webView)
+                                // One player only: the release poster covers YouTube's own
+                                // start screen until playback begins.
+                                .overlay {
+                                    if !controller.started {
+                                        ZStack {
+                                            Color.black
+                                            if let poster = video.posterAsset { Image(poster).resizable().scaledToFit() }
+                                        }
+                                    }
+                                }
                                 .aspectRatio(16 / 9, contentMode: .fit)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: videoAlignment(duo))
                                 .background(.black)

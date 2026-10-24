@@ -143,12 +143,13 @@ struct ReadingPanel: View {
     var gameID: String
     var compact: Bool
     @Binding var headerVisible: Bool
+    @State private var position = ScrollPosition(idType: String.self)
 
     var body: some View {
         let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
         let key = AppModel.bookKey(gameID, chapter)
         ScrollView {
-            LazyVStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading, spacing: 14) {
                 if compact { CompactHero(gameID: gameID) }
                 header.id("top")
                     .onScrollVisibilityChange(threshold: 0.2) { headerVisible = $0 }
@@ -166,7 +167,17 @@ struct ReadingPanel: View {
             .padding(.vertical, 16)
             .padding(.trailing, railWidth)
         }
-        .scrollPosition(id: Binding(get: { model.nav.anchors[key] }, set: { model.nav.anchors[key] = $0 }), anchor: .top)
+        // R-1 / N-6: a deep link or jump brings its release header to the top, including on a
+        // cold launch, where rows inside the journal are not direct scroll targets.
+        .task(id: model.focusToken) {
+            guard let target = model.focusReleaseID.map({ "rel-\($0)" }) ?? model.nav.anchors[key] else { return }
+            // Twice: once laid out, and again after the expanded release has measured its notes.
+            for delay in [300, 700] {
+                try? await Task.sleep(for: .milliseconds(delay))
+                position.scrollTo(id: target, anchor: .top)
+            }
+        }
+        .scrollPosition($position, anchor: .top)
         .background(panelBackground)
         .modifier(FlatCard(enabled: !compact && !duo.isFolded, landscape: duo.isLandscape))
     }
@@ -242,7 +253,7 @@ struct ChapterBar: View {
                                 .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
                                 .padding(.horizontal, 12)
                                 .frame(minHeight: 44)
-                                .background(on ? Color.accentColor.opacity(0.22) : Color.ink3, in: Capsule())
+                                .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
                         }
                         .buttonStyle(.plain)
                         .accessibilityAddTraits(on ? .isSelected : [])

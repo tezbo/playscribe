@@ -22,7 +22,7 @@ struct LibraryView: View {
         }
         .background(Color.ink0)
         .navigationTitle("Library")
-        .toolbarTitleDisplayMode(.inline)
+        .toolbarTitleDisplayMode(.large)
         .toolbar {
             ToolbarItem(placement: .topBarPinnedTrailing) {
                 Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
@@ -164,7 +164,7 @@ struct FilterBar: View {
                             .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
                             .padding(.horizontal, 12)
                             .frame(minHeight: 44)
-                            .background(on ? Color.accentColor.opacity(0.22) : Color.ink3, in: Capsule())
+                            .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
                     }
                     .buttonStyle(.plain)
                     .accessibilityAddTraits(on ? .isSelected : [])
@@ -202,8 +202,9 @@ extension View {
     }
 }
 
-/// B-4 on the closed display: the Continue game's key art leads the list, full-bleed, with the
-/// hero badge (brand README, "Splash and closed Library hero"). Tapping the art opens the book.
+/// B-4 on the closed display: the Continue game's key art in Playscribe's own frame (brand
+/// README, "Closed Library hero"): no badge on game art; the frame says "this is the app".
+/// The whole card is one button. In tabletop the art is display-only in the upper half.
 struct ContinueRow: View {
     @Environment(AppModel.self) private var model
     var game: CatalogGame
@@ -211,54 +212,68 @@ struct ContinueRow: View {
 
     var body: some View {
         Button { model.openGame(game.id, chapter: .updates, releaseID: release.id) } label: {
-            ZStack(alignment: .bottomLeading) {
-                ArtView(asset: game.keyArtAsset, game: game)
-                LinearGradient(colors: [.clear, .black.opacity(0.8)], startPoint: .top, endPoint: .bottom)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Continue").font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                    Text(release.displayName).font(PlayscribeFont.headline)
-                    Text(game.name).font(PlayscribeFont.footnote).foregroundStyle(.secondary).lineLimit(1)
-                }
-                .padding(.leading, 14)
-                .padding(.bottom, 12 + 40 + 10)
-                HeroBadge()
-                    .padding(.leading, 14)
-                    .padding(.bottom, 12)
+            VStack(alignment: .leading, spacing: 10) {
+                HeroFrame(asset: game.keyArtAsset, game: game)
+                ContinueText(game: game, release: release)
             }
-            .frame(height: 176)
-            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .frame(minHeight: 44)
         .tappableFrame()
-        .accessibilityLabel("Continue: \(game.name), \(release.displayName)")
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Continue, \(release.displayName), \(game.name)")
+        .accessibilityAddTraits(.isButton)
     }
 }
 
-/// The glass badge on the closed Library hero: mark and wordmark for 2 s the first time it
-/// appears each launch, then the mark alone. Decorative, so hidden from accessibility.
-struct HeroBadge: View {
-    private static var shownThisLaunch = false
-    @State private var open = !HeroBadge.shownThisLaunch
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-
+struct ContinueText: View {
+    var game: CatalogGame
+    var release: Release
     var body: some View {
-        HStack(spacing: 6) {
-            BrandMark(size: 24)
-            if open {
-                Text(Brand.name).font(PlayscribeFont.subheadline.weight(.semibold))
-                    .transition(.opacity.combined(with: .move(edge: .leading)))
-            }
+        VStack(alignment: .leading, spacing: 4) {
+            Text("CONTINUE")
+                .font(PlayscribeFont.caption)
+                .tracking(12 * 0.08)
+                .foregroundStyle(PlayscribeColor.accent)
+            Text(game.name).font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.textPrimary)
+            Text(release.displayName).font(PlayscribeFont.body).foregroundStyle(PlayscribeColor.textSecondary)
         }
-        .padding(.horizontal, 10)
-        .frame(height: 40)
-        .glassEffect(.regular, in: Capsule())
-        .accessibilityHidden(true)
-        .task {
-            guard open else { return }
-            HeroBadge.shownThisLaunch = true
-            try? await Task.sleep(for: .seconds(2))
-            withAnimation(reduceMotion ? .easeOut(duration: 0.2) : .spring(response: 0.35, dampingFraction: 0.85)) { open = false }
-        }
+        .padding(.horizontal, 4)
+    }
+}
+
+/// The framed key art: continuous 14 pt top corners, a bottom edge that dips 16 pt to the centre
+/// like an open book's pages meeting at the spine, and a vellum hairline. Decorative.
+struct HeroFrame: View {
+    var asset: String?
+    var game: CatalogGame?
+    var body: some View {
+        ArtView(asset: asset, game: game)
+            .aspectRatio(365 / 300, contentMode: .fit)
+            .clipShape(BookEdgeShape())
+            .overlay(BookEdgeShape().stroke(PlayscribeColor.vellum300.opacity(0.35), lineWidth: 1))
+            .accessibilityHidden(true)
+    }
+}
+
+nonisolated struct BookEdgeShape: Shape {
+    var radius: CGFloat = 14
+    var dip: CGFloat = 16
+
+    func path(in r: CGRect) -> Path {
+        var p = Path()
+        let bottom = r.maxY - dip
+        p.move(to: CGPoint(x: r.minX, y: r.minY + radius))
+        p.addQuadCurve(to: CGPoint(x: r.minX + radius, y: r.minY), control: CGPoint(x: r.minX, y: r.minY))
+        p.addLine(to: CGPoint(x: r.maxX - radius, y: r.minY))
+        p.addQuadCurve(to: CGPoint(x: r.maxX, y: r.minY + radius), control: CGPoint(x: r.maxX, y: r.minY))
+        p.addLine(to: CGPoint(x: r.maxX, y: bottom))
+        // brand/library/closed-hero.svg: controls at 77% and 23% of the width, level with the sides.
+        p.addQuadCurve(to: CGPoint(x: r.midX, y: r.maxY), control: CGPoint(x: r.minX + r.width * 0.769, y: bottom))
+        p.addQuadCurve(to: CGPoint(x: r.minX, y: bottom), control: CGPoint(x: r.minX + r.width * 0.231, y: bottom))
+        p.closeSubpath()
+        return p
     }
 }
 
@@ -294,7 +309,7 @@ struct GameRow: View {
             }
             .buttonStyle(.plain)
             .tappableFrame()
-            .background(model.highlight == row.id ? Color.accentColor.opacity(0.15) : .clear)
+            .background(model.highlight == row.id ? PlayscribeColor.accent.opacity(0.15) : .clear)
             GameMenuButton(gameID: row.id)
         }
         .accessibilityElement(children: .contain)
@@ -316,8 +331,8 @@ struct UnreadBadge: View {
             .monospacedDigit()
             .padding(.horizontal, 6)
             .frame(minWidth: 20, minHeight: 20)
-            .background(Color.accentColor, in: Capsule())
-            .foregroundStyle(.white)
+            .background(PlayscribeColor.accent, in: Capsule())
+            .foregroundStyle(PlayscribeColor.onAccent)
             .accessibilityLabel("\(count) unread")
     }
 }
@@ -360,7 +375,7 @@ struct GameTile: View {
             .overlay(alignment: .trailing) { GameMenuButton(gameID: row.id).offset(x: 12) }
         }
         .frame(width: size)
-        .background(model.highlight == row.id ? Color.accentColor.opacity(0.15) : .clear)
+        .background(model.highlight == row.id ? PlayscribeColor.accent.opacity(0.15) : .clear)
         .accessibilityElement(children: .contain)
         .accessibilityLabel("\(row.game.name), \(row.status.label)\(row.unread > 0 ? ", \(row.unread) unread" : "")")
     }
@@ -422,7 +437,7 @@ struct NotificationInviteCard: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(Color.accentColor)
+            Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.accent)
             VStack(alignment: .leading, spacing: 8) {
                 Text("Get a note when \(gameName) updates on PS5").font(PlayscribeFont.headline)
                 Button("Continue") {
