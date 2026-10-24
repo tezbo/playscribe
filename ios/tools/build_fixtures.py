@@ -59,6 +59,7 @@ releases = [
             "Better targeting, lock-on and disengaging; more responsive Shadowstep and Planeshift",
             f"Updated FrameGen with dedicated settings, plus {listed} listed fixes and changes",
         ],
+        "pushLine": "respec with Draught of Mind Rebirth, and a new Story mode",
         "video": {"youtubeID": "Y7F-0CLzvXE", "label": "Update 1.1 overview", "duration": "0:55", "posted": "2026-10-22", "posterAsset": "dw-u11-video"},
     },
     {

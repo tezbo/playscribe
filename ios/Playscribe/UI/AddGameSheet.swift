@@ -136,8 +136,8 @@ struct AddRow: View {
         HStack(spacing: 12) {
             CoverView(game: game, cornerRadius: 4).frame(width: 40)
             VStack(alignment: .leading, spacing: 2) {
-                Text(game.name).font(.subheadline.weight(.semibold)).lineLimit(2)
-                Text(subtitle).font(.caption).foregroundStyle(.secondary)
+                Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
+                Text(subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)
             }
             Spacer(minLength: 8)
             Button(added ? "In library" : "Add", action: onAdd)
@@ -149,14 +149,14 @@ struct AddRow: View {
         }
     }
 
+    /// Index dates can belong to a later edition, so only curated games show one; uncovered
+    /// games say nothing rather than repeat "no coverage" on every row.
     private var subtitle: String {
-        let released = game.releaseDate?.isoDay.map { "Released \($0.shortDay)" } ?? "Release date unknown"
-        let coverage = switch game.coverage {
-        case .full: "Full update coverage"
+        switch game.coverage {
+        case .full: "Full PS5 update coverage"
         case .partial: "Latest official posts"
-        case .none: "No update coverage yet"
+        case .none: game.developer ?? ""
         }
-        return "\(released) · \(coverage)"
     }
 }
 
@@ -170,8 +170,8 @@ struct OnboardingView: View {
         List {
             Section {
                 VStack(alignment: .leading, spacing: 12) {
-                    Image(systemName: "book.closed").font(.largeTitle).foregroundStyle(Color.accentColor)
-                    Text("Add your PS5 games").font(.title2.bold()).fontDesign(.serif)
+                    Image(systemName: "book.closed").font(PlayscribeFont.largeTitle).foregroundStyle(Color.accentColor)
+                    Text("Add your PS5 games").font(PlayscribeFont.title2.bold())
                     Text("Follow a game to get its PS5 patch notes in one place.").foregroundStyle(.secondary)
                 }
                 .padding(.vertical, 8)

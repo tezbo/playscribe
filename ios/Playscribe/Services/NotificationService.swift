@@ -73,9 +73,7 @@ final class NotificationService: NSObject {
     static func content(for release: Release, game: CatalogGame, badge: Int) -> UNMutableNotificationContent {
         let c = UNMutableNotificationContent()
         c.title = game.name
-        let changes = (release.keyChanges ?? []).prefix(2)
-        let tail = changes.isEmpty ? "" : ": " + changes.joined(separator: ", ")
-        c.body = "\(release.displayName) is live on PS5\(tail)."
+        c.body = body(for: release)
         c.threadIdentifier = game.id
         c.interruptionLevel = release.kind.countsAsMajor ? .active : .passive
         c.sound = release.kind.countsAsMajor ? .default : nil
@@ -83,6 +81,28 @@ final class NotificationService: NSObject {
         c.userInfo = ["gameId": game.id, "releaseId": release.id]
         c.categoryIdentifier = "release"
         return c
+    }
+
+    /// N-4: "<Display name> is live on PS5: <short line>." under about 110 characters, one colon.
+    static func body(for release: Release) -> String {
+        let head = "\(release.displayName) is live on PS5"
+        var line = release.pushLine
+        if line == nil {
+            // The two shortest key-change headlines: the part before any colon or semicolon.
+            let heads = (release.keyChanges ?? []).map { k in
+                String(k.split(whereSeparator: { $0 == ":" || $0 == ";" }).first ?? Substring(k)).trimmingCharacters(in: .whitespaces)
+            }.sorted { $0.count < $1.count }.prefix(2)
+            if !heads.isEmpty { line = heads.joined(separator: ", and ") }
+        }
+        guard var line, !line.isEmpty else { return head + "." }
+        if let first = line.first, line.dropFirst().first?.isLowercase == true { line = first.lowercased() + line.dropFirst() }
+        var text = "\(head): \(line)"
+        if text.count > 109 {
+            text = String(text.prefix(108))
+            if let cut = text.lastIndex(of: " ") { text = String(text[..<cut]) }
+            text = text.trimmingCharacters(in: CharacterSet(charactersIn: " ,"))
+        }
+        return text.hasSuffix(".") ? text : text + "."
     }
 
     /// Registers the category so hidden previews read "New update" (N-4).

@@ -161,13 +161,13 @@ struct TabletopRail: View {
             model.nav.tab = t
         } label: {
             Image(systemName: symbol)
-                .font(.title3)
+                .font(PlayscribeFont.title3)
                 .symbolVariant(model.nav.tab == t ? .fill : .none)
                 .foregroundStyle(model.nav.tab == t ? Color.accentColor : .secondary)
                 .frame(width: 48, height: 48)
                 .overlay(alignment: .topTrailing) {
                     if badge > 0 {
-                        Text("\(badge)").font(.caption2.bold()).padding(.horizontal, 4)
+                        Text("\(badge)").font(PlayscribeFont.caption2.bold()).padding(.horizontal, 4)
                             .background(Color.red, in: Capsule()).foregroundStyle(.white)
                     }
                 }
@@ -194,9 +194,9 @@ struct LowerMessages: View {
                     HStack(spacing: 8) {
                         UnreadDot()
                         Text("New on PS5: \(game.name) \(r.displayName)")
-                            .font(.subheadline.weight(.semibold))
+                            .font(PlayscribeFont.subheadline.weight(.semibold))
                             .lineLimit(2)
-                        Image(systemName: "chevron.forward").font(.caption)
+                        Image(systemName: "chevron.forward").font(PlayscribeFont.caption)
                     }
                     .padding(.horizontal, 16)
                     .frame(minHeight: 44)
@@ -209,10 +209,10 @@ struct LowerMessages: View {
             }
             if let toast = model.toast {
                 HStack(spacing: 12) {
-                    Text(toast.text).font(.subheadline)
+                    Text(toast.text).font(PlayscribeFont.subheadline)
                     if let undo = toast.undo {
                         Button("Undo") { undo(); model.toastClear() }
-                            .font(.subheadline.weight(.semibold))
+                            .font(PlayscribeFont.subheadline.weight(.semibold))
                             .hitTarget()
                             .tappableFrame()
                     }

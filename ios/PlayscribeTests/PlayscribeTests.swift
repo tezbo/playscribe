@@ -74,10 +74,30 @@ struct ModelTests {
         let r = m.release("dawnwalker", "dawnwalker@1.1")!
         let c = NotificationService.content(for: r, game: m.game("dawnwalker")!, badge: 1)
         #expect(c.title == "The Blood of Dawnwalker")
-        #expect(c.body.hasPrefix("Update 1.1 is live on PS5: "))
+        #expect(c.body == "Update 1.1 is live on PS5: respec with Draught of Mind Rebirth, and a new Story mode.")
+        #expect(c.body.count <= 110)
+        // Without an editorial line: the two shortest headlines, one colon, a full stop.
+        var plain = r
+        plain.pushLine = nil
+        let fallback = NotificationService.body(for: plain)
+        #expect(fallback.filter { $0 == ":" }.count == 1)
+        #expect(fallback.count <= 110 && fallback.hasSuffix("."))
         #expect(c.threadIdentifier == "dawnwalker")
         #expect(c.interruptionLevel == .active)
         #expect(c.userInfo["releaseId"] as? String == "dawnwalker@1.1")
+    }
+
+    @Test("Feed records decode: camelCase ids and fractional-second dates")
+    func feedDecode() throws {
+        let json = #"{"updatedAt":"2026-10-24T20:57:39.904Z","releases":[{"id":"dawnwalker@1.1","gameId":"dawnwalker","displayName":"Update 1.1","kind":"major","kindBasis":"studio","announcedAt":"2026-10-22T09:17:48.000Z","sourceIds":["dawnwalker-steam"],"platforms":[{"platform":"pc","status":"live","version":null,"sizeBytes":null,"liveAt":{"value":"2026-10-22T09:17:48.000Z","verification":"official","sourceId":"dawnwalker-steam","checkedAt":"2026-10-24T20:57:37.642Z"},"bundles":[],"verification":"official"}],"revision":1}]}"#
+        let latest = try JSONCoding.decoder.decode(FeedClient.Latest.self, from: Data(json.utf8))
+        let m = freshModel()
+        m.feedReleases = latest.releases
+        // The feed's PC row merges with the curated PS5 row and editorial fields.
+        let r = m.release("dawnwalker", "dawnwalker@1.1")
+        #expect(r?.ps5State == .onPS5)
+        #expect(r?.platforms.count == 3 || r?.platforms.count == 2)
+        #expect(r?.headline != nil)
     }
 
     @Test("Search dedupes by IGDB id and prefers curated records (A-3)")

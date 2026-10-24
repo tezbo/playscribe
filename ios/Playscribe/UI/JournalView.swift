@@ -22,11 +22,11 @@ struct JournalView: View {
             SectionHeader(title: "On PS5")
             if mine.isEmpty {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("No PS5 notes yet").font(.headline)
+                    Text("No PS5 notes yet").font(PlayscribeFont.headline)
                     Text(pc.isEmpty
                          ? "\(Brand.name) doesn't have verified patch notes for this game yet, so nothing is shown rather than guessed."
                          : "This game has official notes for its PC build only. They're kept below and don't count as new until they're confirmed on PS5.")
-                        .font(.subheadline).foregroundStyle(.secondary)
+                        .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                 }
                 .padding(.vertical, 8)
             }
@@ -37,7 +37,7 @@ struct JournalView: View {
             if !pc.isEmpty {
                 Button { model.setExpanded(groupKey, !groupOpen) } label: {
                     HStack {
-                        Text("PC only so far").font(.headline)
+                        Text("PC only so far").font(PlayscribeFont.headline)
                         Text("· \(pc.count) update\(pc.count == 1 ? "" : "s")").foregroundStyle(.secondary)
                         Spacer()
                         Image(systemName: "chevron.down").rotationEffect(.degrees(groupOpen ? 180 : 0))
@@ -50,7 +50,7 @@ struct JournalView: View {
                 .id("pconly")
                 if groupOpen {
                     Text("The developer's official notes for these describe the PC build. They may reach PS5 later, under a different version number. \(Brand.name) counts them as yours only once that's confirmed.")
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                     ForEach(pc) { ReleaseEntry(release: $0, defaultOpen: false).id("rel-\($0.id)") }
                 }
             }
@@ -61,7 +61,7 @@ struct JournalView: View {
 struct SectionHeader: View {
     var title: String
     var body: some View {
-        Text(title).font(.title3.weight(.semibold)).fontDesign(.serif).padding(.top, 4)
+        Text(title).font(PlayscribeFont.title3.weight(.semibold)).padding(.top, 4)
             .accessibilityAddTraits(.isHeader)
     }
 }
@@ -83,7 +83,7 @@ struct ReleaseEntry: View {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 8) {
                         if unread { UnreadDot() }
-                        Text(r.displayName).font(.headline)
+                        Text(r.displayName).font(PlayscribeFont.headline)
                         ReleaseTag(release: r)
                         Spacer(minLength: 0)
                         Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
@@ -95,8 +95,8 @@ struct ReleaseEntry: View {
                         // R-2 / V-2: the PS5 version exactly as the console shows it; never a PC number.
                         if let v = r.ps5Version { Text("·"); Text(v).monospacedDigit() }
                     }
-                    .font(.subheadline).foregroundStyle(.secondary)
-                    if !open, let h = r.headline { Text(h).font(.subheadline).lineLimit(2) }
+                    .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    if !open, let h = r.headline { Text(h).font(PlayscribeFont.subheadline).lineLimit(2) }
                 }
                 .contentShape(Rectangle())
                 .frame(minHeight: 44)
@@ -150,25 +150,25 @@ struct ReleaseBody: View {
     var body: some View {
         let r = release
         VStack(alignment: .leading, spacing: 14) {
-            if let h = r.headline { Text(h).font(.body.weight(.semibold)) }
+            if let h = r.headline { Text(h).font(PlayscribeFont.body.weight(.semibold)) }
             Facts(release: r)
             if let summary = r.summary {
                 VStack(alignment: .leading, spacing: 8) {
-                    Label("\(Brand.name) summary", systemImage: "sparkles").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
+                    Label("\(Brand.name) summary", systemImage: "sparkles").font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(.secondary)
                     Text(summary)
                     ForEach(r.keyChanges ?? [], id: \.self) { k in
                         Label { Text(k) } icon: { Image(systemName: "circle.fill").font(.system(size: 5)) }
-                            .font(.subheadline)
+                            .font(PlayscribeFont.subheadline)
                     }
                 }
                 .padding(12)
                 .background(Color.ink3.opacity(0.6), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             }
             if r.isSilent && r.notes.isEmpty {
-                Text("No official notes").font(.subheadline).foregroundStyle(.secondary)
+                Text("No official notes").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
             if !r.notes.isEmpty {
-                Text("Official notes · \(r.noteCount) items").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
+                Text("Official notes · \(r.noteCount) items").font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(.secondary)
                 ForEach(Array(r.notes.enumerated()), id: \.offset) { _, section in
                     NoteSectionView(release: r, section: section)
                 }
@@ -228,11 +228,11 @@ struct Facts: View {
             }
             row("Video", VideoFact(release: r))
             if let checked = p?.liveAt?.checkedAt, Date.now.timeIntervalSince(checked) > 86_400 {
-                row("Checked", Text(checked.shortDay).font(.footnote).foregroundStyle(.secondary))
+                row("Checked", Text(checked.shortDay).font(PlayscribeFont.footnote).foregroundStyle(.secondary))
             }
         }
-        .font(.subheadline)
-        Text("\(Brand.name) can't see what's installed on your console.").font(.footnote).foregroundStyle(.secondary)
+        .font(PlayscribeFont.subheadline)
+        Text("\(Brand.name) can't see what's installed on your console.").font(PlayscribeFont.footnote).foregroundStyle(.secondary)
     }
 
     private var status: String {
@@ -265,14 +265,14 @@ struct VideoFact: View {
                 HStack(spacing: 10) {
                     ZStack {
                         if let poster = v.posterAsset { Image(poster).resizable().scaledToFill() } else { Color.ink3 }
-                        Image(systemName: "play.fill").font(.caption).padding(8).background(.ultraThinMaterial, in: Circle())
+                        Image(systemName: "play.fill").font(PlayscribeFont.caption).padding(8).background(.ultraThinMaterial, in: Circle())
                     }
                     .frame(width: 88, height: 50)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(v.label).font(.subheadline.weight(.semibold))
+                        Text(v.label).font(PlayscribeFont.subheadline.weight(.semibold))
                         Text([v.duration, v.posted.isoDay.map { "Posted \($0.shortDay)" }].compactMap { $0 }.joined(separator: " · "))
-                            .font(.caption).foregroundStyle(.secondary)
+                            .font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     }
                 }
                 .contentShape(Rectangle())
@@ -301,9 +301,9 @@ struct NoteSectionView: View {
         VStack(alignment: .leading, spacing: 8) {
             Button { model.setExpanded(key, !open) } label: {
                 HStack {
-                    Text(section.title).font(.subheadline.weight(.semibold))
+                    Text(section.title).font(PlayscribeFont.subheadline.weight(.semibold))
                     Text("\(section.items.count)\(hidden > 0 && !model.spoilersShown(release.gameID) ? " · \(hidden) hidden for spoilers" : "")")
-                        .font(.caption).foregroundStyle(.secondary)
+                        .font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     Spacer()
                     Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
                 }
@@ -318,7 +318,7 @@ struct NoteSectionView: View {
                 }
                 if !pcOnly.isEmpty {
                     Button(showPC ? "Hide PC-only changes" : "Show PC-only changes (\(pcOnly.count))") { showPC.toggle() }
-                        .font(.footnote).hitTarget()
+                        .font(PlayscribeFont.footnote).hitTarget()
                     if showPC {
                         ForEach(Array(pcOnly.enumerated()), id: \.offset) { i, item in
                             NoteItemView(item: item, gameID: release.gameID, key: "\(key):pc:\(i)")
@@ -346,7 +346,7 @@ struct NoteItemView: View {
                 if item.ps5ProOnly { Tag(text: "PS5 Pro") }
             }
         }
-        .font(.subheadline)
+        .font(PlayscribeFont.subheadline)
         .padding(.bottom, 4)
     }
 }
@@ -366,7 +366,7 @@ struct SpoilerText: View {
                 ZStack(alignment: .leading) {
                     Text(text).blur(radius: 6).accessibilityHidden(true)
                     Label("Spoiler · tap to show", systemImage: "eye.slash")
-                        .font(.caption.weight(.semibold))
+                        .font(PlayscribeFont.caption.weight(.semibold))
                         .padding(.horizontal, 8).padding(.vertical, 4)
                         .background(.ultraThinMaterial, in: Capsule())
                 }

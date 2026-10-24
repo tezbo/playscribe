@@ -13,6 +13,8 @@ struct PlayscribeApp: App {
             RootView()
                 .environment(model)
                 .preferredColorScheme(.dark)
+                .font(PlayscribeFont.body)
+                .foregroundStyle(PlayscribeColor.textPrimary)
                 .onAppear {
                     NotificationService.shared.attach(model)
                     model.loadCachedFeed()

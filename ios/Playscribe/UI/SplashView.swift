@@ -39,14 +39,14 @@ struct SplashView: View {
             if let fold = duo.division {
                 HStack(spacing: 0) {
                     HStack(spacing: 12) {
-                        Text(split.0).font(.largeTitle.bold()).fontDesign(.serif)
+                        Text(split.0).font(PlayscribeFont.largeTitle.bold())
                         MarkPageView(side: .left, height: size * 1.4).rotation3DEffect(.degrees(opened ? 0 : 60), axis: (0, 1, 0), anchor: .trailing)
                     }
                     .frame(width: fold.minX, alignment: .trailing)
                     Color.clear.frame(width: fold.width)
                     HStack(spacing: 12) {
                         MarkPageView(side: .right, height: size * 1.4).rotation3DEffect(.degrees(opened ? 0 : -60), axis: (0, 1, 0), anchor: .leading)
-                        Text(split.1).font(.largeTitle.bold()).fontDesign(.serif)
+                        Text(split.1).font(PlayscribeFont.largeTitle.bold())
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -69,8 +69,8 @@ struct SplashView: View {
 
     private var name: some View {
         VStack(spacing: 6) {
-            Text(Brand.name).font(.largeTitle.bold()).fontDesign(.serif)
-            Text(Brand.tagline).font(.subheadline).foregroundStyle(.secondary)
+            Text(Brand.name).font(PlayscribeFont.largeTitle.bold())
+            Text(Brand.tagline).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
         }
     }
 

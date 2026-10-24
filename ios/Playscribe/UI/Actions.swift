@@ -61,7 +61,7 @@ struct RailButton: View {
 
     private var icon: some View {
         Image(systemName: action.systemImage)
-            .font(.title3)
+            .font(PlayscribeFont.title3)
             .frame(width: 48, height: 48)
             .contentShape(Rectangle())
     }

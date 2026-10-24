@@ -63,7 +63,7 @@ struct SettingsView: View {
                 Section {
                     LabeledContent("Version", value: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")
                 } footer: {
-                    Text("Artwork and trailers belong to their publishers. \(Brand.name) is not affiliated with Sony, Apple or any publisher.")
+                    Text("Artwork and trailers belong to their publishers. \(Brand.trademarkNotice)")
                 }
             }
             .navigationTitle("Settings")

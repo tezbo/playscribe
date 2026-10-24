@@ -26,7 +26,7 @@ struct EntryCard: View {
         let marked = model.isBookmarked(kind: .entry, id: entry.id)
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
-                Text(entry.title).font(.headline)
+                Text(entry.title).font(PlayscribeFont.headline)
                 if entry.verification == "illustrative" { Tag(text: "Illustrative", tint: .ember) }
                 Spacer()
                 Button { model.toggleBookmark(kind: .entry, id: entry.id, gameID: entry.gameID) } label: {
@@ -58,7 +58,7 @@ struct GalleryChapter: View {
         let videos = items.filter { $0.kind == .video }
         let picked = model.data.selectedArtwork[gameID]
         VStack(alignment: .leading, spacing: 14) {
-            Text("Choose a picture to use as this game's backdrop.").font(.footnote).foregroundStyle(.secondary)
+            Text("Choose a picture to use as this game's backdrop.").font(PlayscribeFont.footnote).foregroundStyle(.secondary)
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 10)], spacing: 10) {
                 ForEach(art) { item in
                     Button { model.selectArtwork(gameID, item.id) } label: {
@@ -68,7 +68,7 @@ struct GalleryChapter: View {
                             .overlay(alignment: .bottomLeading) {
                                 Label(item.title, systemImage: picked == item.id ? "checkmark.circle.fill" : "")
                                     .labelStyle(.titleAndIcon)
-                                    .font(.caption2.weight(.semibold))
+                                    .font(PlayscribeFont.caption2.weight(.semibold))
                                     .padding(6).background(.ultraThinMaterial, in: Capsule()).padding(6)
                             }
                     }
@@ -86,8 +86,8 @@ struct GalleryChapter: View {
                         HStack(spacing: 12) {
                             Image(v.asset).resizable().scaledToFill().frame(width: 96, height: 54).clipShape(RoundedRectangle(cornerRadius: 8))
                             VStack(alignment: .leading) {
-                                Text(v.title).font(.subheadline.weight(.semibold))
-                                Text("Opens in YouTube").font(.caption).foregroundStyle(.secondary)
+                                Text(v.title).font(PlayscribeFont.subheadline.weight(.semibold))
+                                Text("Opens in YouTube").font(PlayscribeFont.caption).foregroundStyle(.secondary)
                             }
                             Spacer()
                         }
@@ -148,7 +148,7 @@ struct MyBookChapter: View {
                 model.saveNote(Note(id: "n-\(Int(Date.now.timeIntervalSince1970 * 1000))", gameID: gameID, text: text, updatedAt: .now))
                 model.nav.noteDraft[gameID] = ""
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
             .disabled((model.nav.noteDraft[gameID] ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             .hitTarget()
 
@@ -165,12 +165,12 @@ struct MyBookChapter: View {
                                 model.saveNote(copy)
                                 editing = nil
                             }
-                            .buttonStyle(.borderedProminent).hitTarget()
+                            .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
                         }
                     } else {
                         Text(n.text)
                         HStack {
-                            Text(n.updatedAt.formatted(date: .abbreviated, time: .shortened)).font(.caption).foregroundStyle(.secondary)
+                            Text(n.updatedAt.formatted(date: .abbreviated, time: .shortened)).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                             Spacer()
                             Button { editing = n.id; editText = n.text } label: { Image(systemName: "pencil").hitTarget() }
                                 .accessibilityLabel("Edit note")

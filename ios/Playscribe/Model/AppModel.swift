@@ -374,6 +374,7 @@ final class AppModel {
         case "simulate" where parts.count == 2:
             simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
         case "close": player = nil; addSheetOpen = false; settingsOpen = false
+        case "ask-notifications": Task { await NotificationService.shared.requestAuthorization() }
         default: break
         }
         #endif

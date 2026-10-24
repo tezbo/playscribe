@@ -14,14 +14,14 @@ struct UpdatesView: View {
                 ContentUnavailableView {
                     Label("Updates for your games will appear here", systemImage: "book.closed")
                 } actions: {
-                    Button("Add a game") { model.nav.tab = .library }.buttonStyle(.borderedProminent)
+                    Button("Add a game") { model.nav.tab = .library }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
                 }
             } else {
                 List {
                     ForEach(items) { r in FeedRow(release: r) }
                     if pcCount > 0 {
                         Text("\(pcCount) PC-only update\(pcCount == 1 ? " isn't" : "s aren't") listed because \(pcCount == 1 ? "it's" : "they're") not confirmed on PS5.")
-                            .font(.footnote).foregroundStyle(.secondary)
+                            .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                     }
                 }
                 .contentMargins(.trailing, railWidth, for: .scrollContent)
@@ -43,11 +43,11 @@ struct FeedRow: View {
                 VStack(alignment: .leading, spacing: 3) {
                     HStack(spacing: 6) {
                         if unread { UnreadDot() }
-                        Text(release.displayName).font(.subheadline.weight(unread ? .bold : .semibold))
+                        Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
                         ReleaseTag(release: release)
                     }
-                    Text("\(model.game(release.gameID)?.name ?? "") · \(release.ps5Date.shortDay)").font(.caption).foregroundStyle(.secondary)
-                    if let h = release.headline { Text(h).font(.footnote).lineLimit(2) }
+                    Text("\(model.game(release.gameID)?.name ?? "") · \(release.ps5Date.shortDay)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    if let h = release.headline { Text(h).font(PlayscribeFont.footnote).lineLimit(2) }
                 }
                 Spacer(minLength: 0)
             }
@@ -79,7 +79,7 @@ struct SearchView: View {
         List {
             if term.isEmpty {
                 Text("Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
-                    .font(.footnote).foregroundStyle(.secondary)
+                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
             } else if gameHits.isEmpty && noteHits.isEmpty && entryHits.isEmpty {
                 ContentUnavailableView.search(text: query)
             }
@@ -90,8 +90,8 @@ struct SearchView: View {
                             HStack(spacing: 12) {
                                 CoverView(game: g, cornerRadius: 4).frame(width: 36)
                                 VStack(alignment: .leading) {
-                                    Text(g.name).font(.subheadline.weight(.semibold))
-                                    Text(library.contains(g.id) ? (model.entry(g.id)?.status.label ?? "") : "Not in your library").font(.caption).foregroundStyle(.secondary)
+                                    Text(g.name).font(PlayscribeFont.subheadline.weight(.semibold))
+                                    Text(library.contains(g.id) ? (model.entry(g.id)?.status.label ?? "") : "Not in your library").font(PlayscribeFont.caption).foregroundStyle(.secondary)
                                 }
                             }
                         }
@@ -104,8 +104,8 @@ struct SearchView: View {
                     ForEach(Array(noteHits.prefix(12).enumerated()), id: \.offset) { _, hit in
                         Button { model.openGame(hit.0.gameID, chapter: .updates, releaseID: hit.0.id) } label: {
                             VStack(alignment: .leading, spacing: 2) {
-                                Text("\(hit.0.displayName) · \(model.game(hit.0.gameID)?.name ?? "")").font(.subheadline.weight(.semibold))
-                                Text(hit.1).font(.footnote).lineLimit(2)
+                                Text("\(hit.0.displayName) · \(model.game(hit.0.gameID)?.name ?? "")").font(PlayscribeFont.subheadline.weight(.semibold))
+                                Text(hit.1).font(PlayscribeFont.footnote).lineLimit(2)
                             }
                         }
                         .buttonStyle(.plain)
@@ -121,8 +121,8 @@ struct SearchView: View {
                             model.nav.anchors[AppModel.bookKey(e.gameID, ch)] = "entry-\(e.id)"
                         } label: {
                             VStack(alignment: .leading, spacing: 2) {
-                                Text(e.title).font(.subheadline.weight(.semibold))
-                                Text("\(model.game(e.gameID)?.name ?? "") · \(e.section)\(e.spoiler ? " · spoiler" : "")").font(.caption).foregroundStyle(.secondary)
+                                Text(e.title).font(PlayscribeFont.subheadline.weight(.semibold))
+                                Text("\(model.game(e.gameID)?.name ?? "") · \(e.section)\(e.spoiler ? " · spoiler" : "")").font(PlayscribeFont.caption).foregroundStyle(.secondary)
                             }
                         }
                         .buttonStyle(.plain)

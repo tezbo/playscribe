@@ -106,7 +106,7 @@ struct DebugOverlay: View {
                         .offset(x: r.minX - origin.x, y: r.minY - origin.y)
                 }
                 Text("\(duo.pose.rawValue) · \(Int(duo.size.width))×\(Int(duo.size.height)) pt")
-                    .font(.caption2.monospaced())
+                    .font(PlayscribeFont.caption2.monospaced())
                     .padding(4)
                     .background(.black.opacity(0.7))
                     .offset(x: 8, y: 8)
