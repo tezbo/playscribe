@@ -26,6 +26,8 @@ iOS icons are one 1024x1024 layered design. Appearances are default, dark, clear
   - The card's bottom edge follows the open book's lower silhouette: straight at both sides, dipping 16 pt to the centre like the pages meeting at the spine. Draw it as two quad curves (see `library/closed-hero.svg`).
   - A 1 pt vellum 300 hairline at 35% opacity outlines the card.
   - Below the art, on ink: "CONTINUE" in Instrument Sans caption with ember and tracking, then the game title in Literata title2, then the update line in the body style. The game's own logo stays inside its art and is never redrawn by us.
+  - The whole card, frame plus text, is one button, at least 44 pt, with a VoiceOver label like "Continue, Update 1.1, The Blood of Dawnwalker". The hairline and the dip are decoration only.
+  - In tabletop the framed art moves to the upper half and is display-only. The CONTINUE label, title, update line and tap target stay in the lower half.
   - The large title "Library" in Literata and the ink and vellum chrome carry the brand everywhere else.
 
 ## PlayStation
