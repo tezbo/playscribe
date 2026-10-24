@@ -7,15 +7,16 @@ struct GameBookView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     var gameID: String
+    @State private var headerVisible = true
 
     var body: some View {
         let game = model.game(gameID)
         Group {
             if duo.pose == .closed {
-                ReadingPanel(gameID: gameID, compact: true)
+                ReadingPanel(gameID: gameID, compact: true, headerVisible: $headerVisible)
             } else {
                 ArrangementView {
-                    ReadingPanel(gameID: gameID, compact: false)
+                    ReadingPanel(gameID: gameID, compact: false, headerVisible: $headerVisible)
                         .overlayArrangementEdge(.trailing)
                 } secondary: {
                     BookSecondary(gameID: gameID)
@@ -25,7 +26,8 @@ struct GameBookView: View {
             }
         }
         .background(Color.ink0)
-        .navigationTitle(game?.name ?? "")
+        // The large header carries the name; the bar shows it once the header scrolls away.
+        .navigationTitle(headerVisible ? "" : (game?.name ?? ""))
         .toolbarTitleDisplayMode(.inline)
         .toolbar { ActionToolbar(actions: model.gameActions(gameID)) }
         .onAppear { model.nav.lastGameID = gameID }
@@ -64,9 +66,9 @@ struct TabletopStageTitle: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Wordmark()
-            Text(model.game(gameID)?.name ?? "").font(.title2.bold()).fontDesign(.serif)
+            Text(model.game(gameID)?.name ?? "").font(PlayscribeFont.title2.bold())
             if let r = model.ps5Releases(gameID).first {
-                Text(r.displayName).font(.headline).foregroundStyle(.secondary)
+                Text(r.displayName).font(PlayscribeFont.headline).foregroundStyle(.secondary)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -81,15 +83,15 @@ struct Folio: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(chapter.title.uppercased()).font(.caption2.weight(.semibold)).foregroundStyle(.secondary)
-            Text(model.game(gameID)?.name ?? "").font(.title3.bold()).fontDesign(.serif)
+            Text(chapter.title.uppercased()).font(PlayscribeFont.caption2.weight(.semibold)).foregroundStyle(.secondary)
+            Text(model.game(gameID)?.name ?? "").font(PlayscribeFont.title3.bold())
             ForEach(items, id: \.id) { item in
                 Button(action: item.action) {
                     HStack(spacing: 8) {
                         if item.unread { UnreadDot() } else { Capsule().fill(.secondary).frame(width: 8, height: 2) }
-                        Text(item.label).font(.subheadline.weight(.medium))
+                        Text(item.label).font(PlayscribeFont.subheadline.weight(.medium))
                         Spacer(minLength: 8)
-                        Text(item.sub).font(.caption).foregroundStyle(.secondary)
+                        Text(item.sub).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     }
                     .frame(minHeight: 44)
                     .contentShape(Rectangle())
@@ -140,6 +142,7 @@ struct ReadingPanel: View {
     @Environment(\.railWidth) private var railWidth
     var gameID: String
     var compact: Bool
+    @Binding var headerVisible: Bool
 
     var body: some View {
         let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
@@ -148,6 +151,7 @@ struct ReadingPanel: View {
             LazyVStack(alignment: .leading, spacing: 14) {
                 if compact { CompactHero(gameID: gameID) }
                 header.id("top")
+                    .onScrollVisibilityChange(threshold: 0.2) { headerVisible = $0 }
                 ChapterBar(gameID: gameID, selected: chapter)
                 if duo.pose == .tabletop, chapter == .updates { ReleaseJumpChips(gameID: gameID) }
                 switch chapter {
@@ -174,15 +178,15 @@ struct ReadingPanel: View {
     private var header: some View {
         let game = model.game(gameID)
         return VStack(alignment: .leading, spacing: 6) {
-            Text(game?.name ?? "").font(.title.bold()).fontDesign(.serif)
+            Text(game?.name ?? "").font(PlayscribeFont.title.bold())
             HStack(spacing: 8) {
                 if let e = model.entry(gameID) { StatusPill(status: e.status) }
-                if let dev = game?.developer { Text(dev).font(.subheadline).foregroundStyle(.secondary) }
+                if let dev = game?.developer { Text(dev).font(PlayscribeFont.subheadline).foregroundStyle(.secondary) }
             }
             if model.entry(gameID) == nil, let game {
                 // N-9: a game book outside the library is readable, with Add to library.
                 Button("Add to library") { model.addGame(game, status: .watching) }
-                    .buttonStyle(.borderedProminent)
+                    .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
                     .hitTarget()
             }
         }
@@ -235,7 +239,7 @@ struct ChapterBar: View {
                         let on = c == selected
                         Button { model.nav.chapter = c } label: {
                             Label(c.title, systemImage: c.symbol)
-                                .font(.subheadline.weight(on ? .semibold : .regular))
+                                .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
                                 .padding(.horizontal, 12)
                                 .frame(minHeight: 44)
                                 .background(on ? Color.accentColor.opacity(0.22) : Color.ink3, in: Capsule())
@@ -247,9 +251,9 @@ struct ChapterBar: View {
                     }
                 }
                 .padding(.horizontal, 2)
+                .padding(.trailing, 24)
             }
-            .mask(LinearGradient(stops: [.init(color: .black, location: 0), .init(color: .black, location: 0.9), .init(color: .clear, location: 1)],
-                                 startPoint: .leading, endPoint: .trailing))
+            .edgeFade()
             .onAppear { proxy.scrollTo(selected, anchor: .center) }
             .onChange(of: selected) { _, c in withAnimation { proxy.scrollTo(c, anchor: .center) } }
         }
@@ -267,7 +271,7 @@ struct ReleaseJumpChips: View {
                     Button { model.openGame(gameID, chapter: .updates, releaseID: r.id) } label: {
                         HStack(spacing: 6) {
                             if model.isUnread(r) { UnreadDot() }
-                            Text(r.displayName).font(.footnote.weight(.medium))
+                            Text(r.displayName).font(PlayscribeFont.footnote.weight(.medium))
                         }
                         .padding(.horizontal, 12)
                         .frame(minHeight: 44)

@@ -83,7 +83,11 @@ extension AppModel {
 
     /// V-1 and N-3: a release that is newly On PS5 for a followed game notifies once.
     func notifyNewlyOnPS5() {
-        var known = data.knownOnPS5 ?? []
+        guard var known = data.knownOnPS5 else {
+            // After a reset nothing has been seen yet: what is already On PS5 is not news.
+            data.knownOnPS5 = Set(allReleasesMerged.filter { $0.ps5State == .onPS5 }.map(\.id))
+            return
+        }
         for c in data.collection {
             for r in releases(c.gameID) where r.ps5State == .onPS5 && !known.contains(r.id) {
                 known.insert(r.id)

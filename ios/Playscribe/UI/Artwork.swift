@@ -30,8 +30,8 @@ struct CoverView: View {
         return LinearGradient(colors: tones, startPoint: .topLeading, endPoint: .bottomTrailing)
             .overlay {
                 Text(game.name)
-                    .font(.caption.weight(.semibold))
-                    .fontDesign(.serif)
+                    .font(PlayscribeFont.caption.weight(.semibold))
+                    
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.white.opacity(0.85))
                     .padding(6)
@@ -152,7 +152,7 @@ struct Wordmark: View {
     var body: some View {
         HStack(spacing: 6) {
             BrandMark(size: 22)
-            Text(Brand.name).font(.subheadline.weight(.semibold)).fontDesign(.serif)
+            Text(Brand.name).font(PlayscribeFont.subheadline.weight(.semibold))
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Brand.name)

@@ -133,6 +133,8 @@ struct Release: Codable, Hashable, Identifiable {
     var keyChanges: [String]?
     var video: ReleaseVideo?
     var videoNote: String?
+    /// The short line a notification carries after "is live on PS5:" (N-4).
+    var pushLine: String?
     /// Set on releases created by the internal "Simulate update" tool.
     var simulated: Bool?
     /// A simulated release stays hidden until its notification is due.
@@ -141,16 +143,16 @@ struct Release: Codable, Hashable, Identifiable {
     // JSON keys follow docs/api.md (camelCase "Id").
     enum CodingKeys: String, CodingKey {
         case id, gameID = "gameId", displayName, kind, kindBasis, announcedAt, notes, sourceIDs = "sourceIds", platforms
-        case headline, summary, keyChanges, video, videoNote, simulated, arrivesAt
+        case headline, summary, keyChanges, video, videoNote, pushLine, simulated, arrivesAt
     }
 
     init(id: String, gameID: String, displayName: String, kind: ReleaseKind, kindBasis: KindBasis, announcedAt: Date,
          notes: [NoteSection], sourceIDs: [String], platforms: [PlatformRelease], headline: String? = nil, summary: String? = nil,
-         keyChanges: [String]? = nil, video: ReleaseVideo? = nil, videoNote: String? = nil, simulated: Bool? = nil, arrivesAt: Date? = nil) {
+         keyChanges: [String]? = nil, video: ReleaseVideo? = nil, videoNote: String? = nil, pushLine: String? = nil, simulated: Bool? = nil, arrivesAt: Date? = nil) {
         self.id = id; self.gameID = gameID; self.displayName = displayName; self.kind = kind; self.kindBasis = kindBasis
         self.announcedAt = announcedAt; self.notes = notes; self.sourceIDs = sourceIDs; self.platforms = platforms
         self.headline = headline; self.summary = summary; self.keyChanges = keyChanges; self.video = video
-        self.videoNote = videoNote; self.simulated = simulated; self.arrivesAt = arrivesAt
+        self.videoNote = videoNote; self.pushLine = pushLine; self.simulated = simulated; self.arrivesAt = arrivesAt
     }
 
     init(from decoder: Decoder) throws {
@@ -169,6 +171,7 @@ struct Release: Codable, Hashable, Identifiable {
         keyChanges = try c.decodeIfPresent([String].self, forKey: .keyChanges)
         video = try c.decodeIfPresent(ReleaseVideo.self, forKey: .video)
         videoNote = try c.decodeIfPresent(String.self, forKey: .videoNote)
+        pushLine = try c.decodeIfPresent(String.self, forKey: .pushLine)
         simulated = try c.decodeIfPresent(Bool.self, forKey: .simulated)
         arrivesAt = try c.decodeIfPresent(Date.self, forKey: .arrivesAt)
     }
@@ -186,6 +189,7 @@ struct Release: Codable, Hashable, Identifiable {
         out.keyChanges = feed.keyChanges ?? keyChanges
         out.video = feed.video ?? video
         out.videoNote = feed.videoNote ?? videoNote
+        out.pushLine = feed.pushLine ?? pushLine
         return out
     }
 }

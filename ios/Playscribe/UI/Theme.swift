@@ -3,7 +3,8 @@ import SwiftUI
 enum Brand {
     /// The product name. One constant, so a rename is one line.
     static let name = "Playscribe"
-    static let tagline = "Your PS5 games, in a book"
+    static let tagline = "The story of every update"
+    static let trademarkNotice = "PlayStation, PS5 and the PlayStation Family Mark are trademarks of Sony Interactive Entertainment Inc. Playscribe is not affiliated with or endorsed by Sony Interactive Entertainment."
 }
 
 extension Color {
@@ -13,26 +14,28 @@ extension Color {
         self.init(.sRGB, red: Double((v >> 16) & 0xFF) / 255, green: Double((v >> 8) & 0xFF) / 255, blue: Double(v & 0xFF) / 255)
     }
 
-    static let ink0 = Color(hex: "#0b0d12")
-    static let ink1 = Color(hex: "#11141b")
-    static let ink2 = Color(hex: "#171b24")
-    static let ink3 = Color(hex: "#1f2430")
-    static let ink4 = Color(hex: "#2a3040")
-    static let ember = Color(hex: "#e8b169")
+    // Brand v1 (brand/tokens.json): ink is the ground, vellum the pages, ember the accent.
+    static let ink0 = PlayscribeColor.ink950
+    static let ink1 = PlayscribeColor.ink900
+    static let ink2 = PlayscribeColor.ink800
+    static let ink3 = PlayscribeColor.ink700
+    static let ink4 = PlayscribeColor.ink600
+    static let ember = PlayscribeColor.vellum500
     static let ok = Color(hex: "#6fd3a0")
     static let simulated = Color(hex: "#c9a3ff")
-    static let brand1 = Color(hex: "#7fb2ff")
-    static let brand2 = Color(hex: "#d6e5ff")
-    static let brand3 = Color(hex: "#3d6fdc")
-    static let spark = Color(hex: "#f2bd6b")
+    static let brand1 = PlayscribeColor.vellum300
+    static let brand2 = PlayscribeColor.vellum100
+    static let brand3 = PlayscribeColor.vellum500
+    static let spark = PlayscribeColor.ember500
+    static let watching = Color(hex: "#a99be0")
 }
 
 extension OwnershipStatus {
     var tint: Color {
         switch self {
         case .owned: .ok
-        case .wishlist: .ember
-        case .watching: .accentColor
+        case .wishlist: PlayscribeColor.vellum500
+        case .watching: .watching
         }
     }
 }
@@ -43,11 +46,11 @@ struct Tag: View {
     var tint: Color = .secondary
     var body: some View {
         Text(text)
-            .font(.caption2.weight(.semibold))
+            .font(PlayscribeFont.caption2.weight(.semibold))
             .foregroundStyle(tint)
             .padding(.horizontal, 7)
             .padding(.vertical, 2)
-            .background(tint.opacity(0.14), in: Capsule())
+            .background(tint.opacity(0.16), in: Capsule())
     }
 }
 

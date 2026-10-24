@@ -49,12 +49,12 @@ struct LibraryStage: View {
             VStack(alignment: .leading, spacing: 8) {
                 Wordmark()
                 if let game {
-                    Text(game.name).font(.title2.bold()).fontDesign(.serif).lineLimit(3)
+                    Text(game.name).font(PlayscribeFont.title2.bold()).lineLimit(3)
                     if let c = model.continueItem, c.game.id == game.id {
-                        Text("New on PS5: \(c.release.displayName)").font(.subheadline).foregroundStyle(.secondary)
+                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                         if duo.pose == .book {
                             Button("Continue reading") { model.openGame(c.game.id, chapter: .updates, releaseID: c.release.id) }
-                                .buttonStyle(.borderedProminent)
+                                .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
                                 .hitTarget()
                                 .tappableFrame()
                         }
@@ -95,9 +95,9 @@ struct LibraryShelf: View {
                 }
                 if let line = model.feedStatusLine {
                     HStack {
-                        Text(line).font(.footnote).foregroundStyle(.secondary)
+                        Text(line).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                         if case .failed = model.feedStatus {
-                            Button("Retry") { Task { await model.refreshFeed() } }.font(.footnote).hitTarget()
+                            Button("Retry") { Task { await model.refreshFeed() } }.font(PlayscribeFont.footnote).hitTarget()
                         }
                     }
                 }
@@ -114,7 +114,7 @@ struct LibraryShelf: View {
 
                 if rows.isEmpty {
                     VStack(spacing: 12) {
-                        Text("No \(model.nav.filter == .all ? "" : model.nav.filter.label.lowercased() + " ")games").font(.headline)
+                        Text("No \(model.nav.filter == .all ? "" : model.nav.filter.label.lowercased() + " ")games").font(PlayscribeFont.headline)
                         Button("Show all") { model.nav.filter = .all; model.nav.query = "" }.hitTarget()
                     }
                     .frame(maxWidth: .infinity)
@@ -122,6 +122,7 @@ struct LibraryShelf: View {
                 }
 
                 if duo.pose == .closed {
+                    if let c = model.continueItem { ContinueRow(game: c.game, release: c.release) }
                     ForEach(rows) { row in
                         GameRow(row: row).id("lib-\(row.id)")
                     }
@@ -143,6 +144,7 @@ struct LibraryShelf: View {
             .padding(.trailing, railWidth)
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
+        .contentMargins(.bottom, model.pill == nil && model.toast == nil ? 0 : 72, for: .scrollContent)
         .refreshable { await model.refreshFeed() }
     }
 }
@@ -159,7 +161,7 @@ struct FilterBar: View {
                     let on = model.nav.filter == f
                     Button { model.nav.filter = f } label: {
                         Text("\(f.label) \(n)")
-                            .font(.subheadline.weight(on ? .semibold : .regular))
+                            .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
                             .padding(.horizontal, 12)
                             .frame(minHeight: 44)
                             .background(on ? Color.accentColor.opacity(0.22) : Color.ink3, in: Capsule())
@@ -174,13 +176,88 @@ struct FilterBar: View {
                     }
                 } label: {
                     Label(model.nav.sort.label, systemImage: "arrow.up.arrow.down")
-                        .font(.subheadline)
+                        .font(PlayscribeFont.subheadline)
                         .padding(.horizontal, 12)
                         .frame(minHeight: 44)
                         .background(Color.ink3, in: Capsule())
                 }
                 .tappableFrame()
             }
+            .padding(.trailing, 24)
+        }
+        .edgeFade()
+    }
+}
+
+extension View {
+    /// R-7: a scrolling chip row fades at its edges instead of clipping hard.
+    func edgeFade(_ width: CGFloat = 24) -> some View {
+        mask {
+            HStack(spacing: 0) {
+                LinearGradient(colors: [.clear, .black], startPoint: .leading, endPoint: .trailing).frame(width: 8)
+                Rectangle()
+                LinearGradient(colors: [.black, .clear], startPoint: .leading, endPoint: .trailing).frame(width: width)
+            }
+        }
+    }
+}
+
+/// B-4 on the closed display: the Continue game's key art leads the list, full-bleed, with the
+/// hero badge (brand README, "Splash and closed Library hero"). Tapping the art opens the book.
+struct ContinueRow: View {
+    @Environment(AppModel.self) private var model
+    var game: CatalogGame
+    var release: Release
+
+    var body: some View {
+        Button { model.openGame(game.id, chapter: .updates, releaseID: release.id) } label: {
+            ZStack(alignment: .bottomLeading) {
+                ArtView(asset: game.keyArtAsset, game: game)
+                LinearGradient(colors: [.clear, .black.opacity(0.8)], startPoint: .top, endPoint: .bottom)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Continue").font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                    Text(release.displayName).font(PlayscribeFont.headline)
+                    Text(game.name).font(PlayscribeFont.footnote).foregroundStyle(.secondary).lineLimit(1)
+                }
+                .padding(.leading, 14)
+                .padding(.bottom, 12 + 40 + 10)
+                HeroBadge()
+                    .padding(.leading, 14)
+                    .padding(.bottom, 12)
+            }
+            .frame(height: 176)
+            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .tappableFrame()
+        .accessibilityLabel("Continue: \(game.name), \(release.displayName)")
+    }
+}
+
+/// The glass badge on the closed Library hero: mark and wordmark for 2 s the first time it
+/// appears each launch, then the mark alone. Decorative, so hidden from accessibility.
+struct HeroBadge: View {
+    private static var shownThisLaunch = false
+    @State private var open = !HeroBadge.shownThisLaunch
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    var body: some View {
+        HStack(spacing: 6) {
+            BrandMark(size: 24)
+            if open {
+                Text(Brand.name).font(PlayscribeFont.subheadline.weight(.semibold))
+                    .transition(.opacity.combined(with: .move(edge: .leading)))
+            }
+        }
+        .padding(.horizontal, 10)
+        .frame(height: 40)
+        .glassEffect(.regular, in: Capsule())
+        .accessibilityHidden(true)
+        .task {
+            guard open else { return }
+            HeroBadge.shownThisLaunch = true
+            try? await Task.sleep(for: .seconds(2))
+            withAnimation(reduceMotion ? .easeOut(duration: 0.2) : .spring(response: 0.35, dampingFraction: 0.85)) { open = false }
         }
     }
 }
@@ -199,13 +276,13 @@ struct GameRow: View {
                 layout {
                     CoverView(game: row.game, cornerRadius: 6).frame(width: 44)
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(row.game.name).font(.headline).lineLimit(stacked ? nil : 2).multilineTextAlignment(.leading)
+                        Text(row.game.name).font(PlayscribeFont.headline).lineLimit(stacked ? nil : 2).multilineTextAlignment(.leading)
                         HStack(spacing: 6) {
                             StatusPill(status: row.status)
                             if let r = row.latest {
-                                Text("\(r.displayName) · \(r.ps5Date.dayMonth)").font(.footnote).foregroundStyle(.secondary)
+                                Text("\(r.displayName) · \(r.ps5Date.dayMonth)").font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                             } else {
-                                Text("No PS5 notes yet").font(.footnote).foregroundStyle(.secondary)
+                                Text("No PS5 notes yet").font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                             }
                         }
                     }
@@ -235,7 +312,7 @@ struct UnreadBadge: View {
     var count: Int
     var body: some View {
         Text("\(count)")
-            .font(.caption2.bold())
+            .font(PlayscribeFont.caption2.bold())
             .monospacedDigit()
             .padding(.horizontal, 6)
             .frame(minWidth: 20, minHeight: 20)
@@ -274,10 +351,10 @@ struct GameTile: View {
             }
             .buttonStyle(.plain)
             .tappableFrame()
-            Text(row.game.name).font(.footnote.weight(.semibold)).lineLimit(2)
+            Text(row.game.name).font(PlayscribeFont.footnote.weight(.semibold)).lineLimit(2)
             HStack(spacing: 4) {
                 Circle().fill(row.status.tint).frame(width: 6, height: 6)
-                Text(row.latest?.displayName ?? "No PS5 notes yet").font(.caption2).foregroundStyle(.secondary).lineLimit(1)
+                Text(row.latest?.displayName ?? "No PS5 notes yet").font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(1)
                 Spacer(minLength: 0)
             }
             .overlay(alignment: .trailing) { GameMenuButton(gameID: row.id).offset(x: 12) }
@@ -303,11 +380,11 @@ struct ContinueTile: View {
                     .frame(width: size, height: size * 4 / 3)
                     .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                     .overlay(alignment: .bottomLeading) {
-                        Text("Continue").font(.caption2.bold()).padding(6)
+                        Text("Continue").font(PlayscribeFont.caption2.bold()).padding(6)
                             .background(.ultraThinMaterial, in: Capsule()).padding(6)
                     }
-                Text(release.displayName).font(.footnote.weight(.semibold)).lineLimit(2)
-                Text(game.name).font(.caption2).foregroundStyle(.secondary).lineLimit(1)
+                Text(release.displayName).font(PlayscribeFont.footnote.weight(.semibold)).lineLimit(2)
+                Text(game.name).font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(1)
             }
             .frame(width: size)
         }
@@ -327,7 +404,7 @@ struct FeatureBanner: View {
             LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .top, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 Wordmark()
-                Text(game.name).font(.title3.bold()).fontDesign(.serif)
+                Text(game.name).font(PlayscribeFont.title3.bold())
             }
             .padding(16)
         }
@@ -345,14 +422,14 @@ struct NotificationInviteCard: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            Image(systemName: "bell.badge").font(.title2).foregroundStyle(Color.accentColor)
+            Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(Color.accentColor)
             VStack(alignment: .leading, spacing: 8) {
-                Text("Get a note when \(gameName) updates on PS5").font(.headline)
+                Text("Get a note when \(gameName) updates on PS5").font(PlayscribeFont.headline)
                 Button("Continue") {
                     model.data.notificationCardDismissed = true
                     Task { await NotificationService.shared.requestAuthorization() }
                 }
-                .buttonStyle(.borderedProminent)
+                .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
                 .hitTarget()
                 .tappableFrame()
             }
@@ -381,8 +458,8 @@ struct LibrarySidebar: View {
                 HStack(spacing: 12) {
                     CoverView(game: row.game, cornerRadius: 4).frame(width: 36)
                     VStack(alignment: .leading) {
-                        Text(row.game.name).font(.subheadline.weight(.semibold)).lineLimit(2)
-                        Text(row.latest?.displayName ?? "No PS5 notes yet").font(.caption).foregroundStyle(.secondary)
+                        Text(row.game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
+                        Text(row.latest?.displayName ?? "No PS5 notes yet").font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     }
                     Spacer()
                     if row.unread > 0 { UnreadBadge(count: row.unread) }

@@ -89,6 +89,7 @@ struct PlayerView: View {
     @State private var controller: YouTubeController?
 
     var body: some View {
+        NavigationStack {
         DuoReader { duo in
             let release = model.release(gameID, releaseID)
             Group {
@@ -98,12 +99,13 @@ struct PlayerView: View {
                     } else {
                         // Tabletop: video above the fold, every control below it (R-11).
                         ArrangementView {
-                            PlayerControls(controller: controller, title: video.label, game: model.game(gameID)?.name ?? "", onClose: close)
+                            PlayerControls(controller: controller, title: video.label, game: model.game(gameID)?.name ?? "",
+                                           onClose: tabletopClose(duo))
                                 .padding(.trailing, duo.pose == .tabletop ? 8 : 0)
                         } secondary: {
                             WebSurface(webView: controller.webView)
                                 .aspectRatio(16 / 9, contentMode: .fit)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: videoAlignment(duo))
                                 .background(.black)
                                 .allowsHitTesting(false)
                         }
@@ -114,6 +116,15 @@ struct PlayerView: View {
                 }
             }
             .background(.black)
+            // Tabletop keeps Close in the lower half with the other controls (G-4); elsewhere it
+            // is the bar's cancellation action, at the top of the vertical axis (R-11).
+            .toolbarVisibility(barVisibility(duo), for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(action: close) { Label("Close", systemImage: "xmark") }
+                }
+            }
+        }
         }
         .onAppear {
             if controller == nil, let id = model.release(gameID, releaseID)?.video?.youtubeID {
@@ -126,13 +137,22 @@ struct PlayerView: View {
         controller?.stop()
         dismiss()
     }
+
+    private func barVisibility(_ duo: DuoContext) -> Visibility { duo.pose == .tabletop ? .hidden : .automatic }
+
+    private func videoAlignment(_ duo: DuoContext) -> Alignment { duo.pose == .closed ? .top : .center }
+
+    private func tabletopClose(_ duo: DuoContext) -> (() -> Void)? {
+        guard duo.pose == .tabletop else { return nil }
+        return { close() }
+    }
 }
 
 struct PlayerControls: View {
     @Bindable var controller: YouTubeController
     var title: String
     var game: String
-    var onClose: () -> Void
+    var onClose: (() -> Void)?
     @Environment(\.duo) private var duo
 
     var body: some View {
@@ -140,21 +160,23 @@ struct PlayerControls: View {
             if duo.pose != .tabletop { Spacer() }
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(title).font(.headline)
-                    Text(game).font(.subheadline).foregroundStyle(.secondary)
+                    Text(title).font(PlayscribeFont.headline)
+                    Text(game).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                 }
                 Spacer()
-                Button(action: onClose) { Image(systemName: "xmark").font(.headline).frame(width: 44, height: 44) }
-                    .buttonStyle(.glass)
-                    .accessibilityLabel("Close")
-                    .tappableFrame()
+                if let onClose {
+                    Button(action: onClose) { Image(systemName: "xmark").font(PlayscribeFont.headline).frame(width: 44, height: 44) }
+                        .buttonStyle(.glass)
+                        .accessibilityLabel("Close")
+                        .tappableFrame()
+                }
             }
             Slider(value: Binding(get: { controller.current }, set: { controller.seek(to: $0) }),
                    in: 0...max(1, controller.duration))
                 .accessibilityLabel("Playback position")
                 .tappableFrame()
             HStack(spacing: 24) {
-                Text(Self.time(controller.current)).font(.caption.monospacedDigit())
+                Text(Self.time(controller.current)).font(PlayscribeFont.caption.monospacedDigit())
                 Spacer()
                 Button(action: controller.toggleMute) {
                     Image(systemName: controller.isMuted ? "speaker.slash.fill" : "speaker.wave.2.fill").frame(width: 44, height: 44)
@@ -162,13 +184,13 @@ struct PlayerControls: View {
                 .accessibilityLabel(controller.isMuted ? "Unmute" : "Mute")
                 .tappableFrame()
                 Button(action: controller.playPause) {
-                    Image(systemName: controller.isPlaying ? "pause.fill" : "play.fill").font(.title).frame(width: 56, height: 56)
+                    Image(systemName: controller.isPlaying ? "pause.fill" : "play.fill").font(PlayscribeFont.title).frame(width: 56, height: 56)
                 }
-                .buttonStyle(.glassProminent)
+                .buttonStyle(.glassProminent).foregroundStyle(PlayscribeColor.onAccent)
                 .accessibilityLabel(controller.isPlaying ? "Pause" : "Play")
                 .tappableFrame()
                 Spacer()
-                Text(Self.time(controller.duration)).font(.caption.monospacedDigit())
+                Text(Self.time(controller.duration)).font(PlayscribeFont.caption.monospacedDigit())
             }
             if duo.pose == .tabletop { Spacer() }
         }
@@ -195,7 +217,7 @@ struct VideoUnavailable: View {
     var body: some View {
         VStack(spacing: 16) {
             ContentUnavailableView("Video unavailable", systemImage: "play.slash")
-            if let url { Button("Watch on YouTube") { openURL(url) }.buttonStyle(.borderedProminent) }
+            if let url { Button("Watch on YouTube") { openURL(url) }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent) }
             Button("Close", action: onClose).hitTarget()
         }
     }
