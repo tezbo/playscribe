@@ -260,7 +260,8 @@ def splash_and_cover():
     words = (f'<path transform="translate({hx - gap - wP:.1f} {by:.1f})" d="{dP}" fill="{paper}"/>'
              f'<g transform="translate({hx + gap:.1f} {by:.1f})"><path d="{d_s}" fill="{paper}"/>'
              f'<path transform="translate({icx - 32 * k:.2f} {dot_cy - 14.5 * k:.2f}) scale({k:.4f})" d="{SPARK}" fill="url(#bs)"/></g>')
-    t, _ = text(SANS, tagline, 22, hx + gap, by + 46, tag, 'start')
+    # The tagline sits under "Play" on the left page, which balances the wider "scribe".
+    t, _ = text(SANS, tagline, 22, hx - gap, by + 46, tag, 'end')
     write('splash/book.svg', svg(W, H, bg + left + right + words + t, mark_defs('b')))
 
     # Tabletop: fold horizontal; mark in the upper half, name and tagline in the lower half.
@@ -323,7 +324,7 @@ def swift():
     cols.append(f'    /// Interactive elements and unread state only.')
     cols.append(f'    static let accent = {rgb(C["accent"]["base"])}')
     cols.append(f'    static let accentPressed = {rgb(C["accent"]["pressed"])}')
-    cols.append(f'    /// Text and glyphs drawn on top of `accent`.')
+    cols.append(f'    /// Text and glyphs on any `accent` fill. Never white on accent (1.8:1); this is 9.5:1.')
     cols.append(f'    static let onAccent = {rgb(C["accent"]["on"])}')
     styles = []
     for name, spec in T['type']['ios'].items():

@@ -4,7 +4,7 @@ Live board: https://claude.ai/artifact/8mRkcMcHMa3jox19BszVpb
 
 **Mark.** An open book whose spine is the hinge, with a spark rising from it. The spark's long lower point, slit and breather hole make it a pen nib (the scribe). In the wordmark the spark dots the i. Below 24 pt use `logo/mark-small.svg`, which drops the nib cut.
 
-**Colour.** `tokens.json` is the source of truth. Ink is the ground, vellum is pages and text, ember is the accent and is reserved for interactive elements and unread state. Every text pair passes WCAG AA on Ink 900 and Ink 700. Dark is the default.
+**Colour.** `tokens.json` is the source of truth. Ink is the ground, vellum is pages and text, ember is the accent and is reserved for interactive elements and unread state. Every text colour passes WCAG AA on Ink 900 down to Ink 600. Text and glyphs on an ember fill always use `accent.on` (#2A1600), never white. Dark is the default.
 
 **Type.** Literata (titles) and Instrument Sans (everything else), both SIL OFL, in `fonts/`. Each style maps to an iOS text style with `Font.custom(_:size:relativeTo:)`, so it scales with Dynamic Type up to AX5. List all eight files under `UIAppFonts`.
 
@@ -19,8 +19,8 @@ iOS icons are one 1024x1024 layered design. Appearances are default, dark, clear
 ## Splash and outer cover
 
 - The native launch screen is plain Ink 900, with no logo (HIG, Launching).
-- The branded splash plays on the first launch after install only: 0.8 s hold, 0.3 s fade, plain fade under Reduce Motion, and never when the app opens from a notification. `splash/*.svg` shows each posture. In Book posture "Play" sits on the left page and "scribe" on the right, and nothing crosses the hinge.
-- The outer cover is full-bleed key art. `cover/bug-*.svg` is the glass badge: bottom leading, 40 pt tall, 14 pt from the edge and 22 pt from the bottom, away from the top-right camera. On wake it opens (`bug-open`) for 2 s, then settles to the mark (`bug-rest`) with a spring (response 0.35, damping 0.85). Tapping it opens the app.
+- The branded splash plays on the first launch after install only: 0.8 s hold, 0.3 s fade, plain fade under Reduce Motion, and never when the app opens from a notification. `splash/*.svg` shows each posture. In Book posture "Play" and the tagline sit on the left page, "scribe" on the right, and nothing crosses the hinge.
+- The outer cover is full-bleed key art. `cover/bug-*.svg` is the glass badge: bottom leading, 40 pt tall, 14 pt from the edge and 22 pt from the bottom, away from the top-right camera. On wake it opens (`bug-open`) for 2 s, then settles to the mark (`bug-rest`) with a spring (response 0.35, damping 0.85). It is display-only: whether the outer display takes touches while the device is open is not verified yet.
 
 ## PlayStation
 

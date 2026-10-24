@@ -18,11 +18,11 @@ enum PlayscribeColor {
     static let ember600 = Color(red: 0.949, green: 0.506, blue: 0.227)
     static let textPrimary = Color(red: 0.957, green: 0.933, blue: 0.890)
     static let textSecondary = Color(red: 0.725, green: 0.694, blue: 0.765)
-    static let textTertiary = Color(red: 0.584, green: 0.553, blue: 0.627)
+    static let textTertiary = Color(red: 0.639, green: 0.608, blue: 0.682)
     /// Interactive elements and unread state only.
     static let accent = Color(red: 1.000, green: 0.690, blue: 0.310)
     static let accentPressed = Color(red: 1.000, green: 0.776, blue: 0.475)
-    /// Text and glyphs drawn on top of `accent`.
+    /// Text and glyphs on any `accent` fill. Never white on accent (1.8:1); this is 9.5:1.
     static let onAccent = Color(red: 0.165, green: 0.086, blue: 0.000)
 }
 
