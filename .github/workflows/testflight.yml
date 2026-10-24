@@ -1,0 +1,48 @@
+name: TestFlight
+
+# A tag like v0.3.0 ships that version to TestFlight. Run it by hand for an internal build of main.
+on:
+  push:
+    tags: ['v*.*.*']
+  workflow_dispatch:
+
+concurrency: testflight
+
+jobs:
+  beta:
+    runs-on: macos-latest
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      ASC_KEY_P8_BASE64: ${{ secrets.ASC_KEY_P8_BASE64 }}
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      IOS_SCHEME: ${{ vars.IOS_SCHEME }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate the project (XcodeGen)
+        if: hashFiles('ios/project.yml') != ''
+        run: brew install xcodegen && (cd ios && xcodegen generate)
+      - name: Check prerequisites
+        id: ready
+        run: |
+          if ! ls -d ios/*.xcodeproj >/dev/null 2>&1; then echo "::notice::No Xcode project yet"; exit 0; fi
+          for v in ASC_KEY_ID ASC_ISSUER_ID ASC_KEY_P8_BASE64 APPLE_TEAM_ID; do
+            if [ -z "${!v}" ]; then echo "::warning::$v is not set; see ios/fastlane/README.md"; exit 0; fi
+          done
+          echo "ok=true" >> "$GITHUB_OUTPUT"
+      - name: Use the newest Xcode on the runner
+        if: steps.ready.outputs.ok
+        run: sudo xcode-select -s "$(ls -d /Applications/Xcode*.app | sort -V | tail -1)" && xcodebuild -version
+      - uses: ruby/setup-ruby@v1
+        if: steps.ready.outputs.ok
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+          working-directory: ios
+      - name: Build and upload
+        if: steps.ready.outputs.ok
+        working-directory: ios
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          [[ "$GITHUB_REF_TYPE" == "tag" ]] || version=""
+          bundle exec fastlane beta marketing_version:"$version"

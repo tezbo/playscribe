@@ -1,0 +1,182 @@
+{
+  "$comment": "Per-game official source registry. See docs/ps5-patch-data.md. trust=official can set PS5 status; secondary can only mark 'reported'; pc sources never set PS5 status. fetch=manual means the site blocks automated fetches; do not work around it.",
+  "version": 1,
+  "shared": [
+    {
+      "id": "playstation-blog",
+      "kind": "rss",
+      "url": "https://blog.playstation.com/feed/",
+      "platforms": [
+        "ps5"
+      ],
+      "trust": "official",
+      "fetch": "auto",
+      "ps5Signal": "always"
+    },
+    {
+      "id": "pushsquare",
+      "kind": "rss",
+      "url": "https://www.pushsquare.com/feeds/latest",
+      "platforms": [
+        "ps5"
+      ],
+      "trust": "secondary",
+      "fetch": "auto",
+      "ps5Signal": "always"
+    },
+    {
+      "id": "playstationlifestyle",
+      "kind": "rss",
+      "url": "https://www.playstationlifestyle.net/feed",
+      "platforms": [
+        "ps5"
+      ],
+      "trust": "secondary",
+      "fetch": "auto",
+      "ps5Signal": "always"
+    }
+  ],
+  "games": {
+    "dawnwalker": {
+      "name": "The Blood of Dawnwalker",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "dawnwalker-news",
+          "kind": "html",
+          "url": "https://dawnwalkergame.com/news",
+          "platforms": [
+            "ps5",
+            "xboxSeries",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "manual",
+          "ps5Signal": "explicit"
+        },
+        {
+          "id": "dawnwalker-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/3751260/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "kcd2": {
+      "name": "Kingdom Come: Deliverance II",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "kcd2-deepsilver-news",
+          "kind": "html",
+          "url": "https://www.deepsilver.com/games/kingdom-come-deliverance-ii/news",
+          "platforms": [
+            "ps5",
+            "xboxSeries",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        },
+        {
+          "id": "kcd2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1771300/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "control-resonant": {
+      "name": "CONTROL Resonant",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "remedy-news",
+          "kind": "html",
+          "url": "https://www.remedygames.com/news",
+          "platforms": [
+            "ps5",
+            "xboxSeries",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        },
+        {
+          "id": "control-resonant-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/3669870/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "wukong": {
+      "name": "Black Myth: Wukong",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "wukong-gamesci",
+          "kind": "html",
+          "url": "https://gamesci.cn/wukong/",
+          "platforms": [
+            "ps5",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        },
+        {
+          "id": "wukong-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2358720/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "bg3": {
+      "name": "Baldur's Gate 3",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "bg3-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1086940/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    }
+  }
+}

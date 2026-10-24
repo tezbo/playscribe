@@ -1,0 +1,52 @@
+# Release lanes. Signing is Xcode cloud-managed through an App Store Connect API key, so there are
+# no certificates or profiles in the repo or in CI secrets.
+default_platform(:ios)
+
+platform :ios do
+  def api_key
+    app_store_connect_api_key(
+      key_id: ENV.fetch('ASC_KEY_ID'),
+      issuer_id: ENV.fetch('ASC_ISSUER_ID'),
+      key_content: ENV.fetch('ASC_KEY_P8_BASE64'),
+      is_key_content_base64: true,
+      in_house: false
+    )
+  end
+
+  def project_path
+    Dir['../*.xcodeproj'].first&.then { |p| File.basename(p) } || UI.user_error!('No Xcode project in ios/')
+  end
+
+  desc 'Build, sign and upload to TestFlight. marketing_version: e.g. 0.3.0 (from the git tag)'
+  lane :beta do |options|
+    key = api_key
+    key_path = File.expand_path('../build/AuthKey.p8')
+    FileUtils.mkdir_p(File.dirname(key_path))
+    File.write(key_path, Base64.decode64(ENV.fetch('ASC_KEY_P8_BASE64')))
+
+    # Build numbers only go up: one past whatever TestFlight already has for this version.
+    build = latest_testflight_build_number(api_key: key, initial_build_number: 0) + 1
+    settings = ["CURRENT_PROJECT_VERSION=#{build}"]
+    settings << "MARKETING_VERSION=#{options[:marketing_version]}" unless options[:marketing_version].to_s.empty?
+
+    build_app(
+      project: project_path,
+      scheme: ENV['IOS_SCHEME'].to_s.empty? ? 'Playscribe' : ENV['IOS_SCHEME'],
+      configuration: 'Release',
+      export_method: 'app-store',
+      output_directory: 'build',
+      xcargs: [
+        '-allowProvisioningUpdates',
+        "-authenticationKeyPath #{key_path}",
+        "-authenticationKeyID #{ENV.fetch('ASC_KEY_ID')}",
+        "-authenticationKeyIssuerID #{ENV.fetch('ASC_ISSUER_ID')}",
+        *settings
+      ].join(' '),
+      export_options: { signingStyle: 'automatic', teamID: ENV.fetch('APPLE_TEAM_ID') }
+    )
+
+    upload_to_testflight(api_key: key, skip_waiting_for_build_processing: true, changelog: changelog_from_git_commits(commits_count: 10, merge_commit_filtering: 'exclude_merges'))
+  ensure
+    File.delete(key_path) if key_path && File.exist?(key_path)
+  end
+end

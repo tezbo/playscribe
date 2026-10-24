@@ -1,0 +1,55 @@
+name: iOS
+
+on:
+  pull_request:
+    paths: ['ios/**', '.github/workflows/ios.yml']
+  push:
+    branches: [main]
+    paths: ['ios/**', '.github/workflows/ios.yml']
+  workflow_dispatch:
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate the project (XcodeGen)
+        if: hashFiles('ios/project.yml') != ''
+        run: brew install xcodegen && (cd ios && xcodegen generate)
+      - name: Find the Xcode project
+        id: project
+        run: |
+          proj=$(ls -d ios/*.xcodeproj 2>/dev/null | head -1 || true)
+          if [ -z "$proj" ]; then echo "::notice::No Xcode project in ios/ yet; nothing to build"; exit 0; fi
+          echo "path=$proj" >> "$GITHUB_OUTPUT"
+      - name: Use the newest Xcode on the runner
+        if: steps.project.outputs.path
+        run: |
+          xcode=$(ls -d /Applications/Xcode*.app | sort -V | tail -1)
+          sudo xcode-select -s "$xcode"
+          xcodebuild -version
+      - name: Build and test on a simulator
+        if: steps.project.outputs.path
+        run: |
+          udid=$(xcrun simctl list devices available -j | python3 -c "import json,sys; d=json.load(sys.stdin)['devices']; print(next(x['udid'] for k in sorted(d, reverse=True) if 'iOS' in k for x in d[k] if 'iPhone' in x['name']))")
+          set -o pipefail
+          xcodebuild test \
+            -project "${{ steps.project.outputs.path }}" \
+            -scheme "${SCHEME:-Playscribe}" \
+            -destination "id=$udid" \
+            -resultBundlePath build/TestResults.xcresult \
+            CODE_SIGNING_ALLOWED=NO | tee build.log | grep -E '(error|warning: .*deprecated|Test Suite|Executed)' || true
+          test "${PIPESTATUS[0]}" -eq 0
+        env:
+          SCHEME: ${{ vars.IOS_SCHEME }}
+      - uses: actions/upload-artifact@v4
+        if: failure() && steps.project.outputs.path
+        with:
+          name: test-results
+          path: |
+            build/TestResults.xcresult
+            build.log
