@@ -143,7 +143,7 @@ struct LibraryShelf: View {
             .padding(.trailing, railWidth)
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
-        .contentMargins(.bottom, model.pill == nil && model.toast == nil ? 0 : 72, for: .scrollContent)
+        .contentMargins(.bottom, model.pill == nil && model.toast == nil ? 0 : 96, for: .scrollContent)
         .refreshable { await model.refreshFeed() }
     }
 }

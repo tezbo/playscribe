@@ -494,8 +494,13 @@ final class AppModel {
     func show(_ t: Toast) {
         toast = t
         let token = t.token
+        if UIAccessibility.isVoiceOverRunning {
+            // Under VoiceOver the toast stays until dismissed, and is announced with its action.
+            AccessibilityNotification.Announcement(t.undo == nil ? t.text : "\(t.text). Undo available.").post()
+            if t.undo != nil { return }
+        }
         Task { [weak self] in
-            try? await Task.sleep(for: .seconds(t.undo == nil ? 2.6 : 5))
+            try? await Task.sleep(for: .seconds(t.undo == nil ? 2.6 : 8))
             if self?.toast?.token == token { self?.toast = nil }
         }
     }

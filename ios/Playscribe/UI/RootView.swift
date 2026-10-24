@@ -219,12 +219,22 @@ struct LowerMessages: View {
                 }
                 .padding(.horizontal, 16)
                 .frame(minHeight: 44)
-                .glassEffect(.regular, in: Capsule())
+                .background(PlayscribeColor.ink700, in: Capsule())
+                .overlay(Capsule().strokeBorder(PlayscribeColor.vellum300.opacity(0.2)))
+                .shadow(color: .black.opacity(0.5), radius: 12, y: 4)
+                // Clear of the rows' trailing menu buttons.
+                .padding(.trailing, duo.pose == .closed ? 56 : 0)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .transition(.opacity)
-                .accessibilityElement(children: .contain)
+                .accessibilityElement(children: .combine)
+                .accessibilityActions {
+                    if let undo = toast.undo { Button("Undo") { undo(); model.toastClear() } }
+                    Button("Dismiss") { model.toastClear() }
+                }
             }
         }
-        .padding(.bottom, duo.pose == .tabletop ? 16 : 96)
+        // Above the bottom tab bar only where the bars are horizontal (open portrait).
+        .padding(.bottom, duo.pose == .flat && !duo.isLandscape ? 96 : 16)
         .padding(.trailing, duo.pose == .tabletop ? TabletopRail.width : 0)
         .padding(.horizontal, 16)
         .animation(.snappy, value: model.toast)
