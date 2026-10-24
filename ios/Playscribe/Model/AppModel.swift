@@ -374,6 +374,12 @@ final class AppModel {
         case "simulate" where parts.count == 2:
             simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
         case "close": player = nil; addSheetOpen = false; settingsOpen = false
+        case "add-game" where parts.count == 1:
+            // Adds a game from the PS5 index by IGDB id, as the Add button does (A-5, F-5, N-1).
+            if let id = Int(parts[0]), let e = PS5Index.shared.entries.first(where: { $0.i == id }) {
+                addGame(PS5Index.shared.game(e), status: .owned)
+            }
+        case "remove-game" where parts.count == 1: removeGame(parts[0])
         case "ask-notifications": Task { await NotificationService.shared.requestAuthorization() }
         default: break
         }

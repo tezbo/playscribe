@@ -202,7 +202,8 @@ extension View {
     }
 }
 
-/// B-4 on the closed display: the Continue item leads the list, with key art.
+/// B-4 on the closed display: the Continue game's key art leads the list, full-bleed, with the
+/// hero badge (brand README, "Splash and closed Library hero"). Tapping the art opens the book.
 struct ContinueRow: View {
     @Environment(AppModel.self) private var model
     var game: CatalogGame
@@ -212,20 +213,52 @@ struct ContinueRow: View {
         Button { model.openGame(game.id, chapter: .updates, releaseID: release.id) } label: {
             ZStack(alignment: .bottomLeading) {
                 ArtView(asset: game.keyArtAsset, game: game)
-                LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .top, endPoint: .bottom)
+                LinearGradient(colors: [.clear, .black.opacity(0.8)], startPoint: .top, endPoint: .bottom)
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Continue").font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
                     Text(release.displayName).font(PlayscribeFont.headline)
                     Text(game.name).font(PlayscribeFont.footnote).foregroundStyle(.secondary).lineLimit(1)
                 }
-                .padding(12)
+                .padding(.leading, 14)
+                .padding(.bottom, 12 + 40 + 10)
+                HeroBadge()
+                    .padding(.leading, 14)
+                    .padding(.bottom, 12)
             }
-            .frame(height: 112)
+            .frame(height: 176)
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
         .buttonStyle(.plain)
         .tappableFrame()
         .accessibilityLabel("Continue: \(game.name), \(release.displayName)")
+    }
+}
+
+/// The glass badge on the closed Library hero: mark and wordmark for 2 s the first time it
+/// appears each launch, then the mark alone. Decorative, so hidden from accessibility.
+struct HeroBadge: View {
+    private static var shownThisLaunch = false
+    @State private var open = !HeroBadge.shownThisLaunch
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    var body: some View {
+        HStack(spacing: 6) {
+            BrandMark(size: 24)
+            if open {
+                Text(Brand.name).font(PlayscribeFont.subheadline.weight(.semibold))
+                    .transition(.opacity.combined(with: .move(edge: .leading)))
+            }
+        }
+        .padding(.horizontal, 10)
+        .frame(height: 40)
+        .glassEffect(.regular, in: Capsule())
+        .accessibilityHidden(true)
+        .task {
+            guard open else { return }
+            HeroBadge.shownThisLaunch = true
+            try? await Task.sleep(for: .seconds(2))
+            withAnimation(reduceMotion ? .easeOut(duration: 0.2) : .spring(response: 0.35, dampingFraction: 0.85)) { open = false }
+        }
     }
 }
 
