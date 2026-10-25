@@ -21,17 +21,26 @@ export const releaseDateOf = (rows: ReleaseDate[] | undefined, platformId: numbe
   return other ? { date: other, full: false } : undefined
 }
 
-export interface Ps5Dates { d?: string; e?: true; b?: string }
+export interface Ps5Dates { d?: string; e?: true; f?: string; b?: string }
 export interface Override { d?: string; e?: boolean; b?: string; evidence: string }
 
-/** `d` PS5 release, `e` when `d` is early access (no full release yet), `b` the PS4 release when earlier. */
+/**
+ * `d` PS5 release. When `d` is early access: `f` the later full PS4 release (it plays on
+ * PS5; IGDB often records the 1.0 launch on one platform only), or `e` when there is none yet.
+ * `b` the PS4 release when earlier than `d`.
+ */
 export const ps5DatesOf = (rows: ReleaseDate[] | undefined, ids: { ps5: number; ps4: number }, nameOf: (id?: number) => string | undefined, override?: Override): Ps5Dates => {
   const ps5 = releaseDateOf(rows, ids.ps5, nameOf, PS5_LAUNCH)
   const ps4 = releaseDateOf(rows, ids.ps4, nameOf)?.date
   const d = override?.d ?? ps5?.date
-  const e = override?.d ? override.e === true : ps5 ? !ps5.full : false
+  const early = override?.d ? override.e === true : ps5 ? !ps5.full : false
+  const fullOf = (platform: number) => {
+    const r = releaseDateOf(rows, platform, nameOf, PS5_LAUNCH)
+    return r?.full && d && r.date > d ? r.date : undefined
+  }
+  const f = early && !override?.d ? fullOf(ids.ps4) : undefined
   const b = override?.b ?? (ps4 && (!d || ps4 < d) ? ps4 : undefined)
-  return { d, ...(e ? { e: true as const } : {}), b }
+  return { d, ...(early && !f ? { e: true as const } : {}), ...(f ? { f } : {}), b }
 }
 
 /** Index rows that break the PS5 rules; the build fails on any. */

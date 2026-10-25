@@ -7,7 +7,8 @@
 //      alpha/beta/early access; "patch release" rows (IGDB's next-gen upgrade patches) are not
 //      releases and never count, nor are rows dated before the PS5 launch. No PS5 date means no
 //      `d`, never another platform's date.
-//   e  true when `d` is early access (or alpha/beta): the game has no full PS5 release yet.
+//   f  when `d` is early access (or alpha/beta), the later full PS4 release (IGDB often records the 1.0 on PS4 only).
+//   e  true when `d` is early access and there is no full release yet.
 //   b  the PS4 release, only when it came before `d` (or there is no `d`): PS4 games play on PS5,
 //      so this is when PS5 owners could first play it (Roblox: PS4 Oct 2023, native PS5 Apr 2026).
 // Known IGDB gaps are corrected from scripts/ps5-date-overrides.json, each with its evidence.
@@ -42,8 +43,8 @@ if (args.includes('--inspect')) {
   const ids = args[args.indexOf('--inspect') + 1]!.split(',').map(Number)
   const rows = await igdb.query<any>('games', `fields name,first_release_date,release_dates.date,release_dates.platform,release_dates.status,release_dates.human,release_dates.release_region; where id = (${ids.join(',')});`)
   for (const g of rows) {
-    const { d, e, b } = datesOf(g.id, g.release_dates)
-    console.log(`${g.id} ${g.name} first_release=${day(g.first_release_date)} → d=${d ?? '-'}${e ? ' (early access)' : ''} b=${b ?? '-'}`)
+    const { d, e, f, b } = datesOf(g.id, g.release_dates)
+    console.log(`${g.id} ${g.name} first_release=${day(g.first_release_date)} → d=${d ?? '-'}${e ? ' (early access)' : ''}${f ? ` f=${f}` : ''} b=${b ?? '-'}`)
     for (const r of (g.release_dates ?? []).filter((r: ReleaseDate) => r.platform === ps5.id || r.platform === ps4.id))
       console.log(`  ${r.platform === ps5.id ? 'PS5' : 'PS4'} ${day(r.date) ?? '-'}  ${r.human ?? ''}  status=${statusName.get(r.status!) ?? r.status ?? '-'} region=${r.release_region ?? '-'}`)
   }
@@ -65,7 +66,7 @@ for (let offset = 0; offset < 10000; offset += 500) {
 const old = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, 'utf8')) as { games: { i: number; t?: string[] }[] }) : { games: [] }
 const tones = new Map(old.games.filter((g) => g.t).map((g) => [g.i, g.t]))
 
-const games: { i: number; n: string; d?: string; e?: true; b?: string; v?: string; p?: string; c?: string; t?: string[]; r: number }[] = []
+const games: { i: number; n: string; d?: string; e?: true; f?: string; b?: string; v?: string; p?: string; c?: string; t?: string[]; r: number }[] = []
 for (let offset = 0; ; offset += 500) {
   const page = await igdb.query<any>(
     'games',
@@ -93,4 +94,4 @@ const index = {
   games: games.map(({ r: _r, ...g }) => Object.fromEntries(Object.entries(g).filter(([, v]) => v !== undefined))),
 }
 writeFileSync(OUT, JSON.stringify(index) + '\n')
-console.log(`wrote ${OUT.pathname}: ${games.length} games, ${games.filter((g) => !g.d).length} without a PS5 date, ${games.filter((g) => g.e).length} in early access`)
+console.log(`wrote ${OUT.pathname}: ${games.length} games, ${games.filter((g) => !g.d).length} without a PS5 date, ${games.filter((g) => g.e).length} in early access, ${games.filter((g) => g.f).length} early access then full`)

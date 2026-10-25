@@ -16,6 +16,11 @@ test('early access alone is kept and flagged', () => {
   assert.deepEqual(ps5DatesOf([{ platform: 167, status: 2, date: at('2022-09-06') }], ids, nameOf), { d: '2022-09-06', e: true, b: undefined })
 })
 
+test('a later full release on PS4 ends early access (Disney Dreamlight Valley)', () => {
+  const rows = [{ platform: 167, status: 2, date: at('2022-09-06') }, { platform: 48, status: 2, date: at('2022-09-06') }, { platform: 48, status: 1, date: at('2023-12-05') }]
+  assert.deepEqual(ps5DatesOf(rows, ids, nameOf), { d: '2022-09-06', f: '2023-12-05', b: undefined })
+})
+
 test('patch rows and pre-launch rows are not PS5 releases', () => {
   const rows = [{ platform: 167, status: 3, date: at('2025-03-15') }, { platform: 167, status: 1, date: at('2019-10-10') }, { platform: 48, status: 1, date: at('2013-09-17') }]
   assert.deepEqual(ps5DatesOf(rows, ids, nameOf), { d: undefined, b: '2013-09-17' })
