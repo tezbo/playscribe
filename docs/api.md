@@ -9,7 +9,7 @@ Everything is free for now. There are two ways to read the same data:
 
 Every type below is defined in [ps5-patch-data.md](ps5-patch-data.md). The server adds `revision` and `updatedAt` to `Release`. The app-only fields on `Release` (`headline`, `summary`, `keyChanges`, `video`, `videoNote`) and `NoteItem.spoiler` are not sent yet, so decode them as optional.
 
-`Game` is `{ id, igdbId, name, cover: { imageId, url } | null, ps5Release, ps5ReleasePrecision?, ps5TitleIds }`. `ps5ReleasePrecision` is `month`, `quarter`, `year` or `tbd` when IGDB has only that (a year-only date is stored as 31 Dec), and is absent for an exact day. The bundled PS5 index carries the same thing as `q` on each game.
+`Game` is `{ id, igdbId, name, cover: { imageId, url } | null, artwork: { imageId, url } | null, ps5Release, ps5ReleasePrecision?, ps5TitleIds }`. `artwork` is the studio's official landscape key art from IGDB (textless key art first, 1920×1080 `t_1080p`), for the app to centre-crop to the square game tile; when it is null the app fits the portrait cover over a blurred fill. The bundled PS5 index carries it as `a` (an IGDB image id; build `https://images.igdb.com/igdb/image/upload/t_1080p/<a>.jpg`, or `t_720p` for smaller tiles). There is no store tile art: Sony store data is out of bounds. `ps5ReleasePrecision` is `month`, `quarter`, `year` or `tbd` when IGDB has only that (a year-only date is stored as 31 Dec), and is absent for an exact day. The bundled PS5 index carries the same thing as `q` on each game.
 
 A release is **On PS5** only when its `ps5` platform row has `status == "live"` and `verification == "official"`. This rule comes from the app rules in ps5-patch-data.md.
 

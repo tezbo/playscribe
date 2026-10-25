@@ -83,14 +83,14 @@ export const sourcesFor = (game: Record<string, any>): SourceDef[] => {
   return [{ id: `steam-${game.steam_app_id}`, kind: 'steamNews', url: `https://store.steampowered.com/feeds/news/app/${game.steam_app_id}/`, platforms: ['pc'], trust: 'official', fetch: 'auto', ps5Signal: 'explicit' }]
 }
 
-/** Writes the registry games, filling ids, covers and PS5 release dates from IGDB when it is configured. */
+/** Writes the registry games, filling ids, covers, key art and PS5 release dates from IGDB when it is configured. */
 export const seedGames = async (deps: IngestDeps) => {
   for (const [id, g] of Object.entries(registry.games)) {
     const existing = store.getGameRow(deps.db, id)
     let info = null
     // Ask IGDB once per game, and again while its PS5 date is missing or still ahead (it can move or sharpen).
     const today = new Date().toISOString().slice(0, 10)
-    if (deps.igdb && (!existing?.cover_image_id || !existing.ps5_release || existing.ps5_release >= today)) {
+    if (deps.igdb && (!existing?.cover_image_id || existing.artwork_image_id == null || !existing.ps5_release || existing.ps5_release >= today)) {
       const steamSource = g.sources.find((s) => s.kind === 'steamNews')
       const appid = steamSource ? Number(steamSource.url.match(/\/app\/(\d+)/)?.[1]) : null
       try {
@@ -104,6 +104,7 @@ export const seedGames = async (deps: IngestDeps) => {
       name: g.name,
       igdbId: g.igdbId ?? info?.igdbId,
       coverImageId: info?.coverImageId,
+      artworkImageId: info?.artworkImageId,
       steamAppId: info?.steamAppId,
       ps5Release: info?.ps5Release,
       ps5ReleasePrecision: info?.ps5ReleasePrecision,

@@ -54,6 +54,8 @@ export interface Game {
   igdbId: number | null
   name: string
   cover: { imageId: string; url: string } | null
+  /** Official landscape key art (IGDB t_1080p) for the app to centre-crop to a square tile. Null: use the cover. */
+  artwork: { imageId: string; url: string } | null
   ps5Release: string | null
   /** How exact ps5Release is when it is not a day: "Q4 2027" is 2027-12-31 with quarter. Absent means a day. */
   ps5ReleasePrecision?: 'month' | 'quarter' | 'year' | 'tbd'
