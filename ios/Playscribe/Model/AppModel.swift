@@ -372,7 +372,10 @@ final class AppModel {
         case "demo": resetDemo()
         case "overlay": showDebugOverlay.toggle()
         case "simulate" where parts.count == 2:
-            simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
+            Task {
+                if NotificationService.shared.authorization == .notDetermined { await NotificationService.shared.requestAuthorization() }
+                simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
+            }
         case "close": player = nil; addSheetOpen = false; settingsOpen = false
         case "add-game" where parts.count == 1:
             // Adds a game from the PS5 index by IGDB id, as the Add button does (A-5, F-5, N-1).

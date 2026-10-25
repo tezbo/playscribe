@@ -42,6 +42,18 @@ targets:
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
+  PlayscribeUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: PlayscribeUITests
+    dependencies:
+      - target: Playscribe
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: Playscribe
+        SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
 schemes:
   Playscribe:
     build:
@@ -50,3 +62,11 @@ schemes:
     test:
       targets:
         - PlayscribeTests
+  PlayscribeUI:
+    build:
+      targets:
+        Playscribe: all
+        PlayscribeUITests: [test]
+    test:
+      targets:
+        - PlayscribeUITests
