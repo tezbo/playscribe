@@ -40,7 +40,7 @@ BAR_FILL = 0.62
 
 def notes_body(p, tone='default', sides=('left', 'right')):
     if tone == 'mono-knock':  # tinted icon: greys on grey pages
-        line, track, fill = '#4a4a4a', '#6a6a6a', '#ffffff'
+        line, track, fill = '#2a2a2a', '#5a5a5a', '#ffffff'
     else:
         line = track = C['ink']['900']
         fill = f'url(#{p}s)'
@@ -327,9 +327,10 @@ def splash_and_cover():
     art_h, dip = 300, 16
     edge = (f'M14 64Q14 50 28 50H{W - 28}Q{W - 14} 50 {W - 14} 64V{art_h + 50 - dip}'
             f'Q{W * 0.75:.1f} {art_h + 50 - dip} {W / 2} {art_h + 50}Q{W * 0.25:.1f} {art_h + 50 - dip} 14 {art_h + 50 - dip}Z')
-    # Console vernacular: the selected tile wears a focus ring, as on a console home screen.
-    frame = (f'<path d="{edge}" fill="{C["ink"]["700"]}"/>'
-             f'<path d="{edge}" fill="none" stroke="{C["vellum"]["100"]}" stroke-width="2.5" stroke-opacity=".9"/>')
+    # The selected game gets a lit inner edge (console vernacular), drawn inside the frame so it
+    # never reads as an accessibility focus ring: 1.5 pt vellum at 60%, clipped to the card.
+    frame = (f'<clipPath id="hc"><path d="{edge}"/></clipPath><path d="{edge}" fill="{C["ink"]["700"]}"/>'
+             f'<path d="{edge}" fill="none" stroke="{C["vellum"]["100"]}" stroke-width="3" stroke-opacity=".6" clip-path="url(#hc)"/>')
     lab, lw = text(SANS, 'NEW CHAPTER', 12, 18, art_h + 86, C['accent']['base'], tracking=0.08)
     # Version chip: the patch number, outlined in ember.
     vx = 18 + lw + 10
