@@ -80,7 +80,7 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     /// "Out 19 Nov" this year, "Out 19 Nov 2027" for a later year.
     static func outLine(_ d: Date) -> String {
         let sameYear = Calendar.current.component(.year, from: d) == Calendar.current.component(.year, from: .now)
-        return "Out " + (sameYear ? d.dayMonth : d.formatted(.dateTime.day().month(.abbreviated).year()))
+        return "Out " + (sameYear ? d.dayMonth : d.shortDay)
     }
 
     var isUpcoming: Bool { releaseDate?.isoDay.map { $0 > .now } ?? false }

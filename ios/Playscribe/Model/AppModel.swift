@@ -95,6 +95,8 @@ struct PersistedState: Codable {
     var notified: [String: Date] = [:]
     /// Releases already seen On PS5, so only newly confirmed ones notify (V-1). nil until first run.
     var knownOnPS5: Set<String>?
+    /// N-11: releases already announced quietly as Reported on PS5.
+    var knownReported: Set<String>?
 }
 
 struct Toast: Equatable {

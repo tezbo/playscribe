@@ -88,7 +88,13 @@ extension AppModel {
             data.knownOnPS5 = Set(allReleasesMerged.filter { $0.ps5State == .onPS5 }.map(\.id))
             return
         }
+        var reported = data.knownReported ?? Set(allReleasesMerged.filter { $0.ps5State == .reported }.map(\.id))
         for c in data.collection {
+            for r in releases(c.gameID) where r.ps5State == .reported && !reported.contains(r.id) && !known.contains(r.id) {
+                reported.insert(r.id)
+                NotificationService.shared.scheduleReported(release: r, game: game(c.gameID), level: notifyLevel(c.gameID),
+                                                            pauseAll: data.pauseAll, model: self)
+            }
             for r in releases(c.gameID) where r.ps5State == .onPS5 && !known.contains(r.id) {
                 known.insert(r.id)
                 NotificationService.shared.schedule(release: r, game: game(c.gameID), level: notifyLevel(c.gameID),
@@ -96,6 +102,7 @@ extension AppModel {
             }
         }
         data.knownOnPS5 = known
+        data.knownReported = reported
         NotificationService.shared.updateBadge(badgeCount)
     }
 

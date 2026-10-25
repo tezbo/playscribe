@@ -83,8 +83,11 @@ extension View {
 }
 
 extension Date {
-    var shortDay: String { formatted(.dateTime.day().month(.abbreviated).year()) }
-    var dayMonth: String { formatted(.dateTime.day().month(.abbreviated)) }
+    /// Playscribe writes dates day-first ("19 Nov 2026") in every locale, so copy reads the same
+    /// everywhere and tests don't depend on the runner's region.
+    private static let dayFirst = Locale(identifier: "en_GB")
+    var shortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated).year()) }
+    var dayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated)) }
 }
 
 extension String {

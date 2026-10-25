@@ -190,3 +190,13 @@ struct ReviewFixTests {
         }
     }
 }
+
+@MainActor
+struct DateCopyTests {
+    @Test("Dates read day-first in every locale")
+    func dayFirst() {
+        let d = "2026-11-19".isoDay!
+        #expect(d.dayMonth == "19 Nov")
+        #expect(d.shortDay == "19 Nov 2026")
+    }
+}

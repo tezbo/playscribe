@@ -51,9 +51,42 @@ final class NotificationService: NSObject {
 
     /// Builds the notification for a release that reached On PS5 (N-4) and schedules it locally.
     /// Remote pushes from the backend carry the same fields.
+    /// N-11 (flagged until Terry confirms): a quiet "Reported on PS5" alert. Off by default.
+    static var reportedAlertsEnabled: Bool {
+        UserDefaults.standard.object(forKey: "reportedAlerts") as? Bool ?? false
+    }
+
+    /// N-11: passive, no sound, no badge change; the request id is the release id, so the later
+    /// On PS5 confirmation replaces it in place.
+    func scheduleReported(release: Release, game: CatalogGame?, level: NotifyLevel, pauseAll: Bool, model: AppModel) {
+        guard Self.reportedAlertsEnabled, let game, release.ps5State == .reported, !pauseAll else { return }
+        guard level == .all || (level == .major && release.kind.countsAsMajor) else { return }
+        guard model.data.notified[release.id] == nil else { return }
+        model.data.notified[release.id] = .now
+        let c = UNMutableNotificationContent()
+        c.title = game.name
+        c.body = "\(release.displayName) is reported on PS5. \(Brand.name) will confirm it."
+        c.threadIdentifier = game.id
+        c.interruptionLevel = .passive
+        c.sound = nil
+        c.userInfo = ["gameId": game.id, "releaseId": release.id, "reported": true]
+        c.categoryIdentifier = "release"
+        center.add(UNNotificationRequest(identifier: release.id, content: c, trigger: nil))
+    }
+
     func schedule(release: Release, game: CatalogGame?, level: NotifyLevel, pauseAll: Bool, delay: TimeInterval, model: AppModel) {
         guard let game, release.ps5State == .onPS5, !pauseAll else { return }
         guard level == .all || (level == .major && release.kind.countsAsMajor) else { return }
+        if model.data.knownReported?.contains(release.id) == true, model.data.notified[release.id] != nil {
+            // N-11: the quiet Reported alert was this release's one push. Replace it in place,
+            // silently, with the On PS5 text.
+            let c = Self.content(for: release, game: game, badge: model.badgeCount)
+            c.interruptionLevel = .passive
+            c.sound = nil
+            c.badge = nil
+            center.add(UNNotificationRequest(identifier: release.id, content: c, trigger: nil))
+            return
+        }
         guard model.data.notified[release.id] == nil else { return }
         model.data.notified[release.id] = .now
 

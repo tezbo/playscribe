@@ -1,4 +1,4 @@
-# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v1.4, 2026-10-25: section 10 gamer-review fixes GR-1..GR-7; v1.3 Tabletop and video redesign TT/VB; v1.2 section 9 Open pose and transitions added; v1.1 added G-12, G-13)
+# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v1.4, 2026-10-25: section 10 gamer-review fixes GR-1..GR-7, N-11 quiet Reported alert; v1.3 Tabletop and video redesign TT/VB; v1.2 section 9 Open pose and transitions added; v1.1 added G-12, G-13)
 
 Owner: UX/CX QA thread. Decided 2026-10-24 under Terry's delegation. This is the contract the SwiftUI app builds against and QA tests against. Put it in the repo as `docs/ux-acceptance.md`. IDs are stable: cite them in commits and test names.
 
@@ -118,8 +118,8 @@ Decision: the native launch screen is a plain background colour matching the Lib
 |---|---|---|---|---|
 | **On PS5** (live + official) | main release list, Updates tab | yes | yes, once | no tag; version shown |
 | **Announced for PS5** (official) | main list, under "Coming to PS5" | no | no | "Announced" tag, expected date if official |
-| **Reported on PS5** (press only) | main list | no | no | "Reported" tag; version only if the press gave one |
-| **Silent** (reported, no notes) | main list | no | no | "Reported" + "Silent update" + "No official notes" |
+| **Reported on PS5** (press only) | main list | no | quiet alert, once (N-11) | "Reported" tag; version only if the press gave one |
+| **Silent** (reported, no notes) | main list | no | quiet alert, once (N-11) | "Reported" + "Silent update" + "No official notes" |
 | **Pending** | **nowhere** | no | no | none |
 | **PC only so far** | collapsed group "PC only so far · n updates" at the end of the journal | never | never | "PC" tag; never in the Updates tab (footnote count only) |
 | **Not coming to PS5** (official notPlanned) | inside the PC only group | never | never | "Not planned for PS5" |
@@ -144,6 +144,14 @@ Decision: the native launch screen is a plain background colour matching the Lib
 - **N-8** App icon badge = the number of unread On PS5 releases for games whose notifications are not Off. It updates on read, on remove and on a level change.
 - **N-9** Deep link to a release that no longer exists: open the game book with the toast "That update is no longer available". Deep link to a game no longer in the library: open its game book read-only with an "Add to library" button.
 - **N-10** Settings contains notification levels per game, plus a global "Pause all" toggle (required by HIG Managing notifications).
+- **N-11 Quiet "Reported on PS5" alert** (decided 2026-10-25). When a release first becomes Reported (or Silent) for a followed game whose level allows it (same level rules as N-3), the app posts one local notification.
+  - Text: "<Game>: Update <display name> reported on PS5". The body is the PS5 headline (GR-2) or "No official notes yet".
+  - `interruptionLevel = .passive`, with no sound. Apple: the system "adds the notification to the notification list without lighting up the screen or playing a sound". No badge change (Reported never counts as unread).
+  - The request identifier is the release id. Apple: "If you use the same identifier when scheduling a new notification, the system removes the previously scheduled notification with that identifier and replaces it with the new one".
+  - On confirm (Reported to On PS5), the app re-adds a request with the same identifier, the On PS5 text and `.passive`. The entry updates in place without alerting, and the release becomes unread with the badge updated (V-1, N-8). This counts as N-3's "one push per release": no second alert. If no Reported alert was ever delivered for that release, N-3 applies as normal.
+  - Never for Pending, PC only or Announced. At most one Reported alert per release.
+  - Tapping it opens the release as N-6, showing its Reported tag.
+  - Acceptance: after confirm, Notification Center holds exactly one entry for the release (`getDeliveredNotifications`). Its text is the On PS5 text. No sound and no screen wake happen on either post.
 
 ## 7. Updates tab
 

@@ -50,6 +50,9 @@ struct SettingsView: View {
                 }
 
                 Section("Testing") {
+                    Toggle("Quiet Reported on PS5 alerts (N-11)", isOn: Binding(
+                        get: { NotificationService.reportedAlertsEnabled },
+                        set: { UserDefaults.standard.set($0, forKey: "reportedAlerts") }))
                     Toggle("Show tappable frames and reserved regions", isOn: $model.showDebugOverlay)
                     Button("Reset to first run", role: .destructive) { model.resetToFirstRun(); dismiss() }
                     Button("Reset to demo library") { model.resetDemo(); dismiss() }
