@@ -30,6 +30,32 @@ SPARK = ('M32 2.5C32.7 9.4 34.6 12 41 13.2C35 14.4 33.1 16.8 32 26.5'
 # Cut into the spark: a breather hole and a slit running to the tip.
 NIB_CUT = 'M32 14.6a1.25 1.25 0 1 1 0 2.5a1.25 1.25 0 1 1 0-2.5ZM31.55 17.6H32.45L32.12 23.4H31.88Z'
 
+# The pages carry the subject. The left page holds patch-note lines. The right page holds a line
+# and a console-style update bar part way through installing. All are rounded rects (x, y, w).
+NOTE_H = 2.3
+NOTE_LINES = [(12.4, 30.6, 14.6), (12.4, 35.6, 14.6), (12.4, 40.6, 10.2), (37, 30.6, 14.6), (37, 35.6, 11)]
+BAR = (37, 41.4, 14.6, 2.6)  # x, y, w, h of the track
+BAR_FILL = 0.62
+
+
+def notes_body(p, tone='default', sides=('left', 'right')):
+    if tone == 'mono-knock':  # tinted icon: greys on grey pages
+        line, track, fill = '#4a4a4a', '#6a6a6a', '#ffffff'
+    else:
+        line = track = C['ink']['900']
+        fill = f'url(#{p}s)'
+    r = NOTE_H / 2
+    out = [f'<rect x="{x}" y="{y}" width="{w}" height="{NOTE_H}" rx="{r}" fill="{line}"'
+           f'{" fill-opacity=\".28\"" if tone != "mono-knock" else ""}/>' for x, y, w in NOTE_LINES
+           if ('left' if x < 32 else 'right') in sides]
+    if 'right' not in sides:
+        return ''.join(out)
+    bx, by, bw, bh = BAR
+    out.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="{bh / 2}" fill="{track}"'
+               f'{" fill-opacity=\".16\"" if tone != "mono-knock" else ""}/>')
+    out.append(f'<rect x="{bx}" y="{by}" width="{bw * BAR_FILL:.2f}" height="{bh}" rx="{bh / 2}" fill="{fill}"/>')
+    return ''.join(out)
+
 
 def gradient(id_, stops, x1=0, y1=0, x2=0, y2=1, units=None):
     u = f' gradientUnits="userSpaceOnUse"' if units else ''
@@ -49,7 +75,7 @@ def mark_defs(p, tone='default'):
             + gradient(f'{p}s', [(0, C['ember']['300']), (1, C['ember']['600'])], 0, 0, 0, 1))
 
 
-def mark_body(p, tone='default', nib=True, parts=('left', 'right', 'spark'), mono_fill=None):
+def mark_body(p, tone='default', nib=True, parts=('left', 'right', 'notes', 'spark'), mono_fill=None):
     fills = {
         'left': f'url(#{p}l)', 'right': f'url(#{p}r)', 'spark': f'url(#{p}s)',
     } if tone != 'mono' else {k: mono_fill or 'currentColor' for k in ('left', 'right', 'spark')}
@@ -58,6 +84,9 @@ def mark_body(p, tone='default', nib=True, parts=('left', 'right', 'spark'), mon
         out.append(f'<path d="{LEFT_PAGE}" fill="{fills["left"]}"/>')
     if 'right' in parts:
         out.append(f'<path d="{RIGHT_PAGE}" fill="{fills["right"]}"/>')
+    sides = [sd for sd in ('left', 'right') if 'notes' in parts or f'notes-{sd}' in parts]
+    if sides and tone != 'mono':
+        out.append(notes_body(p, tone, sides))
     if 'spark' in parts:
         d = SPARK + (NIB_CUT if nib else '')
         out.append(f'<path d="{d}" fill="{fills["spark"]}" fill-rule="evenodd"/>')
@@ -158,7 +187,7 @@ def write(rel, content):
 def logos():
     for tone, name in (('default', 'mark'), ('dark', 'mark-dim')):
         write(f'logo/{name}.svg', svg(64, 64, mark_body('m', tone), mark_defs('m', tone)))
-    write('logo/mark-small.svg', svg(64, 64, mark_body('m', nib=False), mark_defs('m')))
+    write('logo/mark-small.svg', svg(64, 64, mark_body('m', nib=False, parts=('left', 'right', 'spark')), mark_defs('m')))
     write('logo/mark-mono.svg', svg(64, 64, mark_body('m', 'mono', mono_fill='#000')))
 
     for tone, ink, name in (('default', C['vellum']['100'], 'wordmark-on-dark'),
@@ -199,7 +228,9 @@ def app_icon():
           svg(ICON, ICON, icon_group(mark_body('i', parts=('left',))), mark_defs('i')))
     write('app-icon/layers/1-pages/2-right-page.svg',
           svg(ICON, ICON, icon_group(mark_body('i', parts=('right',))), mark_defs('i')))
-    write('app-icon/layers/2-spark/1-spark.svg',
+    write('app-icon/layers/2-notes/1-notes.svg',
+          svg(ICON, ICON, icon_group(mark_body('i', parts=('notes',))), mark_defs('i')))
+    write('app-icon/layers/3-spark/1-spark.svg',
           svg(ICON, ICON, icon_group(mark_body('i', parts=('spark',))), mark_defs('i')))
 
     # Flattened sources for the asset catalog fallback and for previews (render.mjs makes PNGs).
@@ -213,6 +244,7 @@ def app_icon():
     # Tinted: grayscale on black. Pages light grey, spark white so it stays the brightest point.
     tinted = (f'<rect width="{ICON}" height="{ICON}" fill="#000"/>'
               + icon_group(f'<path d="{LEFT_PAGE}" fill="#9a9a9a"/><path d="{RIGHT_PAGE}" fill="#c4c4c4"/>'
+                           + notes_body('i', 'mono-knock') +
                            f'<path d="{SPARK + NIB_CUT}" fill="#fff" fill-rule="evenodd"/>'))
     write('app-icon/flat/AppIcon-tinted.svg', svg(ICON, ICON, tinted))
 
@@ -227,10 +259,18 @@ def splash_and_cover():
              f'scale({msize / 64:.4f})">{mark_body(p)}</g>')
         body, ww, _ = wordmark(wsize, 0, 0, paper, p)
         wm = f'<g transform="translate({w / 2 - ww / 2:.1f} {cy + msize * 0.25 + wsize * 0.9:.1f})">{body}</g>'
-        t, _ = text(SANS, tagline, wsize * 0.32, w / 2, cy + msize * 0.25 + wsize * 1.55, tag, 'middle')
-        return m + wm + t
+        ty = cy + msize * 0.25 + wsize * 1.55
+        t, _ = text(SANS, tagline, wsize * 0.32, w / 2, ty, tag, 'middle')
+        return m + wm + t + patch_bar(w / 2, ty + wsize * 0.7, wsize * 2.2, max(3, wsize * 0.06), 0.62, p)
 
     bg = f'<rect width="100%" height="100%" fill="{ink}"/>'
+
+    def patch_bar(x, y, w, h, frac, p, anchor='middle'):
+        """The console update bar: it fills during the splash hold, like an update installing.
+        Static references show it part way through."""
+        x0 = {'start': x, 'middle': x - w / 2, 'end': x - w}[anchor]
+        return (f'<rect x="{x0:.1f}" y="{y:.1f}" width="{w}" height="{h}" rx="{h / 2}" fill="{C["ink"]["600"]}"/>'
+                f'<rect x="{x0:.1f}" y="{y:.1f}" width="{w * frac:.1f}" height="{h}" rx="{h / 2}" fill="url(#{p}s)"/>')
 
     # Closed (outer display, portrait).
     W, H = 393, 852
@@ -241,9 +281,9 @@ def splash_and_cover():
     hx = W / 2
     ms = 210
     left = (f'<g transform="translate({hx - ms / 2 - 16:.1f} {H * 0.27:.1f}) scale({ms / 64:.4f})">'
-            f'{mark_body("b", parts=("left",))}</g>')
+            f'{mark_body("b", parts=("left", "notes-left"))}</g>')
     right = (f'<g transform="translate({hx - ms / 2 + 16:.1f} {H * 0.27:.1f}) scale({ms / 64:.4f})">'
-             f'{mark_body("b", parts=("right",))}</g>')
+             f'{mark_body("b", parts=("right", "notes-right"))}</g>')
     # Nothing crosses the hinge: the spark moves to the i of "scribe" on the right page.
     size = 92
     dP, wP, _ = DISPLAY.run('Play', size, 0, 0, -0.012)
@@ -262,7 +302,8 @@ def splash_and_cover():
              f'<path transform="translate({icx - 32 * k:.2f} {dot_cy - 14.5 * k:.2f}) scale({k:.4f})" d="{SPARK}" fill="url(#bs)"/></g>')
     # The tagline sits under "Play" on the left page, which balances the wider "scribe".
     t, _ = text(SANS, tagline, 22, hx - gap, by + 46, tag, 'end')
-    write('splash/book.svg', svg(W, H, bg + left + right + words + t, mark_defs('b')))
+    bar = patch_bar(hx + gap, by + 34, w_s, 5, 0.62, 'b', 'start')  # under "scribe", right page
+    write('splash/book.svg', svg(W, H, bg + left + right + words + t + bar, mark_defs('b')))
 
     # Tabletop: fold horizontal; mark in the upper half, name and tagline in the lower half.
     W, H = 820, 1024
@@ -273,7 +314,8 @@ def splash_and_cover():
     body, ww, _ = wordmark(88, 0, 0, paper, 't')
     wm = f'<g transform="translate({W / 2 - ww / 2:.1f} {fy + 150:.1f})">{body}</g>'
     t, _ = text(SANS, tagline, 26, W / 2, fy + 204, tag, 'middle')
-    write('splash/tabletop.svg', svg(W, H, bg + m + wm + t, mark_defs('t')))
+    bar = patch_bar(W / 2, fy + 250, 200, 5, 0.62, 't')
+    write('splash/tabletop.svg', svg(W, H, bg + m + wm + t + bar, mark_defs('t')))
 
     # Flat open.
     W, H = 1024, 820
@@ -283,12 +325,21 @@ def splash_and_cover():
     # The bottom edge follows the open book's lower silhouette (dipping to the spine at the centre).
     W, H = 393, 852
     art_h, dip = 300, 16
-    frame = (f'<path d="M14 64Q14 50 28 50H{W - 28}Q{W - 14} 50 {W - 14} 64V{art_h + 50 - dip}'
-             f'Q{W * 0.75:.1f} {art_h + 50 - dip} {W / 2} {art_h + 50}Q{W * 0.25:.1f} {art_h + 50 - dip} 14 {art_h + 50 - dip}Z"'
-             f' fill="{C["ink"]["700"]}" stroke="{C["vellum"]["300"]}" stroke-opacity=".35"/>')
-    lab, _ = text(SANS, 'CONTINUE', 12, 18, art_h + 84, C['accent']['base'], tracking=0.08)
-    ttl, _ = text(DISPLAY, 'The Blood of Dawnwalker', 26, 18, art_h + 116, paper)
-    write('library/closed-hero.svg', svg(W, 520, f'<rect width="100%" height="100%" fill="{ink}"/>' + frame + lab + ttl))
+    edge = (f'M14 64Q14 50 28 50H{W - 28}Q{W - 14} 50 {W - 14} 64V{art_h + 50 - dip}'
+            f'Q{W * 0.75:.1f} {art_h + 50 - dip} {W / 2} {art_h + 50}Q{W * 0.25:.1f} {art_h + 50 - dip} 14 {art_h + 50 - dip}Z')
+    # Console vernacular: the selected tile wears a focus ring, as on a console home screen.
+    frame = (f'<path d="{edge}" fill="{C["ink"]["700"]}"/>'
+             f'<path d="{edge}" fill="none" stroke="{C["vellum"]["100"]}" stroke-width="2.5" stroke-opacity=".9"/>')
+    lab, lw = text(SANS, 'NEW CHAPTER', 12, 18, art_h + 86, C['accent']['base'], tracking=0.08)
+    # Version chip: the patch number, outlined in ember.
+    vx = 18 + lw + 10
+    chip_t, cw = text(SANS, 'v1.1', 12, vx + 8, art_h + 86, C['accent']['base'])
+    chip = (f'<rect x="{vx:.1f}" y="{art_h + 72}" width="{cw + 16:.1f}" height="19" rx="9.5" fill="none" '
+            f'stroke="{C["accent"]["base"]}" stroke-opacity=".7"/>' + chip_t)
+    ttl, _ = text(DISPLAY, 'The Blood of Dawnwalker', 26, 18, art_h + 118, paper)
+    sub, _ = text(SANS, 'Update 1.1 is here. Catch up, then jump back in.', 15, 18, art_h + 142, C['text']['secondary'])
+    write('library/closed-hero.svg', svg(W, 520, f'<rect width="100%" height="100%" fill="{ink}"/>' + frame + lab + chip + ttl + sub,
+                                         mark_defs('h')))
 
 
 def css():
