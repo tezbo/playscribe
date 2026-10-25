@@ -107,7 +107,7 @@ struct ModelTests {
         for e in PS5Index.shared.entries {
             let g = PS5Index.shared.game(e)
             guard let line = g.ps5DateLine else { continue }
-            if line.hasPrefix("Released "), let d = g.releaseDate?.isoDay { #expect(d >= launch, "\(g.name): \(line)") }
+            if line.hasPrefix("Released ") || line.hasPrefix("PS5 version since "), let d = g.releaseDate?.isoDay { #expect(d >= launch, "\(g.name): \(line)") }
             if line.hasPrefix("Playable on PS5 since "), let b = g.playableSince?.isoDay {
                 #expect(b >= launch, "\(g.name): \(line)")
                 #expect(line.hasSuffix(b.formatted(monthYear)))
@@ -115,6 +115,7 @@ struct ModelTests {
         }
         let minecraft = PS5Index.shared.entries.first { $0.n == "Minecraft" }.map(PS5Index.shared.game)
         #expect(minecraft?.ps5DateLine?.contains("2019") != true)
+        #expect(minecraft?.ps5DateLine?.hasPrefix("PS5 version since") == true)
     }
 
     @Test("Search dedupes by IGDB id and prefers curated records (A-3)")

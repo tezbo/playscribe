@@ -61,6 +61,8 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     var ps5DateLine: String? {
         let launch = Self.ps5Launch
         if let d = releaseDate?.isoDay, d >= launch, playableSince.flatMap(\.isoDay).map({ $0 >= launch && $0 < d }) != true {
+            // An older game's native PS5 edition (it had an earlier PS4 release) vs a PS5 first.
+            if let b = playableSince?.isoDay, b < d { return "PS5 version since \(d.shortDay)" }
             return "Released \(d.shortDay)"
         }
         if let b = playableSince?.isoDay {
