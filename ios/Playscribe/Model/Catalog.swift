@@ -35,6 +35,8 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     var releaseDate: String?
     /// Earlier PS4 release date for games playable on PS5 before their PS5 release.
     var playableSince: String?
+    /// The PS5 date is early access with no full release yet.
+    var earlyAccess: Bool?
     var igdbID: Int?
     /// Bundled artwork in the asset catalogue.
     var coverAsset: String?
@@ -59,6 +61,7 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     /// The date line for a catalogue game: its native PS5 release, else when it became playable
     /// on PS5 through its PS4 version. Dates before the PS5 launch are never shown.
     var ps5DateLine: String? {
+        if earlyAccess == true { return "Early access" }
         let launch = Self.ps5Launch
         if let d = releaseDate?.isoDay, d >= launch, playableSince.flatMap(\.isoDay).map({ $0 >= launch && $0 < d }) != true {
             // An older game's native PS5 edition (it had an earlier PS4 release) vs a PS5 first.
@@ -171,6 +174,10 @@ struct PS5Index {
         var d: String?
         /// The earlier PS4 release, when the game was playable on PS5 before its native release.
         var b: String?
+        /// `d` is early access, beta or alpha with no full release yet.
+        var e: Bool?
+        /// The full release date, when `d` was early access.
+        var f: String?
         var v: String?
         var p: String?
         var c: String?
@@ -217,7 +224,7 @@ struct PS5Index {
     func game(_ e: Entry) -> CatalogGame {
         CatalogGame(
             id: "igdb-\(e.i)", name: e.n, developer: e.v, publisher: e.p, platforms: [.ps5],
-            releaseDate: e.d, playableSince: e.b, igdbID: e.i, coverImageID: e.c, tones: e.t, coverage: .none
+            releaseDate: e.f ?? e.d, playableSince: e.b, earlyAccess: e.e == true && e.f == nil, igdbID: e.i, coverImageID: e.c, tones: e.t, coverage: .none
         )
     }
 }
