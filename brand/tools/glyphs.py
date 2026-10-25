@@ -1,6 +1,6 @@
 """Playscribe UI glyphs on a 24 pt grid, weight-matched to SF Symbols Regular (1.6 pt strokes).
 
-swap-sides: two facing pages from the Playscribe mark, with an arc above that trades them across
+swap-sides: two facing pages from the Playscribe mark, with a flat left/right arrow pair above that trades them across
 the spine. Used for "Swap sides" on iPhone Duo (moves the reading page to the other half).
 Run: python3 brand/tools/glyphs.py
 """
@@ -25,8 +25,9 @@ def head(tip, ctrl, size=2.6, spread=math.radians(38)):
     return f'M{pts[0][0]:.2f} {pts[0][1]:.2f}L{tip[0]} {tip[1]}L{pts[1][0]:.2f} {pts[1][1]:.2f}'
 
 
-ARC = f'M{ARC_A[0]} {ARC_A[1]}Q{ARC_C[0]} {ARC_C[1]} {ARC_B[0]} {ARC_B[1]}'
-HEADS = head(ARC_B, ARC_C) + head(ARC_A, ARC_C)
+# A flat left/right pair reads as "swap" faster than a curve, which hints at refresh.
+ARC = 'M6 3.4H18M18 7.4H6'
+HEADS = head((18, 3.4), (6, 3.4), 2.4) + head((6, 7.4), (18, 7.4), 2.4)
 STROKE = f'fill="none" stroke="currentColor" stroke-width="{SW}" stroke-linecap="round" stroke-linejoin="round"'
 
 

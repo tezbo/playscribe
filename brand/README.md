@@ -39,7 +39,7 @@ iOS icons are one 1024x1024 layered design. Appearances are default, dark, clear
 
 ## Glyphs
 
-`ios/symbols/swap-sides*.svg` is Swap sides: two facing pages from the mark, traded across the spine by an arc. It uses a 24 pt grid and 1.6 pt strokes, close to SF Symbols Regular. It comes as an outline and a fill. The buttons are a 30 pt circle with the glyph at 17 pt, in ink 700 with vellum, or ember with `accent.on` (never white). To make a true SF Symbol, open the SF Symbols app on the Mac, export the template for `book` (Regular-S), paste `swap-sides.svg` into the Regular-S group, then validate and import the template into the asset catalog as a Symbol Image. That can't be done off a Mac. Until then, use the SVG as a template image with Preserve Vector Data turned on.
+`ios/symbols/swap-sides*.svg` is Swap sides: two facing pages from the mark, traded across the spine by a flat left/right arrow pair. It uses a 24 pt grid and 1.6 pt strokes, close to SF Symbols Regular. It comes as an outline and a fill. The buttons are a 30 pt circle with the glyph at 17 pt, in ink 700 with vellum, or ember with `accent.on` (never white). To make a true SF Symbol, open the SF Symbols app on the Mac, export the template for `book` (Regular-S), paste `swap-sides.svg` into the Regular-S group, then validate and import the template into the asset catalog as a Symbol Image. That can't be done off a Mac. Until then, use the SVG as a template image with Preserve Vector Data turned on.
 
 ## PlayStation
 
