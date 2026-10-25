@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { classify, consoleVersionOf, nameRelease, ps5StatusOf, sizeBytesOf, studioKindOf } from '../src/ingest/classify.ts'
-import { extractNotes } from '../src/ingest/notes.ts'
+import { extractNotes, platformsFor, tagNotes } from '../src/ingest/notes.ts'
 
 test('studio labels win and name the release', () => {
   assert.deepEqual(nameRelease('The Blood of Dawnwalker - Update 1.1 Patch Notes', '2026-10-22T09:00:00Z'), { displayName: 'Update 1.1', versionKey: '1.1', studioKind: 'major' })
@@ -43,4 +43,27 @@ test('notes keep sections, sub-headed items and platform tags', () => {
   assert.deepEqual(notes[0]!.items.map((i) => i.text), ['Animal petting', 'Draught of Mind Rebirth: Forget all your abilities.'])
   assert.deepEqual(notes[1]!.items[0], { text: 'Fixed HDR on PS5 Pro', platforms: ['ps5'], ps5ProOnly: true })
   assert.deepEqual(notes[2]!.items[0]!.platforms, ['pc'])
+})
+
+test('PC-only lines are tagged PC so PS5 pages leave them out', () => {
+  assert.deepEqual(platformsFor('Update to the FrameGen technology, including dedicated settings.'), ['pc'])
+  assert.deepEqual(platformsFor('Game may crash on switching FrameGen from OFF to ON (on AMD Radeon RX 9070 XT only).'), ['pc'])
+  assert.deepEqual(platformsFor('Implemented support for the Steam Controller.'), ['pc'])
+  assert.deepEqual(platformsFor('Fixed a crash when switching from controller to keyboard and mouse.'), ['pc'])
+  assert.deepEqual(platformsFor('Added DualSense® support on Steam'), ['pc'])
+  // A line that also names a console is not PC-only; words that only look like PC terms are not tags.
+  assert.deepEqual(platformsFor('Fixed a crash on PS5 and AMD GPUs'), ['ps5', 'pc'])
+  assert.equal(platformsFor('Improved performance on consoles and AMD GPUs'), undefined)
+  assert.equal(platformsFor('Fixed rocket launcher ammo not refilling'), undefined)
+  assert.equal(platformsFor('Fixed the tavern windows rendering black'), undefined)
+  assert.equal(platformsFor('Fixed mod.io browsing in the Mod Manager'), undefined)
+  assert.deepEqual(platformsFor('Fixed a crash on Xbox when resuming'), ['xboxSeries'])
+})
+
+test('a heading about one platform tags its items, and stored notes are re-tagged on read', () => {
+  const notes = extractNotes('[h2]Steam Deck[/h2][list][*]Improved loading times[/list][h2]Fixes[/h2][list][*]Fixed a crash on PC when alt-tabbing[*]Fixed a door[/list]')
+  assert.deepEqual(notes[0]!.items[0]!.platforms, ['pc'])
+  assert.deepEqual(notes[1]!.items.map((i) => i.platforms), [['pc'], undefined])
+  const stored = [{ title: 'Highlights', items: [{ text: 'Updated FrameGen', ps5ProOnly: false }] }]
+  assert.deepEqual(tagNotes(stored)[0]!.items[0]!.platforms, ['pc'])
 })

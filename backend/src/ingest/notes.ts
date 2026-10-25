@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import type { NoteItem, NoteSection, Platform } from '../types.ts'
 
 // Turns a post body (Steam BBCode, feed HTML or plain text) into grouped notes.
@@ -34,12 +35,24 @@ const PRO = /\bPS5\s*Pro\b|PlayStation\s*®?\s*5\s*Pro/i
 const PC = /^\s*(\[PC\]|PC:|\(PC\))|\bPC only\b|\(PC\)/i
 const XBOX = /\bXbox Series\b|^\s*(\[Xbox\]|Xbox:)/i
 
-const platformsFor = (text: string, section?: Platform[]): Platform[] | undefined => {
+// Shared with ios/tools/build_fixtures.py so the bundled fixtures follow the same rules.
+const TERMS = JSON.parse(readFileSync(new URL('./platform-terms.json', import.meta.url), 'utf8')) as Record<'pcNames' | 'pc' | 'ps5' | 'xboxSeries' | 'consoles', string[]>
+const any = (list: string[]) => new RegExp(list.map((p) => `(?:${p})`).join('|'), 'i')
+const NAMES = { pc: any([...TERMS.pcNames, ...TERMS.pc]), ps5: any(TERMS.ps5), xboxSeries: any(TERMS.xboxSeries), consoles: any(TERMS.consoles) }
+
+/**
+ * Which platforms an item is about, or undefined for every platform. A section heading ("PC",
+ * "PS5 fixes") decides for its items; otherwise the item's own words do. PC-only words (FrameGen,
+ * DLSS, AMD, Steam Deck, mouse and keyboard…) tag it PC unless it also names a console.
+ */
+export const platformsFor = (text: string, section?: Platform[]): Platform[] | undefined => {
   if (section) return section
   const p: Platform[] = []
-  if (/^\s*(\[PS5\]|PS5:|\(PS5\))|\(PS5( Pro)?\)|PS5 only/i.test(text)) p.push('ps5')
-  if (PC.test(text)) p.push('pc')
-  if (/^\s*(\[Xbox[^\]]*\]|Xbox[^:]*:)|Xbox only/i.test(text)) p.push('xboxSeries')
+  const ps5 = NAMES.ps5.test(text)
+  const xbox = NAMES.xboxSeries.test(text)
+  if (ps5) p.push('ps5')
+  if (PC.test(text) || (NAMES.pc.test(text) && !NAMES.consoles.test(text))) p.push('pc')
+  if (xbox) p.push('xboxSeries')
   return p.length ? p : undefined
 }
 
@@ -48,7 +61,9 @@ const sectionPlatforms = (title: string): Platform[] | undefined => {
   if (/^(PS5|PlayStation\s*®?\s*5)( Pro)?( specific| fixes| changes)?:?$/i.test(t)) return ['ps5']
   if (/^PC( specific| fixes| changes)?:?$/i.test(t)) return ['pc']
   if (/^Xbox( Series X\|?S)?( specific| fixes| changes)?:?$/i.test(t)) return ['xboxSeries']
-  return undefined
+  // "Steam Deck", "Find your best Steam Deck settings": a heading about one platform covers its items.
+  const named = platformsFor(t)
+  return named?.length === 1 ? named : undefined
 }
 
 export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSection[] => {
@@ -94,6 +109,19 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSecti
   }
   return sections.filter((s) => s.items.length)
 }
+
+/** Re-applies the platform rules to notes stored earlier, so a rule change reaches old releases. */
+export const tagNotes = (sections: NoteSection[]): NoteSection[] =>
+  sections.map((s) => {
+    const section = sectionPlatforms(s.title)
+    return {
+      ...s,
+      items: s.items.map(({ platforms: _old, ...i }) => {
+        const platforms = platformsFor(i.text, section)
+        return platforms ? { ...i, platforms } : i
+      }),
+    }
+  })
 
 export const mentionsPs5 = (text: string) => PS5.test(text)
 export const mentionsXbox = (text: string) => XBOX.test(text)

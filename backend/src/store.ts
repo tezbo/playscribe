@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto'
 import { now, type DB } from './db.ts'
+import { tagNotes } from './ingest/notes.ts'
 import type { Field, Game, KindBasis, NoteSection, Platform, PlatformRelease, PlatformStatus, Release, ReleaseKind, Verification } from './types.ts'
 
 // Reads and writes for the release model. Rows hold the spec's nested types as JSON.
@@ -62,7 +63,8 @@ export const releaseFromRow = (db: DB, r: Row): Release => ({
   kind: r.kind,
   kindBasis: r.kind_basis,
   announcedAt: r.announced_at,
-  notes: json(r.notes, []),
+  // Tagged on read, so stored notes follow the current platform rules.
+  notes: tagNotes(json(r.notes, [])),
   sourceIds: json(r.source_ids, []),
   platforms: (db.prepare('SELECT * FROM platform_releases WHERE release_id = ? ORDER BY platform').all(r.id) as Row[]).map(platformFromRow),
   revision: r.revision,

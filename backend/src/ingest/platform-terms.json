@@ -1,0 +1,69 @@
+{
+  "$comment": "Note items that name one of these are tagged with that platform (docs/ps5-patch-data.md, NoteItem.platforms). Read by backend/src/ingest/notes.ts and ios/tools/build_fixtures.py. Patterns are case-insensitive and must stay valid in both JavaScript and Python. An item tagged pc stays untagged (every platform) when it also names a console or matches 'consoles'. Mods are not PC-only: several PS5 games have them. DualSense, haptics and Trophies are left out of ps5: PC supports DualSense, and Trophy lines usually cover achievements too. pcNames only name the platform (\"on PC\"); they tag items but are fine in a PC release's headline.",
+  "pcNames": [
+    "\\b(on|for) (the )?PC\\b",
+    "\\bPC[- ](version|players?|only|specific|build)\\b",
+    "\\bon Steam\\b"
+  ],
+  "pc": [
+    "\\bframe ?gen(eration)?\\b",
+    "\\bDLSS\\b",
+    "\\bXeSS\\b",
+    "\\bFSR ?[34]? ?frame",
+    "\\bray reconstruction\\b",
+    "\\bpath tracing\\b",
+    "\\bNVIDIA\\b",
+    "\\bGeForce\\b",
+    "\\bRTX ?\\d",
+    "\\bGTX ?\\d",
+    "\\bAMD\\b",
+    "\\bRadeon\\b",
+    "\\bRX ?\\d{4}",
+    "\\bIntel (Arc|Core)\\b",
+    "\\b(GPU|graphics) drivers?\\b",
+    "\\bVRAM\\b",
+    "\\bDirectX\\b",
+    "\\bDX1[12]\\b",
+    "\\bVulkan\\b",
+    "\\bshader (compilation|cache|pre-?compil)",
+    "\\bSteam ?(Deck|Controller|Input|overlay|Workshop|Cloud|Big Picture|achievements?)\\b",
+    "\\bSteamworks\\b",
+    "\\bSteam Deck\\b",
+    "\\bProton\\b",
+    "\\bLinux\\b",
+    "\\bEpic Games( Store)?\\b",
+    "\\bGOG\\b",
+    "\\bmouse\\b",
+    "\\bkeyboard\\b",
+    "\\bkey ?bind",
+    "\\brebind(ing)? keys\\b",
+    "\\bM&KB?\\b",
+    "\\bKBM\\b",
+    "\\bultra-?wide\\b",
+    "\\b(21|32):9\\b",
+    "\\bmulti-?monitor\\b",
+    "\\bborderless\\b",
+    "\\bwindow(ed)? mode\\b",
+    "\\balt[ -+]?tab\\b",
+    "\\bverify(ing)? (the )?game files\\b",
+    "\\bNVIDIA Reflex\\b",
+    "\\bWindows (1[01]|PC|version)\\b",
+    "\\bon Windows\\b",
+    "\\bgame launcher\\b"
+  ],
+  "ps5": [
+    "\\bPS5\\b",
+    "\\bPlayStation\\b",
+    "\\bPSSR\\b",
+    "\\bActivity cards?\\b",
+    "\\bGame Help\\b",
+    "\\bPSN\\b"
+  ],
+  "xboxSeries": [
+    "\\bXbox\\b"
+  ],
+  "consoles": [
+    "\\bconsoles?\\b",
+    "\\ball platforms\\b"
+  ]
+}
