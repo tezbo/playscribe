@@ -1,4 +1,4 @@
-# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v1.4, 2026-10-25: section 10 gamer-review fixes GR-1..GR-7, N-11 quiet Reported alert; v1.3 Tabletop and video redesign TT/VB; v1.2 section 9 Open pose and transitions added; v1.1 added G-12, G-13)
+# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v2.0, 2026-10-25: section 11 "One layout, every pose" after Terry's native test supersedes section 9, B-5, B-6, R-9, R-10, TT-1 and TT-3; v1.4: section 10 gamer-review fixes GR-1..GR-7, N-11 quiet Reported alert; v1.3 Tabletop and video redesign TT/VB; v1.2 section 9 Open pose and transitions added; v1.1 added G-12, G-13)
 
 Owner: UX/CX QA thread. Decided 2026-10-24 under Terry's delegation. This is the contract the SwiftUI app builds against and QA tests against. Put it in the repo as `docs/ux-acceptance.md`. IDs are stable: cite them in commits and test names.
 
@@ -168,7 +168,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 - **E-5** Errors that block a user action (for example, adding a game fails) use a system alert with one action.
 - **E-6** Stale data: if a release was checked more than 24 h ago, its facts show "Checked <date>" in the secondary text style.
 
-## 9. Open pose ("the Spread") and pose transitions
+## 9. Open pose ("the Spread") and pose transitions — SUPERSEDED by section 11 (v2.0). Kept for history: O-1..O-6 and T-6..T-9 no longer apply. TT-0, TT-2, TT-4, VB-1..VB-3, T-2..T-5 and T-10 still apply.
 
 Decided 2026-10-25 under Terry's brief: Book pose = the current Open left side plus the Book right side, and the fully Open pose designed fresh. Visual: https://claude.ai/artifact/QEhYMVpHujvaGtMGU9ehZ1 (copy: qa/design/the-spread.html).
 
@@ -272,6 +272,94 @@ Source: the gamer review of 2026-10-25, ranked. Apple basis, fetched 2026-10-25:
   - Adding closes the sheet and shows "Added 3 games · Undo". Undo removes all of them. The library highlights all the new games.
   - Single add is the same flow with n = 1. Games already in the library stay disabled (A-3).
 
-## 11. QA method
+## 11. One layout, every pose (v2.0)
+
+**Visual:** https://claude.ai/artifact/79xqmm4cgSB4hxVzWcKNVz (copy: qa/design/playscribe-one-layout.html).
+
+**Why.** Terry tested the native build on 2026-10-25 and rejected it:
+1. Tabletop (screenshot) showed a 1:3 sidebar, + at the top right of the sidebar, a stray pill, and the scrolling update list in the middle, away from reach.
+2. Closing lost the open game, and reopening jumped to the top game.
+3. The left side in Book did no work (art over a game list), and it showed two "Library" titles.
+4. The rail icons seemed to do nothing.
+
+He's right. We gave every pose its own layout (the Spread, a sidebar, a stage), which Apple tells us not to do.
+
+**Apple basis (fetched 2026-10-25):**
+- "Don't reinvent your app when it resizes; allow the existing layout to expand."
+- "Avoid extreme layout changes as people fold the device."
+- "Keep functionality and the state of elements the same between displays."
+- A split arrangement puts the primary view "in the leading position" in landscape and "in the top position" in portrait, and when the device is closed in landscape it "only shows the primary view".
+- "Avoid placing an arrangement view inside a navigation split view."
+- In a split view, "the system shows bars horizontally for the sidebar". That's why native drew "Library" and "+" in a bar at the top of the sidebar.
+
+**The model.** A game has two parts:
+- the **Page**, which is the release you're reading;
+- the **Contents**, which is the game's chapters, search, releases and actions.
+
+The game book is a single `ArrangementView(.split)` with the Page as primary and the Contents as secondary. Apple's container then does the work:
+
+| Pose | Page | Contents | Rail / bars |
+|---|---|---|---|
+| Closed (outer, landscape) | full display; it includes its own release list inline, so it behaves as today's closed game book | hidden (system: primary only) | vertical rail |
+| Open landscape (flat) | leading half | trailing half, next to the rail | vertical rail |
+| Book (vertical fold) | left page | right page, next to the rail | vertical rail |
+| Open portrait (flat) | top half | bottom half | horizontal bars |
+| Tabletop (horizontal fold) | standing half, display only, paged (TT-2) | flat half: everything you touch | trailing rail on the flat half |
+
+Open becomes Book, and Open portrait becomes Tabletop, with nothing moving except the fold. The halves stay 1:1 on the inner display, so folding doesn't resize anything.
+
+- **D-1 One navigation, outside the layout.**
+  - The structure is `TabView` (Library, Updates, Search), then a `NavigationStack`: Library, then the game book.
+  - No `NavigationSplitView` and no Library sidebar in any pose. This removes the sidebar header, its "+" and the duplicate "Library" title.
+  - The Library is reached with Back (top of the rail), which is the same in every pose (G-2).
+- **D-2 State never changes with pose.**
+  - These live in one scene model (`@SceneStorage` plus the navigation path) shared by both displays: the open game, the selected release, the chapter, the Page scroll anchor, search text and a playing video.
+  - Closing on Kingdom Come shows Kingdom Come on the outer display, at the same release and anchor. Opening again shows Kingdom Come.
+  - If you were on the Library, you stay on the Library. Nothing ever auto-selects the first or the Continue game (O-1 is removed).
+  - Acceptance: a UI test runs Closed → Book → Closed → Open → Tabletop → Closed with Kingdom Come open, and asserts the same game, release and anchor at every step. It runs again from the Library.
+- **D-3 The Page.**
+  - It holds the art band (`backgroundExtensionEffect()` under the rail), then headline, summary, key changes, the facts line and the notes (GR-3). The reading measure is 55 to 75 characters.
+  - On the inner display it shows only the selected release.
+  - In Closed it shows the stacked game book (newest expanded, R-1), because the Contents are hidden.
+  - Video plays in the Page's place (VB-2 left page; TT-4 standing half). Watch along takes the Contents' place.
+- **D-4 The Contents.** From top to bottom:
+  - the game title and status;
+  - the chapter chips;
+  - search in notes (GR-4);
+  - "Mark n read" when something is unread;
+  - the release timeline (one 44 pt row per release with date, tag and unread dot; the selected row highlighted; GR-1 rows for releases with no notes);
+  - in Tabletop only, the section outline and Previous/Next (TT-2).
+  - Tapping a release changes the Page in place, with no navigation push. The Contents always sit next to the rail, so every control is within reach of the same hand (HIG: locate controls near the content they affect).
+- **D-5 Library: one grid, every pose.** There is a single `LazyVGrid` with one large title, "Library", shown once. The Continue tile is the first and largest (B-4).
+  - Closed: rows (B-1).
+  - Open: 112 pt tiles.
+  - Book: tiles in an even number of columns, so the fold falls between columns (Apple: "prefer an even number of columns").
+  - Open portrait: a grid under the title.
+  - Tabletop: the standing half shows the Continue art and title, display only. The grid and filters go on the flat half.
+  - Add (+) is the pinned toolbar item on the rail, never in a sidebar header (A-1).
+- **D-6 The rail only holds actions that visibly do something.** In a game, from the top:
+  - Back.
+  - Notifications (a bell menu headed "Notify me about <Game>").
+  - Status (a menu headed "<Game> is in your library as…", showing the current status symbol, GR-6).
+
+  That's all. Spoilers move inline to the Page's "Story spoilers hidden · Show" line, shown only when the release has spoilers. Mark all read moves to the Contents (D-4), next to the unread rows it changes. Each action shows its result where you're looking (the Page or the Contents), and the toast confirms by name (GR-6c).
+- **D-7 Nothing app-drawn is empty or decorative.**
+  - No pill, card or bar renders without content. The N-7 pill exists only while it has a game to name.
+  - Nothing is designed around the system home indicator.
+  - Acceptance: a test fails if any app-drawn element in the view hierarchy (outside system chrome) has no text or image.
+- **D-8 Transitions.** The pieces are the Page, the Contents and the rail. They keep their identity (T-1) and move with the T-2 spring.
+  - Closed → open: the Page widens into its half and the Contents slide in beside it, at the same anchor (T-5).
+  - Open → closed: the Contents slide away and the Page fills the outer display.
+  - Folding or unfolding: the halves stay put, and only the fold appears or disappears.
+  - Rotating (Open landscape to portrait): the Contents move from beside the Page to under it, the system split behaviour.
+  - Reduce Motion: cross-fade (T-4).
+- **D-9 Evidence needed for native sign-off** (all from the native build, not the prototype):
+  - screenshots of the Library and the game book in all five poses;
+  - the D-2 test passing, plus a screen recording of Terry's exact path (Closed, Kingdom Come, Book, Closed, Open);
+  - the fold-cross test (TT-0) and the D-7 test passing;
+  - the Tabletop poses and Open portrait set by hand;
+  - VoiceOver and AX5 on the game book.
+
+## 12. QA method
 
 QA re-runs these as a checklist on each build. It uses simulator or Device Hub screenshots for: Library, Add game, game book, video and a notification arrival, each in Closed, Open portrait, Open landscape, Book and Tabletop. It adds an Accessibility Inspector audit and AX5 Dynamic Type screenshots of Library and game book. G-4 and G-5 are measured from frames, not judged by eye. Builds should expose a debug overlay that outlines tappable frames and reserved regions.

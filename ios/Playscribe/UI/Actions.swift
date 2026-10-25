@@ -68,9 +68,9 @@ struct RailButton: View {
 }
 
 extension AppModel {
-    func notifyMenu(_ gameID: String) -> [ScreenAction.MenuSection] {
+    func notifyMenu(_ gameID: String, header: String = "Notify me about") -> [ScreenAction.MenuSection] {
         let level = notifyLevel(gameID)
-        var sections = [ScreenAction.MenuSection(title: "Notify me about", items: NotifyLevel.allCases.map { l in
+        var sections = [ScreenAction.MenuSection(title: header, items: NotifyLevel.allCases.map { l in
             .init(id: l.rawValue, title: l.label, checked: l == level) { [weak self] in
                 self?.setNotify(gameID, l)
                 // N-2: the bell before a decision opens the system prompt directly.
@@ -103,25 +103,17 @@ extension AppModel {
         ]
     }
 
-    /// R-8: the game book's actions, toolbar only.
+    /// D-6: the rail holds only actions that visibly do something: Notifications and Status.
+    /// Spoilers live inline on the Page; Mark read lives in the Contents next to the unread rows.
     func gameActions(_ gameID: String) -> [ScreenAction] {
-        var out: [ScreenAction] = []
+        let name = game(gameID)?.name ?? "this game"
         let level = notifyLevel(gameID)
-        out.append(ScreenAction(id: "notify", title: "Notifications", systemImage: level == .off ? "bell.slash" : "bell",
-                                kind: .menu(notifyMenu(gameID)), priority: .high))
-        let shown = spoilersShown(gameID)
-        // GR-6: symbols that say what they do; one-tap items confirm by name.
-        out.append(ScreenAction(id: "spoilers", title: shown ? "Hide spoilers" : "Show spoilers", systemImage: shown ? "eye" : "eye.slash",
-                                kind: .button { [weak self] in
-                                    self?.setSpoilersShown(gameID, !shown)
-                                    self?.show(Toast(text: shown ? "Spoilers hidden" : "Spoilers shown"))
-                                }, priority: .high))
+        var out = [ScreenAction(id: "notify", title: "Notifications", systemImage: level == .off ? "bell.slash" : "bell",
+                                kind: .menu(notifyMenu(gameID, header: "Notify me about \(name)")), priority: .high)]
         if let status = entry(gameID)?.status {
-            out.append(ScreenAction(id: "status", title: "Status: \(status.label)", systemImage: status.symbol, kind: .menu(statusMenu(gameID)), priority: .automatic))
-        }
-        if unreadCount(gameID) > 0 {
-            out.append(ScreenAction(id: "readall", title: "Mark all read", systemImage: "envelope.open",
-                                    kind: .button { [weak self] in self?.markAllRead(gameID) }, priority: .low))
+            var menu = statusMenu(gameID)
+            if !menu.isEmpty { menu[0].title = "\(name) is in your library as…" }
+            out.append(ScreenAction(id: "status", title: "Status: \(status.label)", systemImage: status.symbol, kind: .menu(menu), priority: .high))
         }
         return out
     }

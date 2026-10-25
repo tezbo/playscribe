@@ -33,6 +33,7 @@ struct RootView: View {
 
     var body: some View {
         DuoReader { duo in
+            let _ = { model.livePose = duo.pose }()
             ZStack {
                 TabRoot(duo: duo)
                     .environment(\.railWidth, duo.pose == .tabletop ? TabletopRail.width : 0)
@@ -117,61 +118,21 @@ extension View {
     }
 }
 
-/// Library tab, per pose (docs/ux-acceptance.md §9 table):
-///   closed, tabletop → a stack: Library, then the game book pushed (Back)
-///   book             → split view: art + Library on the left page, the game book on the right
-///   open landscape   → split view: Library sidebar, the Spread in the detail
-///   open portrait    → the Spread with a cover shelf
-/// Pose changes are layout changes: the open game, chapter and reading state live in the model.
+/// D-1: one navigation in every pose: the Library, then the game book, in one stack. No split
+/// view, no sidebar; Back (top of the rail) returns to the Library everywhere.
 struct LibraryRoot: View {
     @Environment(AppModel.self) private var model
     var duo: DuoContext
 
     var body: some View {
-        switch duo.pose {
-        case .book:
-            NavigationSplitView(columnVisibility: .constant(.all)) {
-                // Both pages always show in book pose, so there is no sidebar toggle.
-                BookLeftPage(gameID: model.spreadGameID)
-                    .toolbar(removing: .sidebarToggle)
-            } detail: {
-                if let id = model.spreadGameID {
-                    NavigationStack { GameBookView(gameID: id) }
-                        .environment(\.inSplitDetail, true)
-                } else {
-                    NavigationStack { OnboardingView() }
-                }
-            }
-            .navigationSplitViewStyle(.balanced)
-        case .flat where duo.isLandscape:
-            NavigationSplitView(columnVisibility: .constant(.all)) {
-                // §9: the Library takes ~28% of the open display.
-                LibrarySidebar()
-                    .navigationSplitViewColumnWidth(min: 220, ideal: duo.size.width * 0.28, max: duo.size.width * 0.28)
-                    .toolbar(removing: .sidebarToggle)
-            } detail: {
-                if let id = model.spreadGameID {
-                    NavigationStack { SpreadView(gameID: id) }
-                } else {
-                    NavigationStack { OnboardingView() }
-                }
-            }
-        case .flat:
-            if let id = model.spreadGameID {
-                NavigationStack { SpreadView(gameID: id) }
-            } else {
-                NavigationStack { LibraryView() }
-            }
-        case .closed, .tabletop:
-            NavigationStack(path: Binding(
-                get: { model.nav.gameID.map { [$0] } ?? [] },
-                set: { model.nav.gameID = $0.last }
-            )) {
-                LibraryView()
-                    .navigationDestination(for: String.self) { id in GameBookView(gameID: id) }
-            }
-            .tabletopChrome(duo)
+        NavigationStack(path: Binding(
+            get: { model.nav.gameID.map { [$0] } ?? [] },
+            set: { path in model.nav.gameID = path.last }
+        )) {
+            LibraryView()
+                .navigationDestination(for: String.self) { id in GameBookView(gameID: id) }
         }
+        .tabletopChrome(duo)
     }
 }
 

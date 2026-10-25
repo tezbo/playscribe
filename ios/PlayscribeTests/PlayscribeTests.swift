@@ -232,3 +232,28 @@ struct DatePrecisionTests {
         }
     }
 }
+
+@MainActor
+struct GameBookStateTests {
+    @Test("D-2: the open game and selected release survive a relaunch, whatever the pose")
+    func selectionPersists() {
+        let url = URL.temporaryDirectory.appending(path: "d2-\(UUID().uuidString).json")
+        let m = AppModel(storeURL: url)
+        m.openGame("dawnwalker")
+        let other = m.releases("dawnwalker").last!
+        m.select("dawnwalker", releaseID: other.id)
+        m.livePose = .book
+        m.livePose = .closed
+        m.saveNow()
+        let again = AppModel(storeURL: url)
+        #expect(again.nav.gameID == "dawnwalker")
+        #expect(again.selectedRelease("dawnwalker")?.id == other.id)
+        #expect(!again.isUnread(other))
+    }
+
+    @Test("D-4: with nothing selected the Page shows the newest PS5 release")
+    func defaultSelection() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "d4-\(UUID().uuidString).json"))
+        #expect(m.selectedRelease("dawnwalker")?.id == m.ps5Releases("dawnwalker").first?.id)
+    }
+}

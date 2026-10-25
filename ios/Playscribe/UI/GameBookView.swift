@@ -6,56 +6,48 @@ import SwiftUI
 struct GameBookView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
-    @Environment(\.inSplitDetail) private var inSplitDetail
+    @AppStorage(ReadingSide.key) private var pageOnLeft = false
     var gameID: String
-    @State private var headerVisible = true
 
     var body: some View {
         let game = model.game(gameID)
         Group {
-            if duo.pose == .closed || inSplitDetail {
-                ReadingPanel(gameID: gameID, compact: true, headerVisible: $headerVisible)
-            } else if duo.pose == .tabletop && model.nav.chapter == .updates {
-                // TT-2: the Reader. One section on the standing half, its controls on the flat half.
+            if duo.pose == .closed {
+                // Closed (or any compact width, D-11): the stacked game book, Contents hidden.
+                PageView(gameID: gameID, withContents: true)
+            } else if duo.isLandscape {
+                // Side by side: Contents left, Page right by default (D-10).
                 ArrangementView {
-                    TabletopReaderControls(gameID: gameID)
+                    if pageOnLeft { page } else { ContentsView(gameID: gameID) }
                 } secondary: {
-                    TabletopReaderStage(gameID: gameID)
-                        .allowsHitTesting(false)
+                    if pageOnLeft { ContentsView(gameID: gameID) } else { page }
                 }
-                .arrangementViewStyle(.overlay)
+                .arrangementViewStyle(.split)
             } else {
+                // Stacked: the Page on top (the standing half in Tabletop), the Contents below.
                 ArrangementView {
-                    ReadingPanel(gameID: gameID, compact: false, headerVisible: $headerVisible)
-                        .overlayArrangementEdge(.trailing)
+                    page
                 } secondary: {
-                    BookSecondary(gameID: gameID)
-                        .allowsHitTesting(duo.pose != .tabletop)
+                    ContentsView(gameID: gameID)
                 }
-                .arrangementViewStyle(.overlay)
+                .arrangementViewStyle(.split)
             }
         }
-        .overlay {
-            // GR-4: in-book note search, scoped to this game by default.
-            if model.noteQuery.count >= 2 {
-                NoteSearchResults(query: model.noteQuery, scope: model.noteScope, gameID: gameID) { model.noteScope = .allGames }
-            }
-        }
-        .searchable(text: Binding(get: { model.noteQuery }, set: { model.noteQuery = $0 }),
-                    prompt: "Search \(game.map(Self.shortName) ?? "")'s notes")
-        .searchScopes(Binding(get: { model.noteScope }, set: { model.noteScope = $0 })) {
-            ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
-        }
-        .searchSuggestions {
-            ForEach(model.recentSearches, id: \.self) { Text($0).searchCompletion($0) }
-        }
-        .onSubmit(of: .search) { model.rememberSearch(model.noteQuery) }
         .background(Color.ink0)
-        // The large header carries the name; the bar shows it once the header scrolls away.
-        .navigationTitle(headerVisible ? "" : (game?.name ?? ""))
+        .navigationTitle(game?.name ?? "")
+        .toolbar(removing: .title)
         .toolbarTitleDisplayMode(.inline)
         .toolbar { ActionToolbar(actions: model.gameActions(gameID)) }
         .onAppear { model.nav.lastGameID = gameID }
+    }
+
+    /// TT-2: in Tabletop the Page is the paged, display-only reader.
+    @ViewBuilder private var page: some View {
+        if duo.pose == .tabletop && model.nav.chapter == .updates {
+            TabletopReaderStage(gameID: gameID).allowsHitTesting(false)
+        } else {
+            PageView(gameID: gameID)
+        }
     }
 }
 

@@ -73,6 +73,8 @@ struct NavState: Codable, Hashable {
     var sort: LibrarySort = .updated
     var lastGameID: String?
     var noteDraft: [String: String] = [:]
+    /// D-2: the release the Page shows, per game. Optional so older saved state still decodes.
+    var selected: [String: String]?
 }
 
 struct PersistedState: Codable {
@@ -128,6 +130,9 @@ final class AppModel {
     var focusReleaseID: String?
     var focusToken = 0
     var showDebugOverlay = false
+    /// The pose being laid out right now, written by RootView as it renders. Lets navigation
+    /// bindings tell a user's Back from a container being torn down by a pose change. Not observed.
+    @ObservationIgnored var livePose: Pose = .closed
     /// Tabletop Reader: the section shown per game (TT-2). Transient.
     var readerIndex: [String: Int] = [:]
     var feedStatus: FeedStatus = .idle
@@ -328,6 +333,7 @@ final class AppModel {
         n.lastGameID = gameID
         n.chapter = chapter ?? (sameGame ? n.chapter : .updates)
         if let releaseID {
+            n.selected = (n.selected ?? [:]).merging([gameID: releaseID]) { $1 }
             n.expanded["rel:\(releaseID)"] = true
             n.anchors[Self.bookKey(gameID, .updates)] = "rel-\(releaseID)"
         } else if !sameGame, let first = ps5Releases(gameID).first {
@@ -339,6 +345,19 @@ final class AppModel {
         if pill?.gameID == gameID { pill = nil }
         focusReleaseID = releaseID
         focusToken += 1
+    }
+
+    /// D-2/D-3: the release the Page shows: the one picked, else the newest On PS5 release.
+    func selectedRelease(_ gameID: String) -> Release? {
+        if let id = nav.selected?[gameID], let r = release(gameID, id) { return r }
+        return ps5Releases(gameID).first ?? releases(gameID).first
+    }
+
+    /// D-4: picking a release in the Contents changes the Page in place; no navigation.
+    func select(_ gameID: String, releaseID: String) {
+        nav.selected = (nav.selected ?? [:]).merging([gameID: releaseID]) { $1 }
+        readerIndex[gameID] = 0
+        if let r = release(gameID, releaseID), isUnread(r) { markRead(r.id) }
     }
 
     static func bookKey(_ gameID: String, _ chapter: Chapter) -> String { "book-\(gameID)-\(chapter.rawValue)" }

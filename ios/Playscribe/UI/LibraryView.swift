@@ -8,8 +8,8 @@ struct LibraryView: View {
         Group {
             if model.data.collection.isEmpty {
                 OnboardingView()
-            } else if duo.isFolded {
-                // Book and tabletop: the fold splits the shelf from its stage (B-5, B-6).
+            } else if duo.pose == .tabletop {
+                // D-5: the standing half shows the Continue art, display only; the grid is below.
                 ArrangementView {
                     LibraryShelf()
                 } secondary: {
@@ -35,8 +35,7 @@ struct LibraryView: View {
     }
 }
 
-/// The stage beside or above the shelf when folded: key art and title. In tabletop it is view
-/// only (G-4); on the book's left page it also offers Continue (B-6).
+/// Tabletop's standing half: the Continue art and title, view only (G-4, D-5).
 struct LibraryStage: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
@@ -51,18 +50,12 @@ struct LibraryStage: View {
                     Text(game.name).font(PlayscribeFont.title2.bold()).lineLimit(3)
                     if let c = model.continueItem, c.game.id == game.id {
                         Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
-                        if duo.pose == .book {
-                            Button("Continue reading") { model.openGame(c.game.id, chapter: .updates, releaseID: c.release.id) }
-                                .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
-                                .hitTarget()
-                                .tappableFrame()
-                        }
                     }
                 }
             }
             .padding(20)
         }
-        .allowsHitTesting(duo.pose != .tabletop)
+        .allowsHitTesting(false)
         .accessibilityElement(children: .contain)
     }
 }
@@ -83,13 +76,24 @@ struct LibraryShelf: View {
         }
     }
 
+    /// Book: an even column count across both pages (Apple: prefer an even number of columns).
+    private var columns: [GridItem] {
+        guard duo.pose == .book else {
+            return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize), spacing: 14, alignment: .top)]
+        }
+        let usable = duo.size.width - 32 - railWidth
+        var n = max(2, Int((usable + 14) / (tileSize + 14)))
+        if n.isMultiple(of: 2) == false { n -= 1 }
+        return Array(repeating: GridItem(.flexible(), spacing: 14, alignment: .top), count: max(2, n))
+    }
+
     var body: some View {
         @Bindable var model = model
         let rows = model.shownRows()
         let all = model.libraryRows
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 12) {
-                if !duo.isFolded, duo.pose != .closed, let featured = model.featuredGame {
+                if duo.pose == .flat, let featured = model.featuredGame {
                     FeatureBanner(game: featured)
                 }
                 if let line = model.feedStatusLine {
@@ -109,7 +113,7 @@ struct LibraryShelf: View {
                         .submitLabel(.search)
                         .frame(minHeight: 44)
                 }
-                if all.count >= 2 && duo.pose != .tabletop { FilterBar() }
+                if all.count >= 2 { FilterBar() }
 
                 if rows.isEmpty {
                     VStack(spacing: 12) {
@@ -120,19 +124,15 @@ struct LibraryShelf: View {
                     .padding(.vertical, 40)
                 }
 
-                if duo.pose == .tabletop {
-                    // TT-3: one row of covers on the flat half; the Continue art is on the stage.
-                    CoverShelf(selected: model.continueItem?.game.id)
-                        .padding(.horizontal, -16)
-                    if all.count >= 2 { FilterBar() }
-                } else if duo.pose == .closed {
+                if duo.pose == .closed {
                     if let c = model.continueItem { ContinueRow(game: c.game, release: c.release) }
                     ForEach(rows) { row in
                         GameRow(row: row).id("lib-\(row.id)")
                     }
                 } else {
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: tileSize, maximum: tileSize), spacing: 14, alignment: .top)],
-                              alignment: .leading, spacing: 16) {
+                    // D-5: one grid. In the book pose an even number of columns, so the fold falls
+                    // between two columns, never through a cover.
+                    LazyVGrid(columns: columns, alignment: .leading, spacing: 16) {
                         if let c = model.continueItem {
                             ContinueTile(game: c.game, release: c.release, size: tileSize)
                         }
@@ -471,38 +471,3 @@ struct NotificationInviteCard: View {
 }
 
 /// Open landscape sidebar (G-1).
-struct LibrarySidebar: View {
-    @Environment(AppModel.self) private var model
-    var body: some View {
-        // O-5: the game shown on the other page is marked, so the two pages read as one.
-        let selected = model.spreadGameID
-        List(selection: Binding(get: { model.nav.gameID }, set: { if let id = $0 { model.openGame(id) } })) {
-            ForEach(model.shownRows()) { row in
-                HStack(spacing: 12) {
-                    CoverView(game: row.game, cornerRadius: 4).frame(width: 36)
-                    VStack(alignment: .leading) {
-                        Text(row.game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
-                        Text(row.latest?.displayName ?? "No PS5 notes yet").font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                    }
-                    Spacer()
-                    if row.unread > 0 { UnreadBadge(count: row.unread) }
-                }
-                .tag(row.id)
-                .listRowBackground(row.id == selected
-                    ? RoundedRectangle(cornerRadius: 10, style: .continuous).fill(PlayscribeColor.ink700)
-                        .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(PlayscribeColor.vellum300.opacity(0.35)))
-                        .padding(.horizontal, 8)
-                    : nil)
-                .accessibilityAddTraits(row.id == selected ? .isSelected : [])
-            }
-        }
-        .scrollContentBackground(.hidden)
-        .navigationTitle("Library")
-        .toolbarTitleDisplayMode(.large)
-        .toolbar {
-            ToolbarItem(placement: .topBarPinnedTrailing) {
-                Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
-            }
-        }
-    }
-}
