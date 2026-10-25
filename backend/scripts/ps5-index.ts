@@ -5,7 +5,9 @@
 // Dates:
 //   d  the game's own PS5 release. Only PS5 release_dates rows count; a full release beats
 //      alpha/beta/early access; "patch release" rows (IGDB's next-gen upgrade patches) are not
-//      releases and never count. No PS5 date means no `d`, never another platform's date.
+//      releases and never count, nor are rows dated before the PS5 launch. No PS5 date means no
+//      `d`, never another platform's date.
+//   e  true when `d` is early access (or alpha/beta): the game has no full PS5 release yet.
 //   b  the PS4 release, only when it came before `d` (or there is no `d`): PS4 games play on PS5,
 //      so this is when PS5 owners could first play it (Roblox: PS4 Oct 2023, native PS5 Apr 2026).
 // Known IGDB gaps are corrected from scripts/ps5-date-overrides.json, each with its evidence.
@@ -15,6 +17,7 @@
 //   npm run ps5-index -- --inspect 1020,17269     # print every PS5/PS4 release_dates row for these ids
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { Igdb } from '../src/ingest/igdb.ts'
+import { day, ps5DatesOf, problemsOf, type Override, type ReleaseDate } from '../src/ps5-dates.ts'
 
 const OUT = new URL('../../ios/Playscribe/Resources/Data/ps5-index.json', import.meta.url)
 const { TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET } = process.env
@@ -28,37 +31,19 @@ const args = process.argv.slice(2)
 const [ps5] = await igdb.query<{ id: number }>('platforms', 'fields id; where slug = "ps5"; limit 1;')
 const [ps4] = await igdb.query<{ id: number }>('platforms', 'fields id; where slug = "ps4--1"; limit 1;')
 if (!ps5 || !ps4) throw new Error('PS5 or PS4 platform not found')
-const overrides = JSON.parse(readFileSync(new URL('./ps5-date-overrides.json', import.meta.url), 'utf8')) as Record<string, { d?: string; b?: string; evidence: string }>
+const overrides = JSON.parse(readFileSync(new URL('./ps5-date-overrides.json', import.meta.url), 'utf8')) as Record<string, Override>
 const statuses = await igdb.query<{ id: number; name: string }>('release_date_statuses', 'fields id,name; limit 50;')
 const statusName = new Map(statuses.map((s) => [s.id, s.name]))
 
-interface ReleaseDate { date?: number; platform: number; status?: number; human?: string; release_region?: number }
-
-const day = (s?: number) => (s ? new Date(s * 1000).toISOString().slice(0, 10) : undefined)
-
-/** A platform's release: earliest full release, else earliest date of any status except patch releases. */
-export const releaseDateOf = (rows: ReleaseDate[] | undefined, platformId: number, nameOf: (id?: number) => string | undefined) => {
-  const onPs5 = (rows ?? []).filter((r) => r.platform === platformId && r.date && !/patch/i.test(nameOf(r.status) ?? ''))
-  const full = onPs5.filter((r) => r.status == null || /full release/i.test(nameOf(r.status) ?? ''))
-  const pick = (list: ReleaseDate[]) => list.map((r) => r.date!).sort((a, b) => a - b)[0]
-  return day(pick(full) ?? pick(onPs5))
-}
-
-const datesOf = (id: number, rows: ReleaseDate[] | undefined) => {
-  const nameOf = (i?: number) => statusName.get(i!)
-  const d = releaseDateOf(rows, ps5.id, nameOf)
-  const ps4Date = releaseDateOf(rows, ps4.id, nameOf)
-  const out = { d, b: ps4Date && (!d || ps4Date < d) ? ps4Date : undefined }
-  const o = overrides[String(id)]
-  return o ? { d: o.d ?? out.d, b: o.b ?? out.b } : out
-}
+const datesOf = (id: number, rows: ReleaseDate[] | undefined) =>
+  ps5DatesOf(rows, { ps5: ps5.id, ps4: ps4.id }, (i) => statusName.get(i!), overrides[String(id)])
 
 if (args.includes('--inspect')) {
   const ids = args[args.indexOf('--inspect') + 1]!.split(',').map(Number)
   const rows = await igdb.query<any>('games', `fields name,first_release_date,release_dates.date,release_dates.platform,release_dates.status,release_dates.human,release_dates.release_region; where id = (${ids.join(',')});`)
   for (const g of rows) {
-    const { d, b } = datesOf(g.id, g.release_dates)
-    console.log(`${g.id} ${g.name} first_release=${day(g.first_release_date)} → d=${d ?? '-'} b=${b ?? '-'}`)
+    const { d, e, b } = datesOf(g.id, g.release_dates)
+    console.log(`${g.id} ${g.name} first_release=${day(g.first_release_date)} → d=${d ?? '-'}${e ? ' (early access)' : ''} b=${b ?? '-'}`)
     for (const r of (g.release_dates ?? []).filter((r: ReleaseDate) => r.platform === ps5.id || r.platform === ps4.id))
       console.log(`  ${r.platform === ps5.id ? 'PS5' : 'PS4'} ${day(r.date) ?? '-'}  ${r.human ?? ''}  status=${statusName.get(r.status!) ?? r.status ?? '-'} region=${r.release_region ?? '-'}`)
   }
@@ -80,7 +65,7 @@ for (let offset = 0; offset < 10000; offset += 500) {
 const old = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, 'utf8')) as { games: { i: number; t?: string[] }[] }) : { games: [] }
 const tones = new Map(old.games.filter((g) => g.t).map((g) => [g.i, g.t]))
 
-const games: { i: number; n: string; d?: string; b?: string; v?: string; p?: string; c?: string; t?: string[]; r: number }[] = []
+const games: { i: number; n: string; d?: string; e?: true; b?: string; v?: string; p?: string; c?: string; t?: string[]; r: number }[] = []
 for (let offset = 0; ; offset += 500) {
   const page = await igdb.query<any>(
     'games',
@@ -96,10 +81,16 @@ for (let offset = 0; ; offset += 500) {
 }
 games.sort((a, b) => (rankOf.get(a.i) ?? Infinity) - (rankOf.get(b.i) ?? Infinity) || b.r - a.r)
 
+const problems = problemsOf(games)
+if (problems.length) {
+  console.error(problems.join('\n') + '\nNothing written.')
+  process.exit(1)
+}
+
 const index = {
   fetchedAt: new Date().toISOString(),
   count: games.length,
   games: games.map(({ r: _r, ...g }) => Object.fromEntries(Object.entries(g).filter(([, v]) => v !== undefined))),
 }
 writeFileSync(OUT, JSON.stringify(index) + '\n')
-console.log(`wrote ${OUT.pathname}: ${games.length} games, ${games.filter((g) => !g.d).length} without a PS5 date`)
+console.log(`wrote ${OUT.pathname}: ${games.length} games, ${games.filter((g) => !g.d).length} without a PS5 date, ${games.filter((g) => g.e).length} in early access`)
