@@ -1,5 +1,15 @@
 import SwiftUI
 
+/// True for a game book shown as the right page of the book-pose split view: it reads as one
+/// page, so it uses the single-column layout rather than an arrangement across the fold.
+private struct InSplitDetailKey: EnvironmentKey { static let defaultValue = false }
+extension EnvironmentValues {
+    var inSplitDetail: Bool {
+        get { self[InSplitDetailKey.self] }
+        set { self[InSplitDetailKey.self] = newValue }
+    }
+}
+
 /// Width the tabletop rail takes from the lower half's trailing edge.
 private struct RailWidthKey: EnvironmentKey { static let defaultValue: CGFloat = 0 }
 extension EnvironmentValues {
@@ -11,6 +21,12 @@ extension EnvironmentValues {
 
 struct RootView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    /// T-2: one spring for every pose change; T-4: a short cross-fade under Reduce Motion.
+    private var poseAnimation: Animation {
+        reduceMotion ? .easeInOut(duration: 0.2) : .spring(duration: 0.45, bounce: 0.12)
+    }
     @AppStorage("didShowSplash") private var didShowSplash = false
     @State private var splashVisible = false
     @State private var frames: [CGRect] = []
@@ -35,6 +51,7 @@ struct RootView: View {
                         .zIndex(10)
                 }
             }
+            .animation(poseAnimation, value: duo.pose)
             .onPreferenceChange(TappableFrameKey.self) { frames = $0 }
             .overlay {
                 if model.showDebugOverlay { DebugOverlay(frames: frames, duo: duo) }
@@ -97,24 +114,47 @@ extension View {
     }
 }
 
-/// Library tab: a stack everywhere except the open inner display in landscape, where it is a
-/// split view with the library as sidebar (G-1).
+/// Library tab, per pose (docs/ux-acceptance.md §9 table):
+///   closed, tabletop → a stack: Library, then the game book pushed (Back)
+///   book             → split view: art + Library on the left page, the game book on the right
+///   open landscape   → split view: Library sidebar, the Spread in the detail
+///   open portrait    → the Spread with a cover shelf
+/// Pose changes are layout changes: the open game, chapter and reading state live in the model.
 struct LibraryRoot: View {
     @Environment(AppModel.self) private var model
     var duo: DuoContext
 
     var body: some View {
-        if duo.pose == .flat && duo.isLandscape {
-            NavigationSplitView {
-                LibrarySidebar()
+        switch duo.pose {
+        case .book:
+            NavigationSplitView(columnVisibility: .constant(.all)) {
+                BookLeftPage(gameID: model.spreadGameID)
             } detail: {
-                if let id = model.nav.gameID {
+                if let id = model.spreadGameID {
                     NavigationStack { GameBookView(gameID: id) }
+                        .environment(\.inSplitDetail, true)
                 } else {
-                    ContentUnavailableView("Choose a game", systemImage: "book", description: Text("Its patch journal and game book open here."))
+                    NavigationStack { OnboardingView() }
                 }
             }
-        } else {
+            .navigationSplitViewStyle(.balanced)
+        case .flat where duo.isLandscape:
+            NavigationSplitView(columnVisibility: .constant(.all)) {
+                LibrarySidebar()
+            } detail: {
+                if let id = model.spreadGameID {
+                    NavigationStack { SpreadView(gameID: id) }
+                } else {
+                    NavigationStack { OnboardingView() }
+                }
+            }
+        case .flat:
+            if let id = model.spreadGameID {
+                NavigationStack { SpreadView(gameID: id) }
+            } else {
+                NavigationStack { LibraryView() }
+            }
+        case .closed, .tabletop:
             NavigationStack(path: Binding(
                 get: { model.nav.gameID.map { [$0] } ?? [] },
                 set: { model.nav.gameID = $0.last }

@@ -1,4 +1,4 @@
-# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v1.1, 2026-10-24: G-12 and G-13 added)
+# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v1.2, 2026-10-25: section 9 Open pose and transitions added; v1.1 added G-12, G-13)
 
 Owner: UX/CX QA thread. Decided 2026-10-24 under Terry's delegation. This is the contract the SwiftUI app builds against and QA tests against. Put it in the repo as `docs/ux-acceptance.md`. IDs are stable: cite them in commits and test names.
 
@@ -160,6 +160,41 @@ Decision: the native launch screen is a plain background colour matching the Lib
 - **E-5** Errors that block a user action (for example, adding a game fails) use a system alert with one action.
 - **E-6** Stale data: if a release was checked more than 24 h ago, its facts show "Checked <date>" in the secondary text style.
 
-## 9. QA method
+## 9. Open pose ("the Spread") and pose transitions
+
+Decided 2026-10-25 under Terry's brief: Book pose = the current Open left side plus the Book right side, and the fully Open pose designed fresh. Visual: https://claude.ai/artifact/QEhYMVpHujvaGtMGU9ehZ1 (copy: qa/design/the-spread.html).
+
+Apple basis (fetched 2026-10-25, unchanged from baseline): show an extra level of hierarchy on the inner display; a header may span the full width while scrolling content stays inset; split views adapt their column widths to the fold; favour small adjustments over rearrangement when folding; keep navigation outside arrangement views; `backgroundExtensionEffect()` extends detail content under the sidebar. Everything else in this section is a design decision.
+
+**Five pieces, in every pose:** Art (the game's key art), Library, Page (the open release), Margin (PS5 facts: status, PS5 version, download size and tag, video), Controls (system toolbar and tab bar).
+
+| Pose | Art | Library | Page | Margin | Controls |
+|---|---|---|---|---|---|
+| Closed | 16:9 header | behind Back (stack) | full column | card under the release | trailing rail |
+| Book | left page, top (hero frame) | left page, below the art | right page | card under the release, right page | trailing rail |
+| Open landscape | edge to edge, top ~44% of height | leading column, ~28% | centre column, raised over the art's lower edge by ~15% of the art's height | trailing column, ~25%, no card fill | trailing rail |
+| Open portrait | full width, top ~40% | cover shelf (one row) under the art | lower leading ~60% | lower trailing ~35%, no card fill | system top and bottom bars |
+| Tabletop | entire upper half, display only (video plays here) | via the Library tab | lower half | card under the release | trailing rail, lower half |
+
+- **O-1** Open never shows an empty detail. With no game chosen it opens the Continue game, else the most recently updated game.
+- **O-2** Art in Open landscape is `StageArt().backgroundExtensionEffect()` in the detail column, so it runs under the Library. It shows the game title (Literata title, at most 2 lines) bottom-leading, inside the Library's width, never under the Page.
+- **O-3** The Page is a card (ink 800, vellum hairline) raised over the art. Reading measure stays at 55 to 75 characters. Wider space goes to the Margin, never to a longer line.
+- **O-4** The Margin is the same view as the closed and Book facts card (`matchedGeometryEffect(id: "facts.<releaseID>")`). It is shown as a column only when the detail is at least 560 pt wide and no `.division` reserved region exists; otherwise it is the inline card.
+- **O-5** The Library in Open landscape is the sidebar of the root `NavigationSplitView`, with the selected game highlighted and unread dots visible. In Open portrait it is a single-row cover shelf (58 × 82 pt covers, selected one ringed in ember, 44 pt+ targets).
+- **O-6** Everything tappable in Open meets G-7. Nothing sits under the system rail or bars.
+
+**Transitions.** Pose changes are layout changes, not navigations: nothing pushes, pops or reloads.
+- **T-1** Same pieces, same identity: Art, Page and Margin keep their view identity across poses (matched geometry), so they move and resize instead of fading out and in.
+- **T-2** One motion: `.spring(duration: 0.45, bounce: 0.12)`, staggered Art 0 ms, Page 40 ms, Library 80 ms, Margin 120 ms. It is interruptible: a pose change during an animation retargets from the current frame.
+- **T-3** Text never scales during a transition. It reflows at its final size and the container animates around it.
+- **T-4** Reduce Motion: a 0.2 s cross-fade, no movement.
+- **T-5** The reading anchor (P-1) is restored in the same frame the layout settles. The release header that was at the top stays at the top.
+- **T-6** Closed to Open: the art header grows into the full-width band, the Page lands in the centre column at the same scroll anchor, the Library slides in from leading, and the Margin slides out from under the Page. If the closed display showed the Library list, the list becomes the sidebar at the same scroll position and the Page shows the O-1 game.
+- **T-7** Open to Closed: what had focus last wins. If the Page or Margin had focus, the closed display shows that game book; if the Library had focus, it shows the Library.
+- **T-8** Open to Book: the gutter opens on the fold. The art contracts into the left page above the Library, and the Margin tucks under the release as a card. The split line sits on the fold (system split view behaviour).
+- **T-9** Open landscape to Open portrait or Tabletop (rotation): the art takes the top band or upper half; the Library becomes the shelf (portrait) or steps back to the Library tab (tabletop); controls move to the system position for that pose.
+- **T-10** A playing video keeps playing through every transition (P-2). In Tabletop it moves into the upper-half stage; in Open it stays in the Margin.
+
+## 10. QA method
 
 QA re-runs these as a checklist on each build. It uses simulator or Device Hub screenshots for: Library, Add game, game book, video and a notification arrival, each in Closed, Open portrait, Open landscape, Book and Tabletop. It adds an Accessibility Inspector audit and AX5 Dynamic Type screenshots of Library and game book. G-4 and G-5 are measured from frames, not judged by eye. Builds should expose a debug overlay that outlines tappable frames and reserved regions.

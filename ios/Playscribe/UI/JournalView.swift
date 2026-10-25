@@ -145,15 +145,25 @@ struct ReleaseTag: View {
     }
 }
 
+/// The release whose facts the Spread shows in its Margin column (O-4), if any.
+private struct MarginReleaseKey: EnvironmentKey { static let defaultValue: String? = nil }
+extension EnvironmentValues {
+    var marginReleaseID: String? {
+        get { self[MarginReleaseKey.self] }
+        set { self[MarginReleaseKey.self] = newValue }
+    }
+}
+
 struct ReleaseBody: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.marginReleaseID) private var marginReleaseID
     var release: Release
 
     var body: some View {
         let r = release
         VStack(alignment: .leading, spacing: 14) {
             if let h = r.headline { Text(h).font(PlayscribeFont.body.weight(.semibold)) }
-            Facts(release: r)
+            if marginReleaseID != r.id { FactsCard(release: r) }
             if let summary = r.summary {
                 VStack(alignment: .leading, spacing: 8) {
                     Label("\(Brand.name) summary", systemImage: "sparkles").font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(.secondary)
@@ -194,6 +204,16 @@ struct ReleaseBody: View {
                 }
             }
         }
+    }
+}
+
+/// The facts card (the Margin's inline form, O-4).
+struct FactsCard: View {
+    var release: Release
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) { Facts(release: release) }
+            .padding(12)
+            .background(Color.ink1.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 }
 

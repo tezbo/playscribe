@@ -6,13 +6,14 @@ import SwiftUI
 struct GameBookView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.inSplitDetail) private var inSplitDetail
     var gameID: String
     @State private var headerVisible = true
 
     var body: some View {
         let game = model.game(gameID)
         Group {
-            if duo.pose == .closed {
+            if duo.pose == .closed || inSplitDetail {
                 ReadingPanel(gameID: gameID, compact: true, headerVisible: $headerVisible)
             } else {
                 ArrangementView {
@@ -142,6 +143,8 @@ struct ReadingPanel: View {
     var gameID: String
     var compact: Bool
     @Binding var headerVisible: Bool
+    /// The Spread's Page: no hero (the art is above it) and no floating-card frame.
+    var spreadPage = false
     @State private var position = ScrollPosition(idType: String.self)
 
     var body: some View {
@@ -164,7 +167,7 @@ struct ReadingPanel: View {
             .scrollTargetLayout()
             .padding(.horizontal, compact ? 16 : 20)
             .padding(.vertical, 16)
-            .padding(.trailing, railWidth)
+            .padding(.trailing, spreadPage ? 0 : railWidth)
         }
         // R-1 / N-6: a deep link or jump brings its release header to the top, including on a
         // cold launch, where rows inside the journal are not direct scroll targets.
@@ -178,11 +181,11 @@ struct ReadingPanel: View {
         }
         .scrollPosition($position, anchor: .top)
         .background(panelBackground)
-        .modifier(FlatCard(enabled: !compact && !duo.isFolded, landscape: duo.isLandscape))
+        .modifier(FlatCard(enabled: !compact && !duo.isFolded && !spreadPage, landscape: duo.isLandscape))
     }
 
     @ViewBuilder private var panelBackground: some View {
-        if compact || duo.isFolded { Color.ink1.ignoresSafeArea() } else { Rectangle().fill(.regularMaterial) }
+        if spreadPage { Color.clear } else if compact || duo.isFolded { Color.ink1.ignoresSafeArea() } else { Rectangle().fill(.regularMaterial) }
     }
 
     private var header: some View {
