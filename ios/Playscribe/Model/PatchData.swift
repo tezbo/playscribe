@@ -204,6 +204,37 @@ struct ReleaseVideo: Codable, Hashable {
     var watchURL: URL { URL(string: "https://www.youtube.com/watch?v=\(youtubeID)")! }
 }
 
+// MARK: - PS5-only content (GR-2)
+
+enum PCOnly {
+    /// Terms that mark a line as PC-only: PC hardware, upscalers and frame generation, mouse and
+    /// keyboard, Steam and Steam Deck, GPU vendors. Such lines never lead a PS5 page or a push.
+    static let pattern = try! Regex(#"(?i)\b(frame ?gen\w*|dlss|fsr|xess|amd|radeon|nvidia|geforce|rtx|intel arc|steam( deck)?|mouse|keyboard|ultrawide|vram|directx|dx1[12]|vulkan)\b"#)
+
+    static func matches(_ text: String) -> Bool { text.contains(pattern) }
+}
+
+extension NoteItem {
+    /// Applies only to PC: tagged so, or naming PC-only hardware or features.
+    var isPCOnly: Bool {
+        if let p = platforms, !p.contains(.ps5) { return true }
+        return PCOnly.matches(text)
+    }
+}
+
+extension Release {
+    /// Key changes fit for a PS5 page: PC-only lines removed.
+    var ps5KeyChanges: [String] { (keyChanges ?? []).filter { !PCOnly.matches($0) } }
+
+    /// The headline for a PS5 page; a PC-only headline gives way to the top PS5 key change.
+    var ps5Headline: String? {
+        if let h = headline, !PCOnly.matches(h) { return h }
+        return ps5KeyChanges.first ?? (headline == nil ? nil : displayName)
+    }
+
+    var ps5Summary: String? { summary.flatMap { PCOnly.matches($0) ? nil : $0 } }
+}
+
 // MARK: - PS5 state (docs/ux-acceptance.md, "PS5 verification states")
 
 enum PS5State: Hashable {

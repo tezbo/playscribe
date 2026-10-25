@@ -116,6 +116,12 @@ final class AppModel {
     var settingsOpen = false
     var player: (gameID: String, releaseID: String)?
     var highlight: String?
+    /// GR-4: the in-book and Search tab note query, and its scope. Kept across pose changes (P-1).
+    var noteQuery = ""
+    var noteScope: NoteScope = .thisGame
+    var recentSearches: [String] = []
+    /// GR-7: games just added together, highlighted in the Library.
+    var highlightSet: Set<String> = []
     /// Set when a deep link asks the journal to bring a release to the top.
     var focusReleaseID: String?
     var focusToken = 0
@@ -405,9 +411,14 @@ final class AppModel {
     }
 
     func markAllRead(_ gameID: String) {
-        for r in releases(gameID) where r.ps5State == .onPS5 { data.read[r.id] = .now }
+        let ids = releases(gameID).filter(isUnread).map(\.id)
+        for id in ids { data.read[id] = .now }
         NotificationService.shared.updateBadge(badgeCount)
-        show(Toast(text: "All updates marked as read"))
+        show(Toast(text: "\(ids.count) update\(ids.count == 1 ? "" : "s") marked read", undo: { [weak self] in
+            guard let self else { return }
+            for id in ids { self.data.read[id] = nil }
+            NotificationService.shared.updateBadge(self.badgeCount)
+        }))
     }
 
     func toggleBookmark(kind: Bookmark.Kind, id: String, gameID: String) {
@@ -447,6 +458,25 @@ final class AppModel {
     // MARK: - Library
 
     func addGame(_ game: CatalogGame, status: OwnershipStatus) {
+        addGames([game], status: status)
+    }
+
+    /// GR-7: add one or more games with a single Undo. A future game defaults to Wishlist (GR-5).
+    func addGames(_ list: [CatalogGame], status: OwnershipStatus) {
+        let new = list.filter { entry($0.id) == nil }
+        guard !new.isEmpty else { return }
+        for g in new { insertGame(g, status: status == .owned && g.isUpcoming ? .wishlist : status) }
+        let ids = new.map(\.id)
+        nav.filter = .all
+        highlight = new.count == 1 ? ids[0] : nil
+        highlightSet = Set(ids)
+        nav.anchors["library"] = "lib-\(ids[0])"
+        let text = new.count == 1 ? "Added \(new[0].name)" : "Added \(new.count) games"
+        show(Toast(text: text, undo: { [weak self] in ids.forEach { self?.removeGame($0, toast: false) } }))
+        NotificationService.shared.updateBadge(badgeCount)
+    }
+
+    private func insertGame(_ game: CatalogGame, status: OwnershipStatus) {
         guard entry(game.id) == nil else { return }
         let isFirst = data.collection.isEmpty
         if fixtures.games.first(where: { $0.id == game.id }) == nil, !data.customGames.contains(where: { $0.id == game.id }) {
@@ -455,11 +485,6 @@ final class AppModel {
         data.collection.insert(CollectionEntry(gameID: game.id, status: status, addedAt: .now), at: 0)
         // A-9: Owned follows all updates; Wishlist and Watching follow major ones.
         if data.notify[game.id] == nil { data.notify[game.id] = NotifyPref(level: status == .owned ? .all : .major) }
-        nav.filter = .all
-        highlight = game.id
-        nav.anchors["library"] = "lib-\(game.id)"
-        show(Toast(text: "Added \(game.name)", undo: { [weak self] in self?.removeGame(game.id, toast: false) }))
-        NotificationService.shared.updateBadge(badgeCount)
         if isFirst { data.notificationCardShows = max(data.notificationCardShows, 0) }
     }
 

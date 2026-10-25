@@ -35,12 +35,36 @@ struct GameBookView: View {
                 .arrangementViewStyle(.overlay)
             }
         }
+        .overlay {
+            // GR-4: in-book note search, scoped to this game by default.
+            if model.noteQuery.count >= 2 {
+                NoteSearchResults(query: model.noteQuery, scope: model.noteScope, gameID: gameID) { model.noteScope = .allGames }
+            }
+        }
+        .searchable(text: Binding(get: { model.noteQuery }, set: { model.noteQuery = $0 }),
+                    prompt: "Search \(game.map(Self.shortName) ?? "")'s notes")
+        .searchScopes(Binding(get: { model.noteScope }, set: { model.noteScope = $0 })) {
+            ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
+        }
+        .searchSuggestions {
+            ForEach(model.recentSearches, id: \.self) { Text($0).searchCompletion($0) }
+        }
+        .onSubmit(of: .search) { model.rememberSearch(model.noteQuery) }
         .background(Color.ink0)
         // The large header carries the name; the bar shows it once the header scrolls away.
         .navigationTitle(headerVisible ? "" : (game?.name ?? ""))
         .toolbarTitleDisplayMode(.inline)
         .toolbar { ActionToolbar(actions: model.gameActions(gameID)) }
         .onAppear { model.nav.lastGameID = gameID }
+    }
+}
+
+extension GameBookView {
+    /// "Dawnwalker" for "The Blood of Dawnwalker": the last word of a long name, for placeholders.
+    static func shortName(_ g: CatalogGame) -> String {
+        let words = g.name.split(separator: " ")
+        guard words.count > 2 else { return g.name }
+        return words.last.map(String.init)?.trimmingCharacters(in: .punctuationCharacters) ?? g.name
     }
 }
 

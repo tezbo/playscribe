@@ -62,6 +62,8 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     /// on PS5 through its PS4 version. Dates before the PS5 launch are never shown.
     var ps5DateLine: String? {
         if earlyAccess == true { return "Early access" }
+        // GR-5: a future date never says "Released".
+        if let d = releaseDate?.isoDay, d > .now { return Self.outLine(d) }
         let launch = Self.ps5Launch
         if let d = releaseDate?.isoDay, d >= launch, playableSince.flatMap(\.isoDay).map({ $0 >= launch && $0 < d }) != true {
             // An older game's native PS5 edition (it had an earlier PS4 release) vs a PS5 first.
@@ -73,6 +75,22 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         }
         if let d = releaseDate?.isoDay, d < launch { return "Plays on PS5 (PS4 version)" }
         return nil
+    }
+
+    /// "Out 19 Nov" this year, "Out 19 Nov 2027" for a later year.
+    static func outLine(_ d: Date) -> String {
+        let sameYear = Calendar.current.component(.year, from: d) == Calendar.current.component(.year, from: .now)
+        return "Out " + (sameYear ? d.dayMonth : d.formatted(.dateTime.day().month(.abbreviated).year()))
+    }
+
+    var isUpcoming: Bool { releaseDate?.isoDay.map { $0 > .now } ?? false }
+
+    /// GR-1: when the game is (or will be) out on PS5, for games with no notes yet.
+    var ps5AvailabilityLine: String {
+        guard let d = releaseDate?.isoDay else { return "Release date TBA" }
+        if d > .now { return Self.outLine(d) }
+        let since = max(d, Self.ps5Launch)
+        return "Out on PS5 since \(since.shortDay)"
     }
 
     /// Key art for stages and the Continue tile, falling back to the cover.
@@ -125,11 +143,13 @@ struct Fixtures {
 
     private static func load() -> Fixtures {
         let catalog: CatalogFile = decode("catalog")
+        let book: [BookEntry] = decode("book")
         return Fixtures(
             games: catalog.games,
             seedCollection: catalog.seedCollection,
             releases: decode("releases"),
-            book: decode("book"),
+            // GR-2: the game book is a PS5 page, so PC-only help (GPU crashes, frame generation) stays out.
+            book: book.filter { !PCOnly.matches($0.title + " " + $0.body) },
             gallery: decode("gallery")
         )
     }

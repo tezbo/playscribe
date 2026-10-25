@@ -131,7 +131,19 @@ struct SearchView: View {
             }
         }
         .contentMargins(.trailing, railWidth, for: .scrollContent)
+        .overlay {
+            if query.count >= 2 && model.noteScope == .thisGame && model.nav.lastGameID != nil {
+                NoteSearchResults(query: query, scope: .thisGame, gameID: model.nav.lastGameID) { model.noteScope = .allGames }
+            }
+        }
         .searchable(text: $query, prompt: "Games, patch notes, characters…")
+        .searchScopes(Binding(get: { model.noteScope }, set: { model.noteScope = $0 })) {
+            ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
+        }
+        .searchSuggestions {
+            ForEach(model.recentSearches, id: \.self) { Text($0).searchCompletion($0) }
+        }
+        .onSubmit(of: .search) { model.rememberSearch(query) }
         .navigationTitle("Search")
     }
 }
