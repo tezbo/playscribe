@@ -12,6 +12,7 @@
 //      IGDB stores it), or tbd when IGDB lists a PS5 release with no date. Absent means a day.
 //   a  landscape key art (IGDB artworks image_id, textless key art first) for the app to
 //      centre-crop to the square tile; absent when IGDB has none, and the app uses `c`.
+//   s  the studio's square cover (IGDB "Square cover" artwork), shown as the tile as it is. Rare.
 //   e  true when `d` is early access and there is no full release yet.
 //   b  the PS4 release, only when it came before `d` (or there is no `d`): PS4 games play on PS5,
 //      so this is when PS5 owners could first play it (Roblox: PS4 Oct 2023, native PS5 Apr 2026).
@@ -22,7 +23,7 @@
 //   npm run ps5-index -- --inspect 1020,17269     # print every PS5/PS4 release_dates row for these ids
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { Igdb } from '../src/ingest/igdb.ts'
-import { artworkFields, artworkOf, artworkTypes } from '../src/artwork.ts'
+import { artworkFields, artworkOf, artworkTypes, squareCoverOf } from '../src/artwork.ts'
 import { day, ps5DatesOf, problemsOf, type Override, type ReleaseDate } from '../src/ps5-dates.ts'
 
 const OUT = new URL('../../ios/Playscribe/Resources/Data/ps5-index.json', import.meta.url)
@@ -44,6 +45,7 @@ const formats = await igdb.query<{ id: number; format: string }>('date_formats',
 const formatName = new Map(formats.map((f) => [f.id, f.format]))
 const artworkType = await artworkTypes((e, b) => igdb.query(e, b))
 const artOf = (rows: any) => artworkOf(rows, (i) => artworkType.get(i!))
+const squareOf = (rows: any) => squareCoverOf(rows, (i) => artworkType.get(i!))
 
 const datesOf = (id: number, rows: ReleaseDate[] | undefined) =>
   ps5DatesOf(rows, { ps5: ps5.id, ps4: ps4.id }, (i) => statusName.get(i!), overrides[String(id)], (i) => formatName.get(i!))
@@ -54,7 +56,7 @@ if (args.includes('--inspect')) {
   for (const g of rows) {
     const { d, q, e, f, b } = datesOf(g.id, g.release_dates)
     const arts = (g.artworks ?? []).map((a: any) => `${a.image_id} ${a.width}x${a.height} ${artworkType.get(a.artwork_type) ?? a.artwork_type ?? '-'}`)
-    console.log(`  artwork types: ${[...artworkType.values()].join(', ') || 'none'}; picked a=${artOf(g.artworks) ?? '-'} from ${arts.join(' | ') || 'none'}`)
+    console.log(`  artwork types: ${[...artworkType.values()].join(', ') || 'none'}; picked a=${artOf(g.artworks) ?? '-'} s=${squareOf(g.artworks) ?? '-'} from ${arts.join(' | ') || 'none'}`)
     console.log(`${g.id} ${g.name} first_release=${day(g.first_release_date)} → d=${d ?? '-'}${q ? ` (${q})` : ''}${e ? ' (early access)' : ''}${f ? ` f=${f}` : ''} b=${b ?? '-'}`)
     for (const r of (g.release_dates ?? []).filter((r: ReleaseDate) => r.platform === ps5.id || r.platform === ps4.id))
       console.log(`  ${r.platform === ps5.id ? 'PS5' : 'PS4'} ${day(r.date) ?? '-'}  ${r.human ?? ''}  status=${statusName.get(r.status!) ?? r.status ?? '-'} format=${formatName.get(r.date_format!) ?? '-'} region=${r.release_region ?? '-'}`)
@@ -77,7 +79,7 @@ for (let offset = 0; offset < 10000; offset += 500) {
 const old = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, 'utf8')) as { games: { i: number; t?: string[] }[] }) : { games: [] }
 const tones = new Map(old.games.filter((g) => g.t).map((g) => [g.i, g.t]))
 
-const games: { i: number; n: string; d?: string; q?: string; e?: true; f?: string; b?: string; v?: string; p?: string; c?: string; a?: string; t?: string[]; r: number }[] = []
+const games: { i: number; n: string; d?: string; q?: string; e?: true; f?: string; b?: string; v?: string; p?: string; c?: string; a?: string; s?: string; t?: string[]; r: number }[] = []
 for (let offset = 0; ; offset += 500) {
   const page = await igdb.query<any>(
     'games',
@@ -87,7 +89,7 @@ for (let offset = 0; ; offset += 500) {
   )
   for (const g of page) {
     const company = (role: string) => (g.involved_companies ?? []).find((c: any) => c[role])?.company?.name
-    games.push({ i: g.id, n: g.name, ...datesOf(g.id, g.release_dates), v: company('developer'), p: company('publisher'), c: g.cover?.image_id, a: artOf(g.artworks), t: tones.get(g.id), r: g.total_rating_count ?? 0 })
+    games.push({ i: g.id, n: g.name, ...datesOf(g.id, g.release_dates), v: company('developer'), p: company('publisher'), c: g.cover?.image_id, a: artOf(g.artworks), s: squareOf(g.artworks), t: tones.get(g.id), r: g.total_rating_count ?? 0 })
   }
   if (page.length < 500) break
 }
@@ -105,4 +107,4 @@ const index = {
   games: games.map(({ r: _r, ...g }) => Object.fromEntries(Object.entries(g).filter(([, v]) => v !== undefined))),
 }
 writeFileSync(OUT, JSON.stringify(index) + '\n')
-console.log(`wrote ${OUT.pathname}: ${games.length} games, ${games.filter((g) => !g.d).length} without a PS5 date, ${games.filter((g) => g.e).length} in early access, ${games.filter((g) => g.f).length} early access then full, ${games.filter((g) => g.a).length} with key art`)
+console.log(`wrote ${OUT.pathname}: ${games.length} games, ${games.filter((g) => !g.d).length} without a PS5 date, ${games.filter((g) => g.e).length} in early access, ${games.filter((g) => g.f).length} early access then full, ${games.filter((g) => g.a).length} with key art, ${games.filter((g) => g.s).length} with a square cover`)

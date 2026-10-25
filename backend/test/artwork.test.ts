@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { artworkFields, artworkOf, artworkTypes } from '../src/artwork.ts'
+import { artworkFields, artworkOf, artworkTypes, squareCoverOf } from '../src/artwork.ts'
 import { openDb } from '../src/db.ts'
 import * as store from '../src/store.ts'
 
@@ -8,6 +8,8 @@ const types = new Map([
   [1, 'Key art with logo'],
   [2, 'Key art without logo'],
   [3, 'Concept art'],
+  [4, 'Game logo (white)'],
+  [5, 'Square cover'],
 ])
 
 test('square tile art: textless key art beats key art with a logo, then anything wide; portrait art is skipped', () => {
@@ -23,6 +25,14 @@ test('square tile art: textless key art beats key art with a logo, then anything
   assert.equal(artworkOf(rows, () => undefined), 'concept')
   assert.equal(artworkOf([{ image_id: 'tall', width: 600, height: 900 }], () => undefined), undefined)
   assert.equal(artworkOf(undefined, () => undefined), undefined)
+  // Logos and square covers are never cropped as key art.
+  const logos = [
+    { image_id: 'logo-w', artwork_type: 4, width: 2560, height: 2116 },
+    { image_id: 'sq', artwork_type: 5, width: 1024, height: 1024 },
+  ]
+  assert.equal(artworkOf(logos, (i) => types.get(i!)), undefined)
+  assert.equal(squareCoverOf([...rows, ...logos], (i) => types.get(i!)), 'sq')
+  assert.equal(squareCoverOf(rows, (i) => types.get(i!)), undefined)
 })
 
 test('artwork types are optional: a missing endpoint leaves artwork_type out of the query', async () => {
@@ -44,6 +54,8 @@ test('the feed game carries key art, and "none" is remembered without showing', 
   // A later run without IGDB keeps it.
   store.upsertGame(db, { id: 'g', name: 'G' })
   assert.equal(store.gameFromRow(store.getGameRow(db, 'g')!).artwork?.imageId, 'art')
+  store.upsertGame(db, { id: 'g', name: 'G', artworkImageId: 'art', squareCoverImageId: 'sq' })
+  assert.equal(store.gameFromRow(store.getGameRow(db, 'g')!).squareCover?.url, 'https://images.igdb.com/igdb/image/upload/t_720p/sq.jpg')
   store.upsertGame(db, { id: 'h', name: 'H', artworkImageId: '' })
   assert.equal(store.getGameRow(db, 'h')!.artwork_image_id, '')
   assert.equal(store.gameFromRow(store.getGameRow(db, 'h')!).artwork, null)

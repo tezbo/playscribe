@@ -1,6 +1,6 @@
 import { createHash, randomBytes, randomUUID, timingSafeEqual } from 'node:crypto'
 import { Hono, type Context } from 'hono'
-import { artworkUrl } from './artwork.ts'
+import { artworkUrl, squareCoverUrl } from './artwork.ts'
 import { confirmPlatform, dismissReview, type ConfirmInput } from './confirm.ts'
 import { now, type DB } from './db.ts'
 import type { Igdb } from './ingest/igdb.ts'
@@ -51,7 +51,7 @@ export const createApp = (deps: AppDeps) => {
     const hit = searchCache.get(key)
     if (hit && Date.now() - hit.at < 6 * 3600_000) return c.json(hit.body)
     const games = await deps.igdb.searchPs5(q)
-    const body = { games: games.map((g) => ({ igdbId: g.igdbId, name: g.name, cover: g.coverImageId ? { imageId: g.coverImageId, url: store.coverUrl(g.coverImageId) } : null, artwork: g.artworkImageId ? { imageId: g.artworkImageId, url: artworkUrl(g.artworkImageId) } : null, ps5Release: g.ps5Release })) }
+    const body = { games: games.map((g) => ({ igdbId: g.igdbId, name: g.name, cover: g.coverImageId ? { imageId: g.coverImageId, url: store.coverUrl(g.coverImageId) } : null, squareCover: g.squareCoverImageId ? { imageId: g.squareCoverImageId, url: squareCoverUrl(g.squareCoverImageId) } : null, artwork: g.artworkImageId ? { imageId: g.artworkImageId, url: artworkUrl(g.artworkImageId) } : null, ps5Release: g.ps5Release })) }
     searchCache.set(key, { at: Date.now(), body })
     return c.json(body)
   })
@@ -97,7 +97,7 @@ export const createApp = (deps: AppDeps) => {
     if (!deps.igdb) return null
     const g = await deps.igdb.byId(f.igdbId)
     if (!g) return null
-    store.upsertGame(db, { id: g.slug, name: g.name, igdbId: g.igdbId, coverImageId: g.coverImageId, artworkImageId: g.artworkImageId, steamAppId: g.steamAppId, ps5Release: g.ps5Release, firstRelease: g.firstRelease })
+    store.upsertGame(db, { id: g.slug, name: g.name, igdbId: g.igdbId, coverImageId: g.coverImageId, artworkImageId: g.artworkImageId, squareCoverImageId: g.squareCoverImageId, steamAppId: g.steamAppId, ps5Release: g.ps5Release, firstRelease: g.firstRelease })
     return g.slug
   }
 

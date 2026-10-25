@@ -1,5 +1,5 @@
 import { USER_AGENT, type FetchFn } from '../http.ts'
-import { artworkFields, artworkOf, artworkTypes } from '../artwork.ts'
+import { artworkFields, artworkOf, artworkTypes, squareCoverOf } from '../artwork.ts'
 import { PS5_LAUNCH, releaseDateOf, type Precision } from '../ps5-dates.ts'
 
 // IGDB, through a Twitch app token. Called only from the server: IGDB refuses browser calls and
@@ -11,6 +11,7 @@ export interface IgdbGame {
   coverImageId: string | null
   /** Landscape key art for the square tile; '' when IGDB has none. */
   artworkImageId: string
+  squareCoverImageId: string | null
   ps5Release: string | null
   ps5ReleasePrecision: Precision | null
   firstRelease: string | null
@@ -101,6 +102,7 @@ export class Igdb {
       name: g.name,
       coverImageId: g.cover?.image_id ?? null,
       artworkImageId: artworkOf(g.artworks, (i) => artwork.get(i!)) ?? '',
+      squareCoverImageId: squareCoverOf(g.artworks, (i) => artwork.get(i!)) ?? null,
       ps5Release: ps5Date?.date ?? null,
       ps5ReleasePrecision: ps5Date?.precision ?? null,
       firstRelease: day(g.first_release_date),

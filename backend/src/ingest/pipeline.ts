@@ -105,6 +105,7 @@ export const seedGames = async (deps: IngestDeps) => {
       igdbId: g.igdbId ?? info?.igdbId,
       coverImageId: info?.coverImageId,
       artworkImageId: info?.artworkImageId,
+      squareCoverImageId: info?.squareCoverImageId,
       steamAppId: info?.steamAppId,
       ps5Release: info?.ps5Release,
       ps5ReleasePrecision: info?.ps5ReleasePrecision,
