@@ -55,6 +55,8 @@ export interface Game {
   name: string
   cover: { imageId: string; url: string } | null
   ps5Release: string | null
+  /** How exact ps5Release is when it is not a day: "Q4 2027" is 2027-12-31 with quarter. Absent means a day. */
+  ps5ReleasePrecision?: 'month' | 'quarter' | 'year' | 'tbd'
   ps5TitleIds: string[]
 }
 

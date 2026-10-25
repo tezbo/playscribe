@@ -1,4 +1,5 @@
 import { USER_AGENT, type FetchFn } from '../http.ts'
+import { PS5_LAUNCH, releaseDateOf, type Precision } from '../ps5-dates.ts'
 
 // IGDB, through a Twitch app token. Called only from the server: IGDB refuses browser calls and
 // the client secret must never reach the app. The limit is 4 requests a second.
@@ -8,6 +9,7 @@ export interface IgdbGame {
   name: string
   coverImageId: string | null
   ps5Release: string | null
+  ps5ReleasePrecision: Precision | null
   firstRelease: string | null
   steamAppId: number | null
   onPs5: boolean
@@ -18,7 +20,7 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
 export class Igdb {
   private token: { value: string; expiresAt: number } | null = null
-  private ids: { steam: number; ps5: number } | null = null
+  private ids: { steam: number; ps5: number; status: Map<number, string>; format: Map<number, string> } | null = null
   private last = 0
 
   constructor(
@@ -69,22 +71,26 @@ export class Igdb {
     const [steam] = await this.query<{ id: number }>('external_game_sources', 'fields id; where name = "Steam"; limit 1;')
     const [ps5] = await this.query<{ id: number }>('platforms', 'fields id; where slug = "ps5"; limit 1;')
     if (!steam || !ps5) throw new Error('IGDB: Steam source or PS5 platform not found')
-    this.ids = { steam: steam.id, ps5: ps5.id }
+    const statuses = await this.query<{ id: number; name: string }>('release_date_statuses', 'fields id,name; limit 50;')
+    const formats = await this.query<{ id: number; format: string }>('date_formats', 'fields id,format; limit 50;')
+    this.ids = { steam: steam.id, ps5: ps5.id, status: new Map(statuses.map((x) => [x.id, x.name])), format: new Map(formats.map((x) => [x.id, x.format])) }
     return this.ids
   }
 
-  private static FIELDS = 'fields name,slug,first_release_date,cover.image_id,platforms,release_dates.date,release_dates.platform,external_games.uid,external_games.external_game_source;'
+  private static FIELDS = 'fields name,slug,first_release_date,cover.image_id,platforms,release_dates.date,release_dates.platform,release_dates.status,release_dates.date_format,external_games.uid,external_games.external_game_source;'
 
   private async toGame(g: any): Promise<IgdbGame> {
-    const { steam, ps5 } = await this.lookups()
-    const ps5Dates = (g.release_dates ?? []).filter((d: any) => d.platform === ps5 && d.date).map((d: any) => d.date as number).sort()
+    const { steam, ps5, status, format } = await this.lookups()
+    // The same rules as the bundled index (src/ps5-dates.ts): no patch rows, nothing before launch.
+    const ps5Date = releaseDateOf(g.release_dates, ps5, (i) => status.get(i!), PS5_LAUNCH, (i) => format.get(i!))
     const steamUid = (g.external_games ?? []).find((e: any) => e.external_game_source === steam)?.uid
     return {
       igdbId: g.id,
       slug: g.slug,
       name: g.name,
       coverImageId: g.cover?.image_id ?? null,
-      ps5Release: day(ps5Dates[0]),
+      ps5Release: ps5Date?.date ?? null,
+      ps5ReleasePrecision: ps5Date?.precision ?? null,
       firstRelease: day(g.first_release_date),
       steamAppId: steamUid ? Number(steamUid) : null,
       onPs5: (g.platforms ?? []).includes(ps5),

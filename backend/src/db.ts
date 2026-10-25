@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS games (
   cover_image_id TEXT,
   steam_app_id INTEGER,
   ps5_release TEXT,                  -- YYYY-MM-DD, earliest PS5 release date
+  ps5_release_precision TEXT,        -- month | quarter | year | tbd; NULL is a day
   first_release TEXT,
   ps5_title_ids TEXT NOT NULL DEFAULT '[]',
   created_at TEXT NOT NULL
@@ -118,6 +119,9 @@ export const openDb = (path: string): DB => {
   if (path !== ':memory:') mkdirSync(dirname(path), { recursive: true })
   const db = new DatabaseSync(path)
   db.exec(SCHEMA)
+  // Columns added after the first feed went out; CREATE TABLE IF NOT EXISTS leaves old tables as they were.
+  const has = (table: string, col: string) => (db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).some((c) => c.name === col)
+  if (!has('games', 'ps5_release_precision')) db.exec('ALTER TABLE games ADD COLUMN ps5_release_precision TEXT')
   return db
 }
 

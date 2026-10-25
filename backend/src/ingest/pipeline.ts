@@ -88,7 +88,9 @@ export const seedGames = async (deps: IngestDeps) => {
   for (const [id, g] of Object.entries(registry.games)) {
     const existing = store.getGameRow(deps.db, id)
     let info = null
-    if (deps.igdb && !existing?.cover_image_id) {
+    // Ask IGDB once per game, and again while its PS5 date is missing or still ahead (it can move or sharpen).
+    const today = new Date().toISOString().slice(0, 10)
+    if (deps.igdb && (!existing?.cover_image_id || !existing.ps5_release || existing.ps5_release >= today)) {
       const steamSource = g.sources.find((s) => s.kind === 'steamNews')
       const appid = steamSource ? Number(steamSource.url.match(/\/app\/(\d+)/)?.[1]) : null
       try {
@@ -104,6 +106,7 @@ export const seedGames = async (deps: IngestDeps) => {
       coverImageId: info?.coverImageId,
       steamAppId: info?.steamAppId,
       ps5Release: info?.ps5Release,
+      ps5ReleasePrecision: info?.ps5ReleasePrecision,
       firstRelease: info?.firstRelease,
       ps5TitleIds: g.ps5TitleIds,
     })
