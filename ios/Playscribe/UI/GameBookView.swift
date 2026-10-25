@@ -191,7 +191,8 @@ struct ReadingPanel: View {
     private var header: some View {
         let game = model.game(gameID)
         return VStack(alignment: .leading, spacing: 6) {
-            Text(game?.name ?? "").font(PlayscribeFont.title.bold())
+            // In the Spread the title is on the art (O-2); the Page doesn't repeat it.
+            if !spreadPage { Text(game?.name ?? "").font(PlayscribeFont.title.bold()) }
             HStack(spacing: 8) {
                 if let e = model.entry(gameID) { StatusPill(status: e.status) }
                 if let dev = game?.developer { Text(dev).font(PlayscribeFont.subheadline).foregroundStyle(.secondary) }

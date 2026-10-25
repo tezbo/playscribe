@@ -221,11 +221,21 @@ struct FactsCard: View {
 struct Facts: View {
     @Environment(AppModel.self) private var model
     var release: Release
+    /// The Margin column stacks each label over its value; the inline card uses two columns.
+    var stacked = false
 
     var body: some View {
+        if stacked {
+            VStack(alignment: .leading, spacing: 14) { rows }
+        } else {
+            Grid(alignment: .topLeading, horizontalSpacing: 12, verticalSpacing: 8) { rows }
+        }
+    }
+
+    @ViewBuilder private var rows: some View {
         let r = release
         let p = r.ps5
-        Grid(alignment: .topLeading, horizontalSpacing: 12, verticalSpacing: 8) {
+        Group {
             row("Status", Text(status))
             if r.isPS5Listed {
                 row("PS5 version", Text(p?.version?.value ?? "Not published yet").foregroundStyle(p?.version == nil ? .secondary : .primary))
@@ -268,10 +278,17 @@ struct Facts: View {
         }
     }
 
-    private func row(_ label: String, _ value: some View) -> some View {
-        GridRow {
-            Text(label).foregroundStyle(.secondary).gridColumnAlignment(.leading)
-            value
+    @ViewBuilder private func row(_ label: String, _ value: some View) -> some View {
+        if stacked {
+            VStack(alignment: .leading, spacing: 3) {
+                Text(label).font(PlayscribeFont.caption).foregroundStyle(PlayscribeColor.textTertiary)
+                value
+            }
+        } else {
+            GridRow {
+                Text(label).foregroundStyle(.secondary).gridColumnAlignment(.leading)
+                value
+            }
         }
     }
 }

@@ -142,7 +142,10 @@ struct LibraryRoot: View {
             .navigationSplitViewStyle(.balanced)
         case .flat where duo.isLandscape:
             NavigationSplitView(columnVisibility: .constant(.all)) {
+                // §9: the Library takes ~28% of the open display.
                 LibrarySidebar()
+                    .navigationSplitViewColumnWidth(min: 220, ideal: duo.size.width * 0.28, max: duo.size.width * 0.28)
+                    .toolbar(removing: .sidebarToggle)
             } detail: {
                 if let id = model.spreadGameID {
                     NavigationStack { SpreadView(gameID: id) }

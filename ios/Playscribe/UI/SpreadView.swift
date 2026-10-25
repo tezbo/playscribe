@@ -15,9 +15,11 @@ struct SpreadView: View {
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height
-            let portrait = h > w
-            // O-4: a Margin column only with room for it and no fold across the detail.
-            let showMargin = w >= 560 && duo.division == nil
+            // The scene decides portrait vs landscape; the detail column alone can be taller than wide.
+            let portrait = !duo.isLandscape
+            // O-4: a Margin column only with room for it and no fold across the detail. The
+            // detail's safe area already excludes the vertical bar, so 560 pt of detail is ~500 here.
+            let showMargin = w >= 500 && duo.division == nil
             let marginRelease = showMargin ? marginTarget : nil
             let artH = (portrait ? 0.40 : 0.44) * h
 
@@ -35,30 +37,27 @@ struct SpreadView: View {
                     HStack(alignment: .top, spacing: 20) {
                         ReadingPanel(gameID: gameID, compact: false, headerVisible: $headerVisible, spreadPage: true)
                             .environment(\.marginReleaseID, marginRelease?.id)
-                            .frame(width: showMargin ? w * (portrait ? 0.60 : 0.47) : nil)
-                            .frame(maxWidth: showMargin ? nil : 680)
+                            .frame(width: showMargin ? w * (portrait ? 0.60 : 0.62) : nil)
+                            .frame(maxWidth: showMargin ? nil : 680, maxHeight: .infinity)
+                            .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20, style: .continuous))
                             .background(Color.ink2, in: UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20, style: .continuous))
                             .overlay(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20, style: .continuous)
                                 .strokeBorder(PlayscribeColor.vellum300.opacity(0.25), lineWidth: 1))
                         if let r = marginRelease {
                             MarginColumn(release: r)
-                                .frame(width: w * (portrait ? 0.32 : 0.25))
+                                .frame(width: w * (portrait ? 0.32 : 0.30))
                                 .padding(.top, portrait ? 0 : artH * 0.15 + 12)
                         }
                     }
                     .padding(.horizontal, 20)
+                    .frame(maxHeight: .infinity, alignment: .top)
                 }
             }
         }
         .background(Color.ink0)
         .navigationTitle(headerVisible ? "" : (model.game(gameID)?.name ?? ""))
         .toolbarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarPinnedTrailing) {
-                Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
-            }
-            ActionToolbar(actions: model.gameActions(gameID))
-        }
+        .toolbar { ActionToolbar(actions: model.gameActions(gameID)) }
         .onAppear { model.nav.lastGameID = gameID }
     }
 
@@ -101,7 +100,7 @@ struct MarginColumn: View {
                     .font(PlayscribeFont.caption)
                     .tracking(1)
                     .foregroundStyle(PlayscribeColor.textTertiary)
-                Facts(release: release)
+                Facts(release: release, stacked: true)
             }
             .padding(.vertical, 12)
         }
