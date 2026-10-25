@@ -193,7 +193,7 @@ Apple basis (fetched 2026-10-25, unchanged from baseline): show an extra level o
 - **T-7** Open to Closed: what had focus last wins. If the Page or Margin had focus, the closed display shows that game book; if the Library had focus, it shows the Library.
 - **T-8** Open to Book: the gutter opens on the fold. The art contracts into the left page above the Library, and the Margin tucks under the release as a card. The split line sits on the fold (system split view behaviour).
 - **T-9** Open landscape to Open portrait or Tabletop (rotation): the art takes the top band or upper half; the Library becomes the shelf (portrait) or steps back to the Library tab (tabletop); controls move to the system position for that pose.
-- **T-10** A playing video keeps playing through every transition (P-2). In Tabletop it moves into the upper-half stage; in Open it stays in the Margin.
+- **T-10** A playing video keeps playing through every transition (P-2). The player the user opened stays the player in every pose: full display in Closed and Open, the upper-half stage in Tabletop. It never shrinks into the Margin. The Margin shows only the video's thumbnail and duration, and tapping it opens the player.
 
 ## 10. QA method
 
