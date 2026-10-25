@@ -100,6 +100,23 @@ struct ModelTests {
         #expect(r?.headline != nil)
     }
 
+    @Test("No 'on PS5' date falls before the PS5 launch, 12 Nov 2020")
+    func ps5Dates() {
+        let launch = CatalogGame.ps5Launch
+        let monthYear = Date.FormatStyle.dateTime.month(.abbreviated).year()
+        for e in PS5Index.shared.entries {
+            let g = PS5Index.shared.game(e)
+            guard let line = g.ps5DateLine else { continue }
+            if line.hasPrefix("Released "), let d = g.releaseDate?.isoDay { #expect(d >= launch, "\(g.name): \(line)") }
+            if line.hasPrefix("Playable on PS5 since "), let b = g.playableSince?.isoDay {
+                #expect(b >= launch, "\(g.name): \(line)")
+                #expect(line.hasSuffix(b.formatted(monthYear)))
+            }
+        }
+        let minecraft = PS5Index.shared.entries.first { $0.n == "Minecraft" }.map(PS5Index.shared.game)
+        #expect(minecraft?.ps5DateLine?.contains("2019") != true)
+    }
+
     @Test("Search dedupes by IGDB id and prefers curated records (A-3)")
     func search() {
         let hits = PS5Index.shared.search("dawnwalker")

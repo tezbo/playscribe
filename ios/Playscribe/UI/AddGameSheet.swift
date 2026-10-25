@@ -155,14 +155,7 @@ struct AddRow: View {
         switch game.coverage {
         case .full: "Full PS5 update coverage"
         case .partial: "Latest official posts"
-        case .none:
-            if let b = game.playableSince?.isoDay {
-                "Playable on PS5 since \(b.formatted(.dateTime.month(.abbreviated).year()))"
-            } else if let d = game.releaseDate?.isoDay {
-                "Released \(d.shortDay)"
-            } else {
-                game.developer ?? ""
-            }
+        case .none: game.ps5DateLine ?? game.developer ?? ""
         }
     }
 }

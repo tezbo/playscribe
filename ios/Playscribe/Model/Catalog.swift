@@ -53,6 +53,23 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         coverImageID.map { URL(string: "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/\($0).jpg")! }
     }
 
+    /// The PS5 launched on 12 Nov 2020; no "on PS5" date can be earlier.
+    static let ps5Launch = "2020-11-12".isoDay!
+
+    /// The date line for a catalogue game: its native PS5 release, else when it became playable
+    /// on PS5 through its PS4 version. Dates before the PS5 launch are never shown.
+    var ps5DateLine: String? {
+        let launch = Self.ps5Launch
+        if let d = releaseDate?.isoDay, d >= launch, playableSince.flatMap(\.isoDay).map({ $0 >= launch && $0 < d }) != true {
+            return "Released \(d.shortDay)"
+        }
+        if let b = playableSince?.isoDay {
+            return b >= launch ? "Playable on PS5 since \(b.formatted(.dateTime.month(.abbreviated).year()))" : "Plays on PS5 (PS4 version)"
+        }
+        if let d = releaseDate?.isoDay, d < launch { return "Plays on PS5 (PS4 version)" }
+        return nil
+    }
+
     /// Key art for stages and the Continue tile, falling back to the cover.
     var keyArtAsset: String? { featureAsset ?? heroAsset ?? coverAsset }
 }
