@@ -149,13 +149,20 @@ struct AddRow: View {
         }
     }
 
-    /// Index dates can belong to a later edition, so only curated games show one; uncovered
-    /// games say nothing rather than repeat "no coverage" on every row.
+    /// Uncovered games show their PS5 date (or when they became playable on PS5), never a
+    /// repeated "no coverage" line.
     private var subtitle: String {
         switch game.coverage {
         case .full: "Full PS5 update coverage"
         case .partial: "Latest official posts"
-        case .none: game.developer ?? ""
+        case .none:
+            if let b = game.playableSince?.isoDay {
+                "Playable on PS5 since \(b.formatted(.dateTime.month(.abbreviated).year()))"
+            } else if let d = game.releaseDate?.isoDay {
+                "Released \(d.shortDay)"
+            } else {
+                game.developer ?? ""
+            }
         }
     }
 }

@@ -33,6 +33,8 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     var publisher: String?
     var platforms: [Platform]
     var releaseDate: String?
+    /// Earlier PS4 release date for games playable on PS5 before their PS5 release.
+    var playableSince: String?
     var igdbID: Int?
     /// Bundled artwork in the asset catalogue.
     var coverAsset: String?
@@ -148,6 +150,8 @@ struct PS5Index {
         var i: Int
         var n: String
         var d: String?
+        /// The earlier PS4 release, when the game was playable on PS5 before its native release.
+        var b: String?
         var v: String?
         var p: String?
         var c: String?
@@ -194,7 +198,7 @@ struct PS5Index {
     func game(_ e: Entry) -> CatalogGame {
         CatalogGame(
             id: "igdb-\(e.i)", name: e.n, developer: e.v, publisher: e.p, platforms: [.ps5],
-            releaseDate: e.d, igdbID: e.i, coverImageID: e.c, tones: e.t, coverage: .none
+            releaseDate: e.d, playableSince: e.b, igdbID: e.i, coverImageID: e.c, tones: e.t, coverage: .none
         )
     }
 }
