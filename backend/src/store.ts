@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto'
 import { now, type DB } from './db.ts'
+import { artworkUrl, squareCoverUrl } from './artwork.ts'
 import { tagNotes } from './ingest/notes.ts'
 import type { Field, Game, KindBasis, NoteSection, Platform, PlatformRelease, PlatformStatus, Release, ReleaseKind, Verification } from './types.ts'
 
@@ -14,6 +15,8 @@ export const gameFromRow = (r: Row): Game => ({
   igdbId: r.igdb_id ?? null,
   name: r.name,
   cover: r.cover_image_id ? { imageId: r.cover_image_id, url: coverUrl(r.cover_image_id) } : null,
+  squareCover: r.square_cover_image_id ? { imageId: r.square_cover_image_id, url: squareCoverUrl(r.square_cover_image_id) } : null,
+  artwork: r.artwork_image_id ? { imageId: r.artwork_image_id, url: artworkUrl(r.artwork_image_id) } : null,
   ps5Release: r.ps5_release ?? null,
   ...(r.ps5_release_precision ? { ps5ReleasePrecision: r.ps5_release_precision } : {}),
   ps5TitleIds: json(r.ps5_title_ids, []),
@@ -24,6 +27,8 @@ export interface GameInput {
   name: string
   igdbId?: number | null
   coverImageId?: string | null
+  artworkImageId?: string | null
+  squareCoverImageId?: string | null
   steamAppId?: number | null
   ps5Release?: string | null
   ps5ReleasePrecision?: string | null
@@ -33,18 +38,21 @@ export interface GameInput {
 
 export const upsertGame = (db: DB, g: GameInput) => {
   db.prepare(
-    `INSERT INTO games (id, igdb_id, name, cover_image_id, steam_app_id, ps5_release, ps5_release_precision, first_release, ps5_title_ids, created_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `INSERT INTO games (id, igdb_id, name, cover_image_id, artwork_image_id, square_cover_image_id, steam_app_id, ps5_release, ps5_release_precision, first_release, ps5_title_ids, created_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
      ON CONFLICT (id) DO UPDATE SET
        igdb_id = COALESCE(excluded.igdb_id, igdb_id), name = excluded.name,
        cover_image_id = COALESCE(excluded.cover_image_id, cover_image_id),
+       artwork_image_id = COALESCE(excluded.artwork_image_id, artwork_image_id),
+       -- Fetched together with the key art, so it follows it.
+       square_cover_image_id = CASE WHEN excluded.artwork_image_id IS NOT NULL THEN excluded.square_cover_image_id ELSE square_cover_image_id END,
        steam_app_id = COALESCE(excluded.steam_app_id, steam_app_id),
        ps5_release = COALESCE(excluded.ps5_release, ps5_release),
        -- The precision belongs to whichever date is stored, so it changes with the date.
        ps5_release_precision = CASE WHEN excluded.ps5_release IS NOT NULL OR excluded.ps5_release_precision IS NOT NULL THEN excluded.ps5_release_precision ELSE ps5_release_precision END,
        first_release = COALESCE(excluded.first_release, first_release),
        ps5_title_ids = CASE WHEN excluded.ps5_title_ids = '[]' THEN ps5_title_ids ELSE excluded.ps5_title_ids END`,
-  ).run(g.id, g.igdbId ?? null, g.name, g.coverImageId ?? null, g.steamAppId ?? null, g.ps5Release ?? null, g.ps5ReleasePrecision ?? null, g.firstRelease ?? null, JSON.stringify(g.ps5TitleIds ?? []), now())
+  ).run(g.id, g.igdbId ?? null, g.name, g.coverImageId ?? null, g.artworkImageId ?? null, g.squareCoverImageId ?? null, g.steamAppId ?? null, g.ps5Release ?? null, g.ps5ReleasePrecision ?? null, g.firstRelease ?? null, JSON.stringify(g.ps5TitleIds ?? []), now())
 }
 
 export const getGameRow = (db: DB, id: string) => db.prepare('SELECT * FROM games WHERE id = ?').get(id) as Row | undefined

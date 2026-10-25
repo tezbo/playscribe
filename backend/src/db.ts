@@ -15,6 +15,8 @@ CREATE TABLE IF NOT EXISTS games (
   igdb_id INTEGER UNIQUE,
   name TEXT NOT NULL,
   cover_image_id TEXT,
+  artwork_image_id TEXT,             -- IGDB key art for the square tile; '' when IGDB has none
+  square_cover_image_id TEXT,        -- IGDB square cover, when the studio supplied one
   steam_app_id INTEGER,
   ps5_release TEXT,                  -- YYYY-MM-DD, earliest PS5 release date
   ps5_release_precision TEXT,        -- month | quarter | year | tbd; NULL is a day
@@ -122,6 +124,8 @@ export const openDb = (path: string): DB => {
   // Columns added after the first feed went out; CREATE TABLE IF NOT EXISTS leaves old tables as they were.
   const has = (table: string, col: string) => (db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).some((c) => c.name === col)
   if (!has('games', 'ps5_release_precision')) db.exec('ALTER TABLE games ADD COLUMN ps5_release_precision TEXT')
+  if (!has('games', 'artwork_image_id')) db.exec('ALTER TABLE games ADD COLUMN artwork_image_id TEXT')
+  if (!has('games', 'square_cover_image_id')) db.exec('ALTER TABLE games ADD COLUMN square_cover_image_id TEXT')
   return db
 }
 
