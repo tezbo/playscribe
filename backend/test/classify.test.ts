@@ -67,3 +67,21 @@ test('a heading about one platform tags its items, and stored notes are re-tagge
   const stored = [{ title: 'Highlights', items: [{ text: 'Updated FrameGen', ps5ProOnly: false }] }]
   assert.deepEqual(tagNotes(stored)[0]!.items[0]!.platforms, ['pc'])
 })
+
+test('dates and times in titles are not versions; newsletters are not patches', async () => {
+  const { looksLikePatch } = await import('../src/ingest/adapters.ts')
+  assert.equal(nameRelease('Apex Legends: Latest Update 5/14/2026', '2026-05-14T00:00:00Z').versionKey, 'major-2026-05-14')
+  assert.equal(nameRelease('Apex Legends: Latest Update 5PM PT', '2026-05-14T00:00:00Z').versionKey, 'major-2026-05-14')
+  assert.equal(nameRelease('Update 7.2.1', '2026-10-22T00:00:00Z').versionKey, '7.2.1')
+  assert.equal(looksLikePatch('An Update from the Anti Cheat Team - 10/08/2026'), false)
+  assert.equal(looksLikePatch('Patch Delay Update'), false)
+})
+
+test('the PS5 version is the console form, next to PS5 in a multi-platform post', () => {
+  assert.equal(consoleVersionOf('PS5: Ver.1.005.000 / Steam: Ver.1.005.001'), '01.005.000')
+  assert.equal(consoleVersionOf('Steam Ver.1.005.001 is live; PS5 follows.'), null)
+  assert.equal(consoleVersionOf('Steam: Ver.1.005.001 / PS5: Ver.1.005.000'), '01.005.000')
+  assert.equal(consoleVersionOf('Version 01.004.000 (PS5) and 1.4.0 (PC)'), '01.004.000')
+  assert.equal(consoleVersionOf('The update brings the game to 01.012.000.', { ps5Only: true }), '01.012.000')
+  assert.equal(consoleVersionOf('Version 1.0.21.23831 on PC', { ps5Only: true }), null)
+})

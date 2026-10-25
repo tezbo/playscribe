@@ -129,7 +129,17 @@ struct NoteItem: Codable {
 
 ## Registry file
 
-`registry.json` (next to this spec, and in the repo as `backend/src/sources/registry.json`) holds the shared feeds (PlayStation Blog and the press) and a source list for each game. Each source has `kind` (`rss`, `html` or `steamNews`), `url`, `platforms`, `trust`, `fetch` (`auto` or `manual`) and `ps5Signal`. A `ps5Signal` of `always` means everything in the feed is about PS5, though shared feeds still have to match the game by name. A value of `explicit` means a post counts for PS5 only when its text names "PS5" or "PlayStation 5". The `igdbId` and `ps5TitleIds` fields are filled from the catalogue. Dawnwalker's site blocks automated fetches, so it is `manual`.
+`registry.json` (next to this spec, and in the repo as `backend/src/sources/registry.json`) holds the shared feeds (PlayStation Blog and the press) and a source list for each game. Each source has `kind` (`rss`, `html`, `steamNews` or `pressIndex`, a press site's paged list of update articles whose matching articles are opened for their facts), `url`, `platforms`, `trust`, `fetch` (`auto` or `manual`) and `ps5Signal`. A `ps5Signal` of `always` means everything in the feed is about PS5, though shared feeds still have to match the game by name. A value of `explicit` means a post counts for PS5 only when its text names "PS5" or "PlayStation 5". The `igdbId` and `ps5TitleIds` fields are filled from the catalogue. Dawnwalker's site blocks automated fetches, so it is `manual`. A game's `aliases` are the other names the press uses ("GTA 5", "Dawnwalker"), and `exclude` lists names that contain it but are other games ("Minecraft Dungeons").
+
+Press articles are read for facts only: the PS5 version, the download size, whether it is live, and when. Their text is never stored or shown. Requests to a site are spaced by its robots.txt `Crawl-delay`.
+
+## Note platforms
+
+Each note item is tagged with the platforms it is about (`NoteItem.platforms`), with the shared rules in `backend/src/ingest/platform-terms.json`. An item that names a PC-only thing (FrameGen, DLSS, AMD or NVIDIA GPUs, Steam Deck, Steam Controller, mouse and keyboard, ultrawide…) is tagged `pc` unless it also names a console. A heading about one platform ("PC", "Steam Deck", "PS5") tags its items. PS5 pages leave out items whose platforms don't include `ps5`. Headlines, summaries, key changes and push lines are shown on PS5 pages and in pushes, so they never carry a PC-only line; the fixture builder fails if one does.
+
+## PS5 version
+
+The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000" is the same build with the leading zero dropped, so it is stored as `01.005.000`. In a post that covers several platforms, only a version written next to "PS5" counts. A studio display name ("Update 1.1") or a PC build number is never stored as the PS5 version.
 
 ## Backend jobs
 

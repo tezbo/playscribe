@@ -6,7 +6,7 @@ import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { pushPs5Release } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
 import { getRelease } from '../src/store.ts'
-import { fakeFetch, rss, steamNews } from './helpers.ts'
+import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpers.ts'
 
 const recent = (h: number) => new Date(Date.now() - h * 3600_000).toISOString()
 
@@ -17,9 +17,15 @@ const setup = async () => {
       { gid: '1', title: 'The Blood of Dawnwalker - Update 1.1', date: recent(30), contents: 'Update 1.1 is out now on PC, PlayStation 5, and Xbox Series X|S![h2]Highlights[/h2][list][*]Added photo mode[*]Fixed a crash[/list]', tags: ['patchnotes'] },
       { gid: '2', title: 'Community Update: art contest', date: recent(20), contents: 'Not a patch' },
     ]),
-    'https://www.pushsquare.com/feeds/latest': rss([
-      { title: 'Blood of Dawnwalker PS5 Patch 1.1 Out Now, 13GB Update', link: 'https://www.pushsquare.com/news/dw-1-1', date: recent(10), body: 'Version 01.004.000 weighs 13GB on PS5.' },
-      { title: 'Unrelated game gets Patch 2.0', link: 'https://www.pushsquare.com/news/other', date: recent(9), body: '' },
+    'https://www.pushsquare.com/news/dw-1-1': pressArticle('Dawnwalker PS5 Patch 1.1 Out Now, 13GB Update', 'The patch is 12.882GB on PS5 and brings it to version 01.004.000.'),
+    'https://www.pushsquare.com/news/kcd2-1-7': pressArticle('Kingdom Come Deliverance 2 Patch 1.7 Coming Next Week on PS5', 'Warhorse says patch 1.7 is in certification.'),
+    'https://www.pushsquare.com/tags/updates': pressIndexPage([
+      { title: 'Dawnwalker PS5 Patch 1.1 Out Now, 13GB Update', path: 'news/dw-1-1', date: recent(10), tags: ['Bandai Namco', 'PS5', 'Dawnwalker', 'Updates'] },
+      { title: 'Kingdom Come Deliverance 2 Patch 1.7 Coming Next Week on PS5', path: 'news/kcd2-1-7', date: recent(9) },
+      { title: 'Unrelated game gets Patch 2.0', path: 'news/other', date: recent(9) },
+      { title: 'Minecraft Dungeons Update 1.2 is out now', path: 'news/mcd', date: recent(8) },
+      { title: 'Huge 30GB Update Prepares Ghost of Yotei for DLC', path: 'news/yotei', date: recent(7) },
+      { title: 'Elden Ring: All Patch 1.05 Notes', path: 'guides/elden-ring-patches', date: recent(6) },
     ]),
     'https://blog.playstation.com/feed/': rss([
       { title: 'Kingdom Come: Deliverance II Update 1.6 arrives on PS5 today', link: 'https://blog.playstation.com/kcd2-1-6', date: recent(2), body: '<h2>New</h2><ul><li>Added a new quest line</li></ul>' },
@@ -45,11 +51,20 @@ test('Steam sets PC only; a PS5 mention goes to review, never to a PS5 row', asy
 test('press fills PS5 facts as reported, matched by name and version', async () => {
   const { db } = await setup()
   const ps5 = getRelease(db, 'dawnwalker@1.1')!.platforms.find((p) => p.platform === 'ps5')!
+  assert.equal(ps5.status, 'live')
   assert.equal(ps5.verification, 'reported')
   assert.equal(ps5.version?.value, '01.004.000')
   assert.equal(ps5.version?.verification, 'reported')
-  assert.equal(ps5.sizeBytes?.value, 13e9)
-  assert.equal(db.prepare("SELECT COUNT(*) AS n FROM releases WHERE game_id NOT IN ('dawnwalker','kcd2')").get()!.n, 0)
+  assert.equal(ps5.sizeBytes?.value, 12.882e9)
+  // A headline about next week's patch is announced, not live, and has no live date.
+  const next = getRelease(db, 'kcd2@1.7')!.platforms.find((p) => p.platform === 'ps5')!
+  assert.equal(next.status, 'announced')
+  assert.equal(next.liveAt, null)
+  // A headline without a version is not a release name.
+  const yotei = db.prepare("SELECT display_name, kind FROM releases WHERE game_id = 'yotei'").all() as { display_name: string; kind: string }[]
+  assert.deepEqual(yotei.map((r) => [r.display_name, r.kind]), [['PS5 update', 'silent']])
+  // "Minecraft Dungeons" is not Minecraft, a guide is not news, and an unknown game is not tracked.
+  assert.equal(db.prepare("SELECT COUNT(*) AS n FROM releases WHERE game_id NOT IN ('dawnwalker','kcd2','yotei')").get()!.n, 0)
 })
 
 test('an official PS5 post is pending until a person confirms; push fires once', async () => {

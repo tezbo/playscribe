@@ -3,7 +3,8 @@ import type { KindBasis, NoteSection, PlatformStatus, ReleaseKind } from '../typ
 // Release naming and kinds, per docs/ps5-patch-data.md. The studio's own label always wins;
 // anything else is inferred and marked so it can be audited.
 
-const VERSION = /\b(?:update|patch|hotfix|version|ver\.?|v)\s*#?\s*(\d+(?:\.\d+){0,3}[a-z]?)\b/i
+// A number followed by a slash or AM/PM is a date or time ("Latest Update 5/14", "Update 5PM PT"), not a version.
+const VERSION = /\b(?:update|patch|hotfix|version|ver\.?|v)\s*#?\s*(\d+(?:\.\d+){0,3}[a-z]?)\b(?!\s*\/|\s*[ap]\.?m\b)/i
 const BARE_VERSION = /\b(\d+\.\d+(?:\.\d+){0,2})\b/
 
 export interface Naming {
@@ -64,8 +65,20 @@ export const classify = (opts: {
   return { kind: 'major', kindBasis: 'inferred' }
 }
 
-/** The version string the PS5 shows, e.g. "01.004.000". */
-export const consoleVersionOf = (text: string) => text.match(/\b(\d{2}\.\d{3}\.\d{3})\b/)?.[1] ?? null
+/**
+ * The version string the PS5 shows, e.g. "01.004.000". Studios often drop the leading zero
+ * ("Ver. 1.005.000"); the console always shows two digits, so it is padded. In a multi-platform
+ * post only a version next to "PS5" counts, so a PC build number is never taken for the PS5 one;
+ * `ps5Only` is for posts that are only about PS5.
+ */
+export const consoleVersionOf = (text: string, opts: { ps5Only?: boolean } = {}) => {
+  const V = '(\\d{1,2})\\.(\\d{3})\\.(\\d{3})(?!\\d|\\.\\d)'
+  const near = new RegExp(`(?:PS5|PlayStation\\s*®?\\s*5)[^\\n]{0,40}?\\b${V}|\\b${V}\\s*\\(\\s*(?:PS5|PlayStation\\s*®?\\s*5)`, 'i')
+  const m = text.match(near) ?? (opts.ps5Only ? text.match(new RegExp(`\\b${V}`)) : null)
+  if (!m) return null
+  const [major, minor, patch] = (m[1] ? m.slice(1, 4) : m.slice(4, 7)) as [string, string, string]
+  return `${major.padStart(2, '0')}.${minor}.${patch}`
+}
 
 /** A download size near the word size/download/GB, in bytes. */
 export const sizeBytesOf = (text: string) => {

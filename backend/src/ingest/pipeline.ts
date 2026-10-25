@@ -2,8 +2,8 @@ import { now, tx, type DB } from '../db.ts'
 import { Blocked, allowedByRobots, type FetchFn } from '../http.ts'
 import { registry, type SourceDef } from '../registry.ts'
 import * as store from '../store.ts'
-import type { Post } from '../types.ts'
-import { fetchPosts, looksLikePatch } from './adapters.ts'
+import type { PlatformStatus, Post } from '../types.ts'
+import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
 import { classify, consoleVersionOf, nameRelease, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import type { Igdb } from './igdb.ts'
 import { extractNotes, mentionsPs5 } from './notes.ts'
@@ -34,19 +34,42 @@ export interface IngestSummary {
 
 const MIN_POLL_MS = 55 * 60_000
 
-const norm = (s: string) =>
-  ` ${s
+const norm = (s: string) => {
+  const n = s
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .replace(/[®™]/g, '')
+    .replace(/'s\b/g, 's')
     .replace(/[^a-z0-9]+/g, ' ')
     .replace(/\bii\b/g, '2')
     .replace(/\biii\b/g, '3')
-    .replace(/^the /, '')
-    .trim()} `
+    .replace(/\biv\b/g, '4')
+    .replace(/\bvii\b/g, '7')
+    .trim()
+  // "The Witcher 3" matches "Witcher 3"; "The Finals" keeps its "the", or it would match any final.
+  return ` ${/^the \S+ \S/.test(n) ? n.slice(4) : n} `
+}
 
-export const matchesGame = (name: string, text: string) => {
-  const n = norm(name).trim()
-  return n.length >= 3 && norm(text).includes(` ${n} `)
+/** Does the text name the game (or one of its aliases), and not one of the games it must not be confused with? */
+export const matchesGame = (name: string, text: string, opts: { aliases?: string[]; exclude?: string[]; tags?: string[] } = {}) => {
+  const t = norm(text)
+  if ((opts.exclude ?? []).some((x) => t.includes(norm(x)))) return false
+  const names = [name, ...(opts.aliases ?? [])].map(norm).filter((n) => n.trim().length >= 3)
+  return names.some((n) => t.includes(n)) || (opts.tags ?? []).some((tag) => names.includes(norm(tag)))
+}
+
+const matchesPost = (game: Record<string, any>, post: Post) => {
+  const reg = registry.games[game.id]
+  return matchesGame(game.name, post.title, { aliases: reg?.aliases, exclude: reg?.exclude, tags: post.tags })
+}
+
+/** Press status from the headline first ("Live Now", "Next Week"), then the article. */
+export const pressStatusOf = (title: string, body: string): PlatformStatus => {
+  if (/\b(live|out|available|downloading|rolling out|released|arrives?|lands?|drops?|deployed|now)\b/i.test(title) && !/\b(next week|soon|upcoming|incoming|on the way|tomorrow|teased|planned|will)\b/i.test(title))
+    return 'live'
+  if (/\b(next week|soon|upcoming|incoming|on the way|tomorrow|teased|planned|will|detailed|dated|confirmed for|coming)\b/i.test(title)) return 'announced'
+  return ps5StatusOf(body.slice(0, 600) || title)
 }
 
 /** Registry games are always tracked; any other game is tracked while a device follows it. */
@@ -103,14 +126,14 @@ const recordState = (db: DB, sourceId: string, status: number, error: string | n
     )
     .run(sourceId, now(), status, error, blocked ? 1 : 0)
 
-const poll = async (deps: IngestDeps, s: SourceDef, summary: IngestSummary): Promise<Post[] | null> => {
+const poll = async (deps: IngestDeps, s: SourceDef, summary: IngestSummary, opts: PageOpts = {}): Promise<Post[] | null> => {
   try {
     if (s.kind !== 'steamNews' && !(await allowedByRobots(deps.fetchFn, s.url))) {
       recordState(deps.db, s.id, 0, 'disallowed by robots.txt', true)
       summary.errors.push({ sourceId: s.id, error: 'disallowed by robots.txt; set fetch to manual' })
       return null
     }
-    const posts = await fetchPosts(deps.fetchFn, s)
+    const posts = await fetchPosts(deps.fetchFn, s, { ...opts, seen: (id) => store.isSeen(deps.db, s.id, id) })
     recordState(deps.db, s.id, 200, null)
     summary.polled.push(s.id)
     return posts
@@ -149,27 +172,31 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     // Press: attach to the release it reports on, or record a silent update.
     if (!looksLikePatch(post.title)) return null
     const byKey = db.prepare('SELECT id FROM releases WHERE game_id = ? AND version_key = ?').get(game.id, naming.versionKey) as { id: string } | undefined
+    // By date only when one side has no version: "Patch 1.7" is never the release "Update 1.6".
+    const dateKey = /^[a-z]+-\d{4}-\d{2}-\d{2}$/
     const near = byKey
       ? null
       : (db
           .prepare(
-            `SELECT id FROM releases WHERE game_id = ? AND ABS(julianday(announced_at) - julianday(?)) <= 3
-             ORDER BY ABS(julianday(announced_at) - julianday(?)) LIMIT 1`,
+            `SELECT id, version_key FROM releases WHERE game_id = ? AND ABS(julianday(announced_at) - julianday(?)) <= 3
+             ORDER BY ABS(julianday(announced_at) - julianday(?))`,
           )
-          .get(game.id, post.publishedAt, post.publishedAt) as { id: string } | undefined)
+          .all(game.id, post.publishedAt, post.publishedAt) as { id: string; version_key: string }[]).find((r) => dateKey.test(naming.versionKey) || dateKey.test(r.version_key))
     const releaseId =
       byKey?.id ??
       near?.id ??
-      track(store.upsertRelease(db, { gameId: game.id, versionKey: naming.versionKey, displayName: naming.displayName, kind: 'silent', kindBasis: 'inferred', announcedAt: post.publishedAt, notes: [], sourceId: s.id }))
+      // A press headline is the site's words, not a release name: without a version it is just a PS5 update.
+      track(store.upsertRelease(db, { gameId: game.id, versionKey: naming.versionKey, displayName: /^[a-z]+-\d{4}-/.test(naming.versionKey) ? 'PS5 update' : naming.displayName, kind: 'silent', kindBasis: 'inferred', announcedAt: post.publishedAt, notes: [], sourceId: s.id }))
     if (byKey || near) store.addSource(db, releaseId, s.id)
-    const version = consoleVersionOf(text)
-    const size = sizeBytesOf(text)
+    const version = consoleVersionOf(text, { ps5Only: true })
+    const size = sizeBytesOf(post.body) ?? sizeBytesOf(post.title)
+    const status = pressStatusOf(post.title, post.body)
     store.upsertPlatform(db, releaseId, 'ps5', {
-      status: 'live',
+      status,
       verification: 'reported',
       version: version ? store.field(version, 'reported', s.id) : null,
       sizeBytes: size ? store.field(size, 'reported', s.id) : null,
-      liveAt: store.field(post.publishedAt, 'reported', s.id),
+      liveAt: status === 'live' ? store.field(post.publishedAt, 'reported', s.id) : null,
     })
     return releaseId
   }
@@ -188,7 +215,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   }
 
   const status = ps5StatusOf(text)
-  const version = consoleVersionOf(text)
+  const version = consoleVersionOf(text, { ps5Only: s.ps5Signal === 'always' })
   const size = sizeBytesOf(text)
   store.upsertPlatform(db, releaseId, 'ps5', {
     status,
@@ -201,7 +228,13 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   return releaseId
 }
 
-export const runIngest = async (deps: IngestDeps, opts: { force?: boolean } = {}): Promise<IngestSummary> => {
+export interface IngestOpts {
+  force?: boolean
+  /** Backfill: read each source's history back to this date (Steam's last 100 posts, press list pages). */
+  until?: string
+}
+
+export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promise<IngestSummary> => {
   const summary: IngestSummary = { polled: [], skipped: [], errors: [], created: [], revised: [], review: 0 }
   const games = trackedGames(deps.db)
 
@@ -211,7 +244,7 @@ export const runIngest = async (deps: IngestDeps, opts: { force?: boolean } = {}
         summary.skipped.push(s.id)
         continue
       }
-      const posts = await poll(deps, s, summary)
+      const posts = await poll(deps, s, summary, { until: opts.until })
       // Oldest first, so hotfix inference sees the release before it.
       for (const post of (posts ?? []).sort((a, b) => a.publishedAt.localeCompare(b.publishedAt))) {
         if (store.isSeen(deps.db, s.id, post.postId)) continue
@@ -225,14 +258,26 @@ export const runIngest = async (deps: IngestDeps, opts: { force?: boolean } = {}
       summary.skipped.push(s.id)
       continue
     }
-    const posts = await poll(deps, s, summary)
+    const posts = await poll(deps, s, summary, { until: opts.until })
     for (const post of (posts ?? []).sort((a, b) => a.publishedAt.localeCompare(b.publishedAt))) {
       if (store.isSeen(deps.db, s.id, post.postId)) continue
+      if (opts.until && post.publishedAt < opts.until) continue
+      // Shared feeds cover every game: a post counts only if it names the game and reads like a patch;
+      // a press list counts only posts about PS5.
+      const aboutPs5 = s.kind !== 'pressIndex' || mentionsPs5(post.title) || (post.tags ?? []).some((t) => /^PS5$/i.test(t))
+      const matched = looksLikePatch(post.title) && aboutPs5 ? games.filter((g) => matchesPost(g, post)) : []
+      let full = post
+      if (matched.length && post.expand) {
+        try {
+          full = { ...post, ...(await post.expand()) }
+        } catch (e) {
+          summary.errors.push({ sourceId: s.id, error: `${post.url}: ${(e as Error).message}` })
+          continue // not marked seen, so the next run tries again
+        }
+      }
       tx(deps.db, () => {
         let releaseId: string | null = null
-        // Shared feeds cover every game: a post counts only if its title names the game and reads like a patch.
-        if (looksLikePatch(post.title))
-          for (const game of games) if (matchesGame(game.name, post.title)) releaseId = handlePost(deps, game, s, post, summary) ?? releaseId
+        for (const game of matched) releaseId = handlePost(deps, game, s, full, summary) ?? releaseId
         store.markSeen(deps.db, s.id, post.postId, releaseId)
       })
     }
@@ -243,5 +288,5 @@ export const runIngest = async (deps: IngestDeps, opts: { force?: boolean } = {}
 
 // One ingest at a time per process, whether the scheduler or an admin call started it.
 let running: Promise<IngestSummary> | null = null
-export const runIngestExclusive = (deps: IngestDeps, opts: { force?: boolean } = {}) =>
+export const runIngestExclusive = (deps: IngestDeps, opts: IngestOpts = {}) =>
   (running ??= runIngest(deps, opts).finally(() => (running = null)))

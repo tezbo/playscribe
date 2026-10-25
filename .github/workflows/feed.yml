@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'poll, confirm (a person checked an official post naming PS5) or dismiss (a review item)'
+        description: 'poll, backfill (read history back to the since date), confirm (a person checked an official post naming PS5) or dismiss (a review item)'
         type: choice
-        options: [poll, confirm, dismiss]
+        options: [poll, backfill, confirm, dismiss]
         default: poll
       release:
         description: 'confirm: release id, e.g. dawnwalker@1.1'
@@ -32,6 +32,10 @@ on:
       review_item:
         description: 'dismiss: review item id from review.json'
         required: false
+      since:
+        description: 'backfill: earliest date to read, e.g. 2024-01-01'
+        required: false
+        default: '2024-01-01'
 
 concurrency: feed
 
@@ -41,7 +45,8 @@ permissions:
 jobs:
   feed:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # A backfill reads the press list at its 5 s Crawl-delay, so it runs much longer than a poll.
+    timeout-minutes: ${{ inputs.action == 'backfill' && 180 || 20 }}
     env:
       DATABASE_PATH: ${{ github.workspace }}/out/state/playscribe.db
       TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
@@ -70,6 +75,12 @@ jobs:
         if: github.event_name == 'schedule' || inputs.action == 'poll'
         working-directory: backend
         run: npm run ingest --silent -- --export "$GITHUB_WORKSPACE/out"
+      - name: Backfill
+        if: inputs.action == 'backfill'
+        working-directory: backend
+        env:
+          SINCE: ${{ inputs.since }}
+        run: npm run ingest --silent -- --backfill "$SINCE" --export "$GITHUB_WORKSPACE/out"
       - name: Confirm
         if: inputs.action == 'confirm'
         working-directory: backend
