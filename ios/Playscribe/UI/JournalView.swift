@@ -22,12 +22,11 @@ struct JournalView: View {
             }
 
             SectionHeader(title: "On PS5")
-            if mine.isEmpty {
+            if mine.isEmpty, let game = model.game(gameID) {
+                // GR-1: never an empty game. When it's out, and that we're watching for notes.
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("No PS5 notes yet").font(PlayscribeFont.headline)
-                    Text(pc.isEmpty
-                         ? "\(Brand.name) doesn't have verified patch notes for this game yet, so nothing is shown rather than guessed."
-                         : "This game has official notes for its PC build only. They're kept below and don't count as new until they're confirmed on PS5.")
+                    Text(game.ps5AvailabilityLine).font(PlayscribeFont.headline)
+                    Text("Watching for PS5 notes · checked \(model.lastChecked.formatted(.relative(presentation: .named)))")
                         .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                 }
                 .padding(.vertical, 8)
@@ -51,8 +50,6 @@ struct JournalView: View {
                 .tappableFrame()
                 .id("pconly")
                 if groupOpen {
-                    Text("The developer's official notes for these describe the PC build. They may reach PS5 later, under a different version number. \(Brand.name) counts them as yours only once that's confirmed.")
-                        .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                     ForEach(pc) { ReleaseEntry(release: $0, defaultOpen: false).id("rel-\($0.id)") }
                 }
             }
@@ -98,7 +95,7 @@ struct ReleaseEntry: View {
                         if let v = r.ps5Version { Text("·"); Text(v).monospacedDigit() }
                     }
                     .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
-                    if !open, let h = r.headline { Text(h).font(PlayscribeFont.subheadline).lineLimit(2) }
+                    if !open, let h = r.isPS5Listed ? r.ps5Headline : r.headline { Text(h).font(PlayscribeFont.subheadline).lineLimit(2) }
                 }
                 .contentShape(Rectangle())
                 .frame(minHeight: 44)
@@ -154,36 +151,60 @@ extension EnvironmentValues {
     }
 }
 
+/// GR-3: story first. Headline, a short summary, the key changes, one line of facts that
+/// expands in place, then the full notes. Tags are the only provenance signal.
 struct ReleaseBody: View {
     @Environment(AppModel.self) private var model
     @Environment(\.marginReleaseID) private var marginReleaseID
     var release: Release
+    @State private var factsOpen = false
+    @State private var summaryOpen = false
 
     var body: some View {
         let r = release
+        let ps5Page = r.isPS5Listed
         VStack(alignment: .leading, spacing: 14) {
-            if let h = r.headline { Text(h).font(PlayscribeFont.body.weight(.semibold)) }
-            if marginReleaseID != r.id { FactsCard(release: r) }
-            if let summary = r.summary {
+            if let h = ps5Page ? r.ps5Headline : r.headline {
+                Text(h).font(PlayscribeFont.title3)
+            }
+            if let summary = ps5Page ? r.ps5Summary : r.summary {
+                Text(summary)
+                    .lineLimit(summaryOpen ? nil : 3)
+                    .onTapGesture { summaryOpen.toggle() }
+                    .accessibilityAddTraits(.isButton)
+                    .accessibilityHint(summaryOpen ? "Shows less" : "Shows the full summary")
+            }
+            let keys = ps5Page ? r.ps5KeyChanges : (r.keyChanges ?? [])
+            if !keys.isEmpty {
                 VStack(alignment: .leading, spacing: 8) {
-                    Label("\(Brand.name) summary", systemImage: "sparkles").font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(.secondary)
-                    Text(summary)
-                    ForEach(r.keyChanges ?? [], id: \.self) { k in
-                        Label { Text(k) } icon: { Image(systemName: "circle.fill").font(.system(size: 5)) }
-                            .font(PlayscribeFont.subheadline)
+                    ForEach(keys, id: \.self) { k in
+                        HStack(alignment: .firstTextBaseline, spacing: 10) {
+                            Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
+                            Text(k).font(PlayscribeFont.subheadline)
+                        }
                     }
                 }
-                .padding(12)
-                .background(Color.ink3.opacity(0.6), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            }
+            if marginReleaseID != r.id {
+                Button { withAnimation(.snappy) { factsOpen.toggle() } } label: {
+                    HStack {
+                        Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Spacer()
+                        Image(systemName: "chevron.down").rotationEffect(.degrees(factsOpen ? 180 : 0)).foregroundStyle(.secondary)
+                    }
+                    .frame(minHeight: 44)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityHint(factsOpen ? "Hides the PS5 facts" : "Shows the PS5 facts")
+                .tappableFrame()
+                if factsOpen { FactsCard(release: r) }
             }
             if r.isSilent && r.notes.isEmpty {
                 Text("No official notes").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
-            if !r.notes.isEmpty {
-                Text("Official notes · \(r.noteCount) items").font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(.secondary)
-                ForEach(Array(r.notes.enumerated()), id: \.offset) { _, section in
-                    NoteSectionView(release: r, section: section)
-                }
+            ForEach(Array(r.notes.enumerated()), id: \.offset) { _, section in
+                NoteSectionView(release: r, section: section)
             }
             HStack(spacing: 10) {
                 let marked = model.isBookmarked(kind: .release, id: r.id)
@@ -196,7 +217,7 @@ struct ReleaseBody: View {
                 if r.ps5State == .onPS5 {
                     let unread = model.isUnread(r)
                     Button { model.markRead(r.id, unread) } label: {
-                        Label(unread ? "Mark as read" : "Mark as unread", systemImage: unread ? "checkmark.circle" : "circle")
+                        Label(unread ? "Mark as read" : "Mark as unread", systemImage: unread ? "envelope.open" : "envelope.badge")
                     }
                     .buttonStyle(.bordered)
                     .hitTarget()
@@ -204,6 +225,24 @@ struct ReleaseBody: View {
                 }
             }
         }
+    }
+}
+
+/// "Live on PS5 · 13 GB · 22 Oct" (GR-3).
+enum FactsLine {
+    static func text(for r: Release) -> String {
+        var parts: [String] = []
+        switch r.ps5State {
+        case .onPS5: parts.append("Live on PS5")
+        case .announced: parts.append("Announced for PS5")
+        case .reported: parts.append("Reported on PS5")
+        case .notPlanned: parts.append("Not planned for PS5")
+        case .pcOnly, .pending: parts.append("PC only so far")
+        }
+        if let v = r.ps5Version { parts.append(v) }
+        if let size = r.ps5?.sizeBytes { parts.append(ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal)) }
+        parts.append((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth)
+        return parts.joined(separator: " · ")
     }
 }
 
@@ -334,8 +373,8 @@ struct NoteSectionView: View {
     var body: some View {
         let key = "cat:\(release.id):\(section.title)"
         let open = model.isExpanded(key)
-        let ps5Items = section.items.filter { $0.platforms == nil || $0.platforms!.contains(.ps5) }
-        let pcOnly = section.items.filter { $0.platforms != nil && !$0.platforms!.contains(.ps5) }
+        let ps5Items = release.isPS5Listed ? section.items.filter { !$0.isPCOnly } : section.items
+        let pcOnly = release.isPS5Listed ? section.items.filter(\.isPCOnly) : []
         let hidden = section.items.filter { $0.spoiler == true }.count
         VStack(alignment: .leading, spacing: 8) {
             Button { model.setExpanded(key, !open) } label: {

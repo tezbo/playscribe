@@ -124,3 +124,69 @@ struct ModelTests {
         #expect(!hits.isEmpty)
     }
 }
+
+@MainActor
+struct PS5ContentTests {
+    @Test("GR-2: no PC-only term on a PS5 page outside the PC-only group")
+    func noPCTermsOnPS5Pages() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "gr2-\(UUID().uuidString).json"))
+        for g in m.fixtures.games {
+            for r in m.releases(g.id) where r.isPS5Listed {
+                var lines = [r.ps5Headline, r.ps5Summary, r.pushLine].compactMap { $0 } + r.ps5KeyChanges
+                lines.append(NotificationService.body(for: r))
+                lines += r.notes.flatMap(\.items).filter { !$0.isPCOnly }.map(\.text)
+                for line in lines { #expect(!PCOnly.matches(line), "\(r.id): \(line)") }
+            }
+            for e in m.fixtures.book where e.gameID == g.id {
+                #expect(!PCOnly.matches(e.title + " " + e.body), "\(e.id)")
+            }
+        }
+        // The blocklist itself.
+        for term in ["FrameGen", "DLSS", "FSR", "XeSS", "AMD", "NVIDIA", "Intel Arc", "Steam", "Steam Deck", "mouse", "keyboard", "ultrawide"] {
+            #expect(PCOnly.matches("Fixed \(term) issue"), "\(term)")
+        }
+    }
+}
+
+@MainActor
+struct ReviewFixTests {
+    func model() -> AppModel { AppModel(storeURL: URL.temporaryDirectory.appending(path: "gr-\(UUID().uuidString).json")) }
+
+    @Test("GR-4: note search finds PS5 items, PC-only last, scoped")
+    func noteSearch() {
+        let m = model()
+        let hits = m.noteHits("subtitle", scope: .thisGame, gameID: "dawnwalker")
+        #expect(!hits.isEmpty)
+        #expect(hits.allSatisfy { $0.release.gameID == "dawnwalker" })
+        #expect(m.noteHits("s", scope: .allGames, gameID: nil).isEmpty)
+    }
+
+    @Test("GR-5: a future game says Out, never Released, and adds as Wishlist")
+    func futureGames() {
+        let m = model()
+        var g = PS5Index.shared.popular(limit: 1)[0]
+        g.id = "future-test"; g.releaseDate = "2099-11-19"; g.playableSince = nil; g.earlyAccess = nil
+        #expect(g.ps5DateLine?.hasPrefix("Out 19 Nov") == true)
+        m.addGames([g], status: .owned)
+        #expect(m.entry("future-test")?.status == .wishlist)
+    }
+
+    @Test("GR-7: adding several games is undone by one Undo")
+    func multiAdd() {
+        let m = model()
+        let games = Array(PS5Index.shared.popular(limit: 3))
+        m.addGames(games, status: .owned)
+        #expect(m.toast?.text == "Added 3 games")
+        m.toast?.undo?()
+        #expect(games.allSatisfy { m.entry($0.id) == nil })
+    }
+
+    @Test("GR-1: no game in the demo set has an empty Updates chapter")
+    func neverEmpty() {
+        let m = model()
+        for c in m.data.collection {
+            let g = m.game(c.gameID)!
+            #expect(!m.ps5Releases(c.gameID).isEmpty || !g.ps5AvailabilityLine.isEmpty)
+        }
+    }
+}

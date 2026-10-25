@@ -303,7 +303,7 @@ struct GameRow: View {
                             if let r = row.latest {
                                 Text("\(r.displayName) · \(r.ps5Date.dayMonth)").font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                             } else {
-                                Text("No PS5 notes yet").font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                                Text("\(row.game.ps5AvailabilityLine) · No notes").font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                             }
                         }
                     }
@@ -315,7 +315,7 @@ struct GameRow: View {
             }
             .buttonStyle(.plain)
             .tappableFrame()
-            .background(model.highlight == row.id ? PlayscribeColor.accent.opacity(0.15) : .clear)
+            .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.15) : .clear)
             GameMenuButton(gameID: row.id)
         }
         .accessibilityElement(children: .contain)
@@ -323,9 +323,10 @@ struct GameRow: View {
     }
 
     private func clearHighlight() async {
-        guard model.highlight == row.id else { return }
+        guard model.highlight == row.id || model.highlightSet.contains(row.id) else { return }
         try? await Task.sleep(for: .seconds(1))
         model.highlight = nil
+        model.highlightSet = []
     }
 }
 
@@ -381,7 +382,7 @@ struct GameTile: View {
             .overlay(alignment: .trailing) { GameMenuButton(gameID: row.id).offset(x: 12) }
         }
         .frame(width: size)
-        .background(model.highlight == row.id ? PlayscribeColor.accent.opacity(0.15) : .clear)
+        .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.15) : .clear)
         .accessibilityElement(children: .contain)
         .accessibilityLabel("\(row.game.name), \(row.status.label)\(row.unread > 0 ? ", \(row.unread) unread" : "")")
     }

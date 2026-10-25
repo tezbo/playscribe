@@ -31,6 +31,15 @@ extension Color {
 }
 
 extension OwnershipStatus {
+    /// GR-6: the status's own symbol.
+    var symbol: String {
+        switch self {
+        case .owned: "gamecontroller"
+        case .wishlist: "star"
+        case .watching: "binoculars"
+        }
+    }
+
     var tint: Color {
         switch self {
         case .owned: .ok

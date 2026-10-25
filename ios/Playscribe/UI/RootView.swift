@@ -95,7 +95,7 @@ struct TabRoot: View {
             }
             .badge(model.totalUnread)
 
-            Tab("Updates", systemImage: "clock.arrow.circlepath", value: AppTab.updates) {
+            Tab("Updates", systemImage: "newspaper", value: AppTab.updates) {
                 NavigationStack { UpdatesView() }
                     .tabletopChrome(duo)
             }
@@ -196,7 +196,7 @@ struct TabletopRail: View {
             Spacer(minLength: 8)
             Divider().frame(width: 28)
             tab(.library, "Library", "books.vertical", badge: model.totalUnread)
-            tab(.updates, "Updates", "clock.arrow.circlepath")
+            tab(.updates, "Updates", "newspaper")
             tab(.search, "Search", "magnifyingglass")
         }
         .padding(.vertical, 8)

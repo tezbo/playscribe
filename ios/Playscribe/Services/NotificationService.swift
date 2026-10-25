@@ -86,10 +86,10 @@ final class NotificationService: NSObject {
     /// N-4: "<Display name> is live on PS5: <short line>." under about 110 characters, one colon.
     static func body(for release: Release) -> String {
         let head = "\(release.displayName) is live on PS5"
-        var line = release.pushLine
+        var line = release.pushLine.flatMap { PCOnly.matches($0) ? nil : $0 }
         if line == nil {
             // The two shortest key-change headlines: the part before any colon or semicolon.
-            let heads = (release.keyChanges ?? []).map { k in
+            let heads = release.ps5KeyChanges.map { k in
                 String(k.split(whereSeparator: { $0 == ":" || $0 == ";" }).first ?? Substring(k)).trimmingCharacters(in: .whitespaces)
             }.sorted { $0.count < $1.count }.prefix(2)
             if !heads.isEmpty { line = heads.joined(separator: ", and ") }

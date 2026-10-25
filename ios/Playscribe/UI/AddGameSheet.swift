@@ -12,6 +12,9 @@ struct AddGameSheet: View {
     @State private var custom = false
     @State private var customName = ""
     @State private var customPlatform: Platform = .ps5
+    /// GR-7: games picked so far; kept while the query changes.
+    @State private var picked: [String: CatalogGame] = [:]
+    @State private var pickOrder: [String] = []
 
     var body: some View {
         NavigationStack {
@@ -23,6 +26,13 @@ struct AddGameSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button { dismiss() } label: { Label("Close", systemImage: "xmark") }
+                }
+                if !picked.isEmpty && !custom {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Add \(picked.count)") { addPicked() }
+                            .fontWeight(.semibold)
+                            .accessibilityLabel("Add \(picked.count) game\(picked.count == 1 ? "" : "s")")
+                    }
                 }
             }
         }
@@ -83,7 +93,7 @@ struct AddGameSheet: View {
                     Text("No PS5 game matches '\(debounced)'").foregroundStyle(.secondary)
                     Button("Add '\(debounced)' yourself") { customName = debounced; custom = true }.hitTarget()
                 }
-                ForEach(rows) { g in AddRow(game: g, status: status) { add(g) } }
+                ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
             }
             Section {
                 Button { customName = query; custom = true } label: {
@@ -123,39 +133,62 @@ struct AddGameSheet: View {
         model.addGame(g, status: status)
         dismiss()
     }
+
+    private func toggle(_ g: CatalogGame) {
+        if picked[g.id] != nil { picked[g.id] = nil; pickOrder.removeAll { $0 == g.id } } else { picked[g.id] = g; pickOrder.append(g.id) }
+    }
+
+    private func addPicked() {
+        model.addGames(pickOrder.compactMap { picked[$0] }, status: status)
+        dismiss()
+    }
 }
 
 struct AddRow: View {
     @Environment(AppModel.self) private var model
     var game: CatalogGame
     var status: OwnershipStatus
+    var selected = false
     var onAdd: () -> Void
 
     var body: some View {
         let added = model.entry(game.id) != nil
-        HStack(spacing: 12) {
-            CoverView(game: game, cornerRadius: 4).frame(width: 40)
-            VStack(alignment: .leading, spacing: 2) {
-                Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
-                Text(subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+        Button(action: onAdd) {
+            HStack(spacing: 12) {
+                CoverView(game: game, cornerRadius: 4).frame(width: 40)
+                    .overlay(alignment: .topTrailing) {
+                        if selected {
+                            Image(systemName: "checkmark.circle.fill")
+                                .symbolRenderingMode(.palette)
+                                .foregroundStyle(PlayscribeColor.onAccent, PlayscribeColor.accent)
+                                .font(.title3).offset(x: 8, y: -8)
+                        }
+                    }
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
+                    Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                }
+                Spacer(minLength: 8)
+                Image(systemName: added ? "checkmark" : selected ? "checkmark.circle.fill" : "plus.circle")
+                    .font(.title3)
+                    .foregroundStyle(added ? .secondary : PlayscribeColor.accent)
+                    .frame(width: 44, height: 44)
             }
-            Spacer(minLength: 8)
-            Button(added ? "In library" : "Add", action: onAdd)
-                .buttonStyle(.bordered)
-                .disabled(added)
-                .hitTarget()
-                .accessibilityLabel(added ? "\(game.name) is in your library" : "Add \(game.name) as \(status.label)")
-                .tappableFrame()
+            .contentShape(Rectangle())
         }
+        .buttonStyle(.plain)
+        .disabled(added)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(added ? "\(game.name), in your library" : "\(game.name), \(subtitle)")
+        .accessibilityAddTraits(selected ? [.isButton, .isSelected] : .isButton)
+        .tappableFrame()
     }
 
-    /// Uncovered games show their PS5 date (or when they became playable on PS5), never a
-    /// repeated "no coverage" line.
     private var subtitle: String {
         switch game.coverage {
         case .full: "Full PS5 update coverage"
         case .partial: "Latest official posts"
-        case .none: game.ps5DateLine ?? game.developer ?? ""
+        case .none: game.ps5DateLine ?? "Release date TBA"
         }
     }
 }

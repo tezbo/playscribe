@@ -1,4 +1,4 @@
-# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v1.3, 2026-10-25: Tabletop and video redesign TT/VB; v1.2 section 9 Open pose and transitions added; v1.1 added G-12, G-13)
+# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v1.4, 2026-10-25: section 10 gamer-review fixes GR-1..GR-7; v1.3 Tabletop and video redesign TT/VB; v1.2 section 9 Open pose and transitions added; v1.1 added G-12, G-13)
 
 Owner: UX/CX QA thread. Decided 2026-10-24 under Terry's delegation. This is the contract the SwiftUI app builds against and QA tests against. Put it in the repo as `docs/ux-acceptance.md`. IDs are stable: cite them in commits and test names.
 
@@ -67,7 +67,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 ## 3. Library
 
 - **B-1** Closed: rows have a 44 pt cover, the name (up to 2 lines), a status pill, the latest **On PS5** release name with its date, and an unread count. Open flat: 112 pt tiles. Book: 100 pt tiles. Tabletop: 84 pt tiles. One fixed cover size per pose (Terry). When divided, prefer an even number of columns if the fixed size allows it.
-- **B-2** A game with no On PS5 release shows "No PS5 notes yet" in place of the version.
+- **B-2** *(Superseded by GR-1.)* A game with no On PS5 release shows its latest known PS5 version and date with "Watching for PS5 notes", never a bare "No PS5 notes yet".
 - **B-3** Default sort is "Recently updated on PS5". The other sort is "Name". Filters are All, Owned, Wishlist and Watching, each with a count.
 - **B-4** "Continue" tile: the game with the most recent unread On PS5 release, as the first item, with key art. Tapping it opens that game on its newest unread release. It is hidden when nothing is unread.
 - **B-5** Tabletop: the upper half shows the Continue game's key art and title, view-only. Search, filters, sort and the grid are in the lower half. The Continue tile is the first grid item.
@@ -78,7 +78,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 
 ## 4. Add a game
 
-- **A-1** "+" (pinned toolbar item) opens a system sheet. Its Close is a `cancellationAction`: top of the vertical bar on the outer display, sheet header elsewhere, lower half in tabletop. There is no Done button, because adding is per row.
+- **A-1** "+" (pinned toolbar item) opens a system sheet. Its Close is a `cancellationAction`: top of the vertical bar on the outer display, sheet header elsewhere, lower half in tabletop. *(v1.4: rows and tiles select, and an "Add n" confirmation action adds them all, see GR-7.)*
 - **A-2** The sheet contains:
   - a status segmented control (Owned, Wishlist, Watching; default Owned)
   - a search field
@@ -95,7 +95,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 
 - **R-1** Opening a game shows the Updates chapter. The newest **On PS5** release is expanded and scrolled to the top. Older releases are collapsed.
 - **R-2** Release header: display name ("Update 1.1"), kind label (Day-one patch / Hotfix / Patch / Major update / Silent update), the PS5 live date, and the PS5 version string exactly as the console shows it ("01.004.000"), or nothing if unknown.
-- **R-3** Facts:
+- **R-3** Facts *(v1.4: shown as one line under the key changes, see GR-3; this list is the expanded view)*:
   - **Status:** "Live on PS5", "Announced for PS5" or "Reported on PS5"
   - **PS5 version**
   - **Download:** size, with "Reported" if from the press
@@ -184,7 +184,7 @@ Apple basis (fetched 2026-10-25, unchanged from baseline): show an extra level o
 - **O-6** Everything tappable in Open meets G-7. Nothing sits under the system rail or bars.
 
 **Tabletop and video redesign (2026-10-25, after Terry's review).** Visual: https://claude.ai/artifact/6kthKpcPy4EvLB5iZ9jEoV (copy: qa/design/tabletop-video.html). Apple basis (fetched 2026-10-25): a partially open overlay arrangement puts the primary view at the trailing or bottom side of the fold and the secondary at the leading or top side; "Locate controls near the content they affect"; "Use the system video player…", and a custom player must reference the system player's behaviour and interface.
-- **TT-0** Layout keys on the active `.division` reserved region, not on a pose name: a division wider than tall means tabletop; taller than wide means book. No view's frame may intersect an active division. Add a UI test that fails if any visible view crosses it. (Terry's screenshot showed the Spread's page card across the fold, so the division was being ignored.)
+- **TT-0** Layout keys on the active `.division` reserved region, not on a pose name: a division wider than tall means tabletop; taller than wide means book. No view's frame may intersect an active division. Add a UI test that fails if any visible view crosses it. (Terry's screenshot showed the Spread's page card across the fold, so the division was being ignored.) TT-0 applies to settled layouts. While a pose transition runs (at most 0.45 s), a moving piece may cross the fold, but it must not take hits until it settles, and once settled nothing may cross.
 - **TT-1** Tabletop uses `ArrangementView(.overlay)`. The secondary (top) is the stage, with `.allowsHitTesting(false)`. The primary (bottom) holds every control.
 - **TT-2** Tabletop reading: the standing half shows one section of the release at a time (Literata title 32 pt, body 19 pt, max 34 characters per line) over the game's art, blurred to 35% brightness, with page dots and "n of N". The flat half shows the chapter switcher, the release outline (one 44 pt row per section, the current one highlighted), large Previous and Next buttons (52 pt) and the trailing rail. Sections are: Overview, each key change, Fixes, then PS5 facts and video. Nothing scrolls on the standing half.
 - **TT-3** Tabletop Library: the standing half shows the Continue art and title (display only). The flat half shows one horizontal row of covers, then the filters.
@@ -205,6 +205,65 @@ Apple basis (fetched 2026-10-25, unchanged from baseline): show an extra level o
 - **T-9** Open landscape to Open portrait or Tabletop (rotation): the art takes the top band or upper half; the Library becomes the shelf (portrait) or steps back to the Library tab (tabletop); controls move to the system position for that pose.
 - **T-10** A playing video keeps playing through every transition (P-2). The player the user opened stays the player in every pose: full display in Closed and Open, the upper-half stage in Tabletop. It never shrinks into the Margin. The Margin shows only the video's thumbnail and duration, and tapping it opens the player.
 
-## 10. QA method
+## 10. Gamer-review fixes (v1.4)
+
+Source: the gamer review of 2026-10-25, ranked. Apple basis, fetched 2026-10-25:
+- Designing for iPhone Duo: "Labels that include text stay in a horizontal bar, so prefer a symbol wherever one works", and "Provide both a title and a symbol for each toolbar item".
+- Toolbars: "Make sure the meaning of each control is clear. Don't make people guess".
+- Searching: "Clearly display the current scope of a search", and "Provide suggestions".
+- SwiftUI: `accessibilityShowsLargeContentViewer()`, `searchScopes(_:scopes:)` and `searchSuggestions(_:)`.
+
+**Keep unchanged:** tabletop Watch along, spoiler-hidden quest notes, the tabletop step reader (TT-2), the N-7 pill, and Undo (B-8, A-5).
+
+- **GR-1 Never an empty game.** A game with no notes still shows a per-game timeline in the Updates chapter.
+  - Each known PS5 release is a row: the PS5 version (never a PC version, V-2), the PS5 date, the reported size, and its tag.
+  - Under the rows is the line "Watching for PS5 notes · checked <relative time>".
+  - If no PS5 release is known at all, show the PS5 launch date ("Out on PS5 since 4 Feb 2025", or "Out 19 Nov" for a future game) plus the watching line.
+  - Library rows (B-2) show the latest known PS5 version and date with "No notes", not "No PS5 notes yet".
+  - Acceptance: no game in the demo set renders an empty Updates chapter.
+- **GR-2 PS5 pages show PS5 content only.** On a console page, these use only items that apply to PS5:
+  - the headline, the summary, the key changes, push text (N-4), and Help / known issues.
+  - PC-only items, such as PC hardware, upscalers and frame generation, mouse and keyboard, Steam or Steam Deck features, and GPU vendor crashes, appear only behind R-4's "Show PC-only changes (n)".
+  - Items whose platform is unknown can be listed, but they are never the headline or the push line.
+  - If the source headline is PC-only, the headline becomes the top PS5 key change.
+  - Acceptance: a test fails if FrameGen, DLSS, FSR, XeSS, AMD, NVIDIA, Intel Arc, Steam, Steam Deck, mouse, keyboard or ultrawide appears on a PS5 page outside the PC-only group. Native fixtures must pass the same test. The data rules belong to the backend thread.
+- **GR-3 Reading order: story first.**
+  - A release opens with the headline (display font), then the summary (at most 3 lines), then the key changes, then the full notes.
+  - Facts collapse to one line under the key changes: "Live on PS5 · 13 GB · 22 Oct". Tapping it expands the full R-3 list in place.
+  - Tags are chips (PS5 Pro, Reported, Spoiler).
+  - Remove the inline provenance legends and explainer paragraphs. Tags stay the only provenance signal (V-3).
+  - The "can't see your console" line moves to the expanded facts.
+  - Open keeps its Margin (O-4), with the same one-line summary at its top.
+- **GR-4 Search inside notes ("did they fix X?").**
+  - The Search tab and an in-book search field use `.searchable`, with `searchScopes` "This game" and "All my games". The in-book field defaults to "This game", and the placeholder names the scope: "Search Dawnwalker's notes".
+  - Matching starts at 2 characters, is case- and accent-insensitive, and covers PS5 items' text and section names.
+  - Results are grouped by release, newest first. Each shows the matching line with the term in bold, the release name, the date and the tag.
+  - Tapping a result opens the release with that item highlighted for 1 s at the reading anchor.
+  - PC-only matches are listed last under "PC only".
+  - No match: "No mention of '<q>' in <Game>'s PS5 notes", plus "Search all my games".
+  - `searchSuggestions` offers recent searches. Search text survives pose changes (P-1).
+- **GR-5 Release status in Add is honest.** The row's date line follows IGDB's date precision:
+  - "Released 2025" for a past date.
+  - "Out 19 Nov" for a future date this year, or "Out 19 Nov 2027" for a later year.
+  - "Coming 2027" when only the year is known, and "Release date TBA" when nothing is known.
+  - A future date never says "Released". A future game added from Add defaults to Wishlist and shows its "Out …" line in the Library.
+- **GR-6 Every rail item says what it does.** The Duo rail stays symbol-only (system rule), so:
+  - (a) Every item is a `Label` with a title, and every item has `accessibilityShowsLargeContentViewer()`, so a long press shows its name.
+  - (b) Use self-explanatory symbols:
+    - Notifications: `bell`, or `bell.slash` when off.
+    - Spoilers: `eye.slash` when hidden, `eye` when shown.
+    - Status: a symbol for the current status, `gamecontroller` (Owned), `star` (Wishlist) or `binoculars` (Watching), instead of `tag`.
+    - Mark all read: `envelope.open`, instead of a bare checkmark.
+    - Updates tab: `newspaper`, instead of `clock`.
+  - (c) Each one-tap item confirms by name: "Spoilers shown", or "3 updates marked read · Undo". Menus (bell, status) show their title as the menu header.
+  - (d) In open portrait's horizontal bars, items show title and symbol where the system allows text.
+  - Acceptance: the five symbols, a title on every item, and the confirmations.
+- **GR-7 Add several at once.**
+  - In the Add sheet, tapping a Popular tile or a search row toggles selection (a checkmark badge, plus a selected trait for VoiceOver). Selection persists while the query changes.
+  - A `confirmationAction` "Add n" appears when n ≥ 1, after Close at the top of the rail (A-1).
+  - Adding closes the sheet and shows "Added 3 games · Undo". Undo removes all of them. The library highlights all the new games.
+  - Single add is the same flow with n = 1. Games already in the library stay disabled (A-3).
+
+## 11. QA method
 
 QA re-runs these as a checklist on each build. It uses simulator or Device Hub screenshots for: Library, Add game, game book, video and a notification arrival, each in Closed, Open portrait, Open landscape, Book and Tabletop. It adds an Accessibility Inspector audit and AX5 Dynamic Type screenshots of Library and game book. G-4 and G-5 are measured from frames, not judged by eye. Builds should expose a debug overlay that outlines tappable frames and reserved regions.

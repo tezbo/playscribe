@@ -99,6 +99,12 @@ extension AppModel {
         NotificationService.shared.updateBadge(badgeCount)
     }
 
+    /// When the feed was last checked (GR-1), else the bundled data's check time.
+    var lastChecked: Date {
+        if case .updated(let d) = feedStatus { return d }
+        return FeedClient.loadCache()?.updatedAt ?? "2026-10-23".isoDay ?? .now
+    }
+
     /// The Library's quiet status line (E-1, E-2).
     var feedStatusLine: String? {
         switch feedStatus {

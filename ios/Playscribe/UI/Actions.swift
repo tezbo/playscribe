@@ -110,13 +110,17 @@ extension AppModel {
         out.append(ScreenAction(id: "notify", title: "Notifications", systemImage: level == .off ? "bell.slash" : "bell",
                                 kind: .menu(notifyMenu(gameID)), priority: .high))
         let shown = spoilersShown(gameID)
+        // GR-6: symbols that say what they do; one-tap items confirm by name.
         out.append(ScreenAction(id: "spoilers", title: shown ? "Hide spoilers" : "Show spoilers", systemImage: shown ? "eye" : "eye.slash",
-                                kind: .button { [weak self] in self?.setSpoilersShown(gameID, !shown) }, priority: .high))
-        if entry(gameID) != nil {
-            out.append(ScreenAction(id: "status", title: "Library status", systemImage: "tag", kind: .menu(statusMenu(gameID)), priority: .automatic))
+                                kind: .button { [weak self] in
+                                    self?.setSpoilersShown(gameID, !shown)
+                                    self?.show(Toast(text: shown ? "Spoilers hidden" : "Spoilers shown"))
+                                }, priority: .high))
+        if let status = entry(gameID)?.status {
+            out.append(ScreenAction(id: "status", title: "Status: \(status.label)", systemImage: status.symbol, kind: .menu(statusMenu(gameID)), priority: .automatic))
         }
         if unreadCount(gameID) > 0 {
-            out.append(ScreenAction(id: "readall", title: "Mark all read", systemImage: "checkmark.circle",
+            out.append(ScreenAction(id: "readall", title: "Mark all read", systemImage: "envelope.open",
                                     kind: .button { [weak self] in self?.markAllRead(gameID) }, priority: .low))
         }
         return out
@@ -132,8 +136,10 @@ struct ActionToolbar: ToolbarContent {
                 switch a.kind {
                 case .button(let run):
                     Button(action: run) { Label(a.title, systemImage: a.systemImage) }
+                        .accessibilityShowsLargeContentViewer()
                 case .menu(let sections):
                     Menu { ActionMenuContent(sections: sections) } label: { Label(a.title, systemImage: a.systemImage) }
+                        .accessibilityShowsLargeContentViewer()
                 }
             }
             .visibilityPriority(a.priority)
