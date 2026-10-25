@@ -128,7 +128,9 @@ struct LibraryRoot: View {
         switch duo.pose {
         case .book:
             NavigationSplitView(columnVisibility: .constant(.all)) {
+                // Both pages always show in book pose, so there is no sidebar toggle.
                 BookLeftPage(gameID: model.spreadGameID)
+                    .toolbar(removing: .sidebarToggle)
             } detail: {
                 if let id = model.spreadGameID {
                     NavigationStack { GameBookView(gameID: id) }
