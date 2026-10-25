@@ -31,3 +31,16 @@ test('the build rejects a PS5 date before launch', () => {
   assert.equal(problemsOf([{ i: 1, n: 'A', d: '2020-11-12' }, { i: 2, n: 'B' }]).length, 0)
   assert.equal(problemsOf([{ i: 3, n: 'C', d: '2020-08-14' }]).length, 1)
 })
+
+test('a PS5 date keeps how exact it is: month, quarter, year or TBD', () => {
+  const formats: Record<number, string> = { 1: 'YYYYMMMMDD', 2: 'YYYYMMMM', 3: 'YYYY', 4: 'YYYYQ4', 5: 'TBD' }
+  const fmt = (i?: number) => (i == null ? undefined : formats[i])
+  const of = (rows: object[]) => ps5DatesOf(rows as never, ids, nameOf, undefined, fmt)
+  assert.deepEqual(of([{ platform: 167, status: 1, date: at('2027-12-31'), date_format: 3 }]), { d: '2027-12-31', q: 'year', b: undefined })
+  assert.deepEqual(of([{ platform: 167, status: 1, date: at('2027-12-31'), date_format: 4 }]).q, 'quarter')
+  assert.deepEqual(of([{ platform: 167, status: 1, date: at('2027-03-31'), date_format: 2 }]).q, 'month')
+  assert.equal(of([{ platform: 167, status: 1, date: at('2027-03-14'), date_format: 1 }]).q, undefined)
+  assert.deepEqual(of([{ platform: 167, date_format: 5 }]), { q: 'tbd', d: undefined, b: undefined })
+  // The older category enum: 2 is year.
+  assert.equal(of([{ platform: 167, status: 1, date: at('2028-12-31'), category: 2 }]).q, 'year')
+})

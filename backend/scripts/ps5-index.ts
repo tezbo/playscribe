@@ -8,6 +8,8 @@
 //      releases and never count, nor are rows dated before the PS5 launch. No PS5 date means no
 //      `d`, never another platform's date.
 //   f  when `d` is early access (or alpha/beta), the later full PS4 release (IGDB often records the 1.0 on PS4 only).
+//   q  how exact d is when it is not a day: month, quarter, year (d is the period's last day, as
+//      IGDB stores it), or tbd when IGDB lists a PS5 release with no date. Absent means a day.
 //   e  true when `d` is early access and there is no full release yet.
 //   b  the PS4 release, only when it came before `d` (or there is no `d`): PS4 games play on PS5,
 //      so this is when PS5 owners could first play it (Roblox: PS4 Oct 2023, native PS5 Apr 2026).
@@ -35,18 +37,20 @@ if (!ps5 || !ps4) throw new Error('PS5 or PS4 platform not found')
 const overrides = JSON.parse(readFileSync(new URL('./ps5-date-overrides.json', import.meta.url), 'utf8')) as Record<string, Override>
 const statuses = await igdb.query<{ id: number; name: string }>('release_date_statuses', 'fields id,name; limit 50;')
 const statusName = new Map(statuses.map((s) => [s.id, s.name]))
+const formats = await igdb.query<{ id: number; format: string }>('date_formats', 'fields id,format; limit 50;')
+const formatName = new Map(formats.map((f) => [f.id, f.format]))
 
 const datesOf = (id: number, rows: ReleaseDate[] | undefined) =>
-  ps5DatesOf(rows, { ps5: ps5.id, ps4: ps4.id }, (i) => statusName.get(i!), overrides[String(id)])
+  ps5DatesOf(rows, { ps5: ps5.id, ps4: ps4.id }, (i) => statusName.get(i!), overrides[String(id)], (i) => formatName.get(i!))
 
 if (args.includes('--inspect')) {
   const ids = args[args.indexOf('--inspect') + 1]!.split(',').map(Number)
-  const rows = await igdb.query<any>('games', `fields name,first_release_date,release_dates.date,release_dates.platform,release_dates.status,release_dates.human,release_dates.release_region; where id = (${ids.join(',')});`)
+  const rows = await igdb.query<any>('games', `fields name,first_release_date,release_dates.date,release_dates.platform,release_dates.status,release_dates.human,release_dates.release_region,release_dates.date_format; where id = (${ids.join(',')});`)
   for (const g of rows) {
-    const { d, e, f, b } = datesOf(g.id, g.release_dates)
-    console.log(`${g.id} ${g.name} first_release=${day(g.first_release_date)} → d=${d ?? '-'}${e ? ' (early access)' : ''}${f ? ` f=${f}` : ''} b=${b ?? '-'}`)
+    const { d, q, e, f, b } = datesOf(g.id, g.release_dates)
+    console.log(`${g.id} ${g.name} first_release=${day(g.first_release_date)} → d=${d ?? '-'}${q ? ` (${q})` : ''}${e ? ' (early access)' : ''}${f ? ` f=${f}` : ''} b=${b ?? '-'}`)
     for (const r of (g.release_dates ?? []).filter((r: ReleaseDate) => r.platform === ps5.id || r.platform === ps4.id))
-      console.log(`  ${r.platform === ps5.id ? 'PS5' : 'PS4'} ${day(r.date) ?? '-'}  ${r.human ?? ''}  status=${statusName.get(r.status!) ?? r.status ?? '-'} region=${r.release_region ?? '-'}`)
+      console.log(`  ${r.platform === ps5.id ? 'PS5' : 'PS4'} ${day(r.date) ?? '-'}  ${r.human ?? ''}  status=${statusName.get(r.status!) ?? r.status ?? '-'} format=${formatName.get(r.date_format!) ?? '-'} region=${r.release_region ?? '-'}`)
   }
   process.exit(0)
 }
@@ -66,11 +70,11 @@ for (let offset = 0; offset < 10000; offset += 500) {
 const old = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, 'utf8')) as { games: { i: number; t?: string[] }[] }) : { games: [] }
 const tones = new Map(old.games.filter((g) => g.t).map((g) => [g.i, g.t]))
 
-const games: { i: number; n: string; d?: string; e?: true; f?: string; b?: string; v?: string; p?: string; c?: string; t?: string[]; r: number }[] = []
+const games: { i: number; n: string; d?: string; q?: string; e?: true; f?: string; b?: string; v?: string; p?: string; c?: string; t?: string[]; r: number }[] = []
 for (let offset = 0; ; offset += 500) {
   const page = await igdb.query<any>(
     'games',
-    'fields name,cover.image_id,release_dates.date,release_dates.platform,release_dates.status,' +
+    'fields name,cover.image_id,release_dates.date,release_dates.platform,release_dates.status,release_dates.date_format,' +
       'involved_companies.company.name,involved_companies.developer,involved_companies.publisher,total_rating_count;' +
       `where platforms = (${ps5.id}) & game_type = (${typeIds.join(',')}) & version_parent = null; sort id asc; limit 500; offset ${offset};`,
   )

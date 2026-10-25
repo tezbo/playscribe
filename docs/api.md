@@ -9,7 +9,7 @@ Everything is free for now. There are two ways to read the same data:
 
 Every type below is defined in [ps5-patch-data.md](ps5-patch-data.md). The server adds `revision` and `updatedAt` to `Release`. The app-only fields on `Release` (`headline`, `summary`, `keyChanges`, `video`, `videoNote`) and `NoteItem.spoiler` are not sent yet, so decode them as optional.
 
-`Game` is `{ id, igdbId, name, cover: { imageId, url } | null, ps5Release, ps5TitleIds }`.
+`Game` is `{ id, igdbId, name, cover: { imageId, url } | null, ps5Release, ps5ReleasePrecision?, ps5TitleIds }`. `ps5ReleasePrecision` is `month`, `quarter`, `year` or `tbd` when IGDB has only that (a year-only date is stored as 31 Dec), and is absent for an exact day. The bundled PS5 index carries the same thing as `q` on each game.
 
 A release is **On PS5** only when its `ps5` platform row has `status == "live"` and `verification == "official"`. This rule comes from the app rules in ps5-patch-data.md.
 

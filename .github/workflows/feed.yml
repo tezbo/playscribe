@@ -45,6 +45,8 @@ permissions:
 jobs:
   feed:
     runs-on: ubuntu-latest
+    # The Twitch keys for IGDB (covers, PS5 dates and their precision) live in this environment.
+    environment: development
     # A backfill reads the press list at its 5 s Crawl-delay, so it runs much longer than a poll.
     timeout-minutes: ${{ inputs.action == 'backfill' && 180 || 20 }}
     env:
