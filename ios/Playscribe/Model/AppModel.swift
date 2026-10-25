@@ -120,6 +120,8 @@ final class AppModel {
     var focusReleaseID: String?
     var focusToken = 0
     var showDebugOverlay = false
+    /// Tabletop Reader: the section shown per game (TT-2). Transient.
+    var readerIndex: [String: Int] = [:]
     var feedStatus: FeedStatus = .idle
     /// Releases from the feed, merged over the curated fixtures.
     var feedReleases: [Release] = [] { didSet { rebuildMerged() } }
@@ -325,6 +327,7 @@ final class AppModel {
             if n.expanded["rel:\(first.id)"] == nil { n.expanded["rel:\(first.id)"] = true }
         }
         nav = n
+        readerIndex[gameID] = 0
         if pill?.gameID == gameID { pill = nil }
         focusReleaseID = releaseID
         focusToken += 1

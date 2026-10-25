@@ -81,6 +81,33 @@ extension View {
     }
 }
 
+extension View {
+    /// Reports a layout container's frame to the fold audit (TT-0), without marking it tappable.
+    func foldAudited() -> some View { tappableFrame() }
+}
+
+/// TT-0: counts reported frames that intersect the active division. Always present (internal
+/// builds) as a hidden element the UI test reads: "fold-crossings: N".
+struct FoldAudit: View {
+    var frames: [CGRect]
+    var duo: DuoContext
+    var body: some View {
+        GeometryReader { geo in
+            let origin = geo.frame(in: .global).origin
+            let crossings = duo.division.map { fold in
+                frames.filter { $0.width > 1 && $0.height > 1 && $0.offsetBy(dx: -origin.x, dy: -origin.y).intersects(fold.insetBy(dx: 0.5, dy: 0.5)) }.count
+            } ?? 0
+            Text("fold-crossings: \(crossings); pose: \(duo.pose.rawValue)")
+                .font(.system(size: 1))
+                .opacity(0.01)
+                .accessibilityIdentifier("foldAudit")
+                .accessibilityLabel("fold-crossings: \(crossings); pose: \(duo.pose.rawValue)")
+        }
+        .allowsHitTesting(false)
+        .ignoresSafeArea()
+    }
+}
+
 struct DebugOverlay: View {
     var frames: [CGRect]
     var duo: DuoContext

@@ -55,6 +55,9 @@ struct RootView: View {
             .onPreferenceChange(TappableFrameKey.self) { frames = $0 }
             .overlay {
                 if model.showDebugOverlay { DebugOverlay(frames: frames, duo: duo) }
+                #if INTERNAL
+                FoldAudit(frames: frames, duo: duo)
+                #endif
             }
         }
         .background(Color.ink0)

@@ -43,6 +43,7 @@ struct SpreadView: View {
                             .background(Color.ink2, in: UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20, style: .continuous))
                             .overlay(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20, style: .continuous)
                                 .strokeBorder(PlayscribeColor.vellum300.opacity(0.25), lineWidth: 1))
+                            .foldAudited()
                         if let r = marginRelease {
                             MarginColumn(release: r)
                                 .frame(width: w * (portrait ? 0.32 : 0.30))
@@ -111,13 +112,13 @@ struct MarginColumn: View {
 /// Open portrait: the Library as a one-row cover shelf, the selected game ringed in ember (O-5).
 struct CoverShelf: View {
     @Environment(AppModel.self) private var model
-    var selected: String
+    var selected: String?
 
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
-                    ForEach(model.libraryRows) { row in
+                    ForEach(model.shownRows()) { row in
                         Button { model.openGame(row.id) } label: {
                             CoverView(game: row.game, cornerRadius: 6)
                                 .frame(width: 58, height: 82)
@@ -145,7 +146,7 @@ struct CoverShelf: View {
                 .padding(.horizontal, 20)
             }
             .edgeFade()
-            .onAppear { proxy.scrollTo(selected, anchor: .center) }
+            .onAppear { if let selected { proxy.scrollTo(selected, anchor: .center) } }
         }
     }
 }

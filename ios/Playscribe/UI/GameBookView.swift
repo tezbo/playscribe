@@ -15,6 +15,15 @@ struct GameBookView: View {
         Group {
             if duo.pose == .closed || inSplitDetail {
                 ReadingPanel(gameID: gameID, compact: true, headerVisible: $headerVisible)
+            } else if duo.pose == .tabletop && model.nav.chapter == .updates {
+                // TT-2: the Reader. One section on the standing half, its controls on the flat half.
+                ArrangementView {
+                    TabletopReaderControls(gameID: gameID)
+                } secondary: {
+                    TabletopReaderStage(gameID: gameID)
+                        .allowsHitTesting(false)
+                }
+                .arrangementViewStyle(.overlay)
             } else {
                 ArrangementView {
                     ReadingPanel(gameID: gameID, compact: false, headerVisible: $headerVisible)
@@ -181,6 +190,7 @@ struct ReadingPanel: View {
         }
         .scrollPosition($position, anchor: .top)
         .background(panelBackground)
+        .foldAudited()
         .modifier(FlatCard(enabled: !compact && !duo.isFolded && !spreadPage, landscape: duo.isLandscape))
     }
 

@@ -109,7 +109,7 @@ struct LibraryShelf: View {
                         .submitLabel(.search)
                         .frame(minHeight: 44)
                 }
-                if all.count >= 2 { FilterBar() }
+                if all.count >= 2 && duo.pose != .tabletop { FilterBar() }
 
                 if rows.isEmpty {
                     VStack(spacing: 12) {
@@ -120,7 +120,12 @@ struct LibraryShelf: View {
                     .padding(.vertical, 40)
                 }
 
-                if duo.pose == .closed {
+                if duo.pose == .tabletop {
+                    // TT-3: one row of covers on the flat half; the Continue art is on the stage.
+                    CoverShelf(selected: model.continueItem?.game.id)
+                        .padding(.horizontal, -16)
+                    if all.count >= 2 { FilterBar() }
+                } else if duo.pose == .closed {
                     if let c = model.continueItem { ContinueRow(game: c.game, release: c.release) }
                     ForEach(rows) { row in
                         GameRow(row: row).id("lib-\(row.id)")

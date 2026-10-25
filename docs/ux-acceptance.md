@@ -1,4 +1,4 @@
-# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v1.2, 2026-10-25: section 9 Open pose and transitions added; v1.1 added G-12, G-13)
+# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v1.3, 2026-10-25: Tabletop and video redesign TT/VB; v1.2 section 9 Open pose and transitions added; v1.1 added G-12, G-13)
 
 Owner: UX/CX QA thread. Decided 2026-10-24 under Terry's delegation. This is the contract the SwiftUI app builds against and QA tests against. Put it in the repo as `docs/ux-acceptance.md`. IDs are stable: cite them in commits and test names.
 
@@ -174,7 +174,7 @@ Apple basis (fetched 2026-10-25, unchanged from baseline): show an extra level o
 | Book | left page, top (hero frame) | left page, below the art | right page | card under the release, right page | trailing rail |
 | Open landscape | edge to edge, top ~44% of height | leading column, ~28% | centre column, raised over the art's lower edge by ~15% of the art's height | trailing column, ~25%, no card fill | trailing rail |
 | Open portrait | full width, top ~40% | cover shelf (one row) under the art | lower leading ~60% | lower trailing ~35%, no card fill | system top and bottom bars |
-| Tabletop | entire upper half, display only (video plays here) | via the Library tab | lower half | card under the release | trailing rail, lower half |
+| Tabletop | upper half: the Reader (one section, large type, over blurred art) or the playing video; display only | flat half: covers row on the Library screen; via the Library tab elsewhere | upper half, paged (see TT-2) | section 6 of the outline | flat half: outline, Previous/Next, chapter switcher, trailing rail |
 
 - **O-1** Open never shows an empty detail. With no game chosen it opens the Continue game, else the most recently updated game.
 - **O-2** Art in Open landscape is `StageArt().backgroundExtensionEffect()` in the detail column, so it runs under the Library. It shows the game title (Literata title, at most 2 lines) bottom-leading, inside the Library's width, never under the Page.
@@ -182,6 +182,16 @@ Apple basis (fetched 2026-10-25, unchanged from baseline): show an extra level o
 - **O-4** The Margin is the same view as the closed and Book facts card (`matchedGeometryEffect(id: "facts.<releaseID>")`). It is shown as a column only when the detail is at least 560 pt wide and no `.division` reserved region exists; otherwise it is the inline card.
 - **O-5** The Library in Open landscape is the sidebar of the root `NavigationSplitView`, with the selected game highlighted and unread dots visible. In Open portrait it is a single-row cover shelf (58 × 82 pt covers, selected one ringed in ember, 44 pt+ targets).
 - **O-6** Everything tappable in Open meets G-7. Nothing sits under the system rail or bars.
+
+**Tabletop and video redesign (2026-10-25, after Terry's review).** Visual: https://claude.ai/artifact/6kthKpcPy4EvLB5iZ9jEoV (copy: qa/design/tabletop-video.html). Apple basis (fetched 2026-10-25): a partially open overlay arrangement puts the primary view at the trailing or bottom side of the fold and the secondary at the leading or top side; "Locate controls near the content they affect"; "Use the system video player…", and a custom player must reference the system player's behaviour and interface.
+- **TT-0** Layout keys on the active `.division` reserved region, not on a pose name: a division wider than tall means tabletop; taller than wide means book. No view's frame may intersect an active division. Add a UI test that fails if any visible view crosses it. (Terry's screenshot showed the Spread's page card across the fold, so the division was being ignored.)
+- **TT-1** Tabletop uses `ArrangementView(.overlay)`. The secondary (top) is the stage, with `.allowsHitTesting(false)`. The primary (bottom) holds every control.
+- **TT-2** Tabletop reading: the standing half shows one section of the release at a time (Literata title 32 pt, body 19 pt, max 34 characters per line) over the game's art, blurred to 35% brightness, with page dots and "n of N". The flat half shows the chapter switcher, the release outline (one 44 pt row per section, the current one highlighted), large Previous and Next buttons (52 pt) and the trailing rail. Sections are: Overview, each key change, Fixes, then PS5 facts and video. Nothing scrolls on the standing half.
+- **TT-3** Tabletop Library: the standing half shows the Continue art and title (display only). The flat half shows one horizontal row of covers, then the filters.
+- **TT-4** Tabletop video: the standing half shows the video at its own aspect ratio, fitted to the width, with captions on the video. The flat half shows the title, scrubber with times, then captions, back 10 s, play/pause (64 pt), forward 10 s and volume, in the system player's order. Below that is a "watch along" list of the video's timestamps (tap to seek; the release's key changes when there are no timestamps). Close is at the top of the rail. This is the only custom transport in the app.
+- **VB-1** Video in every pose except Tabletop uses the system player (`AVPlayerViewController` / `VideoPlayer`) with its own controls on the video. Remove the custom transport row.
+- **VB-2** Book video: the left page shows the video top-aligned at full page width, with the title, game and duration under it. The right page shows "Watch along" (as TT-4) and a link to the full notes. Close is at the top of the rail. Controls never sit on the other page from the video.
+- **VB-3** Closed and Open: the system player is full display, with Close at the top of the rail (T-10 unchanged).
 
 **Transitions.** Pose changes are layout changes, not navigations: nothing pushes, pops or reloads.
 - **T-1** Same pieces, same identity: Art, Page and Margin keep their view identity across poses (matched geometry), so they move and resize instead of fading out and in.

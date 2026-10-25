@@ -66,3 +66,24 @@ final class PlayscribeUITests: XCTestCase {
         add(a)
     }
 }
+
+/// TT-0: no reported view frame may intersect an active division, on any main screen.
+final class FoldAuditTests: XCTestCase {
+    @MainActor
+    func testNothingCrossesTheFold() throws {
+        let app = XCUIApplication()
+        for route in ["library", "release/dawnwalker/dawnwalker@1.1", "video/dawnwalker/dawnwalker@1.1", "add", "updates"] {
+            app.launchArguments = ["-qaRoute", route]
+            app.launch()
+            sleep(3)
+            let audit = app.descendants(matching: .any)["foldAudit"]
+            XCTAssertTrue(audit.waitForExistence(timeout: 5))
+            let label = audit.label
+            let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+            shot.name = "fold-\(route.replacingOccurrences(of: "/", with: "_")) \(label)"
+            shot.lifetime = .keepAlways
+            add(shot)
+            XCTAssertTrue(label.hasPrefix("fold-crossings: 0;"), "\(route): \(label)")
+        }
+    }
+}
