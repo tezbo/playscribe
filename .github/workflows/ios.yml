@@ -65,7 +65,7 @@ jobs:
             -destination "id=${{ steps.sim.outputs.udid }}" \
             -resultBundlePath build/TestResults.xcresult \
             CODE_SIGNING_ALLOWED=NO > build.log 2>&1 || status=$?
-          grep -E 'error:|\*\* (BUILD|TEST)|Test Suite .* (passed|failed)|Executed' build.log || true
+          grep -E 'error:|\*\* (BUILD|TEST)|Test run with|Test .* failed|Executed' build.log || true
           echo "xcodebuild exited with $status"
           exit "$status"
         env:
