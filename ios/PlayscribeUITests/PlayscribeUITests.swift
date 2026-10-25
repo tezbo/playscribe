@@ -87,3 +87,33 @@ final class FoldAuditTests: XCTestCase {
         }
     }
 }
+
+/// D-13: every display choice survives a relaunch.
+@MainActor
+final class DisplayChoiceTests: XCTestCase {
+    func testLayoutChoiceSurvivesRelaunch() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "demo"]
+        app.launch()
+        for (choice, expectList) in [("List", true), ("Tiles", false)] {
+            let view = app.buttons["View"].firstMatch
+            XCTAssertTrue(view.waitForExistence(timeout: 10))
+            view.tap()
+            let option = app.buttons[choice].firstMatch
+            XCTAssertTrue(option.waitForExistence(timeout: 5), choice)
+            option.tap()
+            app.terminate()
+            app.launchArguments = ["-qaRoute", "library"]
+            app.launch()
+            // List rows carry an options button per game; tiles keep it only off the closed display.
+            let row = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Options for'")).firstMatch
+            let cover = app.images.matching(NSPredicate(format: "label ENDSWITH ' cover'")).firstMatch
+            XCTAssertTrue(cover.waitForExistence(timeout: 10))
+            if expectList { XCTAssertTrue(row.exists, "List after relaunch") }
+            let shot = XCTAttachment(screenshot: app.screenshot())
+            shot.name = "d13-\(choice.lowercased())-after-relaunch"
+            shot.lifetime = .keepAlways
+            add(shot)
+        }
+    }
+}

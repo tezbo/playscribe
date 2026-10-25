@@ -168,11 +168,18 @@ struct ReleaseBody: View {
                 Text(h).font(PlayscribeFont.title3)
             }
             if let summary = ps5Page ? r.ps5Summary : r.summary {
-                Text(summary)
-                    .lineLimit(summaryOpen ? nil : 3)
-                    .onTapGesture { summaryOpen.toggle() }
-                    .accessibilityAddTraits(.isButton)
-                    .accessibilityHint(summaryOpen ? "Shows less" : "Shows the full summary")
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(summary)
+                        .lineLimit(summaryOpen ? nil : 3)
+                    // GR-3: a truncated summary always says how to read the rest.
+                    if summary.count > 120 {
+                        Button(summaryOpen ? "Less" : "More") { withAnimation(.snappy) { summaryOpen.toggle() } }
+                            .font(PlayscribeFont.subheadline.weight(.semibold))
+                            .frame(minHeight: 44)
+                            .accessibilityHint(summaryOpen ? "Shows less of the summary" : "Shows the full summary")
+                            .tappableFrame()
+                    }
+                }
             }
             let keys = ps5Page ? r.ps5KeyChanges : (r.keyChanges ?? [])
             if !keys.isEmpty {

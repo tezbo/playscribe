@@ -12,6 +12,7 @@ struct SplashView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var opened = false
     @State private var opacity = 1.0
+    @State private var progress = 0.0
 
     var body: some View {
         ZStack {
@@ -22,7 +23,13 @@ struct SplashView: View {
         .allowsHitTesting(false)
         .accessibilityHidden(true)
         .task {
-            if !reduceMotion { withAnimation(.spring(duration: 0.6)) { opened = true } } else { opened = true }
+            if !reduceMotion {
+                withAnimation(.spring(duration: 0.6)) { opened = true }
+                withAnimation(.easeInOut(duration: 0.8)) { progress = 1 }
+            } else {
+                opened = true
+                progress = 1
+            }
             try? await Task.sleep(for: .milliseconds(reduceMotion ? 0 : 800))
             withAnimation(.easeOut(duration: 0.3)) { opacity = 0 }
             try? await Task.sleep(for: .milliseconds(300))
@@ -71,6 +78,7 @@ struct SplashView: View {
         VStack(spacing: 6) {
             Text(Brand.name).font(PlayscribeFont.largeTitle.bold())
             Text(Brand.tagline).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            UpdateBar(progress: progress).padding(.top, 10)
         }
     }
 
@@ -80,5 +88,17 @@ struct SplashView: View {
         if n == "Playscribe" { return ("Play", "scribe") }
         let mid = n.index(n.startIndex, offsetBy: n.count / 2)
         return (String(n[..<mid]), String(n[mid...]))
+    }
+}
+
+/// Brand v2: an update bar, ember on an ink 600 track, filling during the hold.
+struct UpdateBar: View {
+    var progress: Double
+    var body: some View {
+        Capsule().fill(PlayscribeColor.ink600)
+            .frame(width: 120, height: 4)
+            .overlay(alignment: .leading) {
+                Capsule().fill(PlayscribeColor.ember500).frame(width: 120 * progress, height: 4)
+            }
     }
 }

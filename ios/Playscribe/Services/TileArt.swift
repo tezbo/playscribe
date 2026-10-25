@@ -13,7 +13,7 @@ final class TileArtLoader {
     private var memory: [URL: Loaded] = [:]
     private var inFlight: [URL: Task<Loaded?, Never>] = [:]
     private var centres: [String: Double]
-    private let centresURL = URL.cachesDirectory.appending(path: "tile-crop-centres.json")
+    private let centresURL = URL.cachesDirectory.appending(path: "tile-crop-centres-v2.json")
 
     private init() {
         centres = (try? Data(contentsOf: centresURL)).flatMap { try? JSONDecoder().decode([String: Double].self, from: $0) } ?? [:]
@@ -21,15 +21,19 @@ final class TileArtLoader {
 
     func cached(_ url: URL) -> Loaded? { memory[url] }
 
+    /// nil when the art can't be used; the caller then shows the cover over a blurred fill.
     func load(_ url: URL, salient: Bool) async -> Loaded? {
-        if let hit = memory[url] { return hit }
-        if let task = inFlight[url] { return await task.value }
+        let usable: (Loaded?) -> Loaded? = { ($0?.centreX ?? 0) < 0 ? nil : $0 }
+        if let hit = memory[url] { return usable(hit) }
+        if centres[url.lastPathComponent].map({ $0 < 0 }) == true { return nil }
+        if let task = inFlight[url] { return usable(await task.value) }
         let known = centres[url.lastPathComponent]
         let task = Task<Loaded?, Never> {
             guard let (data, _) = try? await URLSession.shared.data(from: url), let image = UIImage(data: data) else { return nil }
             var centre = known.map { CGFloat($0) } ?? 0.5
             if salient, known == nil, let cg = image.cgImage {
-                centre = await Self.salientCentreX(cg)
+                // A concept sheet or other washed-out art is no tile: fall back to the cover.
+                centre = Self.isWashedOut(cg) ? -1 : await Self.salientCentreX(cg)
             }
             return Loaded(image: image, centreX: centre)
         }
@@ -43,7 +47,25 @@ final class TileArtLoader {
                 if let raw = try? JSONEncoder().encode(centres) { try? raw.write(to: centresURL, options: .atomic) }
             }
         }
-        return result
+        return usable(result)
+    }
+
+    /// Mostly white or barely coloured: mean brightness above 0.8 or mean saturation below 0.12.
+    nonisolated static func isWashedOut(_ image: CGImage) -> Bool {
+        let side = 24
+        var px = [UInt8](repeating: 0, count: side * side * 4)
+        guard let ctx = CGContext(data: &px, width: side, height: side, bitsPerComponent: 8, bytesPerRow: side * 4,
+                                  space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return false }
+        ctx.draw(image, in: CGRect(x: 0, y: 0, width: side, height: side))
+        var brightness = 0.0, saturation = 0.0
+        for i in stride(from: 0, to: px.count, by: 4) {
+            let r = Double(px[i]) / 255, g = Double(px[i + 1]) / 255, b = Double(px[i + 2]) / 255
+            let mx = max(r, g, b), mn = min(r, g, b)
+            brightness += mx
+            saturation += mx == 0 ? 0 : (mx - mn) / mx
+        }
+        let n = Double(side * side)
+        return brightness / n > 0.8 || saturation / n < 0.12
     }
 
     /// Horizontal centre (0...1) of the salient region; 0.5 when Vision finds nothing.

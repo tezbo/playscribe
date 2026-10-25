@@ -28,8 +28,11 @@ struct LibraryView: View {
                 Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
                     .disabled(model.addSheetOpen)
             }
-            ToolbarItem(placement: .primaryAction) {
-                LibraryViewMenu()
+            // D-7: nothing to arrange in an empty library.
+            if !model.data.collection.isEmpty {
+                ToolbarItem(placement: .primaryAction) {
+                    LibraryViewMenu()
+                }
             }
         }
     }
@@ -77,7 +80,7 @@ struct LibraryShelf: View {
     /// D-12: one square tile size per pose.
     private var tileSize: CGFloat {
         switch duo.pose {
-        case .closed: 128
+        case .closed: 88
         case .flat: 140
         case .book: 128
         case .tabletop: 104
@@ -86,6 +89,9 @@ struct LibraryShelf: View {
 
     /// Book: an even column count across both pages (Apple: prefer an even number of columns).
     private var columns: [GridItem] {
+        if duo.pose == .closed {
+            return Array(repeating: GridItem(.flexible(), spacing: 12, alignment: .top), count: 3)
+        }
         guard duo.pose == .book else {
             return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 14, alignment: .top)]
         }
@@ -118,8 +124,8 @@ struct LibraryShelf: View {
                         .submitLabel(.search)
                         .frame(minHeight: 44)
                 }
-                // D-7: a narrowed shelf always says so and offers the way back.
-                if model.nav.filter != .all {
+                // D-7: a narrowed list always says so and offers the way back.
+                if model.nav.filter != .all && layout == .list {
                     Button { model.nav.filter = .all } label: {
                         Label("Showing \(model.nav.filter.label) · Show all", systemImage: "line.3.horizontal.decrease")
                             .font(PlayscribeFont.subheadline)
@@ -141,6 +147,7 @@ struct LibraryShelf: View {
                         .frame(maxWidth: layout == .tiles && duo.pose != .closed ? tileSize * 2 + 14 + (duo.pose == .flat ? 120 : 0) : .infinity,
                                alignment: .leading)
                 }
+                if all.count >= 2 && layout == .tiles { FilterBar() }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
                 } else {
@@ -159,6 +166,16 @@ struct LibraryShelf: View {
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
         .contentMargins(.bottom, model.pill == nil && model.toast == nil ? 0 : 96, for: .scrollContent)
         .refreshable { await model.refreshFeed() }
+    }
+}
+
+extension AppModel {
+    /// GR-1: one line under a game in the Library, tile or row: the newest PS5 release, else
+    /// what is known about the game on PS5.
+    func shelfLine(_ row: LibraryRow) -> String {
+        if let r = row.latest { return "\(r.displayName) · \(r.ps5Date.dayMonth)" }
+        if let r = ps5Releases(row.id).first { return "\(r.displayName) · \(r.ps5State == .reported ? "Reported" : "Announced")" }
+        return "\(row.game.ps5AvailabilityLine) · No notes"
     }
 }
 
@@ -195,6 +212,46 @@ struct LibraryViewMenu: View {
     }
 }
 
+
+struct FilterBar: View {
+    @Environment(AppModel.self) private var model
+
+    var body: some View {
+        let rows = model.libraryRows
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                ForEach(LibraryFilter.allCases) { f in
+                    let n = f.status.map { s in rows.filter { $0.status == s }.count } ?? rows.count
+                    let on = model.nav.filter == f
+                    Button { model.nav.filter = f } label: {
+                        Text("\(f.label) \(n)")
+                            .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
+                            .padding(.horizontal, 12)
+                            .frame(minHeight: 44)
+                            .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityAddTraits(on ? .isSelected : [])
+                    .tappableFrame()
+                }
+                Menu {
+                    Picker("Sort by", selection: Binding(get: { model.nav.sort }, set: { model.nav.sort = $0 })) {
+                        ForEach(LibrarySort.allCases) { Text($0.label).tag($0) }
+                    }
+                } label: {
+                    Label(model.nav.sort.label, systemImage: "arrow.up.arrow.down")
+                        .font(PlayscribeFont.subheadline)
+                        .padding(.horizontal, 12)
+                        .frame(minHeight: 44)
+                        .background(Color.ink3, in: Capsule())
+                }
+                .tappableFrame()
+            }
+            .padding(.trailing, 24)
+        }
+        .edgeFade()
+    }
+}
 
 extension View {
     /// R-7: a scrolling chip row fades at its edges instead of clipping hard.
@@ -328,11 +385,7 @@ struct GameRow: View {
                         Text(row.game.name).font(PlayscribeFont.headline).lineLimit(stacked ? nil : 2).multilineTextAlignment(.leading)
                         HStack(spacing: 6) {
                             StatusPill(status: row.status)
-                            if let r = row.latest {
-                                Text("\(r.displayName) · \(r.ps5Date.dayMonth)").font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                            } else {
-                                Text("\(row.game.ps5AvailabilityLine) · No notes").font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                            }
+                            Text(model.shelfLine(row)).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                         }
                     }
                     if !stacked { Spacer(minLength: 0) }
@@ -387,6 +440,7 @@ struct GameMenuButton: View {
 /// Inner display tile: a fixed-size cover, name, a status dot and the unread count.
 struct GameTile: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var row: AppModel.LibraryRow
     var size: CGFloat
 
@@ -399,13 +453,17 @@ struct GameTile: View {
                     }
             }
             .buttonStyle(.plain)
+            .contextMenu { ActionMenuContent(sections: model.statusMenu(row.id)) }
             .tappableFrame()
             Text(row.game.name).font(PlayscribeFont.footnote.weight(.semibold)).lineLimit(2)
-            HStack(spacing: 4) {
+            HStack(alignment: .firstTextBaseline, spacing: 4) {
                 Circle().fill(row.status.tint).frame(width: 6, height: 6)
-                Text(row.latest?.displayName ?? "No PS5 notes yet").font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(1)
+                Text(model.shelfLine(row)).font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(2)
                 Spacer(minLength: 0)
-                GameMenuButton(gameID: row.id).frame(width: 28).padding(.trailing, -8).padding(.vertical, -10)
+                // Closed tiles are too narrow for the caption and a button; the cover's menu remains.
+                if duo.pose != .closed {
+                    GameMenuButton(gameID: row.id).frame(width: 28).padding(.trailing, -8).padding(.vertical, -10)
+                }
             }
         }
         .frame(width: size)
