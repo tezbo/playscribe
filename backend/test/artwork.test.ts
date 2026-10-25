@@ -21,6 +21,8 @@ test('square tile art: textless key art beats key art with a logo, then anything
   ]
   assert.equal(artworkOf(rows, (i) => types.get(i!)), 'clean')
   assert.equal(artworkOf(rows.slice(0, 3), (i) => types.get(i!)), 'logo')
+  // Concept art is never tile art: a game with only concept sheets falls back to its cover.
+  assert.equal(artworkOf(rows.slice(0, 1), (i) => types.get(i!)), undefined)
   // Without IGDB types the widest landscape artwork wins.
   assert.equal(artworkOf(rows, () => undefined), 'concept')
   assert.equal(artworkOf([{ image_id: 'tall', width: 600, height: 900 }], () => undefined), undefined)

@@ -5,7 +5,8 @@
 //
 // IGDB types artworks (artwork_types, checked 2026-10-25: Key art without/with logo, Artwork,
 // Concept art, Square cover, logos, icons, covers…). A studio square cover is the tile as it is;
-// otherwise textless key art crops best, then key art with a logo, then other art.
+// otherwise textless key art crops best, then key art with a logo, then plain artwork, then historical
+// artwork. Concept art is never used.
 export interface Artwork {
   image_id?: string
   artwork_type?: number
@@ -35,11 +36,12 @@ export const squareCoverUrl = (imageId: string) => `https://images.igdb.com/igdb
 const rankOfType = (name: string | undefined) => {
   const n = (name ?? '').toLowerCase()
   if (/key ?art/.test(n)) return /(without|no) logo|textless/.test(n) ? 0 : 1
-  if (/logo|icon|infographic|cover|screenshot/.test(n)) return undefined
-  return 2
+  // Concept art is often a character sheet on white with captions (Black Myth: Wukong), never a tile.
+  if (/logo|icon|infographic|cover|screenshot|concept/.test(n)) return undefined
+  return /historical/.test(n) ? 3 : 2
 }
 
-/** Landscape key art: textless first, then with a logo, then other art; the widest within a rank. */
+/** Landscape key art: textless first, then with a logo, then plain then historical artwork; the widest within a rank. */
 export const artworkOf = (rows: Artwork[] | undefined, typeName: (id: number | undefined) => string | undefined): string | undefined =>
   (rows ?? [])
     .filter((a) => a.image_id && (a.width ?? 1) >= (a.height ?? 0))
