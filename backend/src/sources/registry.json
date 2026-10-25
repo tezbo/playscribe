@@ -15,8 +15,8 @@
     },
     {
       "id": "pushsquare",
-      "kind": "rss",
-      "url": "https://www.pushsquare.com/feeds/latest",
+      "kind": "pressIndex",
+      "url": "https://www.pushsquare.com/tags/updates",
       "platforms": [
         "ps5"
       ],
@@ -39,7 +39,7 @@
   "games": {
     "dawnwalker": {
       "name": "The Blood of Dawnwalker",
-      "igdbId": null,
+      "igdbId": 282831,
       "ps5TitleIds": [],
       "sources": [
         {
@@ -66,11 +66,14 @@
           "fetch": "auto",
           "ps5Signal": "explicit"
         }
+      ],
+      "aliases": [
+        "Dawnwalker"
       ]
     },
     "kcd2": {
       "name": "Kingdom Come: Deliverance II",
-      "igdbId": null,
+      "igdbId": 298526,
       "ps5TitleIds": [],
       "sources": [
         {
@@ -97,11 +100,16 @@
           "fetch": "auto",
           "ps5Signal": "explicit"
         }
+      ],
+      "aliases": [
+        "Kingdom Come Deliverance 2",
+        "Kingdom Come 2",
+        "KCD2"
       ]
     },
     "control-resonant": {
       "name": "CONTROL Resonant",
-      "igdbId": null,
+      "igdbId": 225582,
       "ps5TitleIds": [],
       "sources": [
         {
@@ -132,7 +140,7 @@
     },
     "wukong": {
       "name": "Black Myth: Wukong",
-      "igdbId": null,
+      "igdbId": 136879,
       "ps5TitleIds": [],
       "sources": [
         {
@@ -158,17 +166,874 @@
           "fetch": "auto",
           "ps5Signal": "explicit"
         }
+      ],
+      "aliases": [
+        "Wukong"
       ]
     },
     "bg3": {
       "name": "Baldur's Gate 3",
-      "igdbId": null,
+      "igdbId": 119171,
       "ps5TitleIds": [],
       "sources": [
         {
           "id": "bg3-steam",
           "kind": "steamNews",
           "url": "https://store.steampowered.com/feeds/news/app/1086940/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
+      "aliases": [
+        "BG3",
+        "Baldur's Gate III"
+      ]
+    },
+    "fortnite": {
+      "name": "Fortnite",
+      "exclude": [
+        "Fortnite Festival"
+      ],
+      "igdbId": 1905,
+      "ps5TitleIds": [],
+      "sources": []
+    },
+    "cod-mw4": {
+      "name": "Call of Duty: Modern Warfare 4",
+      "aliases": [
+        "Modern Warfare 4",
+        "MW4",
+        "CoD MW4"
+      ],
+      "igdbId": 403310,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "cod-mw4-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/4435490/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "gta5": {
+      "name": "Grand Theft Auto V",
+      "aliases": [
+        "GTA 5",
+        "GTA V",
+        "GTA Online"
+      ],
+      "exclude": [
+        "GTA 6",
+        "GTA VI",
+        "Grand Theft Auto VI"
+      ],
+      "igdbId": 1020,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "gta5-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/3240220/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "minecraft": {
+      "name": "Minecraft",
+      "exclude": [
+        "Minecraft Dungeons",
+        "Minecraft Legends",
+        "Minecraft Story Mode"
+      ],
+      "igdbId": 135400,
+      "ps5TitleIds": [],
+      "sources": []
+    },
+    "cyberpunk-2077": {
+      "name": "Cyberpunk 2077",
+      "igdbId": 1877,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "cyberpunk-2077-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1091500/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "elden-ring": {
+      "name": "Elden Ring",
+      "exclude": [
+        "Nightreign",
+        "Elden Ring Tarnished Edition"
+      ],
+      "igdbId": 119133,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "elden-ring-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1245620/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "witcher-3": {
+      "name": "The Witcher 3: Wild Hunt",
+      "aliases": [
+        "The Witcher 3",
+        "Witcher 3"
+      ],
+      "igdbId": 1942,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "witcher-3-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/292030/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "dreamlight-valley": {
+      "name": "Disney Dreamlight Valley",
+      "aliases": [
+        "Dreamlight Valley"
+      ],
+      "igdbId": 198506,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "dreamlight-valley-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1401590/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "palworld": {
+      "name": "Palworld",
+      "igdbId": 151665,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "palworld-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1623730/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "ea-fc-26": {
+      "name": "EA Sports FC 26",
+      "aliases": [
+        "EA FC 26",
+        "FC 26"
+      ],
+      "igdbId": 353848,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "ea-fc-26-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/3405690/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "rocket-league": {
+      "name": "Rocket League",
+      "igdbId": 11198,
+      "ps5TitleIds": [],
+      "sources": []
+    },
+    "expedition-33": {
+      "name": "Clair Obscur: Expedition 33",
+      "aliases": [
+        "Clair Obscur",
+        "Expedition 33"
+      ],
+      "igdbId": 305152,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "expedition-33-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1903340/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "marvel-rivals": {
+      "name": "Marvel Rivals",
+      "igdbId": 294041,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "marvel-rivals-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2767030/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "genshin-impact": {
+      "name": "Genshin Impact",
+      "aliases": [
+        "Genshin"
+      ],
+      "igdbId": 119277,
+      "ps5TitleIds": [],
+      "sources": []
+    },
+    "space-marine-2": {
+      "name": "Warhammer 40,000: Space Marine II",
+      "aliases": [
+        "Space Marine 2",
+        "Space Marine II"
+      ],
+      "igdbId": 185252,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "space-marine-2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2183900/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "arc-raiders": {
+      "name": "ARC Raiders",
+      "igdbId": 185258,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "arc-raiders-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1808500/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "overwatch": {
+      "name": "Overwatch",
+      "aliases": [
+        "Overwatch 2"
+      ],
+      "igdbId": 125174,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "overwatch-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2357570/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "silksong": {
+      "name": "Hollow Knight: Silksong",
+      "aliases": [
+        "Silksong"
+      ],
+      "igdbId": 115289,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "silksong-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1030300/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "helldivers-2": {
+      "name": "Helldivers 2",
+      "igdbId": 250616,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "helldivers-2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/553850/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "apex-legends": {
+      "name": "Apex Legends",
+      "igdbId": 114795,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "apex-legends-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1172470/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "battlefield-6": {
+      "name": "Battlefield 6",
+      "aliases": [
+        "BF6"
+      ],
+      "igdbId": 317407,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "battlefield-6-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2807960/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "mh-wilds": {
+      "name": "Monster Hunter Wilds",
+      "aliases": [
+        "MH Wilds"
+      ],
+      "igdbId": 279661,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "mh-wilds-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2246340/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "spider-man-2": {
+      "name": "Marvel's Spider-Man 2",
+      "aliases": [
+        "Spider-Man 2"
+      ],
+      "igdbId": 127044,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "spider-man-2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2651280/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "hogwarts-legacy": {
+      "name": "Hogwarts Legacy",
+      "exclude": [
+        "Hogwarts Legacy 2"
+      ],
+      "igdbId": 136625,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "hogwarts-legacy-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/990080/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "diablo-4": {
+      "name": "Diablo IV",
+      "aliases": [
+        "Diablo 4"
+      ],
+      "igdbId": 125165,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "diablo-4-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2344520/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "poe2": {
+      "name": "Path of Exile 2",
+      "aliases": [
+        "PoE 2"
+      ],
+      "igdbId": 125642,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "poe2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2694490/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "destiny-2": {
+      "name": "Destiny 2",
+      "igdbId": 25657,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "destiny-2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1085660/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "sf6": {
+      "name": "Street Fighter 6",
+      "aliases": [
+        "SF6"
+      ],
+      "igdbId": 191692,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "sf6-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1364780/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "tekken-8": {
+      "name": "Tekken 8",
+      "igdbId": 217590,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "tekken-8-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1778820/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "dead-by-daylight": {
+      "name": "Dead by Daylight",
+      "igdbId": 18866,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "dead-by-daylight-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/381210/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "warframe": {
+      "name": "Warframe",
+      "igdbId": 2903,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "warframe-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/230410/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "r6-siege": {
+      "name": "Rainbow Six Siege",
+      "aliases": [
+        "R6 Siege",
+        "Rainbow Six Siege X"
+      ],
+      "igdbId": 7360,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "r6-siege-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/359550/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "gt7": {
+      "name": "Gran Turismo 7",
+      "aliases": [
+        "GT7"
+      ],
+      "igdbId": 101006,
+      "ps5TitleIds": [],
+      "sources": []
+    },
+    "yotei": {
+      "name": "Ghost of Yotei",
+      "aliases": [
+        "Ghost of Yōtei"
+      ],
+      "igdbId": 317627,
+      "ps5TitleIds": [],
+      "sources": []
+    },
+    "astro-bot": {
+      "name": "Astro Bot",
+      "igdbId": 303811,
+      "ps5TitleIds": [],
+      "sources": []
+    },
+    "the-finals": {
+      "name": "The Finals",
+      "igdbId": 214417,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "the-finals-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2073850/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "no-mans-sky": {
+      "name": "No Man's Sky",
+      "igdbId": 3225,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "no-mans-sky-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/275850/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "sea-of-thieves": {
+      "name": "Sea of Thieves",
+      "igdbId": 11137,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "sea-of-thieves-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1172620/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "valorant": {
+      "name": "Valorant",
+      "igdbId": 126459,
+      "ps5TitleIds": [],
+      "sources": []
+    },
+    "ff7-rebirth": {
+      "name": "Final Fantasy VII Rebirth",
+      "aliases": [
+        "FF7 Rebirth",
+        "FFVII Rebirth",
+        "Final Fantasy 7 Rebirth"
+      ],
+      "igdbId": 133236,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "ff7-rebirth-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2909400/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "stellar-blade": {
+      "name": "Stellar Blade",
+      "exclude": [
+        "Stellar Blade 2"
+      ],
+      "igdbId": 117170,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "stellar-blade-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/3489700/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "death-stranding-2": {
+      "name": "Death Stranding 2: On the Beach",
+      "aliases": [
+        "Death Stranding 2"
+      ],
+      "igdbId": 228530,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "death-stranding-2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/3280350/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "alan-wake-2": {
+      "name": "Alan Wake II",
+      "aliases": [
+        "Alan Wake 2"
+      ],
+      "igdbId": 185246,
+      "ps5TitleIds": [],
+      "sources": []
+    },
+    "007-first-light": {
+      "name": "007 First Light",
+      "igdbId": 141114,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "007-first-light-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/3768760/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "re-requiem": {
+      "name": "Resident Evil Requiem",
+      "aliases": [
+        "RE Requiem"
+      ],
+      "igdbId": 347668,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "re-requiem-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/3764200/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "wolverine": {
+      "name": "Marvel's Wolverine",
+      "aliases": [
+        "Wolverine"
+      ],
+      "igdbId": 168667,
+      "ps5TitleIds": [],
+      "sources": []
+    },
+    "enshrouded": {
+      "name": "Enshrouded",
+      "igdbId": 248643,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "enshrouded-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1203620/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "valheim": {
+      "name": "Valheim",
+      "igdbId": 104967,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "valheim-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/892970/",
           "platforms": [
             "pc"
           ],

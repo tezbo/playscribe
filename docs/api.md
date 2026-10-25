@@ -83,6 +83,7 @@ Sent once per release, when its PS5 row becomes live and official, to followers 
 On the free setup, people work the review queue from GitHub. Go to Actions → Feed → Run workflow and pick an action:
 - `confirm` with a release id and the official source you checked. This makes it official.
 - `dismiss` with a review item id from `review.json`.
+- `backfill` with a since date reads each source's history: the last 100 Steam posts per game and the press update list back to that date. It runs for up to three hours because the press site asks for 5 seconds between requests.
 
 The local server has the same operations under `/v1/admin`, with `Authorization: Bearer <ADMIN_TOKEN>`.
 

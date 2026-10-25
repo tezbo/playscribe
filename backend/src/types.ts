@@ -67,4 +67,8 @@ export interface Post {
   publishedAt: string
   /** Plain text, or light HTML/BBCode; notes are extracted from it. */
   body: string
+  /** The site's own topic tags for the post (game names, systems), when it lists them. */
+  tags?: string[]
+  /** Fetches the full post when the listing only had a teaser. Called only for posts that match a game. */
+  expand?: () => Promise<Pick<Post, 'body'> & Partial<Pick<Post, 'publishedAt' | 'title'>>>
 }

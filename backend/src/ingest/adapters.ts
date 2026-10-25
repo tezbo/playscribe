@@ -8,19 +8,19 @@ import type { Post } from '../types.ts'
 // Steam's patch posts are not always tagged "patchnotes", so titles count too. "Community
 // Update" posts are newsletters, not patches.
 export const PATCH_TITLE = /\b(update|patch|hot\s*-?fix|day[\s-]*one)\b/i
-const NOT_PATCH = /community update|dev(eloper)? update|roadmap|sale\b|discount|giveaway/i
+const NOT_PATCH = /community update|dev(eloper)? update|roadmap|sale\b|discount|giveaway|anti-?cheat|an update (from|on)\b|patch delay|release schedule|matchmaking test|survey/i
 export const looksLikePatch = (title: string) => PATCH_TITLE.test(title) && !NOT_PATCH.test(title)
 
 interface SteamNews {
   appnews: { newsitems: { gid: string; title: string; url: string; date: number; contents: string; tags?: string[] }[] }
 }
 
-const steam = async (fetchFn: FetchFn, s: SourceDef): Promise<Post[]> => {
+const steam = async (fetchFn: FetchFn, s: SourceDef, count: number): Promise<Post[]> => {
   const appid = steamAppIdOf(s)
   if (!appid) throw new Error(`${s.id}: no Steam app id in ${s.url}`)
   const d = await getJson<SteamNews>(
     fetchFn,
-    `https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=${appid}&count=20&maxlength=0&feeds=steam_community_announcements`,
+    `https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=${appid}&count=${count}&maxlength=0&feeds=steam_community_announcements`,
   )
   return d.appnews.newsitems
     .filter((n) => n.tags?.includes('patchnotes') || looksLikePatch(n.title))
@@ -88,8 +88,83 @@ export const parseLinks = (sourceId: string, pageUrl: string, html: string): Pos
   return [...out.values()]
 }
 
-export const fetchPosts = async (fetchFn: FetchFn, s: SourceDef): Promise<Post[]> => {
-  if (s.kind === 'steamNews') return steam(fetchFn, s)
+const plain = (html: string) =>
+  html
+    .replace(/<(script|style|figure|aside)[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<\/(p|li|h\d|div)>|<br\s*\/?>/gi, '\n')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&(amp|quot|#039|apos|nbsp|lt|gt);/g, (_, e) => ({ amp: '&', quot: '"', '#039': "'", apos: "'", nbsp: ' ', lt: '<', gt: '>' })[e as string]!)
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n\s*/g, '\n')
+    .trim()
+
+/**
+ * One page of a press site's update list (Push Square's /tags/updates, dgpCMS markup): each item's
+ * link, title, time (the article's latest revision, which for "live now" posts is when it went
+ * live), teaser and topic tags.
+ */
+export const parsePressIndex = (sourceId: string, pageUrl: string, html: string): Post[] => {
+  const posts: Post[] = []
+  const base = html.match(/<base href="([^"]+)"/)?.[1] ?? pageUrl
+  for (const m of html.matchAll(/<li class="item item-content item-article[^"]*" data-type="article" data-subject="([^"]+)"[\s\S]*?(?=<li class="item |<\/ul>\s*<\/div>\s*<\/section>|$)/g)) {
+    const block = m[0]
+    const title = block.match(/<span class="title[^"]*">([\s\S]*?)<\/span>/)?.[1]
+    const at = block.match(/datetime="([^"]+)"/)?.[1]
+    // News posts only: guides and features recap old patches ("Elden Ring: all patch notes").
+    if (!title || !at || !/^news\//.test(m[1]!)) continue
+    const url = new URL(m[1]!, base).toString()
+    posts.push({
+      sourceId,
+      postId: url,
+      url,
+      title: plain(title),
+      publishedAt: new Date(at).toISOString(),
+      body: plain(block.match(/<p class="text">([\s\S]*?)<\/p>/)?.[1] ?? ''),
+      tags: [...block.matchAll(/<a class="tag" href="[^"]+">([^<]+)<\/a>/g)].map((t) => plain(t[1]!)),
+    })
+  }
+  return posts
+}
+
+/** The article text of a press post, kept only in memory: the pipeline reads facts from it (version, size, status). */
+export const parsePressArticle = (html: string): { body: string; title?: string } => {
+  const title = plain(html.match(/<meta property="og:title" content="([^"]+)"/)?.[1] ?? '')
+  const body = plain(html.match(/class="body body-text article-text"[^>]*>([\s\S]*?)<\/article>/)?.[1] ?? html.match(/class="body body-text[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/)?.[1] ?? '')
+  return title ? { title, body } : { body }
+}
+
+export interface PageOpts {
+  /** Stop paging once a page is entirely older than this (backfill), else after `maxPages`. */
+  until?: string
+  maxPages?: number
+  /** Stop paging at the first page whose posts have all been seen. */
+  seen?: (postId: string) => boolean
+}
+
+const pressIndex = async (fetchFn: FetchFn, s: SourceDef, opts: PageOpts): Promise<Post[]> => {
+  const out = new Map<string, Post>()
+  for (let page = 1; page <= (opts.until ? 200 : (opts.maxPages ?? 3)); page++) {
+    const pageUrl = page === 1 ? s.url : `${s.url}${s.url.includes('?') ? '&' : '?'}page=${page}`
+    let html: string
+    try {
+      html = await getText(fetchFn, pageUrl, { accept: 'text/html' })
+    } catch (e) {
+      if (page > 1 && /^404 /.test((e as Error).message)) break // past the last page
+      throw e
+    }
+    const posts = parsePressIndex(s.id, pageUrl, html).filter((p) => !out.has(p.postId))
+    if (!posts.length) break
+    for (const p of posts)
+      out.set(p.postId, { ...p, expand: async () => ({ ...parsePressArticle(await getText(fetchFn, p.url, { accept: 'text/html' })) }) })
+    if (opts.until ? posts.every((p) => p.publishedAt < opts.until!) : opts.seen && posts.every((p) => opts.seen!(p.postId))) break
+  }
+  return [...out.values()]
+}
+
+export const fetchPosts = async (fetchFn: FetchFn, s: SourceDef, opts: PageOpts = {}): Promise<Post[]> => {
+  if (s.kind === 'steamNews') return steam(fetchFn, s, opts.until ? 100 : 20)
+  if (s.kind === 'pressIndex') return pressIndex(fetchFn, s, opts)
   const body = await getText(fetchFn, s.url, { accept: s.kind === 'rss' ? 'application/rss+xml, application/atom+xml, application/xml' : 'text/html' })
   return s.kind === 'rss' ? parseFeed(s.id, body) : parseLinks(s.id, s.url, body)
 }

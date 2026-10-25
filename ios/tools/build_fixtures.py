@@ -2,14 +2,54 @@
 """Builds the app's bundled fixture data (Playscribe/Resources/Data) from the web prototype's sources.
 
 Usage: python3 tools/build_fixtures.py <prototype src/data dir> <book.json from book.ts>
+       python3 tools/build_fixtures.py --retag    # re-apply the platform rules to releases.json only
 
 Release records follow docs/ps5-patch-data.md. Sources stay in the data and out of the UI.
+Note items are tagged by platform with the backend's rules (backend/src/ingest/platform-terms.json),
+and no headline, summary, key change or push line may carry a PC-only line (FrameGen, AMD, Steam
+Controller…): those fields show on PS5 pages and in pushes.
 """
 import json, re, sys, pathlib
 
+root = pathlib.Path(__file__).resolve().parent.parent
+out = root / "Playscribe/Resources/Data"
+TERMS = json.loads((root.parent / "backend/src/ingest/platform-terms.json").read_text())
+any_of = lambda pats: re.compile("|".join(f"(?:{p})" for p in pats), re.I)
+named = {k: any_of(v) for k, v in TERMS.items() if not k.startswith("$")}
+named["pcFeature"], named["pc"] = named["pc"], any_of(TERMS["pcNames"] + TERMS["pc"])
+PC_PREFIX = re.compile(r"^\s*(\[PC\]|PC:|\(PC\))|\bPC only\b|\(PC\)", re.I)
+
+def platforms_for(text):
+    """Mirror of platformsFor in backend/src/ingest/notes.ts."""
+    p = []
+    if named["ps5"].search(text): p.append("ps5")
+    if PC_PREFIX.search(text) or (named["pc"].search(text) and not named["consoles"].search(text)): p.append("pc")
+    if named["xboxSeries"].search(text): p.append("xboxSeries")
+    return p or None
+
+def tag(releases):
+    for r in releases:
+        for s in r["notes"]:
+            section = platforms_for(s["title"])
+            section = section if section and len(section) == 1 else None
+            for i in s["items"]:
+                i.pop("platforms", None)
+                p = section or platforms_for(i["text"])
+                if p: i["platforms"] = p
+        lines = [r.get("headline"), r.get("summary"), r.get("pushLine"), *(r.get("keyChanges") or [])]
+        bad = [l for l in lines if l and named["pcFeature"].search(l) and platforms_for(l) == ["pc"]]
+        if bad: sys.exit(f"{r['id']}: PC-only line in a field PS5 pages show: {bad}")
+    return releases
+
+if sys.argv[1:] == ["--retag"]:
+    path = out / "releases.json"
+    releases = tag(json.loads(path.read_text()))
+    path.write_text(json.dumps(releases, ensure_ascii=False, indent=1) + "\n")
+    print("retagged", len(releases), "releases")
+    sys.exit()
+
 src = pathlib.Path(sys.argv[1])
 book_json = pathlib.Path(sys.argv[2])
-out = pathlib.Path(__file__).resolve().parent.parent / "Playscribe/Resources/Data"
 CHECKED = "2026-10-23T00:00:00Z"
 
 def field(value, verification, source):
@@ -99,20 +139,20 @@ releases += [
         ["New Game++", "Quality-of-life fixes and polish"], "control-resonant-steam",
         note="No official video for this update found (searched 24 Oct 2026)."),
     pc_release("kcd2@1.5.6", "kcd2", "Patch 1.5.6", "1.5.6", "2026-06-25", "patch",
-        "A Jester’s visit: a new quest, Steam Controller support and fixes",
-        "Adds a short new quest that begins outside the Hangman’s Halter tavern, Steam Controller support, and Hardcore mode and control-scheme fixes.",
-        ["New Jester quest", "Steam Controller support"], "kcd2-steam"),
+        "A Jester’s visit: a new quest and fixes",
+        "Adds a short new quest that begins outside the Hangman’s Halter tavern, and Hardcore mode and control-scheme fixes.",
+        ["New Jester quest", "Hardcore mode fixes"], "kcd2-steam"),
     pc_release("kcd2@1.5.5", "kcd2", "Patch 1.5.5", "1.5.5", "2026-04-20", "patch",
         "Three Crusader Kings book, a Crusader Kings III collaboration",
         "A small update that adds the book Three Crusader Kings around Trosky and Kuttenberg.",
         ["New collectible book"], "kcd2-steam"),
     pc_release("wukong@1.0.21.23831", "wukong", "Patch 1.0.21.23831", "1.0.21.23831", "2026-01-14", "patch",
         "Version 1.0.21.23831, about 2.0 GB on PC",
-        "The most recent patch on the official Steam feed. Game Science recommends removing mods and verifying game files before installing.",
+        "The most recent patch, out on PC so far.",
         [], "wukong-steam", size=2_000_000_000),
     pc_release("wukong@1.0.20.22023", "wukong", "Patch 1.0.20.22023", "1.0.20.22023", "2025-10-16", "patch",
         "Version 1.0.20.22023, about 5.7 GB on PC",
-        "An earlier patch on the official Steam feed.",
+        "An earlier patch, out on PC so far.",
         [], "wukong-steam", size=5_700_000_000),
 ]
 for r in releases:
@@ -187,7 +227,7 @@ seed = [
 
 def dump(name, data):
     (out / name).write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n")
-dump("releases.json", releases)
+dump("releases.json", tag(releases))
 dump("catalog.json", {"games": catalog, "seedCollection": seed})
 dump("gallery.json", gallery)
 dump("book.json", book)
