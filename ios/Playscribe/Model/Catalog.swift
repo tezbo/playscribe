@@ -55,6 +55,16 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     /// Added by the person: no catalogue record behind it.
     var custom: Bool?
 
+    /// D-12 tile art, in order of preference (docs/api.md): the studio's square cover, else
+    /// official key art to crop, else nil (the portrait cover over a blurred fill).
+    enum TileArt: Equatable { case square(URL), keyArt(URL) }
+    var tileArt: TileArt? {
+        guard let id = igdbID, let e = PS5Index.shared.entry(igdb: id) else { return nil }
+        if let sq = e.s { return .square(URL(string: "https://images.igdb.com/igdb/image/upload/t_720p/\(sq).jpg")!) }
+        if let a = e.a { return .keyArt(URL(string: "https://images.igdb.com/igdb/image/upload/t_720p/\(a).jpg")!) }
+        return nil
+    }
+
     var coverURL: URL? {
         coverImageID.map { URL(string: "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/\($0).jpg")! }
     }
@@ -233,6 +243,10 @@ struct PS5Index {
         var p: String?
         var c: String?
         var t: [String]?
+        /// The studio's square cover (IGDB image id), rare.
+        var s: String?
+        /// Official landscape key art (IGDB image id), for a square crop.
+        var a: String?
     }
     private struct File: Decodable { var count: Int; var games: [Entry] }
 
@@ -248,6 +262,12 @@ struct PS5Index {
     }
 
     var count: Int { entries.count }
+
+    private static let igdbLookup: [Int: Int] = Dictionary(
+        PS5Index.shared.entries.enumerated().map { ($1.i, $0) }, uniquingKeysWith: { a, _ in a })
+    private var byIGDB: [Int: Int] { PS5Index.igdbLookup }
+
+    func entry(igdb: Int) -> Entry? { byIGDB[igdb].map { entries[$0] } }
 
     static func fold(_ s: String) -> String {
         let plain = s.folding(options: [.diacriticInsensitive, .caseInsensitive, .widthInsensitive], locale: nil)

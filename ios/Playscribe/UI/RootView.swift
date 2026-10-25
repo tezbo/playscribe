@@ -1,15 +1,5 @@
 import SwiftUI
 
-/// True for a game book shown as the right page of the book-pose split view: it reads as one
-/// page, so it uses the single-column layout rather than an arrangement across the fold.
-private struct InSplitDetailKey: EnvironmentKey { static let defaultValue = false }
-extension EnvironmentValues {
-    var inSplitDetail: Bool {
-        get { self[InSplitDetailKey.self] }
-        set { self[InSplitDetailKey.self] = newValue }
-    }
-}
-
 /// Width the tabletop rail takes from the lower half's trailing edge.
 private struct RailWidthKey: EnvironmentKey { static let defaultValue: CGFloat = 0 }
 extension EnvironmentValues {

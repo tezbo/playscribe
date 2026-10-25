@@ -28,8 +28,8 @@ struct LibraryView: View {
                 Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
                     .disabled(model.addSheetOpen)
             }
-            ToolbarItem(placement: .secondaryAction) {
-                Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
+            ToolbarItem(placement: .primaryAction) {
+                LibraryViewMenu()
             }
         }
     }
@@ -60,30 +60,38 @@ struct LibraryStage: View {
     }
 }
 
+enum LibraryLayout: String, CaseIterable, Identifiable {
+    case tiles, list
+    var id: String { rawValue }
+    var label: String { self == .tiles ? "Tiles" : "List" }
+    var symbol: String { self == .tiles ? "square.grid.2x2" : "list.bullet" }
+    static let key = "libraryLayout"
+}
+
 struct LibraryShelf: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @Environment(\.railWidth) private var railWidth
-    @Environment(\.dynamicTypeSize) private var typeSize
+    @AppStorage(LibraryLayout.key) private var layout: LibraryLayout = .tiles
 
-    /// B-1: one fixed cover size per pose.
+    /// D-12: one square tile size per pose.
     private var tileSize: CGFloat {
         switch duo.pose {
-        case .closed: 44
-        case .flat: 112
-        case .book: 100
-        case .tabletop: 84
+        case .closed: 128
+        case .flat: 140
+        case .book: 128
+        case .tabletop: 104
         }
     }
 
     /// Book: an even column count across both pages (Apple: prefer an even number of columns).
     private var columns: [GridItem] {
         guard duo.pose == .book else {
-            return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize), spacing: 14, alignment: .top)]
+            return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 14, alignment: .top)]
         }
         let usable = duo.size.width - 32 - railWidth
         var n = max(2, Int((usable + 14) / (tileSize + 14)))
-        if n.isMultiple(of: 2) == false { n -= 1 }
+        if !n.isMultiple(of: 2) { n -= 1 }
         return Array(repeating: GridItem(.flexible(), spacing: 14, alignment: .top), count: max(2, n))
     }
 
@@ -92,10 +100,7 @@ struct LibraryShelf: View {
         let rows = model.shownRows()
         let all = model.libraryRows
         ScrollView {
-            LazyVStack(alignment: .leading, spacing: 12) {
-                if duo.pose == .flat, let featured = model.featuredGame {
-                    FeatureBanner(game: featured)
-                }
+            LazyVStack(alignment: .leading, spacing: 14) {
                 if let line = model.feedStatusLine {
                     HStack {
                         Text(line).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
@@ -113,8 +118,15 @@ struct LibraryShelf: View {
                         .submitLabel(.search)
                         .frame(minHeight: 44)
                 }
-                if all.count >= 2 { FilterBar() }
-
+                // D-7: a narrowed shelf always says so and offers the way back.
+                if model.nav.filter != .all {
+                    Button { model.nav.filter = .all } label: {
+                        Label("Showing \(model.nav.filter.label) · Show all", systemImage: "line.3.horizontal.decrease")
+                            .font(PlayscribeFont.subheadline)
+                            .frame(minHeight: 44)
+                    }
+                    .tappableFrame()
+                }
                 if rows.isEmpty {
                     VStack(spacing: 12) {
                         Text("No \(model.nav.filter == .all ? "" : model.nav.filter.label.lowercased() + " ")games").font(PlayscribeFont.headline)
@@ -123,19 +135,16 @@ struct LibraryShelf: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 40)
                 }
-
-                if duo.pose == .closed {
-                    if let c = model.continueItem { ContinueRow(game: c.game, release: c.release) }
-                    ForEach(rows) { row in
-                        GameRow(row: row).id("lib-\(row.id)")
-                    }
+                // D-12: the Continue hero spans two tiles; Tabletop shows it on the standing half.
+                if duo.pose != .tabletop, let c = model.continueItem {
+                    ContinueRow(game: c.game, release: c.release)
+                        .frame(maxWidth: layout == .tiles && duo.pose != .closed ? tileSize * 2 + 14 + (duo.pose == .flat ? 120 : 0) : .infinity,
+                               alignment: .leading)
+                }
+                if layout == .list {
+                    ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
                 } else {
-                    // D-5: one grid. In the book pose an even number of columns, so the fold falls
-                    // between two columns, never through a cover.
-                    LazyVGrid(columns: columns, alignment: .leading, spacing: 16) {
-                        if let c = model.continueItem {
-                            ContinueTile(game: c.game, release: c.release, size: tileSize)
-                        }
+                    LazyVGrid(columns: columns, alignment: .leading, spacing: 18) {
                         ForEach(rows) { row in
                             GameTile(row: row, size: tileSize).id("lib-\(row.id)")
                         }
@@ -153,45 +162,39 @@ struct LibraryShelf: View {
     }
 }
 
-struct FilterBar: View {
+/// D-12: the View menu under Add: Tiles or List, Sort and Filter. Every choice persists (D-13).
+struct LibraryViewMenu: View {
     @Environment(AppModel.self) private var model
+    @AppStorage(LibraryLayout.key) private var layout: LibraryLayout = .tiles
 
     var body: some View {
+        @Bindable var model = model
         let rows = model.libraryRows
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                ForEach(LibraryFilter.allCases) { f in
-                    let n = f.status.map { s in rows.filter { $0.status == s }.count } ?? rows.count
-                    let on = model.nav.filter == f
-                    Button { model.nav.filter = f } label: {
-                        Text("\(f.label) \(n)")
-                            .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
-                            .padding(.horizontal, 12)
-                            .frame(minHeight: 44)
-                            .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityAddTraits(on ? .isSelected : [])
-                    .tappableFrame()
-                }
-                Menu {
-                    Picker("Sort by", selection: Binding(get: { model.nav.sort }, set: { model.nav.sort = $0 })) {
-                        ForEach(LibrarySort.allCases) { Text($0.label).tag($0) }
-                    }
-                } label: {
-                    Label(model.nav.sort.label, systemImage: "arrow.up.arrow.down")
-                        .font(PlayscribeFont.subheadline)
-                        .padding(.horizontal, 12)
-                        .frame(minHeight: 44)
-                        .background(Color.ink3, in: Capsule())
-                }
-                .tappableFrame()
+        Menu {
+            Picker("Show as", selection: $layout) {
+                ForEach(LibraryLayout.allCases) { Label($0.label, systemImage: $0.symbol).tag($0) }
             }
-            .padding(.trailing, 24)
+            .pickerStyle(.inline)
+            Picker("Sort by", selection: $model.data.nav.sort) {
+                ForEach(LibrarySort.allCases) { Text($0.label).tag($0) }
+            }
+            .pickerStyle(.menu)
+            Picker("Show", selection: $model.data.nav.filter) {
+                ForEach(LibraryFilter.allCases) { f in
+                    let n = f.status.map { st in rows.filter { $0.status == st }.count } ?? rows.count
+                    Text("\(f.label) (\(n))").tag(f)
+                }
+            }
+            .pickerStyle(.menu)
+            Divider()
+            Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
+        } label: {
+            Label("View", systemImage: model.nav.filter == .all ? layout.symbol : "line.3.horizontal.decrease.circle.fill")
         }
-        .edgeFade()
+        .accessibilityShowsLargeContentViewer()
     }
 }
+
 
 extension View {
     /// R-7: a scrolling chip row fades at its edges instead of clipping hard.
@@ -209,16 +212,19 @@ extension View {
 /// B-4 on the closed display: the Continue game's key art in Playscribe's own frame (brand
 /// README, "Closed Library hero"): no badge on game art; the frame says "this is the app".
 /// The whole card is one button. In tabletop the art is display-only in the upper half.
+/// The Continue hero (B-4, D-12): the first and largest thing in the Library. When the release is
+/// unread it reads as a new chapter (brand v2): label, version chip and an invite back in.
 struct ContinueRow: View {
     @Environment(AppModel.self) private var model
     var game: CatalogGame
     var release: Release
 
     var body: some View {
+        let fresh = model.isUnread(release)
         Button { model.openGame(game.id, chapter: .updates, releaseID: release.id) } label: {
             VStack(alignment: .leading, spacing: 10) {
                 HeroFrame(asset: game.keyArtAsset, game: game)
-                ContinueText(game: game, release: release)
+                ContinueText(game: game, release: release, fresh: fresh)
             }
             .contentShape(Rectangle())
         }
@@ -226,7 +232,7 @@ struct ContinueRow: View {
         .frame(minHeight: 44)
         .tappableFrame()
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("Continue, \(release.displayName), \(game.name)")
+        .accessibilityLabel(fresh ? "New chapter, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
         .accessibilityAddTraits(.isButton)
     }
 }
@@ -234,16 +240,37 @@ struct ContinueRow: View {
 struct ContinueText: View {
     var game: CatalogGame
     var release: Release
+    var fresh: Bool
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text("CONTINUE")
-                .font(PlayscribeFont.caption)
-                .tracking(12 * 0.08)
-                .foregroundStyle(PlayscribeColor.accent)
+            HStack(spacing: 8) {
+                Text(fresh ? "NEW CHAPTER" : "CONTINUE")
+                    .font(PlayscribeFont.caption)
+                    .tracking(12 * 0.08)
+                    .foregroundStyle(PlayscribeColor.accent)
+                if fresh, let v = release.versionChip {
+                    Text(v)
+                        .font(PlayscribeFont.caption)
+                        .monospacedDigit()
+                        .foregroundStyle(PlayscribeColor.accent)
+                        .padding(.horizontal, 8)
+                        .frame(height: 19)
+                        .overlay(Capsule().strokeBorder(PlayscribeColor.accent.opacity(0.7), lineWidth: 1))
+                }
+            }
             Text(game.name).font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.textPrimary)
-            Text(release.displayName).font(PlayscribeFont.body).foregroundStyle(PlayscribeColor.textSecondary)
+            Text(fresh ? "\(release.displayName) is here. Catch up, then jump back in." : release.displayName)
+                .font(PlayscribeFont.body).foregroundStyle(PlayscribeColor.textSecondary)
         }
         .padding(.horizontal, 4)
+    }
+}
+
+extension Release {
+    /// "Update 1.1" → "v1.1", for the hero's version chip.
+    var versionChip: String? {
+        guard let token = displayName.split(separator: " ").last, token.first?.isNumber == true else { return nil }
+        return "v" + token
     }
 }
 
@@ -258,7 +285,8 @@ struct HeroFrame: View {
             // Closed: 16:9 so the library rows stay on screen; larger displays keep the taller page.
             .aspectRatio(duo.pose == .closed || duo.pose == .book ? 16 / 9 : 365 / 300, contentMode: .fit)
             .clipShape(BookEdgeShape())
-            .overlay(BookEdgeShape().stroke(PlayscribeColor.vellum300.opacity(0.35), lineWidth: 1))
+            // Brand v2: an inset lit edge, 1.5 pt visible (3 pt stroke clipped to the shape).
+            .overlay(BookEdgeShape().stroke(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 3).clipShape(BookEdgeShape()))
             .accessibilityHidden(true)
     }
 }
@@ -365,8 +393,7 @@ struct GameTile: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Button { model.openGame(row.id) } label: {
-                CoverView(game: row.game)
-                    .frame(width: size)
+                SquareCover(game: row.game, size: size)
                     .overlay(alignment: .topTrailing) {
                         if row.unread > 0 { UnreadBadge(count: row.unread).padding(4) }
                     }
@@ -378,8 +405,8 @@ struct GameTile: View {
                 Circle().fill(row.status.tint).frame(width: 6, height: 6)
                 Text(row.latest?.displayName ?? "No PS5 notes yet").font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(1)
                 Spacer(minLength: 0)
+                GameMenuButton(gameID: row.id).frame(width: 28).padding(.trailing, -8).padding(.vertical, -10)
             }
-            .overlay(alignment: .trailing) { GameMenuButton(gameID: row.id).offset(x: 12) }
         }
         .frame(width: size)
         .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.15) : .clear)
@@ -389,51 +416,53 @@ struct GameTile: View {
 }
 
 /// B-4: the game with the most recent unread On PS5 release, first in the grid, with key art.
-struct ContinueTile: View {
-    @Environment(AppModel.self) private var model
+/// D-12: PS5-style square tile. Until square art exists, the portrait cover fits over a blurred
+/// fill of itself.
+struct SquareCover: View {
     var game: CatalogGame
-    var release: Release
     var size: CGFloat
+    @State private var art: TileArtLoader.Loaded?
 
     var body: some View {
-        Button { model.openGame(game.id, chapter: .updates, releaseID: release.id) } label: {
-            VStack(alignment: .leading, spacing: 6) {
-                ArtView(asset: game.keyArtAsset, game: game)
-                    .frame(width: size, height: size * 4 / 3)
-                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                    .overlay(alignment: .bottomLeading) {
-                        Text("Continue").font(PlayscribeFont.caption2.bold()).padding(6)
-                            .background(.ultraThinMaterial, in: Capsule()).padding(6)
-                    }
-                Text(release.displayName).font(PlayscribeFont.footnote.weight(.semibold)).lineLimit(2)
-                Text(game.name).font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(1)
+        let tileArt = game.tileArt
+        ZStack {
+            if let art {
+                // Key art: a square crop centred on the salient region; a square cover as is.
+                let scale = size / min(art.image.size.width, art.image.size.height)
+                let width = art.image.size.width * scale
+                let offset = min(0, max(size - width, size / 2 - art.centreX * width))
+                Image(uiImage: art.image).resizable().interpolation(.high)
+                    .frame(width: width, height: art.image.size.height * scale)
+                    .offset(x: offset + (width - size) / 2)
+            } else {
+                CoverView(game: game, cornerRadius: 0)
+                    .frame(width: size)
+                    .blur(radius: 18)
+                    .overlay(Color.black.opacity(0.35))
+                    .accessibilityHidden(true)
+                CoverView(game: game, cornerRadius: 4)
+                    .frame(height: size - 12)
             }
-            .frame(width: size)
         }
-        .buttonStyle(.plain)
-        .tappableFrame()
-        .accessibilityLabel("Continue: \(game.name), \(release.displayName)")
+        .frame(width: size, height: size)
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).strokeBorder(.white.opacity(0.08)))
+        .accessibilityElement()
+        .accessibilityLabel("\(game.name) cover")
+        .accessibilityAddTraits(.isImage)
+        .task(id: tileArt) {
+            switch tileArt {
+            case .square(let url)?: art = await TileArtLoader.shared.load(url, salient: false)
+            case .keyArt(let url)?: art = await TileArtLoader.shared.load(url, salient: true)
+            case nil: art = nil
+            }
+        }
     }
 }
+
+
 
 /// The open-flat banner: the featured game's art with the wordmark, so it reads as the app.
-struct FeatureBanner: View {
-    @Environment(AppModel.self) private var model
-    var game: CatalogGame
-    var body: some View {
-        ZStack(alignment: .bottomLeading) {
-            ArtView(asset: game.keyArtAsset, game: game)
-            LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .top, endPoint: .bottom)
-            VStack(alignment: .leading, spacing: 4) {
-                Text(game.name).font(PlayscribeFont.title3.bold())
-            }
-            .padding(16)
-        }
-        .frame(height: 160)
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .accessibilityElement(children: .combine)
-    }
-}
 
 /// N-1: asked in context after the first game is added. One Continue button, swipe to dismiss.
 struct NotificationInviteCard: View {

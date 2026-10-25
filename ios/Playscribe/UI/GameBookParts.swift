@@ -15,6 +15,7 @@ enum ReadingSide {
 struct PageView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @State private var position = ScrollPosition()
     var gameID: String
     /// Closed: one stacked book, the Contents below the Page.
     var withContents = false
@@ -55,8 +56,25 @@ struct PageView: View {
             .padding(.bottom, 24)
         }
         .scrollIndicators(.hidden)
+        // D-2, T-5, D-10: the reading position is model state. Closing, opening, rotating or
+        // swapping sides rebuilds this view; it comes back where the reader was.
+        .scrollPosition($position)
+        .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, y in
+            model.nav.anchors[anchorKey] = String(Int(y))
+        }
+        .onAppear(perform: restore)
+        .onChange(of: duo.pose) { restore() }
+        .onChange(of: model.nav.selected?[gameID]) { position.scrollTo(edge: .top) }
         .background(Color.ink0)
         .foldAudited()
+    }
+
+    private var anchorKey: String { "page-\(gameID)-\(model.nav.chapter.rawValue)" }
+
+    private func restore() {
+        guard let y = model.nav.anchors[anchorKey].flatMap(Double.init), y > 0 else { return }
+        // After layout, so the content has its new height.
+        Task { @MainActor in position.scrollTo(y: y) }
     }
 }
 
