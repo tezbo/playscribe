@@ -26,6 +26,8 @@ enum NotifyLevel: String, Codable, CaseIterable, Hashable, Identifiable {
 
 enum Coverage: String, Codable, Hashable { case full, partial, none }
 
+enum DatePrecision: String, Codable, Hashable { case day, month, quarter, year, tbd }
+
 struct CatalogGame: Codable, Hashable, Identifiable {
     var id: String
     var name: String
@@ -33,6 +35,8 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     var publisher: String?
     var platforms: [Platform]
     var releaseDate: String?
+    /// How precise `releaseDate` is; year and quarter dates are stored as the period's last day.
+    var releasePrecision: DatePrecision?
     /// Earlier PS4 release date for games playable on PS5 before their PS5 release.
     var playableSince: String?
     /// The PS5 date is early access with no full release yet.
@@ -62,8 +66,12 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     /// on PS5 through its PS4 version. Dates before the PS5 launch are never shown.
     var ps5DateLine: String? {
         if earlyAccess == true { return "Early access" }
-        // GR-5: a future date never says "Released".
-        if let d = releaseDate?.isoDay, d > .now { return Self.outLine(d) }
+        if releasePrecision == .tbd || releaseDate == nil && playableSince == nil { return "Release date TBA" }
+        // GR-5: a future date never says "Released", and says only as much as is known.
+        if let d = releaseDate?.isoDay, d > .now { return Self.outLine(d, precision: releasePrecision ?? .day) }
+        if let d = releaseDate?.isoDay, let p = releasePrecision, p != .day, d >= Self.ps5Launch {
+            return "Released " + Self.period(d, p)
+        }
         let launch = Self.ps5Launch
         if let d = releaseDate?.isoDay, d >= launch, playableSince.flatMap(\.isoDay).map({ $0 >= launch && $0 < d }) != true {
             // An older game's native PS5 edition (it had an earlier PS4 release) vs a PS5 first.
@@ -77,18 +85,39 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         return nil
     }
 
-    /// "Out 19 Nov" this year, "Out 19 Nov 2027" for a later year.
-    static func outLine(_ d: Date) -> String {
-        let sameYear = Calendar.current.component(.year, from: d) == Calendar.current.component(.year, from: .now)
-        return "Out " + (sameYear ? d.dayMonth : d.shortDay)
+    /// "Out 19 Nov" this year, "Out 19 Nov 2027" for a later year; "Coming Nov 2026",
+    /// "Coming Q2 2027" or "Coming 2027" when only the month, quarter or year is known (GR-5).
+    static func outLine(_ d: Date, precision: DatePrecision = .day) -> String {
+        switch precision {
+        case .day:
+            let sameYear = Calendar.current.component(.year, from: d) == Calendar.current.component(.year, from: .now)
+            return "Out " + (sameYear ? d.dayMonth : d.shortDay)
+        case .tbd: return "Release date TBA"
+        default: return "Coming " + period(d, precision)
+        }
+    }
+
+    /// "Nov 2026", "Q2 2027" or "2027".
+    static func period(_ d: Date, _ p: DatePrecision) -> String {
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = .gmt
+        let year = cal.component(.year, from: d), month = cal.component(.month, from: d)
+        switch p {
+        case .month: return d.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB"), timeZone: .gmt).month(.abbreviated).year())
+        case .quarter: return "Q\((month - 1) / 3 + 1) \(year)"
+        case .year: return "\(year)"
+        case .day: return d.shortDay
+        case .tbd: return "TBA"
+        }
     }
 
     var isUpcoming: Bool { releaseDate?.isoDay.map { $0 > .now } ?? false }
 
     /// GR-1: when the game is (or will be) out on PS5, for games with no notes yet.
     var ps5AvailabilityLine: String {
-        guard let d = releaseDate?.isoDay else { return "Release date TBA" }
-        if d > .now { return Self.outLine(d) }
+        guard releasePrecision != .tbd, let d = releaseDate?.isoDay else { return "Release date TBA" }
+        if d > .now { return Self.outLine(d, precision: releasePrecision ?? .day) }
+        if let p = releasePrecision, p != .day, d >= Self.ps5Launch { return "Out on PS5 since " + Self.period(d, p) }
         let since = max(d, Self.ps5Launch)
         return "Out on PS5 since \(since.shortDay)"
     }
@@ -198,6 +227,8 @@ struct PS5Index {
         var e: Bool?
         /// The full release date, when `d` was early access.
         var f: String?
+        /// Precision of `d`: month, quarter, year or tbd; absent means an exact day.
+        var q: String?
         var v: String?
         var p: String?
         var c: String?
@@ -244,7 +275,7 @@ struct PS5Index {
     func game(_ e: Entry) -> CatalogGame {
         CatalogGame(
             id: "igdb-\(e.i)", name: e.n, developer: e.v, publisher: e.p, platforms: [.ps5],
-            releaseDate: e.f ?? e.d, playableSince: e.b, earlyAccess: e.e == true && e.f == nil, igdbID: e.i, coverImageID: e.c, tones: e.t, coverage: .none
+            releaseDate: e.f ?? e.d, releasePrecision: e.f != nil ? .day : DatePrecision(rawValue: e.q ?? "day"), playableSince: e.b, earlyAccess: e.e == true && e.f == nil, igdbID: e.i, coverImageID: e.c, tones: e.t, coverage: .none
         )
     }
 }

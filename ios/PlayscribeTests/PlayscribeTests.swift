@@ -200,3 +200,35 @@ struct DateCopyTests {
         #expect(d.shortDay == "19 Nov 2026")
     }
 }
+
+@MainActor
+struct DatePrecisionTests {
+    func game(_ d: String?, _ p: DatePrecision?) -> CatalogGame {
+        CatalogGame(id: "t", name: "T", platforms: [.ps5], releaseDate: d, releasePrecision: p, coverage: .none)
+    }
+
+    @Test("GR-5: future dates say only as much as is known")
+    func future() {
+        #expect(game("2099-11-19", .day).ps5DateLine == "Out 19 Nov 2099")
+        #expect(game("2099-11-30", .month).ps5DateLine == "Coming Nov 2099")
+        #expect(game("2099-06-30", .quarter).ps5DateLine == "Coming Q2 2099")
+        #expect(game("2099-12-31", .year).ps5DateLine == "Coming 2099")
+        #expect(game(nil, .tbd).ps5DateLine == "Release date TBA")
+        #expect(game(nil, nil).ps5DateLine == "Release date TBA")
+    }
+
+    @Test("GR-5: past imprecise dates never claim a day")
+    func past() {
+        #expect(game("2025-12-31", .year).ps5DateLine == "Released 2025")
+        #expect(game("2025-09-30", .quarter).ps5DateLine == "Released Q3 2025")
+        #expect(game("2025-03-15", .day).ps5DateLine == "Released 15 Mar 2025")
+    }
+
+    @Test("Index entries with a year precision never show a day")
+    func index() {
+        for e in PS5Index.shared.entries where e.q == "year" || e.q == "quarter" {
+            let line = PS5Index.shared.game(e).ps5DateLine ?? ""
+            #expect(!line.contains("31 Dec") && !line.contains("30 Sep"), "\(e.n): \(line)")
+        }
+    }
+}
