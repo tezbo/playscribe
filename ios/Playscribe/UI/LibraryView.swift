@@ -468,6 +468,8 @@ struct NotificationInviteCard: View {
 struct LibrarySidebar: View {
     @Environment(AppModel.self) private var model
     var body: some View {
+        // O-5: the game shown on the other page is marked, so the two pages read as one.
+        let selected = model.spreadGameID
         List(selection: Binding(get: { model.nav.gameID }, set: { if let id = $0 { model.openGame(id) } })) {
             ForEach(model.shownRows()) { row in
                 HStack(spacing: 12) {
@@ -480,9 +482,17 @@ struct LibrarySidebar: View {
                     if row.unread > 0 { UnreadBadge(count: row.unread) }
                 }
                 .tag(row.id)
+                .listRowBackground(row.id == selected
+                    ? RoundedRectangle(cornerRadius: 10, style: .continuous).fill(PlayscribeColor.ink700)
+                        .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(PlayscribeColor.vellum300.opacity(0.35)))
+                        .padding(.horizontal, 8)
+                    : nil)
+                .accessibilityAddTraits(row.id == selected ? .isSelected : [])
             }
         }
+        .scrollContentBackground(.hidden)
         .navigationTitle("Library")
+        .toolbarTitleDisplayMode(.large)
         .toolbar {
             ToolbarItem(placement: .topBarPinnedTrailing) {
                 Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }

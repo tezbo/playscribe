@@ -159,12 +159,19 @@ struct BookLeftPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
+            // The closed pose's large Literata title, on the left page too.
+            Text("Library")
+                .font(PlayscribeFont.largeTitle)
+                .padding(.horizontal, 20)
+                .padding(.bottom, 6)
+                .accessibilityAddTraits(.isHeader)
             if let id = gameID, let game = model.game(id) {
                 HeroFrame(asset: game.keyArtAsset, game: game)
                     .padding(.horizontal, 14)
                     .padding(.top, 8)
             }
             LibrarySidebar()
+                .toolbar(removing: .title)
         }
         .background(Color.ink0)
     }
