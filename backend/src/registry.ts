@@ -22,6 +22,8 @@ export interface RegistryGame {
   exclude?: string[]
   igdbId: number | null
   ps5TitleIds: string[]
+  /** The Steam version is a separate PC port with its own patches, so a Steam patch says nothing about PS5. */
+  steamIsPcPort?: boolean
   sources: SourceDef[]
 }
 

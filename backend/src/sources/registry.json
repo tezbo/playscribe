@@ -1,5 +1,5 @@
 {
-  "$comment": "Per-game official source registry. See docs/ps5-patch-data.md. trust=official can set PS5 status; secondary can only mark 'reported'; pc sources never set PS5 status. fetch=manual means the site blocks automated fetches; do not work around it.",
+  "$comment": "Per-game official source registry. See docs/ps5-patch-data.md. trust=official can set PS5 status; secondary can only mark 'reported'; a Steam patch is taken as out on PS5 too (verification assumed) unless steamIsPcPort is set. fetch=manual means the site blocks automated fetches; do not work around it.",
   "version": 1,
   "shared": [
     {
@@ -609,6 +609,7 @@
       ],
       "igdbId": 127044,
       "ps5TitleIds": [],
+      "steamIsPcPort": true,
       "sources": [
         {
           "id": "spider-man-2-steam",
@@ -894,6 +895,7 @@
       ],
       "igdbId": 133236,
       "ps5TitleIds": [],
+      "steamIsPcPort": true,
       "sources": [
         {
           "id": "ff7-rebirth-steam",
@@ -915,6 +917,7 @@
       ],
       "igdbId": 117170,
       "ps5TitleIds": [],
+      "steamIsPcPort": true,
       "sources": [
         {
           "id": "stellar-blade-steam",
@@ -936,6 +939,7 @@
       ],
       "igdbId": 228530,
       "ps5TitleIds": [],
+      "steamIsPcPort": true,
       "sources": [
         {
           "id": "death-stranding-2-steam",
@@ -1206,6 +1210,7 @@
       "name": "Final Fantasy XVI",
       "igdbId": 31551,
       "ps5TitleIds": [],
+      "steamIsPcPort": true,
       "sources": [
         {
           "id": "ff16-steam",
@@ -1301,6 +1306,7 @@
       "name": "Ghost of Tsushima",
       "igdbId": 75235,
       "ps5TitleIds": [],
+      "steamIsPcPort": true,
       "sources": [
         {
           "id": "ghost-of-tsushima-steam",

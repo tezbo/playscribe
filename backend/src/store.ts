@@ -3,7 +3,7 @@ import { now, type DB } from './db.ts'
 import { alertOf } from './alerts.ts'
 import { artworkUrl, squareCoverUrl } from './artwork.ts'
 import { tagNotes } from './ingest/notes.ts'
-import type { Field, Game, KindBasis, NoteSection, Platform, PlatformRelease, PlatformStatus, Release, ReleaseKind, Verification } from './types.ts'
+import type { Field, Game, KindBasis, NoteSection, Platform, PlatformRelease, PlatformStatus, Release, ReleaseKind, ReleaseLinks, Verification } from './types.ts'
 
 // Reads and writes for the release model. Rows hold the spec's nested types as JSON.
 type Row = Record<string, any>
@@ -80,6 +80,7 @@ export const releaseFromRow = (db: DB, r: Row): Release => ({
   // Tagged on read, so stored notes follow the current platform rules.
   notes: tagNotes(json(r.notes, [])),
   sourceIds: json(r.source_ids, []),
+  links: json(r.links, {}),
   platforms: (db.prepare('SELECT * FROM platform_releases WHERE release_id = ? ORDER BY platform').all(r.id) as Row[]).map(platformFromRow),
   revision: r.revision,
   updatedAt: r.updated_at,
@@ -162,12 +163,21 @@ export const addSource = (db: DB, releaseId: string, sourceId: string) => {
   db.prepare('UPDATE releases SET source_ids = ?, updated_at = ? WHERE id = ?').run(JSON.stringify([...ids]), now(), releaseId)
 }
 
+/** Records where a release's notes live. The first Steam post and the first PS5 page found are kept. */
+export const addLinks = (db: DB, releaseId: string, links: ReleaseLinks) => {
+  const r = db.prepare('SELECT links FROM releases WHERE id = ?').get(releaseId) as Row | undefined
+  if (!r) return
+  const old = json<ReleaseLinks>(r.links, {})
+  const next = { ...links, ...old }
+  if (JSON.stringify(next) !== JSON.stringify(old)) db.prepare('UPDATE releases SET links = ?, updated_at = ? WHERE id = ?').run(JSON.stringify(next), now(), releaseId)
+}
+
 export const getPlatformRow = (db: DB, releaseId: string, platform: Platform) =>
   db.prepare('SELECT * FROM platform_releases WHERE release_id = ? AND platform = ?').get(releaseId, platform) as Row | undefined
 
 export const field = <T>(value: T, verification: Verification, sourceId: string): Field<T> => ({ value, verification, sourceId, checkedAt: now() })
 
-const RANK: Record<Verification, number> = { pending: 0, reported: 1, official: 2 }
+const RANK: Record<Verification, number> = { assumed: 0, pending: 1, reported: 2, official: 3 }
 
 /** A field only moves to an equal or stronger verification; official values are never overwritten automatically. */
 const mergeField = <T>(old: Field<T> | null, next: Field<T> | null | undefined, force = false): Field<T> | null => {

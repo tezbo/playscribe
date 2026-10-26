@@ -6,17 +6,20 @@ import type { PlatformStatus, Post } from '../types.ts'
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import type { Igdb } from './igdb.ts'
-import { extractNotes, mentionsPs5 } from './notes.ts'
+import { extractNotes, mentionsPs5, ps5PageOf } from './notes.ts'
 
 // The poll job from docs/ps5-patch-data.md. Rules that matter:
-//  - Only an official source that names PS5 can create a PS5 row. When the post says outright that
+//  - An official source that names PS5 decides its PS5 row. When the post says outright that
 //    the update is live on PS5 (ps5LiveStated) the row is official at once (Terry, 2026-10-26:
 //    "Unconfirmed" should be rare); otherwise it is `pending` until a person confirms it (confirm.ts).
 //  - Press (trust: secondary) fills PS5 facts as `reported`. A press report that an update is live
 //    earns one quiet alert tagged "Unconfirmed" (push/notify.ts, after the poll); it never makes a
 //    row official.
-//  - Steam is the PC signal. A studio's Steam post that says the update is live on PS5 too makes
-//    the PS5 row official; one that only mentions PS5 is a lead for the review queue.
+//  - Steam is the source of truth for updates (Terry, 2026-10-27): every Steam patch is taken as out
+//    on PS5 too (verification `assumed`, alerted like any other) unless the post says PS5 gets it later
+//    or not at all, the game's Steam version is a separate PC port, or the post predates the PS5
+//    release. A Steam post that says the update is live on PS5 makes the PS5 row official. Each
+//    release keeps the Steam post and the studio's PS5 page for it (links), when one is found.
 //  - Each source is polled at most hourly; robots.txt and 403s switch it off.
 
 export interface IngestDeps {
@@ -223,6 +226,8 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     })
     db.prepare(`UPDATE review_items SET resolved_at = ?, resolution = 'autoConfirmed' WHERE release_id = ? AND platform = 'ps5' AND resolved_at IS NULL`).run(now(), releaseId)
   }
+  // A studio's own post that names PS5 is that update's PS5 page; a Steam post may link to one.
+  const links = () => (s.kind === 'steamNews' ? { steamNotes: post.url, ps5Page: ps5PageOf(post.body) ?? undefined } : { ps5Page: post.url })
 
   const pcOnly = s.platforms.every((p) => p === 'pc')
   const namesPs5 = s.ps5Signal === 'always' || mentionsPs5(text)
@@ -233,10 +238,17 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
 
   if (pcOnly) {
     store.upsertPlatform(db, releaseId, 'pc', { status: 'live', verification: 'official', liveAt: store.field(post.publishedAt, 'official', s.id) })
+    store.addLinks(db, releaseId, links())
     if (ps5LiveStated(text)) officialPs5(releaseId)
-    else if (mentionsPs5(text)) review(releaseId, 'steamMentionsPs5')
+    else if (!registry.games[game.id]?.steamIsPcPort && !(game.ps5_release && post.publishedAt.slice(0, 10) < game.ps5_release)) {
+      // Taken as out on PS5 too, unless the post says otherwise. Never the PC version or size: those are PC facts.
+      const status = ps5StatusOf(text)
+      store.upsertPlatform(db, releaseId, 'ps5', { status, verification: 'assumed', liveAt: status === 'live' ? store.field(post.publishedAt, 'assumed', s.id) : null })
+      if (mentionsPs5(text)) review(releaseId, 'steamMentionsPs5')
+    }
     return releaseId
   }
+  store.addLinks(db, releaseId, links())
 
   if (ps5LiveStated(text)) {
     officialPs5(releaseId, s.ps5Signal !== 'always')

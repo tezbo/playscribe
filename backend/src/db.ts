@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS releases (
   announced_at TEXT NOT NULL,
   notes TEXT NOT NULL,               -- JSON NoteSection[]
   source_ids TEXT NOT NULL,          -- JSON string[]
+  links TEXT NOT NULL DEFAULT '{}',  -- JSON ReleaseLinks
   content_hash TEXT NOT NULL,
   revision INTEGER NOT NULL DEFAULT 1,
   created_at TEXT NOT NULL,
@@ -51,7 +52,7 @@ CREATE TABLE IF NOT EXISTS platform_releases (
   size_bytes TEXT,                   -- JSON Field<number>
   live_at TEXT,                      -- JSON Field<string>
   bundles TEXT NOT NULL DEFAULT '[]',
-  verification TEXT NOT NULL,        -- official | reported | pending
+  verification TEXT NOT NULL,        -- official | reported | pending | assumed
   pushed_at TEXT,                    -- set once; a release never pushes twice
   updated_at TEXT NOT NULL,
   PRIMARY KEY (release_id, platform)
@@ -125,6 +126,7 @@ export const openDb = (path: string): DB => {
   const has = (table: string, col: string) => (db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).some((c) => c.name === col)
   if (!has('games', 'ps5_release_precision')) db.exec('ALTER TABLE games ADD COLUMN ps5_release_precision TEXT')
   if (!has('games', 'artwork_image_id')) db.exec('ALTER TABLE games ADD COLUMN artwork_image_id TEXT')
+  if (!has('releases', 'links')) db.exec("ALTER TABLE releases ADD COLUMN links TEXT NOT NULL DEFAULT '{}'")
   if (!has('games', 'square_cover_image_id')) db.exec('ALTER TABLE games ADD COLUMN square_cover_image_id TEXT')
   // Tile art picked under older rules (before concept art was excluded) is cleared once, so the next
   // seed asks IGDB again. Bump ART_RULES when src/artwork.ts changes what it picks.

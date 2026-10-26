@@ -3,7 +3,8 @@ export type Platform = 'ps5' | 'xboxSeries' | 'switch2' | 'pc'
 export type ReleaseKind = 'dayOne' | 'hotfix' | 'patch' | 'major' | 'silent'
 export type KindBasis = 'studio' | 'inferred'
 export type Trust = 'official' | 'secondary'
-export type Verification = 'official' | 'reported' | 'pending'
+/** assumed: a Steam patch with no word on PS5, taken as out on PS5 too (Terry, 2026-10-27). */
+export type Verification = 'official' | 'reported' | 'pending' | 'assumed'
 export type PlatformStatus = 'live' | 'announced' | 'notPlanned' | 'unknown'
 export type NotifyLevel = 'all' | 'major' | 'off'
 
@@ -33,8 +34,13 @@ export interface PlatformRelease {
   liveAt: Field<string> | null
   bundles: string[]
   verification: Verification
-  /** PS5 only: the one alert this release earns. quiet is the press-reported "Unconfirmed" alert. */
-  alert?: { style: 'standard' } | { style: 'quiet'; tag: 'Unconfirmed' }
+  /** PS5 only: the one alert this release earns, once it is live. */
+  alert?: { style: 'standard' }
+}
+
+export interface ReleaseLinks {
+  steamNotes?: string
+  ps5Page?: string
 }
 
 export interface Release {
@@ -46,6 +52,8 @@ export interface Release {
   announcedAt: string
   notes: NoteSection[]
   sourceIds: string[]
+  /** Where the notes came from: the Steam post, and the studio's own PS5 page for this update when one exists. */
+  links: ReleaseLinks
   platforms: PlatformRelease[]
   revision: number
   updatedAt: string

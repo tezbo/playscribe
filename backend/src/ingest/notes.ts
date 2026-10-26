@@ -125,3 +125,26 @@ export const tagNotes = (sections: NoteSection[]): NoteSection[] =>
 
 export const mentionsPs5 = (text: string) => PS5.test(text)
 export const mentionsXbox = (text: string) => XBOX.test(text)
+
+// Hosts that are never a studio's PS5 update page: Steam itself, stores, video and social sites, image CDNs.
+const NOT_A_PS5_PAGE = /(^|\.)(steampowered\.com|steamcommunity\.com|steamstatic\.com|akamaihd\.net|store\.playstation\.com|youtube\.com|youtu\.be|twitter\.com|x\.com|discord\.gg|discord\.com|reddit\.com|facebook\.com|instagram\.com|tiktok\.com|twitch\.tv|bsky\.app)$/i
+
+/** The first link in a post to a studio page about this update on PS5 or consoles, judged by its address or link text. */
+export const ps5PageOf = (body: string): string | null => {
+  const links: { url: string; text: string }[] = []
+  for (const m of body.matchAll(/\[url=["']?(https?:\/\/[^\]"'\s]+)["']?\]([\s\S]*?)\[\/url\]/gi)) links.push({ url: m[1]!, text: m[2]! })
+  for (const m of body.matchAll(/<a\s[^>]*href=["'](https?:\/\/[^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)) links.push({ url: m[1]!, text: m[2]! })
+  // A bare address counts with the line it sits on as its text ("PS5 patch notes: https://…").
+  for (const line of body.split('\n')) for (const m of line.matchAll(/(?<![=["'])\bhttps?:\/\/[^\s\]\[<>"']+/gi)) links.push({ url: m[0], text: line })
+  for (const { url, text } of links) {
+    let host: string
+    try {
+      host = new URL(url).hostname
+    } catch {
+      continue
+    }
+    if (NOT_A_PS5_PAGE.test(host)) continue
+    if (/ps5|playstation|console/i.test(`${url} ${text.replace(/<[^>]+>/g, ' ')}`)) return url
+  }
+  return null
+}
