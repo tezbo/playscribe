@@ -1,4 +1,7 @@
 import assert from 'node:assert/strict'
+import { mkdtempSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 import { test } from 'node:test'
 import { artworkFields, artworkOf, artworkTypes, squareCoverOf } from '../src/artwork.ts'
 import { openDb } from '../src/db.ts'
@@ -61,4 +64,18 @@ test('the feed game carries key art, and "none" is remembered without showing', 
   store.upsertGame(db, { id: 'h', name: 'H', artworkImageId: '' })
   assert.equal(store.getGameRow(db, 'h')!.artwork_image_id, '')
   assert.equal(store.gameFromRow(store.getGameRow(db, 'h')!).artwork, null)
+})
+
+test('art picked under older rules is cleared once, so IGDB is asked again', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'art-'))
+  const path = join(dir, 'db.sqlite')
+  const db = openDb(path)
+  db.exec('PRAGMA user_version = 0')
+  store.upsertGame(db, { id: 'w', name: 'W', artworkImageId: 'concept' })
+  db.close()
+  const again = openDb(path)
+  assert.equal(store.getGameRow(again, 'w')!.artwork_image_id, null)
+  store.upsertGame(again, { id: 'w', name: 'W', artworkImageId: 'key' })
+  again.close()
+  assert.equal(store.getGameRow(openDb(path), 'w')!.artwork_image_id, 'key')
 })
