@@ -76,12 +76,12 @@ Sent once per release, when its PS5 row becomes live, to followers whose `notify
 }
 ```
 
-A row the press reports live, before anyone confirms it, gets one quiet push instead, sent by the feed job after its poll. It is tagged "Unconfirmed" in the subtitle (iOS draws it without the app), makes no sound, doesn't light the screen (`passive`), and groups apart from confirmed alerts:
+A row the press reports live, before anyone confirms it, gets one quiet push instead, sent by the feed job after its poll. It is tagged "Unconfirmed" in the title (iOS draws it without the app; wording from contract V-4), makes no sound, doesn't light the screen (`passive`), and groups apart from confirmed alerts:
 
 ```json
 {
   "aps": {
-    "alert": { "title": "The Blood of Dawnwalker", "subtitle": "Unconfirmed · Reported on PS5", "body": "Update 1.1 looks to be out on PS5. Not confirmed yet." },
+    "alert": { "title": "Unconfirmed: The Blood of Dawnwalker", "subtitle": "Update 1.1 reported on PS5", "body": "From press reports. This will update when it's official." },
     "thread-id": "dawnwalker.unconfirmed", "interruption-level": "passive", "relevance-score": 0.1, "category": "PS5_UNCONFIRMED"
   },
   "gameId": "dawnwalker", "releaseId": "dawnwalker@1.1", "kind": "major", "verification": "reported", "tag": "Unconfirmed"

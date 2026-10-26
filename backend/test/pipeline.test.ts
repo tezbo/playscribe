@@ -115,8 +115,11 @@ test('a press report that an update is live earns one quiet "Unconfirmed" alert,
   // Yōtei's press report is live too, but nobody follows it.
   assert.deepEqual(out.map((o) => [o.releaseId.replace(/@.*/, ''), o.style, o.sent]).sort(), [['dawnwalker', 'quiet', 1], ['yotei', 'quiet', 0]])
   const p = sent[0]
-  assert.equal(p.aps.alert.subtitle, 'Unconfirmed · Reported on PS5')
-  assert.match(p.aps.alert.body, /Update 1\.1 looks to be out on PS5.*Not confirmed yet\./)
+  assert.deepEqual(p.aps.alert, {
+    title: 'Unconfirmed: The Blood of Dawnwalker',
+    subtitle: 'Update 1.1 reported on PS5',
+    body: "From press reports. This will update when it's official.",
+  })
   assert.equal(p.aps['interruption-level'], 'passive')
   assert.equal(p.aps.sound, undefined)
   assert.equal(p.aps['thread-id'], 'dawnwalker.unconfirmed')

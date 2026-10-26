@@ -6,7 +6,7 @@ import { tokenIsDead } from './apns.ts'
 
 // Push rule (docs/ps5-patch-data.md): a release alerts once, when its PS5 row goes live. Official
 // rows get the normal alert. A press report that the update is live (verification "reported") gets
-// one quiet alert tagged "Unconfirmed" (passive, no sound, its own notification group), so it lands
+// one quiet alert tagged "Unconfirmed" in its title (passive, no sound, its own notification group), so it lands
 // before the console has auto-installed the patch; a later confirmation does not alert again.
 // Followers with notify "major" only hear about major updates.
 export interface PushOutcome {
@@ -58,12 +58,12 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
           verification: 'official',
         }
       : {
-          // Tagged in the text itself, since iOS draws it without the app: the subtitle carries the tag.
+          // Tagged in the text itself, since iOS draws it without the app (wording: contract V-4).
           aps: {
             alert: {
-              title: game.name,
-              subtitle: `${UNCONFIRMED} · Reported on PS5`,
-              body: `${release.displayName === 'PS5 update' ? 'An update' : release.displayName} looks to be out on PS5${version ? ` (version ${version})` : ''}. Not confirmed yet.`,
+              title: `${UNCONFIRMED}: ${game.name}`,
+              subtitle: `${release.displayName === 'PS5 update' ? 'Update' : release.displayName} reported on PS5`,
+              body: "From press reports. This will update when it's official.",
             },
             'thread-id': `${release.gameId}.unconfirmed`,
             'interruption-level': 'passive',
