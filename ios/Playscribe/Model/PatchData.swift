@@ -275,10 +275,13 @@ extension Release {
     var ps5State: PS5State {
         // Terry, 26 Oct: Steam is the source of truth. A release live on Steam counts as released
         // on PS5 unless we can confirm otherwise.
-        guard let p = ps5 else { return platforms.contains { $0.status == .live } ? .onPS5 : .pcOnly }
+        let liveElsewhere = platforms.contains { $0.platform != .ps5 && $0.status == .live }
+        guard let p = ps5 else { return liveElsewhere ? .onPS5 : .pcOnly }
         if p.verification == .pending { return .pending }
         switch p.status {
-        case .live: return p.verification == .official ? .onPS5 : .reported
+        // V-4 stays rare: Unconfirmed only when the press reports it and neither Steam nor the
+        // studio has it.
+        case .live: return p.verification == .official || liveElsewhere ? .onPS5 : .reported
         case .announced: return p.verification == .official ? .announced : .pcOnly
         case .notPlanned: return p.verification == .official ? .notPlanned : .pcOnly
         case .unknown: return .pcOnly

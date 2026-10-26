@@ -286,8 +286,8 @@ struct Facts: View {
         let p = r.ps5
         Group {
             row("Status", Text(status))
-            if r.isPS5Listed {
-                row("PS5 version", Text(p?.version?.value ?? "Not published yet").foregroundStyle(p?.version == nil ? .secondary : .primary))
+            if r.isPS5Listed, let v = p?.version?.value {
+                row("PS5 version", Text(v))
             }
             if let size = p?.sizeBytes {
                 row("Download", HStack(spacing: 6) {

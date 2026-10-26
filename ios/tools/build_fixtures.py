@@ -149,12 +149,12 @@ releases += [
         "A small update that adds the book Three Crusader Kings around Trosky and Kuttenberg.",
         ["New collectible book"], "kcd2-steam"),
     pc_release("wukong@1.0.21.23831", "wukong", "Patch 1.0.21.23831", "1.0.21.23831", "2026-01-14", "patch",
-        "Version 1.0.21.23831, about 2.0 GB on PC",
-        "The most recent patch, out on PC so far.",
+        "Version 1.0.21.23831",
+        "The most recent patch.",
         [], "wukong-steam", size=2_000_000_000),
     pc_release("wukong@1.0.20.22023", "wukong", "Patch 1.0.20.22023", "1.0.20.22023", "2025-10-16", "patch",
-        "Version 1.0.20.22023, about 5.7 GB on PC",
-        "An earlier patch, out on PC so far.",
+        "Version 1.0.20.22023",
+        "An earlier patch.",
         [], "wukong-steam", size=5_700_000_000),
 ]
 for r in releases:

@@ -1,0 +1,730 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05884C35FBFB4DD652E3A432 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432A4DE2E5898404BA47D6E7 /* LibraryView.swift */; };
+		067964A8E8A64A9B21F3E760 /* OFL-InstrumentSans.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2A3BC1103BEA141360185907 /* OFL-InstrumentSans.txt */; };
+		09E47F6B9BD8F1C41B366024 /* gallery.json in Resources */ = {isa = PBXBuildFile; fileRef = 296156C3886D889254D33FC8 /* gallery.json */; };
+		0DEA667BEC1ACA1F787D096B /* PlayscribeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5660C4605FF5FF2B38EF830 /* PlayscribeUITests.swift */; };
+		1A0CEEC1F999D2548ABA881E /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BA864307F57097EC1AC8DD3 /* book.json */; };
+		1B8B751C9F1C03D101657559 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C1747CA1263E990552C3F6 /* AppModel.swift */; };
+		215E5F9FD1798118E332B4CE /* NoteSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E578DB6E97059C7146FD749 /* NoteSearch.swift */; };
+		2385B50564AC754A7683AC94 /* GameBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D36CE48E61C4052DDA7070 /* GameBookView.swift */; };
+		314337B7355ACAE33B60607D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC82924846617FCED912B /* SplashView.swift */; };
+		33AEB0D26AD3F65DA88D70E4 /* GameBookParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1D2E5DB6DBB30DED887BFF /* GameBookParts.swift */; };
+		38BD750BBC3D029565E6DD60 /* PlayscribeBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A123C4FF7BB81C8DDDC10998 /* PlayscribeBrand.swift */; };
+		3AAB8647AAC84587C37BA2C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8B3E23BF5737715ACFD800 /* Assets.xcassets */; };
+		407AECF39D2B315647A9FAFD /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3FD78F518CAA257F77B057 /* Actions.swift */; };
+		4B1DE06096E3ADC46B5BEF74 /* Literata72pt-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77560089F61FA7689E94EF5B /* Literata72pt-Bold.ttf */; };
+		59B6C359276654CBEFAEB8C2 /* TileArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA904B96BC04F81C6EA657 /* TileArt.swift */; };
+		5AFE90AFA0E3117C20E33CCD /* Chapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F348149A4736564798C15C /* Chapters.swift */; };
+		5B5047837E1212434026B1CA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D9CAAA59C20FEC60713E /* Theme.swift */; };
+		5EEF139AEEA2777FD25A898E /* PatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4116EAA07491BB974409EB0F /* PatchData.swift */; };
+		5F9CDA8EADD3EA8CFAE3FA6F /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398FD8509ADB3271924AD4D /* JournalView.swift */; };
+		67BF14EC3C8BA6BFDD7948D8 /* Literata72pt-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 231E58D099CF264A41A0209A /* Literata72pt-SemiBold.ttf */; };
+		69F330479BDB11C9EF17D24B /* releases.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E28C58A66B9662537418D25 /* releases.json */; };
+		6A353CECE9BE4A69FBB96D6C /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE8094A59CA241C595BCE5 /* PlayerView.swift */; };
+		6FB97DB03B6A168C3784DB04 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C07BBA3B26D3F80ED3EA09 /* Artwork.swift */; };
+		7E08024BB6B250F1E581D4FD /* InstrumentSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBE5EB9A221B77C756185036 /* InstrumentSans-Bold.ttf */; };
+		83CF2D4E27ADB30D56B30523 /* OFL-Literata.txt in Resources */ = {isa = PBXBuildFile; fileRef = E3ED96BC4CC6B9F8FC8FF0DF /* OFL-Literata.txt */; };
+		89B0A08573ABEF05E5B9DB98 /* InstrumentSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94072FBBB4B04F5B8E151349 /* InstrumentSans-SemiBold.ttf */; };
+		8B0454529AB14CB5228A74EC /* catalog.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D57FED0FDD8F5EB9952E8 /* catalog.json */; };
+		938DB1C51F57BFE878E2F56C /* Duo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7B876B556D1B970EE0058 /* Duo.swift */; };
+		AC519C6CCE56B14C5876DFB8 /* FeedClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A171E14ECA25064D16BA3E /* FeedClient.swift */; };
+		B3B7B22632AE3707C5B78B69 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8026071EAF024D1E02812 /* Catalog.swift */; };
+		BABC7EFDE5669CA26B4D481F /* Literata24pt-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F424760C156FC28F12BB845D /* Literata24pt-MediumItalic.ttf */; };
+		BBA20B1AAEE17C058D4F956B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8D9694D32F934E7D17190B /* RootView.swift */; };
+		CDDABAC864E99F4DB1B31E68 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795C6A498D64CD88DB25F767 /* SettingsView.swift */; };
+		D5969FB0DFEA45BCF37C5892 /* FeedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA86585767570D7F1F4F0A0 /* FeedViews.swift */; };
+		D64019D7FF29325FD27677AF /* InstrumentSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0443FE0E41EBEE86FFC3F28 /* InstrumentSans-Regular.ttf */; };
+		D875D6D595B392D0AAFDD829 /* PlayscribeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7554A80ED6EA35D0B5F72EC /* PlayscribeTests.swift */; };
+		E5D4EEBAAE41D98AA330598B /* ps5-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 93BE21221F50474AF6D4F76D /* ps5-index.json */; };
+		EB8A31BBFD1F3850C57ABDB8 /* TabletopReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D2A26F4B05521BA627DA5F /* TabletopReader.swift */; };
+		EE76B0D60E593C16C449B01D /* AddGameSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A449ADAD066E42AC645CEB37 /* AddGameSheet.swift */; };
+		F408084BAB6ACE219F8F3034 /* PlayscribeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD8ACFE52ECC6B046CFFE /* PlayscribeApp.swift */; };
+		FB74EAA90A239A4B9DF58C61 /* InstrumentSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FBA4DE08C016D64DF72F0B72 /* InstrumentSans-Medium.ttf */; };
+		FEC3D55E791B462F03835302 /* Literata24pt-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8641723A95311B52303F32 /* Literata24pt-SemiBold.ttf */; };
+		FEF74999DBE45E0D17FFADBF /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC917B77D00CEB6BB7F074D /* NotificationService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7EC15387BF2090F4761BCD58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7642EF36C32A02DDD4DBA14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12FC6FF080AF3A8A451D4BCE;
+			remoteInfo = Playscribe;
+		};
+		9F874A191107849B06036421 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7642EF36C32A02DDD4DBA14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12FC6FF080AF3A8A451D4BCE;
+			remoteInfo = Playscribe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0243433660C1F86C7D1F97BC /* Playscribe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Playscribe.entitlements; sourceTree = "<group>"; };
+		0B8641723A95311B52303F32 /* Literata24pt-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Literata24pt-SemiBold.ttf"; sourceTree = "<group>"; };
+		0CF534907F5DE0EB76B66A88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		16D36CE48E61C4052DDA7070 /* GameBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBookView.swift; sourceTree = "<group>"; };
+		1AC917B77D00CEB6BB7F074D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		231E58D099CF264A41A0209A /* Literata72pt-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Literata72pt-SemiBold.ttf"; sourceTree = "<group>"; };
+		23E7B876B556D1B970EE0058 /* Duo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duo.swift; sourceTree = "<group>"; };
+		25C1747CA1263E990552C3F6 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		296156C3886D889254D33FC8 /* gallery.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gallery.json; sourceTree = "<group>"; };
+		2A3BC1103BEA141360185907 /* OFL-InstrumentSans.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "OFL-InstrumentSans.txt"; sourceTree = "<group>"; };
+		2E578DB6E97059C7146FD749 /* NoteSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSearch.swift; sourceTree = "<group>"; };
+		4116EAA07491BB974409EB0F /* PatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchData.swift; sourceTree = "<group>"; };
+		432A4DE2E5898404BA47D6E7 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		44FA904B96BC04F81C6EA657 /* TileArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileArt.swift; sourceTree = "<group>"; };
+		5A8D9694D32F934E7D17190B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		5E28C58A66B9662537418D25 /* releases.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = releases.json; sourceTree = "<group>"; };
+		6AA86585767570D7F1F4F0A0 /* FeedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViews.swift; sourceTree = "<group>"; };
+		6BA864307F57097EC1AC8DD3 /* book.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
+		77560089F61FA7689E94EF5B /* Literata72pt-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Literata72pt-Bold.ttf"; sourceTree = "<group>"; };
+		795C6A498D64CD88DB25F767 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7A1D57FED0FDD8F5EB9952E8 /* catalog.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = catalog.json; sourceTree = "<group>"; };
+		7C8B3E23BF5737715ACFD800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80A171E14ECA25064D16BA3E /* FeedClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedClient.swift; sourceTree = "<group>"; };
+		883CC82924846617FCED912B /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		9112D9CAAA59C20FEC60713E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		9398FD8509ADB3271924AD4D /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		93BE21221F50474AF6D4F76D /* ps5-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ps5-index.json"; sourceTree = "<group>"; };
+		94072FBBB4B04F5B8E151349 /* InstrumentSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InstrumentSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		95D2A26F4B05521BA627DA5F /* TabletopReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabletopReader.swift; sourceTree = "<group>"; };
+		97A8026071EAF024D1E02812 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		9F1D2E5DB6DBB30DED887BFF /* GameBookParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBookParts.swift; sourceTree = "<group>"; };
+		A123C4FF7BB81C8DDDC10998 /* PlayscribeBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayscribeBrand.swift; sourceTree = "<group>"; };
+		A449ADAD066E42AC645CEB37 /* AddGameSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameSheet.swift; sourceTree = "<group>"; };
+		A7554A80ED6EA35D0B5F72EC /* PlayscribeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayscribeTests.swift; sourceTree = "<group>"; };
+		B7F348149A4736564798C15C /* Chapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapters.swift; sourceTree = "<group>"; };
+		BBC9911DD14A9BB969FF03E5 /* PlayscribeUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PlayscribeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0B8BF45801CCD04D80BFA97 /* Playscribe.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Playscribe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5660C4605FF5FF2B38EF830 /* PlayscribeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayscribeUITests.swift; sourceTree = "<group>"; };
+		CA9CD8ACFE52ECC6B046CFFE /* PlayscribeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayscribeApp.swift; sourceTree = "<group>"; };
+		D4C07BBA3B26D3F80ED3EA09 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		DE3FD78F518CAA257F77B057 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		E3ED96BC4CC6B9F8FC8FF0DF /* OFL-Literata.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "OFL-Literata.txt"; sourceTree = "<group>"; };
+		E48A5A1993CC1BC4814A1003 /* PlayscribeTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PlayscribeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBE5EB9A221B77C756185036 /* InstrumentSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InstrumentSans-Bold.ttf"; sourceTree = "<group>"; };
+		F0443FE0E41EBEE86FFC3F28 /* InstrumentSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InstrumentSans-Regular.ttf"; sourceTree = "<group>"; };
+		F424760C156FC28F12BB845D /* Literata24pt-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Literata24pt-MediumItalic.ttf"; sourceTree = "<group>"; };
+		FAEE8094A59CA241C595BCE5 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		FBA4DE08C016D64DF72F0B72 /* InstrumentSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InstrumentSans-Medium.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0E467E8281CB4E5C5CFD0097 /* Playscribe */ = {
+			isa = PBXGroup;
+			children = (
+				0CF534907F5DE0EB76B66A88 /* Info.plist */,
+				0243433660C1F86C7D1F97BC /* Playscribe.entitlements */,
+				CA9CD8ACFE52ECC6B046CFFE /* PlayscribeApp.swift */,
+				B0C58B2BB4640072584C6068 /* Model */,
+				B1A7C10604C4B2EB9BC4CAB5 /* Resources */,
+				4FCFAB323E5799A280031FA6 /* Services */,
+				7243BF446AC5A6CBD6313B06 /* UI */,
+			);
+			path = Playscribe;
+			sourceTree = "<group>";
+		};
+		347C6EA3EEDBC803E3800A72 /* PlayscribeTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7554A80ED6EA35D0B5F72EC /* PlayscribeTests.swift */,
+			);
+			path = PlayscribeTests;
+			sourceTree = "<group>";
+		};
+		4AC03CECE943B7C0C04DACEE /* PlayscribeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C5660C4605FF5FF2B38EF830 /* PlayscribeUITests.swift */,
+			);
+			path = PlayscribeUITests;
+			sourceTree = "<group>";
+		};
+		4FCFAB323E5799A280031FA6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				80A171E14ECA25064D16BA3E /* FeedClient.swift */,
+				1AC917B77D00CEB6BB7F074D /* NotificationService.swift */,
+				44FA904B96BC04F81C6EA657 /* TileArt.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6807DAFA18798B84184702A8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6BA864307F57097EC1AC8DD3 /* book.json */,
+				7A1D57FED0FDD8F5EB9952E8 /* catalog.json */,
+				296156C3886D889254D33FC8 /* gallery.json */,
+				93BE21221F50474AF6D4F76D /* ps5-index.json */,
+				5E28C58A66B9662537418D25 /* releases.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7243BF446AC5A6CBD6313B06 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DE3FD78F518CAA257F77B057 /* Actions.swift */,
+				A449ADAD066E42AC645CEB37 /* AddGameSheet.swift */,
+				D4C07BBA3B26D3F80ED3EA09 /* Artwork.swift */,
+				B7F348149A4736564798C15C /* Chapters.swift */,
+				23E7B876B556D1B970EE0058 /* Duo.swift */,
+				6AA86585767570D7F1F4F0A0 /* FeedViews.swift */,
+				9F1D2E5DB6DBB30DED887BFF /* GameBookParts.swift */,
+				16D36CE48E61C4052DDA7070 /* GameBookView.swift */,
+				9398FD8509ADB3271924AD4D /* JournalView.swift */,
+				432A4DE2E5898404BA47D6E7 /* LibraryView.swift */,
+				2E578DB6E97059C7146FD749 /* NoteSearch.swift */,
+				FAEE8094A59CA241C595BCE5 /* PlayerView.swift */,
+				A123C4FF7BB81C8DDDC10998 /* PlayscribeBrand.swift */,
+				5A8D9694D32F934E7D17190B /* RootView.swift */,
+				795C6A498D64CD88DB25F767 /* SettingsView.swift */,
+				883CC82924846617FCED912B /* SplashView.swift */,
+				95D2A26F4B05521BA627DA5F /* TabletopReader.swift */,
+				9112D9CAAA59C20FEC60713E /* Theme.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7CFFB91921211C2C55652F4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0B8BF45801CCD04D80BFA97 /* Playscribe.app */,
+				E48A5A1993CC1BC4814A1003 /* PlayscribeTests.xctest */,
+				BBC9911DD14A9BB969FF03E5 /* PlayscribeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81BDB4FF8BEDCC76530BCB20 = {
+			isa = PBXGroup;
+			children = (
+				0E467E8281CB4E5C5CFD0097 /* Playscribe */,
+				347C6EA3EEDBC803E3800A72 /* PlayscribeTests */,
+				4AC03CECE943B7C0C04DACEE /* PlayscribeUITests */,
+				7CFFB91921211C2C55652F4E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B0C58B2BB4640072584C6068 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				25C1747CA1263E990552C3F6 /* AppModel.swift */,
+				97A8026071EAF024D1E02812 /* Catalog.swift */,
+				4116EAA07491BB974409EB0F /* PatchData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B1A7C10604C4B2EB9BC4CAB5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7C8B3E23BF5737715ACFD800 /* Assets.xcassets */,
+				6807DAFA18798B84184702A8 /* Data */,
+				E8161CDD1ED51B7B6F3A2D6B /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E8161CDD1ED51B7B6F3A2D6B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EBE5EB9A221B77C756185036 /* InstrumentSans-Bold.ttf */,
+				FBA4DE08C016D64DF72F0B72 /* InstrumentSans-Medium.ttf */,
+				F0443FE0E41EBEE86FFC3F28 /* InstrumentSans-Regular.ttf */,
+				94072FBBB4B04F5B8E151349 /* InstrumentSans-SemiBold.ttf */,
+				F424760C156FC28F12BB845D /* Literata24pt-MediumItalic.ttf */,
+				0B8641723A95311B52303F32 /* Literata24pt-SemiBold.ttf */,
+				77560089F61FA7689E94EF5B /* Literata72pt-Bold.ttf */,
+				231E58D099CF264A41A0209A /* Literata72pt-SemiBold.ttf */,
+				2A3BC1103BEA141360185907 /* OFL-InstrumentSans.txt */,
+				E3ED96BC4CC6B9F8FC8FF0DF /* OFL-Literata.txt */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12FC6FF080AF3A8A451D4BCE /* Playscribe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 599C960281BB686074DB85C6 /* Build configuration list for PBXNativeTarget "Playscribe" */;
+			buildPhases = (
+				FEAC4CD788ABB5D81029A4FC /* Sources */,
+				D9355689EDF781DD735DFF5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Playscribe;
+			packageProductDependencies = (
+			);
+			productName = Playscribe;
+			productReference = C0B8BF45801CCD04D80BFA97 /* Playscribe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85617F279958B0A4137EEB0D /* PlayscribeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A0A40F51761972BC501FD5D /* Build configuration list for PBXNativeTarget "PlayscribeTests" */;
+			buildPhases = (
+				5DAB265BC71AD68991FC9CB5 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9E81696129AE2099647FE1B /* PBXTargetDependency */,
+			);
+			name = PlayscribeTests;
+			packageProductDependencies = (
+			);
+			productName = PlayscribeTests;
+			productReference = E48A5A1993CC1BC4814A1003 /* PlayscribeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B04844432F1806AE7AA6A01A /* PlayscribeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 415826E156D4C284E3C2427D /* Build configuration list for PBXNativeTarget "PlayscribeUITests" */;
+			buildPhases = (
+				3F98D3A4C80080A6D0737EE2 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BDDC78B89B2CCE9C01242B1 /* PBXTargetDependency */,
+			);
+			name = PlayscribeUITests;
+			packageProductDependencies = (
+			);
+			productName = PlayscribeUITests;
+			productReference = BBC9911DD14A9BB969FF03E5 /* PlayscribeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7642EF36C32A02DDD4DBA14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					12FC6FF080AF3A8A451D4BCE = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					85617F279958B0A4137EEB0D = {
+						DevelopmentTeam = "";
+					};
+					B04844432F1806AE7AA6A01A = {
+						DevelopmentTeam = "";
+						TestTargetID = 12FC6FF080AF3A8A451D4BCE;
+					};
+				};
+			};
+			buildConfigurationList = 9D020362CF0103D1929D6D56 /* Build configuration list for PBXProject "Playscribe" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 81BDB4FF8BEDCC76530BCB20;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7CFFB91921211C2C55652F4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12FC6FF080AF3A8A451D4BCE /* Playscribe */,
+				85617F279958B0A4137EEB0D /* PlayscribeTests */,
+				B04844432F1806AE7AA6A01A /* PlayscribeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9355689EDF781DD735DFF5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AAB8647AAC84587C37BA2C1 /* Assets.xcassets in Resources */,
+				7E08024BB6B250F1E581D4FD /* InstrumentSans-Bold.ttf in Resources */,
+				FB74EAA90A239A4B9DF58C61 /* InstrumentSans-Medium.ttf in Resources */,
+				D64019D7FF29325FD27677AF /* InstrumentSans-Regular.ttf in Resources */,
+				89B0A08573ABEF05E5B9DB98 /* InstrumentSans-SemiBold.ttf in Resources */,
+				BABC7EFDE5669CA26B4D481F /* Literata24pt-MediumItalic.ttf in Resources */,
+				FEC3D55E791B462F03835302 /* Literata24pt-SemiBold.ttf in Resources */,
+				4B1DE06096E3ADC46B5BEF74 /* Literata72pt-Bold.ttf in Resources */,
+				67BF14EC3C8BA6BFDD7948D8 /* Literata72pt-SemiBold.ttf in Resources */,
+				067964A8E8A64A9B21F3E760 /* OFL-InstrumentSans.txt in Resources */,
+				83CF2D4E27ADB30D56B30523 /* OFL-Literata.txt in Resources */,
+				1A0CEEC1F999D2548ABA881E /* book.json in Resources */,
+				8B0454529AB14CB5228A74EC /* catalog.json in Resources */,
+				09E47F6B9BD8F1C41B366024 /* gallery.json in Resources */,
+				E5D4EEBAAE41D98AA330598B /* ps5-index.json in Resources */,
+				69F330479BDB11C9EF17D24B /* releases.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F98D3A4C80080A6D0737EE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DEA667BEC1ACA1F787D096B /* PlayscribeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DAB265BC71AD68991FC9CB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D875D6D595B392D0AAFDD829 /* PlayscribeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEAC4CD788ABB5D81029A4FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				407AECF39D2B315647A9FAFD /* Actions.swift in Sources */,
+				EE76B0D60E593C16C449B01D /* AddGameSheet.swift in Sources */,
+				1B8B751C9F1C03D101657559 /* AppModel.swift in Sources */,
+				6FB97DB03B6A168C3784DB04 /* Artwork.swift in Sources */,
+				B3B7B22632AE3707C5B78B69 /* Catalog.swift in Sources */,
+				5AFE90AFA0E3117C20E33CCD /* Chapters.swift in Sources */,
+				938DB1C51F57BFE878E2F56C /* Duo.swift in Sources */,
+				AC519C6CCE56B14C5876DFB8 /* FeedClient.swift in Sources */,
+				D5969FB0DFEA45BCF37C5892 /* FeedViews.swift in Sources */,
+				33AEB0D26AD3F65DA88D70E4 /* GameBookParts.swift in Sources */,
+				2385B50564AC754A7683AC94 /* GameBookView.swift in Sources */,
+				5F9CDA8EADD3EA8CFAE3FA6F /* JournalView.swift in Sources */,
+				05884C35FBFB4DD652E3A432 /* LibraryView.swift in Sources */,
+				215E5F9FD1798118E332B4CE /* NoteSearch.swift in Sources */,
+				FEF74999DBE45E0D17FFADBF /* NotificationService.swift in Sources */,
+				5EEF139AEEA2777FD25A898E /* PatchData.swift in Sources */,
+				6A353CECE9BE4A69FBB96D6C /* PlayerView.swift in Sources */,
+				F408084BAB6ACE219F8F3034 /* PlayscribeApp.swift in Sources */,
+				38BD750BBC3D029565E6DD60 /* PlayscribeBrand.swift in Sources */,
+				BBA20B1AAEE17C058D4F956B /* RootView.swift in Sources */,
+				CDDABAC864E99F4DB1B31E68 /* SettingsView.swift in Sources */,
+				314337B7355ACAE33B60607D /* SplashView.swift in Sources */,
+				EB8A31BBFD1F3850C57ABDB8 /* TabletopReader.swift in Sources */,
+				5B5047837E1212434026B1CA /* Theme.swift in Sources */,
+				59B6C359276654CBEFAEB8C2 /* TileArt.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BDDC78B89B2CCE9C01242B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12FC6FF080AF3A8A451D4BCE /* Playscribe */;
+			targetProxy = 9F874A191107849B06036421 /* PBXContainerItemProxy */;
+		};
+		E9E81696129AE2099647FE1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12FC6FF080AF3A8A451D4BCE /* Playscribe */;
+			targetProxy = 7EC15387BF2090F4761BCD58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12F732C2B1AFF05290386E88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.codeconnectors.PlayscribeUITests;
+				SDKROOT = iphoneos;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Playscribe;
+			};
+			name = Debug;
+		};
+		969E92B914435C9CBE754804 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.1;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		BCFEC29B12918B350E9A4580 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.codeconnectors.PlayscribeTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playscribe.app/Playscribe";
+			};
+			name = Debug;
+		};
+		D452155B4340BEFFF86A655A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.codeconnectors.PlayscribeTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playscribe.app/Playscribe";
+			};
+			name = Release;
+		};
+		D93CA0E8E87CD5C7006314B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.codeconnectors.PlayscribeUITests;
+				SDKROOT = iphoneos;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Playscribe;
+			};
+			name = Release;
+		};
+		E9508A4F5F4C58F52777D067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Playscribe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.codeconnectors.playscribe;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = INTERNAL;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EEFECB9FEF85D4EC7F617728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.1;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		F300FA46764BF86A42DDA51F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Playscribe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.codeconnectors.playscribe;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG INTERNAL";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		415826E156D4C284E3C2427D /* Build configuration list for PBXNativeTarget "PlayscribeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12F732C2B1AFF05290386E88 /* Debug */,
+				D93CA0E8E87CD5C7006314B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		599C960281BB686074DB85C6 /* Build configuration list for PBXNativeTarget "Playscribe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F300FA46764BF86A42DDA51F /* Debug */,
+				E9508A4F5F4C58F52777D067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5A0A40F51761972BC501FD5D /* Build configuration list for PBXNativeTarget "PlayscribeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCFEC29B12918B350E9A4580 /* Debug */,
+				D452155B4340BEFFF86A655A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9D020362CF0103D1929D6D56 /* Build configuration list for PBXProject "Playscribe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEFECB9FEF85D4EC7F617728 /* Debug */,
+				969E92B914435C9CBE754804 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7642EF36C32A02DDD4DBA14 /* Project object */;
+}

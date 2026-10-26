@@ -283,6 +283,8 @@ struct UnconfirmedTests {
         r.platforms[i].status = .live
         r.platforms[i].liveAt?.verification = .reported
         r.platforms[i].verification = .reported
+        // Unconfirmed means the press has it and neither Steam nor the studio does.
+        r.platforms = [r.platforms[i]]
         return r
     }
 
