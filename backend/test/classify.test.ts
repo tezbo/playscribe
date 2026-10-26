@@ -10,6 +10,8 @@ test('only a post that says the update is out on PS5 counts as official PS5 evid
   assert.ok(!ps5LiveStated('Update 3 is live on PC. The PS5 version follows next week.'))
   assert.ok(!ps5LiveStated('Patch 5 is live now and fixes PS5 controller button prompts.'))
   assert.ok(!ps5LiveStated('We are working on the PS5 patch. Stay tuned!'))
+  assert.ok(ps5LiveStated('Title Update 1.1.1 - Release Notes. PATCH SIZES: PS5®: 12.40 GB Xbox Series X|S: 32 GB'))
+  assert.ok(!ps5LiveStated('Patch 1.4.6 is live on Steam now. PS5 players should expect it in a day or two. PS5: 3 GB'))
   assert.ok(!ps5LiveStated('Update 1.1 is out now on PC! Notes for PlayStation 5 follow on our site.'))
 })
 

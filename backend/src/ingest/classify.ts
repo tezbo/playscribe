@@ -98,6 +98,8 @@ export const sizeBytesOf = (text: string) => {
 export const ps5LiveStated = (text: string) => {
   const t = text.replace(/(PS5|PlayStation\s*®?\s*5)(\s*(DualSense|DualSense Edge))?\s*(controllers?|pads?|gamepads?|button prompts?|icons?|glyphs?)|DualSense/gi, '')
   if (ps5StatusOf(t) !== 'live') return false
+  // Release notes that list the PS5 patch size ("PATCH SIZES: PS5: 12.40 GB") are about a patch that exists on PS5.
+  if (/(PS5|PlayStation\s*®?\s*5)\s*®?\s*[:–-]\s*~?\d+(\.\d+)?\s*(GB|MB)\b/i.test(t)) return true
   const live = '(live|out now|now out|available|rolling out|released|is here|has arrived|deployed|deploying)'
   return new RegExp(`(PS5|PlayStation\\s*®?\\s*5)[^.!?\\n]{0,80}\\b${live}|\\b${live}[^.!?\\n]{0,80}(PS5|PlayStation\\s*®?\\s*5)`, 'i').test(t)
 }
@@ -105,6 +107,6 @@ export const ps5LiveStated = (text: string) => {
 export const ps5StatusOf = (text: string): PlatformStatus => {
   const near = (re: string) => new RegExp(`(PS5|PlayStation\\s*®?\\s*5|consoles?)[^.!?\\n]{0,80}${re}|${re}[^.!?\\n]{0,80}(PS5|PlayStation\\s*®?\\s*5|consoles?)`, 'i')
   if (near('(not planned|no plans|will not|won\'t)').test(text)) return 'notPlanned'
-  if (near('(coming soon|later|next week|in the coming|certification|cert\\b|as soon as|follow shortly|following week)').test(text)) return 'announced'
+  if (near('(coming soon|later|next week|in the coming|certification|cert\\b|as soon as|follow shortly|following week|in a day or two|in a few days|should expect|expect to see)').test(text)) return 'announced'
   return 'live'
 }
