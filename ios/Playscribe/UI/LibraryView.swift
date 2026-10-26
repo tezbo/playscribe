@@ -144,7 +144,9 @@ struct LibraryShelf: View {
                 // D-12: the Continue hero spans two tiles; Tabletop shows it on the standing half.
                 if duo.pose != .tabletop, let c = model.continueItem {
                     ContinueRow(game: c.game, release: c.release)
-                        .frame(maxWidth: layout == .tiles && duo.pose != .closed ? tileSize * 2 + 14 + (duo.pose == .flat ? 120 : 0) : .infinity,
+                        // D-12: the full hero card in Closed and open portrait; side by side, a
+                        // double-width tile.
+                        .frame(maxWidth: layout == .tiles && duo.isLandscape ? tileSize * 2 + 14 + (duo.pose == .flat ? 120 : 0) : .infinity,
                                alignment: .leading)
                 }
                 if all.count >= 2 && layout == .tiles { FilterBar() }
@@ -249,7 +251,7 @@ struct FilterBar: View {
             }
             .padding(.trailing, 24)
         }
-        .edgeFade()
+        .edgeFade(40)
     }
 }
 
@@ -441,6 +443,7 @@ struct GameMenuButton: View {
 struct GameTile: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     var row: AppModel.LibraryRow
     var size: CGFloat
 
@@ -455,10 +458,13 @@ struct GameTile: View {
             .buttonStyle(.plain)
             .contextMenu { ActionMenuContent(sections: model.statusMenu(row.id)) }
             .tappableFrame()
-            Text(row.game.name).font(PlayscribeFont.footnote.weight(.semibold)).lineLimit(2)
+            // G-8: game names never truncate.
+            Text(row.game.name).font(PlayscribeFont.footnote.weight(.semibold))
+                .lineLimit(typeSize.isAccessibilitySize ? 4 : 3)
+                .fixedSize(horizontal: false, vertical: true)
             HStack(alignment: .firstTextBaseline, spacing: 4) {
                 Circle().fill(row.status.tint).frame(width: 6, height: 6)
-                Text(model.shelfLine(row)).font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(2)
+                Text(model.shelfLine(row)).font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(3)
                 Spacer(minLength: 0)
                 // Closed tiles are too narrow for the caption and a button; the cover's menu remains.
                 if duo.pose != .closed {
