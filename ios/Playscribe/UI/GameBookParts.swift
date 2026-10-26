@@ -202,7 +202,9 @@ struct GameBasicsView: View {
                 Text(genres.joined(separator: " · ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
             if let videos = info?.videos, !videos.isEmpty {
-                ForEach(videos.prefix(3), id: \.youtubeId) { v in
+                // One video per title: the feed can carry two cuts named "Launch Trailer".
+                let unique = videos.reduce(into: [GameBasics.Video]()) { out, v in if !out.contains(where: { $0.name == v.name }) { out.append(v) } }
+                ForEach(unique.prefix(3), id: \.youtubeId) { v in
                     Button { model.trailer = (v.youtubeId, v.name) } label: {
                         HStack(spacing: 12) {
                             AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(v.youtubeId)/mqdefault.jpg")) { $0.resizable().scaledToFill() } placeholder: { Color.ink1 }

@@ -171,7 +171,8 @@ struct LibraryShelf: View {
                 }
                 // D-12: the Continue hero spans two tiles; Tabletop shows it on the standing half.
                 // Tabletop: the Continue art is the standing half; the flat half is the grid.
-                if duo.pose != .tabletop, let c = model.continueItem {
+                // Open landscape: Continue is a double-width tile leading the grid (D-12).
+                if duo.pose != .tabletop && !(duo.pose == .flat && duo.isLandscape && layout == .tiles), let c = model.continueItem {
                     ContinueRow(game: c.game, release: c.release)
                         // D-12: the full hero card in Closed and open portrait; side by side, a
                         // double-width tile.
@@ -184,6 +185,13 @@ struct LibraryShelf: View {
                 }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
+                } else if duo.pose == .flat && duo.isLandscape {
+                    FlowLayout(spacing: 14) {
+                        if let c = model.continueItem {
+                            ContinueTile(game: c.game, release: c.release, size: tileSize)
+                        }
+                        ForEach(rows) { row in GameTile(row: row, size: tileSize).id("lib-\(row.id)") }
+                    }
                 } else {
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 18) {
                         ForEach(cells(rows), id: \.id) { cell in
@@ -351,6 +359,7 @@ struct ContinueText: View {
                 }
             }
             Text(game.name).font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.textPrimary)
+                .lineLimit(2).fixedSize(horizontal: false, vertical: true)
             Text(fresh ? "\(release.displayName) is here. Catch up, then jump back in." : release.displayName)
                 .font(PlayscribeFont.body).foregroundStyle(PlayscribeColor.textSecondary)
         }
@@ -691,3 +700,60 @@ struct NotificationInviteCard: View {
 }
 
 /// Open landscape sidebar (G-1).
+
+/// D-12, side by side: the Continue tile, two tiles wide, with key art and the new chapter.
+struct ContinueTile: View {
+    @Environment(AppModel.self) private var model
+    var game: CatalogGame
+    var release: Release
+    var size: CGFloat
+
+    var body: some View {
+        let fresh = model.isUnread(release)
+        Button { model.openGame(game.id, chapter: .updates, releaseID: release.id) } label: {
+            ArtView(asset: game.keyArtAsset, game: game)
+                .frame(width: size * 2 + 14, height: size * 4 / 3)
+                .overlay {
+                    LinearGradient(colors: [.clear, .black.opacity(0.8)], startPoint: .center, endPoint: .bottom)
+                }
+                .overlay(alignment: .bottomLeading) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(fresh ? "NEW CHAPTER" : "CONTINUE").font(PlayscribeFont.caption2).tracking(1).foregroundStyle(PlayscribeColor.accent)
+                        Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
+                        Text(release.displayName).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    }
+                    .padding(10)
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
+        }
+        .buttonStyle(.plain)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(fresh ? "New chapter, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
+        .accessibilityAddTraits(.isButton)
+        .tappableFrame()
+    }
+}
+
+/// Lays children left to right, wrapping, each at its own size.
+struct FlowLayout: Layout {
+    var spacing: CGFloat = 14
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        place(proposal.width ?? .infinity, subviews).size
+    }
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        for (i, p) in place(bounds.width, subviews).points.enumerated() {
+            subviews[i].place(at: CGPoint(x: bounds.minX + p.x, y: bounds.minY + p.y), proposal: .unspecified)
+        }
+    }
+    private func place(_ width: CGFloat, _ subviews: Subviews) -> (points: [CGPoint], size: CGSize) {
+        var points: [CGPoint] = [], x: CGFloat = 0, y: CGFloat = 0, row: CGFloat = 0, maxX: CGFloat = 0
+        for v in subviews {
+            let s = v.sizeThatFits(.unspecified)
+            if x > 0 && x + s.width > width { x = 0; y += row + spacing; row = 0 }
+            points.append(CGPoint(x: x, y: y))
+            x += s.width + spacing; row = max(row, s.height); maxX = max(maxX, x - spacing)
+        }
+        return (points, CGSize(width: maxX, height: y + row))
+    }
+}
