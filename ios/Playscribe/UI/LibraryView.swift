@@ -82,7 +82,7 @@ struct LibraryShelf: View {
     private var tileSize: CGFloat {
         switch duo.pose {
         case .closed: 88
-        case .flat: duo.isLandscape ? 100 : 108
+        case .flat: 112
         case .book: 100
         case .tabletop: 84
         }
@@ -170,7 +170,8 @@ struct LibraryShelf: View {
                     .padding(.vertical, 40)
                 }
                 // D-12: the Continue hero spans two tiles; Tabletop shows it on the standing half.
-                if let c = model.continueItem {
+                // Tabletop: the Continue art is the standing half; the flat half is the grid.
+                if duo.pose != .tabletop, let c = model.continueItem {
                     ContinueRow(game: c.game, release: c.release)
                         // D-12: the full hero card in Closed and open portrait; side by side, a
                         // double-width tile.
@@ -187,7 +188,7 @@ struct LibraryShelf: View {
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 18) {
                         ForEach(cells(rows), id: \.id) { cell in
                             if let row = cell.row {
-                                GameTile(row: row, size: tileSize).id("lib-\(row.id)")
+                                GameTile(row: row, size: duo.pose == .closed ? nil : tileSize).id("lib-\(row.id)")
                             } else {
                                 Color.clear.frame(height: 1).accessibilityHidden(true)
                             }
@@ -258,6 +259,7 @@ struct LibraryViewMenu: View {
 }
 
 
+/// Filter pills on one line; Sort lives in the View menu (D-12).
 struct FilterBar: View {
     @Environment(AppModel.self) private var model
 
@@ -271,7 +273,7 @@ struct FilterBar: View {
                     Button { model.nav.filter = f } label: {
                         Text("\(f.label) \(n)")
                             .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
-                            .padding(.horizontal, 12)
+                            .padding(.horizontal, 10)
                             .frame(minHeight: 44)
                             .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
                     }
@@ -279,18 +281,6 @@ struct FilterBar: View {
                     .accessibilityAddTraits(on ? .isSelected : [])
                     .tappableFrame()
                 }
-                Menu {
-                    Picker("Sort by", selection: Binding(get: { model.nav.sort }, set: { model.nav.sort = $0 })) {
-                        ForEach(LibrarySort.allCases) { Text($0.label).tag($0) }
-                    }
-                } label: {
-                    Label(model.nav.sort.label, systemImage: "arrow.up.arrow.down")
-                        .font(PlayscribeFont.subheadline)
-                        .padding(.horizontal, 12)
-                        .frame(minHeight: 44)
-                        .background(Color.ink3, in: Capsule())
-                }
-                .tappableFrame()
             }
             .padding(.trailing, 24)
         }
@@ -483,59 +473,136 @@ struct GameMenuButton: View {
 }
 
 /// Inner display tile: a fixed-size cover, name, a status dot and the unread count.
+/// Library tile (brand library-tiles, approved by Terry 26 Oct): a 3:4 cover with no text under
+/// it. Top right, a glass status circle; bottom left, a date pill that carries the update state.
+/// Long-press opens the game's actions.
 struct GameTile: View {
     @Environment(AppModel.self) private var model
-    @Environment(\.duo) private var duo
-    @Environment(\.dynamicTypeSize) private var typeSize
     var row: AppModel.LibraryRow
-    var size: CGFloat
+    /// nil: fill the column (Closed, 3 across).
+    var size: CGFloat?
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Button { model.openGame(row.id) } label: {
-                SquareCover(game: row.game, size: size)
-                    .overlay(alignment: .topTrailing) {
-                        if row.unread > 0 { UnreadBadge(count: row.unread).padding(4) }
-                    }
-                    .overlay(alignment: .bottomLeading) {
-                        // D-12: the PS5-style update mark for an unread On PS5 release. V-4: else a
-                        // dashed Unconfirmed chip; one mark per tile, the confirmed one wins.
-                        if row.unread == 0, model.ps5Releases(row.id).first?.isUnconfirmed == true {
-                            UnconfirmedChip()
-                                .background(Color.black.opacity(0.55), in: Capsule())
-                                .padding(5)
-                        } else if let r = row.latest, model.isUnread(r) {
-                            Text("Update")
-                                .font(PlayscribeFont.caption2.weight(.semibold))
-                                .foregroundStyle(PlayscribeColor.onAccent)
-                                .padding(.horizontal, 6).padding(.vertical, 2)
-                                .background(PlayscribeColor.accent, in: Capsule())
-                                .padding(5)
-                                .accessibilityHidden(true)
+        Button { model.openGame(row.id) } label: {
+            TileCover(game: row.game)
+                .frame(width: size)
+                .aspectRatio(3 / 4, contentMode: .fit)
+                .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
+                .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
+                .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
+                            in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .contextMenu { ActionMenuContent(sections: model.statusMenu(row.id)) }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(model.tileAccessibilityLabel(row))
+        .accessibilityAddTraits(.isButton)
+        .tappableFrame()
+    }
+}
+
+/// The cover: portrait art; else landscape art cropped with the name set in Literata at the top;
+/// else the ink plate with the name. 10 pt corners and a faint inner edge.
+struct TileCover: View {
+    var game: CatalogGame
+    var body: some View {
+        Color.ink1
+            .overlay {
+                if game.coverAsset != nil || game.coverURL != nil {
+                    CoverView(game: game, cornerRadius: 0)
+                } else if let art = game.keyArtAsset {
+                    Image(art).resizable().scaledToFill()
+                        .overlay(alignment: .top) {
+                            Text(game.name).font(.custom("Literata72pt-SemiBold", size: 15, relativeTo: .headline))
+                                .multilineTextAlignment(.center).lineLimit(3).padding(8)
+                                .frame(maxWidth: .infinity)
+                                .background(LinearGradient(colors: [.black.opacity(0.7), .clear], startPoint: .top, endPoint: .bottom))
                         }
-                    }
-            }
-            .buttonStyle(.plain)
-            .contextMenu { ActionMenuContent(sections: model.statusMenu(row.id)) }
-            .tappableFrame()
-            // G-8: game names never truncate.
-            Text(row.game.name).font(PlayscribeFont.footnote.weight(.semibold))
-                .lineLimit(typeSize.isAccessibilitySize ? 4 : 3)
-                .fixedSize(horizontal: false, vertical: true)
-            HStack(alignment: .firstTextBaseline, spacing: 4) {
-                Circle().fill(row.status.tint).frame(width: 6, height: 6)
-                Text(model.tileLine(row)).font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(4)
-                Spacer(minLength: 0)
-                // Closed tiles are too narrow for the caption and a button; the cover's menu remains.
-                if duo.pose != .closed {
-                    GameMenuButton(gameID: row.id).frame(width: 28).padding(.trailing, -8).padding(.vertical, -10)
+                } else {
+                    CoverView(game: game, cornerRadius: 0)
                 }
             }
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
+    }
+}
+
+struct StatusCircle: View {
+    var status: OwnershipStatus
+    var body: some View {
+        Image(systemName: Self.symbol(status))
+            .font(.system(size: 11, weight: .bold))
+            .foregroundStyle(.white)
+            .frame(width: 24, height: 24)
+            .glassEffect(.regular, in: Circle())
+    }
+    static func symbol(_ s: OwnershipStatus) -> String {
+        switch s { case .owned: "checkmark"; case .wishlist: "bookmark.fill"; case .watching: "eye.fill" }
+    }
+}
+
+/// The date pill: solid ember with the spark for an unread update; glass with an ember dot for an
+/// update in the last 7 days; plain glass for older; "Out <date>" when there are no updates.
+struct DatePill: View {
+    @Environment(AppModel.self) private var model
+    var row: AppModel.LibraryRow
+    var body: some View {
+        let state = model.tileDate(row)
+        HStack(spacing: 4) {
+            switch state.kind {
+            case .unread: SparkShape().fill(PlayscribeColor.onAccent).frame(width: 9, height: 9)
+            case .recent: Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
+            default: EmptyView()
+            }
+            Text(state.text)
+                .font(PlayscribeFont.caption2.weight(.semibold))
+                .lineLimit(1).fixedSize()
+                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : state.kind == .none ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
         }
-        .frame(width: size)
-        .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.15) : .clear)
-        .accessibilityElement(children: .contain)
-        .accessibilityLabel("\(row.game.name), \(row.status.label)\(row.unread > 0 ? ", \(row.unread) unread" : "")")
+        .padding(.horizontal, 7).padding(.vertical, 3)
+        .background {
+            if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
+            else { Capsule().fill(.clear).glassEffect(.regular, in: Capsule()) }
+        }
+        .overlay {
+            if state.kind == .unconfirmed {
+                Capsule().strokeBorder(PlayscribeColor.textTertiary, style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
+            }
+        }
+    }
+}
+
+extension AppModel {
+    enum TileDateKind { case unread, recent, older, unconfirmed, none }
+
+    func tileDate(_ row: LibraryRow) -> (kind: TileDateKind, text: String) {
+        if let r = row.latest {
+            let d = r.ps5Date
+            if isUnread(r) { return (.unread, Self.tileDay(d)) }
+            return (d > .now.addingTimeInterval(-7 * 86400) ? .recent : .older, Self.tileDay(d))
+        }
+        if let r = ps5Releases(row.id).first, r.isUnconfirmed { return (.unconfirmed, "Unconfirmed") }
+        return (.none, "Out " + (row.game.releaseDate?.isoDay.map(Self.tileDay) ?? "TBA"))
+    }
+
+    /// "12 Oct" this year, "Jul 2025" before.
+    static func tileDay(_ d: Date) -> String {
+        Calendar.current.isDate(d, equalTo: .now, toGranularity: .year)
+            ? d.dayMonth
+            : d.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB")).month(.abbreviated).year())
+    }
+
+    /// "Elden Ring, last updated Jul 2025, owned".
+    func tileAccessibilityLabel(_ row: LibraryRow) -> String {
+        let state = tileDate(row)
+        let when: String
+        switch state.kind {
+        case .unread: when = "new update \(state.text)"
+        case .recent, .older: when = "last updated \(state.text)"
+        case .unconfirmed: when = "unconfirmed update on PS5, from press reports"
+        case .none: when = state.text.replacingOccurrences(of: "Out ", with: "out ")
+        }
+        return "\(row.game.name), \(when), \(row.status.label.lowercased())"
     }
 }
 
