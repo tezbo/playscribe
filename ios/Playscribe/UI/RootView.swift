@@ -73,6 +73,9 @@ struct RootView: View {
         .fullScreenCover(isPresented: Binding(get: { model.player != nil }, set: { if !$0 { model.player = nil } })) {
             if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID) }
         }
+        .fullScreenCover(isPresented: Binding(get: { model.trailer != nil }, set: { if !$0 { model.trailer = nil } })) {
+            if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
+        }
     }
 }
 

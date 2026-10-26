@@ -123,6 +123,8 @@ final class AppModel {
     var addSheetOpen = false
     var settingsOpen = false
     var player: (gameID: String, releaseID: String)?
+    /// A game's trailer from its basics (no release).
+    var trailer: (videoID: String, name: String)?
     var highlight: String?
     /// GR-4: the in-book and Search tab note query, and its scope. Kept across pose changes (P-1).
     var noteQuery = ""
@@ -358,7 +360,8 @@ final class AppModel {
     /// D-2/D-3: the release the Page shows: the one picked, else the newest On PS5 release.
     func selectedRelease(_ gameID: String) -> Release? {
         if let id = nav.selected?[gameID], let r = release(gameID, id) { return r }
-        return ps5Releases(gameID).first ?? releases(gameID).first
+        // With no PS5 release the Page leads with the game's release and basics, not a PC patch.
+        return ps5Releases(gameID).first
     }
 
     /// D-4: picking a release in the Contents changes the Page in place; no navigation.

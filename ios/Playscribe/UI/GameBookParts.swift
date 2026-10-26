@@ -37,6 +37,10 @@ struct PageView: View {
                     case .updates:
                         if let r = model.selectedRelease(gameID) {
                             ReleasePage(release: r)
+                            if let g = model.game(gameID) {
+                                Divider().overlay(PlayscribeColor.ink700)
+                                GameBasicsView(game: g)
+                            }
                         } else if let g = model.game(gameID) {
                             NoNotesPage(game: g)
                         }
@@ -172,11 +176,88 @@ struct NoNotesPage: View {
     @Environment(AppModel.self) private var model
     var game: CatalogGame
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
-            Text("Watching for PS5 notes · checked \(model.lastChecked.formatted(.relative(presentation: .named)))")
-                .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+        // Terry: a game never opens blank. With no updates, it leads with its release.
+        VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 6) {
+                Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
+                Text("No PS5 updates yet · checked \(model.lastChecked.formatted(.relative(presentation: .named)))")
+                    .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            }
+            GameBasicsView(game: game)
         }
+    }
+}
+
+/// The game's own information: genres, launch trailer, description and story.
+struct GameBasicsView: View {
+    @Environment(AppModel.self) private var model
+    var game: CatalogGame
+    @State private var storyOpen = false
+    private var store: GameInfoStore { .shared }
+
+    var body: some View {
+        let info = game.igdbID.flatMap { store.basics[$0] }
+        VStack(alignment: .leading, spacing: 14) {
+            if let genres = info?.genres, !genres.isEmpty {
+                Text(genres.joined(separator: " · ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            }
+            if let videos = info?.videos, !videos.isEmpty {
+                ForEach(videos.prefix(3), id: \.youtubeId) { v in
+                    Button { model.trailer = (v.youtubeId, v.name) } label: {
+                        HStack(spacing: 12) {
+                            AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(v.youtubeId)/mqdefault.jpg")) { $0.resizable().scaledToFill() } placeholder: { Color.ink1 }
+                                .frame(width: 112, height: 63)
+                                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                                .overlay { Image(systemName: "play.fill").foregroundStyle(.white) }
+                            Text(v.name).font(PlayscribeFont.subheadline).lineLimit(2).multilineTextAlignment(.leading)
+                            Spacer(minLength: 0)
+                        }
+                        .frame(minHeight: 44)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Play \(v.name)")
+                    .tappableFrame()
+                }
+            }
+            if let summary = info?.summary {
+                Text("About").font(PlayscribeFont.headline)
+                Text(summary).font(PlayscribeFont.body)
+            }
+            if let story = info?.storyline {
+                Text("Story").font(PlayscribeFont.headline)
+                Text(story).font(PlayscribeFont.body).lineLimit(storyOpen ? nil : 4)
+                Button(storyOpen ? "Less" : "More") { withAnimation(.snappy) { storyOpen.toggle() } }
+                    .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minHeight: 44).tappableFrame()
+            }
+        }
+        .task(id: game.igdbID) { if let id = game.igdbID { await store.load(igdbID: id) } }
+    }
+}
+
+/// A game's trailer, from its basics (not tied to a release).
+struct TrailerView: View {
+    @Environment(AppModel.self) private var model
+    var videoID: String
+    var name: String
+    @State private var controller: YouTubeController?
+    var body: some View {
+        NavigationStack {
+            VStack(alignment: .leading, spacing: 12) {
+                Color.black.aspectRatio(16 / 9, contentMode: .fit)
+                    .overlay { if let controller { WebSurface(webView: controller.webView) } }
+                Text(name).font(PlayscribeFont.headline).padding(.horizontal, 16)
+                Spacer()
+            }
+            .background(Color.black)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button { model.trailer = nil } label: { Label("Close", systemImage: "xmark") }
+                }
+            }
+        }
+        .onAppear { if controller == nil { controller = YouTubeController(videoID: videoID) } }
+        .onDisappear { controller?.stop() }
     }
 }
 
