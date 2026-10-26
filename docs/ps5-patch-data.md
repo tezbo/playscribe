@@ -12,7 +12,7 @@ Decided 2026-10-24 by the PS5 patching lead. This is the contract for the iOS ap
 
 **Fetching rules for the backend:** prefer RSS, Atom or JSON feeds. Respect robots.txt and each site's terms. Poll each source at most once an hour, with a descriptive User-Agent. If a site returns 403 to automated fetches, mark the source `manual` and don't work around the block.
 
-**Verification:** extraction can be automated, with Claude summarising the post into notes. A release only reaches `official` after a person confirms that the post names PS5. Until then it is `pending` and hidden from push notifications.
+**Verification:** extraction can be automated, with Claude summarising the post into notes. A release reaches `official` when an official post (the studio's site, its Steam post, or the PlayStation Blog) says in so many words that the update is live on PS5, such as "now live on PC, PS5 and Xbox" (Terry, 2026-10-26: Unconfirmed should be the rare exception). A post that only names PS5, or says the PS5 version follows later, stays `pending` until a person confirms it, and is hidden from push notifications until then. A "PS5 controller" mention is not evidence. A backfill re-reads official posts already seen, so the rule also applies to old releases.
 
 ## How console patching works, and what the model has to handle
 

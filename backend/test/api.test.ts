@@ -8,7 +8,7 @@ import { fakeFetch, rss } from './helpers.ts'
 const setup = async () => {
   const db = openDb(':memory:')
   const fetchFn = fakeFetch({
-    'https://blog.playstation.com/feed/': rss([{ title: 'Black Myth: Wukong Update 1.2 out now on PS5', link: 'https://blog.playstation.com/wukong', date: new Date().toISOString(), body: '<ul><li>Added new boss</li></ul>' }]),
+    'https://blog.playstation.com/feed/': rss([{ title: 'Black Myth: Wukong Update 1.2 detailed for PS5', link: 'https://blog.playstation.com/wukong', date: new Date().toISOString(), body: '<ul><li>Added new boss</li></ul>' }]),
   })
   const deps = { db, fetchFn, igdb: null }
   await seedGames(deps)

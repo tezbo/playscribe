@@ -3,7 +3,7 @@ import { test } from 'node:test'
 import { confirmPlatform } from '../src/confirm.ts'
 import { openDb } from '../src/db.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
-import { pushPs5Release, pushReportedPs5 } from '../src/push/notify.ts'
+import { pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
 import { getRelease } from '../src/store.ts'
 import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpers.ts'
@@ -14,8 +14,9 @@ const setup = async () => {
   const db = openDb(':memory:')
   const fetchFn = fakeFetch({
     'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews([
-      { gid: '1', title: 'The Blood of Dawnwalker - Update 1.1', date: recent(30), contents: 'Update 1.1 is out now on PC, PlayStation 5, and Xbox Series X|S![h2]Highlights[/h2][list][*]Added photo mode[*]Fixed a crash[/list]', tags: ['patchnotes'] },
+      { gid: '1', title: 'The Blood of Dawnwalker - Update 1.1', date: recent(30), contents: 'Update 1.1 is out now on PC! Notes for PlayStation 5 follow on our site.[h2]Highlights[/h2][list][*]Added photo mode[*]Fixed a crash[/list]', tags: ['patchnotes'] },
       { gid: '2', title: 'Community Update: art contest', date: recent(20), contents: 'Not a patch' },
+      { gid: '3', title: 'Hotfix 1.0.5', date: recent(40), contents: 'Hotfix 1.0.5 is now live on PC, PS5 and Xbox Series X|S. It fixes a crash when using a PS5 controller on PC.', tags: ['patchnotes'] },
     ]),
     'https://www.pushsquare.com/news/dw-1-1': pressArticle('Dawnwalker PS5 Patch 1.1 Out Now, 13GB Update', 'The patch is 12.882GB on PS5 and brings it to version 01.004.000.'),
     'https://www.pushsquare.com/news/kcd2-1-7': pressArticle('Kingdom Come Deliverance 2 Patch 1.7 Coming Next Week on PS5', 'Warhorse says patch 1.7 is in certification.'),
@@ -46,6 +47,13 @@ test('Steam sets PC only; a PS5 mention goes to review, never to a PS5 row', asy
   assert.ok(!summary.created.some((id) => id.includes('community')))
   const review = db.prepare("SELECT reason FROM review_items WHERE release_id = 'dawnwalker@1.1' ORDER BY reason").all().map((x: any) => x.reason)
   assert.ok(review.includes('steamMentionsPs5'))
+})
+
+test('a studio post that says the update is live on PS5 makes the PS5 row official, with no person', async () => {
+  const { db } = await setup()
+  const ps5 = getRelease(db, 'dawnwalker@1.0.5')!.platforms.find((p) => p.platform === 'ps5')!
+  assert.deepEqual([ps5.status, ps5.verification, ps5.liveAt?.verification, ps5.alert?.style], ['live', 'official', 'official', 'standard'])
+  assert.equal(db.prepare("SELECT COUNT(*) AS n FROM review_items WHERE release_id = 'dawnwalker@1.0.5' AND resolved_at IS NULL").get()!.n, 0)
 })
 
 test('press fills PS5 facts as reported, matched by name and version', async () => {
@@ -111,10 +119,10 @@ test('a press report that an update is live earns one quiet "Unconfirmed" alert,
   const apns = { send: async (_t: string, _e: string, payload: object) => (sent.push(payload), { status: 200 }) } as unknown as Apns
   assert.deepEqual(getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!.alert, { style: 'quiet', tag: 'Unconfirmed' })
 
-  const out = await pushReportedPs5(db, apns, { maxAgeHours: 1e6 })
+  const out = await pushNewPs5(db, apns, { maxAgeHours: 1e6 })
   // Yōtei's press report is live too, but nobody follows it.
-  assert.deepEqual(out.map((o) => [o.releaseId.replace(/@.*/, ''), o.style, o.sent]).sort(), [['dawnwalker', 'quiet', 1], ['yotei', 'quiet', 0]])
-  const p = sent[0]
+  assert.deepEqual(out.map((o) => [o.releaseId.replace(/@.*/, ''), o.style, o.sent]).sort(), [['dawnwalker', 'quiet', 1], ['dawnwalker', 'standard', 1], ['yotei', 'quiet', 0]])
+  const p = sent.find((x) => x.verification === 'reported')
   assert.deepEqual(p.aps.alert, {
     title: 'Unconfirmed: The Blood of Dawnwalker',
     subtitle: 'Update 1.1 reported on PS5',
@@ -124,12 +132,12 @@ test('a press report that an update is live earns one quiet "Unconfirmed" alert,
   assert.equal(p.aps.sound, undefined)
   assert.equal(p.aps['thread-id'], 'dawnwalker.unconfirmed')
   assert.deepEqual([p.verification, p.tag], ['reported', 'Unconfirmed'])
-  assert.equal((await pushReportedPs5(db, apns, { maxAgeHours: 1e6 })).length, 0)
+  assert.equal((await pushNewPs5(db, apns, { maxAgeHours: 1e6 })).length, 0)
 
   confirmPlatform(db, id, 'ps5', { sourceId: 'dawnwalker-news', version: '01.004.001' })
   assert.deepEqual(getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!.alert, { style: 'standard' })
   assert.equal((await pushPs5Release(db, apns, id, { maxAgeHours: 1e6 })).skipped, 'alreadyPushed')
-  assert.equal(sent.length, 1)
+  assert.equal(sent.length, 2)
   // Announced or pending rows earn no alert.
   assert.equal(getRelease(db, 'kcd2@1.7')!.platforms.find((p) => p.platform === 'ps5')!.alert, undefined)
 })
