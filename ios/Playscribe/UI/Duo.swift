@@ -72,10 +72,36 @@ struct TappableFrameKey: PreferenceKey {
 
 extension View {
     /// Reports this control's frame to the debug overlay. Apply to tappable elements.
-    func tappableFrame() -> some View {
-        background {
+    func tappableFrame() -> some View { modifier(TappableFrameReporter()) }
+}
+
+/// False for screens that are in the hierarchy but not on screen: a tab not selected, the Library
+/// under a pushed game book, everything under a sheet. Their frames aren't tappable.
+private struct AuditActiveKey: EnvironmentKey { static let defaultValue = true }
+extension EnvironmentValues {
+    var auditActive: Bool {
+        get { self[AuditActiveKey.self] }
+        set { self[AuditActiveKey.self] = newValue }
+    }
+}
+
+extension View {
+    func auditActive(_ active: Bool) -> some View { transformEnvironment(\.auditActive) { $0 = $0 && active } }
+}
+
+/// Reports the part of a control that can be touched: clipped to the nearest scroll view, so a
+/// chip scrolled out of sight doesn't count.
+private struct TappableFrameReporter: ViewModifier {
+    @Environment(\.auditActive) private var active
+    func body(content: Content) -> some View {
+        content.background {
             GeometryReader { g in
-                Color.clear.preference(key: TappableFrameKey.self, value: [g.frame(in: .global)])
+                let local = CGRect(origin: .zero, size: g.size)
+                let visible = g.bounds(of: .scrollView).map { local.intersection($0) } ?? local
+                let global = g.frame(in: .global)
+                Color.clear.preference(key: TappableFrameKey.self,
+                                       value: active && !visible.isNull && !visible.isEmpty
+                                           ? [visible.offsetBy(dx: global.minX, dy: global.minY)] : [])
             }
         }
     }
@@ -94,14 +120,18 @@ struct FoldAudit: View {
     var body: some View {
         GeometryReader { geo in
             let origin = geo.frame(in: .global).origin
-            let crossings = duo.division.map { fold in
-                frames.filter { $0.width > 1 && $0.height > 1 && $0.offsetBy(dx: -origin.x, dy: -origin.y).intersects(fold.insetBy(dx: 0.5, dy: 0.5)) }.count
-            } ?? 0
-            Text("fold-crossings: \(crossings); pose: \(duo.pose.rawValue)")
+            let crossing = duo.division.map { fold in
+                frames.map { $0.offsetBy(dx: -origin.x, dy: -origin.y) }
+                    .filter { $0.width > 1 && $0.height > 1 && $0.intersects(fold.insetBy(dx: 0.5, dy: 0.5)) }
+            } ?? []
+            let detail = crossing.prefix(3).map { "\(Int($0.minX)),\(Int($0.minY)) \(Int($0.width))x\(Int($0.height))" }.joined(separator: " | ")
+            let fold = duo.division.map { "fold \(Int($0.minX))-\(Int($0.maxX))" } ?? ""
+            let label = "fold-crossings: \(crossing.count); pose: \(duo.pose.rawValue); \(fold) \(detail)"
+            Text(label)
                 .font(.system(size: 1))
                 .opacity(0.01)
                 .accessibilityIdentifier("foldAudit")
-                .accessibilityLabel("fold-crossings: \(crossings); pose: \(duo.pose.rawValue)")
+                .accessibilityLabel(label)
         }
         .allowsHitTesting(false)
         .ignoresSafeArea()

@@ -27,9 +27,11 @@ struct RootView: View {
             ZStack {
                 TabRoot(duo: duo)
                     .environment(\.railWidth, duo.pose == .tabletop ? TabletopRail.width : 0)
+                    .auditActive(!model.addSheetOpen && !model.settingsOpen && model.player == nil)
 
                 if duo.pose == .tabletop, let fold = duo.division {
                     TabletopRail(duo: duo)
+                        .auditActive(!model.addSheetOpen && !model.settingsOpen && model.player == nil)
                         .frame(width: TabletopRail.width, height: max(0, duo.size.height - fold.maxY))
                         .position(x: duo.size.width - TabletopRail.width / 2, y: fold.maxY + (duo.size.height - fold.maxY) / 2)
                 }
@@ -82,16 +84,16 @@ struct TabRoot: View {
         @Bindable var model = model
         TabView(selection: $model.data.nav.tab) {
             Tab("Library", systemImage: "books.vertical", value: AppTab.library) {
-                LibraryRoot(duo: duo)
+                LibraryRoot(duo: duo).auditActive(model.nav.tab == .library)
             }
             .badge(model.totalUnread)
 
             Tab("Updates", systemImage: "newspaper", value: AppTab.updates) {
-                NavigationStack { UpdatesView().tabletopChrome(duo) }
+                NavigationStack { UpdatesView().tabletopChrome(duo) }.auditActive(model.nav.tab == .updates)
             }
 
             Tab(value: AppTab.search, role: .search) {
-                NavigationStack { SearchView().tabletopChrome(duo) }
+                NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search)
             }
         }
     }
@@ -119,6 +121,7 @@ struct LibraryRoot: View {
             set: { path in model.nav.gameID = path.last }
         )) {
             LibraryView()
+                .auditActive(model.nav.gameID == nil)
                 .tabletopChrome(duo)
                 .navigationDestination(for: String.self) { id in GameBookView(gameID: id).tabletopChrome(duo) }
         }

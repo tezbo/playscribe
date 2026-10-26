@@ -117,3 +117,58 @@ final class DisplayChoiceTests: XCTestCase {
         }
     }
 }
+
+/// D-10 a–h: Swap sides, run in a side-by-side pose (Open landscape or Book).
+@MainActor
+final class SwapSidesTests: XCTestCase {
+    func testSwapSides() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "release/dawnwalker/dawnwalker@1.1"]
+        app.launch()
+        let swap = app.buttons["swapSides"]
+        guard swap.waitForExistence(timeout: 8) else {
+            throw XCTSkip("Swap sides is only on the rail when Contents and Page are side by side")
+        }
+        let audit = app.descendants(matching: .any)["foldAudit"]
+        let search = app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 5))
+        search.tap()
+        search.typeText("subtitle")
+        // A bar button drops accessibilityValue, so the side is in the label ("Swap sides, reading on right").
+        let before = swap.label
+        XCTAssertTrue(before.hasPrefix("Swap sides, reading on"), before)
+
+        // One swap: the value changes, the search text and fold audit hold.
+        swap.tap()
+        sleep(1)
+        let after = swap.label
+        XCTAssertNotEqual(before, after)
+        XCTAssertEqual(search.value as? String, "subtitle", "search text survives the swap")
+        XCTAssertTrue(audit.label.hasPrefix("fold-crossings: 0;"), "after swap: \(audit.label)")
+        attach(app, "swap-1")
+
+        // Rapid double tap ends where it started, consistently.
+        swap.tap(); swap.tap()
+        sleep(1)
+        XCTAssertEqual(swap.label, after)
+        attach(app, "swap-double")
+
+        // The side holds across another game and a relaunch.
+        app.terminate()
+        app.launchArguments = ["-qaRoute", "chapter/kcd2/updates"]
+        app.launch()
+        XCTAssertTrue(app.buttons["swapSides"].waitForExistence(timeout: 8))
+        XCTAssertEqual(app.buttons["swapSides"].label, after)
+        attach(app, "swap-relaunch-other-game")
+        // Leave the default side for the next run.
+        app.buttons["swapSides"].tap()
+    }
+
+    private func attach(_ app: XCUIApplication, _ name: String) {
+        let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        shot.name = name
+        shot.lifetime = .keepAlways
+        add(shot)
+    }
+}
+

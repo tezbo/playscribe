@@ -14,14 +14,16 @@ struct GameBookView: View {
             if duo.pose == .closed {
                 // Closed (or any compact width, D-11): the stacked game book, Contents hidden.
                 PageView(gameID: gameID, withContents: true)
-            } else if duo.isLandscape {
-                // Side by side: Contents left, Page right by default (D-10).
+            } else if sideBySide {
+                // Side by side: Contents left, Page right by default (D-10). A swap mirrors the
+                // arrangement instead of rebuilding it, so both keep their state and scroll.
                 ArrangementView {
-                    if pageOnLeft { page } else { ContentsView(gameID: gameID) }
+                    ContentsView(gameID: gameID).environment(\.layoutDirection, .leftToRight)
                 } secondary: {
-                    if pageOnLeft { ContentsView(gameID: gameID) } else { page }
+                    page.environment(\.layoutDirection, .leftToRight)
                 }
                 .arrangementViewStyle(.split)
+                .environment(\.layoutDirection, pageOnLeft ? .rightToLeft : .leftToRight)
             } else {
                 // Stacked: the Page on top (the standing half in Tabletop), the Contents below.
                 ArrangementView {
@@ -36,9 +38,19 @@ struct GameBookView: View {
         .navigationTitle(game?.name ?? "")
         .toolbar(removing: .title)
         .toolbarTitleDisplayMode(.inline)
-        .toolbar { ActionToolbar(actions: model.gameActions(gameID)) }
+        .toolbar {
+            ActionToolbar(actions: model.gameActions(gameID))
+            // D-10: only when Contents and Page are side by side; absent, not disabled, otherwise.
+            if sideBySide {
+                ToolbarSpacer(.fixed, placement: .primaryAction)
+                ToolbarItem(placement: .primaryAction) { SwapSidesButton(pageOnLeft: $pageOnLeft) }
+            }
+        }
         .onAppear { model.nav.lastGameID = gameID }
     }
+
+    /// Open landscape and Book in a regular-width scene (D-11).
+    private var sideBySide: Bool { duo.pose != .closed && duo.pose != .tabletop && duo.isLandscape }
 
     /// TT-2: in Tabletop the Page is the paged, display-only reader.
     @ViewBuilder private var page: some View {

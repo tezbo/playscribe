@@ -4,6 +4,7 @@ import SwiftUI
 struct UpdatesView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.railWidth) private var railWidth
+    @Environment(\.duo) private var duo
 
     var body: some View {
         let ids = model.data.collection.map(\.gameID)
@@ -16,6 +17,29 @@ struct UpdatesView: View {
                 } actions: {
                     Button("Add a game") { model.nav.tab = .library }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
                 }
+            } else if duo.pose == .book, let fold = duo.division {
+                // TT-0: in the book pose the rows are cards on either page, never across the fold.
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.fixed(max(0, fold.minX - 32)), spacing: 0, alignment: .top),
+                                        GridItem(.fixed(fold.width + 32), spacing: 0),
+                                        GridItem(.flexible(), spacing: 0, alignment: .top)],
+                              alignment: .leading, spacing: 12) {
+                        ForEach(Array(items.enumerated()), id: \.element.id) { i, r in
+                            FeedRow(release: r)
+                                .padding(12)
+                                .background(PlayscribeColor.ink700.opacity(0.5), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                            if i.isMultiple(of: 2) { Color.clear.frame(height: 1).accessibilityHidden(true) }
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                    if pcCount > 0 {
+                        Text("\(pcCount) PC-only update\(pcCount == 1 ? " isn't" : "s aren't") listed because \(pcCount == 1 ? "it's" : "they're") not confirmed on PS5.")
+                            .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                            .frame(maxWidth: fold.minX - 32, alignment: .leading)
+                            .padding(16)
+                    }
+                }
+                .frame(width: duo.size.width)
             } else {
                 List {
                     ForEach(items) { r in FeedRow(release: r) }
@@ -25,6 +49,14 @@ struct UpdatesView: View {
                     }
                 }
                 .contentMargins(.trailing, railWidth, for: .scrollContent)
+            }
+        }
+        // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
+        .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
+        .frame(maxHeight: .infinity, alignment: .bottom)
+        .overlay(alignment: .topLeading) {
+            if duo.pose == .tabletop {
+                Text("Updates").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
             }
         }
         .navigationTitle("Updates")

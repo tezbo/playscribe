@@ -215,9 +215,6 @@ struct ContentsBody: View {
                         if let e = model.entry(gameID) { StatusPill(status: e.status) }
                     }
                     Spacer(minLength: 8)
-                    if duo.isLandscape && duo.pose != .closed {
-                        SwapSidesButton(pageOnLeft: $pageOnLeft)
-                    }
                 } }
                 if model.entry(gameID) == nil, let game {
                     Button("Add to library") { model.addGame(game, status: .watching) }
@@ -249,27 +246,26 @@ struct ContentsBody: View {
 /// D-10: flips Contents and Page; shown only when they're side by side.
 struct SwapSidesButton: View {
     @Binding var pageOnLeft: Bool
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     private var glyph: String { Self.glyph(pageOnLeft: pageOnLeft) }
     static func glyph(pageOnLeft: Bool) -> String { pageOnLeft ? "swap-sides.left" : "swap-sides.right" }
     static func value(pageOnLeft: Bool) -> String { pageOnLeft ? "Reading on left" : "Reading on right" }
+
+    /// D-10: the T-2 spring, or a cross-fade under Reduce Motion (T-4).
+    private func swap() {
+        withAnimation(reduceMotion ? .easeInOut(duration: 0.25) : .spring(duration: 0.45, bounce: 0.12)) { pageOnLeft.toggle() }
+    }
+    /// On the rail with the other actions (D-6, D-10): the glyph as the icon, "Swap sides" as the title.
     var body: some View {
-        Button { withAnimation(.spring(duration: 0.45, bounce: 0.12)) { pageOnLeft.toggle() } } label: {
-            // Option A (Terry, 26 Oct): the filled page shows where you read now.
-            Image(glyph)
-                .renderingMode(.template)
-                .resizable().scaledToFit()
-                .frame(width: 17, height: 17)
-                .foregroundStyle(PlayscribeColor.textPrimary)
-                .frame(width: 30, height: 30)
-                .background(PlayscribeColor.ink700, in: Circle())
-                .frame(width: 44, height: 44)
-                .contentShape(Rectangle())
+        Button(action: swap) {
+            Label { Text("Swap sides") } icon: { Image(glyph).renderingMode(.template) }
         }
-        .buttonStyle(.plain)
-        .accessibilityLabel("Swap sides")
-        .accessibilityValue(SwapSidesButton.value(pageOnLeft: pageOnLeft))
+        .accessibilityIdentifier("swapSides")
+        // The toolbar turns this into a bar button, which drops accessibilityValue, so VoiceOver
+        // hears the side as part of the label; Voice Control still answers to "Swap sides".
+        .accessibilityLabel("Swap sides, \(SwapSidesButton.value(pageOnLeft: pageOnLeft).lowercased())")
+        .accessibilityInputLabels(["Swap sides"])
         .accessibilityShowsLargeContentViewer { Label("Swap sides", image: glyph) }
-        .tappableFrame()
     }
 }
 

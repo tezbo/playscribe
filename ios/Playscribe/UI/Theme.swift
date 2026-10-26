@@ -77,6 +77,7 @@ struct UnconfirmedChip: View {
             .overlay(Capsule().strokeBorder(PlayscribeColor.textTertiary, style: StrokeStyle(lineWidth: 1, dash: [3, 2])))
             .accessibilityElement()
             .accessibilityLabel("Unconfirmed on PS5, from press reports")
+            .accessibilityAddTraits(.isStaticText)
     }
 }
 
