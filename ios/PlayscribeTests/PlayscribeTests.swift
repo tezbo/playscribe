@@ -306,6 +306,19 @@ struct UnconfirmedTests {
         #expect(!confirmed.body.contains("Unconfirmed"))
     }
 
+    @Test("V-4: an official release is never Unconfirmed, even when the feed only has press reports")
+    func officialWins() throws {
+        let m = model()
+        let curated = try #require(m.fixtures.releases.first { $0.id == "dawnwalker@1.1" })
+        #expect(curated.ps5State == .onPS5)
+        let feedRow = reported(m)
+        let merged = curated.merged(withFeed: feedRow)
+        #expect(!merged.isUnconfirmed)
+        #expect(merged.ps5State == .onPS5)
+        // And a release only the press reports stays Unconfirmed.
+        #expect(feedRow.merged(withFeed: feedRow).isUnconfirmed)
+    }
+
     @Test("V-4: unconfirmed is never unread, and the facts line says so")
     func unreadAndFacts() {
         let m = model()

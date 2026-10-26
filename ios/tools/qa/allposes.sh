@@ -8,7 +8,7 @@ here=${0:A:h}; mkdir -p $out
 source ${0:A:h}/poselib.sh
 route() { xcrun simctl launch --terminate-running-process $dev $app -qaRoute "$1" >/dev/null; sleep ${2:-4}; }
 shot() { xcrun simctl io $dev screenshot --display=$(panel) "$out/$build-$1.png" >/dev/null 2>&1; echo "$out/$build-$1.png"; }
-side() { xcrun simctl spawn $dev defaults write $app pageOnLeft -bool $1; }
+side() { xcrun simctl openurl $dev "playscribe://side/$([[ $1 == YES ]] && echo left || echo right)"; sleep 2; }
 for p in ${=${POSES:-closed book open open-portrait tabletop}}; do
   set_pose $p
   side NO

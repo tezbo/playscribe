@@ -15,15 +15,16 @@ struct GameBookView: View {
                 // Closed (or any compact width, D-11): the stacked game book, Contents hidden.
                 PageView(gameID: gameID, withContents: true)
             } else if sideBySide {
-                // Side by side: Contents left, Page right by default (D-10). A swap mirrors the
-                // arrangement instead of rebuilding it, so both keep their state and scroll.
+                // Side by side: Contents left, Page right by default (D-10).
+                // Layout direction doesn't move ArrangementView's regions, so the swap places the
+                // pieces explicitly. Their state lives in the model (selection, search, scroll
+                // anchors), so it carries across.
                 ArrangementView {
-                    ContentsView(gameID: gameID).environment(\.layoutDirection, .leftToRight)
+                    if pageOnLeft { page } else { ContentsView(gameID: gameID) }
                 } secondary: {
-                    page.environment(\.layoutDirection, .leftToRight)
+                    if pageOnLeft { ContentsView(gameID: gameID) } else { page }
                 }
                 .arrangementViewStyle(.split)
-                .environment(\.layoutDirection, pageOnLeft ? .rightToLeft : .leftToRight)
             } else {
                 // Stacked: the Page on top (the standing half in Tabletop), the Contents below.
                 ArrangementView {

@@ -415,6 +415,7 @@ final class AppModel {
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
         case "close": player = nil; addSheetOpen = false; settingsOpen = false
+        case "side" where parts.count == 1: UserDefaults.standard.set(parts[0] == "left", forKey: ReadingSide.key)
         case "add-game" where parts.count == 1:
             // Adds a game from the PS5 index by IGDB id, as the Add button does (A-5, F-5, N-1).
             if let id = Int(parts[0]), let e = PS5Index.shared.entries.first(where: { $0.i == id }) {

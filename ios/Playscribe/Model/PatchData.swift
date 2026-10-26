@@ -191,7 +191,14 @@ struct Release: Codable, Hashable, Identifiable {
     func merged(withFeed feed: Release) -> Release {
         var out = feed
         var rows = feed.platforms
-        for row in platforms where !rows.contains(where: { $0.platform == row.platform }) { rows.append(row) }
+        for row in platforms {
+            if let i = rows.firstIndex(where: { $0.platform == row.platform }) {
+                // V-4: an official curated row is never downgraded by a press-reported feed row.
+                if row.verification == .official && rows[i].verification != .official { rows[i] = row }
+            } else {
+                rows.append(row)
+            }
+        }
         out.platforms = rows
         if !notes.isEmpty { out.notes = notes }
         out.headline = feed.headline ?? headline
