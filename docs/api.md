@@ -25,7 +25,7 @@ A release is **On PS5** only when its `ps5` platform row has `status == "live"` 
 
 Without push (it needs the paid Apple Developer Program), the app tells players itself:
 1. On launch and in a `BGAppRefreshTask`, it fetches `latest.json`.
-2. It posts a local notification for each release of a followed game whose PS5 `PlatformRelease` has an `alert` it has not alerted for yet. `alert.style` is `standard` (On PS5: live and official) or `quiet` (Reported on PS5: the press says it is live; `alert.tag` is `"Unconfirmed"`). One alert per release id, ever: a release that alerted quietly and is later confirmed changes to `standard` but does not alert again. Like the server, it skips releases whose `liveAt` is more than 72 hours old.
+2. It posts a local notification for each release of a followed game whose PS5 `PlatformRelease` has an `alert` it has not alerted for yet. `alert.style` is `standard` for every update live on PS5, including a Steam patch taken as out on PS5 (verification `assumed`), or `quiet` with `alert.tag` `"Unconfirmed"` when only the press reports it (no Steam post or studio page in `links`). One alert per release id, ever. Like the server, it skips releases whose `liveAt` is more than 72 hours old.
 3. That notification uses the same content and `userInfo` (`gameId`, `releaseId`, `verification`, `tag`) as the push payloads below, including the quiet alert's passive interruption level, no sound, and its own `threadIdentifier`.
 
 To test the notification UI in the simulator: `xcrun simctl push booted co.codeconnectors.playscribe docs/sample-push.apns` (and `docs/sample-push-unconfirmed.apns` for the quiet Unconfirmed alert).
@@ -65,7 +65,7 @@ Errors are `{ error: "<message>" }` with 400, 401 (bad or missing device key), 4
 
 ## Push (parked)
 
-Sent once per release, when its PS5 row becomes live, to followers whose `notify` allows it. Releases more than 72 hours old by then do not push. A live and official row gets the standard push:
+Sent once per release, when its PS5 row becomes live, to followers whose `notify` allows it. Releases more than 72 hours old by then do not push. Every live row gets the same push; `verification` says what told us (`official`, `reported`, `pending` or `assumed`):
 
 ```json
 {
@@ -77,19 +77,19 @@ Sent once per release, when its PS5 row becomes live, to followers whose `notify
 }
 ```
 
-A row the press reports live, before anyone confirms it, gets one quiet push instead, sent by the feed job after its poll. It is tagged "Unconfirmed" in the title (iOS draws it without the app; wording from contract V-4), makes no sound, doesn't light the screen (`passive`), and groups apart from confirmed alerts:
+A release only the press reports (no Steam post, no studio page) gets one quiet push instead. It is tagged "Unconfirmed" in the title (iOS draws it without the app; wording from contract V-4), makes no sound, doesn't light the screen (`passive`), and groups apart:
 
 ```json
 {
   "aps": {
-    "alert": { "title": "Unconfirmed: The Blood of Dawnwalker", "subtitle": "Update 1.1 reported on PS5", "body": "From press reports. This will update when it's official." },
-    "thread-id": "dawnwalker.unconfirmed", "interruption-level": "passive", "relevance-score": 0.1, "category": "PS5_UNCONFIRMED"
+    "alert": { "title": "Unconfirmed: Ghost of Yōtei", "subtitle": "Update reported on PS5", "body": "From press reports. This will update when it's official." },
+    "thread-id": "yotei.unconfirmed", "interruption-level": "passive", "relevance-score": 0.1, "category": "PS5_UNCONFIRMED"
   },
-  "gameId": "dawnwalker", "releaseId": "dawnwalker@1.1", "kind": "major", "verification": "reported", "tag": "Unconfirmed"
+  "gameId": "yotei", "releaseId": "yotei@ps5-2026-10-20", "kind": "silent", "verification": "reported", "tag": "Unconfirmed"
 }
 ```
 
-A later confirmation does not push again; the release's page simply loses its Unconfirmed tag.
+A later confirmation does not push again.
 
 `apns-collapse-id` is the release id. Topic: `co.codeconnectors.playscribe`.
 

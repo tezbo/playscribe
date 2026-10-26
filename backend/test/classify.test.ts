@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf, studioKindOf } from '../src/ingest/classify.ts'
-import { extractNotes, platformsFor, tagNotes } from '../src/ingest/notes.ts'
+import { extractNotes, platformsFor, ps5PageOf, tagNotes } from '../src/ingest/notes.ts'
 
 test('only a post that says the update is out on PS5 counts as official PS5 evidence', () => {
   assert.ok(ps5LiveStated('Patch 1.04 is now live on PC, PS5 and Xbox Series X|S.'))
@@ -96,4 +96,10 @@ test('the PS5 version is the console form, next to PS5 in a multi-platform post'
   assert.equal(consoleVersionOf('Version 01.004.000 (PS5) and 1.4.0 (PC)'), '01.004.000')
   assert.equal(consoleVersionOf('The update brings the game to 01.012.000.', { ps5Only: true }), '01.012.000')
   assert.equal(consoleVersionOf('Version 1.0.21.23831 on PC', { ps5Only: true }), null)
+})
+
+test('ps5PageOf finds the studio page about the PS5 update, never Steam or a store', () => {
+  assert.equal(ps5PageOf('PS5 patch notes: https://example.com/news/1-2\nhttps://youtu.be/x'), 'https://example.com/news/1-2')
+  assert.equal(ps5PageOf('<a href="https://example.com/ps5-update">notes</a>'), 'https://example.com/ps5-update')
+  assert.equal(ps5PageOf('[url=https://store.playstation.com/x]Buy on PS5[/url] [url=https://example.com/blog]Dev blog[/url]'), null)
 })

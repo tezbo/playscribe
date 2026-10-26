@@ -4,10 +4,11 @@ import { getPlatformRow, getRelease } from '../store.ts'
 import type { Apns, ApnsEnvironment } from './apns.ts'
 import { tokenIsDead } from './apns.ts'
 
-// Push rule (docs/ps5-patch-data.md): a release alerts once, when its PS5 row goes live. Official
-// rows get the normal alert. A press report that the update is live (verification "reported") gets
-// one quiet alert tagged "Unconfirmed" in its title (passive, no sound, its own notification group), so it lands
-// before the console has auto-installed the patch; a later confirmation does not alert again.
+// Push rule (docs/ps5-patch-data.md): a release alerts once, when its PS5 row goes live. Since
+// 2026-10-27 that includes a Steam patch taken as out on PS5 (verification "assumed"); they all get
+// the normal alert. Only a release the press reports and neither Steam nor the studio has gets one
+// quiet alert tagged "Unconfirmed" in its title (passive, no sound, its own notification group).
+// A later confirmation does not alert again.
 // Followers with notify "major" only hear about major updates.
 export interface PushOutcome {
   releaseId: string
@@ -22,7 +23,7 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
   const out: PushOutcome = { releaseId, sent: 0, failed: 0 }
   const row = getPlatformRow(db, releaseId, 'ps5')
   const release = getRelease(db, releaseId)
-  const style = row ? alertStyleOf(row as { status: string; verification: string }) : null
+  const style = row && release ? alertStyleOf(row as { status: string; verification: string }, release.links) : null
   if (!row || !release || !style) return { ...out, skipped: 'notLive' }
   out.style = style
   // Claim the push before sending, so two runs can never both send it.
@@ -55,7 +56,7 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
           gameId: release.gameId,
           releaseId: release.id,
           kind: release.kind,
-          verification: 'official',
+          verification: row.verification,
         }
       : {
           // Tagged in the text itself, since iOS draws it without the app (wording: contract V-4).
@@ -94,10 +95,10 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
   return out
 }
 
-/** After a poll: the one alert for each PS5 row that is now live, official (standard) or press-reported (quiet). */
+/** After a poll: the one alert for each PS5 row that is now live (quiet only for press-only reports). */
 export const pushNewPs5 = async (db: DB, apns: Apns | null, opts: { maxAgeHours: number; allow?: boolean }) => {
   const ids = db
-    .prepare("SELECT release_id FROM platform_releases WHERE platform = 'ps5' AND status = 'live' AND verification IN ('official', 'reported') AND pushed_at IS NULL")
+    .prepare("SELECT release_id FROM platform_releases WHERE platform = 'ps5' AND status = 'live' AND pushed_at IS NULL")
     .all() as { release_id: string }[]
   const out: PushOutcome[] = []
   for (const { release_id } of ids) out.push(await pushPs5Release(db, apns, release_id, opts))
