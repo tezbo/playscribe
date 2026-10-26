@@ -293,12 +293,17 @@ struct UnconfirmedTests {
         let r = reported(m)
         #expect(r.isUnconfirmed)
         let c = NotificationService.unconfirmedContent(for: r, game: m.game("dawnwalker")!)
-        #expect(c.title == "Unconfirmed: The Blood of Dawnwalker \(r.displayName) on PS5")
-        #expect(c.body == "From press reports. We'll tell you when it's official.")
-        #expect(c.threadIdentifier == "unconfirmed")
-        #expect(c.categoryIdentifier == "unconfirmed")
+        #expect(c.title == "Unconfirmed: The Blood of Dawnwalker")
+        #expect(c.subtitle == "\(r.displayName) reported on PS5")
+        #expect(c.body == "From press reports. This will update when it's official.")
+        #expect(c.threadIdentifier == "dawnwalker.unconfirmed")
+        #expect(c.categoryIdentifier == "PS5_UNCONFIRMED")
+        #expect(c.interruptionLevel == .passive && c.sound == nil && c.relevanceScore == 0.1)
+        // On confirm the same request id carries the confirmed N-4 content.
         let confirmed = NotificationService.content(for: r, game: m.game("dawnwalker")!, badge: 1)
-        #expect(!confirmed.title.contains("Unconfirmed") && !confirmed.body.contains("Unconfirmed"))
+        #expect(confirmed.title == "The Blood of Dawnwalker" && confirmed.subtitle.isEmpty)
+        #expect(confirmed.threadIdentifier == "dawnwalker")
+        #expect(!confirmed.body.contains("Unconfirmed"))
     }
 
     @Test("V-4: unconfirmed is never unread, and the facts line says so")

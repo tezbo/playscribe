@@ -50,7 +50,7 @@ struct SettingsView: View {
                 }
 
                 Section("Testing") {
-                    Toggle("Quiet Reported on PS5 alerts (N-11)", isOn: Binding(
+                    Toggle("Quiet Unconfirmed alerts (V-4)", isOn: Binding(
                         get: { NotificationService.reportedAlertsEnabled },
                         set: { UserDefaults.standard.set($0, forKey: "reportedAlerts") }))
                     Toggle("Show tappable frames and reserved regions", isOn: $model.showDebugOverlay)

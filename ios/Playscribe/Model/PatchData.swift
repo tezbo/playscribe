@@ -101,7 +101,17 @@ struct PlatformRelease: Codable, Hashable {
         liveAt = try c.decodeIfPresent(Field<Date>.self, forKey: .liveAt)
         bundles = try c.decodeIfPresent([String].self, forKey: .bundles) ?? []
         verification = try c.decode(Verification.self, forKey: .verification)
+        alert = try c.decodeIfPresent(Alert.self, forKey: .alert)
     }
+
+    /// Which one alert this row earns (docs/api.md): `standard` when live and official, `quiet`
+    /// (tag "Unconfirmed") when the press reports it live.
+    struct Alert: Codable, Hashable {
+        var style: String
+        var tag: String?
+        var isQuiet: Bool { style == "quiet" }
+    }
+    var alert: Alert?
 
     var platform: Platform
     var status: PlatformStatus
