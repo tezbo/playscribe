@@ -87,24 +87,23 @@ struct TabRoot: View {
             .badge(model.totalUnread)
 
             Tab("Updates", systemImage: "newspaper", value: AppTab.updates) {
-                NavigationStack { UpdatesView() }
-                    .tabletopChrome(duo)
+                NavigationStack { UpdatesView().tabletopChrome(duo) }
             }
 
             Tab(value: AppTab.search, role: .search) {
-                NavigationStack { SearchView() }
-                    .tabletopChrome(duo)
+                NavigationStack { SearchView().tabletopChrome(duo) }
             }
         }
-        .toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .tabBar)
     }
 }
 
 extension View {
     /// Tabletop: the system's horizontal bars would put controls in the upper half, so they are
     /// hidden and the lower rail carries them instead (G-4).
+    /// Apply to each screen inside a navigation stack: bar visibility is read from the visible
+    /// screen, not from the stack or the TabView.
     func tabletopChrome(_ duo: DuoContext) -> some View {
-        toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar)
+        toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar, .tabBar)
     }
 }
 
@@ -120,9 +119,9 @@ struct LibraryRoot: View {
             set: { path in model.nav.gameID = path.last }
         )) {
             LibraryView()
-                .navigationDestination(for: String.self) { id in GameBookView(gameID: id) }
+                .tabletopChrome(duo)
+                .navigationDestination(for: String.self) { id in GameBookView(gameID: id).tabletopChrome(duo) }
         }
-        .tabletopChrome(duo)
     }
 }
 
@@ -142,7 +141,16 @@ struct TabletopRail: View {
                 if !model.addSheetOpen {
                     RailButton(action: ScreenAction(id: "add", title: "Add game", systemImage: "plus", kind: .button { model.addSheetOpen = true }))
                 }
-                RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
+                // D-12: the View menu under Add (Settings lives inside it).
+                if !model.data.collection.isEmpty {
+                    LibraryViewMenu()
+                        .labelStyle(.iconOnly)
+                        .font(PlayscribeFont.title3)
+                        .frame(width: 48, height: 48)
+                        .tappableFrame()
+                } else {
+                    RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
+                }
             }
             Spacer(minLength: 8)
             Divider().frame(width: 28)

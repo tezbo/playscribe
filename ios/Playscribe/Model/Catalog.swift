@@ -132,6 +132,14 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         return "Out on PS5 since \(since.shortDay)"
     }
 
+    /// The tile form of the availability line (D-12): month and year, never a day.
+    var ps5ShortLine: String {
+        guard releasePrecision != .tbd, let d = releaseDate?.isoDay else { return "Date TBA" }
+        if d > .now { return Self.outLine(d, precision: releasePrecision ?? .day) }
+        let since = max(d, Self.ps5Launch)
+        return "On PS5 since " + since.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB")).month(.abbreviated).year())
+    }
+
     /// Key art for stages and the Continue tile, falling back to the cover.
     var keyArtAsset: String? { featureAsset ?? heroAsset ?? coverAsset }
 }

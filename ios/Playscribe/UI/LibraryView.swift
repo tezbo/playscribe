@@ -10,10 +10,11 @@ struct LibraryView: View {
                 OnboardingView()
             } else if duo.pose == .tabletop {
                 // D-5: the standing half shows the Continue art, display only; the grid is below.
+                // The primary takes the standing (upper) half.
                 ArrangementView {
-                    LibraryShelf()
-                } secondary: {
                     LibraryStage()
+                } secondary: {
+                    LibraryShelf()
                 }
                 .arrangementViewStyle(.split)
             } else {
@@ -92,13 +93,40 @@ struct LibraryShelf: View {
         if duo.pose == .closed {
             return Array(repeating: GridItem(.flexible(), spacing: 12, alignment: .top), count: 3)
         }
-        guard duo.pose == .book else {
-            return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 14, alignment: .top)]
+        if let book = bookLayout {
+            // A spacer column before each page's tiles centres them on their page; the fold
+            // falls in the middle spacer, never through a tile.
+            let tiles = { (n: Int) in (0..<n).map { i in GridItem(.fixed(tileSize), spacing: i == n - 1 ? 0 : 14, alignment: .top) } }
+            return [GridItem(.fixed(book.lead), spacing: 0)] + tiles(book.perPage) + [GridItem(.fixed(book.gap), spacing: 0)] + tiles(book.perPage)
         }
-        let usable = duo.size.width - 32 - railWidth
-        var n = max(2, Int((usable + 14) / (tileSize + 14)))
-        if !n.isMultiple(of: 2) { n -= 1 }
-        return Array(repeating: GridItem(.flexible(), spacing: 14, alignment: .top), count: max(2, n))
+        return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 14, alignment: .top)]
+    }
+
+    /// Book (D-12): the same number of tiles on each page (Apple: prefer an even number of
+    /// columns), each group centred on its page.
+    private var bookLayout: (perPage: Int, lead: CGFloat, gap: CGFloat)? {
+        guard duo.pose == .book, let fold = duo.division else { return nil }
+        let x0: CGFloat = 16, edge = duo.size.width - railWidth - 16
+        let leftPage = fold.minX - 8 - x0, rightStart = fold.maxX + 8, rightPage = edge - rightStart
+        var k = max(1, Int((min(leftPage, rightPage) + 14) / (tileSize + 14)))
+        while k > 1 && CGFloat(k) * tileSize + CGFloat(k - 1) * 14 > min(leftPage, rightPage) { k -= 1 }
+        let group = CGFloat(k) * tileSize + CGFloat(k - 1) * 14
+        let lead = max(0, (leftPage - group) / 2)
+        let gap = max(0, rightStart + max(0, (rightPage - group) / 2) - (x0 + lead + group))
+        return (k, lead, gap)
+    }
+
+    /// Grid cells: in the book pose, an empty cell in each spacer column.
+    private func cells(_ rows: [AppModel.LibraryRow]) -> [(id: String, row: AppModel.LibraryRow?)] {
+        guard let book = bookLayout else { return rows.map { ($0.id, $0) } }
+        var out: [(id: String, row: AppModel.LibraryRow?)] = []
+        for (i, row) in rows.enumerated() {
+            let slot = i % (book.perPage * 2)
+            if slot == 0 { out.append(("lead-\(i)", nil)) }
+            if slot == book.perPage { out.append(("gap-\(i)", nil)) }
+            out.append((row.id, row))
+        }
+        return out
     }
 
     var body: some View {
@@ -149,13 +177,20 @@ struct LibraryShelf: View {
                         .frame(maxWidth: layout == .tiles && duo.isLandscape ? tileSize * 2 + 14 + (duo.pose == .flat ? 120 : 0) : .infinity,
                                alignment: .leading)
                 }
-                if all.count >= 2 && layout == .tiles { FilterBar() }
+                if all.count >= 2 && layout == .tiles {
+                    // TT-0: in the book pose the chip row stays on the left page.
+                    FilterBar().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
                 } else {
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 18) {
-                        ForEach(rows) { row in
-                            GameTile(row: row, size: tileSize).id("lib-\(row.id)")
+                        ForEach(cells(rows), id: \.id) { cell in
+                            if let row = cell.row {
+                                GameTile(row: row, size: tileSize).id("lib-\(row.id)")
+                            } else {
+                                Color.clear.frame(height: 1).accessibilityHidden(true)
+                            }
                         }
                     }
                 }
@@ -174,6 +209,14 @@ struct LibraryShelf: View {
 extension AppModel {
     /// GR-1: one line under a game in the Library, tile or row: the newest PS5 release, else
     /// what is known about the game on PS5.
+    /// The tile's shorter caption (D-12): the chip carries Unconfirmed, and the availability line
+    /// drops the day.
+    func tileLine(_ row: LibraryRow) -> String {
+        if let r = row.latest { return "\(r.displayName) · \(r.ps5Date.dayMonth)" }
+        if let r = ps5Releases(row.id).first { return r.isUnconfirmed ? r.displayName : "\(r.displayName) · Announced" }
+        return "\(row.game.ps5ShortLine) · No notes"
+    }
+
     func shelfLine(_ row: LibraryRow) -> String {
         if let r = row.latest { return "\(r.displayName) · \(r.ps5Date.dayMonth)" }
         if let r = ps5Releases(row.id).first { return "\(r.displayName) · \(r.isUnconfirmed ? "Unconfirmed" : "Announced")" }
@@ -481,7 +524,7 @@ struct GameTile: View {
                 .fixedSize(horizontal: false, vertical: true)
             HStack(alignment: .firstTextBaseline, spacing: 4) {
                 Circle().fill(row.status.tint).frame(width: 6, height: 6)
-                Text(model.shelfLine(row)).font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(4)
+                Text(model.tileLine(row)).font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(4)
                 Spacer(minLength: 0)
                 // Closed tiles are too narrow for the caption and a button; the cover's menu remains.
                 if duo.pose != .closed {
