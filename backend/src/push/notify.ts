@@ -1,17 +1,20 @@
-import { alertStyleOf, type AlertStyle } from '../alerts.ts'
+import { alertStyleOf, UNCONFIRMED, type AlertStyle } from '../alerts.ts'
 import { now, type DB } from '../db.ts'
 import { getPlatformRow, getRelease } from '../store.ts'
 import type { Apns, ApnsEnvironment } from './apns.ts'
 import { tokenIsDead } from './apns.ts'
 
-// Push rule (docs/ps5-patch-data.md): a release alerts once, when its PS5 row goes live, whatever
-// told us so: the studio, the press, or a Steam patch taken as out on PS5 too (Terry, 2026-10-27).
+// Push rule (docs/ps5-patch-data.md): a release alerts once, when its PS5 row goes live. Since
+// 2026-10-27 that includes a Steam patch taken as out on PS5 (verification "assumed"); they all get
+// the normal alert. Only a release the press reports and neither Steam nor the studio has gets one
+// quiet alert tagged "Unconfirmed" in its title (passive, no sound, its own notification group).
 // A later confirmation does not alert again.
 // Followers with notify "major" only hear about major updates.
 export interface PushOutcome {
   releaseId: string
   sent: number
   failed: number
+  /** quiet: the one "Unconfirmed" alert for a press-reported release. */
   style?: AlertStyle
   skipped?: 'notLive' | 'alreadyPushed' | 'tooOld' | 'pushDisabled' | 'noApns'
 }
@@ -20,7 +23,7 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
   const out: PushOutcome = { releaseId, sent: 0, failed: 0 }
   const row = getPlatformRow(db, releaseId, 'ps5')
   const release = getRelease(db, releaseId)
-  const style = row ? alertStyleOf(row as { status: string; verification: string }) : null
+  const style = row && release ? alertStyleOf(row as { status: string; verification: string }, release.links) : null
   if (!row || !release || !style) return { ...out, skipped: 'notLive' }
   out.style = style
   // Claim the push before sending, so two runs can never both send it.
@@ -40,19 +43,40 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
     )
     .all(release.gameId, release.kind) as { id: string; apns_token: string; environment: ApnsEnvironment }[]
 
-  const payload = {
-    aps: {
-      alert: { title: game.name, body: `${release.displayName} is out on PS5${version ? ` (version ${version})` : ''}. See what changed.` },
-      sound: 'default',
-      'thread-id': release.gameId,
-      'interruption-level': 'active',
-      'relevance-score': release.kind === 'major' ? 1 : 0.5,
-    },
-    gameId: release.gameId,
-    releaseId: release.id,
-    kind: release.kind,
-    verification: row.verification,
-  }
+  const payload =
+    style === 'standard'
+      ? {
+          aps: {
+            alert: { title: game.name, body: `${release.displayName} is out on PS5${version ? ` (version ${version})` : ''}. See what changed.` },
+            sound: 'default',
+            'thread-id': release.gameId,
+            'interruption-level': 'active',
+            'relevance-score': release.kind === 'major' ? 1 : 0.5,
+          },
+          gameId: release.gameId,
+          releaseId: release.id,
+          kind: release.kind,
+          verification: row.verification,
+        }
+      : {
+          // Tagged in the text itself, since iOS draws it without the app (wording: contract V-4).
+          aps: {
+            alert: {
+              title: `${UNCONFIRMED}: ${game.name}`,
+              subtitle: `${release.displayName === 'PS5 update' ? 'Update' : release.displayName} reported on PS5`,
+              body: "From press reports. This will update when it's official.",
+            },
+            'thread-id': `${release.gameId}.unconfirmed`,
+            'interruption-level': 'passive',
+            'relevance-score': 0.1,
+            category: 'PS5_UNCONFIRMED',
+          },
+          gameId: release.gameId,
+          releaseId: release.id,
+          kind: release.kind,
+          verification: 'reported',
+          tag: UNCONFIRMED,
+        }
   const log = db.prepare('INSERT INTO push_log (release_id, device_id, status, reason, sent_at) VALUES (?, ?, ?, ?, ?)')
   for (const t of targets) {
     try {
@@ -71,7 +95,7 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
   return out
 }
 
-/** After a poll: the one alert for each PS5 row that is now live. */
+/** After a poll: the one alert for each PS5 row that is now live (quiet only for press-only reports). */
 export const pushNewPs5 = async (db: DB, apns: Apns | null, opts: { maxAgeHours: number; allow?: boolean }) => {
   const ids = db
     .prepare("SELECT release_id FROM platform_releases WHERE platform = 'ps5' AND status = 'live' AND pushed_at IS NULL")

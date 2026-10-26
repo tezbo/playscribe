@@ -34,8 +34,8 @@ export interface PlatformRelease {
   liveAt: Field<string> | null
   bundles: string[]
   verification: Verification
-  /** PS5 only: the one alert this release earns, once it is live. */
-  alert?: { style: 'standard' }
+  /** PS5 only: the one alert this release earns, once it is live. quiet: the press reports it and neither Steam nor the studio has it. */
+  alert?: { style: 'standard' } | { style: 'quiet'; tag: 'Unconfirmed' }
 }
 
 export interface ReleaseLinks {

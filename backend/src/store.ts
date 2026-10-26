@@ -59,7 +59,7 @@ export const upsertGame = (db: DB, g: GameInput) => {
 export const getGameRow = (db: DB, id: string) => db.prepare('SELECT * FROM games WHERE id = ?').get(id) as Row | undefined
 export const getGameByIgdb = (db: DB, igdbId: number) => db.prepare('SELECT * FROM games WHERE igdb_id = ?').get(igdbId) as Row | undefined
 
-const platformFromRow = (r: Row): PlatformRelease => ({
+const platformFromRow = (r: Row, links: ReleaseLinks): PlatformRelease => ({
   platform: r.platform,
   status: r.status,
   version: json(r.version, null),
@@ -67,7 +67,7 @@ const platformFromRow = (r: Row): PlatformRelease => ({
   liveAt: json(r.live_at, null),
   bundles: json(r.bundles, []),
   verification: r.verification,
-  ...alertOf(r as { platform: string; status: string; verification: string }),
+  ...alertOf(r as { platform: string; status: string; verification: string }, links),
 })
 
 export const releaseFromRow = (db: DB, r: Row): Release => ({
@@ -81,7 +81,7 @@ export const releaseFromRow = (db: DB, r: Row): Release => ({
   notes: tagNotes(json(r.notes, [])),
   sourceIds: json(r.source_ids, []),
   links: json(r.links, {}),
-  platforms: (db.prepare('SELECT * FROM platform_releases WHERE release_id = ? ORDER BY platform').all(r.id) as Row[]).map(platformFromRow),
+  platforms: (db.prepare('SELECT * FROM platform_releases WHERE release_id = ? ORDER BY platform').all(r.id) as Row[]).map((p) => platformFromRow(p, json(r.links, {}))),
   revision: r.revision,
   updatedAt: r.updated_at,
 })

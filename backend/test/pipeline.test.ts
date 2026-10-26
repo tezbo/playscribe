@@ -123,7 +123,7 @@ test('an official PS5 post is pending until a person confirms; push fires once',
   assert.equal(db.prepare('SELECT COUNT(*) AS n FROM review_items WHERE release_id = ? AND resolved_at IS NULL').get(id)!.n, 0)
 })
 
-test('every update live on PS5 earns one standard alert, whatever told us, and confirming it does not alert again', async () => {
+test('every update live on PS5 earns one standard alert; only a press-only report is quiet "Unconfirmed"; confirming does not alert again', async () => {
   const { db } = await setup()
   const id = 'dawnwalker@1.1'
   const t = new Date().toISOString()
@@ -134,7 +134,9 @@ test('every update live on PS5 earns one standard alert, whatever told us, and c
   assert.deepEqual(getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!.alert, { style: 'standard' })
 
   const out = await pushNewPs5(db, apns, { maxAgeHours: 1e6 })
-  assert.ok(out.length && out.every((o) => o.style === 'standard'))
+  // Yōtei is press-only (no Steam post, no studio post): its one alert is the quiet Unconfirmed one.
+  assert.deepEqual(out.filter((o) => o.releaseId.startsWith('yotei@')).map((o) => o.style), ['quiet'])
+  assert.ok(out.filter((o) => !o.releaseId.startsWith('yotei@')).every((o) => o.style === 'standard'))
   const p = sent.find((x) => x.releaseId === id)
   assert.match(p.aps.alert.body, /Update 1\.1 is out on PS5/)
   assert.equal(p.aps['interruption-level'], 'active')
