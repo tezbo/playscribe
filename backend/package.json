@@ -12,7 +12,8 @@
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test --experimental-sqlite --no-warnings=ExperimentalWarning \"test/**/*.test.ts\"",
     "confirm": "node --import tsx --no-warnings=ExperimentalWarning src/cli/confirm.ts",
-    "ps5-index": "node --import tsx --no-warnings=ExperimentalWarning scripts/ps5-index.ts"
+    "ps5-index": "node --import tsx --no-warnings=ExperimentalWarning scripts/ps5-index.ts",
+    "game-info": "node --import tsx --no-warnings=ExperimentalWarning scripts/game-info.ts"
   },
   "dependencies": {
     "@hono/node-server": "2.1.5",
