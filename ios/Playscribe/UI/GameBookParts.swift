@@ -456,7 +456,7 @@ struct ReleaseTimeline: View {
                 Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular)).lineLimit(1)
                 ReleaseTag(release: r)
                 Spacer(minLength: 4)
-                Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).font(PlayscribeFont.caption).foregroundStyle(.secondary)
             }
             .padding(.horizontal, 10)
             .frame(minHeight: 44)

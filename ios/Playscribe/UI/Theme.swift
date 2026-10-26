@@ -106,6 +106,8 @@ extension Date {
     private static let dayFirst = Locale(identifier: "en_GB")
     var shortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated).year()) }
     var dayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated)) }
+    /// "16 Oct" this year, "16 Oct 2025" before.
+    var dayMonthOrYear: String { Calendar.current.isDate(self, equalTo: .now, toGranularity: .year) ? dayMonth : shortDay }
 }
 
 extension String {
