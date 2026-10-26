@@ -11,7 +11,9 @@ import { extractNotes, mentionsPs5 } from './notes.ts'
 // The poll job from docs/ps5-patch-data.md. Rules that matter:
 //  - Only an official source that names PS5 can create a PS5 row, and only as `pending`; a person
 //    confirms it (see confirm.ts) before it counts or pushes.
-//  - Press (trust: secondary) fills PS5 facts as `reported` and never pushes.
+//  - Press (trust: secondary) fills PS5 facts as `reported`. A press report that an update is live
+//    earns one quiet alert tagged "Unconfirmed" (push/notify.ts, after the poll); it never makes a
+//    row official.
 //  - Steam is the PC signal. A Steam post that mentions PS5 is a lead for the review queue, never
 //    a PS5 fact.
 //  - Each source is polled at most hourly; robots.txt and 403s switch it off.

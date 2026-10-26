@@ -33,6 +33,8 @@ export interface PlatformRelease {
   liveAt: Field<string> | null
   bundles: string[]
   verification: Verification
+  /** PS5 only: the one alert this release earns. quiet is the press-reported "Unconfirmed" alert. */
+  alert?: { style: 'standard' } | { style: 'quiet'; tag: 'Unconfirmed' }
 }
 
 export interface Release {

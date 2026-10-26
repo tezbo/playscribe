@@ -121,11 +121,11 @@ struct NoteItem: Codable {
 
 - **On PS5** (counts as new, raises the badge, can push): the PS5 `PlatformRelease` has `status == .live` and its verification is `official`.
 - `PlatformRelease.verification` is about the status only. A press-only size or version on an officially confirmed release does not downgrade it: the release stays On PS5 and that field shows a "Reported" tag. Example: Dawnwalker 1.1 is On PS5, and its size is tagged Reported.
-- **Reported on PS5** (shown, no push): the status verification is `reported`. Show a "Reported" tag and no version unless the press gave one.
+- **Reported on PS5** (shown, one quiet alert): the status verification is `reported`. Show it tagged "Unconfirmed" and visually apart from confirmed releases, with no version unless the press gave one. When the press reports it live it earns one quiet alert (Terry, 2026-10-26): tagged "Unconfirmed", passive, no sound, grouped apart from confirmed alerts, collapse id = release id. This is the only thing a press fact can trigger, and it never makes the release On PS5.
 - **PC only so far** (collapsed group, keep the current prototype copy): no PS5 `PlatformRelease`, or one with `status` of `announced` or `unknown`.
 - **Not coming to PS5**: `status == .notPlanned`, and only when an official post says so.
 - Sources stay in the data and out of the UI, as Terry asked. The verification tag is the only signal shown.
-- Push notifications fire only when a release reaches `official` on the user's platform. A release that later upgrades from `reported` to `official` does not push a second time.
+- A release alerts at most once on the user's platform: the standard alert when it reaches live and `official`, or the quiet Unconfirmed alert when the press reports it live first. A release that later upgrades from `reported` to `official` does not alert a second time. The feed's `PlatformRelease.alert` says which alert a PS5 row earns.
 
 ## Registry file
 

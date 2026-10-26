@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto'
 import { now, type DB } from './db.ts'
+import { alertOf } from './alerts.ts'
 import { artworkUrl, squareCoverUrl } from './artwork.ts'
 import { tagNotes } from './ingest/notes.ts'
 import type { Field, Game, KindBasis, NoteSection, Platform, PlatformRelease, PlatformStatus, Release, ReleaseKind, Verification } from './types.ts'
@@ -66,6 +67,7 @@ const platformFromRow = (r: Row): PlatformRelease => ({
   liveAt: json(r.live_at, null),
   bundles: json(r.bundles, []),
   verification: r.verification,
+  ...alertOf(r as { platform: string; status: string; verification: string }),
 })
 
 export const releaseFromRow = (db: DB, r: Row): Release => ({
