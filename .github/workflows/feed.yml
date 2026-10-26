@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'poll, backfill (read history back to the since date), confirm (a person checked an official post naming PS5) or dismiss (a review item)'
+        description: 'poll, backfill (read history back to the since date), confirm (a person checked an official post naming PS5), dismiss (a review item) or info (refresh every game''s description and trailers now)'
         type: choice
-        options: [poll, backfill, confirm, dismiss]
+        options: [poll, backfill, confirm, dismiss, info]
         default: poll
       release:
         description: 'confirm: release id, e.g. dawnwalker@1.1'
@@ -104,6 +104,15 @@ jobs:
         env:
           ITEM: ${{ inputs.review_item }}
         run: npm run confirm --silent -- --dismiss "$ITEM" --export "$GITHUB_WORKSPACE/out"
+      # Every game's description, genres, first release and trailers (v1/info), so no game page is
+      # ever blank. Refreshed weekly, or now with the info action.
+      - name: Game info
+        if: github.event_name == 'schedule' || inputs.action == 'poll' || inputs.action == 'info'
+        working-directory: backend
+        run: |
+          stamp="$GITHUB_WORKSPACE/out/v1/info/fetched-at"
+          if [ "${{ inputs.action }}" != info ] && [ -f "$stamp" ] && [ $(( $(date +%s) - $(date -d "$(cat "$stamp")" +%s) )) -lt 604800 ]; then echo "Info is fresh"; exit 0; fi
+          npm run game-info --silent -- "$GITHUB_WORKSPACE/out" && date -u +%FT%TZ > "$stamp"
       - name: Publish
         working-directory: out
         run: |

@@ -20,6 +20,7 @@ A release is **On PS5** only when its `ps5` platform row has `status == "live"` 
 | `index.json` | `{ version: 1, updatedAt, games: [Game & { latestReleaseId, releaseCount, updatedAt }] }`. Fetch this first. If `updatedAt` hasn't changed, nothing has. |
 | `games/<id>.json` | `{ game: Game, releases: Release[] }`, newest announcement first. |
 | `latest.json` | `{ updatedAt, releases: Release[] }`. The 100 most recently changed releases, for a background refresh check. |
+| `info/<n>.json` | `{ games: { [igdbId]: { summary?, storyline?, genres?, firstRelease?, videos?: [{ youtubeId, name }] } } }`, where `n` is `igdbId % 100`. The basics for every game in the bundled PS5 catalogue, tracked or not, so no game page is ever blank: description, genres, first release, and YouTube videos with the launch trailer first. Refreshed weekly. With no patch history, a game page leads with its release (date from the PS5 index) and these. |
 | `review.json` | `{ items }`. Open review items (see Admin). This is for people, not the app. |
 
 Without push (it needs the paid Apple Developer Program), the app tells players itself:
