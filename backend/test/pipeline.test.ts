@@ -3,7 +3,7 @@ import { test } from 'node:test'
 import { confirmPlatform } from '../src/confirm.ts'
 import { openDb } from '../src/db.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
-import { pushPs5Release } from '../src/push/notify.ts'
+import { pushPs5Release, pushReportedPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
 import { getRelease } from '../src/store.ts'
 import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpers.ts'
@@ -83,7 +83,7 @@ test('an official PS5 post is pending until a person confirms; push fires once',
   const apns = { send: async (token: string, _env: string, payload: object) => (sent.push({ token, payload }), { status: 200 }) } as unknown as Apns
 
   const before = await pushPs5Release(db, apns, id, { maxAgeHours: 72 })
-  assert.equal(before.skipped, 'notOfficial')
+  assert.equal(before.skipped, 'notLive')
   confirmPlatform(db, id, 'ps5', { sourceId: 'playstation-blog', version: '01.006.000' })
   const ps5 = getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!
   assert.equal(ps5.verification, 'official')
@@ -95,8 +95,40 @@ test('an official PS5 post is pending until a person confirms; push fires once',
   assert.deepEqual(sent.map((s) => s.token).sort(), ['a'.repeat(64), 'b'.repeat(64)])
   assert.equal(sent[0]!.payload.releaseId, id)
   assert.match(sent[0]!.payload.aps.alert.body, /Update 1\.6 is out on PS5 \(version 01\.006\.000\)/)
+  assert.equal(sent[0]!.payload.aps['interruption-level'], 'active')
+  assert.equal(getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!.alert?.style, 'standard')
   assert.equal((await pushPs5Release(db, apns, id, { maxAgeHours: 72 })).skipped, 'alreadyPushed')
   assert.equal(db.prepare('SELECT COUNT(*) AS n FROM review_items WHERE release_id = ? AND resolved_at IS NULL').get(id)!.n, 0)
+})
+
+test('a press report that an update is live earns one quiet "Unconfirmed" alert, and confirming it does not alert again', async () => {
+  const { db } = await setup()
+  const id = 'dawnwalker@1.1'
+  const t = new Date().toISOString()
+  db.prepare("INSERT INTO devices (id, key_hash, apns_token, environment, created_at, updated_at) VALUES ('a', 'ha', ?, 'production', ?, ?)").run('a'.repeat(64), t, t)
+  db.prepare("INSERT INTO follows (device_id, game_id, notify) VALUES ('a', 'dawnwalker', 'all')").run()
+  const sent: any[] = []
+  const apns = { send: async (_t: string, _e: string, payload: object) => (sent.push(payload), { status: 200 }) } as unknown as Apns
+  assert.deepEqual(getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!.alert, { style: 'quiet', tag: 'Unconfirmed' })
+
+  const out = await pushReportedPs5(db, apns, { maxAgeHours: 1e6 })
+  // Yōtei's press report is live too, but nobody follows it.
+  assert.deepEqual(out.map((o) => [o.releaseId.replace(/@.*/, ''), o.style, o.sent]).sort(), [['dawnwalker', 'quiet', 1], ['yotei', 'quiet', 0]])
+  const p = sent[0]
+  assert.equal(p.aps.alert.subtitle, 'Unconfirmed · Reported on PS5')
+  assert.match(p.aps.alert.body, /Update 1\.1 looks to be out on PS5.*Not confirmed yet\./)
+  assert.equal(p.aps['interruption-level'], 'passive')
+  assert.equal(p.aps.sound, undefined)
+  assert.equal(p.aps['thread-id'], 'dawnwalker.unconfirmed')
+  assert.deepEqual([p.verification, p.tag], ['reported', 'Unconfirmed'])
+  assert.equal((await pushReportedPs5(db, apns, { maxAgeHours: 1e6 })).length, 0)
+
+  confirmPlatform(db, id, 'ps5', { sourceId: 'dawnwalker-news', version: '01.004.001' })
+  assert.deepEqual(getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!.alert, { style: 'standard' })
+  assert.equal((await pushPs5Release(db, apns, id, { maxAgeHours: 1e6 })).skipped, 'alreadyPushed')
+  assert.equal(sent.length, 1)
+  // Announced or pending rows earn no alert.
+  assert.equal(getRelease(db, 'kcd2@1.7')!.platforms.find((p) => p.platform === 'ps5')!.alert, undefined)
 })
 
 test('press never downgrades an official fact, and a second ingest reads nothing twice', async () => {
