@@ -1,7 +1,17 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { classify, consoleVersionOf, nameRelease, ps5StatusOf, sizeBytesOf, studioKindOf } from '../src/ingest/classify.ts'
+import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf, studioKindOf } from '../src/ingest/classify.ts'
 import { extractNotes, platformsFor, tagNotes } from '../src/ingest/notes.ts'
+
+test('only a post that says the update is out on PS5 counts as official PS5 evidence', () => {
+  assert.ok(ps5LiveStated('Patch 1.04 is now live on PC, PS5 and Xbox Series X|S.'))
+  assert.ok(ps5LiveStated('The PS5 version of Hotfix 2 is available now.'))
+  assert.ok(ps5LiveStated('Update 3 is rolling out on PlayStation 5 and PC'))
+  assert.ok(!ps5LiveStated('Update 3 is live on PC. The PS5 version follows next week.'))
+  assert.ok(!ps5LiveStated('Patch 5 is live now and fixes PS5 controller button prompts.'))
+  assert.ok(!ps5LiveStated('We are working on the PS5 patch. Stay tuned!'))
+  assert.ok(!ps5LiveStated('Update 1.1 is out now on PC! Notes for PlayStation 5 follow on our site.'))
+})
 
 test('studio labels win and name the release', () => {
   assert.deepEqual(nameRelease('The Blood of Dawnwalker - Update 1.1 Patch Notes', '2026-10-22T09:00:00Z'), { displayName: 'Update 1.1', versionKey: '1.1', studioKind: 'major' })

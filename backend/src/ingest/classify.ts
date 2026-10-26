@@ -90,6 +90,18 @@ export const sizeBytesOf = (text: string) => {
 }
 
 /** For a post that names PS5: is the update out there, coming later, or not coming at all? */
+/**
+ * True when an official post says in so many words that the update is out on PS5 ("now live on PC, PS5
+ * and Xbox", "PS5 patch 1.04 is available"), not just that it names PS5. Controller mentions (a "PS5
+ * controller" on PC) don't count. Such a post makes the PS5 row official without a person.
+ */
+export const ps5LiveStated = (text: string) => {
+  const t = text.replace(/(PS5|PlayStation\s*®?\s*5)(\s*(DualSense|DualSense Edge))?\s*(controllers?|pads?|gamepads?|button prompts?|icons?|glyphs?)|DualSense/gi, '')
+  if (ps5StatusOf(t) !== 'live') return false
+  const live = '(live|out now|now out|available|rolling out|released|is here|has arrived|deployed|deploying)'
+  return new RegExp(`(PS5|PlayStation\\s*®?\\s*5)[^.!?\\n]{0,80}\\b${live}|\\b${live}[^.!?\\n]{0,80}(PS5|PlayStation\\s*®?\\s*5)`, 'i').test(t)
+}
+
 export const ps5StatusOf = (text: string): PlatformStatus => {
   const near = (re: string) => new RegExp(`(PS5|PlayStation\\s*®?\\s*5|consoles?)[^.!?\\n]{0,80}${re}|${re}[^.!?\\n]{0,80}(PS5|PlayStation\\s*®?\\s*5|consoles?)`, 'i')
   if (near('(not planned|no plans|will not|won\'t)').test(text)) return 'notPlanned'

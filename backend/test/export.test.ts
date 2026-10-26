@@ -13,7 +13,7 @@ import { fakeFetch, rss } from './helpers.ts'
 test('static feed: index, per-game files, latest and review, stable across quiet runs', async () => {
   const db = openDb(':memory:')
   const fetchFn = fakeFetch({
-    'https://blog.playstation.com/feed/': rss([{ title: 'Black Myth: Wukong Update 1.2 out now on PS5', link: 'https://blog.playstation.com/wukong', date: '2026-10-20T10:00:00Z', body: '<ul><li>Added new boss</li></ul>' }]),
+    'https://blog.playstation.com/feed/': rss([{ title: 'Black Myth: Wukong Update 1.2 detailed for PS5', link: 'https://blog.playstation.com/wukong', date: '2026-10-20T10:00:00Z', body: '<ul><li>Added new boss</li></ul>' }]),
   })
   const deps = { db, fetchFn, igdb: null }
   await seedGames(deps)

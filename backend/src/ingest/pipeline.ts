@@ -4,18 +4,19 @@ import { registry, type SourceDef } from '../registry.ts'
 import * as store from '../store.ts'
 import type { PlatformStatus, Post } from '../types.ts'
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
-import { classify, consoleVersionOf, nameRelease, ps5StatusOf, sizeBytesOf } from './classify.ts'
+import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import type { Igdb } from './igdb.ts'
 import { extractNotes, mentionsPs5 } from './notes.ts'
 
 // The poll job from docs/ps5-patch-data.md. Rules that matter:
-//  - Only an official source that names PS5 can create a PS5 row, and only as `pending`; a person
-//    confirms it (see confirm.ts) before it counts or pushes.
+//  - Only an official source that names PS5 can create a PS5 row. When the post says outright that
+//    the update is live on PS5 (ps5LiveStated) the row is official at once (Terry, 2026-10-26:
+//    "Unconfirmed" should be rare); otherwise it is `pending` until a person confirms it (confirm.ts).
 //  - Press (trust: secondary) fills PS5 facts as `reported`. A press report that an update is live
 //    earns one quiet alert tagged "Unconfirmed" (push/notify.ts, after the poll); it never makes a
 //    row official.
-//  - Steam is the PC signal. A Steam post that mentions PS5 is a lead for the review queue, never
-//    a PS5 fact.
+//  - Steam is the PC signal. A studio's Steam post that says the update is live on PS5 too makes
+//    the PS5 row official; one that only mentions PS5 is a lead for the review queue.
 //  - Each source is polled at most hourly; robots.txt and 403s switch it off.
 
 export interface IngestDeps {
@@ -208,6 +209,21 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     return releaseId
   }
 
+  // A studio post that says the update is live on PS5: official without a person, so the release
+  // is On PS5 and its pending review items are closed.
+  const officialPs5 = (releaseId: string, ps5Only = true) => {
+    const version = consoleVersionOf(text, { ps5Only })
+    const size = sizeBytesOf(text)
+    store.upsertPlatform(db, releaseId, 'ps5', {
+      status: 'live',
+      verification: 'official',
+      version: version ? store.field(version, 'official', s.id) : null,
+      sizeBytes: size ? store.field(size, 'official', s.id) : null,
+      liveAt: store.field(post.publishedAt, 'official', s.id),
+    })
+    db.prepare(`UPDATE review_items SET resolved_at = ?, resolution = 'autoConfirmed' WHERE release_id = ? AND platform = 'ps5' AND resolved_at IS NULL`).run(now(), releaseId)
+  }
+
   const pcOnly = s.platforms.every((p) => p === 'pc')
   const namesPs5 = s.ps5Signal === 'always' || mentionsPs5(text)
   if (!pcOnly && !namesPs5) return null // an official multi-platform post that doesn't name PS5 says nothing about PS5
@@ -217,10 +233,15 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
 
   if (pcOnly) {
     store.upsertPlatform(db, releaseId, 'pc', { status: 'live', verification: 'official', liveAt: store.field(post.publishedAt, 'official', s.id) })
-    if (mentionsPs5(text)) review(releaseId, 'steamMentionsPs5')
+    if (ps5LiveStated(text)) officialPs5(releaseId)
+    else if (mentionsPs5(text)) review(releaseId, 'steamMentionsPs5')
     return releaseId
   }
 
+  if (ps5LiveStated(text)) {
+    officialPs5(releaseId, s.ps5Signal !== 'always')
+    return releaseId
+  }
   const status = ps5StatusOf(text)
   const version = consoleVersionOf(text, { ps5Only: s.ps5Signal === 'always' })
   const size = sizeBytesOf(text)
@@ -254,7 +275,9 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       const posts = await poll(deps, s, summary, { until: opts.until })
       // Oldest first, so hotfix inference sees the release before it.
       for (const post of (posts ?? []).sort((a, b) => a.publishedAt.localeCompare(b.publishedAt))) {
-        if (store.isSeen(deps.db, s.id, post.postId)) continue
+        // A backfill re-reads official posts already seen, so new rules apply to old releases; reading
+      // is idempotent. Press posts are not re-read (each costs a page at the site's Crawl-delay).
+      if (store.isSeen(deps.db, s.id, post.postId) && !(opts.until && s.trust === 'official')) continue
         tx(deps.db, () => store.markSeen(deps.db, s.id, post.postId, handlePost(deps, game, s, post, summary)))
       }
     }

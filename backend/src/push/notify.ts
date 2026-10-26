@@ -94,10 +94,10 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
   return out
 }
 
-/** After a poll: the one quiet "Unconfirmed" alert for each PS5 row the press now reports live. */
-export const pushReportedPs5 = async (db: DB, apns: Apns | null, opts: { maxAgeHours: number; allow?: boolean }) => {
+/** After a poll: the one alert for each PS5 row that is now live, official (standard) or press-reported (quiet). */
+export const pushNewPs5 = async (db: DB, apns: Apns | null, opts: { maxAgeHours: number; allow?: boolean }) => {
   const ids = db
-    .prepare("SELECT release_id FROM platform_releases WHERE platform = 'ps5' AND status = 'live' AND verification = 'reported' AND pushed_at IS NULL")
+    .prepare("SELECT release_id FROM platform_releases WHERE platform = 'ps5' AND status = 'live' AND verification IN ('official', 'reported') AND pushed_at IS NULL")
     .all() as { release_id: string }[]
   const out: PushOutcome[] = []
   for (const { release_id } of ids) out.push(await pushPs5Release(db, apns, release_id, opts))
