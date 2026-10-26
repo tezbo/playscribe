@@ -105,8 +105,10 @@ releases = [
     {
         "id": "dawnwalker@1.0", "gameId": "dawnwalker", "displayName": "Launch",
         "kind": "major", "kindBasis": "inferred", "announcedAt": day("2026-09-03"),
-        "notes": [], "sourceIds": ["shacknews"],
-        "platforms": [plat(p, "live", "reported", "2026-09-03", "shacknews") for p in ("ps5", "pc", "xboxSeries")],
+        # PS5 is official: the studio announced the 3 Sep PS5 launch and its own posts cover PS5 updates since.
+        "notes": [], "sourceIds": ["dawnwalker-news", "shacknews"],
+        "platforms": [plat("ps5", "live", "official", "2026-09-03", "dawnwalker-news")]
+                     + [plat(p, "live", "reported", "2026-09-03", "shacknews") for p in ("pc", "xboxSeries")],
         "headline": "Available on PC, PlayStation 5 and Xbox Series X|S",
         "summary": "The game launched worldwide. Playscribe has not tracked any launch-window hotfixes, so this entry marks where the journal starts rather than listing changes.",
         "keyChanges": [],
