@@ -64,7 +64,9 @@ struct NotifyPref: Codable, Hashable {
 struct NavState: Codable, Hashable {
     var tab: AppTab = .library
     var gameID: String?
-    var chapter: Chapter = .updates
+    var chapter: Chapter = .updates {
+        didSet { if let g = gameID { chapters = (chapters ?? [:]).merging([g: chapter]) { $1 } } }
+    }
     var expanded: [String: Bool] = [:]
     /// The id of the first visible row per scroll view.
     var anchors: [String: String] = [:]
@@ -75,6 +77,8 @@ struct NavState: Codable, Hashable {
     var noteDraft: [String: String] = [:]
     /// D-2: the release the Page shows, per game. Optional so older saved state still decodes.
     var selected: [String: String]?
+    /// D-13: the chapter last opened, per game.
+    var chapters: [String: Chapter]?
 }
 
 struct PersistedState: Codable {
@@ -122,7 +126,10 @@ final class AppModel {
     var highlight: String?
     /// GR-4: the in-book and Search tab note query, and its scope. Kept across pose changes (P-1).
     var noteQuery = ""
-    var noteScope: NoteScope = .thisGame
+    /// D-13: the notes-search scope persists.
+    var noteScope: NoteScope = NoteScope(rawValue: UserDefaults.standard.string(forKey: "noteScope") ?? "") ?? .thisGame {
+        didSet { UserDefaults.standard.set(noteScope.rawValue, forKey: "noteScope") }
+    }
     var recentSearches: [String] = []
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
@@ -331,7 +338,8 @@ final class AppModel {
         n.tab = .library
         n.gameID = gameID
         n.lastGameID = gameID
-        n.chapter = chapter ?? (sameGame ? n.chapter : .updates)
+        // D-13: each game reopens on the chapter last opened in it.
+        n.chapter = chapter ?? (sameGame ? n.chapter : (n.chapters?[gameID] ?? .updates))
         if let releaseID {
             n.selected = (n.selected ?? [:]).merging([gameID: releaseID]) { $1 }
             n.expanded["rel:\(releaseID)"] = true

@@ -1,4 +1,4 @@
-# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v2.0, 2026-10-25: section 11 "One layout, every pose" after Terry's native test supersedes section 9, B-5, B-6, R-9, R-10, TT-1 and TT-3; v1.4: section 10 gamer-review fixes GR-1..GR-7, N-11 quiet Reported alert; v1.3 Tabletop and video redesign TT/VB; v1.2 section 9 Open pose and transitions added; v1.1 added G-12, G-13)
+# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v2.1, 2026-10-25: D-10..D-13 side swap, multitasking, PS5-style tiles, saved preferences; v2.0 section 11 "One layout, every pose" after Terry's native test supersedes section 9, B-5, B-6, R-9, R-10, TT-1 and TT-3; v1.4: section 10 gamer-review fixes GR-1..GR-7, N-11 quiet Reported alert; v1.3 Tabletop and video redesign TT/VB; v1.2 section 9 Open pose and transitions added; v1.1 added G-12, G-13)
 
 Owner: UX/CX QA thread. Decided 2026-10-24 under Terry's delegation. This is the contract the SwiftUI app builds against and QA tests against. Put it in the repo as `docs/ux-acceptance.md`. IDs are stable: cite them in commits and test names.
 
@@ -66,7 +66,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 
 ## 3. Library
 
-- **B-1** Closed: rows have a 44 pt cover, the name (up to 2 lines), a status pill, the latest **On PS5** release name with its date, and an unread count. Open flat: 112 pt tiles. Book: 100 pt tiles. Tabletop: 84 pt tiles. One fixed cover size per pose (Terry). When divided, prefer an even number of columns if the fixed size allows it.
+- **B-1** *(Superseded by D-12: tiles are the default and rows are the List option.)* Closed: rows have a 44 pt cover, the name (up to 2 lines), a status pill, the latest **On PS5** release name with its date, and an unread count. Open flat: 112 pt tiles. Book: 100 pt tiles. Tabletop: 84 pt tiles. One fixed cover size per pose (Terry). When divided, prefer an even number of columns if the fixed size allows it.
 - **B-2** *(Superseded by GR-1.)* A game with no On PS5 release shows its latest known PS5 version and date with "Watching for PS5 notes", never a bare "No PS5 notes yet".
 - **B-3** Default sort is "Recently updated on PS5". The other sort is "Name". Filters are All, Owned, Wishlist and Watching, each with a count.
 - **B-4** "Continue" tile: the game with the most recent unread On PS5 release, as the first item, with key art. Tapping it opens that game on its newest unread release. It is hidden when nothing is unread.
@@ -296,13 +296,13 @@ He's right. We gave every pose its own layout (the Spread, a sidebar, a stage), 
 - the **Page**, which is the release you're reading;
 - the **Contents**, which is the game's chapters, search, releases and actions.
 
-The game book is a single `ArrangementView(.split)` with the Page as primary and the Contents as secondary. Apple's container then does the work:
+The game book is a single `ArrangementView(.split)`. A split puts its primary leading (side by side) or on top (stacked). So in side-by-side layouts the Contents are primary (leading, like Mail's list), unless the user swaps sides (D-10). In stacked layouts the Page is primary (on top, the standing half in Tabletop). The views keep stable identity whichever slot they fill. *(v2.1, after Terry's question: the reading side defaults to the right. Apple's own split apps (Mail, Notes) put the list leading and the reading pane trailing, and the system puts the reading pane's bars on the vertical rail beside it. The Contents' rows sit under the left thumb in a two-handed grip.)*
 
 | Pose | Page | Contents | Rail / bars |
 |---|---|---|---|
 | Closed (outer, landscape) | full display; it includes its own release list inline, so it behaves as today's closed game book | hidden (system: primary only) | vertical rail |
-| Open landscape (flat) | leading half | trailing half, next to the rail | vertical rail |
-| Book (vertical fold) | left page | right page, next to the rail | vertical rail |
+| Open landscape (flat) | trailing half, beside the rail (default; D-10 swaps) | leading half | vertical rail |
+| Book (vertical fold) | right page (default; D-10 swaps) | left page | vertical rail |
 | Open portrait (flat) | top half | bottom half | horizontal bars |
 | Tabletop (horizontal fold) | standing half, display only, paged (TT-2) | flat half: everything you touch | trailing rail on the flat half |
 
@@ -329,7 +329,7 @@ Open becomes Book, and Open portrait becomes Tabletop, with nothing moving excep
   - "Mark n read" when something is unread;
   - the release timeline (one 44 pt row per release with date, tag and unread dot; the selected row highlighted; GR-1 rows for releases with no notes);
   - in Tabletop only, the section outline and Previous/Next (TT-2).
-  - Tapping a release changes the Page in place, with no navigation push. The Contents always sit next to the rail, so every control is within reach of the same hand (HIG: locate controls near the content they affect).
+  - Tapping a release changes the Page in place, with no navigation push. By default the Contents sit leading, under the left thumb, and the Page sits beside the rail that holds its actions (D-10 can swap them).
 - **D-5 Library: one grid, every pose.** There is a single `LazyVGrid` with one large title, "Library", shown once. The Continue tile is the first and largest (B-4).
   - Closed: rows (B-1).
   - Open: 112 pt tiles.
@@ -353,12 +353,56 @@ Open becomes Book, and Open portrait becomes Tabletop, with nothing moving excep
   - Folding or unfolding: the halves stay put, and only the fold appears or disappears.
   - Rotating (Open landscape to portrait): the Contents move from beside the Page to under it, the system split behaviour.
   - Reduce Motion: cross-fade (T-4).
+- **D-10 Swap sides.**
+  - In side-by-side layouts (Open landscape, Book), a "Swap sides" control sits at the top corner of the Contents panel nearest the Page. It moves the Page and the Contents to opposite halves.
+  - The choice applies to every game and persists (D-13) until it's swapped back.
+  - It's hidden in stacked layouts (Open portrait, Tabletop), where the Page is always on top, and in Closed.
+  - The glyph is brand/ios/symbols/swap-sides.svg (fill variant: swap-sides.fill.svg), drawn by the brand designer and accepted by QA on 2026-10-25. Use it as a template image with Preserve Vector Data until an SF Symbol template is made on the Mac (README steps). The button versions are swap-sides-button(.svg / -ember.svg), at 30 pt with the glyph at 17 pt. The title is "Swap sides" (G-3, GR-6a).
+  - The swap animates with the T-2 spring, and both pieces keep their scroll positions.
+  - Acceptance: swap, change game, close and reopen, relaunch: the side holds every time.
+- **D-11 Sharing the screen with another app (Split View).** Apple, fetched 2026-10-25:
+  - "When two apps share the inner display with Split View multitasking, each one places controls along its outer edge, so the left app has controls on the left."
+  - "Use safe areas to make sure controls don't cover your content, including controls on the opposite edge."
+  - From the iPhone Duo tech talk: "All apps participate in multitasking", in side-by-side and stacked layouts, decided with "size classes and scene geometry".
+
+  Rules:
+  - Layout keys on the scene's size class and bounds, never on the device pose. A compact-width scene shows the one-piece layout (Library, then the game book with its releases inline, the same as Closed). A regular-width scene shows Page plus Contents. This isn't the closed pose: the rail sits on whichever edge the system chooses (the outer edge), and content uses the safe area on both sides.
+  - Entering, leaving or resizing Split View never resets state (D-2). The same game, release, anchor and playing video carry over.
+  - A fold inside our scene still applies TT-0. If the fold falls between the two apps, there's no division in our scene and nothing changes.
+  - Video keeps the system player, with Picture in Picture available, so a user can keep watching while using the other app.
+  - Toasts and the N-7 pill anchor to our scene, away from the rail edge (`toolbarVerticalEdge`).
+  - Acceptance: screenshots with Playscribe on the left and on the right of another app, both open flat and in Book, plus a stacked layout with video if the simulator offers one. State holds across enter and exit.
+- **D-12 Library: PS5-style tiles by default.** This mirrors the PS5 Game Library's square game tiles in a grid, with Sort and Filter beside them.
+  - The default view is **Tiles**: uniform square tiles with 12 pt corners and the game name under each (up to 2 lines, G-8). Each tile carries an unread count badge and a small "Update" mark when a new On PS5 release is unread, which echoes the PS5's update badge.
+  - Art, in order (backend PR #7, 2026-10-25; PS Store art is off limits):
+    1. `squareCover` (`s`).
+    2. Landscape key art (`a`), cropped to a square. Centre the crop on the image's salient region (Vision's attention-based saliency request), not the plain centre, so faces and figures aren't cut.
+    3. The portrait cover fitted inside the square over a blurred fill of itself.
+  - Never crop a cover's logo. The name under the tile carries the title, so the art doesn't have to.
+  - Fixed tile size per pose, and the column count fills the width: Closed 88 pt (3 columns), Open 100 pt, Book 100 pt with an even column count, Open portrait 108 pt, Tabletop 84 pt on the flat half.
+  - Continue: in Closed and Open portrait, the brand v2 "NEW CHAPTER" hero card leads the Library when something is unread (accepted 2026-10-26). In side-by-side layouts and on Tabletop's flat half, it's the first tile, double width (2×1) with key art. Tabletop's standing half shows the hero art, display only.
+  - The second option is **List**: today's rows (old B-1).
+  - A "View" menu sits on the Library's rail under "+" (symbol `square.grid.2x2` or `list.bullet`, matching the current view). It holds View (Tiles / List), Sort (Recently updated on PS5 / Name) and Filter (All / Owned / Wishlist / Watching). The filter chips stay as a shortcut.
+  - Acceptance: a first launch shows Tiles in every pose. Switching to List persists (D-13).
+- **D-13 Every display choice persists.** Each one is stored with `@AppStorage` (or the SwiftData settings model), survives relaunch, pose changes and updates, and is the same on both displays:
+  - Library view, sort and filter (D-12);
+  - reading side (D-10);
+  - spoilers shown, per game (R-5);
+  - notes-search scope (GR-4);
+  - captions on or off for video;
+  - the chapter last opened, per game;
+  - expanded or collapsed facts (GR-3);
+  - notification levels (N-10).
+
+  Nothing resets on a new game, a pose change or a cold launch. Only "Reset to first run" (F-6) clears them.
+  - Acceptance: change each choice, force-quit, relaunch: all of them hold. Then do the same across Closed and Open.
 - **D-9 Evidence needed for native sign-off** (all from the native build, not the prototype):
   - screenshots of the Library and the game book in all five poses;
   - the D-2 test passing, plus a screen recording of Terry's exact path (Closed, Kingdom Come, Book, Closed, Open);
   - the fold-cross test (TT-0) and the D-7 test passing;
   - the Tabletop poses and Open portrait set by hand;
   - VoiceOver and AX5 on the game book.
+  - D-10 swap, D-11 Split View screens, D-12 Tiles in all poses, and the D-13 relaunch test.
 
 ## 12. QA method
 

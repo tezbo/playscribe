@@ -251,6 +251,20 @@ struct GameBookStateTests {
         #expect(!again.isUnread(other))
     }
 
+    @Test("D-13: each game reopens on its last chapter, after a relaunch")
+    func chapterPerGame() {
+        let url = URL.temporaryDirectory.appending(path: "d13-\(UUID().uuidString).json")
+        let m = AppModel(storeURL: url)
+        m.openGame("dawnwalker")
+        m.nav.chapter = .world
+        m.openGame("kcd2")
+        #expect(m.nav.chapter == .updates)
+        m.saveNow()
+        let again = AppModel(storeURL: url)
+        again.openGame("dawnwalker")
+        #expect(again.nav.chapter == .world)
+    }
+
     @Test("D-4: with nothing selected the Page shows the newest PS5 release")
     func defaultSelection() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "d4-\(UUID().uuidString).json"))

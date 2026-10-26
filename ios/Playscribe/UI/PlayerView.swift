@@ -1,3 +1,4 @@
+import AVFoundation
 import SwiftUI
 import WebKit
 
@@ -20,7 +21,10 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     init(videoID: String) {
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
+        // D-11: the trailer keeps playing in Picture in Picture when the person leaves the app.
+        config.allowsPictureInPictureMediaPlayback = true
         config.mediaTypesRequiringUserActionForPlayback = []
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .moviePlayback)
         let content = WKUserContentController()
         config.userContentController = content
         webView = WKWebView(frame: .zero, configuration: config)
@@ -29,7 +33,7 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         webView.scrollView.isScrollEnabled = false
         super.init()
         content.add(self, name: "player")
-        webView.loadHTMLString(Self.html(videoID), baseURL: URL(string: "https://playscribe.app"))
+        webView.loadHTMLString(Self.html(videoID, captions: captionsOn), baseURL: URL(string: "https://playscribe.app"))
     }
 
     nonisolated func userContentController(_ controller: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -53,7 +57,10 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     func seek(to t: Double) { current = t; run("player.seekTo(\(t), true)") }
     func toggleMute() { isMuted.toggle(); run(isMuted ? "player.mute()" : "player.unMute()") }
     func skip(_ seconds: Double) { seek(to: max(0, min(duration, current + seconds))) }
-    var captionsOn = true
+    /// D-13: captions on or off persists.
+    var captionsOn = UserDefaults.standard.object(forKey: "captionsOn") as? Bool ?? true {
+        didSet { UserDefaults.standard.set(captionsOn, forKey: "captionsOn") }
+    }
     func toggleCaptions() {
         captionsOn.toggle()
         run(captionsOn ? "player.loadModule('captions')" : "player.unloadModule('captions')")
@@ -61,7 +68,7 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     func stop() { run("player.stopVideo()") }
     private func run(_ js: String) { webView.evaluateJavaScript(js) }
 
-    static func html(_ id: String) -> String {
+    static func html(_ id: String, captions: Bool) -> String {
         """
         <!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1">
         <style>html,body{margin:0;height:100%;background:#000;overflow:hidden}#p{position:absolute;inset:0;width:100%;height:100%}</style>
@@ -72,7 +79,7 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         function post(m){window.webkit.messageHandlers.player.postMessage(m)}
         function onYouTubeIframeAPIReady(){
           player=new YT.Player('p',{videoId:'\(id)',host:'https://www.youtube-nocookie.com',
-            playerVars:{playsinline:1,controls:1,cc_load_policy:1,rel:0,modestbranding:1,iv_load_policy:3,origin:'https://playscribe.app'},
+            playerVars:{playsinline:1,controls:1,cc_load_policy:\(captions ? 1 : 0),rel:0,modestbranding:1,iv_load_policy:3,origin:'https://playscribe.app'},
             events:{onReady:function(){post({event:'ready',duration:player.getDuration()})},
                     onStateChange:function(e){post({event:'state',state:e.data})},
                     onError:function(e){post({event:'error',code:e.data})}}});

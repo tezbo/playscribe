@@ -81,9 +81,9 @@ struct LibraryShelf: View {
     private var tileSize: CGFloat {
         switch duo.pose {
         case .closed: 88
-        case .flat: 140
-        case .book: 128
-        case .tabletop: 104
+        case .flat: duo.isLandscape ? 100 : 108
+        case .book: 100
+        case .tabletop: 84
         }
     }
 
@@ -142,7 +142,7 @@ struct LibraryShelf: View {
                     .padding(.vertical, 40)
                 }
                 // D-12: the Continue hero spans two tiles; Tabletop shows it on the standing half.
-                if duo.pose != .tabletop, let c = model.continueItem {
+                if let c = model.continueItem {
                     ContinueRow(game: c.game, release: c.release)
                         // D-12: the full hero card in Closed and open portrait; side by side, a
                         // double-width tile.
@@ -453,6 +453,18 @@ struct GameTile: View {
                 SquareCover(game: row.game, size: size)
                     .overlay(alignment: .topTrailing) {
                         if row.unread > 0 { UnreadBadge(count: row.unread).padding(4) }
+                    }
+                    .overlay(alignment: .bottomLeading) {
+                        // D-12: the PS5-style update mark for an unread On PS5 release.
+                        if let r = row.latest, model.isUnread(r) {
+                            Text("Update")
+                                .font(PlayscribeFont.caption2.weight(.semibold))
+                                .foregroundStyle(PlayscribeColor.onAccent)
+                                .padding(.horizontal, 6).padding(.vertical, 2)
+                                .background(PlayscribeColor.accent, in: Capsule())
+                                .padding(5)
+                                .accessibilityHidden(true)
+                        }
                     }
             }
             .buttonStyle(.plain)

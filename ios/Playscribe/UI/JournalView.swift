@@ -157,7 +157,8 @@ struct ReleaseBody: View {
     @Environment(AppModel.self) private var model
     @Environment(\.marginReleaseID) private var marginReleaseID
     var release: Release
-    @State private var factsOpen = false
+    /// D-13: facts expanded or collapsed persists.
+    @AppStorage("factsOpen") private var factsOpen = false
     @State private var summaryOpen = false
 
     var body: some View {
