@@ -101,6 +101,11 @@ struct ModelTests {
         #expect(r?.headline != nil)
     }
 
+    @Test("Steam rule: an 'assumed' PS5 row is released, and unknown verifications don't break the feed")
+    func assumedVerification() throws {
+        #expect(try JSONCoding.decoder.decode([Verification].self, from: Data(#"["assumed","somethingNew"]"#.utf8)) == [.assumed, .pending])
+    }
+
     @Test("No 'on PS5' date falls before the PS5 launch, 12 Nov 2020")
     func ps5Dates() {
         let launch = CatalogGame.ps5Launch

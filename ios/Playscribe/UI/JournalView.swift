@@ -465,3 +465,22 @@ struct SpoilerText: View {
         }
     }
 }
+
+/// Links back to where the notes came from: the studio's PS5 page first, then the Steam post.
+struct SourceLinks: View {
+    var release: Release
+    var body: some View {
+        HStack(spacing: 16) {
+            if let url = release.links?.ps5Page {
+                Link(destination: url) { Label("PS5 update page", systemImage: "arrow.up.right.square") }
+                    .frame(minHeight: 44).tappableFrame()
+            }
+            if let url = release.links?.steamNotes {
+                Link(destination: url) { Label("Steam notes", systemImage: "arrow.up.right.square") }
+                    .frame(minHeight: 44).tappableFrame()
+            }
+        }
+        .font(PlayscribeFont.subheadline)
+        .foregroundStyle(PlayscribeColor.accent)
+    }
+}

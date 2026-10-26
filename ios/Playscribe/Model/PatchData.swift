@@ -43,10 +43,17 @@ enum Verification: String, Codable, Hashable, Comparable {
     case official
     /// Press only.
     case reported
-    /// Extracted automatically, not confirmed yet. Never shown.
+    /// Extracted automatically, not confirmed yet.
     case pending
+    /// A Steam patch with no word on PS5, taken as out on PS5 too (Steam rule, 27 Oct).
+    case assumed
 
-    private var rank: Int { switch self { case .pending: 0; case .reported: 1; case .official: 2 } }
+    /// Unknown values from a newer feed decode as pending rather than failing the whole feed.
+    init(from decoder: Decoder) throws {
+        self = Verification(rawValue: try decoder.singleValueContainer().decode(String.self)) ?? .pending
+    }
+
+    private var rank: Int { switch self { case .pending: 0; case .reported: 1; case .assumed: 2; case .official: 3 } }
     static func < (a: Self, b: Self) -> Bool { a.rank < b.rank }
 }
 
@@ -145,6 +152,9 @@ struct Release: Codable, Hashable, Identifiable {
     var videoNote: String?
     /// The short line a notification carries after "is live on PS5:" (N-4).
     var pushLine: String?
+    /// Where the notes came from (Terry, 27 Oct): the Steam post and the studio's PS5 page.
+    struct Links: Codable, Hashable { var steamNotes: URL?; var ps5Page: URL? }
+    var links: Links?
     /// Set on releases created by the internal "Simulate update" tool.
     var simulated: Bool?
     /// A simulated release stays hidden until its notification is due.
@@ -153,7 +163,7 @@ struct Release: Codable, Hashable, Identifiable {
     // JSON keys follow docs/api.md (camelCase "Id").
     enum CodingKeys: String, CodingKey {
         case id, gameID = "gameId", displayName, kind, kindBasis, announcedAt, notes, sourceIDs = "sourceIds", platforms
-        case headline, summary, keyChanges, video, videoNote, pushLine, simulated, arrivesAt
+        case headline, summary, keyChanges, video, videoNote, pushLine, links, simulated, arrivesAt
     }
 
     init(id: String, gameID: String, displayName: String, kind: ReleaseKind, kindBasis: KindBasis, announcedAt: Date,
@@ -182,6 +192,7 @@ struct Release: Codable, Hashable, Identifiable {
         video = try c.decodeIfPresent(ReleaseVideo.self, forKey: .video)
         videoNote = try c.decodeIfPresent(String.self, forKey: .videoNote)
         pushLine = try c.decodeIfPresent(String.self, forKey: .pushLine)
+        links = try c.decodeIfPresent(Links.self, forKey: .links)
         simulated = try c.decodeIfPresent(Bool.self, forKey: .simulated)
         arrivesAt = try c.decodeIfPresent(Date.self, forKey: .arrivesAt)
     }
@@ -207,6 +218,7 @@ struct Release: Codable, Hashable, Identifiable {
         out.video = feed.video ?? video
         out.videoNote = feed.videoNote ?? videoNote
         out.pushLine = feed.pushLine ?? pushLine
+        out.links = feed.links ?? links
         return out
     }
 }
@@ -277,11 +289,15 @@ extension Release {
         // on PS5 unless we can confirm otherwise.
         let liveElsewhere = platforms.contains { $0.platform != .ps5 && $0.status == .live }
         guard let p = ps5 else { return liveElsewhere ? .onPS5 : .pcOnly }
-        if p.verification == .pending { return .pending }
+        // Released (docs/ps5-patch-data.md): live and official, assumed, pending, or reported on
+        // a release Steam or the studio has.
+        if p.verification == .pending && p.status != .live { return .pending }
         switch p.status {
         // V-4 stays rare: Unconfirmed only when the press reports it and neither Steam nor the
         // studio has it.
-        case .live: return p.verification == .official || liveElsewhere ? .onPS5 : .reported
+        case .live:
+            let hasSource = links?.steamNotes != nil || links?.ps5Page != nil
+            return p.verification != .reported || liveElsewhere || hasSource ? .onPS5 : .reported
         case .announced: return p.verification == .official ? .announced : .pcOnly
         case .notPlanned: return p.verification == .official ? .notPlanned : .pcOnly
         case .unknown: return .pcOnly

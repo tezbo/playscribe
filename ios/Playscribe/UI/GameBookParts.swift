@@ -115,6 +115,7 @@ struct ReleasePage: View {
                 if let v = r.ps5Version { Text("·"); Text(v).monospacedDigit() }
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            SourceLinks(release: r)
             if r.isUnconfirmed { UnconfirmedBand() }
             if r.notes.contains(where: { $0.items.contains { $0.spoiler == true } }) {
                 SpoilerLine(gameID: r.gameID)
