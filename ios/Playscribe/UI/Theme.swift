@@ -63,6 +63,23 @@ struct Tag: View {
     }
 }
 
+/// V-4: the Unconfirmed chip. Tertiary text in a 1 pt dashed outline, no fill, no ember. Nothing
+/// confirmed ever uses a dashed outline.
+struct UnconfirmedChip: View {
+    var body: some View {
+        Text("Unconfirmed")
+            .font(PlayscribeFont.caption2.weight(.semibold))
+            .foregroundStyle(PlayscribeColor.textTertiary)
+            .lineLimit(1)
+            .fixedSize()
+            .padding(.horizontal, 7)
+            .padding(.vertical, 2)
+            .overlay(Capsule().strokeBorder(PlayscribeColor.textTertiary, style: StrokeStyle(lineWidth: 1, dash: [3, 2])))
+            .accessibilityElement()
+            .accessibilityLabel("Unconfirmed on PS5, from press reports")
+    }
+}
+
 struct StatusPill: View {
     var status: OwnershipStatus
     var body: some View { Tag(text: status.label, tint: status.tint) }

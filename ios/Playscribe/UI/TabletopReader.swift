@@ -55,8 +55,12 @@ struct TabletopReaderStage: View {
                 .ignoresSafeArea()
             if let section = sections[safe: index] {
                 VStack(alignment: .leading, spacing: 14) {
-                    Text(release?.displayName.uppercased() ?? "")
-                        .font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.accent)
+                    HStack(spacing: 8) {
+                        Text(release?.displayName.uppercased() ?? "")
+                            .font(PlayscribeFont.caption).tracking(1)
+                            .foregroundStyle(release?.isUnconfirmed == true ? PlayscribeColor.textTertiary : PlayscribeColor.accent)
+                        if release?.isUnconfirmed == true { UnconfirmedChip() }
+                    }
                     Text(section.title)
                         .font(.custom("Literata72pt-SemiBold", size: 32, relativeTo: .largeTitle))
                         .lineLimit(3)

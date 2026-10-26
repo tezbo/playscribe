@@ -104,7 +104,10 @@ struct SearchView: View {
                     ForEach(Array(noteHits.prefix(12).enumerated()), id: \.offset) { _, hit in
                         Button { model.openGame(hit.0.gameID, chapter: .updates, releaseID: hit.0.id) } label: {
                             VStack(alignment: .leading, spacing: 2) {
-                                Text("\(hit.0.displayName) · \(model.game(hit.0.gameID)?.name ?? "")").font(PlayscribeFont.subheadline.weight(.semibold))
+                                HStack(spacing: 6) {
+                                    Text("\(hit.0.displayName) · \(model.game(hit.0.gameID)?.name ?? "")").font(PlayscribeFont.subheadline.weight(.semibold))
+                                    if hit.0.isUnconfirmed { UnconfirmedChip() }
+                                }
                                 Text(hit.1).font(PlayscribeFont.footnote).lineLimit(2)
                             }
                         }

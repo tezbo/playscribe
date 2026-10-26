@@ -133,8 +133,7 @@ struct ReleaseTag: View {
         switch release.ps5State {
         case .onPS5: if release.simulated == true { Tag(text: "Simulated", tint: .simulated) }
         case .announced: Tag(text: "Announced", tint: .ember)
-        case .reported: Tag(text: release.isSilent ? "Reported · Silent update" : "Reported", tint: .secondary)
-                .accessibilityLabel("Reported on PS5")
+        case .reported: UnconfirmedChip()
         case .pcOnly: Tag(text: "PC", tint: .secondary)
         case .notPlanned: Tag(text: "Not planned for PS5", tint: .secondary)
         case .pending: EmptyView()
@@ -243,12 +242,15 @@ enum FactsLine {
         switch r.ps5State {
         case .onPS5: parts.append("Live on PS5")
         case .announced: parts.append("Announced for PS5")
-        case .reported: parts.append("Reported on PS5")
+        case .reported: parts.append("Unconfirmed on PS5")
         case .notPlanned: parts.append("Not planned for PS5")
         case .pcOnly, .pending: parts.append("PC only so far")
         }
         if let v = r.ps5Version { parts.append(v) }
-        if let size = r.ps5?.sizeBytes { parts.append(ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal)) }
+        if let size = r.ps5?.sizeBytes {
+            let text = ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal)
+            parts.append(r.isUnconfirmed ? "\(text) (reported)" : text)
+        }
         parts.append((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth)
         return parts.joined(separator: " · ")
     }

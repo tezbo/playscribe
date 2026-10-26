@@ -176,7 +176,7 @@ extension AppModel {
     /// what is known about the game on PS5.
     func shelfLine(_ row: LibraryRow) -> String {
         if let r = row.latest { return "\(r.displayName) · \(r.ps5Date.dayMonth)" }
-        if let r = ps5Releases(row.id).first { return "\(r.displayName) · \(r.ps5State == .reported ? "Reported" : "Announced")" }
+        if let r = ps5Releases(row.id).first { return "\(r.displayName) · \(r.isUnconfirmed ? "Unconfirmed" : "Announced")" }
         return "\(row.game.ps5AvailabilityLine) · No notes"
     }
 }
@@ -455,8 +455,13 @@ struct GameTile: View {
                         if row.unread > 0 { UnreadBadge(count: row.unread).padding(4) }
                     }
                     .overlay(alignment: .bottomLeading) {
-                        // D-12: the PS5-style update mark for an unread On PS5 release.
-                        if let r = row.latest, model.isUnread(r) {
+                        // D-12: the PS5-style update mark for an unread On PS5 release. V-4: else a
+                        // dashed Unconfirmed chip; one mark per tile, the confirmed one wins.
+                        if row.unread == 0, model.ps5Releases(row.id).first?.isUnconfirmed == true {
+                            UnconfirmedChip()
+                                .background(Color.black.opacity(0.55), in: Capsule())
+                                .padding(5)
+                        } else if let r = row.latest, model.isUnread(r) {
                             Text("Update")
                                 .font(PlayscribeFont.caption2.weight(.semibold))
                                 .foregroundStyle(PlayscribeColor.onAccent)
@@ -476,7 +481,7 @@ struct GameTile: View {
                 .fixedSize(horizontal: false, vertical: true)
             HStack(alignment: .firstTextBaseline, spacing: 4) {
                 Circle().fill(row.status.tint).frame(width: 6, height: 6)
-                Text(model.shelfLine(row)).font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(3)
+                Text(model.shelfLine(row)).font(PlayscribeFont.caption2).foregroundStyle(.secondary).lineLimit(4)
                 Spacer(minLength: 0)
                 // Closed tiles are too narrow for the caption and a button; the cover's menu remains.
                 if duo.pose != .closed {

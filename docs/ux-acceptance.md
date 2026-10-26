@@ -1,4 +1,4 @@
-# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v2.1, 2026-10-25: D-10..D-13 side swap, multitasking, PS5-style tiles, saved preferences; v2.0 section 11 "One layout, every pose" after Terry's native test supersedes section 9, B-5, B-6, R-9, R-10, TT-1 and TT-3; v1.4: section 10 gamer-review fixes GR-1..GR-7, N-11 quiet Reported alert; v1.3 Tabletop and video redesign TT/VB; v1.2 section 9 Open pose and transitions added; v1.1 added G-12, G-13)
+# Playscribe (formerly Gamebook) UX flows and acceptance criteria (v2.2, 2026-10-26: V-4 "Unconfirmed" treatment for press-reported releases, approved by Terry; v2.1, 2026-10-25: D-10..D-13 side swap, multitasking, PS5-style tiles, saved preferences; v2.0 section 11 "One layout, every pose" after Terry's native test supersedes section 9, B-5, B-6, R-9, R-10, TT-1 and TT-3; v1.4: section 10 gamer-review fixes GR-1..GR-7, N-11 quiet Reported alert; v1.3 Tabletop and video redesign TT/VB; v1.2 section 9 Open pose and transitions added; v1.1 added G-12, G-13)
 
 Owner: UX/CX QA thread. Decided 2026-10-24 under Terry's delegation. This is the contract the SwiftUI app builds against and QA tests against. Put it in the repo as `docs/ux-acceptance.md`. IDs are stable: cite them in commits and test names.
 
@@ -28,7 +28,7 @@ Apple sources (read 2026-10-24): Designing for iPhone Duo, Preparing your app fo
 - **G-7** Hit targets are at least 44 × 44 pt. No text is smaller than 11 pt at default size. Contrast meets WCAG AA in dark mode, which is the default appearance.
 - **G-8** Dynamic Type: all text uses text styles. Up to AX5, game names never truncate: they wrap, and rows stack the cover above the text at accessibility sizes. Nothing is clipped horizontally.
 - **G-9** Reduce Motion: no parallax, zoom or animated key art. Transitions become cross-fades. Key-art video and animation do not autoplay when Reduce Motion is on or Video Autoplay is off.
-- **G-10** VoiceOver: every control has a label. Covers are announced as "<Game> cover". Unread dots are announced as "Unread". Verification tags are read out ("Reported on PS5").
+- **G-10** VoiceOver: every control has a label. Covers are announced as "<Game> cover". Unread dots are announced as "Unread". Verification tags are read out ("Unconfirmed on PS5, from press reports", V-4).
 - **G-11** The app is dark by default and supports light mode. The accent colour is used only for interactive elements and unread state.
 - **G-12** No outer-cover content while open. No API lets an app draw on the outer display while the device is open (confirmed by the Xcode build, 2026-10-24). Nothing in the app may depend on a cover, badge or hint there. The brand's cover badge is a design reference only. Re-check if Apple adds an API.
 - **G-13** Accent fills (buttons, badges, unread counts) draw text in accent.on #2A1600, never white. Tertiary text is #A39BAE (at least 4.5:1 on every ink surface).
@@ -118,7 +118,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 |---|---|---|---|---|
 | **On PS5** (live + official) | main release list, Updates tab | yes | yes, once | no tag; version shown |
 | **Announced for PS5** (official) | main list, under "Coming to PS5" | no | no | "Announced" tag, expected date if official |
-| **Reported on PS5** (press only) | main list | no | quiet alert, once (N-11) | "Reported" tag; version only if the press gave one |
+| **Reported on PS5** (press only) | main list, "Unconfirmed" group (V-4) | no | quiet alert, once (N-11) | "Unconfirmed" chip (V-4); version only if the press gave one |
 | **Silent** (reported, no notes) | main list | no | quiet alert, once (N-11) | "Reported" + "Silent update" + "No official notes" |
 | **Pending** | **nowhere** | no | no | none |
 | **PC only so far** | collapsed group "PC only so far · n updates" at the end of the journal | never | never | "PC" tag; never in the Updates tab (footnote count only) |
@@ -127,6 +127,22 @@ Decision: the native launch screen is a plain background colour matching the Lib
 - **V-1** Moving from Reported to On PS5 updates the item in place, removes the tag, makes it unread and pushes once, if notifications allow. Moving from On PS5 to anything else never happens in the UI; corrections edit facts silently.
 - **V-2** A PC version number never appears as a PS5 version anywhere.
 - **V-3** No source names, URLs or credits appear in the UI. Tags are the only provenance signal.
+- **V-4 Unconfirmed is always labelled and visibly separate** (Terry, 2026-10-26: "make sure it's tagged/visually separate, i.e. 'Unconfirmed' or similar"). Every Reported or Silent release is shown to users as **Unconfirmed**. The internal state keeps its name. The treatment never borrows the confirmed look (ember, unread dot, "Update" badge).
+  - **Chip:** "Unconfirmed", in tertiary text (#A39BAE) inside a 1 pt *dashed* outline, with no fill and no ember. Confirmed releases never have a dashed outline. VoiceOver reads "Unconfirmed on PS5, from press reports" (G-10 updated).
+  - **Alert (N-11):** the title starts "Unconfirmed:", for example "Unconfirmed: Kingdom Come: Deliverance II Patch 1.6 on PS5". The body is "From press reports. We'll tell you when it's official."
+    - It uses its own `threadIdentifier` ("unconfirmed"), so the system groups these apart from confirmed updates.
+    - It has a separate notification category, so the long-press preview shows the chip.
+    - On confirmation, the silent replacement takes the confirmed text, with no "Unconfirmed".
+  - **Library tile and row:** no ember "Update" badge and no unread count. A small dashed "Unconfirmed" chip sits on the tile's lower-left corner, and the caption reads "Patch 1.6 · Unconfirmed". If a game has both, the confirmed badge wins and the chip is dropped, so there's only one mark per tile.
+  - **Game book, Contents:** the release timeline shows an "Unconfirmed" subheader above the confirmed releases whenever any exist. Its rows use the dashed outline and chip, never the unread dot.
+  - **Game book, Page:** an unconfirmed release opens with a full-width band under the header that reads "Unconfirmed · From press reports, not in official PS5 notes yet", with a dashed top and bottom rule. The facts line reads "Unconfirmed on PS5 · 7 GB (reported) · 25 Jun".
+  - **Updates tab, search results, the Tabletop reader and the Open Margin** use the same chip.
+  - **When a release is confirmed,** the chip, the band and the group membership disappear in place, and the release becomes unread with the normal ember treatment (V-1).
+  - Acceptance:
+    - Every Reported or Silent release shows "Unconfirmed" on every surface listed above, and no confirmed release shows a dashed outline.
+    - A snapshot test of the tile, row, Page band and alert text.
+    - VoiceOver reads "Unconfirmed".
+    - Confirming removes the treatment without a second alert.
 
 ## 6. Notifications: invitation back
 
@@ -357,7 +373,7 @@ Open becomes Book, and Open portrait becomes Tabletop, with nothing moving excep
   - In side-by-side layouts (Open landscape, Book), a "Swap sides" control sits at the top corner of the Contents panel nearest the Page. It moves the Page and the Contents to opposite halves.
   - The choice applies to every game and persists (D-13) until it's swapped back.
   - It's hidden in stacked layouts (Open portrait, Tabletop), where the Page is always on top, and in Closed.
-  - The glyph is brand/ios/symbols/swap-sides.svg (fill variant: swap-sides.fill.svg), drawn by the brand designer and accepted by QA on 2026-10-25. Use it as a template image with Preserve Vector Data until an SF Symbol template is made on the Mac (README steps). The button versions are swap-sides-button(.svg / -ember.svg), at 30 pt with the glyph at 17 pt. The title is "Swap sides" (G-3, GR-6a).
+  - The glyph is Terry's choice, option A (2026-10-26): the book with the reading page filled and no arrows. Files: brand/ios/symbols/swap-sides.left.svg and swap-sides.right.svg, plus the button variants. The filled page follows the current reading side, so the icon shows where you read now. Use it as a template image with Preserve Vector Data until an SF Symbol template is made on the Mac. Accessibility: the label is "Swap sides" and the value is "Reading on left" or "Reading on right" (`accessibilityValue`), updated on every swap.
   - The swap animates with the T-2 spring, and both pieces keep their scroll positions.
   - Acceptance: swap, change game, close and reopen, relaunch: the side holds every time.
 - **D-11 Sharing the screen with another app (Split View).** Apple, fetched 2026-10-25:

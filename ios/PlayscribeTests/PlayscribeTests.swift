@@ -1,5 +1,7 @@
 import Foundation
 import Testing
+import SwiftUI
+import UserNotifications
 @testable import Playscribe
 
 @MainActor
@@ -269,5 +271,70 @@ struct GameBookStateTests {
     func defaultSelection() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "d4-\(UUID().uuidString).json"))
         #expect(m.selectedRelease("dawnwalker")?.id == m.ps5Releases("dawnwalker").first?.id)
+    }
+}
+
+@MainActor
+struct UnconfirmedTests {
+    func model() -> AppModel { AppModel(storeURL: URL.temporaryDirectory.appending(path: "v4-\(UUID().uuidString).json")) }
+
+    func reported(_ m: AppModel) -> Release {
+        var r = m.releases("dawnwalker").first { $0.isPS5Listed }!
+        let i = r.platforms.firstIndex { $0.platform == .ps5 }!
+        r.platforms[i].status = .live
+        r.platforms[i].liveAt?.verification = .reported
+        r.platforms[i].verification = .reported
+        return r
+    }
+
+    @Test("V-4: the alert says Unconfirmed, groups apart, and confirming uses the confirmed text")
+    func alertText() {
+        let m = model()
+        let r = reported(m)
+        #expect(r.isUnconfirmed)
+        let c = NotificationService.unconfirmedContent(for: r, game: m.game("dawnwalker")!)
+        #expect(c.title == "Unconfirmed: The Blood of Dawnwalker \(r.displayName) on PS5")
+        #expect(c.body == "From press reports. We'll tell you when it's official.")
+        #expect(c.threadIdentifier == "unconfirmed")
+        #expect(c.categoryIdentifier == "unconfirmed")
+        let confirmed = NotificationService.content(for: r, game: m.game("dawnwalker")!, badge: 1)
+        #expect(!confirmed.title.contains("Unconfirmed") && !confirmed.body.contains("Unconfirmed"))
+    }
+
+    @Test("V-4: unconfirmed is never unread, and the facts line says so")
+    func unreadAndFacts() {
+        let m = model()
+        let r = reported(m)
+        #expect(!m.isUnread(r))
+        #expect(FactsLine.text(for: r).hasPrefix("Unconfirmed on PS5"))
+    }
+
+    @Test("V-4: chip, tile, row and Page band render (snapshots attached)")
+    func snapshots() throws {
+        let m = model()
+        let r = reported(m)
+        let views: [(String, AnyView)] = [
+            ("chip", AnyView(UnconfirmedChip())),
+            ("band", AnyView(UnconfirmedBand().frame(width: 360))),
+            ("tag", AnyView(ReleaseTag(release: r))),
+        ]
+        for (name, view) in views {
+            let renderer = ImageRenderer(content: view.environment(m).padding(8).background(Color.ink0))
+            renderer.scale = 3
+            let image = try #require(renderer.uiImage, "\(name) renders")
+            #expect(image.size.width > 10)
+            let url = URL.temporaryDirectory.appending(path: "v4-\(name).png")
+            try image.pngData()?.write(to: url)
+            print("snapshot \(name): \(url.path)")
+        }
+    }
+
+    @Test("D-10: the Swap sides glyph and value follow the reading side")
+    func swapSides() {
+        #expect(SwapSidesButton.glyph(pageOnLeft: true) == "swap-sides.left")
+        #expect(SwapSidesButton.glyph(pageOnLeft: false) == "swap-sides.right")
+        #expect(SwapSidesButton.value(pageOnLeft: true) == "Reading on left")
+        #expect(SwapSidesButton.value(pageOnLeft: false) == "Reading on right")
+        #expect(UIImage(named: "swap-sides.left") != nil && UIImage(named: "swap-sides.right") != nil)
     }
 }

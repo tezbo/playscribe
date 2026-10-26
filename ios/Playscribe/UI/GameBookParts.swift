@@ -113,6 +113,7 @@ struct ReleasePage: View {
                 if let v = r.ps5Version { Text("·"); Text(v).monospacedDigit() }
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            if r.isUnconfirmed { UnconfirmedBand() }
             if r.notes.contains(where: { $0.items.contains { $0.spoiler == true } }) {
                 SpoilerLine(gameID: r.gameID)
             }
@@ -120,6 +121,26 @@ struct ReleasePage: View {
         }
         .id(r.id)
     }
+}
+
+/// V-4: the full-width band an unconfirmed release opens with.
+struct UnconfirmedBand: View {
+    var body: some View {
+        let rule = Line().stroke(PlayscribeColor.textTertiary, style: StrokeStyle(lineWidth: 1, dash: [3, 2])).frame(height: 1)
+        (Text("Unconfirmed").font(PlayscribeFont.subheadline.weight(.semibold))
+            + Text(" · From press reports, not in official PS5 notes yet").font(PlayscribeFont.subheadline))
+        .foregroundStyle(PlayscribeColor.textTertiary)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, 10)
+        .overlay(alignment: .top) { rule }
+        .overlay(alignment: .bottom) { rule }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Unconfirmed on PS5, from press reports, not in official PS5 notes yet")
+    }
+}
+
+nonisolated struct Line: Shape {
+    func path(in r: CGRect) -> Path { Path { $0.move(to: CGPoint(x: r.minX, y: r.midY)); $0.addLine(to: CGPoint(x: r.maxX, y: r.midY)) } }
 }
 
 /// D-6: "Story spoilers hidden · Show", only when the release has spoilers.
@@ -228,22 +249,26 @@ struct ContentsBody: View {
 /// D-10: flips Contents and Page; shown only when they're side by side.
 struct SwapSidesButton: View {
     @Binding var pageOnLeft: Bool
+    private var glyph: String { Self.glyph(pageOnLeft: pageOnLeft) }
+    static func glyph(pageOnLeft: Bool) -> String { pageOnLeft ? "swap-sides.left" : "swap-sides.right" }
+    static func value(pageOnLeft: Bool) -> String { pageOnLeft ? "Reading on left" : "Reading on right" }
     var body: some View {
         Button { withAnimation(.spring(duration: 0.45, bounce: 0.12)) { pageOnLeft.toggle() } } label: {
-            Image("swap-sides")
+            // Option A (Terry, 26 Oct): the filled page shows where you read now.
+            Image(glyph)
                 .renderingMode(.template)
                 .resizable().scaledToFit()
                 .frame(width: 17, height: 17)
-                .foregroundStyle(pageOnLeft ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)
+                .foregroundStyle(PlayscribeColor.textPrimary)
                 .frame(width: 30, height: 30)
-                .background(pageOnLeft ? PlayscribeColor.accent : PlayscribeColor.ink700, in: Circle())
+                .background(PlayscribeColor.ink700, in: Circle())
                 .frame(width: 44, height: 44)
                 .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .accessibilityLabel("Swap sides")
-        .accessibilityValue(pageOnLeft ? "Page on the left" : "Page on the right")
-        .accessibilityShowsLargeContentViewer { Label("Swap sides", image: "swap-sides") }
+        .accessibilityValue(SwapSidesButton.value(pageOnLeft: pageOnLeft))
+        .accessibilityShowsLargeContentViewer { Label("Swap sides", image: glyph) }
         .tappableFrame()
     }
 }
@@ -304,7 +329,10 @@ struct InlineNoteResults: View {
                 } label: {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(h.line).font(PlayscribeFont.subheadline).lineLimit(3)
-                        Text("\(h.release.displayName) · \(h.pcOnly ? "PC only" : h.section)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                        HStack(spacing: 6) {
+                            Text("\(h.release.displayName) · \(h.pcOnly ? "PC only" : h.section)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                            if h.release.isUnconfirmed { UnconfirmedChip() }
+                        }
                     }
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                     .contentShape(Rectangle())
@@ -331,7 +359,15 @@ struct ReleaseTimeline: View {
                 Text(g.ps5AvailabilityLine).font(PlayscribeFont.subheadline)
                 Text("Watching for PS5 notes").font(PlayscribeFont.caption).foregroundStyle(.secondary)
             }
-            ForEach(ps5) { row($0, selected: $0.id == selected) }
+            let unconfirmed = ps5.filter(\.isUnconfirmed)
+            if !unconfirmed.isEmpty {
+                Text("UNCONFIRMED").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+                ForEach(unconfirmed) { row($0, selected: $0.id == selected) }
+                if unconfirmed.count < ps5.count {
+                    Text("ON PS5").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary).padding(.top, 8)
+                }
+            }
+            ForEach(ps5.filter { !$0.isUnconfirmed }) { row($0, selected: $0.id == selected) }
             if !pc.isEmpty {
                 Text("PC ONLY SO FAR").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary).padding(.top, 8)
                 ForEach(pc) { row($0, selected: $0.id == selected) }
@@ -351,6 +387,12 @@ struct ReleaseTimeline: View {
             .padding(.horizontal, 10)
             .frame(minHeight: 44)
             .background(selected ? PlayscribeColor.ink700 : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .overlay {
+                if r.isUnconfirmed {
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .strokeBorder(PlayscribeColor.textTertiary.opacity(0.6), style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
+                }
+            }
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

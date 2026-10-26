@@ -63,15 +63,20 @@ final class NotificationService: NSObject {
         guard level == .all || (level == .major && release.kind.countsAsMajor) else { return }
         guard model.data.notified[release.id] == nil else { return }
         model.data.notified[release.id] = .now
+        center.add(UNNotificationRequest(identifier: release.id, content: Self.unconfirmedContent(for: release, game: game), trigger: nil))
+    }
+
+    /// V-4: an unconfirmed release's alert, grouped and categorised apart from confirmed ones.
+    static func unconfirmedContent(for release: Release, game: CatalogGame) -> UNMutableNotificationContent {
         let c = UNMutableNotificationContent()
-        c.title = game.name
-        c.body = "\(release.displayName) is reported on PS5. \(Brand.name) will confirm it."
-        c.threadIdentifier = game.id
+        c.title = "Unconfirmed: \(game.name) \(release.displayName) on PS5"
+        c.body = "From press reports. We'll tell you when it's official."
+        c.threadIdentifier = "unconfirmed"
         c.interruptionLevel = .passive
         c.sound = nil
         c.userInfo = ["gameId": game.id, "releaseId": release.id, "reported": true]
-        c.categoryIdentifier = "release"
-        center.add(UNNotificationRequest(identifier: release.id, content: c, trigger: nil))
+        c.categoryIdentifier = "unconfirmed"
+        return c
     }
 
     func schedule(release: Release, game: CatalogGame?, level: NotifyLevel, pauseAll: Bool, delay: TimeInterval, model: AppModel) {
@@ -142,7 +147,9 @@ final class NotificationService: NSObject {
     func registerCategories() {
         let category = UNNotificationCategory(identifier: "release", actions: [], intentIdentifiers: [],
                                               hiddenPreviewsBodyPlaceholder: "New update", options: [])
-        center.setNotificationCategories([category])
+        let unconfirmed = UNNotificationCategory(identifier: "unconfirmed", actions: [], intentIdentifiers: [],
+                                                 hiddenPreviewsBodyPlaceholder: "Unconfirmed update", options: [])
+        center.setNotificationCategories([category, unconfirmed])
     }
 }
 
