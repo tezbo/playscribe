@@ -59,3 +59,42 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# --- Swap sides options (2026-10-26), with no arrow sitting on top of the book --------------------
+BIG_L = 'M11 6.4C8.8 4.9 5.6 4.5 2.6 5.1V18.6C5.6 18 8.8 18.4 11 19.9Z'
+BIG_R = 'M13 6.4C15.2 4.9 18.4 4.5 21.4 5.1V18.6C18.4 18 15.2 18.4 13 19.9Z'
+
+
+def opt_a(color='currentColor'):
+    """A: the book with the reading page filled. The fill shows which side you read on; tapping swaps it."""
+    return (f'<path d="{BIG_L}" fill="{color}" stroke="{color}" stroke-width="{SW}" stroke-linejoin="round"/>'
+            f'<path d="{BIG_R}" {STROKE.replace("currentColor", color)}/>')
+
+
+def opt_b(color='currentColor'):
+    """B: arrows inside the pages, offset like an exchange: top one heads right, bottom one heads left."""
+    arrows = ('M4.9 10.4H9' + head((9, 10.4), (4.9, 10.4), 2) +
+              'M19.1 14.6H15' + head((15, 14.6), (19.1, 14.6), 2))
+    return f'<path d="{BIG_L} {BIG_R}{arrows}" {STROKE.replace("currentColor", color)}/>'
+
+
+def opt_c(color='currentColor'):
+    """C: the Duo itself, two screens either side of the hinge, with the reading screen filled."""
+    return (f'<rect x="2.6" y="5" width="8.4" height="14" rx="2" fill="{color}" stroke="{color}" stroke-width="{SW}"/>'
+            f'<rect x="13" y="5" width="8.4" height="14" rx="2" {STROKE.replace("currentColor", color)}/>')
+
+
+def options():
+    k, off = 17 / 24, (30 - 17) / 2
+    for name, fn in (('a', opt_a), ('b', opt_b), ('c', opt_c)):
+        (OUT / f'options/swap-sides-{name}.svg').parent.mkdir(exist_ok=True)
+        (OUT / f'options/swap-sides-{name}.svg').write_text(svg(fn()))
+        for tone, bg, fg in (('', C['ink']['700'], C['text']['primary']), ('-ember', C['accent']['base'], C['accent']['on'])):
+            body = (f'<circle cx="15" cy="15" r="15" fill="{bg}"/>'
+                    f'<g transform="translate({off} {off}) scale({k:.4f})">{fn(fg)}</g>')
+            (OUT / f'options/swap-sides-{name}-button{tone}.svg').write_text(svg(body, 30, '0 0 30 30'))
+
+
+if __name__ == '__main__':
+    options()
