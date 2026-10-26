@@ -111,8 +111,6 @@ struct ReleasePage: View {
                 ReleaseTag(release: r)
             }
             HStack(spacing: 6) {
-                Text(r.kind.label)
-                Text("·")
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
                 if let v = r.ps5Version { Text("·"); Text(v).monospacedDigit() }
             }
@@ -180,7 +178,7 @@ struct NoNotesPage: View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
                 Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
-                Text("No PS5 updates yet · checked \(model.lastChecked.formatted(.relative(presentation: .named)))")
+                Text("No updates yet · checked \(model.lastChecked.formatted(.relative(presentation: .named)))")
                     .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
             GameBasicsView(game: game)
@@ -436,21 +434,17 @@ struct ReleaseTimeline: View {
             Text("RELEASES").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
             if ps5.isEmpty, let g = model.game(gameID) {
                 Text(g.ps5AvailabilityLine).font(PlayscribeFont.subheadline)
-                Text("Watching for PS5 notes").font(PlayscribeFont.caption).foregroundStyle(.secondary)
             }
             let unconfirmed = ps5.filter(\.isUnconfirmed)
             if !unconfirmed.isEmpty {
                 Text("UNCONFIRMED").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
                 ForEach(unconfirmed) { row($0, selected: $0.id == selected) }
                 if unconfirmed.count < ps5.count {
-                    Text("ON PS5").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary).padding(.top, 8)
+                    Text("RELEASED").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary).padding(.top, 8)
                 }
             }
             ForEach(ps5.filter { !$0.isUnconfirmed }) { row($0, selected: $0.id == selected) }
-            if !pc.isEmpty {
-                Text("PC ONLY SO FAR").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary).padding(.top, 8)
-                ForEach(pc) { row($0, selected: $0.id == selected) }
-            }
+            ForEach(pc) { row($0, selected: $0.id == selected) }
         }
     }
 

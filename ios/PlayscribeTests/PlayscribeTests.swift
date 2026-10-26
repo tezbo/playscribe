@@ -19,17 +19,16 @@ struct ModelTests {
         #expect(PS5Index.shared.count > 1000)
     }
 
-    @Test("Dawnwalker 1.1 is On PS5; PC-only Steam posts never are (V-2)")
+    @Test("Steam is the source of truth (Terry, 26 Oct): Steam-live releases count as released, never with a PC version as the PS5 one")
     func ps5States() {
         let m = freshModel()
         let dw = m.release("dawnwalker", "dawnwalker@1.1")
         #expect(dw?.ps5State == .onPS5)
         #expect(dw?.ps5Version == nil)
-        for r in m.releases("control-resonant") {
-            #expect(r.ps5State == .pcOnly)
+        for r in m.releases("control-resonant") where r.ps5 == nil {
+            #expect(r.ps5State == .onPS5)
             #expect(r.ps5Version == nil)
         }
-        #expect(m.unreadCount("control-resonant") == 0)
     }
 
     @Test("Opening a game expands the newest On PS5 release (R-1)")

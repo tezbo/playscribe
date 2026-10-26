@@ -26,7 +26,7 @@ struct JournalView: View {
                 // GR-1: never an empty game. When it's out, and that we're watching for notes.
                 VStack(alignment: .leading, spacing: 6) {
                     Text(game.ps5AvailabilityLine).font(PlayscribeFont.headline)
-                    Text("Watching for PS5 notes · checked \(model.lastChecked.formatted(.relative(presentation: .named)))")
+                    Text("No updates yet · checked \(model.lastChecked.formatted(.relative(presentation: .named)))")
                         .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                 }
                 .padding(.vertical, 8)
@@ -38,7 +38,7 @@ struct JournalView: View {
             if !pc.isEmpty {
                 Button { model.setExpanded(groupKey, !groupOpen) } label: {
                     HStack {
-                        Text("PC only so far").font(PlayscribeFont.headline)
+                        Text("Other updates").font(PlayscribeFont.headline)
                         Text("· \(pc.count) update\(pc.count == 1 ? "" : "s")").foregroundStyle(.secondary)
                         Spacer()
                         Image(systemName: "chevron.down").rotationEffect(.degrees(groupOpen ? 180 : 0))
@@ -134,7 +134,7 @@ struct ReleaseTag: View {
         case .onPS5: if release.simulated == true { Tag(text: "Simulated", tint: .simulated) }
         case .announced: Tag(text: "Announced", tint: .ember)
         case .reported: UnconfirmedChip()
-        case .pcOnly: Tag(text: "PC", tint: .secondary)
+        case .pcOnly: EmptyView()
         case .notPlanned: Tag(text: "Not planned for PS5", tint: .secondary)
         case .pending: EmptyView()
         }
@@ -240,11 +240,11 @@ enum FactsLine {
     static func text(for r: Release) -> String {
         var parts: [String] = []
         switch r.ps5State {
-        case .onPS5: parts.append("Live on PS5")
+        case .onPS5: parts.append("Released")
         case .announced: parts.append("Announced for PS5")
         case .reported: parts.append("Unconfirmed on PS5")
         case .notPlanned: parts.append("Not planned for PS5")
-        case .pcOnly, .pending: parts.append("PC only so far")
+        case .pcOnly, .pending: parts.append("Released")
         }
         if let v = r.ps5Version { parts.append(v) }
         if let size = r.ps5?.sizeBytes {
@@ -313,17 +313,15 @@ struct Facts: View {
             }
         }
         .font(PlayscribeFont.subheadline)
-        Text("\(Brand.name) can't see what's installed on your console.").font(PlayscribeFont.footnote).foregroundStyle(.secondary)
     }
 
     private var status: String {
         switch release.ps5State {
-        case .onPS5: "Live on PS5"
+        case .onPS5: "Released"
         case .announced: "Announced for PS5"
         case .reported: "Reported on PS5"
         case .notPlanned: "Not planned for PS5"
-        case .pcOnly, .pending:
-            "Live on " + release.platforms.filter { $0.status == .live }.map(\.platform.label).joined(separator: ", ") + ". Not confirmed on PS5."
+        case .pcOnly, .pending: "Released"
         }
     }
 

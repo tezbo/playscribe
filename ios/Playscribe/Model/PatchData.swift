@@ -273,7 +273,9 @@ extension Release {
     var ps5: PlatformRelease? { platforms.first { $0.platform == .ps5 } }
 
     var ps5State: PS5State {
-        guard let p = ps5 else { return .pcOnly }
+        // Terry, 26 Oct: Steam is the source of truth. A release live on Steam counts as released
+        // on PS5 unless we can confirm otherwise.
+        guard let p = ps5 else { return platforms.contains { $0.status == .live } ? .onPS5 : .pcOnly }
         if p.verification == .pending { return .pending }
         switch p.status {
         case .live: return p.verification == .official ? .onPS5 : .reported

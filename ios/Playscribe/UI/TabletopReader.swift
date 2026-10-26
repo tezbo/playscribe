@@ -29,7 +29,7 @@ extension AppModel {
             out.append(ReaderSection(id: "fixes", title: "Fixes",
                                      body: "\(r.noteCount) listed changes, including: " + first.joined(separator: " ")))
         }
-        var facts = ["Status: " + (r.ps5State == .onPS5 ? "Live on PS5" : r.ps5State == .reported ? "Reported on PS5" : "Not confirmed on PS5"),
+        var facts = ["Status: " + (r.isUnconfirmed ? "Unconfirmed" : "Released"),
                      "PS5 version: " + (r.ps5Version ?? "not published yet")]
         if let size = r.ps5?.sizeBytes {
             facts.append("Download: " + ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal) + (size.verification == .reported ? " (reported)" : ""))
