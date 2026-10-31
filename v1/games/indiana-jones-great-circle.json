@@ -1,0 +1,3059 @@
+{
+ "game": {
+  "id": "indiana-jones-great-circle",
+  "igdbId": 142415,
+  "name": "Indiana Jones and the Great Circle",
+  "cover": {
+   "imageId": "co7nbc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7nbc.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3qeq",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3qeq.jpg"
+  },
+  "ps5Release": "2025-04-17",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "indiana-jones-great-circle@8",
+   "gameId": "indiana-jones-great-circle",
+   "displayName": "Update 8",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-12T15:17:10.000Z",
+   "notes": [
+    {
+     "title": "Shanghai Club outfit is now available!",
+     "items": [
+      {
+       "text": "We’ve added a new outfit for Indy for all players across all platforms, based on the suit he wore in Club Obi Wan at the beginning of Indiana Jones and the Temple of Doom™.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "To switch to this outfit, visit the “Outfit” tab in the Options menu and select the “Shanghai Club” outfit.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "When equipped, Indy will wear this outfit whenever he isn’t wearing a disguise, or if the level requires a special outfit such as in Marshall College or in Nepal.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "GOG - DualSense support",
+     "items": [
+      {
+       "text": "The GOG version of the game now supports the DualSense controller.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Nintendo Switch 2 – Features",
+     "items": [
+      {
+       "text": "Update 8 brings new Nintendo Switch 2 features for launch day, including support for Polish Localization and adds Mouse Controls. Mouse controls can be activated from within the game’s “Options” menu from the “Controller” tab in the “Mouse Controls Look” setting.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "Many CPU optimizations were made throughout the game in advance of the initial Nintendo Switch 2 cartridge release, to reduce overall CPU load.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Path Tracing (PC)",
+     "items": [
+      {
+       "text": "Fixed crashes that could occur on AMD graphics cards when Path Tracing option was enabled.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Reviewed against Vulkan validation layers and fixed some minor issues to help safeguard against possible future driver updates.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where some specific reflections were too bright when using Ray Traced Reflections.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Upscalers and Frame Generation (PC)",
+     "items": [
+      {
+       "text": "Frame Generation for Nvidia DLSS and AMD FSR can now be utilized during cinematics.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where VRAM reserved for AMD FSR would not be released when switching from AMD FSR to a different upscaler.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where you would see ghosting in some cinematics if using HDR with Nvidia DLSS.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where brightest parts of the screen could look overexposed when using AMD FSR upscaling with HDR",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "HDR (All Platforms)",
+     "items": [
+      {
+       "text": "Fixed an issue where player photographs taken when playing with HDR active could appear washed out when viewing them from your Journal. Note: this will not update any photographs you have already taken.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Colors in the start-up video now look more natural when running in HDR.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Misc Visuals (Platforms Noted Below)",
+     "items": [
+      {
+       "text": "Ambient Occlusion from Hair, and the Contact Shadows on characters have been made slightly smoother, with less noise, on all platforms.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed frame pacing issues in some specific cinematics that could show if you were running the game at a locked 30fps on PC.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where sun shadows could be missing for a short time after using the in-game signposts to fast travel, on all platforms.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where hair grooms could appear spikey on some Intel and AMD GPUs when using lower hair quality settings.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Audio (All Platforms)",
+     "items": [
+      {
+       "text": "Fixed an issue where some specific kinds of footstep sounds for Indy were missing when wearing either the Traveling Suit, Cairo Shirt, Pankot Palace or Marshall College outfits.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Sukhothai",
+     "items": [
+      {
+       "text": "Fixed an issue where Gina could get permanently stuck/left behind if you had entered a zipline while she was performing certain actions, therefore she could not join you on the zipline. If Gina has gone missing for you in your game, she will be where you last left her. If that is far away, getting in and out of your boat at a dock should teleport her back to you.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Hitting the giant mushrooms with the Khmer Spears in the Nephilim Archive should now be easier to achieve.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Iraq",
+     "items": [
+      {
+       "text": "Fixed an issue that could cause Indy to become invincible if completing the final Ancient Artifacts puzzle in the Ziggurat and then skipping the game credits.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "The Order of Giants DLC",
+     "items": [
+      {
+       "text": "Fixed an issue where the game could crash in specific circumstances when starting the fight with Abgal in The Order of Giants.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "UI and Markers",
+     "items": [
+      {
+       "text": "Fixed an issue where you could not photograph the “Game Room,” the “Messenger Statue” and the “Messenger Statue Symbol” in Sukhothai if you revisited Sukhothai after having already reached the end of the game.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where you could not pick up the “Lockbox Note” again below the Vatican Post Office if you did not press “Collect” the very first time that you inspected it.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue to ensure the “Lockbox Note” has a map marker when looking at your Field Notes in your Journal.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where in-world map markers for Adventure Books would still appear onscreen if you had already collected a copy of that book in a different level.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed the Sukhothai Guide map marker location for one of the Ancient Relics near Wat Si Sawai.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the location marker for the “Button Man II” adventure book is now shown correctly when using the Kummetz Guide in Nepal.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the in-world photo opportunity marker for the “Symbol Pedestal” in Sukhothai was showing before it could be photographed.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the description text for the Sacred Wounds puzzle photographs in the Vatican did not display when inspected if the wine was poured before the photographs were taken.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the photo description texts for the Light and Dark dragons were reversed in the Fountain of Confession puzzle.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the journal map didn’t change to a Local Map until you were very close to the Tomb of Gibborim in The Order of Giants DLC.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the onscreen objective header wasn’t very visible if a mission was automatically tracked.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the highlighted heading in the journal would reset to the first in the list if you zoomed in on a map.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where exiting from sub-menus very quickly might result in the Options Menu heading disappearing.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Made several minor corrections to the game’s Manual in the Options menu to be more accurate.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added some more information to the descriptions of some PC Video settings to be more useful.",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "indiana-jones-great-circle-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2677660/view/1832065502824193"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-12T15:17:10.000Z",
+      "verification": "official",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T18:27:35.510Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-11T15:06:24.000Z",
+      "verification": "assumed",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T19:53:33.931Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 6,
+   "updatedAt": "2026-10-26T19:53:33.931Z"
+  },
+  {
+   "id": "indiana-jones-great-circle@7",
+   "gameId": "indiana-jones-great-circle",
+   "displayName": "Update 7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-09T16:05:01.000Z",
+   "notes": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Pankot Palace outfit is now available",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]We’ve added a new outfit for Indy for all players, based on the suit he wore to dinner at Pankot Palace in Indiana Jones and the Temple of Doom™.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "To switch to the new outfit, visit the “Outfit” tab in the Options menu and select the “Pankot Palace” outfit. Any other custom outfits you have from Pre-Order or Premium upgrades are also in this tab.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Indy will wear this outfit whenever he isn’t wearing a disguise, or if the level requires a special outfit such as in Marshall College or in Nepal",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "There’s still another new outfit to come in a future update… so stay tuned!",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes and game updates",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Main Game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed the VO balance on some scenes to make the speech more audible",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the game’s manual entries were incorrect about alternative outfits and whips",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue with power-saving mode on Xbox Series X|S that could cause it to activate in the middle of some videos",
+       "ps5ProOnly": false,
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]The Order of Giants DLC",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Fieldwork name for “A Mystery Begins” may not appear correctly in your Journal if you had already progressed beyond the Vatican when first purchasing the DLC.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "indiana-jones-great-circle-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2677660/view/1818118366185804"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-09T16:05:01.000Z",
+      "verification": "official",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T18:27:35.509Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-09T16:05:01.000Z",
+      "verification": "assumed",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T19:53:33.929Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:33.929Z"
+  },
+  {
+   "id": "indiana-jones-great-circle@6",
+   "gameId": "indiana-jones-great-circle",
+   "displayName": "Update 6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-14T18:44:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This small hotfix addresses some issues in the MachineGames Anniversary Update!",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the \"Exit Game\" main menu option disappeared during certain situations",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a journal related issue that occurred within The Order of Giants DLC side quests",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "indiana-jones-great-circle-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2677660/view/1813041031380423"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T18:44:54.000Z",
+      "verification": "official",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T18:27:35.508Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T18:44:54.000Z",
+      "verification": "assumed",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T19:53:33.929Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:33.929Z"
+  },
+  {
+   "id": "indiana-jones-great-circle@major-2025-10-10",
+   "gameId": "indiana-jones-great-circle",
+   "displayName": "Indiana Jones and the Great Circle™ MachineGames Anniversary Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-10T15:16:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "October marks a huge milestone for MachineGames as the studio celebrates their 15th anniversary! To celebrate the occasion, they’re adding some community requested features to Indiana Jones and the Great Circle™ in a brand-new Anniversary Update. The Anniversary Update will be available on October 10 on Xbox Series X|S, PC and PlayStation 5.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]Read on for a deeper breakdown of the update’s highlights and how to access the new content, plus a look at the full patch notes.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "New Game+",
+     "items": [
+      {
+       "text": "[p align=\"start\"]The highly-anticipated New Game+ mode is coming to the game! With the release of Indiana Jones and the Great Circle: The Order of Giants DLC, now is the perfect time to jump back into the game and experience the story all over again.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]How It Works: Once you’ve completed the main story, New Game+ will be available right from the main menu. Select a Game Slot containing a completed playthrough of the story and you’ll be taken to the New Game+ set up menu. (Because you’ll be significantly stronger this time around, we recommend bumping your difficulty up. You can adjust this during the New Game+ setup.)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]What Carries Over: Jump back into the adventure with all your collected and unlocked Adventure Books, plus any unspent Adventure Points, local currency, and Medicine Bottles from your previous playthrough.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]A New Reward: Complete the story in New Game+ and unlock a brand-new ending sequence after the credits!",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Cairo Outfit",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Looking to cool off in the sweltering heat of Gizeh or the humid temples of Sukhothai? With the Anniversary Update, all players can unlock a free new Indy outfit inspired by his classic, jacket-free Cairo look in “Raiders of the Lost Ark™.” To don this “cooler” look, visit the Outfit tab in the Options menu. This outfit can be worn by Indy whenever he isn’t wearing a disguise, unless the level requires a special outfit, such as in Marshall College or Nepal.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44841594/4b714e176dde7fbd8ca264ae884c5b2e8ca5c028.png\"]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The Cairo outfit is just the beginning! Keep an eye out for even more outfits rolling out in the coming months.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Voice Language Select",
+     "items": [
+      {
+       "text": "[p align=\"start\"]The third major addition coming in the Anniversary Update is Voice Language Select. Now, you can mix and match any of the nine available voice languages with any of the fourteen text languages. Prefer to hear the original English performances with subtitles in your native language? Want to try a new combination? The choice is yours.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]To change the language settings, go to the Audio tab in the Options menu and scroll down to Language settings. There you can choose your preferred languages for Text and VO. After choosing the new settings, additional files may need to be downloaded in the background. A message will pop up telling you when the files have been downloaded. Your changes will take effect after starting a new level or if you restart from a checkpoint.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]Note: In the Steam version of the game, only the Text language option is set in-game. You will need to select the VO language in the game properties in the Steam client.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44841594/dbc5385506bbbb8bb6446b7f3e6af04409581d32.png\"]",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "FULL PATCH NOTES",
+     "items": [
+      {
+       "text": "Other Features",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]The Xbox Series X and S release now features a Power Saving mode. By default, the GPU will spin down with it is not being fully tasked. In addition, there is a Power Saving option in the Video section of the Options menu. When you activate this, the game will enter a power saving mode if you leave your controller idle for some time; resolution will lower and frame rate will be limited. As soon as you move the controller again the game will exit the power saving state.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]We’re looking to add this future to other platforms in the future.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]In anticipation of the upcoming release of the ROG Xbox Ally and ROG Xbox Ally X, we’ve added detection of those handhelds, and the game will automatically set suitable video quality settings for better performance.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "General Fixes",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where enemies might linger in their “stumble” animation if you punched them while they’re breaking out of your grab.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where pushing a grabbed enemy into a tight space could leave the enemy detached from Indy but still in the “grabbed” animation state.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue with a specific “finisher” animation where the camera would clip through Indy’s arms.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where you could enter wall squeezes while downed and using the “Lucky Hat” ability that resulted in you standing up and unable to progress properly.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that could cause a control-lock if restarting a checkpoint during the middle of a save.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where using the “push” button to open “disguise doors” could prevent you from being able to walk through the door.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where, if you left a level while holding an inventory item, it would be stuck to your hands when revisiting the level",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Missions & Quests",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]DLC",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed another issue that might cause pipes to be placed incorrectly during the Gladiator puzzle.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed the animation of the blackshirt being dropped from the bridge near the entrance to the Gladiator puzzle.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed many minor graphical glitches through the whole story.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]Peru",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where audio was missing in the Main Menu if you quit the game during the opening cutscene.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]Gizeh",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the clothes of certain villager NPCs would not animate when the character moved.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that might cause the boat engine sounds to never stop when you arrive at the rebel village at night.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]Iraq",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where skipping the cinematic where Indy frees Gina might result in the Siren sounds to never stop.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The price of guides and books now show correctly when inspecting them from one of the vendors.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "PC Specific Fixes",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where binding the interact/use key to be the same as the “buy” button from vendors, it could prevent you from buying items.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where setting Reflections to the lowest quality made certain objects look completely black.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Localization",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "In Arabic, fixed the alignment of the quick-inventory warning text about restricted zones.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "indiana-jones-great-circle-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2677660/view/1813041031243921"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T15:16:46.000Z",
+      "verification": "official",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T18:27:35.508Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T15:16:46.000Z",
+      "verification": "official",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T18:27:35.508Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:33.928Z"
+  },
+  {
+   "id": "indiana-jones-great-circle@5",
+   "gameId": "indiana-jones-great-circle",
+   "displayName": "Update 5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-04T15:10:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update enables compatibility with the Indiana Jones and the Great Circle™: The Order of Giants DLC, adds a new action experience difficulty, and contains a variety of other fixes and improvements!",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "This update enables compatibility with The Order of Giants DLC, available for purchase separately now",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We’ve added a new “Very Light” action experience difficulty for players who prefer to be challenged by the exploration and puzzle solving, and prefer not to find the combat too challenging",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "This update adds support for RTX Hair on 50-series Nvidia RTX GPUs. This is a high-end rendering feature to enable ray-tracing on character’s hair for a more realistic appearance. We recommend enabling this feature only on higher-end GPUs with 16GB of VRAM or more. You can find the option for “Ray Traced Hair” in the “Advanced Video Settings” menu.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44841594/e27118cae370c3ac439be7a848f7761b51131628.png\"]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "New Radio MCs have been added to the Jazz and Opera radio stations found on radio sets in Marshall College and the Vatican. You can also now tune the Vatican radio sets to hear news broadcasts that cover the events from the around the game’s world.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We’ve added information to the Quick Inventory to let you know which of your outfits and disguises are safe or restricted in the current area you find yourself in",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes & Game Updates",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Please note that these can provide minor spoilers for the game!",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where fast-travel signposts may become unusable if player died while the combat timer was cooling down. Restarting a checkpoint will make the signposts usable again now.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where markers for the Open Season and Sleight of Hand adventure books may not appear if the player had already purchased the Vatican Books map before installing Update 4 of the game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where, if you have the Punch Out II ability, the controls could get locked if you died in the middle of doing a stealth takedown on an enemy",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where mantling/vaulting at the same time as you’re placing an object down might cause the object to disappear or cause controls to get stuck",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Indy’s whip may not animate correctly later in the game if you had died during the Dart Trap in Peru, or during the last stage of the final fight with Voss",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a slight animation snap that occurred if tapping the button to raise your candle",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Indy’s hand now animates when collecting coins from a coin purse",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Missions & Quests",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]The Vatican",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where you could block yourself in the Necropolis by throwing the Antique Bust (needed to open a gate) into an unreachable location",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the “Secret of Giants” inscription number counter may not be correct if revisiting the Vatican using a savegame made using Update 3",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]Gizeh",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the player may be blocked from entering Nawal’s tent if they had died while in combat nearby to the tent",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Gina may not follow you through to the last scorpion room in the Sanctuary of the Guardians mission if you run through the level quickly",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where revisiting Gizeh might result in the player appearing in the “buried in sand” scorpion fight once more, but not able to complete it",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Indy will now give a voice clue about needing to burn objects if trying to pass through the first Stelae tomb before having purchased the Lighter",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a crash that might occur in rare circumstances while escaping from the Nazi Compound with Gina",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where you may not be able to talk to Professor Savage at the Gizeh Village market in certain circumstances",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the game might crash in rare circumstances if revisiting Gizeh with a savegame that was made while playing the Update 3 version of the game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]Nepal",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Improved Gina’s enter and exit into and from wall-presses, so she doesn’t appear to be making unnatural sidesteps",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Indy’s whip might detach itself from a branch in the spiral staircase leading down to the “leech room” in the Blessed Pearl mission",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed camera shaking issue if player tried to dive in shallow water during the first visit to the Sukhothai village at night",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[p align=\"start\"]Iraq",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the clouds during the end credits appeared in very low detail if you were not using the Higher Resolution Texture Pack (which is not installed on Xbox Series S unless the player chooses to)",
+       "ps5ProOnly": false,
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the “continue” button might appear visually corrupted if pausing during a level load",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed the description of the “Performance Metrics” menu option",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Accessibility",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The in-game Manual text now adjusts to match the player’s choice of enabling/disabling control toggles",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Audio",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the sound of plane propellers might be heard persistently in other levels after revisiting Shanghai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Gina’s voice lines when using the boat radio in Sukhothai are now radio-processed correctly",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "PC",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where switching between Native TAA and other upscalers (DLSS, XeSS or FSR) might cause a crash on some systems",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Frame Generation might disable when skipping cutscenes or restarting checkpoints",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the glass on Clerical Doors appeared incorrectly when using DLSS Ray Reconstruction",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where water caustic reflection effects may not appear on walls when DLSS Ray Reconstruction is used",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where applying some ray tracing options while in the Shanghai level may have caused a crash in certain situations",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where, if you linked your Steam version saves to your Xbox account, you could temporarily corrupt your saves on one of your devices if quitting a play session before any progress was made in that session",
+       "ps5ProOnly": false,
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Xbox",
+       "ps5ProOnly": false,
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed an issue where subtitles might briefly flicker between camera cuts in cutscenes",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Steam Deck",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue where there may be a black screen for a long while generating shader pipelines during the first launch",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Localization",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Additional one-liners from Indy when finishing combat are now available in non-English languages too",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where controller input was reversed in the Arabic localization on the “Apply Video Settings” confirmation menu",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "When playing in the Russian language, based on community feedback, the keyboard bindings now always use Latin alphabet characters rather than Cyrillic",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "indiana-jones-great-circle-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2677660/view/1809869180036730"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-04T15:10:32.000Z",
+      "verification": "official",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T18:27:35.506Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-18T15:53:41.000Z",
+      "verification": "assumed",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T19:53:33.927Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 6,
+   "updatedAt": "2026-10-26T19:53:33.927Z"
+  },
+  {
+   "id": "indiana-jones-great-circle@4",
+   "gameId": "indiana-jones-great-circle",
+   "displayName": "Update 4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-10T15:11:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’ve whipped up a new update for Indiana Jones and the Great Circle! Read the full patch notes:",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "New Adventure Books",
+     "items": [
+      {
+       "text": "You can learn a lot from reading, and in Update 4 we’ve added two new Adventure Books that give Indy some whip-tastic options in combat!",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "With the “Open Season” Adventure Book, hitting an opponent with the whip temporarily causes them to take more damage from subsequent attacks",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "“Sleight of Hand” lets Indy pull an enemy’s weapon towards him after disarming them with the whip",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life Features",
+     "items": [
+      {
+       "text": "Based on community feedback, we’ve added tons of new options and features in this update:",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "You can choose to disable the center dot on the HUD (if you’re prone to motion sickness, we recommend leaving the dot enabled)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We’ve added an “Allow Skip Of Unseen Cutscenes” option, letting you skip cutscenes even if you haven’t watched them",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Players can disable the “Stealth Vignette” around the edge of the HUD while Indy is crouched in stealth",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "You can cycle between local maps and level maps when viewing the journal in “lowered” mode",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Players will now see slightly more of the map while the journal is in “lowered” mode",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Some of you have told us that you don’t have much use for Repair Kits. Well, now you can throw them at your enemies!",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have added a timer to the combat HUD around Indy’s health that lets you know how long it will take for alerted enemies to call off a search",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The PC version now supports the PlayStation DualSense Wireless Controller for advanced haptic feedback and adaptive triggers",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "If you are using PlayStation or Steam Deck controllers in the PC version, they will now show up in the controller configuration menu",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "You can now bind a key to toggle High Contrast Mode on PC",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Several new tutorials have been added:",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Tutorials are now given explaining how to unlock/activate Adventure Books after you’ve collected them",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Tutorials are now given about how to buy Health or Stamina upgrades after collecting multiple medicine bottles",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We’ve added a tutorial on how to blow away scorpions at the end of the Gizeh level",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The menu to purchase or unlock Adventure Books and map information booklets has been improved to give clearer information about unlock costs and to better subdivide the categories",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We’ve recorded new one-liners for Indy during fights, for extra variety",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We’ve improved Ray-traced Global Illumination on all platforms at no performance cost; contact shadows have been improved, helping objects appear more “grounded” in the scene",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Made Indy’s transition from ledge hanging into whip attach and swing look smoother",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where some medicine bottles could not be picked up in various locations in the game in specific circumstances",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Dogs move their legs more naturally when turning while walking",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "It’s now much easier to throw defeated soldiers over ledges when carrying them",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where Gina would use here her standing conversation ‘gesture’ animations while she’s crouching",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Prevented merchant items from disappearing if you trigger a cutscene with them immediately after holding one of their books",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where you could get stuck in third-person camera if using a zipline while inspecting an item",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where you could loot multiple items from downed opponents by spamming the interact button",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "“Parry” tutorial stays on screen longer, giving you more chance to read it",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Whipping the air near an enemy soldier is now always considered an offensive action even if you are in a soldier disguise",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Missions and Quests",
+     "items": [
+      {
+       "text": "Marshall College",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Interaction marker for the Cat Mummy photograph is now shown from farther away",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Pendant Marker is now visible when you are in the exhibition hall",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Markers are now shown on the cabinets when you pick up the exhibits in the Cat Mummy puzzle",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The Vatican",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the marker for Giuseppe could not be shown if he left Section F (for example if he came to investigate gunfire sounds). The marker on Giuseppe will always be shown now (if you have ‘Objective Location Markers’ set to ‘On’ in the ‘Adventure Experience’ section of the ‘HUD and Gameplay’ menu). Also prevented the “Search Giuseppe” marker from disappearing if you leave Section F before searching him",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where you could not open the “Bulls of Blood” secret door when revisiting the Castel Sant Angelo. Also prevented the “search area” for this mystery from appearing on your map if you the mystery was started on your first visit to the area but not completed",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for priests appearing behind the sealed ‘demon door’ in the Tower of Nicholas V in the Vatican",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix to prevent speedrunning players running under the gate before it closes in the Silver Path Trial in the Vatican, and finding themselves stuck",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where player may get stuck in a death loop in the flames of the Silver Path Trial in the Vatican",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where Gina would not exit the Silver Path Trial rooms if you lingered on the whip-swing beams",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Solved an issue where Indy’s animations broke if you tried to inspect a photo with the magnifying glass in the Vatican at the same time as equipping another item.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix to prevent player falling out of world when vaulting through a fireplace in Castel Sant Angelo",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Objective marker for rescuing Sidney from the barracks no longer shows permanently if player hasn’t actually enabled the ‘Objective Location Markers’ feature in the Adventure Experience menu",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Gizeh",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where it was not possible to track the Remedy for All activity in Gizeh if the guidebook was collected before speaking to Dr. Kafour",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where Gina would only escort you across the first scorpion-filled room in Sanctury of the Guardians if you picked up a specific one of the three staffs",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for “Parked Car” photo opportunity marker in Gizeh Village appearing before the car is actually present",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where player may be able to survive falling into pits in the temples near the Nazi Dig Site in Gizeh, getting stuck",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "“Gantz’s Orders” and “Gantz’s Journal” note marker is changed to be a Search Area instead of a point marker",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added some extra grabbable ledges around the pit where you collect the Sebek Stele, to allow for more graceful swing failures!",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Shanghai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where you might see enemy planes frozen in the sky",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Updated how objective markers are displayed in the “Royal Army Transmissions”. Markers appear by the radio closest to Gina when you have frequencies to return to her, and the marker appears on Gina when you have returned all of the frequencies",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where it was not possible to complete the Royal Army Transmissions mission despite having turned in all radio frequencies",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where player could not swim to escape from the flooding temple in Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "“Fried Egg” note can now be obtained even if player does not start the “Lost in the Past” mission by talking to Sunan before travelling to the cave. Players who did not speak to Sunan will receive the note when exiting the dream sequence. Players who have already completed this mission should also receive the note",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Gina would be repeating her startled and worried voice lines from the ambush when you revisit Sukhothai. Update 3 prevented new players from experiencing this issue, and in Update 4 we’ve been able to fix this for players who are already encountering this bug",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where Gina may be missing when exiting the flooding temple in Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where Gina might stay at Wat Mahathat when you return to Sukhothai in a revisit, making it seem like she has “disappeared.” Gina now returns to the Village correctly",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the game may crash after being eaten by the Giant Snake while swimming underwater",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue whereby changing your outfit outside of the Sukhothai village might have prevented you from performing certain actions, such as punching",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The Mystery Guide bought from Tongdang now shows the marker on the Mak Yek mystery.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Removed the duplicated marker for “Fascist’s Journal” in Sukhothai shown in the Sukhothai Notes guidebook after you have collected it",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Serpent’s Chest mystery would not start when opening the chest in a specific scenario",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed another issue where the keys for Serpent’s Chest mystery would not spawn in very specific circumstances",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where you could re-use the same key multiple times to open the Serpent’s Chest",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Demon’s Tomb quest could get stuck if using dynamite to prematurely open the weak wall in the sarcophagus room",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Made it easier to hit certain giant mushrooms with the Khmer spears after the snake fight in the Nephilim Archive",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where player couldn’t whip-climb up a wall in Sukthothai when escaping the flooding temple if you were using saved games made in the initial launch of the game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where you could get permanently stuck in the spiked-walls trap room in the Demon’s Tomb if you tried to run straight through the spikes",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for “Exploded Opening” photo opportunity marker appearing before you can take the photo",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "An autosave now occurs after you complete “The Kid Who Vanished” mission",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix to prevent players from being able to start The Demon’s Tomb mission before you have purchased the rebreather in certain circumstances",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Map marker is now shown correctly for “Painted Message” photo opportunity in Path of Tigers",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Sukhothai Mysteries guide now points to correct location for A Game of Wits mystery",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Map markers are incorrectly shown for “A Game of Wits” mystery when the player is actually tracking Field Notes",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where you would die instantly if picking up Indy’s fedora from the wrong side of the podium in “Lost in the Past”",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Iraq",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Updated the Iraq level so the gates to the camp should now be open when you revisit the level, making for easier backtracking",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Gina will no longer walk in front of Indy while you are solving the final Nephilim puzzle in Iraq",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue that could stop the Lower Elevator button from working",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Iraq’s chapter summary now increments correctly with progression",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "“Grab Gina’s Hand” marker is now more visible in the final stages of the last fight with Voss",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where player could fall down the elevator shaft in Iraq without dying, getting permanently stuck",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Removed camera jerkiness when the player gets control at start of the fight with Voss in Iraq",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Player will now respawn at their last saved checkpoint when revisiting Iraq, rather than always appearing in front of the Nephilim Vault",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "When inspecting notes, the icon shown on the description text is now of the correct category",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where mission objectives would still appear on screen even when there in is no main mission available",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where combat state stayed active on the HUD when entering or exiting the Sukhothai boat while in combat",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Prevented overlap of some “interact” and “waypoint” markers in various locations through the game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Solved issue where books tracked in “A World of Knowledge” do not have their objective markers cleared if you bought the book in another game level",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The Gizeh dig site local map is now better aligned",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where player could get into a broken animation state when inspecting Adventure Books while quickly switching between different books",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Colors used in “High Contrast Mode” now more closely match the colors shown in the menus",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several letters and notes not giving an Adventure Points notification on the HUD",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several photo opportunities giving zero Adventure Points as reward",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several photo opportunities having no star rating",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several controls so they can be set as toggleable when bound to LT; Aim Firearm, Aim Photo, Camera, Raise Lighter and Whip Free Climb",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "New objectives now appear more quickly when they change in the HUD",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Onscreen objective text for several Discoveries now updates in real-time correctly",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Made the voice lines from captains more audible from distance when they are spotting Indy in disguise, to give you a better idea that they’re suspicious of you. Also increased their subtitle range",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added audio for when you are whip-punching, or kicking, a blocking enemy",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for subtitles not appearing in parts of the “Path of Tigers” mystery",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Gina will remind Indy to pull her up into the ship when first entering the Kummetz in Nepal",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added engine sounds for the enemy boats, and fighting sounds for Locus, in the boat chase in Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue that could result in Locus’ whistling be silent near the beginning of Iraq",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Made sure all of Gina’s lines play when racing to reach her at the end of the Sukhothai level",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Made sure all of Annika’s lines play in the Demon’s tomb if you interrupt her by talking to her",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed some missing lines of VO from Indy at the start of The Kid Who Vanished quest in Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added sound for Gina opening the door in the Borgia Tower in the Vatican",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Improved reverb on the rifle shots in echoing environments",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added sounds to when Indy moves the banana crates in Gizeh",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Effort sounds added when Indy and Gina rotate the fountain of confession in Vatican",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for several sounds that were looping incorrectly",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Cinematic Music Volume option now controls the volume of the music in cutscenes in the Peru level correctly",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Solved missing waterfall sounds in Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several instances of Indy or Gina repeating their lines if the player repeats the same action",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Graphics",
+     "items": [
+      {
+       "text": "Reduced the shimmering on the horizon of Lake Hammar in the cinematic reveal",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "PC-specific Fixes",
+     "items": [
+      {
+       "text": "Additional fixes for being able to use Xbox cloud saves on the Steam release. You can now enable these correctly even if you have never played the game on an Xbox console or the Xbox App PC release",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Several text corrections; and updates to menu text and subtitles across all languages",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Various fixes to voiceover localization, including sync issues",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Aligned HUD notifications for Arabic localization after picking up items",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for rare crashes when scrolling through the game manual tabs in Arabic",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where, on occasion, multiple items would be highlighted in the option menus in Arabic",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed some issues where Indy would repeat his lines every time he interacted with certain props",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "River Duuro is now correctly named in the travel montage when flying to Rome",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "OTHER NOTES",
+     "items": [
+      {
+       "text": "EULA has been updated to the latest version.",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "indiana-jones-great-circle-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2677660/view/1796631172248648"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-10T15:11:20.000Z",
+      "verification": "official",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T18:27:35.503Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-08T17:11:43.000Z",
+      "verification": "assumed",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T19:53:33.925Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 6,
+   "updatedAt": "2026-10-26T19:53:33.924Z"
+  },
+  {
+   "id": "indiana-jones-great-circle@3",
+   "gameId": "indiana-jones-great-circle",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-27T15:50:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Calling all adventurers: Update 3 is now LIVE! Read on for the full patch notes:",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "NVIDIA DLSS 4",
+     "items": [
+      {
+       "text": "Update 3 brings support for NVIDIA DLSS 4: a suite of rendering technologies that boosts framerates, increases performance, and improves image quality!",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Players using supported NVIDIA hardware can enable Multi Frame Generation (3x, 4x) using the new transformer-based model",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Ray Reconstruction increases the clarity and stability of ray-traced images",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "DLAA and DLSS Super Resolution have also been updated to the transformer-based model. These options when enabled enhance native and upscaled image quality, respectively",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Ray-Traced Local Lights",
+     "items": [
+      {
+       "text": "For players who have Path Tracing enabled, this update includes a new option for ray-traced shadows to include all light sources, which significantly increases the quality of shadows in interior locations. (Players can also choose to keep the previous setting, which provides ray-traced shadows from the sun only.)",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Path Tracing (Full Ray Tracing) Support for AMD and Intel Graphics Cards",
+     "items": [
+      {
+       "text": "This update brings Path Tracing to supported Intel and AMD GPUs. To use Path Tracing, your Intel or AMD graphics card must support Hardware Ray Tracing and have at least 16GB of VRAM. Please make sure to download the latest drivers from your GPU manufacturer!",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Note that in foliage-dense locations, such as Sukhothai, reducing Vegetation Animation Quality below the “Ultra” settings can reduce the occasional shadow “popping” that may be seen on all graphics cards using Path Tracing.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "FSR 3.1, including Frame Generation",
+     "items": [
+      {
+       "text": "Update 3 adds support for AMD FSR 3.1 upscaling and frame generation technology.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Intel XESS 1.4",
+     "items": [
+      {
+       "text": "Update 3 also adds support for Intel XESS 1.4 upscaling.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life Updates",
+     "items": [
+      {
+       "text": "Repair kits can now also be used by selecting them directly from the inventory (Rather than only by selecting your broken weapon or tool!)",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed an issue where players would be unable to use ladders, squeeze through walls, or climb vines in Sukhothai; particularly during the Blessed Pearl mission",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that could prevent players from picking up certain medicine bottles in the Vatican",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that could temporarily stop you from being able to punch or block if you had picked up an item while the game was saving",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the camera could be stuck in third person when backing out of certain third-person interactions",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the player and enemies might take damage while walking through an open doorway after restarting a checkpoint",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where notes might clip through the front of the screen when inspecting them",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where players could accidentally drop their Camera or Lighter while inspecting items for purchase",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that could make items disappear if players tried to pick up objects while vaulting over objects",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where inspectable items could be lost if picked up at the same moment an enemy punched you",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that could make the “Restricted Area” HUD marker to be offset after restarting a checkpoint",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where camera shake would permanently occur when revisiting Gizeh",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where a bullet could be seen in the Luger chamber even when the gun is empty",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where players could pour wine from their Camera in the Five Sacred Wounds puzzle",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the player’s view could be tilted after being released from a whip pull by Voss",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that caused enemy soldiers leaning on objects to spin unnaturally when alerted by the player",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Graphics",
+     "items": [
+      {
+       "text": "Fixed remaining issues where animation update rate was inconsistent in some cutscenes, causing visible shaking or stuttering",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issue where the pouring water streams were not visible during the initial collapse of the Ziggurat in Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that let players see out of world in the Vatican Dig Site",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Missions and Quests",
+     "items": [
+      {
+       "text": "Fixed an issue where players could not take a photo of Uncle Sunan when revisiting Sukhothai, or after skipping a cutscene between Sunan and Pailin",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that could prevent collecting the ‘Fried Egg’ Field Note in Sukhothai, and the Ostracan Shard in Gizeh after restarting checkpoints",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that could prevent players from being able to turn in Radio Frequencies at the radio stations when revisiting Sukhothai (since Gina would not be present)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where players could not unlock the “Shadows out of Time” achievement if they had any Ancient Relics placed in the Puzzle Boards in Iraq. (I.e. if you did not have all 50 Relics in your inventory.) For players who have already completed the puzzle, simply revisiting Iraq will now unlock the achievement",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where collecting the last ancient relic for “Riddles of the Ancients” did not update the counter in the UI, giving the impression there was still another to collect. Also fixed issues where this mission had no description on your map information, and certain Ancient Relic markers did not appear on the Sukhothai and Vatican maps",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that could prevent the players from re-collecting Khmer Cogs if they changed the puzzle difficulty after solving the Khmer Gate puzzle",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the player could obtain the rebreather in Sukhothai before ever getting the objective to talk to Tongdang, preventing the player from getting the next mission objective",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Field Notes could still be tracked even when all notes had been collected",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several issues where an unneeded note marker would appear under the world",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Adventure Books were not shown on the map after acquiring the Ziggurat Guide in Iraq",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Ability Book and guide markers appeared on the Sukhothai map before players acquired the guides from Tongdang",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where certain map markers near the end of the Vatican level did not appear on the main map, but only on your local map",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where taking photos of the monkey posters in Sukhothai did not remove their in-world markers",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the cogwheel markers might not appear if players purchased the map information pamphlet after a certain point in Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the main Sukhothai main map could be lost if you put it down after inspecting it (instead of collecting it)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Gina would not leave Wat Si Sawai if you left the temple while she was talking with Aran",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that could prevent the desk drawer being opened in the poker tent in Gizeh",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Gina could open the cavern door in Iraq by herself, leading to the cavern being empty of all enemies",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added additional voice lines to help the player understand that they should run away from the Nephilim in the dream sequence in Sukhothai, rather than fight",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where players could not pick up the Priest outfit from Antonio if they tried to do it too quickly",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that prevented players from getting into the boat in the escape from the Hotel sequence in Sukhothai if they pushed the interact button too many times",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where players could spawn inside the ground when revisiting Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the last objective of a mission was still displayed on the HUD after all Adventures and Field Work were completed in a level",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the World of Knowledge quest could complete when arriving outside the Vatican for the first time",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "In Marshall College, we increased the visibility the outlines of the cat mummy photo and gramophone record (in Indy’s office) from further away",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Fixed an issue where Indy would repeat his line about, “The Yeak in the water,” whenever surfacing from a dive in Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Indy would repeat dialogue about Voss’s gold stash in Sukhothai (“Well you're not bribing anyone with this, Voss”), long after having completed that mission",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Gina would repeat her lines from the ambush (“That was too close”) while you are in the boat. Please note this will, unfortunately, not correct the issue for players who are currently experiencing the bug, but it will prevent it from happening again",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Improvements to combat and stealth music transitions, to make them more seamless",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added sound for heavyweight enemies breaking out of a clinch",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Raised the volume of the enemy mounted machineguns in Sukhothai hotel shootout",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Corrected the sound type when walking on the boat near Forrestal’s camp in Peru",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed Annika Lund’s effort voices in Sukhothai when she is traversing objects",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Updated Indy’s effort voices when sliding",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added sounds for when Indy pushes the dragon statue at the Fountain of Sacrament",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed Indy repeating the same VO line when picking up recipe note in Borgia Tower",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issues where environmental sounds disappeared or were incorrect in several locations in the Vatican and Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where voice reactions to getting hit from a dart in Peru would get cut off prematurely",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added voice lines when photographing the sewer bridge and Great Tower Hall in the Vatican",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Stopped Indy from repeating his voice lines when returning to speak to Aran, or when cancelling your interaction with the Prayer Wheel in Sukhothai",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The music during the game loading sequence is now affected by the overall volume setting",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Stability",
+     "items": [
+      {
+       "text": "Fixed a freeze that could occur when skipping the credits at the end of the game shortly after loading a save",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several crashes that could occur in very specific circumstances in the following states:",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "While writing out a save game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "When picking up and interacting with objects",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "When updating hints while using Indy’s camera",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "After updating gamepad bindings and then moving to a new location",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "When inspecting Laura’s journal in Voss’ office in Gizeh",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "In certain UI states",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "PC Specific fixes",
+     "items": [
+      {
+       "text": "Fixed an issue that could cause the game to crash at startup with some graphics cards",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Many fixes and improvements have been made to environment lights, to present a more natural appearance when Path Tracing is enabled",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where Nvidia Low Latency mode would cause inconsistent frame rates",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue where Nvidia Frame Generation became disabled when HDR was toggled on",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue that could prevent Xbox Cloud saves from being loaded on the Steam release of the game",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where game did not render correctly if using DLSS at 3440x1440 resolution in Widescreen picture framing",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where players could be partially control locked when opening and closing the Game Bar overlay",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where Indy’s hair was missing in reflections when using Path Tracing",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some issues with light leaks in underground locations in Gizeh when Path Tracing is enabled",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Many text corrections and updates to menu text and subtitles across all languages",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Various fixes to voiceover localization in many languages",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed some errors on stone tablet inscriptions in Gizeh and in Marshall College",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed some errors in the street and shop signage in Shanghai",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Other Notes",
+     "items": [
+      {
+       "text": "We are looking into adding support for other community requested features, such as HUD modification, and support for Nvidia RTX hair in future updates!",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "indiana-jones-great-circle-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2677660/view/1789580505439276"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-27T15:50:32.000Z",
+      "verification": "official",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T18:27:35.501Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-10-26T19:53:33.798Z"
+  },
+  {
+   "id": "indiana-jones-great-circle@2",
+   "gameId": "indiana-jones-great-circle",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-17T16:11:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today we’re releasing Update 2 for Indiana Jones and the Great Circle, which includes additional fixes.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed an issue where users Game Slot may be reported as being damaged, or may appear to be completely missing, when no actual problem had occurred.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed an issue where player may be unable to equip Indy’s whip.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where a player may end up with Indy’s camera permanently equipped.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where player may drop and lose their camera if they use the quick-equip (“key item”) prompt to equip their camera while they are inspecting another nearby pick-up item.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Graphics",
+     "items": [
+      {
+       "text": "Fix to prevent “Double vision” getting stuck on screen when Indy has almost drowned. To players who have already encountered this issue, repeating the near-drown should clear the issue.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Some further improvements to reduce “stutter” from duplicated frames during cutscenes.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Missions and quests – Please note this section contains some small spoilers",
+     "items": [
+      {
+       "text": "Fixed an issue where Gina may not approach the secret entrance to the Vatican Treasure Chamber, blocking the mission from progressing.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Gina may go to pick the lock to the exit from the Vatican Treasure Chamber as soon as you enter the room, meaning you may miss some very important story developments.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a big hole in the floor collision around the edge of the wall around the Ziggurat in Sukhothai that the player could fall through.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "PC Specific fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where Nvidia DLSS may cause performance problems when enabled.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where Nvidia Frame Generation wasn’t activated properly if HDR is in use.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where Nvidia Low Latency Mode could cause performance problems when used with Frame Generation.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where global illumination may be completely disabled when playing with below minimum VRAM graphics cards.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where Lighting may be over bright in interior spaces if Path Tracing (Full Ray Tracing) is set to Medium or High Quality.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Known Issue: Nvidia Frame Generation may be temporarily disabled if HDR is activated for the first time. To work around this issue, disable and then re-enable DLSS. This only needs to be done once.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Additional Notes",
+     "items": [
+      {
+       "text": "Content creators may have experienced crashes in the game if using OBS Studio software to capture video. Updating OBS Studio to version 31.0.0 should prevent these crashes from occurring. See https://obsproject.com/ to update to the latest version.",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "indiana-jones-great-circle-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2677660/view/1785774543690966"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-17T16:11:30.000Z",
+      "verification": "official",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T18:27:35.500Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:33.798Z"
+  },
+  {
+   "id": "indiana-jones-great-circle@1",
+   "gameId": "indiana-jones-great-circle",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-08T20:07:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 1 for Indiana Jones and the Great Circle™ is now available for players with early access! This update brings Full Ray Tracing (Path Tracing), improvements, and fixes to the game. Read on for the full patch notes!",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Added Full Ray Tracing (Path Tracing) feature on supported NVIDIA video cards. A minimum of 12GB VRAM is required to make use of this feature. Please note that we’re also working to support AMD FSR in a future game update.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fix for a rare crash that could occur while saving the game.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue where you could temporarily lose Pre-Order/Deluxe outfit entitlements.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix to ensure your photographs appear more quickly when inspecting them from the journal.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fix for a broken animation that could occur if you equip the rebreather immediately upon jumping into water.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for a situation where you may not be able to interact with objects temporarily if you tried to push an enemy with your revolver while stamina is exhausted.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue that could prevent you from being able to block punches while looking at a nearby pickup object.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for issue where you may not be able to change your disguise after leaving the Sukhothai village via a fast-travel signpost.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for several places where the whip may detach unexpectedly when swinging.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue where Indy’s legs may unexpectedly snap into place when swinging across the gap in the bridge in Nepal.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix to prevent enemies from being unaware of Indy when reloading a checkpoint made very close to soldiers that are guarding the entrance to a restricted location.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue that may result in Gina not appearing near your docked boat when expected.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for camera shaking unexpectedly when dying to scorpions near the end of the Gizeh level.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue where first shot made from a temporary gun would be silent.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue where enemies may have a delayed response after you have stolen valuables from them.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue that might make you appear in a broken animation state if restarting a checkpoint after using a zipline while the game is saving.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue that might result in being unable to use your whip if you were performing a whip crack while saving the game, and then reloaded that save.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue where you may become stuck in the “Lucky Hat” recovery state.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Added “Reset to Default” selection in the Options menu.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for a situation where rapid cycling of the Quick Equip menu might result in the wrong item being shown in the menu.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added explanation of the Blue Suitcase revisit icon on maps to the in-game manual.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Prevent map location titles from overlapping with photo opportunity names.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for intermittent text flicker during the credits.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Ensure the player’s Adventure Book list is updated immediately after unlocking a new book.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Graphics",
+     "items": [
+      {
+       "text": "Fix for bottles appearing overly blurred when moving around with an equipped bottle.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue where Indy’s right arm might look pinched above the wrist when in a bare-armed costume.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for occasional stuttering that might be seen in cutscenes.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix to make Indy’s whip behave more naturally when attached to his belt.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Missions and quests – Please note this section contains some small spoilers",
+     "items": [
+      {
+       "text": "Ensure several photo opportunities are still available when revisiting levels or after completing sections of the game.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Ensure several journal notes are still available to be collected when revisiting levels or after completing sections of the game.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Ensure several Adventure Books are shown correctly on the map after purchasing map information booklets.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix to prevent player from getting stuck when dropping Giuseppe’s Key, rather than stashing it, in A Savage Predicament.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix to prevent rare issue where Gina may not path to the open door after the fire trap in the Chamber of Fire – Silver Trial mission in the Vatican.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix to prevent rare issue where Gina may not use the levers or may get stuck when pathing to an elevator in Wat Si Sawai in Sukhothai.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue where Gina may not help open the Game Room door at the Sukhothai Ziggurat.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue where Gina may not enter a co-op vault or climb when she has recently been in combat.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue where pieces of the Vatican fountain puzzle may keep moving slowly, that could prevent its completion if left for a very long time.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue that could prevent the “Finish Forging the Gold Key” quest objective from ever being cleared in your journal in the Vatican.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue where dying shortly after opening the safe in the Sukhothai HQ may result in player being unable to pick up all of the gold.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue where gates may be locked inside the caves if restarting a checkpoint while sneaking into the Nazi Compound in Gizeh.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue that prevent player from picking up an important book in Voss’ office inside the Nazi Compound in Gizeh.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fix for an issue that might result in Antonio or Ventura being stuck in a “cower” state while you are in Antonio’s office in the Vatican.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "PC Specific fixes",
+     "items": [
+      {
+       "text": "Improved performance on larger game levels if using an 8GB VRAM video-card.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix an issue where Alt-Tabbing might prevent you from being able to open your inventory.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix to make sure that the “Revert” option works correctly when you change video modes.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for torch or lighter flames flickering when playing the game at a high refresh rate.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for Sand Pouring and Torch flame effects not rendering correctly in Peru level on AMD video-cards.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for issue where enabling HDR and DLSS simultaneously might result in a moiré effect on plain white walls.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for an issue where black artifacts may appear in Indy’s eye during cutscenes inside the cave in Peru.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for issue where black squares may appear intermittently on screen if renderscale is used at certain resolutions on AMD video-cards.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix to ensure that your Photos can be exported correctly from Steam cloud saves if you decide to switch to using Xbox cloud saves.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Please note that AMD FSR support will be added in a future game update.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "We are aware some players may experience reduced performance if launching the game with DLSS enabled and we are looking into it. Players encountering this issue can try:",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Navigate to the Options Menu after loading the game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Select Graphics Options",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Switch from DLSS to TAA",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Switch back to DLSS and exit the menu. Performance should return to normal shortly after",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "indiana-jones-great-circle-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2677660/view/1785321795711914"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-08T20:07:59.000Z",
+      "verification": "official",
+      "sourceId": "indiana-jones-great-circle-steam",
+      "checkedAt": "2026-10-26T18:27:35.500Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:33.797Z"
+  }
+ ]
+}

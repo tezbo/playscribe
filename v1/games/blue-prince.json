@@ -1,0 +1,2523 @@
+{
+ "game": {
+  "id": "blue-prince",
+  "igdbId": 149657,
+  "name": "Blue Prince",
+  "cover": {
+   "imageId": "co9mzd",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9mzd.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4xp3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4xp3.jpg"
+  },
+  "ps5Release": "2025-04-10",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "blue-prince@1.7.3",
+   "gameId": "blue-prince",
+   "displayName": "Patch 1.7.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-16T08:01:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello drafters,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have released Patch 1.7.3 today which includes some fixes and adjustments.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Please note that this changelog will include spoilers for some rarer rooms and late game mechanics.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fixed problematic spawn points for trophies in a few rooms (Showroom, Tunnel, and Pump Room)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed the lighting on one of the books (ANC) in the library to make the coloring of the cover more consistent.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a collider issue on the checkout card in one of the books (ANC).",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a few problematic colliders that made some dig spots in the house harder to trigger.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added a collider to prevent a desk drawer from being clicked on from the wrong side of the desk.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added a safety collider in the basement to prevent players from accidentally clipping through the floor while operating heavy machinery.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Restored the right-mouse icon to the above action UI.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted a few colliders in the basement to prevent a narrow softlock.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a softlock that occurred when digging up a buried hint after earning a trophy but not actually picking it up.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a large number of corner-case bugs associated with the mechanics of one of Guest Bedroom’s upgraded floorplans.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Adjusted the pages in a letter found in the Study to make page turning more intuitive.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a very rare bug that would result in the Toolshed appearing to only contain one item.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an oversight that caused a blue item to not spawn when its room was drafted as an outer room.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Three Day Blessing of the Tinkerer and Chef gold amounts have been swapped to correctly align their intended blessing thresholds. (This will align with the higher tiers now.)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The list of blessings printed in an issue of Drafting Strategy has been reordered and reformatted.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Finally fixed an elusive bug that prevented the Kennel’s effect from working correctly in The Foundation.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Challenge Mode / Speedrunning Changelog",
+     "items": [
+      {
+       "text": "The below changelog includes challenge mode related and other game mechanics and bugs that players will not typically encounter through regular play.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a troublesome bug in Dare Mode that sometimes failed a certain dare involving red rooms when the player used Secret Garden Key or a similar special key (or a berry) while drafting.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug that sometimes caused the fourth dare presented to the player to be blank.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an unintended issue that only flagged the player as having ‘been cursed’ after reading the curse description in the menu. It now sets the flag correctly.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "A certain in-game timer (utilized by players that play on dare and curse mode and other speed challenges) now doesn’t begin until the player has begun moving on day one.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Addressed several raycast and UI button issues that sometimes caused major bugs when fast clicking in UI menus. This fixed several issues including misaligned inputs (different buttons/floorplans are pressed than the one you clicked), softlocks and glitches within the Drafting UI, Basement Door UI, Regular Door UI, and other ‘Use a key’ UIs.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug causing the hand cursor to persist beyond drafting after selecting a floorplan quickly.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that caused HLC to inadvertently be removed from the Draft Pool under certain circumstances.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that could unintentionally make Workshop less common after an item interaction under certain circumstances.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The Armory is no longer incorrectly categorized as a gem room when you begin the day with Mantle of the Knight.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The patch is now live on Steam and will be available for Xbox, PlayStation and Nintendo Switch 2 players soon.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "If you would be interested in helping us test upcoming patches we have a designated space for this in the Laboratory section of our Discord server.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "https://store.steampowered.com/app/1569580/Blue_Prince/",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1844115010488395"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-16T08:01:12.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.402Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-16T08:01:12.000Z",
+      "verification": "assumed",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T19:53:21.972Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.972Z"
+  },
+  {
+   "id": "blue-prince@1.7.2",
+   "gameId": "blue-prince",
+   "displayName": "Hotfix 1.7.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-21T15:11:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello drafters,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have released hotfix 1.7.2 to fix a corner case softlock.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fixed a softlock that could occur while unlocking the first door of the day if a player clicked the USE KEY button too quickly after hovering over the SPECIAL KEY button immediately after clicking on a door. Due to the frame precise nature of this issue, this bug effectively only ever occurred in speedrunning contexts.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "https://store.steampowered.com/app/1569580/Blue_Prince/",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1838407329269251"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-21T15:11:55.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.402Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-21T15:11:55.000Z",
+      "verification": "assumed",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T19:53:21.972Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.972Z"
+  },
+  {
+   "id": "blue-prince@1.7.1",
+   "gameId": "blue-prince",
+   "displayName": "Hotfix 1.7.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-11T15:00:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello drafters,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have released hotfix 1.7.1 to fix a number of issues reported by the community following the Accessibility Patch.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fixed a bug causing the ‘Color Labeling’ system to be activated without first turning on the feature in the Color Support Menu.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue for controllers that was breaking the input and button glyph for a document in the Blueprint Menu in one of the challenge modes.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug (or two) introduced in the last patch that resulted in the Explorer Trophy to trigger incorrectly (or not at all) for some players. If you completed the directory but did not receive your trophy due to this bug, it should be waiting for you in the Entrance Hall.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue causing the cursor to not display in the Main Menu on Mac for some players.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue causing the cursor to not display in the Remapping menu when accessed from the Accessibility Menu within the Main Menu.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several reported incorrect color labels on a page of the Final Exam",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an event issue related to selecting a color in the menu UI.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Thank you for bringing these issues to our attention and thank you for your patience while the team worked on a fix.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We will be rolling out this hotfix for PS5 and Xbox players as soon as possible and these fixes will be included with Patch 1.7 when it launches on Nintendo Switch 2 and App Store.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Blue Prince is Out Now",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "https://store.steampowered.com/app/1569580/Blue_Prince/",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1832065502821591"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-11T15:00:44.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.401Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "announced",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": null,
+     "bundles": [],
+     "verification": "assumed"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.971Z"
+  },
+  {
+   "id": "blue-prince@1.7",
+   "gameId": "blue-prince",
+   "displayName": "Patch 1.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-29T11:29:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Good Day Drafters,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Blue Prince’s Patch 1.7 is now available! (Console and Mac players should expect to see this update next week.)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "This patch includes our accessibility update alongside a number of fixes for issues reported from the community.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "The Accessibility Update",
+     "items": [
+      {
+       "text": "1.7 marks the completion of a large rollout of accessibility features. These features can be accessed via the Accessibility menu and include:",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Color Assist - A set of tools to provide color clarity to players who have trouble distinguishing some specific colors in the game. In addition to making puzzle colors a bit more vivid, we have also included separate systems to display color patterns, and an even more robust system that displays color labels for objects of inquiry.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Remapping - Yes! Key/button remapping is now supported for both keyboard and controller.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Cursor Set - Options for changing the opacity, style, and size of the game’s reticle and cursor (this is part of our new Motion Assist options.)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Invert Stroll - This is a feature that will allow players to invert the stroll button functionality. Inverting this means you will move at the faster stroll speed without needing to press/hold a button, and pressing/holding the stroll button will slow you down to a walk.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Motion Assist - A consolidated menu of features and settings aimed to reduce motion sickness and sensory conflict: Cursor/Reticle Settings, Look Sensitivity, Field of View, Smooth Look, and Stairs Skip (visually turn off spiral staircase travel.) Each feature is included along with our recommended setting adjustments.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Changelog cont.",
+     "items": [
+      {
+       "text": "The patch notes below will include spoilers for some rarer rooms and mechanics.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have updated the save file architecture again on PS5 to further address an issue with some save files exceeding size limits.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "As part of the Cursor features implemented above, we have redone the way the system handles changing cursors for a smoother visual experience when drafting, picking up items etc.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several visual bugs in the Precipice involving geometry from other areas clipping into the area from certain vantage points.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed some colliders in the Casino causing players to inadvertently exit a UI screen while trying to pull a lever.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added redundant safety checks to avoid potential soft locks that have been reported to occur within the above UI system.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue that was occasionally displaying a phantom Upgrade Disk in the Security terminal list for some players.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Slightly adjusted some factors related to the way Upgrade Disk floorplans are randomly selected to allow for greater variety during challenge runs while simultaneously making it less likely for new players from getting offered upgrades for rooms they have never drafted.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several bugs related to Powered Duct animations which restored spinning ducts to several rooms. Changing the direction of power in the Boiler Room also no longer breaks these animations.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several routing related bugs that could cause certain details and areas of the grounds and house to not be visible when approaching from certain areas.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an animation glitch caused by pressing buttons in the Chamber of Mirrors a bit too quickly that led to unexpected panel behaviour.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a handful of issues that were previously preventing floorplans from being duplicated by Chamber of Mirrors (some rooms are still excluded for technical reasons but the list is now more extensive.)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Related to the above - the experimental trigger related to terminal access has been reworked to correctly deal with duplicated terminal rooms.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "A stamp in the Mail Room no longer disappears during magnification when a letter is in the foreground.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug that shut the book whenever you would click on the checkout card of A New Clue instead of inspecting it.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug that was unintentionally increasing the likelihood of drawing a non-green room in addition to the intended Green Rooms after Greenhouse had been drafted.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug with a particular locker in locker room that was occasionally not reacting to interaction.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a UI typo of “Bedroom” in an item description.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a text mesh bug that was not rendering asterisks correctly on a late grade chalkboard.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Updated templating of Observatory’s floorplan text to be more technically accurate and consistent with the game’s templating. (The floorplan now simply has the text “+1 star”)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed incorrect layer assignments on a few more textures causing them to not be rendered when viewed through the magnifying glass.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added more descriptive clarity for rarity in the wrench UI during first time use.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Very Late Game Changelog including Deep Spoilers (read at your own risk)",
+     "items": [
+      {
+       "text": "Fixed a rare bug in the Conservatory that was offering players options from “studio floorplans” and “found floorplans” that they had not added to their draft pools.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added a redundancy check to address a glitch which was causing some challenge mode save files to incorrectly load in Bequest mode.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a corner case material glitch that related to the blessing of the monk that would sometimes affect the art at the bottom of the Foundation.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a sacred bug that only accepted the PM but not the AM.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Finally fixed a troublesome late game bug that was causing the drafting system to regard one very rare room as a color it clearly was not.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug causing boat travel to occasionally not be persistent between days if the cutscene was skipped.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug caused by exiting door UI during special key use animation in an underground area.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Addressed reports of clipping through the floor in a very late-game area by adding additional safety measures.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed some issues that were causing unintended step loss and unintentioned geometry overlapping in that same area.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed some uvmap texture issues in two of the illustrations in that same area. 🐌🎼",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Gambit of the Queen has been rebalanced to grant the player an additional key per trigger.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Due to several known bugs and issues with R_y_l Sc____r (some of which rendered the item functionless), this item’s design has been subtly changed and expanded. The game will now allow players to set the color an additional time per day from the inventory menu, and the method the player “keeps” the item has also been tweaked.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "This patch will follow for Xbox, PlayStation, Nintendo and App Store players. Each platform has varying timescales for approving patches and we expect this to reach players by late next week.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Blue Prince is Out Now",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "https://store.steampowered.com/app/1569580/Blue_Prince/",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1831432155564824"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-29T11:29:42.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.401Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "announced",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": null,
+     "bundles": [],
+     "verification": "assumed"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.970Z"
+  },
+  {
+   "id": "blue-prince@1.6.1",
+   "gameId": "blue-prince",
+   "displayName": "Update 1.6.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-08T09:22:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello drafters!",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We’re happy to share a Unity security fix in today’s patch. Read more in the notes below.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Security Fix",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Applied Unity's official patch for CVE-2025-59489, addressing a high-severity vulnerability in the Unity Runtime (versions 2017.1 and later) For full details, see Unity's security advisory: unity.com/security/sept-2025-01.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Notes",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "This update rebuilds the game using the latest patched Unity Editor to ensure full protection across Windows and macOS releases.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "No gameplay changes or new features are included, this is a targeted security release.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "If you're playing via Steam, note that Valve has also deployed client side updates related to this issue.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Blue Prince is Out Now",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1569580/Blue_Prince/\"]",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1813041031169522"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-08T09:22:56.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.400Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-08T09:22:56.000Z",
+      "verification": "assumed",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T19:53:21.970Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.970Z"
+  },
+  {
+   "id": "blue-prince@1.6",
+   "gameId": "blue-prince",
+   "displayName": "Patch 1.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-29T17:36:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40356052/c6fb288ca301a0fdd1868d97da9431c7cf61bc46.png\"]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have released patch 1.6 this afternoon for Steam players. This patch addresses a number of issues reported by the community. This update should be available on consoles within a week or two.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The changelog below may include spoilers for some rarer rooms and mechanics.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Patch 1.6 changelog",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added ability to manually “restore from backup” to the save menu. This is the same redundant safety system that was implemented in patch 1.5 to automatically restore a backup save in case of file corruption. Manual restoration may be useful for edge cases in which the main file is overwritten but not corrupted (one example may be a platform based cloud save conflict that was resolved incorrectly.) This feature can be found in the Save Menu.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a softlock that would occur when attempting to use a certain special key in the Vestibule .",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "In the Conservatory , controller support now works as intended while resetting rarity using the Room Directory .",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug that has eluded us for a long time that was unintentionally preventing something rare being dug up from dig spots. (A scrap of paper containing a hint for contraption components.) This scrap can only be dug up in a save file where the contraption has not been built and it will only have a chance of appearing later in the game. Dig spot odds have also been subtly adjusted to ensure that this fix does not worsen item discovery or trash chances.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a rare bug that would occasionally allow an extra classroom to appear in the draft pool after all classrooms in the draft pool had already been drafted.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug that was preventing one of the default classrooms to be drafted in corner and edge locations in the house.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a few other rare issues preventing some rooms from unintentionally being unable to be drafted in certain locations in the house.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug that would sometimes offer players a “blank” reward in the Chamber of Mirrors .",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Safety mechanism put in place to prevent a bug that was resulting in some players encountering three blank parlor boxes.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed bug causing some items in certain classrooms to spawn offset from its desk.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug causing the metal detector to continue beeping after picking up a key in the Laundry Room.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug causing the metal detector to continue beeping after picking up the Key of A**** .",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Audio added for SD raising event.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a narrow issue in which Greenhouse would sometimes be inadvertently removed from the draft pool while drafting south in the West Wing.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug with Commissary Special Orders that could delay some special orders from fulfilling.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a few discrepancies in the Commissary's listed sale prices and signs.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Typo for “features” fixed in Drafting Strategy Vol 2",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a typo caused by hyphenation in Drafting Strategy Vol 5",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Adjusted some details in the final exam’s first question to be more geographically clear.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Typo for “Synka” fixed in a terminal message related to packet transfers.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Changed a component in a grid that was mathematically inconsistent.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a regional character issue preventing repellent to work correctly in the Foundation for players in some regions.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "And lastly,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a recently introduced bug resulting in The Foundation sometimes not appearing at the beginning of the day.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Patch 1.6 not 1.06?",
+     "items": [
+      {
+       "text": "We wanted to clean up our versioning scheme to align a bit more with Patch 1.10 which will be the tenth and final major patch to the game. We didn’t want this patch numerically mistaken for Patch 1.1 which now designates the first patch of the game, so major patches will proceed very logically in sequence - 1.5, 1.6, 1.7 etc. while minor patches and hotfixes will use a third patch number such as our last hotfix which was 1.5.1.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Thank you to everyone for your careful and diligent reporting of issues and bugs — it makes a huge difference",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1811772772381516"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-29T17:36:44.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.399Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-29T17:36:44.000Z",
+      "verification": "assumed",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T19:53:21.969Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.969Z"
+  },
+  {
+   "id": "blue-prince@1.5.1",
+   "gameId": "blue-prince",
+   "displayName": "Patch 1.5.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-20T17:44:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40356052/b20b126440973632f5a3bd564478d149d0588b20.jpg\"]Hello drafters, We have released Patch 1.5.1 today on Steam. This is a hotfix for an issue that was introduced that was preventing some players from progressing. Full details of the hotfix contain spoilers: Fixed a conflict interfering with the intended functionality of the remote power box (red door) permanently staying open. This hotfix has corrected this issue and this door should remain open for all subsequent days.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This hotfix is now live on Steam and console players should see this early next week.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Blue Prince is Out Now",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1569580/Blue_Prince/\"]",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1802893906769013"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-20T17:44:52.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.398Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "announced",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": null,
+     "bundles": [],
+     "verification": "assumed"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.968Z"
+  },
+  {
+   "id": "blue-prince@1.5",
+   "gameId": "blue-prince",
+   "displayName": "Patch 1.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-18T16:39:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40356052/d09c183989ec231d85856d97d2d5fa3031f8e113.jpg\"]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Hello drafters,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have released patch 1.5 this afternoon for Steam players. This patch addresses a number of issues reported by the community. Save Corruption & Loading Freeze Fixes",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We've identified and addressed several edge cases that were causing save file corruption, resulting in a loading freeze when accessing the main menu. Unfortunately, if your save file was affected by these issues, we are sorry to say that means it is corrupted and irretrievable despite our best efforts to find a way to restore it.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "This update also includes multiple fixes aimed at preventing these corruption cases from occurring in the future. Several code checks have been added to reduce the chance of corruption including redundant checking of the validity of the save before writing it. Additionally, we’ve implemented an automatic backup system: if the primary save becomes corrupted or lost, a backup save will now load instead. If you are PS Plus user whose save file has been affected by this, we have had a few encouraging reports from users who were able to restore a backup of their save file via Playstation Plus cloud storage. To restore from cloud on PS5 follow these steps:",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "1. Go to Settings > Saved Data and Game/App Settings.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "2. Select Saved Data (PS5).",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "3. Choose Download or Delete from Cloud Storage.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "4. Select the game and then the specific save file you want to restore.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "5. Choose Download.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We are also currently implementing an “IMPORT TROPHY DATA” feature to work with platform achievements that had been previously earned in previous save files (even if they don’t exist in any of your current save files.) This feature will be included in an upcoming patch.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "FURTHER CHANGES IN THIS PATCH LISTED BELOW",
+     "items": [
+      {
+       "text": "Fixed a bug occurring when consecutive Parlor boxes were opened too quickly.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an input recognition issue on keyboard where \\[Right Arrow] and \\ were incorrectly interpreted as CONFIRM in certain cases.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Corrected some minor magnification issues and inconsistencies in font usage in the following locations - Library, \\Master Bedroom\\, \\Vault. \\",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Unified all instances of ‘Mary Matthew’ to a consistent spelling. (One instance had a typo.)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "LATE GAME SPOILERS BELOW",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "\\You can now reset rarity changes that you have made to your floorplans. The method is explained in the Conservatory menu as floorplan rarity can only be reset in the Conservatory).\\",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "\\The doors powered by remote power boxes are now opened by button press instead of unlocking automatically. These doors will remain permanently unlocked after being opened.\\",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "\\A trunk in the Treasure Trove incorrectly displaying the moon symbol has been changed to the sun symbol. (A blue memo was incorrectly being labeled as false.\\",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We also have corrected a few oversights and bugs in the room drafting logic. Below are listed a few of the resulting technical corrections that may be of interest.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "\\Master Bedroom will no longer erroneously appear in places other than the East Wing (Rank 9 related bug)\\",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "\\Fixed a narrow bug permitting Foundation to be added to the draft pool after repellent use before 7 days had transpired.\\",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "\\Foundation will no longer be drawn with as much frequency on Ranks 2 and 3\\",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "\\An oversight in outer room drafting logic has been corrected concerning day one and outer room rarities have been slightly flattened across the board.\\",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The patch is live now on Steam. We expect the patch to be available to Xbox and PlayStation players before the weekend.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Blue Prince is Out Now",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1569580/Blue_Prince/\"]",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1802893906701654"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-18T16:39:22.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.398Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-18T16:39:22.000Z",
+      "verification": "assumed",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T19:53:21.967Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.967Z"
+  },
+  {
+   "id": "blue-prince@major-2025-06-17",
+   "gameId": "blue-prince",
+   "displayName": "Blue Prince Accolades Trailer, Music Room Bundle and Mac Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-17T13:00:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We are excited to share our accolades trailer showcasing many of the wonderful responses to Blue Prince!",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have been so grateful for the support and enthusiasm shown by the community, from players, content creators and press alike. After eight years in development, seeing the reception to Blue Prince has been incredible.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We also have news.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Blue Prince will be available to Mac players on Steam in 2025!",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40356052/2facd6dd067dd3d36ba075f15d383cae08d3d3db.png\"]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We will have more details about when Mac players will be able to begin their explorations of Mount Holly to share with you in the near future.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "But that’s not all.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The original soundtrack by Trigg & Gusset featuring 32 tracks from Blue Prince is now available on Steam alongside the new Music Room Bundle, which includes Blue Prince and the OST together.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40356052/2a05aa1e9b43841a31c76518cf4f65889fe6486b.png\"]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Blue Prince is out now.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1569580/Blue_Prince/\"]",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1802354289723747"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-17T13:00:23.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.397Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-17T13:00:23.000Z",
+      "verification": "assumed",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T19:53:21.967Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.967Z"
+  },
+  {
+   "id": "blue-prince@1.4.6",
+   "gameId": "blue-prince",
+   "displayName": "Patch 1.4.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-27T14:01:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello drafters,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have released a patch this afternoon to hotfix a a few issues caused by the introduction of the “hold to skip” cinematic feature in our update last Thursday:",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug introduced by our latest “hold to skip” update that would sometimes remove the Step Count UI if a player briefly pressed escape/back button during a cinematic but did not actually skip it.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug causing players to fall out of bounds, if they skipped a certain cinematic SAFE H _ _ _ _ ) during a narrow window of timing during that cinematic (around 2.5 seconds after the cinematic started playing.) Now, you can now freely skip this cinematic at any time.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "This one is a bit more spoiling: Fixed an issue that was causing Antechamber Lever pulls to be occasionally off-sync in a certain monk related situation. Players who encountered this bug may have interpreted it as the levers not working, but they were merely functioning backwards. Antechamber levers in this situation will once again work as expected now.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "This update is live on Steam now. Xbox and PS5 players should expect to see this update in a day or two.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "https://store.steampowered.com/app/1569580/Blue_Prince/",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1800357164569341"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-27T14:01:47.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.266Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "announced",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": null,
+     "bundles": [],
+     "verification": "assumed"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.966Z"
+  },
+  {
+   "id": "blue-prince@1.4.5",
+   "gameId": "blue-prince",
+   "displayName": "Patch 1.4.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-22T15:43:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40356052/40428a50ea2ab304e5922d255bbe7658168f6d40.jpg\"]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Hello drafters,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have released a patch this afternoon to resolve some issues that the community have been experiencing. The patch is now live on Steam and we expect Xbox and PlayStation players to see this before the weekend. As always, the changelog below includes some spoilers.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "PlayStation 5 Save Rollback Issue",
+     "items": [
+      {
+       "text": "This patch also includes a fix for the PS5 Save Rollback Issue that was preventing players from progressing their explorations of Mount Holly.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "This issue was caused by a duplication of save data causing new save information to time out and not be saved. This problem has now been addressed and players should have no issues progressing and saving the game past the point where the bug was initially encountered.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "We have worked tirelessly with Sony to avoid any save files being lost once the game patches.However, content that was not saved during the Rollback Issue has unfortunately been lost. Players should be able to return to Mount Holly at the point where they encountered the bug.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Patch 1.4.5 Changelog",
+     "items": [
+      {
+       "text": "Fixed the rollback bug that was interfering with saving the game on PlayStation for some users",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug occasionally preventing players from entering the highest rank due to a rogue collider.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a bug that could cause you to lose steps when investigating the east sealed antechamber door while in a gymnasium.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a potential collider softlock that could occur after digging up treasure in the Cloister.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a potential collider softlock that could occur after digging up treasure in the Closet.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The experiment “Gain 1 Key, 1 Gem or 1 Gold (selected at random)” has been changed to “Gain 1 Key, 1 Gem, or 1 Die (selected at random)”",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Unified all instances of \"Christoph\" to a consistent spelling.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Typo fixed in Glossary entry for “Directory”.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "LATE GAME SPOILER CHANGELOG BELOW - Read at own risk",
+     "items": [
+      {
+       "text": "Boat Ride cinematics can now be once again skipped (this had been disabled because of a soft lock that has also now been fixed.)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Lever pull cinematics can now be skipped.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added additional safety checks to address reported soft locks some users reported encountering in the Casino.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The 7-letter title in the Gallery now accepts an overlooked regional spelling as a valid solution",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Boudoir Safe now accepts one alternate regional solution.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Safes now remain open on subsequent days after unlocking them.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "A bug has been fixed in Maid’s Chamber and Servant’s Quarter that would occasionally cause payroll to not spawn.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "A bug has been fixed in an upgraded guest bedroom that was causing a one-time trigger to occur multiple times.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "EVEN DEEPER SPOILER CHANGELOG BELOW",
+     "items": [
+      {
+       "text": "Edited the wording of “Question 33” to provide more clarity. The solution remains unchanged.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Cleaned up the mathematical symbols of “Question 46” to provide more clarity. The solution remains unchanged.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Unified Date formatting in terminal logs for consistency.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Repositioned a (Blue Tents) memo in a ‘found floorplan’ to fix a bug causing it to occasionally not appear. (no content change)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The experiment that “lowers water” will now be replaced with an experiment variation that “raises water” if there is not currently any water to lower.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The experiment “Each time you view your map, lose 10 steps and then” has been changed to “The next 10 times you view your map, lose 10 steps and then”",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The experiment “Gain 1 Key for every 40 steps you have” has been changed to “Gain 1 Key for every 30 steps you have”",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The experiment “Gain 1 Key, 1 Gem or 1 Gold (selected at random)” has been changed to “Gain 1 Key, 1 Gem, or 1 Die (selected at random)”",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "On Day One, the trunk in the bedroom will no longer only appear after the first draft.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We would also like to add that we are currently working on a feature to use the Blackbridge Terminal’s “IMPORT TROPHY DATA” feature to work with platform achievements that have been previously earned (even if they don’t exist in any of your current save files.) We expect this feature to be completed soon and will be included in an upcoming patch, thank you for your patience.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "The Path to 1.10",
+     "items": [
+      {
+       "text": "It had always been my dream to release a definitive version of the game at launch. I’m a big fan of complete standalone experiences and it was never my plan to continually tinker with the game with regular content updates, room rebalancing, or DLC and the like. Considering this is my first game, I’m extremely proud of everything I managed to include for launch, but there are a few minor things that were not quite completed before our release date that I feel must be added to fulfill that original vision",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Those inclusions will be added in 1.10, which will be the final major update to the game. It will be the definitive version of the game.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Among the planned inclusions in this final update: an overhyped arcade game, a curious house cat, accessibility features like color assist mode, controls remapping, cursor size/opacity settings, and widescreen support. Some UI/UX improvements, more variations for end-of-day manor descriptions and accompanying house illustrations, HUD display customization, final room/item balancing, and the addition of a handful of extra cinematics that I am still working on (the unlockable challenge modes actually have their own unique openings and endings!)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "NOTE: We will continue to release bug-fixing patches intermittently in the months leading up to 1.10 and some of these updates may preemptively roll out some of the above-mentioned features (we wouldn’t want to sit on accessibility features for months on end while we wait on cinematics!) And while 1.10 will be the last planned content update, we will, of course, continually be committed to fixing bugs for far, far into the future.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Tonda Ros, Director of Blue Prince: [dynamiclink href=\"https://store.steampowered.com/app/1569580/Blue_Prince/\"]",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1800357164410801"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-22T15:43:39.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.265Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-22T15:43:39.000Z",
+      "verification": "assumed",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T19:53:21.965Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.965Z"
+  },
+  {
+   "id": "blue-prince@1.4",
+   "gameId": "blue-prince",
+   "displayName": "Patch 1.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-30T15:23:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello drafters,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have released a patch this afternoon to address some issues that players reported experiencing. The changelog below includes spoilers.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Expanded video playback compatibility for even more Steam Deck configurations!",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Azerty keyboards now function correctly while navigating on terminals.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Azerty keyboards now function correctly while viewing documents (turning pages.)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "LATE GAME SPOILERS BELOW",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Azerty keyboards now function correctly while moving carts (pushing Z to move fwd)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Scepter color selection now functions correctly on controller.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The pinboard map on the last rank now functions correctly on controller.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have implemented a different solution for the reported softlock underground, allowing us to restore the position saving for the giant gear from day to day.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Corrected a few mistakes in text documents that were conflicting with the story’s timeline. Document locations for these changes include Bookshop, Archives, and Shelter.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "This patch is live now on Steam and will roll out to Xbox and PlayStation players before the weekend.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "PlayStation 5 Save Rollback Issue",
+     "items": [
+      {
+       "text": "We are aware of the PS5 save rollback issues that many players have reported and the team are working directly with Sony on this as a matter of priority and we hope to have an update soon.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "We apologize for the amount of time this is taking to fix, anything affecting saves is very sensitive and so we need to allow enough time for thorough testing.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "If you are impacted by this issue please submit a ticket to our support desk: https://rawfury.atlassian.net/servicedesk/customer/portal/1 including your PSN ID and the size of your save file to help the team narrow in on a fix.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "We thank you for your patience while we work on this issue.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "As soon as we have an update about the PS5 save rollback issue we will make an announcement to let everyone know.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Blue Prince is OUT NOW",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "https://store.steampowered.com/app/1569580/Blue_Prince/",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1798454487574160"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-30T15:23:58.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.264Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "announced",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": null,
+     "bundles": [],
+     "verification": "assumed"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.964Z"
+  },
+  {
+   "id": "blue-prince@1.3",
+   "gameId": "blue-prince",
+   "displayName": "Patch 1.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-24T17:08:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have released a patch this afternoon to address the save file issue that some players were reporting. This patch will be rolling out to Steam as you're reading this, and is planned to roll out to Xbox/Gamepass/Win 10 and Playstation platforms before the weekend.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "The changelog below contains spoilers.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed SAVE FILE bug that caused some user’s save files to roll back several days to an older, prior save state. This bug was caused by our internal save backup system which has now been disabled.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Temporarily disabled the Main Menu credits from auto-playing on idle as this was causing issues when players would click “continue” within a few frames of the credits starting.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed some typos.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "LATE GAME SPOILERS BELOW",
+     "items": [
+      {
+       "text": "Fixed a bug involving the resetting of the position of a giant gear from day to day that had a small potential to lock players from accessing an area.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We want to thank you for bringing this issue to our attention and your patience whilst we investigated and worked towards a solution.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Dogubomb/Raw Fury",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1797820624466192"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-24T17:08:45.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.263Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-24T17:08:45.000Z",
+      "verification": "assumed",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T19:53:21.964Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.964Z"
+  },
+  {
+   "id": "blue-prince@1.2",
+   "gameId": "blue-prince",
+   "displayName": "Patch 1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-18T14:20:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Our second patch is now available on Steam so please make sure to update your clients. Playstation and Microsoft players can expect the same patch to arrive next week, delayed slightly by the weekend interrupting the necessary testing and certification protocols.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "Be advised, the following notes contain spoilers so browse at your own peril:",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added redundant video files of our cinematics compatible with more Steam Decks. This is the fix responsible for the increase in the game’s file size.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed camera lock that occurred while reaccessing the lab machine on subsequent days after activating it / solving it.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Misc. typo and text format fixes.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed major bug causing rarity and directory data to be read from previously accessed save files. This bug would cause rarity changes to inadvertently carry over between save files. This bug also potentially caused some uncommon and rare rooms to appear less frequently than they should have for some players.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "LATE GAME SPOILER",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed softlock that occurred while accessing the blueprint menu or systems menu while SPOILER traveling by boat",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed hardlock that occurred while attempting to unlock a locked door found outside of the house with a basement key.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed bug that would rarely cause only one item to appear in the TOOLSHED.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "In a special room added by the drafting studio, C_s__o , the use of Coin Purse had been prevented. However, due to a bug, one machine was still able to exploit the use of this item. We are sorry to report this has been fixed and Coin Purse no longer works while playing games in this room.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Once again we'd like to extend our sincere gratitude for the wealth of feedback we've received from the community. We cannot thank you enough for shining light on Blue Prince and supporting us in the critical launch window of our game.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We hope you have a great weekend in Mt.Holly.",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1797185861673597"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-18T14:20:44.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.262Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-18T14:20:44.000Z",
+      "verification": "assumed",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T19:53:21.963Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.963Z"
+  },
+  {
+   "id": "blue-prince@1.1",
+   "gameId": "blue-prince",
+   "displayName": "Patch 1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-15T16:48:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello drafters,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The first Blue Prince patch has now been submitted across Steam, Xbox and Playstation platforms that fixes some issues that were reported by the community. Be forewarned, this changelog does contain minor spoilers:",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed the bug occasionally causing new game files to overwrite previous save files after a force quit.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Temporarily disabled options to Backup, Restore, or Duplicate Save Files while we investigate reported issues.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed system issue causing some players to be unable to unlock a safe in SPOILER: SHELTER",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed bug causing BATTERY PACK to spawn less frequently than intended.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Tweaked odds of certain rare OUTER ROOMS being drawn while drafting.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Each platform has varying timescales for patches. We expect players on Steam and Playstation to have access to this patch later today with Xbox/Game Pass players gaining access by, at latest, tomorrow afternoon.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "We want to thank you all for continuing to report any issues you experience in the game, helping us to investigate and implement fixes.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Blue Prince is OUT NOW",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "https://store.steampowered.com/app/1569580/Blue_Prince/",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1796631172412602"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-15T16:48:29.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.261Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-15T16:48:29.000Z",
+      "verification": "assumed",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T19:53:21.963Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.963Z"
+  },
+  {
+   "id": "blue-prince@dayone-2025-04-11",
+   "gameId": "blue-prince",
+   "displayName": "Day one patch",
+   "kind": "dayOne",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-11T18:01:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello drafters,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The first 24 hours of sharing Blue Prince with you all has been incredible. Thank you for your support of the game. After 8 years in development it’s wonderful to see people walking the halls, exploring the rooms and uncovering the secrets that Mount Holly holds.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "If you’re enjoying your time at the estate please consider leaving us a review, following us on our Twitter and Bluesky accounts and joining our Discord server where you can compare notes with other drafters.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "https://store.steampowered.com/app/1569580/Blue_Prince/",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/1796631172285795"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-11T18:01:55.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.216Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-11T18:01:55.000Z",
+      "verification": "assumed",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T19:53:21.962Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.962Z"
+  },
+  {
+   "id": "blue-prince@1",
+   "gameId": "blue-prince",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-16T11:10:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Drafters,",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We've implemented the much requested Y-axis Invert as well as an option to turn \"Smooth Look\" off. You'll find both of these options in the 'Mouse Settings' (or 'Look Settings' if you are using controller) from the System Menu in the game.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You may also notice a new FOV slider in that same menu which is not quite usable yet (it not make this patch as it was unexpectedly causing some issues with UI elements, so it needs a bit more work.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "A few minor text bugs that had been reported have been fixed, like Sinclair's Signature in the entrance letter not rendering under Magnifying glass .",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Lastly, overlooked exploits that were allowing players to reach content beyond the scope of the demo has been removed. This was done principally with the removal of the S _ r _ _ e floorplan.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Thank you for your continued support of the Blue Prince Demo.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Don't forget to Wishlist Blue Prince.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "https://store.steampowered.com/app/1569580/Blue_Prince/",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Follow us on Twitter",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Join us on Discord",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "blue-prince-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1569580/view/6890025005359543175"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-16T11:10:33.000Z",
+      "verification": "official",
+      "sourceId": "blue-prince-steam",
+      "checkedAt": "2026-10-26T18:27:28.215Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:21.961Z"
+  }
+ ]
+}

@@ -1,0 +1,656 @@
+{
+ "game": {
+  "id": "tekken-8",
+  "igdbId": 217590,
+  "name": "Tekken 8",
+  "cover": {
+   "imageId": "co7lbb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7lbb.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5zhb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5zhb.jpg"
+  },
+  "ps5Release": "2024-01-26",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "tekken-8@major-2026-03-17",
+   "gameId": "tekken-8",
+   "displayName": "PS5 update",
+   "kind": "silent",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-17T13:00:00.000Z",
+   "notes": [],
+   "sourceIds": [
+    "pushsquare"
+   ],
+   "links": {},
+   "platforms": [
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-17T13:00:00.000Z",
+      "verification": "reported",
+      "sourceId": "pushsquare",
+      "checkedAt": "2026-10-25T17:09:00.610Z"
+     },
+     "bundles": [],
+     "verification": "reported",
+     "alert": {
+      "style": "quiet",
+      "tag": "Unconfirmed"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-25T17:09:00.610Z"
+  },
+  {
+   "id": "tekken-8@2.0",
+   "gameId": "tekken-8",
+   "displayName": "Patch 2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-02T12:45:07.000Z",
+   "notes": [
+    {
+     "title": "The higher your opponent’s rank, the more points you earn for a win",
+     "items": [
+      {
+       "text": "The lower your opponent’s rank, the more points you lose for a defeat",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "(Examples)",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "You: “Fujin” (Rank 21) vs Opponent: “Battle Ruler” (Rank 20)",
+     "items": [
+      {
+       "text": "> Win: +720pt / Loss: -1280pt",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "You: “Fujin” (Rank 21) vs Opponent: “Fujin” (Rank 21)",
+     "items": [
+      {
+       "text": "> Win: +1000pt / Loss: -1000pt",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "You: “Fujin” (Rank 21) vs Opponent: “Raijin” (Rank 22)",
+     "items": [
+      {
+       "text": "> Win: +1280pt / Loss: -720pt",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Promotion bonus points are now only awarded once upon reaching a new highest rank",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The system that caused a significant point drop after 3 consecutive losses has been removed",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "The win streak bonus system has been adjusted",
+     "items": [
+      {
+       "text": "Bonus points for win streaks are now only available up to “Tenryu” (Rank 17)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "For ranks “Tenryu” and below, bonus points start applying after 3 consecutive wins",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "For ranks “Tenryu” and below, the more wins in a row, the greater the additional points earned",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Now possible to choose from",
+     "items": [
+      {
+       "text": "”Same Rank Only” / “±1 or lower” / “±2 or lower” / “±3 or lower” / “No Restriction”",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Now displays combo count and combo damage in actual battles, just like in “Practice” mode",
+     "items": [
+      {
+       "text": "To turn the display OFF, go to OPTIONS > “Screen Settings” > “In-Battle Status Settings” > toggle ON/OFF",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "In “PRACTICE” and “MY REPLAY & TIPS”, you can toggle it from the “Display Settings” in the pause menu",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "A practice-only stage with a wall distance of approximately 500m is now available",
+     "items": [
+      {
+       "text": "Select “Practice Stage” under “Restart Settings” and press [Touchpad/View button/V] + [×/A/J] (normal restart method) to switch to the practice stage",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "You can also switch to the practice stage by pressing [Touchpad/View button/V] + [↑]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "To return to the original stage after switching with [Touchpad/View button/V] + [↑], press [Touchpad/View button/V] + [×/A/J]",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "The following CPU actions can now be set",
+     "items": [
+      {
+       "text": "Heat Burst / Heat Burst (Cancel) / Standing Block / Crouching Block /",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Low Parry / Dash / Back Dash / Sidestep (Into Background) /",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Side Walk (Into Background) / Sidestep (Into Foreground) / Side Walk (Into Foreground)",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "“V-Sync” settings are now available on PS5 and Xbox Series X|S",
+     "items": [
+      {
+       "text": "Can be toggled ON/OFF via Options > Graphics Settings > V-Sync",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Season 1 leaderboards have been reset",
+     "items": [
+      {
+       "text": "Online ranking data from Season 2 is now viewable",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Season 1 stats have been reset in the following categories",
+     "items": [
+      {
+       "text": "BATTLE (ONLINE), OTHER (ONLINE section only), PLAYSTATS, CHARACTER DATA (ONLINE)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Newly accumulated stats from Season 2 are now displayed",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "YouTube : Link",
+     "items": [
+      {
+       "text": "Thank you for your continued support of “TEKKEN 8”.",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "tekken-8-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778820/view/1795917897291620"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-02T12:45:07.000Z",
+      "verification": "official",
+      "sourceId": "tekken-8-steam",
+      "checkedAt": "2026-10-25T17:01:48.388Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-02T12:45:07.000Z",
+      "verification": "official",
+      "sourceId": "tekken-8-steam",
+      "checkedAt": "2026-10-26T18:27:45.731Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:40.177Z"
+  },
+  {
+   "id": "tekken-8@1.11",
+   "gameId": "tekken-8",
+   "displayName": "Patch 1.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-17T16:49:21.000Z",
+   "notes": [
+    {
+     "title": "TEKKEN 8 - Patch 1.11",
+     "items": [
+      {
+       "text": "The update data for TEKKEN 8 will be distributed with the following details:",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Version",
+     "items": [
+      {
+       "text": "Ver.1.11.00",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Application Date and Time",
+     "items": [
+      {
+       "text": "[] From around 11:00 on Wednesday, January 15th, applied sequentially",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[] From around 3:00 on Wednesday, January 15th, applied sequentially",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "From around 18:00 on Tuesday, January 14th, applied sequentially",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Maintenance Date and Time",
+     "items": [
+      {
+       "text": "[] Wednesday, January 15th, 10:30 – 14:00",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[] Wednesday, January 15th, 2:30 – 6:00",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Tuesday, January 14th, 17:30 – 21:00",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Note",
+     "items": [
+      {
+       "text": "Please note that the date and time may change without prior notice.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "All online content will be unavailable during maintenance.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Impact of the Update",
+     "items": [
+      {
+       "text": "The application of the update data will affect the following modes and features:",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[]DOWNLOADED REPLAYS / MY REPLAY & TIPS: Replay data from before the update will no longer be playable.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[]ONLINE REPLAY: All replay data from before the update will be deleted.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "SUPER GHOST BATTLE / GHOST MATCH: The behavior and performance of characters after the update will be reflected in ghost data. There will be no loss of data.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "TEKKEN SHOP",
+     "items": [
+      {
+       "text": "“Flamboyant Pack” Added: Flamboyant Hair (Hair): Flamboyant Haori & Hakama (Upper Body): Flamboyant Geta (Shoes): Flamboyant Peacock Feathers (Accessory)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "“Sublime Pack” Added: Sublime Hair (Hair): Sublime Long-Sleeve Kimono (Upper Body): Sublime Geta (Shoes): Sublime Fan (Accessory)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "“TEKKEN SPECIAL DEAL” Available: Selected items available at special prices during the event period.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "MAIN MENU",
+     "items": [
+      {
+       "text": "[]Characters can now be selected from Customized Slots: Added the ability to select main menu characters from slots other than “PRESET” via OPTIONS > Screen Settings > Main Menu Character Display Settings > Costume.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[]Added UI Hide Function: Press [R3/R Stick/N] to hide the UI.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "CHARACTER CUSTOMIZE",
+     "items": [
+      {
+       "text": "“Shared Customize Slot” Added: 20 customization slots shared across all playable characters.: Access the shared tab from each character’s dedicated slot screen.: []“Add to Favorites” Function: Press [□/X button/U] in the customization slot list to add/remove favorites.: []“Replace” Function: Rearrange customization slots by pressing [△/Y button/I].",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "QUICK MATCH / GROUP MATCH / TEKKEN BALL (ONLINE)",
+     "items": [
+      {
+       "text": "Added Rematch Function: Players can rematch from the result screen after a best-of-3 match without returning to the matchmaking standby screen.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "PRACTICE",
+     "items": [
+      {
+       "text": "[]Improved “Punishment Settings” Display: Configured CPU behavior settings now displayed in the “Punishment Settings” list.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[]Improved Photo Mode Controls: Mouse wheel can now be used for zoom in/out operations (Steam version only).",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "OPTIONS",
+     "items": [
+      {
+       "text": "Hide Other Player Information: Configure via Screen Settings > Hide Other Player Names / Hide Friends/Following/Rivals.: Opponent player names in various modes will appear as “-”.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Hide Friends/Following/Rivals Displays: Configurable in lounges, profiles, and match result screens.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "REPLAY",
+     "items": [
+      {
+       "text": "Access Replay List from Profile Screen: Players can now navigate to a replay list directly from a profile.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "PLAYABLE CHARACTERS",
+     "items": [
+      {
+       "text": "Adjusted Behavior and Performance: Behavior fixes and performance adjustments have been applied to Heihachi and Clive.: Heihachi received minor adjustments to address unintended phenomena.: Clive underwent significant balance changes, suppressing the performance of certain overpowered moves.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Sound and Visual Improvements: Enhancements were made to sound effects (SE), voice, and visual effects.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Win Streak Display Fixed: The win streak display in “PLAYER MATCH” session screens now accurately reflects consecutive wins within the same session.: Win streaks in “PLAYER MATCH” will be reset after the update.",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "tekken-8-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778820/view/1789039014372627"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-17T16:49:21.000Z",
+      "verification": "official",
+      "sourceId": "tekken-8-steam",
+      "checkedAt": "2026-10-25T17:01:48.388Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-17T16:49:21.000Z",
+      "verification": "assumed",
+      "sourceId": "tekken-8-steam",
+      "checkedAt": "2026-10-26T19:53:40.176Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:40.176Z"
+  },
+  {
+   "id": "tekken-8@major-2024-12-11",
+   "gameId": "tekken-8",
+   "displayName": "Winter & Spring 2025 Update Trailer!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-11T10:54:36.000Z",
+   "notes": [
+    {
+     "title": "New content is coming your way! 👊",
+     "items": [
+      {
+       "text": "❄️ Winter update: new photo mode and customization features, a special 30th Anniversary Fight Pass & more!",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "🌱 Spring: Season 2, major system and balance updates, new moves for all characters and the biggest and best TEKKEN World Tour yet 🤜🤛",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "https://store.steampowered.com/app/1778820/TEKKEN_8/",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "tekken-8-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778820/view/1785774543488634"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-11T10:54:36.000Z",
+      "verification": "official",
+      "sourceId": "tekken-8-steam",
+      "checkedAt": "2026-10-25T17:01:48.387Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-11T10:54:36.000Z",
+      "verification": "assumed",
+      "sourceId": "tekken-8-steam",
+      "checkedAt": "2026-10-26T19:53:40.175Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:40.175Z"
+  },
+  {
+   "id": "tekken-8@1.04",
+   "gameId": "tekken-8",
+   "displayName": "Patch 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-02T13:06:57.000Z",
+   "notes": [
+    {
+     "title": "Maintenance is scheduled at following times",
+     "items": [
+      {
+       "text": "May 8th @ 10:30-16:00 JST | 3:30-9:00 CEST | 6:30 PM [May 7] - 12 AM PDT",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "All online content will be unavailable during maintenance.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Read the full patch notes here 🤜",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We hope you’ll continue to enjoy TEKKEN 8!",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "https://store.steampowered.com/app/1778820/TEKKEN_8/",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "tekken-8-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778820/view/5766372999943591926"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-02T13:06:57.000Z",
+      "verification": "official",
+      "sourceId": "tekken-8-steam",
+      "checkedAt": "2026-10-25T17:01:48.387Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-02T13:06:57.000Z",
+      "verification": "assumed",
+      "sourceId": "tekken-8-steam",
+      "checkedAt": "2026-10-26T19:53:40.175Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:40.175Z"
+  }
+ ]
+}
