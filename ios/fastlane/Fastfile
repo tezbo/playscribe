@@ -40,6 +40,7 @@ platform :ios do
         "-authenticationKeyPath #{key_path}",
         "-authenticationKeyID #{ENV.fetch('ASC_KEY_ID')}",
         "-authenticationKeyIssuerID #{ENV.fetch('ASC_ISSUER_ID')}",
+        "DEVELOPMENT_TEAM=#{ENV.fetch('APPLE_TEAM_ID')}",
         *settings
       ].join(' '),
       export_options: { signingStyle: 'automatic', teamID: ENV.fetch('APPLE_TEAM_ID') }
