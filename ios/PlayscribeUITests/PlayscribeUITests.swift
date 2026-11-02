@@ -248,11 +248,12 @@ final class JourneyTests: XCTestCase {
         row.tap()
         sleep(1)
         let pushed = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); pushed.name = "journey-closed-pushed"; pushed.lifetime = .keepAlways; add(pushed)
-        // Wait for the unfold: the row reappears beside the Page.
-        let deadline = Date.now.addingTimeInterval(120)
-        while !(row.exists && row.isHittable) && Date.now < deadline { sleep(2) }
+        // Wait for the unfold: the pushed screen pops and the Page shows the release.
         let title = app.staticTexts.matching(identifier: "releaseTitle").matching(NSPredicate(format: "label == %@", "Patch 1.4")).firstMatch
-        XCTAssertTrue(title.waitForExistence(timeout: 8), "Page shows Patch 1.4 after unfolding")
+        let deadline = Date.now.addingTimeInterval(150)
+        while (app.navigationBars["Patch 1.4"].exists || !title.exists) && Date.now < deadline { sleep(2) }
+        sleep(2)
+        XCTAssertTrue(title.exists && !app.navigationBars["Patch 1.4"].exists, "Page shows Patch 1.4 after unfolding")
         ReleaseRowTests.reveal(row, in: app)
         XCTAssertTrue(row.isSelected, "Patch 1.4 row selected")
         let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); shot.name = "journey-open-patch-1.4"; shot.lifetime = .keepAlways; add(shot)

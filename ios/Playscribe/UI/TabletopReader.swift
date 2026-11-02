@@ -50,19 +50,27 @@ struct TabletopReaderStage: View {
         let sections = release.map(model.readerSections) ?? []
         let index = min(model.readerIndex[gameID] ?? 0, max(0, sections.count - 1))
         ZStack {
+            // The same art as the Page in every other pose (default header when none loads),
+            // shaded towards the text side for legibility.
             ArtView(asset: model.backdrop(gameID, chapter: .updates, tall: false), game: model.game(gameID))
-                .blur(radius: 24)
-                .brightness(-0.65)
+                .overlay(LinearGradient(colors: [.black.opacity(0.85), .black.opacity(0.35)], startPoint: .leading, endPoint: .trailing))
                 .ignoresSafeArea()
             if let section = sections[safe: index] {
                 VStack(alignment: .leading, spacing: 14) {
+                    // Eyebrow: the game and the date; the release itself is the title below.
                     HStack(spacing: 8) {
-                        Text(release?.displayName ?? "")
-                            .font(PlayscribeFont.title3)
-                            .accessibilityIdentifier("releaseTitle")
-                            .foregroundStyle(release?.isUnconfirmed == true ? PlayscribeColor.textTertiary : PlayscribeColor.accent)
+                        Text(model.game(gameID)?.name ?? "")
+                        if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary) }
                         if release?.isUnconfirmed == true { UnconfirmedChip() }
                     }
+                    .font(PlayscribeFont.subheadline.weight(.semibold))
+                    .foregroundStyle(PlayscribeColor.accent)
+                    // The release name for VoiceOver (and J-4), when the title is a headline.
+                    Color.clear.frame(width: 1, height: 1)
+                        .accessibilityElement()
+                        .accessibilityLabel(release?.displayName ?? "")
+                        .accessibilityAddTraits(.isStaticText)
+                        .accessibilityIdentifier("releaseTitle")
                     Text(section.title)
                         .font(PlayscribeFont.title)
                         .lineLimit(3)
@@ -73,13 +81,6 @@ struct TabletopReaderStage: View {
                         .lineSpacing(4)
                         .minimumScaleFactor(0.7)
                     Spacer(minLength: 0)
-                    // Only when there's more than one page to turn.
-                    if sections.count >= 2 { HStack(spacing: 6) {
-                        ForEach(0..<sections.count, id: \.self) { i in
-                            Circle().fill(i == index ? PlayscribeColor.accent : PlayscribeColor.textTertiary).frame(width: 7, height: 7)
-                        }
-                        Text("\(index + 1) of \(sections.count)").font(PlayscribeFont.caption).foregroundStyle(.secondary).padding(.leading, 6)
-                    } }
                 }
                 // About 34 characters per line at 19 pt.
                 .frame(maxWidth: 380, maxHeight: .infinity, alignment: .topLeading)

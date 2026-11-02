@@ -8,6 +8,7 @@ open -a /Applications/Xcode.app/Contents/Applications/DeviceHub.app 2>/dev/null;
 press() {
   # Device Hub sometimes hides its toolbar until the window is active; retry, waking it with a tree read.
   for i in 1 2 3; do
+    open -a /Applications/Xcode.app/Contents/Applications/DeviceHub.app 2>/dev/null; sleep 1
     ($_qa/../posedriver/pose.sh press "$1" >/dev/null 2>&1 & q=$!; sleep 12; kill $q 2>/dev/null || true)
     grep -q "→ 0" /tmp/posedriver.txt 2>/dev/null && { sleep 2; return; }
     ($_qa/../posedriver/pose.sh tree 3 50 >/dev/null 2>&1 & q=$!; sleep 8; kill $q 2>/dev/null || true)
