@@ -324,6 +324,8 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       })
     }
   }
+  const promoted = store.promoteAnnounced(deps.db)
+  deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)
   deps.log?.(`ingest: polled ${summary.polled.length}, new ${summary.created.length}, revised ${summary.revised.length}, review +${summary.review}, errors ${summary.errors.length}`)
   return summary
 }

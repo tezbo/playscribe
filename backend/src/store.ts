@@ -234,3 +234,29 @@ export const markSeen = (db: DB, sourceId: string, postId: string, releaseId: st
   db.prepare('INSERT OR IGNORE INTO seen_posts (source_id, post_id, release_id, seen_at) VALUES (?, ?, ?, ?)').run(sourceId, postId, releaseId, now())
 
 export const isSeen = (db: DB, sourceId: string, postId: string) => !!db.prepare('SELECT 1 FROM seen_posts WHERE source_id = ? AND post_id = ?').get(sourceId, postId)
+
+/**
+ * Steam rule (Terry, 2026-10-27): a Steam patch counts as released on PS5. When its post said consoles get it
+ * "next week", the PS5 row starts as announced; a week after the Steam release it is taken as live, dated
+ * from Steam, so no update stays PC only. One that is already older than 72 h never alerts.
+ */
+export const promoteAnnounced = (db: DB, at = new Date()) => {
+  const rows = db
+    .prepare(
+      `SELECT p.release_id, c.live_at AS pc_live FROM platform_releases p
+       JOIN platform_releases c ON c.release_id = p.release_id AND c.platform = 'pc' AND c.status = 'live'
+       WHERE p.platform = 'ps5' AND p.status = 'announced' AND p.verification = 'assumed'`,
+    )
+    .all() as { release_id: string; pc_live: string | null }[]
+  let n = 0
+  for (const r of rows) {
+    const pc = json<Field<string> | null>(r.pc_live, null)
+    if (!pc?.value) continue
+    const age = at.getTime() - Date.parse(pc.value)
+    if (!(age >= 7 * 86400e3)) continue
+    upsertPlatform(db, r.release_id, 'ps5', { status: 'live', verification: 'assumed', liveAt: field(pc.value, 'assumed', pc.sourceId) })
+    if (age > 72 * 3600e3) db.prepare("UPDATE platform_releases SET pushed_at = ? WHERE release_id = ? AND platform = 'ps5' AND pushed_at IS NULL").run(now(), r.release_id)
+    n++
+  }
+  return n
+}
