@@ -30,7 +30,11 @@ platform :ios do
   def team_id
     return ENV['APPLE_TEAM_ID'] unless ENV['APPLE_TEAM_ID'].to_s.empty?
     id = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
-    Spaceship::ConnectAPI::BundleId.find(id)&.seed_id || UI.user_error!("No bundle id #{id} in App Store Connect")
+    apps = Spaceship::ConnectAPI::App.all.map { |a| "#{a.name} (#{a.bundle_id})" }
+    UI.message("App Store Connect apps: #{apps.join(', ')}")
+    bundle = Spaceship::ConnectAPI::BundleId.find(id)
+    bundle ||= Spaceship::ConnectAPI::BundleId.create(name: 'Playscribe', platform: 'IOS', identifier: id).tap { UI.message("Registered bundle id #{id}") }
+    bundle.seed_id
   end
 
   def project_path
