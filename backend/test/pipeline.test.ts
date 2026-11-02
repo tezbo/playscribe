@@ -5,7 +5,7 @@ import { openDb } from '../src/db.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
-import { getRelease } from '../src/store.ts'
+import { getRelease, promoteAnnounced } from '../src/store.ts'
 import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpers.ts'
 
 const recent = (h: number) => new Date(Date.now() - h * 3600_000).toISOString()
@@ -49,6 +49,12 @@ test('a Steam patch is taken as out on PS5 too, unless it says consoles get it l
   assert.deepEqual(later.platforms.find((p) => p.platform === 'ps5')!.status, 'announced')
   assert.equal(later.platforms.find((p) => p.platform === 'ps5')!.alert, undefined)
   assert.deepEqual(later.links, { steamNotes: 'https://store.steampowered.com/news/app/3751260/view/4' })
+  // A week after Steam, a console-later update counts as live on PS5, dated from Steam, without an alert once stale.
+  assert.equal(promoteAnnounced(db, new Date(Date.now() + 6 * 86400e3)), 0)
+  assert.equal(promoteAnnounced(db, new Date(Date.now() + 8 * 86400e3)), 1)
+  const promoted = getRelease(db, 'dawnwalker@1.2')!.platforms.find((p) => p.platform === 'ps5')!
+  assert.deepEqual([promoted.status, promoted.verification, promoted.liveAt?.value], ['live', 'assumed', getRelease(db, 'dawnwalker@1.2')!.platforms.find((p) => p.platform === 'pc')!.liveAt?.value])
+  assert.ok(db.prepare("SELECT pushed_at FROM platform_releases WHERE release_id = 'dawnwalker@1.2' AND platform = 'ps5'").get()!.pushed_at)
   // A studio post that names PS5 is that update's PS5 page.
   assert.equal(getRelease(db, 'kcd2@1.6')!.links.ps5Page, 'https://blog.playstation.com/kcd2-1-6')
 })
