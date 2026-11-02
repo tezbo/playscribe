@@ -45,6 +45,19 @@ platform :ios do
     Spaceship::ConnectAPI::BundleId.find(bundle_id)&.seed_id || UI.user_error!("No bundle id #{bundle_id} in the developer account")
   end
 
+  # Everyone on the App Store Connect team gets every build: one internal TestFlight group. A failure
+  # here never fails the upload; it is reported and the group can be set up by hand.
+  def ensure_internal_testers
+    app = Spaceship::ConnectAPI::App.find(bundle_id)
+    group = app.get_beta_groups.find(&:is_internal_group) ||
+            app.create_beta_group(group_name: 'Team', is_internal_group: true, has_access_to_all_builds: true)
+    users = Spaceship::ConnectAPI::User.all.map { |u| { email: u.username, firstName: u.first_name, lastName: u.last_name } }
+    group.post_bulk_beta_tester_assignments(beta_testers: users)
+    UI.success("Internal TestFlight group '#{group.name}' has #{users.size} tester(s)")
+  rescue StandardError => e
+    UI.important("Couldn't set up internal testers: #{e.class}: #{e.message}")
+  end
+
   def project_path
     File.exist?('../Playscribe.xcodeproj') ? 'Playscribe.xcodeproj' : UI.user_error!('No Playscribe.xcodeproj in ios/ (run xcodegen)')
   end
@@ -81,6 +94,7 @@ platform :ios do
     )
 
     upload_to_testflight(api_key: key, app_identifier: bundle_id, skip_waiting_for_build_processing: true, changelog: changelog_from_git_commits(commits_count: 10, merge_commit_filtering: 'exclude_merges'))
+    ensure_internal_testers
   ensure
     File.delete(key_path) if key_path && File.exist?(key_path)
   end
