@@ -48,6 +48,8 @@ struct GameBookView: View {
             }
         }
         .onAppear { model.nav.lastGameID = gameID }
+        // The game's full history, not only what's in the newest-100 feed.
+        .task(id: gameID) { await model.refreshHistories([gameID]) }
     }
 
     /// Open landscape and Book in a regular-width scene (D-11).

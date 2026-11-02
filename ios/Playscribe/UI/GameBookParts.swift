@@ -221,6 +221,19 @@ struct GameBasicsView: View {
                     .tappableFrame()
                 }
             }
+            // Link opens the default browser.
+            if info?.links?.official != nil || info?.links?.patchNotes != nil {
+                HStack(spacing: 16) {
+                    if let url = info?.links?.official {
+                        Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    }
+                    if let url = info?.links?.patchNotes {
+                        Link(destination: url) { Label("Patch notes", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    }
+                }
+                .font(PlayscribeFont.subheadline)
+                .foregroundStyle(PlayscribeColor.accent)
+            }
             if let summary = info?.summary {
                 Text("About").font(PlayscribeFont.headline)
                 Text(summary).font(PlayscribeFont.body)

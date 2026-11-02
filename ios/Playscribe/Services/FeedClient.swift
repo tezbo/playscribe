@@ -49,6 +49,7 @@ enum FeedStatus: Equatable {
 extension AppModel {
     /// Loads the cached feed at launch without notifying.
     func loadCachedFeed() {
+        loadCachedHistories()
         if let cached = FeedClient.loadCache() {
             feedReleases = cached.releases
             feedStatus = .updated(cached.updatedAt)
@@ -69,6 +70,7 @@ extension AppModel {
             feedReleases = latest.releases
             feedStatus = .updated(latest.updatedAt)
             notifyNewlyOnPS5()
+            await refreshHistories()
         } catch let error as URLError where [.notConnectedToInternet, .networkConnectionLost, .timedOut].contains(error.code) {
             feedStatus = .offline(previous)
         } catch {
@@ -97,6 +99,8 @@ extension AppModel {
             }
             for r in releases(c.gameID) where r.ps5State == .onPS5 && !known.contains(r.id) {
                 known.insert(r.id)
+                // Like the server: nothing that went live more than 72 hours ago alerts.
+                guard r.ps5Date > .now.addingTimeInterval(-72 * 3600) else { continue }
                 NotificationService.shared.schedule(release: r, game: game(c.gameID), level: notifyLevel(c.gameID),
                                                     pauseAll: data.pauseAll, delay: 1, model: self)
             }

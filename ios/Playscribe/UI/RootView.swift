@@ -56,7 +56,8 @@ struct RootView: View {
         .background(Color.ink0)
         .onAppear {
             // §2: the branded splash plays only on the first launch, never from a notification (L-3).
-            if !didShowSplash && !NotificationService.shared.launchedFromNotification {
+            // Terry, 2 Nov: every cold launch, not only the first.
+            if !NotificationService.shared.launchedFromNotification {
                 splashVisible = true
                 didShowSplash = true
             }

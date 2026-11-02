@@ -29,6 +29,10 @@ struct PlayscribeApp: App {
                 .foregroundStyle(PlayscribeColor.textPrimary)
                 .onAppear {
                     NotificationService.shared.attach(model)
+                    // Terry, 2 Nov: a cold launch starts fresh on the splash and the Library.
+                    // Backgrounding keeps your place, and each game still reopens where you were
+                    // reading. A notification tap opens its update after this.
+                    model.startFresh()
                     model.loadCachedFeed()
                     #if INTERNAL
                     // QA: `simctl launch <device> co.codeconnectors.playscribe -qaRoute add` opens a

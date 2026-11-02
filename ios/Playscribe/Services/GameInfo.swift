@@ -10,6 +10,8 @@ struct GameBasics: Codable, Hashable {
     var genres: [String]?
     var firstRelease: String?
     var videos: [Video]?
+    struct Links: Codable, Hashable { var official: URL?; var patchNotes: URL? }
+    var links: Links?
 }
 
 @MainActor @Observable

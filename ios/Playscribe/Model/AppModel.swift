@@ -165,11 +165,18 @@ final class AppModel {
         rebuildMerged()
     }
 
+    /// Full per-game histories (games/<id>.json), keyed by the app's game id.
+    var gameReleases: [String: [Release]] = [:] { didSet { rebuildMerged() } }
+    @ObservationIgnored var historyStamps: [String: String] = [:]
+
     private func rebuildMerged() {
         let curated = Dictionary(fixtures.releases.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
         var seen = Set<String>()
         var out: [Release] = []
-        for f in feedReleases {
+        // A game's own history is the fullest copy; latest.json fills in the rest.
+        let histories = gameReleases.values.flatMap { $0 }
+        let historyIDs = Set(histories.map(\.id))
+        for f in histories + feedReleases.filter({ !historyIDs.contains($0.id) }) {
             out.append(curated[f.id].map { $0.merged(withFeed: f) } ?? f)
             seen.insert(f.id)
         }
@@ -436,6 +443,14 @@ final class AppModel {
     func isExpanded(_ key: String, default value: Bool = false) -> Bool { nav.expanded[key] ?? value }
 
     func setExpanded(_ key: String, _ value: Bool) { nav.expanded[key] = value }
+
+    /// A cold launch opens on the Library, not the last screen.
+    func startFresh() {
+        nav.gameID = nil
+        nav.tab = .library
+        addSheetOpen = false
+        settingsOpen = false
+    }
 
     func markRead(_ releaseID: String, _ read: Bool = true) {
         if read { data.read[releaseID] = .now } else { data.read[releaseID] = nil }
