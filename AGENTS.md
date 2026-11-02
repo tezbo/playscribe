@@ -44,6 +44,29 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
   Sam or Nadia.
 - Every PR names the acceptance IDs it touches. Sign-offs name the exact commit SHA.
 
+## Sprint board
+
+The live board is https://claude.ai/artifact/T5NNq75hBh7Yu9SGt28BEU (source: `docs/board/sprint-board.html`).
+Agents read and write its database with the artifact data tools (`ArtifactData`, or `db_list`/`db_write` on the
+claude-artifacts connector). Terry can file ideas, move cards and comment on the page itself.
+
+- **Cards** live in `cards`. Fields: `title`, `note`, `kind` (idea, feature, bug, release, chore), `col`, `release`
+  (`0.3.0` … `1.0.0`, `1.x`, `Parked`, or empty), `owner`, `by` (your teammate name), `take` (Nadia's decision),
+  `links` (PR or issue URLs), `createdAt`, `updatedAt` (epoch ms; set `updatedAt` on every write).
+- **Columns** (`col`): `ideas` (awaiting Nadia) → `review` (Nadia debating) → `terry` (escalated) → `backlog`
+  (approved for a release) → `doing` → `qa` → `done`. Parked cards sit in `done` with release `Parked`.
+- **File an idea:** any agent adds a card with `col: "ideas"`, `kind: "idea"`, a one-line why in `note`, and `by`.
+  One to three ideas per agent per ideation, no duplicates (list `cards` first).
+- **Debate:** add to `notes` (`card`, `by`, `text`, `at`). Keep it short and cite evidence.
+- **Nadia decides:** she moves an idea to `backlog` with a `release` and a `take`, parks it, or moves it to `terry`
+  with the question in `take`. Only Terry moves a card out of `terry`.
+- **Moving work:** the owner moves their own card: `doing` when work starts (add the PR to `links`), `qa` when the
+  PR is merged and the RC SHA is named, `done` after sign-offs or when shipped. Quinn moves cards back from `qa`
+  with a note if they fail.
+- **Activity:** every move or decision also adds one `activity` row (`text`, `by`, `at`), e.g. "moved X to QA".
+- Terry's suggestion box on the roadmap page stays his quick input; Nadia mirrors new suggestions onto the board as
+  `ideas` cards with id `sug-<suggestion id>` and `source: "suggestion:<id>"`.
+
 ## Rules every agent keeps
 
 The core rules are in `CLAUDE.md`. In short: spend nothing, no game ever opens to a blank page, Steam is the

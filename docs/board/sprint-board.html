@@ -1,0 +1,256 @@
+<title>Playscribe Sprint Board</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600;7..72,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a press-room board. Header with release filter, seven lanes left to right (ideas to done), a live activity column. Dark ink first, vellum for light. */
+:root{
+  --bg:#0F0E14; --panel:#18161F; --card:#211E2A; --line:#34303F; --fg:#F4EEE3; --muted:#B9B1C3; --faint:#A39BAE;
+  --accent:#FFB04F; --on-accent:#2A1600; --soft:rgba(255,176,79,.14);
+  --ok:#8FD6A4; --warn:#FFC86A; --info:#9CC3FF; --terry:#FF8A7A;
+  --display:"Literata",Georgia,serif; --body:"Instrument Sans",system-ui,-apple-system,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --bg:#FBF4E6; --panel:#F3E9D4; --card:#FFFBF2; --line:#DCCBA8; --fg:#1C1824; --muted:#4F4859; --faint:#6A6274;
+  --accent:#B65A12; --on-accent:#FFF6EA; --soft:rgba(182,90,18,.10); --ok:#2E7D4A; --warn:#8A5200; --info:#2F5FA8; --terry:#B23A2A; color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#FBF4E6; --panel:#F3E9D4; --card:#FFFBF2; --line:#DCCBA8; --fg:#1C1824; --muted:#4F4859; --faint:#6A6274;
+  --accent:#B65A12; --on-accent:#FFF6EA; --soft:rgba(182,90,18,.10); --ok:#2E7D4A; --warn:#8A5200; --info:#2F5FA8; --terry:#B23A2A; color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:14px/1.45 var(--body)}
+.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 40px;display:grid;gap:18px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+h1{font-size:clamp(24px,4vw,32px)}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.top{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between}
+.top p{margin:4px 0 0;color:var(--muted);max-width:70ch}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--faint)}
+.dot.on{background:var(--ok)}
+@media (prefers-reduced-motion:no-preference){.dot.on{animation:pulse 2s infinite}@keyframes pulse{50%{opacity:.4}}}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font:600 12px var(--body);border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:999px;padding:4px 11px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn{font:600 13px var(--body);background:var(--accent);color:var(--on-accent);border:0;border-radius:6px;padding:8px 14px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:18px;align-items:start}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr)}}
+.lanes{overflow-x:auto;padding-bottom:8px}
+.lanes-in{display:grid;grid-template-columns:repeat(7,minmax(220px,1fr));gap:10px;min-width:1600px}
+.lane{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px;display:grid;gap:8px;align-content:start;min-height:220px}
+.lane.terry{border-color:var(--terry)}
+.lane-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.lane-h h2{font-size:15px}
+.lane-h .n{font:500 12px var(--mono);color:var(--faint);font-variant-numeric:tabular-nums}
+.lane-sub{font-size:12px;color:var(--faint)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:9px 10px;display:grid;gap:6px;cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%}
+.card:hover{border-color:var(--accent)}
+.card .t{font-weight:600}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:11px;color:var(--faint)}
+.tag{font:600 10px var(--body);letter-spacing:.06em;text-transform:uppercase;border-radius:4px;padding:1px 6px;border:1px solid currentColor}
+.k-idea{color:var(--accent)} .k-feature{color:var(--info)} .k-bug{color:var(--terry)} .k-release{color:var(--ok)} .k-chore{color:var(--muted)}
+.rel{font:500 11px var(--mono);color:var(--muted)}
+.empty{font-size:12px;color:var(--faint);padding:6px 2px}
+aside{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:10px}
+aside h2{font-size:16px}
+.feed{display:grid;gap:0;max-height:70vh;overflow:auto}
+.ev{padding:8px 0;border-top:1px solid var(--line);font-size:13px;display:grid;gap:2px}
+.ev b{font-weight:600}
+.when{font:500 11px var(--mono);color:var(--faint)}
+dialog{background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:12px;padding:0;width:min(560px,calc(100vw - 32px));max-height:calc(100vh - 48px)}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+.dlg{padding:18px;display:grid;gap:12px}
+.dlg h3{font-size:20px}
+.row{display:grid;gap:4px}
+label{font-size:12px;font-weight:600;color:var(--muted)}
+input,textarea,select{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;width:100%}
+textarea{min-height:70px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:480px){.two{grid-template-columns:1fr}}
+.notes{display:grid;gap:0;max-height:260px;overflow:auto}
+.note{padding:8px 0;border-top:1px solid var(--line);display:grid;gap:2px}
+.note p{margin:0;white-space:pre-wrap}
+.take{background:var(--soft);border-radius:6px;padding:8px 10px}
+.acts{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.msg{font-size:12px;color:var(--faint)}
+a{color:var(--accent)}
+.desc{margin:0;color:var(--muted);white-space:pre-wrap}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Playscribe · ideas to TestFlight</div>
+      <h1>Sprint board</h1>
+      <p>Any teammate files an idea. Nadia approves it into the backlog, or sends it to Terry when she isn't sure it fits. Cards then move through the sprint to QA and Done. Open a card to read the debate or add to it.</p>
+    </div>
+    <div class="bar">
+      <span class="live"><span class="dot" id="dot"></span><span id="livetxt">Connecting…</span></span>
+      <button class="btn" id="addBtn" type="button" disabled>File an idea</button>
+    </div>
+  </header>
+
+  <div class="bar" id="rels" role="group" aria-label="Filter by release"></div>
+
+  <div class="layout">
+    <div class="lanes"><div class="lanes-in" id="lanes"></div></div>
+    <aside aria-labelledby="fh">
+      <h2 id="fh">Live activity</h2>
+      <div class="feed" id="feed"><div class="empty">Moves, approvals and comments appear here as they happen.</div></div>
+    </aside>
+  </div>
+</div>
+
+<dialog id="cardDlg"><form class="dlg" id="cardForm" method="dialog">
+  <div class="eyebrow" id="cdEyebrow"></div>
+  <h3 id="cdTitle"></h3>
+  <p class="desc" id="cdDesc"></p>
+  <div class="take" id="cdTake" hidden></div>
+  <div class="meta" id="cdMeta"></div>
+  <div class="two">
+    <div class="row"><label for="cdCol">Column</label><select id="cdCol"></select></div>
+    <div class="row"><label for="cdRel">Release</label><input id="cdRel" placeholder="0.3.0"></div>
+  </div>
+  <div class="row"><label>Discussion</label><div class="notes" id="cdNotes"></div></div>
+  <div class="row"><label for="cdNote">Add to the discussion</label><textarea id="cdNote" placeholder="Agree, push back, or add evidence"></textarea></div>
+  <div class="msg" id="cdMsg" role="status"></div>
+  <div class="acts"><button class="btn ghost" value="cancel" type="submit">Close</button><button class="btn" id="cdSave" type="button">Save</button></div>
+</form></dialog>
+
+<dialog id="newDlg"><form class="dlg" id="newForm" method="dialog">
+  <h3>File an idea</h3>
+  <div class="row"><label for="nTitle">Idea</label><input id="nTitle" maxlength="120" required placeholder="e.g. Haptic page turn when an update opens"></div>
+  <div class="row"><label for="nNote">Why it helps a PS5 player</label><textarea id="nNote" maxlength="1500"></textarea></div>
+  <div class="two">
+    <div class="row"><label for="nBy">Filed by</label><input id="nBy" value="Terry"></div>
+    <div class="row"><label for="nRel">Release it fits (optional)</label><input id="nRel" placeholder="0.4.0"></div>
+  </div>
+  <div class="msg" id="nMsg" role="status"></div>
+  <div class="acts"><button class="btn ghost" value="cancel" type="submit">Cancel</button><button class="btn" id="nSave" type="button">File idea</button></div>
+</form></dialog>
+
+<script>
+(function(){
+  const COLS=[
+    ["ideas","Ideas","Awaiting Nadia"],
+    ["review","Nadia review","Being debated; approve or escalate"],
+    ["terry","Escalated to Terry","Needs Terry's call"],
+    ["backlog","Sprint backlog","Approved, not started"],
+    ["doing","In progress","Being built"],
+    ["qa","QA","Quinn, Iris, Jun"],
+    ["done","Done","Merged or shipped"]];
+  const COLNAME=Object.fromEntries(COLS.map(c=>[c[0],c[1]]));
+  const $=id=>document.getElementById(id);
+  let db=null, cards=[], notes=[], filter="all", openId=null;
+  const el=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e};
+  const ago=t=>{if(!t)return"";const s=(Date.now()-t)/1000;if(s<60)return"just now";if(s<3600)return Math.floor(s/60)+"m ago";if(s<86400)return Math.floor(s/3600)+"h ago";return new Date(t).toLocaleDateString(undefined,{day:"numeric",month:"short"})};
+  const relKey=r=>(r||"").split(".").map(n=>n.padStart(3,"0")).join(".");
+
+  for(const [k,n] of COLS){const o=el("option",null,n);o.value=k;$("cdCol").append(o)}
+
+  function renderFilters(){
+    const rels=[...new Set(cards.map(c=>c.release).filter(Boolean))].sort((a,b)=>relKey(a)<relKey(b)?-1:1);
+    const box=$("rels");box.textContent="";
+    for(const r of ["all",...rels,"none"]){
+      const b=el("button","chip",r==="all"?"All releases":r==="none"?"No release":r);b.type="button";
+      b.setAttribute("aria-pressed",String(filter===r));b.onclick=()=>{filter=r;renderAll()};box.append(b)}
+  }
+  function renderLanes(){
+    const box=$("lanes");box.textContent="";
+    const shown=cards.filter(c=>filter==="all"?c.release!=="Parked":(filter==="none"?!c.release:c.release===filter));
+    for(const [k,n,sub] of COLS){
+      const lane=el("section","lane"+(k==="terry"?" terry":""));lane.setAttribute("aria-label",n);
+      const list=shown.filter(c=>(c.col||"ideas")===k).sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0));
+      const h=el("div","lane-h");h.append(el("h2",null,n),el("span","n",String(list.length)));
+      lane.append(h,el("div","lane-sub",sub));
+      if(!list.length)lane.append(el("div","empty","Nothing here."));
+      for(const c of list){
+        const b=el("button","card");b.type="button";b.onclick=()=>openCard(c.id);
+        b.append(el("span","t",c.title||"Untitled"));
+        const m=el("span","meta");const kind=c.kind||"idea";
+        m.append(el("span","tag k-"+kind,kind));
+        if(c.release)m.append(el("span","rel",c.release));
+        const who=c.owner||c.by;if(who)m.append(el("span",null,who));
+        const nc=notes.filter(x=>x.card===c.id).length;if(nc)m.append(el("span",null,nc+(nc===1?" note":" notes")));
+        m.append(el("span",null,ago(c.updatedAt)));
+        b.append(m);lane.append(b)}
+      box.append(lane)}
+  }
+  function renderAll(){renderFilters();renderLanes();if(openId)fillCard()}
+
+  function fillCard(){
+    const c=cards.find(x=>x.id===openId);if(!c)return;
+    $("cdEyebrow").textContent=(c.kind||"idea")+" · filed by "+(c.by||"someone")+(c.createdAt?" · "+ago(c.createdAt):"");
+    $("cdTitle").textContent=c.title||"Untitled";
+    $("cdDesc").textContent=c.note||"";
+    const tk=$("cdTake");tk.hidden=!c.take;tk.textContent=c.take?"Nadia: "+c.take:"";
+    const m=$("cdMeta");m.textContent="";
+    if(c.owner)m.append(el("span",null,"Owner: "+c.owner));
+    if(c.accept)m.append(el("span",null,"Acceptance: "+c.accept));
+    for(const u of [].concat(c.links||[],c.link?[c.link]:[])){if(/^https:\/\//.test(u)){const a=el("a",null,u.replace(/^https:\/\/(github\.com\/)?/,""));a.href=u;a.target="_blank";a.rel="noopener";m.append(a)}}
+    const nb=$("cdNotes");nb.textContent="";
+    const list=notes.filter(x=>x.card===c.id).sort((a,b)=>(a.at||0)-(b.at||0));
+    if(!list.length)nb.append(el("div","empty","No discussion yet."));
+    for(const n of list){const d=el("div","note");const h=el("div","when");h.textContent=(n.by||"Someone")+" · "+ago(n.at);d.append(h,el("p",null,n.text||""));nb.append(d)}
+  }
+  function openCard(id){
+    openId=id;const c=cards.find(x=>x.id===id);if(!c)return;
+    $("cdCol").value=c.col||"ideas";$("cdRel").value=c.release||"";$("cdNote").value="";$("cdMsg").textContent="";
+    fillCard();$("cardDlg").showModal();
+  }
+  $("cardDlg").addEventListener("close",()=>{openId=null});
+
+  async function log(text,by){try{await db.collection("activity").add({text,by:by||"Terry",at:Date.now()})}catch(e){}}
+
+  $("cdSave").onclick=async()=>{
+    const c=cards.find(x=>x.id===openId);if(!c||!db)return;
+    const col=$("cdCol").value, rel=$("cdRel").value.trim(), text=$("cdNote").value.trim();
+    const patch={};if(col!==(c.col||"ideas"))patch.col=col;if(rel!==(c.release||""))patch.release=rel;
+    if(!Object.keys(patch).length&&!text){$("cardDlg").close();return}
+    $("cdSave").disabled=true;
+    try{
+      if(Object.keys(patch).length){patch.updatedAt=Date.now();await db.doc("cards/"+c.id).update(patch);
+        if(patch.col)await log("moved “"+c.title+"” to "+COLNAME[col]);
+        else await log("set “"+c.title+"” to release "+(rel||"none"))}
+      if(text){await db.collection("notes").add({card:c.id,by:"Terry",text,at:Date.now()});
+        if(!patch.col)await db.doc("cards/"+c.id).update({updatedAt:Date.now()});
+        await log("commented on “"+c.title+"”")}
+      $("cardDlg").close();
+    }catch(e){$("cdMsg").textContent="That didn't save. You may only have view access to this board."}
+    finally{$("cdSave").disabled=false}
+  };
+
+  $("addBtn").onclick=()=>{$("nMsg").textContent="";$("newDlg").showModal();$("nTitle").focus()};
+  $("nSave").onclick=async()=>{
+    const title=$("nTitle").value.trim();if(!title||!db){$("nMsg").textContent="Give the idea a name first.";return}
+    const by=$("nBy").value.trim()||"Terry";$("nSave").disabled=true;
+    try{const now=Date.now();
+      await db.collection("cards").add({title,note:$("nNote").value.trim(),kind:"idea",col:"ideas",release:$("nRel").value.trim(),by,createdAt:now,updatedAt:now});
+      await log("filed idea “"+title+"”",by);
+      $("nTitle").value="";$("nNote").value="";$("nRel").value="";$("newDlg").close();
+    }catch(e){$("nMsg").textContent="That didn't save. You may only have view access to this board."}
+    finally{$("nSave").disabled=false}
+  };
+
+  function renderFeed(evs){
+    const f=$("feed");f.textContent="";
+    if(!evs.length){f.append(el("div","empty","Moves, approvals and comments appear here as they happen."));return}
+    for(const e of evs){const d=el("div","ev");const p=el("div");p.append(el("b",null,(e.by||"Someone")+" "),document.createTextNode(e.text||""));d.append(p,el("span","when",ago(e.at)));f.append(d)}
+  }
+
+  renderLanes();
+  const timer=setTimeout(()=>{if(!db)$("livetxt").textContent="Offline. Reopen the page to reconnect."},10000);
+  Promise.resolve(window.claude?.use("db")).then(d=>{
+    clearTimeout(timer);
+    if(!d){$("livetxt").textContent="Sign in to see the live board.";return}
+    db=d;$("dot").classList.add("on");$("livetxt").textContent="Live";$("addBtn").disabled=false;
+    const fail=()=>{$("dot").classList.remove("on");$("livetxt").textContent="Lost connection. Reopen the page."};
+    db.collection("cards").onSnapshot(s=>{cards=s.docs.map(x=>({id:x.id,...x.data()}));renderAll()},fail);
+    db.collection("notes").onSnapshot(s=>{notes=s.docs.map(x=>({id:x.id,...x.data()}));renderAll()},fail);
+    db.collection("activity").orderBy("at","desc").limit(60).onSnapshot(s=>renderFeed(s.docs.map(x=>x.data())),fail);
+  }).catch(()=>{clearTimeout(timer);$("livetxt").textContent="Offline. Reopen the page to reconnect."});
+  setInterval(()=>{if(db)renderLanes()},60000);
+})();
+</script>
