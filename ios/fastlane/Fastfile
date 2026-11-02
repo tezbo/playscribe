@@ -3,14 +3,21 @@
 default_platform(:ios)
 
 platform :ios do
+  # The key as the .p8 text (ASC_KEY_P8, pasteable from a phone) or base64 of the file (ASC_KEY_P8_BASE64).
+  def p8
+    raw = ENV['ASC_KEY_P8'].to_s
+    raw.empty? ? Base64.decode64(ENV.fetch('ASC_KEY_P8_BASE64')) : raw.gsub('\\n', "\n")
+  end
+
   def api_key
-    app_store_connect_api_key(
-      key_id: ENV.fetch('ASC_KEY_ID'),
-      issuer_id: ENV.fetch('ASC_ISSUER_ID'),
-      key_content: ENV.fetch('ASC_KEY_P8_BASE64'),
-      is_key_content_base64: true,
-      in_house: false
-    )
+    app_store_connect_api_key(key_id: ENV.fetch('ASC_KEY_ID'), issuer_id: ENV.fetch('ASC_ISSUER_ID'), key_content: p8, in_house: false)
+  end
+
+  # APPLE_TEAM_ID, else the team that owns the bundle id (its App ID prefix).
+  def team_id
+    return ENV['APPLE_TEAM_ID'] unless ENV['APPLE_TEAM_ID'].to_s.empty?
+    id = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
+    Spaceship::ConnectAPI::BundleId.find(id)&.seed_id || UI.user_error!("No bundle id #{id} in App Store Connect")
   end
 
   def project_path
@@ -22,7 +29,8 @@ platform :ios do
     key = api_key
     key_path = File.expand_path('../build/AuthKey.p8')
     FileUtils.mkdir_p(File.dirname(key_path))
-    File.write(key_path, Base64.decode64(ENV.fetch('ASC_KEY_P8_BASE64')))
+    File.write(key_path, p8)
+    team = team_id
 
     # Build numbers only go up: one past whatever TestFlight already has for this version.
     build = latest_testflight_build_number(api_key: key, initial_build_number: 0) + 1
@@ -40,10 +48,10 @@ platform :ios do
         "-authenticationKeyPath #{key_path}",
         "-authenticationKeyID #{ENV.fetch('ASC_KEY_ID')}",
         "-authenticationKeyIssuerID #{ENV.fetch('ASC_ISSUER_ID')}",
-        "DEVELOPMENT_TEAM=#{ENV.fetch('APPLE_TEAM_ID')}",
+        "DEVELOPMENT_TEAM=#{team}",
         *settings
       ].join(' '),
-      export_options: { signingStyle: 'automatic', teamID: ENV.fetch('APPLE_TEAM_ID') }
+      export_options: { signingStyle: 'automatic', teamID: team }
     )
 
     upload_to_testflight(api_key: key, skip_waiting_for_build_processing: true, changelog: changelog_from_git_commits(commits_count: 10, merge_commit_filtering: 'exclude_merges'))

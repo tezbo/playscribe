@@ -12,8 +12,8 @@ Repository secrets (Settings → Secrets and variables → Actions):
 |---|---|
 | `ASC_KEY_ID` | App Store Connect → Users and Access → Integrations → App Store Connect API → Team key (Admin role, needed for cloud signing) |
 | `ASC_ISSUER_ID` | Same page, above the key list |
-| `ASC_KEY_P8_BASE64` | `base64 -i AuthKey_XXXX.p8 \| pbcopy` |
-| `APPLE_TEAM_ID` | developer.apple.com → Membership |
+| `ASC_KEY_P8` | The .p8 file's text, pasted as is (or `ASC_KEY_P8_BASE64`: `base64 -i AuthKey_XXXX.p8 \| pbcopy`) |
+| `APPLE_TEAM_ID` | Optional: developer.apple.com → Membership. Without it the lane uses the team that owns the bundle id |
 
 Optional repository variables: `IOS_SCHEME` (default `Playscribe`), `IOS_BUNDLE_ID` (default `co.codeconnectors.playscribe`).
 
