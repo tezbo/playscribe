@@ -298,9 +298,10 @@ extension Release {
         case .live:
             let hasSource = links?.steamNotes != nil || links?.ps5Page != nil
             return p.verification != .reported || liveElsewhere || hasSource ? .onPS5 : .reported
-        case .announced: return p.verification == .official ? .announced : .pcOnly
-        case .notPlanned: return p.verification == .official ? .notPlanned : .pcOnly
-        case .unknown: return .pcOnly
+        // Steam rule: unless an official post says otherwise, an update live on Steam is released.
+        case .announced: return p.verification == .official ? .announced : (liveElsewhere ? .onPS5 : .pcOnly)
+        case .notPlanned: return p.verification == .official ? .notPlanned : (liveElsewhere ? .onPS5 : .pcOnly)
+        case .unknown: return liveElsewhere ? .onPS5 : .pcOnly
         }
     }
 

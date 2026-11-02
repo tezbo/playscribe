@@ -9,7 +9,6 @@ struct UpdatesView: View {
     var body: some View {
         let ids = model.data.collection.map(\.gameID)
         let items = ids.flatMap { model.ps5Releases($0) }.sorted { $0.ps5Date > $1.ps5Date }
-        let pcCount = ids.reduce(0) { $0 + model.pcOnlyReleases($1).count }
         Group {
             if ids.isEmpty {
                 ContentUnavailableView {
@@ -32,21 +31,13 @@ struct UpdatesView: View {
                         }
                     }
                     .padding(.horizontal, 16)
-                    if pcCount > 0 {
-                        Text("\(pcCount) PC-only update\(pcCount == 1 ? " isn't" : "s aren't") listed because \(pcCount == 1 ? "it's" : "they're") not confirmed on PS5.")
-                            .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                            .frame(maxWidth: fold.minX - 32, alignment: .leading)
-                            .padding(16)
-                    }
+
                 }
                 .frame(width: duo.size.width)
             } else {
                 List {
                     ForEach(items) { r in FeedRow(release: r) }
-                    if pcCount > 0 {
-                        Text("\(pcCount) PC-only update\(pcCount == 1 ? " isn't" : "s aren't") listed because \(pcCount == 1 ? "it's" : "they're") not confirmed on PS5.")
-                            .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                    }
+
                 }
                 .contentMargins(.trailing, railWidth, for: .scrollContent)
             }

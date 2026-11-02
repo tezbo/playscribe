@@ -188,7 +188,29 @@ struct NoNotesPage: View {
 }
 
 /// The game's own information: genres, launch trailer, description and story.
+/// The game's official website and patch notes (info links); Link opens the default browser.
+/// In the Contents, so in Tabletop they're on the flat half.
+struct GameLinks: View {
+    var game: CatalogGame
+    var body: some View {
+        let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
+        if links?.official != nil || links?.patchNotes != nil {
+            HStack(spacing: 16) {
+                if let url = links?.official {
+                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                }
+                if let url = links?.patchNotes {
+                    Link(destination: url) { Label("Patch notes", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                }
+            }
+            .font(PlayscribeFont.subheadline)
+            .foregroundStyle(PlayscribeColor.accent)
+        }
+    }
+}
+
 struct GameBasicsView: View {
+    @Environment(\.duo) private var duo
     @Environment(AppModel.self) private var model
     var game: CatalogGame
     @State private var storyOpen = false
@@ -221,19 +243,8 @@ struct GameBasicsView: View {
                     .tappableFrame()
                 }
             }
-            // Link opens the default browser.
-            if info?.links?.official != nil || info?.links?.patchNotes != nil {
-                HStack(spacing: 16) {
-                    if let url = info?.links?.official {
-                        Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
-                    }
-                    if let url = info?.links?.patchNotes {
-                        Link(destination: url) { Label("Patch notes", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
-                    }
-                }
-                .font(PlayscribeFont.subheadline)
-                .foregroundStyle(PlayscribeColor.accent)
-            }
+            // Closed has no Contents panel, so the links sit with the basics.
+            if duo.pose == .closed { GameLinks(game: game) }
             if let summary = info?.summary {
                 Text("About").font(PlayscribeFont.headline)
                 Text(summary).font(PlayscribeFont.body)
@@ -311,6 +322,7 @@ struct ContentsBody: View {
                     }
                     Spacer(minLength: 8)
                 } }
+                if let game { GameLinks(game: game) }
                 if model.entry(gameID) == nil, let game {
                     Button("Add to library") { model.addGame(game, status: .watching) }
                         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
@@ -421,7 +433,7 @@ struct InlineNoteResults: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(h.line).font(PlayscribeFont.subheadline).lineLimit(3)
                         HStack(spacing: 6) {
-                            Text("\(h.release.displayName) · \(h.pcOnly ? "PC only" : h.section)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                            Text("\(h.release.displayName) · \(h.pcOnly ? "PC-specific" : h.section)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
                             if h.release.isUnconfirmed { UnconfirmedChip() }
                         }
                     }

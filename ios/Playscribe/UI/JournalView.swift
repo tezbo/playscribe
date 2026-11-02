@@ -403,7 +403,7 @@ struct NoteSectionView: View {
                     NoteItemView(item: item, gameID: release.gameID, key: "\(key):\(i)")
                 }
                 if !pcOnly.isEmpty {
-                    Button(showPC ? "Hide PC-only changes" : "Show PC-only changes (\(pcOnly.count))") { showPC.toggle() }
+                    Button(showPC ? "Hide PC-specific changes" : "Show PC-specific changes (\(pcOnly.count))") { showPC.toggle() }
                         .font(PlayscribeFont.footnote).hitTarget()
                     if showPC {
                         ForEach(Array(pcOnly.enumerated()), id: \.offset) { i, item in
