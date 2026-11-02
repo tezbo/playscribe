@@ -38,6 +38,7 @@ Answers the questions a PS5 player actually has (from the gamer review, 25 Oct),
 - Faster alerts: tighter feed schedule for followed games, within the free GitHub Actions budget.
 - Home Screen widget: latest update across your library.
 - Add several games at once, including from a screenshot of your PS App library.
+- Follow a known issue and get an alert when a patch mentions it.
 
 ### 0.5.0 "Your gaming world"
 - News for your games and series from official studio and PlayStation Blog posts (Terry).
@@ -47,6 +48,7 @@ Answers the questions a PS5 player actually has (from the gamer review, 25 Oct),
 ### 1.0.0 App Store launch
 - Works well on every iPhone, best on iPhone Duo. Accessibility pass (Dynamic Type, VoiceOver, Reduce Motion).
 - Light (vellum) and dark (ink) appearance (Terry).
+- Siri and Shortcuts: "What's new in Wukong?"
 - In-app feature suggestions from users, feeding this backlog (Terry).
 - App Store listing, screenshots, privacy labels, support page on GitHub Pages; empty, offline and error states.
 
@@ -57,15 +59,14 @@ it with one game after 1.0.
 
 ## Backlog (not scheduled)
 
-- Siri and Shortcuts: "What's new in Wukong?"
-- Patch size and "download now" hint. Follow a known issue and get told when a patch mentions it.
+- Patch size and "download now" hint (in review: depends on how often studios publish PS5 sizes).
 - Parked until Sony opens an official route: trophy data (Terry), PlayStation sign-in, price watch.
 - Other consoles once PS5 is excellent.
 
 ## Suggestions and agent ideas
 
 Every agent is empowered to pitch its own ideas at any time, not only in ideation (Terry, 2 Nov). Pitches and Terry's
-suggestions go on the live sprint board and in the suggestion box on the visual roadmap
+suggestions go on the live sprint board (https://claude.ai/artifact/T5NNq75hBh7Yu9SGt28BEU) and in the suggestion box on the visual roadmap
 (https://claude.ai/artifact/2uRr1xdcv4xLRvwvMao6k4). Nadia decides each one:
 
 - **Approve:** place it in the release whose theme it strengthens, with the reasoning.
