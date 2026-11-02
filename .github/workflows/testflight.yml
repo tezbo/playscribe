@@ -15,6 +15,7 @@ jobs:
     env:
       ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
       ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
       ASC_KEY_P8_BASE64: ${{ secrets.ASC_KEY_P8_BASE64 }}
       APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
       IOS_SCHEME: ${{ vars.IOS_SCHEME }}
@@ -27,9 +28,10 @@ jobs:
         id: ready
         run: |
           if ! ls -d ios/*.xcodeproj >/dev/null 2>&1; then echo "::notice::No Xcode project yet"; exit 0; fi
-          for v in ASC_KEY_ID ASC_ISSUER_ID ASC_KEY_P8_BASE64 APPLE_TEAM_ID; do
+          for v in ASC_KEY_ID ASC_ISSUER_ID; do
             if [ -z "${!v}" ]; then echo "::warning::$v is not set; see ios/fastlane/README.md"; exit 0; fi
           done
+          if [ -z "$ASC_KEY_P8$ASC_KEY_P8_BASE64" ]; then echo "::warning::ASC_KEY_P8 is not set; see ios/fastlane/README.md"; exit 0; fi
           echo "ok=true" >> "$GITHUB_OUTPUT"
       - name: Select Xcode 27.1
         if: steps.ready.outputs.ok
