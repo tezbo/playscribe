@@ -1,69 +1,102 @@
-"""Default Playscribe header art, used when a game has no art (wide 16:9 and tall 9:16).
-Run from the repo root: python3 brand/tools/header.py, then render.mjs rasterises it."""
-import json, random, pathlib, sys
+"""Default Playscribe header art for games with no backdrop art (wide 16:9, tall 9:16).
+A world being written: mountain ridges drawn from patch-note lines, the spark rising behind
+them like a dawn sun, pages drifting like birds, and an update bar winding up the slope as the path.
+Run from the repo root: python3 brand/tools/header.py, then node brand/tools/render.mjs."""
+import json, math, random, pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from gen import LEFT_PAGE, RIGHT_PAGE, SPARK, NOTE_LINES, NOTE_H, BAR, BAR_FILL
+from gen import SPARK
 B = pathlib.Path(__file__).resolve().parent.parent
 C = json.loads((B / 'tokens.json').read_text())['color']
 INK, PLUM, VEL, EMB = C['ink']['900'], C['icon']['bgTop'], C['vellum']['100'], C['accent']['base']
 
-def header(w, h, mark_scale, mark_xy, seed):
+def ridge(rnd, w, base, amp, rough, peaks):
+    """Height profile: a few broad peaks plus jagged noise, sampled every 8 px."""
+    xs = list(range(-20, w + 28, 8))
+    ph = [(rnd.uniform(0, w), rnd.uniform(.5, 1) * amp, rnd.uniform(w * .08, w * .22)) for _ in range(peaks)]
+    ys, n = [], 0
+    for x in xs:
+        n = n * .9 + rnd.uniform(-1, 1) * rough * .5
+        h = sum(a * math.exp(-((x - c) / s) ** 2) for c, a, s in ph)
+        ys.append(base - h + n)
+    return xs, ys
+
+def header(w, h, seed, sun):
     rnd = random.Random(seed)
-    # A field of faint patch-note lines, like the pages of a journal, drifting behind the mark.
-    lines = []
-    for row in range(0, h, 34):
-        x = rnd.randint(-60, 40)
-        while x < w:
-            ln = rnd.choice([60, 90, 120, 160, 210])
-            op = rnd.choice([.035, .05, .07])
-            lines.append(f'<rect x="{x}" y="{row + 14}" width="{ln}" height="7" rx="3.5" fill="{VEL}" opacity="{op}"/>')
-            x += ln + rnd.randint(18, 60)
-    # Embers rising from the open book, and a few distant sparks.
-    mx, my = mark_xy; k = mark_scale
-    sparks = []
-    for _ in range(46):
-        x = rnd.gauss(mx, w * .16); y = rnd.uniform(0, my - 4 * k)
-        r = rnd.choice([1.5, 2, 2.5, 3.5])
-        sparks.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{r}" fill="{EMB}" opacity="{rnd.uniform(.25,.8):.2f}"/>')
-    for _ in range(9):
-        sc = rnd.uniform(.22, .5); x = rnd.uniform(0, w); y = rnd.uniform(0, h * .55)
-        sparks.append(f'<path d="{SPARK}" transform="translate({x:.0f} {y:.0f}) scale({sc:.2f}) translate(-32 -14)" fill="{EMB}" opacity="{rnd.uniform(.35,.7):.2f}"/>')
-    # Light fanning up out of the spine.
-    rays = []
-    for ang in range(-58, 59, 9):
-        rays.append(f'<path d="M0 0 L{-26} {-1600} L{26} {-1600} Z" transform="rotate({ang})" fill="url(#ray)" opacity="{.55 - abs(ang)/160:.2f}"/>')
-    notes = ''.join(f'<rect x="{x}" y="{y}" width="{ww}" height="{NOTE_H}" rx="{NOTE_H/2}" fill="#5a4a3a" opacity=".28"/>' for x, y, ww in NOTE_LINES)
-    bx, by, bw, bh = BAR
+    sx, sy = sun
+    out = []
+    # Sky: plum to a warm horizon, the spark rising as a sun with a halo.
+    out.append(f'<rect width="{w}" height="{h}" fill="url(#sky)"/>')
+    out.append(f'<circle cx="{sx}" cy="{sy}" r="{h*.42:.0f}" fill="url(#halo)"/>')
+    for i in range(70):  # stars
+        x, y = rnd.uniform(0, w), rnd.uniform(0, h * .5)
+        out.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{rnd.choice([.8,1.1,1.5])}" fill="{VEL}" opacity="{rnd.uniform(.15,.55):.2f}"/>')
+    k = h / 900 * 3.2
+    out.append(f'<g transform="translate({sx} {sy}) scale({k:.2f}) translate(-32 -14.5)"><path d="{SPARK}" fill="{EMB}" filter="url(#bloom)" opacity=".9"/><path d="{SPARK}" fill="url(#spk)"/></g>')
+    # Ridges, far to near. Each is a silhouette with patch-note dashes written along its contour.
+    layers = 6
+    for L in range(layers):
+        t = L / (layers - 1)
+        base = h * (.52 + .09 * L) if w > h else h * (.5 + .075 * L)
+        xs, ys = ridge(rnd, w, base, h * (.22 - .025 * L), 4 + 2 * L, 3)
+        # Keep a notch so the sun always shows above the ridges.
+        tgt = sy + h * (.08 + .05 * L); sw = w * (.10 + .02 * L)
+        ys = [y + max(0, tgt - y) * math.exp(-((x - sx) / sw) ** 2) for x, y in zip(xs, ys)]
+        pts = ' '.join(f'{x},{y:.1f}' for x, y in zip(xs, ys))
+        out.append(f'<polygon points="-20,{h} {pts} {w+28},{h}" fill="url(#r{L})"/>')
+        # Dashes: rows of note lines following the ridge, fading as they go down the slope.
+        rows = 9 - L // 2
+        for r in range(1, rows):
+            dy = r * (10 + 3 * L)
+            x = rnd.uniform(-30, 10)
+            while x < w:
+                ln = rnd.choice([24, 36, 52, 70, 90]) * (1 + .4 * t)
+                i0 = max(0, min(len(xs) - 1, int((x + 20) / 8)))
+                i1 = max(0, min(len(xs) - 1, int((x + ln + 20) / 8)))
+                y0, y1 = ys[i0] + dy, ys[i1] + dy
+                op = (.16 - .012 * r) * (1 - .45 * t)
+                if abs(y1 - y0) > ln * .45: op = 0
+                if op > .02:
+                    col = EMB if (L == 3 and rnd.random() < .06) else VEL
+                    out.append(f'<line x1="{x:.0f}" y1="{y0:.1f}" x2="{x+ln:.0f}" y2="{y1:.1f}" stroke="{col}" stroke-width="{2.2 + 1.2*t:.1f}" stroke-linecap="round" opacity="{op*(3 if col==EMB else 1):.3f}"/>')
+                x += ln + rnd.uniform(10, 34)
+        # Rim light on the ridge line, warm where it faces the sun.
+        out.append(f'<polyline points="{pts}" fill="none" stroke="url(#rim{L})" stroke-width="{1.4 + t:.1f}" opacity="{.7 - .5*t:.2f}"/>')
+        if L == 4:
+            # The path: an update bar winding through the foothills toward the sun, part way installed.
+            x0, y0 = w * .06, h * .97
+            x3, y3 = sx, ys[max(0, min(len(xs) - 1, int((sx + 20) / 8)))] + h * .05
+            d = (f'M{x0:.0f} {y0:.0f} C{w*.42:.0f} {h*.98:.0f} {w*.18:.0f} {h*.80:.0f} {(x0+x3)/2:.0f} {(y0+y3)/2 + h*.04:.0f} '
+                 f'S{x3 - w*.05:.0f} {y3 + h*.06:.0f} {x3:.0f} {y3:.0f}')
+            out.append(f'<path d="{d}" fill="none" stroke="{VEL}" stroke-opacity=".18" stroke-width="5" stroke-linecap="round"/>')
+            out.append(f'<path d="{d}" fill="none" stroke="{EMB}" stroke-width="5" stroke-linecap="round" pathLength="100" stroke-dasharray="62 100" filter="url(#glowline)"/>')
+    # Pages drifting like birds toward the sun.
+    for i in range(9):
+        bx = sx + rnd.uniform(-w * .32, w * .22); by = sy + rnd.uniform(-h * .22, h * .12)
+        s = rnd.uniform(5, 11)
+        out.append(f'<path d="M{bx-s:.0f} {by:.0f} Q{bx-s/2:.0f} {by-s*.55:.0f} {bx:.0f} {by:.0f} Q{bx+s/2:.0f} {by-s*.55:.0f} {bx+s:.0f} {by:.0f}" fill="none" stroke="{VEL}" stroke-width="1.6" stroke-linecap="round" opacity="{rnd.uniform(.35,.7):.2f}"/>')
+    out.append(f'<rect width="{w}" height="{h}" fill="url(#fade)"/>')
+    ridges = ''.join(
+        f'<linearGradient id="r{L}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{mix(PLUM, INK, .25 + .15*L)}"/><stop offset="1" stop-color="{mix(PLUM, INK, .55 + .09*L)}"/></linearGradient>'
+        f'<linearGradient id="rim{L}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{VEL}" stop-opacity=".15"/><stop offset="{sx/w:.2f}" stop-color="{EMB}" stop-opacity=".9"/><stop offset="1" stop-color="{VEL}" stop-opacity=".15"/></linearGradient>'
+        for L in range(layers))
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">
 <defs>
- <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="{PLUM}"/><stop offset="1" stop-color="#141019"/></linearGradient>
- <radialGradient id="glow" cx="{mx/w:.3f}" cy="{(my - 18*k)/h:.3f}" r="{.6 if w > h else .8}"><stop offset="0" stop-color="{EMB}" stop-opacity=".42"/><stop offset=".4" stop-color="{EMB}" stop-opacity=".1"/><stop offset="1" stop-color="{EMB}" stop-opacity="0"/></radialGradient>
- <linearGradient id="ray" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FFE2B8" stop-opacity=".5"/><stop offset=".6" stop-color="{EMB}" stop-opacity="0"/></linearGradient>
- <radialGradient id="page" cx="32" cy="26" r="34" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF8EA"/><stop offset=".55" stop-color="{VEL}" stop-opacity=".9"/><stop offset="1" stop-color="{C['vellum']['500']}" stop-opacity=".55"/></radialGradient>
- <radialGradient id="spk" cx=".5" cy=".45" r=".6"><stop offset="0" stop-color="#FFF1DC"/><stop offset="1" stop-color="{EMB}"/></radialGradient>
- <filter id="bloom" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2.4"/></filter>
- <filter id="soft"><feGaussianBlur stdDeviation="{k*1.1:.0f}"/></filter>
- <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset=".62" stop-color="{INK}" stop-opacity="0"/><stop offset="1" stop-color="{INK}" stop-opacity=".9"/></linearGradient>
- <filter id="ember"><feGaussianBlur stdDeviation="1.2"/></filter>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B1428"/><stop offset=".45" stop-color="{PLUM}"/><stop offset=".62" stop-color="#7A4A4E"/><stop offset=".72" stop-color="#3A2A45"/></linearGradient>
+ <radialGradient id="halo"><stop offset="0" stop-color="#FFD9A0" stop-opacity=".55"/><stop offset=".25" stop-color="{EMB}" stop-opacity=".22"/><stop offset="1" stop-color="{EMB}" stop-opacity="0"/></radialGradient>
+ <radialGradient id="spk" cx=".5" cy=".45" r=".6"><stop offset="0" stop-color="#FFF4E2"/><stop offset="1" stop-color="{EMB}"/></radialGradient>
+ <filter id="bloom" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3"/></filter>
+ <filter id="glowline" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset=".7" stop-color="{INK}" stop-opacity="0"/><stop offset="1" stop-color="{INK}" stop-opacity=".85"/></linearGradient>
+ {ridges}
 </defs>
-<rect width="{w}" height="{h}" fill="url(#bg)"/>
-{''.join(lines)}
-<rect width="{w}" height="{h}" fill="url(#glow)"/>
-<g transform="translate({mx} {my - 26*k})" filter="url(#soft)">{''.join(rays)}</g>
-<g filter="url(#ember)">{''.join(sparks)}</g>
-<g transform="translate({mx} {my}) scale({k}) translate(-32 -32)">
- <path d="{LEFT_PAGE}" fill="#000" opacity=".35" transform="translate(0 2.5)" filter="url(#bloom)"/><path d="{RIGHT_PAGE}" fill="#000" opacity=".35" transform="translate(0 2.5)" filter="url(#bloom)"/>
- <path d="{LEFT_PAGE}" fill="url(#page)"/><path d="{RIGHT_PAGE}" fill="url(#page)"/>
- {notes}
- <rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="{bh/2}" fill="#5a4a3a" opacity=".22"/>
- <rect x="{bx}" y="{by}" width="{bw*BAR_FILL:.2f}" height="{bh}" rx="{bh/2}" fill="{EMB}"/>
- <path d="{SPARK}" fill="{EMB}" filter="url(#bloom)" transform="translate(32 14) scale(1.5) translate(-32 -14)" opacity=".75"/>
- <path d="{SPARK}" fill="url(#spk)"/>
-</g>
-<rect width="{w}" height="{h}" fill="url(#fade)"/>
+{''.join(out)}
 </svg>'''
 
+def mix(a, b, t):
+    a = [int(a[i:i+2], 16) for i in (1, 3, 5)]; b = [int(b[i:i+2], 16) for i in (1, 3, 5)]
+    return '#' + ''.join(f'{round(x + (y - x) * t):02x}' for x, y in zip(a, b))
+
 out = B / 'hero'; out.mkdir(exist_ok=True)
-(out / 'default-header-wide.svg').write_text(header(1600, 900, 17, (1080, 610), 7))
-(out / 'default-header-tall.svg').write_text(header(900, 1600, 15, (450, 900), 11))
+(out / 'default-header-wide.svg').write_text(header(1600, 900, 3, (1060, 250)))
+(out / 'default-header-tall.svg').write_text(header(900, 1600, 5, (520, 520)))
 print('ok')
