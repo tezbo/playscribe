@@ -13,16 +13,22 @@ back to it. Steam is the source of truth, no game opens to a blank page, and we 
 - Full update history for every game (Blue Prince fix).
 - Cold launch opens on the home screen.
 - Links open in the default browser; each game links its official site and patch notes.
-- Recent chapters hero carousel: **ship only if signed off with the rest; otherwise first item of 0.3.0.**
+- Recent chapters hero moved to 0.3.0 as the Latest updates hero (0.2.0 UX signed off at cca2c99 without it).
 
 ### 0.3.0 "Trust the notes"
-Answers the questions a PS5 player actually has (from the gamer review, 25 Oct).
-- Reader leads with what changed; links and details sit below.
-- PS5 version number when the studio publishes one (never a PC number).
-- PC-only items (Steam Deck, mouse, PC graphics settings) folded under "PC only", not mixed into PS5 notes.
-- Search inside a game's notes ("did they fix the save bug?").
-- Catch-up: "Since you last opened" groups every patch you missed into one summary.
-- Recent chapters hero, if it slipped from 0.2.0.
+Answers the questions a PS5 player actually has (from the gamer review, 25 Oct), plus the designer's 0.2.0 sign-off notes.
+1. Latest updates hero on home (formerly Recent chapters; mock-up v3).
+2. Tabletop links: one "Links" rail button opens a lower-half sheet (Official website, Patch notes, Steam notes);
+   upper-half labels become secondary text so nothing above the fold looks tappable. **Required.**
+3. Wording: an update is always "update"; "chapter" only means a book section. "What's new" for this patch,
+   "All updates" for the history (replacing Changes and Changelog).
+4. Reader leads with what changed; links and details sit below.
+5. PS5 version number when the studio publishes one (never a PC number).
+6. PC-only items (Steam Deck, mouse, PC graphics settings) folded under "PC only", not mixed into PS5 notes.
+7. Search inside a game's notes ("did they fix the save bug?").
+8. Catch-up: "Since you last opened" groups every patch you missed into one summary.
+9. Games without backdrop art fill the band above the title with a cover crop or the ink plate.
+10. "Checked" date refreshes when the history is fetched, or goes.
 
 ### 0.4.0 "Stay in the loop"
 - Faster alerts: tighter feed schedule for followed games, within the free GitHub Actions budget.
