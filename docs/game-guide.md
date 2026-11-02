@@ -31,7 +31,7 @@ Recommended: **Field Guide** (badge "Field Guide" with a lock glyph until unlock
 ## Content (the hard part)
 
 IGN wikis and GameFAQs guides are the right *feel* but we can't use their content: it's copyrighted by IGN or by
-each guide's author, and both sites' terms forbid reuse. Allowed sources, best first:
+each guide's author, and both sites' terms forbid reuse. Allowed sources, best first (Terry chose 1 and 2 for the trial):
 
 1. **Our own content.** Ezra writes the walkthrough and draws a stylised map for the trial game.
 2. **CC BY-SA wikis** (Fandom, wiki.gg): reusable with attribution and share-alike, so credit them as we already do
@@ -41,7 +41,7 @@ each guide's author, and both sites' terms forbid reuse. Allowed sources, best f
 Trial game: **The Blood of Dawnwalker** (our demo game). Scope: one region, with a walkthrough, map layers, two boss
 cards and a short codex.
 
-## Decisions for Terry
+## Decisions
 
-1. Name: Field Guide, or another?
-2. Trial content: our own writing plus CC BY-SA wiki material with credits (recommended)?
+- Content (Terry, 2 Nov): our own content plus CC BY-SA wiki text, credited in the guide. No IGN or GameFAQs content.
+- Name: "Field Guide" is the working name until Terry says otherwise.
