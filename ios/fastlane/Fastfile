@@ -9,7 +9,12 @@ platform :ios do
     raw = ENV['ASC_KEY_P8'].to_s
     raw = Base64.decode64(ENV.fetch('ASC_KEY_P8_BASE64')) if raw.empty?
     body = raw.gsub(/-----[A-Z ]+-----/, '').gsub(/\\n|[^A-Za-z0-9+\/=]/, '')
-    "-----BEGIN PRIVATE KEY-----\n#{body.scan(/.{1,64}/).join("\n")}\n-----END PRIVATE KEY-----\n"
+    pem = "-----BEGIN PRIVATE KEY-----\n#{body.scan(/.{1,64}/).join("\n")}\n-----END PRIVATE KEY-----\n"
+    OpenSSL::PKey.read(pem)
+    pem
+  rescue OpenSSL::PKey::PKeyError
+    # Lengths only, never the key: an App Store Connect .p8 body is 184 base64 characters (138 bytes).
+    UI.user_error!("The App Store Connect key isn't a valid .p8: its body has #{body.length} base64 characters (#{Base64.decode64(body).bytesize} bytes); a .p8 has 184 (138). Paste the whole file into ASC_KEY_P8 again.")
   end
 
   def api_key
