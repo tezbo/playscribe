@@ -75,6 +75,14 @@ platform :ios do
     File.exist?('../Playscribe.xcodeproj') ? 'Playscribe.xcodeproj' : UI.user_error!('No Playscribe.xcodeproj in ios/ (run xcodegen)')
   end
 
+  # The "## 0.2.0" section of CHANGELOG.md, without its heading.
+  def release_notes(version)
+    text = File.read(File.expand_path('../../CHANGELOG.md')) # lanes run in ios/fastlane
+    section = text[/^## #{Regexp.escape(version.to_s)}\b.*?\n(.*?)(?=^## |\z)/m, 1].to_s.strip
+    UI.user_error!("CHANGELOG.md has no section for #{version}") if section.empty?
+    section[0, 4000]
+  end
+
   desc 'Build, sign and upload to TestFlight. marketing_version: e.g. 0.3.0 (from the git tag)'
   lane :beta do |options|
     key = api_key
@@ -106,7 +114,8 @@ platform :ios do
       export_options: { signingStyle: 'automatic', teamID: team }
     )
 
-    upload_to_testflight(api_key: key, app_identifier: bundle_id, skip_waiting_for_build_processing: true, changelog: changelog_from_git_commits(commits_count: 10, merge_commit_filtering: 'exclude_merges'))
+    # "What to Test" is this version's CHANGELOG.md section. TestFlight only takes it once the build has processed.
+    upload_to_testflight(api_key: key, app_identifier: bundle_id, changelog: release_notes(options[:marketing_version]))
     ensure_internal_testers
   ensure
     File.delete(key_path) if key_path && File.exist?(key_path)
