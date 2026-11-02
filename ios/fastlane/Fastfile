@@ -4,9 +4,12 @@ default_platform(:ios)
 
 platform :ios do
   # The key as the .p8 text (ASC_KEY_P8, pasteable from a phone) or base64 of the file (ASC_KEY_P8_BASE64).
+  # Rebuilt from its base64 body, since a copy from a phone can lose the line breaks.
   def p8
     raw = ENV['ASC_KEY_P8'].to_s
-    raw.empty? ? Base64.decode64(ENV.fetch('ASC_KEY_P8_BASE64')) : raw.gsub('\\n', "\n")
+    raw = Base64.decode64(ENV.fetch('ASC_KEY_P8_BASE64')) if raw.empty?
+    body = raw.gsub(/-----[A-Z ]+-----/, '').gsub(/\\n|[^A-Za-z0-9+\/=]/, '')
+    "-----BEGIN PRIVATE KEY-----\n#{body.scan(/.{1,64}/).join("\n")}\n-----END PRIVATE KEY-----\n"
   end
 
   def api_key
