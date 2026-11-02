@@ -26,15 +26,23 @@ platform :ios do
     app_store_connect_api_key(key_id: ENV.fetch('ASC_KEY_ID'), issuer_id: ENV.fetch('ASC_ISSUER_ID'), key_content: p8, in_house: false)
   end
 
+  # The bundle id of the App Store Connect app: the Appfile's, or the account's only app when that
+  # was created under another id (Terry's is tezbo.Playscribe; an app's bundle id can't be changed).
+  def bundle_id
+    @bundle_id ||= begin
+      id = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
+      apps = Spaceship::ConnectAPI::App.all
+      app = apps.find { |a| a.bundle_id == id } || (apps.size == 1 ? apps.first : nil)
+      UI.user_error!("No App Store Connect app for #{id} (apps: #{apps.map(&:bundle_id).join(', ')})") unless app
+      UI.message("Building for #{app.name} (#{app.bundle_id})")
+      app.bundle_id
+    end
+  end
+
   # APPLE_TEAM_ID, else the team that owns the bundle id (its App ID prefix).
   def team_id
     return ENV['APPLE_TEAM_ID'] unless ENV['APPLE_TEAM_ID'].to_s.empty?
-    id = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
-    apps = Spaceship::ConnectAPI::App.all.map { |a| "#{a.name} (#{a.bundle_id})" }
-    UI.message("App Store Connect apps: #{apps.join(', ')}")
-    bundle = Spaceship::ConnectAPI::BundleId.find(id)
-    bundle ||= Spaceship::ConnectAPI::BundleId.create(name: 'Playscribe', platform: 'IOS', identifier: id).tap { UI.message("Registered bundle id #{id}") }
-    bundle.seed_id
+    Spaceship::ConnectAPI::BundleId.find(bundle_id)&.seed_id || UI.user_error!("No bundle id #{bundle_id} in the developer account")
   end
 
   def project_path
@@ -50,7 +58,7 @@ platform :ios do
     team = team_id
 
     # Build numbers only go up: one past whatever TestFlight already has for this version.
-    build = latest_testflight_build_number(api_key: key, initial_build_number: 0) + 1
+    build = latest_testflight_build_number(api_key: key, app_identifier: bundle_id, initial_build_number: 0) + 1
     settings = ["CURRENT_PROJECT_VERSION=#{build}"]
     settings << "MARKETING_VERSION=#{options[:marketing_version]}" unless options[:marketing_version].to_s.empty?
 
@@ -66,12 +74,13 @@ platform :ios do
         "-authenticationKeyID #{ENV.fetch('ASC_KEY_ID')}",
         "-authenticationKeyIssuerID #{ENV.fetch('ASC_ISSUER_ID')}",
         "DEVELOPMENT_TEAM=#{team}",
+        "PRODUCT_BUNDLE_IDENTIFIER=#{bundle_id}",
         *settings
       ].join(' '),
       export_options: { signingStyle: 'automatic', teamID: team }
     )
 
-    upload_to_testflight(api_key: key, skip_waiting_for_build_processing: true, changelog: changelog_from_git_commits(commits_count: 10, merge_commit_filtering: 'exclude_merges'))
+    upload_to_testflight(api_key: key, app_identifier: bundle_id, skip_waiting_for_build_processing: true, changelog: changelog_from_git_commits(commits_count: 10, merge_commit_filtering: 'exclude_merges'))
   ensure
     File.delete(key_path) if key_path && File.exist?(key_path)
   end
