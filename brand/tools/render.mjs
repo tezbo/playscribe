@@ -19,6 +19,8 @@ const jobs = [
   ['splash/flat.svg', 'splash/png/flat.png', 1024 * 2, 820 * 2, false],
   ['splash/book.svg', 'splash/png/book.png', 1024 * 2, 820 * 2, false],
   ['library/closed-hero.svg', 'library/png/closed-hero.png', 393 * 3, 520 * 3, false],
+  ['hero/default-header-wide.svg', 'hero/png/default-header-wide.png', 1600 * 2, 900 * 2, false],
+  ['hero/default-header-tall.svg', 'hero/png/default-header-tall.png', 900 * 2, 1600 * 2, false],
   ['splash/tabletop.svg', 'splash/png/tabletop.png', 820 * 2, 1024 * 2, false],
 ]
 
