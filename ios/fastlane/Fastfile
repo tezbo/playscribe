@@ -9,22 +9,70 @@ platform :ios do
     raw = ENV['ASC_KEY_P8'].to_s
     raw = Base64.decode64(ENV.fetch('ASC_KEY_P8_BASE64')) if raw.empty?
     body = raw.gsub(/-----[A-Z ]+-----/, '').gsub(/\\n|[^A-Za-z0-9+\/=]/, '')
-    "-----BEGIN PRIVATE KEY-----\n#{body.scan(/.{1,64}/).join("\n")}\n-----END PRIVATE KEY-----\n"
+    # The key is one DER sequence ("MIG..."): cut it out by its own length, which drops armour a phone mangled.
+    if (start = body.index('MIG'))
+      len = Base64.decode64(body[start, 4]).bytes[2] + 3
+      body = body[start, (len + 2) / 3 * 4]
+    end
+    pem = "-----BEGIN PRIVATE KEY-----\n#{body.scan(/.{1,64}/).join("\n")}\n-----END PRIVATE KEY-----\n"
+    OpenSSL::PKey.read(pem)
+    pem
+  rescue OpenSSL::PKey::PKeyError
+    # Lengths only, never the key.
+    UI.user_error!("The App Store Connect key isn't a valid .p8 (#{body.length} base64 characters after cleanup). Paste the whole file into ASC_KEY_P8 again.")
   end
 
   def api_key
     app_store_connect_api_key(key_id: ENV.fetch('ASC_KEY_ID'), issuer_id: ENV.fetch('ASC_ISSUER_ID'), key_content: p8, in_house: false)
   end
 
+  # The bundle id of the App Store Connect app: the Appfile's, or the account's only app when that
+  # was created under another id (Terry's is tezbo.Playscribe; an app's bundle id can't be changed).
+  def bundle_id
+    @bundle_id ||= begin
+      id = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
+      apps = Spaceship::ConnectAPI::App.all
+      app = apps.find { |a| a.bundle_id == id } || (apps.size == 1 ? apps.first : nil)
+      UI.user_error!("No App Store Connect app for #{id} (apps: #{apps.map(&:bundle_id).join(', ')})") unless app
+      UI.message("Building for #{app.name} (#{app.bundle_id})")
+      app.bundle_id
+    end
+  end
+
   # APPLE_TEAM_ID, else the team that owns the bundle id (its App ID prefix).
   def team_id
     return ENV['APPLE_TEAM_ID'] unless ENV['APPLE_TEAM_ID'].to_s.empty?
-    id = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
-    Spaceship::ConnectAPI::BundleId.find(id)&.seed_id || UI.user_error!("No bundle id #{id} in App Store Connect")
+    Spaceship::ConnectAPI::BundleId.find(bundle_id)&.seed_id || UI.user_error!("No bundle id #{bundle_id} in the developer account")
+  end
+
+  # Everyone on the App Store Connect team gets every build: one internal TestFlight group. A failure
+  # here never fails the upload; it is reported and the group can be set up by hand.
+  def ensure_internal_testers
+    app = Spaceship::ConnectAPI::App.find(bundle_id)
+    group = app.get_beta_groups.find(&:is_internal_group) || begin
+      # Posted directly: fastlane's create_beta_group always sends public-link fields, which Apple
+      # rejects for an internal group.
+      body = { data: { type: 'betaGroups', attributes: { name: 'Team', isInternalGroup: true, hasAccessToAllBuilds: true },
+                       relationships: { app: { data: { type: 'apps', id: app.id } } } } }
+      Spaceship::ConnectAPI.client.test_flight_request_client.post('v1/betaGroups', body)
+      app.get_beta_groups.find(&:is_internal_group)
+    end
+    users = Spaceship::ConnectAPI::User.all
+    client = Spaceship::ConnectAPI.client.test_flight_request_client
+    users.each do |u|
+      body = { data: { type: 'betaTesters', attributes: { email: u.username, firstName: u.first_name, lastName: u.last_name },
+                       relationships: { betaGroups: { data: [{ type: 'betaGroups', id: group.id }] } } } }
+      client.post('v1/betaTesters', body)
+    rescue Spaceship::UnexpectedResponse => e
+      UI.message("Tester #{u.username}: #{e.message}") # already in the group
+    end
+    UI.success("Internal TestFlight group '#{group.name}' has the team's #{users.size} member(s)")
+  rescue StandardError => e
+    UI.important("Couldn't set up internal testers: #{e.class}: #{e.message}")
   end
 
   def project_path
-    Dir['../*.xcodeproj'].first&.then { |p| File.basename(p) } || UI.user_error!('No Xcode project in ios/')
+    File.exist?('../Playscribe.xcodeproj') ? 'Playscribe.xcodeproj' : UI.user_error!('No Playscribe.xcodeproj in ios/ (run xcodegen)')
   end
 
   desc 'Build, sign and upload to TestFlight. marketing_version: e.g. 0.3.0 (from the git tag)'
@@ -36,7 +84,7 @@ platform :ios do
     team = team_id
 
     # Build numbers only go up: one past whatever TestFlight already has for this version.
-    build = latest_testflight_build_number(api_key: key, initial_build_number: 0) + 1
+    build = latest_testflight_build_number(api_key: key, app_identifier: bundle_id, initial_build_number: 0) + 1
     settings = ["CURRENT_PROJECT_VERSION=#{build}"]
     settings << "MARKETING_VERSION=#{options[:marketing_version]}" unless options[:marketing_version].to_s.empty?
 
@@ -52,12 +100,14 @@ platform :ios do
         "-authenticationKeyID #{ENV.fetch('ASC_KEY_ID')}",
         "-authenticationKeyIssuerID #{ENV.fetch('ASC_ISSUER_ID')}",
         "DEVELOPMENT_TEAM=#{team}",
+        "PRODUCT_BUNDLE_IDENTIFIER=#{bundle_id}",
         *settings
       ].join(' '),
       export_options: { signingStyle: 'automatic', teamID: team }
     )
 
-    upload_to_testflight(api_key: key, skip_waiting_for_build_processing: true, changelog: changelog_from_git_commits(commits_count: 10, merge_commit_filtering: 'exclude_merges'))
+    upload_to_testflight(api_key: key, app_identifier: bundle_id, skip_waiting_for_build_processing: true, changelog: changelog_from_git_commits(commits_count: 10, merge_commit_filtering: 'exclude_merges'))
+    ensure_internal_testers
   ensure
     File.delete(key_path) if key_path && File.exist?(key_path)
   end
