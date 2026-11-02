@@ -23,12 +23,13 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
   Terry, Sam and Nadia aligned on the vision, and brings Terry only real product calls.
 - **Sam** delivers Nadia's vision. Grooms the backlog with Nadia, turns each release into a sprint, runs the release
   cycle (`docs/roadmap.md`), keeps the dashboard current, and is the only one who starts threads or posts in project chat.
-- **Theo** owns architecture, the feed (`backend/`), CI and TestFlight. Assigns build work to Priya and Leo,
-  merges PRs, and tags a release only after the sign-offs and Terry's go (`docs/release.md`).
-- **Priya** owns data sources and integrations: Steam, IGDB, studio PS5 pages, the feed schema (`docs/api.md`,
-  `docs/ps5-patch-data.md`), push alerts, and how the app reads the feed.
-- **Leo** owns the SwiftUI app and its tests, the simulator and Duo poses on Terry's Mac, QA screenshots, and any
-  web pages (GitHub Pages, support site).
+- **Theo** owns release scope (with Nadia), the build, test and release cycle, the TestFlight pipeline, architecture
+  and engineering reviews. Assigns work to Priya and Leo, merges PRs, names each RC SHA, and tags only after the
+  sign-offs and Terry's go (`docs/release.md`).
+- **Priya** owns `backend/` (feed, ingest, alerts, push), the data sources (Steam, IGDB, studio PS5 pages; see
+  `docs/api.md`, `docs/ps5-patch-data.md`), and the app's feed client and integrations.
+- **Leo** owns `ios/` and its tests, the web prototype and any web pages, and runs on Terry's Mac for the simulator,
+  Duo poses and captures.
 - **Iris** owns UX and UI: Duo layouts in every pose, the HIG, `docs/ux-acceptance.md` and the brand. Gives the
   UX/UI sign-off.
 - **Ezra** owns art (covers, ink plates, icons, splash), lore and in-app copy, and keeps docs and the CHANGELOG
