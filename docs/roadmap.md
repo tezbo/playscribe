@@ -29,6 +29,9 @@ Answers the questions a PS5 player actually has (from the gamer review, 25 Oct),
 8. Catch-up: "Since you last opened" groups every patch you missed into one summary.
 9. Games without backdrop art fill the band above the title with a cover crop or the ink plate.
 10. "Checked" date refreshes when the history is fetched, or goes.
+11. Tabletop eyebrow shows the game name or date, not the patch title twice.
+12. Updates older than a game's PS5 launch (Blue Prince "Patch 1", Jun 2024) don't count as released on PS5.
+13. Backend (Theo): 72-hour guard on reported alerts; alert when a "consoles later" update goes live.
 
 ### 0.4.0 "Stay in the loop"
 - Faster alerts: tighter feed schedule for followed games, within the free GitHub Actions budget.
@@ -53,8 +56,19 @@ Answers the questions a PS5 player actually has (from the gamer review, 25 Oct),
 7. PlayStation sign-in to import your library. Parked: official auth only.
 8. Other consoles (Xbox, Switch 2) once PS5 is solid.
 
-## How the product owner works
+## Release cycle
 
-- Keeps this file current and proposes each version's scope to the release manager.
-- Brings Terry only real product calls (scope changes, anything that costs money, anything touching the core).
-- Ideas from any thread land in the backlog here, ranked against the core purpose.
+Owners and roles are in AGENTS.md. Each minor release runs once through this cycle.
+
+1. **Ideation.** Every agent pitches one to three ideas to Nadia. Nadia and Sam groom them into one release theme
+   with a short scope in this file.
+2. **Scope.** Nadia sends Terry the theme and scope. Terry approves or changes it.
+3. **Build.** Sam turns the scope into a sprint. Theo, Priya and Leo build it, with Iris and Ezra designing ahead
+   of the build. Every PR cites acceptance IDs.
+4. **Test.** On one candidate SHA: Quinn signs off backend/data and front end, Iris signs off UX/UI, and Jun
+   playtests. Fixes loop back to step 3.
+5. **Review.** Sam shows Terry a short demo: screenshots for each pose plus the CHANGELOG section.
+6. **Ship.** Terry says go, and Theo tags the release, which goes to TestFlight (docs/release.md).
+7. **Retro.** Each agent sends Sam one keep and one change. Leftovers and new ideas go back to the backlog.
+
+Patch releases (0.x.1) skip steps 1, 2 and 5 and still need step 4 and Terry's go.
