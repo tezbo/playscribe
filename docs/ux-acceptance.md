@@ -423,3 +423,12 @@ Open becomes Book, and Open portrait becomes Tabletop, with nothing moving excep
 ## 12. QA method
 
 QA re-runs these as a checklist on each build. It uses simulator or Device Hub screenshots for: Library, Add game, game book, video and a notification arrival, each in Closed, Open portrait, Open landscape, Book and Tabletop. It adds an Accessibility Inspector audit and AX5 Dynamic Type screenshots of Library and game book. G-4 and G-5 are measured from frames, not judged by eye. Builds should expose a debug overlay that outlines tappable frames and reserved regions.
+
+## 13. Every tap lands (v2.4)
+
+Added after Terry found that tapping a Blue Prince patch row scrolled the list to the top instead of opening the patch.
+
+- **J-1 Every list row opens its target.** Tapping any row (release, game, search hit, Updates feed item, notification-history item) selects it and shows its target in one tap, in every pose. In side-by-side layouts the Page shows that release and the row stays selected and in view. In stacked or closed layouts the target is pushed. A tap never scrolls the list, jumps to the top, reselects a different row, or does nothing. A second tap on the selected row is harmless. The Back button returns to the same row at the same scroll offset.
+- **J-2 Every card and control does what its label says.** Tiles, hero cards, filter pills, rail items, the View menu, links (opening the default browser), Mark read, Bookmark, Show spoilers, Next and Previous each land where a player would expect, with visible feedback within 100 ms.
+- **J-3 Long lists.** J-1 also holds for rows far down the list (the 10th row and beyond, for example Blue Prince 1.4) and right after a refresh that adds rows above.
+- **J-4 Evidence.** The front-end sign-off is done by tapping, not from stills. For every screen a release touches: an XCUITest that taps each row and control and asserts the target (selected release id, pushed view or opened URL), run in all 5 poses, plus one recording per journey. A still alone does not pass J-1 or J-2.
