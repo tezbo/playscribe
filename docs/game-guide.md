@@ -20,6 +20,15 @@ Recommended: **Field Guide** (badge "Field Guide" with a lock glyph until unlock
 | Open, book | A guide spread: walkthrough on the left page, map plate or boss card on the right, turning like pages. |
 | Open, flat | The full atlas with every layer, and the codex (characters, lore, series history). |
 
+## Guide devices to carry over (from docs/guide-references.md)
+
+Terry's reference is a classic official strategy guide. We keep its devices and draw them in Playscribe's own art:
+- **Chapter thumb tabs** on the outer page edge in book pose, so the guide has a geography you can find by feel.
+- **Numbered walkthrough steps** under place-named section banners, with **Tip** callouts for optional depth.
+- **Numbered collectible cards** (bestiary, items) with element chips and a completion count, so it reads as a checklist you want to finish.
+- **Full-page location plates** in our ink style, and an **Extras** chapter for lore and art.
+- Closed pose shows the current boss's weaknesses as element chips next to the next step.
+
 ## The gateway
 
 - A "Field Guide" badge where "My book" is today. Locked, it opens a preview spread and the Playscribe+ offer.
