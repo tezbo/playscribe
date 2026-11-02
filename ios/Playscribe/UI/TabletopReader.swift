@@ -56,8 +56,8 @@ struct TabletopReaderStage: View {
             if let section = sections[safe: index] {
                 VStack(alignment: .leading, spacing: 14) {
                     HStack(spacing: 8) {
-                        Text(release?.displayName.uppercased() ?? "")
-                            .font(PlayscribeFont.caption).tracking(1)
+                        Text(release?.displayName ?? "")
+                            .font(PlayscribeFont.title3)
                             .foregroundStyle(release?.isUnconfirmed == true ? PlayscribeColor.textTertiary : PlayscribeColor.accent)
                         if release?.isUnconfirmed == true { UnconfirmedChip() }
                     }

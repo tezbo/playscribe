@@ -68,7 +68,8 @@ struct PageView: View {
         }
         .onAppear(perform: restore)
         .onChange(of: duo.pose) { restore() }
-        .onChange(of: model.nav.selected?[gameID]) { position.scrollTo(edge: .top) }
+        // Closed, the list shares this scroll; jumping to the top would lose the tapped row (J-1).
+        .onChange(of: model.nav.selected?[gameID]) { if !withContents { position.scrollTo(edge: .top) } }
         .background(Color.ink0)
         .foldAudited()
     }
@@ -107,7 +108,8 @@ struct ReleasePage: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(spacing: 8) {
                 if model.isUnread(r) { UnreadDot() }
-                Text(r.displayName).font(PlayscribeFont.headline)
+                // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
+                Text(r.displayName).font(PlayscribeFont.title3)
                     .accessibilityIdentifier("releaseTitle")
                 ReleaseTag(release: r)
             }
@@ -481,8 +483,8 @@ struct ReleaseTimeline: View {
             // J-1: side by side (and Tabletop, where the Page is the standing half) the Page shows
             // it; Closed and open portrait push it as its own screen.
             if duo.pose == .closed || (duo.pose == .flat && !duo.isLandscape) {
+                model.select(gameID, releaseID: r.id)
                 model.nav.detailReleaseID = r.id
-                if model.isUnread(r) { model.markRead(r.id) }
             } else {
                 model.select(gameID, releaseID: r.id)
             }

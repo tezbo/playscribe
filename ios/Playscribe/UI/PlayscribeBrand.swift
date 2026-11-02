@@ -27,8 +27,8 @@ enum PlayscribeColor {
 }
 
 enum PlayscribeFont {
-    static let largeTitle = Font.custom("Literata72pt-SemiBold", size: 34, relativeTo: .largeTitle)
-    static let title = Font.custom("Literata72pt-SemiBold", size: 28, relativeTo: .title)
+    static let largeTitle = Font.custom("Literata24pt-SemiBold", size: 34, relativeTo: .largeTitle)
+    static let title = Font.custom("Literata24pt-SemiBold", size: 28, relativeTo: .title)
     static let title2 = Font.custom("Literata24pt-SemiBold", size: 22, relativeTo: .title2)
     static let title3 = Font.custom("Literata24pt-SemiBold", size: 20, relativeTo: .title3)
     static let pullQuote = Font.custom("Literata24pt-MediumItalic", size: 20, relativeTo: .title3)

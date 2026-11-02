@@ -174,21 +174,29 @@ final class SwapSidesTests: XCTestCase {
 
 
 /// J-1, J-3, J-4: every release row opens its release in one tap, in the current pose, including
-/// one far down the list (Blue Prince 1.4); Back returns to the list.
+/// one far down the list (Blue Prince 1.4); the list never jumps, and Back returns to the row.
 @MainActor
 final class ReleaseRowTests: XCTestCase {
-    func testRowsOpenTheirRelease() throws {
-        let app = XCUIApplication()
+    static func openBluePrince(_ app: XCUIApplication) {
         app.launchArguments = ["-qaRoute", "add-game/149657"]
         app.launch()
         sleep(3)
         app.terminate()
         app.launchArguments = ["-qaRoute", "chapter/igdb-149657/updates"]
         app.launch()
+    }
+
+    static func reveal(_ row: XCUIElement, in app: XCUIApplication) {
+        var tries = 0
+        while !(row.exists && row.isHittable) && tries < 14 { app.swipeUp(velocity: .slow); tries += 1 }
+    }
+
+    func testRowsOpenTheirRelease() throws {
+        let app = XCUIApplication()
+        Self.openBluePrince(app)
         for name in ["Hotfix 1.7.2", "Patch 1.4"] {
             let row = app.buttons["releaseRow-\(name)"]
-            var tries = 0
-            while !row.isHittable && tries < 12 { app.swipeUp(velocity: .slow); tries += 1 }
+            Self.reveal(row, in: app)
             XCTAssertTrue(row.waitForExistence(timeout: 10) && row.isHittable, "\(name) row reachable")
             row.tap()
             sleep(1)
@@ -196,12 +204,44 @@ final class ReleaseRowTests: XCTestCase {
             XCTAssertTrue(title.waitForExistence(timeout: 5), "\(name) opens")
             let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
             shot.name = "row-\(name)"; shot.lifetime = .keepAlways; add(shot)
-            // Pushed (Closed, open portrait): Back returns to the list with the row there.
-            let back = app.navigationBars.buttons.element(boundBy: 0)
-            if app.navigationBars[name].exists, back.exists {
-                back.tap()
-                XCTAssertTrue(row.waitForExistence(timeout: 5), "back to \(name) row")
+            if app.navigationBars[name].exists {
+                // Pushed (Closed, open portrait): Back returns to the same row, still in view.
+                app.navigationBars[name].buttons.element(boundBy: 0).tap()
+                sleep(1)
+                XCTAssertTrue(row.isHittable, "back to \(name) row, in view")
+            } else {
+                // On the Page: the list didn't jump; the row is still in view and selected.
+                XCTAssertTrue(row.isHittable, "\(name) row still in view after the tap")
+                XCTAssertTrue(row.isSelected, "\(name) row selected")
             }
         }
+    }
+}
+
+/// J-1 across a pose change, run by tools/qa/journey.sh: tap Patch 1.4 Closed, unfold to Open,
+/// and the Page shows 1.4 with its row selected.
+@MainActor
+final class JourneyTests: XCTestCase {
+    func testA_ClosedTapsPatch14() throws {
+        let app = XCUIApplication()
+        ReleaseRowTests.openBluePrince(app)
+        let row = app.buttons["releaseRow-Patch 1.4"]
+        ReleaseRowTests.reveal(row, in: app)
+        row.tap()
+        XCTAssertTrue(app.navigationBars["Patch 1.4"].waitForExistence(timeout: 5), "pushed in Closed")
+    }
+
+    func testB_OpenShowsPatch14() throws {
+        let app = XCUIApplication()
+        app.activate()
+        sleep(2)
+        let title = app.staticTexts.matching(identifier: "releaseTitle").matching(NSPredicate(format: "label == %@", "Patch 1.4")).firstMatch
+        XCTAssertTrue(title.waitForExistence(timeout: 8), "Page shows Patch 1.4 after unfolding")
+        XCTAssertFalse(app.navigationBars["Patch 1.4"].exists, "the pushed screen popped on unfolding")
+        let row = app.buttons["releaseRow-Patch 1.4"]
+        ReleaseRowTests.reveal(row, in: app)
+        XCTAssertTrue(row.isSelected, "Patch 1.4 row selected")
+        let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        shot.name = "journey-open-patch-1.4"; shot.lifetime = .keepAlways; add(shot)
     }
 }
