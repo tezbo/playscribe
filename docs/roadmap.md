@@ -37,7 +37,7 @@ Answers the questions a PS5 player actually has (from the gamer review, 25 Oct),
 - Watchlist for upcoming games: release dates, announcements and release-day alerts (Terry).
 - Faster alerts: tighter feed schedule for followed games, within the free GitHub Actions budget.
 - Home Screen widget: latest update across your library.
-- Add several games at once, including from a screenshot of your PS App library.
+- Live library scan (Terry): point the camera at your PS5 or PS App library and games pop into Playscribe in real time, recognised on device; a photo is the fallback. Add several games at once.
 - Follow a known issue and get an alert when a patch mentions it.
 
 ### 0.5.0 "Your gaming world"
