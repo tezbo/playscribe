@@ -60,15 +60,15 @@ Answers the questions a PS5 player actually has (from the gamer review, 25 Oct),
 
 Owners and roles are in AGENTS.md. Each minor release runs once through this cycle.
 
-1. **Ideation.** Every agent pitches one to three ideas to Nadia. Nadia and Sam groom them into one release theme
-   with a short scope in this file.
-2. **Scope.** Nadia sends Terry the theme and scope. Terry approves or changes it.
-3. **Build.** Sam turns the scope into a sprint. Theo, Priya and Leo build it, with Iris and Ezra designing ahead
-   of the build. Every PR cites acceptance IDs.
-4. **Test.** On one candidate SHA: Quinn signs off backend/data and front end, Iris signs off UX/UI, and Jun
-   playtests. Fixes loop back to step 3.
-5. **Review.** Sam shows Terry a short demo: screenshots for each pose plus the CHANGELOG section.
-6. **Ship.** Terry says go, and Theo tags the release, which goes to TestFlight (docs/release.md).
-7. **Retro.** Each agent sends Sam one keep and one change. Leftovers and new ideas go back to the backlog.
+1. **Ideation.** Every agent pitches one to three ideas to Nadia. Nadia and Sam groom them into one release theme.
+2. **Plan.** Theo and Nadia pick the version's scope from this file, and Terry agrees it.
+3. **Build.** Sam runs it as a sprint. Priya and Leo build it, Iris and Ezra design ahead of the build, and work
+   merges to main. Merging never uploads anything. Every PR cites acceptance IDs.
+4. **Freeze.** Theo names one RC SHA.
+5. **Test that SHA.** Quinn signs off backend/data and front end, Iris signs off UX/UI, and Jun playtests. Fixes
+   make a new RC, and only the diff is re-checked.
+6. **Sprint review.** Leo captures, Iris builds the walkthrough, and Theo presents it to Terry with the CHANGELOG section.
+7. **Ship.** Terry says go, then Theo tags `vX.Y.Z` and TestFlight ships it (docs/release.md).
+8. **Retro.** Each agent sends Sam one keep and one change. Leftovers and new ideas go back to the backlog.
 
-Patch releases (0.x.1) skip steps 1, 2 and 5 and still need step 4 and Terry's go.
+Patch releases (0.x.1) skip ideation and the sprint review, and still need steps 4, 5 and Terry's go.
