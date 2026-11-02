@@ -49,3 +49,7 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 The core rules are in `CLAUDE.md`. In short: spend nothing, no game ever opens to a blank page, Steam is the
 source of truth, use only official sources and auth, check Apple facts against current docs and the SDK, keep
 messages to Terry short, and spend tokens carefully.
+
+**Tokens (Terry, 2026-11-02).** Every agent keeps its token use in mind and plans its work to cut waste without
+lowering quality. Read only what the task needs, prefer targeted searches and diffs over whole files, don't re-check
+what is already verified, batch related changes, and keep messages between agents short.
