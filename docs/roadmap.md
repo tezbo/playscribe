@@ -21,7 +21,8 @@ Answers the questions a PS5 player actually has (from the gamer review, 25 Oct),
 2. Tabletop links: one "Links" rail button opens a lower-half sheet (Official website, Patch notes, Steam notes);
    upper-half labels become secondary text so nothing above the fold looks tappable. **Required.**
 3. Wording: an update is always "update"; "chapter" only means a book section. "What's new" for this patch,
-   "All updates" for the history (replacing Changes and Changelog).
+   "All updates" for the history (replacing Changes and Changelog). Links: "Patch notes" on the game page becomes
+   "All patch notes", and "Steam notes" on each update becomes "Read this patch" (Iris).
 4. Reader leads with what changed; links and details sit below.
 5. PS5 version number when the studio publishes one (never a PC number).
 6. PC-only items (Steam Deck, mouse, PC graphics settings) folded under "PC only", not mixed into PS5 notes.
