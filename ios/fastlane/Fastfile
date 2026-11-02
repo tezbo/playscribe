@@ -57,9 +57,16 @@ platform :ios do
       Spaceship::ConnectAPI.client.test_flight_request_client.post('v1/betaGroups', body)
       app.get_beta_groups.find(&:is_internal_group)
     end
-    users = Spaceship::ConnectAPI::User.all.map { |u| { email: u.username, firstName: u.first_name, lastName: u.last_name } }
-    group.post_bulk_beta_tester_assignments(beta_testers: users)
-    UI.success("Internal TestFlight group '#{group.name}' has #{users.size} tester(s)")
+    users = Spaceship::ConnectAPI::User.all
+    client = Spaceship::ConnectAPI.client.test_flight_request_client
+    users.each do |u|
+      body = { data: { type: 'betaTesters', attributes: { email: u.username, firstName: u.first_name, lastName: u.last_name },
+                       relationships: { betaGroups: { data: [{ type: 'betaGroups', id: group.id }] } } } }
+      client.post('v1/betaTesters', body)
+    rescue Spaceship::UnexpectedResponse => e
+      UI.message("Tester #{u.username}: #{e.message}") # already in the group
+    end
+    UI.success("Internal TestFlight group '#{group.name}' has the team's #{users.size} member(s)")
   rescue StandardError => e
     UI.important("Couldn't set up internal testers: #{e.class}: #{e.message}")
   end
