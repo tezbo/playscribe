@@ -5,9 +5,12 @@ so write it for testers. Release steps are in docs/release.md.
 
 ## 0.2.0 (candidate, not released)
 
-- Blue Prince and every other game show their full update history, not only recent ones.
-- A cold launch opens on the home screen.
-- Links open in your default browser. Each game page links its official website and patch notes.
+- Every game shows its full update history, and Blue Prince is no longer empty.
+- Updates that reached consoles a little after Steam now count as released on PS5, so none of them show as PC only.
+- Tap any update in the list to open it. On a closed phone it opens full screen and Back returns to your place.
+- A cold launch opens on your Library.
+- Links open in your browser. Each game links to its official website and "All patch notes", and each update has "Open in Steam".
+- A game without artwork gets the Playscribe header instead of a blank space. Image dots only show when there is more than one image.
 
 ## 0.1.0
 
