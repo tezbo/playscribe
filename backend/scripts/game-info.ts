@@ -7,6 +7,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { Igdb } from '../src/ingest/igdb.ts'
+import { registry, steamAppIdOf } from '../src/registry.ts'
 
 const { TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET } = process.env
 const outDir = process.argv[2]
@@ -24,6 +25,27 @@ export interface GameInfo {
   firstRelease?: string
   /** YouTube videos, launch trailer first, then other trailers, then the rest. */
   videos?: { youtubeId: string; name: string }[]
+  /** The game's official website, and the page its patch notes are posted on. Opened in the browser. */
+  links?: { official?: string; patchNotes?: string }
+}
+
+// Patch notes page: the registry's official PS5 news page (a web page, not a feed), else the game's Steam news.
+const steamNews = (id: number) => `https://store.steampowered.com/news/app/${id}`
+const registryNotes = new Map<number, string | null>()
+for (const g of Object.values(registry.games)) {
+  if (!g.igdbId) continue
+  const page = g.sources.find((s) => s.trust === 'official' && s.kind === 'html' && s.platforms.includes('ps5'))
+  const steam = g.sources.map(steamAppIdOf).find((x) => x)
+  const url = page?.url ?? (steam && !g.steamIsPcPort ? steamNews(steam) : undefined)
+  // A PC port's Steam news says nothing about PS5, so it gets no Steam fallback.
+  if (url || g.steamIsPcPort) registryNotes.set(g.igdbId, url ?? null)
+}
+const linksOf = (g: any): GameInfo['links'] => {
+  const sites: { url: string; type?: number; category?: number }[] = g.websites ?? []
+  const official = sites.find((w) => (w.type ?? w.category) === 1)?.url
+  const steamId = sites.map((w) => w.url?.match(/store\.steampowered\.com\/app\/(\d+)/)?.[1]).find((x) => x)
+  const patchNotes = registryNotes.has(g.id) ? registryNotes.get(g.id) ?? undefined : steamId ? steamNews(Number(steamId)) : undefined
+  return official || patchNotes ? { official, patchNotes } : undefined
 }
 
 const videoRank = (name: string) => (/launch/i.test(name) ? 0 : /trailer/i.test(name) ? 1 : 2)
@@ -38,7 +60,7 @@ let n = 0
 for (let offset = 0; ; offset += 500) {
   const page = await igdb.query<any>(
     'games',
-    'fields summary,storyline,genres.name,first_release_date,videos.video_id,videos.name;' +
+    'fields summary,storyline,genres.name,first_release_date,videos.video_id,videos.name,websites.url,websites.type;' +
       `where platforms = (${ps5.id}) & game_type = (${typeIds.join(',')}) & version_parent = null; sort id asc; limit 500; offset ${offset};`,
   )
   for (const g of page) {
@@ -54,6 +76,7 @@ for (let offset = 0; ; offset += 500) {
       genres: g.genres?.map((x: any) => x.name),
       firstRelease: g.first_release_date ? new Date(g.first_release_date * 1000).toISOString().slice(0, 10) : undefined,
       videos: videos.length ? videos : undefined,
+      links: linksOf(g),
     }
     shards[g.id % SHARDS]![g.id] = JSON.parse(JSON.stringify(info))
     n++
