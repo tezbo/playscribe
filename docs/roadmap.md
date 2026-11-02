@@ -34,27 +34,40 @@ Answers the questions a PS5 player actually has (from the gamer review, 25 Oct),
 13. Backend (Theo): 72-hour guard on reported alerts; alert when a "consoles later" update goes live.
 
 ### 0.4.0 "Stay in the loop"
+- Watchlist for upcoming games: release dates, announcements and release-day alerts (Terry).
 - Faster alerts: tighter feed schedule for followed games, within the free GitHub Actions budget.
 - Home Screen widget: latest update across your library.
-- Add several games at once, plus suggested popular PS5 games on first run.
-- Upcoming release dates and new game announcements for games and series you follow (first of Terry's ideas).
+- Add several games at once, including from a screenshot of your PS App library.
+
+### 0.5.0 "Your gaming world"
+- News for your games and series from official studio and PlayStation Blog posts (Terry).
+- Similar games to your library (IGDB).
+- Share an update as a card.
 
 ### 1.0.0 App Store launch
-- Works well on every iPhone, best on iPhone Duo.
-- Accessibility pass (Dynamic Type, VoiceOver, Reduce Motion) and the HIG baseline in qa/.
-- App Store listing, screenshots, privacy labels, support page on GitHub Pages.
-- Empty, offline and error states for every screen; crash-free TestFlight run with outside testers.
+- Works well on every iPhone, best on iPhone Duo. Accessibility pass (Dynamic Type, VoiceOver, Reduce Motion).
+- Light (vellum) and dark (ink) appearance (Terry).
+- In-app feature suggestions from users, feeding this backlog (Terry).
+- App Store listing, screenshots, privacy labels, support page on GitHub Pages; empty, offline and error states.
 
-## Backlog (not scheduled, roughly ranked)
+### 1.x "Sidekick" (big bet, needs Terry's call)
+Made-for-Duo walkthroughs and maps (map above the fold in Tabletop, guide below), character guides, lore and series
+history, possibly as a paid Playscribe+ membership (Terry). Open questions: content rights and charging. Proposal: try
+it with one game after 1.0.
 
-1. Similar games to your library (needs a free data source; IGDB is the candidate).
-2. Share an update as a card (image + one-line summary).
-3. Siri and Shortcuts: "What's new in Wukong?"
-4. Patch size and "download now" hint before you play.
-5. Follow a known issue and get told when a patch mentions it.
-6. Price watch for DLC and games with deal alerts. Parked: no official, free PS Store price source.
-7. PlayStation sign-in to import your library. Parked: official auth only.
-8. Other consoles (Xbox, Switch 2) once PS5 is solid.
+## Backlog (not scheduled)
+
+- Siri and Shortcuts: "What's new in Wukong?"
+- Patch size and "download now" hint. Follow a known issue and get told when a patch mentions it.
+- Parked until Sony opens an official route: trophy data (Terry), PlayStation sign-in, price watch.
+- Other consoles once PS5 is excellent.
+
+## Suggestions
+
+Anyone, Terry included, adds ideas in the suggestion box on the visual roadmap
+(https://claude.ai/artifact/2uRr1xdcv4xLRvwvMao6k4). Before each ideation, Nadia places every new suggestion in the
+release whose theme it strengthens, or parks it, and replies on the page with the reasoning. Releases are packaged
+by theme, never by cramming in the newest ideas.
 
 ## Release cycle
 
