@@ -61,6 +61,16 @@ struct ArtView: View {
                         // G-9: slow drift only when motion is allowed.
                         .scaleEffect(drift && !reduceMotion ? (phase ? 1.06 : 1.0) : 1.0)
                         .clipped()
+                } else if let url = game?.heroArtURL {
+                    // Catalogue games have no bundled art: the official key art from the index.
+                    AsyncImage(url: url, transaction: Transaction(animation: .easeOut(duration: 0.2))) { phase in
+                        if let image = phase.image {
+                            image.resizable().scaledToFill()
+                                .frame(width: geo.size.width, height: geo.size.height)
+                                .scaleEffect(drift && !reduceMotion ? (self.phase ? 1.06 : 1.0) : 1.0)
+                                .clipped()
+                        }
+                    }
                 }
             }
         }

@@ -65,6 +65,12 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         return nil
     }
 
+    /// Official landscape key art from the index (`a`), for stages and art bands.
+    var heroArtURL: URL? {
+        guard let id = igdbID, let a = PS5Index.shared.entry(igdb: id)?.a else { return nil }
+        return URL(string: "https://images.igdb.com/igdb/image/upload/t_1080p/\(a).jpg")
+    }
+
     var coverURL: URL? {
         coverImageID.map { URL(string: "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/\($0).jpg")! }
     }
