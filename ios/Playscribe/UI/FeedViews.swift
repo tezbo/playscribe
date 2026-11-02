@@ -69,7 +69,11 @@ struct FeedRow: View {
                         Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
                         ReleaseTag(release: release)
                     }
-                    Text("\(model.game(release.gameID)?.name ?? "") · \(release.ps5Date.shortDay)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    HStack(spacing: 8) {
+                        Text(model.game(release.gameID)?.name ?? "")
+                        Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
+                    }
+                    .font(PlayscribeFont.caption)
                     if let h = release.headline { Text(h).font(PlayscribeFont.footnote).lineLimit(2) }
                 }
                 Spacer(minLength: 0)
@@ -128,7 +132,8 @@ struct SearchView: View {
                         Button { model.openGame(hit.0.gameID, chapter: .updates, releaseID: hit.0.id) } label: {
                             VStack(alignment: .leading, spacing: 2) {
                                 HStack(spacing: 6) {
-                                    Text("\(hit.0.displayName) · \(model.game(hit.0.gameID)?.name ?? "")").font(PlayscribeFont.subheadline.weight(.semibold))
+                                    Text(hit.0.displayName).font(PlayscribeFont.subheadline.weight(.semibold))
+                                    Text(model.game(hit.0.gameID)?.name ?? "").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                                     if hit.0.isUnconfirmed { UnconfirmedChip() }
                                 }
                                 Text(hit.1).font(PlayscribeFont.footnote).lineLimit(2)
@@ -148,7 +153,12 @@ struct SearchView: View {
                         } label: {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(e.title).font(PlayscribeFont.subheadline.weight(.semibold))
-                                Text("\(model.game(e.gameID)?.name ?? "") · \(e.section)\(e.spoiler ? " · spoiler" : "")").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                                HStack(spacing: 8) {
+                                    Text(model.game(e.gameID)?.name ?? "")
+                                    Text(e.section).foregroundStyle(.secondary)
+                                    if e.spoiler { Tag(text: "Spoiler") }
+                                }
+                                .font(PlayscribeFont.caption)
                             }
                         }
                         .buttonStyle(.plain)

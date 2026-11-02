@@ -87,9 +87,10 @@ struct NoteSearchResults: View {
                 Section {
                     rows(rs)
                 } header: {
-                    HStack(spacing: 6) {
-                        Text("\(r.displayName) · \(model.game(r.gameID)?.name ?? "")")
-                        Text("· " + (r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth)
+                    HStack(spacing: 8) {
+                        Text(r.displayName)
+                        Text(model.game(r.gameID)?.name ?? "").foregroundStyle(.secondary)
+                        Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth).foregroundStyle(.secondary)
                         ReleaseTag(release: r)
                     }
                 }

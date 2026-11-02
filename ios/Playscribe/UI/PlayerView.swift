@@ -206,7 +206,7 @@ struct VideoCaption: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
             Text(video.label).font(PlayscribeFont.headline).foregroundStyle(.white)
-            Text([game, video.duration].compactMap { $0 }.joined(separator: " · "))
+            Text([game, video.duration].compactMap { $0 }.joined(separator: ", "))
                 .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)

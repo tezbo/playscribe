@@ -124,7 +124,7 @@ extension AppModel {
     /// The Library's quiet status line (E-1, E-2).
     var feedStatusLine: String? {
         switch feedStatus {
-        case .offline(let d): "Offline" + (d.map { " · updated \($0.formatted(.relative(presentation: .named)))" } ?? "")
+        case .offline(let d): "Offline" + (d.map { ". Updated \($0.formatted(.relative(presentation: .named)))." } ?? "")
         case .failed: "Couldn't refresh"
         default: nil
         }

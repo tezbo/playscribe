@@ -26,7 +26,7 @@ struct JournalView: View {
                 // GR-1: never an empty game. When it's out, and that we're watching for notes.
                 VStack(alignment: .leading, spacing: 6) {
                     Text(game.ps5AvailabilityLine).font(PlayscribeFont.headline)
-                    Text("No updates yet · checked \(model.lastChecked.formatted(.relative(presentation: .named)))")
+                    Text("No updates yet. Checked \(model.lastChecked.formatted(.relative(presentation: .named))).")
                         .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                 }
                 .padding(.vertical, 8)
@@ -39,7 +39,7 @@ struct JournalView: View {
                 Button { model.setExpanded(groupKey, !groupOpen) } label: {
                     HStack {
                         Text("Other updates").font(PlayscribeFont.headline)
-                        Text("· \(pc.count) update\(pc.count == 1 ? "" : "s")").foregroundStyle(.secondary)
+                        Text("\(pc.count) update\(pc.count == 1 ? "" : "s")").foregroundStyle(.secondary)
                         Spacer()
                         Image(systemName: "chevron.down").rotationEffect(.degrees(groupOpen ? 180 : 0))
                     }
@@ -87,12 +87,11 @@ struct ReleaseEntry: View {
                         Spacer(minLength: 0)
                         Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
                     }
-                    HStack(spacing: 6) {
+                    HStack(spacing: 8) {
                         Text(r.kind.label)
-                        Text("·")
                         Text(r.isPS5Listed ? r.ps5Date.shortDay : r.latestDate.shortDay)
                         // R-2 / V-2: the PS5 version exactly as the console shows it; never a PC number.
-                        if let v = r.ps5Version { Text("·"); Text(v).monospacedDigit() }
+                        if let v = r.ps5Version { Text(v).monospacedDigit() }
                     }
                     .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     if !open, let h = r.isPS5Listed ? r.ps5Headline : r.headline { Text(h).font(PlayscribeFont.subheadline).lineLimit(2) }
@@ -195,7 +194,8 @@ struct ReleaseBody: View {
             if marginReleaseID != r.id {
                 Button { withAnimation(.snappy) { factsOpen.toggle() } } label: {
                     HStack {
-                        Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline)
+                        if let d = FactsLine.detail(for: r) { Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary) }
                         Spacer()
                         Image(systemName: "chevron.down").rotationEffect(.degrees(factsOpen ? 180 : 0)).foregroundStyle(.secondary)
                     }
@@ -235,24 +235,26 @@ struct ReleaseBody: View {
     }
 }
 
-/// "Live on PS5 · 13 GB · 22 Oct" (GR-3).
+/// "Released 22 Oct" (GR-3), with the version and size as secondary detail.
 enum FactsLine {
     static func text(for r: Release) -> String {
-        var parts: [String] = []
+        let date = (r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth
         switch r.ps5State {
-        case .onPS5: parts.append("Released")
-        case .announced: parts.append("Announced for PS5")
-        case .reported: parts.append("Unconfirmed on PS5")
-        case .notPlanned: parts.append("Not planned for PS5")
-        case .pcOnly, .pending: parts.append("Released")
+        case .onPS5, .pcOnly, .pending: return "Released \(date)"
+        case .announced: return "Announced for PS5, \(date)"
+        case .reported: return "Unconfirmed on PS5, \(date)"
+        case .notPlanned: return "Not planned for PS5"
         }
+    }
+
+    static func detail(for r: Release) -> String? {
+        var parts: [String] = []
         if let v = r.ps5Version { parts.append(v) }
         if let size = r.ps5?.sizeBytes {
             let text = ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal)
             parts.append(r.isUnconfirmed ? "\(text) (reported)" : text)
         }
-        parts.append((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth)
-        return parts.joined(separator: " · ")
+        return parts.isEmpty ? nil : parts.joined(separator: ", ")
     }
 }
 
@@ -357,7 +359,7 @@ struct VideoFact: View {
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     VStack(alignment: .leading, spacing: 2) {
                         Text(v.label).font(PlayscribeFont.subheadline.weight(.semibold))
-                        Text([v.duration, v.posted.isoDay.map { "Posted \($0.shortDay)" }].compactMap { $0 }.joined(separator: " · "))
+                        Text([v.duration, v.posted.isoDay.map { "Posted \($0.shortDay)" }].compactMap { $0 }.joined(separator: ", "))
                             .font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     }
                 }
@@ -388,7 +390,7 @@ struct NoteSectionView: View {
             Button { model.setExpanded(key, !open) } label: {
                 HStack {
                     Text(section.title).font(PlayscribeFont.subheadline.weight(.semibold))
-                    Text("\(section.items.count)\(hidden > 0 && !model.spoilersShown(release.gameID) ? " · \(hidden) hidden for spoilers" : "")")
+                    Text("\(section.items.count)\(hidden > 0 && !model.spoilersShown(release.gameID) ? ", \(hidden) hidden for spoilers" : "")")
                         .font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     Spacer()
                     Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
@@ -451,7 +453,7 @@ struct SpoilerText: View {
             Button { model.reveal(key) } label: {
                 ZStack(alignment: .leading) {
                     Text(text).blur(radius: 6).accessibilityHidden(true)
-                    Label("Spoiler · tap to show", systemImage: "eye.slash")
+                    Label("Spoiler. Tap to show", systemImage: "eye.slash")
                         .font(PlayscribeFont.caption.weight(.semibold))
                         .padding(.horizontal, 8).padding(.vertical, 4)
                         .background(.ultraThinMaterial, in: Capsule())

@@ -154,12 +154,14 @@ struct LibraryShelf: View {
                 }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
-                    Button { model.nav.filter = .all } label: {
-                        Label("Showing \(model.nav.filter.label) · Show all", systemImage: "line.3.horizontal.decrease")
-                            .font(PlayscribeFont.subheadline)
+                    HStack(spacing: 12) {
+                        Label("Showing \(model.nav.filter.label)", systemImage: "line.3.horizontal.decrease")
+                            .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Button("Show all") { model.nav.filter = .all }
+                            .font(PlayscribeFont.subheadline.weight(.semibold))
                             .frame(minHeight: 44)
+                            .tappableFrame()
                     }
-                    .tappableFrame()
                 }
                 if rows.isEmpty {
                     VStack(spacing: 12) {
@@ -221,15 +223,15 @@ extension AppModel {
     /// The tile's shorter caption (D-12): the chip carries Unconfirmed, and the availability line
     /// drops the day.
     func tileLine(_ row: LibraryRow) -> String {
-        if let r = row.latest { return "\(r.displayName) · \(r.ps5Date.dayMonth)" }
-        if let r = ps5Releases(row.id).first { return r.isUnconfirmed ? r.displayName : "\(r.displayName) · Announced" }
-        return "\(row.game.ps5ShortLine) · No notes"
+        if let r = row.latest { return "\(r.displayName), \(r.ps5Date.dayMonth)" }
+        if let r = ps5Releases(row.id).first { return r.isUnconfirmed ? r.displayName : "\(r.displayName), announced" }
+        return "\(row.game.ps5ShortLine). No notes yet"
     }
 
     func shelfLine(_ row: LibraryRow) -> String {
-        if let r = row.latest { return "\(r.displayName) · \(r.ps5Date.dayMonth)" }
-        if let r = ps5Releases(row.id).first { return "\(r.displayName) · \(r.isUnconfirmed ? "Unconfirmed" : "Announced")" }
-        return "\(row.game.ps5AvailabilityLine) · No notes"
+        if let r = row.latest { return "\(r.displayName), \(r.ps5Date.dayMonth)" }
+        if let r = ps5Releases(row.id).first { return "\(r.displayName), \(r.isUnconfirmed ? "unconfirmed" : "announced")" }
+        return "\(row.game.ps5AvailabilityLine). No notes yet"
     }
 }
 

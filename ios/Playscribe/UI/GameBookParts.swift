@@ -121,9 +121,9 @@ struct ReleasePage: View {
                     .accessibilityIdentifier("releaseTitle")
                 ReleaseTag(release: r)
             }
-            HStack(spacing: 6) {
+            HStack(spacing: 8) {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
-                if let v = r.ps5Version { Text("·"); Text(v).monospacedDigit() }
+                if let v = r.ps5Version { Text(v).monospacedDigit() }
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             SourceLinks(release: r)
@@ -141,8 +141,10 @@ struct ReleasePage: View {
 struct UnconfirmedBand: View {
     var body: some View {
         let rule = Line().stroke(PlayscribeColor.textTertiary, style: StrokeStyle(lineWidth: 1, dash: [3, 2])).frame(height: 1)
-        (Text("Unconfirmed").font(PlayscribeFont.subheadline.weight(.semibold))
-            + Text(" · From press reports, not in official PS5 notes yet").font(PlayscribeFont.subheadline))
+        VStack(alignment: .leading, spacing: 2) {
+            Text("Unconfirmed").font(PlayscribeFont.subheadline.weight(.semibold))
+            Text("From press reports, not in official PS5 notes yet.").font(PlayscribeFont.subheadline)
+        }
         .foregroundStyle(PlayscribeColor.textTertiary)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 10)
@@ -157,7 +159,7 @@ nonisolated struct Line: Shape {
     func path(in r: CGRect) -> Path { Path { $0.move(to: CGPoint(x: r.minX, y: r.midY)); $0.addLine(to: CGPoint(x: r.maxX, y: r.midY)) } }
 }
 
-/// D-6: "Story spoilers hidden · Show", only when the release has spoilers.
+/// D-6: "Story spoilers hidden" with a Show button, only when the release has spoilers.
 struct SpoilerLine: View {
     @Environment(AppModel.self) private var model
     var gameID: String
@@ -167,9 +169,10 @@ struct SpoilerLine: View {
             model.setSpoilersShown(gameID, !shown)
             model.show(Toast(text: shown ? "Spoilers hidden" : "Spoilers shown"))
         } label: {
-            HStack(spacing: 6) {
+            HStack(spacing: 8) {
                 Image(systemName: shown ? "eye" : "eye.slash")
-                Text(shown ? "Story spoilers shown · Hide" : "Story spoilers hidden · Show")
+                Text(shown ? "Story spoilers shown" : "Story spoilers hidden").foregroundStyle(.secondary)
+                Text(shown ? "Hide" : "Show").fontWeight(.semibold)
             }
             .font(PlayscribeFont.subheadline)
             .foregroundStyle(PlayscribeColor.accent)
@@ -190,7 +193,7 @@ struct NoNotesPage: View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
                 Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
-                Text("No updates yet · checked \(model.lastChecked.formatted(.relative(presentation: .named)))")
+                Text("No updates yet. Checked \(model.lastChecked.formatted(.relative(presentation: .named))).")
                     .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
             GameBasicsView(game: game)
@@ -231,7 +234,7 @@ struct GameBasicsView: View {
         let info = game.igdbID.flatMap { store.basics[$0] }
         VStack(alignment: .leading, spacing: 14) {
             if let genres = info?.genres, !genres.isEmpty {
-                Text(genres.joined(separator: " · ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
             if let videos = info?.videos, !videos.isEmpty {
                 // One video per title: the feed can carry two cuts named "Launch Trailer".
@@ -452,7 +455,8 @@ struct InlineNoteResults: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(h.line).font(PlayscribeFont.subheadline).lineLimit(3)
                         HStack(spacing: 6) {
-                            Text("\(h.release.displayName) · \(h.pcOnly ? "PC-specific" : h.section)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                            Text(h.release.displayName).font(PlayscribeFont.caption)
+                            Text(h.pcOnly ? "PC-specific" : h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                             if h.release.isUnconfirmed { UnconfirmedChip() }
                         }
                     }
