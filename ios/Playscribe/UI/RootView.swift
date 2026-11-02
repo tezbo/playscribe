@@ -121,13 +121,22 @@ struct LibraryRoot: View {
 
     var body: some View {
         NavigationStack(path: Binding(
-            get: { model.nav.gameID.map { [$0] } ?? [] },
-            set: { path in model.nav.gameID = path.last }
+            get: { (model.nav.gameID.map { [$0] } ?? []) + (model.nav.gameID != nil ? model.nav.detailReleaseID.map { ["release:" + $0] } ?? [] : []) },
+            set: { path in
+                model.nav.gameID = path.first
+                model.nav.detailReleaseID = path.count > 1 ? String(path[1].dropFirst("release:".count)) : nil
+            }
         )) {
             LibraryView()
                 .auditActive(model.nav.gameID == nil)
                 .tabletopChrome(duo)
-                .navigationDestination(for: String.self) { id in GameBookView(gameID: id).tabletopChrome(duo) }
+                .navigationDestination(for: String.self) { id in
+                    if id.hasPrefix("release:"), let gameID = model.nav.gameID {
+                        ReleaseDetailView(gameID: gameID, releaseID: String(id.dropFirst("release:".count))).tabletopChrome(duo)
+                    } else {
+                        GameBookView(gameID: id).tabletopChrome(duo).auditActive(model.nav.detailReleaseID == nil)
+                    }
+                }
         }
     }
 }

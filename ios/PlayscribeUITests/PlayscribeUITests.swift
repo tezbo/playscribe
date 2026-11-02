@@ -172,3 +172,36 @@ final class SwapSidesTests: XCTestCase {
     }
 }
 
+
+/// J-1, J-3, J-4: every release row opens its release in one tap, in the current pose, including
+/// one far down the list (Blue Prince 1.4); Back returns to the list.
+@MainActor
+final class ReleaseRowTests: XCTestCase {
+    func testRowsOpenTheirRelease() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "add-game/149657"]
+        app.launch()
+        sleep(3)
+        app.terminate()
+        app.launchArguments = ["-qaRoute", "chapter/igdb-149657/updates"]
+        app.launch()
+        for name in ["Hotfix 1.7.2", "Patch 1.4"] {
+            let row = app.buttons["releaseRow-\(name)"]
+            var tries = 0
+            while !row.isHittable && tries < 12 { app.swipeUp(velocity: .slow); tries += 1 }
+            XCTAssertTrue(row.waitForExistence(timeout: 10) && row.isHittable, "\(name) row reachable")
+            row.tap()
+            sleep(1)
+            let title = app.staticTexts.matching(identifier: "releaseTitle").matching(NSPredicate(format: "label == %@", name)).firstMatch
+            XCTAssertTrue(title.waitForExistence(timeout: 5), "\(name) opens")
+            let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+            shot.name = "row-\(name)"; shot.lifetime = .keepAlways; add(shot)
+            // Pushed (Closed, open portrait): Back returns to the list with the row there.
+            let back = app.navigationBars.buttons.element(boundBy: 0)
+            if app.navigationBars[name].exists, back.exists {
+                back.tap()
+                XCTAssertTrue(row.waitForExistence(timeout: 5), "back to \(name) row")
+            }
+        }
+    }
+}

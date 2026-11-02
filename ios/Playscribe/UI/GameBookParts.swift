@@ -108,6 +108,7 @@ struct ReleasePage: View {
             HStack(spacing: 8) {
                 if model.isUnread(r) { UnreadDot() }
                 Text(r.displayName).font(PlayscribeFont.headline)
+                    .accessibilityIdentifier("releaseTitle")
                 ReleaseTag(release: r)
             }
             HStack(spacing: 6) {
@@ -450,6 +451,7 @@ struct InlineNoteResults: View {
 /// D-4: one 44 pt row per release; the selected row highlighted; PC-only last.
 struct ReleaseTimeline: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
 
     var body: some View {
@@ -475,7 +477,16 @@ struct ReleaseTimeline: View {
     }
 
     private func row(_ r: Release, selected: Bool) -> some View {
-        Button { model.select(gameID, releaseID: r.id) } label: {
+        Button {
+            // J-1: side by side (and Tabletop, where the Page is the standing half) the Page shows
+            // it; Closed and open portrait push it as its own screen.
+            if duo.pose == .closed || (duo.pose == .flat && !duo.isLandscape) {
+                model.nav.detailReleaseID = r.id
+                if model.isUnread(r) { model.markRead(r.id) }
+            } else {
+                model.select(gameID, releaseID: r.id)
+            }
+        } label: {
             HStack(spacing: 8) {
                 if model.isUnread(r) { UnreadDot() } else { Color.clear.frame(width: 8, height: 8) }
                 Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular)).lineLimit(1)
@@ -495,6 +506,7 @@ struct ReleaseTimeline: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("releaseRow-\(r.displayName)")
         .accessibilityAddTraits(selected ? .isSelected : [])
         .tappableFrame()
     }
@@ -542,5 +554,27 @@ struct TabletopOutline: View {
         .disabled(!enabled)
         .opacity(enabled ? 1 : 0.4)
         .tappableFrame()
+    }
+}
+
+/// J-1: one release as its own screen, pushed from the list in Closed and open portrait.
+struct ReleaseDetailView: View {
+    @Environment(AppModel.self) private var model
+    var gameID: String
+    var releaseID: String
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                PageArtBand(gameID: gameID)
+                if let r = model.release(gameID, releaseID) {
+                    ReleasePage(release: r).padding(.horizontal, 20)
+                }
+            }
+            .padding(.bottom, 24)
+        }
+        .background(Color.ink0)
+        .navigationTitle(model.release(gameID, releaseID)?.displayName ?? "")
+        .toolbarTitleDisplayMode(.inline)
+        .foldAudited()
     }
 }

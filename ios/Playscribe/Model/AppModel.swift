@@ -77,6 +77,8 @@ struct NavState: Codable, Hashable {
     var noteDraft: [String: String] = [:]
     /// D-2: the release the Page shows, per game. Optional so older saved state still decodes.
     var selected: [String: String]?
+    /// J-1: a release pushed as its own screen (Closed and open portrait).
+    var detailReleaseID: String?
     /// D-13: the chapter last opened, per game.
     var chapters: [String: Chapter]?
 }
@@ -345,6 +347,7 @@ final class AppModel {
         var n = nav
         let sameGame = n.gameID == gameID
         n.tab = .library
+        if !sameGame { n.detailReleaseID = nil }
         n.gameID = gameID
         n.lastGameID = gameID
         // D-13: each game reopens on the chapter last opened in it.
@@ -447,6 +450,7 @@ final class AppModel {
     /// A cold launch opens on the Library, not the last screen.
     func startFresh() {
         nav.gameID = nil
+        nav.detailReleaseID = nil
         nav.tab = .library
         addSheetOpen = false
         settingsOpen = false

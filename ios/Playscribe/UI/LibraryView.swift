@@ -522,7 +522,7 @@ struct TileCover: View {
                 } else if let art = game.keyArtAsset {
                     Image(art).resizable().scaledToFill()
                         .overlay(alignment: .top) {
-                            Text(game.name).font(.custom("Literata72pt-SemiBold", size: 15, relativeTo: .headline))
+                            Text(game.name).font(PlayscribeFont.title3)
                                 .multilineTextAlignment(.center).lineLimit(3).padding(8)
                                 .frame(maxWidth: .infinity)
                                 .background(LinearGradient(colors: [.black.opacity(0.7), .clear], startPoint: .top, endPoint: .bottom))

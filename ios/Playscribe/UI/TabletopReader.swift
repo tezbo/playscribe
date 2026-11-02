@@ -62,11 +62,11 @@ struct TabletopReaderStage: View {
                         if release?.isUnconfirmed == true { UnconfirmedChip() }
                     }
                     Text(section.title)
-                        .font(.custom("Literata72pt-SemiBold", size: 32, relativeTo: .largeTitle))
+                        .font(PlayscribeFont.title)
                         .lineLimit(3)
                         .minimumScaleFactor(0.8)
                     Text(section.body)
-                        .font(.custom("InstrumentSans-Regular", size: 19, relativeTo: .body))
+                        .font(PlayscribeFont.body)
                         .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.92))
                         .lineSpacing(4)
                         .minimumScaleFactor(0.7)
