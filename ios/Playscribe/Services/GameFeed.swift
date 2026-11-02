@@ -31,6 +31,7 @@ extension AppModel {
             if let raw = try? Data(contentsOf: FeedClient.historyCacheURL(c.gameID)),
                let h = try? JSONCoding.decoder.decode(FeedClient.GameHistory.self, from: raw) {
                 out[c.gameID] = h.releases.map { $0.reassigned(to: c.gameID) }
+                markPastAsRead(out[c.gameID] ?? [])
             }
         }
         gameReleases = out
@@ -51,14 +52,25 @@ extension AppModel {
             let fresh = history.releases.map { $0.reassigned(to: gameID) }
             // A history seen for the first time is the past, not news: anything that went live
             // more than 72 hours ago is read and never alerts (docs/api.md).
-            if gameReleases[gameID] == nil {
-                let cutoff = Date.now.addingTimeInterval(-72 * 3600)
-                for r in fresh where r.ps5Date < cutoff && data.read[r.id] == nil { data.read[r.id] = .now }
-            }
+            markPastAsRead(fresh)
             historyStamps[gameID] = stamp
             gameReleases[gameID] = fresh
         }
         notifyNewlyOnPS5()
+    }
+}
+
+extension AppModel {
+    /// A release first seen more than 72 hours after it went live is the past: read, no alert.
+    func markPastAsRead(_ releases: [Release]) {
+        let cutoff = Date.now.addingTimeInterval(-72 * 3600)
+        var known = data.knownOnPS5 ?? []
+        // Recent ones stay unknown so notifyNewlyOnPS5 can alert for them.
+        for r in releases where !known.contains(r.id) && r.ps5Date < cutoff {
+            known.insert(r.id)
+            if data.read[r.id] == nil { data.read[r.id] = .now }
+        }
+        data.knownOnPS5 = known
     }
 }
 
