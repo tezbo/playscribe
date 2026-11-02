@@ -52,14 +52,13 @@ Answers the questions a PS5 player actually has (from the gamer review, 25 Oct),
 - In-app feature suggestions from users, feeding this backlog (Terry).
 - App Store listing, screenshots, privacy labels, support page on GitHub Pages; empty, offline and error states.
 
-### 1.x "Sidekick" (big bet, needs Terry's call)
-Made-for-Duo walkthroughs and maps (map above the fold in Tabletop, guide below), character guides, lore and series
-history, possibly as a paid Playscribe+ membership (Terry). Open questions: content rights and charging. Proposal: try
-it with one game after 1.0.
+### Later: Sidekick / Field Guide (parked as a release, hidden trial planned)
+A made-for-Duo strategy guide behind a Playscribe+ members-only gateway (Terry). Parked as a public release. A hidden,
+internal-only trial for one game is planned after 0.2.0 ships. Brief: docs/game-guide.md.
 
 ## Backlog (not scheduled)
 
-- Patch size and "download now" hint (in review: depends on how often studios publish PS5 sizes).
+- Parked: patch size hint (only 3% of PS5 updates list a size).
 - Parked until Sony opens an official route: trophy data (Terry), PlayStation sign-in, price watch.
 - Other consoles once PS5 is excellent.
 
