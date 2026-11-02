@@ -6,7 +6,9 @@ Nothing ships to TestFlight by itself. Merging to main never uploads a build; on
    recommendations, and asks Terry whether anything else should go in.
 2. **Three sign-offs** on that exact commit, each naming its SHA:
    - **Backend and data** (QA thread): the feed, alerts and links for the release's games are right.
-   - **Front end** (QA thread): docs/ux-acceptance.md passes in every pose.
+   - **Front end** (QA thread): docs/ux-acceptance.md passes in every pose, driven by taps, not stills alone: every
+     row, card and control on a screen the release touches is tapped and lands where a player expects (a patch row
+     opens that patch). Captures or a recording show each journey.
    - **UX and UI** (designer thread): the release keeps the core purpose, PS5 game update journals, clear and
      first, and new features fit without crowding it.
 3. **Sprint review.** Terry gets a complete, working demo of every new feature in the release, built from the
