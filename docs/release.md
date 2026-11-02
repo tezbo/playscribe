@@ -25,3 +25,10 @@ Versions: patch (0.2.1) for fixes only, minor (0.3.0) for features, 1.0.0 for th
 ## Roadmap
 
 The version plan and backlog live in docs/roadmap.md, owned by the product owner.
+
+## Keeping the board current
+
+The release manager keeps the release's card on the sprint board (https://claude.ai/artifact/T5NNq75hBh7Yu9SGt28BEU)
+current at each gate. Update the card's `note` (the current SHA, which sign-offs are in, and what blocks), and add
+one `activity` entry for each build, QA result and blocker, including Leo's steps since he cannot write to the board.
+Use small writes and don't re-read the whole board.
