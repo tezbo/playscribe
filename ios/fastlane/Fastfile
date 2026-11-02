@@ -46,7 +46,7 @@ platform :ios do
   end
 
   def project_path
-    Dir['../*.xcodeproj'].first&.then { |p| File.basename(p) } || UI.user_error!('No Xcode project in ios/')
+    File.exist?('../Playscribe.xcodeproj') ? 'Playscribe.xcodeproj' : UI.user_error!('No Playscribe.xcodeproj in ios/ (run xcodegen)')
   end
 
   desc 'Build, sign and upload to TestFlight. marketing_version: e.g. 0.3.0 (from the git tag)'
