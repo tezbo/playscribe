@@ -3,6 +3,8 @@
 # panel in use tells book from tabletop (rot90 landscape, rot0 portrait).
 dev=${DEVICE:-01725EFD-2D6E-423D-B367-C5155D7E6623}
 _qa=${0:A:h}
+# Device Hub answers Accessibility reads reliably only when it's the active app.
+open -a /Applications/Xcode.app/Contents/Applications/DeviceHub.app 2>/dev/null; sleep 2
 press() {
   # Device Hub sometimes hides its toolbar until the window is active; retry, waking it with a tree read.
   for i in 1 2 3; do

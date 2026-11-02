@@ -13,7 +13,8 @@ extension AppModel {
     /// The release the Reader shows: the focused one, else the newest On PS5 release.
     func readerRelease(_ gameID: String) -> Release? {
         if let id = focusReleaseID, let r = release(gameID, id) { return r }
-        return ps5Releases(gameID).first ?? releases(gameID).first
+        // J-1: the release picked in the list, as on every other Page.
+        return selectedRelease(gameID) ?? releases(gameID).first
     }
 
     /// Overview, each key change, Fixes, then PS5 facts and video.
@@ -90,7 +91,8 @@ struct TabletopReaderStage: View {
             }
         }
         .animation(.easeInOut(duration: 0.2), value: index)
-        .accessibilityElement(children: .combine)
+        // Its parts stay separate elements, so the release title is findable (J-4).
+        .accessibilityElement(children: .contain)
     }
 }
 
