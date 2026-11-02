@@ -11,7 +11,7 @@ struct PlayscribeApp: App {
     init() {
         // Bar titles in the brand faces (Literata for large titles, Instrument Sans inline).
         let bar = UINavigationBar.appearance()
-        if let large = UIFont(name: "Literata24pt-SemiBold", size: 34) {
+        if let large = UIFont(name: "Literata72pt-SemiBold", size: 34) {
             bar.largeTitleTextAttributes = [.font: UIFontMetrics(forTextStyle: .largeTitle).scaledFont(for: large)]
         }
         if let inline = UIFont(name: "InstrumentSans-SemiBold", size: 17) {

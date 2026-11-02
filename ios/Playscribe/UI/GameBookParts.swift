@@ -15,7 +15,7 @@ enum ReadingSide {
 struct PageView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
-    @State private var position = ScrollPosition()
+    @State private var position = ScrollPosition(idType: String.self)
     var gameID: String
     /// Closed: one stacked book, the Contents below the Page.
     var withContents = false
@@ -63,6 +63,14 @@ struct PageView: View {
         // D-2, T-5, D-10: the reading position is model state. Closing, opening, rotating or
         // swapping sides rebuilds this view; it comes back where the reader was.
         .scrollPosition($position)
+        .accessibilityIdentifier("pageScroll")
+        // J-1: Back from a pushed release lands on its row (Closed shares this scroll).
+        .onChange(of: model.nav.detailReleaseID) { old, new in
+            // After the restore of the saved offset, which no longer points at the row.
+            if withContents, new == nil, let old {
+                Task { try? await Task.sleep(for: .milliseconds(250)); position.scrollTo(id: "row-\(old)", anchor: .center) }
+            }
+        }
         .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, y in
             model.nav.anchors[anchorKey] = String(Int(y))
         }
@@ -203,7 +211,7 @@ struct GameLinks: View {
                     Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
                 }
                 if let url = links?.patchNotes {
-                    Link(destination: url) { Label("Patch notes", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    Link(destination: url) { Label("All patch notes", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
                 }
             }
             .font(PlayscribeFont.subheadline)
@@ -292,7 +300,9 @@ struct TrailerView: View {
 /// D-4: the Contents, top to bottom: title and status, chapters, search in notes, Mark n read,
 /// the release timeline, and in Tabletop the section outline with Previous and Next.
 struct ContentsView: View {
+    @Environment(AppModel.self) private var model
     @Environment(\.railWidth) private var railWidth
+    @State private var position = ScrollPosition(idType: String.self)
     var gameID: String
 
     var body: some View {
@@ -301,6 +311,12 @@ struct ContentsView: View {
                 .padding(.horizontal, 16)
                 .padding(.vertical, 14)
                 .padding(.trailing, railWidth)
+        }
+        .scrollPosition($position)
+        .accessibilityIdentifier("contentsScroll")
+        // J-1: Back from a pushed release (open portrait) lands on its row.
+        .onChange(of: model.nav.detailReleaseID) { old, new in
+            if new == nil, let old { position.scrollTo(id: "row-\(old)", anchor: .center) }
         }
         .scrollIndicators(.hidden)
         .background(Color.ink1)
@@ -509,6 +525,7 @@ struct ReleaseTimeline: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("releaseRow-\(r.displayName)")
+        .id("row-\(r.id)")
         .accessibilityAddTraits(selected ? .isSelected : [])
         .tappableFrame()
     }

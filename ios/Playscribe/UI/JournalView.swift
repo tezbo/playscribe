@@ -476,7 +476,7 @@ struct SourceLinks: View {
                     .frame(minHeight: 44).tappableFrame()
             }
             if let url = release.links?.steamNotes {
-                Link(destination: url) { Label("Steam notes", systemImage: "arrow.up.right.square") }
+                Link(destination: url) { Label("Open in Steam", systemImage: "arrow.up.right.square") }
                     .frame(minHeight: 44).tappableFrame()
             }
         }

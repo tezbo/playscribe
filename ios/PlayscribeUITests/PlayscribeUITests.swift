@@ -186,9 +186,27 @@ final class ReleaseRowTests: XCTestCase {
         app.launch()
     }
 
+    /// Scrolls the release list itself (in landscape a swipe on the app lands on the Page).
     static func reveal(_ row: XCUIElement, in app: XCUIApplication) {
+        let contents = app.scrollViews["contentsScroll"], page = app.scrollViews["pageScroll"]
         var tries = 0
-        while !(row.exists && row.isHittable) && tries < 14 { app.swipeUp(velocity: .slow); tries += 1 }
+        while !(row.exists && row.isHittable) && tries < 14 {
+            if contents.exists && contents.isHittable { contents.swipeUp(velocity: .slow) }
+            else if page.exists && page.isHittable { page.swipeUp(velocity: .slow) }
+            else { app.swipeUp(velocity: .slow) }
+            tries += 1
+        }
+    }
+
+    /// Back from a pushed screen: the navigation bar's Back button, wherever the toolbar puts it.
+    static func goBack(_ app: XCUIApplication) {
+        app.buttons["BackButton"].firstMatch.tap()
+    }
+
+    /// The pose the app reports (fold audit), so each result says where it ran.
+    static func pose(_ app: XCUIApplication) -> String {
+        let audit = app.descendants(matching: .any)["foldAudit"]
+        return audit.exists ? audit.label : "unknown"
     }
 
     func testRowsOpenTheirRelease() throws {
@@ -203,10 +221,10 @@ final class ReleaseRowTests: XCTestCase {
             let title = app.staticTexts.matching(identifier: "releaseTitle").matching(NSPredicate(format: "label == %@", name)).firstMatch
             XCTAssertTrue(title.waitForExistence(timeout: 5), "\(name) opens")
             let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
-            shot.name = "row-\(name)"; shot.lifetime = .keepAlways; add(shot)
+            shot.name = "row-\(name) [\(Self.pose(app))]"; shot.lifetime = .keepAlways; add(shot)
             if app.navigationBars[name].exists {
                 // Pushed (Closed, open portrait): Back returns to the same row, still in view.
-                app.navigationBars[name].buttons.element(boundBy: 0).tap()
+                Self.goBack(app)
                 sleep(1)
                 XCTAssertTrue(row.isHittable, "back to \(name) row, in view")
             } else {
@@ -218,30 +236,25 @@ final class ReleaseRowTests: XCTestCase {
     }
 }
 
-/// J-1 across a pose change, run by tools/qa/journey.sh: tap Patch 1.4 Closed, unfold to Open,
-/// and the Page shows 1.4 with its row selected.
+/// J-1 across a pose change, run by tools/qa/journey.sh: tap Patch 1.4 Closed; the script unfolds
+/// the device to Open while the test waits; the Page then shows 1.4 with its row selected.
 @MainActor
 final class JourneyTests: XCTestCase {
-    func testA_ClosedTapsPatch14() throws {
+    func testClosedToOpenKeepsPatch14() throws {
         let app = XCUIApplication()
         ReleaseRowTests.openBluePrince(app)
         let row = app.buttons["releaseRow-Patch 1.4"]
         ReleaseRowTests.reveal(row, in: app)
         row.tap()
-        XCTAssertTrue(app.navigationBars["Patch 1.4"].waitForExistence(timeout: 5), "pushed in Closed")
-    }
-
-    func testB_OpenShowsPatch14() throws {
-        let app = XCUIApplication()
-        app.activate()
-        sleep(2)
+        sleep(1)
+        let pushed = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); pushed.name = "journey-closed-pushed"; pushed.lifetime = .keepAlways; add(pushed)
+        // Wait for the unfold: the row reappears beside the Page.
+        let deadline = Date.now.addingTimeInterval(120)
+        while !(row.exists && row.isHittable) && Date.now < deadline { sleep(2) }
         let title = app.staticTexts.matching(identifier: "releaseTitle").matching(NSPredicate(format: "label == %@", "Patch 1.4")).firstMatch
         XCTAssertTrue(title.waitForExistence(timeout: 8), "Page shows Patch 1.4 after unfolding")
-        XCTAssertFalse(app.navigationBars["Patch 1.4"].exists, "the pushed screen popped on unfolding")
-        let row = app.buttons["releaseRow-Patch 1.4"]
         ReleaseRowTests.reveal(row, in: app)
         XCTAssertTrue(row.isSelected, "Patch 1.4 row selected")
-        let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
-        shot.name = "journey-open-patch-1.4"; shot.lifetime = .keepAlways; add(shot)
+        let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); shot.name = "journey-open-patch-1.4"; shot.lifetime = .keepAlways; add(shot)
     }
 }

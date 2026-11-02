@@ -58,6 +58,7 @@ struct TabletopReaderStage: View {
                     HStack(spacing: 8) {
                         Text(release?.displayName ?? "")
                             .font(PlayscribeFont.title3)
+                            .accessibilityIdentifier("releaseTitle")
                             .foregroundStyle(release?.isUnconfirmed == true ? PlayscribeColor.textTertiary : PlayscribeColor.accent)
                         if release?.isUnconfirmed == true { UnconfirmedChip() }
                     }
@@ -71,12 +72,13 @@ struct TabletopReaderStage: View {
                         .lineSpacing(4)
                         .minimumScaleFactor(0.7)
                     Spacer(minLength: 0)
-                    HStack(spacing: 6) {
+                    // Only when there's more than one page to turn.
+                    if sections.count >= 2 { HStack(spacing: 6) {
                         ForEach(0..<sections.count, id: \.self) { i in
                             Circle().fill(i == index ? PlayscribeColor.accent : PlayscribeColor.textTertiary).frame(width: 7, height: 7)
                         }
                         Text("\(index + 1) of \(sections.count)").font(PlayscribeFont.caption).foregroundStyle(.secondary).padding(.leading, 6)
-                    }
+                    } }
                 }
                 // About 34 characters per line at 19 pt.
                 .frame(maxWidth: 380, maxHeight: .infinity, alignment: .topLeading)

@@ -69,8 +69,13 @@ struct ArtView: View {
                                 .frame(width: geo.size.width, height: geo.size.height)
                                 .scaleEffect(drift && !reduceMotion ? (self.phase ? 1.06 : 1.0) : 1.0)
                                 .clipped()
+                        } else if case .failure = phase {
+                            defaultHeader(geo.size)
                         }
                     }
+                } else {
+                    // Never a blank header (Terry, sprint review): the brand's default art.
+                    defaultHeader(geo.size)
                 }
             }
         }
@@ -80,6 +85,14 @@ struct ArtView: View {
             guard drift, !reduceMotion else { return }
             withAnimation(.easeInOut(duration: 18).repeatForever(autoreverses: true)) { phase = true }
         }
+    }
+
+    /// brand/hero default headers: 16:9 for wide spaces, 9:16 for tall ones.
+    private func defaultHeader(_ size: CGSize) -> some View {
+        Image(size.width >= size.height ? "default-header-wide" : "default-header-tall")
+            .resizable().scaledToFill()
+            .frame(width: size.width, height: size.height)
+            .clipped()
     }
 }
 

@@ -50,11 +50,7 @@ struct GameBookView: View {
         .onAppear { model.nav.lastGameID = gameID }
         // The game's full history, not only what's in the newest-100 feed.
         .task(id: gameID) { await model.refreshHistories([gameID]) }
-        // J-1: a pushed release only exists where pushing is the layout. Unfolding to side by
-        // side (or Tabletop) pops it; the Page already shows it because the push selected it.
-        .onChange(of: sideBySide || duo.pose == .tabletop, initial: true) { _, onPage in
-            if onPage { model.nav.detailReleaseID = nil }
-        }
+
     }
 
     /// Open landscape and Book in a regular-width scene (D-11).

@@ -10,9 +10,11 @@ run() { xcodebuild -project $here/../../Playscribe.xcodeproj -scheme PlayscribeU
   -resultBundlePath $out/$1.xcresult > $out/$1.log 2>&1; echo "$1: $(grep -E '\*\* TEST (SUCCEEDED|FAILED)' $out/$1.log)"; grep "error:" $out/$1.log | sed 's/.*error: //' | head -3; }
 set_pose closed
 xcrun simctl io $dev recordVideo --display=LCD --force $out/journey-closed.mov >/dev/null 2>&1 &
-run testA_ClosedTapsPatch14
+run testClosedToOpenKeepsPatch14 &
+tp=$!
+sleep 60
 pkill -INT -f recordVideo; sleep 2
 set_pose open
 xcrun simctl io $dev recordVideo --display=LCD-1 --force $out/journey-open.mov >/dev/null 2>&1 &
-run testB_OpenShowsPatch14
+wait $tp
 pkill -INT -f recordVideo; sleep 2
