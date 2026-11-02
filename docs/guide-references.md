@@ -1,6 +1,6 @@
 # Game guide references (for the "Full game guide")
 
-Terry's reference set lives on his Mac at `references/` and is not committed: it's a commercial
+Terry's reference set lives on Terry's Mac at `references/` and is not committed: it's a commercial
 guide (Prima's official guide to *Ni no Kuni: Wrath of the White Witch*, 408 pages, as both PDF and
 EPUB). This note describes its patterns only. I sampled pages across the book rather than reading
 all of it, so treat the coverage below as indicative.
