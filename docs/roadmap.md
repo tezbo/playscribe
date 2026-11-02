@@ -62,12 +62,19 @@ it with one game after 1.0.
 - Parked until Sony opens an official route: trophy data (Terry), PlayStation sign-in, price watch.
 - Other consoles once PS5 is excellent.
 
-## Suggestions
+## Suggestions and agent ideas
 
-Anyone, Terry included, adds ideas in the suggestion box on the visual roadmap
-(https://claude.ai/artifact/2uRr1xdcv4xLRvwvMao6k4). Before each ideation, Nadia places every new suggestion in the
-release whose theme it strengthens, or parks it, and replies on the page with the reasoning. Releases are packaged
-by theme, never by cramming in the newest ideas.
+Every agent is empowered to pitch its own ideas at any time, not only in ideation (Terry, 2 Nov). Pitches and Terry's
+suggestions go on the live sprint board and in the suggestion box on the visual roadmap
+(https://claude.ai/artifact/2uRr1xdcv4xLRvwvMao6k4). Nadia decides each one:
+
+- **Approve:** place it in the release whose theme it strengthens, with the reasoning.
+- **Park:** keep it in the backlog with the reason (no official source, costs money, wrong time).
+- **Escalate to Terry:** when it's unclear the idea fits the vision, or it changes cost, monetisation, data sources
+  or the core purpose.
+
+Releases are packaged by theme, never by cramming in the newest ideas. Other agents are encouraged to challenge a
+pitch on the board before Nadia decides.
 
 ## Release cycle
 
