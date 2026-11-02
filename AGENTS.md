@@ -64,7 +64,7 @@ claude-artifacts connector). Terry can file ideas, move cards and comment on the
   PR is merged and the RC SHA is named, `done` after sign-offs or when shipped. Quinn moves cards back from `qa`
   with a note if they fail.
 - **Activity:** every move or decision also adds one `activity` row (`text`, `by`, `at`), e.g. "moved X to QA".
-- Terry's suggestion box on the roadmap page stays his quick input; Nadia mirrors new suggestions onto the board as
+- Terry's suggestion box on the roadmap page stays Terry's quick input; Nadia mirrors new suggestions onto the board as
   `ideas` cards with id `sug-<suggestion id>` and `source: "suggestion:<id>"`.
 
 ## Rules every agent keeps
