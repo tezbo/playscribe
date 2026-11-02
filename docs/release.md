@@ -18,10 +18,6 @@ Nothing ships to TestFlight by itself. Merging to main never uploads a build; on
 
 Versions: patch (0.2.1) for fixes only, minor (0.3.0) for features, 1.0.0 for the App Store launch.
 
-## Roadmap (later releases, not before the core is solid)
+## Roadmap
 
-Each one must keep update journals the heart of the app.
-
-- Similar games to the ones in your library.
-- New game announcements for studios and series you follow.
-- Price watch for DLC of games you own, and for new games, with deal alerts.
+The version plan and backlog live in docs/roadmap.md, owned by the product owner.
