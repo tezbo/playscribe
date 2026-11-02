@@ -12,7 +12,8 @@ back to it. Steam is the source of truth, no game opens to a blank page, and we 
 ### 0.2.0 "Complete journals" (in progress)
 - Full update history for every game (Blue Prince fix).
 - Cold launch opens on the home screen.
-- Links open in the default browser; each game links its official site and patch notes.
+- Links open in the default browser; each game links its official site and "All patch notes", and each update
+  has "Open in Steam" (Terry).
 - Recent chapters hero moved to 0.3.0 as the Latest updates hero (0.2.0 UX signed off at cca2c99 without it).
 
 ### 0.3.0 "Trust the notes"
@@ -21,8 +22,7 @@ Answers the questions a PS5 player actually has (from the gamer review, 25 Oct),
 2. Tabletop links: one "Links" rail button opens a lower-half sheet (Official website, Patch notes, Steam notes);
    upper-half labels become secondary text so nothing above the fold looks tappable. **Required.**
 3. Wording: an update is always "update"; "chapter" only means a book section. "What's new" for this patch,
-   "All updates" for the history (replacing Changes and Changelog). Links: "Patch notes" on the game page becomes
-   "All patch notes", and "Steam notes" on each update becomes "Read this patch" (Iris).
+   "All updates" for the history (replacing Changes and Changelog).
 4. Reader leads with what changed; links and details sit below.
 5. PS5 version number when the studio publishes one (never a PC number).
 6. PC-only items (Steam Deck, mouse, PC graphics settings) folded under "PC only", not mixed into PS5 notes.
