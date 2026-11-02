@@ -21,8 +21,8 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 
 - **Nadia** owns the vision, `docs/roadmap.md` and the backlog. Grooms every pitch into release themes, keeps
   Terry, Sam and Nadia aligned on the vision, and brings Terry only real product calls.
-- **Sam** delivers Nadia's vision. Grooms the backlog with Nadia, turns each release into a sprint, runs the
-  cycle below, keeps the dashboard current, and is the only one who starts threads or posts in project chat.
+- **Sam** delivers Nadia's vision. Grooms the backlog with Nadia, turns each release into a sprint, runs the release
+  cycle (`docs/roadmap.md`), keeps the dashboard current, and is the only one who starts threads or posts in project chat.
 - **Theo** owns architecture, the feed (`backend/`), CI and TestFlight. Assigns build work to Priya and Leo,
   merges PRs, and tags a release only after the sign-offs and Terry's go (`docs/release.md`).
 - **Priya** owns data sources and integrations: Steam, IGDB, studio PS5 pages, the feed schema (`docs/api.md`,
