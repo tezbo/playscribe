@@ -88,6 +88,7 @@ extension AppModel {
         guard var known = data.knownOnPS5 else {
             // After a reset nothing has been seen yet: what is already On PS5 is not news.
             data.knownOnPS5 = Set(allReleasesMerged.filter { $0.ps5State == .onPS5 }.map(\.id))
+            markPastAsRead(allReleasesMerged.filter { $0.ps5State == .onPS5 }, force: true)
             return
         }
         var reported = data.knownReported ?? Set(allReleasesMerged.filter { $0.ps5State == .reported }.map(\.id))
@@ -100,7 +101,11 @@ extension AppModel {
             for r in releases(c.gameID) where r.ps5State == .onPS5 && !known.contains(r.id) {
                 known.insert(r.id)
                 // Like the server: nothing that went live more than 72 hours ago alerts.
-                guard r.ps5Date > .now.addingTimeInterval(-72 * 3600) else { continue }
+                // It's the past, so it's read too: adding a game doesn't flood it with unread updates.
+                guard r.ps5Date > .now.addingTimeInterval(-72 * 3600) else {
+                    if data.read[r.id] == nil { data.read[r.id] = .now }
+                    continue
+                }
                 NotificationService.shared.schedule(release: r, game: game(c.gameID), level: notifyLevel(c.gameID),
                                                     pauseAll: data.pauseAll, delay: 1, model: self)
             }

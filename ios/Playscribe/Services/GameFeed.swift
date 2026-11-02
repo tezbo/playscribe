@@ -62,11 +62,12 @@ extension AppModel {
 
 extension AppModel {
     /// A release first seen more than 72 hours after it went live is the past: read, no alert.
-    func markPastAsRead(_ releases: [Release]) {
+    /// `force`: after a reset, everything is newly seen.
+    func markPastAsRead(_ releases: [Release], force: Bool = false) {
         let cutoff = Date.now.addingTimeInterval(-72 * 3600)
         var known = data.knownOnPS5 ?? []
         // Recent ones stay unknown so notifyNewlyOnPS5 can alert for them.
-        for r in releases where !known.contains(r.id) && r.ps5Date < cutoff {
+        for r in releases where (force || !known.contains(r.id)) && r.ps5Date < cutoff {
             known.insert(r.id)
             if data.read[r.id] == nil { data.read[r.id] = .now }
         }
