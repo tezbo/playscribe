@@ -31,3 +31,37 @@ test('roadmap 14: shards are igdbId % 10', () => {
   assert.equal(shardOf(4321), 1)
   assert.deepEqual(Object.keys(shardsOf([g])[1]!), ['4321'])
 })
+
+import { moveOf, shorten, trailerOf, withMoves } from '../src/upcoming.ts'
+
+test('upcoming never blank: summary cut at a word, three genres, the trailer, hypes', () => {
+  const long = `${'word '.repeat(80)}end`
+  const g = upcomingOf({ igdbId: 9, name: 'I', d: '2027-02-02', summary: long, genres: ['A', 'B', 'C', 'D'], videos: [{ video_id: 'v1', name: 'Gameplay' }, { video_id: 'v2', name: 'Announce Trailer' }], hypes: 120 }, today)!
+  assert.ok(g.summary!.length <= 301 && g.summary!.endsWith('…') && !g.summary!.includes('wor…'))
+  assert.deepEqual([g.genres, g.trailerId, g.hypes], [['A', 'B', 'C'], 'v2', 120])
+  assert.equal(shorten('Short text.'), 'Short text.')
+  assert.equal(trailerOf([{ video_id: 'x', name: 'Interview' }]), 'x')
+  assert.equal(trailerOf(undefined), undefined)
+  const bare = upcomingOf({ igdbId: 10, name: 'J', d: '2027-02-02' }, today)!
+  assert.deepEqual(Object.keys(bare).sort(), ['datePrecision', 'date', 'igdbId', 'name', 'status'].sort())
+})
+
+test('upcoming date moved: delayed, earlier, dated; narrowing a vague date is not a move; a move shows for 14 days', () => {
+  const day = (date: string, id = 1) => upcomingOf({ igdbId: id, name: 'K', d: date }, today)!
+  const q = (date: string) => upcomingOf({ igdbId: 1, name: 'K', d: date, q: 'quarter' }, today)!
+  assert.equal(moveOf(day('2027-06-01'), day('2027-03-01'), today)?.kind, 'delayed')
+  assert.equal(moveOf(day('2027-02-01'), day('2027-03-01'), today)?.kind, 'earlier')
+  assert.deepEqual(moveOf(day('2027-06-01'), day('2027-03-01'), today), { kind: 'delayed', previousDate: '2027-03-01', previousPrecision: 'day', movedAt: today })
+  assert.equal(moveOf(q('2027-06-30'), day('2027-03-01'), today)?.kind, 'delayed')
+  assert.equal(moveOf(day('2027-03-01'), q('2027-03-31'), today)?.kind, 'dated')
+  assert.equal(moveOf(upcomingOf({ igdbId: 1, name: 'K', q: 'tbd' }, today)!, day('2027-03-01'), today)?.kind, 'delayed')
+  // "Q4" to "November": the date firming up, not a delay or an earlier date.
+  assert.equal(moveOf(upcomingOf({ igdbId: 1, name: 'K', d: '2026-11-30', q: 'month' }, today)!, upcomingOf({ igdbId: 1, name: 'K', d: '2026-12-31', q: 'quarter' }, today)!, today), undefined)
+  assert.equal(moveOf(day('2027-03-01'), day('2027-03-01'), today), undefined)
+  // Carried for 14 days, then gone; a new move replaces it.
+  const moved = withMoves([day('2027-06-01')], [day('2027-03-01')], '2026-11-03')[0]!
+  assert.equal(withMoves([day('2027-06-01')], [moved], '2026-11-10')[0]!.move?.movedAt, '2026-11-03')
+  assert.equal(withMoves([day('2027-06-01')], [moved], '2026-11-20')[0]!.move, undefined)
+  assert.equal(withMoves([day('2027-09-01')], [moved], '2026-11-10')[0]!.move?.previousDate, '2027-06-01')
+  assert.equal(withMoves([day('2027-06-01', 2)], [day('2027-03-01')], today)[0]!.move, undefined)
+})

@@ -138,3 +138,9 @@ The app holds follows on the device and reads static JSON, so an "event" is a ch
 ## Contract with the 0.2.0 app
 
 `src/contract.ts` encodes every place the 0.2.0 Swift decoders throw (unknown `Platform`, `ReleaseKind`, `KindBasis`, `PlatformStatus`; wrong types; missing `id`, `gameId`, `displayName`, `kind`, `announcedAt`, `notes`, `sourceIds`, `platforms`; unparseable dates or URLs; a null `latest.json` `updatedAt`). Unknown extra keys are safe. After export, `latest.json` and `games/<id>.json` are checked and a failure stops the run before publish; `info/<n>.json` problems are warnings, since one bad URL stops the app decoding that whole shard. Rules are refreshed from the Swift models when the oldest app in use changes. It found a live bad URL in `info/38.json` (an IGDB website with a space), now filtered when the shard is built.
+
+## Upcoming entries: never blank, and date moves (0.5.0)
+
+Each `upcoming/<n>.json` entry also carries, when IGDB has them: `summary` (cut to 300 characters at a word, ends with an ellipsis), `genres` (at most 3), `trailerId` (a YouTube id; a video named like a trailer, else the first), and `hypes` (IGDB's count of people waiting; a sort key for "Coming to PS5", never shown). A game that is not in the bundled catalogue therefore opens with a description and a trailer, not a blank page.
+
+`move`, `{ kind: delayed|earlier|dated, previousDate?, previousPrecision, movedAt }`, is present for 14 days after a real change in the date, found by comparing with the previous run: a later day, or an exact day that became vague or tbd, is `delayed`; an earlier exact day is `earlier`; a vague or tbd date that became an exact day is `dated`. A vague date that only narrows ("Q4" to "November") is not a move. Show it as "Delayed from March" or "Now dated"; the app has no need to store anything.
