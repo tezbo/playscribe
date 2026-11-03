@@ -56,6 +56,9 @@ export const platformsFor = (text: string, section?: Platform[]): Platform[] | u
   return p.length ? p : undefined
 }
 
+/** A line tagged for PC and no console. */
+export const isPcOnly = (platforms: Platform[] | undefined) => !!platforms?.length && platforms.every((p) => p === 'pc')
+
 const sectionPlatforms = (title: string): Platform[] | undefined => {
   const t = title.trim()
   if (/^(PS5|PlayStation\s*®?\s*5)( Pro)?( specific| fixes| changes)?:?$/i.test(t)) return ['ps5']
@@ -101,9 +104,10 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSecti
     }
     if (bullet) inList = true
     if (!current) open(fallbackTitle)
-    const item: NoteItem = { text, ps5ProOnly: currentPro || PRO.test(text) }
+    const item: NoteItem = { text, ps5ProOnly: currentPro || PRO.test(text), pcOnly: false }
     const platforms = platformsFor(text, currentPlatforms)
     if (platforms) item.platforms = platforms
+    item.pcOnly = isPcOnly(platforms)
     current!.items.push(item)
     lastItem = bullet ? item : null
   }
@@ -118,7 +122,7 @@ export const tagNotes = (sections: NoteSection[]): NoteSection[] =>
       ...s,
       items: s.items.map(({ platforms: _old, ...i }) => {
         const platforms = platformsFor(i.text, section)
-        return platforms ? { ...i, platforms } : i
+        return platforms ? { ...i, platforms, pcOnly: isPcOnly(platforms) } : { ...i, pcOnly: false }
       }),
     }
   })

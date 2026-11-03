@@ -159,3 +159,9 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 - **Guard date.** `alert.from` in the feed: the moment a console-later update went live on PS5 (`alert_from`), else the PS5 row's `liveAt`.
 - **Consoles later.** A Steam patch whose post says consoles get it later is `announced`; a week after the Steam post the backend takes it as `live` (liveAt stays Steam's date) and sets `alert_from` to that moment, so it earns its one standard alert, once. A rerun does not alert again (the row is no longer `announced`, and `pushed_at` claims the push).
 - **Before PS5 launch.** A Steam patch dated before the game's PS5 release creates no PS5 row; it is not released on PS5.
+
+## 0.5.0 PS5 version, checked date, PC-only lines (roadmap 4, 9)
+
+- **PS5 version.** `PlatformRelease.version` for PS5 is only ever read next to "PS5" in a post (or from a PS5-only post), never from a PC build number. A Steam post never fills it; a test covers a PC-only number.
+- **Checked date.** Every `Field` carries `checkedAt`. When a fetch reads the same fact again (same value and verification), `checkedAt` moves to that fetch time, so the app can say "checked <date>".
+- **PC-only lines.** `NoteItem.pcOnly` is true when a notes line is tagged for PC and no console (Steam Deck, mouse and keyboard, PC graphics, or a PC section). It is a grouping flag on the line inside the Steam notes. It is not a release status: there is still no "PC only" state for a release (Terry, 26 Oct). Lines stored before 0.5.0 are re-tagged on export; the app treats a missing `pcOnly` as false.

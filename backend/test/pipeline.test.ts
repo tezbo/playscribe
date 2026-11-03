@@ -217,3 +217,16 @@ test('roadmap 11: a Steam patch dated before the game\'s PS5 launch is not live 
   assert.equal(r.platforms.find((p) => p.platform === 'pc')!.status, 'live')
   assert.equal(r.platforms.find((p) => p.platform === 'ps5'), undefined)
 })
+
+test('roadmap 9: checkedAt follows the latest fetch, and a PC number never reaches the PS5 row', async () => {
+  const { db, deps } = await setup()
+  const ps5 = () => getRelease(db, 'dawnwalker@1.1.1')!.platforms.find((p) => p.platform === 'ps5')!
+  assert.equal(ps5().version, null)
+  const t0 = ps5().liveAt!.checkedAt
+  await new Promise((r) => setTimeout(r, 5))
+  db.prepare('UPDATE source_state SET last_fetched_at = NULL').run()
+  db.prepare('DELETE FROM seen_posts').run()
+  await runIngest(deps)
+  assert.ok(ps5().liveAt!.checkedAt > t0)
+  assert.equal(ps5().version, null)
+})

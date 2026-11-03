@@ -110,3 +110,8 @@ The local server has the same operations under `/v1/admin`, with `Authorization:
 | `POST /releases` | `{ gameId, title, announcedAt, sourceId, url?, body?, platforms? }`. Manual entry for sources the registry marks `fetch: manual`, such as Dawnwalker's site. Rows start `pending`. |
 | `POST /ingest?force=1` | Polls now. Sources still honour robots.txt and stay off after a 403. |
 | `GET /sources` | Last poll time, status and error per source. |
+
+## 0.5.0 additions: notes lines and checked date
+
+- `NoteItem.pcOnly: boolean` marks a notes line that is only about PC. The app may fold these lines into a group; it never turns a release into "PC only".
+- `Field.checkedAt` is the time of the latest fetch that read the fact. PS5 `version` is never a PC number.
