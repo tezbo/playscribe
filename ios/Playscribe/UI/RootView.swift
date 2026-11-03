@@ -159,6 +159,10 @@ struct TabletopRail: View {
                 RailButton(action: ScreenAction(id: "back", title: "Library", systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
                 ForEach(model.gameActions(id)) { RailButton(action: $0) }
+                if LinksSheet.hasLinks(model, id) {
+                    RailButton(action: ScreenAction(id: "links", title: "Links", systemImage: "link", kind: .button { model.linksSheetOpen = true }))
+                        .accessibilityLabel("Links, opens a list")
+                }
             } else if model.nav.tab == .library {
                 if !model.addSheetOpen {
                     RailButton(action: ScreenAction(id: "add", title: "Add game", systemImage: "plus", kind: .button { model.addSheetOpen = true }))
@@ -183,6 +187,9 @@ struct TabletopRail: View {
         .padding(.vertical, 8)
         .frame(maxHeight: .infinity)
         .background(.bar)
+        .sheet(isPresented: Bindable(model).linksSheetOpen) {
+            if let id = model.nav.gameID { LinksSheet(gameID: id) }
+        }
     }
 
     private func tab(_ t: AppTab, _ title: String, _ symbol: String, badge: Int = 0) -> some View {
