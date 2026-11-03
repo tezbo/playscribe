@@ -3,7 +3,7 @@ import Foundation
 /// What the Home Screen widget shows. The app writes it into the shared App Group container;
 /// the widget only reads it. Official PS5 updates only, newest and unread first (same order as
 /// the Library's Latest updates deck). No source names or URLs.
-struct WidgetSnapshot: Codable, Equatable, Sendable {
+nonisolated struct WidgetSnapshot: Codable, Equatable, Sendable {
     struct Row: Codable, Equatable, Sendable, Identifiable {
         var gameID: String
         var game: String
@@ -24,17 +24,27 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     static let coverFile = "widget-cover.jpg"
     static let fileName = "widget-snapshot.json"
 
+    /// One library game with its newest PS5 update, for Siri, Shortcuts and Spotlight (spike).
+    struct GameLine: Codable, Equatable, Sendable, Identifiable {
+        var id: String
+        var name: String
+        var update: String?
+        var date: Date?
+        var changes: [String]
+    }
+
     var rows: [Row]
+    var games: [GameLine]?
     var unreadCount: Int
     var hasGames: Bool
 
-    static let empty = WidgetSnapshot(rows: [], unreadCount: 0, hasGames: false)
+    static let empty = WidgetSnapshot(rows: [], games: nil, unreadCount: 0, hasGames: false)
 
     /// Gallery preview, same sample as the share card.
     static let sample = WidgetSnapshot(
         rows: [Row(gameID: "the-blood-of-dawnwalker", game: "The Blood of Dawnwalker", releaseID: "update-1-1",
                    update: "Update 1.1", date: Date(timeIntervalSince1970: 1_792_627_200), unread: true)],
-        unreadCount: 1, hasGames: true)
+        games: nil, unreadCount: 1, hasGames: true)
 
     static var containerURL: URL? { FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: group) }
 
