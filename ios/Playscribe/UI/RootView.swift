@@ -177,6 +177,17 @@ struct TabletopRail: View {
                 } else {
                     RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
                 }
+                // 0.5.0: Playing and Upcoming on the rail (Tabletop's lower half), not above the fold.
+                if !model.data.collection.isEmpty {
+                    RailButton(action: ScreenAction(id: "playing", title: "Playing",
+                                                    systemImage: model.libraryTab == .playing ? "gamecontroller.fill" : "gamecontroller",
+                                                    kind: .button { model.libraryTab = .playing }))
+                        .accessibilityAddTraits(model.libraryTab == .playing ? .isSelected : [])
+                    RailButton(action: ScreenAction(id: "upcoming", title: "Upcoming",
+                                                    systemImage: model.libraryTab == .upcoming ? "calendar.badge.clock" : "calendar",
+                                                    kind: .button { model.libraryTab = .upcoming }))
+                        .accessibilityAddTraits(model.libraryTab == .upcoming ? .isSelected : [])
+                }
             }
             Spacer(minLength: 8)
             Divider().frame(width: 28)
