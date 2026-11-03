@@ -205,4 +205,28 @@ final class ReleaseFeatureTests: XCTestCase {
             app.terminate()
         }
     }
+
+    /// Every 0.5.0 surface keeps the frame rules in the current pose: no frame crosses a division,
+    /// and in Tabletop nothing tappable sits above the fold. Upcoming is reached from the rail.
+    func testNewSurfacesKeepFrameRules() throws {
+        let routes = ["library", "chapter/dawnwalker/news", "chapter/dawnwalker/updates", "release/dawnwalker/update-1-1",
+                      "add", "settings", "first-run"]
+        for route in routes {
+            app.launchArguments = ["-qaRoute", route]
+            app.launch()
+            sleep(2)
+            assertFrames(route)
+            if route == "library" {
+                let upcoming = button("Upcoming")
+                XCTAssertTrue(upcoming.waitForExistence(timeout: 10), "Upcoming control")
+                if pose().contains("pose: tabletop") {
+                    XCTAssertGreaterThanOrEqual(upcoming.frame.minY, app.frame.midY - 1, "Upcoming rail button is on the flat half")
+                }
+                upcoming.tap()
+                sleep(1)
+                assertFrames("library-upcoming")
+            }
+            app.terminate()
+        }
+    }
 }
