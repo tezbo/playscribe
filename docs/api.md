@@ -130,3 +130,7 @@ The app holds follows on the device and reads static JSON, so an "event" is a ch
 | **News headline** | `news/<id>.json` | `title`, `date`, `url` (opens in the browser) | A new item for a tracked game | Headlines only, no alert. |
 
 `checkedAt` on every `Field` moves whenever a fetch re-reads the same fact, so "checked <date>" advances without any of the events above.
+
+## Contract with the 0.2.0 app
+
+`src/contract.ts` encodes every place the 0.2.0 Swift decoders throw (unknown `Platform`, `ReleaseKind`, `KindBasis`, `PlatformStatus`; wrong types; missing `id`, `gameId`, `displayName`, `kind`, `announcedAt`, `notes`, `sourceIds`, `platforms`; unparseable dates or URLs; a null `latest.json` `updatedAt`). Unknown extra keys are safe. After export, `latest.json` and `games/<id>.json` are checked and a failure stops the run before publish; `info/<n>.json` problems are warnings, since one bad URL stops the app decoding that whole shard. Rules are refreshed from the Swift models when the oldest app in use changes. It found a live bad URL in `info/38.json` (an IGDB website with a space), now filtered when the shard is built.

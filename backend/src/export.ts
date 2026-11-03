@@ -47,7 +47,8 @@ export const exportStatic = (db: DB, outDir: string) => {
   }))
   // "updatedAt" is the newest data change, not the run time, so quiet runs leave files untouched.
   write(join(root, 'index.json'), { version: 1, updatedAt: newest || null, games: index })
-  write(join(root, 'latest.json'), { updatedAt: newest || null, releases: latest })
+  // latest.json's updatedAt must always be a date: the 0.2.0 app (Latest.updatedAt: Date) cannot decode null from an empty feed.
+  write(join(root, 'latest.json'), { updatedAt: newest || '1970-01-01T00:00:00.000Z', releases: latest })
   write(join(root, 'review.json'), { items: review })
   return { games: games.length, files: readdirSync(join(root, 'games')).length * 2 + 3 }
 }
