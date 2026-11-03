@@ -14,6 +14,14 @@ struct CatchUpCard: View {
                 Text("Since you last opened").font(PlayscribeFont.title3)
                     .accessibilityAddTraits(.isHeader)
                 Text(summary).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                if let line = Self.digestLine(items.map(\.release)) {
+                    Text(line).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                }
+                if let top = items.lazy.compactMap({ $0.release.digest?.topNew }).first(where: { !$0.isEmpty }) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        ForEach(top.prefix(3), id: \.self) { Text($0).font(PlayscribeFont.footnote).lineLimit(2) }
+                    }
+                }
                 ForEach(items.prefix(3), id: \.release.id) { item in
                     Button { model.openGame(item.game.id, chapter: .updates, releaseID: item.release.id) } label: {
                         HStack(spacing: 12) {
@@ -49,5 +57,14 @@ struct CatchUpCard: View {
             .accessibilityElement(children: .contain)
             .accessibilityLabel(summary)
         }
+    }
+
+    /// "12 new, 8 fixed, 3 balance changes" summed over the releases; nil when the feed has no digest.
+    static func digestLine(_ releases: [Release]) -> String? {
+        let d = releases.compactMap(\.digest)
+        guard !d.isEmpty else { return nil }
+        let parts = [(d.reduce(0) { $0 + $1.new }, "new"), (d.reduce(0) { $0 + $1.fixed }, "fixed"),
+                     (d.reduce(0) { $0 + $1.balance }, "balance")].filter { $0.0 > 0 }.map { "\($0.0) \($0.1)" }
+        return parts.isEmpty ? nil : parts.joined(separator: ", ")
     }
 }
