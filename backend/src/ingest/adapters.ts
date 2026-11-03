@@ -23,7 +23,6 @@ const steam = async (fetchFn: FetchFn, s: SourceDef, count: number): Promise<Pos
     `https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=${appid}&count=${count}&maxlength=0&feeds=steam_community_announcements`,
   )
   return d.appnews.newsitems
-    .filter((n) => n.tags?.includes('patchnotes') || looksLikePatch(n.title))
     .map((n) => ({
       sourceId: s.id,
       postId: n.gid,
@@ -31,6 +30,7 @@ const steam = async (fetchFn: FetchFn, s: SourceDef, count: number): Promise<Pos
       title: n.title,
       publishedAt: new Date(n.date * 1000).toISOString(),
       body: n.contents,
+      ...(n.tags?.includes('patchnotes') || looksLikePatch(n.title) ? {} : { news: true }),
     }))
 }
 

@@ -182,3 +182,10 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 
 - `src/issues.ts` derives issues from stored notes at export time (no new table): a "Known issues" section or a "Known issue:" line, PC-only lines excluded. Id = hash of game and normalised text.
 - A later release addresses an issue when one of its other note lines matches (one contains the other, or at least 70% of the shorter line's words are shared). Relisting it as known keeps it open. The match is a heuristic; a wrong match can be fixed by rewording, and nothing here alters the notes themselves.
+
+## 0.5.0 news (roadmap 17)
+
+- Allowlist: `backend/src/sources/news-sources.json`. Only the game's own Steam news feed and the PlayStation Blog RSS feed. Press sites (Push Square, PlayStation LifeStyle) are facts-only for patches and never feed news.
+- Stored: title, date, link (`news` table). Never body text. The source id stays in the database for audit and is not exported. The UI shows no source names or credits.
+- Terms: Steam's `ISteamNews` is public and already used. The PlayStation Blog's robots.txt allows `/feed/` (Crawl-delay 5, respected), checked 2026-11-03; its written terms of use were not machine-checked, so Theo is asked to confirm before App Store submission.
+- Patch posts are not news; they become releases as before.
