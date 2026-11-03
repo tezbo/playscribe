@@ -16,6 +16,7 @@ struct JournalView: View {
         // A Group, not a stack: each release is a direct child of the reading panel's lazy stack,
         // so deep links can scroll it to the top (R-1, N-6).
         Group {
+            FollowingList(gameID: gameID)
             if !announced.isEmpty {
                 SectionHeader(title: "Coming to PS5")
                 ForEach(announced) { ReleaseEntry(release: $0, defaultOpen: false).id("rel-\($0.id)") }
@@ -448,6 +449,10 @@ struct NoteItemView: View {
             VStack(alignment: .leading, spacing: 4) {
                 if item.spoiler == true { SpoilerText(text: item.text, gameID: gameID, key: key) } else { LinkedTextView(text: item.text) }
                 if item.ps5ProOnly { Tag(text: "PS5 Pro") }
+            }
+            if let issue = model.knownIssue(for: item, in: gameID) {
+                Spacer(minLength: 0)
+                FollowIssueButton(issue: issue)
             }
         }
         .font(PlayscribeFont.subheadline)
