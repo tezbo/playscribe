@@ -21,7 +21,7 @@ final class NotificationService: NSObject {
     func attach(_ model: AppModel) {
         self.model = model
         center.delegate = self
-        Task { await refreshAuthorization() }
+        Task { await refreshAuthorization(); syncReleaseDayAlerts() }
     }
 
     func refreshAuthorization() async {
@@ -38,6 +38,32 @@ final class NotificationService: NSObject {
         let granted = (try? await center.requestAuthorization(options: [.alert, .badge, .sound])) ?? false
         await refreshAuthorization()
         return granted
+    }
+
+    /// Release-day alert (0.5.0 item 14, PR 2): one local notification at 09:00 on the day an
+    /// exact-dated Wishlist game is out, "<Game> is out today on PS5". Respects the global
+    /// "Notify me about" setting and a per-game Off. Vague dates (month, quarter, year) never alert.
+    func syncReleaseDayAlerts() {
+        guard let model, authorization == .authorized || authorization == .provisional else { return }
+        let due = model.data.collection.compactMap { c -> (CatalogGame, Date)? in
+            guard c.status == .wishlist, !model.data.pauseAll, model.notifyLevel(c.gameID) != .off,
+                  let g = model.game(c.gameID), (g.releasePrecision ?? .day) == .day,
+                  let day = g.releaseDate?.isoDay, day > .now else { return nil }
+            return (g, day)
+        }
+        center.getPendingNotificationRequests { [center] pending in
+            let old = pending.map(\.identifier).filter { $0.hasPrefix("release-day-") }
+            center.removePendingNotificationRequests(withIdentifiers: old)
+            for (g, day) in due {
+                let content = UNMutableNotificationContent()
+                content.title = "\(g.name) is out today on PS5"
+                content.sound = .default
+                var parts = Calendar.current.dateComponents([.year, .month, .day], from: day)
+                parts.hour = 9
+                let trigger = UNCalendarNotificationTrigger(dateMatching: parts, repeats: false)
+                center.add(UNNotificationRequest(identifier: "release-day-\(g.id)", content: content, trigger: trigger))
+            }
+        }
     }
 
     func didRegister(token: Data) {

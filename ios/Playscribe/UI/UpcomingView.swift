@@ -54,6 +54,7 @@ struct UpcomingView: View {
     private func tile(_ g: CatalogGame, watching: Bool) -> some View {
         Button {
             if model.entry(g.id) == nil { model.addGame(g, status: .wishlist) }
+            NotificationService.shared.syncReleaseDayAlerts()
             model.openGame(g.id)
         } label: {
             VStack(alignment: .leading, spacing: 6) {
