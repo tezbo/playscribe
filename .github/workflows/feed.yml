@@ -121,7 +121,7 @@ jobs:
           npm run game-info --silent -- "$GITHUB_WORKSPACE/out" && date -u +%FT%TZ > "$stamp"
       # Upcoming PS5 games for the watchlist (v1/upcoming), refreshed daily, or now with the info action.
       - name: Upcoming games
-        if: github.event_name == 'schedule' || inputs.action == 'poll' || inputs.action == 'info'
+        if: (github.event_name == 'schedule' && github.event.schedule != '47 * * * *') || inputs.action == 'poll' || inputs.action == 'info'
         working-directory: backend
         run: |
           stamp="$GITHUB_WORKSPACE/out/v1/upcoming/fetched-at"
