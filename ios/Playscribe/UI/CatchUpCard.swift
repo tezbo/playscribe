@@ -4,6 +4,7 @@ import SwiftUI
 /// since the last open. Updates older than 72 h are already read and never listed.
 struct CatchUpCard: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         let items = model.catchUpItems
@@ -27,7 +28,7 @@ struct CatchUpCard: View {
                         HStack(spacing: 12) {
                             CoverView(game: item.game, cornerRadius: 6).frame(width: 40)
                             VStack(alignment: .leading, spacing: 2) {
-                                Text(item.game.name).font(PlayscribeFont.headline).lineLimit(1)
+                                Text(item.game.name).font(PlayscribeFont.headline).lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
                                 HStack(spacing: 8) {
                                     Text(item.release.displayName)
                                     if let v = item.release.ps5Version { Text(v).monospacedDigit() }
