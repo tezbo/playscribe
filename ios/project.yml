@@ -18,10 +18,15 @@ targets:
     platform: iOS
     sources:
       - path: Playscribe
+      - path: Shared
+    dependencies:
+      - target: PlayscribeWidget
+        embed: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: co.codeconnectors.playscribe
         INFOPLIST_FILE: Playscribe/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Playscribe/Playscribe.entitlements
         CODE_SIGN_STYLE: Automatic
         TARGETED_DEVICE_FAMILY: "1"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
@@ -32,6 +37,24 @@ targets:
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG INTERNAL
         Release:
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: INTERNAL
+  PlayscribeWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: PlayscribeWidget
+        excludes: ["Info.plist", "*.entitlements"]
+      - path: Shared
+      - path: Playscribe/Resources/Fonts
+        includes: ["InstrumentSans-*.ttf"]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: co.codeconnectors.playscribe.widget
+        INFOPLIST_FILE: PlayscribeWidget/Info.plist
+        CODE_SIGN_ENTITLEMENTS: PlayscribeWidget/PlayscribeWidget.entitlements
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
+        SKIP_INSTALL: YES
   PlayscribeTests:
     type: bundle.unit-test
     platform: iOS
