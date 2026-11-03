@@ -701,6 +701,15 @@ struct GameTitleWithStatus: View {
     var name: String
 
     var body: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            titleRow
+            if model.entry(gameID)?.status == .wishlist, let g = model.game(gameID), g.isUpcoming || g.releasePrecision == .tbd {
+                Text("On your watchlist").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            }
+        }
+    }
+
+    private var titleRow: some View {
         HStack(alignment: .firstTextBaseline, spacing: 8) {
             Text(name).font(PlayscribeFont.title2).lineLimit(2).accessibilityAddTraits(.isHeader)
             if let e = model.entry(gameID) {
