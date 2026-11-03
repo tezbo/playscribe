@@ -140,6 +140,8 @@ final class AppModel {
     var recentSearches: [String] = []
     /// The Latest updates deck's current card (not persisted); Tabletop's page edge drives the standing half with it.
     var deckSelection: String?
+    /// Tabletop's Links sheet (J-11).
+    var linksSheetOpen = false
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
     /// Set when a deep link asks the journal to bring a release to the top.

@@ -328,7 +328,7 @@ struct ContentsBody: View {
                     Spacer(minLength: 8)
                 } }
                 // Once per page (Terry): closed, the links sit with the game's basics instead.
-                if duo.pose != .closed, let game { GameLinks(game: game) }
+                if duo.pose != .closed && duo.pose != .tabletop, let game { GameLinks(game: game) }
                 if model.entry(gameID) == nil, let game {
                     Button("Add to library") { model.addGame(game, status: .watching) }
                         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
@@ -600,5 +600,56 @@ struct GameTitleWithStatus: View {
 
     static func symbol(_ s: OwnershipStatus) -> String {
         switch s { case .owned: "checkmark.circle.fill"; case .wishlist: "bookmark.fill"; case .watching: "eye.fill" }
+    }
+}
+
+
+/// J-11: the game's links as sheet rows, Tabletop only (the inline row stays in every other pose).
+struct LinksSheet: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.dismiss) private var dismiss
+    var gameID: String
+
+    private struct Row: Identifiable { var id: String; var title: String; var url: URL }
+
+    private var rows: [Row] {
+        var out: [Row] = []
+        if let game = model.game(gameID) {
+            let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
+            if let u = links?.official { out.append(Row(id: "official", title: "Official website", url: u)) }
+            if let u = links?.patchNotes { out.append(Row(id: "notes", title: "All patch notes", url: u)) }
+        }
+        if let r = model.readerRelease(gameID), let u = r.links?.steamNotes { out.append(Row(id: "steam", title: "Open in Steam", url: u)) }
+        return out
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("Links").font(PlayscribeFont.title3).padding(.horizontal, 20).padding(.top, 20).padding(.bottom, 8)
+                .accessibilityAddTraits(.isHeader)
+            ForEach(rows) { row in
+                Link(destination: row.url) {
+                    HStack {
+                        Text(row.title).font(PlayscribeFont.body)
+                        Spacer()
+                        Image(systemName: "arrow.up.right.square")
+                    }
+                    .padding(.horizontal, 20)
+                    .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
+                    .contentShape(Rectangle())
+                }
+                .foregroundStyle(PlayscribeColor.accent)
+                .accessibilityLabel("\(row.title), opens in browser")
+                .tappableFrame()
+            }
+            Spacer(minLength: 0)
+        }
+        .background(Color.ink1)
+        .presentationDetents([.medium])
+    }
+
+    static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool {
+        let links = model.game(gameID)?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
+        return links?.official != nil || links?.patchNotes != nil || model.readerRelease(gameID)?.links?.steamNotes != nil
     }
 }
