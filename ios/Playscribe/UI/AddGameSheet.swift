@@ -167,15 +167,8 @@ struct AddRow: View {
         let added = model.entry(game.id) != nil
         Button(action: onAdd) {
             HStack(spacing: 12) {
+                // One mark per row: the circle on the right becomes a tick (no badge on the cover).
                 CoverView(game: game, cornerRadius: 4).frame(width: 40)
-                    .overlay(alignment: .topTrailing) {
-                        if selected {
-                            Image(systemName: "checkmark.circle.fill")
-                                .symbolRenderingMode(.palette)
-                                .foregroundStyle(PlayscribeColor.onAccent, PlayscribeColor.accent)
-                                .font(.title3).offset(x: 8, y: -8)
-                        }
-                    }
                 VStack(alignment: .leading, spacing: 2) {
                     Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
                     Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)

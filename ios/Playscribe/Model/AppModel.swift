@@ -165,7 +165,13 @@ final class AppModel {
            let decoded = try? JSONCoding.decoder.decode(PersistedState.self, from: raw) {
             data = decoded
         } else {
+            // A real first launch starts empty, on onboarding: demo games never appear in a
+            // player's library. Debug builds (and the QA demo route) still seed the demo set.
+            #if DEBUG
             data = PersistedState(collection: Fixtures.shared.seedCollection)
+            #else
+            data = PersistedState(collection: [])
+            #endif
         }
         rebuildMerged()
     }
