@@ -23,6 +23,12 @@ extension AppModel {
         for g in games {
             for r in releases(g) {
                 let ps5 = r.isPS5Listed
+                // A5: update titles match too, shown as the update's own headline.
+                let title = [r.displayName, r.headline].compactMap { $0 }.joined(separator: " ")
+                if PS5Index.fold(title).contains(q) {
+                    hits.append(NoteHit(id: "\(r.id)#title", release: r, line: r.ps5Headline ?? r.displayName, section: "Update",
+                                        pcOnly: !ps5))
+                }
                 for (si, section) in r.notes.enumerated() {
                     for (ii, item) in section.items.enumerated() where item.spoiler != true {
                         guard PS5Index.fold(item.text + " " + section.title).contains(q) else { continue }
@@ -118,7 +124,12 @@ struct NoteSearchResults: View {
         }
     }
 
-    private func bolded(_ line: String) -> AttributedString {
+    private func bolded(_ line: String) -> AttributedString { NoteHit.bolded(line, query: query) }
+}
+
+extension NoteHit {
+    /// The matching text in bold ember (A5).
+    static func bolded(_ line: String, query: String) -> AttributedString {
         var a = AttributedString(line)
         if let r = a.range(of: query, options: [.caseInsensitive, .diacriticInsensitive]) {
             a[r].font = PlayscribeFont.subheadline.bold()

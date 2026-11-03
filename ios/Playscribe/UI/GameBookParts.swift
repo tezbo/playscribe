@@ -440,11 +440,10 @@ struct NotesSearchField: View {
     var gameID: String
     var body: some View {
         @Bindable var model = model
-        let short = model.game(gameID).map(GameBookView.shortName) ?? "this game"
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                TextField(model.noteScope == .thisGame ? "Search \(short)'s notes" : "Search all my games' notes", text: $model.noteQuery)
+                TextField(model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes", text: $model.noteQuery)
                     .autocorrectionDisabled()
                     .submitLabel(.search)
                     .onSubmit { model.rememberSearch(model.noteQuery) }
@@ -472,10 +471,14 @@ struct InlineNoteResults: View {
     var body: some View {
         let hits = model.noteHits(model.noteQuery, scope: model.noteScope, gameID: gameID)
         VStack(alignment: .leading, spacing: 6) {
+            if !hits.isEmpty {
+                Text("\(hits.count) result\(hits.count == 1 ? "" : "s")")
+                    .font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    .accessibilityLabel("\(hits.count) results")
+            }
             if hits.isEmpty {
-                let name = model.game(gameID)?.name ?? "this game"
-                Text(model.noteScope == .thisGame ? "No mention of '\(model.noteQuery)' in \(name)'s PS5 notes" : "No mention of '\(model.noteQuery)' in your games' PS5 notes")
-                    .font(PlayscribeFont.subheadline)
+                Text(model.noteScope == .thisGame ? "Nothing in this game's notes matches" : "Nothing in your games' notes matches")
+                    .font(PlayscribeFont.headline)
                 if model.noteScope == .thisGame {
                     Button("Search all my games") { model.noteScope = .allGames }.hitTarget()
                 }
@@ -489,7 +492,7 @@ struct InlineNoteResults: View {
                     model.noteQuery = ""
                 } label: {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(h.line).font(PlayscribeFont.subheadline).lineLimit(3)
+                        Text(NoteHit.bolded(h.line, query: model.noteQuery)).font(PlayscribeFont.subheadline).lineLimit(3)
                         HStack(spacing: 6) {
                             Text(h.release.displayName).font(PlayscribeFont.caption)
                             Text(h.pcOnly ? "PC-specific" : h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
