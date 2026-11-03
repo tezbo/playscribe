@@ -110,6 +110,8 @@ struct PersistedState: Codable {
     var knownOnPS5: Set<String>?
     /// N-11: releases already announced quietly as Reported on PS5.
     var knownReported: Set<String>?
+    /// Upcoming date moves already announced ("igdbId:movedAt"), so one change alerts once.
+    var notifiedMoves: Set<String>?
     /// When the app was last opened (A6): the catch-up card lists what arrived after it.
     var lastOpenedAt: Date?
     /// Known issues the person follows, and those already alerted as fixed (0.5.0 item 19).
