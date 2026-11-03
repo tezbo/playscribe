@@ -189,7 +189,15 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 
 ## 0.5.0 news (roadmap 17)
 
-- Allowlist: `backend/src/sources/news-sources.json`. Only the game's own Steam news feed and the PlayStation Blog RSS feed. Press sites (Push Square, PlayStation LifeStyle) are facts-only for patches and never feed news.
+- Allowlist: `backend/src/sources/news-sources.json`. Only the game's own Steam news feed. The PlayStation Blog is not on it (see the open check below). Press sites (Push Square, PlayStation LifeStyle) are facts-only for patches and never feed news.
 - Stored: title, date, link (`news` table). Never body text. The source id stays in the database for audit and is not exported. The UI shows no source names or credits.
-- Terms: Steam's `ISteamNews` is public and already used. The PlayStation Blog's robots.txt allows `/feed/` (Crawl-delay 5, respected), checked 2026-11-03; its written terms of use were not machine-checked, so Theo is asked to confirm before App Store submission.
+- Terms: Steam's `ISteamNews` is public and already used.
 - Patch posts are not news; they become releases as before.
+
+### Open check before App Store submission: PlayStation Blog terms
+
+The PlayStation Blog's robots.txt allows `/feed/` (Crawl-delay 5), but playstation.com's website terms of use (read 2026-11-03, section on text and data mining) say users shall not use any "robot", "bot", "spider", "scraper" or other automated tool to access, obtain, copy, monitor or republish any portion of the site or its content. It is not clear that a public RSS feed is carved out, or that blog.playstation.com falls under those terms. Until Terry or Theo decides:
+
+- The PlayStation Blog is not used for news headlines.
+- It is still polled by the existing patch ingest (`playstation-blog` in `src/sources/registry.json`, facts only: the PS5 version, size and live time; no text stored). That predates 0.5.0. If the answer is no, set its `fetch` to `manual`; the Steam path is unaffected.
+- The same terms are why Sony's patch servers and PSN APIs are out (see the top of this file).
