@@ -53,7 +53,7 @@ test('notes keep sections, sub-headed items and platform tags', () => {
 [h2]General[/h2][list][*][PC] Fixed DLSS flicker[/list]`)
   assert.deepEqual(notes.map((s) => s.title), ['New features', 'PS5', 'General'])
   assert.deepEqual(notes[0]!.items.map((i) => i.text), ['Animal petting', 'Draught of Mind Rebirth: Forget all your abilities.'])
-  assert.deepEqual(notes[1]!.items[0], { text: 'Fixed HDR on PS5 Pro', platforms: ['ps5'], ps5ProOnly: true })
+  assert.deepEqual(notes[1]!.items[0], { text: 'Fixed HDR on PS5 Pro', platforms: ['ps5'], ps5ProOnly: true, pcOnly: false })
   assert.deepEqual(notes[2]!.items[0]!.platforms, ['pc'])
 })
 
@@ -76,7 +76,7 @@ test('a heading about one platform tags its items, and stored notes are re-tagge
   const notes = extractNotes('[h2]Steam Deck[/h2][list][*]Improved loading times[/list][h2]Fixes[/h2][list][*]Fixed a crash on PC when alt-tabbing[*]Fixed a door[/list]')
   assert.deepEqual(notes[0]!.items[0]!.platforms, ['pc'])
   assert.deepEqual(notes[1]!.items.map((i) => i.platforms), [['pc'], undefined])
-  const stored = [{ title: 'Highlights', items: [{ text: 'Updated FrameGen', ps5ProOnly: false }] }]
+  const stored = [{ title: 'Highlights', items: [{ text: 'Updated FrameGen', ps5ProOnly: false, pcOnly: false }] }]
   assert.deepEqual(tagNotes(stored)[0]!.items[0]!.platforms, ['pc'])
 })
 
@@ -102,4 +102,12 @@ test('ps5PageOf finds the studio page about the PS5 update, never Steam or a sto
   assert.equal(ps5PageOf('PS5 patch notes: https://example.com/news/1-2\nhttps://youtu.be/x'), 'https://example.com/news/1-2')
   assert.equal(ps5PageOf('<a href="https://example.com/ps5-update">notes</a>'), 'https://example.com/ps5-update')
   assert.equal(ps5PageOf('[url=https://store.playstation.com/x]Buy on PS5[/url] [url=https://example.com/blog]Dev blog[/url]'), null)
+})
+
+test('roadmap 4: a PC build number is never a PS5 version; PC-only lines carry pcOnly, a line grouping flag and not a status', () => {
+  assert.equal(consoleVersionOf('Build 1.004.000 is out on PC with new DLSS options.'), null)
+  assert.equal(consoleVersionOf('PC build 1.004.000. PS5 is version 01.005.002.'), '01.005.002')
+  assert.equal(consoleVersionOf('PC 01.004.000 and Xbox 01.004.001', {}), null)
+  const notes = extractNotes('[h2]Fixes[/h2][list][*]Steam Deck: fixed stutter[*]Fixed a door on PS5[*]Added mouse and keyboard remapping[/list]')
+  assert.deepEqual(notes[0]!.items.map((i) => i.pcOnly), [true, false, true])
 })

@@ -184,6 +184,8 @@ const mergeField = <T>(old: Field<T> | null, next: Field<T> | null | undefined, 
   if (!next) return old
   if (!old || force || RANK[next.verification] > RANK[old.verification]) return next
   if (RANK[next.verification] === RANK[old.verification] && old.verification !== 'official') return next
+  // Roadmap 4/9: the same fact read again keeps its value and verification but carries the new fetch date.
+  if (next.value === old.value && next.verification === old.verification) return { ...old, checkedAt: next.checkedAt }
   return old
 }
 
