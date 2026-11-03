@@ -38,7 +38,7 @@ extension AppModel {
 
     func fixedInName(_ issue: KnownIssue, gameID: String) -> String? {
         guard let id = issue.addressedBy else { return nil }
-        return releases(gameID).first { $0.id == id }?.displayName
+        return releases(gameID).first { $0.id == id }.map { $0.ps5Version ?? $0.displayName }
     }
 
     /// One alert per followed issue, when it was fixed within the last 72 hours.
@@ -68,7 +68,8 @@ struct FollowIssueButton: View {
                 .foregroundStyle(on ? Color.secondary : PlayscribeColor.accent)
                 .frame(minWidth: 44, minHeight: 44)
                 .tappableFrame()
-                .accessibilityLabel(on ? "Following this issue. Tap to stop" : "Follow this issue")
+                .accessibilityLabel(on ? "Following this issue" : "Follow this issue")
+                .accessibilityHint(on ? "Double tap to stop following" : "Alerts you when an update fixes it")
         }
     }
 }
@@ -86,7 +87,7 @@ struct FollowingList: View {
                     HStack(alignment: .firstTextBaseline, spacing: 8) {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(LinkedText.clean(issue.text)).font(PlayscribeFont.subheadline).lineLimit(3)
-                            Text(issue.isAddressed ? "Fixed in \(model.fixedInName(issue, gameID: gameID) ?? "a later update")" : "Still open")
+                            Text(issue.isAddressed ? "Fixed in \(model.fixedInName(issue, gameID: gameID) ?? "a later update")" : "Not fixed yet")
                                 .font(PlayscribeFont.caption).foregroundStyle(.secondary)
                         }
                         Spacer(minLength: 0)
