@@ -4,6 +4,7 @@ import { Blocked, allowedByRobots, type FetchFn } from '../http.ts'
 import { registry, type SourceDef } from '../registry.ts'
 import * as store from '../store.ts'
 import type { PlatformStatus, Post } from '../types.ts'
+import newsSources from '../sources/news-sources.json' with { type: 'json' }
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import type { Igdb } from './igdb.ts'
@@ -293,6 +294,13 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
         // A backfill re-reads official posts already seen, so new rules apply to old releases; reading
       // is idempotent. Press posts are not re-read (each costs a page at the site's Crawl-delay).
       if (store.isSeen(deps.db, s.id, post.postId) && !(opts.until && s.trust === 'official')) continue
+        if (post.news) {
+          tx(deps.db, () => {
+            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources) store.addNews(deps.db, game.id, post)
+            store.markSeen(deps.db, s.id, post.postId, null)
+          })
+          continue
+        }
         tx(deps.db, () => store.markSeen(deps.db, s.id, post.postId, handlePost(deps, game, s, post, summary)))
       }
     }
@@ -309,6 +317,14 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       if (opts.until && post.publishedAt < opts.until) continue
       // Shared feeds cover every game: a post counts only if it names the game and reads like a patch;
       // a press list counts only posts about PS5.
+      // The PlayStation Blog's non-patch posts that name a tracked game are news headlines (title, date, link).
+      if (s.id in newsSources.sources && !looksLikePatch(post.title)) {
+        tx(deps.db, () => {
+          for (const g of games.filter((g) => matchesPost(g, post))) store.addNews(deps.db, g.id, post)
+          store.markSeen(deps.db, s.id, post.postId, null)
+        })
+        continue
+      }
       const aboutPs5 = s.kind !== 'pressIndex' || mentionsPs5(post.title) || (post.tags ?? []).some((t) => /^PS5$/i.test(t))
       const matched = looksLikePatch(post.title) && aboutPs5 ? games.filter((g) => matchesPost(g, post)) : []
       let full = post

@@ -1,0 +1,13 @@
+{
+  "$comment": "Roadmap 17. The only sources that may feed news headlines. Anything not listed here is never read for news (press sites included). We keep the title, date and link only, never article text, and the app shows no source names. Terms checked 2026-11-03 by Priya.",
+  "sources": {
+    "steamNews": {
+      "what": "Official posts on each game's own Steam news feed (Steam Web API ISteamNews, public, no key), the studio's own announcements.",
+      "terms": "Same endpoint the patch ingest already uses; only the headline, date and Steam link are kept."
+    },
+    "playstation-blog": {
+      "what": "PlayStation Blog's public RSS feed, posts whose title names a tracked game.",
+      "terms": "robots.txt checked 2026-11-03: /feed/ is allowed for all agents, Crawl-delay 5, which the shared poll respects. Headline, date and link only. The blog's written terms of use were not machine-checked: Theo to confirm before this ships to the App Store."
+    }
+  }
+}

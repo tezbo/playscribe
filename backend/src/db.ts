@@ -108,6 +108,16 @@ CREATE TABLE IF NOT EXISTS follows (
   PRIMARY KEY (device_id, game_id)
 );
 
+-- Roadmap 17: news headlines per game. Title, date and link only, never the article text. source_id is kept for audit and never exported.
+CREATE TABLE IF NOT EXISTS news (
+  game_id TEXT NOT NULL REFERENCES games(id),
+  url TEXT NOT NULL,
+  title TEXT NOT NULL,
+  published_at TEXT NOT NULL,
+  source_id TEXT NOT NULL,
+  PRIMARY KEY (game_id, url)
+);
+
 CREATE TABLE IF NOT EXISTS push_log (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   release_id TEXT NOT NULL,

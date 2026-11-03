@@ -263,3 +263,16 @@ export const promoteAnnounced = (db: DB, at = new Date()) => {
   }
   return n
 }
+
+/** A news headline for a game: title, date and link only (roadmap 17). Never the post body. */
+export const addNews = (db: DB, gameId: string, post: { url: string; title: string; publishedAt: string; sourceId: string }) =>
+  db
+    .prepare('INSERT OR IGNORE INTO news (game_id, url, title, published_at, source_id) VALUES (?, ?, ?, ?, ?)')
+    .run(gameId, post.url, post.title.trim().slice(0, 200), post.publishedAt, post.sourceId)
+
+export const newsOf = (db: DB, gameId: string, limit = 20) =>
+  (db.prepare('SELECT title, published_at, url FROM news WHERE game_id = ? ORDER BY published_at DESC, url LIMIT ?').all(gameId, limit) as { title: string; published_at: string; url: string }[]).map((n) => ({
+    title: n.title,
+    date: n.published_at,
+    url: n.url,
+  }))
