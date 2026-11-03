@@ -110,6 +110,9 @@ struct PersistedState: Codable {
     var knownReported: Set<String>?
     /// When the app was last opened (A6): the catch-up card lists what arrived after it.
     var lastOpenedAt: Date?
+    /// Known issues the person follows, and those already alerted as fixed (0.5.0 item 19).
+    var followedIssues: Set<String>?
+    var alertedIssues: Set<String>?
 }
 
 struct Toast: Equatable {
@@ -215,6 +218,8 @@ final class AppModel {
     /// Full per-game histories (games/<id>.json), keyed by the app's game id.
     var gameReleases: [String: [Release]] = [:] { didSet { rebuildMerged() } }
     @ObservationIgnored var historyStamps: [String: String] = [:]
+    /// Known issues per game from games/<id>.json.
+    var gameIssues: [String: [KnownIssue]] = [:]
 
     private func rebuildMerged() {
         let curated = Dictionary(fixtures.releases.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
