@@ -92,3 +92,26 @@ struct StaleHint: View {
         }
     }
 }
+
+/// Offline states 5 and 6: nothing released lately. One calm card in the hero slot, never a gap.
+struct CaughtUpCard: View {
+    @Environment(AppModel.self) private var model
+
+    private var lastUpdate: Date? {
+        model.data.collection.flatMap { model.ps5Releases($0.gameID) }
+            .filter { $0.ps5State == .onPS5 }.map(\.ps5Date).max()
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text("You're all caught up").font(PlayscribeFont.headline)
+            Text(lastUpdate.map { "Last update \($0.formatted(.dateTime.day().month(.abbreviated)))" } ?? "Nothing new in 90 days")
+                .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(16)
+        .background(PlayscribeColor.ink800, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .padding(.horizontal, 16)
+        .accessibilityElement(children: .combine)
+    }
+}
