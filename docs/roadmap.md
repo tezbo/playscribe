@@ -38,7 +38,7 @@ The Field Guide trial (docs/game-guide.md) stays hidden and is not part of this 
 **B. Stay in the loop**
 | # | Item | Eng | Design |
 |---|---|---|---|
-| 11 | Backend: 72-hour guard on reported alerts; alert when a "consoles later" update goes live; faster feed schedule within the free Actions budget | Theo, Priya | |
+| 11 | Backend: 72-hour guard on reported alerts; alert when a "consoles later" update goes live; faster alerts: a hot set (games with a patch in the last 14 days plus a pinned list of up to 12) polled about every 30 minutes, everything else hourly; follows live on devices, so this is not per-user; the repo is public, so the Actions minutes are free | Theo, Priya | |
 | 12 | Add flow: + menu with Scan with camera, From a photo, Say it, Type it; decline-camera fallback; first-run welcome and guided add. API check first (Vision, DataScanner, Foundation Models against the SDK). | Leo, Priya | Iris, Ezra |
 | 13 | Add games multi-select: shipped in 0.2.0 as the pinned "Add N games" bar with tap-to-select (Terry agreed), instead of a Select multiple toggle. Nothing left here | | |
 | 14 | Watchlist for upcoming games: release dates, announcements, release-day alerts | Priya, Leo | Iris |
@@ -48,7 +48,7 @@ The Field Guide trial (docs/game-guide.md) stays hidden and is not part of this 
 **C. Your gaming world**
 | # | Item | Eng | Design |
 |---|---|---|---|
-| 17 | News for your games and series from official studio and PlayStation Blog posts | Priya | Iris |
+| 17 | Official studio news for your games and series (Steam news only; no PlayStation Blog until we have written permission, its terms bar automated access) | Priya | Iris |
 | 18 | Similar games to your library (IGDB) | Priya | Iris |
 | 19 | Share an update as a card | Leo | Iris, Ezra |
 
