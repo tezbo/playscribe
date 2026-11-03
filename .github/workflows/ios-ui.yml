@@ -6,6 +6,9 @@ name: iOS UI
 # gate still runs on the Mac (docs/release-0.5.0-gate.md).
 on:
   workflow_dispatch:
+  # A change to this workflow runs it on its own PR, so it proves itself before it merges.
+  pull_request:
+    paths: ['.github/workflows/ios-ui.yml']
   push:
     branches: ['release/0.5.0']
     paths: ['ios/**', '.github/workflows/ios-ui.yml']
