@@ -36,7 +36,13 @@ extension AppModel {
         cards.sort { a, b in
             a.unread != b.unread ? a.unread : (a.date ?? .distantPast) > (b.date ?? .distantPast)
         }
-        return Array(cards.prefix(8))
+        // At most 2 cards per game, so one busy game cannot fill the deck (Quinn, PR 55).
+        var perGame: [String: Int] = [:]
+        let spread = cards.filter { c in
+            perGame[c.game.id, default: 0] += 1
+            return perGame[c.game.id]! <= 2
+        }
+        return Array(spread.prefix(8))
     }
 }
 
@@ -52,7 +58,8 @@ struct LatestUpdatesDeck: View {
         switch duo.pose {
         case .closed: 1.12            // one card, the next peeking
         case .book: 1.12              // the deck lives on the left page
-        default: duo.isLandscape || duo.pose == .flat ? 2 : 1.12
+        case .flat: 2                 // Open, either orientation: two cards across (mock-up v3)
+        default: 1.12
         }
     }
 
@@ -154,6 +161,16 @@ struct PageEdge: View {
     var select: (String) -> Void
 
     var body: some View {
+        // 8 leaves at 44 pt are 352 pt: when that does not fit (Closed, the Book's left page), the
+        // edge scrolls sideways instead of overflowing.
+        ViewThatFits(in: .horizontal) {
+            leaves
+            ScrollView(.horizontal, showsIndicators: false) { leaves }
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+    }
+
+    private var leaves: some View {
         HStack(spacing: 0) {
             ForEach(Array(cards.enumerated()), id: \.element.id) { i, card in
                 let isCurrent = card.id == current
@@ -170,7 +187,6 @@ struct PageEdge: View {
                 .accessibilityAddTraits(isCurrent ? [.isButton, .isSelected] : .isButton)
             }
         }
-        .frame(maxWidth: .infinity, alignment: .center)
     }
 }
 
