@@ -53,7 +53,8 @@ jobs:
             -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd \
             -only-testing:PlayscribeUITests/ReleaseFeatureTests \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
-          grep -E 'error:|Test Case .* (passed|failed)|skipped|Executed|\*\* TEST' uitests.log | tail -60
+          grep -E 'error:|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
+          [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"
           exit "${status:-0}"
       - name: Export test screenshots
         if: always()

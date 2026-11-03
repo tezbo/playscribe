@@ -10,7 +10,11 @@ xcrun simctl bootstatus "$dev" -b >/dev/null 2>&1 || true
 shot() { # name route [seconds]
   xcrun simctl launch --terminate-running-process "$dev" "$app" -qaRoute "$2" >/dev/null 2>&1 || { echo "launch failed: $2"; return; }
   sleep "${3:-4}"
-  xcrun simctl io "$dev" screenshot "$out/$1-closed.png" >/dev/null 2>&1 && echo "$out/$1-closed.png" || echo "no screenshot: $1"
+  # The Duo has two panels (LCD outer, LCD-1 inner); a plain call can fail, so try each in turn.
+  for d in "" "--display=LCD" "--display=LCD-1"; do
+    if xcrun simctl io "$dev" screenshot $d "$out/$1-closed.png" 2>"$out/err.txt"; then echo "$out/$1-closed.png ${d:-default}"; return; fi
+  done
+  echo "no screenshot: $1 ($(tr '\n' ' ' < "$out/err.txt" | cut -c1-200))"
 }
 shot first-run first-run
 shot library library
