@@ -1,0 +1,1725 @@
+{
+ "game": {
+  "id": "control-resonant",
+  "igdbId": 225582,
+  "name": "CONTROL Resonant",
+  "cover": {
+   "imageId": "coc64f",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coc64f.jpg"
+  },
+  "squareCover": {
+   "imageId": "ar5z7a",
+   "url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5z7a.jpg"
+  },
+  "artwork": {
+   "imageId": "ar5z75",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5z75.jpg"
+  },
+  "ps5Release": "2026-09-24",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "control-resonant@1.4.2",
+   "gameId": "control-resonant",
+   "displayName": "Hotfix 1.4.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-08T08:19:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a hotfix to fix issues brought by Game Update 1.4.0. Ahti would probably describe this as “kun rapataan, niin roiskuu”.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Hotfix 1.4.2 Notes",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue in the The House in Distress quest where Zoe went missing, preventing quest progression",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the player is unable to leave the Gap after exiting to the Main Menu right after defeating the Artist Resonant and not using the Ability selection prompt",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the player is unable to ask Busken (NPC) about Underhill after getting far enough into the quest",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue with the Notes: Every Dog Has Her Day side quest where completing the quest was not awarding an Artifact as a reward. You shall now be rewarded. Unless the dog ate the reward. - Added a method to retroactively give the reward to players who have completed the quest (as long as they did not enter New Game + yet!)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Firebreaker you have to protect decides to do nothing but stand around",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Burn status effect deals too much damage to Dylan while using the Wallet Artifact and running out of Power",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where during Escort tasks the Rangers didn’t always reset their positions correctly",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed subtitle timing and other localization issues across all languages",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "control-resonant-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3669870/view/1846018067928790"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-08T08:19:58.000Z",
+      "verification": "official",
+      "sourceId": "control-resonant-steam",
+      "checkedAt": "2026-10-24T20:57:37.422Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-08T08:19:58.000Z",
+      "verification": "assumed",
+      "sourceId": "control-resonant-steam",
+      "checkedAt": "2026-10-26T19:53:22.903Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:22.903Z"
+  },
+  {
+   "id": "control-resonant@1.4.1",
+   "gameId": "control-resonant",
+   "displayName": "Hotfix 1.4.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-02T12:56:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This hotfix addresses two specific issues that yesterday's 1.4.0 Game Update unfortunately broke. There were thousands of changes in 1.4.0 and while we diligently test these updates, some things unfortunately slip. We apologize for any frustration caused.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Hotfix Notes",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where players were unable to progress The Park Resonant quest because eating the Mold (required quest step) became impossible.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed Dash canceling while using Elevate: The issue here was that while fixing a bug related to movement, we inadvertently broke the momentum from dashing carrying over to Surge. We apologize for this and lets... move on.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "control-resonant-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3669870/view/1845383656386238"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-02T12:56:21.000Z",
+      "verification": "official",
+      "sourceId": "control-resonant-steam",
+      "checkedAt": "2026-10-24T20:57:37.421Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-02T12:56:21.000Z",
+      "verification": "assumed",
+      "sourceId": "control-resonant-steam",
+      "checkedAt": "2026-10-26T19:53:22.903Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:22.903Z"
+  },
+  {
+   "id": "control-resonant@1.4",
+   "gameId": "control-resonant",
+   "displayName": "Update 1.4",
+   "kind": "silent",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-01T10:30:00.000Z",
+   "notes": [],
+   "sourceIds": [
+    "pushsquare"
+   ],
+   "links": {},
+   "platforms": [
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-01T10:30:00.000Z",
+      "verification": "reported",
+      "sourceId": "pushsquare",
+      "checkedAt": "2026-10-25T17:10:25.440Z"
+     },
+     "bundles": [],
+     "verification": "reported",
+     "alert": {
+      "style": "quiet",
+      "tag": "Unconfirmed"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-25T17:10:25.440Z"
+  },
+  {
+   "id": "control-resonant@1.4.0",
+   "gameId": "control-resonant",
+   "displayName": "Update 1.4.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-01T07:47:27.000Z",
+   "notes": [
+    {
+     "title": "Game Update 1.4.0 Notes",
+     "items": [
+      {
+       "text": "Hello.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We hope you are having a great time with CONTROL Resonant.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We have been very happy with the game's stability and overall technical performance during the launch window, based on the feedback we've received and the data we are seeing. However, there's always more to improve and fix, especially in a game of this size and ambition. Many things are much easier to see now that so many people are playing.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Game Update 1.40 brings many bug fixes for problems you likely never saw, fixes issues you have encountered, and adds additional polish across the game.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The update notes don't list every fix, but rather the ones we think make a difference for players. Or are just plain funny. The criteria keep changing as we go.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Lastly and very importantly, Game Update 1.40 brings quite a few quality-of-life improvements, so let's go over the highlights.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Highlights",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "New Game ++: You can now play an infinite number of runs of CONTROL Resonant in New Game ++",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added the Build Power number to the Loadout screen on the bottom left so that players can easily see their Power level instead of having to find it buried in the Stats & Effects menu: It's worth saying here that if you are below the enemy level, you are going to have a tougher time with combat, so keep doing side quests, explore twisted Manhattan, and level up!",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The HUD will have a little notification icon to indicate that you have new things to buy or upgrade in The Gap",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added a feature that when you pin materials you need to acquire for upgrades, you can see if these materials are available at the Vendor by looking at the Vendor icon on the Map (instead of having to go to the Vendor to see their wares)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Unknown Zone - Decreased the overall amount of combat and intensity by 10%-15%",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added a separate volume slider for radio dialogue. You can now customize the audio balance between speakers/headphones and the DualSense controller speaker",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added a new option in the Assist Mode - Power Core Charge Duration: Added a 100-300% Power Core Charge duration multiplier",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Many fixes to map markers either sticking around too long or being in the wrong place and not clearing correctly. We are sure we still missed a few of these, though",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a VFX issue where framerate could drop during the Artist Resonant fight when she does her special attack",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added “Mute copyrighted music” option to turn off Apocalyptica’s “Upperhand” intro credits song (It’s a great track, so why would you)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added a Tutorial about the Rush ability removing status effects",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed over-saturated HDR highlights in AgX (tonemapper)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a multitude of subtitle and VO issues across the game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Several specific performance optimizations, mainly targeting PC minimum and recommended specs",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Polish on all aspects of the game, including audio, dialogue timing, subtitle timing, animation, lighting, code, mission polish, UI, and so on",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added support for Razer haptics. The game will trigger many gameplay events like using melee, taking damage, etc., and trigger effects on Razer peripherals",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We also should mention that AMD has released new optional drivers that improve performance and fix several game crashes. Please download the drivers here:",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "https://www.amd.com/en/resources/support-articles/release-notes/RN-RAD-WIN-26-9-2.html",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Game Update Notes",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Audio",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added a separate volume slider for radio dialogue, so players will be able to customize the audio balance between speakers/headphones + DualSense controller speaker",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added “Mute copyrighted music” option to turn off Apocalyptica’s “Upperhand” intro credits song. (It’s a great track, so why would you)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Dialogue fixes in all areas of the game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Improved audio mix, sound effects, and ambiance across the game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the audio would desync across the game (also known as the haunting bug of Alan Wake 2…)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Dylan’s melee attacks would not play the right sound effect",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issues with the Ranger’s combat barks playing at inopportune times, as fun as that could be",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed multiple music state restoration issues when loading a save or entering and exiting The Gap",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed the music not being stopped after completing the quest The Party Won’t Stop. (Guess the party had to be stopped)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed Dr Darling’s projected videos going out of sync or losing dialogue altogether",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed the Deserter Resonant boss music not playing if the player backtracks from the approach before entering the fight",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue with audio cutting out throughout the game on Xbox Series X",
+       "ps5ProOnly": false,
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Visuals",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Minor improvements to many conversation animations and timings",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed Rangers glitching if they die by being smashed high up in the air",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the player could get out of bounds when approaching the Deserter boss by executing an enemy in the factory",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Reduced artifacts in the opening credits, resulting in the vibes not being at maximum",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Additional polish addressing minor issues across a range of cinematics",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Adjusted many areas of the game to stop players from getting out of bounds or breaking Story Quest progression",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Adjusted draw distances, tweaked streaming volumes, and improved many LODs to fix pop-in issues across the game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Adjusted The Hedron boss phase 1 arena size to improve the player experience",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Improved signposting towards the Oldest House rooftop in the Unknown Zone",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Improved player interactions (sliding and parkouring) on a range of objects across the game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed many dynamic objects that should be static and vice versa",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Code",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Several performance optimizations, mainly targeting PC minimum and recommended specs",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Crash fixes across all platforms",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed over-saturated HDR highlights in AgX (tonemapper)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed aggressive artifacts and pixelation most visible when using HDR",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the game would crash when toggling between RT modes",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Steam Controller wouldn’t reconnect if the connection were lost (you are back in the game!) This fix also impacts other controllers when using Steam Input.",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Increased the Main Menu Save Game slot count from 5 to 7 - For example: New Game+ runs, and your original run save games exist in separate Save Game folders, which are accessible when loading a game from the main menu.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Dylan’s outfits would change when fast traveling to Downtown Zone after the credits have rolled",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added a new option in the Assist Mode - The game now refunds one dodge and one jump after an air execution if the player is out of both",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "DLSS frame gen improvements: scale the motion blur shutter speed by the DLSS/FSR frame generation multiplier and allow V-Sync to be used together with DLSS FG",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Improved language detection for various languages and locales on startup",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the render resolution dropdown would show a blank label after booting in exclusive Fullscreen",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Frame Rate Limiter disabled itself when other graphics options are changed",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed tear-like artifacts appearing in specific videos on PlayStation 5",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the skip button shows up where it shouldn’t",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue in the Into the Sinkhole quest where during the miniboss encounter enemies would get stuck or fall out of Gravity Anomalies (so it's harder now)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Drone enemies (the ones whose sacrifice is meaningless to the progress of the encounters) would disappear too quickly when revived by the “Crowd Conversion” talent",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed multiple issues when using the Push ability and how enemies react to it in Gravity Anomalies",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where using any of the Fast Travel doors in Evacuation Zone and moving to Central would result in the game displaying the wrong Zone name (at least the font size stayed consistent!)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed the Leashing status effect so that enemies returning to their area regenerate Falter instead of being immune to it",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Dylan would not perform the Ground Slam if he hit his head on a low ceiling…",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Shield ability was not affected by the Wallet Artifact (show me the money!)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Tutorial for Respeccing and refunding would be skipped if the player quits to the main menu right after defeating the Artist",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue in the quest Enemy of My Enemy where Pope’s dialogue would go missing after reloading the game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where selecting silent conversation options plays the wrong dialogue (stay quiet!)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Shield ability was leaving behind corrupted shadows trailing Dylan when blocking an explosive attack",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where, in the fight against the Collective Resonant boss, the Mold Scrappers are unable to move after using their Leap in Gravity Anomalies",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where The Last Taxi quest wasn’t granting any rewards (well, Dylan didn’t really pay for the ride at any point…)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where collecting an audio collectible would not always play when you would instantly go into the Archives menu to listen to the collectible you picked up",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where using the Command function on a heavy enemy with low health costs 2 charges (instead of 1) despite the “Thought Leader” talent being active",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a rare issue with Artifacts. Sometimes equipping an artifact, then removing it and equipping it again in the Loadout screen, removed the effect the Artifact was supposed to produce",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Game Design",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Unknown Zone - Decreased the overall amount of combat by 10%-15%",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "(Some of you on Reddit will be happy about this one) Made the Firebreak employee doing his job in The Park a lot stronger. There wasn’t supposed to be this amount of Mold to to stand in to make the job that difficult for the Firebreaker.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Slightly increased Astral Rebuke lifetime",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Adjusted mini boss and heavy enemy reactions to the player using the Push ability",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Updated rewards to ensure players can max out every Zone in New Game+ somewhat easier",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Adjusted some SHÜM Challenge scores to be easier",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added a Tutorial about the Rush ability removing status effects",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Finetuned some DualSense adaptive trigger effects",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Explosive threat indicators for Mold projectiles are visible from too far",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue in the Co-Director Resonant fight where triggering a Perfect Dodge was nigh-on impossible against most of the boss's attacks (sorry)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where after killing the Collective Resonant with One-Hit Kills on in the Assist Mode, its tentacles remained alive and surprised the crap out of players if they returned to the site of the glorious fight",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Status Spread talent upgrade would spread the Infected/Burn status effect even after it had expired",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where NPCs with half-armor had an incorrect status effect icon",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where warning indicators were being shown from grenades thrown by friendly Rangers",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where players could get stuck in the training area of The Gap for an eternity",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Split Pivot and Split Orbit combo enders can retrigger the Crush Instant Charge upgrade multiple times, which can cause animations to get stuck",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Finetuned the forklift enemy to be easier to hit",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed Player progression - Secondary Weapon - Power Drill upgrade adds less than 25% power from drilling airborne enemies",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where Swarm Satellites were not dealing damage to each other after using Command",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Magnet Artifact didn’t show small Resource Crates on the map in dungeons",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Executive Order upgrade for the Extend Aberrant form didn’t work correctly",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where destroying land mines and hitting electric boxes would give the player the Ruthless status effect",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Level Design",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Many fixes to Map markers either sticking around too long or being in the wrong place or requiring both entrances to the room be opened to make the marker disappear (that’s one way to extend the gameplay hours)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Dylan now audibly reacts to doing Tasks",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Field Panopticon encounter could be skipped in the Co-Director Approach",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "New Game +: Fixed a rare issue in the Into the Sinkhole quest where a miniboss wouldn't spawn at the end of the quest",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Improved many Gravity Anomalies to work better",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Not sure why, but the microphone in “The Party Won't Stop” karaoke mission no longer stays floating in the air after the song has been completed. Thought it was an Altered Item",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed Carbon Copy Part 2 - The call from Zoe that starts part 2 doesn't trigger",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several issues where enemy encounters started prematurely, and enemies fell through the world to their (deserved) deaths",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed a rare issue with the Achievement / Trophy – “Repeating, Refracting”, where the user got the Achievement / Trophy after killing The Hedron after the third phase, before the platforming section",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed multiple PlayStation 5 Activities triggering at wrong times and not ending correctly",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the “Customer Complaint” collectible lacked a pick up prompt in the Downtown Zone",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where in the New Growth quest step Find the Test Subjects remains to be done even after the player finds and eliminates them without interacting with the Mold guide",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue in the “Recursions and Iterations” quest where after reloading the game an interact would appear on Ayad, but do nothing.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue in the “Carbon Copy” quest where Hannah’s voice can be heard all over the Zone…",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the A New Directive quest fails to start or progress if the player gets caught by a polaroid camera during a call from Fra",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where in the Underpass Fault the path forward fails to be lit properly and the player is unable to make progress.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue with The Complete Set quest where the interaction prompt for the Subwoofer at the end of the quest would not appear for 2 minutes",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue with the Panopticon Service Request where the cell door to the radio was open too early and picking it up would result in skipped quest steps",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Lighting",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Additional polish across the entire game, including cinematics",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Improvements to lighting performance across all Zones",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed and issue where a large placeholder object would appear in the middle of the SHÜM Challenge mode’s Parkour course. (GTFO)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Localization",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed many issues for voice overs across all languages",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several voice over issues across all languages",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed many text typos across all languages",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Miscellaneous",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Updated the credits",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Narrative and User Interface",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Overall polish across text and VO throughout the entire game",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several issues with subtitle timings, subtitles taking up too much space on the screen and other issues",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added in missing non-English VO and fixed issues where the game would default to English despite another language being chosen",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the speaker name was not shown in subtitles if VO language was set to a language other than English",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issues where calls to Dylan would overlap at inopportune moments",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "New Game +: Fixed an issue where Zoe would mention rescuing the Party Won’t Stop partygoers and congratulate Dylan for saving them. Despite everyone being dead",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added the Build Power to the Loadout screen so that players can easily see their Power level instead of having to find it buried under the Stats & Effects menu",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "The HUD will have a little notification icon to indicate that you have new things to buy or upgrade in The Gap",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Added a feature that when you pin materials you need to acquire for upgrades, you can see if these materials are available at the Vendor by looking at the Vendor icon on the Map (instead of having to go to the Vendor to see their wares)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Removed the scroll requirement from the EULA and Privacy Policy screens. (The real highlight of this patch. Legal in the house!)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Spoiler warning added to the Digital Deluxe Edition's Art book menu",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed several instances of overlapping HUD elements, such as notifications, conversations, subtitles and the HUD being visible over in-game cutscenes or scripted sequences",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the player could become stuck in the Options menu after backing out using a mouse while entering a code in the “Redeem Code” screen",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed multiple issues when using ultrawide aspect ratio",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the Artifact currencies were not sorted correctly",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the user was unable to use the slider with a mouse in the Collectibles tab",
+       "ps5ProOnly": false,
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed issues where the vendor was showing incorrect prices (respect the hustle!)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the map was not defaulting to maxed out zoom when viewing in dungeons (quests taking place underground)",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an issue where the “Enter Redeem Code” field stays filled when the player attempts to enter a new code after one has already been entered on PlayStation 5",
+       "ps5ProOnly": false,
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed Display calibration background isn't completely black in all cases",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "VFX",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Fixed an VFX issue where framerate could drop during the Artist Resonant fight when she does her special attack",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Improved performance in the Dancer Resonant approach path",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "control-resonant-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3669870/view/1845383656380201",
+    "ps5Page": "https://www.amd.com/en/resources/support-articles/release-notes/RN-RAD-WIN-26-9-2.html"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-01T07:47:27.000Z",
+      "verification": "official",
+      "sourceId": "control-resonant-steam",
+      "checkedAt": "2026-10-24T20:57:37.418Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-01T07:47:27.000Z",
+      "verification": "assumed",
+      "sourceId": "control-resonant-steam",
+      "checkedAt": "2026-10-26T19:53:22.902Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:22.902Z"
+  },
+  {
+   "id": "control-resonant@hotfix-2026-09-24",
+   "gameId": "control-resonant",
+   "displayName": "CONTROL Resonant launch hotfix addresses enemy health and combat strength",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-24T13:06:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As the game launches globally today, CONTROL Resonant has already been in the hands of a significant number of players. We have been keeping a close eye on player feedback, reading all the reviews, and looking at early player data. And, of course, we have been spending a lot (a lot!) of time playing the final game ourselves over the past few weeks. It's great to see players enjoying the game and having a great time with it.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Based on what we have seen so far, we have decided to deploy a hotfix (1.3.3) at launch to address a few specific things: enemy health pools feeling too high, requiring too many hits to Falter (stun) enemies for executions, and Dylan’s overall combat strength early on in the game not feeling powerful enough (even if the man just woke up from a coma).",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Enemy Health and Dylan’s Combat Strength",
+     "items": [
+      {
+       "text": "We strongly believe these changes will improve the gameplay feel and flow while still providing a challenge.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Depending on player progression, enemies can feel too tanky during the early hours of the game. To address this, we are making the following changes:",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Reduce the base health and required Falter (stun) level of most enemies, as well as the Dancer and Deserter bosses",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Increase maximum Aberrant Strength and maximum Ability Strength",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "These strength increases follow a curve, with progressively larger increases towards the end. The more upgrades you have, the more damage you deal.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Assist Mode",
+     "items": [
+      {
+       "text": "If you want to tweak the game further to your liking and tailor individual parts of the experience, such as enemy aggression, incoming damage, or how quickly Dylan recovers his abilities, the Assist Mode is there for you in the Gameplay menu of the game’s options. You can use the sliders to adjust the difficulty to your preference and have much more control over individual aspects of the experience, even to make the game more harder if you want!",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Respeccing",
+     "items": [
+      {
+       "text": "To encourage buildcrafting and experimentation, we are permanently reducing the cost of respeccing and increasing the stock of these “Reset Items” across all vendors in the game.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "In addition, the first Resonant boss fight (The Artist) will now drop two “Reset Items” instead of one.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "UI Text Updates",
+     "items": [
+      {
+       "text": "We will also update a couple of English UI texts to explain Build Power and Aberrant Strength better. These text changes will be English-only for now, with localizations to follow as soon as possible.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Aberrant Strength: “Multiplier X%” will now be: “Damage and Falter X%”.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Build Power: “Calculated based on equipped Weapon Forms, Talents and Core Upgrades.” will now be: “From unlocked Combat Abilities, Aberrant forms/upgrades, Talents, and Core Upgrades.”",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "[/*]",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "We will closely follow your feedback and make further adjustments as needed. Enjoy the game, take your time, explore, and let us know what you think.",
+       "ps5ProOnly": false
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "We are aware of a number of issues currently affecting players. For the latest information and updates, please see our Known Issues thread in the forums.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "For technical support, please visit the CONTROL Resonant Support section.",
+       "ps5ProOnly": false
+      },
+      {
+       "text": "Thank you for the early impressions, and we hope you have fun exploring altered Manhattan in CONTROL Resonant!",
+       "ps5ProOnly": false
+      }
+     ]
+    }
+   ],
+   "sourceIds": [
+    "control-resonant-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3669870/view/1844751498221468"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-24T13:06:00.000Z",
+      "verification": "official",
+      "sourceId": "control-resonant-steam",
+      "checkedAt": "2026-10-24T20:57:37.413Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-24T13:06:00.000Z",
+      "verification": "assumed",
+      "sourceId": "control-resonant-steam",
+      "checkedAt": "2026-10-26T19:53:22.899Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-10-26T19:53:22.899Z"
+  }
+ ]
+}
