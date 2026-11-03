@@ -87,15 +87,42 @@ struct SayItView: View {
     @State private var capture = SpeechCapture()
     var find: (String) -> Void
     var typeInstead: () -> Void
+    /// The explainer comes before the system prompts, and only while neither is decided.
+    @State private var explained = SFSpeechRecognizer.authorizationStatus() != .notDetermined
 
     var body: some View {
         VStack(spacing: 20) {
-            if capture.denied || capture.unavailable {
+            if !explained {
                 VStack(spacing: 12) {
-                    Text(capture.denied ? "Microphone or speech access is off" : "Speech isn't available on this device right now")
+                    Image(systemName: "mic.fill").font(.system(size: 44)).foregroundStyle(PlayscribeColor.accent)
+                        .accessibilityHidden(true)
+                    Text("Let Playscribe hear your list").font(PlayscribeFont.headline).multilineTextAlignment(.center)
+                    Text("Playscribe turns your voice into game names on your phone. It only listens while you hold the button.")
+                        .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                    Button { explained = true } label: {
+                        Text("Continue").font(PlayscribeFont.headline).foregroundStyle(PlayscribeColor.onAccent)
+                            .frame(maxWidth: .infinity, minHeight: 52)
+                            .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    }
+                    .buttonStyle(.plain).tappableFrame()
+                    .accessibilityHint("Shows the system permission request")
+                    Button("Not now", action: typeInstead).hitTarget()
+                }
+                .padding(.horizontal, 16).padding(.top, 24)
+            } else if capture.denied || capture.unavailable {
+                VStack(spacing: 12) {
+                    Text(capture.denied ? "Say it is off" : "Speech isn't available on this device right now")
                         .font(PlayscribeFont.headline).multilineTextAlignment(.center)
-                    Text("You can still add games by typing them.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
-                    Button("Type it instead", action: typeInstead).hitTarget()
+                    if capture.denied {
+                        Text("You can turn on the microphone and speech recognition for Playscribe in Settings.")
+                            .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                    }
+                    Button("Type it", action: typeInstead).hitTarget()
+                    if capture.denied {
+                        Button("Open Settings") {
+                            if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+                        }.hitTarget()
+                    }
                 }
                 .padding(.top, 24)
             } else {
@@ -109,7 +136,7 @@ struct SayItView: View {
                     .accessibilityLabel(capture.transcript.isEmpty ? "No titles heard yet" : capture.transcript)
             }
             Spacer(minLength: 0)
-            if !capture.denied && !capture.unavailable {
+            if explained && !capture.denied && !capture.unavailable {
                 Image(systemName: capture.listening ? "waveform" : "mic.fill")
                     .font(.title)
                     .foregroundStyle(PlayscribeColor.onAccent)
