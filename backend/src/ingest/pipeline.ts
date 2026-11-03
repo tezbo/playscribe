@@ -11,10 +11,9 @@ import { extractNotes, mentionsPs5, ps5PageOf } from './notes.ts'
 // The poll job from docs/ps5-patch-data.md. Rules that matter:
 //  - An official source that names PS5 decides its PS5 row. When the post says outright that
 //    the update is live on PS5 (ps5LiveStated) the row is official at once (Terry, 2026-10-26:
-//    "Unconfirmed" should be rare); otherwise it is `pending` until a person confirms it (confirm.ts).
+//    press-only reports should be rare); otherwise it is `pending` until a person confirms it (confirm.ts).
 //  - Press (trust: secondary) fills PS5 facts as `reported`. A press report that an update is live
-//    earns one quiet alert tagged "Unconfirmed" (push/notify.ts, after the poll); it never makes a
-//    row official.
+//    earns no alert and is not shown until Steam or the studio has it; it never makes a row official.
 //  - Steam is the source of truth for updates (Terry, 2026-10-27): every Steam patch is taken as out
 //    on PS5 too (verification `assumed`, alerted like any other) unless the post says PS5 gets it later
 //    or not at all, the game's Steam version is a separate PC port, or the post predates the PS5

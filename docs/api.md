@@ -25,10 +25,10 @@ A release is **On PS5** only when its `ps5` platform row has `status == "live"` 
 
 Without push (it needs the paid Apple Developer Program), the app tells players itself:
 1. On launch and in a `BGAppRefreshTask`, it fetches `latest.json`.
-2. It posts a local notification for each release of a followed game whose PS5 `PlatformRelease` has an `alert` it has not alerted for yet. `alert.style` is `standard` for every update live on PS5, including a Steam patch taken as out on PS5 (verification `assumed`), or `quiet` with `alert.tag` `"Unconfirmed"` when only the press reports it (no Steam post or studio page in `links`). One alert per release id, ever. Like the server, it skips releases whose `alert.from` (when absent, `liveAt`) is more than 72 hours old. `alert.from` is the moment a console-later update went live on PS5, so such an update alerts when it goes live even though Steam posted it a week earlier.
-3. That notification uses the same content and `userInfo` (`gameId`, `releaseId`, `verification`, `tag`) as the push payloads below, including the quiet alert's passive interruption level, no sound, and its own `threadIdentifier`.
+2. It posts a local notification for each release of a followed game whose PS5 `PlatformRelease` has an `alert` it has not alerted for yet. `alert.style` is `standard` for every update live on PS5, including a Steam patch taken as out on PS5 (verification `assumed`). A release only the press reports (no Steam post or studio page in `links`) has no `alert`, is not shown, and alerts once Steam or the studio has it. One alert per release id, ever. Like the server, it skips releases whose `alert.from` (when absent, `liveAt`) is more than 72 hours old. `alert.from` is the moment a console-later update went live on PS5, so such an update alerts when it goes live even though Steam posted it a week earlier.
+3. That notification uses the same content and `userInfo` (`gameId`, `releaseId`, `verification`, `tag`) as the push payloads below.
 
-To test the notification UI in the simulator: `xcrun simctl push booted co.codeconnectors.playscribe docs/sample-push.apns` (and `docs/sample-push-unconfirmed.apns` for the quiet Unconfirmed alert).
+To test the notification UI in the simulator: `xcrun simctl push booted co.codeconnectors.playscribe docs/sample-push.apns`.
 
 Games covered: the registry games (`backend/src/sources/registry.json`). Covering a new game takes one entry added to the registry.
 
@@ -77,17 +77,7 @@ Sent once per release, when its PS5 row becomes live, to followers whose `notify
 }
 ```
 
-A release only the press reports (no Steam post, no studio page) gets one quiet push instead. It is tagged "Unconfirmed" in the title (iOS draws it without the app; wording from contract V-4), makes no sound, doesn't light the screen (`passive`), and groups apart:
-
-```json
-{
-  "aps": {
-    "alert": { "title": "Unconfirmed: Ghost of Yōtei", "subtitle": "Update reported on PS5", "body": "From press reports. This will update when it's official." },
-    "thread-id": "yotei.unconfirmed", "interruption-level": "passive", "relevance-score": 0.1, "category": "PS5_UNCONFIRMED"
-  },
-  "gameId": "yotei", "releaseId": "yotei@ps5-2026-10-20", "kind": "silent", "verification": "reported", "tag": "Unconfirmed"
-}
-```
+A release only the press reports (no Steam post, no studio page) gets no push and no `alert`; there is no Unconfirmed state. It alerts, once, if Steam or the studio later has it.
 
 A later confirmation does not push again.
 
