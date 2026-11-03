@@ -95,8 +95,20 @@ struct UpcomingView: View {
                 .padding(.vertical, 20)
                 .accessibilityElement(children: .combine)
             } else {
-                Text("On your watchlist").font(PlayscribeFont.headline)
-                LazyVGrid(columns: columns, spacing: 14) { ForEach(watched) { tile($0, watching: true) } }
+                // Placeholder copy until Ezra's line: "Out this week".
+                let soon = watched.filter { g in
+                    guard (g.releasePrecision ?? .day) == .day, let d = g.releaseDate?.isoDay else { return false }
+                    return d >= Calendar.current.startOfDay(for: .now) && d.timeIntervalSinceNow < 7 * 86400
+                }
+                let later = watched.filter { g in !soon.contains { $0.id == g.id } }
+                if !soon.isEmpty {
+                    Text("Out this week").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                    LazyVGrid(columns: columns, spacing: 14) { ForEach(soon) { tile($0, watching: true) } }
+                }
+                if !later.isEmpty {
+                    Text("On your watchlist").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                    LazyVGrid(columns: columns, spacing: 14) { ForEach(later) { tile($0, watching: true) } }
+                }
             }
             if more.isEmpty && watched.isEmpty {
                 Text("Nothing upcoming. Announced updates will show here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
