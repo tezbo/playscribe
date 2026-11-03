@@ -1,3 +1,5 @@
+import type { Digest } from './digest.ts'
+
 // Wire types. These mirror docs/ps5-patch-data.md exactly; the iOS app decodes the same shapes.
 export type Platform = 'ps5' | 'xboxSeries' | 'switch2' | 'pc'
 export type ReleaseKind = 'dayOne' | 'hotfix' | 'patch' | 'major' | 'silent'
@@ -61,6 +63,8 @@ export interface Release {
   /** Where the notes came from: the Steam post, and the studio's own PS5 page for this update when one exists. */
   links: ReleaseLinks
   platforms: PlatformRelease[]
+  /** Catch-up summary derived from the notes (src/digest.ts). */
+  digest: Digest
   revision: number
   updatedAt: string
 }
