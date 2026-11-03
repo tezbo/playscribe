@@ -181,6 +181,10 @@ struct ReleaseBody: View {
                     }
                 }
             }
+            if let minutes = r.readMinutes {
+                Text("\(minutes) min read").font(PlayscribeFont.footnote.weight(.semibold)).foregroundStyle(.secondary)
+                    .accessibilityLabel("About \(minutes) minute\(minutes == 1 ? "" : "s") to read")
+            }
             let keys = ps5Page ? r.ps5KeyChanges : (r.keyChanges ?? [])
             if !keys.isEmpty {
                 VStack(alignment: .leading, spacing: 8) {

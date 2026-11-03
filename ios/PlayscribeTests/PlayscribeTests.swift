@@ -347,3 +347,21 @@ struct LinkedTextTests {
         #expect(links(LinkedText.attributed("Spoiler: the ending is at http://example.com/end")).count == 1)
     }
 }
+
+@MainActor
+struct ReadTimeTests {
+    private func release(_ items: [NoteItem]) -> Release {
+        Release(id: "r", gameID: "g", displayName: "Update", kind: .patch, kindBasis: .inferred, announcedAt: .now,
+                notes: items.isEmpty ? [] : [NoteSection(title: "Changes", items: items)], sourceIDs: [], platforms: [])
+    }
+
+    @Test("Read time is words over 220 rounded up, at least 1, hidden with no notes, PC-only lines left out")
+    func readTime() {
+        #expect(release([]).readMinutes == nil)
+        #expect(release([NoteItem(text: "Fixed a crash")]).readMinutes == 1)
+        let long = Array(repeating: "word", count: 221).joined(separator: " ")
+        #expect(release([NoteItem(text: long)]).readMinutes == 2)
+        var pc = NoteItem(text: long); pc.pcOnly = true
+        #expect(release([NoteItem(text: "Fixed a crash"), pc]).readMinutes == 1)
+    }
+}
