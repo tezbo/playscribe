@@ -72,7 +72,7 @@ struct NoteSearchResults: View {
             }
             group(ps5)
             if !pc.isEmpty {
-                Section("PC-specific") { rows(pc) }
+                Section("PC only") { rows(pc) }
             }
         }
         .scrollContentBackground(.hidden)

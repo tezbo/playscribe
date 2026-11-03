@@ -78,6 +78,7 @@ struct NoteItem: Codable, Hashable {
         platforms = try c.decodeIfPresent([Platform].self, forKey: .platforms)
         ps5ProOnly = try c.decodeIfPresent(Bool.self, forKey: .ps5ProOnly) ?? false
         spoiler = try c.decodeIfPresent(Bool.self, forKey: .spoiler)
+        pcOnly = try c.decodeIfPresent(Bool.self, forKey: .pcOnly) ?? false
     }
 
     var text: String
@@ -86,6 +87,8 @@ struct NoteItem: Codable, Hashable {
     var ps5ProOnly: Bool
     /// App extension: story content that is hidden until revealed.
     var spoiler: Bool?
+    /// The feed marks a line that is only about PC (docs/api.md); a missing key is false.
+    var pcOnly: Bool = false
 }
 
 struct NoteSection: Codable, Hashable {
@@ -246,6 +249,7 @@ enum PCOnly {
 extension NoteItem {
     /// Applies only to PC: tagged so, or naming PC-only hardware or features.
     var isPCOnly: Bool {
+        if pcOnly { return true }
         if let p = platforms, !p.contains(.ps5) { return true }
         return PCOnly.matches(text)
     }
