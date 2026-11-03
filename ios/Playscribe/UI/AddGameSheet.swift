@@ -35,6 +35,9 @@ struct AddGameSheet: View {
                     }
                 } else { AddEntryView { method = $0 } }
             }
+            .onAppear {
+                if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
+            }
             .navigationTitle(custom ? "Add your own game" : matches != nil ? "Found games" : method == nil ? "Add games" : method!.title)
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
@@ -260,11 +263,13 @@ struct OnboardingView: View {
 }
 
 struct OnboardingStage: View {
+    @Environment(AppModel.self) private var model
+    private var welcomeDone: Bool { model.data.welcomeDone ?? false }
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: nil, game: nil)
             LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .center, endPoint: .bottom)
-            Text("Follow a game to get its PS5 patch notes in one place.")
+            Text(welcomeDone ? "Follow a game to get its PS5 patch notes in one place." : "Add your games to see every update")
                 .font(PlayscribeFont.title)
                 .foregroundStyle(PlayscribeColor.textPrimary)
                 .padding(20)
@@ -280,6 +285,49 @@ struct OnboardingActions: View {
     @Environment(\.duo) private var duo
 
     var body: some View {
+        if !(model.data.welcomeDone ?? false) {
+            welcome
+        } else {
+            plain
+        }
+    }
+
+    /// 0.5.0 guided welcome (first run only): the four ways to add, then Skip for now.
+    private var welcome: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Tell Playscribe what you play and it keeps every update in one place.")
+                .font(PlayscribeFont.body).foregroundStyle(.secondary)
+            ForEach(AddMethod.available) { m in
+                Button {
+                    model.data.welcomeDone = true
+                    model.addSheetMethod = m
+                    model.addSheetOpen = true
+                } label: {
+                    HStack(spacing: 14) {
+                        Image(systemName: m.symbol).font(.title3).frame(width: 32)
+                            .foregroundStyle(PlayscribeColor.accent)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(m.title).font(PlayscribeFont.headline)
+                            Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                        }
+                        Spacer(minLength: 0)
+                    }
+                    .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("\(m.title), \(m.detail.lowercasedFirst)")
+                .tappableFrame()
+            }
+            Button("Skip for now") { model.data.welcomeDone = true }
+                .font(PlayscribeFont.headline)
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .accessibilityHint("Goes to your empty Library")
+                .tappableFrame()
+        }
+    }
+
+    private var plain: some View {
         VStack(alignment: .leading, spacing: 16) {
             Button { model.addSheetOpen = true } label: {
                 Text("Add your first game")

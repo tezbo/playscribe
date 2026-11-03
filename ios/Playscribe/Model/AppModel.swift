@@ -115,6 +115,8 @@ struct PersistedState: Codable {
     /// Known issues the person follows, and those already alerted as fixed (0.5.0 item 19).
     var followedIssues: Set<String>?
     var alertedIssues: Set<String>?
+    /// The first-run welcome was used or skipped; the plain empty Library shows after that.
+    var welcomeDone: Bool?
 }
 
 struct Toast: Equatable {
@@ -133,6 +135,8 @@ final class AppModel {
     var toast: Toast?
     var pill: (gameID: String, releaseID: String)?
     var addSheetOpen = false
+    /// Opens the Add games sheet straight on this method (first-run welcome rows).
+    var addSheetMethod: AddMethod?
     var settingsOpen = false
     var player: (gameID: String, releaseID: String)?
     /// A game's trailer from its basics (no release).
