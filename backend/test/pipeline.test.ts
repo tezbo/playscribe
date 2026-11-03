@@ -5,7 +5,7 @@ import { openDb } from '../src/db.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
-import { getRelease, promoteAnnounced } from '../src/store.ts'
+import { getRelease, newsOf, promoteAnnounced } from '../src/store.ts'
 import { hotGameIds } from '../src/hot.ts'
 import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpers.ts'
 
@@ -244,4 +244,14 @@ test('roadmap 11: the hot set is the games with a patch in the last 14 days plus
   const r = await runIngest(deps, { hot: true })
   assert.ok(r.polled.some((id: string) => id.startsWith('dawnwalker')))
   assert.ok(!r.polled.some((id: string) => id === 'pushsquare-updates'))
+})
+
+test('roadmap 17: official non-patch posts become news headlines (title, date, url only); a patch post does not', async () => {
+  const { db } = await setup()
+  const rows = db.prepare("SELECT * FROM news WHERE game_id = 'dawnwalker'").all() as Record<string, any>[]
+  const art = rows.find((r) => r.title === 'Community Update: art contest')!
+  assert.ok(art)
+  assert.deepEqual(Object.keys(art).sort(), ['game_id', 'published_at', 'source_id', 'title', 'url'])
+  assert.ok(!rows.some((r) => /Hotfix|Update 1\.1$/.test(r.title)))
+  assert.ok(newsOf(db, 'dawnwalker').every((n) => Object.keys(n).sort().join() === 'date,title,url'))
 })
