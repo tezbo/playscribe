@@ -113,3 +113,7 @@ The local server has the same operations under `/v1/admin`, with `Authorization:
 ## Feed health and data quality (0.5.0)
 
 Each ingest run reports a source that has failed three polls in a row (`source_state.fail_streak`) as an error annotation and in the workflow summary. After export it checks the feed: a PC version is never the PS5 version, no source names appear in user-facing text, and every game in `v1/index.json` has a release or an official link. A failed check fails the run before the feed is published. Games with no readable official source carry `links` in `sources/registry.json` (official site, patch-notes page), which overrides IGDB's in `info/<n>.json`.
+
+## Contract with the 0.2.0 app
+
+`src/contract.ts` encodes every place the 0.2.0 Swift decoders throw (unknown `Platform`, `ReleaseKind`, `KindBasis`, `PlatformStatus`; wrong types; missing `id`, `gameId`, `displayName`, `kind`, `announcedAt`, `notes`, `sourceIds`, `platforms`; unparseable dates or URLs; a null `latest.json` `updatedAt`). Unknown extra keys are safe. After export, `latest.json` and `games/<id>.json` are checked and a failure stops the run before publish; `info/<n>.json` problems are warnings, since one bad URL stops the app decoding that whole shard. Rules are refreshed from the Swift models when the oldest app in use changes. It found a live bad URL in `info/38.json` (an IGDB website with a space), now filtered when the shard is built.

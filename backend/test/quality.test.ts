@@ -48,3 +48,23 @@ test('data quality: every indexed game has a release or an official link; link-o
   exportStatic(db, out)
   assert.deepEqual(feedProblems(out), [])
 })
+
+test('0.2.0 contract: a feed exported with every release shape decodes; breaking values are caught', async () => {
+  const { contractProblems: c } = await import('../src/contract.ts')
+  const ok = { id: 'g@1', gameId: 'g', displayName: 'Update 1', kind: 'patch', kindBasis: 'inferred', announcedAt: '2026-10-22T09:17:48.000Z', notes: [{ title: 'Fixes', items: [{ text: 'x', ps5ProOnly: false, pcOnly: false, category: 'fixed', platforms: ['ps5'] }] }], sourceIds: ['s'], links: { steamNotes: 'https://store.steampowered.com/news/app/1' }, platforms: [{ platform: 'ps5', status: 'live', version: null, sizeBytes: { value: 100, verification: 'assumed', sourceId: 's', checkedAt: '2026-10-22T09:17:48.000Z' }, liveAt: null, bundles: [], verification: 'assumed', alert: { style: 'standard', from: '2026-10-22T09:17:48.000Z' } }] }
+  assert.deepEqual(c.release(ok), [])
+  assert.equal(c.release({ ...ok, kind: 'update' }).length, 1)
+  assert.equal(c.release({ ...ok, notes: [{ title: 't', items: [{ text: 'x', platforms: ['ps4'] }] }] }).length, 1)
+  assert.equal(c.release({ ...ok, links: { steamNotes: '' } }).length, 1)
+  assert.equal(c.release({ ...ok, platforms: [{ ...ok.platforms[0], status: 'delayed' }] }).length, 1)
+  assert.equal(c.latest({ updatedAt: null, releases: [] }).length, 1)
+  assert.deepEqual(c.info({ games: { '1': { summary: 's', links: { official: 'https://a.example/x' }, similar: [{ igdbId: 2, name: 'n' }] } } }), [])
+  assert.equal(c.info({ games: { '1': { links: { official: 'not a url' } } } }).length, 1)
+})
+
+test('0.2.0 contract: a malformed IGDB website URL (seen live in info/38) is caught', async () => {
+  const { contractProblems: c, isUrl } = await import('../src/contract.ts')
+  assert.ok(!isUrl('https://v.douyin.com/iDuoKPNm/ 8@4.com'))
+  assert.ok(isUrl('https://www.minecraft.net/en-us'))
+  assert.equal(c.info({ games: { '296238': { links: { official: 'https://v.douyin.com/iDuoKPNm/ 8@4.com' } } } }).length, 1)
+})

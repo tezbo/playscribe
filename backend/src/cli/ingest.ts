@@ -12,6 +12,7 @@ import { config } from '../config.ts'
 import { openDb } from '../db.ts'
 import { exportStatic } from '../export.ts'
 import { failingSources, healthSummary } from '../health.ts'
+import { infoContractProblems } from '../contract.ts'
 import { feedProblems } from '../quality.ts'
 import { appendFileSync } from 'node:fs'
 import { Igdb } from '../ingest/igdb.ts'
@@ -39,6 +40,7 @@ const sick = failingSources(db)
 for (const h of sick) console.log(`::error title=Source failing::${h.sourceId} failed ${h.failStreak} polls in a row: ${h.lastError ?? h.lastStatus}`)
 const problems = exportDir ? feedProblems(exportDir) : []
 for (const p of problems) console.log(`::error title=Data quality::${p}`)
+if (exportDir) for (const p of infoContractProblems(exportDir)) console.log(`::warning title=Info shard breaks 0.2.0::${p}`)
 if (process.env.GITHUB_STEP_SUMMARY) {
   const md = [healthSummary(sick), problems.length ? `## Data quality\n\n${problems.map((p) => `- ${p}`).join('\n')}\n` : ''].filter(Boolean).join('\n')
   if (md) appendFileSync(process.env.GITHUB_STEP_SUMMARY, md + '\n')
