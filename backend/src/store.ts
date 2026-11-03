@@ -272,7 +272,24 @@ export const addNews = (db: DB, gameId: string, post: { url: string; title: stri
 
 export const newsOf = (db: DB, gameId: string, limit = 20) =>
   (db.prepare('SELECT title, published_at, url FROM news WHERE game_id = ? ORDER BY published_at DESC, url LIMIT ?').all(gameId, limit) as { title: string; published_at: string; url: string }[]).map((n) => ({
+    gameId,
     title: n.title,
     date: n.published_at,
     url: n.url,
   }))
+
+/**
+ * Coverage audit, 2026-11-03: Steam patches dated before a game's PS5 launch were flagged live on PS5 when the
+ * row was made before IGDB gave the PS5 date. Only rows taken as out on PS5 from Steam alone (`assumed`) are
+ * dropped; anything an official or press source said about PS5 stays. Safe to run every ingest.
+ */
+export const dropPreLaunchPs5 = (db: DB) =>
+  Number(
+    db
+      .prepare(
+        `DELETE FROM platform_releases WHERE platform = 'ps5' AND verification = 'assumed' AND release_id IN (
+           SELECT r.id FROM releases r JOIN games g ON g.id = r.game_id
+           WHERE g.ps5_release IS NOT NULL AND substr(r.announced_at, 1, 10) < g.ps5_release)`,
+      )
+      .run().changes,
+  )
