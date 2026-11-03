@@ -177,3 +177,8 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 - Follows live on devices, so the server does not know which games are followed. The **hot set** is the games with a patch in the last 14 days plus `backend/src/sources/hot-pinned.json`, capped at 12 (`src/hot.ts`).
 - A second Actions schedule at :47 runs `npm run ingest -- --hot`: it polls only the hot games' sources (25 minute minimum interval, instead of 55) and skips the shared press sources. The hourly :17 run does everything as before and also uses the 25 minute interval for hot games. Hot games are therefore checked about every 30 minutes; the rest hourly.
 - Budget: each hot run takes about 1 to 2 minutes (cached install, up to 12 games), so roughly 1,000 to 1,500 extra Actions minutes a month. The repository is public, so this is free. GitHub may delay scheduled runs, so these are targets, not guarantees.
+
+## 0.5.0 known issues (roadmap 16)
+
+- `src/issues.ts` derives issues from stored notes at export time (no new table): a "Known issues" section or a "Known issue:" line, PC-only lines excluded. Id = hash of game and normalised text.
+- A later release addresses an issue when one of its other note lines matches (one contains the other, or at least 70% of the shorter line's words are shared). Relisting it as known keeps it open. The match is a heuristic; a wrong match can be fixed by rewording, and nothing here alters the notes themselves.

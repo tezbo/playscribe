@@ -1,12 +1,13 @@
 import { mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import type { DB } from './db.ts'
+import { issuesOf } from './issues.ts'
 import { gameFromRow, getRelease, listReleases, releaseFromRow } from './store.ts'
 
 // Writes the read side of the API as static files, so the app can sync from any static host
 // (the `feed` branch on GitHub, see .github/workflows/feed.yml). Shapes match docs/api.md.
 //   v1/index.json          every game, with its newest release and when it last changed
-//   v1/games/<id>.json     one game and all its releases
+//   v1/games/<id>.json     one game, all its releases and its known issues
 //   v1/latest.json         the 100 most recently changed releases, for a cheap "anything new?" check
 //   v1/review.json         open review items (public post links only)
 // Output is deterministic for the same data, so an unchanged run produces no commit.
@@ -25,7 +26,7 @@ export const exportStatic = (db: DB, outDir: string) => {
     const updatedAt = releases.reduce((m, r) => (r.updatedAt > m ? r.updatedAt : m), '')
     if (updatedAt > newest) newest = updatedAt
     index.push({ ...g, latestReleaseId: releases[0]?.id ?? null, releaseCount: releases.length, updatedAt: updatedAt || null })
-    write(join(root, 'games', `${g.id}.json`), { game: g, releases })
+    write(join(root, 'games', `${g.id}.json`), { game: g, releases, issues: issuesOf(g.id, releases) })
   }
   const latest = (db.prepare('SELECT * FROM releases ORDER BY updated_at DESC, id LIMIT 100').all() as Record<string, any>[]).map((r) => releaseFromRow(db, r))
   const review = (db.prepare('SELECT * FROM review_items WHERE resolved_at IS NULL ORDER BY created_at, id').all() as Record<string, any>[]).map((i) => ({
