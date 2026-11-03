@@ -23,6 +23,7 @@ export const toLines = (body: string) =>
       .replace(/\[\*\]|<li[^>]*>/gi, '\n- ')
       .replace(/<br\s*\/?>|<\/p>|<\/li>|<\/div>|\[\/?p\]|\[\/?list\]|\[\/?olist\]/gi, '\n')
       .replace(/\[img\][\s\S]*?\[\/img\]|\[previewyoutube[^\]]*\][\s\S]*?\[\/previewyoutube\]/gi, '')
+      .replace(/\[\/\*\]/g, '')
       .replace(/\[\/?[a-z0-9]+(=[^\]]*)?\]/gi, '')
       .replace(/<[^>]+>/g, ''),
   )
@@ -69,6 +70,15 @@ export const categoryOf = (title: string): NoteCategory =>
         ? 'new'
         : 'other'
 
+/** A section titled "Changes" or "Patch Notes" says nothing about its items, so an item whose own first words name the kind of change decides for itself. */
+export const itemCategoryOf = (text: string, section: NoteCategory): NoteCategory => {
+  if (section !== 'other') return section
+  if (/^(fix(ed|es)?|resolved|corrected|addressed|prevented)\b/i.test(text)) return 'fixed'
+  if (/^(added|adds|new|introduced|implemented|improved|enhanced|now (supports?|includes?|has))\b/i.test(text)) return 'new'
+  if (/^(adjusted|increased|decreased|reduced|reworked|tuned|nerfed|buffed|rebalanced|lowered|raised)\b/i.test(text)) return 'balance'
+  return 'other'
+}
+
 const sectionPlatforms = (title: string): Platform[] | undefined => {
   const t = title.trim()
   if (/^(PS5|PlayStation\s*®?\s*5)( Pro)?( specific| fixes| changes)?:?$/i.test(t)) return ['ps5']
@@ -114,7 +124,7 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSecti
     }
     if (bullet) inList = true
     if (!current) open(fallbackTitle)
-    const item: NoteItem = { text, ps5ProOnly: currentPro || PRO.test(text), pcOnly: false, category: categoryOf(current!.title) }
+    const item: NoteItem = { text, ps5ProOnly: currentPro || PRO.test(text), pcOnly: false, category: itemCategoryOf(text, categoryOf(current!.title)) }
     const platforms = platformsFor(text, currentPlatforms)
     if (platforms) item.platforms = platforms
     item.pcOnly = isPcOnly(platforms)
@@ -132,7 +142,7 @@ export const tagNotes = (sections: NoteSection[]): NoteSection[] =>
       ...s,
       items: s.items.map(({ platforms: _old, ...i }) => {
         const platforms = platformsFor(i.text, section)
-        const category = categoryOf(s.title)
+        const category = itemCategoryOf(i.text, categoryOf(s.title))
         return platforms ? { ...i, platforms, pcOnly: isPcOnly(platforms), category } : { ...i, pcOnly: false, category }
       }),
     }
