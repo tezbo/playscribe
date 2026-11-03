@@ -205,3 +205,7 @@ The PlayStation Blog's robots.txt allows `/feed/` (Crawl-delay 5), but playstati
 ## Link-only games and feed health (0.5.0)
 
 Minecraft, Rocket League, Valorant, Fortnite, Astro Bot, Gran Turismo 7, Ghost of Yotei, Wolverine, Alan Wake 2 and Genshin Impact have no readable official patch feed, so they stay link-only: registry `links` give the official site and patch-notes page. Six PS5 games with no history yet pin the official site only; their patch-notes link stays Steam news. See docs/api.md for the run checks.
+
+## Note categories and pcOnly accuracy (0.5.0 item 4)
+
+Checked against the latest patch posts of 22 games on Steam. A heading that names a kind of change (Fixes, Balance, New, Content) sets the category of its items. Under a generic heading ("Changes", "Patch Notes"), an item's own first word decides: Fixed/Resolved is `fixed`, Added/New/Improved/Implemented is `new`, Adjusted/Increased/Reduced/Reworked is `balance`, anything else stays `other`. `pcOnly` held up: PC-specific headings, graphics-driver versions, keybinds and Steam Controller lines tag PC; lines naming a console never do. Stray `[/*]` markup no longer becomes a note item.
