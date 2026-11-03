@@ -19,6 +19,8 @@ export interface NoteItem {
   text: string
   platforms?: Platform[]
   ps5ProOnly: boolean
+  /** Roadmap 4: the line is only about PC (Steam Deck, mouse and keyboard, PC graphics). A grouping flag on the line, never a release status. */
+  pcOnly: boolean
 }
 
 export interface NoteSection {
