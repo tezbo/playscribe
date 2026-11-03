@@ -24,10 +24,10 @@ enum AddMethod: String, CaseIterable, Identifiable {
     }
     var detail: String {
         switch self {
-        case .typeIt: "Search every PS5 game by name"
-        case .sayIt: "Say a few titles, like Elden Ring and Astro Bot"
-        case .photo: "Read titles from a photo of your shelf or screen"
-        case .camera: "Point at game cases and watch them appear"
+        case .typeIt: "Search by name"
+        case .sayIt: "List your games out loud"
+        case .photo: "Pick a picture of your games or your shelf"
+        case .camera: "Point at a box or a shelf"
         }
     }
 
@@ -97,7 +97,7 @@ struct AddEntryView: View {
                         .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel("\(m.title). \(m.detail)")
+                    .accessibilityLabel("\(m.title), \(m.detail.lowercasedFirst)")
                     .accessibilityAddTraits(.isButton)
                     .tappableFrame()
                 }
@@ -145,4 +145,8 @@ struct AddResultsView: View {
             }
         }
     }
+}
+
+extension String {
+    var lowercasedFirst: String { prefix(1).lowercased() + dropFirst() }
 }
