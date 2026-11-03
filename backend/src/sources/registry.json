@@ -1,5 +1,5 @@
 {
-  "$comment": "Per-game official source registry. See docs/ps5-patch-data.md. trust=official can set PS5 status; secondary can only mark 'reported'; a Steam patch is taken as out on PS5 too (verification assumed) unless steamIsPcPort is set. fetch=manual means the site blocks automated fetches; do not work around it.",
+  "$comment": "Per-game official source registry. See docs/ps5-patch-data.md. trust=official can set PS5 status; secondary can only mark 'reported'; a Steam patch is taken as out on PS5 too (verification assumed) unless steamIsPcPort is set. fetch=manual means the site blocks automated fetches; do not work around it. playstation-blog is manual on purpose (2026-11-03, Theo): playstation.com's terms bar automated access; re-enable only with written permission (docs/ps5-patch-data.md).",
   "version": 1,
   "shared": [
     {
@@ -10,7 +10,7 @@
         "ps5"
       ],
       "trust": "official",
-      "fetch": "auto",
+      "fetch": "manual",
       "ps5Signal": "always"
     },
     {

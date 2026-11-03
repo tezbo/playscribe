@@ -198,6 +198,6 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 
 The PlayStation Blog's robots.txt allows `/feed/` (Crawl-delay 5), but playstation.com's website terms of use (read 2026-11-03, section on text and data mining) say users shall not use any "robot", "bot", "spider", "scraper" or other automated tool to access, obtain, copy, monitor or republish any portion of the site or its content. It is not clear that a public RSS feed is carved out, or that blog.playstation.com falls under those terms. Until Terry or Theo decides:
 
-- The PlayStation Blog is not used for news headlines.
-- It is still polled by the existing patch ingest (`playstation-blog` in `src/sources/registry.json`, facts only: the PS5 version, size and live time; no text stored). That predates 0.5.0. If the answer is no, set its `fetch` to `manual`; the Steam path is unaffected.
+- The PlayStation Blog is not used for news headlines, and (below) not polled for patches either.
+- It is no longer polled at all: `playstation-blog` in `src/sources/registry.json` is `fetch: manual` (Theo's call, 2026-11-03). Re-enable only with written permission from Sony. Nothing else depends on it: PS5 versions and live times come from studio posts, Steam posts and other allowed sources, and a release's `links.ps5Page` comes from the Steam post or from a studio page, or is added by hand. Data already stored from it stays; it is not refreshed.
 - The same terms are why Sony's patch servers and PSN APIs are out (see the top of this file).

@@ -1,4 +1,9 @@
 import type { FetchFn } from '../src/http.ts'
+import { registry } from '../src/registry.ts'
+
+// Production keeps the PlayStation Blog on fetch=manual (its terms bar automated access). These tests exercise the
+// generic official shared-feed path with a fixture feed, so they switch it on in the test process only.
+for (const s of registry.shared) if (s.id === 'playstation-blog') s.fetch = 'auto'
 
 // A fetch that answers from a URL table; anything unlisted is empty (feeds, Steam, pages).
 export const fakeFetch = (routes: Record<string, string | { status: number; body?: string }>): FetchFn =>
