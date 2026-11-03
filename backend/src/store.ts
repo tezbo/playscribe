@@ -67,7 +67,7 @@ const platformFromRow = (r: Row, links: ReleaseLinks): PlatformRelease => ({
   liveAt: json(r.live_at, null),
   bundles: json(r.bundles, []),
   verification: r.verification,
-  ...alertOf(r as { platform: string; status: string; verification: string }, links),
+  ...alertOf(r as { platform: string; status: string; verification: string; alert_from?: string | null; live_at?: string | null }, links),
 })
 
 export const releaseFromRow = (db: DB, r: Row): Release => ({
@@ -238,7 +238,7 @@ export const isSeen = (db: DB, sourceId: string, postId: string) => !!db.prepare
 /**
  * Steam rule (Terry, 2026-10-27): a Steam patch counts as released on PS5. When its post said consoles get it
  * "next week", the PS5 row starts as announced; a week after the Steam release it is taken as live, dated
- * from Steam, so no update stays PC only. One that is already older than 72 h never alerts.
+ * from Steam, so no update stays PC only. It earns its one alert when it goes live (alert_from), however old the Steam post is.
  */
 export const promoteAnnounced = (db: DB, at = new Date()) => {
   const rows = db
@@ -255,7 +255,8 @@ export const promoteAnnounced = (db: DB, at = new Date()) => {
     const age = at.getTime() - Date.parse(pc.value)
     if (!(age >= 7 * 86400e3)) continue
     upsertPlatform(db, r.release_id, 'ps5', { status: 'live', verification: 'assumed', liveAt: field(pc.value, 'assumed', pc.sourceId) })
-    if (age > 72 * 3600e3) db.prepare("UPDATE platform_releases SET pushed_at = ? WHERE release_id = ? AND platform = 'ps5' AND pushed_at IS NULL").run(now(), r.release_id)
+    // Roadmap 11: the update goes live on PS5 now, so its one alert (and the 72 h guard) counts from now, not from Steam's date.
+    db.prepare("UPDATE platform_releases SET alert_from = ? WHERE release_id = ? AND platform = 'ps5'").run(at.toISOString(), r.release_id)
     n++
   }
   return n

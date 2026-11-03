@@ -152,3 +152,10 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 3. `confirm`: a review queue where a person approves a release, which moves it to `official` and triggers push.
 4. `press`: matches press reports to existing releases and fills `version` and `sizeBytes` as `reported` when no official value exists.
 5. Steam news keeps feeding the PC platform rows, using the existing `fetch-catalog.mjs` logic.
+
+## 0.5.0 guards and alerts (roadmap 11)
+
+- **72-hour guard.** An alert is raised only if its guard date is under 72 h old. A release that is already older is stored as pushed (`pushed_at` set) and sends nothing, for the push job and the app alike. This holds for press-only (`quiet`) reports and every other style.
+- **Guard date.** `alert.from` in the feed: the moment a console-later update went live on PS5 (`alert_from`), else the PS5 row's `liveAt`.
+- **Consoles later.** A Steam patch whose post says consoles get it later is `announced`; a week after the Steam post the backend takes it as `live` (liveAt stays Steam's date) and sets `alert_from` to that moment, so it earns its one standard alert, once. A rerun does not alert again (the row is no longer `announced`, and `pushed_at` claims the push).
+- **Before PS5 launch.** A Steam patch dated before the game's PS5 release creates no PS5 row; it is not released on PS5.
