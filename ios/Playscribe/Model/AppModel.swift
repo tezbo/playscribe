@@ -5,11 +5,12 @@ import SwiftUI
 enum AppTab: String, Codable, Hashable { case library, updates, search }
 
 enum Chapter: String, Codable, CaseIterable, Hashable, Identifiable {
-    case updates, world, companion, gallery, mybook
+    case updates, news, world, companion, gallery, mybook
     var id: String { rawValue }
     var title: String {
         switch self {
         case .updates: "What's new"
+        case .news: "News"
         case .world: "World"
         case .companion: "Companion"
         case .gallery: "Gallery"
@@ -19,6 +20,7 @@ enum Chapter: String, Codable, CaseIterable, Hashable, Identifiable {
     var symbol: String {
         switch self {
         case .updates: "list.bullet.rectangle.portrait"
+        case .news: "newspaper"
         case .world: "globe.europe.africa"
         case .companion: "lightbulb"
         case .gallery: "photo.on.rectangle"
@@ -369,7 +371,7 @@ final class AppModel {
     func chapters(_ gameID: String) -> [Chapter] {
         Chapter.allCases.filter { c in
             switch c {
-            case .updates, .mybook, .gallery: true
+            case .updates, .news, .mybook, .gallery: true
             case .world: fixtures.book.contains { $0.gameID == gameID && $0.chapter == .world }
             case .companion: fixtures.book.contains { $0.gameID == gameID && $0.chapter == .companion }
             }
