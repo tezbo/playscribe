@@ -495,7 +495,7 @@ struct InlineNoteResults: View {
                         Text(NoteHit.bolded(h.line, query: model.noteQuery)).font(PlayscribeFont.subheadline).lineLimit(3)
                         HStack(spacing: 6) {
                             Text(h.release.displayName).font(PlayscribeFont.caption)
-                            Text(h.pcOnly ? "PC-specific" : h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                            Text(h.pcOnly ? "PC only" : h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                         }
                     }
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
