@@ -433,7 +433,7 @@ struct NoteItemView: View {
         HStack(alignment: .firstTextBaseline, spacing: 8) {
             Text("•").foregroundStyle(.secondary)
             VStack(alignment: .leading, spacing: 4) {
-                if item.spoiler == true { SpoilerText(text: LinkedText.clean(item.text), gameID: gameID, key: key) } else { LinkedTextView(text: item.text) }
+                if item.spoiler == true { SpoilerText(text: item.text, gameID: gameID, key: key) } else { LinkedTextView(text: item.text) }
                 if item.ps5ProOnly { Tag(text: "PS5 Pro") }
             }
         }
@@ -451,11 +451,11 @@ struct SpoilerText: View {
 
     var body: some View {
         if model.isRevealed(key, gameID: gameID) {
-            Text(text)
+            LinkedTextView(text: text)
         } else {
             Button { model.reveal(key) } label: {
                 ZStack(alignment: .leading) {
-                    Text(text).blur(radius: 6).accessibilityHidden(true)
+                    Text(LinkedText.clean(text)).blur(radius: 6).accessibilityHidden(true)
                     Label("Spoiler. Tap to show", systemImage: "eye.slash")
                         .font(PlayscribeFont.caption.weight(.semibold))
                         .padding(.horizontal, 8).padding(.vertical, 4)

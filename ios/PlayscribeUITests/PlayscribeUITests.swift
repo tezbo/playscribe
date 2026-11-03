@@ -294,7 +294,7 @@ final class ReviewFixUITests: XCTestCase {
                 seen = max(seen, app.links.matching(NSPredicate(format: "label CONTAINS %@", name)).count)
                 app.swipeUp(velocity: .fast); tries += 1
             } while tries < 6
-            XCTAssertLessThanOrEqual(seen, 1, "\(name) shown once")
+            XCTAssertEqual(seen, 1, "\(name) shown exactly once [\(ReleaseRowTests.pose(app))]")
         }
     }
 
@@ -311,11 +311,18 @@ final class ReviewFixUITests: XCTestCase {
     }
 
     /// Scrolling Dawnwalker's Update 1.1 page: hitch ratio recorded for each run.
+    /// From a normal launch (no -qaRoute, so no audit tracking): the path Terry uses. The gate
+    /// script fails the run when the hitch ratio is over 10 ms/s (Apple: under 5 is good).
     func testUpdate11ScrollPerformance() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", "release/dawnwalker/dawnwalker@1.1"]
+        app.launchArguments = []
         app.launch()
+        sleep(2)
+        app.open(URL(string: "playscribe://release/dawnwalker/dawnwalker@1.1")!)
+        let open = XCUIApplication(bundleIdentifier: "com.apple.springboard").buttons["Open"]
+        if open.waitForExistence(timeout: 3) { open.tap() }
         sleep(3)
+        XCTAssertFalse(app.descendants(matching: .any)["foldAudit"].exists && app.launchArguments.contains("-qaRoute"))
         let page = app.scrollViews["pageScroll"].exists ? app.scrollViews["pageScroll"] : app.scrollViews.firstMatch
         measure(metrics: [XCTOSSignpostMetric.scrollingAndDecelerationMetric]) {
             page.swipeUp(velocity: .fast)

@@ -362,3 +362,24 @@ struct UnconfirmedTests {
         #expect(UIImage(named: "swap-sides.left") != nil && UIImage(named: "swap-sides.right") != nil)
     }
 }
+
+@MainActor
+struct LinkedTextTests {
+    func links(_ a: AttributedString) -> [URL] { a.runs.compactMap(\.link) }
+
+    @Test("http:// and https:// URLs become links; Steam markup is tidied")
+    func links() {
+        #expect(links(LinkedText.attributed("Patch notes at http://example.com/notes today")) == [URL(string: "http://example.com/notes")!])
+        #expect(links(LinkedText.attributed("See https://store.steampowered.com/app/1")) == [URL(string: "https://store.steampowered.com/app/1")!])
+        let steam = LinkedText.attributed(#"[img src="https://x/y.png"][dynamiclink href="https://store.steampowered.com/app/3751260/"]"#)
+        #expect(links(steam) == [URL(string: "https://store.steampowered.com/app/3751260/")!])
+        #expect(String(steam.characters) == "https://store.steampowered.com/app/3751260/")
+        #expect(LinkedText.clean(#"[img src="https://x/y.png"]"#).isEmpty)
+    }
+
+    @Test("A spoiler note keeps its links once revealed")
+    func spoilerLinks() {
+        // SpoilerText shows LinkedTextView(text:) for the revealed text, the same path as other notes.
+        #expect(links(LinkedText.attributed("Spoiler: the ending is at http://example.com/end")).count == 1)
+    }
+}
