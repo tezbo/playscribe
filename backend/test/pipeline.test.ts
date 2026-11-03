@@ -10,7 +10,7 @@ import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpe
 
 const recent = (h: number) => new Date(Date.now() - h * 3600_000).toISOString()
 
-const setup = async () => {
+const setup = async (beforeIngest?: (db: ReturnType<typeof openDb>) => void) => {
   const db = openDb(':memory:')
   const fetchFn = fakeFetch({
     'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews([
@@ -36,6 +36,7 @@ const setup = async () => {
   })
   const deps = { db, fetchFn, igdb: null }
   await seedGames(deps)
+  beforeIngest?.(db)
   return { db, deps, summary: await runIngest(deps) }
 }
 
@@ -54,7 +55,23 @@ test('a Steam patch is taken as out on PS5 too, unless it says consoles get it l
   assert.equal(promoteAnnounced(db, new Date(Date.now() + 8 * 86400e3)), 1)
   const promoted = getRelease(db, 'dawnwalker@1.2')!.platforms.find((p) => p.platform === 'ps5')!
   assert.deepEqual([promoted.status, promoted.verification, promoted.liveAt?.value], ['live', 'assumed', getRelease(db, 'dawnwalker@1.2')!.platforms.find((p) => p.platform === 'pc')!.liveAt?.value])
-  assert.ok(db.prepare("SELECT pushed_at FROM platform_releases WHERE release_id = 'dawnwalker@1.2' AND platform = 'ps5'").get()!.pushed_at)
+  // Roadmap 11: it earns its one alert now, counted from the moment it went live, not Steam's week-old date.
+  const row = db.prepare("SELECT pushed_at, alert_from FROM platform_releases WHERE release_id = 'dawnwalker@1.2' AND platform = 'ps5'").get()!
+  assert.equal(row.pushed_at, null)
+  assert.ok(row.alert_from)
+  assert.equal(promoted.alert?.style, 'standard')
+  assert.equal(promoted.alert?.from, row.alert_from)
+  assert.equal(promoteAnnounced(db, new Date(Date.now() + 9 * 86400e3)), 0)
+  const sent: unknown[] = []
+  const apns = { send: async (_t: string, _e: string, payload: object) => (sent.push(payload), { status: 200 }) } as unknown as Apns
+  const t = new Date().toISOString()
+  db.prepare("INSERT INTO devices (id, key_hash, apns_token, environment, created_at, updated_at) VALUES ('c', 'hc', ?, 'production', ?, ?)").run('c'.repeat(64), t, t)
+  db.prepare("INSERT INTO follows (device_id, game_id, notify) VALUES ('c', 'dawnwalker', 'all')").run()
+  // The push job runs against the real clock, so the promotion time must be fresh for it; here it was set 8 days ahead.
+  db.prepare("UPDATE platform_releases SET alert_from = ? WHERE release_id = 'dawnwalker@1.2' AND platform = 'ps5'").run(t)
+  assert.equal((await pushPs5Release(db, apns, 'dawnwalker@1.2', { maxAgeHours: 72 })).sent, 1)
+  assert.equal((await pushPs5Release(db, apns, 'dawnwalker@1.2', { maxAgeHours: 72 })).skipped, 'alreadyPushed')
+  assert.equal(sent.length, 1)
   // A studio post that names PS5 is that update's PS5 page.
   assert.equal(getRelease(db, 'kcd2@1.6')!.links.ps5Page, 'https://blog.playstation.com/kcd2-1-6')
 })
@@ -137,7 +154,7 @@ test('every update live on PS5 earns one standard alert; only a press-only repor
   db.prepare("INSERT INTO follows (device_id, game_id, notify) VALUES ('a', 'dawnwalker', 'all')").run()
   const sent: any[] = []
   const apns = { send: async (_t: string, _e: string, payload: object) => (sent.push(payload), { status: 200 }) } as unknown as Apns
-  assert.deepEqual(getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!.alert, { style: 'standard' })
+  assert.equal(getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!.alert?.style, 'standard')
 
   const out = await pushNewPs5(db, apns, { maxAgeHours: 1e6 })
   // Yōtei is press-only (no Steam post, no studio post): its one alert is the quiet Unconfirmed one.
@@ -176,4 +193,27 @@ test('sources are polled at most hourly, and a 403 switches a source off', async
   assert.equal(second.polled.length, 0)
   const forced = await runIngest(deps, { force: true })
   assert.ok(!forced.polled.includes('remedy-news'))
+})
+
+test('roadmap 11: a stale press-only report is stored as pushed with no alert; a patch dated before the PS5 launch is not live on PS5', async () => {
+  const { db } = await setup()
+  const t = new Date().toISOString()
+  db.prepare("INSERT INTO devices (id, key_hash, apns_token, environment, created_at, updated_at) VALUES ('b', 'hb', ?, 'production', ?, ?)").run('b'.repeat(64), t, t)
+  db.prepare("INSERT INTO follows (device_id, game_id, notify) VALUES ('b', 'yotei', 'all')").run()
+  const sent: unknown[] = []
+  const apns = { send: async (_t: string, _e: string, payload: object) => (sent.push(payload), { status: 200 }) } as unknown as Apns
+  const yotei = db.prepare("SELECT release_id FROM platform_releases WHERE release_id LIKE 'yotei@%' AND platform = 'ps5' AND status = 'live'").get()!.release_id as string
+  db.prepare("UPDATE platform_releases SET live_at = ? WHERE release_id = ? AND platform = 'ps5'").run(JSON.stringify({ value: recent(100), verification: 'reported', sourceId: 'x' }), yotei)
+  const out = await pushPs5Release(db, apns, yotei, { maxAgeHours: 72 })
+  assert.equal(out.skipped, 'tooOld')
+  assert.equal(sent.length, 0)
+  assert.ok(db.prepare("SELECT pushed_at FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").get(yotei)!.pushed_at)
+  assert.equal((await pushPs5Release(db, apns, yotei, { maxAgeHours: 72 })).skipped, 'alreadyPushed')
+})
+
+test('roadmap 11: a Steam patch dated before the game\'s PS5 launch is not live on PS5', async () => {
+  const { db } = await setup((d) => d.prepare("UPDATE games SET ps5_release = '2099-01-01' WHERE id = 'dawnwalker'").run())
+  const r = getRelease(db, 'dawnwalker@1.1.1')!
+  assert.equal(r.platforms.find((p) => p.platform === 'pc')!.status, 'live')
+  assert.equal(r.platforms.find((p) => p.platform === 'ps5'), undefined)
 })

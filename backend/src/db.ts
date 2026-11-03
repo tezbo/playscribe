@@ -127,6 +127,7 @@ export const openDb = (path: string): DB => {
   if (!has('games', 'ps5_release_precision')) db.exec('ALTER TABLE games ADD COLUMN ps5_release_precision TEXT')
   if (!has('games', 'artwork_image_id')) db.exec('ALTER TABLE games ADD COLUMN artwork_image_id TEXT')
   if (!has('releases', 'links')) db.exec("ALTER TABLE releases ADD COLUMN links TEXT NOT NULL DEFAULT '{}'")
+  if (!has('platform_releases', 'alert_from')) db.exec('ALTER TABLE platform_releases ADD COLUMN alert_from TEXT')
   if (!has('games', 'square_cover_image_id')) db.exec('ALTER TABLE games ADD COLUMN square_cover_image_id TEXT')
   // Tile art picked under older rules (before concept art was excluded) is cleared once, so the next
   // seed asks IGDB again. Bump ART_RULES when src/artwork.ts changes what it picks.

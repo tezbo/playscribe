@@ -11,7 +11,23 @@ export const pressOnly = (links: { steamNotes?: string; ps5Page?: string }) => !
 export const alertStyleOf = (row: { status: string; verification: string }, links: { steamNotes?: string; ps5Page?: string }): AlertStyle | null =>
   row.status !== 'live' ? null : row.verification === 'reported' && pressOnly(links) ? 'quiet' : 'standard'
 
-export const alertOf = (row: { platform: string; status: string; verification: string }, links: { steamNotes?: string; ps5Page?: string }) => {
+/** Roadmap 11: an alert older than this is never raised, by the push job or by the app. */
+export const ALERT_MAX_AGE_HOURS = 72
+
+/** When the alert's 72 h guard counts from: the moment a console-later update went live, else its live date. */
+export const alertFromOf = (row: { alert_from?: string | null; live_at?: string | null }): string | undefined => {
+  if (row.alert_from) return row.alert_from
+  try {
+    return (JSON.parse(row.live_at ?? 'null') as { value?: string } | null)?.value ?? undefined
+  } catch {
+    return undefined
+  }
+}
+
+export const alertOf = (row: { platform: string; status: string; verification: string; alert_from?: string | null; live_at?: string | null }, links: { steamNotes?: string; ps5Page?: string }) => {
   const style = row.platform === 'ps5' ? alertStyleOf(row, links) : null
-  return style === 'quiet' ? { alert: { style, tag: UNCONFIRMED } as const } : style ? { alert: { style } as const } : {}
+  if (!style) return {}
+  const from = alertFromOf(row)
+  const f = from ? { from } : {}
+  return style === 'quiet' ? { alert: { style, tag: UNCONFIRMED, ...f } as const } : { alert: { style, ...f } as const }
 }

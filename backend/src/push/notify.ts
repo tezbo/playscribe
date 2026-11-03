@@ -1,4 +1,4 @@
-import { alertStyleOf, UNCONFIRMED, type AlertStyle } from '../alerts.ts'
+import { alertFromOf, alertStyleOf, UNCONFIRMED, type AlertStyle } from '../alerts.ts'
 import { now, type DB } from '../db.ts'
 import { getPlatformRow, getRelease } from '../store.ts'
 import type { Apns, ApnsEnvironment } from './apns.ts'
@@ -30,7 +30,7 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
   const claimed = db.prepare('UPDATE platform_releases SET pushed_at = ? WHERE release_id = ? AND platform = ? AND pushed_at IS NULL').run(now(), releaseId, 'ps5')
   if (!Number(claimed.changes)) return { ...out, skipped: 'alreadyPushed' }
   if (opts.allow === false) return { ...out, skipped: 'pushDisabled' }
-  const liveAt = (JSON.parse(row.live_at ?? 'null') as { value: string } | null)?.value ?? release.announcedAt
+  const liveAt = alertFromOf(row) ?? release.announcedAt
   if (Date.now() - Date.parse(liveAt) > opts.maxAgeHours * 3600_000) return { ...out, skipped: 'tooOld' }
   if (!apns) return { ...out, skipped: 'noApns' }
 
