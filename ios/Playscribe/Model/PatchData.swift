@@ -79,7 +79,7 @@ struct NoteItem: Codable, Hashable {
         ps5ProOnly = try c.decodeIfPresent(Bool.self, forKey: .ps5ProOnly) ?? false
         spoiler = try c.decodeIfPresent(Bool.self, forKey: .spoiler)
         category = try c.decodeIfPresent(String.self, forKey: .category)
-        pcOnly = try c.decodeIfPresent(Bool.self, forKey: .pending) ?? false
+        pcOnly = try c.decodeIfPresent(Bool.self, forKey: .pcOnly) ?? false
     }
 
     var text: String
