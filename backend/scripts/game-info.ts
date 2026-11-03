@@ -8,6 +8,7 @@ import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { Igdb } from '../src/ingest/igdb.ts'
 import { registry, steamAppIdOf } from '../src/registry.ts'
+import { isUrl } from '../src/urls.ts'
 
 const { TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET } = process.env
 const outDir = process.argv[2]
@@ -42,7 +43,8 @@ for (const g of Object.values(registry.games)) {
 }
 const linksOf = (g: any): GameInfo['links'] => {
   const sites: { url: string; type?: number; category?: number }[] = g.websites ?? []
-  const official = sites.find((w) => (w.type ?? w.category) === 1)?.url
+  // A malformed IGDB URL is dropped: one bad value would stop the app decoding the whole shard.
+  const official = sites.find((w) => (w.type ?? w.category) === 1 && isUrl(w.url))?.url
   const steamId = sites.map((w) => w.url?.match(/store\.steampowered\.com\/app\/(\d+)/)?.[1]).find((x) => x)
   const patchNotes = registryNotes.has(g.id) ? registryNotes.get(g.id) ?? undefined : steamId ? steamNews(Number(steamId)) : undefined
   return official || patchNotes ? { official, patchNotes } : undefined
