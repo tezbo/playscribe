@@ -108,6 +108,8 @@ struct PersistedState: Codable {
     var knownOnPS5: Set<String>?
     /// N-11: releases already announced quietly as Reported on PS5.
     var knownReported: Set<String>?
+    /// When the app was last opened (A6): the catch-up card lists what arrived after it.
+    var lastOpenedAt: Date?
 }
 
 struct Toast: Equatable {
@@ -179,7 +181,34 @@ final class AppModel {
                 data = PersistedState(collection: [])
             }
         }
+        // A6: remember the previous open for the catch-up card, then stamp this one.
+        catchUpSince = data.lastOpenedAt
+        data.lastOpenedAt = .now
         rebuildMerged()
+    }
+
+    /// The previous launch's open time (nil on a first launch); the catch-up card's cut-off.
+    @ObservationIgnored var catchUpSince: Date?
+    /// The card is shown once per launch; marking read or dismissing hides it.
+    var catchUpHidden = false
+
+    /// Unread On PS5 updates that arrived since the last open, newest first.
+    var catchUpItems: [(game: CatalogGame, release: Release)] {
+        guard !catchUpHidden, let since = catchUpSince else { return [] }
+        let cutoff = Date.now.addingTimeInterval(-72 * 3600)
+        return data.collection.flatMap { c -> [(CatalogGame, Release)] in
+            guard let g = game(c.gameID) else { return [] }
+            return ps5Releases(c.gameID).filter { isUnread($0) && $0.ps5Date > since && $0.ps5Date > cutoff }.map { (g, $0) }
+        }
+        .sorted { $0.1.ps5Date > $1.1.ps5Date }
+        .map { (game: $0.0, release: $0.1) }
+    }
+
+    func markCatchUpRead() {
+        let ids = catchUpItems.map(\.release.id)
+        for id in ids { data.read[id] = .now }
+        catchUpHidden = true
+        NotificationService.shared.updateBadge(badgeCount)
     }
 
     /// Full per-game histories (games/<id>.json), keyed by the app's game id.

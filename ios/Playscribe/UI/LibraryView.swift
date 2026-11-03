@@ -152,6 +152,7 @@ struct LibraryShelf: View {
                         }
                     }
                 }
+                CatchUpCard()
                 if model.showsNotificationCard, let first = all.first {
                     NotificationInviteCard(gameName: first.game.name)
                 }
