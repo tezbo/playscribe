@@ -42,9 +42,9 @@ for (const g of Object.values(registry.games)) {
   if (url || g.steamIsPcPort) registryNotes.set(g.igdbId, url ?? null)
 }
 const linksOf = (g: any): GameInfo['links'] => {
+  const sites: { url: string; type?: number; category?: number }[] = g.websites ?? []
   // A malformed IGDB URL is dropped: one bad value would stop the app decoding the whole shard.
   const official = sites.find((w) => (w.type ?? w.category) === 1 && isUrl(w.url))?.url
-  const official = sites.find((w) => (w.type ?? w.category) === 1)?.url
   const steamId = sites.map((w) => w.url?.match(/store\.steampowered\.com\/app\/(\d+)/)?.[1]).find((x) => x)
   const patchNotes = registryNotes.has(g.id) ? registryNotes.get(g.id) ?? undefined : steamId ? steamNews(Number(steamId)) : undefined
   return official || patchNotes ? { official, patchNotes } : undefined
