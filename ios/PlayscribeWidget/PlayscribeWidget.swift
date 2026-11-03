@@ -98,9 +98,50 @@ struct WidgetView: View {
     }
 
     var body: some View {
+        if family == .accessoryRectangular || family == .accessoryInline {
+            lockScreen
+        } else {
+            home
+        }
+    }
+
+    /// Lock Screen: the newest unread update, else the newest. Tapping opens it.
+    @ViewBuilder private var lockScreen: some View {
+        let snap = entry.snapshot
+        let row = snap.rows.first { $0.unread } ?? snap.rows.first
+        Group {
+            if !snap.hasGames {
+                if family == .accessoryInline { Text("Add your games") } else { lockText("Add your games", "Open Playscribe to build your library.") }
+            } else if let r = row {
+                if family == .accessoryInline {
+                    Text(r.unread ? "New: \(r.game)" : r.game)
+                } else {
+                    lockText(r.game, r.update + (r.unread ? ", new" : ""))
+                }
+            } else if family == .accessoryInline {
+                Text("You're all caught up")
+            } else {
+                lockText("You're all caught up", "Playscribe will show new updates here.")
+            }
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(row.map(voice) ?? (snap.hasGames ? "You're all caught up" : "Add your games, open Playscribe to build your library"))
+        .widgetURL(row?.url)
+        .containerBackground(for: .widget) { Color.clear }
+    }
+
+    private func lockText(_ title: String, _ detail: String) -> some View {
+        VStack(alignment: .leading, spacing: 1) {
+            Text(title).font(W.title).lineLimit(2)
+            Text(detail).font(W.body).lineLimit(1)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var home: some View {
         let snap = entry.snapshot
         let rows = Array(snap.rows.prefix(limit))
-        Group {
+        return Group {
             if !snap.hasGames {
                 Notice(title: "Add your games", message: "Open Playscribe to build your library.")
                     .accessibilityLabel("Add your games, open Playscribe to build your library")
@@ -146,6 +187,6 @@ struct PlayscribeWidgetBundle: Widget {
         }
         .configurationDisplayName("Latest updates")
         .description("See the newest updates for your games.")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .accessoryRectangular, .accessoryInline])
     }
 }
