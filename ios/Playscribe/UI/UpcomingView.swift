@@ -85,7 +85,7 @@ struct UpcomingView: View {
         VStack(alignment: .leading, spacing: 14) {
             if UpcomingStore.shared.failed && more.isEmpty {
                 HStack {
-                    Text("Couldn't load upcoming games").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Text("Couldn't load upcoming games. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
                     Button("Retry") { Task { await UpcomingStore.shared.load() } }
                         .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
@@ -117,7 +117,13 @@ struct UpcomingView: View {
                     LazyVGrid(columns: columns, spacing: 14) { ForEach(later) { tile($0, watching: true) } }
                 }
             }
-            if more.isEmpty && watched.isEmpty {
+            if more.isEmpty && watched.isEmpty && UpcomingStore.shared.loading {
+                HStack(spacing: 10) {
+                    ProgressView()
+                    Text("Loading upcoming games").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                }
+                .accessibilityElement(children: .combine)
+            } else if more.isEmpty && watched.isEmpty && !UpcomingStore.shared.failed {
                 Text("Nothing upcoming. Announced updates will show here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             } else if !more.isEmpty {
                 Text("Coming to PS5").font(PlayscribeFont.headline)

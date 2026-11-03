@@ -64,13 +64,20 @@ struct NewsChapter: View {
             if list.isEmpty {
                 if store.failed.contains(gameID) {
                     HStack {
-                        Text("Couldn't load news").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("Couldn't load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                         Spacer(minLength: 0)
                         Button("Retry") { Task { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) } }
                             .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
                             .frame(minHeight: 44).tappableFrame()
                     }
-                } else if store.loaded.contains(gameID) {
+                } else if !store.loaded.contains(gameID) {
+                    HStack(spacing: 10) {
+                        ProgressView()
+                        Text("Loading news").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    }
+                    .frame(minHeight: 44)
+                    .accessibilityElement(children: .combine)
+                } else {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("No news yet").font(PlayscribeFont.headline)
                         Text("Official posts from the studio will appear here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)

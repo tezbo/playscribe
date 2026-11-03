@@ -81,8 +81,9 @@ final class ReleaseFeatureTests: XCTestCase {
     /// News strip and News chapter: never a blank page; one of the three states is always shown.
     func testNewsChapterIsNeverBlank() throws {
         launch("chapter/dawnwalker/news")
-        let states = ["No news yet", "Couldn't load news", "Official"]
-        let seen = states.contains { app.staticTexts[$0].waitForExistence(timeout: 10) }
+        let states = ["No news yet", "Loading news", "Official"]
+        let failed = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH \"Couldn't load news\"")).firstMatch
+        let seen = states.contains { app.staticTexts[$0].waitForExistence(timeout: 10) } || failed.exists
             || app.staticTexts.matching(NSPredicate(format: "label == 'Official'")).firstMatch.exists
         XCTAssertTrue(seen, "News shows a list, the empty copy or the retry")
         assertFrames("news")
