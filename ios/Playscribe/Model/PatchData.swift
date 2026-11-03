@@ -79,7 +79,7 @@ struct NoteItem: Codable, Hashable {
         ps5ProOnly = try c.decodeIfPresent(Bool.self, forKey: .ps5ProOnly) ?? false
         spoiler = try c.decodeIfPresent(Bool.self, forKey: .spoiler)
         category = try c.decodeIfPresent(String.self, forKey: .category)
-        pcOnly = try c.decodeIfPresent(Bool.self, forKey: .pcOnly) ?? false
+        pcOnly = try c.decodeIfPresent(Bool.self, forKey: .pending) ?? false
     }
 
     var text: String
@@ -280,10 +280,8 @@ enum PS5State: Hashable {
     case announced
     /// press only. A silent update is reported with no notes.
     case reported
-    /// not shown anywhere.
+    /// not shown anywhere: no PS5 row, or one without an official PS5 announcement. Never a status shown to the player.
     case pending
-    /// No PS5 row, or one that is announced/unknown without an official PS5 announcement.
-    case pcOnly
     /// An official post says it is not coming to PS5.
     case notPlanned
 }
@@ -295,7 +293,7 @@ extension Release {
         // Terry, 26 Oct: Steam is the source of truth. A release live on Steam counts as released
         // on PS5 unless we can confirm otherwise.
         let liveElsewhere = platforms.contains { $0.platform != .ps5 && $0.status == .live }
-        guard let p = ps5 else { return liveElsewhere ? .onPS5 : .pcOnly }
+        guard let p = ps5 else { return liveElsewhere ? .onPS5 : .pending }
         // Released (docs/ps5-patch-data.md): live and official, assumed, pending, or reported on
         // a release Steam or the studio has.
         if p.verification == .pending && p.status != .live { return .pending }
@@ -306,9 +304,9 @@ extension Release {
             let hasSource = links?.steamNotes != nil || links?.ps5Page != nil
             return p.verification != .reported || liveElsewhere || hasSource ? .onPS5 : .reported
         // Steam rule: unless an official post says otherwise, an update live on Steam is released.
-        case .announced: return p.verification == .official ? .announced : (liveElsewhere ? .onPS5 : .pcOnly)
-        case .notPlanned: return p.verification == .official ? .notPlanned : (liveElsewhere ? .onPS5 : .pcOnly)
-        case .unknown: return liveElsewhere ? .onPS5 : .pcOnly
+        case .announced: return p.verification == .official ? .announced : (liveElsewhere ? .onPS5 : .pending)
+        case .notPlanned: return p.verification == .official ? .notPlanned : (liveElsewhere ? .onPS5 : .pending)
+        case .unknown: return liveElsewhere ? .onPS5 : .pending
         }
     }
 
