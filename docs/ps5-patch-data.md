@@ -165,3 +165,9 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 - **PS5 version.** `PlatformRelease.version` for PS5 is only ever read next to "PS5" in a post (or from a PS5-only post), never from a PC build number. A Steam post never fills it; a test covers a PC-only number.
 - **Checked date.** Every `Field` carries `checkedAt`. When a fetch reads the same fact again (same value and verification), `checkedAt` moves to that fetch time, so the app can say "checked <date>".
 - **PC-only lines.** `NoteItem.pcOnly` is true when a notes line is tagged for PC and no console (Steam Deck, mouse and keyboard, PC graphics, or a PC section). It is a grouping flag on the line inside the Steam notes. It is not a release status: there is still no "PC only" state for a release (Terry, 26 Oct). Lines stored before 0.5.0 are re-tagged on export; the app treats a missing `pcOnly` as false.
+
+## 0.5.0 hot-set schedule (roadmap 11)
+
+- Follows live on devices, so the server does not know which games are followed. The **hot set** is the games with a patch in the last 14 days plus `backend/src/sources/hot-pinned.json`, capped at 12 (`src/hot.ts`).
+- A second Actions schedule at :47 runs `npm run ingest -- --hot`: it polls only the hot games' sources (25 minute minimum interval, instead of 55) and skips the shared press sources. The hourly :17 run does everything as before and also uses the 25 minute interval for hot games. Hot games are therefore checked about every 30 minutes; the rest hourly.
+- Budget: each hot run takes about 1 to 2 minutes (cached install, up to 12 games), so roughly 1,000 to 1,500 extra Actions minutes a month. The repository is public, so this is free. GitHub may delay scheduled runs, so these are targets, not guarantees.
