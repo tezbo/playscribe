@@ -44,6 +44,7 @@ struct PlayscribeApp: App {
                 }
                 .task {
                     await model.refreshFeed()
+                    WidgetBridge.publish(model)
                     FeedClient.scheduleRefresh()
                 }
                 .onOpenURL { model.handle(url: $0) }
@@ -55,6 +56,7 @@ struct PlayscribeApp: App {
                         NotificationService.shared.updateBadge(model.badgeCount)
                     } else if p == .background {
                         model.saveNow()
+                        WidgetBridge.publish(model)
                         FeedClient.scheduleRefresh()
                     }
                 }

@@ -22,6 +22,22 @@ Nothing ships to TestFlight by itself. Merging to main never uploads a build; on
 
 Versions: patch (0.2.1) for fixes only, minor (0.3.0) for features, 1.0.0 for the App Store launch.
 
+## Bundle IDs and the Home Screen widget
+
+`ios/project.yml` has one setting, `PLAYSCRIBE_BUNDLE_ID` (default `co.codeconnectors.playscribe`). The app uses it,
+the widget is `<id>.widget` and the App Group is `group.<id>` (read at runtime from Info.plist `PlayscribeAppGroup`).
+The release lane overrides it with the App Store Connect app's id (`tezbo.Playscribe`), so TestFlight builds use
+`tezbo.Playscribe`, `tezbo.Playscribe.widget` and `group.tezbo.Playscribe`.
+
+Registration (needed once, before the first build with the widget). With `-allowProvisioningUpdates` and the
+Admin API key, Xcode usually creates the widget App ID and profiles itself, but an App Group can only be made by
+hand, so assume these steps:
+1. developer.apple.com, Certificates, Identifiers & Profiles, Identifiers, App Groups, add `group.tezbo.Playscribe`.
+2. Identifiers, `tezbo.Playscribe`, enable App Groups, select that group, Save.
+3. Identifiers, add an App ID `tezbo.Playscribe.widget` (Explicit, no capabilities but App Groups with the same group).
+4. Re-run the release lane. If it fails with "doesn't include the App Groups capability", step 2 or 3 is missing.
+No App Store Connect app record is needed for the widget.
+
 ## Roadmap
 
 The version plan and backlog live in docs/roadmap.md, owned by the product owner.
