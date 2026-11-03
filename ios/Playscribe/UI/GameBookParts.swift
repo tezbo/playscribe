@@ -191,6 +191,7 @@ struct ReleasePage: View {
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             SourceLinks(release: r)
+            ForYouCard(release: r)
             if r.notes.contains(where: { $0.items.contains { $0.spoiler == true } }) {
                 SpoilerLine(gameID: r.gameID)
             }

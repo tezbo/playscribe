@@ -61,6 +61,40 @@ extension AppModel {
     }
 }
 
+extension AppModel {
+    /// "For you" (0.6.0 pitch 2): up to three plain lines about what this update means to this
+    /// player. Followed issues it fixes, and whether PS5 players should wait for it. Nothing when
+    /// there is nothing to say, never a guess.
+    func forYouLines(for r: Release) -> [String] {
+        var lines: [String] = []
+        for issue in followedIssues(r.gameID) where issue.isAddressed && issue.addressedBy == r.id {
+            lines.append("Fixes an issue you follow: \(LinkedText.clean(issue.text))")
+            if lines.count == 2 { break }
+        }
+        if r.ps5State == .announced { lines.append("Announced for PS5. Playscribe will tell you when it is live.") }
+        return lines
+    }
+}
+
+/// Display only: no control, so it is safe on the Tabletop stage.
+struct ForYouCard: View {
+    @Environment(AppModel.self) private var model
+    var release: Release
+    var body: some View {
+        let lines = model.forYouLines(for: release)
+        if !lines.isEmpty {
+            VStack(alignment: .leading, spacing: 6) {
+                Text("For you").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                ForEach(lines, id: \.self) { Text($0).font(PlayscribeFont.subheadline).foregroundStyle(.secondary) }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(12)
+            .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .accessibilityElement(children: .combine)
+        }
+    }
+}
+
 struct FollowIssueButton: View {
     @Environment(AppModel.self) private var model
     var issue: KnownIssue
