@@ -115,6 +115,11 @@ struct AddGameSheet: View {
                     .autocorrectionDisabled()
                     .submitLabel(.search)
                     .frame(minHeight: 44)
+                // Offline state 7: rows keep their placeholder covers; say why.
+                if case .failed(offline: true) = model.checkState {
+                    Label("Covers need a connection", systemImage: "wifi.slash")
+                        .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                }
             }
             let rows = results
             Section(debounced.count >= 2 ? "Best matches" : "Popular on PS5") {

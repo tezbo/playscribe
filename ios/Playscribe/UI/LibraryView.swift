@@ -64,6 +64,12 @@ struct LibraryStage: View {
                     if let c = model.continueItem, c.game.id == game.id {
                         Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     }
+                    if let c = model.continueItem, c.game.id == game.id {
+                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    }
+                }
+                if !model.data.collection.isEmpty {
+                    Text("Nothing new in 90 days").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                 }
             }
             .padding(20)
@@ -198,6 +204,9 @@ struct LibraryShelf: View {
                     let deck = model.latestDeck
                     if !deck.isEmpty {
                         LatestUpdatesDeck(cards: deck)
+                            .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                    } else if !model.data.collection.isEmpty {
+                        CaughtUpCard()
                             .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
                     }
                 } else {
