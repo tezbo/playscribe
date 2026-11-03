@@ -4,7 +4,9 @@ extension Release {
     /// Whole minutes to read the notes at 220 words a minute (rounded up, at least 1); nil with no
     /// notes. PC-only lines are not counted.
     var readMinutes: Int? {
-        let key = "\(id):\(notes.reduce(0) { $0 + $1.items.count })" as NSString
+        var hasher = Hasher()
+        for item in notes.flatMap(\.items) { hasher.combine(item.text); hasher.combine(item.isPCOnly) }
+        let key = "\(id):\(hasher.finalize())" as NSString
         if let hit = Self.readCache.object(forKey: key) { return hit.intValue < 0 ? nil : hit.intValue }
         let value = computeReadMinutes()
         Self.readCache.setObject(NSNumber(value: value ?? -1), forKey: key)
