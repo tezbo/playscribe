@@ -90,7 +90,10 @@ struct PersistedState: Codable {
     var read: [String: Date] = [:]
     var bookmarks: [Bookmark] = []
     var notes: [Note] = []
+    /// Per-game overrides of the default (Settings, 0.2.0).
     var notify: [String: NotifyPref] = [:]
+    /// "Notify me about": the level for every game without its own setting. nil = All updates.
+    var notifyDefault: NotifyLevel?
     var spoilersShown: [String: Bool] = [:]
     var revealed: [String: Bool] = [:]
     var simulated: [Release] = []
@@ -254,7 +257,13 @@ final class AppModel {
         ps5Releases(gameID).first { $0.ps5State == .onPS5 }
     }
 
-    func notifyLevel(_ gameID: String) -> NotifyLevel { data.notify[gameID]?.level ?? .all }
+    func notifyLevel(_ gameID: String) -> NotifyLevel { data.notify[gameID]?.level ?? notifyDefault }
+    var notifyDefault: NotifyLevel { data.notifyDefault ?? .all }
+    func hasOwnNotify(_ gameID: String) -> Bool { data.notify[gameID] != nil }
+    /// Library games with their own setting, for Settings' plain list.
+    var notifyOverrides: [(game: CatalogGame, level: NotifyLevel)] {
+        libraryRows.compactMap { r in data.notify[r.id].map { (r.game, $0.level) } }
+    }
 
     /// App icon badge (N-8): unread On PS5 releases for games whose notifications are not Off.
     var badgeCount: Int {
@@ -428,6 +437,12 @@ final class AppModel {
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
         case "close": player = nil; addSheetOpen = false; settingsOpen = false
+        case "fill-library" where parts.count == 1:
+            // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
+            if let n = Int(parts[0]) {
+                let missing = PS5Index.shared.popular(limit: 60).filter { g in !data.collection.contains { $0.gameID == g.id } }
+                for g in missing.prefix(max(0, n - data.collection.count)) { insertGame(g, status: .owned) }
+            }
         case "side" where parts.count == 1: UserDefaults.standard.set(parts[0] == "left", forKey: ReadingSide.key)
         case "add-game" where parts.count == 1:
             // Adds a game from the PS5 index by IGDB id, as the Add button does (A-5, F-5, N-1).
@@ -536,7 +551,7 @@ final class AppModel {
         }
         data.collection.insert(CollectionEntry(gameID: game.id, status: status, addedAt: .now), at: 0)
         // A-9: Owned follows all updates; Wishlist and Watching follow major ones.
-        if data.notify[game.id] == nil { data.notify[game.id] = NotifyPref(level: status == .owned ? .all : .major) }
+        // New games follow the default; a per-game level is only set from the game's bell.
         if isFirst { data.notificationCardShows = max(data.notificationCardShows, 0) }
     }
 
@@ -545,8 +560,9 @@ final class AppModel {
         data.collection[i].status = status
     }
 
-    func setNotify(_ gameID: String, _ level: NotifyLevel) {
-        data.notify[gameID] = NotifyPref(level: level)
+    /// nil: use the default.
+    func setNotify(_ gameID: String, _ level: NotifyLevel?) {
+        data.notify[gameID] = level.map { NotifyPref(level: $0) }
         NotificationService.shared.updateBadge(badgeCount)
     }
 

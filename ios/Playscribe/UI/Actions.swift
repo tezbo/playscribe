@@ -69,9 +69,12 @@ struct RailButton: View {
 
 extension AppModel {
     func notifyMenu(_ gameID: String, header: String = "Notify me about") -> [ScreenAction.MenuSection] {
-        let level = notifyLevel(gameID)
-        var sections = [ScreenAction.MenuSection(title: header, items: NotifyLevel.allCases.map { l in
-            .init(id: l.rawValue, title: l.label, checked: l == level) { [weak self] in
+        let level = notifyLevel(gameID), own = hasOwnNotify(gameID)
+        let useDefault = ScreenAction.MenuItem(id: "default", title: "Use default (\(notifyDefault.label))", checked: !own) { [weak self] in
+            self?.setNotify(gameID, nil)
+        }
+        var sections = [ScreenAction.MenuSection(title: header, items: [useDefault] + NotifyLevel.allCases.map { l in
+            .init(id: l.rawValue, title: l.label, checked: own && l == level) { [weak self] in
                 self?.setNotify(gameID, l)
                 // N-2: the bell before a decision opens the system prompt directly.
                 if l != .off, NotificationService.shared.authorization == .notDetermined {

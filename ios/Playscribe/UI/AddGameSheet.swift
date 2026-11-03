@@ -27,12 +27,24 @@ struct AddGameSheet: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button { dismiss() } label: { Label("Close", systemImage: "xmark") }
                 }
+            }
+            // One confirm bar pinned to the bottom of the sheet (Terry, 0.2.0): no scrolling back
+            // up to add. The sheet's bottom is the lower half in Tabletop and clear of the hinge.
+            .safeAreaInset(edge: .bottom) {
                 if !picked.isEmpty && !custom {
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Add \(picked.count)") { addPicked() }
-                            .fontWeight(.semibold)
-                            .accessibilityLabel("Add \(picked.count) game\(picked.count == 1 ? "" : "s")")
+                    Button(action: addPicked) {
+                        Text("Add \(picked.count) game\(picked.count == 1 ? "" : "s")")
+                            .font(PlayscribeFont.headline)
+                            .foregroundStyle(PlayscribeColor.onAccent)
+                            .frame(maxWidth: .infinity, minHeight: 50)
+                            .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
+                    .buttonStyle(.plain)
+                    .accessibilityIdentifier("addPicked")
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                    .background(.bar)
+                    .tappableFrame()
                 }
             }
         }
@@ -169,7 +181,7 @@ struct AddRow: View {
                     Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                 }
                 Spacer(minLength: 8)
-                Image(systemName: added ? "checkmark" : selected ? "checkmark.circle.fill" : "plus.circle")
+                Image(systemName: added ? "checkmark" : selected ? "checkmark.circle.fill" : "circle")
                     .font(.title3)
                     .foregroundStyle(added ? .secondary : PlayscribeColor.accent)
                     .frame(width: 44, height: 44)

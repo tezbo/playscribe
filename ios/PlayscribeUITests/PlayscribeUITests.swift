@@ -268,19 +268,28 @@ final class ReviewFixUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments = ["-qaRoute", "release/dawnwalker/dawnwalker@1.0.5"]
         app.launch()
+        // Tabletop shows releases on the standing half, which is never touchable (G-4).
+        if ReleaseRowTests.pose(app).contains("tabletop") { throw XCTSkip("links aren't tappable on Tabletop's standing half by design") }
         // The link sits in a notes section, closed by default.
         let section = app.buttons.matching(NSPredicate(format: "label CONTAINS 'We will continue'")).firstMatch
-        var opened = 0
-        while !(section.exists && section.isHittable) && opened < 12 { app.swipeUp(velocity: .slow); opened += 1 }
-        if section.exists { section.tap() }
+        Self.scrollTo(section, in: app)
+        section.tap()
         let link = app.links.matching(NSPredicate(format: "label CONTAINS 'store.steampowered.com'")).firstMatch
-        var tries = 0
-        while !(link.exists && link.isHittable) && tries < 12 { app.swipeUp(velocity: .slow); tries += 1 }
-        XCTAssertTrue(link.exists, "a bare Steam link in the notes is a link")
+        Self.scrollTo(link, in: app)
+        XCTAssertTrue(link.exists && link.isHittable, "a bare Steam link in the notes is a link")
         link.tap()
         let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
         XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 10), "opens in the default browser")
         app.activate()
+    }
+
+    /// Scrolls the page (either way) until the element is on screen.
+    static func scrollTo(_ e: XCUIElement, in app: XCUIApplication) {
+        let page = app.scrollViews["pageScroll"].exists ? app.scrollViews["pageScroll"] : app.scrollViews.firstMatch
+        for _ in 0..<16 {
+            if e.exists && e.isHittable { return }
+            if e.exists && e.frame.minY < app.frame.minY + 80 { page.swipeDown(velocity: .slow) } else { page.swipeUp(velocity: .slow) }
+        }
     }
 
     /// Official website and All patch notes appear once on the game page.
@@ -329,4 +338,44 @@ final class ReviewFixUITests: XCTestCase {
             page.swipeDown(velocity: .fast)
         }
     }
+}
+
+/// J-5: Library tiles never overlap each other or the Continue hero, with 8 and 28 games.
+@MainActor
+final class LibraryLayoutTests: XCTestCase {
+    func checkNoOverlap(games: Int) throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "demo"]
+        app.launch()
+        sleep(2)
+        app.open(URL(string: "playscribe://fill-library/\(games)")!)
+        let open = XCUIApplication(bundleIdentifier: "com.apple.springboard").buttons["Open"]
+        if open.waitForExistence(timeout: 2) { open.tap() }
+        sleep(2)
+        app.terminate()
+        app.launchArguments = ["-qaRoute", "library"]
+        app.launch()
+        sleep(4)
+        let pose = ReleaseRowTests.pose(app)
+        var checked = 0
+        for _ in 0..<6 {
+            // The accessibility frame of a tile runs past its cover (the cover image's own
+            // bounds), so each tile is taken as its laid-out cover: origin and width, 3:4.
+            let tiles = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', out ' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
+                .allElementsBoundByIndex.map(\.frame).filter { !$0.isEmpty && $0.width > 20 }
+                .map { CGRect(x: $0.minX, y: $0.minY, width: $0.width, height: ($0.width * 4 / 3).rounded()) }
+            let hero = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'New update,' OR label BEGINSWITH 'Continue,'")).allElementsBoundByIndex.map(\.frame)
+            for (i, a) in tiles.enumerated() {
+                for b in tiles[(i + 1)...] { XCTAssertFalse(a.insetBy(dx: 1, dy: 1).intersects(b), "tiles overlap \(a) \(b) [\(pose)]") }
+                for h in hero { XCTAssertFalse(a.insetBy(dx: 1, dy: 1).intersects(h), "tile overlaps hero \(a) \(h) [\(pose)]") }
+            }
+            checked += tiles.count
+            app.swipeUp(velocity: .fast)
+        }
+        XCTAssertGreaterThan(checked, 0, "found tiles [\(pose)]")
+        let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); shot.name = "library-\(games) [\(pose)]"; shot.lifetime = .keepAlways; add(shot)
+    }
+
+    func testEightGames() throws { try checkNoOverlap(games: 8) }
+    func testTwentyEightGames() throws { try checkNoOverlap(games: 28) }
 }

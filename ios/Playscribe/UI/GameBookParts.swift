@@ -28,8 +28,7 @@ struct PageView: View {
                 PageArtBand(gameID: gameID)
                 if withContents, let g = model.game(gameID) {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text(g.name).font(PlayscribeFont.title2).accessibilityAddTraits(.isHeader)
-                        if let e = model.entry(gameID) { StatusPill(status: e.status) }
+                        GameTitleWithStatus(gameID: gameID, name: g.name)
                     }
                     .padding(.horizontal, 20)
                 }
@@ -345,8 +344,7 @@ struct ContentsBody: View {
             VStack(alignment: .leading, spacing: 14) {
                 if duo.pose != .closed { HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(game?.name ?? "").font(PlayscribeFont.title2).lineLimit(2)
-                        if let e = model.entry(gameID) { StatusPill(status: e.status) }
+                        GameTitleWithStatus(gameID: gameID, name: game?.name ?? "")
                     }
                     Spacer(minLength: 8)
                 } }
@@ -606,5 +604,37 @@ struct ReleaseDetailView: View {
         .navigationTitle(model.release(gameID, releaseID)?.displayName ?? "")
         .toolbarTitleDisplayMode(.inline)
         .foldAudited()
+    }
+}
+
+/// The game's name with its status glyph inline (Iris, 0.2.0): a tick in a circle for Owned, a
+/// bookmark for Wishlist, an eye for Watching. Tapping the glyph opens the status choice.
+struct GameTitleWithStatus: View {
+    @Environment(AppModel.self) private var model
+    var gameID: String
+    var name: String
+
+    var body: some View {
+        HStack(alignment: .firstTextBaseline, spacing: 8) {
+            Text(name).font(PlayscribeFont.title2).lineLimit(2).accessibilityAddTraits(.isHeader)
+            if let e = model.entry(gameID) {
+                Menu { ActionMenuContent(sections: model.statusMenu(gameID)) } label: {
+                    Image(systemName: Self.symbol(e.status))
+                        .font(.system(size: 20))
+                        .foregroundStyle(e.status == .owned ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
+                        .frame(width: 44, height: 44)
+                        .contentShape(Rectangle())
+                }
+                .padding(.vertical, -12)
+                .accessibilityLabel(e.status.label)
+                .accessibilityHint("Change status")
+                .accessibilityIdentifier("statusGlyph")
+                .tappableFrame()
+            }
+        }
+    }
+
+    static func symbol(_ s: OwnershipStatus) -> String {
+        switch s { case .owned: "checkmark.circle.fill"; case .wishlist: "bookmark.fill"; case .watching: "eye.fill" }
     }
 }

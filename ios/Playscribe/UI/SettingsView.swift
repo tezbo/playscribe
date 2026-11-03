@@ -20,12 +20,19 @@ struct SettingsView: View {
         @Bindable var model = model
         NavigationStack {
             Form {
-                // N-10: per-game levels plus Pause all.
+                // One default for every game (Terry, 0.2.0); a game's own setting lives on its bell.
                 Section {
+                    Picker("Notify me about", selection: Binding(get: { model.notifyDefault }, set: { model.data.notifyDefault = $0 })) {
+                        ForEach(NotifyLevel.allCases) { Text($0.label).tag($0) }
+                    }
                     Toggle("Pause all", isOn: $model.data.pauseAll)
-                    ForEach(model.libraryRows) { row in
-                        Picker(row.game.name, selection: Binding(get: { model.notifyLevel(row.id) }, set: { model.setNotify(row.id, $0) })) {
-                            ForEach(NotifyLevel.allCases) { Text($0.label).tag($0) }
+                    let overrides = model.notifyOverrides
+                    if !overrides.isEmpty {
+                        NavigationLink("\(overrides.count) game\(overrides.count == 1 ? " has its" : "s have their") own setting") {
+                            List(overrides, id: \.game.id) { o in
+                                LabeledContent(o.game.name, value: o.level.label)
+                            }
+                            .navigationTitle("Own settings")
                         }
                     }
                 } header: {
@@ -33,7 +40,7 @@ struct SettingsView: View {
                 } footer: {
                     Text(NotificationService.shared.authorization == .denied
                          ? "Notifications are off for \(Brand.name) in iOS Settings."
-                         : "You're told when an update is live on PS5. Hotfixes arrive quietly.")
+                         : "Change a single game from the bell on its page.")
                 }
 
                 #if INTERNAL

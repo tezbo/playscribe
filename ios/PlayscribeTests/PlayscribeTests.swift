@@ -55,12 +55,18 @@ struct ModelTests {
         #expect(m.data.notes.contains { $0.id == "n1" })
     }
 
-    @Test("New games get All for Owned and Major for others (A-9)")
+    @Test("New games follow the default; a game's own setting overrides it, and Use default clears it")
     func defaultLevels() {
         let m = freshModel()
         let g = PS5Index.shared.popular(limit: 1)[0]
         m.addGame(g, status: .wishlist)
+        #expect(m.notifyLevel(g.id) == .all && !m.hasOwnNotify(g.id))
+        m.data.notifyDefault = .major
         #expect(m.notifyLevel(g.id) == .major)
+        m.setNotify(g.id, .off)
+        #expect(m.notifyLevel(g.id) == .off && m.notifyOverrides.contains { $0.game.id == g.id })
+        m.setNotify(g.id, nil)
+        #expect(m.notifyLevel(g.id) == .major && !m.hasOwnNotify(g.id))
     }
 
     @Test("Console versions bump in the PS5 format")

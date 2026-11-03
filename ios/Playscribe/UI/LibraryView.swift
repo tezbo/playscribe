@@ -91,15 +91,15 @@ struct LibraryShelf: View {
     /// Book: an even column count across both pages (Apple: prefer an even number of columns).
     private var columns: [GridItem] {
         if duo.pose == .closed {
-            return Array(repeating: GridItem(.flexible(), spacing: 12, alignment: .top), count: 3)
+            return Array(repeating: GridItem(.flexible(), spacing: 10, alignment: .top), count: 3)
         }
         if let book = bookLayout {
             // A spacer column before each page's tiles centres them on their page; the fold
             // falls in the middle spacer, never through a tile.
-            let tiles = { (n: Int) in (0..<n).map { i in GridItem(.fixed(tileSize), spacing: i == n - 1 ? 0 : 14, alignment: .top) } }
+            let tiles = { (n: Int) in (0..<n).map { i in GridItem(.fixed(tileSize), spacing: i == n - 1 ? 0 : 10, alignment: .top) } }
             return [GridItem(.fixed(book.lead), spacing: 0)] + tiles(book.perPage) + [GridItem(.fixed(book.gap), spacing: 0)] + tiles(book.perPage)
         }
-        return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 14, alignment: .top)]
+        return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 10, alignment: .top)]
     }
 
     /// Book (D-12): the same number of tiles on each page (Apple: prefer an even number of
@@ -108,9 +108,9 @@ struct LibraryShelf: View {
         guard duo.pose == .book, let fold = duo.division else { return nil }
         let x0: CGFloat = 16, edge = duo.size.width - railWidth - 16
         let leftPage = fold.minX - 8 - x0, rightStart = fold.maxX + 8, rightPage = edge - rightStart
-        var k = max(1, Int((min(leftPage, rightPage) + 14) / (tileSize + 14)))
-        while k > 1 && CGFloat(k) * tileSize + CGFloat(k - 1) * 14 > min(leftPage, rightPage) { k -= 1 }
-        let group = CGFloat(k) * tileSize + CGFloat(k - 1) * 14
+        var k = max(1, Int((min(leftPage, rightPage) + 10) / (tileSize + 10)))
+        while k > 1 && CGFloat(k) * tileSize + CGFloat(k - 1) * 10 > min(leftPage, rightPage) { k -= 1 }
+        let group = CGFloat(k) * tileSize + CGFloat(k - 1) * 10
         let lead = max(0, (leftPage - group) / 2)
         let gap = max(0, rightStart + max(0, (rightPage - group) / 2) - (x0 + lead + group))
         return (k, lead, gap)
@@ -188,14 +188,14 @@ struct LibraryShelf: View {
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
                 } else if duo.pose == .flat && duo.isLandscape {
-                    FlowLayout(spacing: 14) {
+                    FlowLayout(spacing: 10) {
                         if let c = model.continueItem {
                             ContinueTile(game: c.game, release: c.release, size: tileSize)
                         }
                         ForEach(rows) { row in GameTile(row: row, size: tileSize).id("lib-\(row.id)") }
                     }
                 } else {
-                    LazyVGrid(columns: columns, alignment: .leading, spacing: 18) {
+                    LazyVGrid(columns: columns, alignment: .leading, spacing: 10) {
                         ForEach(cells(rows), id: \.id) { cell in
                             if let row = cell.row {
                                 GameTile(row: row, size: duo.pose == .closed ? nil : tileSize).id("lib-\(row.id)")
@@ -334,7 +334,7 @@ struct ContinueRow: View {
         .frame(minHeight: 44)
         .tappableFrame()
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(fresh ? "New chapter, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
+        .accessibilityLabel(fresh ? "New update, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
         .accessibilityAddTraits(.isButton)
     }
 }
@@ -346,7 +346,7 @@ struct ContinueText: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(spacing: 8) {
-                Text(fresh ? "NEW CHAPTER" : "CONTINUE")
+                Text(fresh ? "NEW UPDATE" : "CONTINUE")
                     .font(PlayscribeFont.caption)
                     .tracking(12 * 0.08)
                     .foregroundStyle(PlayscribeColor.accent)
@@ -493,11 +493,16 @@ struct GameTile: View {
     /// nil: fill the column (Closed, 3 across).
     var size: CGFloat?
 
+    @ViewBuilder private func tileFrame(_ cover: some View) -> some View {
+        if let size { cover.frame(width: size, height: (size * 4 / 3).rounded()) }
+        else { cover.aspectRatio(3 / 4, contentMode: .fit).frame(maxWidth: .infinity) }
+    }
+
     var body: some View {
         Button { model.openGame(row.id) } label: {
-            TileCover(game: row.game)
-                .frame(width: size)
-                .aspectRatio(3 / 4, contentMode: .fit)
+            // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
+            // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
+            tileFrame(TileCover(game: row.game))
                 .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
                 .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
                 .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
@@ -714,13 +719,13 @@ struct ContinueTile: View {
         let fresh = model.isUnread(release)
         Button { model.openGame(game.id, chapter: .updates, releaseID: release.id) } label: {
             ArtView(asset: game.keyArtAsset, game: game)
-                .frame(width: size * 2 + 14, height: size * 4 / 3)
+                .frame(width: size * 2 + 10, height: (size * 4 / 3).rounded())
                 .overlay {
                     LinearGradient(colors: [.clear, .black.opacity(0.8)], startPoint: .center, endPoint: .bottom)
                 }
                 .overlay(alignment: .bottomLeading) {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(fresh ? "NEW CHAPTER" : "CONTINUE").font(PlayscribeFont.caption2).tracking(1).foregroundStyle(PlayscribeColor.accent)
+                        Text(fresh ? "NEW UPDATE" : "CONTINUE").font(PlayscribeFont.caption2).tracking(1).foregroundStyle(PlayscribeColor.accent)
                         Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
                         Text(release.displayName).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     }
@@ -731,7 +736,7 @@ struct ContinueTile: View {
         }
         .buttonStyle(.plain)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(fresh ? "New chapter, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
+        .accessibilityLabel(fresh ? "New update, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
     }
