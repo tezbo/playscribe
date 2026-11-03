@@ -159,3 +159,9 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 - **Guard date.** `alert.from` in the feed: the moment a console-later update went live on PS5 (`alert_from`), else the PS5 row's `liveAt`.
 - **Consoles later.** A Steam patch whose post says consoles get it later is `announced`; a week after the Steam post the backend takes it as `live` (liveAt stays Steam's date) and sets `alert_from` to that moment, so it earns its one standard alert, once. A rerun does not alert again (the row is no longer `announced`, and `pushed_at` claims the push).
 - **Before PS5 launch.** A Steam patch dated before the game's PS5 release creates no PS5 row; it is not released on PS5.
+
+## 0.5.0 upcoming games (roadmap 14)
+
+- Source: IGDB PS5 `release_dates` rows (same date rules and overrides as the PS5 index). `scripts/upcoming.ts` writes `v1/upcoming/<igdbId % 10>.json` and `events.json` daily. Rules live in `src/upcoming.ts`.
+- No invented dates: month, quarter and year dates keep their precision, tbd has no date. A game with no PS5 date row at all is not listed.
+- A game stays listed 3 days after an exact release date so the release-day event reaches offline devices; older ones drop out, as do vague dates that have passed.
