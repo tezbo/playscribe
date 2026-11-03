@@ -109,3 +109,7 @@ The local server has the same operations under `/v1/admin`, with `Authorization:
 - `NoteItem.category: new|fixed|balance|other` is the kind of change a notes line is, derived from its Steam section title ("New Features", "Bug Fixes", "Balance Changes"…); `other` when the title says nothing. Missing in older data: treat as `other`. Fixes win when a title says both.
 - `NoteItem.pcOnly: boolean` marks a notes line that is only about PC. The app may fold these lines into a group; it never turns a release into "PC only".
 - `Field.checkedAt` is the time of the latest fetch that read the fact. PS5 `version` is never a PC number.
+
+## Feed health and data quality (0.5.0)
+
+Each ingest run reports a source that has failed three polls in a row (`source_state.fail_streak`) as an error annotation and in the workflow summary. After export it checks the feed: a PC version is never the PS5 version, no source names appear in user-facing text, and every game in `v1/index.json` has a release or an official link. A failed check fails the run before the feed is published. Games with no readable official source carry `links` in `sources/registry.json` (official site, patch-notes page), which overrides IGDB's in `info/<n>.json`.
