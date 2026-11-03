@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs'
-import type { NoteItem, NoteSection, Platform } from '../types.ts'
+import type { NoteCategory, NoteItem, NoteSection, Platform } from '../types.ts'
 
 // Turns a post body (Steam BBCode, feed HTML or plain text) into grouped notes.
 const ENTITIES: Record<string, string> = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', '#39': "'" }
@@ -59,6 +59,16 @@ export const platformsFor = (text: string, section?: Platform[]): Platform[] | u
 /** A line tagged for PC and no console. */
 export const isPcOnly = (platforms: Platform[] | undefined) => !!platforms?.length && platforms.every((p) => p === 'pc')
 
+/** The kind of change a section lists, from its title. Fixes win over new when a title says both ("Fixes and additions"). */
+export const categoryOf = (title: string): NoteCategory =>
+  /\b(fix(es|ed)?|bug\s*fix(es)?|bugs?|crash(es)?|stability|resolved)\b/i.test(title)
+    ? 'fixed'
+    : /\b(balanc\w*|tuning|tweaks?|nerfs?|buffs?|adjustments?|difficulty)\b/i.test(title)
+      ? 'balance'
+      : /\b(new|added|additions?|features?|content|introduc\w*|improvements?|enhancements?|highlights?)\b/i.test(title)
+        ? 'new'
+        : 'other'
+
 const sectionPlatforms = (title: string): Platform[] | undefined => {
   const t = title.trim()
   if (/^(PS5|PlayStation\s*®?\s*5)( Pro)?( specific| fixes| changes)?:?$/i.test(t)) return ['ps5']
@@ -104,7 +114,7 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSecti
     }
     if (bullet) inList = true
     if (!current) open(fallbackTitle)
-    const item: NoteItem = { text, ps5ProOnly: currentPro || PRO.test(text), pcOnly: false }
+    const item: NoteItem = { text, ps5ProOnly: currentPro || PRO.test(text), pcOnly: false, category: categoryOf(current!.title) }
     const platforms = platformsFor(text, currentPlatforms)
     if (platforms) item.platforms = platforms
     item.pcOnly = isPcOnly(platforms)
@@ -122,7 +132,8 @@ export const tagNotes = (sections: NoteSection[]): NoteSection[] =>
       ...s,
       items: s.items.map(({ platforms: _old, ...i }) => {
         const platforms = platformsFor(i.text, section)
-        return platforms ? { ...i, platforms, pcOnly: isPcOnly(platforms) } : { ...i, pcOnly: false }
+        const category = categoryOf(s.title)
+        return platforms ? { ...i, platforms, pcOnly: isPcOnly(platforms), category } : { ...i, pcOnly: false, category }
       }),
     }
   })
