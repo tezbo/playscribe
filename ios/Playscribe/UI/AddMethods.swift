@@ -32,7 +32,7 @@ enum AddMethod: String, CaseIterable, Identifiable {
     }
 
     /// Methods in this build, in the order the entry sheet shows them.
-    static var available: [AddMethod] { [.typeIt, .sayIt] }
+    static var available: [AddMethod] { [.typeIt, .sayIt, .photo] }
 }
 
 /// One spoken, typed or scanned title and what it matched.

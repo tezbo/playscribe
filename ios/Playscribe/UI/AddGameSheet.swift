@@ -29,6 +29,7 @@ struct AddGameSheet: View {
                     switch method {
                     case .typeIt: list
                     case .sayIt: SayItView(find: { showMatches(AddMatcher.titles(from: $0)) }, typeInstead: { self.method = .typeIt })
+                    case .photo: PhotoAddView(find: { showMatches($0, sureOnly: true) }, typeInstead: { self.method = .typeIt })
                     default: list
                     }
                 } else { AddEntryView { method = $0 } }
@@ -164,8 +165,11 @@ struct AddGameSheet: View {
     }
 
     /// Every method lands here: sure matches not yet in the library are pre-ticked, the rest wait.
-    private func showMatches(_ titles: [String]) {
-        let found = AddMatcher.match(titles, curated: model.fixtures.games)
+    /// `sureOnly` (photos): a picture is full of other words, so unsure lines are dropped unless
+    /// nothing at all matched.
+    private func showMatches(_ titles: [String], sureOnly: Bool = false) {
+        var found = AddMatcher.match(titles, curated: model.fixtures.games)
+        if sureOnly, found.contains(where: \.sure) { found = found.filter(\.sure) }
         for m in found { if let g = m.best, model.entry(g.id) == nil, picked[g.id] == nil { toggle(g) } }
         matches = found
     }
