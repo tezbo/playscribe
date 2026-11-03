@@ -113,3 +113,7 @@ The local server has the same operations under `/v1/admin`, with `Authorization:
 ## Feed health and data quality (0.5.0)
 
 Each ingest run reports a source that has failed three polls in a row (`source_state.fail_streak`) as an error annotation and in the workflow summary. After export it checks the feed: a PC version is never the PS5 version, no source names appear in user-facing text, and every game in `v1/index.json` has a release or an official link. A failed check fails the run before the feed is published. Games with no readable official source carry `links` in `sources/registry.json` (official site, patch-notes page), which overrides IGDB's in `info/<n>.json`.
+
+## Release digest: "Since you last looked" (0.5.0, roadmap item 6)
+
+Every `Release` in `latest.json` and `games/<id>.json` carries `digest: { new, fixed, balance, other, ps5, topNew? }`, derived from its notes on read. The counts cover lines a PS5 player can use (PC-only lines are left out); `ps5` is how many name PS5 or PS5 Pro. `topNew` (at most 3 lines, each 120 characters or fewer) is present only when the headings are clean: the lines sit under a heading that names new content and make up most of the release's new lines. Otherwise show counts only. There is no download size (too few releases carry one). The catch-up screen sums `digest` over the releases newer than the player's last visit. Additive: the 0.2.0 app ignores it.

@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto'
 import { now, type DB } from './db.ts'
 import { alertOf } from './alerts.ts'
 import { artworkUrl, squareCoverUrl } from './artwork.ts'
+import { digestOf } from './digest.ts'
 import { tagNotes } from './ingest/notes.ts'
 import type { Field, Game, KindBasis, NoteSection, Platform, PlatformRelease, PlatformStatus, Release, ReleaseKind, ReleaseLinks, Verification } from './types.ts'
 
@@ -70,21 +71,25 @@ const platformFromRow = (r: Row, links: ReleaseLinks): PlatformRelease => ({
   ...alertOf(r as { platform: string; status: string; verification: string; alert_from?: string | null; live_at?: string | null }, links),
 })
 
-export const releaseFromRow = (db: DB, r: Row): Release => ({
-  id: r.id,
-  gameId: r.game_id,
-  displayName: r.display_name,
-  kind: r.kind,
-  kindBasis: r.kind_basis,
-  announcedAt: r.announced_at,
+export const releaseFromRow = (db: DB, r: Row): Release => {
   // Tagged on read, so stored notes follow the current platform rules.
-  notes: tagNotes(json(r.notes, [])),
-  sourceIds: json(r.source_ids, []),
-  links: json(r.links, {}),
-  platforms: (db.prepare('SELECT * FROM platform_releases WHERE release_id = ? ORDER BY platform').all(r.id) as Row[]).map((p) => platformFromRow(p, json(r.links, {}))),
-  revision: r.revision,
-  updatedAt: r.updated_at,
-})
+  const notes = tagNotes(json(r.notes, []))
+  return {
+    id: r.id,
+    gameId: r.game_id,
+    displayName: r.display_name,
+    kind: r.kind,
+    kindBasis: r.kind_basis,
+    announcedAt: r.announced_at,
+    notes,
+    digest: digestOf(notes),
+    sourceIds: json(r.source_ids, []),
+    links: json(r.links, {}),
+    platforms: (db.prepare('SELECT * FROM platform_releases WHERE release_id = ? ORDER BY platform').all(r.id) as Row[]).map((p) => platformFromRow(p, json(r.links, {}))),
+    revision: r.revision,
+    updatedAt: r.updated_at,
+  }
+}
 
 export const getRelease = (db: DB, id: string) => {
   const r = db.prepare('SELECT * FROM releases WHERE id = ?').get(id) as Row | undefined
