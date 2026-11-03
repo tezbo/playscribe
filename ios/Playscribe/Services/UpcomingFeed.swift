@@ -28,6 +28,7 @@ final class UpcomingStore {
         var kind: String
         var previousDate: String?
         var previousPrecision: String?
+        var movedAt: String?
     }
     /// What the feed knows about a game that is not in the bundled catalogue, by IGDB id.
     struct Extras {
@@ -70,6 +71,7 @@ final class UpcomingStore {
             ($0.releaseDate?.isoDay ?? .distantFuture, $0.name) < ($1.releaseDate?.isoDay ?? .distantFuture, $1.name)
         }
         .prefix(120).map { $0 }
+        NotificationService.shared.notifyDateMoves()
     }
 }
 
@@ -97,5 +99,16 @@ extension UpcomingStore.Move {
         case "day": return d.formatted(.dateTime.day().month(.wide))
         default: return nil
         }
+    }
+}
+
+extension UpcomingStore.Move {
+    var movedDate: Date? { movedAt.flatMap { try? Date($0, strategy: .iso8601) } }
+
+    /// Whether this move may alert now: a real kind, and within 72 hours of the change like every
+    /// other alert (the feed keeps a move for 14 days, so an older one is the past).
+    func isFresh(now: Date = .now) -> Bool {
+        guard line != nil, let d = movedDate else { return false }
+        return d > now.addingTimeInterval(-72 * 3600)
     }
 }

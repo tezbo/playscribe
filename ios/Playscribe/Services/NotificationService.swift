@@ -66,6 +66,28 @@ final class NotificationService: NSObject {
         }
     }
 
+    /// Date-move alert (0.6.0 pitch): when a watched game's PS5 date is delayed, moved earlier or
+    /// newly dated, one quiet notification per change, within 72 hours of it. Honours Pause all and a
+    /// per-game Off. The feed has no push for upcoming games, so this rides the Upcoming refresh.
+    func notifyDateMoves() {
+        guard let model, authorization == .authorized || authorization == .provisional, !model.data.pauseAll else { return }
+        var done = model.data.notifiedMoves ?? []
+        for c in model.data.collection where c.status == .wishlist && model.notifyLevel(c.gameID) != .off {
+            guard let g = model.game(c.gameID), let igdb = g.igdbID,
+                  let move = UpcomingStore.shared.extras[igdb]?.move, move.isFresh(), let line = move.line,
+                  let stamp = move.movedAt else { continue }
+            let key = "\(igdb):\(stamp)"
+            guard !done.contains(key) else { continue }
+            done.insert(key)
+            let content = UNMutableNotificationContent()
+            content.title = g.name
+            content.body = [line, g.ps5DateLine.flatMap { $0 == "Release date TBA" ? nil : $0 }].compactMap { $0 }.joined(separator: ". ")
+            content.interruptionLevel = .passive
+            center.add(UNNotificationRequest(identifier: "date-move-\(key)", content: content, trigger: nil))
+        }
+        model.data.notifiedMoves = done
+    }
+
     func didRegister(token: Data) {
         deviceToken = token.map { String(format: "%02x", $0) }.joined()
         if let model { PushRegistrar.register(token: deviceToken!, follows: model.follows) }

@@ -91,3 +91,20 @@ struct UpcomingMoveTests {
         #expect(M(kind: "other").line == nil)
     }
 }
+
+@MainActor
+struct DateMoveAlertTests {
+    @Test("A date move alerts only within 72 hours and only for a real kind")
+    func freshness() {
+        let now = Date(timeIntervalSince1970: 1_800_000_000)
+        func move(_ kind: String, hoursAgo: Double) -> UpcomingStore.Move {
+            let at = Date(timeIntervalSince1970: now.timeIntervalSince1970 - hoursAgo * 3600)
+            return UpcomingStore.Move(kind: kind, movedAt: at.formatted(.iso8601))
+        }
+        #expect(move("delayed", hoursAgo: 5).isFresh(now: now))
+        #expect(move("dated", hoursAgo: 71).isFresh(now: now))
+        #expect(!move("delayed", hoursAgo: 80).isFresh(now: now))
+        #expect(!move("other", hoursAgo: 1).isFresh(now: now))
+        #expect(!UpcomingStore.Move(kind: "delayed").isFresh(now: now))
+    }
+}
