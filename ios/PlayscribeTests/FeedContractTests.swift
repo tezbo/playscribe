@@ -108,3 +108,19 @@ struct DateMoveAlertTests {
         #expect(!UpcomingStore.Move(kind: "delayed").isFresh(now: now))
     }
 }
+
+@MainActor
+struct ForYouTests {
+    @Test("For you lists only followed, fixed issues and says nothing otherwise")
+    func lines() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "foryou-\(UUID().uuidString).json"))
+        let r = Release(id: "g@1.2", gameID: "g", displayName: "Update 1.2", kind: .patch, kindBasis: .inferred, announcedAt: .now,
+                        notes: [], sourceIDs: [], platforms: [])
+        #expect(model.forYouLines(for: r).isEmpty)
+        model.gameIssues["g"] = [KnownIssue(id: "i1", text: "Crash on load", status: "addressed", addressedBy: "g@1.2"),
+                                 KnownIssue(id: "i2", text: "Audio pops", status: "addressed", addressedBy: "g@1.2")]
+        #expect(model.forYouLines(for: r).isEmpty)
+        model.data.followedIssues = ["i1"]
+        #expect(model.forYouLines(for: r) == ["Fixes an issue you follow: Crash on load"])
+    }
+}
