@@ -361,7 +361,7 @@ final class LibraryLayoutTests: XCTestCase {
         for _ in 0..<6 {
             // The accessibility frame of a tile runs past its cover (the cover image's own
             // bounds), so each tile is taken as its laid-out cover: origin and width, 3:4.
-            let tiles = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', out ' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
+            let tiles = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
                 .allElementsBoundByIndex.map(\.frame).filter { !$0.isEmpty && $0.width > 20 }
                 .map { CGRect(x: $0.minX, y: $0.minY, width: $0.width, height: ($0.width * 4 / 3).rounded()) }
             let hero = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'New update,' OR label BEGINSWITH 'Continue,'")).allElementsBoundByIndex.map(\.frame)
@@ -378,4 +378,50 @@ final class LibraryLayoutTests: XCTestCase {
 
     func testEightGames() throws { try checkNoOverlap(games: 8) }
     func testTwentyEightGames() throws { try checkNoOverlap(games: 28) }
+}
+
+/// Review stills for QA and design (attachments named capture-*).
+@MainActor
+final class CaptureTests: XCTestCase {
+    func shot(_ name: String) {
+        let a = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); a.name = "capture-\(name)"; a.lifetime = .keepAlways; add(a)
+    }
+
+    func testReviewStills() throws {
+        let app = XCUIApplication()
+        // Settings: version, Notify me about.
+        app.launchArguments = ["-qaRoute", "settings"]
+        app.launch(); sleep(3)
+        shot("settings-top")
+        let form = app.collectionViews.firstMatch
+        let version = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS '0.2.0' OR value CONTAINS '0.2.0'")).firstMatch
+        var tries = 0
+        while !version.exists && tries < 8 { (form.exists ? form : app).swipeUp(); tries += 1 }
+        shot("settings-version")
+
+        // The game's bell: Use default first.
+        app.terminate()
+        app.launchArguments = ["-qaRoute", "release/dawnwalker/dawnwalker@1.1"]
+        app.launch(); sleep(4)
+        let bell = app.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'Notif'")).firstMatch
+        if bell.waitForExistence(timeout: 5) { bell.tap(); sleep(1) }
+        shot("bell-menu")
+        app.typeKey(XCUIKeyboardKey.escape, modifierFlags: [])
+
+        // Game page: one link pair (scroll to it when Closed).
+        app.terminate()
+        ReleaseRowTests.openBluePrince(app); sleep(4)
+        let site = app.links.matching(NSPredicate(format: "label CONTAINS 'Official website'")).firstMatch
+        ReviewFixUITests.scrollTo(site, in: app)
+        shot("game-links")
+
+        // Add game: tap two rows, the pinned bar reads Add 2 games.
+        app.terminate()
+        app.launchArguments = ["-qaRoute", "add"]
+        app.launch(); sleep(4)
+        let rows = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Released' OR label CONTAINS 'PS5'"))
+        for i in 0..<2 where rows.count > i { rows.element(boundBy: i).tap() }
+        sleep(1)
+        shot("add-game-bar")
+    }
 }

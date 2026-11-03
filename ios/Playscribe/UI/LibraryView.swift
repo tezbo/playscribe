@@ -147,10 +147,18 @@ struct LibraryShelf: View {
                     NotificationInviteCard(gameName: first.game.name)
                 }
                 if all.count >= 6 {
-                    TextField("Search your library", text: $model.data.nav.query)
-                        .textFieldStyle(.roundedBorder)
-                        .submitLabel(.search)
-                        .frame(minHeight: 44)
+                    // The same field as the notes search; the system rounded border read as a
+                    // faded box behind the large title on the dark Library (QA, a258f0c).
+                    HStack(spacing: 8) {
+                        Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+                        TextField("Search your library", text: $model.data.nav.query)
+                            .submitLabel(.search)
+                            .autocorrectionDisabled()
+                    }
+                    .padding(.horizontal, 12)
+                    .frame(minHeight: 44)
+                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    .padding(.top, 4)
                 }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
@@ -598,7 +606,7 @@ extension AppModel {
             return (d > .now.addingTimeInterval(-7 * 86400) ? .recent : .older, Self.tileDay(d))
         }
         if let r = ps5Releases(row.id).first, r.isUnconfirmed { return (.unconfirmed, "Unconfirmed") }
-        return (.none, "Out " + (row.game.releaseDate?.isoDay.map(Self.tileDay) ?? "TBA"))
+        return (.none, row.game.releaseDate?.isoDay.map(Self.tileDay) ?? "TBA")
     }
 
     /// "12 Oct" this year, "Jul 2025" before.
@@ -616,7 +624,7 @@ extension AppModel {
         case .unread: when = "new update \(state.text)"
         case .recent, .older: when = "last updated \(state.text)"
         case .unconfirmed: when = "unconfirmed update on PS5, from press reports"
-        case .none: when = state.text.replacingOccurrences(of: "Out ", with: "out ")
+        case .none: when = state.text == "TBA" ? "release date to be announced" : "released \(state.text)"
         }
         return "\(row.game.name), \(when), \(row.status.label.lowercased())"
     }
