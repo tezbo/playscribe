@@ -35,8 +35,10 @@ export interface GameInfo {
 // Patch notes page: the registry's official PS5 news page (a web page, not a feed), else the game's Steam news.
 const steamNews = (id: number) => `https://store.steampowered.com/news/app/${id}`
 const registryNotes = new Map<number, string | null>()
+const registryLinks = new Map<number, { official?: string; patchNotes?: string }>()
 for (const g of Object.values(registry.games)) {
   if (!g.igdbId) continue
+  if (g.links) registryLinks.set(g.igdbId, g.links)
   const page = g.sources.find((s) => s.trust === 'official' && s.kind === 'html' && s.platforms.includes('ps5'))
   const steam = g.sources.map(steamAppIdOf).find((x) => x)
   const url = page?.url ?? (steam && !g.steamIsPcPort ? steamNews(steam) : undefined)
@@ -48,7 +50,9 @@ const linksOf = (g: any): GameInfo['links'] => {
   const official = sites.find((w) => (w.type ?? w.category) === 1)?.url
   const steamId = sites.map((w) => w.url?.match(/store\.steampowered\.com\/app\/(\d+)/)?.[1]).find((x) => x)
   const patchNotes = registryNotes.has(g.id) ? registryNotes.get(g.id) ?? undefined : steamId ? steamNews(Number(steamId)) : undefined
-  return official || patchNotes ? { official, patchNotes } : undefined
+  const pinned = registryLinks.get(g.id)
+  const merged = { official: pinned?.official ?? official, patchNotes: pinned?.patchNotes ?? patchNotes }
+  return merged.official || merged.patchNotes ? merged : undefined
 }
 
 const videoRank = (name: string) => (/launch/i.test(name) ? 0 : /trailer/i.test(name) ? 1 : 2)

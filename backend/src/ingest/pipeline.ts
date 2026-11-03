@@ -132,11 +132,12 @@ const due = (db: DB, s: SourceDef, force: boolean, minMs = MIN_POLL_MS) => {
 const recordState = (db: DB, sourceId: string, status: number, error: string | null, blocked = false) =>
   db
     .prepare(
-      `INSERT INTO source_state (source_id, last_fetched_at, last_status, last_error, blocked) VALUES (?, ?, ?, ?, ?)
+      `INSERT INTO source_state (source_id, last_fetched_at, last_status, last_error, blocked, fail_streak) VALUES (?, ?, ?, ?, ?, CASE WHEN ? = 200 THEN 0 ELSE 1 END)
        ON CONFLICT (source_id) DO UPDATE SET last_fetched_at = excluded.last_fetched_at, last_status = excluded.last_status,
-         last_error = excluded.last_error, blocked = MAX(blocked, excluded.blocked)`,
+         last_error = excluded.last_error, blocked = MAX(blocked, excluded.blocked),
+         fail_streak = CASE WHEN excluded.last_status = 200 THEN 0 ELSE fail_streak + 1 END`,
     )
-    .run(sourceId, now(), status, error, blocked ? 1 : 0)
+    .run(sourceId, now(), status, error, blocked ? 1 : 0, status)
 
 const poll = async (deps: IngestDeps, s: SourceDef, summary: IngestSummary, opts: PageOpts = {}): Promise<Post[] | null> => {
   try {

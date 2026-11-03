@@ -134,6 +134,7 @@ export const openDb = (path: string): DB => {
   db.exec(SCHEMA)
   // Columns added after the first feed went out; CREATE TABLE IF NOT EXISTS leaves old tables as they were.
   const has = (table: string, col: string) => (db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).some((c) => c.name === col)
+  if (!has('source_state', 'fail_streak')) db.exec('ALTER TABLE source_state ADD COLUMN fail_streak INTEGER NOT NULL DEFAULT 0')
   if (!has('games', 'ps5_release_precision')) db.exec('ALTER TABLE games ADD COLUMN ps5_release_precision TEXT')
   if (!has('games', 'artwork_image_id')) db.exec('ALTER TABLE games ADD COLUMN artwork_image_id TEXT')
   if (!has('releases', 'links')) db.exec("ALTER TABLE releases ADD COLUMN links TEXT NOT NULL DEFAULT '{}'")

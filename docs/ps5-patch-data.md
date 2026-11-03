@@ -201,3 +201,7 @@ The PlayStation Blog's robots.txt allows `/feed/` (Crawl-delay 5), but playstati
 - The PlayStation Blog is not used for news headlines, and (below) not polled for patches either.
 - It is no longer polled at all: `playstation-blog` in `src/sources/registry.json` is `fetch: manual` (Theo's call, 2026-11-03). Re-enable only with written permission from Sony. Nothing else depends on it: PS5 versions and live times come from studio posts, Steam posts and other allowed sources, and a release's `links.ps5Page` comes from the Steam post or from a studio page, or is added by hand. Data already stored from it stays; it is not refreshed.
 - The same terms are why Sony's patch servers and PSN APIs are out (see the top of this file).
+
+## Link-only games and feed health (0.5.0)
+
+Minecraft, Rocket League, Valorant, Fortnite, Astro Bot, Gran Turismo 7, Ghost of Yotei, Wolverine, Alan Wake 2 and Genshin Impact have no readable official patch feed, so they stay link-only: registry `links` give the official site and patch-notes page. Six PS5 games with no history yet pin the official site only; their patch-notes link stays Steam news. See docs/api.md for the run checks.
