@@ -13,6 +13,7 @@
     "test": "node --import tsx --test --experimental-sqlite --no-warnings=ExperimentalWarning \"test/**/*.test.ts\"",
     "confirm": "node --import tsx --no-warnings=ExperimentalWarning src/cli/confirm.ts",
     "ps5-index": "node --import tsx --no-warnings=ExperimentalWarning scripts/ps5-index.ts",
+    "upcoming": "node --import tsx --no-warnings=ExperimentalWarning scripts/upcoming.ts",
     "game-info": "node --import tsx --no-warnings=ExperimentalWarning scripts/game-info.ts"
   },
   "dependencies": {
