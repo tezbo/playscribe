@@ -3,6 +3,7 @@
 //  - no source names or credits in user-facing fields (Terry's rule: verification tags are the only provenance).
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { feedContractProblems } from './contract.ts'
 import { registry as defaultRegistry, steamAppIdOf, type Registry } from './registry.ts'
 
 /** Names of the sources we read, as users would see them. "Steam" is left out: Steam Deck and Steam links are product names. */
@@ -38,5 +39,5 @@ export const feedProblems = (root: string): string[] => {
   const games = readdirSync(dir)
     .filter((f) => f.endsWith('.json'))
     .flatMap((f) => (JSON.parse(readFileSync(join(dir, f), 'utf8')).releases ?? []).flatMap(releaseProblems))
-  return [...games, ...coverageProblems(JSON.parse(readFileSync(join(root, 'v1', 'index.json'), 'utf8')))]
+  return [...games, ...feedContractProblems(root), ...coverageProblems(JSON.parse(readFileSync(join(root, 'v1', 'index.json'), 'utf8')))]
 }
