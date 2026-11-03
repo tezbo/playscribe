@@ -37,6 +37,10 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Playscribe listens only while you hold the button, to hear the game titles you say. Speech is recognised on your device.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Playscribe turns the titles you say into a list of games to add. Recognition happens on your device.</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>PlayscribeAPIBaseURL</key>

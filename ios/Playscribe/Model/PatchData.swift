@@ -79,6 +79,7 @@ struct NoteItem: Codable, Hashable {
         ps5ProOnly = try c.decodeIfPresent(Bool.self, forKey: .ps5ProOnly) ?? false
         spoiler = try c.decodeIfPresent(Bool.self, forKey: .spoiler)
         category = try c.decodeIfPresent(String.self, forKey: .category)
+        pcOnly = try c.decodeIfPresent(Bool.self, forKey: .pcOnly) ?? false
     }
 
     var text: String
@@ -89,6 +90,8 @@ struct NoteItem: Codable, Hashable {
     var spoiler: Bool?
     /// The feed's change group: new, fixed, balance or other (other when unclear). nil on older data.
     var category: String?
+    /// The feed marks a line that is only about PC (docs/api.md); a missing key is false.
+    var pcOnly: Bool = false
 }
 
 struct NoteSection: Codable, Hashable {
@@ -249,6 +252,7 @@ enum PCOnly {
 extension NoteItem {
     /// Applies only to PC: tagged so, or naming PC-only hardware or features.
     var isPCOnly: Bool {
+        if pcOnly { return true }
         if let p = platforms, !p.contains(.ps5) { return true }
         return PCOnly.matches(text)
     }

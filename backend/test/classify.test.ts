@@ -54,7 +54,7 @@ test('notes keep sections, sub-headed items and platform tags', () => {
 [h2]General[/h2][list][*][PC] Fixed DLSS flicker[/list]`)
   assert.deepEqual(notes.map((s) => s.title), ['New features', 'PS5', 'General'])
   assert.deepEqual(notes[0]!.items.map((i) => i.text), ['Animal petting', 'Draught of Mind Rebirth: Forget all your abilities.'])
-  assert.deepEqual(notes[1]!.items[0], { text: 'Fixed HDR on PS5 Pro', platforms: ['ps5'], ps5ProOnly: true, pcOnly: false, category: 'other' })
+  assert.deepEqual(notes[1]!.items[0], { text: 'Fixed HDR on PS5 Pro', platforms: ['ps5'], ps5ProOnly: true, pcOnly: false, category: 'fixed' })
   assert.deepEqual(notes[2]!.items[0]!.platforms, ['pc'])
 })
 
@@ -117,4 +117,24 @@ test('notes lines carry a category from their section title', () => {
   const notes = extractNotes('[h2]New Features[/h2][list][*]Photo mode[/list][h2]Bug Fixes[/h2][list][*]Fixed a door[/list][h2]Balance Changes[/h2][list][*]Sword damage -5%[/list][h2]Misc[/h2][list][*]Credits updated[/list]')
   assert.deepEqual(notes.map((s) => s.items[0]!.category), ['new', 'fixed', 'balance', 'other'])
   assert.equal(tagNotes([{ title: 'Fixes', items: [{ text: 'x', ps5ProOnly: false, pcOnly: false, category: 'other' }] }])[0]!.items[0]!.category, 'fixed')
+})
+
+// Roadmap item 4: accuracy check against real Steam patch notes (Witcher 3 5.01, MH Wilds 1.042, Expedition 33, KCD2, Cyberpunk).
+test('item categories: a generic "Changes" heading defers to the item\'s own first words; named headings still decide', () => {
+  const generic = extractNotes('[list][*]Fixed a crash on load[*]Added a photo mode filter[*]Reduced boss health[*]Quest markers are clearer[/list]')
+  assert.deepEqual(generic[0]!.items.map((i) => i.category), ['fixed', 'new', 'balance', 'other'])
+  const fixes = extractNotes('[h3]Fixes[/h3][list][*]Added missing subtitles[/list]')
+  assert.equal(fixes[0]!.items[0]!.category, 'fixed')
+  assert.deepEqual(tagNotes(generic).flatMap((s) => s.items.map((i) => i.category)), ['fixed', 'new', 'balance', 'other'])
+})
+
+test('pcOnly: PC-specific headings and graphics-driver lines are PC; console-neutral lines are not; stray BBCode is not an item', () => {
+  const witcher = extractNotes('[h3]PC-specific[/h3][list][*]Fixed an issue where the GTAO Quality setting would reset.[/*][*]Fixed Steam Deck crash.[/list][h3]Gameplay[/h3][list][*]Fixed Geralt freezing in a cutscene.[/list]')
+  assert.ok(witcher.every((s) => s.items.every((i) => i.text !== '[/*]' && !i.text.includes('[/*]'))))
+  assert.ok(witcher[0]!.items.every((i) => i.pcOnly))
+  assert.ok(witcher[1]!.items.every((i) => !i.pcOnly))
+  const wilds = extractNotes('[h3]Video Driver Version[/h3][list][*]NVIDIA GeForce: 581.57 or newer[*]AMD Radeon: 25.9.1 or newer[/list]')
+  assert.ok(wilds[0]!.items.every((i) => i.pcOnly))
+  const mixed = extractNotes('[list][*]Improved performance on PC and PS5[*]Fixed a crash on PS5[/list]')
+  assert.ok(mixed[0]!.items.every((i) => !i.pcOnly))
 })

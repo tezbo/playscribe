@@ -425,3 +425,25 @@ final class CaptureTests: XCTestCase {
         shot("add-game-bar")
     }
 }
+
+/// J-1 and J-4: the Latest updates deck. A card opens its update; a page-edge leaf (44 pt, "Update n of N")
+/// brings its card into view. The pose is read from the fold audit by the other tests, so this one
+/// runs in whichever pose the simulator is in.
+@MainActor
+final class LatestUpdatesDeckTests: XCTestCase {
+    func testCardAndLeafTaps() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "library"]
+        app.launch()
+        sleep(4)
+        let leaves = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Update ' AND label CONTAINS ' of '"))
+        if leaves.count > 1 {
+            XCTAssertGreaterThanOrEqual(leaves.element(boundBy: 1).frame.height, 44, "leaf is a 44 pt target")
+            leaves.element(boundBy: 1).tap()
+        }
+        let cards = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'New update,' OR (label CONTAINS ', ' AND NOT label CONTAINS ' of ')"))
+        XCTAssertGreaterThan(cards.count, 0, "deck has a card")
+        cards.firstMatch.tap()
+        XCTAssertTrue(app.descendants(matching: .any)["releaseTitle"].waitForExistence(timeout: 5), "card opens its update")
+    }
+}

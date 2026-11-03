@@ -272,7 +272,68 @@ export const addNews = (db: DB, gameId: string, post: { url: string; title: stri
 
 export const newsOf = (db: DB, gameId: string, limit = 20) =>
   (db.prepare('SELECT title, published_at, url FROM news WHERE game_id = ? ORDER BY published_at DESC, url LIMIT ?').all(gameId, limit) as { title: string; published_at: string; url: string }[]).map((n) => ({
+    gameId,
     title: n.title,
     date: n.published_at,
     url: n.url,
   }))
+
+/**
+ * Coverage audit, 2026-11-03: Steam patches dated before a game's PS5 launch were flagged live on PS5 when the
+ * row was made before IGDB gave the PS5 date. Only rows taken as out on PS5 from Steam alone (`assumed`) are
+ * dropped; anything an official or press source said about PS5 stays. Safe to run every ingest.
+ */
+export const dropPreLaunchPs5 = (db: DB) =>
+  Number(
+    db
+      .prepare(
+        `DELETE FROM platform_releases WHERE platform = 'ps5' AND verification = 'assumed' AND release_id IN (
+           SELECT r.id FROM releases r JOIN games g ON g.id = r.game_id
+           WHERE g.ps5_release IS NOT NULL AND substr(r.announced_at, 1, 10) < g.ps5_release)`,
+      )
+      .run().changes,
+  )
+
+/** "1.4" and "1.4.0" are the same patch: trailing zero parts are dropped, keeping two parts ("2.0" stays "2.0"). */
+export const versionIdentity = (key: string) => {
+  const parts = key.toLowerCase().split('.')
+  if (!parts.every((p) => /^\d+$/.test(p))) return key.toLowerCase()
+  while (parts.length > 2 && /^0+$/.test(parts[parts.length - 1]!)) parts.pop()
+  return parts.join('.')
+}
+
+/**
+ * The stored release that is the same patch under another spelling of its version ("Update 1.4" from the press,
+ * "Update 1.4.0" from Steam), announced within 3 days. Months apart they are different patches and stay separate.
+ */
+export const equivalentRelease = (db: DB, gameId: string, versionKey: string, announcedAt: string): { id: string; version_key: string } | undefined => {
+  const want = versionIdentity(versionKey)
+  return (
+    db
+      .prepare(`SELECT id, version_key FROM releases WHERE game_id = ? AND version_key != ? AND ABS(julianday(announced_at) - julianday(?)) <= 3 ORDER BY ABS(julianday(announced_at) - julianday(?))`)
+      .all(gameId, versionKey, announcedAt, announcedAt) as { id: string; version_key: string }[]
+  ).find((r) => versionIdentity(r.version_key) === want)
+}
+
+/**
+ * Repair for duplicates stored before equivalentRelease existed: a press-only (silent) release that is the same patch as a
+ * real one is folded into it (its reported PS5 version and size, its source) and removed. Safe to run every ingest.
+ */
+export const mergeSilentDuplicates = (db: DB) => {
+  let merged = 0
+  const silent = db.prepare(`SELECT * FROM releases WHERE kind = 'silent'`).all() as Row[]
+  for (const s of silent) {
+    const target = equivalentRelease(db, s.game_id, s.version_key, s.announced_at)
+    const t = target && (db.prepare('SELECT * FROM releases WHERE id = ?').get(target.id) as Row)
+    if (!t || t.kind === 'silent') continue
+    const ps5 = getPlatformRow(db, s.id, 'ps5')
+    if (ps5) upsertPlatform(db, t.id, 'ps5', { status: ps5.status, verification: 'reported', version: json(ps5.version, null) ?? undefined, sizeBytes: json(ps5.size_bytes, null) ?? undefined })
+    const sources = new Set<string>([...json<string[]>(t.source_ids, []), ...json<string[]>(s.source_ids, [])])
+    db.prepare('UPDATE releases SET source_ids = ?, updated_at = ? WHERE id = ?').run(JSON.stringify([...sources]), now(), t.id)
+    db.prepare('UPDATE review_items SET release_id = ? WHERE release_id = ?').run(t.id, s.id)
+    db.prepare('DELETE FROM platform_releases WHERE release_id = ?').run(s.id)
+    db.prepare('DELETE FROM releases WHERE id = ?').run(s.id)
+    merged++
+  }
+  return merged
+}

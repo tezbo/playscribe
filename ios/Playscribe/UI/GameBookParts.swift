@@ -26,6 +26,7 @@ struct PageView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 PageArtBand(gameID: gameID)
+                StaleHint()
                 if withContents, let g = model.game(gameID) {
                     VStack(alignment: .leading, spacing: 6) {
                         GameTitleWithStatus(gameID: gameID, name: g.name)
@@ -229,8 +230,7 @@ struct NoNotesPage: View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
                 Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
-                Text("No updates yet. Checked \(model.lastChecked.formatted(.relative(presentation: .named))).")
-                    .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                NoUpdatesLine()
             }
             GameBasicsView(game: game)
         }
@@ -292,6 +292,18 @@ struct GameBasicsView: View {
                     .accessibilityLabel("Play \(v.name)")
                     .tappableFrame()
                 }
+            }
+            // The slot is always reserved: when the details did not load, say so and offer Retry.
+            if info == nil, let id = game.igdbID, store.failedShards.contains(id % 100) {
+                HStack {
+                    Text("Details need a connection").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Spacer(minLength: 0)
+                    Button("Retry") { Task { await store.load(igdbID: id) } }
+                        .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                        .frame(minHeight: 44).tappableFrame()
+                }
+                .padding(.horizontal, 14)
+                .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             }
             // Closed has no Contents panel, so the links sit with the basics.
             if duo.pose == .closed { GameLinks(game: game) }
@@ -440,11 +452,10 @@ struct NotesSearchField: View {
     var gameID: String
     var body: some View {
         @Bindable var model = model
-        let short = model.game(gameID).map(GameBookView.shortName) ?? "this game"
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                TextField(model.noteScope == .thisGame ? "Search \(short)'s notes" : "Search all my games' notes", text: $model.noteQuery)
+                TextField(model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes", text: $model.noteQuery)
                     .autocorrectionDisabled()
                     .submitLabel(.search)
                     .onSubmit { model.rememberSearch(model.noteQuery) }
@@ -472,10 +483,14 @@ struct InlineNoteResults: View {
     var body: some View {
         let hits = model.noteHits(model.noteQuery, scope: model.noteScope, gameID: gameID)
         VStack(alignment: .leading, spacing: 6) {
+            if !hits.isEmpty {
+                Text("\(hits.count) result\(hits.count == 1 ? "" : "s")")
+                    .font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    .accessibilityLabel("\(hits.count) results")
+            }
             if hits.isEmpty {
-                let name = model.game(gameID)?.name ?? "this game"
-                Text(model.noteScope == .thisGame ? "No mention of '\(model.noteQuery)' in \(name)'s PS5 notes" : "No mention of '\(model.noteQuery)' in your games' PS5 notes")
-                    .font(PlayscribeFont.subheadline)
+                Text(model.noteScope == .thisGame ? "Nothing in this game's notes matches" : "Nothing in your games' notes matches")
+                    .font(PlayscribeFont.headline)
                 if model.noteScope == .thisGame {
                     Button("Search all my games") { model.noteScope = .allGames }.hitTarget()
                 }
@@ -489,10 +504,10 @@ struct InlineNoteResults: View {
                     model.noteQuery = ""
                 } label: {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(h.line).font(PlayscribeFont.subheadline).lineLimit(3)
+                        Text(NoteHit.bolded(h.line, query: model.noteQuery)).font(PlayscribeFont.subheadline).lineLimit(3)
                         HStack(spacing: 6) {
                             Text(h.release.displayName).font(PlayscribeFont.caption)
-                            Text(h.pcOnly ? "PC-specific" : h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                            Text(h.pcOnly ? "PC only" : h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                         }
                     }
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)

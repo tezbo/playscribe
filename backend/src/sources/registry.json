@@ -1,5 +1,5 @@
 {
-  "$comment": "Per-game official source registry. See docs/ps5-patch-data.md. trust=official can set PS5 status; secondary can only mark 'reported'; a Steam patch is taken as out on PS5 too (verification assumed) unless steamIsPcPort is set. fetch=manual means the site blocks automated fetches; do not work around it.",
+  "$comment": "Per-game official source registry. See docs/ps5-patch-data.md. trust=official can set PS5 status; secondary can only mark 'reported'; a Steam patch is taken as out on PS5 too (verification assumed) unless steamIsPcPort is set. fetch=manual means the site blocks automated fetches; do not work around it. playstation-blog is manual on purpose (2026-11-03, Theo): playstation.com's terms bar automated access; re-enable only with written permission (docs/ps5-patch-data.md).",
   "version": 1,
   "shared": [
     {
@@ -10,7 +10,7 @@
         "ps5"
       ],
       "trust": "official",
-      "fetch": "auto",
+      "fetch": "manual",
       "ps5Signal": "always"
     },
     {
@@ -200,7 +200,11 @@
       ],
       "igdbId": 1905,
       "ps5TitleIds": [],
-      "sources": []
+      "sources": [],
+      "links": {
+        "official": "https://www.fortnite.com/",
+        "patchNotes": "https://www.fortnite.com/news"
+      }
     },
     "cod-mw4": {
       "name": "Call of Duty: Modern Warfare 4",
@@ -262,7 +266,11 @@
       ],
       "igdbId": 135400,
       "ps5TitleIds": [],
-      "sources": []
+      "sources": [],
+      "links": {
+        "official": "https://www.minecraft.net/en-us",
+        "patchNotes": "https://www.minecraft.net/en-us/article"
+      }
     },
     "cyberpunk-2077": {
       "name": "Cyberpunk 2077",
@@ -391,7 +399,11 @@
       "name": "Rocket League",
       "igdbId": 11198,
       "ps5TitleIds": [],
-      "sources": []
+      "sources": [],
+      "links": {
+        "official": "https://www.rocketleague.com/en/",
+        "patchNotes": "https://www.rocketleague.com/en/news"
+      }
     },
     "expedition-33": {
       "name": "Clair Obscur: Expedition 33",
@@ -440,7 +452,11 @@
       ],
       "igdbId": 119277,
       "ps5TitleIds": [],
-      "sources": []
+      "sources": [],
+      "links": {
+        "official": "https://genshin.hoyoverse.com/en/",
+        "patchNotes": "https://genshin.hoyoverse.com/en/news"
+      }
     },
     "space-marine-2": {
       "name": "Warhammer 40,000: Space Marine II",
@@ -622,7 +638,10 @@
           "fetch": "auto",
           "ps5Signal": "explicit"
         }
-      ]
+      ],
+      "links": {
+        "official": "https://www.playstation.com/en-us/games/marvels-spider-man-2/"
+      }
     },
     "hogwarts-legacy": {
       "name": "Hogwarts Legacy",
@@ -809,7 +828,11 @@
       ],
       "igdbId": 101006,
       "ps5TitleIds": [],
-      "sources": []
+      "sources": [],
+      "links": {
+        "official": "https://www.playstation.com/en-us/games/gran-turismo-7/",
+        "patchNotes": "https://www.gran-turismo.com/gb/gt7/news/"
+      }
     },
     "yotei": {
       "name": "Ghost of Yotei",
@@ -818,13 +841,21 @@
       ],
       "igdbId": 317627,
       "ps5TitleIds": [],
-      "sources": []
+      "sources": [],
+      "links": {
+        "official": "https://www.playstation.com/en-us/games/ghost-of-yotei/",
+        "patchNotes": "https://www.playstation.com/en-us/games/ghost-of-yotei/"
+      }
     },
     "astro-bot": {
       "name": "Astro Bot",
       "igdbId": 303811,
       "ps5TitleIds": [],
-      "sources": []
+      "sources": [],
+      "links": {
+        "official": "https://www.playstation.com/en-us/games/astro-bot/",
+        "patchNotes": "https://www.playstation.com/en-us/games/astro-bot/"
+      }
     },
     "the-finals": {
       "name": "The Finals",
@@ -884,7 +915,11 @@
       "name": "Valorant",
       "igdbId": 126459,
       "ps5TitleIds": [],
-      "sources": []
+      "sources": [],
+      "links": {
+        "official": "https://playvalorant.com/en-us/",
+        "patchNotes": "https://playvalorant.com/en-us/news/game-updates/"
+      }
     },
     "ff7-rebirth": {
       "name": "Final Fantasy VII Rebirth",
@@ -908,7 +943,10 @@
           "fetch": "auto",
           "ps5Signal": "explicit"
         }
-      ]
+      ],
+      "links": {
+        "official": "https://www.playstation.com/en-us/games/final-fantasy-vii-rebirth/"
+      }
     },
     "stellar-blade": {
       "name": "Stellar Blade",
@@ -930,7 +968,10 @@
           "fetch": "auto",
           "ps5Signal": "explicit"
         }
-      ]
+      ],
+      "links": {
+        "official": "https://www.playstation.com/en-us/games/stellar-blade/"
+      }
     },
     "death-stranding-2": {
       "name": "Death Stranding 2: On the Beach",
@@ -952,7 +993,10 @@
           "fetch": "auto",
           "ps5Signal": "explicit"
         }
-      ]
+      ],
+      "links": {
+        "official": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/"
+      }
     },
     "alan-wake-2": {
       "name": "Alan Wake II",
@@ -961,7 +1005,11 @@
       ],
       "igdbId": 185246,
       "ps5TitleIds": [],
-      "sources": []
+      "sources": [],
+      "links": {
+        "official": "https://www.alanwake.com/",
+        "patchNotes": "https://www.alanwake.com/news"
+      }
     },
     "007-first-light": {
       "name": "007 First Light",
@@ -1009,7 +1057,11 @@
       ],
       "igdbId": 168667,
       "ps5TitleIds": [],
-      "sources": []
+      "sources": [],
+      "links": {
+        "official": "https://www.playstation.com/en-us/games/marvels-wolverine/",
+        "patchNotes": "https://www.playstation.com/en-us/games/marvels-wolverine/"
+      }
     },
     "enshrouded": {
       "name": "Enshrouded",
@@ -1228,7 +1280,10 @@
         "Final Fantasy 16",
         "FF16",
         "FFXVI"
-      ]
+      ],
+      "links": {
+        "official": "https://www.square-enix-games.com/en_GB/games/final-fantasy-xvi"
+      }
     },
     "borderlands-4": {
       "name": "Borderlands 4",
@@ -1322,7 +1377,10 @@
       ],
       "aliases": [
         "Ghost of Tsushima Director's Cut"
-      ]
+      ],
+      "links": {
+        "official": "https://www.playstation.com/en-us/games/ghost-of-tsushima/"
+      }
     },
     "rematch": {
       "name": "Rematch",
@@ -1340,6 +1398,327 @@
           "fetch": "auto",
           "ps5Signal": "explicit"
         }
+      ]
+    },
+    "dragons-dogma-2": {
+      "name": "Dragon's Dogma 2",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "dragons-dogma-2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2054970/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
+      "aliases": [
+        "Dragons Dogma 2"
+      ]
+    },
+    "mortal-kombat-1": {
+      "name": "Mortal Kombat 1",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "mortal-kombat-1-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1971870/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
+      "aliases": [
+        "MK1"
+      ]
+    },
+    "persona-3-reload": {
+      "name": "Persona 3 Reload",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "persona-3-reload-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2161700/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "re4": {
+      "name": "Resident Evil 4",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "re4-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2050650/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
+      "aliases": [
+        "RE4",
+        "Resident Evil 4 Remake"
+      ]
+    },
+    "re-village": {
+      "name": "Resident Evil Village",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "re-village-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1196590/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
+      "aliases": [
+        "RE Village",
+        "RE8"
+      ]
+    },
+    "star-wars-outlaws": {
+      "name": "Star Wars Outlaws",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "star-wars-outlaws-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2842040/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "metaphor-refantazio": {
+      "name": "Metaphor: ReFantazio",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "metaphor-refantazio-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2679460/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
+      "aliases": [
+        "Metaphor ReFantazio"
+      ]
+    },
+    "cult-of-the-lamb": {
+      "name": "Cult of the Lamb",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "cult-of-the-lamb-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1313140/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "stardew-valley": {
+      "name": "Stardew Valley",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "stardew-valley-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/413150/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "mh-world": {
+      "name": "Monster Hunter: World",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "mh-world-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/582010/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
+      "aliases": [
+        "Monster Hunter World",
+        "MH World"
+      ]
+    },
+    "it-takes-two": {
+      "name": "It Takes Two",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "it-takes-two-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1426210/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "ready-or-not": {
+      "name": "Ready or Not",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "ready-or-not-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1144200/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "payday-3": {
+      "name": "PAYDAY 3",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "payday-3-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1272080/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
+      "aliases": [
+        "Payday 3"
+      ]
+    },
+    "remnant-2": {
+      "name": "Remnant II",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "remnant-2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1282100/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
+      "aliases": [
+        "Remnant 2"
+      ]
+    },
+    "star-wars-jedi-survivor": {
+      "name": "Star Wars Jedi: Survivor",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "star-wars-jedi-survivor-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1774580/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
+      "aliases": [
+        "Jedi Survivor"
+      ]
+    },
+    "hunt-showdown": {
+      "name": "Hunt: Showdown 1896",
+      "igdbId": null,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "hunt-showdown-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/594650/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
+      "aliases": [
+        "Hunt Showdown"
       ]
     }
   }

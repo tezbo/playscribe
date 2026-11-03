@@ -189,7 +189,27 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 
 ## 0.5.0 news (roadmap 17)
 
-- Allowlist: `backend/src/sources/news-sources.json`. Only the game's own Steam news feed and the PlayStation Blog RSS feed. Press sites (Push Square, PlayStation LifeStyle) are facts-only for patches and never feed news.
+- Allowlist: `backend/src/sources/news-sources.json`. Only the game's own Steam news feed. The PlayStation Blog is not on it (see the open check below). Press sites (Push Square, PlayStation LifeStyle) are facts-only for patches and never feed news.
 - Stored: title, date, link (`news` table). Never body text. The source id stays in the database for audit and is not exported. The UI shows no source names or credits.
-- Terms: Steam's `ISteamNews` is public and already used. The PlayStation Blog's robots.txt allows `/feed/` (Crawl-delay 5, respected), checked 2026-11-03; its written terms of use were not machine-checked, so Theo is asked to confirm before App Store submission.
+- Terms: Steam's `ISteamNews` is public and already used.
 - Patch posts are not news; they become releases as before.
+
+### Open check before App Store submission: PlayStation Blog terms
+
+The PlayStation Blog's robots.txt allows `/feed/` (Crawl-delay 5), but playstation.com's website terms of use (read 2026-11-03, section on text and data mining) say users shall not use any "robot", "bot", "spider", "scraper" or other automated tool to access, obtain, copy, monitor or republish any portion of the site or its content. It is not clear that a public RSS feed is carved out, or that blog.playstation.com falls under those terms. Until Terry or Theo decides:
+
+- The PlayStation Blog is not used for news headlines, and (below) not polled for patches either.
+- It is no longer polled at all: `playstation-blog` in `src/sources/registry.json` is `fetch: manual` (Theo's call, 2026-11-03). Re-enable only with written permission from Sony. Nothing else depends on it: PS5 versions and live times come from studio posts, Steam posts and other allowed sources, and a release's `links.ps5Page` comes from the Steam post or from a studio page, or is added by hand. Data already stored from it stays; it is not refreshed.
+- The same terms are why Sony's patch servers and PSN APIs are out (see the top of this file).
+
+## Link-only games and feed health (0.5.0)
+
+Minecraft, Rocket League, Valorant, Fortnite, Astro Bot, Gran Turismo 7, Ghost of Yotei, Wolverine, Alan Wake 2 and Genshin Impact have no readable official patch feed, so they stay link-only: registry `links` give the official site and patch-notes page. Six PS5 games with no history yet pin the official site only; their patch-notes link stays Steam news. See docs/api.md for the run checks.
+
+## Note categories and pcOnly accuracy (0.5.0 item 4)
+
+Checked against the latest patch posts of 22 games on Steam. A heading that names a kind of change (Fixes, Balance, New, Content) sets the category of its items. Under a generic heading ("Changes", "Patch Notes"), an item's own first word decides: Fixed/Resolved is `fixed`, Added/New/Improved/Implemented is `new`, Adjusted/Increased/Reduced/Reworked is `balance`, anything else stays `other`. `pcOnly` held up: PC-specific headings, graphics-driver versions, keybinds and Steam Controller lines tag PC; lines naming a console never do. Stray `[/*]` markup no longer becomes a note item.
+
+## One patch, one release (0.5.0 duplicate audit)
+
+Audit of the live feed (1,298 releases; the five games with most releases checked first, then every game): no repeated ids, and same-day pairs such as Hotfix 10.4.1 and Update 10.4.0 are distinct patches. One real duplicate: Control Resonant `1.4` (press only) and `1.4.0` (Steam), three hours apart. Cause: the version key was the literal text, so "1.4" and "1.4.0" differed. Now trailing zero parts are ignored when matching (`versionIdentity`: `1.4.0` = `1.4`, `2.0` stays `2.0`), but only within 3 days of the stored release, so Dead by Daylight "Patch 10.2" and "Patch 10.2.0", months apart, stay separate (also checked: 5 other pairs in the feed are months apart). A press report or studio post joins the stored release and adds its source and PS5 facts. `mergeSilentDuplicates` folds a press-only duplicate stored earlier into the real release on each ingest.

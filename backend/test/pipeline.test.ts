@@ -5,6 +5,7 @@ import { openDb } from '../src/db.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
+import * as store from '../src/store.ts'
 import { getRelease, newsOf, promoteAnnounced } from '../src/store.ts'
 import { hotGameIds } from '../src/hot.ts'
 import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpers.ts'
@@ -253,5 +254,72 @@ test('roadmap 17: official non-patch posts become news headlines (title, date, u
   assert.ok(art)
   assert.deepEqual(Object.keys(art).sort(), ['game_id', 'published_at', 'source_id', 'title', 'url'])
   assert.ok(!rows.some((r) => /Hotfix|Update 1\.1$/.test(r.title)))
-  assert.ok(newsOf(db, 'dawnwalker').every((n) => Object.keys(n).sort().join() === 'date,title,url'))
+  assert.ok(newsOf(db, 'dawnwalker').every((n) => Object.keys(n).sort().join() === 'date,gameId,title,url' && n.gameId === 'dawnwalker'))
+})
+
+test('coverage audit: a Steam-assumed PS5 row dated before the PS5 launch is dropped; official rows stay', async () => {
+  const { db } = await setup()
+  const row = (id: string) => db.prepare("SELECT 1 FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").get(id)
+  assert.ok(row('dawnwalker@1.1.1'))
+  db.prepare("UPDATE games SET ps5_release = '2099-01-01' WHERE id = 'dawnwalker'").run()
+  const n = store.dropPreLaunchPs5(db)
+  assert.ok(n >= 1)
+  assert.equal(row('dawnwalker@1.1.1'), undefined)
+  assert.ok(row('dawnwalker@1.1'), 'a press or official PS5 row is kept')
+  assert.equal(store.dropPreLaunchPs5(db), 0)
+})
+
+// Roadmap duplicate audit: the same patch seen as "1.4" by the press and "1.4.0" by Steam is one release.
+const spelling = async (steamTitle: string, pressTitle: string, steamHoursAgo = 30, pressHoursAgo = 28) => {
+  const db = openDb(':memory:')
+  const fetchFn = fakeFetch({
+    'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews([{ gid: '1', title: steamTitle, date: recent(steamHoursAgo), contents: 'Notes.[list][*]Fixed a crash[/list]', tags: ['patchnotes'] }]),
+    'https://www.pushsquare.com/news/dw': pressArticle(pressTitle, 'The patch is 3.5GB on PS5 and brings it to version 01.004.000.'),
+    'https://www.pushsquare.com/tags/updates': pressIndexPage([{ title: pressTitle, path: 'news/dw', date: recent(pressHoursAgo), tags: ['PS5', 'Dawnwalker', 'Updates'] }]),
+  })
+  const deps = { db, fetchFn, igdb: null }
+  await seedGames(deps)
+  await runIngest(deps)
+  return db
+}
+const dawnwalkerIds = (db: ReturnType<typeof openDb>) => (db.prepare("SELECT id FROM releases WHERE game_id = 'dawnwalker' ORDER BY id").all() as { id: string }[]).map((r) => r.id)
+
+test('one patch under two spellings of its version is one release; its PS5 facts and sources fold in', async () => {
+  const db = await spelling('The Blood of Dawnwalker - Update 1.4.0', 'Dawnwalker PS5 Update 1.4 Out Now')
+  assert.deepEqual(dawnwalkerIds(db), ['dawnwalker@1.4.0'])
+  const r = getRelease(db, 'dawnwalker@1.4.0')!
+  assert.deepEqual(r.sourceIds.sort(), ['dawnwalker-steam', 'pushsquare'])
+  const ps5 = r.platforms.find((p) => p.platform === 'ps5')!
+  assert.equal(ps5.version?.value, '01.004.000')
+  assert.equal(ps5.verification, 'reported')
+})
+
+test('the same spelling difference with the press first, and a studio post later, still gives one release', async () => {
+  const db = await spelling('The Blood of Dawnwalker - Update 1.4.0', 'Dawnwalker PS5 Update 1.4 Out Now', 20, 30)
+  assert.equal(dawnwalkerIds(db).length, 1)
+})
+
+test('a press-only duplicate stored before this rule is folded into the real release', async () => {
+  const db = await spelling('The Blood of Dawnwalker - Update 1.4.0', 'Dawnwalker PS5 Update 1.4 Out Now')
+  const real = getRelease(db, 'dawnwalker@1.4.0')!
+  const t = new Date().toISOString()
+  db.prepare(`INSERT INTO releases (id, game_id, version_key, display_name, kind, kind_basis, announced_at, notes, source_ids, content_hash, created_at, updated_at) VALUES ('dawnwalker@1.4', 'dawnwalker', '1.4', 'Update 1.4', 'silent', 'inferred', ?, '[]', '["pushsquare"]', 'x', ?, ?)`).run(real.announcedAt, t, t)
+  db.prepare(`INSERT INTO platform_releases (release_id, platform, status, version, size_bytes, live_at, bundles, verification, updated_at) VALUES ('dawnwalker@1.4', 'ps5', 'live', NULL, NULL, NULL, '[]', 'reported', ?)`).run(t)
+  assert.equal(store.mergeSilentDuplicates(db), 1)
+  assert.deepEqual(dawnwalkerIds(db), ['dawnwalker@1.4.0'])
+  assert.equal(store.mergeSilentDuplicates(db), 0)
+})
+
+test('"Patch 10.2" and "Patch 10.2.0" months apart are different patches; "2.0" is not "2"', async () => {
+  const { versionIdentity, equivalentRelease } = store
+  assert.equal(versionIdentity('1.4.0'), versionIdentity('1.4'))
+  assert.equal(versionIdentity('1.4.0.0'), '1.4')
+  assert.equal(versionIdentity('2.0'), '2.0')
+  assert.notEqual(versionIdentity('1.4.1'), versionIdentity('1.4'))
+  const db = openDb(':memory:')
+  await seedGames({ db, fetchFn: fakeFetch({}), igdb: null })
+  const t = new Date().toISOString()
+  db.prepare(`INSERT INTO releases (id, game_id, version_key, display_name, kind, kind_basis, announced_at, notes, source_ids, content_hash, created_at, updated_at) VALUES ('dawnwalker@10.2.0', 'dawnwalker', '10.2.0', 'Patch 10.2.0', 'patch', 'studio', '2026-09-15T15:07:00.000Z', '[]', '[]', 'x', ?, ?)`).run(t, t)
+  assert.equal(equivalentRelease(db, 'dawnwalker', '10.2', '2026-10-29T15:06:00.000Z'), undefined)
+  assert.equal(equivalentRelease(db, 'dawnwalker', '10.2', '2026-09-16T15:06:00.000Z')?.id, 'dawnwalker@10.2.0')
 })
