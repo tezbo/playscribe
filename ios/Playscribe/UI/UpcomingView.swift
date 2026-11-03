@@ -22,9 +22,9 @@ extension AppModel {
         return Self.catalogueUpcoming.filter { g in g.igdbID.map { !inLibrary.contains($0) } ?? true }
     }
 
-    private static let catalogueUpcoming: [CatalogGame] = {
+    @MainActor private static let catalogueUpcoming: [CatalogGame] = {
         let index = PS5Index.shared
-        return index.entries.map(index.game).filter(\.isUpcoming)
+        return index.entries.map { index.game($0) }.filter(\.isUpcoming)
             .sorted { ($0.releaseDate?.isoDay ?? .distantFuture) < ($1.releaseDate?.isoDay ?? .distantFuture) }
             .prefix(60).map { $0 }
     }()
