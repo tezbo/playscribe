@@ -1,5 +1,6 @@
 // One poll against the database at DATABASE_PATH.
-//   npm run ingest [-- --force] [-- --export <dir>] [-- --backfill 2024-01-01]
+//   npm run ingest [-- --hot] [-- --force] [-- --export <dir>] [-- --backfill 2024-01-01]
+// --hot polls only the hot set (src/hot.ts) every 25 minutes, with no shared press sources.
 // --export writes the static feed (src/export.ts) after polling. --backfill reads every source's
 // history back to that date (Steam's last 100 posts per game, the press update list page by page,
 // at the site's Crawl-delay); it implies --force.
@@ -22,7 +23,7 @@ const igdb = config.twitch.clientId && config.twitch.clientSecret ? new Igdb(con
 const deps = { db, fetchFn: fetch, igdb, log: console.log }
 await seedGames(deps)
 const until = args.includes('--backfill') ? new Date(args[args.indexOf('--backfill') + 1]!).toISOString() : undefined
-const summary = await runIngest(deps, { force: args.includes('--force') || !!until, until })
+const summary = await runIngest(deps, { force: args.includes('--force') || !!until, until, hot: args.includes('--hot') })
 console.log(JSON.stringify(summary, null, 2))
 const { keyId, teamId, key, topic } = config.apns
 const apns = process.env.PUSH_ENABLED === '1' && keyId && teamId && key ? new Apns({ keyId, teamId, key, topic }) : null

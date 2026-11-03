@@ -1,3 +1,4 @@
+import { hotGameIds, HOT_POLL_MS } from '../hot.ts'
 import { now, tx, type DB } from '../db.ts'
 import { Blocked, allowedByRobots, type FetchFn } from '../http.ts'
 import { registry, type SourceDef } from '../registry.ts'
@@ -120,11 +121,11 @@ export const seedGames = async (deps: IngestDeps) => {
   }
 }
 
-const due = (db: DB, s: SourceDef, force: boolean) => {
+const due = (db: DB, s: SourceDef, force: boolean, minMs = MIN_POLL_MS) => {
   const st = db.prepare('SELECT * FROM source_state WHERE source_id = ?').get(s.id) as Record<string, any> | undefined
   if (s.fetch !== 'auto' || st?.blocked) return false
   if (force) return true
-  return !st?.last_fetched_at || Date.now() - Date.parse(st.last_fetched_at) >= MIN_POLL_MS
+  return !st?.last_fetched_at || Date.now() - Date.parse(st.last_fetched_at) >= minMs
 }
 
 const recordState = (db: DB, sourceId: string, status: number, error: string | null, blocked = false) =>
@@ -271,15 +272,18 @@ export interface IngestOpts {
   force?: boolean
   /** Backfill: read each source's history back to this date (Steam's last 100 posts, press list pages). */
   until?: string
+  /** Poll only the hot set (hot.ts), at the shorter hot interval, and skip the shared press sources. */
+  hot?: boolean
 }
 
 export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promise<IngestSummary> => {
   const summary: IngestSummary = { polled: [], skipped: [], errors: [], created: [], revised: [], review: 0 }
-  const games = trackedGames(deps.db)
+  const hot = hotGameIds(deps.db)
+  const games = trackedGames(deps.db).filter((g) => !opts.hot || hot.has(g.id))
 
   for (const game of games) {
     for (const s of sourcesFor(game)) {
-      if (!due(deps.db, s, !!opts.force)) {
+      if (!due(deps.db, s, !!opts.force, hot.has(game.id) ? HOT_POLL_MS : MIN_POLL_MS)) {
         summary.skipped.push(s.id)
         continue
       }
@@ -294,7 +298,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
     }
   }
 
-  for (const s of registry.shared) {
+  for (const s of opts.hot ? [] : registry.shared) {
     if (!due(deps.db, s, !!opts.force)) {
       summary.skipped.push(s.id)
       continue

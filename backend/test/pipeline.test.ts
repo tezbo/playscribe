@@ -6,6 +6,7 @@ import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
 import { getRelease, promoteAnnounced } from '../src/store.ts'
+import { hotGameIds } from '../src/hot.ts'
 import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpers.ts'
 
 const recent = (h: number) => new Date(Date.now() - h * 3600_000).toISOString()
@@ -230,4 +231,17 @@ test('roadmap 9: checkedAt follows the latest fetch, and a PC number never reach
   await runIngest(deps)
   assert.ok(ps5().liveAt!.checkedAt > t0)
   assert.equal(ps5().version, null)
+})
+
+test('roadmap 11: the hot set is the games with a patch in the last 14 days plus the pinned list; a hot run skips the rest', async () => {
+  const { db, deps } = await setup()
+  const hot = hotGameIds(db, new Date(), ['yotei'])
+  assert.ok(hot.has('yotei') && hot.has('dawnwalker'))
+  assert.ok(hotGameIds(db, new Date(Date.now() + 40 * 86400e3), []).size === 0)
+  assert.equal(hotGameIds(db, new Date(), ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm']).size, 12)
+  // 30 minutes later a hot game's sources are due again; a cold game's and the shared press sources are not.
+  db.prepare("UPDATE source_state SET last_fetched_at = ?").run(new Date(Date.now() - 30 * 60_000).toISOString())
+  const r = await runIngest(deps, { hot: true })
+  assert.ok(r.polled.some((id: string) => id.startsWith('dawnwalker')))
+  assert.ok(!r.polled.some((id: string) => id === 'pushsquare-updates'))
 })
