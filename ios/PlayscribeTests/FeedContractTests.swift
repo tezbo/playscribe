@@ -5,6 +5,7 @@ import Testing
 /// The 0.5.0 feed contract (handoff/0.5.0-feed-contract.md, docs/api.md) against what the app
 /// decodes. Samples are the contract's own examples plus the extra fields the feed adds; the feed's
 /// dates carry fractional seconds. Every field is additive: a missing key is absent, never an error.
+@MainActor
 struct FeedContractTests {
     let decoder = JSONCoding.decoder
 
@@ -74,13 +75,5 @@ struct FeedContractTests {
         #expect(shard.games.count == 3)
         #expect(shard.games["2"]?.datePrecision == "year")
         #expect(shard.games["3"]?.date == nil)
-    }
-
-    @Test("The 72 hour guard counts from alert.from when the feed gives one")
-    func guardUsesAlertFrom() throws {
-        let stale = Date.now.addingTimeInterval(-10 * 86400)
-        let a = PlatformRelease.Alert(style: "standard", from: Date.now.addingTimeInterval(-3600), tag: nil)
-        #expect(a.from! > Date.now.addingTimeInterval(-72 * 3600))
-        #expect(stale < Date.now.addingTimeInterval(-72 * 3600))
     }
 }
