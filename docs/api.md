@@ -114,6 +114,23 @@ The local server has the same operations under `/v1/admin`, with `Authorization:
 
 Each ingest run reports a source that has failed three polls in a row (`source_state.fail_streak`) as an error annotation and in the workflow summary. After export it checks the feed: a PC version is never the PS5 version, no source names appear in user-facing text, and every game in `v1/index.json` has a release or an official link. A failed check fails the run before the feed is published. Games with no readable official source carry `links` in `sources/registry.json` (official site, patch-notes page), which overrides IGDB's in `info/<n>.json`.
 
+## Every event the feed can raise (0.5.0)
+
+The app holds follows on the device and reads static JSON, so an "event" is a change it detects in a file it already fetches. Nothing is pushed from the server while push is parked.
+
+| Event | Where it appears | Fields the app reads | When it fires | 72 h rule |
+|---|---|---|---|---|
+| **Update live on PS5** | `latest.json`, `games/<id>.json`: a release whose PS5 `PlatformRelease` has `alert` | `alert.style` (`standard`), `alert.from`, `liveAt`, `verification` (`official`, `assumed`, `reported`), release `id`, `gameId`, `kind`, `displayName`, `notes` | A followed game gains a PS5 row with `status: live` and an `alert` the device has not alerted for. One alert per release id, ever. A press-only report has no `alert`. | Skipped when `alert.from` (else `liveAt`) is over 72 h old. The release is then marked read. |
+| **Console-later update goes live** | Same release, later: PS5 `status` moves `announced` to `live`, `alert` appears | `alert.from` = the moment it went live (about a week after Steam), `liveAt` stays Steam's date | A Steam post said consoles get it later; a week on the backend takes it as live | Counted from `alert.from`, so it alerts once, on time, though Steam posted it earlier. |
+| **Notes revised** | Same release `id`, higher `revision` and new `updatedAt` | `revision`, `notes` | A source edits its post | No alert. The app refreshes the page. |
+| **PS5 fact confirmed** | Same release: PS5 `verification` moves to `official` or `reported` | `version`, `sizeBytes`, `verification` | A studio post or person confirms | No alert (the update alerted when it went live). |
+| **Known issue opened or addressed** | `games/<id>.json` `issues[]` | `id` (stable), `text`, `status` (`open`, `addressed`), `firstReleaseId`, `addressedBy`, `addressedAt` | An issue appears in a release's "Known issues"; a later release's fixes mention it | Proposed for the app (not built yet): alert a followed issue once when `addressedAt` is within 72 h; an older one just shows as addressed. |
+| **Release day** | `upcoming/events.json` `releaseDay[]` (and `upcoming/<n>.json` `status: released`) | `igdbId`, `name`, `date` | A followed upcoming game's exact PS5 date has come | Listed while the date is within 72 h (kept 3 days); the app should alert once per game (not built yet). |
+| **Release date firmed or moved** | `upcoming/<n>.json` entry changes `datePrecision` or `date` | `date`, `datePrecision` (`day`, `month`, `quarter`, `year`, `tbd`), `status` (`announced`, `dated`, `released`) | IGDB's PS5 date gains or changes precision | No alert; shown on the watchlist. A vague date is never turned into a day. |
+| **News headline** | `news/<id>.json` | `title`, `date`, `url` (opens in the browser) | A new item for a tracked game | Headlines only, no alert. |
+
+`checkedAt` on every `Field` moves whenever a fetch re-reads the same fact, so "checked <date>" advances without any of the events above.
+
 ## Contract with the 0.2.0 app
 
 `src/contract.ts` encodes every place the 0.2.0 Swift decoders throw (unknown `Platform`, `ReleaseKind`, `KindBasis`, `PlatformStatus`; wrong types; missing `id`, `gameId`, `displayName`, `kind`, `announcedAt`, `notes`, `sourceIds`, `platforms`; unparseable dates or URLs; a null `latest.json` `updatedAt`). Unknown extra keys are safe. After export, `latest.json` and `games/<id>.json` are checked and a failure stops the run before publish; `info/<n>.json` problems are warnings, since one bad URL stops the app decoding that whole shard. Rules are refreshed from the Swift models when the oldest app in use changes. It found a live bad URL in `info/38.json` (an IGDB website with a space), now filtered when the shard is built.
