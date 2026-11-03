@@ -45,6 +45,15 @@ struct LibraryStage: View {
     @Environment(\.duo) private var duo
 
     var body: some View {
+        let deck = model.latestDeck
+        if let card = deck.first(where: { $0.id == model.deckSelection }) ?? deck.first {
+            DeckStage(card: card)
+        } else {
+            legacyStage
+        }
+    }
+
+    @ViewBuilder private var legacyStage: some View {
         let game = model.featuredGame
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: game?.keyArtAsset, game: game, drift: true)
@@ -182,12 +191,17 @@ struct LibraryShelf: View {
                 // D-12: the Continue hero spans two tiles; Tabletop shows it on the standing half.
                 // Tabletop: the Continue art is the standing half; the flat half is the grid.
                 // Open landscape: Continue is a double-width tile leading the grid (D-12).
-                if duo.pose != .tabletop && !(duo.pose == .flat && duo.isLandscape && layout == .tiles), let c = model.continueItem {
-                    ContinueRow(game: c.game, release: c.release)
-                        // D-12: the full hero card in Closed and open portrait; side by side, a
-                        // double-width tile.
-                        .frame(maxWidth: layout == .tiles && duo.isLandscape ? tileSize * 2 + 14 + (duo.pose == .flat ? 120 : 0) : .infinity,
-                               alignment: .leading)
+                // 0.5.0 item 1: the Latest updates deck replaces the single Continue hero. Tabletop
+                // shows the first card in the standing half and the page edge on this lower half.
+                if duo.pose != .tabletop {
+                    let deck = model.latestDeck
+                    if !deck.isEmpty {
+                        LatestUpdatesDeck(cards: deck)
+                            .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                    }
+                } else {
+                    let deck = model.latestDeck
+                    if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
                 }
                 if all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
@@ -197,9 +211,6 @@ struct LibraryShelf: View {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
                 } else if duo.pose == .flat && duo.isLandscape {
                     FlowLayout(spacing: 10) {
-                        if let c = model.continueItem {
-                            ContinueTile(game: c.game, release: c.release, size: tileSize)
-                        }
                         ForEach(rows) { row in GameTile(row: row, size: tileSize).id("lib-\(row.id)") }
                     }
                 } else {
@@ -600,7 +611,8 @@ extension AppModel {
             if isUnread(r) { return (.unread, Self.tileDay(d)) }
             return (d > .now.addingTimeInterval(-7 * 86400) ? .recent : .older, Self.tileDay(d))
         }
-        return (.none, row.game.releaseDate?.isoDay.map(Self.tileDay) ?? "TBA")
+        if let d = row.game.releaseDate?.isoDay { return (.none, (d <= .now ? "Released " : "") + Self.tileDay(d)) }
+        return (.none, "TBA")
     }
 
     /// "12 Oct" this year, "Jul 2025" before.
@@ -617,7 +629,7 @@ extension AppModel {
         switch state.kind {
         case .unread: when = "new update \(state.text)"
         case .recent, .older: when = "last updated \(state.text)"
-        case .none: when = state.text == "TBA" ? "release date to be announced" : "released \(state.text)"
+        case .none: when = state.text == "TBA" ? "release date to be announced" : state.text.lowercased().hasPrefix("released") ? state.text.lowercased() : "out \(state.text)"
         }
         return "\(row.game.name), \(when), \(row.status.label.lowercased())"
     }

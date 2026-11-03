@@ -464,7 +464,7 @@ struct ReleaseTimeline: View {
         let ps5 = model.ps5Releases(gameID)
         let pc = model.pcOnlyReleases(gameID)
         VStack(alignment: .leading, spacing: 4) {
-            Text("RELEASES").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+            Text("ALL UPDATES").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
             if ps5.isEmpty, let g = model.game(gameID) {
                 Text(g.ps5AvailabilityLine).font(PlayscribeFont.subheadline)
             }

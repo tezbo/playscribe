@@ -9,7 +9,7 @@ enum Chapter: String, Codable, CaseIterable, Hashable, Identifiable {
     var id: String { rawValue }
     var title: String {
         switch self {
-        case .updates: "Updates"
+        case .updates: "What's new"
         case .world: "World"
         case .companion: "Companion"
         case .gallery: "Gallery"
@@ -138,6 +138,8 @@ final class AppModel {
         didSet { UserDefaults.standard.set(noteScope.rawValue, forKey: "noteScope") }
     }
     var recentSearches: [String] = []
+    /// The Latest updates deck's current card (not persisted); Tabletop's page edge drives the standing half with it.
+    var deckSelection: String?
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
     /// Set when a deep link asks the journal to bring a release to the top.

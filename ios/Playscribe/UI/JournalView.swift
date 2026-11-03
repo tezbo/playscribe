@@ -38,7 +38,7 @@ struct JournalView: View {
             if !pc.isEmpty {
                 Button { model.setExpanded(groupKey, !groupOpen) } label: {
                     HStack {
-                        Text("Other updates").font(PlayscribeFont.headline)
+                        Text("PC only").font(PlayscribeFont.headline)
                         Text("\(pc.count) update\(pc.count == 1 ? "" : "s")").foregroundStyle(.secondary)
                         Spacer()
                         Image(systemName: "chevron.down").rotationEffect(.degrees(groupOpen ? 180 : 0))
@@ -183,6 +183,7 @@ struct ReleaseBody: View {
             let keys = ps5Page ? r.ps5KeyChanges : (r.keyChanges ?? [])
             if !keys.isEmpty {
                 VStack(alignment: .leading, spacing: 8) {
+                    Text("What's new").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
                     ForEach(keys, id: \.self) { k in
                         HStack(alignment: .firstTextBaseline, spacing: 10) {
                             Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
