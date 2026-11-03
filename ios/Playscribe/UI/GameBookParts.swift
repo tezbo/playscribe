@@ -178,6 +178,8 @@ struct ReleasePage: View {
                 Text(r.displayName).font(PlayscribeFont.title3)
                     .accessibilityIdentifier("releaseTitle")
                 ReleaseTag(release: r)
+                Spacer(minLength: 0)
+                if r.isPS5Listed { ShareUpdateButton(release: r) }
             }
             HStack(spacing: 8) {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
