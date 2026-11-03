@@ -19,7 +19,8 @@ extension AppModel {
 
     var upcomingMore: [CatalogGame] {
         let inLibrary = Set(data.collection.compactMap { game($0.gameID)?.igdbID })
-        return Self.catalogueUpcoming.filter { g in g.igdbID.map { !inLibrary.contains($0) } ?? true }
+        let source = UpcomingStore.shared.games.isEmpty ? Self.catalogueUpcoming : UpcomingStore.shared.games
+        return source.filter { g in g.igdbID.map { !inLibrary.contains($0) } ?? true }
     }
 
     @MainActor private static let catalogueUpcoming: [CatalogGame] = {
@@ -75,6 +76,15 @@ struct UpcomingView: View {
         let more = model.upcomingMore
         let columns = [GridItem(.adaptive(minimum: 104, maximum: 160), spacing: 10, alignment: .top)]
         VStack(alignment: .leading, spacing: 14) {
+            if UpcomingStore.shared.failed && more.isEmpty {
+                HStack {
+                    Text("Couldn't load upcoming games").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Spacer(minLength: 0)
+                    Button("Retry") { Task { await UpcomingStore.shared.load() } }
+                        .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                        .frame(minHeight: 44).tappableFrame()
+                }
+            }
             if watched.isEmpty {
                 VStack(spacing: 8) {
                     Text("Nothing on your watchlist yet").font(PlayscribeFont.headline)
@@ -95,5 +105,6 @@ struct UpcomingView: View {
                 LazyVGrid(columns: columns, spacing: 14) { ForEach(more) { tile($0, watching: false) } }
             }
         }
+        .task { await UpcomingStore.shared.load() }
     }
 }
