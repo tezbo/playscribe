@@ -97,3 +97,51 @@ struct NewsChapter: View {
         .task(id: gameID) { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) }
     }
 }
+
+/// Library "News" strip (0.5.0 item 17, PR 2): up to 5 official headlines across the library,
+/// newest first, game name above each title. Hidden when empty or when loading failed.
+struct NewsStrip: View {
+    @Environment(AppModel.self) private var model
+    private var store: NewsStore { .shared }
+
+    private var ids: [String] { model.data.collection.map(\.gameID) }
+
+    private var posts: [(game: String, item: NewsItem)] {
+        ids.flatMap { id in (store.items[id] ?? []).map { (model.game(id)?.name ?? "", $0) } }
+            .sorted { ($0.item.date ?? .distantPast) > ($1.item.date ?? .distantPast) }
+            .prefix(5).map { $0 }
+    }
+
+    var body: some View {
+        let list = posts
+        Group {
+            if !list.isEmpty {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("News").font(PlayscribeFont.title3).accessibilityAddTraits(.isHeader)
+                    ForEach(list, id: \.item.id) { post in
+                        Link(destination: post.item.url) {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(post.game).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                                Text(post.item.title).font(PlayscribeFont.subheadline.weight(.semibold))
+                                    .multilineTextAlignment(.leading).lineLimit(2)
+                                HStack(spacing: 8) {
+                                    if let d = post.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated))) }
+                                    Tag(text: "Official")
+                                }
+                                .font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                            }
+                            .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                            .contentShape(Rectangle())
+                        }
+                        .tappableFrame()
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel("\(post.game), \(post.item.title), Official, opens in browser")
+                    }
+                }
+            }
+        }
+        .task(id: ids) {
+            for id in ids.prefix(12) { await store.load(gameID: id, igdbID: model.game(id)?.igdbID) }
+        }
+    }
+}
