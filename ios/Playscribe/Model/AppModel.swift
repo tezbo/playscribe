@@ -166,12 +166,14 @@ final class AppModel {
             data = decoded
         } else {
             // A real first launch starts empty, on onboarding: demo games never appear in a
-            // player's library. Debug builds (and the QA demo route) still seed the demo set.
-            #if DEBUG
-            data = PersistedState(collection: Fixtures.shared.seedCollection)
-            #else
-            data = PersistedState(collection: [])
-            #endif
+            // player's library. QA launches (-qaRoute, other than first-run) still seed the demo set;
+            // real installs never pass -qaRoute.
+            let args = ProcessInfo.processInfo.arguments
+            if args.contains("-qaRoute") && !args.contains("first-run") {
+                data = PersistedState(collection: Fixtures.shared.seedCollection)
+            } else {
+                data = PersistedState(collection: [])
+            }
         }
         rebuildMerged()
     }
