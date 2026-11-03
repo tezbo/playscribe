@@ -165,11 +165,26 @@ struct Release: Codable, Hashable, Identifiable {
     var simulated: Bool?
     /// A simulated release stays hidden until its notification is due.
     var arrivesAt: Date?
+    /// Counts of what changed for a PS5 player (feed `digest`); nil on older data.
+    struct Digest: Codable, Hashable {
+        var new = 0, fixed = 0, balance = 0, other = 0, ps5 = 0
+        var topNew: [String]?
+        init(from decoder: Decoder) throws {
+            let c = try decoder.container(keyedBy: CodingKeys.self)
+            new = try c.decodeIfPresent(Int.self, forKey: .new) ?? 0
+            fixed = try c.decodeIfPresent(Int.self, forKey: .fixed) ?? 0
+            balance = try c.decodeIfPresent(Int.self, forKey: .balance) ?? 0
+            other = try c.decodeIfPresent(Int.self, forKey: .other) ?? 0
+            ps5 = try c.decodeIfPresent(Int.self, forKey: .ps5) ?? 0
+            topNew = try c.decodeIfPresent([String].self, forKey: .topNew)
+        }
+    }
+    var digest: Digest?
 
     // JSON keys follow docs/api.md (camelCase "Id").
     enum CodingKeys: String, CodingKey {
         case id, gameID = "gameId", displayName, kind, kindBasis, announcedAt, notes, sourceIDs = "sourceIds", platforms
-        case headline, summary, keyChanges, video, videoNote, pushLine, links, simulated, arrivesAt
+        case headline, summary, keyChanges, video, videoNote, pushLine, links, simulated, arrivesAt, digest
     }
 
     init(id: String, gameID: String, displayName: String, kind: ReleaseKind, kindBasis: KindBasis, announcedAt: Date,
@@ -201,6 +216,7 @@ struct Release: Codable, Hashable, Identifiable {
         links = try c.decodeIfPresent(Links.self, forKey: .links)
         simulated = try c.decodeIfPresent(Bool.self, forKey: .simulated)
         arrivesAt = try c.decodeIfPresent(Date.self, forKey: .arrivesAt)
+        digest = try? c.decodeIfPresent(Digest.self, forKey: .digest)
     }
 
     /// Combines a feed record with Playscribe's curated record for the same release: the feed's
