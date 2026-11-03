@@ -49,7 +49,7 @@ nonisolated struct PlayscribeShortcuts: AppShortcutsProvider {
     }
 }
 
-/// Library games in Spotlight. Tapping a result opens the game (playscribe://game/<id>).
+/// Library games in Spotlight. Tapping a result opens the game (see onContinueUserActivity in PlayscribeApp).
 enum GameSpotlight {
     nonisolated static func index(_ lines: [WidgetSnapshot.GameLine]) {
         let items = lines.map { line -> CSSearchableItem in
