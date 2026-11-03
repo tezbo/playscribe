@@ -519,10 +519,24 @@ enum ChangeKind: String, CaseIterable {
         return .other
     }
 
-    /// Non-empty groups in New, Fixed, Balance order; the count leaves out PC-only lines on a PS5 page.
+    /// The feed's category when present, else the keyword guess on the section title.
+    static func of(_ item: NoteItem, in title: String) -> ChangeKind {
+        switch item.category {
+        case "new": .new
+        case "fixed": .fixed
+        case "balance": .balance
+        case "other": .other
+        default: of(title)
+        }
+    }
+
+    /// Non-empty groups in New, Fixed, Balance, Other order; the count leaves out PC-only lines on a PS5 page.
     static func grouped(_ notes: [NoteSection], ps5Only: Bool) -> [(kind: ChangeKind, sections: [NoteSection], count: Int)] {
         allCases.compactMap { kind in
-            let sections = notes.filter { of($0.title) == kind }
+            let sections = notes.compactMap { sec -> NoteSection? in
+                let items = sec.items.filter { of($0, in: sec.title) == kind }
+                return items.isEmpty ? nil : NoteSection(title: sec.title, items: items)
+            }
             guard !sections.isEmpty else { return nil }
             let count = sections.reduce(0) { total, sec in total + sec.items.filter { item in !(ps5Only && item.isPCOnly) }.count }
             return (kind, sections, count)
