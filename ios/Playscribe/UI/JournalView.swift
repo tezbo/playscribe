@@ -38,7 +38,7 @@ struct JournalView: View {
             if !pc.isEmpty {
                 Button { model.setExpanded(groupKey, !groupOpen) } label: {
                     HStack {
-                        Text("PC only").font(PlayscribeFont.headline)
+                        Text("Other updates").font(PlayscribeFont.headline)
                         Text("\(pc.count) update\(pc.count == 1 ? "" : "s")").foregroundStyle(.secondary)
                         Spacer()
                         Image(systemName: "chevron.down").rotationEffect(.degrees(groupOpen ? 180 : 0))
