@@ -132,7 +132,6 @@ struct ReleaseTag: View {
         case .onPS5: if release.simulated == true { Tag(text: "Simulated", tint: .simulated) }
         case .announced: Tag(text: "Announced", tint: .ember)
         case .reported: EmptyView()
-        case .pcOnly: EmptyView()
         case .notPlanned: Tag(text: "Not planned for PS5", tint: .secondary)
         case .pending: EmptyView()
         }
@@ -248,7 +247,7 @@ enum FactsLine {
     static func text(for r: Release) -> String {
         let date = (r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth
         switch r.ps5State {
-        case .onPS5, .pcOnly, .pending: return "Released \(date)"
+        case .onPS5, .pending: return "Released \(date)"
         case .announced: return "Announced for PS5, \(date)"
         case .reported: return "Released \(date)"
         case .notPlanned: return "Not planned for PS5"
@@ -331,7 +330,7 @@ struct Facts: View {
         case .announced: "Announced for PS5"
         case .reported: "Reported on PS5"
         case .notPlanned: "Not planned for PS5"
-        case .pcOnly, .pending: "Released"
+        case .pending: "Released"
         }
     }
 
