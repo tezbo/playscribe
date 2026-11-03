@@ -32,9 +32,9 @@ iOS icons are one 1024x1024 layered design. Appearances are default, dark, clear
   - The art sits in a card inset 14 pt from both edges, below the large title, with 14 pt continuous corners at the top.
   - The card's bottom edge follows the open book's lower silhouette: straight at both sides, dipping 16 pt to the centre like the pages meeting at the spine. Draw it as two quad curves (see `library/closed-hero.svg`).
   - The selected game gets a lit inner edge: 1.5 pt vellum 100 at 60% opacity, inset inside the frame and following its corners. It is decoration with no accessibility trait. It must never look like a focus ring, because Full Keyboard Access draws its own.
-  - Below the art, on ink: "NEW CHAPTER" in Instrument Sans caption with ember and 0.08 em tracking, followed by the version chip (an ember outline at 70% opacity, 19 pt tall, pill-shaped). Then the game title in Literata title2, then the invite line in subheadline secondary, for example "Update 1.1 is here. Catch up, then jump back in." The game's own logo stays inside its art and is never redrawn by us.
-  - The whole card, frame plus text, is one button, at least 44 pt, with a VoiceOver label like "New chapter, Update 1.1, The Blood of Dawnwalker". The inner edge and the dip are decoration only.
-  - In tabletop the framed art moves to the upper half and is display-only. The NEW CHAPTER label, chip, title, update line and tap target stay in the lower half.
+  - Below the art, on ink: "NEW UPDATE" in Instrument Sans caption with ember and 0.08 em tracking, followed by the version chip (an ember outline at 70% opacity, 19 pt tall, pill-shaped). Then the game title in Literata title2, then the invite line in subheadline secondary, for example "Update 1.1 is here. Catch up, then jump back in." The game's own logo stays inside its art and is never redrawn by us.
+  - The whole card, frame plus text, is one button, at least 44 pt, with a VoiceOver label like "New update, Update 1.1, The Blood of Dawnwalker". The inner edge and the dip are decoration only.
+  - In tabletop the framed art moves to the upper half and is display-only. The NEW UPDATE label, chip, title, update line and tap target stay in the lower half.
   - The large title "Library" in Literata and the ink and vellum chrome carry the brand everywhere else.
 
 ## Glyphs

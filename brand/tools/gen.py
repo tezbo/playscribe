@@ -331,7 +331,7 @@ def splash_and_cover():
     # never reads as an accessibility focus ring: 1.5 pt vellum at 60%, clipped to the card.
     frame = (f'<clipPath id="hc"><path d="{edge}"/></clipPath><path d="{edge}" fill="{C["ink"]["700"]}"/>'
              f'<path d="{edge}" fill="none" stroke="{C["vellum"]["100"]}" stroke-width="3" stroke-opacity=".6" clip-path="url(#hc)"/>')
-    lab, lw = text(SANS, 'NEW CHAPTER', 12, 18, art_h + 86, C['accent']['base'], tracking=0.08)
+    lab, lw = text(SANS, 'NEW UPDATE', 12, 18, art_h + 86, C['accent']['base'], tracking=0.08)
     # Version chip: the patch number, outlined in ember.
     vx = 18 + lw + 10
     chip_t, cw = text(SANS, 'v1.1', 12, vx + 8, art_h + 86, C['accent']['base'])
