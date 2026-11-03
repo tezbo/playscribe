@@ -195,12 +195,15 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
              ORDER BY ABS(julianday(announced_at) - julianday(?))`,
           )
           .all(game.id, post.publishedAt, post.publishedAt) as { id: string; version_key: string }[]).find((r) => dateKey.test(naming.versionKey) || dateKey.test(r.version_key))
+    // The same patch under another spelling of its version ("1.4" and "1.4.0"), announced within 3 days.
+    const alike = byKey || near ? null : store.equivalentRelease(db, game.id, naming.versionKey, post.publishedAt)
     const releaseId =
       byKey?.id ??
       near?.id ??
+      alike?.id ??
       // A press headline is the site's words, not a release name: without a version it is just a PS5 update.
       track(store.upsertRelease(db, { gameId: game.id, versionKey: naming.versionKey, displayName: /^[a-z]+-\d{4}-/.test(naming.versionKey) ? 'PS5 update' : naming.displayName, kind: 'silent', kindBasis: 'inferred', announcedAt: post.publishedAt, notes: [], sourceId: s.id }))
-    if (byKey || near) store.addSource(db, releaseId, s.id)
+    if (byKey || near || alike) store.addSource(db, releaseId, s.id)
     const version = consoleVersionOf(text, { ps5Only: true })
     const size = sizeBytesOf(post.body) ?? sizeBytesOf(post.title)
     const status = pressStatusOf(post.title, post.body)
@@ -236,7 +239,9 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   if (!pcOnly && !namesPs5) return null // an official multi-platform post that doesn't name PS5 says nothing about PS5
 
   const k = kind()
-  const releaseId = track(store.upsertRelease(db, { gameId: game.id, versionKey: naming.versionKey, displayName: naming.displayName, kind: k.kind, kindBasis: k.kindBasis, announcedAt: post.publishedAt, notes, sourceId: s.id }))
+  // A studio or Steam post spelling a version another way ("1.4.0" for "1.4") joins the release already stored.
+  const versionKey = store.equivalentRelease(db, game.id, naming.versionKey, post.publishedAt)?.version_key ?? naming.versionKey
+  const releaseId = track(store.upsertRelease(db, { gameId: game.id, versionKey, displayName: naming.displayName, kind: k.kind, kindBasis: k.kindBasis, announcedAt: post.publishedAt, notes, sourceId: s.id }))
 
   if (pcOnly) {
     store.upsertPlatform(db, releaseId, 'pc', { status: 'live', verification: 'official', liveAt: store.field(post.publishedAt, 'official', s.id) })
@@ -344,6 +349,8 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       })
     }
   }
+  const folded = store.mergeSilentDuplicates(deps.db)
+  if (folded) deps.log?.(`ingest: folded ${folded} press-only duplicates into the release they report`)
   const dropped = store.dropPreLaunchPs5(deps.db)
   if (dropped) deps.log?.(`ingest: dropped ${dropped} Steam-assumed PS5 rows dated before the game's PS5 launch`)
   const promoted = store.promoteAnnounced(deps.db)
