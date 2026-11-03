@@ -305,8 +305,6 @@ extension Release {
         }
     }
 
-    /// V-4: Reported (including silent) releases are shown to people as Unconfirmed.
-    var isUnconfirmed: Bool { ps5State == .reported }
 
     /// Shown in the main journal (above the "PC only so far" group).
     var isPS5Listed: Bool { [.onPS5, .announced, .reported].contains(ps5State) }

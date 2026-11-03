@@ -51,41 +51,6 @@ final class NotificationService: NSObject {
 
     /// Builds the notification for a release that reached On PS5 (N-4) and schedules it locally.
     /// Remote pushes from the backend carry the same fields.
-    /// N-11 / V-4: one quiet Unconfirmed alert when the press reports a release live (Terry,
-    /// 26 Oct). On by default; the internal-build toggle can turn it off for testing.
-    static var reportedAlertsEnabled: Bool {
-        UserDefaults.standard.object(forKey: "reportedAlerts") as? Bool ?? true
-    }
-
-    /// N-11: passive, no sound, no badge change; the request id is the release id, so the later
-    /// On PS5 confirmation replaces it in place.
-    func scheduleReported(release: Release, game: CatalogGame?, level: NotifyLevel, pauseAll: Bool, model: AppModel) {
-        guard Self.reportedAlertsEnabled, let game, release.ps5State == .reported, !pauseAll else { return }
-        // The feed decides which alert a row earns; without the field, a reported live row is quiet.
-        if let alert = release.ps5?.alert, !alert.isQuiet { return }
-        // Like the server, skip anything that went live more than 72 hours ago.
-        if let live = release.ps5?.liveAt?.value, live < .now.addingTimeInterval(-72 * 3600) { return }
-        guard level == .all || (level == .major && release.kind.countsAsMajor) else { return }
-        guard model.data.notified[release.id] == nil else { return }
-        model.data.notified[release.id] = .now
-        center.add(UNNotificationRequest(identifier: release.id, content: Self.unconfirmedContent(for: release, game: game), trigger: nil))
-    }
-
-    /// V-4: an unconfirmed release's alert, grouped and categorised apart from confirmed ones.
-    static func unconfirmedContent(for release: Release, game: CatalogGame) -> UNMutableNotificationContent {
-        let c = UNMutableNotificationContent()
-        c.title = "Unconfirmed: \(game.name)"
-        c.subtitle = "\(release.displayName) reported on PS5"
-        c.body = "From press reports. This will update when it's official."
-        c.threadIdentifier = "\(game.id).unconfirmed"
-        c.interruptionLevel = .passive
-        c.relevanceScore = 0.1
-        c.sound = nil
-        c.userInfo = ["gameId": game.id, "releaseId": release.id, "verification": "reported", "tag": "Unconfirmed"]
-        c.categoryIdentifier = "PS5_UNCONFIRMED"
-        return c
-    }
-
     func schedule(release: Release, game: CatalogGame?, level: NotifyLevel, pauseAll: Bool, delay: TimeInterval, model: AppModel) {
         guard let game, release.ps5State == .onPS5, !pauseAll else { return }
         guard level == .all || (level == .major && release.kind.countsAsMajor) else { return }
@@ -154,9 +119,7 @@ final class NotificationService: NSObject {
     func registerCategories() {
         let category = UNNotificationCategory(identifier: "release", actions: [], intentIdentifiers: [],
                                               hiddenPreviewsBodyPlaceholder: "New update", options: [])
-        let unconfirmed = UNNotificationCategory(identifier: "PS5_UNCONFIRMED", actions: [], intentIdentifiers: [],
-                                                 hiddenPreviewsBodyPlaceholder: "Unconfirmed update", options: [])
-        center.setNotificationCategories([category, unconfirmed])
+        center.setNotificationCategories([category])
     }
 }
 

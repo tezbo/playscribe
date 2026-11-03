@@ -132,7 +132,6 @@ struct ReleasePage: View {
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             SourceLinks(release: r)
-            if r.isUnconfirmed { UnconfirmedBand() }
             if r.notes.contains(where: { $0.items.contains { $0.spoiler == true } }) {
                 SpoilerLine(gameID: r.gameID)
             }
@@ -142,27 +141,7 @@ struct ReleasePage: View {
     }
 }
 
-/// V-4: the full-width band an unconfirmed release opens with.
-struct UnconfirmedBand: View {
-    var body: some View {
-        let rule = Line().stroke(PlayscribeColor.textTertiary, style: StrokeStyle(lineWidth: 1, dash: [3, 2])).frame(height: 1)
-        VStack(alignment: .leading, spacing: 2) {
-            Text("Unconfirmed").font(PlayscribeFont.subheadline.weight(.semibold))
-            Text("From press reports, not in official PS5 notes yet.").font(PlayscribeFont.subheadline)
-        }
-        .foregroundStyle(PlayscribeColor.textTertiary)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, 10)
-        .overlay(alignment: .top) { rule }
-        .overlay(alignment: .bottom) { rule }
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel("Unconfirmed on PS5, from press reports, not in official PS5 notes yet")
-    }
-}
 
-nonisolated struct Line: Shape {
-    func path(in r: CGRect) -> Path { Path { $0.move(to: CGPoint(x: r.minX, y: r.midY)); $0.addLine(to: CGPoint(x: r.maxX, y: r.midY)) } }
-}
 
 /// D-6: "Story spoilers hidden" with a Show button, only when the release has spoilers.
 struct SpoilerLine: View {
@@ -462,7 +441,6 @@ struct InlineNoteResults: View {
                         HStack(spacing: 6) {
                             Text(h.release.displayName).font(PlayscribeFont.caption)
                             Text(h.pcOnly ? "PC-specific" : h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                            if h.release.isUnconfirmed { UnconfirmedChip() }
                         }
                     }
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
@@ -490,15 +468,7 @@ struct ReleaseTimeline: View {
             if ps5.isEmpty, let g = model.game(gameID) {
                 Text(g.ps5AvailabilityLine).font(PlayscribeFont.subheadline)
             }
-            let unconfirmed = ps5.filter(\.isUnconfirmed)
-            if !unconfirmed.isEmpty {
-                Text("UNCONFIRMED").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
-                ForEach(unconfirmed) { row($0, selected: $0.id == selected) }
-                if unconfirmed.count < ps5.count {
-                    Text("RELEASED").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary).padding(.top, 8)
-                }
-            }
-            ForEach(ps5.filter { !$0.isUnconfirmed }) { row($0, selected: $0.id == selected) }
+            ForEach(ps5) { row($0, selected: $0.id == selected) }
             ForEach(pc) { row($0, selected: $0.id == selected) }
         }
     }
@@ -524,12 +494,6 @@ struct ReleaseTimeline: View {
             .padding(.horizontal, 10)
             .frame(minHeight: 44)
             .background(selected ? PlayscribeColor.ink700 : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-            .overlay {
-                if r.isUnconfirmed {
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .strokeBorder(PlayscribeColor.textTertiary.opacity(0.6), style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
-                }
-            }
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

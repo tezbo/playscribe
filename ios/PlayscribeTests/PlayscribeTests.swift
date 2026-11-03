@@ -288,75 +288,31 @@ struct GameBookStateTests {
 struct UnconfirmedTests {
     func model() -> AppModel { AppModel(storeURL: URL.temporaryDirectory.appending(path: "v4-\(UUID().uuidString).json")) }
 
-    func reported(_ m: AppModel) -> Release {
+    func pressOnly(_ m: AppModel) -> Release {
         var r = m.releases("dawnwalker").first { $0.isPS5Listed }!
         let i = r.platforms.firstIndex { $0.platform == .ps5 }!
         r.platforms[i].status = .live
         r.platforms[i].liveAt?.verification = .reported
         r.platforms[i].verification = .reported
-        // Unconfirmed means the press has it and neither Steam nor the studio does.
         r.platforms = [r.platforms[i]]
+        r.links = nil
         return r
     }
 
-    @Test("V-4: the alert says Unconfirmed, groups apart, and confirming uses the confirmed text")
-    func alertText() {
+    @Test("Steam rule: a release only the press reports is not shown at all")
+    func pressOnlyHidden() {
         let m = model()
-        let r = reported(m)
-        #expect(r.isUnconfirmed)
-        let c = NotificationService.unconfirmedContent(for: r, game: m.game("dawnwalker")!)
-        #expect(c.title == "Unconfirmed: The Blood of Dawnwalker")
-        #expect(c.subtitle == "\(r.displayName) reported on PS5")
-        #expect(c.body == "From press reports. This will update when it's official.")
-        #expect(c.threadIdentifier == "dawnwalker.unconfirmed")
-        #expect(c.categoryIdentifier == "PS5_UNCONFIRMED")
-        #expect(c.interruptionLevel == .passive && c.sound == nil && c.relevanceScore == 0.1)
-        // On confirm the same request id carries the confirmed N-4 content.
-        let confirmed = NotificationService.content(for: r, game: m.game("dawnwalker")!, badge: 1)
-        #expect(confirmed.title == "The Blood of Dawnwalker" && confirmed.subtitle.isEmpty)
-        #expect(confirmed.threadIdentifier == "dawnwalker")
-        #expect(!confirmed.body.contains("Unconfirmed"))
+        let r = pressOnly(m)
+        #expect(r.ps5State == .reported)
+        m.feedReleases = [r]
+        #expect(!m.releases("dawnwalker").contains { $0.id == r.id && $0.ps5State == .reported })
     }
 
-    @Test("V-4: an official release is never Unconfirmed, even when the feed only has press reports")
+    @Test("An official curated release stays released when the feed only has press reports")
     func officialWins() throws {
         let m = model()
         let curated = try #require(m.fixtures.releases.first { $0.id == "dawnwalker@1.1" })
-        #expect(curated.ps5State == .onPS5)
-        let feedRow = reported(m)
-        let merged = curated.merged(withFeed: feedRow)
-        #expect(!merged.isUnconfirmed)
-        #expect(merged.ps5State == .onPS5)
-        // And a release only the press reports stays Unconfirmed.
-        #expect(feedRow.merged(withFeed: feedRow).isUnconfirmed)
-    }
-
-    @Test("V-4: unconfirmed is never unread, and the facts line says so")
-    func unreadAndFacts() {
-        let m = model()
-        let r = reported(m)
-        #expect(!m.isUnread(r))
-        #expect(FactsLine.text(for: r).hasPrefix("Unconfirmed on PS5"))
-    }
-
-    @Test("V-4: chip, tile, row and Page band render (snapshots attached)")
-    func snapshots() throws {
-        let m = model()
-        let r = reported(m)
-        let views: [(String, AnyView)] = [
-            ("chip", AnyView(UnconfirmedChip())),
-            ("band", AnyView(UnconfirmedBand().frame(width: 360))),
-            ("tag", AnyView(ReleaseTag(release: r))),
-        ]
-        for (name, view) in views {
-            let renderer = ImageRenderer(content: view.environment(m).padding(8).background(Color.ink0))
-            renderer.scale = 3
-            let image = try #require(renderer.uiImage, "\(name) renders")
-            #expect(image.size.width > 10)
-            let url = URL.temporaryDirectory.appending(path: "v4-\(name).png")
-            try image.pngData()?.write(to: url)
-            print("snapshot \(name): \(url.path)")
-        }
+        #expect(curated.merged(withFeed: pressOnly(m)).ps5State == .onPS5)
     }
 
     @Test("D-10: the Swap sides glyph and value follow the reading side")

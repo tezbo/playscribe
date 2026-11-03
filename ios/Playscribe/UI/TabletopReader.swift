@@ -30,7 +30,7 @@ extension AppModel {
             out.append(ReaderSection(id: "fixes", title: "Fixes",
                                      body: "\(r.noteCount) listed changes, including: " + first.joined(separator: " ")))
         }
-        var facts = ["Status: " + (r.isUnconfirmed ? "Unconfirmed" : "Released"),
+        var facts = ["Status: Released",
                      "PS5 version: " + (r.ps5Version ?? "not published yet")]
         if let size = r.ps5?.sizeBytes {
             facts.append("Download: " + ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal) + (size.verification == .reported ? " (reported)" : ""))
@@ -61,7 +61,6 @@ struct TabletopReaderStage: View {
                     HStack(spacing: 8) {
                         Text(model.game(gameID)?.name ?? "")
                         if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary) }
-                        if release?.isUnconfirmed == true { UnconfirmedChip() }
                     }
                     .font(PlayscribeFont.subheadline.weight(.semibold))
                     .foregroundStyle(PlayscribeColor.accent)

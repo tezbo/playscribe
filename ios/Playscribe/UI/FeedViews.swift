@@ -134,7 +134,6 @@ struct SearchView: View {
                                 HStack(spacing: 6) {
                                     Text(hit.0.displayName).font(PlayscribeFont.subheadline.weight(.semibold))
                                     Text(model.game(hit.0.gameID)?.name ?? "").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
-                                    if hit.0.isUnconfirmed { UnconfirmedChip() }
                                 }
                                 Text(hit.1).font(PlayscribeFont.footnote).lineLimit(2)
                             }

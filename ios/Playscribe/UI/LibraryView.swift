@@ -232,13 +232,13 @@ extension AppModel {
     /// drops the day.
     func tileLine(_ row: LibraryRow) -> String {
         if let r = row.latest { return "\(r.displayName), \(r.ps5Date.dayMonth)" }
-        if let r = ps5Releases(row.id).first { return r.isUnconfirmed ? r.displayName : "\(r.displayName), announced" }
+        if let r = ps5Releases(row.id).first { return "\(r.displayName), announced" }
         return "\(row.game.ps5ShortLine). No notes yet"
     }
 
     func shelfLine(_ row: LibraryRow) -> String {
         if let r = row.latest { return "\(r.displayName), \(r.ps5Date.dayMonth)" }
-        if let r = ps5Releases(row.id).first { return "\(r.displayName), \(r.isUnconfirmed ? "unconfirmed" : "announced")" }
+        if let r = ps5Releases(row.id).first { return "\(r.displayName), announced" }
         return "\(row.game.ps5AvailabilityLine). No notes yet"
     }
 }
@@ -588,16 +588,11 @@ struct DatePill: View {
             if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
             else { Capsule().fill(.clear).glassEffect(.regular, in: Capsule()) }
         }
-        .overlay {
-            if state.kind == .unconfirmed {
-                Capsule().strokeBorder(PlayscribeColor.textTertiary, style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
-            }
-        }
     }
 }
 
 extension AppModel {
-    enum TileDateKind { case unread, recent, older, unconfirmed, none }
+    enum TileDateKind { case unread, recent, older, none }
 
     func tileDate(_ row: LibraryRow) -> (kind: TileDateKind, text: String) {
         if let r = row.latest {
@@ -605,7 +600,6 @@ extension AppModel {
             if isUnread(r) { return (.unread, Self.tileDay(d)) }
             return (d > .now.addingTimeInterval(-7 * 86400) ? .recent : .older, Self.tileDay(d))
         }
-        if let r = ps5Releases(row.id).first, r.isUnconfirmed { return (.unconfirmed, "Unconfirmed") }
         return (.none, row.game.releaseDate?.isoDay.map(Self.tileDay) ?? "TBA")
     }
 
@@ -623,7 +617,6 @@ extension AppModel {
         switch state.kind {
         case .unread: when = "new update \(state.text)"
         case .recent, .older: when = "last updated \(state.text)"
-        case .unconfirmed: when = "unconfirmed update on PS5, from press reports"
         case .none: when = state.text == "TBA" ? "release date to be announced" : "released \(state.text)"
         }
         return "\(row.game.name), \(when), \(row.status.label.lowercased())"

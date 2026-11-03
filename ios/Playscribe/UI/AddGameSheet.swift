@@ -199,34 +199,80 @@ struct AddRow: View {
 }
 
 /// F-1: the empty Library is the onboarding screen.
+/// First run (Iris, 0.2.0): never blank. The brand's header art, one line on what Playscribe does,
+/// one ember button and six popular PS5 games to tap. Tabletop: art and headline on the standing
+/// half (display only), the button and covers on the flat half.
 struct OnboardingView: View {
-    @Environment(AppModel.self) private var model
-    @Environment(\.railWidth) private var railWidth
-    @State private var query = ""
+    @Environment(\.duo) private var duo
 
     var body: some View {
-        List {
-            Section {
-                VStack(alignment: .leading, spacing: 12) {
-                    Image(systemName: "book.closed").font(PlayscribeFont.largeTitle).foregroundStyle(PlayscribeColor.accent)
-                    Text("Add your PS5 games").font(PlayscribeFont.title2.bold())
-                    Text("Follow a game to get its PS5 patch notes in one place.").foregroundStyle(.secondary)
+        if duo.pose == .tabletop {
+            ArrangementView {
+                OnboardingStage().allowsHitTesting(false)
+            } secondary: {
+                ScrollView { OnboardingActions().padding(16) }
+            }
+            .arrangementViewStyle(.split)
+        } else {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
+                    OnboardingActions().padding(.horizontal, 16)
                 }
-                .padding(.vertical, 8)
-                .listRowBackground(Color.clear)
-                TextField("Search PS5 games", text: $query)
-                    .autocorrectionDisabled()
-                    .frame(minHeight: 44)
-            }
-            Section(query.count >= 2 ? "Best matches" : "Popular on PS5") {
-                let games = query.count >= 2 ? PS5Index.shared.search(query, limit: 12) : PS5Index.shared.popular(limit: 12)
-                ForEach(games) { g in AddRow(game: g, status: .owned) { model.addGame(g, status: .owned) } }
-            }
-            Section {
-                Button("Add a game that isn't listed") { model.addSheetOpen = true }.hitTarget()
+                .padding(.bottom, 24)
             }
         }
-        .contentMargins(.trailing, railWidth, for: .scrollContent)
-        .scrollContentBackground(.hidden)
+    }
+}
+
+struct OnboardingStage: View {
+    var body: some View {
+        ZStack(alignment: .bottomLeading) {
+            ArtView(asset: nil, game: nil)
+            LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .center, endPoint: .bottom)
+            Text("Follow a game to get its PS5 patch notes in one place.")
+                .font(PlayscribeFont.title)
+                .foregroundStyle(PlayscribeColor.textPrimary)
+                .padding(20)
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .padding(.horizontal, 16)
+        .accessibilityElement(children: .combine)
+    }
+}
+
+struct OnboardingActions: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Button { model.addSheetOpen = true } label: {
+                Text("Add your first game")
+                    .font(PlayscribeFont.headline)
+                    .foregroundStyle(PlayscribeColor.onAccent)
+                    .frame(maxWidth: .infinity, minHeight: 52)
+                    .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            }
+            .buttonStyle(.plain)
+            .tappableFrame()
+            Text("Popular on PS5").font(PlayscribeFont.headline)
+            let size: CGFloat = duo.pose == .closed ? 96 : 108
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 10) {
+                    ForEach(PS5Index.shared.popular(limit: 6)) { g in
+                        Button { model.addGame(g, status: .owned) } label: {
+                            TileCover(game: g).frame(width: size, height: (size * 4 / 3).rounded())
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("Add \(g.name)")
+                        .tappableFrame()
+                    }
+                }
+            }
+            .edgeFade(40)
+            Text("PlayStation account import is planned for a later version.")
+                .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+        }
     }
 }

@@ -239,7 +239,8 @@ final class AppModel {
     func releases(_ gameID: String) -> [Release] {
         let now = clock
         return (data.simulated + allReleasesMerged)
-            .filter { $0.gameID == gameID && $0.ps5State != .pending && ($0.arrivesAt ?? .distantPast) <= now }
+            // Steam is the source of truth (Terry, 26 Oct): a release only the press reports is not shown.
+            .filter { $0.gameID == gameID && $0.ps5State != .pending && $0.ps5State != .reported && ($0.arrivesAt ?? .distantPast) <= now }
             .sorted { $0.latestDate > $1.latestDate }
     }
 

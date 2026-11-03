@@ -132,7 +132,7 @@ struct ReleaseTag: View {
         switch release.ps5State {
         case .onPS5: if release.simulated == true { Tag(text: "Simulated", tint: .simulated) }
         case .announced: Tag(text: "Announced", tint: .ember)
-        case .reported: UnconfirmedChip()
+        case .reported: EmptyView()
         case .pcOnly: EmptyView()
         case .notPlanned: Tag(text: "Not planned for PS5", tint: .secondary)
         case .pending: EmptyView()
@@ -242,7 +242,7 @@ enum FactsLine {
         switch r.ps5State {
         case .onPS5, .pcOnly, .pending: return "Released \(date)"
         case .announced: return "Announced for PS5, \(date)"
-        case .reported: return "Unconfirmed on PS5, \(date)"
+        case .reported: return "Released \(date)"
         case .notPlanned: return "Not planned for PS5"
         }
     }
@@ -252,7 +252,7 @@ enum FactsLine {
         if let v = r.ps5Version { parts.append(v) }
         if let size = r.ps5?.sizeBytes {
             let text = ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal)
-            parts.append(r.isUnconfirmed ? "\(text) (reported)" : text)
+            parts.append(text)
         }
         return parts.isEmpty ? nil : parts.joined(separator: ", ")
     }
