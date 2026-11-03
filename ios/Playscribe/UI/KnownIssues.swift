@@ -19,9 +19,11 @@ extension AppModel {
 
     /// The feed issue behind a notes line, matched on normalised text.
     func knownIssue(for item: NoteItem, in gameID: String) -> KnownIssue? {
+        // Most games have no issues: skip the per-row text normalising entirely.
+        guard let issues = gameIssues[gameID], !issues.isEmpty else { return nil }
         let key = Self.normalised(item.text)
         guard !key.isEmpty else { return nil }
-        return gameIssues[gameID]?.first { Self.normalised($0.text) == key }
+        return issues.first { Self.normalised($0.text) == key }
     }
 
     func isFollowing(_ issue: KnownIssue) -> Bool { data.followedIssues?.contains(issue.id) == true }
