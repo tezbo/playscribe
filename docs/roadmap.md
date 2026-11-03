@@ -1,7 +1,7 @@
 # Product roadmap
 
 Owner: the product owner thread. Terry sets direction; the release manager ships (docs/release.md).
-Last updated 2 Nov 2026.
+Last updated 3 Nov 2026.
 
 **Core purpose:** a PS5 player opens Playscribe and, in seconds, knows what an update changed, whether it
 fixed their thing, and whether it's on their console. Everything else must make that faster or bring people
@@ -14,39 +14,45 @@ back to it. Steam is the source of truth, no game opens to a blank page, and we 
 - Cold launch opens on the home screen.
 - Links open in the default browser; each game links its official site and "All patch notes", and each update
   has "Open in Steam" (Terry).
-- Recent chapters hero moved to 0.3.0 as the Latest updates hero (0.2.0 UX signed off at cca2c99 without it).
+- Recent chapters hero moved to 0.5.0 as the Latest updates hero (0.2.0 UX signed off at cca2c99 without it).
 
-### 0.3.0 "Trust the notes"
-Answers the questions a PS5 player actually has (from the gamer review, 25 Oct), plus the designer's 0.2.0 sign-off notes.
-1. Latest updates hero on home (formerly Recent chapters; mock-up v3).
-2. Tabletop links: one "Links" rail button opens a lower-half sheet (Official website, Patch notes, Steam notes);
-   upper-half labels become secondary text so nothing above the fold looks tappable. **Required.**
-3. Wording: an update is always "update"; "chapter" only means a book section. "What's new" for this patch,
-   "All updates" for the history (replacing Changes and Changelog).
-4. Reader leads with what changed; links and details sit below.
-5. PS5 version number when the studio publishes one (never a PC number).
-6. PC-only items (Steam Deck, mouse, PC graphics settings) folded under "PC only", not mixed into PS5 notes.
-7. Search inside a game's notes ("did they fix the save bug?").
-8. Catch-up: "Since you last opened" groups every patch you missed into one summary.
-9. Games without backdrop art fill the band above the title with a cover crop or the ink plate.
-10. "Checked" date refreshes when the history is fetched, or goes.
-11. Tabletop eyebrow shows the game name or date, not the patch title twice.
-12. Updates older than a game's PS5 launch (Blue Prince "Patch 1", Jun 2024) don't count as released on PS5.
-13. Backend (Theo): 72-hour guard on reported alerts; alert when a "consoles later" update goes live.
+### 0.5.0 "Know your games" (0.3.0, 0.4.0 and 0.5.0 merged into one release, Terry 3 Nov)
+One release, ordered by value. The core purpose comes first, then staying in the loop, then the wider gaming world.
+Engineering = Theo (lead), Priya. Design = Iris (lead), Ezra. Leo builds the app work in both columns.
+The Field Guide trial (docs/game-guide.md) stays hidden and is not part of this release's sign-off.
 
-### 0.4.0 "Stay in the loop"
-- Watchlist for upcoming games: release dates, announcements and release-day alerts (Terry).
-- Faster alerts: tighter feed schedule for followed games, within the free GitHub Actions budget.
-- Home Screen widget: latest update across your library.
-- **Build your library in seconds** (Terry, headline): the + button opens Scan with camera (games pop in live as
-  they're recognised on device), From a photo, Say it, or Type it. Declining the camera falls back to voice or typing.
-  First open with an empty library shows a welcome and guided add, with the camera as the default.
-- Follow a known issue and get an alert when a patch mentions it.
+**A. Trust the notes (core purpose, ship first)**
+| # | Item | Eng | Design |
+|---|---|---|---|
+| 1 | Latest updates hero on home (mock-up v3) | Leo | Iris |
+| 2 | Tabletop Links rail button and lower-half sheet (**required**); upper-half labels read as secondary text | Leo | Iris |
+| 3 | Reader leads with what changed; wording "What's new" and "All updates"; an update is always "update" | Leo | Iris, Ezra (copy) |
+| 4 | PS5 version number when published, never a PC number; PC-only items folded under "PC only" | Priya | Iris |
+| 5 | Search inside a game's notes | Leo | Iris |
+| 6 | Catch-up: "Since you last opened" | Leo | Iris |
+| 7 | Game page status glyph after the name (owned, wishlist, watching) replaces the "Owned" line; website and All patch notes on one row | Leo | Iris (VoiceOver text) |
+| 8 | Faded key-art header as default, generic landscape last resort (spec: header-fade handoff). No game opens to a blank page. | Leo | Iris, Ezra (landscape art) |
+| 9 | "Checked" date refreshes with the history; Tabletop eyebrow shows game name or date; pre-launch patches not counted on PS5 | Priya, Leo | Iris |
+| 10 | Settings notifications redesign: one global control plus a compact per-game override, not a dropdown per game | Leo | Iris |
 
-### 0.5.0 "Your gaming world"
-- News for your games and series from official studio and PlayStation Blog posts (Terry).
-- Similar games to your library (IGDB).
-- Share an update as a card.
+**B. Stay in the loop**
+| # | Item | Eng | Design |
+|---|---|---|---|
+| 11 | Backend: 72-hour guard on reported alerts; alert when a "consoles later" update goes live; faster feed schedule within the free Actions budget | Theo, Priya | |
+| 12 | Add flow: + menu with Scan with camera, From a photo, Say it, Type it; decline-camera fallback; first-run welcome and guided add. API check first (Vision, DataScanner, Foundation Models against the SDK). | Leo, Priya | Iris, Ezra |
+| 13 | Add games "Select multiple": a toggle at the top, radio-style selectors, one confirm button always in view | Leo | Iris |
+| 14 | Watchlist for upcoming games: release dates, announcements, release-day alerts | Priya, Leo | Iris |
+| 15 | Home Screen widget: latest update across your library | Leo | Iris |
+| 16 | Follow a known issue and get an alert when a patch mentions it | Priya, Leo | Iris |
+
+**C. Your gaming world**
+| # | Item | Eng | Design |
+|---|---|---|---|
+| 17 | News for your games and series from official studio and PlayStation Blog posts | Priya | Iris |
+| 18 | Similar games to your library (IGDB) | Priya | Iris |
+| 19 | Share an update as a card | Leo | Iris, Ezra |
+
+Cut line: if time runs short, items 16 to 19 move to 0.6.0 first. A and B1 to B3 ship together or not at all.
 
 ### 1.0.0 App Store launch
 - Works well on every iPhone, best on iPhone Duo. Accessibility pass (Dynamic Type, VoiceOver, Reduce Motion).
