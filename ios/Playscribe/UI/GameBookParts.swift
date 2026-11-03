@@ -37,11 +37,14 @@ struct PageView: View {
                     switch chapter {
                     case .updates:
                         if let r = model.selectedRelease(gameID) {
-                            ReleasePage(release: r)
-                            if let g = model.game(gameID) {
-                                Divider().overlay(PlayscribeColor.ink700)
-                                GameBasicsView(game: g)
+                            VStack(alignment: .leading, spacing: 16) {
+                                ReleasePage(release: r)
+                                if let g = model.game(gameID) {
+                                    Divider().overlay(PlayscribeColor.ink700)
+                                    GameBasicsView(game: g)
+                                }
                             }
+                            .pageTurn(key: r.id)
                         } else if let g = model.game(gameID) {
                             NoNotesPage(game: g)
                         }
