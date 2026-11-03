@@ -9,8 +9,8 @@ import Foundation
 nonisolated struct GameEntity: AppEntity {
     static let typeDisplayRepresentation = TypeDisplayRepresentation(name: "Game")
     static let defaultQuery = GameQuery()
-    var id: String
-    var name: String
+    let id: String
+    let name: String
     var displayRepresentation: DisplayRepresentation { DisplayRepresentation(title: "\(name)") }
 }
 
@@ -25,7 +25,7 @@ nonisolated struct GameQuery: EntityStringQuery {
     func suggestedEntities() async throws -> [GameEntity] { all() }
 }
 
-nonisolated struct WhatsNewIntent: AppIntent {
+struct WhatsNewIntent: AppIntent {
     static let title: LocalizedStringResource = "What's new in a game"
     static let description = IntentDescription("Hears the newest PS5 update for one of your games.")
 
