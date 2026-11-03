@@ -9,20 +9,18 @@ jobs:
     env:
       DEVELOPER_DIR: /Applications/Xcode_27.1.app/Contents/Developer
     steps:
-      - uses: actions/checkout@v4
       - run: |
-          xcrun simctl help 2>&1 | head -80
-          echo ---- Duo devices
-          xcrun simctl list devicetypes | grep -i duo
-          xcrun simctl list devices available | grep -i duo
-          echo ---- help grep
-          for c in $(xcrun simctl help 2>&1 | awk '/^\s+[a-z_]+ /{print $1}' | sort -u); do :; done
-          xcrun simctl help 2>&1 | grep -i -E 'pose|fold|hinge|display|posture' || echo none
-          echo ---- devicectl
-          xcrun devicectl --help 2>&1 | head -5
-          echo ---- binaries
-          ls /Applications/Xcode_27.1.app/Contents/Applications/ 2>&1
-          ls /Applications/Xcode_27.1.app/Contents/Developer/usr/bin | grep -i -E 'sim|duo|pose|hub' 
-          echo ---- pose strings in CoreSimulator
-          strings "$(xcode-select -p)/../SharedFrameworks/CoreSimulator.framework/CoreSimulator" 2>/dev/null | grep -i -E 'posture|foldpose|hingeangle|duopose' | sort -u | head -30
-          xcodebuild -list -project ios/Playscribe.xcodeproj 2>&1 | head -3 || true
+          X=/Applications/Xcode_27.1.app
+          xcrun simctl help ui 2>&1 | head -30
+          xcrun simctl help io 2>&1 | head -30
+          echo ---- DeviceHub
+          ls $X/Contents/Applications/DeviceHub.app/Contents/MacOS $X/Contents/Applications/DeviceHub.app/Contents/Frameworks 2>&1 | head -30
+          strings -a $X/Contents/Applications/DeviceHub.app/Contents/MacOS/DeviceHub | grep -i -E 'partially|setPose|posture|hingeAngle|foldState|devicePose' | sort -u | head -30
+          echo ---- CoreSimulator
+          for f in $X/Contents/SharedFrameworks/CoreSimulator.framework/CoreSimulator $X/Contents/Developer/Library/PrivateFrameworks/SimulatorKit.framework/SimulatorKit; do echo $f; strings -a $f 2>/dev/null | grep -i -E 'posture|pose|hinge|foldable|duo' | sort -u | head -40; done
+          echo ---- simctl
+          strings -a $X/Contents/Developer/usr/bin/simctl | grep -i -E 'pose|posture|hinge|fold' | sort -u | head
+          echo ---- boot
+          xcrun simctl boot D0D80A96-1387-4502-BEFD-3CB0955AD02A && xcrun simctl bootstatus D0D80A96-1387-4502-BEFD-3CB0955AD02A
+          xcrun simctl ui D0D80A96-1387-4502-BEFD-3CB0955AD02A 2>&1 | head
+          defaults read com.apple.iphonesimulator 2>&1 | head -20
