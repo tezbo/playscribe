@@ -10,7 +10,7 @@ final class UpcomingStore {
     private(set) var failed = false
     private(set) var loading = false
 
-    private struct Entry: Codable {
+    struct Entry: Codable {
         var igdbId: Int
         var name: String
         var date: String?
@@ -18,7 +18,7 @@ final class UpcomingStore {
         var status: String?
         var coverId: String?
     }
-    private struct Shard: Codable { var games: [String: Entry] }
+    struct Shard: Codable { var games: [String: Entry] }
 
     private static func cacheURL(_ n: Int) -> URL { URL.cachesDirectory.appending(path: "upcoming-\(n).json") }
 

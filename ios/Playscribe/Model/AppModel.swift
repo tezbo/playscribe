@@ -208,7 +208,7 @@ final class AppModel {
         let cutoff = Date.now.addingTimeInterval(-72 * 3600)
         return data.collection.flatMap { c -> [(CatalogGame, Release)] in
             guard let g = game(c.gameID) else { return [] }
-            return ps5Releases(c.gameID).filter { isUnread($0) && $0.ps5Date > since && $0.ps5Date > cutoff }.map { (g, $0) }
+            return ps5Releases(c.gameID).filter { isUnread($0) && $0.ps5Date > since && $0.alertDate > cutoff }.map { (g, $0) }
         }
         .sorted { $0.1.ps5Date > $1.1.ps5Date }
         .map { (game: $0.0, release: $0.1) }

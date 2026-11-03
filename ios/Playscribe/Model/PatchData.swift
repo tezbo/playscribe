@@ -121,6 +121,9 @@ struct PlatformRelease: Codable, Hashable {
     /// (tag "Unconfirmed") when the press reports it live.
     struct Alert: Codable, Hashable {
         var style: String
+        /// When the 72 hour guard counts from (feed contract): the moment a consoles-later update
+        /// went live, else `liveAt`. nil on older data.
+        var from: Date?
         var tag: String?
         var isQuiet: Bool { style == "quiet" }
     }
@@ -304,6 +307,8 @@ enum PS5State: Hashable {
 
 extension Release {
     var ps5: PlatformRelease? { platforms.first { $0.platform == .ps5 } }
+    /// The date the 72 hour alert guard counts from: the feed's `alert.from`, else the PS5 date.
+    var alertDate: Date { ps5?.alert?.from ?? ps5Date }
 
     var ps5State: PS5State {
         // Terry, 26 Oct: Steam is the source of truth. A release live on Steam counts as released
