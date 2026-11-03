@@ -1,15 +1,14 @@
 // Which alert a release earns on PS5 (docs/ps5-patch-data.md, App rules). Shared by the push job
 // and the feed, so the app's local alert and the server push follow the same rule.
 // Since 2026-10-27 (Terry) Steam is the source of truth: every update live on PS5, Steam-assumed
-// included, is "Released" and gets the standard alert. Only a release the press reports and neither
-// Steam nor the studio has (no links) is "Unconfirmed", with its one quiet alert.
-export type AlertStyle = 'standard' | 'quiet'
-export const UNCONFIRMED = 'Unconfirmed'
+// included, is "Released" and gets the standard alert. A release only the press reports (no links)
+// earns no alert and no user-facing tag: there is no Unconfirmed state (0.5.0, Terry's data rule).
+export type AlertStyle = 'standard'
 
 export const pressOnly = (links: { steamNotes?: string; ps5Page?: string }) => !links.steamNotes && !links.ps5Page
 
 export const alertStyleOf = (row: { status: string; verification: string }, links: { steamNotes?: string; ps5Page?: string }): AlertStyle | null =>
-  row.status !== 'live' ? null : row.verification === 'reported' && pressOnly(links) ? 'quiet' : 'standard'
+  row.status !== 'live' || (row.verification === 'reported' && pressOnly(links)) ? null : 'standard'
 
 /** Roadmap 11: an alert older than this is never raised, by the push job or by the app. */
 export const ALERT_MAX_AGE_HOURS = 72
@@ -29,5 +28,5 @@ export const alertOf = (row: { platform: string; status: string; verification: s
   if (!style) return {}
   const from = alertFromOf(row)
   const f = from ? { from } : {}
-  return style === 'quiet' ? { alert: { style, tag: UNCONFIRMED, ...f } as const } : { alert: { style, ...f } as const }
+  return { alert: { style, ...f } as const }
 }
