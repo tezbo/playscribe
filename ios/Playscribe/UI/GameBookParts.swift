@@ -26,6 +26,7 @@ struct PageView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 PageArtBand(gameID: gameID)
+                StaleHint()
                 if withContents, let g = model.game(gameID) {
                     VStack(alignment: .leading, spacing: 6) {
                         GameTitleWithStatus(gameID: gameID, name: g.name)
@@ -229,8 +230,7 @@ struct NoNotesPage: View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
                 Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
-                Text("No updates yet. Checked \(model.lastChecked.formatted(.relative(presentation: .named))).")
-                    .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                NoUpdatesLine()
             }
             GameBasicsView(game: game)
         }
@@ -292,6 +292,18 @@ struct GameBasicsView: View {
                     .accessibilityLabel("Play \(v.name)")
                     .tappableFrame()
                 }
+            }
+            // The slot is always reserved: when the details did not load, say so and offer Retry.
+            if info == nil, let id = game.igdbID, store.failedShards.contains(id % 100) {
+                HStack {
+                    Text("Details need a connection").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Spacer(minLength: 0)
+                    Button("Retry") { Task { await store.load(igdbID: id) } }
+                        .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                        .frame(minHeight: 44).tappableFrame()
+                }
+                .padding(.horizontal, 14)
+                .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             }
             // Closed has no Contents panel, so the links sit with the basics.
             if duo.pose == .closed { GameLinks(game: game) }
