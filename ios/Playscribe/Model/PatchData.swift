@@ -78,6 +78,7 @@ struct NoteItem: Codable, Hashable {
         platforms = try c.decodeIfPresent([Platform].self, forKey: .platforms)
         ps5ProOnly = try c.decodeIfPresent(Bool.self, forKey: .ps5ProOnly) ?? false
         spoiler = try c.decodeIfPresent(Bool.self, forKey: .spoiler)
+        category = try c.decodeIfPresent(String.self, forKey: .category)
         pcOnly = try c.decodeIfPresent(Bool.self, forKey: .pcOnly) ?? false
     }
 
@@ -87,6 +88,8 @@ struct NoteItem: Codable, Hashable {
     var ps5ProOnly: Bool
     /// App extension: story content that is hidden until revealed.
     var spoiler: Bool?
+    /// The feed's change group: new, fixed, balance or other (other when unclear). nil on older data.
+    var category: String?
     /// The feed marks a line that is only about PC (docs/api.md); a missing key is false.
     var pcOnly: Bool = false
 }

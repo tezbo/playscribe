@@ -164,6 +164,8 @@ struct ReleaseBody: View {
         VStack(alignment: .leading, spacing: 14) {
             if let h = ps5Page ? r.ps5Headline : r.headline {
                 Text(h).font(PlayscribeFont.title3)
+            } else if !r.notes.isEmpty {
+                Text("Fixes and tuning").font(PlayscribeFont.title3)
             }
             if let summary = ps5Page ? r.ps5Summary : r.summary {
                 VStack(alignment: .leading, spacing: 4) {
@@ -210,8 +212,14 @@ struct ReleaseBody: View {
             if r.isSilent && r.notes.isEmpty {
                 Text("No official notes").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
-            ForEach(Array(r.notes.enumerated()), id: \.offset) { _, section in
-                NoteSectionView(release: r, section: section)
+            // A-reader: changes grouped New, Fixed, Balance, each heading with its count.
+            let groups = ChangeKind.grouped(r.notes, ps5Only: ps5Page)
+            ForEach(groups, id: \.kind) { g in
+                Text("\(g.kind.rawValue) \(g.count)").font(PlayscribeFont.title3).padding(.top, 6)
+                    .accessibilityAddTraits(.isHeader)
+                ForEach(Array(g.sections.enumerated()), id: \.offset) { _, section in
+                    NoteSectionView(release: r, section: section)
+                }
             }
             HStack(spacing: 10) {
                 let marked = model.isBookmarked(kind: .release, id: r.id)
@@ -379,6 +387,7 @@ struct NoteSectionView: View {
     var release: Release
     var section: NoteSection
     @State private var showPC = false
+    @State private var allShown = false
 
     var body: some View {
         let key = "cat:\(release.id):\(section.title)"
@@ -401,11 +410,16 @@ struct NoteSectionView: View {
             .buttonStyle(.plain)
             .tappableFrame()
             if open {
-                ForEach(Array(ps5Items.enumerated()), id: \.offset) { i, item in
+                let visible = allShown ? ps5Items.count : min(5, ps5Items.count)
+                ForEach(Array(ps5Items.prefix(visible).enumerated()), id: \.offset) { i, item in
                     // An item that was only Steam markup (an image) has nothing to show.
                     if !LinkedText.clean(item.text).isEmpty {
                         NoteItemView(item: item, gameID: release.gameID, key: "\(key):\(i)")
                     }
+                }
+                if ps5Items.count > 5 {
+                    Button(allShown ? "Show fewer" : "Show \(ps5Items.count - 5) more") { allShown.toggle() }
+                        .font(PlayscribeFont.footnote).hitTarget()
                 }
                 if !pcOnly.isEmpty {
                     Button(showPC ? "Hide PC only" : "Show PC only (\(pcOnly.count))") { showPC.toggle() }
@@ -487,5 +501,44 @@ struct SourceLinks: View {
         }
         .font(PlayscribeFont.subheadline)
         .foregroundStyle(PlayscribeColor.accent)
+    }
+}
+
+/// New, Fixed and Balance: the reader's change groups, chosen from the section title.
+enum ChangeKind: String, CaseIterable {
+    case new = "New", fixed = "Fixed", balance = "Balance", other = "Other changes"
+
+    /// Keywords in the section title; a title the guess cannot place goes under Other changes,
+    /// never into a wrong group (Iris). Replace with the feed's category field when it lands.
+    static func of(_ title: String) -> ChangeKind {
+        let t = title.lowercased()
+        if t.contains("fix") || t.contains("bug") || t.contains("crash") || t.contains("stabil") { return .fixed }
+        if t.contains("balanc") || t.contains("tuning") || t.contains("adjust") || t.contains("tweak") { return .balance }
+        if t.contains("new") || t.contains("add") || t.contains("feature") || t.contains("introduc") { return .new }
+        return .other
+    }
+
+    /// The feed's category when present, else the keyword guess on the section title.
+    static func of(_ item: NoteItem, in title: String) -> ChangeKind {
+        switch item.category {
+        case "new": .new
+        case "fixed": .fixed
+        case "balance": .balance
+        case "other": .other
+        default: of(title)
+        }
+    }
+
+    /// Non-empty groups in New, Fixed, Balance, Other order; the count leaves out PC-only lines on a PS5 page.
+    static func grouped(_ notes: [NoteSection], ps5Only: Bool) -> [(kind: ChangeKind, sections: [NoteSection], count: Int)] {
+        allCases.compactMap { kind in
+            let sections = notes.compactMap { sec -> NoteSection? in
+                let items = sec.items.filter { of($0, in: sec.title) == kind }
+                return items.isEmpty ? nil : NoteSection(title: sec.title, items: items)
+            }
+            guard !sections.isEmpty else { return nil }
+            let count = sections.reduce(0) { total, sec in total + sec.items.filter { item in !(ps5Only && item.isPCOnly) }.count }
+            return (kind, sections, count)
+        }
     }
 }
