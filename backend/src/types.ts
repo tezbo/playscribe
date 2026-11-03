@@ -15,12 +15,16 @@ export interface Field<T> {
   checkedAt: string
 }
 
+export type NoteCategory = 'new' | 'fixed' | 'balance' | 'other'
+
 export interface NoteItem {
   text: string
   platforms?: Platform[]
   ps5ProOnly: boolean
   /** Roadmap 4: the line is only about PC (Steam Deck, mouse and keyboard, PC graphics). A grouping flag on the line, never a release status. */
   pcOnly: boolean
+  /** Roadmap: what kind of change the line is, from its section title ("New Features", "Bug Fixes", "Balance"…). Absent in older data: treat as other. */
+  category: NoteCategory
 }
 
 export interface NoteSection {

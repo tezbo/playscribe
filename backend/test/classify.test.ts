@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf, studioKindOf } from '../src/ingest/classify.ts'
+import type { NoteSection } from '../src/types.ts'
 import { extractNotes, platformsFor, ps5PageOf, tagNotes } from '../src/ingest/notes.ts'
 
 test('only a post that says the update is out on PS5 counts as official PS5 evidence', () => {
@@ -53,7 +54,7 @@ test('notes keep sections, sub-headed items and platform tags', () => {
 [h2]General[/h2][list][*][PC] Fixed DLSS flicker[/list]`)
   assert.deepEqual(notes.map((s) => s.title), ['New features', 'PS5', 'General'])
   assert.deepEqual(notes[0]!.items.map((i) => i.text), ['Animal petting', 'Draught of Mind Rebirth: Forget all your abilities.'])
-  assert.deepEqual(notes[1]!.items[0], { text: 'Fixed HDR on PS5 Pro', platforms: ['ps5'], ps5ProOnly: true, pcOnly: false })
+  assert.deepEqual(notes[1]!.items[0], { text: 'Fixed HDR on PS5 Pro', platforms: ['ps5'], ps5ProOnly: true, pcOnly: false, category: 'other' })
   assert.deepEqual(notes[2]!.items[0]!.platforms, ['pc'])
 })
 
@@ -76,7 +77,7 @@ test('a heading about one platform tags its items, and stored notes are re-tagge
   const notes = extractNotes('[h2]Steam Deck[/h2][list][*]Improved loading times[/list][h2]Fixes[/h2][list][*]Fixed a crash on PC when alt-tabbing[*]Fixed a door[/list]')
   assert.deepEqual(notes[0]!.items[0]!.platforms, ['pc'])
   assert.deepEqual(notes[1]!.items.map((i) => i.platforms), [['pc'], undefined])
-  const stored = [{ title: 'Highlights', items: [{ text: 'Updated FrameGen', ps5ProOnly: false, pcOnly: false }] }]
+  const stored: NoteSection[] = [{ title: 'Highlights', items: [{ text: 'Updated FrameGen', ps5ProOnly: false, pcOnly: false, category: 'other' }] }]
   assert.deepEqual(tagNotes(stored)[0]!.items[0]!.platforms, ['pc'])
 })
 
@@ -110,4 +111,10 @@ test('roadmap 4: a PC build number is never a PS5 version; PC-only lines carry p
   assert.equal(consoleVersionOf('PC 01.004.000 and Xbox 01.004.001', {}), null)
   const notes = extractNotes('[h2]Fixes[/h2][list][*]Steam Deck: fixed stutter[*]Fixed a door on PS5[*]Added mouse and keyboard remapping[/list]')
   assert.deepEqual(notes[0]!.items.map((i) => i.pcOnly), [true, false, true])
+})
+
+test('notes lines carry a category from their section title', () => {
+  const notes = extractNotes('[h2]New Features[/h2][list][*]Photo mode[/list][h2]Bug Fixes[/h2][list][*]Fixed a door[/list][h2]Balance Changes[/h2][list][*]Sword damage -5%[/list][h2]Misc[/h2][list][*]Credits updated[/list]')
+  assert.deepEqual(notes.map((s) => s.items[0]!.category), ['new', 'fixed', 'balance', 'other'])
+  assert.equal(tagNotes([{ title: 'Fixes', items: [{ text: 'x', ps5ProOnly: false, pcOnly: false, category: 'other' }] }])[0]!.items[0]!.category, 'fixed')
 })
