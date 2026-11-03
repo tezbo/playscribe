@@ -267,6 +267,11 @@ final class ReviewFixUITests: XCTestCase {
     func testNoteLinkOpensBrowser() throws {
         let app = XCUIApplication()
         app.launchArguments = ["-qaRoute", "release/dawnwalker/dawnwalker@1.0.5"]
+        // The notes only exist in the live feed: launch once and wait for them to land (never skip).
+        app.launch()
+        let landed = app.buttons.matching(NSPredicate(format: "label CONTAINS 'We will continue'")).firstMatch
+        XCTAssertTrue(landed.waitForExistence(timeout: 60), "live feed delivered dawnwalker@1.0.5 within 60 s")
+        app.terminate()
         app.launch()
         // Tabletop shows releases on the standing half, which is never touchable (G-4).
         if ReleaseRowTests.pose(app).contains("tabletop") { throw XCTSkip("links aren't tappable on Tabletop's standing half by design") }
