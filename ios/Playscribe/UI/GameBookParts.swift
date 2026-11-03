@@ -45,6 +45,7 @@ struct PageView: View {
                         } else if let g = model.game(gameID) {
                             NoNotesPage(game: g)
                         }
+                    case .news: NewsChapter(gameID: gameID)
                     case .world, .companion: EntriesChapter(gameID: gameID, chapter: chapter)
                     case .gallery: GalleryChapter(gameID: gameID)
                     case .mybook: MyBookChapter(gameID: gameID)
