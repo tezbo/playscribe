@@ -183,6 +183,10 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 - `src/issues.ts` derives issues from stored notes at export time (no new table): a "Known issues" section or a "Known issue:" line, PC-only lines excluded. Id = hash of game and normalised text.
 - A later release addresses an issue when one of its other note lines matches (one contains the other, or at least 70% of the shorter line's words are shared). Relisting it as known keeps it open. The match is a heuristic; a wrong match can be fixed by rewording, and nothing here alters the notes themselves.
 
+## 0.5.0 similar games (roadmap 18)
+
+- `similar[]` in the info shard comes from IGDB `similar_games` (`src/similar.ts`): `{ igdbId, name, coverId? }`, at most 8, unique, never the game itself. It is the weekly info refresh, so it costs no extra IGDB request.
+
 ## 0.5.0 news (roadmap 17)
 
 - Allowlist: `backend/src/sources/news-sources.json`. Only the game's own Steam news feed and the PlayStation Blog RSS feed. Press sites (Push Square, PlayStation LifeStyle) are facts-only for patches and never feed news.

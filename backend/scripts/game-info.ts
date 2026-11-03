@@ -7,6 +7,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { Igdb } from '../src/ingest/igdb.ts'
+import { similarOf, type SimilarGame } from '../src/similar.ts'
 import { registry, steamAppIdOf } from '../src/registry.ts'
 
 const { TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET } = process.env
@@ -27,6 +28,8 @@ export interface GameInfo {
   videos?: { youtubeId: string; name: string }[]
   /** The game's official website, and the page its patch notes are posted on. Opened in the browser. */
   links?: { official?: string; patchNotes?: string }
+  /** IGDB similar_games, at most 8, for the "Similar games" row. */
+  similar?: SimilarGame[]
 }
 
 // Patch notes page: the registry's official PS5 news page (a web page, not a feed), else the game's Steam news.
@@ -60,7 +63,7 @@ let n = 0
 for (let offset = 0; ; offset += 500) {
   const page = await igdb.query<any>(
     'games',
-    'fields summary,storyline,genres.name,first_release_date,videos.video_id,videos.name,websites.url,websites.type;' +
+    'fields summary,storyline,genres.name,first_release_date,videos.video_id,videos.name,websites.url,websites.type,similar_games.name,similar_games.cover.image_id;' +
       `where platforms = (${ps5.id}) & game_type = (${typeIds.join(',')}) & version_parent = null; sort id asc; limit 500; offset ${offset};`,
   )
   for (const g of page) {
@@ -77,6 +80,7 @@ for (let offset = 0; ; offset += 500) {
       firstRelease: g.first_release_date ? new Date(g.first_release_date * 1000).toISOString().slice(0, 10) : undefined,
       videos: videos.length ? videos : undefined,
       links: linksOf(g),
+      similar: similarOf(g.similar_games, g.id),
     }
     shards[g.id % SHARDS]![g.id] = JSON.parse(JSON.stringify(info))
     n++
