@@ -6,7 +6,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { Igdb } from '../src/ingest/igdb.ts'
 import { ps5DatesOf, type Override, type ReleaseDate } from '../src/ps5-dates.ts'
-import { releaseDayEvents, shardsOf, upcomingOf, SHARDS, type UpcomingGame } from '../src/upcoming.ts'
+import { releaseDayEvents, shardsOf, upcomingOf, withMoves, SHARDS, type UpcomingGame } from '../src/upcoming.ts'
 
 const { TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET } = process.env
 const outDir = process.argv[2]
@@ -35,7 +35,7 @@ for (const where of [`release_dates.platform = ${ps5.id} & release_dates.date > 
   for (let offset = 0; ; offset += 500) {
     const page = await igdb.query<any>(
       'games',
-      'fields name,cover.image_id,release_dates.date,release_dates.platform,release_dates.status,release_dates.date_format;' +
+      'fields name,cover.image_id,summary,genres.name,videos.video_id,videos.name,hypes,release_dates.date,release_dates.platform,release_dates.status,release_dates.date_format;' +
         `where ${where} & game_type = (${typeIds.join(',')}) & version_parent = null; sort id asc; limit 500; offset ${offset};`,
     )
     for (const g of page) {
@@ -49,6 +49,14 @@ for (const where of [`release_dates.platform = ${ps5.id} & release_dates.date > 
 
 const dir = join(outDir, 'v1', 'upcoming')
 mkdirSync(dir, { recursive: true })
+// The feed branch still holds the last run's shards: compare with them to find dates that moved.
+const previous: UpcomingGame[] = []
+for (let i = 0; i < SHARDS; i++) {
+  try {
+    previous.push(...Object.values(JSON.parse(readFileSync(join(dir, `${i}.json`), 'utf8')).games as Record<string, UpcomingGame>))
+  } catch {}
+}
+games.splice(0, games.length, ...withMoves(games, previous, today))
 shardsOf(games).forEach((g, i) => writeFileSync(join(dir, `${i}.json`), JSON.stringify({ games: g }) + '\n'))
 writeFileSync(join(dir, 'events.json'), JSON.stringify({ today, releaseDay: releaseDayEvents(games, today) }) + '\n')
 console.log(`wrote ${SHARDS} upcoming shards for ${games.length} games`)
