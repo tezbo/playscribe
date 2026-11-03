@@ -152,3 +152,9 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 3. `confirm`: a review queue where a person approves a release, which moves it to `official` and triggers push.
 4. `press`: matches press reports to existing releases and fills `version` and `sizeBytes` as `reported` when no official value exists.
 5. Steam news keeps feeding the PC platform rows, using the existing `fetch-catalog.mjs` logic.
+
+## 0.5.0 upcoming games (roadmap 14)
+
+- Source: IGDB PS5 `release_dates` rows (same date rules and overrides as the PS5 index). `scripts/upcoming.ts` writes `v1/upcoming/<igdbId % 10>.json` and `events.json` daily. Rules live in `src/upcoming.ts`.
+- No invented dates: month, quarter and year dates keep their precision, tbd has no date. A game with no PS5 date row at all is not listed.
+- A game stays listed 3 days after an exact release date so the release-day event reaches offline devices; older ones drop out, as do vague dates that have passed.
