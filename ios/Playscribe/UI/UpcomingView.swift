@@ -52,6 +52,10 @@ struct UpcomingView: View {
         return line == "Release date TBA" ? "Date to be announced" : line
     }
 
+    private func moveLine(_ g: CatalogGame) -> String? {
+        g.igdbID.flatMap { UpcomingStore.shared.extras[$0]?.move?.line }
+    }
+
     private func tile(_ g: CatalogGame, watching: Bool) -> some View {
         Button {
             if model.entry(g.id) == nil { model.addGame(g, status: .wishlist) }
@@ -62,11 +66,14 @@ struct UpcomingView: View {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit)
                 Text(g.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
                 Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2)
+                if let move = moveLine(g) {
+                    Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).lineLimit(2)
+                }
             }
         }
         .buttonStyle(.plain)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(g.name), \(dateLine(g))\(watching ? ", on your watchlist" : "")")
+        .accessibilityLabel("\(g.name), \(dateLine(g))\(moveLine(g).map { ", " + $0 } ?? "")\(watching ? ", on your watchlist" : "")")
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
     }

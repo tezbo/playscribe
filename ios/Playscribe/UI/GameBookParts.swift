@@ -274,11 +274,19 @@ struct GameBasicsView: View {
 
     var body: some View {
         let info = game.igdbID.flatMap { store.basics[$0] }
+        // A game not in the catalogue still opens with what the upcoming feed carries.
+        let fallback = game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }
+        let genres = info?.genres ?? fallback?.genres ?? []
+        let summary = info?.summary ?? fallback?.summary
+        let videos = info?.videos ?? fallback?.trailerId.map { [GameBasics.Video(youtubeId: $0, name: "Trailer")] } ?? []
         VStack(alignment: .leading, spacing: 14) {
-            if let genres = info?.genres, !genres.isEmpty {
+            if let move = fallback?.move?.line {
+                Text(move).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+            }
+            if !genres.isEmpty {
                 Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
-            if let videos = info?.videos, !videos.isEmpty {
+            if !videos.isEmpty {
                 // One video per title: the feed can carry two cuts named "Launch Trailer".
                 let unique = videos.reduce(into: [GameBasics.Video]()) { out, v in if !out.contains(where: { $0.name == v.name }) { out.append(v) } }
                 ForEach(unique.prefix(3), id: \.youtubeId) { v in
@@ -313,7 +321,7 @@ struct GameBasicsView: View {
             }
             // Closed has no Contents panel, so the links sit with the basics.
             if duo.pose == .closed { GameLinks(game: game) }
-            if let summary = info?.summary {
+            if let summary {
                 Text("About").font(PlayscribeFont.headline)
                 LinkedTextView(text: summary).font(PlayscribeFont.body)
             }
