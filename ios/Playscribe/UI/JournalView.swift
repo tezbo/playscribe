@@ -26,8 +26,7 @@ struct JournalView: View {
                 // GR-1: never an empty game. When it's out, and that we're watching for notes.
                 VStack(alignment: .leading, spacing: 6) {
                     Text(game.ps5AvailabilityLine).font(PlayscribeFont.headline)
-                    Text("No updates yet. Checked \(model.lastChecked.formatted(.relative(presentation: .named))).")
-                        .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    NoUpdatesLine()
                 }
                 .padding(.vertical, 8)
             }
@@ -409,7 +408,7 @@ struct NoteSectionView: View {
                     }
                 }
                 if !pcOnly.isEmpty {
-                    Button(showPC ? "Hide PC-specific changes" : "Show PC-specific changes (\(pcOnly.count))") { showPC.toggle() }
+                    Button(showPC ? "Hide PC only" : "Show PC only (\(pcOnly.count))") { showPC.toggle() }
                         .font(PlayscribeFont.footnote).hitTarget()
                     if showPC {
                         ForEach(Array(pcOnly.enumerated()), id: \.offset) { i, item in
