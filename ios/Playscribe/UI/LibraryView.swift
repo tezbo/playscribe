@@ -144,6 +144,10 @@ struct LibraryShelf: View {
         let all = model.libraryRows
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 14) {
+                LibraryTabPicker()
+                if model.libraryTab == .upcoming {
+                    UpcomingView()
+                } else {
                 if let line = model.feedStatusLine {
                     HStack {
                         Text(line).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
@@ -223,6 +227,7 @@ struct LibraryShelf: View {
                             }
                         }
                     }
+                }
                 }
             }
             .scrollTargetLayout()
