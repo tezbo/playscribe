@@ -412,7 +412,16 @@ final class AppModel {
         addSheetOpen = false
         if release(gameID, releaseID) == nil {
             openGame(gameID, chapter: .updates)
-            show(Toast(text: "That update is no longer available"))
+            // A cold launch from a notification can beat the game's history: fetch it, then re-resolve
+            // before deciding the update is gone.
+            Task {
+                await refreshHistories([gameID])
+                if release(gameID, releaseID) != nil {
+                    openGame(gameID, chapter: .updates, releaseID: releaseID)
+                } else {
+                    show(Toast(text: "That update is no longer available"))
+                }
+            }
         } else {
             openGame(gameID, chapter: .updates, releaseID: releaseID)
         }

@@ -395,6 +395,7 @@ struct HeroFrame: View {
         ArtView(asset: asset, game: game)
             // Closed: 16:9 so the library rows stay on screen; larger displays keep the taller page.
             .aspectRatio(duo.pose == .closed || duo.pose == .book ? 16 / 9 : 365 / 300, contentMode: .fit)
+            .clipped()
             .clipShape(BookEdgeShape())
             // Brand v2: an inset lit edge, 1.5 pt visible (3 pt stroke clipped to the shape).
             .overlay(BookEdgeShape().stroke(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 3).clipShape(BookEdgeShape()))
@@ -721,6 +722,7 @@ struct ContinueTile: View {
         Button { model.openGame(game.id, chapter: .updates, releaseID: release.id) } label: {
             ArtView(asset: game.keyArtAsset, game: game)
                 .frame(width: size * 2 + 10, height: (size * 4 / 3).rounded())
+                .clipped()
                 .overlay {
                     LinearGradient(colors: [.clear, .black.opacity(0.8)], startPoint: .center, endPoint: .bottom)
                 }
