@@ -31,7 +31,7 @@ extension AppModel {
         let wasFollowing = set.contains(issue.id)
         if wasFollowing { set.remove(issue.id) } else { set.insert(issue.id) }
         data.followedIssues = set
-        toast = Toast(text: wasFollowing ? "Stopped following" : "Following this issue")
+        show(Toast(text: wasFollowing ? "Stopped following" : "Following this issue"))
     }
 
     func followedIssues(_ gameID: String) -> [KnownIssue] {
