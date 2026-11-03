@@ -5,6 +5,7 @@ import { openDb } from '../src/db.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
+import * as store from '../src/store.ts'
 import { getRelease, newsOf, promoteAnnounced } from '../src/store.ts'
 import { hotGameIds } from '../src/hot.ts'
 import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpers.ts'
@@ -253,5 +254,17 @@ test('roadmap 17: official non-patch posts become news headlines (title, date, u
   assert.ok(art)
   assert.deepEqual(Object.keys(art).sort(), ['game_id', 'published_at', 'source_id', 'title', 'url'])
   assert.ok(!rows.some((r) => /Hotfix|Update 1\.1$/.test(r.title)))
-  assert.ok(newsOf(db, 'dawnwalker').every((n) => Object.keys(n).sort().join() === 'date,title,url'))
+  assert.ok(newsOf(db, 'dawnwalker').every((n) => Object.keys(n).sort().join() === 'date,gameId,title,url' && n.gameId === 'dawnwalker'))
+})
+
+test('coverage audit: a Steam-assumed PS5 row dated before the PS5 launch is dropped; official rows stay', async () => {
+  const { db } = await setup()
+  const row = (id: string) => db.prepare("SELECT 1 FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").get(id)
+  assert.ok(row('dawnwalker@1.1.1'))
+  db.prepare("UPDATE games SET ps5_release = '2099-01-01' WHERE id = 'dawnwalker'").run()
+  const n = store.dropPreLaunchPs5(db)
+  assert.ok(n >= 1)
+  assert.equal(row('dawnwalker@1.1.1'), undefined)
+  assert.ok(row('dawnwalker@1.1'), 'a press or official PS5 row is kept')
+  assert.equal(store.dropPreLaunchPs5(db), 0)
 })

@@ -343,6 +343,8 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       })
     }
   }
+  const dropped = store.dropPreLaunchPs5(deps.db)
+  if (dropped) deps.log?.(`ingest: dropped ${dropped} Steam-assumed PS5 rows dated before the game's PS5 launch`)
   const promoted = store.promoteAnnounced(deps.db)
   deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)
   deps.log?.(`ingest: polled ${summary.polled.length}, new ${summary.created.length}, revised ${summary.revised.length}, review +${summary.review}, errors ${summary.errors.length}`)
