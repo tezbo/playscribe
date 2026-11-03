@@ -15,14 +15,27 @@ interface SteamNews {
   appnews: { newsitems: { gid: string; title: string; url: string; date: number; contents: string; tags?: string[] }[] }
 }
 
-const steam = async (fetchFn: FetchFn, s: SourceDef, count: number): Promise<Post[]> => {
+const steam = async (fetchFn: FetchFn, s: SourceDef, count: number, until?: string): Promise<Post[]> => {
   const appid = steamAppIdOf(s)
   if (!appid) throw new Error(`${s.id}: no Steam app id in ${s.url}`)
-  const d = await getJson<SteamNews>(
-    fetchFn,
-    `https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=${appid}&count=${count}&maxlength=0&feeds=steam_community_announcements`,
-  )
-  return d.appnews.newsitems
+  // A poll reads the newest posts. A backfill pages back with `enddate` (Steam returns posts older than it) until a page
+  // is short or older than `until`, so busy games get their full history: 100 posts reach back only a year or two.
+  const items: SteamNews['appnews']['newsitems'] = []
+  let end: number | undefined
+  for (let page = 0; page < (until ? 60 : 1); page++) {
+    const d = await getJson<SteamNews>(
+      fetchFn,
+      `https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=${appid}&count=${count}&maxlength=0&feeds=steam_community_announcements${end ? `&enddate=${end}` : ''}`,
+    )
+    const got = d.appnews.newsitems
+    items.push(...got)
+    const oldest = got.reduce((m, n) => Math.min(m, n.date), Infinity)
+    if (!until || got.length < count || (end !== undefined && oldest >= end) || oldest * 1000 < Date.parse(until)) break
+    end = oldest
+  }
+  const seen = new Set<string>()
+  return items
+    .filter((n) => !seen.has(n.gid) && !!seen.add(n.gid))
     .filter((n) => n.tags?.includes('patchnotes') || looksLikePatch(n.title))
     .map((n) => ({
       sourceId: s.id,
@@ -163,7 +176,7 @@ const pressIndex = async (fetchFn: FetchFn, s: SourceDef, opts: PageOpts): Promi
 }
 
 export const fetchPosts = async (fetchFn: FetchFn, s: SourceDef, opts: PageOpts = {}): Promise<Post[]> => {
-  if (s.kind === 'steamNews') return steam(fetchFn, s, opts.until ? 100 : 20)
+  if (s.kind === 'steamNews') return steam(fetchFn, s, opts.until ? 100 : 20, opts.until)
   if (s.kind === 'pressIndex') return pressIndex(fetchFn, s, opts)
   const body = await getText(fetchFn, s.url, { accept: s.kind === 'rss' ? 'application/rss+xml, application/atom+xml, application/xml' : 'text/html' })
   return s.kind === 'rss' ? parseFeed(s.id, body) : parseLinks(s.id, s.url, body)
