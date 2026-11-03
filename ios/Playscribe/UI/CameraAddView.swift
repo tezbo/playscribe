@@ -21,17 +21,19 @@ struct CameraAddView: View {
                 VStack(spacing: 12) {
                     Image(systemName: "camera.viewfinder").font(.system(size: 44)).foregroundStyle(PlayscribeColor.accent)
                         .accessibilityHidden(true)
-                    Text("Point the camera at game cases.").font(PlayscribeFont.headline)
-                    Text("Playscribe reads the titles on your device. Nothing is recorded or uploaded.")
+                    Text("Let Playscribe see your games").font(PlayscribeFont.headline).multilineTextAlignment(.center)
+                    Text("Playscribe reads the titles on boxes and shelf spines on your phone, then asks you which ones to add.")
                         .font(PlayscribeFont.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
                     Button {
                         Task { _ = await AVCaptureDevice.requestAccess(for: .video); access = AVCaptureDevice.authorizationStatus(for: .video) }
                     } label: {
-                        Text("Turn on camera").font(PlayscribeFont.headline).foregroundStyle(PlayscribeColor.onAccent)
+                        Text("Continue").font(PlayscribeFont.headline).foregroundStyle(PlayscribeColor.onAccent)
                             .frame(maxWidth: .infinity, minHeight: 52)
                             .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
                     .buttonStyle(.plain).tappableFrame()
+                    .accessibilityHint("Shows the system permission request")
+                    Button("Not now", action: typeInstead).hitTarget()
                     Spacer()
                 }
                 .padding(16)
@@ -58,14 +60,18 @@ struct CameraAddView: View {
     private var unavailable: some View {
         VStack(spacing: 12) {
             Image(systemName: "camera.fill").font(.system(size: 44)).foregroundStyle(.secondary).accessibilityHidden(true)
-            Text(supported ? "Camera is off for Playscribe." : "This device can't scan titles.")
+            Text(supported ? "Scan with camera is off" : "This device can't scan titles.")
                 .font(PlayscribeFont.headline).multilineTextAlignment(.center)
+            if supported {
+                Text("You can turn on the camera for Playscribe in Settings, or pick a photo instead.")
+                    .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+            }
+            Button("Type it", action: typeInstead).hitTarget()
             if supported {
                 Button("Open Settings") {
                     if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
                 }.hitTarget()
             }
-            Button("Type it", action: typeInstead).hitTarget()
             Spacer()
         }
         .padding(16)
