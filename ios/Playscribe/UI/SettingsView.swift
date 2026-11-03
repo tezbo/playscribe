@@ -65,9 +65,6 @@ struct SettingsView: View {
                 }
 
                 Section("Testing") {
-                    Toggle("Quiet Unconfirmed alerts (V-4)", isOn: Binding(
-                        get: { NotificationService.reportedAlertsEnabled },
-                        set: { UserDefaults.standard.set($0, forKey: "reportedAlerts") }))
                     Toggle("Show tappable frames and reserved regions", isOn: Binding(
                         get: { model.showDebugOverlay },
                         set: { model.showDebugOverlay = $0; if $0 { FoldAuditSwitch.enabled = true } }))
