@@ -168,7 +168,7 @@ struct ReleaseBody: View {
             }
             if let summary = ps5Page ? r.ps5Summary : r.summary {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(summary)
+                    LinkedTextView(text: summary)
                         .lineLimit(summaryOpen ? nil : 3)
                     // GR-3: a truncated summary always says how to read the rest.
                     if summary.count > 120 {
@@ -389,7 +389,7 @@ struct NoteSectionView: View {
         VStack(alignment: .leading, spacing: 8) {
             Button { model.setExpanded(key, !open) } label: {
                 HStack {
-                    Text(section.title).font(PlayscribeFont.subheadline.weight(.semibold))
+                    Text(LinkedText.clean(section.title)).font(PlayscribeFont.subheadline.weight(.semibold))
                     Text("\(section.items.count)\(hidden > 0 && !model.spoilersShown(release.gameID) ? ", \(hidden) hidden for spoilers" : "")")
                         .font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     Spacer()
@@ -402,7 +402,10 @@ struct NoteSectionView: View {
             .tappableFrame()
             if open {
                 ForEach(Array(ps5Items.enumerated()), id: \.offset) { i, item in
-                    NoteItemView(item: item, gameID: release.gameID, key: "\(key):\(i)")
+                    // An item that was only Steam markup (an image) has nothing to show.
+                    if !LinkedText.clean(item.text).isEmpty {
+                        NoteItemView(item: item, gameID: release.gameID, key: "\(key):\(i)")
+                    }
                 }
                 if !pcOnly.isEmpty {
                     Button(showPC ? "Hide PC-specific changes" : "Show PC-specific changes (\(pcOnly.count))") { showPC.toggle() }
@@ -430,7 +433,7 @@ struct NoteItemView: View {
         HStack(alignment: .firstTextBaseline, spacing: 8) {
             Text("•").foregroundStyle(.secondary)
             VStack(alignment: .leading, spacing: 4) {
-                if item.spoiler == true { SpoilerText(text: item.text, gameID: gameID, key: key) } else { Text(item.text) }
+                if item.spoiler == true { SpoilerText(text: LinkedText.clean(item.text), gameID: gameID, key: key) } else { LinkedTextView(text: item.text) }
                 if item.ps5ProOnly { Tag(text: "PS5 Pro") }
             }
         }

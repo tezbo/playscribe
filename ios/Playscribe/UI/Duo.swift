@@ -91,9 +91,19 @@ extension View {
 
 /// Reports the part of a control that can be touched: clipped to the nearest scroll view, so a
 /// chip scrolled out of sight doesn't count.
+/// Frame tracking for the fold audit and debug overlay. Off in normal use: a geometry reader on
+/// every control, reporting up to the root on each scroll frame, made long pages lag (0.2.0).
+enum FoldAuditSwitch {
+    nonisolated(unsafe) static var enabled = ProcessInfo.processInfo.arguments.contains("-qaRoute")
+}
+
 private struct TappableFrameReporter: ViewModifier {
     @Environment(\.auditActive) private var active
     func body(content: Content) -> some View {
+        if FoldAuditSwitch.enabled { tracked(content) } else { content }
+    }
+
+    private func tracked(_ content: Content) -> some View {
         content.background {
             GeometryReader { g in
                 let local = CGRect(origin: .zero, size: g.size)

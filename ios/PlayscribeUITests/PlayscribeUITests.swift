@@ -259,3 +259,67 @@ final class JourneyTests: XCTestCase {
         let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); shot.name = "journey-open-patch-1.4"; shot.lifetime = .keepAlways; add(shot)
     }
 }
+
+/// 0.2.0 review fixes (Terry): links, single game links, version, scrolling.
+@MainActor
+final class ReviewFixUITests: XCTestCase {
+    /// Bare links in notes are tappable and open in the default browser.
+    func testNoteLinkOpensBrowser() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "release/dawnwalker/dawnwalker@1.0.5"]
+        app.launch()
+        // The link sits in a notes section, closed by default.
+        let section = app.buttons.matching(NSPredicate(format: "label CONTAINS 'We will continue'")).firstMatch
+        var opened = 0
+        while !(section.exists && section.isHittable) && opened < 12 { app.swipeUp(velocity: .slow); opened += 1 }
+        if section.exists { section.tap() }
+        let link = app.links.matching(NSPredicate(format: "label CONTAINS 'store.steampowered.com'")).firstMatch
+        var tries = 0
+        while !(link.exists && link.isHittable) && tries < 12 { app.swipeUp(velocity: .slow); tries += 1 }
+        XCTAssertTrue(link.exists, "a bare Steam link in the notes is a link")
+        link.tap()
+        let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
+        XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 10), "opens in the default browser")
+        app.activate()
+    }
+
+    /// Official website and All patch notes appear once on the game page.
+    func testGameLinksOnce() throws {
+        let app = XCUIApplication()
+        ReleaseRowTests.openBluePrince(app)
+        sleep(3)
+        for name in ["Official website", "All patch notes"] {
+            var seen = 0, tries = 0
+            repeat {
+                seen = max(seen, app.links.matching(NSPredicate(format: "label CONTAINS %@", name)).count)
+                app.swipeUp(velocity: .fast); tries += 1
+            } while tries < 6
+            XCTAssertLessThanOrEqual(seen, 1, "\(name) shown once")
+        }
+    }
+
+    /// Settings shows the bundle's version, 0.2.0.
+    func testSettingsVersion() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "settings"]
+        app.launch()
+        let version = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS '0.2.0' OR value CONTAINS '0.2.0'")).firstMatch
+        let form = app.collectionViews.firstMatch
+        var tries = 0
+        while !version.exists && tries < 8 { (form.exists ? form : app).swipeUp(); tries += 1 }
+        XCTAssertTrue(version.exists, "Settings shows version 0.2.0")
+    }
+
+    /// Scrolling Dawnwalker's Update 1.1 page: hitch ratio recorded for each run.
+    func testUpdate11ScrollPerformance() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "release/dawnwalker/dawnwalker@1.1"]
+        app.launch()
+        sleep(3)
+        let page = app.scrollViews["pageScroll"].exists ? app.scrollViews["pageScroll"] : app.scrollViews.firstMatch
+        measure(metrics: [XCTOSSignpostMetric.scrollingAndDecelerationMetric]) {
+            page.swipeUp(velocity: .fast)
+            page.swipeDown(velocity: .fast)
+        }
+    }
+}

@@ -7,7 +7,7 @@ here=${0:A:h}
 source $here/poselib.sh
 run() { xcodebuild -project $here/../../Playscribe.xcodeproj -scheme PlayscribeUI -destination "platform=iOS Simulator,id=$dev" \
   -derivedDataPath ~/Library/Developer/Xcode/DerivedData/Playscribe-cli test-without-building -only-testing:PlayscribeUITests/JourneyTests/$1 \
-  -resultBundlePath $out/$1.xcresult > $out/$1.log 2>&1; echo "$1: $(grep -E '\*\* TEST (SUCCEEDED|FAILED)' $out/$1.log)"; grep "error:" $out/$1.log | sed 's/.*error: //' | head -3; }
+  -resultBundlePath $out/$1.xcresult > $out/$1.log 2>&1; if grep -q '\*\* TEST SUCCEEDED' $out/$1.log; then echo "PASS $1"; else echo "FAIL $1"; grep "error:" $out/$1.log | sed 's/.*error: /  /' | head -3; fi; }
 set_pose closed
 xcrun simctl io $dev recordVideo --display=LCD --force $out/journey-closed.mov >/dev/null 2>&1 &
 run testClosedToOpenKeepsPatch14 &

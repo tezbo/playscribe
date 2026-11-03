@@ -16,6 +16,7 @@ struct PageView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @State private var position = ScrollPosition(idType: String.self)
+    @State private var liveOffset: CGFloat = 0
     var gameID: String
     /// Closed: one stacked book, the Contents below the Page.
     var withContents = false
@@ -71,8 +72,13 @@ struct PageView: View {
                 Task { try? await Task.sleep(for: .milliseconds(250)); position.scrollTo(id: "row-\(old)", anchor: .center) }
             }
         }
+        // Track the offset locally and persist it only when scrolling settles: writing model
+        // state every frame re-rendered the whole page and made long notes lag (Terry, 0.2.0).
         .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, y in
-            model.nav.anchors[anchorKey] = String(Int(y))
+            liveOffset = y
+        }
+        .onScrollPhaseChange { _, phase in
+            if phase == .idle { model.nav.anchors[anchorKey] = String(Int(liveOffset)) }
         }
         .onAppear(perform: restore)
         .onChange(of: duo.pose) { restore() }
@@ -261,11 +267,11 @@ struct GameBasicsView: View {
             if duo.pose == .closed { GameLinks(game: game) }
             if let summary = info?.summary {
                 Text("About").font(PlayscribeFont.headline)
-                Text(summary).font(PlayscribeFont.body)
+                LinkedTextView(text: summary).font(PlayscribeFont.body)
             }
             if let story = info?.storyline {
                 Text("Story").font(PlayscribeFont.headline)
-                Text(story).font(PlayscribeFont.body).lineLimit(storyOpen ? nil : 4)
+                LinkedTextView(text: story).font(PlayscribeFont.body).lineLimit(storyOpen ? nil : 4)
                 Button(storyOpen ? "Less" : "More") { withAnimation(.snappy) { storyOpen.toggle() } }
                     .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minHeight: 44).tappableFrame()
             }
@@ -344,7 +350,8 @@ struct ContentsBody: View {
                     }
                     Spacer(minLength: 8)
                 } }
-                if let game { GameLinks(game: game) }
+                // Once per page (Terry): closed, the links sit with the game's basics instead.
+                if duo.pose != .closed, let game { GameLinks(game: game) }
                 if model.entry(gameID) == nil, let game {
                     Button("Add to library") { model.addGame(game, status: .watching) }
                         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()

@@ -1,6 +1,14 @@
 import SwiftUI
 
 struct SettingsView: View {
+    /// "0.2.0 (12)", from the bundle, so it always matches the build.
+    static var version: String {
+        let info = Bundle.main.infoDictionary
+        let v = info?["CFBundleShortVersionString"] as? String ?? ""
+        let b = info?["CFBundleVersion"] as? String ?? ""
+        return b.isEmpty ? v : "\(v) (\(b))"
+    }
+
     @Environment(AppModel.self) private var model
     @Environment(\.dismiss) private var dismiss
     @Environment(\.duo) private var duo
@@ -53,7 +61,9 @@ struct SettingsView: View {
                     Toggle("Quiet Unconfirmed alerts (V-4)", isOn: Binding(
                         get: { NotificationService.reportedAlertsEnabled },
                         set: { UserDefaults.standard.set($0, forKey: "reportedAlerts") }))
-                    Toggle("Show tappable frames and reserved regions", isOn: $model.showDebugOverlay)
+                    Toggle("Show tappable frames and reserved regions", isOn: Binding(
+                        get: { model.showDebugOverlay },
+                        set: { model.showDebugOverlay = $0; if $0 { FoldAuditSwitch.enabled = true } }))
                     Button("Reset to first run", role: .destructive) { model.resetToFirstRun(); dismiss() }
                     Button("Reset to demo library") { model.resetDemo(); dismiss() }
                     LabeledContent("Pose", value: duo.pose.rawValue)
@@ -64,7 +74,8 @@ struct SettingsView: View {
                 #endif
 
                 Section {
-                    LabeledContent("Version", value: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")
+                    LabeledContent("Version", value: Self.version)
+                        .accessibilityIdentifier("appVersion")
                 } footer: {
                     Text("Artwork and trailers belong to their publishers. \(Brand.trademarkNotice)")
                 }

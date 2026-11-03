@@ -421,7 +421,7 @@ final class AppModel {
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
-        case "overlay": showDebugOverlay.toggle()
+        case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
             Task {
                 if NotificationService.shared.authorization == .notDetermined { await NotificationService.shared.requestAuthorization() }
