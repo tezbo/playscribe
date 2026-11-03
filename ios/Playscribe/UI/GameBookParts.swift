@@ -96,18 +96,70 @@ struct PageView: View {
     }
 }
 
-/// The art band at the top of the Page, extended under the rail.
+/// The art band at the top of the Page, extended under the rail. The faded key-art header is the
+/// default (A8, header-fade handoff): key art top-trailing under a left and a bottom fade into
+/// ink; a portrait cover alone sits right over a blurred copy of itself; no art at all falls back
+/// to the Playscribe landscape.
 struct PageArtBand: View {
     @Environment(AppModel.self) private var model
     var gameID: String
     var body: some View {
-        ArtView(asset: model.backdrop(gameID, chapter: model.nav.chapter, tall: false), game: model.game(gameID))
-            .frame(height: 170)
-            .backgroundExtensionEffect()
-            .overlay(alignment: .bottom) {
+        let game = model.game(gameID)
+        let asset = model.backdrop(gameID, chapter: model.nav.chapter, tall: false)
+        let coverOnly = asset != nil && asset == game?.coverAsset && asset != game?.heroAsset
+        let hasArt = asset != nil || game?.heroArtURL != nil || game?.coverURL != nil
+        Group {
+            if coverOnly || (asset == nil && game?.heroArtURL == nil && game?.coverURL != nil) {
+                CoverHeader(game: game, asset: asset)
+            } else {
+                ArtView(asset: asset, game: game)
+                    .modifier(hasArt ? FadeMask() : FadeMask(enabled: false))
+            }
+        }
+        .frame(height: 170)
+        .backgroundExtensionEffect()
+        .accessibilityHidden(true)
+    }
+}
+
+/// Two gradients, no hard edge: left to right from ink to clear at 55%, bottom clear at 55% to ink.
+struct FadeMask: ViewModifier {
+    var enabled = true
+    func body(content: Content) -> some View {
+        if enabled {
+            content
+                .overlay(LinearGradient(stops: [.init(color: Color.ink0, location: 0), .init(color: .clear, location: 0.55)],
+                                        startPoint: .leading, endPoint: .trailing))
+                .overlay(LinearGradient(stops: [.init(color: .clear, location: 0.55), .init(color: Color.ink0, location: 1)],
+                                        startPoint: .top, endPoint: .bottom))
+        } else {
+            content.overlay(alignment: .bottom) {
                 LinearGradient(colors: [.clear, Color.ink0], startPoint: .top, endPoint: .bottom).frame(height: 60)
             }
-            .accessibilityHidden(true)
+        }
+    }
+}
+
+/// Step 3 of the ladder: the portrait cover on the right at about 60% of the header height,
+/// over a heavily blurred, darkened copy of itself, in the same faded treatment.
+struct CoverHeader: View {
+    var game: CatalogGame?
+    var asset: String?
+    var body: some View {
+        GeometryReader { geo in
+            ZStack(alignment: .trailing) {
+                cover.scaledToFill().frame(width: geo.size.width, height: geo.size.height).blur(radius: 30).brightness(-0.35).clipped()
+                cover.scaledToFit().frame(height: geo.size.height * 0.6).padding(.trailing, 24)
+            }
+        }
+        .modifier(FadeMask())
+    }
+
+    @ViewBuilder private var cover: some View {
+        if let asset { Image(asset).resizable() }
+        else if let url = game?.coverURL {
+            AsyncImage(url: url) { $0.resizable() } placeholder: { Color.ink1 }
+        } else { Color.ink1 }
     }
 }
 
