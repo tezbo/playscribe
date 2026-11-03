@@ -73,7 +73,7 @@ struct NewsChapter: View {
                 } else if store.loaded.contains(gameID) {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("No news yet").font(PlayscribeFont.headline)
-                        Text("Official posts from the studio will show here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("Official posts from the studio will appear here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     }
                     .padding(.vertical, 20)
                 }
