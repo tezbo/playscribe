@@ -507,13 +507,16 @@ struct SourceLinks: View {
 
 /// New, Fixed and Balance: the reader's change groups, chosen from the section title.
 enum ChangeKind: String, CaseIterable {
-    case new = "New", fixed = "Fixed", balance = "Balance"
+    case new = "New", fixed = "Fixed", balance = "Balance", other = "Other changes"
 
+    /// Keywords in the section title; a title the guess cannot place goes under Other changes,
+    /// never into a wrong group (Iris). Replace with the feed's category field when it lands.
     static func of(_ title: String) -> ChangeKind {
         let t = title.lowercased()
         if t.contains("fix") || t.contains("bug") || t.contains("crash") || t.contains("stabil") { return .fixed }
         if t.contains("balanc") || t.contains("tuning") || t.contains("adjust") || t.contains("tweak") { return .balance }
-        return .new
+        if t.contains("new") || t.contains("add") || t.contains("feature") || t.contains("introduc") { return .new }
+        return .other
     }
 
     /// Non-empty groups in New, Fixed, Balance order; the count leaves out PC-only lines on a PS5 page.
