@@ -15,17 +15,34 @@ struct AddGameSheet: View {
     /// GR-7: games picked so far; kept while the query changes.
     @State private var picked: [String: CatalogGame] = [:]
     @State private var pickOrder: [String] = []
+    /// nil shows the entry sheet; `matches` non-nil shows the shared results list.
+    @State private var method: AddMethod?
+    @State private var matches: [AddMatch]?
 
     var body: some View {
         NavigationStack {
             Group {
-                if custom { customForm } else { list }
+                if custom { customForm }
+                else if let matches {
+                    AddResultsView(matches: matches, status: status, picked: picked, toggle: toggle) { self.matches = nil }
+                } else if let method {
+                    switch method {
+                    case .typeIt: list
+                    case .sayIt: SayItView(find: { showMatches(AddMatcher.titles(from: $0)) }, typeInstead: { self.method = .typeIt })
+                    default: list
+                    }
+                } else { AddEntryView { method = $0 } }
             }
-            .navigationTitle(custom ? "Add your own game" : "Add game")
+            .navigationTitle(custom ? "Add your own game" : matches != nil ? "Found games" : method == nil ? "Add games" : method!.title)
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button { dismiss() } label: { Label("Close", systemImage: "xmark") }
+                }
+                if method != nil && !custom {
+                    ToolbarItem(placement: .navigation) {
+                        Button { if matches != nil { matches = nil } else { method = nil } } label: { Label("Back", systemImage: "chevron.backward") }
+                    }
                 }
             }
             // One confirm bar pinned to the bottom of the sheet (Terry, 0.2.0): no scrolling back
@@ -139,6 +156,13 @@ struct AddGameSheet: View {
                 Button("Back to list") { custom = false }
             }
         }
+    }
+
+    /// Every method lands here: sure matches not yet in the library are pre-ticked, the rest wait.
+    private func showMatches(_ titles: [String]) {
+        let found = AddMatcher.match(titles, curated: model.fixtures.games)
+        for m in found { if let g = m.best, model.entry(g.id) == nil, picked[g.id] == nil { toggle(g) } }
+        matches = found
     }
 
     private func add(_ g: CatalogGame) {
