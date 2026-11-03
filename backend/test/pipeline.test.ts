@@ -146,7 +146,7 @@ test('an official PS5 post is pending until a person confirms; push fires once',
   assert.equal(db.prepare('SELECT COUNT(*) AS n FROM review_items WHERE release_id = ? AND resolved_at IS NULL').get(id)!.n, 0)
 })
 
-test('every update live on PS5 earns one standard alert; only a press-only report is quiet "Unconfirmed"; confirming does not alert again', async () => {
+test('every update live on PS5 earns one standard alert; a press-only report earns none; confirming does not alert again', async () => {
   const { db } = await setup()
   const id = 'dawnwalker@1.1'
   const t = new Date().toISOString()
@@ -157,8 +157,9 @@ test('every update live on PS5 earns one standard alert; only a press-only repor
   assert.equal(getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!.alert?.style, 'standard')
 
   const out = await pushNewPs5(db, apns, { maxAgeHours: 1e6 })
-  // Yōtei is press-only (no Steam post, no studio post): its one alert is the quiet Unconfirmed one.
-  assert.deepEqual(out.filter((o) => o.releaseId.startsWith('yotei@')).map((o) => o.style), ['quiet'])
+  // Yōtei is press-only (no Steam post, no studio post): no alert, no tag, and its push is not claimed.
+  assert.equal(out.filter((o) => o.releaseId.startsWith('yotei@')).length, 0)
+  assert.equal(getRelease(db, (db.prepare("SELECT release_id FROM platform_releases WHERE release_id LIKE 'yotei@%' AND platform = 'ps5'").get() as { release_id: string }).release_id)!.platforms.find((p) => p.platform === 'ps5')!.alert, undefined)
   assert.ok(out.filter((o) => !o.releaseId.startsWith('yotei@')).every((o) => o.style === 'standard'))
   const p = sent.find((x) => x.releaseId === id)
   assert.match(p.aps.alert.body, /Update 1\.1 is out on PS5/)
@@ -195,14 +196,14 @@ test('sources are polled at most hourly, and a 403 switches a source off', async
   assert.ok(!forced.polled.includes('remedy-news'))
 })
 
-test('roadmap 11: a stale press-only report is stored as pushed with no alert; a patch dated before the PS5 launch is not live on PS5', async () => {
+test('roadmap 11: a stale report is stored as pushed with no alert; a patch dated before the PS5 launch is not live on PS5', async () => {
   const { db } = await setup()
   const t = new Date().toISOString()
   db.prepare("INSERT INTO devices (id, key_hash, apns_token, environment, created_at, updated_at) VALUES ('b', 'hb', ?, 'production', ?, ?)").run('b'.repeat(64), t, t)
-  db.prepare("INSERT INTO follows (device_id, game_id, notify) VALUES ('b', 'yotei', 'all')").run()
+  db.prepare("INSERT INTO follows (device_id, game_id, notify) VALUES ('b', 'dawnwalker', 'all')").run()
   const sent: unknown[] = []
   const apns = { send: async (_t: string, _e: string, payload: object) => (sent.push(payload), { status: 200 }) } as unknown as Apns
-  const yotei = db.prepare("SELECT release_id FROM platform_releases WHERE release_id LIKE 'yotei@%' AND platform = 'ps5' AND status = 'live'").get()!.release_id as string
+  const yotei = 'dawnwalker@1.1'
   db.prepare("UPDATE platform_releases SET live_at = ? WHERE release_id = ? AND platform = 'ps5'").run(JSON.stringify({ value: recent(100), verification: 'reported', sourceId: 'x' }), yotei)
   const out = await pushPs5Release(db, apns, yotei, { maxAgeHours: 72 })
   assert.equal(out.skipped, 'tooOld')

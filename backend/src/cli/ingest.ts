@@ -4,7 +4,7 @@
 // history back to that date (Steam's last 100 posts per game, the press update list page by page,
 // at the site's Crawl-delay); it implies --force.
 // After the poll, each PS5 update now live gets its one alert, Steam patches included; a press-only
-// report gets the quiet "Unconfirmed" one
+// report gets none
 // (only when PUSH_ENABLED=1 and APNs keys are set; otherwise it is marked as alerted and the app
 // raises it locally from the feed's `alert`).
 import { config } from '../config.ts'

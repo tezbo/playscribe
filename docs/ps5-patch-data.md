@@ -125,11 +125,11 @@ struct NoteItem: Codable {
 
 - **Released** (counts as new, raises the badge, alerts once): the PS5 `PlatformRelease` has `status == .live` and its `alert.style` is `standard` (verification `official`, `pending`, `assumed`, or `reported` on a release Steam or the studio has). Since 2026-10-27 the app shows no Unconfirmed, "Not confirmed on PS5", "Live on PC" or "PC only so far" wording for these.
 - `PlatformRelease.verification` is about the status only. A press-only size or version on an officially confirmed release does not downgrade it: the release stays On PS5 and that field shows a "Reported" tag. Example: Dawnwalker 1.1 is On PS5, and its size is tagged Reported.
-- **Unconfirmed** (press only, one quiet alert): live, verification `reported`, and the release has no `links` (neither Steam nor the studio has it). The feed marks these with `alert: { style: quiet, tag: Unconfirmed }`. Wording (contract V-4): title "Unconfirmed: <Game>", subtitle "<Display name> reported on PS5", body "From press reports. This will update when it's official."; passive, no sound, grouped apart, collapse id = release id. A press report on a release Steam or the studio already has is just Released.
+- **Press only (no Unconfirmed state)**: live, verification `reported`, and the release has no `links`. The feed gives it no `alert`, the app does not show it, and no push is sent. If Steam or the studio later has it, it is Released and alerts once. Removed in 0.5.0 (Terry's data rule).
 - **Coming to PS5**: a PS5 `PlatformRelease` with `status` of `announced` (the studio said consoles get it later). Releases with no PS5 row at all (PC ports, posts before the PS5 release) are not PS5 updates.
 - **Not coming to PS5**: `status == .notPlanned`, and only when an official post says so.
 - Each release links back to where its notes came from: `links.steamNotes` (the Steam post) and `links.ps5Page` (the studio's own PS5 page for that update, when one is found: an official post that names PS5, or a PS5 or console link in the Steam post). Terry, 2026-10-27; this replaces the earlier no-source-credits rule.
-- A release alerts at most once on the user's platform: the standard alert as soon as its PS5 row is live, including a Steam patch taken as out on PS5, or the quiet Unconfirmed alert for a press-only report. A later confirmation does not alert a second time. The feed's `PlatformRelease.alert` says which alert a PS5 row earns.
+- A release alerts at most once on the user's platform: the standard alert as soon as its PS5 row is live, including a Steam patch taken as out on PS5. A press-only report earns none. A later confirmation does not alert a second time. The feed's `PlatformRelease.alert` says which alert a PS5 row earns.
 
 ## Registry file
 
