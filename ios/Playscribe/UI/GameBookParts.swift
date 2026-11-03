@@ -317,8 +317,57 @@ struct GameBasicsView: View {
                 Button(storyOpen ? "Less" : "More") { withAnimation(.snappy) { storyOpen.toggle() } }
                     .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minHeight: 44).tappableFrame()
             }
+            SimilarGamesRow(game: game)
         }
         .task(id: game.igdbID) { if let id = game.igdbID { await store.load(igdbID: id) } }
+    }
+}
+
+/// "You might also like": up to 8 PS5 games related to this one, none already in the library.
+/// Hidden when empty; a failed load shows nothing (0.5.0 item 18).
+struct SimilarGamesRow: View {
+    @Environment(AppModel.self) private var model
+    var game: CatalogGame
+    @State private var choosing: CatalogGame?
+
+    private var games: [CatalogGame] {
+        let inLibrary = Set(model.data.collection.compactMap { model.game($0.gameID)?.igdbID })
+        let similar = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.similar ?? []
+        return similar.compactMap { s -> CatalogGame? in
+            guard s.igdbId != game.igdbID, !inLibrary.contains(s.igdbId),
+                  let e = PS5Index.shared.entry(igdb: s.igdbId) else { return nil }
+            return PS5Index.shared.game(e)
+        }.prefix(8).map { $0 }
+    }
+
+    var body: some View {
+        let list = games
+        if !list.isEmpty {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("You might also like").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        ForEach(list) { g in
+                            Button { choosing = g } label: {
+                                TileCover(game: g).frame(width: 104, height: 139)
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel(g.name)
+                            .accessibilityHint("Choose how to add it")
+                            .tappableFrame()
+                        }
+                    }
+                }
+                .edgeFade(40)
+            }
+            .confirmationDialog(choosing?.name ?? "", isPresented: Binding(get: { choosing != nil }, set: { if !$0 { choosing = nil } }), titleVisibility: .visible) {
+                if let g = choosing {
+                    Button("Add to library") { model.addGame(g, status: .owned); model.openGame(g.id) }
+                    Button("Add to watchlist") { model.addGame(g, status: .wishlist); model.openGame(g.id) }
+                }
+                Button("Cancel", role: .cancel) {}
+            }
+        }
     }
 }
 

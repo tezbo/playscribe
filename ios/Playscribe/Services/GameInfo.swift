@@ -12,6 +12,9 @@ struct GameBasics: Codable, Hashable {
     var videos: [Video]?
     struct Links: Codable, Hashable { var official: URL?; var patchNotes: URL? }
     var links: Links?
+    struct Similar: Codable, Hashable { var igdbId: Int; var name: String; var coverId: String? }
+    /// Up to 8 related games (feed `similar`); nil on older data.
+    var similar: [Similar]?
 }
 
 @MainActor @Observable
