@@ -42,6 +42,8 @@ struct ModelTests {
     @Test("Remove then Undo restores status, level, bookmarks and notes (B-8)")
     func removeUndo() {
         let m = freshModel()
+        // A real first launch starts empty (245aea0), so the game is added before it is changed.
+        m.addGame(m.game("dawnwalker")!, status: .owned)
         m.setStatus("dawnwalker", .wishlist)
         m.setNotify("dawnwalker", .major)
         m.toggleBookmark(kind: .release, id: "dawnwalker@1.1", gameID: "dawnwalker")
