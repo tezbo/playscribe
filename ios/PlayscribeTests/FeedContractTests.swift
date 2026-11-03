@@ -77,3 +77,17 @@ struct FeedContractTests {
         #expect(shard.games["3"]?.date == nil)
     }
 }
+
+@MainActor
+struct UpcomingMoveTests {
+    @Test("Upcoming moves read as plain lines (0.5.0)")
+    func moveLines() {
+        typealias M = UpcomingStore.Move
+        #expect(M(kind: "dated").line == "Now dated")
+        #expect(M(kind: "earlier").line == "Moved earlier")
+        #expect(M(kind: "delayed").line == "Delayed")
+        #expect(M(kind: "delayed", previousDate: "2027-03-31", previousPrecision: "month").line == "Delayed from March 2027")
+        #expect(M(kind: "delayed", previousDate: "2026-12-31", previousPrecision: "quarter").line == "Delayed from Q4 2026")
+        #expect(M(kind: "other").line == nil)
+    }
+}
