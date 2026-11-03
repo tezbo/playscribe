@@ -11,11 +11,17 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         var update: String
         var date: Date
         var unread: Bool
+        /// A cover thumbnail was written for this row (first row only, for the small widget).
+        var hasCover = false
         var id: String { releaseID }
         var url: URL { URL(string: "playscribe://release/\(gameID)/\(releaseID)")! }
     }
 
-    static let group = "group.co.codeconnectors.playscribe"
+    /// The App Group derives from the bundle ID build setting (Info.plist key PlayscribeAppGroup).
+    static var group: String {
+        Bundle.main.object(forInfoDictionaryKey: "PlayscribeAppGroup") as? String ?? "group.co.codeconnectors.playscribe"
+    }
+    static let coverFile = "widget-cover.jpg"
     static let fileName = "widget-snapshot.json"
 
     var rows: [Row]
@@ -31,6 +37,10 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         unreadCount: 1, hasGames: true)
 
     static var containerURL: URL? { FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: group) }
+
+    static func coverData() -> Data? {
+        containerURL.flatMap { try? Data(contentsOf: $0.appendingPathComponent(coverFile)) }
+    }
 
     static func load() -> WidgetSnapshot {
         guard let url = containerURL?.appendingPathComponent(fileName),

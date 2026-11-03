@@ -108,7 +108,7 @@ platform :ios do
         "-authenticationKeyID #{ENV.fetch('ASC_KEY_ID')}",
         "-authenticationKeyIssuerID #{ENV.fetch('ASC_ISSUER_ID')}",
         "DEVELOPMENT_TEAM=#{team}",
-        "PRODUCT_BUNDLE_IDENTIFIER=#{bundle_id}",
+        "PLAYSCRIBE_BUNDLE_ID=#{bundle_id}",
         *settings
       ].join(' '),
       export_options: { signingStyle: 'automatic', teamID: team }

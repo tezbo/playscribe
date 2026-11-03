@@ -110,6 +110,10 @@ struct WidgetView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     if r.unread { NewChip() }
                     Spacer(minLength: 0)
+                    if r.hasCover, let data = WidgetSnapshot.coverData(), let img = UIImage(data: data) {
+                        Image(uiImage: img).resizable().scaledToFill()
+                            .frame(height: 44).clipShape(RoundedRectangle(cornerRadius: 8)).accessibilityHidden(true)
+                    }
                     Text(r.game).font(W.title).lineLimit(3)
                     Text(r.update).font(W.body).foregroundStyle(.secondary).lineLimit(1)
                     Text(age(r.date)).font(W.body).foregroundStyle(.secondary).lineLimit(1)

@@ -12,6 +12,8 @@ settings:
     MARKETING_VERSION: "0.2.0"
     CURRENT_PROJECT_VERSION: "1"
     DEVELOPMENT_TEAM: ""
+    # One setting drives the app and widget bundle IDs and the App Group. The release lane overrides it.
+    PLAYSCRIBE_BUNDLE_ID: co.codeconnectors.playscribe
 targets:
   Playscribe:
     type: application
@@ -24,7 +26,7 @@ targets:
         embed: true
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: co.codeconnectors.playscribe
+        PRODUCT_BUNDLE_IDENTIFIER: $(PLAYSCRIBE_BUNDLE_ID)
         INFOPLIST_FILE: Playscribe/Info.plist
         CODE_SIGN_ENTITLEMENTS: Playscribe/Playscribe.entitlements
         CODE_SIGN_STYLE: Automatic
@@ -48,7 +50,7 @@ targets:
         includes: ["InstrumentSans-*.ttf"]
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: co.codeconnectors.playscribe.widget
+        PRODUCT_BUNDLE_IDENTIFIER: $(PLAYSCRIBE_BUNDLE_ID).widget
         INFOPLIST_FILE: PlayscribeWidget/Info.plist
         CODE_SIGN_ENTITLEMENTS: PlayscribeWidget/PlayscribeWidget.entitlements
         CODE_SIGN_STYLE: Automatic
