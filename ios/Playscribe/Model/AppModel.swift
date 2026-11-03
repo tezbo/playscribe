@@ -144,6 +144,7 @@ final class AppModel {
     var deckSelection: String?
     /// Tabletop's Links sheet (J-11).
     var linksSheetOpen = false
+    var libraryTab: LibraryTab = .playing
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
     /// Set when a deep link asks the journal to bring a release to the top.
