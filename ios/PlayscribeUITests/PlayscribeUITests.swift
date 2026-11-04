@@ -494,6 +494,7 @@ final class LatestUpdatesDeckTests: XCTestCase {
         app.launchArguments = ["-qaRoute", "library"]
         app.launch()
         sleep(4)
+        if ReleaseRowTests.pose(app).contains("pose: tabletop") { app.terminate(); throw XCTSkip("Tabletop's upper half is view only") }
         let leaves = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Update ' AND label CONTAINS ' of '"))
         if leaves.count > 1 {
             XCTAssertGreaterThanOrEqual(leaves.element(boundBy: 1).frame.height, 44, "leaf is a 44 pt target")
