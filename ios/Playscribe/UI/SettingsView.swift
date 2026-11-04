@@ -66,6 +66,12 @@ struct SettingsView: View {
                     }
                     Toggle("Pause all", isOn: $model.data.pauseAll)
                     quietHoursRows
+                    // PS Plus: a reminder three days before a month's games can no longer be claimed.
+                    Toggle("PS Plus leaving soon", isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true }))
+                        .accessibilityHint("A reminder three days before this month's PS Plus games leave")
+                        .accessibilityIdentifier("plusLeavingSoon")
+                        .onChange(of: model.data.plusLeavingSoonOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
+                        .onChange(of: model.data.pauseAll) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
                     let overrides = model.notifyOverrides
                     if !overrides.isEmpty {
                         NavigationLink("\(overrides.count) game\(overrides.count == 1 ? " has its" : "s have their") own setting") {
