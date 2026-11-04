@@ -562,9 +562,16 @@ struct GameTile: View {
     /// Closed fills its column, so the cover's width is only known once laid out.
     @State private var measuredWidth: CGFloat = 0
 
+    /// Reports the cover itself to the fold audit and publishes its width. The measure sits on the
+    /// 3:4 cover, inside the column-filling wrapper: measuring the wrapper gave the column's width
+    /// (181 pt), not the cover's (J-5 then read 241 pt tall tiles on a 236 pt pitch).
+    private func measured(_ cover: some View) -> some View {
+        cover.tappableFrame().onGeometryChange(for: CGFloat.self) { $0.size.width } action: { measuredWidth = $0 }
+    }
+
     @ViewBuilder private func tileFrame(_ cover: some View) -> some View {
-        if let size { cover.frame(width: size, height: (size * 4 / 3).rounded()) }
-        else { cover.aspectRatio(3 / 4, contentMode: .fit).frame(maxWidth: .infinity) }
+        if let size { measured(cover.frame(width: size, height: (size * 4 / 3).rounded())) }
+        else { measured(cover.aspectRatio(3 / 4, contentMode: .fit)).frame(maxWidth: .infinity) }
     }
 
     var body: some View {
@@ -572,9 +579,6 @@ struct GameTile: View {
             // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             tileFrame(TileCover(game: row.game))
-                // The fold audit measures the cover (clipped 3:4), not the 8 pt wider accessibility frame.
-                .tappableFrame()
-                .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { measuredWidth = $0 }
                 .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
                 .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
                 .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
