@@ -293,6 +293,8 @@ struct LowerMessages: View {
                     }
                     .padding(.horizontal, 16)
                     .frame(minHeight: 44)
+                    // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
+                    .background(Capsule().fill(PlayscribeColor.ink700))
                     .adaptiveGlass(in: Capsule(), interactive: true)
                 }
                 .buttonStyle(.plain)
