@@ -83,8 +83,56 @@ platform :ios do
     section[0, 4000]
   end
 
+  # "What to Test" is betaBuildLocalizations.whatsNew, one per locale. Testers see only the locale that
+  # matches their device, so notes in one locale and none in theirs show nothing.
+  def find_build(app, version, build_number)
+    Spaceship::ConnectAPI::Build.all(app_id: app.id, version: version.to_s, build_number: build_number.to_s).first ||
+      UI.user_error!("No build #{build_number} of #{version} on App Store Connect (yet)")
+  end
+
+  def print_whats_new(build, label)
+    locs = build.get_beta_build_localizations
+    UI.message("#{label}: #{locs.size} locale(s)")
+    locs.each { |l| UI.message("  #{l.locale}: #{l.whats_new.to_s[0, 60].inspect}") }
+    locs
+  end
+
+  # whatsNew = notes on every existing locale plus en-US and en-GB (created when missing).
+  def set_whats_new(build, notes)
+    text = Pilot::BuildManager.sanitize_changelog(notes) # the same cleanup upload_to_testflight applies
+    existing = build.get_beta_build_localizations
+    (existing.map(&:locale) | %w[en-US en-GB]).each do |locale|
+      loc = existing.find { |l| l.locale == locale }
+      if loc
+        Spaceship::ConnectAPI.patch_beta_build_localizations(localization_id: loc.id, attributes: { whatsNew: text })
+      else
+        Spaceship::ConnectAPI.post_beta_build_localizations(build_id: build.id, attributes: { locale: locale, whatsNew: text })
+      end
+    end
+  end
+
+  desc 'Print and set What to Test for a build already on TestFlight. version: 0.2.0, build: 5'
+  lane :notes do |options|
+    UI.user_error!('Pass version:0.2.0 build:5') if options[:version].to_s.empty? || options[:build].to_s.empty?
+    api_key
+    app = Spaceship::ConnectAPI::App.find(bundle_id)
+    UI.message("App primary locale: #{app.primary_locale}")
+    app_locs = app.get_beta_app_localizations
+    UI.message("Beta app localizations: #{app_locs.map(&:locale).join(', ')}")
+    notes = release_notes(options[:version])
+    build = find_build(app, options[:version], options[:build])
+    UI.message("Build #{build.version} of #{options[:version]}, processing state: #{build.processing_state}")
+    print_whats_new(build, 'Before')
+    set_whats_new(build, notes)
+    after = print_whats_new(build, 'After')
+    UI.user_error!('No locale has What to Test after the update') if after.none? { |l| !l.whats_new.to_s.strip.empty? }
+    UI.success("What to Test set for #{after.map(&:locale).join(', ')}")
+  end
+
   desc 'Build, sign and upload to TestFlight. marketing_version: e.g. 0.3.0 (from the git tag)'
   lane :beta do |options|
+    # Fails before any build work when the CHANGELOG has no section for this version.
+    notes = release_notes(options[:marketing_version])
     key = api_key
     key_path = File.expand_path('../build/AuthKey.p8')
     FileUtils.mkdir_p(File.dirname(key_path))
@@ -115,7 +163,19 @@ platform :ios do
     )
 
     # "What to Test" is this version's CHANGELOG.md section. TestFlight only takes it once the build has processed.
-    upload_to_testflight(api_key: key, app_identifier: bundle_id, changelog: release_notes(options[:marketing_version]))
+    upload_to_testflight(api_key: key, app_identifier: bundle_id, changelog: notes)
+
+    # Read the notes back: a build never ships silently without them. If the upload left a build with
+    # none, set every locale once, then fail if it still has none.
+    app = Spaceship::ConnectAPI::App.find(bundle_id)
+    uploaded = find_build(app, options[:marketing_version], build)
+    locs = print_whats_new(uploaded, 'After upload')
+    if locs.none? { |l| !l.whats_new.to_s.strip.empty? }
+      UI.important('No locale has What to Test after the upload; setting it directly')
+      set_whats_new(uploaded, notes)
+      locs = print_whats_new(uploaded, 'After fix')
+    end
+    UI.user_error!("Build #{build} of #{options[:marketing_version]} has no What to Test in any locale") if locs.none? { |l| !l.whats_new.to_s.strip.empty? }
     ensure_internal_testers
   ensure
     File.delete(key_path) if key_path && File.exist?(key_path)
