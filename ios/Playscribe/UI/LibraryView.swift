@@ -210,7 +210,7 @@ struct LibraryShelf: View {
             ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
         let all = model.libraryRows
         ScrollView {
-            LazyVStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading, spacing: 14) {
                 LibraryTabPicker()
                 if model.libraryTab == .upcoming {
                     UpcomingView()
