@@ -283,8 +283,11 @@ struct DeckCardArt: View {
     var card: DeckCard
     var height: CGFloat?
     var body: some View {
-        ArtView(asset: card.game.keyArtAsset, game: card.game)
-            .aspectRatio(16 / 9, contentMode: .fit)
+        // The 16:9 box comes from a clear base, so the art's own size never sets the card's height (a Book
+        // hero came out as tall as the screen when the proposal had no height).
+        Color.clear.aspectRatio(16 / 9, contentMode: .fit)
+            .overlay { ArtView(asset: card.game.keyArtAsset, game: card.game) }
+            .clipped()
             .modifier(FixedArtHeight(height: height))
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))

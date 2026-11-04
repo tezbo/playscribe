@@ -211,7 +211,10 @@ struct LibraryShelf: View {
         let all = model.libraryRows
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
+                // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
                 LibraryTabPicker()
+                    .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 if model.libraryTab == .upcoming {
                     UpcomingView()
                 } else {
