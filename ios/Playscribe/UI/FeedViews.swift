@@ -107,6 +107,7 @@ struct SearchView: View {
             if term.isEmpty {
                 Text("Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
                     .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
             } else if gameHits.isEmpty && noteHits.isEmpty && entryHits.isEmpty {
                 ContentUnavailableView.search(text: query)
             }
@@ -171,7 +172,7 @@ struct SearchView: View {
                 NoteSearchResults(query: query, scope: .thisGame, gameID: model.nav.lastGameID) { model.noteScope = .allGames }
             }
         }
-        .searchable(text: $query, prompt: "Games, patch notes, characters…")
+        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Games, patch notes, characters…")
         .searchScopes(Binding(get: { model.noteScope }, set: { model.noteScope = $0 })) {
             ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
         }
