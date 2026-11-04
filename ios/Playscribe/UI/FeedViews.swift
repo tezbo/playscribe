@@ -114,11 +114,12 @@ struct SearchView: View {
 
     var body: some View {
         let tabletop = duo.pose == .tabletop
-        let book = duo.pose == .book && duo.division != nil
-        // Closed portrait: the system drawer field runs to the edge of the narrow window, touching the
-        // time and Wi-Fi badge beside it (Mac, ea3af92: 0.3 pt clear). Iris: 16 pt clear, so this pose
-        // has its own field with 16 pt margins.
-        let ownField = duo.pose == .closed && !duo.isLandscape
+        // Every pose but Tabletop has its own field in the list: the system drawer field ran flush to
+        // the time and Wi-Fi badge (Mac, ea3af92) and could not be inset. The field and the hint card
+        // share the same insets, and the list keeps clear of any occlusion at the top (Iris, #185).
+        let ownField = !tabletop
+        let badgeExtra = duo.occlusions.filter { $0.minY < 190 && $0.maxY > 40 }
+            .map { max(0, duo.size.width - $0.minX) }.max() ?? 0
         let term = tabletop ? "" : query.trimmingCharacters(in: .whitespaces).lowercased()
         let active = tabletop ? letter != nil : !term.isEmpty
         let library = Set(model.data.collection.map(\.gameID))
@@ -175,7 +176,7 @@ struct SearchView: View {
                     }
                 }
             }
-            if !active && !book {
+            if !active {
                 Text(tabletop ? "Pick a letter to see games, patch notes and game book entries that start with it. Spoiler-tagged notes are left out."
                               : "Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
                     .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
@@ -246,27 +247,14 @@ struct SearchView: View {
                 }
             }
         }
-        .contentMargins(.trailing, railWidth, for: .scrollContent)
+        .contentMargins(.trailing, railWidth + (tabletop ? 0 : badgeExtra), for: .scrollContent)
         .overlay {
             if query.count >= 2 && model.noteScope == .thisGame && model.nav.lastGameID != nil {
                 NoteSearchResults(query: query, scope: .thisGame, gameID: model.nav.lastGameID) { model.noteScope = .allGames }
             }
         }
-        .modifier(SearchFieldIfTyping(enabled: !tabletop && !ownField, drawer: duo.pose != .book, query: $query))
         // Book: Search lives on the right page, never across the fold (0.2.0 gate: field and hint ran full width).
         .padding(.leading, duo.pose == .book ? (duo.division.map { $0.maxX + 8 } ?? 0) : 0)
-        // Book: the hint sits on the left page under the title, so the left page is not empty and the
-        // field and results own the right page (Iris, #185 review).
-        .overlay(alignment: .topLeading) {
-            if book, !active, let fold = duo.division {
-                Text("Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
-                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(width: max(0, fold.minX - 16 - 24), alignment: .leading)
-                    .padding(.leading, 16).padding(.top, 120)
-                    .allowsHitTesting(false)
-            }
-        }
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
         .frame(maxHeight: tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
@@ -277,32 +265,5 @@ struct SearchView: View {
         }
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.large)
-    }
-}
-
-/// The system search field everywhere except Tabletop, which uses the read-only button and letter strip.
-/// Closed poses hide the tab-bar search field, so it sits in the navigation drawer in every pose.
-private struct SearchFieldIfTyping: ViewModifier {
-    @Environment(AppModel.self) private var model
-    var enabled: Bool
-    /// Closed and flat poses hide the tab-bar field, so it moves into the nav drawer; Book keeps the
-    /// system's own placement, which sits on the right page.
-    var drawer: Bool
-    @Binding var query: String
-
-    func body(content: Content) -> some View {
-        if enabled {
-            content
-            .searchable(text: $query, placement: drawer ? .navigationBarDrawer(displayMode: .always) : .automatic, prompt: "Games, patch notes, characters…")
-            .searchScopes(Binding(get: { model.noteScope }, set: { model.noteScope = $0 })) {
-                ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
-            }
-            .searchSuggestions {
-                ForEach(model.recentSearches, id: \.self) { Text($0).searchCompletion($0) }
-            }
-            .onSubmit(of: .search) { model.rememberSearch(query) }
-        } else {
-            content
-        }
     }
 }

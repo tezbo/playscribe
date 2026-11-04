@@ -635,7 +635,7 @@ final class FinalFixTests: XCTestCase {
         app.terminate()
     }
 
-    /// The Search tab always offers a way to search, in every pose: the system field (a real, hittable
+    /// The Search tab always offers a way to search, in every pose: its own text field (16 pt margins, clear of the badge)
     /// one, in the nav drawer) outside Tabletop; the read-only button and letter strip in Tabletop.
     func testSearchTabHasAFieldInEveryPose() throws {
         let app = launch("demo")
