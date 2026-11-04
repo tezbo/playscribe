@@ -718,4 +718,27 @@ final class FinalFixTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(visible.count, 3, "at least 3 rows visible, saw \(visible.count)")
         app.terminate()
     }
+
+    /// Tabletop Library: the Latest updates caption (game name and "New on PS5") ends at least 24 pt
+    /// above the division band; the art stays full bleed behind it.
+    func testTabletopLibraryCaptionClearsTheDivision() throws {
+        let app = launch("demo")
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let caption = app.descendants(matching: .any).matching(identifier: "stageCaption").firstMatch
+        XCTAssertTrue(caption.waitForExistence(timeout: 5))
+        XCTAssertLessThanOrEqual(caption.frame.maxY, app.frame.midY - 24, "caption \(caption.frame) is across the division")
+        app.terminate()
+    }
+
+    /// Tabletop game page: the reader text ends at least 24 pt above the division band.
+    func testTabletopReaderTextClearsTheDivision() throws {
+        let app = XCUIApplication()
+        ReleaseRowTests.openBluePrince(app)
+        sleep(3)
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let body = app.descendants(matching: .any).matching(identifier: "readerBody").firstMatch
+        XCTAssertTrue(body.waitForExistence(timeout: 10))
+        XCTAssertLessThanOrEqual(body.frame.maxY, app.frame.midY - 24, "reader text \(body.frame) is across the division")
+        app.terminate()
+    }
 }
