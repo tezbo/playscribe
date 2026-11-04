@@ -146,6 +146,8 @@ final class AppModel {
     var focusReleaseID: String?
     var focusToken = 0
     var showDebugOverlay = false
+    /// QA (route "one-update") and tests: the "Also new" panel sees no other updates.
+    var qaSingleUpdate = false
     /// The pose being laid out right now, written by RootView as it renders. Lets navigation
     /// bindings tell a user's Back from a container being torn down by a pose change. Not observed.
     @ObservationIgnored var livePose: Pose = .closed
@@ -450,13 +452,7 @@ final class AppModel {
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
-        case "one-update":
-            // QA: a library of exactly one game with a fresh (unread, On PS5) update, so the hero shows
-            // and the "Also new" panel falls back to "What's new".
-            resetDemo()
-            if let keep = data.collection.first(where: { c in ps5Releases(c.gameID).contains(where: isUnread) }) {
-                data.collection = [keep]
-            }
+        case "one-update": resetToOneUpdateDemo()
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
             Task {
@@ -650,9 +646,32 @@ final class AppModel {
     }
 
     func resetDemo() {
+        qaSingleUpdate = false
         data = PersistedState(collection: fixtures.seedCollection)
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
+    }
+
+    /// QA and tests: the full demo library with exactly one fresh, unread On PS5 update (so the Library
+    /// hero shows), every other update read, and the "Also new" panel seeing no other updates, which
+    /// is the panel's "What's new" fallback.
+    func resetToOneUpdateDemo() {
+        resetDemo()
+        guard let hero = continueItem else { return }
+        for c in data.collection {
+            for r in releases(c.gameID) where !(c.gameID == hero.game.id && r.id == hero.release.id) { data.read[r.id] = .now }
+        }
+        qaSingleUpdate = true
+    }
+
+    /// The updates beside the hero in the Library (Open portrait): the newest across the library,
+    /// not the hero's own game.
+    func alsoNewReleases(excluding gameID: String, limit: Int = 6) -> [Release] {
+        if qaSingleUpdate { return [] }
+        return Array(data.collection.map(\.gameID).filter { $0 != gameID }
+            .flatMap { ps5Releases($0) }
+            .sorted { $0.ps5Date > $1.ps5Date }
+            .prefix(limit))
     }
 
     // MARK: - Simulated updates (internal builds)

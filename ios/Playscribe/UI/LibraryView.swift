@@ -418,12 +418,7 @@ struct AlsoNewPanel: View {
     @Environment(AppModel.self) private var model
     var hero: Release
 
-    private var others: [Release] {
-        return model.data.collection.map(\.gameID).filter { $0 != hero.gameID }
-            .flatMap { model.ps5Releases($0) }
-            .sorted { $0.ps5Date > $1.ps5Date }
-            .prefix(6).map { $0 }
-    }
+    private var others: [Release] { model.alsoNewReleases(excluding: hero.gameID) }
 
     private var changes: [String] {
         let key = (hero.keyChanges ?? []).filter { !$0.isEmpty }
