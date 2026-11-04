@@ -125,6 +125,9 @@ extension AppModel {
             if !menu.isEmpty { menu[0].title = "\(name) is in your library as…" }
             out.append(ScreenAction(id: "status", title: "Status: \(status.label)", systemImage: status.symbol, kind: .menu(menu), priority: .high))
         }
+        // A way to ask for an update check from the game itself (Terry): the same refresh as the Library's pull.
+        out.append(ScreenAction(id: "refresh", title: "Check for updates", systemImage: "arrow.clockwise",
+                                kind: .button { [weak self] in Task { await self?.refreshFeed(); await self?.refreshHistories([gameID]) } }))
         return out
     }
 }
