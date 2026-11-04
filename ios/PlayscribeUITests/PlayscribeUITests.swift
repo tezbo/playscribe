@@ -634,6 +634,39 @@ final class Release050Tests: XCTestCase {
 
     private func isTabletop(_ app: XCUIApplication) -> Bool { ReleaseRowTests.pose(app).contains("pose: tabletop") }
 
+    /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and
+    /// of the status bar, in every pose; the cog opens Settings, which shows a semantic version.
+    /// Fast on its own: -only-testing:PlayscribeUITests/Release050Tests/testLibraryToolbarCogAndAdd
+    func testLibraryToolbarCogAndAdd() throws {
+        let app = launch("library")
+        let pose = ReleaseRowTests.pose(app)
+        let cog = app.buttons["settingsButton"]
+        let add = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add game' OR label == 'Add game' OR label == 'Add'")).firstMatch
+        XCTAssertTrue(cog.waitForExistence(timeout: 10), "Settings cog exists [\(pose)]")
+        XCTAssertTrue(add.exists, "Add exists [\(pose)]")
+        for (name, e) in [("Settings", cog), ("Add", add)] {
+            XCTAssertTrue(e.isHittable, "\(name) is hittable [\(pose)]")
+            XCTAssertGreaterThanOrEqual(e.frame.height, 43.5, "\(name) height 44 pt [\(pose)]")
+            XCTAssertGreaterThanOrEqual(e.frame.width, 43.5, "\(name) width 44 pt [\(pose)]")
+            XCTAssertGreaterThanOrEqual(e.frame.minY, 0, "\(name) is on screen [\(pose)]")
+        }
+        XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(add.frame), "cog and Add do not overlap \(cog.frame) \(add.frame) [\(pose)]")
+        // Status bar: nothing of either control sits inside the status bar's frame.
+        let status = app.statusBars.firstMatch
+        if status.exists {
+            XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(status.frame), "cog clear of the status bar [\(pose)]")
+            XCTAssertFalse(add.frame.insetBy(dx: 1, dy: 1).intersects(status.frame), "Add clear of the status bar [\(pose)]")
+        }
+        cog.tap()
+        let version = app.descendants(matching: .any)["appVersion"]
+        let form = app.collectionViews.firstMatch
+        var tries = 0
+        while !version.waitForExistence(timeout: 1) && tries < 8 { (form.exists ? form : app).swipeUp(); tries += 1 }
+        XCTAssertTrue(version.exists, "Settings opened and shows its Version row [\(pose)]")
+        let text = [version.value as? String, version.label].compactMap { $0 }.joined(separator: " ")
+        XCTAssertNotNil(text.range(of: #"\d+\.\d+\.\d+"#, options: .regularExpression), "Version reads like 1.2.3, got '\(text)' [\(pose)]")
+    }
+
     /// J-20: quiet hours. The switch is off by default; turning it on shows From and Until and the footer.
     func testQuietHours() throws {
         let app = launch("settings")
