@@ -29,6 +29,11 @@ Check on the Duo:
 - Open Enshrouded: it should open on its newest patch.
 - Turn Quiet hours on in Settings and set it to cover the current time: the next alert should arrive without a sound.
 - Open Search, tap Back or swipe in from the left edge: you should land where you started.
+- Open an upcoming game in Upcoming and tap it to watch it: it moves to your watchlist, and a release-day alert is set for it.
+- Share an update: a picture card with the game and update appears in the share sheet.
+- Add a game by speaking, then by photo, then by camera: each asks permission first and each offers Type it.
+- Follow a known issue on a game page: it appears under Following. (The alert itself only arrives when an update fixes it.)
+- PS Plus on the Library shows this month's games with a claim-by date; in its last three days the heading says last chance.
 
 ## 0.2.0
 
