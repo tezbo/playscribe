@@ -93,7 +93,13 @@ struct LatestUpdatesDeck: View {
 
 struct DeckCardView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var card: DeckCard
+
+    /// Closed landscape (container wider than tall): the wide hero card, never a device check.
+    private var wide: Bool { duo.pose == .closed && duo.isLandscape }
+    /// 40% of the container's height, 168 to 240 pt (Iris, hero-wide-layouts).
+    private var wideHeight: CGFloat { min(240, max(168, duo.size.height * 0.4)) }
 
     var body: some View {
         let game = card.game
@@ -101,6 +107,11 @@ struct DeckCardView: View {
             if let r = card.release { model.openGame(game.id, chapter: .updates, releaseID: r.id) }
             else { model.openGame(game.id, chapter: .updates) }
         } label: {
+            if wide {
+                WideDeckCard(card: card, height: wideHeight)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .contentShape(Rectangle())
+            } else {
             VStack(alignment: .leading, spacing: 8) {
                 DeckCardArt(card: card)
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? game.name)
@@ -114,6 +125,7 @@ struct DeckCardView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .contentShape(Rectangle())
+            }
         }
         .buttonStyle(.plain)
         .tappableFrame()
@@ -126,6 +138,46 @@ struct DeckCardView: View {
     private var label: String {
         if let r = card.release { return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(dateText)" }
         return "\(card.game.name), released \(dateText)"
+    }
+}
+
+/// Closed landscape hero: art left to right with a dark fade from the leading edge; the caption
+/// (New update chip, game name, one-line summary) on the leading 55%, the version chip trailing.
+struct WideDeckCard: View {
+    var card: DeckCard
+    var height: CGFloat
+
+    var body: some View {
+        GeometryReader { g in
+            ZStack(alignment: .leading) {
+                ArtView(asset: card.game.keyArtAsset, game: card.game)
+                LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.55), .clear],
+                               startPoint: .leading, endPoint: .trailing)
+                VStack(alignment: .leading, spacing: 6) {
+                    if card.unread { chip("New update", filled: true) }
+                    Text(card.game.name).font(PlayscribeFont.title2.bold())
+                        .foregroundStyle(PlayscribeColor.textPrimary).lineLimit(2)
+                    Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)).lineLimit(1)
+                }
+                .padding(16)
+                .frame(width: g.size.width * 0.55, alignment: .leading)
+            }
+            .overlay(alignment: .topTrailing) {
+                if let v = card.release?.versionChip { chip(v, filled: false).padding(12) }
+            }
+        }
+        .frame(height: height)
+        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
+        .accessibilityHidden(true)
+    }
+
+    private func chip(_ text: String, filled: Bool) -> some View {
+        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+            .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
+            .padding(.horizontal, 8).frame(height: 22)
+            .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
     }
 }
 
@@ -197,14 +249,7 @@ struct PageEdge: View {
 struct DeckStage: View {
     var card: DeckCard
     @Environment(\.duo) private var duo
-    @State private var stageHeight: CGFloat = 0
-
-    /// Polish 1: in Tabletop the caption sits at least 24 pt above the division, never under it.
-    private var clearance: CGFloat {
-        guard let d = duo.division else { return 0 }
-        let overlap = stageHeight - d.minY
-        return overlap > 0 ? overlap + 4 : 0
-    }
+    @State private var stageBottom: CGFloat = 0
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
@@ -225,9 +270,10 @@ struct DeckStage: View {
                 .font(PlayscribeFont.subheadline)
             }
             .padding(20)
-            .padding(.bottom, clearance)
+            // The caption ends 24 pt above the division, measured in screen space (as in 0.2.0 #174/#176).
+            .padding(.bottom, duo.clearance(forBottom: stageBottom))
         }
-        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { stageHeight = $0 }
+        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { stageBottom = $0 }
         .allowsHitTesting(false)
         .accessibilityElement(children: .contain)
     }
