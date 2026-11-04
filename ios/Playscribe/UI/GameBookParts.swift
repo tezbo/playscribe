@@ -252,7 +252,8 @@ struct GameLinks: View {
     var body: some View {
         let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
         if links?.official != nil || links?.patchNotes != nil {
-            HStack(spacing: 16) {
+            // One row, a 24 pt gap and no separators; wraps to a second line rather than truncating (Iris 0.5.0).
+            FlowLayout(spacing: 24) {
                 if let url = links?.official {
                     Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
                 }
