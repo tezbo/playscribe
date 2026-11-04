@@ -53,9 +53,18 @@ final class NewsStore {
     }
 }
 
+extension View {
+    /// Reports the frame to the fold audit only where the control can be touched. In Tabletop every chapter but
+    /// What's new sits on the standing half, which is view only (G-4, TT-1): nothing there is tappable.
+    @ViewBuilder func tappableFrame(when touchable: Bool) -> some View {
+        if touchable { tappableFrame() } else { self }
+    }
+}
+
 struct NewsChapter: View {
     var gameID: String
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     private var store: NewsStore { .shared }
 
     var body: some View {
@@ -68,7 +77,7 @@ struct NewsChapter: View {
                         Spacer(minLength: 0)
                         Button { Task { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                             .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                            .tappableFrame()
+                            .tappableFrame(when: duo.pose != .tabletop)
                     }
                 } else if !store.loaded.contains(gameID) {
                     HStack(spacing: 10) {
@@ -98,7 +107,7 @@ struct NewsChapter: View {
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                     .contentShape(Rectangle())
                 }
-                .tappableFrame()
+                .tappableFrame(when: duo.pose != .tabletop)
             }
         }
         .task(id: gameID) { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) }

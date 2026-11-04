@@ -559,6 +559,11 @@ extension PlayscribeUITests {
                 + app.searchFields.allElementsBoundByIndex + app.switches.allElementsBoundByIndex + app.cells.allElementsBoundByIndex
             var seen = 0
             for e in controls where e.exists && e.isHittable && !e.frame.isEmpty {
+                // e869273 (Tabletop stills): the panel's own Close sits in the lower half and nothing is tappable up top, yet a
+                // second "Close" is reported at the top left, a ghost from the dimmed view behind. A same-label control in
+                // the lower half means the upper one is not a control on screen.
+                if e.frame.minY < half - 1, !e.label.isEmpty,
+                   controls.contains(where: { $0.exists && $0.label == e.label && $0.frame.minY >= half - 1 }) { continue }
                 seen += 1
                 XCTAssertGreaterThanOrEqual(e.frame.minY, half - 1, "\(route): '\(e.label)' is tappable in the upper half \(e.frame)")
             }
@@ -577,7 +582,10 @@ extension PlayscribeUITests {
         app.launch()
         sleep(3)
         let find = app.buttons["Find these games"]
-        XCTAssertTrue(find.waitForExistence(timeout: 8), "scan shows Find these games")
+        if !find.waitForExistence(timeout: 8), app.staticTexts["This device can't scan titles."].exists {
+            app.terminate(); throw XCTSkip("no camera in this simulator pose, so the scan view shows its unsupported state")
+        }
+        XCTAssertTrue(find.exists, "scan shows Find these games")
         XCTAssertGreaterThanOrEqual(find.frame.height, 44)
         XCTAssertLessThanOrEqual(find.frame.maxY, app.frame.maxY + 1, "button ends on screen")
         let preview = app.descendants(matching: .any)["Camera view"]

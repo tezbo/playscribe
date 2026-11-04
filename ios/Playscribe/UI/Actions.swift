@@ -125,7 +125,11 @@ extension AppModel {
         }
         // A way to ask for an update check from the game itself (Terry): the same refresh as the Library's pull.
         out.append(ScreenAction(id: "refresh", title: "Check for updates", systemImage: "arrow.clockwise",
-                                kind: .button { [weak self] in Task { await self?.refreshFeed(); await self?.refreshHistories([gameID]) } }))
+                                kind: .button { [weak self] in Task {
+                                    await self?.refreshFeed(); await self?.refreshHistories([gameID])
+                                    // Tabletop's News page is view only, so this is also its retry.
+                                    await NewsStore.shared.load(gameID: gameID, igdbID: self?.game(gameID)?.igdbID)
+                                } }))
         return out
     }
 }
