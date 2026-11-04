@@ -343,16 +343,16 @@ final class ReviewFixUITests: XCTestCase {
         }
     }
 
-    /// Settings shows the bundle's version, 0.2.0.
+    /// Settings shows the bundle's version (semantic, x.y.z; the number moves with each release).
     func testSettingsVersion() throws {
         let app = XCUIApplication()
         app.launchArguments = ["-qaRoute", "settings"]
         app.launch()
-        let version = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS '0.2.0' OR value CONTAINS '0.2.0'")).firstMatch
+        let version = app.descendants(matching: .any).matching(NSPredicate(format: "label MATCHES '.*[0-9]+\\\\.[0-9]+\\\\.[0-9]+.*' OR value MATCHES '.*[0-9]+\\\\.[0-9]+\\\\.[0-9]+.*'")).firstMatch
         let form = app.collectionViews.firstMatch
         var tries = 0
         while !version.exists && tries < 8 { (form.exists ? form : app).swipeUp(); tries += 1 }
-        XCTAssertTrue(version.exists, "Settings shows version 0.2.0")
+        XCTAssertTrue(version.exists, "Settings shows a semantic version")
         XCTAssertTrue(app.descendants(matching: .any)["appVersion"].exists, "the version row is identified")
     }
 
@@ -481,7 +481,7 @@ final class CaptureTests: XCTestCase {
         app.launch(); sleep(3)
         shot("settings-top")
         let form = app.collectionViews.firstMatch
-        let version = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS '0.2.0' OR value CONTAINS '0.2.0'")).firstMatch
+        let version = app.descendants(matching: .any).matching(NSPredicate(format: "label MATCHES '.*[0-9]+\\\\.[0-9]+\\\\.[0-9]+.*' OR value MATCHES '.*[0-9]+\\\\.[0-9]+\\\\.[0-9]+.*'")).firstMatch
         var tries = 0
         while !version.exists && tries < 8 { (form.exists ? form : app).swipeUp(); tries += 1 }
         shot("settings-version")
