@@ -293,12 +293,14 @@ struct LowerMessages: View {
                     }
                     .padding(.horizontal, 16)
                     .frame(minHeight: 44)
+                    // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
+                    .background(Capsule().fill(PlayscribeColor.ink700))
                     .adaptiveGlass(in: Capsule(), interactive: true)
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()
                 .accessibilityIdentifier("newOnPS5Pill")
-                .gesture(DragGesture(minimumDistance: 20).onEnded { _ in model.pill = nil })
+                .highPriorityGesture(DragGesture(minimumDistance: 20).onEnded { _ in model.pill = nil })
                 .accessibilityAction(named: "Dismiss") { model.pill = nil }
                 .transition(.move(edge: .bottom).combined(with: .opacity))
             }

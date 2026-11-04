@@ -903,7 +903,7 @@ extension AppModel {
             if isUnread(r) { return (.unread, Self.tileDay(d)) }
             return (d > .now.addingTimeInterval(-7 * 86400) ? .recent : .older, Self.tileDay(d))
         }
-        if let d = row.game.releaseDate?.isoDay { return (.none, (d <= .now ? "Released " : "") + Self.tileDay(d)) }
+        if let d = row.game.releaseDate?.isoDay { return (.none, Self.tileDay(d)) }
         return (.none, "TBA")
     }
 
@@ -921,7 +921,11 @@ extension AppModel {
         switch state.kind {
         case .unread: when = "new update \(state.text)"
         case .recent, .older: when = "last updated \(state.text)"
-        case .none: when = state.text == "TBA" ? "release date to be announced" : state.text.lowercased().hasPrefix("released") ? state.text.lowercased() : "out \(state.text)"
+        case .none:
+            // The pill is the short form; VoiceOver gets the full words (Iris, 6589abf).
+            if state.text == "TBA" { when = "release date to be announced" }
+            else if let d = row.game.releaseDate?.isoDay, d <= .now { when = "released \(state.text)" }
+            else { when = "expected \(state.text)" }
         }
         return "\(row.game.name), \(when), \(row.status.label.lowercased())"
     }

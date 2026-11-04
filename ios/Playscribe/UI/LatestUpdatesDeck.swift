@@ -312,33 +312,37 @@ struct PageEdge: View {
     var current: String?
     var select: (String) -> Void
 
-    var body: some View {
-        // 8 leaves at 44 pt are 352 pt: when that does not fit (Closed, the Book's left page), the
-        // edge scrolls sideways instead of overflowing.
-        ViewThatFits(in: .horizontal) {
-            leaves
-            ScrollView(.horizontal, showsIndicators: false) { leaves }
-        }
-        .frame(maxWidth: .infinity, alignment: .center)
+    /// At most 5 leaves, in a window that slides with the current card (Iris, 6589abf): the current one
+    /// ember and tall, the outer ones of a longer deck smaller, centred under the deck.
+    private var window: [(index: Int, card: DeckCard)] {
+        let all = Array(cards.enumerated())
+        guard all.count > 5 else { return all.map { ($0.offset, $0.element) } }
+        let cur = cards.firstIndex { $0.id == current } ?? 0
+        let start = min(max(0, cur - 2), all.count - 5)
+        return all[start..<(start + 5)].map { ($0.offset, $0.element) }
     }
 
-    private var leaves: some View {
+    var body: some View {
         HStack(spacing: 0) {
-            ForEach(Array(cards.enumerated()), id: \.element.id) { i, card in
-                let isCurrent = card.id == current
-                Button { select(card.id) } label: {
+            ForEach(window, id: \.card.id) { item in
+                let isCurrent = item.card.id == current
+                // The ends of a window that has more cards beyond it are drawn smaller.
+                let trimmed = cards.count > 5 && !isCurrent
+                    && ((item.index == window.first?.index && item.index > 0) || (item.index == window.last?.index && item.index < cards.count - 1))
+                Button { select(item.card.id) } label: {
                     RoundedRectangle(cornerRadius: 1.5)
-                        .fill(isCurrent ? PlayscribeColor.vellum100 : (card.unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary.opacity(0.5)))
-                        .frame(width: 3, height: isCurrent ? 18 : 10)
+                        .fill(isCurrent ? PlayscribeColor.accent : (item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5)))
+                        .frame(width: trimmed ? 2 : 3, height: isCurrent ? 18 : (trimmed ? 6 : 10))
                         .frame(width: 44, height: 44)
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()
-                .accessibilityLabel("Update \(i + 1) of \(cards.count)")
+                .accessibilityLabel("Update \(item.index + 1) of \(cards.count)")
                 .accessibilityAddTraits(isCurrent ? [.isButton, .isSelected] : .isButton)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 }
 
