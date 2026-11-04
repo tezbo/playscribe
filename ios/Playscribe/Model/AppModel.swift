@@ -133,6 +133,8 @@ final class AppModel {
     var highlight: String?
     /// GR-4: the in-book and Search tab note query, and its scope. Kept across pose changes (P-1).
     var noteQuery = ""
+    /// Tabletop: first-letter filter for the notes search (the keyboard never opens there).
+    var noteLetter: String?
     /// D-13: the notes-search scope persists.
     var noteScope: NoteScope = NoteScope(rawValue: UserDefaults.standard.string(forKey: "noteScope") ?? "") ?? .thisGame {
         didSet { UserDefaults.standard.set(noteScope.rawValue, forKey: "noteScope") }
