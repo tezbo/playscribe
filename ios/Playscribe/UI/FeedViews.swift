@@ -180,7 +180,7 @@ struct SearchView: View {
                 }
             }
             if !active {
-                Text(tabletop ? "Pick a letter to see games, patch notes and game book entries that start with it. Spoiler-tagged notes are left out."
+                Text(tabletop ? "Typing needs the flat screen. Pick a letter below, or open your Duo flat to type."
                               : "Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
                     .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -193,7 +193,14 @@ struct SearchView: View {
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets(top: 8, leading: tabletop ? 0 : 16, bottom: 8, trailing: tabletop ? 0 : 16))
             } else if gameHits.isEmpty && noteHits.isEmpty && entryHits.isEmpty {
+                // Iris: the No Results card has the field's leading and trailing edges, like the hint card.
                 ContentUnavailableView.search(text: tabletop ? (letter ?? "") : query)
+                    .padding(12)
+                    .frame(maxWidth: .infinity)
+                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 8, leading: tabletop ? 0 : 16, bottom: 8, trailing: tabletop ? 0 : 16))
             }
             if !gameHits.isEmpty {
                 Section("Games") {
