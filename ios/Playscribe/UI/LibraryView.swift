@@ -191,7 +191,14 @@ struct LibraryShelf: View {
                 }
                 if all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
-                    FilterBar().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                    // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
+                    // accessibility frame never reaches the fold either.
+                    if duo.pose == .book, let fold = duo.division {
+                        FilterBar().frame(width: max(0, fold.minX - 24 - 16), alignment: .leading)
+                            .clipped().contentShape(Rectangle())
+                    } else {
+                        FilterBar().frame(maxWidth: .infinity, alignment: .leading)
+                    }
                 }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
