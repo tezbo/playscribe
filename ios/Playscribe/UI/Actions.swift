@@ -99,15 +99,13 @@ extension AppModel {
         return sections
     }
 
+    /// Status and Remove only. Notifications have their own bell menu (Terry, 0.2.0 build 5: the controller icon showed both).
     func statusMenu(_ gameID: String) -> [ScreenAction.MenuSection] {
         let current = entry(gameID)?.status
         let name = game(gameID)?.name ?? "game"
         return [
             .init(title: "Status", items: OwnershipStatus.allCases.map { s in
                 .init(id: s.rawValue, title: s.label, checked: s == current) { [weak self] in self?.setStatus(gameID, s) }
-            }),
-            .init(title: "Notifications", items: NotifyLevel.allCases.map { l in
-                .init(id: "n-" + l.rawValue, title: l.label, checked: l == notifyLevel(gameID)) { [weak self] in self?.setNotify(gameID, l) }
             }),
             .init(items: [.init(id: "remove", title: "Remove \(name)", destructive: true) { [weak self] in self?.removeGame(gameID) }]),
         ]
