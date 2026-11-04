@@ -43,6 +43,9 @@ extension AppModel {
 
 struct TabletopReaderStage: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
+    /// The stage's bottom edge in screen space; the text ends 24 pt above the division.
+    @State private var stageBottom: CGFloat = 0
     var gameID: String
 
     var body: some View {
@@ -79,17 +82,20 @@ struct TabletopReaderStage: View {
                         .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.92))
                         .lineSpacing(4)
                         .minimumScaleFactor(0.7)
+                        .accessibilityIdentifier("readerBody")
                     Spacer(minLength: 0)
                 }
                 // About 34 characters per line at 19 pt.
                 .frame(maxWidth: 380, maxHeight: .infinity, alignment: .topLeading)
                 .padding(.horizontal, 28)
                 .padding(.vertical, 24)
+                .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .id(section.id)
                 .transition(.opacity)
             }
         }
+        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { stageBottom = $0 }
         .animation(.easeInOut(duration: 0.2), value: index)
         // Its parts stay separate elements, so the release title is findable (J-4).
         .accessibilityElement(children: .contain)
