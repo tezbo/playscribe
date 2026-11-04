@@ -389,6 +389,16 @@ struct OneUpdateDemoTests {
         if let hero { #expect(m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
     }
 
+    /// The `two-update` QA route: exactly two fresh unread updates, from different games.
+    @Test func twoUpdateRouteLeavesTwoFreshUpdatesFromDifferentGames() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "two-\(UUID().uuidString).json"))
+        m.resetToTwoUpdateDemo()
+        let unread = m.data.collection.flatMap { m.releases($0.gameID) }.filter(m.isUnread)
+        #expect(unread.count == 2)
+        #expect(Set(unread.map(\.gameID)).count == 2)
+        #expect(m.latestDeck.count == 2)
+    }
+
     @Test func demoRouteListsOtherUpdatesBesideTheHero() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
         m.resetDemo()

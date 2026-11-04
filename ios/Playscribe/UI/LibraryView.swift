@@ -198,9 +198,9 @@ struct LibraryShelf: View {
     /// Closed landscape (container wider than tall): the compact first screen.
     private var closedWide: Bool { duo.pose == .closed && duo.isLandscape }
 
-    /// Book with 3 or more recent updates: the hero carousel takes the right page's top.
+    /// Book with any recent update: the hero carousel takes the right page's top; the left page keeps the controls, chips and grid.
     private var heroOnRightPage: Bool {
-        duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming && model.latestDeck.count >= 3
+        duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming && !model.latestDeck.isEmpty
     }
 
     /// The library search field; one page wide in Book, and reported to the fold audit.
@@ -279,7 +279,7 @@ struct LibraryShelf: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 40)
                 }
-                // Book, 3 or more recent updates (Iris, hero-wide-layouts): search, news and filters stay on
+                // Book, any recent update (Iris, hero-wide-layouts): search, news and filters stay on
                 // the left page and the carousel spans the top of the RIGHT page; the tiles start below both.
                 if heroOnRightPage, let fold = duo.division {
                     let leftWidth = max(0, fold.minX - 24 - 16)
@@ -335,16 +335,8 @@ struct LibraryShelf: View {
                 } else if duo.pose != .tabletop && !heroOnRightPage {
                     let deck = model.latestDeck
                     if !deck.isEmpty {
-                        if duo.pose == .book, let fold = duo.division {
-                            // Book with 1 or 2 updates: the deck is the left page wide, sized explicitly (16:9 art plus the
-                            // page edge). Left to the pager the card filled the screen (acb182e, one-update route).
-                            let pageW = max(0, fold.minX - 24 - 16)
-                            LatestUpdatesDeck(cards: deck, compact: true, maxHeight: (pageW * 9 / 16).rounded() + 52)
-                                .frame(width: pageW, alignment: .leading)
-                        } else {
-                            LatestUpdatesDeck(cards: deck)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        }
+                        LatestUpdatesDeck(cards: deck)
+                            .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
                     } else if !model.data.collection.isEmpty {
                         CaughtUpCard()
                             .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
