@@ -73,7 +73,7 @@ Sent once per release, when its PS5 row becomes live, to followers whose `notify
 ```json
 {
   "aps": {
-    "alert": { "title": "The Blood of Dawnwalker", "body": "Update 1.1 is out on PS5 (version 01.004.000). See what changed." },
+    "alert": { "title": "The Blood of Dawnwalker: 4 new, 9 fixed", "body": "Update 01.004.000: Added photo mode" },
     "sound": "default", "thread-id": "dawnwalker", "interruption-level": "active", "relevance-score": 1
   },
   "gameId": "dawnwalker", "releaseId": "dawnwalker@1.1", "kind": "major", "verification": "official"
@@ -147,4 +147,4 @@ Each `upcoming/<n>.json` entry also carries, when IGDB has them: `summary` (cut 
 
 ### Push alert payload: digest counts (r050-richer-alerts)
 
-The PS5 alert body is `<Update> is out on PS5 (version X). <line>` where `<line>` is built from the release digest, counts only: `3 new, 12 fixed, 2 balance, 1 PS5-only.` (zero counts are left out). With fewer than two counted lines (thin notes) it falls back to `See what changed.` The payload also carries `digest: {new, fixed, balance, ps5}` beside `gameId`, `releaseId`, `kind`, `verification`, so the app can render its own line. The 72-hour guard and once-only claim are unchanged.
+Alert copy (Iris): counts in the title, body `Update <version>: <headline>`. Title is `<Game>: 3 new, 12 fixed, 2 balance, 1 PS5-only` (zero counts left out), or just the game name when fewer than two lines are counted. The headline is the digest's first `topNew` line. When it is missing (poor headings), the body is the counts line (`3 new, 12 fixed.`), or `See what changed.` when thin. The payload also carries `digest: {new, fixed, balance, ps5}` beside `gameId`, `releaseId`, `kind`, `verification`. The 72-hour guard and once-only claim are unchanged.

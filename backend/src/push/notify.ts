@@ -19,11 +19,23 @@ export interface PushOutcome {
   skipped?: 'notLive' | 'alreadyPushed' | 'tooOld' | 'pushDisabled' | 'noApns'
 }
 
-/** Lock-screen line from the digest counts (counts only, no generated text); thin notes fall back to the plain line. */
-export const digestLine = (d: Digest): string => {
-  if (d.new + d.fixed + d.balance < 2) return 'See what changed.'
-  const parts = [d.new && `${d.new} new`, d.fixed && `${d.fixed} fixed`, d.balance && `${d.balance} balance`, d.ps5 && `${d.ps5} PS5-only`].filter(Boolean)
-  return `${parts.join(', ')}.`
+/** Counts only, no generated text; null when the notes are thin (fewer than two counted lines). */
+export const digestCounts = (d: Digest): string | null => {
+  if (d.new + d.fixed + d.balance < 2) return null
+  return [d.new && `${d.new} new`, d.fixed && `${d.fixed} fixed`, d.balance && `${d.balance} balance`, d.ps5 && `${d.ps5} PS5-only`].filter(Boolean).join(', ')
+}
+
+/**
+ * Alert copy (Iris): counts in the title, body "Update <version>: <headline>". The headline is the first clean new line
+ * (digest.topNew); when it is missing, or the headings were poor, the body is the counts line, or "See what changed." when thin.
+ */
+export const alertCopy = (gameName: string, label: string, d: Digest): { title: string; body: string } => {
+  const counts = digestCounts(d)
+  const headline = d.topNew?.[0]
+  return {
+    title: counts ? `${gameName}: ${counts}` : gameName,
+    body: headline ? `${label}: ${headline}` : `${counts ?? 'See what changed'}.`,
+  }
 }
 
 export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: string, opts: { maxAgeHours: number; allow?: boolean }): Promise<PushOutcome> => {
@@ -52,7 +64,7 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
 
   const payload = {
     aps: {
-      alert: { title: game.name, body: `${release.displayName} is out on PS5${version ? ` (version ${version})` : ''}. ${digestLine(release.digest)}` },
+      alert: alertCopy(game.name, version ? `Update ${version}` : release.displayName, release.digest),
       sound: 'default',
       'thread-id': release.gameId,
       'interruption-level': 'active',

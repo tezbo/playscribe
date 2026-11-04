@@ -3,7 +3,7 @@ import { test } from 'node:test'
 import { confirmPlatform } from '../src/confirm.ts'
 import { openDb } from '../src/db.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
-import { digestLine, pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
+import { alertCopy, pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
 import * as store from '../src/store.ts'
 import { getRelease, newsOf, promoteAnnounced } from '../src/store.ts'
@@ -141,7 +141,7 @@ test('an official PS5 post is pending until a person confirms; push fires once',
   assert.equal(first.sent, 2)
   assert.deepEqual(sent.map((s) => s.token).sort(), ['a'.repeat(64), 'b'.repeat(64)])
   assert.equal(sent[0]!.payload.releaseId, id)
-  assert.match(sent[0]!.payload.aps.alert.body, /Update 1\.6 is out on PS5 \(version 01\.006\.000\)/)
+  assert.match(sent[0]!.payload.aps.alert.body, /^Update 01\.006\.000/)
   assert.equal(sent[0]!.payload.aps['interruption-level'], 'active')
   assert.equal(getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!.alert?.style, 'standard')
   assert.equal((await pushPs5Release(db, apns, id, { maxAgeHours: 72 })).skipped, 'alreadyPushed')
@@ -164,7 +164,7 @@ test('every update live on PS5 earns one standard alert; a press-only report ear
   assert.equal(getRelease(db, (db.prepare("SELECT release_id FROM platform_releases WHERE release_id LIKE 'yotei@%' AND platform = 'ps5'").get() as { release_id: string }).release_id)!.platforms.find((p) => p.platform === 'ps5')!.alert, undefined)
   assert.ok(out.filter((o) => !o.releaseId.startsWith('yotei@')).every((o) => o.style === 'standard'))
   const p = sent.find((x) => x.releaseId === id)
-  assert.match(p.aps.alert.body, /Update 1\.1 is out on PS5/)
+  assert.match(p.aps.alert.body, /^Update /)
   assert.ok(p.digest && typeof p.digest.new === 'number', 'payload carries digest counts')
   assert.equal(p.aps['interruption-level'], 'active')
   assert.equal((await pushNewPs5(db, apns, { maxAgeHours: 1e6 })).length, 0)
@@ -325,9 +325,9 @@ test('"Patch 10.2" and "Patch 10.2.0" months apart are different patches; "2.0" 
   assert.equal(equivalentRelease(db, 'dawnwalker', '10.2', '2026-09-16T15:06:00.000Z')?.id, 'dawnwalker@10.2.0')
 })
 
-test('richer alerts (r050): digest counts on the lock screen, plain fallback when notes are thin', () => {
-  assert.equal(digestLine({ new: 3, fixed: 12, balance: 0, other: 1, ps5: 2 }), '3 new, 12 fixed, 2 PS5-only.')
-  assert.equal(digestLine({ new: 0, fixed: 5, balance: 0, other: 0, ps5: 0 }), '5 fixed.')
-  assert.equal(digestLine({ new: 1, fixed: 0, balance: 0, other: 4, ps5: 0 }), 'See what changed.')
-  assert.equal(digestLine({ new: 0, fixed: 0, balance: 0, other: 0, ps5: 0 }), 'See what changed.')
+test('richer alerts (r050): counts in the title, headline body, counts fallback', () => {
+  const d = { new: 3, fixed: 12, balance: 0, other: 1, ps5: 2 }
+  assert.deepEqual(alertCopy('Dawnwalker', 'Update 1.1', { ...d, topNew: ['New skill tree'] }), { title: 'Dawnwalker: 3 new, 12 fixed, 2 PS5-only', body: 'Update 1.1: New skill tree' })
+  assert.equal(alertCopy('Dawnwalker', 'Update 1.1', d).body, '3 new, 12 fixed, 2 PS5-only.')
+  assert.deepEqual(alertCopy('Dawnwalker', 'Update 1.1', { new: 1, fixed: 0, balance: 0, other: 4, ps5: 0 }), { title: 'Dawnwalker', body: 'See what changed.' })
 })
