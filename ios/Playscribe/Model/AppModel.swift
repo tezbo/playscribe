@@ -176,26 +176,30 @@ final class AppModel {
     var focusReleaseID: String?
     var focusToken = 0
     var showDebugOverlay = false
-    /// QA (route "one-update") and tests: the "Also new" panel sees no other updates.
-    var qaSingleUpdate = false
+    /// QA (routes "one-update", "two-update") and tests: how many fresh unread updates the demo has; 0 is the normal demo.
+    var qaUpdateCount = 0
+    var qaSingleUpdate: Bool {
+        get { qaUpdateCount > 0 }
+        set { qaUpdateCount = newValue ? 1 : 0 }
+    }
     /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
     /// confirm a `-qaRoute` took effect.
     var qaRoute: String?
-    /// QA (route "one-update"): the newest On PS5 release is the only unread one. Chosen when first asked
-    /// (not at launch, when releases may not be merged yet), so a later feed refresh or the 72 hour
-    /// rule cannot take the hero away.
-    @ObservationIgnored private var qaHeroCache: String?
-    private func qaHeroReleaseID() -> String? {
-        if let id = qaHeroCache { return id }
-        var newest: Release?
+    /// QA: the newest On PS5 update of the first `qaUpdateCount` different games are the only unread ones. Chosen
+    /// when first asked (not at launch, when releases may not be merged yet), so a later feed refresh or the 72 hour
+    /// rule cannot take them away.
+    @ObservationIgnored private var qaFreshCache: Set<String>?
+    private func qaFreshIDs() -> Set<String> {
+        if let ids = qaFreshCache { return ids }
+        var newestPerGame: [Release] = []
         for entry in data.collection {
-            for r in releases(entry.gameID) where r.ps5State == .onPS5 {
-                if let n = newest, n.ps5Date >= r.ps5Date { continue }
-                newest = r
-            }
+            let best = releases(entry.gameID).filter { $0.ps5State == .onPS5 }.max { $0.ps5Date < $1.ps5Date }
+            if let best { newestPerGame.append(best) }
         }
-        qaHeroCache = newest?.id
-        return newest?.id
+        newestPerGame.sort { $0.ps5Date > $1.ps5Date }
+        let ids = Set(newestPerGame.prefix(qaUpdateCount).map(\.id))
+        qaFreshCache = ids
+        return ids
     }
     /// The pose being laid out right now, written by RootView as it renders. Lets navigation
     /// bindings tell a user's Back from a container being torn down by a pose change. Not observed.
@@ -341,7 +345,7 @@ final class AppModel {
     }
 
     func isUnread(_ r: Release) -> Bool {
-        if qaSingleUpdate { return r.ps5State == .onPS5 && r.id == qaHeroReleaseID() }
+        if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) }
         return r.ps5State == .onPS5 && data.read[r.id] == nil
     }
 
@@ -541,6 +545,7 @@ final class AppModel {
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
         case "one-update": resetToOneUpdateDemo()
+        case "two-update": resetToTwoUpdateDemo()
         case "pill": holdQAPill()
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
@@ -738,8 +743,8 @@ final class AppModel {
     }
 
     func resetDemo() {
-        qaSingleUpdate = false
-        qaHeroCache = nil
+        qaUpdateCount = 0
+        qaFreshCache = nil
         data = PersistedState(collection: fixtures.seedCollection)
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
@@ -766,7 +771,13 @@ final class AppModel {
     /// is the panel's "What's new" fallback.
     func resetToOneUpdateDemo() {
         resetDemo()
-        qaSingleUpdate = true
+        qaUpdateCount = 1
+    }
+
+    /// QA and tests (route "two-update"): as the one-update demo with two fresh updates, from different games.
+    func resetToTwoUpdateDemo() {
+        resetDemo()
+        qaUpdateCount = 2
     }
 
     /// The updates beside the deck in the Library (Open portrait): every update in the deck except the

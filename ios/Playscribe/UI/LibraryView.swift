@@ -138,6 +138,21 @@ struct LibraryShelf: View {
         return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 10, alignment: .top)]
     }
 
+    /// Columns that fill a Book page: at least 124 pt tiles, 10 pt gaps, the leftover shared equally.
+    static func pageFit(width: CGFloat) -> (count: Int, size: CGFloat) {
+        let n = max(2, Int((width + 10) / 134))
+        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
+    }
+
+    /// One Book page's tiles, top to bottom, on that page's own columns.
+    private func pageGrid(_ rows: [AppModel.LibraryRow], fit: (count: Int, size: CGFloat)) -> some View {
+        LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: 10, alignment: .top), count: fit.count),
+                  alignment: .leading, spacing: 10) {
+            ForEach(rows) { row in GameTile(row: row, size: fit.size).id("lib-\(row.id)") }
+        }
+        .padding(.top, 2)
+    }
+
     /// Book (D-12): the same number of tiles on each page (Apple: prefer an even number of
     /// columns), each group centred on its page.
     private var bookLayout: (perPage: Int, lead: CGFloat, gap: CGFloat)? {
@@ -180,9 +195,12 @@ struct LibraryShelf: View {
         return out
     }
 
-    /// Book with 3 or more recent updates: the hero carousel takes the right page's top.
+    /// Closed landscape (container wider than tall): the compact first screen.
+    private var closedWide: Bool { duo.pose == .closed && duo.isLandscape }
+
+    /// Book with any recent update: the hero carousel takes the right page's top; the left page keeps the controls, chips and grid.
     private var heroOnRightPage: Bool {
-        duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming && model.latestDeck.count >= 3
+        duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming && !model.latestDeck.isEmpty
     }
 
     /// The library search field; one page wide in Book, and reported to the fold audit.
@@ -211,7 +229,18 @@ struct LibraryShelf: View {
         let all = model.libraryRows
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
-                LibraryTabPicker()
+                // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
+                if closedWide {
+                    // Closed landscape: the control and the search field share one row, 44 pt each (Iris, cf6c889).
+                    HStack(spacing: 12) {
+                        LibraryTabPicker().frame(width: 220, height: 44)
+                        if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                    }
+                } else if !heroOnRightPage {
+                    LibraryTabPicker()
+                        .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
                 if model.libraryTab == .upcoming {
                     UpcomingView()
                 } else {
@@ -230,7 +259,7 @@ struct LibraryShelf: View {
                 if !all.isEmpty && duo.pose == .tabletop {
                     // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
                     TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4)
-                } else if !heroOnRightPage, !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                } else if !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
                     HStack(spacing: 12) {
@@ -250,23 +279,37 @@ struct LibraryShelf: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 40)
                 }
-                // Book, 3 or more recent updates (Iris, hero-wide-layouts): search, news and filters stay on
+                // Book, any recent update (Iris, hero-wide-layouts): search, news and filters stay on
                 // the left page and the carousel spans the top of the RIGHT page; the tiles start below both.
                 if heroOnRightPage, let fold = duo.division {
+                    let leftWidth = max(0, fold.minX - 24 - 16)
                     let rightStart = fold.maxX + 24 - 16
                     let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
+                    // Each page flows on its own (Iris, cf6c889): the left tiles start 16 pt under the filters, the
+                    // right tiles under the deck; order is the left page top to bottom, then the right page. The
+                    // tiles share each page's width equally (min 124 pt, 10 pt gaps).
+                    let left = Self.pageFit(width: leftWidth), right = Self.pageFit(width: rightWidth)
+                    let leftCount = layout == .tiles
+                        ? min(rows.count, Int((Double(rows.count) * Double(left.count) / Double(left.count + right.count)).rounded(.up))) : 0
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
+                            LibraryTabPicker()
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                             NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                             if all.count >= 2 && layout == .tiles {
                                 FilterBar().frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
                             }
+                            if layout == .tiles { pageGrid(Array(rows.prefix(leftCount)), fit: left) }
                         }
-                        .frame(width: max(0, fold.minX - 24 - 16), alignment: .topLeading)
-                        LatestUpdatesDeck(cards: model.latestDeck)
-                            .frame(width: rightWidth, alignment: .leading)
-                            .padding(.leading, max(0, rightStart - max(0, fold.minX - 24 - 16)))
+                        .frame(width: leftWidth, alignment: .topLeading)
+                        VStack(alignment: .leading, spacing: 14) {
+                            // 16:9 art at the page's width plus the page edge, sized explicitly: left to the pager the
+                            // card came out as tall as the screen and pushed the grid off (834a5eb).
+                            LatestUpdatesDeck(cards: model.latestDeck, compact: true, maxHeight: (rightWidth * 9 / 16).rounded() + 52)
+                            if layout == .tiles { pageGrid(Array(rows.dropFirst(leftCount)), fit: right) }
+                        }
+                        .frame(width: rightWidth, alignment: .topLeading)
+                        .padding(.leading, max(0, rightStart - leftWidth))
                     }
                     .id(poseKey)
                 }
@@ -319,6 +362,8 @@ struct LibraryShelf: View {
                 }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
+                } else if heroOnRightPage {
+                    EmptyView()   // the two page grids above carry the tiles
                 } else if duo.pose == .flat && duo.isLandscape {
                     FlowLayout(spacing: 10) {
                         ForEach(rows) { row in GameTile(row: row, size: tileSize).id("lib-\(row.id)") }
