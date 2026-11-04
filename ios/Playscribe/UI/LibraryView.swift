@@ -419,7 +419,6 @@ struct AlsoNewPanel: View {
     var hero: Release
 
     private var others: [Release] {
-        if model.qaSingleUpdate { return [] }
         return model.data.collection.map(\.gameID).filter { $0 != hero.gameID }
             .flatMap { model.ps5Releases($0) }
             .sorted { $0.ps5Date > $1.ps5Date }

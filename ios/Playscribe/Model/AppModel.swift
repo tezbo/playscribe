@@ -146,9 +146,6 @@ final class AppModel {
     var focusReleaseID: String?
     var focusToken = 0
     var showDebugOverlay = false
-    /// QA (route "one-update"): the Library's "Also new" panel sees no other updates, so the
-    /// "What's new" variant can be captured from the demo store.
-    var qaSingleUpdate = false
     /// The pose being laid out right now, written by RootView as it renders. Lets navigation
     /// bindings tell a user's Back from a container being torn down by a pose change. Not observed.
     @ObservationIgnored var livePose: Pose = .closed
@@ -452,8 +449,14 @@ final class AppModel {
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
-        case "demo": qaSingleUpdate = false; resetDemo()
-        case "one-update": resetDemo(); qaSingleUpdate = true
+        case "demo": resetDemo()
+        case "one-update":
+            // QA: a library of exactly one game with a fresh (unread, On PS5) update, so the hero shows
+            // and the "Also new" panel falls back to "What's new".
+            resetDemo()
+            if let keep = data.collection.first(where: { c in ps5Releases(c.gameID).contains(where: isUnread) }) {
+                data.collection = [keep]
+            }
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
             Task {
