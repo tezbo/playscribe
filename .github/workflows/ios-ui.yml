@@ -63,7 +63,7 @@ jobs:
           [ -d build/UITests.xcresult ] && xcrun xcresulttool export attachments --path build/UITests.xcresult --output-path build/attachments || true
       - name: Screenshots of every new surface (Closed)
         if: always()
-        run: ios/tools/qa/ci-shots.sh "${{ steps.sim.outputs.udid }}" build/shots
+        run: ios/tools/qa/ci-shots.sh "${{ steps.sim.outputs.udid }}" build/shots "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
