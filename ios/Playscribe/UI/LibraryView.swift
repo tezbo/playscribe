@@ -97,6 +97,7 @@ struct LibraryShelf: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @Environment(\.railWidth) private var railWidth
+    @Environment(\.dynamicTypeSize) private var typeSize
     @AppStorage(LibraryLayout.key) private var layout: LibraryLayout = .tiles
     /// Tabletop: first-letter filter instead of typing (the keyboard never opens there).
     @State private var letter: String?
@@ -281,6 +282,14 @@ struct LibraryShelf: View {
                     let deck = model.latestDeck
                     let front = deck.first { $0.id == model.deckSelection } ?? deck.first
                     let deckHeight = (duo.size.height * 0.38).rounded()
+                    if typeSize.isAccessibilitySize {
+                        // Accessibility sizes (Iris): the deck full width, Also new below it as a list.
+                        VStack(alignment: .leading, spacing: 14) {
+                            LatestUpdatesDeck(cards: deck, compact: true, maxHeight: deckHeight)
+                            AlsoNewPanel(hero: front?.release).frame(height: 460)
+                        }
+                        .id(poseKey)
+                    } else {
                     HStack(alignment: .top, spacing: 10) {
                         LatestUpdatesDeck(cards: deck, compact: true, maxHeight: deckHeight)
                             .frame(width: max(0, (duo.size.width - railWidth - 32 - 10) * 0.46), alignment: .leading)
@@ -289,6 +298,7 @@ struct LibraryShelf: View {
                     }
                     .frame(height: deckHeight)
                     .id(poseKey)
+                    }
                 } else if duo.pose != .tabletop && !heroOnRightPage {
                     let deck = model.latestDeck
                     if !deck.isEmpty {
@@ -416,29 +426,42 @@ struct LibraryViewMenu: View {
 /// Filter pills on one line; Sort lives in the View menu (D-12).
 struct FilterBar: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    private func chip(_ f: LibraryFilter, rows: [AppModel.LibraryRow]) -> some View {
+        let n = f.status.map { s in rows.filter { $0.status == s }.count } ?? rows.count
+        let on = model.nav.filter == f
+        return Button { model.nav.filter = f } label: {
+            Text("\(f.label) \(n)")
+                .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
+                // Never cut mid-glyph: one unbroken line in the scrolling row, two at accessibility sizes.
+                .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
+                .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
+                .padding(.horizontal, 10)
+                .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil, minHeight: 44)
+                .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(on ? .isSelected : [])
+        .tappableFrame()
+    }
 
     var body: some View {
         let rows = model.libraryRows
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                ForEach(LibraryFilter.allCases) { f in
-                    let n = f.status.map { s in rows.filter { $0.status == s }.count } ?? rows.count
-                    let on = model.nav.filter == f
-                    Button { model.nav.filter = f } label: {
-                        Text("\(f.label) \(n)")
-                            .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
-                            .padding(.horizontal, 10)
-                            .frame(minHeight: 44)
-                            .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityAddTraits(on ? .isSelected : [])
-                    .tappableFrame()
-                }
+        if typeSize.isAccessibilitySize {
+            // Accessibility sizes: the chips wrap into rows of two instead of scrolling sideways.
+            LazyVGrid(columns: [GridItem(.flexible(), spacing: 8), GridItem(.flexible(), spacing: 8)], spacing: 8) {
+                ForEach(LibraryFilter.allCases) { f in chip(f, rows: rows) }
             }
-            .padding(.trailing, 24)
+        } else {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(LibraryFilter.allCases) { f in chip(f, rows: rows) }
+                }
+                .padding(.trailing, 24)
+            }
+            .edgeFade(40)
         }
-        .edgeFade(40)
     }
 }
 
@@ -513,7 +536,8 @@ struct AlsoNewPanel: View {
             // Iris's fill rule: 72 pt rows (3 to 6, what fits), grown evenly to 96 pt when 24 pt or more
             // is spare, a heading block above and a pinned 56 pt footer below.
             // Top padding 12, heading 26 + 12 to the first row, footer 56: the whole stack fits the panel exactly.
-            let avail = max(0, geo.size.height - 12 - 38 - 56)
+            let headingH: CGFloat = typeSize.isAccessibilitySize ? 44 : 26
+            let avail = max(0, geo.size.height - 12 - (headingH + 12) - 56)
             // Accessibility sizes (0.5.0 a11y): rows grow to 2-line names, so fewer fit (never a clipped row).
             let unit: CGFloat = typeSize.isAccessibilitySize ? 104 : 72
             let fit = min(6, max(typeSize.isAccessibilitySize ? 1 : 3, Int(avail / unit)))
@@ -525,7 +549,7 @@ struct AlsoNewPanel: View {
             VStack(alignment: .leading, spacing: 0) {
                 Text(all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
                     .accessibilityAddTraits(.isHeader)
-                    .frame(height: 26, alignment: .topLeading)
+                    .frame(minHeight: headingH, alignment: .topLeading)
                     .padding(.bottom, 12)
                 if all.isEmpty {
                     whatsNew(lines: shownChanges(width: geo.size.width - 24, available: avail), available: avail, width: geo.size.width - 24)
@@ -877,6 +901,9 @@ struct DatePill: View {
     var row: AppModel.LibraryRow
     var body: some View {
         let state = model.tileDate(row)
+        // Accessibility sizes: the pill would cover the art, so it is hidden; the date stays in the label
+        // and on the game page (Iris, 0.5.0 a11y).
+        if !typeSize.isAccessibilitySize {
         HStack(spacing: 4) {
             switch state.kind {
             case .unread: SparkShape().fill(PlayscribeColor.onAccent).frame(width: 9, height: 9)
@@ -894,6 +921,7 @@ struct DatePill: View {
         .background {
             if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
             else { Capsule().fill(.clear).adaptiveGlass(in: Capsule()) }
+        }
         }
     }
 }

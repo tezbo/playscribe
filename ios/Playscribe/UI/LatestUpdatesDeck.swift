@@ -187,13 +187,15 @@ struct CompactDeckCard: View {
     var height: CGFloat
     @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @Environment(\.qaSolid) private var qaSolid
+    @Environment(\.dynamicTypeSize) private var typeSize
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: card.game.keyArtAsset, game: card.game)
             // Increase Contrast / Reduce Transparency: a solid ink scrim behind the caption, not a fade.
-            if contrast == .increased || reduceTransparency {
+            if contrast == .increased || reduceTransparency || qaSolid {
                 PlayscribeColor.ink950.opacity(0.92).frame(height: height * 0.45)
                     .frame(maxHeight: .infinity, alignment: .bottom)
             } else {
@@ -201,12 +203,13 @@ struct CompactDeckCard: View {
             }
             VStack(alignment: .leading, spacing: 4) {
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
-                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).lineLimit(3)
+                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
+                    .lineLimit(typeSize.isAccessibilitySize ? 2 : 3)
                 HStack(spacing: 8) {
                     Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
                     if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
                 }
-                .font(PlayscribeFont.subheadline).lineLimit(1)
+                .font(PlayscribeFont.subheadline).lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
             }
             .padding(16)
         }
