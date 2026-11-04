@@ -60,7 +60,7 @@ final class PlayscribeUITests: XCTestCase {
     }
 
     private func attach(name: String) {
-        let a = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        let a = XCTAttachment(screenshot: app.screenshot())
         a.name = name
         a.lifetime = .keepAlways
         add(a)
@@ -79,7 +79,7 @@ final class FoldAuditTests: XCTestCase {
             let audit = app.descendants(matching: .any)["foldAudit"]
             XCTAssertTrue(audit.waitForExistence(timeout: 5))
             let label = audit.label
-            let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+            let shot = XCTAttachment(screenshot: app.screenshot())
             shot.name = "fold-\(route.replacingOccurrences(of: "/", with: "_")) \(label)"
             shot.lifetime = .keepAlways
             add(shot)
@@ -165,7 +165,7 @@ final class SwapSidesTests: XCTestCase {
     }
 
     private func attach(_ app: XCUIApplication, _ name: String) {
-        let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        let shot = XCTAttachment(screenshot: app.screenshot())
         shot.name = name
         shot.lifetime = .keepAlways
         add(shot)
@@ -220,7 +220,7 @@ final class ReleaseRowTests: XCTestCase {
             sleep(1)
             let title = app.staticTexts.matching(identifier: "releaseTitle").matching(NSPredicate(format: "label == %@", name)).firstMatch
             XCTAssertTrue(title.waitForExistence(timeout: 5), "\(name) opens")
-            let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+            let shot = XCTAttachment(screenshot: app.screenshot())
             shot.name = "row-\(name) [\(Self.pose(app))]"; shot.lifetime = .keepAlways; add(shot)
             if app.navigationBars[name].exists {
                 // Pushed (Closed, open portrait): Back returns to the same row, still in view.
@@ -247,7 +247,7 @@ final class JourneyTests: XCTestCase {
         ReleaseRowTests.reveal(row, in: app)
         row.tap()
         sleep(1)
-        let pushed = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); pushed.name = "journey-closed-pushed"; pushed.lifetime = .keepAlways; add(pushed)
+        let pushed = XCTAttachment(screenshot: app.screenshot()); pushed.name = "journey-closed-pushed"; pushed.lifetime = .keepAlways; add(pushed)
         // Wait for the unfold: the pushed screen pops and the Page shows the release.
         let title = app.staticTexts.matching(identifier: "releaseTitle").matching(NSPredicate(format: "label == %@", "Patch 1.4")).firstMatch
         let deadline = Date.now.addingTimeInterval(150)
@@ -256,7 +256,7 @@ final class JourneyTests: XCTestCase {
         XCTAssertTrue(title.exists && !app.navigationBars["Patch 1.4"].exists, "Page shows Patch 1.4 after unfolding")
         ReleaseRowTests.reveal(row, in: app)
         XCTAssertTrue(row.isSelected, "Patch 1.4 row selected")
-        let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); shot.name = "journey-open-patch-1.4"; shot.lifetime = .keepAlways; add(shot)
+        let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "journey-open-patch-1.4"; shot.lifetime = .keepAlways; add(shot)
     }
 }
 
@@ -369,8 +369,12 @@ final class LibraryLayoutTests: XCTestCase {
             // The accessibility frame of a tile runs past its cover (the cover image's own
             // bounds), so each tile is taken as its laid-out cover: origin and width, 3:4.
             let tiles = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
-                .allElementsBoundByIndex.map(\.frame).filter { !$0.isEmpty && $0.width > 20 }
-                .map { CGRect(x: $0.minX, y: $0.minY, width: $0.width, height: ($0.width * 4 / 3).rounded()) }
+                .allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }
+                .map { e -> CGRect in
+                    // The cover's real width is in the identifier ("tile-100"); Closed fills its column (tile-0).
+                    let w = Double(e.identifier.dropFirst(5)).flatMap { $0 > 0 ? $0 : nil } ?? e.frame.width
+                    return CGRect(x: e.frame.minX, y: e.frame.minY, width: w, height: (w * 4 / 3).rounded())
+                }
             let hero = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'New update,' OR label BEGINSWITH 'Continue,'")).allElementsBoundByIndex.map(\.frame)
             // 0.2.0 gate: the hero's frame is its card, not the fill-scaled art behind it (it once
             // reported x -97.7, width 461). Open landscape: the double tile, 2 x 112 + 10 = 234 pt.
@@ -389,7 +393,7 @@ final class LibraryLayoutTests: XCTestCase {
             app.swipeUp(velocity: .fast)
         }
         XCTAssertGreaterThan(checked, 0, "found tiles [\(pose)]")
-        let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); shot.name = "library-\(games) [\(pose)]"; shot.lifetime = .keepAlways; add(shot)
+        let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "library-\(games) [\(pose)]"; shot.lifetime = .keepAlways; add(shot)
     }
 
     func testEightGames() throws { try checkNoOverlap(games: 8) }
@@ -400,7 +404,7 @@ final class LibraryLayoutTests: XCTestCase {
 @MainActor
 final class CaptureTests: XCTestCase {
     func shot(_ name: String) {
-        let a = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); a.name = "capture-\(name)"; a.lifetime = .keepAlways; add(a)
+        let a = XCTAttachment(screenshot: app.screenshot()); a.name = "capture-\(name)"; a.lifetime = .keepAlways; add(a)
     }
 
     func testReviewStills() throws {
@@ -461,7 +465,10 @@ extension PlayscribeUITests {
             XCTAssertTrue(label.hasPrefix("fold-crossings: 0;"), "\(route): \(label)")
             let elements = app.buttons.allElementsBoundByIndex + app.cells.allElementsBoundByIndex + app.scrollViews.allElementsBoundByIndex
             for e in elements where e.exists && !e.frame.isEmpty && e.frame.width < app.frame.width - 1 {
-                XCTAssertFalse(e.frame.maxX > lo && e.frame.minX < hi, "\(route): '\(e.label)' \(e.frame) enters the fold \(lo)-\(hi)")
+                // Tiles: the cover's real width is in the identifier ("tile-100"); the element frame is 8 pt wider.
+                var frame = e.frame
+                if e.identifier.hasPrefix("tile-"), let w = Double(e.identifier.dropFirst(5)), w > 0 { frame.size.width = w }
+                XCTAssertFalse(frame.maxX > lo && frame.minX < hi, "\(route): '\(e.label)' \(frame) enters the fold \(lo)-\(hi)")
             }
             app.terminate()
         }
