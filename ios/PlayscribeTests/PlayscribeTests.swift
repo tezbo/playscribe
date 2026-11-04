@@ -394,4 +394,15 @@ struct OneUpdateDemoTests {
         m.resetDemo()
         if let hero = m.continueItem { #expect(!m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
     }
+
+    /// Also new: one row per game, never the deck front card's game (Iris, 3548a21).
+    @Test func alsoNewHasOneRowPerGameAndSkipsTheFrontGame() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
+        m.resetDemo()
+        guard let front = m.latestDeck.first?.release else { return }
+        let rows = m.alsoNewReleases(excludingRelease: front.id)
+        let games = rows.map(\.gameID)
+        #expect(Set(games).count == games.count)
+        #expect(!games.contains(front.gameID))
+    }
 }
