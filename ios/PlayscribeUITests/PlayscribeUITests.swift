@@ -634,4 +634,26 @@ final class FinalFixTests: XCTestCase {
         XCTAssertTrue(f.waitForExistence(timeout: 3) && f.frame.height >= 44, "44 pt letter chip")
         app.terminate()
     }
+
+    /// The Search tab always offers a way to search, in every pose: the system field (a real, hittable
+    /// one, in the nav drawer) outside Tabletop; the read-only button and letter strip in Tabletop.
+    func testSearchTabHasAFieldInEveryPose() throws {
+        let app = launch("demo")
+        let tab = app.buttons.matching(NSPredicate(format: "label == 'Search'")).firstMatch
+        XCTAssertTrue(tab.waitForExistence(timeout: 5), "Search tab or rail button")
+        tab.tap()
+        sleep(1)
+        if ReleaseRowTests.pose(app).contains("pose: tabletop") {
+            let button = app.descendants(matching: .any).matching(identifier: "tabletopSearch").firstMatch
+            XCTAssertTrue(button.waitForExistence(timeout: 5), "Tabletop: read-only search button")
+            XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "letter-A").firstMatch.exists, "Tabletop: letter strip")
+            XCTAssertFalse(app.keyboards.firstMatch.exists)
+        } else {
+            let field = app.searchFields.firstMatch
+            XCTAssertTrue(field.waitForExistence(timeout: 5), "a search field exists on the Search tab")
+            XCTAssertTrue(field.isHittable, "the search field is on screen and tappable")
+            XCTAssertLessThanOrEqual(field.frame.maxX, app.frame.maxX + 1, "field stays inside the screen")
+        }
+        app.terminate()
+    }
 }

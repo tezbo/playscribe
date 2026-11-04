@@ -89,27 +89,43 @@ struct FeedRow: View {
 struct SearchView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.railWidth) private var railWidth
+    @Environment(\.duo) private var duo
     @State private var query = ""
+    /// Tabletop: first-letter filter instead of typing (the keyboard never opens there; Iris, 0.2.0).
+    @State private var letter: String?
 
     var body: some View {
-        let term = query.trimmingCharacters(in: .whitespaces).lowercased()
+        let tabletop = duo.pose == .tabletop
+        let term = tabletop ? "" : query.trimmingCharacters(in: .whitespaces).lowercased()
+        let active = tabletop ? letter != nil : !term.isEmpty
         let library = Set(model.data.collection.map(\.gameID))
-        let gameHits = term.isEmpty ? [] : model.games.values.filter { $0.name.lowercased().contains(term) }.sorted { $0.name < $1.name }
-        let noteHits: [(Release, String)] = term.isEmpty ? [] : library.flatMap { model.releases($0) }.flatMap { r -> [(Release, String)] in
+        let gameHits: [CatalogGame] = tabletop
+            ? (letter.map { l in model.games.values.filter { LetterIndex.matches($0.name, l) }.sorted { $0.name < $1.name } } ?? [])
+            : term.isEmpty ? [] : model.games.values.filter { $0.name.lowercased().contains(term) }.sorted { $0.name < $1.name }
+        let noteHits: [(Release, String)] = tabletop
+            ? (letter.map { l in model.noteHits(letter: l, scope: .allGames, gameID: nil).prefix(12).map { ($0.release, $0.line) } } ?? [])
+            : term.isEmpty ? [] : library.flatMap { model.releases($0) }.flatMap { r -> [(Release, String)] in
             var hits: [(Release, String)] = []
             if ([r.displayName, r.headline ?? "", r.summary ?? ""].joined(separator: " ")).lowercased().contains(term) { hits.append((r, r.headline ?? r.displayName)) }
             for s in r.notes { for i in s.items where i.spoiler != true && i.text.lowercased().contains(term) { hits.append((r, i.text)) } }
             return Array(hits.prefix(3))
         }
-        let entryHits = term.isEmpty ? [] : model.fixtures.book.filter { library.contains($0.gameID) && ($0.title + " " + $0.body).lowercased().contains(term) }
+        let entryHits: [BookEntry] = tabletop
+            ? (letter.map { l in model.fixtures.book.filter { library.contains($0.gameID) && LetterIndex.matches($0.title, l) } } ?? [])
+            : term.isEmpty ? [] : model.fixtures.book.filter { library.contains($0.gameID) && ($0.title + " " + $0.body).lowercased().contains(term) }
 
         List {
-            if term.isEmpty {
-                Text("Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
+            if tabletop {
+                TabletopSearch(letter: $letter, prompt: "Search games, patch notes, characters")
+                    .listRowBackground(Color.clear)
+            }
+            if !active {
+                Text(tabletop ? "Pick a letter to see games, patch notes and game book entries that start with it. Spoiler-tagged notes are left out."
+                              : "Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
                     .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
             } else if gameHits.isEmpty && noteHits.isEmpty && entryHits.isEmpty {
-                ContentUnavailableView.search(text: query)
+                ContentUnavailableView.search(text: tabletop ? (letter ?? "") : query)
             }
             if !gameHits.isEmpty {
                 Section("Games") {
@@ -172,14 +188,39 @@ struct SearchView: View {
                 NoteSearchResults(query: query, scope: .thisGame, gameID: model.nav.lastGameID) { model.noteScope = .allGames }
             }
         }
-        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Games, patch notes, characters…")
-        .searchScopes(Binding(get: { model.noteScope }, set: { model.noteScope = $0 })) {
-            ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
+        .modifier(SearchFieldIfTyping(enabled: !tabletop, query: $query))
+        // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
+        .frame(maxHeight: tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
+        .frame(maxHeight: .infinity, alignment: .bottom)
+        .overlay(alignment: .topLeading) {
+            if tabletop {
+                Text("Search").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
+            }
         }
-        .searchSuggestions {
-            ForEach(model.recentSearches, id: \.self) { Text($0).searchCompletion($0) }
-        }
-        .onSubmit(of: .search) { model.rememberSearch(query) }
         .navigationTitle("Search")
+    }
+}
+
+/// The system search field everywhere except Tabletop, which uses the read-only button and letter strip.
+/// Closed poses hide the tab-bar search field, so it sits in the navigation drawer in every pose.
+private struct SearchFieldIfTyping: ViewModifier {
+    @Environment(AppModel.self) private var model
+    var enabled: Bool
+    @Binding var query: String
+
+    func body(content: Content) -> some View {
+        if enabled {
+            content
+            .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Games, patch notes, characters…")
+            .searchScopes(Binding(get: { model.noteScope }, set: { model.noteScope = $0 })) {
+                ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
+            }
+            .searchSuggestions {
+                ForEach(model.recentSearches, id: \.self) { Text($0).searchCompletion($0) }
+            }
+            .onSubmit(of: .search) { model.rememberSearch(query) }
+        } else {
+            content
+        }
     }
 }
