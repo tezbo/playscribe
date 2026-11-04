@@ -373,3 +373,25 @@ struct ReadTimeTests {
         #expect(release([NoteItem(text: "Fixed a crash"), pc]).readMinutes == 1)
     }
 }
+
+@MainActor
+struct OneUpdateDemoTests {
+    /// The `one-update` QA route: the Library hero shows (one fresh unread update) and the "Also new"
+    /// panel has nothing else to list, so it falls back to "What's new".
+    @Test func oneUpdateRouteLeavesExactlyOneFreshUpdate() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "one-\(UUID().uuidString).json"))
+        m.resetToOneUpdateDemo()
+        #expect(m.data.collection.count > 1, "the full demo library is kept")
+        let hero = m.continueItem
+        #expect(hero != nil, "the hero shows")
+        let unread = m.data.collection.flatMap { m.releases($0.gameID) }.filter(m.isUnread)
+        #expect(unread.count == 1)
+        if let hero { #expect(m.alsoNewReleases(excluding: hero.game.id).isEmpty) }
+    }
+
+    @Test func demoRouteListsOtherUpdatesBesideTheHero() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
+        m.resetDemo()
+        if let hero = m.continueItem { #expect(!m.alsoNewReleases(excluding: hero.game.id).isEmpty) }
+    }
+}
