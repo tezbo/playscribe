@@ -24,7 +24,7 @@ struct AddGameSheet: View {
             Group {
                 if custom { customForm } else { list }
             }
-            .navigationTitle(custom ? "Add your own game" : "Add game")
+            .navigationTitle(custom ? "Add your own game" : duo.pose == .tabletop ? "" : "Add game")
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -96,11 +96,28 @@ struct AddGameSheet: View {
     private var list: some View {
         List {
             Section {
-                statusPicker
-                TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
-                    .autocorrectionDisabled()
-                    .submitLabel(.search)
-                    .frame(minHeight: 44)
+                if duo.pose == .tabletop {
+                    // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
+                    // at least three results stay visible in the lower half.
+                    HStack(spacing: 8) {
+                        Picker("Add as", selection: $status) {
+                            ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
+                        }
+                        .pickerStyle(.menu)
+                        .fixedSize()
+                        .frame(minHeight: 44)
+                        TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
+                            .autocorrectionDisabled()
+                            .submitLabel(.search)
+                            .frame(minHeight: 44)
+                    }
+                } else {
+                    statusPicker
+                    TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
+                        .autocorrectionDisabled()
+                        .submitLabel(.search)
+                        .frame(minHeight: 44)
+                }
             }
             let rows = results
             Section(debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
@@ -188,6 +205,7 @@ struct AddRow: View {
         .disabled(added)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(added ? "\(game.name), in your library" : "\(game.name), \(subtitle)")
+        .accessibilityIdentifier("addRow")
         .accessibilityAddTraits(selected ? [.isButton, .isSelected] : .isButton)
         .tappableFrame()
     }
@@ -262,6 +280,16 @@ struct OnboardingView: View {
 }
 
 struct OnboardingStage: View {
+    @Environment(\.duo) private var duo
+    @State private var height: CGFloat = 0
+
+    /// Tabletop: the headline sits at least 24 pt above the division band, never across it.
+    private var clearance: CGFloat {
+        guard duo.pose == .tabletop, let d = duo.division else { return 0 }
+        let overlap = height - d.minY
+        return overlap > 0 ? overlap + 4 : 0
+    }
+
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: nil, game: nil)
@@ -270,7 +298,9 @@ struct OnboardingStage: View {
                 .font(PlayscribeFont.title)
                 .foregroundStyle(PlayscribeColor.textPrimary)
                 .padding(20)
+                .padding(.bottom, clearance)
         }
+        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { height = $0 }
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
         .padding(.horizontal, 16)
         .accessibilityElement(children: .combine)
