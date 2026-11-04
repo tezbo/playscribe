@@ -173,7 +173,7 @@ struct LibraryShelf: View {
                     HStack {
                         Text(line).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                         if case .failed = model.feedStatus {
-                            Button("Retry") { Task { await model.refreshFeed() } }.font(PlayscribeFont.footnote).hitTarget()
+                            Button("Retry") { Task { await model.retryCheck() } }.font(PlayscribeFont.footnote).hitTarget()
                         }
                     }
                 }
@@ -647,6 +647,7 @@ struct StatusCircle: View {
 /// update in the last 7 days; plain glass for older; "Out <date>" when there are no updates.
 struct DatePill: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var row: AppModel.LibraryRow
     var body: some View {
         let state = model.tileDate(row)
@@ -658,7 +659,9 @@ struct DatePill: View {
             }
             Text(state.text)
                 .font(PlayscribeFont.caption2.weight(.semibold))
-                .lineLimit(1).fixedSize()
+                // Accessibility sizes: wrap to two lines inside the tile instead of running off it.
+                .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
+                .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
                 .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : state.kind == .none ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
         }
         .padding(.horizontal, 7).padding(.vertical, 3)
