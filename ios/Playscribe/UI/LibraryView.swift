@@ -439,8 +439,9 @@ struct AlsoNewPanel: View {
         let all = others
         GeometryReader { geo in
             // Iris's fill rule: 72 pt rows (3 to 6, what fits), grown evenly to 96 pt when 24 pt or more
-            // is spare, a 64 pt heading block above and a pinned 56 pt footer below.
-            let avail = max(0, geo.size.height - 64 - 56)
+            // is spare, a heading block above and a pinned 56 pt footer below.
+            // Top padding 12, heading 26 + 12 to the first row, footer 56: the whole stack fits the panel exactly.
+            let avail = max(0, geo.size.height - 12 - 38 - 56)
             let fit = min(6, max(3, Int(avail / 72)))
             let rows = Array(all.prefix(fit))
             let spare = avail - CGFloat(rows.count) * 72
@@ -448,7 +449,8 @@ struct AlsoNewPanel: View {
             VStack(alignment: .leading, spacing: 0) {
                 Text(all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
                     .accessibilityAddTraits(.isHeader)
-                    .frame(height: 64, alignment: .topLeading)
+                    .frame(height: 26, alignment: .topLeading)
+                    .padding(.bottom, 12)
                 if all.isEmpty {
                     ForEach(Array(changes.enumerated()), id: \.offset) { _, line in
                         Text(line).font(PlayscribeFont.subheadline).lineLimit(1).frame(minHeight: 44, alignment: .leading)
