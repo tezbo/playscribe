@@ -401,6 +401,8 @@ struct ContinueRow: View {
                 HeroFrame(asset: game.keyArtAsset, game: game)
                 ContinueText(game: game, release: release, fresh: fresh)
             }
+            // Iris: the caption's last line sat 2 pt from the hero frame's bottom edge.
+            .padding(.bottom, 8)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
