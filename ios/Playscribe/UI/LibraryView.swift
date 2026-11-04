@@ -43,6 +43,8 @@ struct LibraryView: View {
 struct LibraryStage: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    /// The stage's bottom edge in screen space; the caption lifts to end 24 pt above the division.
+    @State private var stageBottom: CGFloat = 0
 
     var body: some View {
         let game = model.featuredGame
@@ -58,7 +60,11 @@ struct LibraryStage: View {
                 }
             }
             .padding(20)
+            .padding(.bottom, duo.clearance(forBottom: stageBottom))
+            .accessibilityElement(children: .combine)
+            .accessibilityIdentifier("stageCaption")
         }
+        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { stageBottom = $0 }
         .allowsHitTesting(false)
         .accessibilityElement(children: .contain)
     }
