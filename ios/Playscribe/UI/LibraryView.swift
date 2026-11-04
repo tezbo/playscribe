@@ -484,6 +484,7 @@ struct FilterBar: View {
                 .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
                 .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
                 .padding(.horizontal, 10)
+                .padding(.vertical, typeSize.isAccessibilitySize ? 6 : 0)
                 .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil, minHeight: 44)
                 .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
         }
@@ -495,8 +496,9 @@ struct FilterBar: View {
     var body: some View {
         let rows = model.libraryRows
         if typeSize.isAccessibilitySize {
-            // Accessibility sizes: the chips wrap into rows of two instead of scrolling sideways.
-            LazyVGrid(columns: [GridItem(.flexible(), spacing: 8), GridItem(.flexible(), spacing: 8)], spacing: 8) {
+            // Accessibility sizes: one chip per row at the full column width, so "Watching 1" stays on one line
+            // inside its pill and tap frame (Closed AX3, 382 pt); a row grows if it must wrap.
+            LazyVGrid(columns: [GridItem(.flexible())], spacing: 8) {
                 ForEach(LibraryFilter.allCases) { f in chip(f, rows: rows) }
             }
         } else {
