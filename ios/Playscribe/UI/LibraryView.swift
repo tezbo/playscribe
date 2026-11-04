@@ -285,7 +285,8 @@ struct LibraryShelf: View {
                     if typeSize.isAccessibilitySize {
                         // Accessibility sizes (Iris): the deck full width, Also new below it as a list.
                         VStack(alignment: .leading, spacing: 14) {
-                            LatestUpdatesDeck(cards: deck, compact: true, maxHeight: deckHeight)
+                            // Taller than the 38% side-by-side deck: the title needs up to 4 lines at AX3 (no ellipsis).
+                            LatestUpdatesDeck(cards: deck, compact: true, maxHeight: (duo.size.height * 0.46).rounded())
                             AlsoNewPanel(hero: front?.release).frame(height: 460)
                         }
                         .id(poseKey)

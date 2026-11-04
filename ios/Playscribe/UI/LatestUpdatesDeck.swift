@@ -53,6 +53,7 @@ struct LatestUpdatesDeck: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.dynamicTypeSize) private var typeSize
     var cards: [DeckCard]
     /// Open portrait: the deck is the left column beside the Also new panel, one card at a time.
     var compact = false
@@ -85,10 +86,20 @@ struct LatestUpdatesDeck: View {
                 deck(cardWidth: g.size.width, artHeight: art)
             }
             .frame(height: maxHeight > 0 ? maxHeight : nil)
+        } else if typeSize.isAccessibilitySize {
+            // Accessibility sizes: one card per screen at an explicit height. The unsized pager let the card fill the
+            // screen (7fe84f4, AX3).
+            GeometryReader { g in
+                deck(cardWidth: g.size.width, artHeight: axArtHeight)
+            }
+            .frame(height: axArtHeight + (cards.count > 1 ? Self.pageEdgeHeight : 0))
         } else {
             deck(cardWidth: nil, artHeight: nil)
         }
     }
+
+    /// 40% of the container, 200 pt at least; independent of the column width so the frame and the card agree.
+    private var axArtHeight: CGFloat { max(200, (duo.size.height * 0.4).rounded()) }
 
     private func deck(cardWidth: CGFloat?, artHeight: CGFloat?) -> some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -204,7 +215,8 @@ struct CompactDeckCard: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
-                    .lineLimit(typeSize.isAccessibilitySize ? 2 : 3)
+                    .lineLimit(typeSize.isAccessibilitySize ? 4 : 3)
+                    .minimumScaleFactor(typeSize.isAccessibilitySize ? 0.85 : 1)
                 HStack(spacing: 8) {
                     Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
                     if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
