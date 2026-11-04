@@ -36,7 +36,7 @@ struct AddGameSheet: View {
             Group {
                 if custom { customForm }
                 else if let matches {
-                    AddResultsView(matches: matches, status: status, picked: picked, toggle: toggle) { self.matches = nil }
+                    AddResultsView(matches: matches, status: status, picked: picked, toggle: tap) { self.matches = nil }
                 } else if let method {
                     switch method {
                     case .typeIt: list
@@ -156,7 +156,7 @@ struct AddGameSheet: View {
                     Text("No PS5 game matches '\(debounced)'").foregroundStyle(.secondary)
                     Button("Add '\(debounced)' yourself") { customName = debounced; custom = true }.hitTarget()
                 }
-                ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
+                ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { tap(g) } }
             }
             Section {
                 Button { customName = query; custom = true } label: {
@@ -200,12 +200,16 @@ struct AddGameSheet: View {
         if sureOnly, found.contains(where: \.sure) { found = found.filter(\.sure) }
         for m in found { if let g = m.best, model.entry(g.id) == nil, picked[g.id] == nil { toggle(g) } }
         matches = found
+        if found.isEmpty { Haptics.warning() }
     }
 
     private func add(_ g: CatalogGame) {
         model.addGame(g, status: status)
         dismiss()
     }
+
+    /// A person's own tick (not the pre-ticked sure matches).
+    private func tap(_ g: CatalogGame) { Haptics.selection(); toggle(g) }
 
     private func toggle(_ g: CatalogGame) {
         if picked[g.id] != nil { picked[g.id] = nil; pickOrder.removeAll { $0 == g.id } } else { picked[g.id] = g; pickOrder.append(g.id) }

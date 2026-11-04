@@ -84,6 +84,13 @@ struct SettingsView: View {
                             ? "Alerts arrive silently during these hours."
                             : "Change a single game from the bell on its page.")
                 }
+                Section {
+                    Toggle("Sounds", isOn: Binding(get: { model.data.soundsOff != true }, set: { model.data.soundsOff = $0 ? nil : true }))
+                        .accessibilityHint("Plays a soft pop when games are added")
+                        .accessibilityIdentifier("sounds")
+                } footer: {
+                    Text("A soft pop when you add games. Never plays while you are listening to something else.")
+                }
 
                 #if INTERNAL
                 Section {

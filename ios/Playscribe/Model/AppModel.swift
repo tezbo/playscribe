@@ -104,6 +104,8 @@ struct PersistedState: Codable {
     var pauseAll = false
     /// Quiet hours (0.5.0, Iris): nil = off, the default. Local scheduling only.
     var quietHours: QuietHours?
+    /// nil = on. Off silences the add pop.
+    var soundsOff: Bool?
     var notificationCardShows = 0
     var notificationCardDismissed = false
     /// Releases already announced by a notification, so a release never pushes twice (N-3).
@@ -166,6 +168,8 @@ final class AppModel {
     var libraryTab: LibraryTab = .playing
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
+    /// Order games were just added in, for the pop stagger.
+    var addedOrder: [String] = []
     /// Set when a deep link asks the journal to bring a release to the top.
     var focusReleaseID: String?
     var focusToken = 0
@@ -617,9 +621,11 @@ final class AppModel {
         nav.filter = .all
         highlight = new.count == 1 ? ids[0] : nil
         highlightSet = Set(ids)
+        addedOrder = ids
         nav.anchors["library"] = "lib-\(ids[0])"
         let text = new.count == 1 ? "Added \(new[0].name)" : "Added \(new.count) games"
         show(Toast(text: text, undo: { [weak self] in ids.forEach { self?.removeGame($0, toast: false) } }))
+        if data.soundsOff != true { PopSound.play(count: new.count, quiet: data.quietHours) }
         NotificationService.shared.updateBadge(badgeCount)
     }
 
