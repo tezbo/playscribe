@@ -642,7 +642,12 @@ final class Release050Tests: XCTestCase {
         if hero.waitForExistence(timeout: 4) {
             XCTAssertGreaterThanOrEqual(hero.frame.minX, app.frame.minX - 1)
             XCTAssertLessThanOrEqual(hero.frame.maxX, app.frame.maxX + 1, "hero within the screen width")
+        }
+        app.terminate()
+    }
+}
 
+extension PlayscribeUITests {
     /// 0.2.0 gate (dc27a53): in Tabletop the first-run "Add your first game" button and the popular
     /// covers ran under the trailing rail. No first-run control may intersect the rail.
     func testTabletopFirstRunClearsTheRail() throws {
