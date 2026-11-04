@@ -652,7 +652,17 @@ final class FinalFixTests: XCTestCase {
             let field = app.searchFields.firstMatch
             XCTAssertTrue(field.waitForExistence(timeout: 5), "a search field exists on the Search tab")
             XCTAssertTrue(field.isHittable, "the search field is on screen and tappable")
-            XCTAssertLessThanOrEqual(field.frame.maxX, app.frame.maxX + 1, "field stays inside the screen")
+            XCTAssertGreaterThanOrEqual(field.frame.minX, 0, "field starts on screen")
+            // Book: the field sits on one page, never across the fold. (app.frame reports the portrait
+            // width after XCUITest resets the orientation, so the fold comes from the audit label.)
+            let label = ReleaseRowTests.pose(app)
+            if label.contains("pose: book"), let r = label.range(of: "fold ") {
+                let digits = label[r.upperBound...].prefix(while: { $0.isNumber || $0 == "-" })
+                let nums = digits.split(separator: "-")
+                if nums.count == 2, let lo = Double(nums[0]), let hi = Double(nums[1]) {
+                    XCTAssertTrue(field.frame.maxX <= lo + 1 || field.frame.minX >= hi - 1, "Book: search field \(field.frame) crosses the fold \(lo)-\(hi)")
+                }
+            }
         }
         app.terminate()
     }

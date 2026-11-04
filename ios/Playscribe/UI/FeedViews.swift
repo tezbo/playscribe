@@ -199,7 +199,9 @@ struct SearchView: View {
                 NoteSearchResults(query: query, scope: .thisGame, gameID: model.nav.lastGameID) { model.noteScope = .allGames }
             }
         }
-        .modifier(SearchFieldIfTyping(enabled: !tabletop, query: $query))
+        .modifier(SearchFieldIfTyping(enabled: !tabletop, drawer: duo.pose != .book, query: $query))
+        // Book: Search lives on the right page, never across the fold (0.2.0 gate: field and hint ran full width).
+        .padding(.leading, duo.pose == .book ? (duo.division.map { $0.maxX + 8 } ?? 0) : 0)
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
         .frame(maxHeight: tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
@@ -217,12 +219,15 @@ struct SearchView: View {
 private struct SearchFieldIfTyping: ViewModifier {
     @Environment(AppModel.self) private var model
     var enabled: Bool
+    /// Closed and flat poses hide the tab-bar field, so it moves into the nav drawer; Book keeps the
+    /// system's own placement, which sits on the right page.
+    var drawer: Bool
     @Binding var query: String
 
     func body(content: Content) -> some View {
         if enabled {
             content
-            .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Games, patch notes, characters…")
+            .searchable(text: $query, placement: drawer ? .navigationBarDrawer(displayMode: .always) : .automatic, prompt: "Games, patch notes, characters…")
             .searchScopes(Binding(get: { model.noteScope }, set: { model.noteScope = $0 })) {
                 ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
             }
