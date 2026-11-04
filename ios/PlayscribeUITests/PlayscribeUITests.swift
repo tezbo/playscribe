@@ -619,4 +619,19 @@ final class FinalFixTests: XCTestCase {
         XCTAssertFalse(app.keyboards.firstMatch.exists)
         app.terminate()
     }
+
+    /// Tabletop game page: notes search is the read-only button plus the A to Z strip, never the keyboard.
+    func testTabletopNotesSearchUsesLettersNotTheKeyboard() throws {
+        let app = XCUIApplication()
+        ReleaseRowTests.openBluePrince(app)
+        sleep(3)
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let search = app.descendants(matching: .any).matching(identifier: "tabletopSearch").firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10), "read-only notes search button")
+        search.tap()
+        XCTAssertFalse(app.keyboards.firstMatch.exists, "the keyboard never opens in Tabletop")
+        let f = app.descendants(matching: .any).matching(identifier: "letter-F").firstMatch
+        XCTAssertTrue(f.waitForExistence(timeout: 3) && f.frame.height >= 44, "44 pt letter chip")
+        app.terminate()
+    }
 }
