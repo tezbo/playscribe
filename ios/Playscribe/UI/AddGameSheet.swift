@@ -14,6 +14,7 @@ struct AddGameSheet: View {
     @State private var debounced = ""
     /// Tabletop: first-letter filter instead of typing (the keyboard never opens there).
     @State private var letter: String?
+    @State private var hintShown = false
     @State private var custom = false
     @State private var customName = ""
     @State private var customPlatform: Platform = .ps5
@@ -150,7 +151,7 @@ struct AddGameSheet: View {
                 if duo.pose == .tabletop {
                     // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
                     // at least three results stay visible in the lower half.
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: 4) {
                         HStack(spacing: 8) {
                             Button { dismiss() } label: {
                                 Image(systemName: "xmark").font(PlayscribeFont.headline)
@@ -166,9 +167,12 @@ struct AddGameSheet: View {
                             .pickerStyle(.menu)
                             .fixedSize()
                             .frame(minHeight: 44)
+                            TabletopSearchButton(letter: letter, prompt: "Search PS5 games", hintShown: $hintShown)
                         }
-                        TabletopSearch(letter: $letter, prompt: "Search \(PS5Index.shared.count.formatted()) PS5 games")
+                        TabletopSearchHint(shown: hintShown)
+                        TabletopLetterStrip(letter: $letter)
                     }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                 } else {
                     statusPicker
                     TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
