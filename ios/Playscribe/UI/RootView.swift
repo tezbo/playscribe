@@ -90,6 +90,7 @@ struct RootView: View {
                 }
             }
             .animation(poseAnimation, value: duo.pose)
+            .environment(\.qaSolid, BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaReduceTransparency"))
             .onPreferenceChange(TappableFrameKey.self) { frames = $0 }
             .overlay {
                 if model.showDebugOverlay { DebugOverlay(frames: frames, duo: duo) }
@@ -312,7 +313,8 @@ struct LowerMessages: View {
             }
             if let toast = model.toast {
                 HStack(spacing: 12) {
-                    Text(toast.text).font(PlayscribeFont.subheadline)
+                    // Wraps to two lines at large sizes instead of shrinking (Iris, AX3).
+                    Text(toast.text).font(PlayscribeFont.subheadline).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     if let undo = toast.undo {
                         Button(toast.actionLabel) { undo(); model.toastClear() }
                             .font(PlayscribeFont.subheadline.weight(.semibold))

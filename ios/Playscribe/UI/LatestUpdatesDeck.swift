@@ -53,6 +53,7 @@ struct LatestUpdatesDeck: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.dynamicTypeSize) private var typeSize
     var cards: [DeckCard]
     /// Open portrait: the deck is the left column beside the Also new panel, one card at a time.
     var compact = false
@@ -85,6 +86,13 @@ struct LatestUpdatesDeck: View {
                 deck(cardWidth: g.size.width, artHeight: art)
             }
             .frame(height: maxHeight > 0 ? maxHeight : nil)
+        } else if typeSize.isAccessibilitySize && !(duo.pose == .closed && duo.isLandscape) {
+            // Accessibility sizes: one card per screen at an explicit height. The unsized pager let the card fill the
+            // screen (7fe84f4, AX3).
+            GeometryReader { g in
+                deck(cardWidth: g.size.width, artHeight: axArtHeight)
+            }
+            .frame(height: axArtHeight + (cards.count > 1 ? Self.pageEdgeHeight : 0))
         } else {
             // Closed landscape: the wide card's height is set on the pager itself (40% of the container,
             // 168 to 240 pt); a horizontal ScrollView otherwise sizes to what it is offered (151 pt drawn).
@@ -92,6 +100,10 @@ struct LatestUpdatesDeck: View {
                  scrollHeight: duo.pose == .closed && duo.isLandscape ? min(240, max(168, duo.size.height * 0.4)) : nil)
         }
     }
+
+    /// 40% of the container, 200 pt at least; independent of the column width so the frame and the card agree.
+    private var axArtHeight: CGFloat { max(200, (duo.size.height * 0.4).rounded()) }
+
 
     private var pageEdge: some View {
         PageEdge(cards: cards, current: current ?? cards.first?.id) { id in
@@ -194,20 +206,32 @@ struct DeckCardView: View {
 struct CompactDeckCard: View {
     var card: DeckCard
     var height: CGFloat
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @Environment(\.qaSolid) private var qaSolid
+    @Environment(\.dynamicTypeSize) private var typeSize
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: card.game.keyArtAsset, game: card.game)
-            LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.9)], startPoint: .center, endPoint: .bottom)
+            // Increase Contrast / Reduce Transparency: a solid ink scrim behind the caption, not a fade.
+            if contrast == .increased || reduceTransparency || qaSolid {
+                PlayscribeColor.ink950.opacity(0.92).frame(height: height * 0.45)
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+            } else {
+                LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.9)], startPoint: .center, endPoint: .bottom)
+            }
             VStack(alignment: .leading, spacing: 4) {
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
-                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).lineLimit(3)
+                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
+                    .lineLimit(typeSize.isAccessibilitySize ? 4 : 3)
+                    .minimumScaleFactor(typeSize.isAccessibilitySize ? 0.85 : 1)
                 HStack(spacing: 8) {
                     Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
                     if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
                 }
-                .font(PlayscribeFont.subheadline).lineLimit(1)
+                .font(PlayscribeFont.subheadline).lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
             }
             .padding(16)
         }
