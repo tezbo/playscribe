@@ -146,6 +146,27 @@ final class AppModel {
     var focusReleaseID: String?
     var focusToken = 0
     var showDebugOverlay = false
+    /// QA (route "one-update") and tests: the "Also new" panel sees no other updates.
+    var qaSingleUpdate = false
+    /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
+    /// confirm a `-qaRoute` took effect.
+    var qaRoute: String?
+    /// QA (route "one-update"): the newest On PS5 release is the only unread one. Chosen when first asked
+    /// (not at launch, when releases may not be merged yet), so a later feed refresh or the 72 hour
+    /// rule cannot take the hero away.
+    @ObservationIgnored private var qaHeroCache: String?
+    private func qaHeroReleaseID() -> String? {
+        if let id = qaHeroCache { return id }
+        var newest: Release?
+        for entry in data.collection {
+            for r in releases(entry.gameID) where r.ps5State == .onPS5 {
+                if let n = newest, n.ps5Date >= r.ps5Date { continue }
+                newest = r
+            }
+        }
+        qaHeroCache = newest?.id
+        return newest?.id
+    }
     /// The pose being laid out right now, written by RootView as it renders. Lets navigation
     /// bindings tell a user's Back from a container being torn down by a pose change. Not observed.
     @ObservationIgnored var livePose: Pose = .closed
@@ -260,7 +281,10 @@ final class AppModel {
         releases(gameID).filter { !$0.isPS5Listed }
     }
 
-    func isUnread(_ r: Release) -> Bool { r.ps5State == .onPS5 && data.read[r.id] == nil }
+    func isUnread(_ r: Release) -> Bool {
+        if qaSingleUpdate { return r.ps5State == .onPS5 && r.id == qaHeroReleaseID() }
+        return r.ps5State == .onPS5 && data.read[r.id] == nil
+    }
 
     func unreadCount(_ gameID: String) -> Int { releases(gameID).filter(isUnread).count }
 
@@ -440,6 +464,7 @@ final class AppModel {
         }
         #if INTERNAL
         // Internal routes so QA can script every screen in every pose with `simctl openurl`.
+        qaRoute = url.host()
         switch url.host() {
         case "add": addSheetOpen = true
         case "settings": settingsOpen = true
@@ -450,6 +475,7 @@ final class AppModel {
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
+        case "one-update": resetToOneUpdateDemo()
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
             Task {
@@ -643,9 +669,29 @@ final class AppModel {
     }
 
     func resetDemo() {
+        qaSingleUpdate = false
+        qaHeroCache = nil
         data = PersistedState(collection: fixtures.seedCollection)
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
+    }
+
+    /// QA and tests: the full demo library with exactly one fresh, unread On PS5 update (so the Library
+    /// hero shows), every other update read, and the "Also new" panel seeing no other updates, which
+    /// is the panel's "What's new" fallback.
+    func resetToOneUpdateDemo() {
+        resetDemo()
+        qaSingleUpdate = true
+    }
+
+    /// The updates beside the hero in the Library (Open portrait): the newest across the library,
+    /// not the hero's own game.
+    func alsoNewReleases(excluding gameID: String, limit: Int = 6) -> [Release] {
+        if qaSingleUpdate { return [] }
+        return Array(data.collection.map(\.gameID).filter { $0 != gameID }
+            .flatMap { ps5Releases($0) }
+            .sorted { $0.ps5Date > $1.ps5Date }
+            .prefix(limit))
     }
 
     // MARK: - Simulated updates (internal builds)

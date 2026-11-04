@@ -389,13 +389,30 @@ final class LibraryLayoutTests: XCTestCase {
                 }
             let hero = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'New update,' OR label BEGINSWITH 'Continue,'")).allElementsBoundByIndex.map(\.frame)
             // 0.2.0 gate: the hero's frame is its card, not the fill-scaled art behind it (it once
-            // reported x -97.7, width 461). Open landscape: the double tile, 2 x 112 + 10 = 234 pt.
+            // reported x -97.7, width 461). Open landscape: the double tile, 2 tiles + 10 pt, where the
+            // tile fills the width (n columns of at least 124 pt, leftover spread equally, 16 pt margins).
+            let openW = app.frame.width - 32
+            let openN = max(2, Int((openW + 10) / 134))
+            let openTile = ((openW - CGFloat(openN - 1) * 10) / CGFloat(openN) * 100).rounded(.down) / 100
             for h in hero {
                 XCTAssertGreaterThanOrEqual(h.minX, 0, "hero starts on screen \(h) [\(pose)]")
                 XCTAssertLessThanOrEqual(h.maxX, app.frame.width + 1, "hero ends on screen \(h) [\(pose)]")
                 if pose.contains("flat") && app.frame.width > app.frame.height {
-                    XCTAssertEqual(h.width, 234, accuracy: 3, "Open hero is the 234 pt double tile [\(pose)]")
+                    XCTAssertEqual(h.width, openTile * 2 + 10, accuracy: 3, "Open hero is the double tile [\(pose)]")
                 }
+                if pose.contains("flat") && app.frame.width <= app.frame.height {
+                    XCTAssertLessThanOrEqual(h.height, app.frame.height * 0.38 + 12, "Open portrait hero is at most 38% of the height [\(pose)]")
+                }
+            }
+            // The panel belongs to the taller-than-wide hero card (Open portrait); in Open landscape the hero is a
+            // double tile in the grid and there is no panel. (app.frame can report the wrong orientation here.)
+            if pose.contains("flat"), let h0 = hero.first, h0.height > h0.width {
+                let panel = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Also new' OR label == \"What's new\"")).firstMatch
+                XCTAssertTrue(panel.exists, "Open portrait: the Also new / What's new panel sits beside the hero [\(pose)]")
+                for h in hero { XCTAssertFalse(panel.frame.insetBy(dx: 1, dy: 1).intersects(h), "panel overlaps hero \(panel.frame) \(h) [\(pose)]") }
+            }
+            if pose.contains("flat"), let right = tiles.map(\.maxX).max(), tiles.count >= openN {
+                XCTAssertGreaterThanOrEqual(right, app.frame.width - 16 - 12, "Open grid fills the width, no dead space on the trailing side [\(pose)]")
             }
             for (i, a) in tiles.enumerated() {
                 for b in tiles[(i + 1)...] { XCTAssertFalse(a.insetBy(dx: 1, dy: 1).intersects(b), "tiles overlap \(a) \(b) [\(pose)]") }
