@@ -28,6 +28,12 @@ struct ScreenAction: Identifiable {
     var priority: ToolbarItemVisibilityPriority = .automatic
 }
 
+extension Array where Element == ScreenAction.MenuSection {
+    /// Which items are ticked. Keying a Menu on this rebuilds it when a choice changes, so a toolbar or rail menu never
+    /// shows the old tick (Terry, 0.2.0 build 5: Major only reverted to All updates on return).
+    var tickKey: String { flatMap(\.items).filter(\.checked).map(\.id).joined(separator: ",") }
+}
+
 struct ActionMenuContent: View {
     var sections: [ScreenAction.MenuSection]
     var body: some View {
@@ -53,6 +59,7 @@ struct RailButton: View {
                 Button(action: run) { icon }
             case .menu(let sections):
                 Menu { ActionMenuContent(sections: sections) } label: { icon }
+                    .id(sections.tickKey)
             }
         }
         .accessibilityLabel(action.title)

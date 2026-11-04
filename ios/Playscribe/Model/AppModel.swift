@@ -327,7 +327,15 @@ final class AppModel {
         return (data.simulated + allReleasesMerged)
             // Steam is the source of truth (Terry, 26 Oct): a release only the press reports is not shown.
             .filter { $0.gameID == gameID && $0.ps5State != .pending && $0.ps5State != .reported && ($0.arrivesAt ?? .distantPast) <= now }
-            .sorted { $0.latestDate > $1.latestDate }
+            .sorted { Self.newer($0, $1, by: \.latestDate) }
+    }
+
+    /// Newest first by a date, ties broken by when the update was announced, then by id, so equal PS5 dates
+    /// (a launch batch) never leave an old patch in front of the latest (Terry, 0.2.0 build 5: Enshrouded opened on patch 1).
+    static func newer(_ a: Release, _ b: Release, by date: KeyPath<Release, Date>) -> Bool {
+        if a[keyPath: date] != b[keyPath: date] { return a[keyPath: date] > b[keyPath: date] }
+        if a.announcedAt != b.announcedAt { return a.announcedAt > b.announcedAt }
+        return a.id > b.id
     }
 
     func release(_ gameID: String, _ releaseID: String) -> Release? {
@@ -335,7 +343,7 @@ final class AppModel {
     }
 
     func ps5Releases(_ gameID: String) -> [Release] {
-        releases(gameID).filter(\.isPS5Listed).sorted { $0.ps5Date > $1.ps5Date }
+        releases(gameID).filter(\.isPS5Listed).sorted { Self.newer($0, $1, by: \.ps5Date) }
     }
 
     func pcOnlyReleases(_ gameID: String) -> [Release] {
