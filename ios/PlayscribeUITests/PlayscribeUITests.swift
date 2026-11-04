@@ -86,6 +86,31 @@ final class FoldAuditTests: XCTestCase {
             XCTAssertTrue(label.hasPrefix("fold-crossings: 0;"), "\(route): \(label)")
         }
     }
+
+    /// 0.2.0 gate defects (Book, Library): no button, cell or chip row may enter the fold zone.
+    /// Reads the fold from the audit label ("fold 455-495") and checks each element's frame.
+    func testBookLibraryNothingEntersTheFold() throws {
+        let app = XCUIApplication()
+        for route in ["library", "demo"] {
+            app.launchArguments = ["-qaRoute", route]
+            app.launch()
+            sleep(3)
+            let audit = app.descendants(matching: .any)["foldAudit"]
+            XCTAssertTrue(audit.waitForExistence(timeout: 5))
+            let label = audit.label
+            guard label.contains("pose: book"), let range = label.range(of: #"fold (\d+)-(\d+)"#, options: .regularExpression) else {
+                app.terminate(); throw XCTSkip("not in the Book pose: \(label)")
+            }
+            let nums = label[range].dropFirst(5).split(separator: "-").compactMap { Double($0) }
+            let (lo, hi) = (nums[0], nums[1])
+            XCTAssertTrue(label.hasPrefix("fold-crossings: 0;"), "\(route): \(label)")
+            let elements = app.buttons.allElementsBoundByIndex + app.cells.allElementsBoundByIndex + app.scrollViews.allElementsBoundByIndex
+            for e in elements where e.exists && !e.frame.isEmpty && e.frame.width < app.frame.width - 1 {
+                XCTAssertFalse(e.frame.maxX > lo && e.frame.minX < hi, "\(route): '\(e.label)' \(e.frame) enters the fold \(lo)-\(hi)")
+            }
+            app.terminate()
+        }
+    }
 }
 
 /// D-13: every display choice survives a relaunch.
