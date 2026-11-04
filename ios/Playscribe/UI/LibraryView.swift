@@ -490,6 +490,7 @@ struct ContinueRow: View {
 struct AlsoNewPanel: View {
     @Environment(AppModel.self) private var model
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.dynamicTypeSize) private var typeSize
     /// The deck's front card's update: left out of the list, and the "What's new" source when it is alone.
     var hero: Release?
 
@@ -513,12 +514,14 @@ struct AlsoNewPanel: View {
             // is spare, a heading block above and a pinned 56 pt footer below.
             // Top padding 12, heading 26 + 12 to the first row, footer 56: the whole stack fits the panel exactly.
             let avail = max(0, geo.size.height - 12 - 38 - 56)
-            let fit = min(6, max(3, Int(avail / 72)))
+            // Accessibility sizes (0.5.0 a11y): rows grow to 2-line names, so fewer fit (never a clipped row).
+            let unit: CGFloat = typeSize.isAccessibilitySize ? 104 : 72
+            let fit = min(6, max(typeSize.isAccessibilitySize ? 1 : 3, Int(avail / unit)))
             let rows = Array(all.prefix(fit))
-            let spare = avail - CGFloat(rows.count) * 72
+            let spare = avail - CGFloat(rows.count) * unit
             // Three rows are the floor: when they do not quite fit, they give up a few points each (never below 64).
-            let rowHeight: CGFloat = rows.isEmpty ? 72 : spare < 0 ? max(64, avail / CGFloat(rows.count))
-                : spare <= 24 ? 72 : min(96, 72 + spare / CGFloat(rows.count))
+            let rowHeight: CGFloat = rows.isEmpty ? unit : spare < 0 ? max(typeSize.isAccessibilitySize ? 88 : 64, avail / CGFloat(rows.count))
+                : spare <= 24 ? unit : min(unit + 24, unit + spare / CGFloat(rows.count))
             VStack(alignment: .leading, spacing: 0) {
                 Text(all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
                     .accessibilityAddTraits(.isHeader)
@@ -607,14 +610,15 @@ struct AlsoNewPanel: View {
             HStack(spacing: 10) {
                 if let g = game { CoverView(game: g, cornerRadius: 4).frame(width: 48) }
                 VStack(alignment: .leading, spacing: 1) {
-                    Text(game?.name ?? "").font(PlayscribeFont.headline).lineLimit(1)
+                    // Game names never truncate below two lines (0.5.0 a11y).
+                    Text(game?.name ?? "").font(PlayscribeFont.headline).lineLimit(2)
                     Text("\(r.displayName), \(age)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
                         .lineLimit(2).minimumScaleFactor(0.85)
                 }
                 Spacer(minLength: 0)
                 Image(systemName: "chevron.right").font(PlayscribeFont.caption).foregroundStyle(.secondary).accessibilityHidden(true)
             }
-            .frame(height: height)
+            .frame(minHeight: height)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

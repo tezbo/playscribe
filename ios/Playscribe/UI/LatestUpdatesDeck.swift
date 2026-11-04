@@ -185,12 +185,20 @@ struct DeckCardView: View {
 struct CompactDeckCard: View {
     var card: DeckCard
     var height: CGFloat
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: card.game.keyArtAsset, game: card.game)
-            LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.9)], startPoint: .center, endPoint: .bottom)
+            // Increase Contrast / Reduce Transparency: a solid ink scrim behind the caption, not a fade.
+            if contrast == .increased || reduceTransparency {
+                PlayscribeColor.ink950.opacity(0.92).frame(height: height * 0.45)
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+            } else {
+                LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.9)], startPoint: .center, endPoint: .bottom)
+            }
             VStack(alignment: .leading, spacing: 4) {
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).lineLimit(3)
