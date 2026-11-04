@@ -108,6 +108,12 @@ CREATE TABLE IF NOT EXISTS follows (
   PRIMARY KEY (device_id, game_id)
 );
 
+CREATE TABLE IF NOT EXISTS plus_months (
+  month TEXT PRIMARY KEY,
+  data TEXT NOT NULL,
+  fetched_at TEXT NOT NULL
+);
+
 -- Roadmap 17: news headlines per game. Title, date and link only, never the article text. source_id is kept for audit and never exported.
 CREATE TABLE IF NOT EXISTS news (
   game_id TEXT NOT NULL REFERENCES games(id),

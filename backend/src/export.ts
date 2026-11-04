@@ -3,6 +3,7 @@ import { join } from 'node:path'
 import type { DB } from './db.ts'
 import { issuesOf } from './issues.ts'
 import { loadPlus } from './plus.ts'
+import { storedPlusMonths } from './plusAuto.ts'
 import { gameFromRow, getRelease, listReleases, newsOf, releaseFromRow } from './store.ts'
 
 // Writes the read side of the API as static files, so the app can sync from any static host
@@ -52,6 +53,9 @@ export const exportStatic = (db: DB, outDir: string) => {
   // latest.json's updatedAt must always be a date: the 0.2.0 app (Latest.updatedAt: Date) cannot decode null from an empty feed.
   write(join(root, 'latest.json'), { updatedAt: newest || '1970-01-01T00:00:00.000Z', releases: latest })
   write(join(root, 'review.json'), { items: review })
-  write(join(root, 'plus.json'), loadPlus(undefined, new Set(games.map((g) => g.id))))
+  // Manual months override the automatic ones, month by month.
+  const manual = loadPlus(undefined, new Set(games.map((g) => g.id)))
+  const months = new Map([...storedPlusMonths(db), ...manual.months].map((m) => [m.month, m]))
+  write(join(root, 'plus.json'), { version: 1, months: [...months.values()].sort((a, b) => (a.month < b.month ? 1 : -1)) })
   return { games: games.length, files: readdirSync(join(root, 'games')).length * 2 + 3 }
 }
