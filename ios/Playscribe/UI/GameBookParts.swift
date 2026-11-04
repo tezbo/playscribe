@@ -464,7 +464,7 @@ struct ContentsBody: View {
                 }
                 ChapterBar(gameID: gameID, selected: chapter)
                 NotesSearchField(gameID: gameID)
-                if model.noteQuery.count >= 2 {
+                if model.noteQuery.count >= 2 || (duo.pose == .tabletop && model.noteLetter != nil) {
                     InlineNoteResults(gameID: gameID)
                 } else if chapter == .updates {
                     let unread = model.releases(gameID).filter(model.isUnread).count
@@ -514,9 +514,23 @@ struct SwapSidesButton: View {
 /// GR-4 in the Contents: search this game's notes, or all my games.
 struct NotesSearchField: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
     var body: some View {
         @Bindable var model = model
+        if duo.pose == .tabletop {
+            // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
+            VStack(alignment: .leading, spacing: 8) {
+                TabletopSearch(letter: $model.noteLetter,
+                               prompt: model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes")
+                if model.noteLetter != nil {
+                    Picker("Search in", selection: $model.noteScope) {
+                        ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
+                    }
+                    .pickerStyle(.segmented)
+                }
+            }
+        } else {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
@@ -539,14 +553,18 @@ struct NotesSearchField: View {
                 .pickerStyle(.segmented)
             }
         }
+        }
     }
 }
 
 struct InlineNoteResults: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
     var body: some View {
-        let hits = model.noteHits(model.noteQuery, scope: model.noteScope, gameID: gameID)
+        let byLetter = duo.pose == .tabletop ? model.noteLetter : nil
+        let hits = byLetter.map { model.noteHits(letter: $0, scope: model.noteScope, gameID: gameID) }
+            ?? model.noteHits(model.noteQuery, scope: model.noteScope, gameID: gameID)
         VStack(alignment: .leading, spacing: 6) {
             if !hits.isEmpty {
                 Text("\(hits.count) result\(hits.count == 1 ? "" : "s")")
@@ -554,7 +572,8 @@ struct InlineNoteResults: View {
                     .accessibilityLabel("\(hits.count) results")
             }
             if hits.isEmpty {
-                Text(model.noteScope == .thisGame ? "Nothing in this game's notes matches" : "Nothing in your games' notes matches")
+                let none = model.noteScope == .thisGame ? "Nothing in this game's notes matches" : "Nothing in your games' notes matches"
+                Text(byLetter.map { "No notes start with \($0)" } ?? none)
                     .font(PlayscribeFont.headline)
                 if model.noteScope == .thisGame {
                     Button("Search all my games") { model.noteScope = .allGames }.hitTarget()
@@ -567,6 +586,7 @@ struct InlineNoteResults: View {
                     else { model.openGame(h.release.gameID, chapter: .updates, releaseID: h.release.id) }
                     model.highlight = h.release.id
                     model.noteQuery = ""
+                    model.noteLetter = nil
                 } label: {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(NoteHit.bolded(h.line, query: model.noteQuery)).font(PlayscribeFont.subheadline).lineLimit(3)
