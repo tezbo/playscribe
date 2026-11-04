@@ -148,6 +148,7 @@ struct TabRoot: View {
                 NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search)
             }
         }
+        .onChange(of: model.data.nav.tab) { old, new in if new == .search && old != .search { model.searchReturnTab = old } }
     }
 }
 
@@ -211,6 +212,10 @@ struct TabletopRail: View {
                     RailButton(action: ScreenAction(id: "links", title: "Links", systemImage: "link", kind: .button { model.linksSheetOpen = true }))
                         .accessibilityLabel("Links, opens a list")
                 }
+            } else if model.nav.tab == .search {
+                // Search is a dead end without this: Back to where it was opened from (Terry, 0.2.0 build 5).
+                RailButton(action: ScreenAction(id: "back", title: "Back", systemImage: "chevron.backward",
+                                                kind: .button { model.leaveSearch() }))
             } else if model.nav.tab == .library {
                 if !model.addSheetOpen {
                     RailButton(action: ScreenAction(id: "add", title: "Add game", systemImage: "plus", kind: .button { model.addSheetOpen = true }))

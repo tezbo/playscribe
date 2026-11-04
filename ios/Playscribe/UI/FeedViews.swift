@@ -265,5 +265,17 @@ struct SearchView: View {
         }
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.large)
+        // Back to where Search was opened from: a visible button (the rail has its own in Tabletop) and the edge swipe.
+        .toolbar {
+            if !tabletop {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button { model.leaveSearch() } label: { Label("Back", systemImage: "chevron.backward") }
+                        .accessibilityIdentifier("searchBack")
+                }
+            }
+        }
+        .simultaneousGesture(DragGesture(minimumDistance: 24).onEnded { v in
+            if v.startLocation.x < 28 && v.translation.width > 80 && abs(v.translation.height) < 60 { model.leaveSearch() }
+        })
     }
 }

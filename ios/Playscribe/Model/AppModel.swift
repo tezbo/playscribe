@@ -141,6 +141,9 @@ final class AppModel {
 
     // Transient
     var toast: Toast?
+    /// The tab Search was opened from, so Search can go back to it (Terry, 0.2.0 build 5).
+    var searchReturnTab: AppTab = .library
+    func leaveSearch() { if nav.tab == .search { nav.tab = searchReturnTab == .search ? .library : searchReturnTab } }
     var pill: (gameID: String, releaseID: String)?
     var addSheetOpen = false
     /// QA (route add/scan): the camera scan shows a fixed feed, since simulators have no camera.
