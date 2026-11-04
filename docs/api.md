@@ -59,7 +59,8 @@ These only matter once APNs is on. For now the app keeps follows on the device.
    `environment` is `sandbox` for Xcode debug builds and `production` for TestFlight and the App Store. `apnsToken` may be left out until the user allows notifications. A follow names our `gameId` or an `igdbId` from the app's PS5 index; the server adds unknown IGDB games on the fly. `notify` is `all`, `major` (major updates only) or `off`.
    Response `201`: `{ deviceId, deviceKey, follows, unknown }`. Keep `deviceKey` in the Keychain; it is shown once.
 2. Every later call sends `Authorization: Bearer <deviceKey>`.
-   - `PATCH /v1/devices/me` `{ apnsToken?, environment?, locale? }` when the token changes (call it on every launch after `didRegisterForRemoteNotificationsWithDeviceToken`). `apnsToken: null` stops pushes.
+   - `PATCH /v1/devices/me` `{ apnsToken?, environment?, locale?, quietHours? }` when the token changes (call it on every launch after `didRegisterForRemoteNotificationsWithDeviceToken`). `apnsToken: null` stops pushes.
+   - `quietHours` is `{ from, until, timeZone }` (minutes since midnight, `from` may be after `until` to cross midnight, IANA zone) or `null` for none. Inside the window the relay sends `interruption-level: passive` and no `sound`; outside it, or when absent, nothing changes. The app sends it on every change, on launch and after registering.
    - `GET /v1/devices/me/follows` → `{ follows: [{ gameId, notify }] }`
    - `PUT /v1/devices/me/follows` `{ follows: [...] }` replaces the whole list. → `{ follows, unknown }`
    - `DELETE /v1/devices/me` → `204`

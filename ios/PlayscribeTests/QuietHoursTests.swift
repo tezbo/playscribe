@@ -21,3 +21,16 @@ struct QuietHoursTests {
 
     @Test func label() { #expect(QuietHours().label == "22:00 to 08:00") }
 }
+
+/// r050-quiet-hours-push: what the app sends the relay.
+struct QuietWindowTests {
+    @Test func windowCarriesMinutesAndZone() {
+        let w = PushRegistrar.quietWindow(QuietHours(from: 22 * 60, until: 8 * 60), timeZone: TimeZone(identifier: "Europe/London")!)
+        #expect(w == PushRegistrar.QuietWindow(from: 1320, until: 480, timeZone: "Europe/London"))
+    }
+
+    @Test func offOrEmptyWindowSendsNothing() {
+        #expect(PushRegistrar.quietWindow(nil) == nil)
+        #expect(PushRegistrar.quietWindow(QuietHours(from: 600, until: 600)) == nil)
+    }
+}
