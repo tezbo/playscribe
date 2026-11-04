@@ -148,6 +148,20 @@ final class AppModel {
     var showDebugOverlay = false
     /// QA (route "one-update") and tests: the "Also new" panel sees no other updates.
     var qaSingleUpdate = false
+    /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
+    /// confirm a `-qaRoute` took effect.
+    var qaRoute: String?
+    /// QA (route "one-update"): the newest On PS5 release is the only unread one. Chosen when first asked
+    /// (not at launch, when releases may not be merged yet), so a later feed refresh or the 72 hour
+    /// rule cannot take the hero away.
+    @ObservationIgnored private var qaHeroCache: String?
+    private func qaHeroReleaseID() -> String? {
+        if let id = qaHeroCache { return id }
+        let id = data.collection.flatMap { releases($0.gameID) }.filter { $0.ps5State == .onPS5 }
+            .max { $0.ps5Date < $1.ps5Date }?.id
+        qaHeroCache = id
+        return id
+    }
     /// The pose being laid out right now, written by RootView as it renders. Lets navigation
     /// bindings tell a user's Back from a container being torn down by a pose change. Not observed.
     @ObservationIgnored var livePose: Pose = .closed
@@ -262,7 +276,10 @@ final class AppModel {
         releases(gameID).filter { !$0.isPS5Listed }
     }
 
-    func isUnread(_ r: Release) -> Bool { r.ps5State == .onPS5 && data.read[r.id] == nil }
+    func isUnread(_ r: Release) -> Bool {
+        if qaSingleUpdate { return r.ps5State == .onPS5 && r.id == qaHeroReleaseID() }
+        return r.ps5State == .onPS5 && data.read[r.id] == nil
+    }
 
     func unreadCount(_ gameID: String) -> Int { releases(gameID).filter(isUnread).count }
 
@@ -442,6 +459,7 @@ final class AppModel {
         }
         #if INTERNAL
         // Internal routes so QA can script every screen in every pose with `simctl openurl`.
+        qaRoute = url.host()
         switch url.host() {
         case "add": addSheetOpen = true
         case "settings": settingsOpen = true
@@ -647,6 +665,7 @@ final class AppModel {
 
     func resetDemo() {
         qaSingleUpdate = false
+        qaHeroCache = nil
         data = PersistedState(collection: fixtures.seedCollection)
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
@@ -657,10 +676,6 @@ final class AppModel {
     /// is the panel's "What's new" fallback.
     func resetToOneUpdateDemo() {
         resetDemo()
-        guard let hero = continueItem else { return }
-        for c in data.collection {
-            for r in releases(c.gameID) where !(c.gameID == hero.game.id && r.id == hero.release.id) { data.read[r.id] = .now }
-        }
         qaSingleUpdate = true
     }
 

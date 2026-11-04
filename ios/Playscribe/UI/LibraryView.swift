@@ -146,7 +146,7 @@ struct LibraryShelf: View {
     private var probe: some View {
         let mode = bookLayout.map { "book k=\($0.perPage) lead=\(Int($0.lead)) gap=\(Int($0.gap))" } ?? "grid"
         let fold = duo.division.map { "fold \(Int($0.minX))-\(Int($0.maxX))" } ?? "no fold"
-        let label = "library-duo pose: \(duo.pose.rawValue); \(fold); width \(Int(duo.size.width)); rail \(Int(railWidth)); tile \(Int(tileSize)); \(mode)"
+        let label = "library-duo pose: \(duo.pose.rawValue); \(fold); width \(Int(duo.size.width)); rail \(Int(railWidth)); tile \(Int(tileSize)); \(mode); route \(model.qaRoute ?? "none"); hero \(model.continueItem?.release.id ?? "none")"
         return Text(label).font(.system(size: 1)).opacity(0.01)
             .accessibilityIdentifier("libraryDuo").accessibilityLabel(label)
     }
@@ -286,7 +286,17 @@ struct LibraryShelf: View {
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
         .contentMargins(.bottom, model.pill == nil && model.toast == nil ? 0 : 96, for: .scrollContent)
         .refreshable { await model.refreshFeed() }
-        .overlay(alignment: .topLeading) { if FoldAuditSwitch.enabled { probe.allowsHitTesting(false) } }
+        .overlay(alignment: .topLeading) {
+            if FoldAuditSwitch.enabled {
+                ZStack {
+                    probe
+                    if let r = model.qaRoute {
+                        Text("qa-route-\(r)").font(.system(size: 1)).opacity(0.01).accessibilityIdentifier("qa-route-\(r)")
+                    }
+                }
+                .allowsHitTesting(false)
+            }
+        }
     }
 }
 
