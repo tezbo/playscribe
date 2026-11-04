@@ -115,6 +115,10 @@ struct SearchView: View {
     var body: some View {
         let tabletop = duo.pose == .tabletop
         let book = duo.pose == .book && duo.division != nil
+        // Closed portrait: the system drawer field runs to the edge of the narrow window, touching the
+        // time and Wi-Fi badge beside it (Mac, ea3af92: 0.3 pt clear). Iris: 16 pt clear, so this pose
+        // has its own field with 16 pt margins.
+        let ownField = duo.pose == .closed && !duo.isLandscape
         let term = tabletop ? "" : query.trimmingCharacters(in: .whitespaces).lowercased()
         let active = tabletop ? letter != nil : !term.isEmpty
         let library = Set(model.data.collection.map(\.gameID))
@@ -130,6 +134,46 @@ struct SearchView: View {
             if tabletop {
                 TabletopSearch(letter: $letter, prompt: "Search games, patch notes, characters")
                     .listRowBackground(Color.clear)
+            }
+            if ownField {
+                HStack(spacing: 8) {
+                    Image(systemName: "magnifyingglass").foregroundStyle(.secondary).accessibilityHidden(true)
+                    TextField("Games, patch notes, characters…", text: $query)
+                        .autocorrectionDisabled()
+                        .textInputAutocapitalization(.never)
+                        .submitLabel(.search)
+                        .onSubmit { model.rememberSearch(query) }
+                        .accessibilityIdentifier("searchField")
+                    if !query.isEmpty {
+                        Button { query = "" } label: {
+                            Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
+                                .frame(width: 44, height: 44).contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain).accessibilityLabel("Clear search").tappableFrame()
+                    }
+                }
+                .padding(.horizontal, 12)
+                .frame(minHeight: 44)
+                .background(PlayscribeColor.ink700, in: Capsule())
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 4, trailing: 16))
+                if !query.isEmpty {
+                    Picker("Search in", selection: Binding(get: { model.noteScope }, set: { model.noteScope = $0 })) {
+                        ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
+                    }
+                    .pickerStyle(.segmented)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                } else if !model.recentSearches.isEmpty {
+                    Section("Recent") {
+                        ForEach(model.recentSearches, id: \.self) { r in
+                            Button { query = r } label: { Label(r, systemImage: "clock.arrow.circlepath") }
+                                .buttonStyle(.plain).frame(minHeight: 44).tappableFrame()
+                        }
+                    }
+                }
             }
             if !active && !book {
                 Text(tabletop ? "Pick a letter to see games, patch notes and game book entries that start with it. Spoiler-tagged notes are left out."
@@ -208,7 +252,7 @@ struct SearchView: View {
                 NoteSearchResults(query: query, scope: .thisGame, gameID: model.nav.lastGameID) { model.noteScope = .allGames }
             }
         }
-        .modifier(SearchFieldIfTyping(enabled: !tabletop, drawer: duo.pose != .book, query: $query))
+        .modifier(SearchFieldIfTyping(enabled: !tabletop && !ownField, drawer: duo.pose != .book, query: $query))
         // Book: Search lives on the right page, never across the fold (0.2.0 gate: field and hint ran full width).
         .padding(.leading, duo.pose == .book ? (duo.division.map { $0.maxX + 8 } ?? 0) : 0)
         // Book: the hint sits on the left page under the title, so the left page is not empty and the

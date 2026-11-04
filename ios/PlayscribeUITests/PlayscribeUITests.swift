@@ -649,7 +649,9 @@ final class FinalFixTests: XCTestCase {
             XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "letter-A").firstMatch.exists, "Tabletop: letter strip")
             XCTAssertFalse(app.keyboards.firstMatch.exists)
         } else {
-            let field = app.searchFields.firstMatch
+            // Closed portrait has its own text field (16 pt clear of the badge); the other poses use the system field.
+            let own = app.textFields["searchField"]
+            let field = own.waitForExistence(timeout: 2) ? own : app.searchFields.firstMatch
             XCTAssertTrue(field.waitForExistence(timeout: 5), "a search field exists on the Search tab")
             XCTAssertTrue(field.isHittable, "the search field is on screen and tappable")
             XCTAssertGreaterThanOrEqual(field.frame.minX, 0, "field starts on screen")
