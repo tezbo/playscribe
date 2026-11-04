@@ -24,7 +24,7 @@ struct AddGameSheet: View {
             Group {
                 if custom { customForm } else { list }
             }
-            .navigationTitle(custom ? "Add your own game" : "Add game")
+            .navigationTitle(custom ? "Add your own game" : duo.pose == .tabletop ? "" : "Add game")
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -96,11 +96,28 @@ struct AddGameSheet: View {
     private var list: some View {
         List {
             Section {
-                statusPicker
-                TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
-                    .autocorrectionDisabled()
-                    .submitLabel(.search)
-                    .frame(minHeight: 44)
+                if duo.pose == .tabletop {
+                    // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
+                    // at least three results stay visible in the lower half.
+                    HStack(spacing: 8) {
+                        Picker("Add as", selection: $status) {
+                            ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
+                        }
+                        .pickerStyle(.menu)
+                        .fixedSize()
+                        .frame(minHeight: 44)
+                        TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
+                            .autocorrectionDisabled()
+                            .submitLabel(.search)
+                            .frame(minHeight: 44)
+                    }
+                } else {
+                    statusPicker
+                    TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
+                        .autocorrectionDisabled()
+                        .submitLabel(.search)
+                        .frame(minHeight: 44)
+                }
             }
             let rows = results
             Section(debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
@@ -188,6 +205,7 @@ struct AddRow: View {
         .disabled(added)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(added ? "\(game.name), in your library" : "\(game.name), \(subtitle)")
+        .accessibilityIdentifier("addRow")
         .accessibilityAddTraits(selected ? [.isButton, .isSelected] : .isButton)
         .tappableFrame()
     }
@@ -226,15 +244,28 @@ struct OnboardingView: View {
             }
             .arrangementViewStyle(.split)
         } else {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
-                    OnboardingActions(pageWidth: pageWidth).padding(.horizontal, 16)
+            HStack(alignment: .top, spacing: 0) {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+                        OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
+                        OnboardingActions(pageWidth: pageWidth, bookLeft: pageWidth != nil).padding(.horizontal, 16)
+                    }
+                    .padding(.bottom, 24)
                 }
-                .padding(.bottom, 24)
                 // Book: one page wide, so nothing crosses the fold (0.2.0 gate, first-run Library).
-                .frame(width: pageWidth.map { $0 + 32 }, alignment: .leading)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(width: pageWidth.map { $0 + 32 })
+                if let fold = duo.division, duo.pose == .book {
+                    // The right page is never blank (Iris, book-first-run): Popular on PS5 as a grid,
+                    // 24 pt clear of the hinge.
+                    let start = fold.maxX + 24
+                    let width = max(0, duo.size.width - railWidth - start - 16)
+                    OnboardingRightPage(width: width)
+                        .frame(width: width)
+                        .padding(.leading, max(0, start - (fold.minX - 24 - 32 + 32)))
+                    Spacer(minLength: 0)
+                } else {
+                    Spacer(minLength: 0)
+                }
             }
             .overlay(alignment: .topLeading) {
                 if FoldAuditSwitch.enabled {
@@ -249,6 +280,16 @@ struct OnboardingView: View {
 }
 
 struct OnboardingStage: View {
+    @Environment(\.duo) private var duo
+    @State private var height: CGFloat = 0
+
+    /// Tabletop: the headline sits at least 24 pt above the division band, never across it.
+    private var clearance: CGFloat {
+        guard duo.pose == .tabletop, let d = duo.division else { return 0 }
+        let overlap = height - d.minY
+        return overlap > 0 ? overlap + 4 : 0
+    }
+
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: nil, game: nil)
@@ -257,7 +298,9 @@ struct OnboardingStage: View {
                 .font(PlayscribeFont.title)
                 .foregroundStyle(PlayscribeColor.textPrimary)
                 .padding(20)
+                .padding(.bottom, clearance)
         }
+        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { height = $0 }
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
         .padding(.horizontal, 16)
         .accessibilityElement(children: .combine)
@@ -269,6 +312,8 @@ struct OnboardingActions: View {
     @Environment(\.duo) private var duo
     /// Book: the width of one page; only whole covers that fit are shown.
     var pageWidth: CGFloat?
+    /// Book left page: the covers and the footer move to the right page.
+    var bookLeft = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -281,9 +326,10 @@ struct OnboardingActions: View {
             }
             .buttonStyle(.plain)
             .tappableFrame()
-            Text("Popular on PS5").font(PlayscribeFont.headline)
+            if !bookLeft { Text("Popular on PS5").font(PlayscribeFont.headline) }
             let size: CGFloat = duo.pose == .closed ? 96 : 108
             let fit = pageWidth.map { max(1, Int(($0 + 10) / (size + 10))) } ?? 6
+            if !bookLeft {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(PS5Index.shared.popular(limit: fit)) { g in
@@ -299,6 +345,37 @@ struct OnboardingActions: View {
             .edgeFade(40)
             Text("PlayStation account import is planned for a later version.")
                 .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+            }
         }
+    }
+}
+
+/// Book first-run, right page: Popular on PS5 as a 3-column grid of 3:4 tiles (10 pt gap), scrolling,
+/// with the account-import line at the foot. Tapping a cover adds it, as the strip does elsewhere.
+struct OnboardingRightPage: View {
+    @Environment(AppModel.self) private var model
+    var width: CGFloat
+
+    var body: some View {
+        let tile = max(40, ((width - 20) / 3).rounded(.down))
+        ScrollView {
+            VStack(alignment: .leading, spacing: 14) {
+                Text("Popular on PS5").font(PlayscribeFont.title3)
+                LazyVGrid(columns: Array(repeating: GridItem(.fixed(tile), spacing: 10, alignment: .top), count: 3), alignment: .leading, spacing: 10) {
+                    ForEach(PS5Index.shared.popular(limit: 18)) { g in
+                        Button { model.addGame(g, status: .owned) } label: {
+                            TileCover(game: g).frame(width: tile, height: (tile * 4 / 3).rounded())
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("Add \(g.name)")
+                        .tappableFrame()
+                    }
+                }
+                Text("PlayStation account import is planned for a later version.")
+                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+            }
+            .padding(.top, 16).padding(.bottom, 24)
+        }
+        .scrollIndicators(.hidden)
     }
 }

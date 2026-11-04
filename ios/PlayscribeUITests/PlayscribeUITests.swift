@@ -526,3 +526,50 @@ extension PlayscribeUITests {
         app.terminate()
     }
 }
+
+/// 0.2.0 final fixes (Iris, dc27a53 review).
+@MainActor
+final class FinalFixTests: XCTestCase {
+    private func launch(_ route: String) -> XCUIApplication {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", route]
+        app.launch()
+        sleep(3)
+        return app
+    }
+
+    /// Book first-run: the right page is never blank. Popular covers sit right of the fold, clear of it.
+    func testBookFirstRunFillsTheRightPage() throws {
+        let app = launch("first-run")
+        let pose = ReleaseRowTests.pose(app)
+        guard pose.contains("pose: book"), let r = pose.range(of: #"fold (\d+)-(\d+)"#, options: .regularExpression) else {
+            app.terminate(); throw XCTSkip("not Book")
+        }
+        let nums = pose[r].dropFirst(5).split(separator: "-").compactMap { Double($0) }
+        let covers = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add ' AND label != 'Add game'")).allElementsBoundByIndex
+        let right = covers.filter { $0.exists && $0.frame.minX >= nums[1] }
+        XCTAssertGreaterThanOrEqual(right.count, 3, "right page shows Popular on PS5 covers")
+        for c in covers where c.exists { XCTAssertFalse(c.frame.minX < nums[1] && c.frame.maxX > nums[0], "\(c.label) crosses the fold") }
+        app.terminate()
+    }
+
+    /// Tabletop first-run: the headline sits at least 24 pt above the division band (conservatively, above mid-screen).
+    func testTabletopFirstRunHeadlineClearsTheDivision() throws {
+        let app = launch("first-run")
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let headline = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Follow a game'")).firstMatch
+        XCTAssertTrue(headline.waitForExistence(timeout: 5))
+        XCTAssertLessThanOrEqual(headline.frame.maxY, app.frame.midY - 24, "headline \(headline.frame) is across the division")
+        app.terminate()
+    }
+
+    /// Tabletop Add game: the compact header leaves at least three results visible in the lower half.
+    func testTabletopAddGameShowsThreeRows() throws {
+        let app = launch("add")
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let rows = app.descendants(matching: .any).matching(identifier: "addRow").allElementsBoundByIndex
+        let visible = rows.filter { $0.exists && $0.frame.minY >= app.frame.midY - 1 && $0.frame.maxY <= app.frame.maxY + 1 }
+        XCTAssertGreaterThanOrEqual(visible.count, 3, "at least 3 rows visible, saw \(visible.count)")
+        app.terminate()
+    }
+}
