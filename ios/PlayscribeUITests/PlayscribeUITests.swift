@@ -636,7 +636,7 @@ final class FinalFixTests: XCTestCase {
     }
 
     /// The Search tab always offers a way to search, in every pose: its own text field (16 pt margins, clear of the badge)
-    /// one, in the nav drawer) outside Tabletop; the read-only button and letter strip in Tabletop.
+    /// outside Tabletop; the read-only button and letter strip in Tabletop.
     func testSearchTabHasAFieldInEveryPose() throws {
         let app = launch("demo")
         let tab = app.buttons.matching(NSPredicate(format: "label == 'Search'")).firstMatch
