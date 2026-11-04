@@ -192,6 +192,7 @@ struct DeckCardView: View {
         .tappableFrame()
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(label)
+        .accessibilityIdentifier("deckCard")
         .accessibilityAddTraits(.isButton)
     }
 

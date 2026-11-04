@@ -388,7 +388,11 @@ final class LibraryLayoutTests: XCTestCase {
                     let h = min((w * 4 / 3).rounded(), max(0, e.frame.height - 8))
                     return CGRect(x: e.frame.minX, y: e.frame.minY, width: w, height: h)
                 }
-            let hero = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'New update,' OR label BEGINSWITH 'Continue,'")).allElementsBoundByIndex.map(\.frame)
+            // The deck is a pager: only the first card is the hero; the rest wait off screen to the right. (app.frame
+            // can report the wrong orientation in Closed landscape, so the wide card is checked against the longer side.)
+            let heroCards = app.buttons.matching(identifier: "deckCard").allElementsBoundByIndex.prefix(1).map(\.frame)
+            let hero = heroCards + app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Continue,'")).allElementsBoundByIndex.map(\.frame)
+            let screenW = pose.contains("closed") ? max(app.frame.width, app.frame.height) : app.frame.width
             // 0.2.0 gate: the hero's frame is its card, not the fill-scaled art behind it (it once
             // reported x -97.7, width 461). Open landscape: the double tile, 2 tiles + 10 pt, where the
             // tile fills the width (n columns of at least 124 pt, leftover spread equally, 16 pt margins).
@@ -396,7 +400,7 @@ final class LibraryLayoutTests: XCTestCase {
             let openN = max(2, Int((openW + 10) / 134))
             for h in hero {
                 XCTAssertGreaterThanOrEqual(h.minX, 0, "hero starts on screen \(h) [\(pose)]")
-                XCTAssertLessThanOrEqual(h.maxX, app.frame.width + 1, "hero ends on screen \(h) [\(pose)]")
+                XCTAssertLessThanOrEqual(h.maxX, screenW + 1, "hero ends on screen \(h) [\(pose)]")
                 // 0.5.0: the hero is the Latest updates deck, so a card is not a tile; the old double-tile width
                 // check does not apply. Open portrait: the card is at most 38% of the height.
                 if pose.contains("flat") && app.frame.width <= app.frame.height {
@@ -492,7 +496,8 @@ final class LatestUpdatesDeckTests: XCTestCase {
             XCTAssertGreaterThanOrEqual(leaves.element(boundBy: 1).frame.height, 44, "leaf is a 44 pt target")
             leaves.element(boundBy: 1).tap()
         }
-        let cards = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'New update,' OR (label CONTAINS ', ' AND NOT label CONTAINS ' of ')"))
+        // The deck cards by identifier: the old label query could land on a Library tile, which opens the game, not an update.
+        let cards = app.buttons.matching(identifier: "deckCard")
         XCTAssertGreaterThan(cards.count, 0, "deck has a card")
         cards.firstMatch.tap()
         XCTAssertTrue(app.descendants(matching: .any)["releaseTitle"].waitForExistence(timeout: 5), "card opens its update")
