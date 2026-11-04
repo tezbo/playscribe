@@ -625,7 +625,7 @@ final class AppModel {
         nav.anchors["library"] = "lib-\(ids[0])"
         let text = new.count == 1 ? "Added \(new[0].name)" : "Added \(new.count) games"
         show(Toast(text: text, undo: { [weak self] in ids.forEach { self?.removeGame($0, toast: false) } }))
-        if data.soundsOff != true { PopSound.play(count: new.count) }
+        if data.soundsOff != true { PopSound.play(count: new.count, quiet: data.quietHours) }
         NotificationService.shared.updateBadge(badgeCount)
     }
 
