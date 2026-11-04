@@ -386,12 +386,12 @@ struct OneUpdateDemoTests {
         #expect(hero != nil, "the hero shows")
         let unread = m.data.collection.flatMap { m.releases($0.gameID) }.filter(m.isUnread)
         #expect(unread.count == 1)
-        if let hero { #expect(m.alsoNewReleases(excluding: hero.game.id).isEmpty) }
+        if let hero { #expect(m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
     }
 
     @Test func demoRouteListsOtherUpdatesBesideTheHero() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
         m.resetDemo()
-        if let hero = m.continueItem { #expect(!m.alsoNewReleases(excluding: hero.game.id).isEmpty) }
+        if let hero = m.continueItem { #expect(!m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
     }
 }

@@ -769,12 +769,11 @@ final class AppModel {
         qaSingleUpdate = true
     }
 
-    /// The updates beside the hero in the Library (Open portrait): the newest across the library,
-    /// not the hero's own game.
-    func alsoNewReleases(excluding gameID: String, limit: Int = 6) -> [Release] {
-        if qaSingleUpdate { return [] }
-        return Array(data.collection.map(\.gameID).filter { $0 != gameID }
-            .flatMap { ps5Releases($0) }
+    /// The updates beside the deck in the Library (Open portrait): every update in the deck except the
+    /// front card's, newest first, so nothing repeats.
+    func alsoNewReleases(excludingRelease id: String?, limit: Int = 6) -> [Release] {
+        // Updates only: a headline-only post (no version in its name) is News, not an update (Iris, 20d77ea).
+        Array(latestDeck.compactMap(\.release).filter { $0.id != id && $0.versionChip != nil }
             .sorted { $0.ps5Date > $1.ps5Date }
             .prefix(limit))
     }
