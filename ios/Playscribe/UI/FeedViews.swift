@@ -136,6 +136,14 @@ struct SearchView: View {
                               : "Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
                     .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
+                    // Iris: the hint card is exactly as wide as the field, ending at its trailing edge
+                    // (a list row's own background ran to the screen edge in every pose).
+                    .padding(12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
             } else if gameHits.isEmpty && noteHits.isEmpty && entryHits.isEmpty {
                 ContentUnavailableView.search(text: tabletop ? (letter ?? "") : query)
             }
@@ -224,6 +232,7 @@ struct SearchView: View {
             }
         }
         .navigationTitle("Search")
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 
