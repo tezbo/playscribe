@@ -308,7 +308,7 @@ struct LowerMessages: View {
                 HStack(spacing: 12) {
                     Text(toast.text).font(PlayscribeFont.subheadline)
                     if let undo = toast.undo {
-                        Button("Undo") { undo(); model.toastClear() }
+                        Button(toast.actionLabel) { undo(); model.toastClear() }
                             .font(PlayscribeFont.subheadline.weight(.semibold))
                             .hitTarget()
                             .tappableFrame()
@@ -325,7 +325,7 @@ struct LowerMessages: View {
                 .transition(.opacity)
                 .accessibilityElement(children: .combine)
                 .accessibilityActions {
-                    if let undo = toast.undo { Button("Undo") { undo(); model.toastClear() } }
+                    if let undo = toast.undo { Button(toast.actionLabel) { undo(); model.toastClear() } }
                     Button("Dismiss") { model.toastClear() }
                 }
             }

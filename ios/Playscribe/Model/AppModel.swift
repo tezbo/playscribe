@@ -128,6 +128,8 @@ struct PersistedState: Codable {
 struct Toast: Equatable {
     var text: String
     var undo: (@MainActor () -> Void)?
+    /// The button's label: "Undo" by default, "Open My book" on a new bookmark.
+    var actionLabel = "Undo"
     var token = UUID()
     static func == (a: Toast, b: Toast) -> Bool { a.token == b.token }
 }
@@ -607,7 +609,8 @@ final class AppModel {
             show(Toast(text: "Bookmark removed"))
         } else {
             data.bookmarks.insert(Bookmark(kind: kind, id: id, gameID: gameID, at: .now), at: 0)
-            show(Toast(text: "Bookmarked. Find it in My book"))
+            // The destination is one tap away (Terry, 0.2.0 build 5: "there is no My Book").
+            show(Toast(text: "Bookmarked", undo: { [weak self] in self?.openGame(gameID, chapter: .mybook) }, actionLabel: "Open My book"))
         }
     }
 
