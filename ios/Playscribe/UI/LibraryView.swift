@@ -195,6 +195,9 @@ struct LibraryShelf: View {
         return out
     }
 
+    /// Closed landscape (container wider than tall): the compact first screen.
+    private var closedWide: Bool { duo.pose == .closed && duo.isLandscape }
+
     /// Book with 3 or more recent updates: the hero carousel takes the right page's top.
     private var heroOnRightPage: Bool {
         duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming && model.latestDeck.count >= 3
@@ -227,7 +230,13 @@ struct LibraryShelf: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
-                if !heroOnRightPage {
+                if closedWide {
+                    // Closed landscape: the control and the search field share one row, 44 pt each (Iris, cf6c889).
+                    HStack(spacing: 12) {
+                        LibraryTabPicker().frame(width: 220, height: 44)
+                        if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                    }
+                } else if !heroOnRightPage {
                     LibraryTabPicker()
                         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -250,7 +259,7 @@ struct LibraryShelf: View {
                 if !all.isEmpty && duo.pose == .tabletop {
                     // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
                     TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4)
-                } else if !heroOnRightPage, !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                } else if !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
                     HStack(spacing: 12) {

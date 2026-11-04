@@ -93,6 +93,12 @@ struct LatestUpdatesDeck: View {
         }
     }
 
+    private var pageEdge: some View {
+        PageEdge(cards: cards, current: current ?? cards.first?.id) { id in
+            withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) { current = id }
+        }
+    }
+
     private func deck(cardWidth: CGFloat?, artHeight: CGFloat?, scrollHeight: CGFloat? = nil) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             ScrollView(.horizontal, showsIndicators: false) {
@@ -116,11 +122,10 @@ struct LatestUpdatesDeck: View {
             .onChange(of: current) { _, new in model.deckSelection = new }
             .scrollTargetBehavior(.viewAligned)
             .contentMargins(.trailing, 0, for: .scrollContent)
-            if cards.count > 1 {
-                PageEdge(cards: cards, current: current ?? cards.first?.id) { id in
-                    withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) { current = id }
-                }
-            }
+            // Closed landscape (scrollHeight set): the dots sit inside the hero's bottom edge, centred, so the
+            // first screen still shows the chips and the first tile row (Iris, cf6c889).
+            .overlay(alignment: .bottom) { if scrollHeight != nil && cards.count > 1 { pageEdge } }
+            if cards.count > 1 && scrollHeight == nil { pageEdge }
         }
         .accessibilityElement(children: .contain)
         .accessibilityLabel(compact || cards.count > 1
