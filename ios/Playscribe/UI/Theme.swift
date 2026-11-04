@@ -104,3 +104,29 @@ extension String {
         return Calendar(identifier: .gregorian).date(from: c)
     }
 }
+
+
+/// Glass that becomes solid ink with a 1 pt vellum border under Reduce Transparency or Increase
+/// Contrast (Iris, 0.5.0 accessibility pass).
+private struct AdaptiveGlass<S: InsettableShape>: ViewModifier {
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @Environment(\.colorSchemeContrast) private var contrast
+    var shape: S
+    var interactive: Bool
+
+    func body(content: Content) -> some View {
+        if reduceTransparency || contrast == .increased {
+            content
+                .background(Color.ink2, in: shape)
+                .overlay(shape.strokeBorder(PlayscribeColor.vellum500, lineWidth: 1))
+        } else {
+            content.glassEffect(interactive ? .regular.interactive() : .regular, in: shape)
+        }
+    }
+}
+
+extension View {
+    func adaptiveGlass<S: InsettableShape>(in shape: S, interactive: Bool = false) -> some View {
+        modifier(AdaptiveGlass(shape: shape, interactive: interactive))
+    }
+}

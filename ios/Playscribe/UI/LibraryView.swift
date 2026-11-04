@@ -628,7 +628,7 @@ struct StatusCircle: View {
             .font(.system(size: 11, weight: .bold))
             .foregroundStyle(.white)
             .frame(width: 24, height: 24)
-            .glassEffect(.regular, in: Circle())
+            .adaptiveGlass(in: Circle())
     }
     static func symbol(_ s: OwnershipStatus) -> String {
         switch s { case .owned: "checkmark"; case .wishlist: "bookmark.fill"; case .watching: "eye.fill" }
@@ -656,7 +656,7 @@ struct DatePill: View {
         .padding(.horizontal, 7).padding(.vertical, 3)
         .background {
             if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
-            else { Capsule().fill(.clear).glassEffect(.regular, in: Capsule()) }
+            else { Capsule().fill(.clear).adaptiveGlass(in: Capsule()) }
         }
     }
 }

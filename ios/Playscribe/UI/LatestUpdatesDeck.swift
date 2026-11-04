@@ -81,7 +81,7 @@ struct LatestUpdatesDeck: View {
             .contentMargins(.trailing, 0, for: .scrollContent)
             if cards.count > 1 {
                 PageEdge(cards: cards, current: current ?? cards.first?.id) { id in
-                    withAnimation(reduceMotion ? nil : .snappy) { current = id }
+                    withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) { current = id }
                 }
             }
         }
