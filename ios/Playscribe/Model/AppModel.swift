@@ -106,6 +106,8 @@ struct PersistedState: Codable {
     var quietHours: QuietHours?
     /// nil = on. Off silences the add pop.
     var soundsOff: Bool?
+    /// The PS Plus "Leaving soon" reminder (0.5.0): nil = on.
+    var plusLeavingSoonOff: Bool?
     var notificationCardShows = 0
     var notificationCardDismissed = false
     /// Releases already announced by a notification, so a release never pushes twice (N-3).
