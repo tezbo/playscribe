@@ -453,6 +453,8 @@ struct LibraryViewMenu: View {
         @Bindable var model = model
         let rows = model.libraryRows
         Menu {
+            // Fallback route to Settings if the toolbar cog is ever collapsed away (TB-1).
+            Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
             Picker("Show as", selection: $layout) {
                 ForEach(LibraryLayout.allCases) { Label($0.label, systemImage: $0.symbol).tag($0) }
             }
