@@ -165,6 +165,30 @@ struct LibraryShelf: View {
         return out
     }
 
+    /// Book with 3 or more recent updates: the hero carousel takes the right page's top.
+    private var heroOnRightPage: Bool {
+        duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming && model.latestDeck.count >= 3
+    }
+
+    /// The library search field; one page wide in Book, and reported to the fold audit.
+    private func searchField(binding: Binding<String>) -> some View {
+                    // The same field as the notes search; the system rounded border read as a
+                    // faded box behind the large title on the dark Library (QA, a258f0c).
+                    HStack(spacing: 8) {
+                        Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+                        TextField("Search your library", text: binding)
+                            .submitLabel(.search)
+                            .autocorrectionDisabled()
+                    }
+                    .padding(.horizontal, 12)
+                    .frame(minHeight: 44)
+                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    // Book: one page wide (like the chip row), and reported to the fold audit.
+                    .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
+                    .tappableFrame()
+                    .padding(.top, 4)
+    }
+
     var body: some View {
         @Bindable var model = model
         let rows = model.shownRows()
@@ -187,23 +211,7 @@ struct LibraryShelf: View {
                 if model.showsNotificationCard, let first = all.first {
                     NotificationInviteCard(gameName: first.game.name)
                 }
-                if all.count >= 6 {
-                    // The same field as the notes search; the system rounded border read as a
-                    // faded box behind the large title on the dark Library (QA, a258f0c).
-                    HStack(spacing: 8) {
-                        Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                        TextField("Search your library", text: $model.data.nav.query)
-                            .submitLabel(.search)
-                            .autocorrectionDisabled()
-                    }
-                    .padding(.horizontal, 12)
-                    .frame(minHeight: 44)
-                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                    // Book: one page wide (like the chip row), and reported to the fold audit.
-                    .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
-                    .tappableFrame()
-                    .padding(.top, 4)
-                }
+                if !heroOnRightPage, all.count >= 6 { searchField(binding: $model.data.nav.query) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
                     HStack(spacing: 12) {
@@ -223,12 +231,32 @@ struct LibraryShelf: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 40)
                 }
+                // Book, 3 or more recent updates (Iris, hero-wide-layouts): search, news and filters stay on
+                // the left page and the carousel spans the top of the RIGHT page; the tiles start below both.
+                if heroOnRightPage, let fold = duo.division {
+                    let rightStart = fold.maxX + 24 - 16
+                    let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
+                    HStack(alignment: .top, spacing: 0) {
+                        VStack(alignment: .leading, spacing: 14) {
+                            if all.count >= 6 { searchField(binding: $model.data.nav.query) }
+                            NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
+                            if all.count >= 2 && layout == .tiles {
+                                FilterBar().frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
+                            }
+                        }
+                        .frame(width: max(0, fold.minX - 24 - 16), alignment: .topLeading)
+                        LatestUpdatesDeck(cards: model.latestDeck)
+                            .frame(width: rightWidth, alignment: .leading)
+                            .padding(.leading, max(0, rightStart - max(0, fold.minX - 24 - 16)))
+                    }
+                    .id(poseKey)
+                }
                 // D-12: the Continue hero spans two tiles; Tabletop shows it on the standing half.
                 // Tabletop: the Continue art is the standing half; the flat half is the grid.
                 // Open landscape: Continue is a double-width tile leading the grid (D-12).
                 // 0.5.0 item 1: the Latest updates deck replaces the single Continue hero. Tabletop
                 // shows the first card in the standing half and the page edge on this lower half.
-                if duo.pose != .tabletop {
+                if duo.pose != .tabletop && !heroOnRightPage {
                     let deck = model.latestDeck
                     if !deck.isEmpty {
                         LatestUpdatesDeck(cards: deck)
@@ -237,12 +265,12 @@ struct LibraryShelf: View {
                         CaughtUpCard()
                             .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
                     }
-                } else {
+                } else if duo.pose == .tabletop {
                     let deck = model.latestDeck
                     if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
                 }
-                NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
-                if all.count >= 2 && layout == .tiles {
+                if !heroOnRightPage { NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading) }
+                if !heroOnRightPage && all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
                     // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
                     // accessibility frame never reaches the fold either.
