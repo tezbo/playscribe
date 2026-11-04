@@ -62,3 +62,13 @@ Keep the last three `backup/feed-*` branches and delete older ones once a step h
 - **Backfill (step 5).** `--backfill` re-reads every source back to the date, and the press list is read page by page at the site's 5 second Crawl-delay, so allow up to the 180 minute job limit. Steam now pages back with `enddate`, so busy games (Apex, Dead by Daylight, Rainbow Six Siege, The Finals, GT7 had nothing before 2024 to 2026 in the live feed) get their full history. Run it once with since `2020-11-01` (PS5 launch is 2020-11-12), then check the games in `docs/ps5-patch-data.md`.
 - **Keys.** The Twitch keys exist only in the Actions "development" environment. `action=info` and the upcoming step need them; a local dry run does not (it skips IGDB).
 - **Quality failures stop the publish by design.** If a run fails on "Data quality", the live feed stays as it was; fix forward rather than bypass the check.
+
+## Dry run on release/0.5.0, 2026-11-04 (Priya)
+
+Run from the live feed state (`git checkout` of `feed`, then `npm run ingest -- --export`), then `npm run publish-diff`:
+
+- 171 files compared (100 new, no live copy), 49 fields added, **one removed: `alert.tag`** (the press-only quiet alert's "Unconfirmed" tag, same as before, step 7).
+- The run was green: no "Data quality" or "Source failing", errors 0. It folded 1 press-only duplicate, dropped 32 Steam-assumed PS5 rows dated before their game's PS5 launch (step 3; the earlier estimate was 20), added 89 new releases, revised 3.
+- Open before step 3: #152 (live-date audit fix, 87 drifted PS5 dates) is not merged yet; it rides step 3.
+- The PS Plus parser failed on the real October announcement (wording differs month to month); fixed on this branch, and both real pages (October, November) now parse.
+- Not touched by this dry run: the live feed, the feed branch, main. Nothing was pushed except this branch.
