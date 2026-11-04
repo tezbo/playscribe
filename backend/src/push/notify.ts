@@ -1,3 +1,4 @@
+import { inQuietHours } from './quiet.ts'
 import { alertFromOf, alertStyleOf, type AlertStyle } from '../alerts.ts'
 import { now, type DB } from '../db.ts'
 import { getPlatformRow, getRelease } from '../store.ts'
@@ -37,10 +38,10 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
   const version = (JSON.parse(row.version ?? 'null') as { value: string } | null)?.value
   const targets = db
     .prepare(
-      `SELECT d.id, d.apns_token, d.environment FROM follows f JOIN devices d ON d.id = f.device_id
+      `SELECT d.id, d.apns_token, d.environment, d.quiet_from, d.quiet_until, d.quiet_tz FROM follows f JOIN devices d ON d.id = f.device_id
        WHERE f.game_id = ? AND d.apns_token IS NOT NULL AND (f.notify = 'all' OR (f.notify = 'major' AND ? = 'major'))`,
     )
-    .all(release.gameId, release.kind) as { id: string; apns_token: string; environment: ApnsEnvironment }[]
+    .all(release.gameId, release.kind) as { id: string; apns_token: string; environment: ApnsEnvironment; quiet_from: number | null; quiet_until: number | null; quiet_tz: string | null }[]
 
   const payload = {
     aps: {
@@ -55,10 +56,16 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
     kind: release.kind,
     verification: row.verification,
   }
+  // Inside the device's registered quiet hours the push is passive and silent; the 72 h guard and the once-only claim are unchanged.
+  const forDevice = (p: typeof payload, t: (typeof targets)[number]) => {
+    if (t.quiet_from === null || t.quiet_until === null || !t.quiet_tz || !inQuietHours({ from: t.quiet_from, until: t.quiet_until, timeZone: t.quiet_tz })) return p
+    const { sound: _sound, ...aps } = p.aps
+    return { ...p, aps: { ...aps, 'interruption-level': 'passive' } }
+  }
   const log = db.prepare('INSERT INTO push_log (release_id, device_id, status, reason, sent_at) VALUES (?, ?, ?, ?, ?)')
   for (const t of targets) {
     try {
-      const r = await apns.send(t.apns_token, t.environment, payload, { collapseId: release.id })
+      const r = await apns.send(t.apns_token, t.environment, forDevice(payload, t), { collapseId: release.id })
       log.run(releaseId, t.id, r.status, r.reason ?? null, now())
       if (r.status === 200) out.sent++
       else {
