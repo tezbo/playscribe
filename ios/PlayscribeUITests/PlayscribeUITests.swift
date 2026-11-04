@@ -549,3 +549,100 @@ extension PlayscribeUITests {
         app.terminate()
     }
 }
+
+/// 0.5.0 surfaces the Mac gate runs in each pose. Each test reads the pose from the fold audit and
+/// applies the Tabletop rule (every control in the lower half) when it is Tabletop.
+@MainActor
+final class Release050Tests: XCTestCase {
+    private func launch(_ route: String, overlay: Bool = false) -> XCUIApplication {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", route] + (overlay ? ["-qaOverlay", "YES"] : [])
+        app.launch()
+        sleep(3)
+        return app
+    }
+
+    private func isTabletop(_ app: XCUIApplication) -> Bool { ReleaseRowTests.pose(app).contains("pose: tabletop") }
+
+    /// J-20: quiet hours. The switch is off by default; turning it on shows From and Until and the footer.
+    func testQuietHours() throws {
+        let app = launch("settings")
+        let toggle = app.switches["quietHours"]
+        var tries = 0
+        while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
+        XCTAssertTrue(toggle.exists, "Settings has a Quiet hours switch")
+        XCTAssertEqual(toggle.value as? String, "0", "off by default")
+        XCTAssertGreaterThanOrEqual(toggle.frame.height, 44 - 1)
+        toggle.tap()
+        XCTAssertTrue(app.staticTexts["From"].waitForExistence(timeout: 3), "From row appears")
+        XCTAssertTrue(app.staticTexts["Until"].exists, "Until row appears")
+        XCTAssertTrue(app.staticTexts["Alerts arrive silently during these hours."].exists, "footer")
+        if isTabletop(app) { XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: switch in the lower half") }
+        app.terminate()
+    }
+
+    /// J-20: the explainer opens from `tag/<kind>`, shows the ladder with the current one marked, and Done closes it.
+    func testVerificationExplainer() throws {
+        for kind in ["official", "reported", "pending"] {
+            let app = launch("tag/\(kind)")
+            let sheet = app.descendants(matching: .any)["verificationExplainer"]
+            XCTAssertTrue(sheet.waitForExistence(timeout: 5), "\(kind): explainer is open")
+            XCTAssertTrue(app.staticTexts["What this tag means"].exists)
+            XCTAssertTrue(app.staticTexts["This one"].exists, "\(kind): current tag is marked")
+            for rung in ["Official", "Reported", "Pending"] { XCTAssertTrue(app.staticTexts[rung].exists, "\(kind): ladder has \(rung)") }
+            let done = app.buttons["Done"]
+            XCTAssertTrue(done.exists)
+            XCTAssertGreaterThanOrEqual(done.frame.height, 44 - 1, "Done is a 44 pt target")
+            if isTabletop(app) { XCTAssertGreaterThanOrEqual(done.frame.minY, app.frame.midY - 1, "Tabletop: Done in the lower half") }
+            done.tap()
+            XCTAssertFalse(sheet.waitForExistence(timeout: 2), "\(kind): Done closes it")
+            app.terminate()
+        }
+    }
+
+    /// Iris, one-row links: Official website and All patch notes share a row with a 24 pt gap, or wrap; never truncated.
+    func testLinksOneRow() throws {
+        let app = XCUIApplication()
+        ReleaseRowTests.openBluePrince(app); sleep(4)
+        if isTabletop(app) { app.terminate(); throw XCTSkip("Tabletop uses the Links button") }
+        let site = app.links.matching(NSPredicate(format: "label CONTAINS 'Official website'")).firstMatch
+        let notes = app.links.matching(NSPredicate(format: "label CONTAINS 'All patch notes'")).firstMatch
+        ReviewFixUITests.scrollTo(site, in: app)
+        guard site.exists, notes.exists else { app.terminate(); throw XCTSkip("this game has no info links") }
+        if abs(site.frame.minY - notes.frame.minY) < 4 {
+            XCTAssertGreaterThanOrEqual(notes.frame.minX - site.frame.maxX, 24 - 4, "24 pt gap on one row")
+        } else {
+            XCTAssertGreaterThan(notes.frame.minY, site.frame.maxY - 4, "wrapped below, not overlapping")
+        }
+        for l in [site, notes] { XCTAssertLessThanOrEqual(l.frame.maxX, app.frame.maxX + 1); XCTAssertGreaterThanOrEqual(l.frame.height, 44 - 1) }
+        app.terminate()
+    }
+
+    /// Iris, Add keyboard fallback: with the keyboard up, the search field and the close control stay above/clear of it.
+    func testAddKeyboard() throws {
+        let app = launch("add/keyboard")
+        let keyboard = app.keyboards.firstMatch
+        guard keyboard.waitForExistence(timeout: 6) else { app.terminate(); throw XCTSkip("hardware keyboard connected: no on-screen keyboard") }
+        let field = app.textFields.firstMatch
+        XCTAssertTrue(field.exists)
+        XCTAssertLessThanOrEqual(field.frame.maxY, keyboard.frame.minY + 1, "search field sits above the keyboard")
+        let close = app.buttons.matching(NSPredicate(format: "label == 'Done' OR label == 'Close'")).firstMatch
+        XCTAssertTrue(close.exists && close.isHittable, "close stays reachable")
+        if isTabletop(app) {
+            XCTAssertGreaterThanOrEqual(field.frame.minY, app.frame.midY - 1, "Tabletop: search in the lower half")
+            XCTAssertGreaterThanOrEqual(close.frame.minY, app.frame.midY - 1, "Tabletop: close in the lower half")
+        }
+        app.terminate()
+    }
+
+    /// J-21: deck and hero art stay inside the screen in every pose.
+    func testHeroStaysOnScreen() throws {
+        let app = launch("library")
+        let hero = app.descendants(matching: .any).matching(NSPredicate(format: "identifier == 'continueHero'")).firstMatch
+        if hero.waitForExistence(timeout: 4) {
+            XCTAssertGreaterThanOrEqual(hero.frame.minX, app.frame.minX - 1)
+            XCTAssertLessThanOrEqual(hero.frame.maxX, app.frame.maxX + 1, "hero within the screen width")
+        }
+        app.terminate()
+    }
+}

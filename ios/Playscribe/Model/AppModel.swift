@@ -143,6 +143,8 @@ final class AppModel {
     var simulatedScan = false
     /// Opens the Add games sheet straight on this method (first-run welcome rows).
     var addSheetMethod: AddMethod?
+    /// QA: route add/keyboard focuses the Add search field so the keyboard is up.
+    var addSearchFocus = false
     var settingsOpen = false
     var player: (gameID: String, releaseID: String)?
     /// A game's trailer from its basics (no release).
@@ -492,8 +494,14 @@ final class AppModel {
         #if INTERNAL
         // Internal routes so QA can script every screen in every pose with `simctl openurl`.
         switch url.host() {
-        case "add": addSheetOpen = true; if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
-        case "settings": settingsOpen = true
+        case "add":
+            addSheetOpen = true
+            if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
+            if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
+        case "settings":
+            settingsOpen = true
+            if parts.first == "quiet" { data.quietHours = QuietHours() }
+        case "tag" where parts.count == 1: if let v = Verification(rawValue: parts[0]) { tagExplainer = v }
         case "library": nav.tab = .library; nav.gameID = nil
         case "updates": nav.tab = .updates
         case "search": nav.tab = .search
@@ -508,7 +516,7 @@ final class AppModel {
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
         case "links" where parts.count == 1: openGame(parts[0]); linksSheetOpen = true
-        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil
+        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; addSearchFocus = false
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
             if let n = Int(parts[0]) {
