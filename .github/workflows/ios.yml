@@ -70,6 +70,19 @@ jobs:
           exit "$status"
         env:
           SCHEME: ${{ vars.IOS_SCHEME }}
+      - name: Compile the UI tests
+        # UI tests only run at the Mac gate, so a compile error would otherwise surface there first.
+        if: steps.project.outputs.path
+        run: |
+          status=0
+          xcodebuild build-for-testing \
+            -project "${{ steps.project.outputs.path }}" \
+            -scheme PlayscribeUI \
+            -destination "id=${{ steps.sim.outputs.udid }}" \
+            CODE_SIGNING_ALLOWED=NO > build-ui.log 2>&1 || status=$?
+          grep -E 'error:|\*\* (BUILD|TEST)' build-ui.log || true
+          echo "build-for-testing exited with $status"
+          exit "$status"
       - uses: actions/upload-artifact@v4
         if: failure() && steps.project.outputs.path
         with:
@@ -77,3 +90,4 @@ jobs:
           path: |
             build/TestResults.xcresult
             build.log
+            build-ui.log

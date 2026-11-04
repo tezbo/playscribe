@@ -9,6 +9,47 @@ extension EnvironmentValues {
     }
 }
 
+/// Tabletop: a sheet's controls must sit in the lower half (the upper half is view only), so
+/// sheets there are this panel, bottom-aligned under the division, instead of a presented sheet.
+private struct PanelCloseKey: EnvironmentKey { static let defaultValue: (() -> Void)? = nil }
+extension EnvironmentValues {
+    var panelClose: (() -> Void)? {
+        get { self[PanelCloseKey.self] }
+        set { self[PanelCloseKey.self] = newValue }
+    }
+}
+
+struct LowerHalfPanel: View {
+    @Environment(AppModel.self) private var model
+    var duo: DuoContext
+    var fold: CGRect
+
+    private var open: Bool { model.addSheetOpen || model.settingsOpen || model.trailer != nil }
+
+    var body: some View {
+        if open {
+            let height = max(0, duo.size.height - fold.maxY)
+            ZStack(alignment: .bottom) {
+                // The stage above stays view only: a dimmer that takes no touches.
+                Color.black.opacity(0.4).ignoresSafeArea().allowsHitTesting(false)
+                Group {
+                    if model.addSheetOpen { AddGameSheet() }
+                    else if model.settingsOpen { SettingsView() }
+                    else if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
+                }
+                .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil })
+                .environment(\.railWidth, 0)
+                .frame(width: duo.size.width, height: height)
+                .background(Color.ink0)
+                .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20))
+                .accessibilityAddTraits(.isModal)
+            }
+            .transition(.move(edge: .bottom))
+            .zIndex(5)
+        }
+    }
+}
+
 struct RootView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -38,6 +79,8 @@ struct RootView: View {
 
                 LowerMessages(duo: duo)
 
+                if duo.pose == .tabletop, let fold = duo.division { LowerHalfPanel(duo: duo, fold: fold) }
+
                 if splashVisible {
                     SplashView(duo: duo) { splashVisible = false }
                         .transition(.opacity)
@@ -65,16 +108,16 @@ struct RootView: View {
         .onChange(of: NotificationService.shared.launchedFromNotification) { _, fromNotification in
             if fromNotification { splashVisible = false }
         }
-        .sheet(isPresented: Binding(get: { model.addSheetOpen }, set: { model.addSheetOpen = $0 })) {
+        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop }, set: { model.addSheetOpen = $0 })) {
             AddGameSheet()
         }
-        .sheet(isPresented: Binding(get: { model.settingsOpen }, set: { model.settingsOpen = $0 })) {
+        .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop }, set: { model.settingsOpen = $0 })) {
             SettingsView()
         }
         .fullScreenCover(isPresented: Binding(get: { model.player != nil }, set: { if !$0 { model.player = nil } })) {
             if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID) }
         }
-        .fullScreenCover(isPresented: Binding(get: { model.trailer != nil }, set: { if !$0 { model.trailer = nil } })) {
+        .fullScreenCover(isPresented: Binding(get: { model.trailer != nil && model.livePose != .tabletop }, set: { if !$0 { model.trailer = nil } })) {
             if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
         }
     }

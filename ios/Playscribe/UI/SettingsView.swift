@@ -1,16 +1,20 @@
 import SwiftUI
 
 struct SettingsView: View {
-    /// "0.2.0 (12)", from the bundle, so it always matches the build.
+    /// "0.2.0, build 12, abc1234", from the bundle, so it always matches the build.
     static var version: String {
         let info = Bundle.main.infoDictionary
         let v = info?["CFBundleShortVersionString"] as? String ?? ""
         let b = info?["CFBundleVersion"] as? String ?? ""
-        return b.isEmpty ? v : "\(v) (\(b))"
+        let sha = info?["PlayscribeGitSHA"] as? String ?? ""
+        return [v, b.isEmpty ? "" : "build \(b)", sha].filter { !$0.isEmpty }.joined(separator: ", ")
     }
 
     @Environment(AppModel.self) private var model
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss) private var systemDismiss
+    @Environment(\.panelClose) private var panelClose
+    /// In Tabletop the sheet is the lower-half panel, which is not presented, so it closes itself.
+    private func dismiss() { if let panelClose { panelClose() } else { systemDismiss() } }
     @Environment(\.duo) private var duo
     @State private var simGame: String = ""
     @State private var simKind: AppModel.SimKind = .major

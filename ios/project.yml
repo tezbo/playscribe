@@ -10,7 +10,7 @@ settings:
     SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
     SWIFT_APPROACHABLE_CONCURRENCY: YES
     MARKETING_VERSION: "0.2.0"
-    CURRENT_PROJECT_VERSION: "1"
+    CURRENT_PROJECT_VERSION: "2"
     DEVELOPMENT_TEAM: ""
     # One setting drives the app and widget bundle IDs and the App Group. The release lane overrides it.
     PLAYSCRIBE_BUNDLE_ID: co.codeconnectors.playscribe
@@ -24,6 +24,12 @@ targets:
     dependencies:
       - target: PlayscribeWidget
         embed: true
+    postBuildScripts:
+      - name: Stamp git SHA
+        basedOnDependencyAnalysis: false
+        script: |
+          sha=$(git -C "$SRCROOT" rev-parse --short HEAD 2>/dev/null || echo dev)
+          /usr/libexec/PlistBuddy -c "Set :PlayscribeGitSHA $sha" "$TARGET_BUILD_DIR/$INFOPLIST_PATH"
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: $(PLAYSCRIBE_BUNDLE_ID)
@@ -34,6 +40,7 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         ENABLE_PREVIEWS: YES
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
       configs:
         Debug:
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG INTERNAL
