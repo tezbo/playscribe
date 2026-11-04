@@ -180,7 +180,7 @@ struct SearchView: View {
                 }
             }
             if !active {
-                Text(tabletop ? "Typing needs the flat screen. Pick a letter below, or open your Duo flat to type."
+                Text(tabletop ? "Typing needs the flat screen. Pick a letter above, or open your Duo flat to type."
                               : "Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
                     .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
