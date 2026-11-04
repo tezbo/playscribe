@@ -83,14 +83,22 @@ struct ModelTests {
         let r = m.release("dawnwalker", "dawnwalker@1.1")!
         let c = NotificationService.content(for: r, game: m.game("dawnwalker")!, badge: 1)
         #expect(c.title == "The Blood of Dawnwalker")
-        #expect(c.body == "Update 1.1 is live on PS5: respec with Draught of Mind Rebirth, and a new Story mode.")
-        #expect(c.body.count <= 110)
-        // Without an editorial line: the two shortest headlines, one colon, a full stop.
+        #expect(c.body.hasPrefix("Update 1.1: "))
+        #expect(c.body.count <= 60 && !c.body.contains("PS5"))
+        // Without an editorial line: the first key change, still one line, one colon.
         var plain = r
         plain.pushLine = nil
         let fallback = NotificationService.body(for: plain)
-        #expect(fallback.filter { $0 == ":" }.count == 1)
-        #expect(fallback.count <= 110 && fallback.hasSuffix("."))
+        #expect(fallback.filter { $0 == ":" }.count == 1 && fallback.count <= 60)
+        // Nothing to say: the plain fallback.
+        plain.keyChanges = nil
+        plain.digest = nil
+        #expect(NotificationService.body(for: plain) == "A new update is out")
+        plain.digest = .init(new: 3, fixed: 5, ps5: 2)
+        #expect(NotificationService.body(for: plain) == "3 new, 5 fixes, 2 PS5 only")
+        plain.digest = nil
+        #expect(NotificationService.latestBody(for: plain) == "New updates are out")
+        #expect(NotificationService.title(game: m.game("dawnwalker")!, count: 3) == "The Blood of Dawnwalker, 3 new updates")
         #expect(c.threadIdentifier == "dawnwalker")
         #expect(c.interruptionLevel == .active)
         #expect(c.userInfo["releaseId"] as? String == "dawnwalker@1.1")
