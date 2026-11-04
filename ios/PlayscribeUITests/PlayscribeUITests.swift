@@ -634,4 +634,45 @@ final class FinalFixTests: XCTestCase {
         XCTAssertTrue(f.waitForExistence(timeout: 3) && f.frame.height >= 44, "44 pt letter chip")
         app.terminate()
     }
+
+    /// The Search tab always offers a way to search, in every pose: its own text field (16 pt margins, clear of the badge)
+    /// outside Tabletop; the read-only button and letter strip in Tabletop.
+    func testSearchTabHasAFieldInEveryPose() throws {
+        let app = launch("demo")
+        let tab = app.buttons.matching(NSPredicate(format: "label == 'Search'")).firstMatch
+        XCTAssertTrue(tab.waitForExistence(timeout: 5), "Search tab or rail button")
+        tab.tap()
+        sleep(1)
+        if ReleaseRowTests.pose(app).contains("pose: tabletop") {
+            let button = app.descendants(matching: .any).matching(identifier: "tabletopSearch").firstMatch
+            XCTAssertTrue(button.waitForExistence(timeout: 5), "Tabletop: read-only search button")
+            XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "letter-A").firstMatch.exists, "Tabletop: letter strip")
+            XCTAssertFalse(app.keyboards.firstMatch.exists)
+            // Ruling: tapping the field never raises the keyboard; it explains why instead.
+            button.tap()
+            let hint = app.descendants(matching: .any).matching(identifier: "tabletopSearchHint").firstMatch
+            XCTAssertTrue(hint.waitForExistence(timeout: 3), "Tabletop: the field explains why there is no keyboard")
+            XCTAssertTrue(hint.label.contains("Typing needs the flat screen. Pick a letter below, or open your Duo flat to type."), "hint wording [\(hint.label)]")
+            sleep(1)
+            XCTAssertFalse(app.keyboards.firstMatch.exists, "Tabletop: the keyboard never opens")
+        } else {
+            // Closed portrait has its own text field (16 pt clear of the badge); the other poses use the system field.
+            let own = app.textFields["searchField"]
+            let field = own.waitForExistence(timeout: 2) ? own : app.searchFields.firstMatch
+            XCTAssertTrue(field.waitForExistence(timeout: 5), "a search field exists on the Search tab")
+            XCTAssertTrue(field.isHittable, "the search field is on screen and tappable")
+            XCTAssertGreaterThanOrEqual(field.frame.minX, 0, "field starts on screen")
+            // Book: the field sits on one page, never across the fold. (app.frame reports the portrait
+            // width after XCUITest resets the orientation, so the fold comes from the audit label.)
+            let label = ReleaseRowTests.pose(app)
+            if label.contains("pose: book"), let r = label.range(of: "fold ") {
+                let digits = label[r.upperBound...].prefix(while: { $0.isNumber || $0 == "-" })
+                let nums = digits.split(separator: "-")
+                if nums.count == 2, let lo = Double(nums[0]), let hi = Double(nums[1]) {
+                    XCTAssertTrue(field.frame.maxX <= lo + 1 || field.frame.minX >= hi - 1, "Book: search field \(field.frame) crosses the fold \(lo)-\(hi)")
+                }
+            }
+        }
+        app.terminate()
+    }
 }
