@@ -19,10 +19,20 @@ final class PlayscribeUITests: XCTestCase {
             if cold { app.terminate() } else { XCUIDevice.shared.press(.home) }
             let note = try postAndFindNotification()
             note.tap()
-            XCTAssertTrue(app.wait(for: .runningForeground, timeout: 10))
-            let release = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Update 1.1'")).firstMatch
-            XCTAssertTrue(release.waitForExistence(timeout: 10), cold ? "cold" : "warm")
-            attach(name: cold ? "notification-tap-cold" : "notification-tap-warm")
+            // The tap starts (or resumes) the app in a process this test's `app` proxy never launched, and the `simulate`
+            // launch in postAndFindNotification replaced it, so ask a fresh proxy for the target app's state (3758183 and
+            // e9a735d: a bare assertion here failed with no message).
+            let target = XCUIApplication()
+            let foreground = target.wait(for: .runningForeground, timeout: 15)
+            if !foreground {
+                let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+                shot.name = "n6-not-foreground-" + (cold ? "cold" : "warm"); shot.lifetime = .keepAlways; add(shot)
+            }
+            XCTAssertTrue(foreground, "\(cold ? "cold" : "warm"): tapping the notification brings Playscribe to the foreground (app state \(target.state.rawValue); 4 is running foreground)")
+            let release = target.buttons.matching(NSPredicate(format: "label CONTAINS 'Update 1.1'")).firstMatch
+            XCTAssertTrue(release.waitForExistence(timeout: 10), "\(cold ? "cold" : "warm"): the Update 1.1 release opens after the tap")
+            let a = XCTAttachment(screenshot: target.screenshot()); a.name = cold ? "notification-tap-cold" : "notification-tap-warm"
+            a.lifetime = .keepAlways; add(a)
         }
     }
 
