@@ -86,11 +86,14 @@ struct LatestUpdatesDeck: View {
             }
             .frame(height: maxHeight > 0 ? maxHeight : nil)
         } else {
-            deck(cardWidth: nil, artHeight: nil)
+            // Closed landscape: the wide card's height is set on the pager itself (40% of the container,
+            // 168 to 240 pt); a horizontal ScrollView otherwise sizes to what it is offered (151 pt drawn).
+            deck(cardWidth: nil, artHeight: nil,
+                 scrollHeight: duo.pose == .closed && duo.isLandscape ? min(240, max(168, duo.size.height * 0.4)) : nil)
         }
     }
 
-    private func deck(cardWidth: CGFloat?, artHeight: CGFloat?) -> some View {
+    private func deck(cardWidth: CGFloat?, artHeight: CGFloat?, scrollHeight: CGFloat? = nil) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 12) {
@@ -108,6 +111,7 @@ struct LatestUpdatesDeck: View {
                 }
                 .scrollTargetLayout()
             }
+            .frame(height: scrollHeight)
             .scrollPosition(id: $current)
             .onChange(of: current) { _, new in model.deckSelection = new }
             .scrollTargetBehavior(.viewAligned)

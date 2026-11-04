@@ -267,7 +267,9 @@ struct LibraryShelf: View {
                             }
                         }
                         .frame(width: max(0, fold.minX - 24 - 16), alignment: .topLeading)
-                        LatestUpdatesDeck(cards: model.latestDeck)
+                        // 16:9 art at the page's width plus the page edge, sized explicitly: left to the pager the
+                        // card came out as tall as the screen and pushed the grid off (834a5eb).
+                        LatestUpdatesDeck(cards: model.latestDeck, compact: true, maxHeight: (rightWidth * 9 / 16).rounded() + 52)
                             .frame(width: rightWidth, alignment: .leading)
                             .padding(.leading, max(0, rightStart - max(0, fold.minX - 24 - 16)))
                     }
