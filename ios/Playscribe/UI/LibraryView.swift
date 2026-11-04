@@ -215,6 +215,7 @@ struct LibraryShelf: View {
                             .autocorrectionDisabled()
                     }
                     .padding(.horizontal, 12)
+                    .padding(.vertical, typeSize.isAccessibilitySize ? 12 : 0)
                     .frame(minHeight: 44)
                     .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     // Book: one page wide (like the chip row), and reported to the fold audit.
