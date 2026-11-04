@@ -330,6 +330,7 @@ final class ReviewFixUITests: XCTestCase {
         var tries = 0
         while !version.exists && tries < 8 { (form.exists ? form : app).swipeUp(); tries += 1 }
         XCTAssertTrue(version.exists, "Settings shows version 0.2.0")
+        XCTAssertTrue(app.descendants(matching: .any)["appVersion"].exists, "the version row is identified")
     }
 
     /// Scrolling Dawnwalker's Update 1.1 page: hitch ratio recorded for each run.

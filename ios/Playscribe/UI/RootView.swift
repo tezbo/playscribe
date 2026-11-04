@@ -108,16 +108,16 @@ struct RootView: View {
         .onChange(of: NotificationService.shared.launchedFromNotification) { _, fromNotification in
             if fromNotification { splashVisible = false }
         }
-        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop }, set: { model.addSheetOpen = $0 })) {
+        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.addSheetOpen = false } })) {
             AddGameSheet()
         }
-        .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop }, set: { model.settingsOpen = $0 })) {
+        .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.settingsOpen = false } })) {
             SettingsView()
         }
         .fullScreenCover(isPresented: Binding(get: { model.player != nil }, set: { if !$0 { model.player = nil } })) {
             if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID) }
         }
-        .fullScreenCover(isPresented: Binding(get: { model.trailer != nil && model.livePose != .tabletop }, set: { if !$0 { model.trailer = nil } })) {
+        .fullScreenCover(isPresented: Binding(get: { model.trailer != nil && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.trailer = nil } })) {
             if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
         }
     }
@@ -309,6 +309,9 @@ struct LowerMessages: View {
         .padding(.bottom, duo.pose == .flat && !duo.isLandscape ? 96 : 16)
         .padding(.trailing, duo.pose == .tabletop ? TabletopRail.width : 0)
         .padding(.horizontal, 16)
+        // Book: the pill and toasts stay on the left page; they never straddle the fold.
+        .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 8) : .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .animation(.snappy, value: model.toast)
         .animation(.snappy, value: model.pill?.releaseID)
     }

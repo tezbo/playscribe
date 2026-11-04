@@ -172,6 +172,9 @@ struct LibraryShelf: View {
                     .padding(.horizontal, 12)
                     .frame(minHeight: 44)
                     .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    // Book: one page wide (like the chip row), and reported to the fold audit.
+                    .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
+                    .tappableFrame()
                     .padding(.top, 4)
                 }
                 // D-7: a narrowed list always says so and offers the way back.
@@ -542,6 +545,8 @@ struct GameTile: View {
             // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             tileFrame(TileCover(game: row.game))
+                // The fold audit measures the cover (clipped 3:4), not the 8 pt wider accessibility frame.
+                .tappableFrame()
                 .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { measuredWidth = $0 }
                 .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
                 .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
@@ -556,7 +561,6 @@ struct GameTile: View {
         .accessibilityIdentifier("tile-\(Int((size ?? measuredWidth).rounded()))")
         .accessibilityLabel(model.tileAccessibilityLabel(row))
         .accessibilityAddTraits(.isButton)
-        .tappableFrame()
     }
 }
 
