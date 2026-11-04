@@ -24,6 +24,7 @@ struct AddGameSheet: View {
     /// Keyboard height while it is up (Iris, 0.5.0 Tabletop sheets: if the lower half minus the
     /// keyboard leaves under 200 pt, hide the title and keep Done and search only).
     @State private var keyboardHeight: CGFloat = 0
+    @FocusState private var searchFocused: Bool
     private var titleHidden: Bool {
         guard duo.pose == .tabletop, keyboardHeight > 0 else { return false }
         let lowerHalf = duo.size.height - (duo.division?.maxY ?? duo.size.height / 2)
@@ -48,6 +49,7 @@ struct AddGameSheet: View {
             }
             .onAppear {
                 if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
+                if model.addSearchFocus { model.addSearchFocus = false; Task { try? await Task.sleep(for: .milliseconds(600)); searchFocused = true } }
             }
             .navigationTitle(titleHidden ? "" : custom ? "Add your own game" : matches != nil ? "Found games" : method == nil ? "Add games" : method!.title)
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillChangeFrameNotification)) { note in
@@ -140,6 +142,7 @@ struct AddGameSheet: View {
                 TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
                     .autocorrectionDisabled()
                     .submitLabel(.search)
+                    .focused($searchFocused)
                     .frame(minHeight: 44)
                 // Offline state 7: rows keep their placeholder covers; say why.
                 if case .failed(offline: true) = model.checkState {
