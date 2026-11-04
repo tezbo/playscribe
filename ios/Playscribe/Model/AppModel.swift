@@ -137,6 +137,8 @@ final class AppModel {
     var toast: Toast?
     var pill: (gameID: String, releaseID: String)?
     var addSheetOpen = false
+    /// QA (route add/scan): the camera scan shows a fixed feed, since simulators have no camera.
+    var simulatedScan = false
     /// Opens the Add games sheet straight on this method (first-run welcome rows).
     var addSheetMethod: AddMethod?
     var settingsOpen = false
@@ -486,7 +488,7 @@ final class AppModel {
         #if INTERNAL
         // Internal routes so QA can script every screen in every pose with `simctl openurl`.
         switch url.host() {
-        case "add": addSheetOpen = true
+        case "add": addSheetOpen = true; if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
         case "settings": settingsOpen = true
         case "library": nav.tab = .library; nav.gameID = nil
         case "updates": nav.tab = .updates
@@ -502,7 +504,7 @@ final class AppModel {
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
         case "links" where parts.count == 1: openGame(parts[0]); linksSheetOpen = true
-        case "close": player = nil; addSheetOpen = false; settingsOpen = false; linksSheetOpen = false
+        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
             if let n = Int(parts[0]) {

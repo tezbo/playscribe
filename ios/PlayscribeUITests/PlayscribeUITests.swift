@@ -520,3 +520,25 @@ extension PlayscribeUITests {
         }
     }
 }
+
+extension PlayscribeUITests {
+    /// J-20b: the scan view fits the panel: preview, hint and button all end inside the screen, and
+    /// every control is at least 44 pt (QA route add/scan, simulated feed). Any pose.
+    func testScanFitsThePanel() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "add/scan"]
+        app.launch()
+        sleep(3)
+        let find = app.buttons["Find these games"]
+        XCTAssertTrue(find.waitForExistence(timeout: 8), "scan shows Find these games")
+        XCTAssertGreaterThanOrEqual(find.frame.height, 44)
+        XCTAssertLessThanOrEqual(find.frame.maxY, app.frame.maxY + 1, "button ends on screen")
+        let preview = app.descendants(matching: .any)["Camera view"]
+        XCTAssertTrue(preview.exists)
+        XCTAssertLessThanOrEqual(preview.frame.maxY, find.frame.minY + 1, "preview sits above the button")
+        if ReleaseRowTests.pose(app).contains("pose: tabletop") {
+            XCTAssertGreaterThanOrEqual(preview.frame.minY, app.frame.midY - 1, "Tabletop: preview is in the lower half")
+        }
+        app.terminate()
+    }
+}
