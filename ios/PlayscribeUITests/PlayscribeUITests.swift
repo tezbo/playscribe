@@ -267,8 +267,10 @@ final class ReviewFixUITests: XCTestCase {
     func testNoteLinkOpensBrowser() throws {
         let app = XCUIApplication()
         app.launchArguments = ["-qaRoute", "release/dawnwalker/dawnwalker@1.0.5"]
-        // The notes only exist in the live feed: launch once and wait for them to land (never skip).
         app.launch()
+        // Tabletop shows releases on the standing half, which is never touchable (G-4): skip before any waiting.
+        if ReleaseRowTests.pose(app).contains("tabletop") { app.terminate(); throw XCTSkip("links aren't tappable on Tabletop's standing half by design") }
+        // The notes only exist in the live feed: wait for them to land (never skip).
         let landed = app.buttons.matching(NSPredicate(format: "label CONTAINS 'We will continue'")).firstMatch
         XCTAssertTrue(landed.waitForExistence(timeout: 60), "live feed delivered dawnwalker@1.0.5 within 60 s")
         app.terminate()
@@ -461,6 +463,30 @@ extension PlayscribeUITests {
             for e in elements where e.exists && !e.frame.isEmpty && e.frame.width < app.frame.width - 1 {
                 XCTAssertFalse(e.frame.maxX > lo && e.frame.minX < hi, "\(route): '\(e.label)' \(e.frame) enters the fold \(lo)-\(hi)")
             }
+            app.terminate()
+        }
+    }
+}
+
+extension PlayscribeUITests {
+    /// CLAUDE.md Tabletop rule for presented sheets: with the Add game sheet or Settings open, every
+    /// control (close, search, rows, bars) sits in the lower half. Skips outside Tabletop.
+    func testTabletopSheetsKeepControlsInTheLowerHalf() throws {
+        let app = XCUIApplication()
+        for route in ["add", "settings"] {
+            app.launchArguments = ["-qaRoute", route]
+            app.launch()
+            sleep(3)
+            guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+            let half = app.frame.midY
+            let controls = app.buttons.allElementsBoundByIndex + app.textFields.allElementsBoundByIndex
+                + app.searchFields.allElementsBoundByIndex + app.switches.allElementsBoundByIndex + app.cells.allElementsBoundByIndex
+            var seen = 0
+            for e in controls where e.exists && e.isHittable && !e.frame.isEmpty {
+                seen += 1
+                XCTAssertGreaterThanOrEqual(e.frame.minY, half - 1, "\(route): '\(e.label)' is tappable in the upper half \(e.frame)")
+            }
+            XCTAssertGreaterThan(seen, 0, "\(route) shows controls")
             app.terminate()
         }
     }
