@@ -404,7 +404,7 @@ final class LibraryLayoutTests: XCTestCase {
 @MainActor
 final class CaptureTests: XCTestCase {
     func shot(_ name: String) {
-        let a = XCTAttachment(screenshot: app.screenshot()); a.name = "capture-\(name)"; a.lifetime = .keepAlways; add(a)
+        let a = XCTAttachment(screenshot: XCUIApplication().screenshot()); a.name = "capture-\(name)"; a.lifetime = .keepAlways; add(a)
     }
 
     func testReviewStills() throws {
