@@ -19,22 +19,22 @@ export interface PushOutcome {
   skipped?: 'notLive' | 'alreadyPushed' | 'tooOld' | 'pushDisabled' | 'noApns'
 }
 
-/** Counts only, no generated text; null when the notes are thin (fewer than two counted lines). */
+/** Counts only, no generated text; null when there is nothing to count. */
 export const digestCounts = (d: Digest): string | null => {
-  if (d.new + d.fixed + d.balance < 2) return null
+  if (d.new + d.fixed + d.balance + d.ps5 === 0) return null
   return [d.new && `${d.new} new`, d.fixed && `${d.fixed} fixed`, d.balance && `${d.balance} balance`, d.ps5 && `${d.ps5} PS5-only`].filter(Boolean).join(', ')
 }
 
 /**
  * Alert copy (Iris): counts in the title, body "Update <version>: <headline>". The headline is the first clean new line
- * (digest.topNew); when it is missing, or the headings were poor, the body is the counts line, or "See what changed." when thin.
+ * (digest.topNew); when it is missing, or the headings were poor, the body is the counts line, or "A new update is out" when there is nothing to count.
  */
 export const alertCopy = (gameName: string, label: string, d: Digest): { title: string; body: string } => {
   const counts = digestCounts(d)
   const headline = d.topNew?.[0]
   return {
     title: counts ? `${gameName}: ${counts}` : gameName,
-    body: headline ? `${label}: ${headline}` : `${counts ?? 'See what changed'}.`,
+    body: headline ? `${label}: ${headline}` : counts ? `${counts}.` : 'A new update is out',
   }
 }
 

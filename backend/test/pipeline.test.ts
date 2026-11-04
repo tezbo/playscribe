@@ -329,5 +329,6 @@ test('richer alerts (r050): counts in the title, headline body, counts fallback'
   const d = { new: 3, fixed: 12, balance: 0, other: 1, ps5: 2 }
   assert.deepEqual(alertCopy('Dawnwalker', 'Update 1.1', { ...d, topNew: ['New skill tree'] }), { title: 'Dawnwalker: 3 new, 12 fixed, 2 PS5-only', body: 'Update 1.1: New skill tree' })
   assert.equal(alertCopy('Dawnwalker', 'Update 1.1', d).body, '3 new, 12 fixed, 2 PS5-only.')
-  assert.deepEqual(alertCopy('Dawnwalker', 'Update 1.1', { new: 1, fixed: 0, balance: 0, other: 4, ps5: 0 }), { title: 'Dawnwalker', body: 'See what changed.' })
+  assert.deepEqual(alertCopy('Dawnwalker', 'Update 1.1', { new: 1, fixed: 0, balance: 0, other: 4, ps5: 0 }), { title: 'Dawnwalker: 1 new', body: '1 new.' })
+  assert.deepEqual(alertCopy('Dawnwalker', 'Update 1.1', { new: 0, fixed: 0, balance: 0, other: 4, ps5: 0 }), { title: 'Dawnwalker', body: 'A new update is out' })
 })
