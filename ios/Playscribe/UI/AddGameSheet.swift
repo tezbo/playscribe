@@ -270,6 +270,7 @@ struct AddRow: View {
 /// half (display only), the button and covers on the flat half.
 struct OnboardingView: View {
     @Environment(\.duo) private var duo
+    @Environment(\.railWidth) private var railWidth
 
     /// Content width of the left page in Book (clear of the fold), nil in other poses.
     private var pageWidth: CGFloat? {
@@ -282,7 +283,9 @@ struct OnboardingView: View {
             ArrangementView {
                 OnboardingStage().allowsHitTesting(false)
             } secondary: {
+                // The trailing rail sits over the lower half: keep the actions clear of it (0.2.0 gate).
                 ScrollView { OnboardingActions().padding(16) }
+                    .contentMargins(.trailing, railWidth, for: .scrollContent)
             }
             .arrangementViewStyle(.split)
         } else {

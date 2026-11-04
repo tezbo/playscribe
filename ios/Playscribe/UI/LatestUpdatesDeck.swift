@@ -193,6 +193,16 @@ struct PageEdge: View {
 /// Tabletop's standing half: the selected card as content only (G-4); the page edge below drives it.
 struct DeckStage: View {
     var card: DeckCard
+    @Environment(\.duo) private var duo
+    @State private var stageHeight: CGFloat = 0
+
+    /// Polish 1: in Tabletop the caption sits at least 24 pt above the division, never under it.
+    private var clearance: CGFloat {
+        guard let d = duo.division else { return 0 }
+        let overlap = stageHeight - d.minY
+        return overlap > 0 ? overlap + 4 : 0
+    }
+
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: card.game.keyArtAsset, game: card.game, drift: true)
@@ -212,7 +222,9 @@ struct DeckStage: View {
                 .font(PlayscribeFont.subheadline)
             }
             .padding(20)
+            .padding(.bottom, clearance)
         }
+        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { stageHeight = $0 }
         .allowsHitTesting(false)
         .accessibilityElement(children: .contain)
     }

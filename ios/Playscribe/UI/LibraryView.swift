@@ -126,7 +126,8 @@ struct LibraryShelf: View {
         var k = max(1, Int((min(leftPage, rightPage) + 10) / (tileSize + 10)))
         while k > 1 && CGFloat(k) * tileSize + CGFloat(k - 1) * 10 > min(leftPage, rightPage) { k -= 1 }
         let group = CGFloat(k) * tileSize + CGFloat(k - 1) * 10
-        let lead = max(0, (leftPage - group) / 2)
+        // Polish 2: the left page's tiles start at the same margin as search, hero and filters.
+        let lead: CGFloat = 0
         let gap = max(0, rightStart + max(0, (rightPage - group) / 2) - (x0 + lead + group))
         return (k, lead, gap)
     }
@@ -629,8 +630,9 @@ struct StatusCircle: View {
         Image(systemName: Self.symbol(status))
             .font(.system(size: 11, weight: .bold))
             .foregroundStyle(.white)
-            .frame(width: 24, height: 24)
+            .frame(width: 20, height: 20)
             .adaptiveGlass(in: Circle())
+            // 20 pt so titles on art stay readable; the whole tile remains the 44 pt+ tap target.
     }
     static func symbol(_ s: OwnershipStatus) -> String {
         switch s { case .owned: "checkmark"; case .wishlist: "bookmark.fill"; case .watching: "eye.fill" }

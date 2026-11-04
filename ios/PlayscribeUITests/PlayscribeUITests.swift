@@ -646,3 +646,24 @@ final class Release050Tests: XCTestCase {
         app.terminate()
     }
 }
+
+extension PlayscribeUITests {
+    /// 0.2.0 gate (dc27a53): in Tabletop the first-run "Add your first game" button and the popular
+    /// covers ran under the trailing rail. No first-run control may intersect the rail.
+    func testTabletopFirstRunClearsTheRail() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "first-run"]
+        app.launch()
+        sleep(3)
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let rail = app.buttons["Library"].firstMatch
+        XCTAssertTrue(rail.waitForExistence(timeout: 5), "rail")
+        let add = app.buttons["Add your first game"].firstMatch
+        XCTAssertTrue(add.exists)
+        XCTAssertLessThanOrEqual(add.frame.maxX, rail.frame.minX, "Add your first game \(add.frame) runs under the rail \(rail.frame)")
+        for cover in app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add '")).allElementsBoundByIndex where cover.isHittable && cover.label != "Add game" {
+            XCTAssertLessThanOrEqual(cover.frame.maxX, rail.frame.minX + 1, "\(cover.label) \(cover.frame) runs under the rail")
+        }
+        app.terminate()
+    }
+}
