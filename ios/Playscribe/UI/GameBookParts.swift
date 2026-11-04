@@ -747,7 +747,7 @@ struct GameTitleWithStatus: View {
 /// J-11: the game's links as sheet rows, Tabletop only (the inline row stays in every other pose).
 struct LinksSheet: View {
     @Environment(AppModel.self) private var model
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.panelClose) private var panelClose
     var gameID: String
 
     private struct Row: Identifiable { var id: String; var title: String; var url: URL }
@@ -765,8 +765,17 @@ struct LinksSheet: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Links").font(PlayscribeFont.title3).padding(.horizontal, 20).padding(.top, 20).padding(.bottom, 8)
-                .accessibilityAddTraits(.isHeader)
+            HStack {
+                Text("Links").font(PlayscribeFont.title3).accessibilityAddTraits(.isHeader)
+                Spacer()
+                Button { if let panelClose { panelClose() } else { model.linksSheetOpen = false } } label: {
+                    Image(systemName: "xmark.circle.fill").font(PlayscribeFont.title3).frame(width: 44, height: 44)
+                }
+                .foregroundStyle(.secondary)
+                .accessibilityLabel("Close links")
+                .tappableFrame()
+            }
+            .padding(.horizontal, 20).padding(.top, 8).padding(.bottom, 4)
             ForEach(rows) { row in
                 Link(destination: row.url) {
                     HStack {
@@ -785,7 +794,6 @@ struct LinksSheet: View {
             Spacer(minLength: 0)
         }
         .background(Color.ink1)
-        .presentationDetents([.medium])
     }
 
     static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool {

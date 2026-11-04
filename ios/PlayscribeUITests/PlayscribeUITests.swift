@@ -502,7 +502,7 @@ extension PlayscribeUITests {
     /// control (close, search, rows, bars) sits in the lower half. Skips outside Tabletop.
     func testTabletopSheetsKeepControlsInTheLowerHalf() throws {
         let app = XCUIApplication()
-        for route in ["add", "settings"] {
+        for route in ["add", "settings", "links/dawnwalker"] {
             app.launchArguments = ["-qaRoute", route]
             app.launch()
             sleep(3)

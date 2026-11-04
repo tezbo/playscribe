@@ -24,7 +24,7 @@ struct LowerHalfPanel: View {
     var duo: DuoContext
     var fold: CGRect
 
-    private var open: Bool { model.addSheetOpen || model.settingsOpen || model.trailer != nil }
+    private var open: Bool { model.addSheetOpen || model.settingsOpen || model.trailer != nil || model.linksSheetOpen }
 
     var body: some View {
         if open {
@@ -36,8 +36,9 @@ struct LowerHalfPanel: View {
                     if model.addSheetOpen { AddGameSheet() }
                     else if model.settingsOpen { SettingsView() }
                     else if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
+                    else if model.linksSheetOpen, let id = model.nav.gameID { LinksSheet(gameID: id) }
                 }
-                .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil })
+                .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil; model.linksSheetOpen = false })
                 .environment(\.railWidth, 0)
                 .frame(width: duo.size.width, height: height)
                 .background(Color.ink0)
@@ -68,11 +69,11 @@ struct RootView: View {
             ZStack {
                 TabRoot(duo: duo)
                     .environment(\.railWidth, duo.pose == .tabletop ? TabletopRail.width : 0)
-                    .auditActive(!model.addSheetOpen && !model.settingsOpen && model.player == nil)
+                    .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.player == nil)
 
                 if duo.pose == .tabletop, let fold = duo.division {
                     TabletopRail(duo: duo)
-                        .auditActive(!model.addSheetOpen && !model.settingsOpen && model.player == nil)
+                        .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.player == nil)
                         .frame(width: TabletopRail.width, height: max(0, duo.size.height - fold.maxY))
                         .position(x: duo.size.width - TabletopRail.width / 2, y: fold.maxY + (duo.size.height - fold.maxY) / 2)
                 }
@@ -241,9 +242,6 @@ struct TabletopRail: View {
         .padding(.vertical, 8)
         .frame(maxHeight: .infinity)
         .background(.bar)
-        .sheet(isPresented: Bindable(model).linksSheetOpen) {
-            if let id = model.nav.gameID { LinksSheet(gameID: id) }
-        }
     }
 
     private func tab(_ t: AppTab, _ title: String, _ symbol: String, badge: Int = 0) -> some View {
