@@ -3,7 +3,7 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
-## 0.2.0 (candidate, not released)
+## 0.2.0
 
 - Every game shows its full update history, and Blue Prince is no longer empty.
 - Updates that reached consoles a little after Steam now count as released on PS5, so none of them show as PC only.
@@ -11,6 +11,8 @@ so write it for testers. Release steps are in docs/release.md.
 - A cold launch opens on your Library.
 - Links open in your browser. Each game links to its official website and "All patch notes", and each update has "Open in Steam".
 - A game without artwork gets the Playscribe header instead of a blank space. Image dots only show when there is more than one image.
+- Settings shows the version, build number and build ID, so you can check which build you are on.
+- The Library, Search and Add game fit every Duo pose. In Tabletop there is no keyboard: pick a letter from the A to Z strip instead.
 
 ## 0.1.0
 
