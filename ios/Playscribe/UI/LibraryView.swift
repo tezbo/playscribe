@@ -182,9 +182,9 @@ struct LibraryShelf: View {
                 if model.showsNotificationCard, let first = all.first {
                     NotificationInviteCard(gameName: first.game.name)
                 }
-                if all.count >= 6 && duo.pose == .tabletop {
+                if !all.isEmpty && duo.pose == .tabletop {
                     TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4)
-                } else if all.count >= 6 {
+                } else if !all.isEmpty {
                     // The same field as the notes search; the system rounded border read as a
                     // faded box behind the large title on the dark Library (QA, a258f0c).
                     HStack(spacing: 8) {
@@ -434,8 +434,8 @@ struct AlsoNewPanel: View {
 
     private var changes: [String] {
         let key = (hero.keyChanges ?? []).filter { !$0.isEmpty }
-        if !key.isEmpty { return Array(key.prefix(3)) }
-        return Array(hero.notes.flatMap { $0.items.filter { $0.spoiler != true }.map(\.text) }.prefix(3))
+        if !key.isEmpty { return Array(key.prefix(5)) }
+        return Array(hero.notes.flatMap { $0.items.filter { $0.spoiler != true }.map(\.text) }.prefix(5))
     }
 
     private static let age: RelativeDateTimeFormatter = {
@@ -461,14 +461,26 @@ struct AlsoNewPanel: View {
                     .frame(height: 26, alignment: .topLeading)
                     .padding(.bottom, 12)
                 if all.isEmpty {
-                    ForEach(Array(changes.enumerated()), id: \.offset) { _, line in
-                        Text(line).font(PlayscribeFont.subheadline).lineLimit(1).frame(minHeight: 44, alignment: .leading)
-                    }
+                    whatsNew(lines: shownChanges(width: geo.size.width - 24, available: avail), available: avail, width: geo.size.width - 24)
                 } else {
                     ForEach(rows) { r in row(r, height: rowHeight) }
                 }
                 Spacer(minLength: 0)
-                if !all.isEmpty {
+                if all.isEmpty {
+                    // Iris: a 56 pt row pinned to the bottom, so the panel never ends half empty.
+                    Button { model.openGame(hero.gameID, chapter: .updates, releaseID: hero.id) } label: {
+                        HStack {
+                            Text("Read the full update").font(PlayscribeFont.subheadline.weight(.semibold))
+                            Spacer(minLength: 0)
+                            Image(systemName: "chevron.right").font(PlayscribeFont.caption).accessibilityHidden(true)
+                        }
+                        .foregroundStyle(PlayscribeColor.accent)
+                        .frame(maxWidth: .infinity, minHeight: 56, alignment: .center)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .tappableFrame()
+                } else {
                     Button { model.nav.tab = .updates } label: {
                         Text("See all updates").font(PlayscribeFont.subheadline.weight(.semibold))
                             .foregroundStyle(PlayscribeColor.accent)
@@ -486,6 +498,40 @@ struct AlsoNewPanel: View {
         .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .accessibilityElement(children: .contain)
         .accessibilityLabel(all.isEmpty ? "What's new" : "Also new, \(min(all.count, 6)) updates")
+    }
+
+    /// Estimated height of one change line at 17 pt: up to three lines of 22 pt plus 16 pt around it.
+    private func estimate(_ line: String, width: CGFloat) -> CGFloat {
+        let perLine = max(12, width / 8.6)
+        let n = min(3, max(1, Int((Double(line.count) / Double(perLine)).rounded(.up))))
+        return CGFloat(n) * 22 + 16 + 1
+    }
+
+    /// Iris: the top 3 to 5 change lines, as many as fit above the footer.
+    private func shownChanges(width: CGFloat, available: CGFloat) -> [String] {
+        var used: CGFloat = 0, out: [String] = []
+        for line in changes.prefix(5) {
+            let h = estimate(line, width: width)
+            if out.count >= 3 && used + h > available { break }
+            out.append(line); used += h
+        }
+        return out
+    }
+
+    /// No ellipsis mid-sentence: each line wraps to up to three lines. Hairlines between, no bullets.
+    private func whatsNew(lines: [String], available: CGFloat, width: CGFloat) -> some View {
+        let used = lines.reduce(CGFloat(0)) { $0 + estimate($1, width: width) }
+        // Spare height goes to line spacing, up to 24 pt between lines, then to the footer.
+        let extra = lines.isEmpty ? 0 : min(4, max(0, (available - used) / CGFloat(lines.count * 2)))
+        return VStack(alignment: .leading, spacing: 0) {
+            ForEach(Array(lines.enumerated()), id: \.offset) { i, line in
+                if i > 0 { Rectangle().fill(PlayscribeColor.textPrimary.opacity(0.14)).frame(height: 1) }
+                Text(line).font(PlayscribeFont.body).lineLimit(3)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.vertical, 8 + extra)
+            }
+        }
     }
 
     private func row(_ r: Release, height: CGFloat) -> some View {
