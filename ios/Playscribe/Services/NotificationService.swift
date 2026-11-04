@@ -56,7 +56,8 @@ final class NotificationService: NSObject {
             center.removePendingNotificationRequests(withIdentifiers: old)
             for (g, day) in due {
                 let content = UNMutableNotificationContent()
-                content.title = "\(g.name) is out today on PS5"
+                content.title = g.name
+                content.body = "Out today on PS5"
                 content.sound = .default
                 var parts = Calendar.current.dateComponents([.year, .month, .day], from: day)
                 parts.hour = 9
@@ -146,32 +147,51 @@ final class NotificationService: NSObject {
         return c
     }
 
-    /// N-4: "<Display name> is live on PS5: <short line>." under about 110 characters, one colon.
+    /// 0.5.0 copy (handoff/0.5.0/alert-and-field-guide-copy.md): "Update 1.1: <headline>", one line of
+    /// at most 60 characters, no counts (counts live in titles). Fallback when there is no headline.
     static func body(for release: Release) -> String {
-        let head = "\(release.displayName) is live on PS5"
-        var line = release.pushLine.flatMap { PCOnly.matches($0) ? nil : $0 }
-        if line == nil {
-            // The two shortest key-change headlines: the part before any colon or semicolon.
-            let heads = release.ps5KeyChanges.map { k in
-                String(k.split(whereSeparator: { $0 == ":" || $0 == ";" }).first ?? Substring(k)).trimmingCharacters(in: .whitespaces)
-            }.sorted { $0.count < $1.count }.prefix(2)
-            if !heads.isEmpty { line = heads.joined(separator: ", and ") }
-        }
-        guard var line, !line.isEmpty else { return head + "." }
-        if let first = line.first, line.dropFirst().first?.isLowercase == true { line = first.lowercased() + line.dropFirst() }
-        var text = "\(head): \(line)"
-        if text.count > 109 {
-            text = String(text.prefix(108))
-            if let cut = text.lastIndex(of: " ") { text = String(text[..<cut]) }
-            text = text.trimmingCharacters(in: CharacterSet(charactersIn: " ,"))
-        }
-        return text.hasSuffix(".") ? text : text + "."
+        guard let head = headline(for: release) else { return countsLine(release) ?? "A new update is out" }
+        return fit("\(release.displayName): \(head)")
     }
 
-    /// Registers the category so hidden previews read "New update" (N-4).
+    /// The first PS5 change line, or the editorial push line; the part before any colon or semicolon.
+    static func headline(for release: Release) -> String? {
+        let raw = release.pushLine.flatMap { PCOnly.matches($0) ? nil : $0 } ?? release.ps5KeyChanges.first
+        guard let raw else { return nil }
+        var line = String(raw.split(whereSeparator: { $0 == ":" || $0 == ";" }).first ?? Substring(raw))
+            .trimmingCharacters(in: CharacterSet(charactersIn: " .,"))
+        if let first = line.first, line.dropFirst().first?.isLowercase == true { line = first.lowercased() + line.dropFirst() }
+        return line.isEmpty ? nil : line
+    }
+
+    /// "3 new, 5 fixes, 2 PS5 only" from the feed digest (zero counts left out); nil when nothing counted.
+    static func countsLine(_ release: Release) -> String? {
+        guard let d = release.digest else { return nil }
+        let parts = [(d.new, "new"), (d.fixed, d.fixed == 1 ? "fix" : "fixes"), (d.ps5, "PS5 only")]
+            .filter { $0.0 > 0 }.map { "\($0.0) \($0.1)" }
+        return parts.count >= 2 ? parts.joined(separator: ", ") : nil
+    }
+
+    /// "<Game>, 3 new updates" when several arrive at once; the game name otherwise.
+    static func title(game: CatalogGame, count: Int) -> String { count > 1 ? "\(game.name), \(count) new updates" : game.name }
+
+    /// Several at once: "Latest: <version>, <headline>".
+    static func latestBody(for release: Release) -> String {
+        guard let head = headline(for: release) else { return "New updates are out" }
+        return fit("Latest: \(release.displayName), \(head)")
+    }
+
+    private static func fit(_ text: String, limit: Int = 60) -> String {
+        guard text.count > limit else { return text }
+        var cut = String(text.prefix(limit - 1))
+        if let sp = cut.lastIndex(of: " ") { cut = String(cut[..<sp]) }
+        return cut.trimmingCharacters(in: CharacterSet(charactersIn: " ,:")) + "…"
+    }
+
+    /// Registers the category so hidden previews read "A game you follow has an update".
     func registerCategories() {
         let category = UNNotificationCategory(identifier: "release", actions: [], intentIdentifiers: [],
-                                              hiddenPreviewsBodyPlaceholder: "New update", options: [])
+                                              hiddenPreviewsBodyPlaceholder: "A game you follow has an update", options: [])
         center.setNotificationCategories([category])
     }
 }
