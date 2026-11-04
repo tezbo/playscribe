@@ -48,6 +48,8 @@ struct UpcomingView: View {
     @Environment(AppModel.self) private var model
 
     private func dateLine(_ g: CatalogGame) -> String {
+        // Ezra's copy: "Out today" on release day, otherwise the date line ("Out" only for dated, near releases).
+        if (g.releasePrecision ?? .day) == .day, let d = g.releaseDate?.isoDay, Calendar.current.isDateInToday(d) { return "Out today" }
         let line = g.ps5DateLine ?? "Date to be announced"
         return line == "Release date TBA" ? "Date to be announced" : line
     }
@@ -102,7 +104,6 @@ struct UpcomingView: View {
                 .padding(.vertical, 20)
                 .accessibilityElement(children: .combine)
             } else {
-                // Placeholder copy until Ezra's line: "Out this week".
                 let soon = watched.filter { g in
                     guard (g.releasePrecision ?? .day) == .day, let d = g.releaseDate?.isoDay else { return false }
                     return d >= Calendar.current.startOfDay(for: .now) && d.timeIntervalSinceNow < 7 * 86400
@@ -110,10 +111,13 @@ struct UpcomingView: View {
                 let later = watched.filter { g in !soon.contains { $0.id == g.id } }
                 if !soon.isEmpty {
                     Text("Out this week").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                        .accessibilityLabel("Out this week, \(soon.count) game\(soon.count == 1 ? "" : "s")")
                     LazyVGrid(columns: columns, spacing: 14) { ForEach(soon) { tile($0, watching: true) } }
                 }
                 if !later.isEmpty {
-                    Text("On your watchlist").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                    let laterTitle = soon.isEmpty ? "On your watchlist" : "Coming later"
+                    Text(laterTitle).font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                        .accessibilityLabel("\(laterTitle), \(later.count) game\(later.count == 1 ? "" : "s")")
                     LazyVGrid(columns: columns, spacing: 14) { ForEach(later) { tile($0, watching: true) } }
                 }
             }

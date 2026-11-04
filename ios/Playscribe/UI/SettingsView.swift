@@ -34,6 +34,7 @@ struct SettingsView: View {
 
     @ViewBuilder private func quietPicker(_ title: String, minutes: Int, set: @escaping (Int) -> Void) -> some View {
         let binding = Binding<Date>(get: { QuietHours.date(minutes: minutes) }, set: { set(QuietHours.minutes(of: $0)) })
+        Group {
         if duo.pose == .tabletop {
             VStack(alignment: .leading) {
                 Text(title)
@@ -43,6 +44,8 @@ struct SettingsView: View {
         } else {
             DatePicker(title, selection: binding, displayedComponents: .hourAndMinute).frame(minHeight: 44)
         }
+        }
+        .accessibilityHint(title == "From" ? "Sets when quiet hours start" : "Sets when quiet hours end")
     }
 
     var body: some View {
@@ -75,6 +78,8 @@ struct SettingsView: View {
                 } footer: {
                     Text(NotificationService.shared.authorization == .denied
                          ? "Notifications are off for \(Brand.name) in iOS Settings."
+                         : model.data.quietHours.map({ $0.from == $0.until }) == true
+                            ? "Alerts arrive silently during these hours. Choose different times, or turn quiet hours off."
                          : model.data.quietHours != nil
                             ? "Alerts arrive silently during these hours."
                             : "Change a single game from the bell on its page.")
