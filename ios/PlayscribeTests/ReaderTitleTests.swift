@@ -11,7 +11,7 @@ struct ReaderTitleTests {
 
     @Test("Long text is cut at six words with an ellipsis")
     func longText() {
-        #expect(ReaderTitle.derived(from: "Reworked how companions follow you through narrow doorways and stairs") == "Reworked how companions follow you…")
+        #expect(ReaderTitle.derived(from: "Reworked how companions follow you through narrow doorways and stairs") == "Reworked how companions follow you through…")
     }
 
     @Test("Exactly six words has no ellipsis")
