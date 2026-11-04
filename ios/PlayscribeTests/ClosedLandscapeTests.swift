@@ -15,7 +15,7 @@ import UIKit
 struct ClosedLandscapeTests {
     static let size = CGSize(width: 678, height: 466)
 
-    private final class FrameBox { var frames: [CGRect] = [] }
+    private final class FrameBox: @unchecked Sendable { var frames: [CGRect] = [] }
 
     private func model() -> AppModel {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "cl-\(UUID().uuidString).json"))
