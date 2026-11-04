@@ -79,9 +79,10 @@ struct SettingsView: View {
                     Text(NotificationService.shared.authorization == .denied
                          ? "Notifications are off for \(Brand.name) in iOS Settings."
                          : model.data.quietHours.map({ $0.from == $0.until }) == true
-                            ? "Alerts arrive silently during these hours. Choose different times, or turn quiet hours off."
+                            ? "These hours are empty, so nothing is quiet. Choose different times, or turn quiet hours off."
                          : model.data.quietHours != nil
-                            ? "Alerts arrive silently during these hours."
+                            // Honest scope until a push path honours the window (r050-quiet-hours-push).
+                            ? "Alerts scheduled on this device arrive silently during these hours. Updates sent while the app is closed may still make a sound."
                             : "Change a single game from the bell on its page.")
                 }
                 Section {
