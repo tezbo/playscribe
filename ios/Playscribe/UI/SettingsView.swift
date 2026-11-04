@@ -11,7 +11,10 @@ struct SettingsView: View {
     }
 
     @Environment(AppModel.self) private var model
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss) private var systemDismiss
+    @Environment(\.panelClose) private var panelClose
+    /// In Tabletop the sheet is the lower-half panel, which is not presented, so it closes itself.
+    private func dismiss() { if let panelClose { panelClose() } else { systemDismiss() } }
     @Environment(\.duo) private var duo
     @State private var simGame: String = ""
     @State private var simKind: AppModel.SimKind = .major
