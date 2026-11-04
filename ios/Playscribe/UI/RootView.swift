@@ -215,16 +215,17 @@ struct TabletopRail: View {
                 if !model.addSheetOpen {
                     RailButton(action: ScreenAction(id: "add", title: "Add game", systemImage: "plus", kind: .button { model.addSheetOpen = true }))
                 }
-                // D-12: the View menu under Add (Settings lives inside it).
+                // D-12: the View menu under Add.
                 if !model.data.collection.isEmpty {
                     LibraryViewMenu()
                         .labelStyle(.iconOnly)
                         .font(PlayscribeFont.title3)
                         .frame(width: 48, height: 48)
                         .tappableFrame()
-                } else {
-                    RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
                 }
+                // Settings has its own cog on the rail, not inside the View menu (Terry, 0.2.0 build 5).
+                RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
+                    .accessibilityIdentifier("settingsButton")
                 // 0.5.0: Playing and Upcoming on the rail (Tabletop's lower half), not above the fold.
                 if !model.data.collection.isEmpty {
                     RailButton(action: ScreenAction(id: "playing", title: "Playing",

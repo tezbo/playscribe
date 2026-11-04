@@ -29,6 +29,12 @@ struct LibraryView: View {
                 Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
                     .disabled(model.addSheetOpen)
             }
+            // Settings has its own cog (Terry, 0.2.0 build 5: "hard to find"), no longer inside the View menu.
+            ToolbarItem(placement: .topBarPinnedTrailing) {
+                Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
+                    .accessibilityIdentifier("settingsButton")
+                    .disabled(model.settingsOpen)
+            }
             // D-7: nothing to arrange in an empty library.
             if !model.data.collection.isEmpty {
                 ToolbarItem(placement: .primaryAction) {
@@ -403,8 +409,6 @@ struct LibraryViewMenu: View {
                 }
             }
             .pickerStyle(.menu)
-            Divider()
-            Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
         } label: {
             Label("View", systemImage: model.nav.filter == .all ? layout.symbol : "line.3.horizontal.decrease.circle.fill")
         }
