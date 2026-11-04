@@ -90,10 +90,20 @@ struct LibraryShelf: View {
     private var tileSize: CGFloat {
         switch duo.pose {
         case .closed: 88
-        case .flat: 112
+        case .flat: flatFit.size
         case .book: 100
         case .tabletop: 84
         }
+    }
+
+    /// Open (flat), 0.2.0 gate: the column count comes from the container width (tiles at least 124 pt,
+    /// 10 pt gaps) and the leftover is spread equally, so the grid fills the width between the 16 pt
+    /// margins with no dead space on the trailing side.
+    private var flatFit: (count: Int, size: CGFloat) {
+        let width = max(0, duo.size.width - railWidth - 32)
+        let n = max(2, Int((width + 10) / (124 + 10)))
+        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
+        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
     }
 
     /// Book: an even column count across both pages (Apple: prefer an even number of columns).
@@ -106,6 +116,9 @@ struct LibraryShelf: View {
             // falls in the middle spacer, never through a tile.
             let tiles = { (n: Int) in (0..<n).map { i in GridItem(.fixed(tileSize), spacing: i == n - 1 ? 0 : 10, alignment: .top) } }
             return [GridItem(.fixed(book.lead), spacing: 0)] + tiles(book.perPage) + [GridItem(.fixed(book.gap), spacing: 0)] + tiles(book.perPage)
+        }
+        if duo.pose == .flat {
+            return Array(repeating: GridItem(.fixed(flatFit.size), spacing: 10, alignment: .top), count: flatFit.count)
         }
         return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 10, alignment: .top)]
     }
@@ -437,6 +450,9 @@ struct HeroFrame: View {
         ArtView(asset: asset, game: game)
             // Closed: 16:9 so the library rows stay on screen; larger displays keep the taller page.
             .aspectRatio(duo.pose == .closed || duo.pose == .book ? 16 / 9 : 365 / 300, contentMode: .fit)
+            // Open portrait, 0.2.0 gate: the whole hero card (art plus caption) is at most 38% of the
+            // container height, the art cropped to fill, so search, filters and tiles show on the first screen.
+            .frame(maxHeight: duo.pose == .flat ? max(160, duo.size.height * 0.38 - 76) : .infinity)
             .clipped()
             .clipShape(BookEdgeShape())
             // Brand v2: an inset lit edge, 1.5 pt visible (3 pt stroke clipped to the shape).
