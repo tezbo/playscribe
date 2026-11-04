@@ -26,8 +26,9 @@ POSE_SUITES=(FoldAuditTests LibraryLayoutTests LatestUpdatesDeckTests Release050
   PlayscribeUITests/testScanFitsThePanel)
 # Only meaningful when two pages are side by side.
 TWO_PAGE_SUITES=(SwapSidesTests)
-# Pose-independent: logic, data, navigation. Once, in Closed.
-ONCE_SUITES=(ReleaseRowTests JourneyTests ReviewFixUITests DisplayChoiceTests CaptureTests ReaderPerformanceTests
+# Pose-independent: logic, data, navigation. Once, in Closed. (JourneyTests is not here: it needs the device
+# unfolded mid-test, which only tools/qa/journey.sh does.)
+ONCE_SUITES=(ReleaseRowTests ReviewFixUITests DisplayChoiceTests CaptureTests ReaderPerformanceTests
   PlayscribeUITests/testNotificationTapOpensRelease)
 
 note "gate $sha $(date '+%F %T')"

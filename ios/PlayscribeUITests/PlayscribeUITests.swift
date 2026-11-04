@@ -42,19 +42,20 @@ final class PlayscribeUITests: XCTestCase {
 
     // MARK: - Helpers
 
-    /// Schedules a local notification through the app's internal route, then finds its banner.
+    /// Schedules a local notification through the app's internal route, then finds its banner. The 0.5.0 copy is
+    /// "Update 1.1: <headline>" under the game name (no "is live on PS5"), so the banner is found by the game name.
     private func postAndFindNotification() throws -> XCUIElement {
         let simulate = XCUIApplication()
         simulate.launchArguments = ["-qaRoute", "simulate/dawnwalker/major"]
         simulate.launch()
         XCUIDevice.shared.press(.home)
         let banner = springboard.otherElements["Notification"].descendants(matching: .any)
-            .matching(NSPredicate(format: "label CONTAINS 'is live on PS5'")).firstMatch
+            .matching(NSPredicate(format: "label CONTAINS 'Dawnwalker'")).firstMatch
         if banner.waitForExistence(timeout: 15) { return banner }
         // Fall back to Notification Center.
         let start = springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
         start.press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.6)))
-        let listed = springboard.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'is live on PS5'")).firstMatch
+        let listed = springboard.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Dawnwalker'")).firstMatch
         XCTAssertTrue(listed.waitForExistence(timeout: 5))
         return listed
     }
