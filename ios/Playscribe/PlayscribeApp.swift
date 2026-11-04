@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreSpotlight
 import UIKit
 import UserNotifications
 
@@ -50,6 +51,12 @@ struct PlayscribeApp: App {
                     FeedClient.scheduleRefresh()
                 }
                 .onOpenURL { model.handle(url: $0) }
+                .onContinueUserActivity(CSSearchableItemActionType) { activity in
+                    // A Spotlight result for a library game (see GameSpotlight).
+                    if let id = activity.userInfo?[CSSearchableItemActivityIdentifier] as? String, id.hasPrefix("game:") {
+                        model.openGame(String(id.dropFirst(5)))
+                    }
+                }
                 .onChange(of: phase) { _, p in
                     if p == .active {
                         model.tick()

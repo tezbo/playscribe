@@ -20,10 +20,17 @@ enum WidgetBridge {
                 rows[0].hasCover = true
             }
         }
-        let snap = WidgetSnapshot(rows: Array(rows), unreadCount: cards.filter(\.unread).count,
+        let lines = model.data.collection.compactMap { c -> WidgetSnapshot.GameLine? in
+            guard let g = model.game(c.gameID) else { return nil }
+            let latest = model.ps5Releases(c.gameID).filter { $0.ps5State == .onPS5 }.max { $0.ps5Date < $1.ps5Date }
+            let changes = (latest?.ps5KeyChanges ?? []).prefix(3)
+            return .init(id: g.id, name: g.name, update: latest?.displayName, date: latest?.ps5Date, changes: Array(changes))
+        }
+        let snap = WidgetSnapshot(rows: Array(rows), games: lines, unreadCount: cards.filter(\.unread).count,
                                   hasGames: !model.data.collection.isEmpty)
         guard snap != WidgetSnapshot.load() else { return }
         snap.save()
         WidgetCenter.shared.reloadAllTimelines()
+        GameSpotlight.index(lines)
     }
 }
