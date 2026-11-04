@@ -501,7 +501,8 @@ final class AppModel {
                 if NotificationService.shared.authorization == .notDetermined { await NotificationService.shared.requestAuthorization() }
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
-        case "close": player = nil; addSheetOpen = false; settingsOpen = false
+        case "links" where parts.count == 1: openGame(parts[0]); linksSheetOpen = true
+        case "close": player = nil; addSheetOpen = false; settingsOpen = false; linksSheetOpen = false
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
             if let n = Int(parts[0]) {
