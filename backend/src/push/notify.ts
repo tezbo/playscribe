@@ -1,3 +1,4 @@
+import type { Digest } from '../digest.ts'
 import { alertFromOf, alertStyleOf, type AlertStyle } from '../alerts.ts'
 import { now, type DB } from '../db.ts'
 import { getPlatformRow, getRelease } from '../store.ts'
@@ -16,6 +17,13 @@ export interface PushOutcome {
   failed: number
   style?: AlertStyle
   skipped?: 'notLive' | 'alreadyPushed' | 'tooOld' | 'pushDisabled' | 'noApns'
+}
+
+/** Lock-screen line from the digest counts (counts only, no generated text); thin notes fall back to the plain line. */
+export const digestLine = (d: Digest): string => {
+  if (d.new + d.fixed + d.balance < 2) return 'See what changed.'
+  const parts = [d.new && `${d.new} new`, d.fixed && `${d.fixed} fixed`, d.balance && `${d.balance} balance`, d.ps5 && `${d.ps5} PS5-only`].filter(Boolean)
+  return `${parts.join(', ')}.`
 }
 
 export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: string, opts: { maxAgeHours: number; allow?: boolean }): Promise<PushOutcome> => {
@@ -44,7 +52,7 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
 
   const payload = {
     aps: {
-      alert: { title: game.name, body: `${release.displayName} is out on PS5${version ? ` (version ${version})` : ''}. See what changed.` },
+      alert: { title: game.name, body: `${release.displayName} is out on PS5${version ? ` (version ${version})` : ''}. ${digestLine(release.digest)}` },
       sound: 'default',
       'thread-id': release.gameId,
       'interruption-level': 'active',
@@ -53,6 +61,7 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
     gameId: release.gameId,
     releaseId: release.id,
     kind: release.kind,
+    digest: { new: release.digest.new, fixed: release.digest.fixed, balance: release.digest.balance, ps5: release.digest.ps5 },
     verification: row.verification,
   }
   const log = db.prepare('INSERT INTO push_log (release_id, device_id, status, reason, sent_at) VALUES (?, ?, ?, ?, ?)')

@@ -144,3 +144,7 @@ The app holds follows on the device and reads static JSON, so an "event" is a ch
 Each `upcoming/<n>.json` entry also carries, when IGDB has them: `summary` (cut to 300 characters at a word, ends with an ellipsis), `genres` (at most 3), `trailerId` (a YouTube id; a video named like a trailer, else the first), and `hypes` (IGDB's count of people waiting; a sort key for "Coming to PS5", never shown). A game that is not in the bundled catalogue therefore opens with a description and a trailer, not a blank page.
 
 `move`, `{ kind: delayed|earlier|dated, previousDate?, previousPrecision, movedAt }`, is present for 14 days after a real change in the date, found by comparing with the previous run: a later day, or an exact day that became vague or tbd, is `delayed`; an earlier exact day is `earlier`; a vague or tbd date that became an exact day is `dated`. A vague date that only narrows ("Q4" to "November") is not a move. Show it as "Delayed from March" or "Now dated"; the app has no need to store anything.
+
+### Push alert payload: digest counts (r050-richer-alerts)
+
+The PS5 alert body is `<Update> is out on PS5 (version X). <line>` where `<line>` is built from the release digest, counts only: `3 new, 12 fixed, 2 balance, 1 PS5-only.` (zero counts are left out). With fewer than two counted lines (thin notes) it falls back to `See what changed.` The payload also carries `digest: {new, fixed, balance, ps5}` beside `gameId`, `releaseId`, `kind`, `verification`, so the app can render its own line. The 72-hour guard and once-only claim are unchanged.
