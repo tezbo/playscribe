@@ -26,6 +26,8 @@ struct SettingsView: View {
         Toggle("Quiet hours", isOn: Binding(get: { on }, set: { model.data.quietHours = $0 ? QuietHours() : nil }))
             .accessibilityValue(model.data.quietHours.map { "on, \($0.label)" } ?? "off")
             .accessibilityIdentifier("quietHours")
+            // Tell the push relay when the window changes, so a push inside it is delivered passively.
+            .onChange(of: model.data.quietHours) { _, new in PushRegistrar.syncQuietHours(new) }
         if let q = model.data.quietHours {
             quietPicker("From", minutes: q.from) { model.data.quietHours?.from = $0 }
             quietPicker("Until", minutes: q.until) { model.data.quietHours?.until = $0 }
@@ -79,8 +81,9 @@ struct SettingsView: View {
                     Text(NotificationService.shared.authorization == .denied
                          ? "Notifications are off for \(Brand.name) in iOS Settings."
                          : model.data.quietHours.map({ $0.from == $0.until }) == true
-                            ? "Alerts arrive silently during these hours. Choose different times, or turn quiet hours off."
+                            ? "These hours are empty, so nothing is quiet. Choose different times, or turn quiet hours off."
                          : model.data.quietHours != nil
+                            // The relay honours the window too (#198), so the plain promise is true again.
                             ? "Alerts arrive silently during these hours."
                             : "Change a single game from the bell on its page.")
                 }

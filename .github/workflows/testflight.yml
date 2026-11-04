@@ -41,6 +41,10 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
           working-directory: ios
+      - name: Check the lanes' fastlane API use
+        if: steps.ready.outputs.ok
+        working-directory: ios
+        run: bundle exec ruby fastlane/check_api.rb
       - name: Build and upload
         if: steps.ready.outputs.ok
         working-directory: ios
