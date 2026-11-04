@@ -404,7 +404,9 @@ final class LibraryLayoutTests: XCTestCase {
                     XCTAssertLessThanOrEqual(h.height, app.frame.height * 0.38 + 12, "Open portrait hero is at most 38% of the height [\(pose)]")
                 }
             }
-            if pose.contains("flat") && app.frame.width <= app.frame.height && !hero.isEmpty {
+            // The panel belongs to the taller-than-wide hero card (Open portrait); in Open landscape the hero is a
+            // double tile in the grid and there is no panel. (app.frame can report the wrong orientation here.)
+            if pose.contains("flat"), let h0 = hero.first, h0.height > h0.width {
                 let panel = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Also new' OR label == \"What's new\"")).firstMatch
                 XCTAssertTrue(panel.exists, "Open portrait: the Also new / What's new panel sits beside the hero [\(pose)]")
                 for h in hero { XCTAssertFalse(panel.frame.insetBy(dx: 1, dy: 1).intersects(h), "panel overlaps hero \(panel.frame) \(h) [\(pose)]") }

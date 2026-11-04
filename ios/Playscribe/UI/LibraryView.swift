@@ -419,10 +419,11 @@ struct AlsoNewPanel: View {
     var hero: Release
 
     private var others: [Release] {
-        model.data.collection.map(\.gameID).filter { $0 != hero.gameID }
+        if model.qaSingleUpdate { return [] }
+        return model.data.collection.map(\.gameID).filter { $0 != hero.gameID }
             .flatMap { model.ps5Releases($0) }
             .sorted { $0.ps5Date > $1.ps5Date }
-            .prefix(3).map { $0 }
+            .prefix(6).map { $0 }
     }
 
     private var changes: [String] {
@@ -436,32 +437,53 @@ struct AlsoNewPanel: View {
     }()
 
     var body: some View {
-        let rows = others
-        VStack(alignment: .leading, spacing: 4) {
-            Text(rows.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
-                .accessibilityAddTraits(.isHeader)
-            if rows.isEmpty {
-                ForEach(Array(changes.enumerated()), id: \.offset) { _, line in
-                    Text(line).font(PlayscribeFont.subheadline).lineLimit(1).frame(minHeight: 44, alignment: .leading)
+        let all = others
+        GeometryReader { geo in
+            // Iris's fill rule: 72 pt rows (3 to 6, what fits), grown evenly to 96 pt when 24 pt or more
+            // is spare, a 64 pt heading block above and a pinned 56 pt footer below.
+            let avail = max(0, geo.size.height - 64 - 56)
+            let fit = min(6, max(3, Int(avail / 72)))
+            let rows = Array(all.prefix(fit))
+            let spare = avail - CGFloat(rows.count) * 72
+            let rowHeight: CGFloat = rows.isEmpty || spare <= 24 ? 72 : min(96, 72 + spare / CGFloat(rows.count))
+            VStack(alignment: .leading, spacing: 0) {
+                Text(all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
+                    .accessibilityAddTraits(.isHeader)
+                    .frame(height: 64, alignment: .topLeading)
+                if all.isEmpty {
+                    ForEach(Array(changes.enumerated()), id: \.offset) { _, line in
+                        Text(line).font(PlayscribeFont.subheadline).lineLimit(1).frame(minHeight: 44, alignment: .leading)
+                    }
+                } else {
+                    ForEach(rows) { r in row(r, height: rowHeight) }
                 }
-            } else {
-                ForEach(rows) { r in row(r) }
+                Spacer(minLength: 0)
+                if !all.isEmpty {
+                    Button { model.nav.tab = .updates } label: {
+                        Text("See all updates").font(PlayscribeFont.subheadline.weight(.semibold))
+                            .foregroundStyle(PlayscribeColor.accent)
+                            .frame(maxWidth: .infinity, minHeight: 56, alignment: .center)
+                            .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .tappableFrame()
+                }
             }
-            Spacer(minLength: 0)
+            .padding(.horizontal, 12)
+            .padding(.top, 12)
+            .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
         }
-        .padding(12)
-        .frame(maxWidth: .infinity, alignment: .topLeading)
         .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .accessibilityElement(children: .contain)
-        .accessibilityLabel(rows.isEmpty ? "What's new" : "Also new, \(rows.count) updates")
+        .accessibilityLabel(all.isEmpty ? "What's new" : "Also new, \(min(all.count, 6)) updates")
     }
 
-    private func row(_ r: Release) -> some View {
+    private func row(_ r: Release, height: CGFloat) -> some View {
         let game = model.game(r.gameID)
         let age = Self.age.localizedString(for: r.ps5Date, relativeTo: .now)
         return Button { model.openGame(r.gameID, chapter: .updates, releaseID: r.id) } label: {
             HStack(spacing: 10) {
-                if let g = game { CoverView(game: g, cornerRadius: 4).frame(width: 40) }
+                if let g = game { CoverView(game: g, cornerRadius: 4).frame(width: 48) }
                 VStack(alignment: .leading, spacing: 1) {
                     Text(game?.name ?? "").font(PlayscribeFont.headline).lineLimit(1)
                     Text("\(r.displayName), \(age)").font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(1)
@@ -469,7 +491,7 @@ struct AlsoNewPanel: View {
                 Spacer(minLength: 0)
                 Image(systemName: "chevron.right").font(PlayscribeFont.caption).foregroundStyle(.secondary).accessibilityHidden(true)
             }
-            .frame(minHeight: 56)
+            .frame(height: height)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
