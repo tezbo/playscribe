@@ -563,6 +563,8 @@ struct GameTile: View {
     var size: CGFloat?
     /// Closed fills its column, so the cover's width is only known once laid out.
     @State private var measuredWidth: CGFloat = 0
+    /// QA probe only (fold audit on): the tile's outer width, to compare with the published id.
+    @State private var outerWidth: CGFloat = 0
 
     /// Reports the cover itself to the fold audit and publishes its width. The measure sits on the
     /// 3:4 cover, inside the column-filling wrapper: measuring the wrapper gave the column's width
@@ -595,6 +597,8 @@ struct GameTile: View {
         .accessibilityIdentifier("tile-\(Int((size ?? measuredWidth).rounded()))")
         .accessibilityLabel(model.tileAccessibilityLabel(row))
         .accessibilityAddTraits(.isButton)
+        .accessibilityValue(FoldAuditSwitch.enabled ? "probe id=\(Int((size ?? measuredWidth).rounded())) cover=\(Int(measuredWidth.rounded())) outer=\(Int(outerWidth.rounded()))" : "")
+        .onGeometryChange(for: CGFloat.self) { FoldAuditSwitch.enabled ? $0.size.width : 0 } action: { outerWidth = $0 }
     }
 }
 
