@@ -83,8 +83,8 @@ struct SettingsView: View {
                          : model.data.quietHours.map({ $0.from == $0.until }) == true
                             ? "These hours are empty, so nothing is quiet. Choose different times, or turn quiet hours off."
                          : model.data.quietHours != nil
-                            // Honest scope until a push path honours the window (r050-quiet-hours-push).
-                            ? "Alerts scheduled on this device arrive silently during these hours. Updates sent while the app is closed may still make a sound."
+                            // The relay honours the window too (#198), so the plain promise is true again.
+                            ? "Alerts arrive silently during these hours."
                             : "Change a single game from the bell on its page.")
                 }
                 Section {
