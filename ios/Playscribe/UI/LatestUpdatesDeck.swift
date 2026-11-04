@@ -241,7 +241,9 @@ struct WideDeckCard: View {
                     Text(card.game.name).font(PlayscribeFont.title2.bold())
                         .foregroundStyle(PlayscribeColor.textPrimary).lineLimit(2)
                     Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
-                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)).lineLimit(1)
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9))
+                        // Two lines, never an ellipsis mid-sentence (Iris, hero-wide-layouts).
+                        .lineLimit(2).fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(16)
                 .frame(width: g.size.width * 0.55, alignment: .leading)
