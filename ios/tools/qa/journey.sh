@@ -7,7 +7,7 @@ here=${0:A:h}
 source $here/poselib.sh
 run() { xcodebuild -project $here/../../Playscribe.xcodeproj -scheme PlayscribeUI -destination "platform=iOS Simulator,id=$dev" \
   -derivedDataPath ~/Library/Developer/Xcode/DerivedData/Playscribe-cli test-without-building -only-testing:PlayscribeUITests/JourneyTests/$1 \
-  -resultBundlePath $out/$1.xcresult > $out/$1.log 2>&1; if grep -q '\*\* TEST SUCCEEDED' $out/$1.log; then echo "PASS $1"; else echo "FAIL $1"; grep "error:" $out/$1.log | sed 's/.*error: /  /' | head -3; fi; }
+  -resultBundlePath $out/$1.xcresult > $out/$1.log 2>&1; if grep -qE '\*\* TEST (EXECUTE )?SUCCEEDED' $out/$1.log; then echo "PASS $1"; else echo "FAIL $1"; grep "error:" $out/$1.log | sed 's/.*error: /  /' | head -3; fi; }
 set_pose closed
 xcrun simctl io $dev recordVideo --display=LCD --force $out/journey-closed.mov >/dev/null 2>&1 &
 run testClosedToOpenKeepsPatch14 &
@@ -15,6 +15,7 @@ tp=$!
 sleep 60
 pkill -INT -f recordVideo; sleep 2
 set_pose open
-xcrun simctl io $dev recordVideo --display=LCD-1 --force $out/journey-open.mov >/dev/null 2>&1 &
+sleep 3
+xcrun simctl io $dev recordVideo --display=$(panel) --force $out/journey-open.mov >/dev/null 2>&1 &
 wait $tp
 pkill -INT -f recordVideo; sleep 2
