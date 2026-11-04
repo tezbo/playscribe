@@ -119,10 +119,10 @@ struct GalleryEmpty: View {
             Text("You can find trailers and screenshots elsewhere.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             FlowLayout(spacing: 24) {
                 if let url = links?.official {
-                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                 }
                 if let url = search {
-                    Link(destination: url) { Label("Find trailers online", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    Link(destination: url) { Label("Find trailers online", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                 }
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.accent)

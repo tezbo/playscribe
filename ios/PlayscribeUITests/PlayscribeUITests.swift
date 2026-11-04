@@ -595,12 +595,18 @@ final class Release050Tests: XCTestCase {
         var tries = 0
         while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
         XCTAssertTrue(toggle.exists, "Settings has a Quiet hours switch")
-        XCTAssertEqual(toggle.value as? String, "0", "off by default")
+        XCTAssertEqual(toggle.value as? String, "off", "off by default (the switch speaks its own value)")
         XCTAssertGreaterThanOrEqual(toggle.frame.height, 44 - 1)
         toggle.tap()
-        XCTAssertTrue(app.staticTexts["From"].waitForExistence(timeout: 3), "From row appears")
-        XCTAssertTrue(app.staticTexts["Until"].exists, "Until row appears")
-        XCTAssertTrue(app.staticTexts["Alerts arrive silently during these hours."].exists, "footer")
+        // From and Until are date pickers (their label is the title), so match any element, not only static text.
+        func any(_ prefix: String) -> XCUIElement {
+            app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH %@", prefix)).firstMatch
+        }
+        XCTAssertTrue(any("From").waitForExistence(timeout: 3), "From row appears")
+        XCTAssertTrue(any("Until").exists, "Until row appears")
+        var tries2 = 0
+        while !any("Alerts arrive silently").exists && tries2 < 4 { app.swipeUp(); tries2 += 1 }
+        XCTAssertTrue(any("Alerts arrive silently").exists, "footer")
         if isTabletop(app) { XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: switch in the lower half") }
         app.terminate()
     }

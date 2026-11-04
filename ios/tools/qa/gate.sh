@@ -46,7 +46,10 @@ run() {  # run <label> <only-testing…>
     "$@" -resultBundlePath $out/$label.xcresult > $out/$label.log 2>&1
   local r=$(grep -E '\*\* TEST (SUCCEEDED|FAILED)' $out/$label.log)
   note "$label: ${r:-NO RESULT}"
-  grep -E "error:" $out/$label.log | sed 's/.*error: -\[/  [/' | head -8 | tee -a $sum
+  # Every error, never a capped list (the old head -8 hid most of the e869273 failures), then the failing-test count.
+  grep -E "error:" $out/$label.log | sed 's/.*error: -\[/  [/' | tee -a $sum
+  note "$label: $(grep -E "^Test Case .* failed" $out/$label.log | sort -u | wc -l | tr -d ' ') failing test(s)"
+  grep -E "^Test Case .* failed" $out/$label.log | sort -u | sed 's/^Test Case .-\[/  FAILED [/;s/. failed.*//' | tee -a $sum
   [[ $r == *SUCCEEDED* ]]
 }
 verify_pose() {  # verify_pose <pose>: panel and orientation must match, or the run is void.
