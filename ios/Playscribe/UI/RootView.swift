@@ -297,6 +297,7 @@ struct LowerMessages: View {
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()
+                .accessibilityIdentifier("newOnPS5Pill")
                 .gesture(DragGesture(minimumDistance: 20).onEnded { _ in model.pill = nil })
                 .accessibilityAction(named: "Dismiss") { model.pill = nil }
                 .transition(.move(edge: .bottom).combined(with: .opacity))

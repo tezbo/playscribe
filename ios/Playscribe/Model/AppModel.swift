@@ -541,6 +541,7 @@ final class AppModel {
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
         case "one-update": resetToOneUpdateDemo()
+        case "pill": holdQAPill()
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
             Task {
@@ -742,6 +743,22 @@ final class AppModel {
         data = PersistedState(collection: fixtures.seedCollection)
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
+    }
+
+    /// QA (INTERNAL, `-qaRoute pill`): hold the "New on PS5" pill on screen (no 4 s timeout) so a swipe-dismiss
+    /// can be tested. Uses the newest On PS5 release in the collection. Nothing user-facing changes.
+    func holdQAPill() {
+        var newest: Release?
+        var gameID = ""
+        for entry in data.collection {
+            for r in releases(entry.gameID) where r.ps5State == .onPS5 {
+                if let n = newest, n.ps5Date >= r.ps5Date { continue }
+                newest = r
+                gameID = entry.gameID
+            }
+        }
+        guard let r = newest else { return }
+        showPill(gameID: gameID, releaseID: r.id, after: 3600)
     }
 
     /// QA and tests: the full demo library with exactly one fresh, unread On PS5 update (so the Library
