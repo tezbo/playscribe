@@ -306,7 +306,7 @@ struct Facts: View {
             if let size = p?.sizeBytes {
                 row("Download", HStack(spacing: 6) {
                     Text(ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal))
-                    if size.verification == .reported { Tag(text: "Reported") }
+                    if size.verification == .reported { VerificationTag(kind: .reported) }
                 })
             } else if !r.isPS5Listed, let size = r.platforms.first(where: { $0.platform == .pc })?.sizeBytes {
                 row("Download", Text("\(ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal)) on PC"))

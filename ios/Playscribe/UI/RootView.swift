@@ -24,7 +24,7 @@ struct LowerHalfPanel: View {
     var duo: DuoContext
     var fold: CGRect
 
-    private var open: Bool { model.addSheetOpen || model.settingsOpen || model.trailer != nil || model.linksSheetOpen }
+    private var open: Bool { model.addSheetOpen || model.settingsOpen || model.trailer != nil || model.linksSheetOpen || model.tagExplainer != nil }
 
     var body: some View {
         if open {
@@ -37,8 +37,9 @@ struct LowerHalfPanel: View {
                     else if model.settingsOpen { SettingsView() }
                     else if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
                     else if model.linksSheetOpen, let id = model.nav.gameID { LinksSheet(gameID: id) }
+                    else if let k = model.tagExplainer { VerificationExplainer(kind: k) }
                 }
-                .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil; model.linksSheetOpen = false })
+                .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil; model.linksSheetOpen = false; model.tagExplainer = nil })
                 .environment(\.railWidth, 0)
                 .frame(width: duo.size.width, height: height)
                 .background(Color.ink0)
@@ -69,11 +70,11 @@ struct RootView: View {
             ZStack {
                 TabRoot(duo: duo)
                     .environment(\.railWidth, duo.pose == .tabletop ? TabletopRail.width : 0)
-                    .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.player == nil)
+                    .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.tagExplainer == nil && model.player == nil)
 
                 if duo.pose == .tabletop, let fold = duo.division {
                     TabletopRail(duo: duo)
-                        .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.player == nil)
+                        .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.tagExplainer == nil && model.player == nil)
                         .frame(width: TabletopRail.width, height: max(0, duo.size.height - fold.maxY))
                         .position(x: duo.size.width - TabletopRail.width / 2, y: fold.maxY + (duo.size.height - fold.maxY) / 2)
                 }
@@ -114,6 +115,9 @@ struct RootView: View {
         }
         .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.settingsOpen = false } })) {
             SettingsView()
+        }
+        .sheet(item: Binding(get: { model.livePose == .tabletop ? nil : model.tagExplainer }, set: { if $0 == nil && model.livePose != .tabletop { model.tagExplainer = nil } })) { kind in
+            VerificationExplainer(kind: kind).presentationDetents([.medium])
         }
         .fullScreenCover(isPresented: Binding(get: { model.player != nil }, set: { if !$0 { model.player = nil } })) {
             if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID) }

@@ -157,6 +157,8 @@ final class AppModel {
     var deckSelection: String?
     /// Tabletop's Links sheet (J-11).
     var linksSheetOpen = false
+    /// The verification tag whose explainer is open (0.5.0).
+    var tagExplainer: Verification?
     var libraryTab: LibraryTab = .playing
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
@@ -504,7 +506,7 @@ final class AppModel {
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
         case "links" where parts.count == 1: openGame(parts[0]); linksSheetOpen = true
-        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false
+        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
             if let n = Int(parts[0]) {
