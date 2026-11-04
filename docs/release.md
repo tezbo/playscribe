@@ -29,13 +29,16 @@ the widget is `<id>.widget` and the App Group is `group.<id>` (read at runtime f
 The release lane overrides it with the App Store Connect app's id (`tezbo.Playscribe`), so TestFlight builds use
 `tezbo.Playscribe`, `tezbo.Playscribe.widget` and `group.tezbo.Playscribe`.
 
-Registration (needed once, before the first build with the widget). With `-allowProvisioningUpdates` and the
-Admin API key, Xcode usually creates the widget App ID and profiles itself, but an App Group can only be made by
-hand, so assume these steps:
+Registration. Automatic signing is the first plan: the first 0.5.0 release lane run (with `-allowProvisioningUpdates`
+and the Admin API key) is expected to create the widget App ID `tezbo.Playscribe.widget` and the App Group
+`group.tezbo.Playscribe` itself, and to add App Groups to `tezbo.Playscribe`. This is unverified until the lane runs.
+The existing app record and identifier `tezbo.Playscribe` need no re-registration.
+
+Fallback, only if the lane fails with "doesn't include the App Groups capability" or similar: Terry registers by hand.
 1. developer.apple.com, Certificates, Identifiers & Profiles, Identifiers, App Groups, add `group.tezbo.Playscribe`.
 2. Identifiers, `tezbo.Playscribe`, enable App Groups, select that group, Save.
 3. Identifiers, add an App ID `tezbo.Playscribe.widget` (Explicit, no capabilities but App Groups with the same group).
-4. Re-run the release lane. If it fails with "doesn't include the App Groups capability", step 2 or 3 is missing.
+4. Re-run the release lane. If it still fails with the same message, step 2 or 3 is missing.
 No App Store Connect app record is needed for the widget.
 
 ## Roadmap
