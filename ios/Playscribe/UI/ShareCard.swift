@@ -77,6 +77,7 @@ struct ShareUpdateButton: View {
                 }
             } else if failed {
                 Button("Retry") { render() }.font(PlayscribeFont.footnote).frame(minHeight: 44)
+                    .accessibilityHint("Couldn't make the card. Try again.")
             } else {
                 ProgressView().frame(width: 44, height: 44).accessibilityLabel("Making your card")
             }

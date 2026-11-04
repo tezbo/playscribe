@@ -9,6 +9,8 @@ struct CameraAddView: View {
     @Environment(AppModel.self) private var model
     var find: ([String]) -> Void
     var typeInstead: () -> Void
+    /// Off state (offline/empty/error copy 8): "From a photo" beside "Type it".
+    var photoInstead: (() -> Void)?
     @State private var seen: [String] = []
     @State private var access: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
 
@@ -80,6 +82,7 @@ struct CameraAddView: View {
                     .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
             }
             Button("Type it", action: typeInstead).hitTarget()
+            if supported, let photoInstead { Button("From a photo", action: photoInstead).hitTarget() }
             if supported {
                 Button("Open Settings") {
                     if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }

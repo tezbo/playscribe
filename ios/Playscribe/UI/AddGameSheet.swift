@@ -32,7 +32,7 @@ struct AddGameSheet: View {
                     switch method {
                     case .typeIt: list
                     case .sayIt: SayItView(find: { showMatches(AddMatcher.titles(from: $0)) }, typeInstead: { self.method = .typeIt })
-                    case .camera: CameraAddView(find: { showMatches($0, sureOnly: true) }, typeInstead: { self.method = .typeIt })
+                    case .camera: CameraAddView(find: { showMatches($0, sureOnly: true) }, typeInstead: { self.method = .typeIt }, photoInstead: { self.method = .photo })
                     case .photo: PhotoAddView(find: { showMatches($0, sureOnly: true) }, typeInstead: { self.method = .typeIt })
                     default: list
                     }
