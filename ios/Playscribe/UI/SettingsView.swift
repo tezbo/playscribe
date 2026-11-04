@@ -66,12 +66,15 @@ struct SettingsView: View {
                     }
                     Toggle("Pause all", isOn: $model.data.pauseAll)
                     quietHoursRows
-                    // PS Plus: a reminder in the last three days a month's games can be claimed.
-                    Toggle("PS Plus games leaving soon", isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true }))
-                        .accessibilityHint("A reminder in the last three days before this month's PS Plus games leave")
-                        .accessibilityIdentifier("plusLeavingSoon")
-                        .onChange(of: model.data.plusLeavingSoonOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
-                        .onChange(of: model.data.pauseAll) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
+                    // Shown only while a PS Plus month exists, the same condition as the Library card.
+                    if PlusLogic.current(PlusStore.shared.months) != nil {
+                        // PS Plus: a reminder in the last three days a month's games can be claimed.
+                        Toggle("PS Plus games leaving soon", isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true }))
+                            .accessibilityHint("A reminder in the last three days before this month's PS Plus games leave")
+                            .accessibilityIdentifier("plusLeavingSoon")
+                            .onChange(of: model.data.plusLeavingSoonOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
+                            .onChange(of: model.data.pauseAll) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
+                    }
                     let overrides = model.notifyOverrides
                     if !overrides.isEmpty {
                         NavigationLink("\(overrides.count) game\(overrides.count == 1 ? " has its" : "s have their") own setting") {

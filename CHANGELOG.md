@@ -18,7 +18,6 @@ so write it for testers. Release steps are in docs/release.md.
 - Add your games by typing, speaking, a photo or the camera. Playscribe asks before using the microphone or camera, and always offers Type it.
 - A first-run welcome walks you through adding your games; Skip for now takes you to your Library.
 - Alerts say what changed, not just that something did. Quiet hours (Settings) deliver alerts silently overnight, and a tap on a verification tag explains it.
-- PS Plus: this month's games on your Library, a "last chance" in the final three days, and an optional "PS Plus games leaving soon" reminder in Settings.
 - Settings has its own cog. Search has a Back button. A game with no pictures says so and points elsewhere, bookmarking offers "Open My book", and a game page can check for updates.
 - Tabletop: Playing, Upcoming and Settings sit on the lower rail, and the A to Z search strip is in the lower half.
 
@@ -33,7 +32,6 @@ Check on the Duo:
 - Share an update: a picture card with the game and update appears in the share sheet.
 - Add a game by speaking, then by photo, then by camera: each asks permission first and each offers Type it.
 - Follow a known issue on a game page: it appears under Following. (The alert itself only arrives when an update fixes it.)
-- PS Plus on the Library shows this month's games with a claim-by date; in its last three days the heading says last chance.
 
 ## 0.2.0
 
