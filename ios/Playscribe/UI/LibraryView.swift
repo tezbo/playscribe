@@ -510,6 +510,7 @@ struct GameRow: View {
             .buttonStyle(.plain)
             .tappableFrame()
             .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.15) : .clear)
+            .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
             GameMenuButton(gameID: row.id)
         }
         .accessibilityElement(children: .contain)
@@ -585,6 +586,7 @@ struct GameTile: View {
                             in: RoundedRectangle(cornerRadius: 12, style: .continuous))
         }
         .buttonStyle(.plain)
+        .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
         .contextMenu { ActionMenuContent(sections: model.statusMenu(row.id)) }
         .accessibilityElement(children: .ignore)
         // The accessibility frame runs 8 pt wider than the cover; the id carries the cover's real
@@ -845,4 +847,54 @@ struct FlowLayout: Layout {
         }
         return (points, CGSize(width: maxX, height: y + row))
     }
+}
+
+/// A newly added game squeeze-pops into the library (handoff/0.5.0-scan-haptics.md, Add pop):
+/// 0.6 scale and clear, spring to size, opacity easeOut 0.15 s, 70 ms stagger capped at 8 tiles,
+/// a 3 pt ember ring that fades in 0.3 s, one light impact. Reduce Motion: a 0.2 s fade only.
+private struct SqueezePop: ViewModifier {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(AppModel.self) private var model
+    var id: String
+    @State private var settled: Bool
+    @State private var ring: Bool
+
+    init(id: String, isNew: Bool) { self.id = id; _settled = State(initialValue: !isNew); _ring = State(initialValue: false) }
+
+    func body(content: Content) -> some View {
+        content
+            .overlay {
+                if !reduceMotion {
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .strokeBorder(PlayscribeColor.accent, lineWidth: 3)
+                        .opacity(ring ? 1 : 0)
+                        .allowsHitTesting(false)
+                        .accessibilityHidden(true)
+                }
+            }
+            .scaleEffect(reduceMotion || settled ? 1 : 0.6)
+            .opacity(settled ? 1 : 0)
+            .onAppear {
+                guard !settled else { return }
+                let i = min(model.addedOrder.firstIndex(of: id) ?? 0, 7)
+                let delay = Double(i) * 0.07
+                if reduceMotion {
+                    withAnimation(.easeInOut(duration: 0.2).delay(delay)) { settled = true }
+                    return
+                }
+                withAnimation(.spring(response: 0.38, dampingFraction: 0.58).delay(delay)) { settled = true }
+                ring = true
+                withAnimation(.easeOut(duration: 0.3).delay(delay + 0.05)) { ring = false }
+                if i < 4 {
+                    Task {
+                        try? await Task.sleep(for: .seconds(delay + 0.12))
+                        Haptics.pop(first: i == 0)
+                    }
+                }
+            }
+    }
+}
+
+extension View {
+    func squeezePop(id: String, isNew: Bool) -> some View { modifier(SqueezePop(id: id, isNew: isNew)) }
 }

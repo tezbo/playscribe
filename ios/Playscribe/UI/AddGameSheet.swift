@@ -217,7 +217,6 @@ struct AddGameSheet: View {
 
     private func addPicked() {
         model.addGames(pickOrder.compactMap { picked[$0] }, status: status)
-        Haptics.success()
         dismiss()
     }
 }

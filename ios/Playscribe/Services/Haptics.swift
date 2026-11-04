@@ -33,6 +33,13 @@ enum Haptics {
         guard enabled else { return }
         UISelectionFeedbackGenerator().selectionChanged()
     }
+    private static var lastPop = Date.distantPast
+    /// Add pop: light at the first tile's peak, soft for later tiles at most every 120 ms.
+    static func pop(first: Bool) {
+        guard enabled, Date.now.timeIntervalSince(lastPop) >= (first ? 0 : 0.12) else { return }
+        lastPop = .now
+        UIImpactFeedbackGenerator(style: first ? .light : .soft).impactOccurred()
+    }
     static func success() {
         guard enabled else { return }
         UINotificationFeedbackGenerator().notificationOccurred(.success)

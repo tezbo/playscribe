@@ -64,6 +64,8 @@ struct SettingsView: View {
                     }
                     Toggle("Pause all", isOn: $model.data.pauseAll)
                     quietHoursRows
+                    Toggle("Sounds", isOn: Binding(get: { model.data.soundsOff != true }, set: { model.data.soundsOff = $0 ? nil : true }))
+                        .accessibilityIdentifier("sounds")
                     let overrides = model.notifyOverrides
                     if !overrides.isEmpty {
                         NavigationLink("\(overrides.count) game\(overrides.count == 1 ? " has its" : "s have their") own setting") {
