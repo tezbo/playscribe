@@ -9,23 +9,47 @@ struct ReaderSection: Identifiable, Hashable {
     var body: String
 }
 
-/// A title for a key change that has no "Heading: text" split: its first sentence, or its first six
-/// words, cut at a word boundary with an ellipsis. Never a counter such as "Change 2".
+/// A key change without a "Heading: text" split, cleaned for the reader (Iris, 0.2.0 spec): leading
+/// bullets and numbers are stripped; a "Fixed:" or "Added:" style prefix becomes the group (it feeds
+/// the New / Fixed / Balance grouping in 0.5.0); the title is the first sentence, at most seven
+/// words, cut at a word boundary with an ellipsis only when something was cut. Never "Change N".
 enum ReaderTitle {
-    static func derived(from text: String, maxWords: Int = 6) -> String {
-        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return "What changed" }
-        var sentence = trimmed
-        if let end = trimmed.firstIndex(where: { ".!?".contains($0) }) {
-            let next = trimmed.index(after: end)
-            if next == trimmed.endIndex || trimmed[next] == " " { sentence = String(trimmed[..<end]) }
+    struct Parsed: Equatable { var group: String?; var title: String; var body: String }
+
+    static let groups = ["new", "added", "add", "fixed", "fix", "balance", "balanced", "changed", "improved", "updated", "other"]
+
+    static func parse(_ text: String, maxWords: Int = 7) -> Parsed {
+        var t = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        // Leading bullets, then a list number such as "3." or "3)".
+        t = String(t.drop { "•-–—*· \t".contains($0) })
+        if let r = t.range(of: #"^\d+[.)]\s+"#, options: .regularExpression) { t.removeSubrange(r) }
+        // A group prefix such as "Fixed:".
+        var group: String?
+        if let colon = t.firstIndex(of: ":") {
+            let head = t[..<colon].trimmingCharacters(in: .whitespaces)
+            if groups.contains(head.lowercased()) {
+                group = head.prefix(1).uppercased() + head.dropFirst().lowercased()
+                t = String(t[t.index(after: colon)...]).trimmingCharacters(in: .whitespaces)
+            }
+        }
+        guard !t.isEmpty else { return Parsed(group: group, title: "What changed", body: "") }
+        let body = t.prefix(1).uppercased() + t.dropFirst()
+        // First sentence: a full stop, "!" or "?" followed by a space or the end ("1.1" is not one).
+        var sentence = Substring(t)
+        var i = t.startIndex
+        while i < t.endIndex {
+            if ".!?".contains(t[i]) {
+                let next = t.index(after: i)
+                if next == t.endIndex || t[next] == " " { sentence = t[..<i]; break }
+            }
+            i = t.index(after: i)
         }
         let words = sentence.split(separator: " ")
         let cut = words.count > maxWords
         let head = words.prefix(maxWords).joined(separator: " ")
             .trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-–—"))
         let title = head.prefix(1).uppercased() + head.dropFirst()
-        return cut ? title + "…" : title
+        return Parsed(group: group, title: cut ? title + "…" : title, body: body)
     }
 }
 
@@ -42,8 +66,13 @@ extension AppModel {
         var out = [ReaderSection(id: "overview", title: r.headline ?? r.displayName, body: r.summary ?? "")]
         for (i, k) in (r.keyChanges ?? []).enumerated() {
             let parts = k.split(separator: ":", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
-            out.append(ReaderSection(id: "key-\(i)", title: parts.count == 2 ? parts[0] : ReaderTitle.derived(from: k),
-                                     body: parts.count == 2 ? parts[1].prefix(1).uppercased() + parts[1].dropFirst() : k))
+            let parsed = ReaderTitle.parse(k)
+            if parsed.group == nil, parts.count == 2 {
+                // "Heading: text": the heading is the title.
+                out.append(ReaderSection(id: "key-\(i)", title: parts[0], body: parts[1].prefix(1).uppercased() + parts[1].dropFirst()))
+            } else {
+                out.append(ReaderSection(id: "key-\(i)", title: parsed.title, body: parsed.body))
+            }
         }
         if r.noteCount > 0 {
             let first = r.notes.flatMap(\.items).filter { $0.spoiler != true }.prefix(3).map(\.text)
