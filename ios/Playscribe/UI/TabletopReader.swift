@@ -9,6 +9,26 @@ struct ReaderSection: Identifiable, Hashable {
     var body: String
 }
 
+/// A title for a key change that has no "Heading: text" split: its first sentence, or its first six
+/// words, cut at a word boundary with an ellipsis. Never a counter such as "Change 2".
+enum ReaderTitle {
+    static func derived(from text: String, maxWords: Int = 6) -> String {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return "What changed" }
+        var sentence = trimmed
+        if let end = trimmed.firstIndex(where: { ".!?".contains($0) }) {
+            let next = trimmed.index(after: end)
+            if next == trimmed.endIndex || trimmed[next] == " " { sentence = String(trimmed[..<end]) }
+        }
+        let words = sentence.split(separator: " ")
+        let cut = words.count > maxWords
+        let head = words.prefix(maxWords).joined(separator: " ")
+            .trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-–—"))
+        let title = head.prefix(1).uppercased() + head.dropFirst()
+        return cut ? title + "…" : title
+    }
+}
+
 extension AppModel {
     /// The release the Reader shows: the focused one, else the newest On PS5 release.
     func readerRelease(_ gameID: String) -> Release? {
@@ -22,7 +42,7 @@ extension AppModel {
         var out = [ReaderSection(id: "overview", title: r.headline ?? r.displayName, body: r.summary ?? "")]
         for (i, k) in (r.keyChanges ?? []).enumerated() {
             let parts = k.split(separator: ":", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
-            out.append(ReaderSection(id: "key-\(i)", title: parts.count == 2 ? parts[0] : "Change \(i + 1)",
+            out.append(ReaderSection(id: "key-\(i)", title: parts.count == 2 ? parts[0] : ReaderTitle.derived(from: k),
                                      body: parts.count == 2 ? parts[1].prefix(1).uppercased() + parts[1].dropFirst() : k))
         }
         if r.noteCount > 0 {
