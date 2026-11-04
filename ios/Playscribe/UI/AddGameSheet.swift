@@ -45,7 +45,11 @@ struct AddGameSheet: View {
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button { dismiss() } label: { Label("Close", systemImage: "xmark") }
+                    if duo.pose == .tabletop {
+                        Button("Done") { dismiss() }.frame(minHeight: 44).accessibilityIdentifier("close")
+                    } else {
+                        Button { dismiss() } label: { Label("Close", systemImage: "xmark") }
+                    }
                 }
                 if method != nil && !custom {
                     ToolbarItem(placement: .navigation) {
@@ -61,13 +65,14 @@ struct AddGameSheet: View {
                         Text("Add \(picked.count) game\(picked.count == 1 ? "" : "s")")
                             .font(PlayscribeFont.headline)
                             .foregroundStyle(PlayscribeColor.onAccent)
-                            .frame(maxWidth: .infinity, minHeight: 50)
+                            .frame(maxWidth: .infinity, minHeight: 56)
                             .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
                     .buttonStyle(.plain)
                     .accessibilityIdentifier("addPicked")
                     .padding(.horizontal, 16)
-                    .padding(.vertical, 10)
+                    // Tabletop (Iris): 56 pt button in a 72 pt strip pinned to the bottom of the panel.
+                    .frame(minHeight: 72)
                     .background(.bar)
                     .tappableFrame()
                 }
@@ -219,6 +224,7 @@ struct AddRow: View {
                     .foregroundStyle(added ? .secondary : PlayscribeColor.accent)
                     .frame(width: 44, height: 44)
             }
+            .frame(minHeight: 64)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
