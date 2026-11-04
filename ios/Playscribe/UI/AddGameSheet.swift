@@ -289,15 +289,28 @@ struct OnboardingView: View {
             }
             .arrangementViewStyle(.split)
         } else {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
-                    OnboardingActions(pageWidth: pageWidth).padding(.horizontal, 16)
+            HStack(alignment: .top, spacing: 0) {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+                        OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
+                        OnboardingActions(pageWidth: pageWidth, bookLeft: pageWidth != nil).padding(.horizontal, 16)
+                    }
+                    .padding(.bottom, 24)
                 }
-                .padding(.bottom, 24)
                 // Book: one page wide, so nothing crosses the fold (0.2.0 gate, first-run Library).
-                .frame(width: pageWidth.map { $0 + 32 }, alignment: .leading)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(width: pageWidth.map { $0 + 32 })
+                if let fold = duo.division, duo.pose == .book {
+                    // The right page is never blank (Iris, book-first-run): Popular on PS5 as a grid,
+                    // 24 pt clear of the hinge.
+                    let start = fold.maxX + 24
+                    let width = max(0, duo.size.width - railWidth - start - 16)
+                    OnboardingRightPage(width: width)
+                        .frame(width: width)
+                        .padding(.leading, max(0, start - (fold.minX - 24 - 32 + 32)))
+                    Spacer(minLength: 0)
+                } else {
+                    Spacer(minLength: 0)
+                }
             }
             .overlay(alignment: .topLeading) {
                 if FoldAuditSwitch.enabled {
@@ -334,6 +347,8 @@ struct OnboardingActions: View {
     @Environment(\.duo) private var duo
     /// Book: the width of one page; only whole covers that fit are shown.
     var pageWidth: CGFloat?
+    /// Book left page: the covers and the footer move to the right page.
+    var bookLeft = false
 
     var body: some View {
         if !(model.data.welcomeDone ?? false) {
@@ -389,9 +404,10 @@ struct OnboardingActions: View {
             }
             .buttonStyle(.plain)
             .tappableFrame()
-            Text("Popular on PS5").font(PlayscribeFont.headline)
+            if !bookLeft { Text("Popular on PS5").font(PlayscribeFont.headline) }
             let size: CGFloat = duo.pose == .closed ? 96 : 108
             let fit = pageWidth.map { max(1, Int(($0 + 10) / (size + 10))) } ?? 6
+            if !bookLeft {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(PS5Index.shared.popular(limit: fit)) { g in
@@ -407,6 +423,37 @@ struct OnboardingActions: View {
             .edgeFade(40)
             Text("PlayStation account import is planned for a later version.")
                 .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+            }
         }
+    }
+}
+
+/// Book first-run, right page: Popular on PS5 as a 3-column grid of 3:4 tiles (10 pt gap), scrolling,
+/// with the account-import line at the foot. Tapping a cover adds it, as the strip does elsewhere.
+struct OnboardingRightPage: View {
+    @Environment(AppModel.self) private var model
+    var width: CGFloat
+
+    var body: some View {
+        let tile = max(40, ((width - 20) / 3).rounded(.down))
+        ScrollView {
+            VStack(alignment: .leading, spacing: 14) {
+                Text("Popular on PS5").font(PlayscribeFont.title3)
+                LazyVGrid(columns: Array(repeating: GridItem(.fixed(tile), spacing: 10, alignment: .top), count: 3), alignment: .leading, spacing: 10) {
+                    ForEach(PS5Index.shared.popular(limit: 18)) { g in
+                        Button { model.addGame(g, status: .owned) } label: {
+                            TileCover(game: g).frame(width: tile, height: (tile * 4 / 3).rounded())
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("Add \(g.name)")
+                        .tappableFrame()
+                    }
+                }
+                Text("PlayStation account import is planned for a later version.")
+                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+            }
+            .padding(.top, 16).padding(.bottom, 24)
+        }
+        .scrollIndicators(.hidden)
     }
 }
