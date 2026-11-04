@@ -6,18 +6,20 @@ import VisionKit
 /// Titles collect as they are seen; "Find these games" hands them to the shared results list.
 /// Camera access is asked for only when this row is chosen, after saying why.
 struct CameraAddView: View {
+    @Environment(AppModel.self) private var model
     var find: ([String]) -> Void
     var typeInstead: () -> Void
     @State private var seen: [String] = []
     @State private var access: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
 
-    private var supported: Bool { DataScannerViewController.isSupported && DataScannerViewController.isAvailable }
+    private var simulated: Bool { model.simulatedScan }
+    private var supported: Bool { simulated || (DataScannerViewController.isSupported && DataScannerViewController.isAvailable) }
 
     var body: some View {
         VStack(spacing: 12) {
-            if !supported || access == .denied || access == .restricted {
+            if !supported || (!simulated && (access == .denied || access == .restricted)) {
                 unavailable
-            } else if access == .notDetermined {
+            } else if !simulated && access == .notDetermined {
                 VStack(spacing: 12) {
                     Image(systemName: "camera.viewfinder").font(.system(size: 44)).foregroundStyle(PlayscribeColor.accent)
                         .accessibilityHidden(true)
@@ -38,11 +40,23 @@ struct CameraAddView: View {
                 }
                 .padding(16)
             } else {
-                ScannerView { seen = $0 }
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .aspectRatio(4 / 3, contentMode: .fit)
-                    .padding(.horizontal, 16)
-                    .accessibilityLabel("Camera view")
+                // J-20b: the preview takes the height that is left (4:3 at most), so the hint and the
+                // button below always fit the panel, whatever the size class or text size.
+                Group {
+                    if simulated {
+                        // QA route add/scan: simulators have no camera, so a fixed feed stands in.
+                        RoundedRectangle(cornerRadius: 16, style: .continuous).fill(Color.ink1)
+                            .overlay { Image(systemName: "camera.viewfinder").font(.largeTitle).foregroundStyle(.secondary) }
+                            .onAppear { seen = ["Hades", "Celeste", "Blue Prince"] }
+                    } else {
+                        ScannerView { seen = $0 }.clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    }
+                }
+                .aspectRatio(4 / 3, contentMode: .fit)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(minHeight: 96)
+                .padding(.horizontal, 16)
+                .accessibilityLabel("Camera view")
                 Text(seen.isEmpty ? "Looking for titles" : "Seen \(seen.count) line\(seen.count == 1 ? "" : "s") of text")
                     .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                 Button { find(seen) } label: {
@@ -50,8 +64,7 @@ struct CameraAddView: View {
                         .frame(maxWidth: .infinity, minHeight: 52)
                         .background(PlayscribeColor.accent.opacity(seen.isEmpty ? 0.4 : 1), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 }
-                .buttonStyle(.plain).disabled(seen.isEmpty).tappableFrame().padding(.horizontal, 16)
-                Spacer(minLength: 0)
+                .buttonStyle(.plain).disabled(seen.isEmpty).tappableFrame().padding(.horizontal, 16).padding(.bottom, 8)
             }
         }
         .padding(.top, 8)
