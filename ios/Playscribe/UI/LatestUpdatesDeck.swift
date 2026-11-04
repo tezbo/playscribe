@@ -56,7 +56,12 @@ struct LatestUpdatesDeck: View {
     var cards: [DeckCard]
     /// Open portrait: the deck is the left column beside the Also new panel, one card at a time.
     var compact = false
+    /// Compact only: the whole deck (card, caption, page edge) is at most this tall (Iris: 38% of the height).
+    var maxHeight: CGFloat = 0
     @State private var current: String?
+
+    /// The page edge (44 pt leaves) and the 8 pt gap above it; the card takes the rest of maxHeight.
+    private static let pageEdgeHeight: CGFloat = 52
 
     private var perScreen: CGFloat {
         if compact { return 1 }
@@ -72,13 +77,33 @@ struct LatestUpdatesDeck: View {
     }
 
     var body: some View {
+        if compact {
+            // Explicit geometry: every card is exactly the column wide, so a swipe snaps card to card, and the
+            // art is capped so the deck never grows past maxHeight (the 727 pt card, 20d77ea).
+            GeometryReader { g in
+                let art = max(96, maxHeight - Self.pageEdgeHeight)
+                deck(cardWidth: g.size.width, artHeight: art)
+            }
+            .frame(height: maxHeight > 0 ? maxHeight : nil)
+        } else {
+            deck(cardWidth: nil, artHeight: nil)
+        }
+    }
+
+    private func deck(cardWidth: CGFloat?, artHeight: CGFloat?) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 12) {
                     ForEach(cards) { card in
-                        DeckCardView(card: card)
-                            .containerRelativeFrame(.horizontal, count: Int((perScreen * 100).rounded()), span: 100, spacing: 12)
-                            .id(card.id)
+                        Group {
+                            if let w = cardWidth {
+                                DeckCardView(card: card, artHeight: artHeight).frame(width: w)
+                            } else {
+                                DeckCardView(card: card)
+                                    .containerRelativeFrame(.horizontal, count: Int((perScreen * 100).rounded()), span: 100, spacing: 12)
+                            }
+                        }
+                        .id(card.id)
                     }
                 }
                 .scrollTargetLayout()
@@ -103,6 +128,8 @@ struct DeckCardView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     var card: DeckCard
+    /// Open portrait: a fixed art height, so the card never outgrows its share of the screen.
+    var artHeight: CGFloat?
 
     /// Closed landscape (container wider than tall): the wide hero card, never a device check.
     private var wide: Bool { duo.pose == .closed && duo.isLandscape }
@@ -119,9 +146,14 @@ struct DeckCardView: View {
                 WideDeckCard(card: card, height: wideHeight)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .contentShape(Rectangle())
+            } else if let h = artHeight {
+                // Open portrait (Iris): art fills the card, caption inside it with 16 pt padding, version pill top leading.
+                CompactDeckCard(card: card, height: h)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .contentShape(Rectangle())
             } else {
             VStack(alignment: .leading, spacing: 8) {
-                DeckCardArt(card: card)
+                DeckCardArt(card: card, height: artHeight)
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? game.name)
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                     .lineLimit(2).fixedSize(horizontal: false, vertical: true)
@@ -146,6 +178,49 @@ struct DeckCardView: View {
     private var label: String {
         if let r = card.release { return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(dateText)" }
         return "\(card.game.name), released \(dateText)"
+    }
+}
+
+/// Open portrait card: fills its height with the key art, caption on a dark fade inside (16 pt padding).
+struct CompactDeckCard: View {
+    var card: DeckCard
+    var height: CGFloat
+    private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
+
+    var body: some View {
+        ZStack(alignment: .bottomLeading) {
+            ArtView(asset: card.game.keyArtAsset, game: card.game)
+            LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.9)], startPoint: .center, endPoint: .bottom)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
+                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).lineLimit(3)
+                HStack(spacing: 8) {
+                    Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
+                    if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
+                }
+                .font(PlayscribeFont.subheadline).lineLimit(1)
+            }
+            .padding(16)
+        }
+        .overlay(alignment: .topLeading) {
+            HStack(spacing: 6) {
+                if let v = card.release?.versionChip { chip(v, filled: false) }
+                if card.unread { chip("New update", filled: true) }
+                if card.release == nil, let d = card.date { chip("Released " + AppModel.tileDay(d), filled: false) }
+            }
+            .padding(12)
+        }
+        .frame(height: height)
+        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
+        .accessibilityHidden(true)
+    }
+
+    private func chip(_ text: String, filled: Bool) -> some View {
+        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+            .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
+            .padding(.horizontal, 8).frame(height: 22)
+            .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
     }
 }
 
@@ -189,12 +264,26 @@ struct WideDeckCard: View {
     }
 }
 
+/// With a height, the art fills the card's width at exactly that height (cropped), else 16:9.
+private struct FixedArtHeight: ViewModifier {
+    var height: CGFloat?
+    func body(content: Content) -> some View {
+        if let h = height {
+            Color.clear.frame(maxWidth: .infinity).frame(height: h)
+                .overlay { content.aspectRatio(nil, contentMode: .fill) }
+                .clipped()
+        } else { content }
+    }
+}
+
 /// The art in the lit frame, with the chips. Display only; the card is the button.
 struct DeckCardArt: View {
     var card: DeckCard
+    var height: CGFloat?
     var body: some View {
         ArtView(asset: card.game.keyArtAsset, game: card.game)
             .aspectRatio(16 / 9, contentMode: .fit)
+            .modifier(FixedArtHeight(height: height))
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
             .overlay(alignment: .topLeading) {

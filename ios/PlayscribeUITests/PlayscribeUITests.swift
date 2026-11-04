@@ -372,7 +372,7 @@ final class LibraryLayoutTests: XCTestCase {
         sleep(4)
         let pose = ReleaseRowTests.pose(app)
         var checked = 0
-        for _ in 0..<6 {
+        for _ in 0..<10 {
             // The accessibility frame of a tile runs past its cover (the cover image's own
             // bounds), so each tile is taken as its laid-out cover: origin and width, 3:4.
             let tiles = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))

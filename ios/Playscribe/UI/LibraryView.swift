@@ -280,12 +280,14 @@ struct LibraryShelf: View {
                     // panel on the right at the same height, listing every update but the deck's front card.
                     let deck = model.latestDeck
                     let front = deck.first { $0.id == model.deckSelection } ?? deck.first
+                    let deckHeight = (duo.size.height * 0.38).rounded()
                     HStack(alignment: .top, spacing: 10) {
-                        LatestUpdatesDeck(cards: deck, compact: true)
+                        LatestUpdatesDeck(cards: deck, compact: true, maxHeight: deckHeight)
                             .frame(width: max(0, (duo.size.width - railWidth - 32 - 10) * 0.46), alignment: .leading)
                         AlsoNewPanel(hero: front?.release)
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     }
+                    .frame(height: deckHeight)
                     .id(poseKey)
                 } else if duo.pose != .tabletop && !heroOnRightPage {
                     let deck = model.latestDeck
@@ -606,7 +608,8 @@ struct AlsoNewPanel: View {
                 if let g = game { CoverView(game: g, cornerRadius: 4).frame(width: 48) }
                 VStack(alignment: .leading, spacing: 1) {
                     Text(game?.name ?? "").font(PlayscribeFont.headline).lineLimit(1)
-                    Text("\(r.displayName), \(age)").font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(1)
+                    Text("\(r.displayName), \(age)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                        .lineLimit(2).minimumScaleFactor(0.85)
                 }
                 Spacer(minLength: 0)
                 Image(systemName: "chevron.right").font(PlayscribeFont.caption).foregroundStyle(.secondary).accessibilityHidden(true)

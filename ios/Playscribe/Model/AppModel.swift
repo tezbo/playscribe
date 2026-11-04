@@ -755,7 +755,8 @@ final class AppModel {
     /// The updates beside the deck in the Library (Open portrait): every update in the deck except the
     /// front card's, newest first, so nothing repeats.
     func alsoNewReleases(excludingRelease id: String?, limit: Int = 6) -> [Release] {
-        Array(latestDeck.compactMap(\.release).filter { $0.id != id }
+        // Updates only: a headline-only post (no version in its name) is News, not an update (Iris, 20d77ea).
+        Array(latestDeck.compactMap(\.release).filter { $0.id != id && $0.versionChip != nil }
             .sorted { $0.ps5Date > $1.ps5Date }
             .prefix(limit))
     }
