@@ -3,7 +3,7 @@ import { test } from 'node:test'
 import { confirmPlatform } from '../src/confirm.ts'
 import { openDb } from '../src/db.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
-import { alertCopy, pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
+import { alertCopy, headlineOf, pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
 import * as store from '../src/store.ts'
 import { getRelease, newsOf, promoteAnnounced } from '../src/store.ts'
@@ -141,7 +141,7 @@ test('an official PS5 post is pending until a person confirms; push fires once',
   assert.equal(first.sent, 2)
   assert.deepEqual(sent.map((s) => s.token).sort(), ['a'.repeat(64), 'b'.repeat(64)])
   assert.equal(sent[0]!.payload.releaseId, id)
-  assert.match(sent[0]!.payload.aps.alert.body, /^Update 01\.006\.000/)
+  assert.match(sent[0]!.payload.aps.alert.body, /^Update 1\.6/)
   assert.equal(sent[0]!.payload.aps['interruption-level'], 'active')
   assert.equal(getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!.alert?.style, 'standard')
   assert.equal((await pushPs5Release(db, apns, id, { maxAgeHours: 72 })).skipped, 'alreadyPushed')
@@ -331,4 +331,16 @@ test('richer alerts (r050): counts in the title, headline body, counts fallback'
   assert.equal(alertCopy('Dawnwalker', 'Update 1.1', d).body, '3 new, 12 fixed, 2 PS5-only.')
   assert.deepEqual(alertCopy('Dawnwalker', 'Update 1.1', { new: 1, fixed: 0, balance: 0, other: 4, ps5: 0 }), { title: 'Dawnwalker: 1 new', body: '1 new.' })
   assert.deepEqual(alertCopy('Dawnwalker', 'Update 1.1', { new: 0, fixed: 0, balance: 0, other: 4, ps5: 0 }), { title: 'Dawnwalker', body: 'A new update is out' })
+})
+
+test('headline: text before a colon, 60 characters at a word boundary, ellipsis only when cut', () => {
+  assert.equal(headlineOf('Added photo mode'), 'Added photo mode')
+  assert.equal(headlineOf('Photo mode: capture every fight in the dark forest'), 'Photo mode')
+  const long = 'Added a brand new endless survival mode with daily challenges and leaderboards for every player'
+  const h = headlineOf(long)!
+  assert.ok(h.length <= 60 && h.endsWith('…') && !h.slice(0, -1).endsWith(' '))
+  assert.ok(long.startsWith(h.slice(0, -1)))
+  assert.equal(headlineOf('x'.repeat(59)), 'x'.repeat(59))
+  assert.equal(headlineOf(undefined), null)
+  assert.equal(headlineOf(': nothing before'), null)
 })

@@ -84,8 +84,16 @@ struct SettingsView: View {
                             ? "Alerts arrive silently during these hours."
                             : "Change a single game from the bell on its page.")
                 }
+                Section {
+                    Toggle("Sounds", isOn: Binding(get: { model.data.soundsOff != true }, set: { model.data.soundsOff = $0 ? nil : true }))
+                        .accessibilityHint("Plays a soft pop when games are added")
+                        .accessibilityIdentifier("sounds")
+                } footer: {
+                    Text("A soft pop when you add games. Never plays while you are listening to something else.")
+                }
 
                 #if INTERNAL
+                if BuildChannel.showsInternalTools {
                 Section {
                     Picker("Game", selection: $simGame) {
                         ForEach(model.libraryRows) { Text($0.game.name).tag($0.id) }
@@ -116,6 +124,7 @@ struct SettingsView: View {
                     if let token = NotificationService.shared.deviceToken {
                         LabeledContent("APNs token", value: String(token.prefix(12)) + "…")
                     }
+                }
                 }
                 #endif
 

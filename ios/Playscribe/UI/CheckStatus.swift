@@ -22,6 +22,18 @@ extension AppModel {
     /// "3 Nov, 14:20"
     static func checkedStamp(_ d: Date) -> String { "\(d.dayMonth), \(d.formatted(date: .omitted, time: .shortened))" }
 
+    /// Retry: check again and say the result aloud, since the line changes silently (a11y pass).
+    func retryCheck() async {
+        await refreshFeed()
+        let text: String
+        switch checkState {
+        case .checked(let d): text = "Checked \(Self.checkedStamp(d))"
+        case .failed(let offline): text = offline ? "Couldn't check. Offline" : "Couldn't check"
+        case .notChecked: text = "Not checked yet"
+        }
+        AccessibilityNotification.Announcement(text).post()
+    }
+
     var feedIsStale: Bool {
         if case .failed = checkState { return true }
         return false
@@ -51,7 +63,7 @@ struct CheckedLine: View {
 struct RetryButton: View {
     @Environment(AppModel.self) private var model
     var body: some View {
-        Button("Retry") { Task { await model.refreshFeed() } }
+        Button("Retry") { Task { await model.retryCheck() } }
             .font(PlayscribeFont.subheadline.weight(.semibold))
             .foregroundStyle(PlayscribeColor.accent)
             .frame(minHeight: 44)

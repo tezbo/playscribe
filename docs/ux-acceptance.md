@@ -149,11 +149,11 @@ Decision: the native launch screen is a plain background colour matching the Lib
 - **N-1** Permission is asked in context, never at launch. After the first game is added, a card at the top of the Library reads "Get a note when <Game> updates on PS5". It has one button, **Continue**, which opens the system prompt, and the card is swipe-dismissable. The card shows at most twice (two separate sessions) and never after a decision.
 - **N-2** Tapping the bell before a decision skips the card and opens the system prompt directly. If permission is denied, the bell menu shows "Notifications are off for Gamebook" plus "Open Settings". The per-game choice is still stored.
 - **N-3** A push is sent only when a release reaches On PS5 for a followed game whose level allows it. "Major only" covers `major` and `dayOne`. Hotfix and patch go out with interruption level `.passive`; major and dayOne with `.active`. Never Time Sensitive. There is one push per release, ever.
-- **N-4** Content:
+- **N-4** Content (0.5.0 copy, Iris: counts in titles only, body `Update <version>: <headline>`, one line up to 60 characters; no headline falls back to the digest counts line, then "A new update is out"):
   - title = game name
-  - body = "<Display name> is live on PS5: <first two key changes>." Sentence case, no app name, no emoji.
+  - body = "<Display name>: <first PS5 change>". Sentence case, no app name, no emoji.
   - `threadIdentifier` = game id
-  - `hiddenPreviewsBodyPlaceholder` = "New update".
+  - `hiddenPreviewsBodyPlaceholder` = "A game you follow has an update".
 - **N-5** If 3 or more games update within 10 minutes, they are summarised by the system thread grouping. No custom digest.
 - **N-6** Tapping a notification (cold, warm, closed or open) opens the game book, Updates chapter, with that release expanded at the top, in whatever pose the device is in. Back goes to Library. In open landscape, the sidebar shows the game selected.
 - **N-7** In the foreground, no banner is shown (`willPresent` returns `.badge` and `.list`). The release is inserted into the current list with a 0.3 s highlight. If the user is elsewhere, a pill "New on PS5: <Game> <Display name>" appears above the tab bar or rail. In tabletop it appears in the lower half. The pill stays until tapped or until that game is opened, and swiping dismisses it.

@@ -20,7 +20,7 @@ struct CameraAddView: View {
     var body: some View {
         VStack(spacing: 12) {
             if !supported || (!simulated && (access == .denied || access == .restricted)) {
-                unavailable
+                unavailable.onAppear { Haptics.warning() }
             } else if !simulated && access == .notDetermined {
                 VStack(spacing: 12) {
                     Image(systemName: "camera.viewfinder").font(.system(size: 44)).foregroundStyle(PlayscribeColor.accent)
@@ -51,7 +51,7 @@ struct CameraAddView: View {
                             .overlay { Image(systemName: "camera.viewfinder").font(.largeTitle).foregroundStyle(.secondary) }
                             .onAppear { seen = ["Hades", "Celeste", "Blue Prince"] }
                     } else {
-                        ScannerView { seen = $0 }.clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        ScannerView { seen = $0 } onNew: { Haptics.recognisedTitle() }.clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                     }
                 }
                 .aspectRatio(4 / 3, contentMode: .fit)
@@ -96,8 +96,9 @@ struct CameraAddView: View {
 
 private struct ScannerView: UIViewControllerRepresentable {
     var onChange: ([String]) -> Void
+    var onNew: () -> Void
 
-    func makeCoordinator() -> Coordinator { Coordinator(onChange: onChange) }
+    func makeCoordinator() -> Coordinator { Coordinator(onChange: onChange, onNew: onNew) }
 
     func makeUIViewController(context: Context) -> DataScannerViewController {
         let vc = DataScannerViewController(recognizedDataTypes: [.text()], qualityLevel: .balanced,
@@ -114,13 +115,14 @@ private struct ScannerView: UIViewControllerRepresentable {
 
     final class Coordinator: NSObject, DataScannerViewControllerDelegate {
         var onChange: ([String]) -> Void
+        var onNew: () -> Void
         private var lines: [String] = []
-        init(onChange: @escaping ([String]) -> Void) { self.onChange = onChange }
+        init(onChange: @escaping ([String]) -> Void, onNew: @escaping () -> Void) { self.onChange = onChange; self.onNew = onNew }
 
         func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {
             for case .text(let t) in addedItems {
                 let line = t.transcript.trimmingCharacters(in: .whitespacesAndNewlines)
-                if line.count >= 3, line.count <= 60, !lines.contains(line) { lines.append(line) }
+                if line.count >= 3, line.count <= 60, !lines.contains(line) { lines.append(line); onNew() }
             }
             onChange(lines)
         }

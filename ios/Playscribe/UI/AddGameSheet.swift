@@ -12,6 +12,9 @@ struct AddGameSheet: View {
     @State private var status: OwnershipStatus = .owned
     @State private var query = ""
     @State private var debounced = ""
+    /// Tabletop: first-letter filter instead of typing (the keyboard never opens there).
+    @State private var letter: String?
+    @State private var hintShown = false
     @State private var custom = false
     @State private var customName = ""
     @State private var customPlatform: Platform = .ps5
@@ -36,7 +39,7 @@ struct AddGameSheet: View {
             Group {
                 if custom { customForm }
                 else if let matches {
-                    AddResultsView(matches: matches, status: status, picked: picked, toggle: toggle) { self.matches = nil }
+                    AddResultsView(matches: matches, status: status, picked: picked, toggle: tap) { self.matches = nil }
                 } else if let method {
                     switch method {
                     case .typeIt: list
@@ -51,13 +54,16 @@ struct AddGameSheet: View {
                 if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
                 if model.addSearchFocus { model.addSearchFocus = false; Task { try? await Task.sleep(for: .milliseconds(600)); searchFocused = true } }
             }
-            .navigationTitle(titleHidden ? "" : custom ? "Add your own game" : matches != nil ? "Found games" : method == nil ? "Add games" : method!.title)
+            .navigationTitle(titleHidden || duo.pose == .tabletop ? "" : custom ? "Add your own game" : matches != nil ? "Found games" : method == nil ? "Add games" : method!.title)
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillChangeFrameNotification)) { note in
                 let end = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) ?? .zero
                 keyboardHeight = end.minY >= UIScreen.main.bounds.height ? 0 : end.height
             }
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in keyboardHeight = 0 }
             .toolbarTitleDisplayMode(.inline)
+            // Tabletop (0.2.0 gate): the empty nav bar cost about 100 pt of the lower half, so the
+            // bar is hidden and Close sits in the search row instead; three rows then fit.
+            .toolbar(duo.pose == .tabletop && !custom ? .hidden : .automatic, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     if duo.pose == .tabletop {
@@ -111,6 +117,10 @@ struct AddGameSheet: View {
 
     /// A-3: one row per IGDB id; the curated record (with art) wins; added games go last.
     private var results: [CatalogGame] {
+        if duo.pose == .tabletop, let letter {
+            let all = PS5Index.shared.titles(startingWith: letter)
+            return all.filter { model.entry($0.id) == nil } + all.filter { model.entry($0.id) != nil }
+        }
         let q = debounced.trimmingCharacters(in: .whitespaces)
         let curated = model.fixtures.games
         let curatedByIGDB = Dictionary(curated.compactMap { g in g.igdbID.map { ($0, g) } }, uniquingKeysWith: { a, _ in a })
@@ -138,12 +148,39 @@ struct AddGameSheet: View {
     private var list: some View {
         List {
             Section {
-                statusPicker
-                TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
-                    .autocorrectionDisabled()
-                    .submitLabel(.search)
-                    .focused($searchFocused)
-                    .frame(minHeight: 44)
+                if duo.pose == .tabletop {
+                    // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
+                    // at least three results stay visible in the lower half.
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack(spacing: 8) {
+                            Button { dismiss() } label: {
+                                Image(systemName: "xmark").font(PlayscribeFont.headline)
+                                    .frame(width: 44, height: 44).contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            .foregroundStyle(PlayscribeColor.accent)
+                            .accessibilityLabel("Close")
+                            .tappableFrame()
+                            Picker("Add as", selection: $status) {
+                                ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
+                            }
+                            .pickerStyle(.menu)
+                            .fixedSize()
+                            .frame(minHeight: 44)
+                            TabletopSearchButton(letter: letter, prompt: "Search PS5 games", hintShown: $hintShown)
+                        }
+                        TabletopSearchHint(shown: hintShown)
+                        TabletopLetterStrip(letter: $letter)
+                    }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                } else {
+                    statusPicker
+                    TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
+                        .autocorrectionDisabled()
+                        .submitLabel(.search)
+                        .focused($searchFocused)
+                        .frame(minHeight: 44)
+                }
                 // Offline state 7: rows keep their placeholder covers; say why.
                 if case .failed(offline: true) = model.checkState {
                     Label("Covers need a connection", systemImage: "wifi.slash")
@@ -151,12 +188,12 @@ struct AddGameSheet: View {
                 }
             }
             let rows = results
-            Section(debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
+            Section(letter != nil && duo.pose == .tabletop ? "Starting with \(letter ?? "")" : debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
                 if rows.isEmpty {
                     Text("No PS5 game matches '\(debounced)'").foregroundStyle(.secondary)
                     Button("Add '\(debounced)' yourself") { customName = debounced; custom = true }.hitTarget()
                 }
-                ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
+                ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { tap(g) } }
             }
             Section {
                 Button { customName = query; custom = true } label: {
@@ -200,12 +237,16 @@ struct AddGameSheet: View {
         if sureOnly, found.contains(where: \.sure) { found = found.filter(\.sure) }
         for m in found { if let g = m.best, model.entry(g.id) == nil, picked[g.id] == nil { toggle(g) } }
         matches = found
+        if found.isEmpty { Haptics.warning() }
     }
 
     private func add(_ g: CatalogGame) {
         model.addGame(g, status: status)
         dismiss()
     }
+
+    /// A person's own tick (not the pre-ticked sure matches).
+    private func tap(_ g: CatalogGame) { Haptics.selection(); toggle(g) }
 
     private func toggle(_ g: CatalogGame) {
         if picked[g.id] != nil { picked[g.id] = nil; pickOrder.removeAll { $0 == g.id } } else { picked[g.id] = g; pickOrder.append(g.id) }
@@ -247,6 +288,7 @@ struct AddRow: View {
         .disabled(added)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(added ? "\(game.name), in your library" : "\(game.name), \(subtitle)")
+        .accessibilityIdentifier("addRow")
         .accessibilityAddTraits(selected ? [.isButton, .isSelected] : .isButton)
         .tappableFrame()
     }
@@ -266,6 +308,7 @@ struct AddRow: View {
 /// half (display only), the button and covers on the flat half.
 struct OnboardingView: View {
     @Environment(\.duo) private var duo
+    @Environment(\.railWidth) private var railWidth
 
     /// Content width of the left page in Book (clear of the fold), nil in other poses.
     private var pageWidth: CGFloat? {
@@ -278,19 +321,34 @@ struct OnboardingView: View {
             ArrangementView {
                 OnboardingStage().allowsHitTesting(false)
             } secondary: {
+                // The trailing rail sits over the lower half: keep the actions clear of it (0.2.0 gate).
                 ScrollView { OnboardingActions().padding(16) }
+                    .contentMargins(.trailing, railWidth, for: .scrollContent)
             }
             .arrangementViewStyle(.split)
         } else {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
-                    OnboardingActions(pageWidth: pageWidth).padding(.horizontal, 16)
+            HStack(alignment: .top, spacing: 0) {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+                        OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
+                        OnboardingActions(pageWidth: pageWidth, bookLeft: pageWidth != nil).padding(.horizontal, 16)
+                    }
+                    .padding(.bottom, 24)
                 }
-                .padding(.bottom, 24)
                 // Book: one page wide, so nothing crosses the fold (0.2.0 gate, first-run Library).
-                .frame(width: pageWidth.map { $0 + 32 }, alignment: .leading)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(width: pageWidth.map { $0 + 32 })
+                if let fold = duo.division, duo.pose == .book {
+                    // The right page is never blank (Iris, book-first-run): Popular on PS5 as a grid,
+                    // 24 pt clear of the hinge.
+                    let start = fold.maxX + 24
+                    let width = max(0, duo.size.width - railWidth - start - 16)
+                    OnboardingRightPage(width: width)
+                        .frame(width: width)
+                        .padding(.leading, max(0, start - (fold.minX - 24 - 32 + 32)))
+                    Spacer(minLength: 0)
+                } else {
+                    Spacer(minLength: 0)
+                }
             }
             .overlay(alignment: .topLeading) {
                 if FoldAuditSwitch.enabled {
@@ -307,6 +365,18 @@ struct OnboardingView: View {
 struct OnboardingStage: View {
     @Environment(AppModel.self) private var model
     private var welcomeDone: Bool { model.data.welcomeDone ?? false }
+    @Environment(\.duo) private var duo
+    /// The stage's bottom edge in screen space, before any clearance is applied.
+    @State private var bottom: CGFloat = 0
+
+    /// Tabletop: the stage ends at least 24 pt above the division band, never across it (the
+    /// headline's accessibility frame is the stage, so the stage itself must clear). The frame is
+    /// read in screen space: the old local-height check ignored the stage's own top offset (0.2.0 gate).
+    private var clearance: CGFloat {
+        guard duo.pose == .tabletop, let d = duo.division, bottom > 0 else { return 0 }
+        return max(0, bottom - (d.minY - 24))
+    }
+
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: nil, game: nil)
@@ -317,8 +387,13 @@ struct OnboardingStage: View {
                 .padding(20)
         }
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .padding(.horizontal, 16)
         .accessibilityElement(children: .combine)
+        .padding(.bottom, clearance)
+        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { new in
+            // The padding shrinks the stage inside this frame, so the frame's bottom is unchanged.
+            bottom = new
+        }
+        .padding(.horizontal, 16)
     }
 }
 
@@ -327,6 +402,8 @@ struct OnboardingActions: View {
     @Environment(\.duo) private var duo
     /// Book: the width of one page; only whole covers that fit are shown.
     var pageWidth: CGFloat?
+    /// Book left page: the covers and the footer move to the right page.
+    var bookLeft = false
 
     var body: some View {
         if !(model.data.welcomeDone ?? false) {
@@ -382,9 +459,10 @@ struct OnboardingActions: View {
             }
             .buttonStyle(.plain)
             .tappableFrame()
-            Text("Popular on PS5").font(PlayscribeFont.headline)
+            if !bookLeft { Text("Popular on PS5").font(PlayscribeFont.headline) }
             let size: CGFloat = duo.pose == .closed ? 96 : 108
             let fit = pageWidth.map { max(1, Int(($0 + 10) / (size + 10))) } ?? 6
+            if !bookLeft {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(PS5Index.shared.popular(limit: fit)) { g in
@@ -400,6 +478,37 @@ struct OnboardingActions: View {
             .edgeFade(40)
             Text("PlayStation account import is planned for a later version.")
                 .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+            }
         }
+    }
+}
+
+/// Book first-run, right page: Popular on PS5 as a 3-column grid of 3:4 tiles (10 pt gap), scrolling,
+/// with the account-import line at the foot. Tapping a cover adds it, as the strip does elsewhere.
+struct OnboardingRightPage: View {
+    @Environment(AppModel.self) private var model
+    var width: CGFloat
+
+    var body: some View {
+        let tile = max(40, ((width - 20) / 3).rounded(.down))
+        ScrollView {
+            VStack(alignment: .leading, spacing: 14) {
+                Text("Popular on PS5").font(PlayscribeFont.title3)
+                LazyVGrid(columns: Array(repeating: GridItem(.fixed(tile), spacing: 10, alignment: .top), count: 3), alignment: .leading, spacing: 10) {
+                    ForEach(PS5Index.shared.popular(limit: 18)) { g in
+                        Button { model.addGame(g, status: .owned) } label: {
+                            TileCover(game: g).frame(width: tile, height: (tile * 4 / 3).rounded())
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("Add \(g.name)")
+                        .tappableFrame()
+                    }
+                }
+                Text("PlayStation account import is planned for a later version.")
+                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+            }
+            .padding(.top, 16).padding(.bottom, 24)
+        }
+        .scrollIndicators(.hidden)
     }
 }

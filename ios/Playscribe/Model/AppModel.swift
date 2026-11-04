@@ -104,6 +104,8 @@ struct PersistedState: Codable {
     var pauseAll = false
     /// Quiet hours (0.5.0, Iris): nil = off, the default. Local scheduling only.
     var quietHours: QuietHours?
+    /// nil = on. Off silences the add pop.
+    var soundsOff: Bool?
     var notificationCardShows = 0
     var notificationCardDismissed = false
     /// Releases already announced by a notification, so a release never pushes twice (N-3).
@@ -152,6 +154,8 @@ final class AppModel {
     var highlight: String?
     /// GR-4: the in-book and Search tab note query, and its scope. Kept across pose changes (P-1).
     var noteQuery = ""
+    /// Tabletop: first-letter filter for the notes search (the keyboard never opens there).
+    var noteLetter: String?
     /// D-13: the notes-search scope persists.
     var noteScope: NoteScope = NoteScope(rawValue: UserDefaults.standard.string(forKey: "noteScope") ?? "") ?? .thisGame {
         didSet { UserDefaults.standard.set(noteScope.rawValue, forKey: "noteScope") }
@@ -166,10 +170,33 @@ final class AppModel {
     var libraryTab: LibraryTab = .playing
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
+    /// Order games were just added in, for the pop stagger.
+    var addedOrder: [String] = []
     /// Set when a deep link asks the journal to bring a release to the top.
     var focusReleaseID: String?
     var focusToken = 0
     var showDebugOverlay = false
+    /// QA (route "one-update") and tests: the "Also new" panel sees no other updates.
+    var qaSingleUpdate = false
+    /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
+    /// confirm a `-qaRoute` took effect.
+    var qaRoute: String?
+    /// QA (route "one-update"): the newest On PS5 release is the only unread one. Chosen when first asked
+    /// (not at launch, when releases may not be merged yet), so a later feed refresh or the 72 hour
+    /// rule cannot take the hero away.
+    @ObservationIgnored private var qaHeroCache: String?
+    private func qaHeroReleaseID() -> String? {
+        if let id = qaHeroCache { return id }
+        var newest: Release?
+        for entry in data.collection {
+            for r in releases(entry.gameID) where r.ps5State == .onPS5 {
+                if let n = newest, n.ps5Date >= r.ps5Date { continue }
+                newest = r
+            }
+        }
+        qaHeroCache = newest?.id
+        return newest?.id
+    }
     /// The pose being laid out right now, written by RootView as it renders. Lets navigation
     /// bindings tell a user's Back from a container being torn down by a pose change. Not observed.
     @ObservationIgnored var livePose: Pose = .closed
@@ -313,7 +340,10 @@ final class AppModel {
         releases(gameID).filter { !$0.isPS5Listed }
     }
 
-    func isUnread(_ r: Release) -> Bool { r.ps5State == .onPS5 && data.read[r.id] == nil }
+    func isUnread(_ r: Release) -> Bool {
+        if qaSingleUpdate { return r.ps5State == .onPS5 && r.id == qaHeroReleaseID() }
+        return r.ps5State == .onPS5 && data.read[r.id] == nil
+    }
 
     func unreadCount(_ gameID: String) -> Int { releases(gameID).filter(isUnread).count }
 
@@ -493,6 +523,7 @@ final class AppModel {
         }
         #if INTERNAL
         // Internal routes so QA can script every screen in every pose with `simctl openurl`.
+        qaRoute = url.host()
         switch url.host() {
         case "add":
             addSheetOpen = true
@@ -509,6 +540,8 @@ final class AppModel {
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
+        case "one-update": resetToOneUpdateDemo()
+        case "pill": holdQAPill()
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
             Task {
@@ -617,9 +650,11 @@ final class AppModel {
         nav.filter = .all
         highlight = new.count == 1 ? ids[0] : nil
         highlightSet = Set(ids)
+        addedOrder = ids
         nav.anchors["library"] = "lib-\(ids[0])"
         let text = new.count == 1 ? "Added \(new[0].name)" : "Added \(new.count) games"
         show(Toast(text: text, undo: { [weak self] in ids.forEach { self?.removeGame($0, toast: false) } }))
+        if data.soundsOff != true { PopSound.play(count: new.count, quiet: data.quietHours) }
         NotificationService.shared.updateBadge(badgeCount)
     }
 
@@ -703,9 +738,52 @@ final class AppModel {
     }
 
     func resetDemo() {
+        qaSingleUpdate = false
+        qaHeroCache = nil
         data = PersistedState(collection: fixtures.seedCollection)
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
+    }
+
+    /// QA (INTERNAL, `-qaRoute pill`): hold the "New on PS5" pill on screen (no 4 s timeout) so a swipe-dismiss
+    /// can be tested. Uses the newest On PS5 release in the collection. Nothing user-facing changes.
+    func holdQAPill() {
+        var newest: Release?
+        var gameID = ""
+        for entry in data.collection {
+            for r in releases(entry.gameID) where r.ps5State == .onPS5 {
+                if let n = newest, n.ps5Date >= r.ps5Date { continue }
+                newest = r
+                gameID = entry.gameID
+            }
+        }
+        guard let r = newest else { return }
+        showPill(gameID: gameID, releaseID: r.id, after: 3600)
+    }
+
+    /// QA and tests: the full demo library with exactly one fresh, unread On PS5 update (so the Library
+    /// hero shows), every other update read, and the "Also new" panel seeing no other updates, which
+    /// is the panel's "What's new" fallback.
+    func resetToOneUpdateDemo() {
+        resetDemo()
+        qaSingleUpdate = true
+    }
+
+    /// The updates beside the deck in the Library (Open portrait): every update in the deck except the
+    /// front card's, newest first, so nothing repeats.
+    func alsoNewReleases(excludingRelease id: String?, limit: Int = 6) -> [Release] {
+        let all = latestDeck.compactMap(\.release)
+        // One row per game (its latest update), and never the deck's front game (Iris, 3548a21).
+        let frontGame = all.first { $0.id == id }?.gameID
+        var seen = Set<String>()
+        var out: [Release] = []
+        for r in all.sorted(by: { $0.ps5Date > $1.ps5Date }) {
+            // Updates only: a headline-only post (no version in its name) is News, not an update (Iris, 20d77ea).
+            guard r.versionChip != nil, r.gameID != frontGame, seen.insert(r.gameID).inserted else { continue }
+            out.append(r)
+            if out.count == limit { break }
+        }
+        return out
     }
 
     // MARK: - Simulated updates (internal builds)
@@ -759,7 +837,18 @@ final class AppModel {
     func releaseArrivedInForeground(gameID: String, releaseID: String) {
         tick()
         highlight = releaseID
-        if nav.gameID != gameID { pill = (gameID, releaseID) }
+        if nav.gameID != gameID { showPill(gameID: gameID, releaseID: releaseID) }
         NotificationService.shared.updateBadge(badgeCount)
+    }
+
+    /// The "New on PS5" pill dismisses itself after 4 s (Iris, 0.2.0 gate); a swipe also dismisses it.
+    /// Under VoiceOver it stays until dismissed.
+    func showPill(gameID: String, releaseID: String, after seconds: Double = 4) {
+        pill = (gameID, releaseID)
+        guard !UIAccessibility.isVoiceOverRunning else { return }
+        Task { [weak self] in
+            try? await Task.sleep(for: .seconds(seconds))
+            if self?.pill?.releaseID == releaseID { self?.pill = nil }
+        }
     }
 }

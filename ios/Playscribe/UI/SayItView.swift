@@ -34,6 +34,7 @@ final class SpeechCapture {
             engine.prepare()
             try engine.start()
             listening = true
+            Haptics.voiceEdge()
             task = recognizer.recognitionTask(with: request, resultHandler: Self.handler { [weak self] text, done in
                 Task { @MainActor in self?.apply(text, done: done) }
             })
@@ -49,6 +50,7 @@ final class SpeechCapture {
         engine.inputNode.removeTap(onBus: 0)
         request?.endAudio()
         request = nil
+        if listening { Haptics.voiceEdge() }
         listening = false
         try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
     }

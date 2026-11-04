@@ -266,6 +266,7 @@ struct TabletopRail: View {
                 .contentShape(Rectangle())
         }
         .accessibilityLabel(title)
+        .accessibilityValue(badge > 0 ? "\(badge) unread" : "")
         .accessibilityAddTraits(model.nav.tab == t ? .isSelected : [])
         .tappableFrame()
     }
@@ -292,11 +293,15 @@ struct LowerMessages: View {
                     }
                     .padding(.horizontal, 16)
                     .frame(minHeight: 44)
+                    // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
+                    .background(Capsule().fill(PlayscribeColor.ink700))
                     .adaptiveGlass(in: Capsule(), interactive: true)
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()
-                .gesture(DragGesture(minimumDistance: 20).onEnded { _ in model.pill = nil })
+                .accessibilityIdentifier("newOnPS5Pill")
+                .highPriorityGesture(DragGesture(minimumDistance: 20).onEnded { _ in model.pill = nil })
+                .accessibilityAction(named: "Dismiss") { model.pill = nil }
                 .transition(.move(edge: .bottom).combined(with: .opacity))
             }
             if let toast = model.toast {

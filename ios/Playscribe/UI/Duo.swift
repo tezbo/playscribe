@@ -23,6 +23,13 @@ struct DuoContext: Equatable {
     var occlusions: [CGRect] = []
     var isLandscape: Bool { size.width > size.height }
     var isFolded: Bool { division != nil }
+
+    /// Tabletop: how far content whose bottom edge is at `bottom` (screen coordinates) must be
+    /// lifted so it ends `gap` pt above the division band. Zero in every other pose.
+    func clearance(forBottom bottom: CGFloat, gap: CGFloat = 24) -> CGFloat {
+        guard pose == .tabletop, let d = division, bottom > 0 else { return 0 }
+        return max(0, bottom - (d.minY - gap))
+    }
 }
 
 private struct DuoKey: EnvironmentKey {
