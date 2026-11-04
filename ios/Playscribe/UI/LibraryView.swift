@@ -224,11 +224,21 @@ struct LibraryShelf: View {
                 // Tabletop: the Continue art is the standing half; the flat half is the grid.
                 // Open landscape: Continue is a double-width tile leading the grid (D-12).
                 if duo.pose != .tabletop && !(duo.pose == .flat && duo.isLandscape && layout == .tiles), let c = model.continueItem {
-                    ContinueRow(game: c.game, release: c.release)
-                        // D-12: the full hero card in Closed and open portrait; side by side, a
-                        // double-width tile.
-                        .frame(maxWidth: layout == .tiles && duo.isLandscape ? tileSize * 2 + 14 + (duo.pose == .flat ? 120 : 0) : .infinity,
-                               alignment: .leading)
+                    if duo.pose == .flat && !duo.isLandscape {
+                        // Open portrait, 0.2.0 gate: the hero is about 46% of the content width and the
+                        // "Also new" panel fills the rest, the same height as the hero card.
+                        HStack(alignment: .top, spacing: 10) {
+                            ContinueRow(game: c.game, release: c.release)
+                                .frame(width: max(0, (duo.size.width - railWidth - 32 - 10) * 0.46), alignment: .leading)
+                            AlsoNewPanel(hero: c.release)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                        }
+                    } else {
+                        ContinueRow(game: c.game, release: c.release)
+                            // D-12: the full hero card in Closed; side by side, a double-width tile.
+                            .frame(maxWidth: layout == .tiles && duo.isLandscape ? tileSize * 2 + 14 + (duo.pose == .flat ? 120 : 0) : .infinity,
+                                   alignment: .leading)
+                    }
                 }
                 if all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
@@ -398,6 +408,74 @@ struct ContinueRow: View {
         .tappableFrame()
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(fresh ? "New update, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
+        .accessibilityAddTraits(.isButton)
+    }
+}
+
+/// Open portrait: the space beside the hero. The next three most recent updates across the library
+/// (not the hero's game), each opening that update; with none, the hero update's top three changes.
+struct AlsoNewPanel: View {
+    @Environment(AppModel.self) private var model
+    var hero: Release
+
+    private var others: [Release] {
+        model.data.collection.map(\.gameID).filter { $0 != hero.gameID }
+            .flatMap { model.ps5Releases($0) }
+            .sorted { $0.ps5Date > $1.ps5Date }
+            .prefix(3).map { $0 }
+    }
+
+    private var changes: [String] {
+        let key = (hero.keyChanges ?? []).filter { !$0.isEmpty }
+        if !key.isEmpty { return Array(key.prefix(3)) }
+        return Array(hero.notes.flatMap { $0.items.filter { $0.spoiler != true }.map(\.text) }.prefix(3))
+    }
+
+    private static let age: RelativeDateTimeFormatter = {
+        let f = RelativeDateTimeFormatter(); f.unitsStyle = .full; return f
+    }()
+
+    var body: some View {
+        let rows = others
+        VStack(alignment: .leading, spacing: 4) {
+            Text(rows.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
+                .accessibilityAddTraits(.isHeader)
+            if rows.isEmpty {
+                ForEach(Array(changes.enumerated()), id: \.offset) { _, line in
+                    Text(line).font(PlayscribeFont.subheadline).lineLimit(1).frame(minHeight: 44, alignment: .leading)
+                }
+            } else {
+                ForEach(rows) { r in row(r) }
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(rows.isEmpty ? "What's new" : "Also new, \(rows.count) updates")
+    }
+
+    private func row(_ r: Release) -> some View {
+        let game = model.game(r.gameID)
+        let age = Self.age.localizedString(for: r.ps5Date, relativeTo: .now)
+        return Button { model.openGame(r.gameID, chapter: .updates, releaseID: r.id) } label: {
+            HStack(spacing: 10) {
+                if let g = game { CoverView(game: g, cornerRadius: 4).frame(width: 40) }
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(game?.name ?? "").font(PlayscribeFont.headline).lineLimit(1)
+                    Text("\(r.displayName), \(age)").font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(1)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right").font(PlayscribeFont.caption).foregroundStyle(.secondary).accessibilityHidden(true)
+            }
+            .frame(minHeight: 56)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .tappableFrame()
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(game?.name ?? ""), \(r.displayName), \(age), opens update")
         .accessibilityAddTraits(.isButton)
     }
 }

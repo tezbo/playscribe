@@ -404,6 +404,11 @@ final class LibraryLayoutTests: XCTestCase {
                     XCTAssertLessThanOrEqual(h.height, app.frame.height * 0.38 + 12, "Open portrait hero is at most 38% of the height [\(pose)]")
                 }
             }
+            if pose.contains("flat") && app.frame.width <= app.frame.height && !hero.isEmpty {
+                let panel = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Also new' OR label == \"What's new\"")).firstMatch
+                XCTAssertTrue(panel.exists, "Open portrait: the Also new / What's new panel sits beside the hero [\(pose)]")
+                for h in hero { XCTAssertFalse(panel.frame.insetBy(dx: 1, dy: 1).intersects(h), "panel overlaps hero \(panel.frame) \(h) [\(pose)]") }
+            }
             if pose.contains("flat"), let right = tiles.map(\.maxX).max(), tiles.count >= openN {
                 XCTAssertGreaterThanOrEqual(right, app.frame.width - 16 - 12, "Open grid fills the width, no dead space on the trailing side [\(pose)]")
             }
