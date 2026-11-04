@@ -405,6 +405,13 @@ final class LibraryLayoutTests: XCTestCase {
                 XCTAssertLessThanOrEqual(h.maxX, screenW + 1, "hero ends on screen \(h) [\(pose)]")
                 // 0.5.0: the hero is the Latest updates deck, so a card is not a tile; the old double-tile width
                 // check does not apply. Open portrait: the card is at most 38% of the height.
+                // e869273 (28 games): the hero was 835 x 727 pt in Open and screen-tall in Closed portrait. In every pose but
+                // Tabletop (view only) and Closed landscape (the wide card, 168 to 240 pt) a hero card is at most about 38%
+                // of the screen height; app.frame's orientation is unreliable, so the shorter side bounds it (half of it).
+                if !pose.contains("tabletop") {
+                    XCTAssertLessThanOrEqual(h.height, min(app.frame.width, app.frame.height) * 0.5 + 12,
+                                             "hero card never fills the screen \(h) [\(pose)]")
+                }
                 // Only when the measurement is consistent with portrait: a card wider than app.frame is a landscape reading.
                 if pose.contains("flat") && app.frame.width <= app.frame.height && h.maxX <= app.frame.width + 1 {
                     XCTAssertLessThanOrEqual(h.height, app.frame.height * 0.38 + 12, "Open portrait hero is at most 38% of the height [\(pose)]")
