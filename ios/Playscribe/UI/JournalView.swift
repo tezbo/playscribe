@@ -503,9 +503,9 @@ struct SourceLinks: View {
                     .frame(minHeight: 44).tappableFrame()
             }
             if let url = release.links?.steamNotes {
-                Link(destination: url) { Label("Open in Steam", systemImage: "arrow.up.right.square") }
+                Link(destination: url) { Label("Open in Steam", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
                     .padding(.trailing, 8)
-                    .frame(minHeight: 44).tappableFrame()
+                    .tappableFrame()
             }
         }
         .font(PlayscribeFont.subheadline)

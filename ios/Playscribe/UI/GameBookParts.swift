@@ -314,9 +314,9 @@ struct GameBasicsView: View {
                 HStack {
                     Text("Details need a connection").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
-                    Button("Retry") { Task { await store.load(igdbID: id) } }
+                    Button { Task { await store.load(igdbID: id) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                         .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                        .frame(minHeight: 44).tappableFrame()
+                        .tappableFrame()
                 }
                 .padding(.horizontal, 14)
                 .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))

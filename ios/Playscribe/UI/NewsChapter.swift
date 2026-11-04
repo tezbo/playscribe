@@ -66,9 +66,9 @@ struct NewsChapter: View {
                     HStack {
                         Text("Couldn't load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                         Spacer(minLength: 0)
-                        Button("Retry") { Task { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) } }
+                        Button { Task { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                             .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                            .frame(minHeight: 44).tappableFrame()
+                            .tappableFrame()
                     }
                 } else if !store.loaded.contains(gameID) {
                     HStack(spacing: 10) {

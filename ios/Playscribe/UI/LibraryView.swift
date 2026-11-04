@@ -256,7 +256,7 @@ struct LibraryShelf: View {
                     HStack {
                         Text(line).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                         if case .failed = model.feedStatus {
-                            Button("Retry") { Task { await model.retryCheck() } }.font(PlayscribeFont.footnote).hitTarget()
+                            Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
                         }
                     }
                 }
