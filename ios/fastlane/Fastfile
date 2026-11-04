@@ -132,21 +132,8 @@ platform :ios do
     UI.success("What to Test set for #{after.map(&:locale).join(', ')}")
   end
 
-  desc 'Build, sign and upload to TestFlight. marketing_version: e.g. 0.3.0 (from the git tag)'
-  lane :beta do |options|
-    # Fails before any build work when the CHANGELOG has no section for this version.
-    notes = release_notes(options[:marketing_version])
-    key = api_key
-    key_path = File.expand_path('../build/AuthKey.p8')
-    FileUtils.mkdir_p(File.dirname(key_path))
-    File.write(key_path, p8)
-    team = team_id
-
-    # Build numbers only go up: one past whatever TestFlight already has for this version.
-    build = latest_testflight_build_number(api_key: key, app_identifier: bundle_id, initial_build_number: 0) + 1
-    settings = ["CURRENT_PROJECT_VERSION=#{build}"]
-    settings << "MARKETING_VERSION=#{options[:marketing_version]}" unless options[:marketing_version].to_s.empty?
-
+  # Archives and exports the Release build with automatic signing through the API key. Shared by `beta` and `signing_check`.
+  def archive_release(key_path, team, settings)
     build_app(
       project: project_path,
       scheme: ENV['IOS_SCHEME'].to_s.empty? ? 'Playscribe' : ENV['IOS_SCHEME'],
@@ -164,6 +151,62 @@ platform :ios do
       ].join(' '),
       export_options: { signingStyle: 'automatic', teamID: team }
     )
+  end
+
+  desc 'Archive and export Release with the widget, signed automatically, and check the result. Uploads NOTHING.'
+  lane :signing_check do |options|
+    api_key
+    key_path = File.expand_path('../build/AuthKey.p8')
+    FileUtils.mkdir_p(File.dirname(key_path))
+    File.write(key_path, p8)
+    team = team_id
+    # A build number far above any real one, and never uploaded.
+    archive_release(key_path, team, ['CURRENT_PROJECT_VERSION=99999', "MARKETING_VERSION=#{options[:marketing_version] || '0.5.0'}"])
+
+    ipa = lane_context[SharedValues::IPA_OUTPUT_PATH] || UI.user_error!('No .ipa was exported')
+    dir = Dir.mktmpdir('signing_check')
+    sh("unzip -q '#{ipa}' -d '#{dir}'", log: false)
+    app = Dir["#{dir}/Payload/*.app"].first || UI.user_error!('No .app inside the .ipa')
+    targets = { app: app }
+    Dir["#{app}/PlugIns/*.appex"].each { |x| targets[:widget] = x }
+    UI.user_error!('The exported app has no widget extension in PlugIns/') unless targets[:widget]
+
+    want = { app: bundle_id, widget: "#{bundle_id}.widget" }
+    group = "group.#{bundle_id}"
+    problems = []
+    targets.each do |name, path|
+      id = sh("/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' '#{path}/Info.plist'", log: false).strip
+      ents = sh("codesign -d --entitlements :- '#{path}' 2>/dev/null", log: false)
+      profile = File.exist?("#{path}/embedded.mobileprovision") ? sh("security cms -D -i '#{path}/embedded.mobileprovision'", log: false) : ''
+      UI.message("#{name}: bundle id #{id}")
+      UI.message("#{name}: in the entitlements, app group #{ents.include?(group) ? 'present' : 'MISSING'} (#{group})")
+      UI.message("#{name}: provisioning profile #{profile.empty? ? 'MISSING' : 'embedded'}; names the group: #{profile.include?(group)}")
+      problems << "#{name} bundle id is #{id}, wanted #{want[name]}" unless id == want[name]
+      problems << "#{name} entitlements lack #{group}" unless ents.include?(group)
+      problems << "#{name} has no embedded provisioning profile naming #{group}" unless profile.include?(group)
+    end
+    UI.user_error!("Signing check failed: #{problems.join('; ')}") unless problems.empty?
+    UI.success("Signing check passed: #{want[:app]} and #{want[:widget]} are signed with #{group}. Nothing was uploaded.")
+  ensure
+    File.delete(key_path) if key_path && File.exist?(key_path)
+  end
+
+  desc 'Build, sign and upload to TestFlight. marketing_version: e.g. 0.3.0 (from the git tag)'
+  lane :beta do |options|
+    # Fails before any build work when the CHANGELOG has no section for this version.
+    notes = release_notes(options[:marketing_version])
+    key = api_key
+    key_path = File.expand_path('../build/AuthKey.p8')
+    FileUtils.mkdir_p(File.dirname(key_path))
+    File.write(key_path, p8)
+    team = team_id
+
+    # Build numbers only go up: one past whatever TestFlight already has for this version.
+    build = latest_testflight_build_number(api_key: key, app_identifier: bundle_id, initial_build_number: 0) + 1
+    settings = ["CURRENT_PROJECT_VERSION=#{build}"]
+    settings << "MARKETING_VERSION=#{options[:marketing_version]}" unless options[:marketing_version].to_s.empty?
+
+    archive_release(key_path, team, settings)
 
     # "What to Test" is this version's CHANGELOG.md section. TestFlight only takes it once the build has processed.
     upload_to_testflight(api_key: key, app_identifier: bundle_id, changelog: notes)
