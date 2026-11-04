@@ -733,8 +733,11 @@ struct ContinueTile: View {
     var body: some View {
         let fresh = model.isUnread(release)
         Button { model.openGame(game.id, chapter: .updates, releaseID: release.id) } label: {
-            ArtView(asset: game.keyArtAsset, game: game)
+            // A fixed-size clear base with the art as an overlay: the art is proposed exactly the
+            // card's size and cannot widen the label (it once reported x -97.7, width 461).
+            Color.clear
                 .frame(width: size * 2 + 10, height: (size * 4 / 3).rounded())
+                .overlay { ArtView(asset: game.keyArtAsset, game: game) }
                 .clipped()
                 .overlay {
                     LinearGradient(colors: [.clear, .black.opacity(0.8)], startPoint: .center, endPoint: .bottom)
@@ -749,9 +752,14 @@ struct ContinueTile: View {
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
+                .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        // The accessibility element is the card-sized container, not the button's label content.
+        .frame(width: size * 2 + 10, height: (size * 4 / 3).rounded())
+        .clipped()
         .accessibilityElement(children: .ignore)
+        .accessibilityIdentifier("continueHero")
         .accessibilityLabel(fresh ? "New update, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
@@ -766,7 +774,8 @@ struct FlowLayout: Layout {
     }
     func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
         for (i, p) in place(bounds.width, subviews).points.enumerated() {
-            subviews[i].place(at: CGPoint(x: bounds.minX + p.x, y: bounds.minY + p.y), proposal: .unspecified)
+            let size = subviews[i].sizeThatFits(.unspecified)
+            subviews[i].place(at: CGPoint(x: bounds.minX + p.x, y: bounds.minY + p.y), proposal: ProposedViewSize(size))
         }
     }
     private func place(_ width: CGFloat, _ subviews: Subviews) -> (points: [CGPoint], size: CGSize) {
