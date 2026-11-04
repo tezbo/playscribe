@@ -25,10 +25,13 @@ struct LibraryView: View {
         .navigationTitle("Library")
         .toolbarTitleDisplayMode(.large)
         .toolbar {
-            // One group, so Add and Settings are both shown (Terry, 0.2.0 build 5: Settings was "hard to find").
-            ToolbarItemGroup(placement: .topBarPinnedTrailing) {
+            // Add trails, Settings leads: the system collapsed a second trailing item away in Closed and
+            // Open (0.5.0 Mac stills, TB-1), so the cog sits in its own region and is always drawn.
+            ToolbarItem(placement: .topBarTrailing) {
                 Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
                     .disabled(model.addSheetOpen)
+            }
+            ToolbarItem(placement: .topBarLeading) {
                 Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
                     .accessibilityIdentifier("settingsButton")
                     .disabled(model.settingsOpen)
