@@ -58,7 +58,7 @@ struct LatestUpdatesDeck: View {
         // A lone card, or the wide Closed landscape screen, takes the full content width: no card
         // narrower than its row with an empty area beside it (Iris, dc27a53 polish item 6).
         if cards.count == 1 || (duo.pose == .closed && duo.isLandscape) { return 1 }
-        switch duo.pose {
+        return switch duo.pose {
         case .closed: 1.12            // one card, the next peeking
         case .book: 1.12              // the deck lives on the left page
         case .flat: 2                 // Open, either orientation: two cards across (mock-up v3)
