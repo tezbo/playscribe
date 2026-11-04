@@ -162,15 +162,10 @@ struct SearchView: View {
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
                 .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 4, trailing: 16))
-                if !query.isEmpty {
-                    Picker("Search in", selection: Binding(get: { model.noteScope }, set: { model.noteScope = $0 })) {
-                        ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
-                    }
-                    .pickerStyle(.segmented)
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
-                } else if !model.recentSearches.isEmpty {
+                // Search is universal: every game and every patch note in the library. The scope picker that
+                // silently limited it to the last game opened is gone (Terry, 0.2.0 build 5); a game's own
+                // search lives in that game's Contents.
+                if query.isEmpty, !model.recentSearches.isEmpty {
                     Section("Recent") {
                         ForEach(model.recentSearches, id: \.self) { r in
                             Button { query = r } label: { Label(r, systemImage: "clock.arrow.circlepath") }
@@ -258,11 +253,6 @@ struct SearchView: View {
             }
         }
         .contentMargins(.trailing, railWidth + (tabletop ? 0 : badgeExtra), for: .scrollContent)
-        .overlay {
-            if query.count >= 2 && model.noteScope == .thisGame && model.nav.lastGameID != nil {
-                NoteSearchResults(query: query, scope: .thisGame, gameID: model.nav.lastGameID) { model.noteScope = .allGames }
-            }
-        }
         // Book: Search lives on the right page, never across the fold (0.2.0 gate: field and hint ran full width).
         .padding(.leading, duo.pose == .book ? (duo.division.map { $0.maxX + 8 } ?? 0) : 0)
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
@@ -275,5 +265,17 @@ struct SearchView: View {
         }
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.large)
+        // Back to where Search was opened from: a visible button (the rail has its own in Tabletop) and the edge swipe.
+        .toolbar {
+            if !tabletop {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button { model.leaveSearch() } label: { Label("Back", systemImage: "chevron.backward") }
+                        .accessibilityIdentifier("searchBack")
+                }
+            }
+        }
+        .simultaneousGesture(DragGesture(minimumDistance: 24).onEnded { v in
+            if v.startLocation.x < 28 && v.translation.width > 80 && abs(v.translation.height) < 60 { model.leaveSearch() }
+        })
     }
 }
