@@ -5,23 +5,22 @@ import SwiftUI
 /// here are placeholders until handoff/0.5.0 lands.
 extension Verification {
     /// The tags a reader can ever see; pending and assumed never show a tag.
-    static let ladder: [Verification] = [.official, .reported, .pending, .assumed]
+    static let ladder: [Verification] = [.official, .reported, .pending]
 
     var tagName: String {
         switch self {
         case .official: "Official"
         case .reported: "Reported"
-        case .pending: "Not confirmed yet"
-        case .assumed: "Taken as out"
+        case .pending: "Pending"
+        case .assumed: "Pending" // never shown as a tag; "Assumed" has no copy
         }
     }
 
     var meaning: String {
         switch self {
-        case .official: "Confirmed against an official post that names this platform."
-        case .reported: "Reported by the press, not yet confirmed by an official post."
-        case .pending: "Found automatically and waiting for someone to confirm it."
-        case .assumed: "No word on PS5 yet, so it is treated as out on PS5 too."
+        case .official: "This comes from the people who make the game or the console, in their own announcement."
+        case .reported: "Independent outlets reported this. It did not come from the game's makers."
+        case .pending, .assumed: "Not confirmed yet. Playscribe will update this when it is."
         }
     }
 }
@@ -51,20 +50,21 @@ struct VerificationExplainer: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack {
-                Text(kind.tagName).font(PlayscribeFont.title3)
+                Text("What this tag means").font(PlayscribeFont.title3)
                 Spacer()
                 Button("Done") { if let panelClose { panelClose() } else { systemDismiss() } }
-                    .frame(minHeight: 44).accessibilityIdentifier("close").tappableFrame()
+                    .frame(minHeight: 44).accessibilityHint("Closes the explainer").accessibilityIdentifier("close").tappableFrame()
             }
             .frame(minHeight: 52)
+            Text(kind.tagName).font(PlayscribeFont.headline)
             Text(kind.meaning).font(PlayscribeFont.body)
-            Text("From most to least sure").font(PlayscribeFont.footnote).foregroundStyle(.secondary)
             VStack(alignment: .leading, spacing: 8) {
                 ForEach(Verification.ladder, id: \.self) { v in
                     HStack(spacing: 8) {
                         Image(systemName: v == kind ? "checkmark.circle.fill" : "circle")
                             .foregroundStyle(v == kind ? PlayscribeColor.accent : .secondary)
                         Text(v.tagName).font(PlayscribeFont.subheadline.weight(v == kind ? .semibold : .regular))
+                        if v == kind { Text("This one").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
                     }
                     .accessibilityElement(children: .combine)
                     .accessibilityAddTraits(v == kind ? .isSelected : [])
