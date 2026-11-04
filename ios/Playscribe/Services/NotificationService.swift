@@ -91,7 +91,7 @@ final class NotificationService: NSObject {
 
     func didRegister(token: Data) {
         deviceToken = token.map { String(format: "%02x", $0) }.joined()
-        if let model { PushRegistrar.register(token: deviceToken!, follows: model.follows) }
+        if let model { PushRegistrar.register(token: deviceToken!, follows: model.follows, quietHours: model.data.quietHours) }
     }
 
     func updateBadge(_ count: Int) {
@@ -231,7 +231,7 @@ enum PushRegistrar {
         return URL(string: s)
     }
 
-    static func register(token: String, follows: [Follow]) {
+    static func register(token: String, follows: [Follow], quietHours: QuietHours? = nil) {
         guard let url = baseURL?.appending(path: "v1/devices") else { return }
         #if DEBUG
         let environment = "sandbox"
@@ -246,7 +246,38 @@ enum PushRegistrar {
             guard let (data, _) = try? await URLSession.shared.data(for: request),
                   let reply = try? JSONDecoder().decode(Reply.self, from: data) else { return }
             UserDefaults.standard.set(reply.deviceKey, forKey: "deviceKey")
+            syncQuietHours(quietHours)
         }
+    }
+
+    /// The quiet window as the relay needs it: minutes since midnight and the IANA zone, so daylight saving
+    /// is the relay's to apply. Absent when quiet hours is off (`null` clears it).
+    struct QuietWindow: Encodable, Equatable { var from: Int; var until: Int; var timeZone: String }
+    private struct QuietBody: Encodable {
+        var quietHours: QuietWindow?
+        func encode(to encoder: Encoder) throws {
+            var c = encoder.container(keyedBy: CodingKeys.self)
+            try c.encode(quietHours, forKey: .quietHours)   // an explicit null when off
+        }
+        enum CodingKeys: String, CodingKey { case quietHours }
+    }
+
+    static func quietWindow(_ q: QuietHours?, timeZone: TimeZone = .current) -> QuietWindow? {
+        guard let q, q.from != q.until else { return nil }
+        return QuietWindow(from: q.from, until: q.until, timeZone: timeZone.identifier)
+    }
+
+    /// PATCH /v1/devices/me { quietHours }. Does nothing before the device is registered (no push can
+    /// reach it then, so there is nothing to quiet) or while PlayscribeAPIBaseURL is unset.
+    static func syncQuietHours(_ q: QuietHours?) {
+        guard let url = baseURL?.appending(path: "v1/devices/me"),
+              let key = UserDefaults.standard.string(forKey: "deviceKey") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+        request.httpBody = try? JSONEncoder().encode(QuietBody(quietHours: quietWindow(q)))
+        Task { _ = try? await URLSession.shared.data(for: request) }
     }
 }
 

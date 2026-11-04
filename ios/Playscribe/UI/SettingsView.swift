@@ -26,6 +26,8 @@ struct SettingsView: View {
         Toggle("Quiet hours", isOn: Binding(get: { on }, set: { model.data.quietHours = $0 ? QuietHours() : nil }))
             .accessibilityValue(model.data.quietHours.map { "on, \($0.label)" } ?? "off")
             .accessibilityIdentifier("quietHours")
+            // Tell the push relay when the window changes, so a push inside it is delivered passively.
+            .onChange(of: model.data.quietHours) { _, new in PushRegistrar.syncQuietHours(new) }
         if let q = model.data.quietHours {
             quietPicker("From", minutes: q.from) { model.data.quietHours?.from = $0 }
             quietPicker("Until", minutes: q.until) { model.data.quietHours?.until = $0 }
