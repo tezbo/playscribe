@@ -292,7 +292,7 @@ struct LowerMessages: View {
                     }
                     .padding(.horizontal, 16)
                     .frame(minHeight: 44)
-                    .glassEffect(.regular.interactive(), in: Capsule())
+                    .adaptiveGlass(in: Capsule(), interactive: true)
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()
