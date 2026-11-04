@@ -208,6 +208,12 @@ struct AddRow: View {
 struct OnboardingView: View {
     @Environment(\.duo) private var duo
 
+    /// Content width of the left page in Book (clear of the fold), nil in other poses.
+    private var pageWidth: CGFloat? {
+        guard duo.pose == .book, let fold = duo.division else { return nil }
+        return max(0, fold.minX - 24 - 32)
+    }
+
     var body: some View {
         if duo.pose == .tabletop {
             ArrangementView {
@@ -220,9 +226,20 @@ struct OnboardingView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
-                    OnboardingActions().padding(.horizontal, 16)
+                    OnboardingActions(pageWidth: pageWidth).padding(.horizontal, 16)
                 }
                 .padding(.bottom, 24)
+                // Book: one page wide, so nothing crosses the fold (0.2.0 gate, first-run Library).
+                .frame(width: pageWidth.map { $0 + 32 }, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .overlay(alignment: .topLeading) {
+                if FoldAuditSwitch.enabled {
+                    let fold = duo.division.map { "fold \(Int($0.minX))-\(Int($0.maxX))" } ?? "no fold"
+                    let label = "library-duo pose: \(duo.pose.rawValue); \(fold); width \(Int(duo.size.width)); onboarding page \(Int(pageWidth ?? -1))"
+                    Text(label).font(.system(size: 1)).opacity(0.01).allowsHitTesting(false)
+                        .accessibilityIdentifier("libraryDuo").accessibilityLabel(label)
+                }
             }
         }
     }
@@ -247,6 +264,8 @@ struct OnboardingStage: View {
 struct OnboardingActions: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    /// Book: the width of one page; only whole covers that fit are shown.
+    var pageWidth: CGFloat?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -261,9 +280,10 @@ struct OnboardingActions: View {
             .tappableFrame()
             Text("Popular on PS5").font(PlayscribeFont.headline)
             let size: CGFloat = duo.pose == .closed ? 96 : 108
+            let fit = pageWidth.map { max(1, Int(($0 + 10) / (size + 10))) } ?? 6
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
-                    ForEach(PS5Index.shared.popular(limit: 6)) { g in
+                    ForEach(PS5Index.shared.popular(limit: fit)) { g in
                         Button { model.addGame(g, status: .owned) } label: {
                             TileCover(game: g).frame(width: size, height: (size * 4 / 3).rounded())
                         }
