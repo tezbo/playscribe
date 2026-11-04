@@ -528,6 +528,7 @@ extension PlayscribeUITests {
 }
 
 /// 0.2.0 final fixes (Iris, dc27a53 review).
+@MainActor
 final class FinalFixTests: XCTestCase {
     private func launch(_ route: String) -> XCUIApplication {
         let app = XCUIApplication()
