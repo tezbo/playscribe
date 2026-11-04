@@ -697,7 +697,18 @@ final class AppModel {
     func releaseArrivedInForeground(gameID: String, releaseID: String) {
         tick()
         highlight = releaseID
-        if nav.gameID != gameID { pill = (gameID, releaseID) }
+        if nav.gameID != gameID { showPill(gameID: gameID, releaseID: releaseID) }
         NotificationService.shared.updateBadge(badgeCount)
+    }
+
+    /// The "New on PS5" pill dismisses itself after 4 s (Iris, 0.2.0 gate); a swipe also dismisses it.
+    /// Under VoiceOver it stays until dismissed.
+    func showPill(gameID: String, releaseID: String, after seconds: Double = 4) {
+        pill = (gameID, releaseID)
+        guard !UIAccessibility.isVoiceOverRunning else { return }
+        Task { [weak self] in
+            try? await Task.sleep(for: .seconds(seconds))
+            if self?.pill?.releaseID == releaseID { self?.pill = nil }
+        }
     }
 }
