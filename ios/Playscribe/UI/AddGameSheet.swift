@@ -21,6 +21,14 @@ struct AddGameSheet: View {
     /// nil shows the entry sheet; `matches` non-nil shows the shared results list.
     @State private var method: AddMethod?
     @State private var matches: [AddMatch]?
+    /// Keyboard height while it is up (Iris, 0.5.0 Tabletop sheets: if the lower half minus the
+    /// keyboard leaves under 200 pt, hide the title and keep Done and search only).
+    @State private var keyboardHeight: CGFloat = 0
+    private var titleHidden: Bool {
+        guard duo.pose == .tabletop, keyboardHeight > 0 else { return false }
+        let lowerHalf = duo.size.height - (duo.division?.maxY ?? duo.size.height / 2)
+        return lowerHalf - keyboardHeight < 200
+    }
 
     var body: some View {
         NavigationStack {
@@ -41,7 +49,12 @@ struct AddGameSheet: View {
             .onAppear {
                 if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
             }
-            .navigationTitle(custom ? "Add your own game" : matches != nil ? "Found games" : method == nil ? "Add games" : method!.title)
+            .navigationTitle(titleHidden ? "" : custom ? "Add your own game" : matches != nil ? "Found games" : method == nil ? "Add games" : method!.title)
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillChangeFrameNotification)) { note in
+                let end = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) ?? .zero
+                keyboardHeight = end.minY >= UIScreen.main.bounds.height ? 0 : end.height
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in keyboardHeight = 0 }
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
