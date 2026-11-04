@@ -527,6 +527,9 @@ struct GameTile: View {
         .buttonStyle(.plain)
         .contextMenu { ActionMenuContent(sections: model.statusMenu(row.id)) }
         .accessibilityElement(children: .ignore)
+        // The accessibility frame runs 8 pt wider than the cover; the id carries the cover's real
+        // width so the frame tests measure the cover, not the element (fold audit, J-5).
+        .accessibilityIdentifier("tile-\(size.map { Int($0) } ?? 0)")
         .accessibilityLabel(model.tileAccessibilityLabel(row))
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
