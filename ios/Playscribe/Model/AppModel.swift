@@ -157,10 +157,15 @@ final class AppModel {
     @ObservationIgnored private var qaHeroCache: String?
     private func qaHeroReleaseID() -> String? {
         if let id = qaHeroCache { return id }
-        let id = data.collection.flatMap { releases($0.gameID) }.filter { $0.ps5State == .onPS5 }
-            .max { $0.ps5Date < $1.ps5Date }?.id
-        qaHeroCache = id
-        return id
+        var newest: Release?
+        for entry in data.collection {
+            for r in releases(entry.gameID) where r.ps5State == .onPS5 {
+                if let n = newest, n.ps5Date >= r.ps5Date { continue }
+                newest = r
+            }
+        }
+        qaHeroCache = newest?.id
+        return newest?.id
     }
     /// The pose being laid out right now, written by RootView as it renders. Lets navigation
     /// bindings tell a user's Back from a container being torn down by a pose change. Not observed.
