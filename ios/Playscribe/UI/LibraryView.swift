@@ -220,7 +220,14 @@ struct LibraryShelf: View {
                 NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
                 if all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
-                    FilterBar().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                    // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
+                    // accessibility frame never reaches the fold either.
+                    if duo.pose == .book, let fold = duo.division {
+                        FilterBar().frame(width: max(0, fold.minX - 24 - 16), alignment: .leading)
+                            .clipped().contentShape(Rectangle())
+                    } else {
+                        FilterBar().frame(maxWidth: .infinity, alignment: .leading)
+                    }
                 }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
@@ -422,6 +429,7 @@ struct HeroFrame: View {
         ArtView(asset: asset, game: game)
             // Closed: 16:9 so the library rows stay on screen; larger displays keep the taller page.
             .aspectRatio(duo.pose == .closed || duo.pose == .book ? 16 / 9 : 365 / 300, contentMode: .fit)
+            .clipped()
             .clipShape(BookEdgeShape())
             // Brand v2: an inset lit edge, 1.5 pt visible (3 pt stroke clipped to the shape).
             .overlay(BookEdgeShape().stroke(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 3).clipShape(BookEdgeShape()))
@@ -546,6 +554,9 @@ struct GameTile: View {
         .buttonStyle(.plain)
         .contextMenu { ActionMenuContent(sections: model.statusMenu(row.id)) }
         .accessibilityElement(children: .ignore)
+        // The accessibility frame runs 8 pt wider than the cover; the id carries the cover's real
+        // width so the frame tests measure the cover, not the element (fold audit, J-5).
+        .accessibilityIdentifier("tile-\(size.map { Int($0) } ?? 0)")
         .accessibilityLabel(model.tileAccessibilityLabel(row))
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
@@ -749,6 +760,7 @@ struct ContinueTile: View {
         Button { model.openGame(game.id, chapter: .updates, releaseID: release.id) } label: {
             ArtView(asset: game.keyArtAsset, game: game)
                 .frame(width: size * 2 + 10, height: (size * 4 / 3).rounded())
+                .clipped()
                 .overlay {
                     LinearGradient(colors: [.clear, .black.opacity(0.8)], startPoint: .center, endPoint: .bottom)
                 }
