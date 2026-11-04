@@ -21,7 +21,7 @@ final class NotificationService: NSObject {
     func attach(_ model: AppModel) {
         self.model = model
         center.delegate = self
-        Task { await refreshAuthorization(); syncReleaseDayAlerts() }
+        Task { await refreshAuthorization(); syncReleaseDayAlerts(); syncPlusLeavingSoon() }
     }
 
     func refreshAuthorization() async {
@@ -63,6 +63,40 @@ final class NotificationService: NSObject {
                 parts.hour = 9
                 let trigger = UNCalendarNotificationTrigger(dateMatching: parts, repeats: false)
                 center.add(UNNotificationRequest(identifier: "release-day-\(g.id)", content: content, trigger: trigger))
+            }
+        }
+    }
+
+    /// PS Plus "Leaving soon" (0.5.0): one local reminder at 10:00 on the first of the last three days to claim
+    /// a month's games, for each month still ahead. Honours its own switch, Pause all and quiet hours. Rescheduled
+    /// after every plus.json load, on launch and when the switch changes; one identifier per month, so never twice.
+    func syncPlusLeavingSoon() {
+        guard let model else { return }
+        let on = model.data.plusLeavingSoonOff != true && !model.data.pauseAll
+            && (authorization == .authorized || authorization == .provisional)
+        // Everything the closure needs is worked out here, on the main actor, as plain values.
+        struct Item: Sendable { var id: String; var body: String; var passive: Bool; var parts: DateComponents }
+        var items: [Item] = []
+        if on {
+            let quiet = model.data.quietHours
+            for m in PlusStore.shared.months {
+                guard let fire = PlusLogic.leavingSoonFire(m) else { continue }
+                items.append(Item(id: "plus-leaving-\(m.month)",
+                                  body: "This month's games can be claimed until \(PlusLogic.claimByText(m)).",
+                                  passive: quiet?.contains(fire) == true,
+                                  parts: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: fire)))
+            }
+        }
+        let due = items
+        center.getPendingNotificationRequests { [center] pending in
+            center.removePendingNotificationRequests(withIdentifiers: pending.map(\.identifier).filter { $0.hasPrefix("plus-leaving-") })
+            for i in due {
+                let content = UNMutableNotificationContent()
+                content.title = "PS Plus games leaving soon"
+                content.body = i.body
+                if i.passive { content.interruptionLevel = .passive } else { content.sound = .default }
+                center.add(UNNotificationRequest(identifier: i.id, content: content,
+                                                 trigger: UNCalendarNotificationTrigger(dateMatching: i.parts, repeats: false)))
             }
         }
     }

@@ -106,6 +106,8 @@ struct PersistedState: Codable {
     var quietHours: QuietHours?
     /// nil = on. Off silences the add pop.
     var soundsOff: Bool?
+    /// The PS Plus "Leaving soon" reminder (0.5.0): nil = on.
+    var plusLeavingSoonOff: Bool?
     var notificationCardShows = 0
     var notificationCardDismissed = false
     /// Releases already announced by a notification, so a release never pushes twice (N-3).
@@ -128,6 +130,8 @@ struct PersistedState: Codable {
 struct Toast: Equatable {
     var text: String
     var undo: (@MainActor () -> Void)?
+    /// The button's label: "Undo" by default, "Open My book" on a new bookmark.
+    var actionLabel = "Undo"
     var token = UUID()
     static func == (a: Toast, b: Toast) -> Bool { a.token == b.token }
 }
@@ -139,6 +143,9 @@ final class AppModel {
 
     // Transient
     var toast: Toast?
+    /// The tab Search was opened from, so Search can go back to it (Terry, 0.2.0 build 5).
+    var searchReturnTab: AppTab = .library
+    func leaveSearch() { if nav.tab == .search { nav.tab = searchReturnTab == .search ? .library : searchReturnTab } }
     var pill: (gameID: String, releaseID: String)?
     var addSheetOpen = false
     /// QA (route add/scan): the camera scan shows a fixed feed, since simulators have no camera.
@@ -329,7 +336,15 @@ final class AppModel {
         return (data.simulated + allReleasesMerged)
             // Steam is the source of truth (Terry, 26 Oct): a release only the press reports is not shown.
             .filter { $0.gameID == gameID && $0.ps5State != .pending && $0.ps5State != .reported && ($0.arrivesAt ?? .distantPast) <= now }
-            .sorted { $0.latestDate > $1.latestDate }
+            .sorted { Self.newer($0, $1, by: \.latestDate) }
+    }
+
+    /// Newest first by a date, ties broken by when the update was announced, then by id, so equal PS5 dates
+    /// (a launch batch) never leave an old patch in front of the latest (Terry, 0.2.0 build 5: Enshrouded opened on patch 1).
+    static func newer(_ a: Release, _ b: Release, by date: KeyPath<Release, Date>) -> Bool {
+        if a[keyPath: date] != b[keyPath: date] { return a[keyPath: date] > b[keyPath: date] }
+        if a.announcedAt != b.announcedAt { return a.announcedAt > b.announcedAt }
+        return a.id > b.id
     }
 
     func release(_ gameID: String, _ releaseID: String) -> Release? {
@@ -337,7 +352,7 @@ final class AppModel {
     }
 
     func ps5Releases(_ gameID: String) -> [Release] {
-        releases(gameID).filter(\.isPS5Listed).sorted { $0.ps5Date > $1.ps5Date }
+        releases(gameID).filter(\.isPS5Listed).sorted { Self.newer($0, $1, by: \.ps5Date) }
     }
 
     func pcOnlyReleases(_ gameID: String) -> [Release] {
@@ -612,7 +627,8 @@ final class AppModel {
             show(Toast(text: "Bookmark removed"))
         } else {
             data.bookmarks.insert(Bookmark(kind: kind, id: id, gameID: gameID, at: .now), at: 0)
-            show(Toast(text: "Bookmarked. Find it in My book"))
+            // The destination is one tap away (Terry, 0.2.0 build 5: "there is no My Book").
+            show(Toast(text: "Bookmarked", undo: { [weak self] in self?.openGame(gameID, chapter: .mybook) }, actionLabel: "Open My book"))
         }
     }
 

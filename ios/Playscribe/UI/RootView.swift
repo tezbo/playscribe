@@ -149,6 +149,7 @@ struct TabRoot: View {
                 NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search)
             }
         }
+        .onChange(of: model.data.nav.tab) { old, new in if new == .search && old != .search { model.searchReturnTab = old } }
     }
 }
 
@@ -212,20 +213,25 @@ struct TabletopRail: View {
                     RailButton(action: ScreenAction(id: "links", title: "Links", systemImage: "link", kind: .button { model.linksSheetOpen = true }))
                         .accessibilityLabel("Links, opens a list")
                 }
+            } else if model.nav.tab == .search {
+                // Search is a dead end without this: Back to where it was opened from (Terry, 0.2.0 build 5).
+                RailButton(action: ScreenAction(id: "back", title: "Back", systemImage: "chevron.backward",
+                                                kind: .button { model.leaveSearch() }))
             } else if model.nav.tab == .library {
                 if !model.addSheetOpen {
                     RailButton(action: ScreenAction(id: "add", title: "Add game", systemImage: "plus", kind: .button { model.addSheetOpen = true }))
                 }
-                // D-12: the View menu under Add (Settings lives inside it).
+                // D-12: the View menu under Add.
                 if !model.data.collection.isEmpty {
                     LibraryViewMenu()
                         .labelStyle(.iconOnly)
                         .font(PlayscribeFont.title3)
                         .frame(width: 48, height: 48)
                         .tappableFrame()
-                } else {
-                    RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
                 }
+                // Settings has its own cog on the rail, not inside the View menu (Terry, 0.2.0 build 5).
+                RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
+                    .accessibilityIdentifier("settingsButton")
                 // 0.5.0: Playing and Upcoming on the rail (Tabletop's lower half), not above the fold.
                 if !model.data.collection.isEmpty {
                     RailButton(action: ScreenAction(id: "playing", title: "Playing",
@@ -310,7 +316,7 @@ struct LowerMessages: View {
                     // Wraps to two lines at large sizes instead of shrinking (Iris, AX3).
                     Text(toast.text).font(PlayscribeFont.subheadline).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     if let undo = toast.undo {
-                        Button("Undo") { undo(); model.toastClear() }
+                        Button(toast.actionLabel) { undo(); model.toastClear() }
                             .font(PlayscribeFont.subheadline.weight(.semibold))
                             .hitTarget()
                             .tappableFrame()
@@ -327,7 +333,7 @@ struct LowerMessages: View {
                 .transition(.opacity)
                 .accessibilityElement(children: .combine)
                 .accessibilityActions {
-                    if let undo = toast.undo { Button("Undo") { undo(); model.toastClear() } }
+                    if let undo = toast.undo { Button(toast.actionLabel) { undo(); model.toastClear() } }
                     Button("Dismiss") { model.toastClear() }
                 }
             }
