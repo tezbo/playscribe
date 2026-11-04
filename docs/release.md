@@ -16,7 +16,7 @@ Nothing ships to TestFlight by itself. Merging to main never uploads a build; on
 4. **Sprint review.** Terry gets a complete, working demo of every new feature in the release, built from the
    signed-off commit: simulator captures in each pose and a clickable walkthrough. The designer helps put it
    together. Go is asked for only at this review.
-5. **Go.** Only after Terry says go: drop "(candidate, not released)" from the heading, then tag that commit
+5. **Go.** Only after Terry says go: make sure the heading no longer says "(candidate, not released)" (it is dropped when the notes are final), then tag that commit
    `vX.Y.Z` and push the tag. `.github/workflows/testflight.yml` builds it, sets the version from the tag and
    the next build number, and uses the section as "What to Test".
 
