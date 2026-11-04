@@ -83,7 +83,13 @@ final class FoldAuditTests: XCTestCase {
             shot.name = "fold-\(route.replacingOccurrences(of: "/", with: "_")) \(label)"
             shot.lifetime = .keepAlways
             add(shot)
-            XCTAssertTrue(label.hasPrefix("fold-crossings: 0;"), "\(route): \(label)")
+            let believed = app.descendants(matching: .any)["libraryDuo"]
+            let seen = believed.exists ? believed.label : "no library probe"
+            let note = XCTAttachment(string: "\(route): \(label)\n\(seen)")
+            note.name = "fold-audit-\(route.replacingOccurrences(of: "/", with: "_")).txt"
+            note.lifetime = .keepAlways
+            add(note)
+            XCTAssertTrue(label.hasPrefix("fold-crossings: 0;"), "\(route): \(label) | \(seen)")
         }
     }
 }

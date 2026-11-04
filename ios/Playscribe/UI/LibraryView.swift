@@ -116,6 +116,20 @@ struct LibraryShelf: View {
         return (k, lead, gap)
     }
 
+    /// Changes with the pose and the fold, so layouts that cache by position are rebuilt.
+    private var poseKey: String {
+        "\(duo.pose.rawValue)-\(Int(duo.division?.minX ?? -1))-\(Int(duo.division?.minY ?? -1))-\(Int(duo.size.width))"
+    }
+
+    /// QA: what this view believes (pose, fold, layout), read by FoldAuditTests next to the root audit.
+    private var probe: some View {
+        let mode = bookLayout.map { "book k=\($0.perPage) lead=\(Int($0.lead)) gap=\(Int($0.gap))" } ?? "grid"
+        let fold = duo.division.map { "fold \(Int($0.minX))-\(Int($0.maxX))" } ?? "no fold"
+        let label = "library-duo pose: \(duo.pose.rawValue); \(fold); width \(Int(duo.size.width)); rail \(Int(railWidth)); tile \(Int(tileSize)); \(mode)"
+        return Text(label).font(.system(size: 1)).opacity(0.01)
+            .accessibilityIdentifier("libraryDuo").accessibilityLabel(label)
+    }
+
     /// Grid cells: in the book pose, an empty cell in each spacer column.
     private func cells(_ rows: [AppModel.LibraryRow]) -> [(id: String, row: AppModel.LibraryRow?)] {
         guard let book = bookLayout else { return rows.map { ($0.id, $0) } }
@@ -193,12 +207,15 @@ struct LibraryShelf: View {
                     // TT-0: in the book pose the chip row stays on the left page.
                     // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
                     // accessibility frame never reaches the fold either.
-                    if duo.pose == .book, let fold = duo.division {
-                        FilterBar().frame(width: max(0, fold.minX - 24 - 16), alignment: .leading)
-                            .clipped().contentShape(Rectangle())
-                    } else {
-                        FilterBar().frame(maxWidth: .infinity, alignment: .leading)
+                    Group {
+                        if duo.pose == .book, let fold = duo.division {
+                            FilterBar().frame(width: max(0, fold.minX - 24 - 16), alignment: .leading)
+                                .clipped().contentShape(Rectangle())
+                        } else {
+                            FilterBar().frame(maxWidth: .infinity, alignment: .leading)
+                        }
                     }
+                    .id(poseKey)
                 }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
@@ -219,6 +236,9 @@ struct LibraryShelf: View {
                             }
                         }
                     }
+                    // A pose or fold change rebuilds the grid: lazily cached cells kept their old frames
+                    // (0.2.0 gate: Book showed the open-pose grid across the fold).
+                    .id(poseKey)
                 }
             }
             .scrollTargetLayout()
@@ -229,6 +249,7 @@ struct LibraryShelf: View {
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
         .contentMargins(.bottom, model.pill == nil && model.toast == nil ? 0 : 96, for: .scrollContent)
         .refreshable { await model.refreshFeed() }
+        .overlay(alignment: .topLeading) { if FoldAuditSwitch.enabled { probe.allowsHitTesting(false) } }
     }
 }
 
