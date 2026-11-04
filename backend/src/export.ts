@@ -2,6 +2,7 @@ import { mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import type { DB } from './db.ts'
 import { issuesOf } from './issues.ts'
+import { loadPlus } from './plus.ts'
 import { gameFromRow, getRelease, listReleases, newsOf, releaseFromRow } from './store.ts'
 
 // Writes the read side of the API as static files, so the app can sync from any static host
@@ -11,6 +12,7 @@ import { gameFromRow, getRelease, listReleases, newsOf, releaseFromRow } from '.
 //   v1/news/<id>.json      one game's news headlines (title, date, url), newest first
 //   v1/latest.json         the 100 most recently changed releases, for a cheap "anything new?" check
 //   v1/review.json         open review items (public post links only)
+//   v1/plus.json           the hand-curated PS Plus monthly games (src/sources/plus.json)
 // Output is deterministic for the same data, so an unchanged run produces no commit.
 const write = (path: string, data: unknown) => writeFileSync(path, JSON.stringify(data, null, 1) + '\n')
 
@@ -50,5 +52,6 @@ export const exportStatic = (db: DB, outDir: string) => {
   // latest.json's updatedAt must always be a date: the 0.2.0 app (Latest.updatedAt: Date) cannot decode null from an empty feed.
   write(join(root, 'latest.json'), { updatedAt: newest || '1970-01-01T00:00:00.000Z', releases: latest })
   write(join(root, 'review.json'), { items: review })
+  write(join(root, 'plus.json'), loadPlus(undefined, new Set(games.map((g) => g.id))))
   return { games: games.length, files: readdirSync(join(root, 'games')).length * 2 + 3 }
 }

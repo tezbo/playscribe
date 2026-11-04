@@ -149,3 +149,15 @@ Each `upcoming/<n>.json` entry also carries, when IGDB has them: `summary` (cut 
 ### Quiet hours on the relay (r050-quiet-hours-push)
 
 `POST /v1/devices` and `PATCH /v1/devices/me` accept `quietHours: { from, until, timeZone } | null` (whole minutes after local midnight, `from` may be after `until` to cross midnight, IANA zone; `from == until` or an unknown zone is a 400; `null` clears; an absent field leaves it as is). Stored as three columns on the device: a window and a zone, no identity, and the zone (not an offset) so daylight saving is right. When a push is sent, a device whose local time is inside `[from, until)` gets `interruption-level: passive` and no `sound`; the copy, `thread-id`, 72-hour guard and once-only claim are unchanged. A device with no window behaves as before.
+
+### PS Plus monthly games: `v1/plus.json` (r050-plus-card)
+
+Hand-curated, never fetched: playstation.com's terms bar automated access, so a person (Ezra) types the month's lineup from Sony's public announcement into `backend/src/sources/plus.json` once a month. Names and dates only, no copied text. The export validates it (a bad file fails the run) and publishes it unchanged:
+
+```json
+{ "version": 1, "months": [
+  { "month": "2026-11", "from": "2026-11-04", "until": "2026-12-01",
+    "games": [ { "name": "Some Game" }, { "name": "Another", "gameId": "kcd2" } ] } ] }
+```
+
+`months` is newest first. `from` and `until` are the first and last day the lineup can be claimed (dates, inclusive). `gameId` is set only when the game is one the app tracks, so the card can link to its page. The app shows the card for the month whose window contains today (or the newest month inside its last 3 days as "Last chance") and hides it when `months` is empty or none matches. Decoders must ignore unknown keys.
