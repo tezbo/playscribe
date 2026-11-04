@@ -213,3 +213,18 @@ Checked against the latest patch posts of 22 games on Steam. A heading that name
 ## One patch, one release (0.5.0 duplicate audit)
 
 Audit of the live feed (1,298 releases; the five games with most releases checked first, then every game): no repeated ids, and same-day pairs such as Hotfix 10.4.1 and Update 10.4.0 are distinct patches. One real duplicate: Control Resonant `1.4` (press only) and `1.4.0` (Steam), three hours apart. Cause: the version key was the literal text, so "1.4" and "1.4.0" differed. Now trailing zero parts are ignored when matching (`versionIdentity`: `1.4.0` = `1.4`, `2.0` stays `2.0`), but only within 3 days of the stored release, so Dead by Daylight "Patch 10.2" and "Patch 10.2.0", months apart, stay separate (also checked: 5 other pairs in the feed are months apart). A press report or studio post joins the stored release and adds its source and PS5 facts. `mergeSilentDuplicates` folds a press-only duplicate stored earlier into the real release on each ingest.
+
+## PS Plus lineup sources, checked 2026-11-04 (Priya)
+
+Goal: fill `plus.json` automatically (see docs/api.md, PS Plus monthly games). Manual entry stays as the fallback.
+
+| Source | Result |
+| --- | --- |
+| PlayStation Blog / playstation.com | Website terms bar bots and scrapers. Not used. |
+| Push Square | robots.txt allows articles and the public RSS feed (`/feeds/latest`, linked in its footer; Crawl-delay 5). Its terms page (`/terms`) has no bot, scraper or feed clause apart from competition entries. Feed items are teasers; the lineup is in the article page, which robots.txt allows. Candidate, same facts-only rules as the press pipeline: names and dates, text never stored. |
+| PlayStation LifeStyle | robots.txt allows everything but `/tag`; its terms not yet read. Possible second source. |
+| PSU.com | Cloudflare challenge returns 403 to automated clients. Not used. |
+| Wikipedia | The API rate-limited this run (429) and its list pages are not a monthly feed. Not used. |
+| IGDB | No PS Plus data. |
+
+Next step: parse the monthly "PS Plus Essential games for <month>" article from Push Square when one is published, fill `plus.json` from it, and keep manual entry as the override. Not built yet: the month's article was not in the feed during this check, so there is no real sample to parse against.
