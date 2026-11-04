@@ -83,6 +83,8 @@ struct LibraryShelf: View {
     @Environment(\.duo) private var duo
     @Environment(\.railWidth) private var railWidth
     @AppStorage(LibraryLayout.key) private var layout: LibraryLayout = .tiles
+    /// Tabletop: first-letter filter instead of typing (the keyboard never opens there).
+    @State private var letter: String?
 
     /// D-12: one square tile size per pose.
     private var tileSize: CGFloat {
@@ -151,7 +153,8 @@ struct LibraryShelf: View {
 
     var body: some View {
         @Bindable var model = model
-        let rows = model.shownRows()
+        let rows = duo.pose == .tabletop && letter != nil
+            ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
         let all = model.libraryRows
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 14) {
@@ -166,7 +169,9 @@ struct LibraryShelf: View {
                 if model.showsNotificationCard, let first = all.first {
                     NotificationInviteCard(gameName: first.game.name)
                 }
-                if all.count >= 6 {
+                if all.count >= 6 && duo.pose == .tabletop {
+                    TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4)
+                } else if all.count >= 6 {
                     // The same field as the notes search; the system rounded border read as a
                     // faded box behind the large title on the dark Library (QA, a258f0c).
                     HStack(spacing: 8) {

@@ -12,6 +12,8 @@ struct AddGameSheet: View {
     @State private var status: OwnershipStatus = .owned
     @State private var query = ""
     @State private var debounced = ""
+    /// Tabletop: first-letter filter instead of typing (the keyboard never opens there).
+    @State private var letter: String?
     @State private var custom = false
     @State private var customName = ""
     @State private var customPlatform: Platform = .ps5
@@ -72,6 +74,10 @@ struct AddGameSheet: View {
 
     /// A-3: one row per IGDB id; the curated record (with art) wins; added games go last.
     private var results: [CatalogGame] {
+        if duo.pose == .tabletop, let letter {
+            let all = PS5Index.shared.titles(startingWith: letter)
+            return all.filter { model.entry($0.id) == nil } + all.filter { model.entry($0.id) != nil }
+        }
         let q = debounced.trimmingCharacters(in: .whitespaces)
         let curated = model.fixtures.games
         let curatedByIGDB = Dictionary(curated.compactMap { g in g.igdbID.map { ($0, g) } }, uniquingKeysWith: { a, _ in a })
@@ -102,25 +108,24 @@ struct AddGameSheet: View {
                 if duo.pose == .tabletop {
                     // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
                     // at least three results stay visible in the lower half.
-                    HStack(spacing: 8) {
-                        Button { dismiss() } label: {
-                            Image(systemName: "xmark").font(PlayscribeFont.headline)
-                                .frame(width: 44, height: 44).contentShape(Rectangle())
-                        }
-                        .buttonStyle(.plain)
-                        .foregroundStyle(PlayscribeColor.accent)
-                        .accessibilityLabel("Close")
-                        .tappableFrame()
-                        Picker("Add as", selection: $status) {
-                            ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
-                        }
-                        .pickerStyle(.menu)
-                        .fixedSize()
-                        .frame(minHeight: 44)
-                        TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
-                            .autocorrectionDisabled()
-                            .submitLabel(.search)
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack(spacing: 8) {
+                            Button { dismiss() } label: {
+                                Image(systemName: "xmark").font(PlayscribeFont.headline)
+                                    .frame(width: 44, height: 44).contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            .foregroundStyle(PlayscribeColor.accent)
+                            .accessibilityLabel("Close")
+                            .tappableFrame()
+                            Picker("Add as", selection: $status) {
+                                ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
+                            }
+                            .pickerStyle(.menu)
+                            .fixedSize()
                             .frame(minHeight: 44)
+                        }
+                        TabletopSearch(letter: $letter, prompt: "Search \(PS5Index.shared.count.formatted()) PS5 games")
                     }
                 } else {
                     statusPicker
@@ -131,7 +136,7 @@ struct AddGameSheet: View {
                 }
             }
             let rows = results
-            Section(debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
+            Section(letter != nil && duo.pose == .tabletop ? "Starting with \(letter ?? "")" : debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
                 if rows.isEmpty {
                     Text("No PS5 game matches '\(debounced)'").foregroundStyle(.secondary)
                     Button("Add '\(debounced)' yourself") { customName = debounced; custom = true }.hitTarget()
