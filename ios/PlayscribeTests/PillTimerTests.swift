@@ -1,3 +1,6 @@
+import Testing
+import Foundation
+@testable import Playscribe
 
 @MainActor
 struct PillTimerTests {

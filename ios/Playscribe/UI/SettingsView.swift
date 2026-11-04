@@ -53,6 +53,7 @@ struct SettingsView: View {
                 }
 
                 #if INTERNAL
+                if BuildChannel.showsInternalTools {
                 Section {
                     Picker("Game", selection: $simGame) {
                         ForEach(model.libraryRows) { Text($0.game.name).tag($0.id) }
@@ -83,6 +84,7 @@ struct SettingsView: View {
                     if let token = NotificationService.shared.deviceToken {
                         LabeledContent("APNs token", value: String(token.prefix(12)) + "…")
                     }
+                }
                 }
                 #endif
 
