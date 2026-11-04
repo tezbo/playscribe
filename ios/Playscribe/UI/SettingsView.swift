@@ -24,6 +24,11 @@ struct SettingsView: View {
         @Bindable var model = model
         NavigationStack {
             Form {
+                // Tabletop's panel is half a screen: the build version leads, so it is on screen
+                // without scrolling (Terry checks it to verify the build).
+                if duo.pose == .tabletop {
+                    Section { LabeledContent("Version", value: Self.version).accessibilityIdentifier("appVersion") }
+                }
                 // One default for every game (Terry, 0.2.0); a game's own setting lives on its bell.
                 Section {
                     Picker("Notify me about", selection: Binding(get: { model.notifyDefault }, set: { model.data.notifyDefault = $0 })) {
@@ -82,8 +87,10 @@ struct SettingsView: View {
                 #endif
 
                 Section {
-                    LabeledContent("Version", value: Self.version)
-                        .accessibilityIdentifier("appVersion")
+                    if duo.pose != .tabletop {
+                        LabeledContent("Version", value: Self.version)
+                            .accessibilityIdentifier("appVersion")
+                    }
                 } footer: {
                     Text("Artwork and trailers belong to their publishers. \(Brand.trademarkNotice)")
                 }
