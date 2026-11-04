@@ -379,8 +379,13 @@ final class LibraryLayoutTests: XCTestCase {
                 .allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }
                 .map { e -> CGRect in
                     // The cover's real width is in the identifier ("tile-100"); Closed measures its column width at layout.
-                    let w = Double(e.identifier.dropFirst(5)).flatMap { $0 > 0 ? $0 : nil } ?? e.frame.width
-                    return CGRect(x: e.frame.minX, y: e.frame.minY, width: w, height: (w * 4 / 3).rounded())
+                    var w = Double(e.identifier.dropFirst(5)).flatMap { $0 > 0 ? $0 : nil } ?? e.frame.width
+                    // Closed landscape (0.2.0 gate, 3813f3d): the published width can be wider than the
+                    // laid-out cover, so a 3:4 box from it overstates the height (241 vs a 236 row pitch).
+                    // The element's own frame is cover + 8 pt of outset; never take more than that.
+                    if e.frame.width - 8 > 20 { w = min(w, e.frame.width - 8) }
+                    let h = min((w * 4 / 3).rounded(), max(0, e.frame.height - 8))
+                    return CGRect(x: e.frame.minX, y: e.frame.minY, width: w, height: h)
                 }
             let hero = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'New update,' OR label BEGINSWITH 'Continue,'")).allElementsBoundByIndex.map(\.frame)
             // 0.2.0 gate: the hero's frame is its card, not the fill-scaled art behind it (it once
