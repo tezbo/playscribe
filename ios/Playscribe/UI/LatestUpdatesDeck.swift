@@ -86,7 +86,7 @@ struct LatestUpdatesDeck: View {
                 deck(cardWidth: g.size.width, artHeight: art)
             }
             .frame(height: maxHeight > 0 ? maxHeight : nil)
-        } else if typeSize.isAccessibilitySize {
+        } else if typeSize.isAccessibilitySize && !(duo.pose == .closed && duo.isLandscape) {
             // Accessibility sizes: one card per screen at an explicit height. The unsized pager let the card fill the
             // screen (7fe84f4, AX3).
             GeometryReader { g in
@@ -94,14 +94,24 @@ struct LatestUpdatesDeck: View {
             }
             .frame(height: axArtHeight + (cards.count > 1 ? Self.pageEdgeHeight : 0))
         } else {
-            deck(cardWidth: nil, artHeight: nil)
+            // Closed landscape: the wide card's height is set on the pager itself (40% of the container,
+            // 168 to 240 pt); a horizontal ScrollView otherwise sizes to what it is offered (151 pt drawn).
+            deck(cardWidth: nil, artHeight: nil,
+                 scrollHeight: duo.pose == .closed && duo.isLandscape ? min(240, max(168, duo.size.height * 0.4)) : nil)
         }
     }
 
     /// 40% of the container, 200 pt at least; independent of the column width so the frame and the card agree.
     private var axArtHeight: CGFloat { max(200, (duo.size.height * 0.4).rounded()) }
 
-    private func deck(cardWidth: CGFloat?, artHeight: CGFloat?) -> some View {
+
+    private var pageEdge: some View {
+        PageEdge(cards: cards, current: current ?? cards.first?.id) { id in
+            withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) { current = id }
+        }
+    }
+
+    private func deck(cardWidth: CGFloat?, artHeight: CGFloat?, scrollHeight: CGFloat? = nil) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 12) {
@@ -119,15 +129,15 @@ struct LatestUpdatesDeck: View {
                 }
                 .scrollTargetLayout()
             }
+            .frame(height: scrollHeight)
             .scrollPosition(id: $current)
             .onChange(of: current) { _, new in model.deckSelection = new }
             .scrollTargetBehavior(.viewAligned)
             .contentMargins(.trailing, 0, for: .scrollContent)
-            if cards.count > 1 {
-                PageEdge(cards: cards, current: current ?? cards.first?.id) { id in
-                    withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) { current = id }
-                }
-            }
+            // Closed landscape (scrollHeight set): the dots sit inside the hero's bottom edge, centred, so the
+            // first screen still shows the chips and the first tile row (Iris, cf6c889).
+            .overlay(alignment: .bottom) { if scrollHeight != nil && cards.count > 1 { pageEdge } }
+            if cards.count > 1 && scrollHeight == nil { pageEdge }
         }
         .accessibilityElement(children: .contain)
         .accessibilityLabel(compact || cards.count > 1
@@ -264,7 +274,9 @@ struct WideDeckCard: View {
                     Text(card.game.name).font(PlayscribeFont.title2.bold())
                         .foregroundStyle(PlayscribeColor.textPrimary).lineLimit(2)
                     Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
-                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)).lineLimit(1)
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9))
+                        // Two lines, never an ellipsis mid-sentence (Iris, hero-wide-layouts).
+                        .lineLimit(2).fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(16)
                 .frame(width: g.size.width * 0.55, alignment: .leading)
@@ -304,8 +316,11 @@ struct DeckCardArt: View {
     var card: DeckCard
     var height: CGFloat?
     var body: some View {
-        ArtView(asset: card.game.keyArtAsset, game: card.game)
-            .aspectRatio(16 / 9, contentMode: .fit)
+        // The 16:9 box comes from a clear base, so the art's own size never sets the card's height (a Book
+        // hero came out as tall as the screen when the proposal had no height).
+        Color.clear.aspectRatio(16 / 9, contentMode: .fit)
+            .overlay { ArtView(asset: card.game.keyArtAsset, game: card.game) }
+            .clipped()
             .modifier(FixedArtHeight(height: height))
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
