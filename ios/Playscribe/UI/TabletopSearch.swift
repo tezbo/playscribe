@@ -15,6 +15,7 @@ enum LetterIndex {
 
 /// The Tabletop stand-in for a search field: a read-only 44 pt button that explains itself, then an
 /// A to Z and "#" strip of 44 pt chips. Tapping a letter filters; tapping it again clears.
+/// Add game composes the pieces itself so the button shares the "Add as" row (0.2.0 gate: three rows).
 struct TabletopSearch: View {
     @Binding var letter: String?
     var prompt = "Search"
@@ -22,45 +23,70 @@ struct TabletopSearch: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Button { hintShown.toggle() } label: {
-                HStack(spacing: 8) {
-                    Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                    Text(letter.map { "Titles starting with \($0)" } ?? prompt).foregroundStyle(.secondary)
-                    Spacer(minLength: 0)
-                }
-                .padding(.horizontal, 12)
-                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-                .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                .contentShape(Rectangle())
+            TabletopSearchButton(letter: letter, prompt: prompt, hintShown: $hintShown)
+            TabletopSearchHint(shown: hintShown)
+            TabletopLetterStrip(letter: $letter)
+        }
+    }
+}
+
+struct TabletopSearchButton: View {
+    var letter: String?
+    var prompt: String
+    @Binding var hintShown: Bool
+
+    var body: some View {
+        Button { hintShown.toggle() } label: {
+            HStack(spacing: 8) {
+                Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+                Text(letter.map { "Starting with \($0)" } ?? prompt).foregroundStyle(.secondary).lineLimit(1)
+                Spacer(minLength: 0)
             }
-            .buttonStyle(.plain)
-            .accessibilityIdentifier("tabletopSearch")
-            .accessibilityLabel(prompt)
-            .accessibilityHint("Typing needs the flat screen")
-            .tappableFrame()
-            if hintShown {
-                Text("Typing needs the flat screen. Pick a letter below, or open your Duo flat to type.")
-                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .accessibilityIdentifier("tabletopSearchHint")
-            }
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 4) {
-                    ForEach(LetterIndex.letters, id: \.self) { l in
-                        let on = letter == l
-                        Button { letter = on ? nil : l } label: {
-                            Text(l).font(PlayscribeFont.headline)
-                                .foregroundStyle(on ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)
-                                .frame(width: 44, height: 44)
-                                .background(Circle().fill(on ? PlayscribeColor.accent : PlayscribeColor.ink700))
-                                .contentShape(Rectangle())
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityIdentifier("letter-\(l)")
-                        .accessibilityLabel("Titles starting with \(l)")
-                        .accessibilityAddTraits(on ? [.isButton, .isSelected] : .isButton)
-                        .tappableFrame()
+            .padding(.horizontal, 12)
+            .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+            .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("tabletopSearch")
+        .accessibilityLabel(prompt)
+        .accessibilityHint("Typing needs the flat screen")
+        .tappableFrame()
+    }
+}
+
+struct TabletopSearchHint: View {
+    var shown: Bool
+    var body: some View {
+        if shown {
+            Text("Typing needs the flat screen. Pick a letter below, or open your Duo flat to type.")
+                .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityIdentifier("tabletopSearchHint")
+        }
+    }
+}
+
+struct TabletopLetterStrip: View {
+    @Binding var letter: String?
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 4) {
+                ForEach(LetterIndex.letters, id: \.self) { l in
+                    let on = letter == l
+                    Button { letter = on ? nil : l } label: {
+                        Text(l).font(PlayscribeFont.headline)
+                            .foregroundStyle(on ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)
+                            .frame(width: 44, height: 44)
+                            .background(Circle().fill(on ? PlayscribeColor.accent : PlayscribeColor.ink700))
+                            .contentShape(Rectangle())
                     }
+                    .buttonStyle(.plain)
+                    .accessibilityIdentifier("letter-\(l)")
+                    .accessibilityLabel("Titles starting with \(l)")
+                    .accessibilityAddTraits(on ? [.isButton, .isSelected] : .isButton)
+                    .tappableFrame()
                 }
             }
         }
