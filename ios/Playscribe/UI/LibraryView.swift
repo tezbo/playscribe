@@ -335,8 +335,16 @@ struct LibraryShelf: View {
                 } else if duo.pose != .tabletop && !heroOnRightPage {
                     let deck = model.latestDeck
                     if !deck.isEmpty {
-                        LatestUpdatesDeck(cards: deck)
-                            .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                        if duo.pose == .book, let fold = duo.division {
+                            // Book with 1 or 2 updates: the deck is the left page wide, sized explicitly (16:9 art plus the
+                            // page edge). Left to the pager the card filled the screen (acb182e, one-update route).
+                            let pageW = max(0, fold.minX - 24 - 16)
+                            LatestUpdatesDeck(cards: deck, compact: true, maxHeight: (pageW * 9 / 16).rounded() + 52)
+                                .frame(width: pageW, alignment: .leading)
+                        } else {
+                            LatestUpdatesDeck(cards: deck)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
                     } else if !model.data.collection.isEmpty {
                         CaughtUpCard()
                             .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
