@@ -94,6 +94,24 @@ struct SearchView: View {
     /// Tabletop: first-letter filter instead of typing (the keyboard never opens there; Iris, 0.2.0).
     @State private var letter: String?
 
+    private func noteLines(term: String, library: Set<String>, tabletop: Bool) -> [(Release, String)] {
+        if tabletop {
+            guard let l = letter else { return [] }
+            return model.noteHits(letter: l, scope: .allGames, gameID: nil).prefix(12).map { ($0.release, $0.line) }
+        }
+        guard !term.isEmpty else { return [] }
+        var out: [(Release, String)] = []
+        for g in library {
+            for r in model.releases(g) {
+                var hits: [(Release, String)] = []
+                if ([r.displayName, r.headline ?? "", r.summary ?? ""].joined(separator: " ")).lowercased().contains(term) { hits.append((r, r.headline ?? r.displayName)) }
+                for s in r.notes { for i in s.items where i.spoiler != true && i.text.lowercased().contains(term) { hits.append((r, i.text)) } }
+                out += hits.prefix(3)
+            }
+        }
+        return out
+    }
+
     var body: some View {
         let tabletop = duo.pose == .tabletop
         let term = tabletop ? "" : query.trimmingCharacters(in: .whitespaces).lowercased()
@@ -102,14 +120,7 @@ struct SearchView: View {
         let gameHits: [CatalogGame] = tabletop
             ? (letter.map { l in model.games.values.filter { LetterIndex.matches($0.name, l) }.sorted { $0.name < $1.name } } ?? [])
             : term.isEmpty ? [] : model.games.values.filter { $0.name.lowercased().contains(term) }.sorted { $0.name < $1.name }
-        let noteHits: [(Release, String)] = tabletop
-            ? (letter.map { l in model.noteHits(letter: l, scope: .allGames, gameID: nil).prefix(12).map { ($0.release, $0.line) } } ?? [])
-            : term.isEmpty ? [] : library.flatMap { model.releases($0) }.flatMap { r -> [(Release, String)] in
-            var hits: [(Release, String)] = []
-            if ([r.displayName, r.headline ?? "", r.summary ?? ""].joined(separator: " ")).lowercased().contains(term) { hits.append((r, r.headline ?? r.displayName)) }
-            for s in r.notes { for i in s.items where i.spoiler != true && i.text.lowercased().contains(term) { hits.append((r, i.text)) } }
-            return Array(hits.prefix(3))
-        }
+        let noteHits = noteLines(term: term, library: library, tabletop: tabletop)
         let entryHits: [BookEntry] = tabletop
             ? (letter.map { l in model.fixtures.book.filter { library.contains($0.gameID) && LetterIndex.matches($0.title, l) } } ?? [])
             : term.isEmpty ? [] : model.fixtures.book.filter { library.contains($0.gameID) && ($0.title + " " + $0.body).lowercased().contains(term) }
