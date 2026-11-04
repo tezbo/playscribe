@@ -445,7 +445,9 @@ struct AlsoNewPanel: View {
             let fit = min(6, max(3, Int(avail / 72)))
             let rows = Array(all.prefix(fit))
             let spare = avail - CGFloat(rows.count) * 72
-            let rowHeight: CGFloat = rows.isEmpty || spare <= 24 ? 72 : min(96, 72 + spare / CGFloat(rows.count))
+            // Three rows are the floor: when they do not quite fit, they give up a few points each (never below 64).
+            let rowHeight: CGFloat = rows.isEmpty ? 72 : spare < 0 ? max(64, avail / CGFloat(rows.count))
+                : spare <= 24 ? 72 : min(96, 72 + spare / CGFloat(rows.count))
             VStack(alignment: .leading, spacing: 0) {
                 Text(all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
                     .accessibilityAddTraits(.isHeader)
