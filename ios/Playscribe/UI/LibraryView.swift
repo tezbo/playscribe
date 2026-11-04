@@ -25,12 +25,10 @@ struct LibraryView: View {
         .navigationTitle("Library")
         .toolbarTitleDisplayMode(.large)
         .toolbar {
-            ToolbarItem(placement: .topBarPinnedTrailing) {
+            // One group, so Add and Settings are both shown (Terry, 0.2.0 build 5: Settings was "hard to find").
+            ToolbarItemGroup(placement: .topBarPinnedTrailing) {
                 Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
                     .disabled(model.addSheetOpen)
-            }
-            // Settings has its own cog (Terry, 0.2.0 build 5: "hard to find"), no longer inside the View menu.
-            ToolbarItem(placement: .topBarPinnedTrailing) {
                 Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
                     .accessibilityIdentifier("settingsButton")
                     .disabled(model.settingsOpen)
