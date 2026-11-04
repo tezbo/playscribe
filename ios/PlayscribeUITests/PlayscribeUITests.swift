@@ -600,4 +600,23 @@ final class FinalFixTests: XCTestCase {
         XCTAssertLessThanOrEqual(body.frame.maxY, app.frame.midY - 24, "reader text \(body.frame) is across the division")
         app.terminate()
     }
+
+    /// Tabletop Add game: no keyboard. The search button explains why, and a letter filters the list (Iris ruling).
+    func testTabletopSearchUsesLettersNotTheKeyboard() throws {
+        let app = launch("add")
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let search = app.descendants(matching: .any).matching(identifier: "tabletopSearch").firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 5), "read-only search button")
+        XCTAssertGreaterThanOrEqual(search.frame.height, 44)
+        search.tap()
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "tabletopSearchHint").firstMatch.waitForExistence(timeout: 3), "hint shown")
+        XCTAssertFalse(app.keyboards.firstMatch.exists, "the keyboard never opens in Tabletop")
+        let b = app.descendants(matching: .any).matching(identifier: "letter-B").firstMatch
+        XCTAssertTrue(b.waitForExistence(timeout: 3) && b.frame.height >= 44, "44 pt letter chip")
+        b.tap()
+        sleep(1)
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "addRow").firstMatch.waitForExistence(timeout: 3), "results for B")
+        XCTAssertFalse(app.keyboards.firstMatch.exists)
+        app.terminate()
+    }
 }
