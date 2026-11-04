@@ -34,7 +34,7 @@ extension AppModel {
                 let ps5 = r.isPS5Listed
                 // A5: update titles match too, shown as the update's own headline.
                 let title = [r.displayName, r.headline].compactMap { $0 }.joined(separator: " ")
-                if PS5Index.fold(title).contains(q) {
+                if test(title, "") {
                     hits.append(NoteHit(id: "\(r.id)#title", release: r, line: r.ps5Headline ?? r.displayName, section: "Update",
                                         pcOnly: !ps5))
                 }
