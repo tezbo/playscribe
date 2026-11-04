@@ -26,6 +26,9 @@ struct AddGameSheet: View {
             }
             .navigationTitle(custom ? "Add your own game" : duo.pose == .tabletop ? "" : "Add game")
             .toolbarTitleDisplayMode(.inline)
+            // Tabletop (0.2.0 gate): the empty nav bar cost about 100 pt of the lower half, so the
+            // bar is hidden and Close sits in the search row instead; three rows then fit.
+            .toolbar(duo.pose == .tabletop && !custom ? .hidden : .automatic, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button { dismiss() } label: { Label("Close", systemImage: "xmark") }
@@ -100,6 +103,14 @@ struct AddGameSheet: View {
                     // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
                     // at least three results stay visible in the lower half.
                     HStack(spacing: 8) {
+                        Button { dismiss() } label: {
+                            Image(systemName: "xmark").font(PlayscribeFont.headline)
+                                .frame(width: 44, height: 44).contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                        .foregroundStyle(PlayscribeColor.accent)
+                        .accessibilityLabel("Close")
+                        .tappableFrame()
                         Picker("Add as", selection: $status) {
                             ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
                         }
@@ -281,13 +292,15 @@ struct OnboardingView: View {
 
 struct OnboardingStage: View {
     @Environment(\.duo) private var duo
-    @State private var height: CGFloat = 0
+    /// The stage's bottom edge in screen space, before any clearance is applied.
+    @State private var bottom: CGFloat = 0
 
-    /// Tabletop: the headline sits at least 24 pt above the division band, never across it.
+    /// Tabletop: the stage ends at least 24 pt above the division band, never across it (the
+    /// headline's accessibility frame is the stage, so the stage itself must clear). The frame is
+    /// read in screen space: the old local-height check ignored the stage's own top offset (0.2.0 gate).
     private var clearance: CGFloat {
-        guard duo.pose == .tabletop, let d = duo.division else { return 0 }
-        let overlap = height - d.minY
-        return overlap > 0 ? overlap + 4 : 0
+        guard duo.pose == .tabletop, let d = duo.division, bottom > 0 else { return 0 }
+        return max(0, bottom - (d.minY - 24))
     }
 
     var body: some View {
@@ -298,12 +311,15 @@ struct OnboardingStage: View {
                 .font(PlayscribeFont.title)
                 .foregroundStyle(PlayscribeColor.textPrimary)
                 .padding(20)
-                .padding(.bottom, clearance)
         }
-        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { height = $0 }
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .padding(.horizontal, 16)
         .accessibilityElement(children: .combine)
+        .padding(.bottom, clearance)
+        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { new in
+            // The padding shrinks the stage inside this frame, so the frame's bottom is unchanged.
+            bottom = new
+        }
+        .padding(.horizontal, 16)
     }
 }
 
