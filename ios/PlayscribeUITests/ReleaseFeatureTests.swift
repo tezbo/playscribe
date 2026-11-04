@@ -118,9 +118,8 @@ final class ReleaseFeatureTests: XCTestCase {
     func testShareUpdateButton() throws {
         launch("release/dawnwalker/dawnwalker@1.1")
         let share = app.buttons["Share update"]
-        // Tabletop reads the release through its own reader, which has no Share control yet (a gap to report, not a pass).
-        if !share.waitForExistence(timeout: 10), inTabletop { throw XCTSkip("Share update is not offered in Tabletop") }
-        XCTAssertTrue(share.exists)
+        XCTAssertTrue(share.waitForExistence(timeout: 10), "Share update is offered (Tabletop: on the lower rail)")
+        if inTabletop { XCTAssertGreaterThanOrEqual(share.frame.minY, app.frame.midY - 1, "Tabletop: Share sits in the lower half") }
         XCTAssertGreaterThanOrEqual(share.frame.height, 44, "44 pt target")
         assertFrames("release")
     }
