@@ -20,6 +20,31 @@ struct SettingsView: View {
     @State private var simKind: AppModel.SimKind = .major
     @State private var simDelay: Double = 10
 
+    /// Quiet hours (0.5.0): off by default; the pickers sit inline in Tabletop, never a popover into the upper half.
+    @ViewBuilder private var quietHoursRows: some View {
+        let on = model.data.quietHours != nil
+        Toggle("Quiet hours", isOn: Binding(get: { on }, set: { model.data.quietHours = $0 ? QuietHours() : nil }))
+            .accessibilityValue(model.data.quietHours.map { "on, \($0.label)" } ?? "off")
+            .accessibilityIdentifier("quietHours")
+        if let q = model.data.quietHours {
+            quietPicker("From", minutes: q.from) { model.data.quietHours?.from = $0 }
+            quietPicker("Until", minutes: q.until) { model.data.quietHours?.until = $0 }
+        }
+    }
+
+    @ViewBuilder private func quietPicker(_ title: String, minutes: Int, set: @escaping (Int) -> Void) -> some View {
+        let binding = Binding<Date>(get: { QuietHours.date(minutes: minutes) }, set: { set(QuietHours.minutes(of: $0)) })
+        if duo.pose == .tabletop {
+            VStack(alignment: .leading) {
+                Text(title)
+                DatePicker(title, selection: binding, displayedComponents: .hourAndMinute)
+                    .datePickerStyle(.wheel).labelsHidden().frame(height: 120).clipped()
+            }
+        } else {
+            DatePicker(title, selection: binding, displayedComponents: .hourAndMinute).frame(minHeight: 44)
+        }
+    }
+
     var body: some View {
         @Bindable var model = model
         NavigationStack {
@@ -35,6 +60,7 @@ struct SettingsView: View {
                         ForEach(NotifyLevel.allCases) { Text($0.label).tag($0) }
                     }
                     Toggle("Pause all", isOn: $model.data.pauseAll)
+                    quietHoursRows
                     let overrides = model.notifyOverrides
                     if !overrides.isEmpty {
                         NavigationLink("\(overrides.count) game\(overrides.count == 1 ? " has its" : "s have their") own setting") {
@@ -49,7 +75,9 @@ struct SettingsView: View {
                 } footer: {
                     Text(NotificationService.shared.authorization == .denied
                          ? "Notifications are off for \(Brand.name) in iOS Settings."
-                         : "Change a single game from the bell on its page.")
+                         : model.data.quietHours != nil
+                            ? "Alerts arrive silently during these hours."
+                            : "Change a single game from the bell on its page.")
                 }
 
                 #if INTERNAL

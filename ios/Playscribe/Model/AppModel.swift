@@ -102,6 +102,8 @@ struct PersistedState: Codable {
     var selectedArtwork: [String: String] = [:]
     var nav = NavState()
     var pauseAll = false
+    /// Quiet hours (0.5.0, Iris): nil = off, the default. Local scheduling only.
+    var quietHours: QuietHours?
     var notificationCardShows = 0
     var notificationCardDismissed = false
     /// Releases already announced by a notification, so a release never pushes twice (N-3).

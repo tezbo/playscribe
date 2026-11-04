@@ -116,6 +116,11 @@ final class NotificationService: NSObject {
         model.data.notified[release.id] = .now
 
         let content = Self.content(for: release, game: game, badge: model.badgeCount + 1)
+        // Quiet hours: arrive silently in Notification Center, never held back past the window end.
+        if model.data.quietHours?.contains(Date().addingTimeInterval(max(1, delay))) == true {
+            content.interruptionLevel = .passive
+            content.sound = nil
+        }
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: max(1, delay), repeats: false)
         let request = UNNotificationRequest(identifier: release.id, content: content, trigger: trigger)
         center.add(request)
