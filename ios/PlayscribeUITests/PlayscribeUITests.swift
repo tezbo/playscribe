@@ -599,7 +599,7 @@ final class Release050Tests: XCTestCase {
         toggle.tap()
         XCTAssertTrue(app.staticTexts["From"].waitForExistence(timeout: 3), "From row appears")
         XCTAssertTrue(app.staticTexts["Until"].exists, "Until row appears")
-        XCTAssertTrue(app.staticTexts["Alerts arrive silently during these hours."].exists, "footer")
+        XCTAssertTrue(app.staticTexts["Alerts scheduled on this device arrive silently during these hours. Updates sent while the app is closed may still make a sound."].exists, "footer says what quiet hours cover")
         if isTabletop(app) { XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: switch in the lower half") }
         app.terminate()
     }
