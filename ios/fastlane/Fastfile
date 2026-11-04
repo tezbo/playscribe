@@ -99,7 +99,10 @@ platform :ios do
 
   # whatsNew = notes on every existing locale plus en-US and en-GB (created when missing).
   def set_whats_new(build, notes)
-    text = Pilot::BuildManager.sanitize_changelog(notes) # the same cleanup upload_to_testflight applies
+    # The cleanup upload_to_testflight applies (Apple rejects "<" and emoji, and caps the text at 4000 bytes). Not
+    # Pilot::BuildManager: that constant is only loaded inside upload_to_testflight (NameError, notes run 41901431426).
+    text = notes.delete('<').gsub(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}]/, '').strip
+    text = text.byteslice(0, 3997).scrub('') + '...' if text.bytesize > 4000
     existing = build.get_beta_build_localizations
     (existing.map(&:locale) | %w[en-US en-GB]).each do |locale|
       loc = existing.find { |l| l.locale == locale }
@@ -165,17 +168,29 @@ platform :ios do
     # "What to Test" is this version's CHANGELOG.md section. TestFlight only takes it once the build has processed.
     upload_to_testflight(api_key: key, app_identifier: bundle_id, changelog: notes)
 
-    # Read the notes back: a build never ships silently without them. If the upload left a build with
-    # none, set every locale once, then fail if it still has none.
-    app = Spaceship::ConnectAPI::App.find(bundle_id)
-    uploaded = find_build(app, options[:marketing_version], build)
-    locs = print_whats_new(uploaded, 'After upload')
-    if locs.none? { |l| !l.whats_new.to_s.strip.empty? }
-      UI.important('No locale has What to Test after the upload; setting it directly')
-      set_whats_new(uploaded, notes)
-      locs = print_whats_new(uploaded, 'After fix')
+    # Read the notes back: a build never ships silently without them. If the upload left a build with none, set every
+    # locale once, then fail if it still has none. The build is already on TestFlight by now, so every failure here
+    # names the build and the way to fix it, and the tester group is still set up first.
+    fix = "Build #{build} of #{options[:marketing_version]} IS uploaded but may have no What to Test: " \
+          "run the 'TestFlight notes' workflow with version #{options[:marketing_version]} and build #{build}"
+    begin
+      app = Spaceship::ConnectAPI::App.find(bundle_id)
+      uploaded = find_build(app, options[:marketing_version], build)
+      locs = print_whats_new(uploaded, 'After upload')
+      if locs.none? { |l| !l.whats_new.to_s.strip.empty? }
+        UI.important('No locale has What to Test after the upload; setting it directly')
+        set_whats_new(uploaded, notes)
+        locs = print_whats_new(uploaded, 'After fix')
+      end
+      notes_missing = locs.none? { |l| !l.whats_new.to_s.strip.empty? }
+    rescue StandardError => e
+      ensure_internal_testers
+      UI.user_error!("#{fix} (#{e.class}: #{e.message})")
     end
-    UI.user_error!("Build #{build} of #{options[:marketing_version]} has no What to Test in any locale") if locs.none? { |l| !l.whats_new.to_s.strip.empty? }
+    if notes_missing
+      ensure_internal_testers
+      UI.user_error!("#{fix} (no locale has text after setting it)")
+    end
     ensure_internal_testers
   ensure
     File.delete(key_path) if key_path && File.exist?(key_path)
