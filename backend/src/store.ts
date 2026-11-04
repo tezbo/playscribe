@@ -194,6 +194,15 @@ const mergeField = <T>(old: Field<T> | null, next: Field<T> | null | undefined, 
   return old
 }
 
+/**
+ * When a fact went live is the earliest evidence: a second post for the same release (a hotfix note, a re-post) must not
+ * push a non-official date later. Stronger evidence still wins, and a confirmation overrides.
+ */
+const mergeLiveAt = (old: Field<string> | null, next: Field<string> | null | undefined, force = false): Field<string> | null => {
+  if (old && next && !force && RANK[next.verification] === RANK[old.verification] && old.verification !== 'official' && next.value > old.value) return { ...old, checkedAt: next.checkedAt }
+  return mergeField(old, next, force)
+}
+
 export interface PlatformInput {
   status?: PlatformStatus
   version?: Field<string> | null
@@ -214,7 +223,7 @@ export const upsertPlatform = (db: DB, releaseId: string, platform: Platform, p:
   const status = p.status && (!old || p.confirm || oldV !== 'official') ? p.status : (old?.status ?? 'unknown')
   const version = mergeField(json(old?.version, null), p.version, p.confirm)
   const sizeBytes = mergeField(json(old?.size_bytes, null), p.sizeBytes, p.confirm)
-  const liveAt = mergeField(json(old?.live_at, null), p.liveAt, p.confirm)
+  const liveAt = mergeLiveAt(json(old?.live_at, null), p.liveAt, p.confirm)
   const bundles = p.bundles ?? json(old?.bundles, [])
   db.prepare(
     `INSERT INTO platform_releases (release_id, platform, status, version, size_bytes, live_at, bundles, verification, updated_at)
@@ -341,4 +350,28 @@ export const mergeSilentDuplicates = (db: DB) => {
     merged++
   }
   return merged
+}
+
+/**
+ * Repair for the later-post bug: a Steam-assumed PS5 row dated after the Steam release it assumes. The PC row's date is the
+ * Steam post, so the PS5 row takes it. Rows promoted from announced already carry it.
+ */
+export const repairAssumedLiveAt = (db: DB) => {
+  const rows = db
+    .prepare(
+      `SELECT p.release_id, p.live_at AS ps_live, c.live_at AS pc_live FROM platform_releases p
+       JOIN platform_releases c ON c.release_id = p.release_id AND c.platform = 'pc'
+       WHERE p.platform = 'ps5' AND p.status = 'live' AND p.verification = 'assumed'`,
+    )
+    .all() as { release_id: string; ps_live: string | null; pc_live: string | null }[]
+  let n = 0
+  for (const r of rows) {
+    const ps = json<Field<string> | null>(r.ps_live, null)
+    const pc = json<Field<string> | null>(r.pc_live, null)
+    if (!ps || !pc || ps.verification !== 'assumed' || !(ps.value > pc.value)) continue
+    db.prepare("UPDATE platform_releases SET live_at = ? WHERE release_id = ? AND platform = 'ps5'").run(JSON.stringify({ ...ps, value: pc.value }), r.release_id)
+    db.prepare('UPDATE releases SET updated_at = ? WHERE id = ?').run(now(), r.release_id)
+    n++
+  }
+  return n
 }
