@@ -18,7 +18,7 @@ final class PlayscribeUITests: XCTestCase {
             app.launch()
             if cold { app.terminate() } else { XCUIDevice.shared.press(.home) }
             let note = try postAndFindNotification()
-            note.tap()
+            note.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
             // The tap starts (or resumes) the app in a process this test's `app` proxy never launched, and the `simulate`
             // launch in postAndFindNotification replaced it, so ask a fresh proxy for the target app's state (3758183 and
             // e9a735d: a bare assertion here failed with no message).
@@ -59,15 +59,27 @@ final class PlayscribeUITests: XCTestCase {
         simulate.launchArguments = ["-qaRoute", "simulate/dawnwalker/major"]
         simulate.launch()
         XCUIDevice.shared.press(.home)
-        let banner = springboard.otherElements["Notification"].descendants(matching: .any)
-            .matching(NSPredicate(format: "label CONTAINS 'Dawnwalker'")).firstMatch
-        if banner.waitForExistence(timeout: 15) { return banner }
-        // Fall back to Notification Center.
+        // The banner is up for only a few seconds, and pressing Home returns slowly: look briefly, then use Notification Center.
+        if let banner = notificationRow(timeout: 4) { return banner }
         let start = springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
         start.press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.6)))
-        let listed = springboard.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Dawnwalker'")).firstMatch
-        XCTAssertTrue(listed.waitForExistence(timeout: 5))
-        return listed
+        let listed = notificationRow(timeout: 10)
+        XCTAssertNotNil(listed, "the Dawnwalker notification is in the banner or Notification Center")
+        return listed ?? springboard.otherElements["Notification"]
+    }
+
+    /// The notification's own row: the smallest hittable element whose label names the game. A first match on any element
+    /// can be a container (a list or its scroll view) whose centre is not the row, so the tap lands on nothing (e9a735d:
+    /// the tap at 40.7 s left the app unlaunched with its icon badged "1 new item").
+    private func notificationRow(timeout: TimeInterval) -> XCUIElement? {
+        let deadline = Date.now.addingTimeInterval(timeout)
+        let query = springboard.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Dawnwalker'"))
+        repeat {
+            let rows = query.allElementsBoundByIndex.filter { $0.exists && $0.isHittable && !$0.frame.isEmpty }
+            if let row = rows.min(by: { $0.frame.width * $0.frame.height < $1.frame.width * $1.frame.height }) { return row }
+            usleep(500_000)
+        } while Date.now < deadline
+        return nil
     }
 
     private func attach(name: String) {
