@@ -393,23 +393,24 @@ final class LibraryLayoutTests: XCTestCase {
             // tile fills the width (n columns of at least 124 pt, leftover spread equally, 16 pt margins).
             let openW = app.frame.width - 32
             let openN = max(2, Int((openW + 10) / 134))
-            let openTile = ((openW - CGFloat(openN - 1) * 10) / CGFloat(openN) * 100).rounded(.down) / 100
             for h in hero {
                 XCTAssertGreaterThanOrEqual(h.minX, 0, "hero starts on screen \(h) [\(pose)]")
                 XCTAssertLessThanOrEqual(h.maxX, app.frame.width + 1, "hero ends on screen \(h) [\(pose)]")
-                if pose.contains("flat") && app.frame.width > app.frame.height {
-                    XCTAssertEqual(h.width, openTile * 2 + 10, accuracy: 3, "Open hero is the double tile [\(pose)]")
-                }
+                // 0.5.0: the hero is the Latest updates deck, so a card is not a tile; the old double-tile width
+                // check does not apply. Open portrait: the card is at most 38% of the height.
                 if pose.contains("flat") && app.frame.width <= app.frame.height {
                     XCTAssertLessThanOrEqual(h.height, app.frame.height * 0.38 + 12, "Open portrait hero is at most 38% of the height [\(pose)]")
                 }
             }
-            // The panel belongs to the taller-than-wide hero card (Open portrait); in Open landscape the hero is a
-            // double tile in the grid and there is no panel. (app.frame can report the wrong orientation here.)
-            if pose.contains("flat"), let h0 = hero.first, h0.height > h0.width {
-                let panel = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Also new' OR label == \"What's new\"")).firstMatch
-                XCTAssertTrue(panel.exists, "Open portrait: the Also new / What's new panel sits beside the hero [\(pose)]")
-                for h in hero { XCTAssertFalse(panel.frame.insetBy(dx: 1, dy: 1).intersects(h), "panel overlaps hero \(panel.frame) \(h) [\(pose)]") }
+            // Open portrait (0.5.0): the Also new / What's new panel sits beside the deck, same top and height,
+            // never overlapping it. (app.frame can report the wrong orientation, so the panel's presence is
+            // asserted from the stills, and its geometry whenever it is there.)
+            let panel = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Also new' OR label == \"What's new\"")).firstMatch
+            let deck = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Latest updates, page'")).firstMatch
+            if pose.contains("flat"), panel.exists, deck.exists {
+                XCTAssertFalse(panel.frame.insetBy(dx: 1, dy: 1).intersects(deck.frame), "panel overlaps the deck \(panel.frame) \(deck.frame) [\(pose)]")
+                XCTAssertEqual(panel.frame.minY, deck.frame.minY, accuracy: 4, "panel and deck share a top [\(pose)]")
+                XCTAssertEqual(panel.frame.height, deck.frame.height, accuracy: 6, "panel and deck are equal height [\(pose)]")
             }
             if pose.contains("flat"), let right = tiles.map(\.maxX).max(), tiles.count >= openN {
                 XCTAssertGreaterThanOrEqual(right, app.frame.width - 16 - 12, "Open grid fills the width, no dead space on the trailing side [\(pose)]")

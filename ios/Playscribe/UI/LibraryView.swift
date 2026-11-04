@@ -275,7 +275,19 @@ struct LibraryShelf: View {
                 // Open landscape: Continue is a double-width tile leading the grid (D-12).
                 // 0.5.0 item 1: the Latest updates deck replaces the single Continue hero. Tabletop
                 // shows the first card in the standing half and the page edge on this lower half.
-                if duo.pose != .tabletop && !heroOnRightPage {
+                if duo.pose == .flat && !duo.isLandscape && !model.latestDeck.isEmpty {
+                    // Open portrait (Iris, 0.5.0): the deck on the left at the 0.2.0 hero's width, the Also new
+                    // panel on the right at the same height, listing every update but the deck's front card.
+                    let deck = model.latestDeck
+                    let front = deck.first { $0.id == model.deckSelection } ?? deck.first
+                    HStack(alignment: .top, spacing: 10) {
+                        LatestUpdatesDeck(cards: deck, compact: true)
+                            .frame(width: max(0, (duo.size.width - railWidth - 32 - 10) * 0.46), alignment: .leading)
+                        AlsoNewPanel(hero: front?.release)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                    }
+                    .id(poseKey)
+                } else if duo.pose != .tabletop && !heroOnRightPage {
                     let deck = model.latestDeck
                     if !deck.isEmpty {
                         LatestUpdatesDeck(cards: deck)
@@ -475,11 +487,14 @@ struct ContinueRow: View {
 /// (not the hero's game), each opening that update; with none, the hero update's top three changes.
 struct AlsoNewPanel: View {
     @Environment(AppModel.self) private var model
-    var hero: Release
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    /// The deck's front card's update: left out of the list, and the "What's new" source when it is alone.
+    var hero: Release?
 
-    private var others: [Release] { model.alsoNewReleases(excluding: hero.gameID) }
+    private var others: [Release] { model.alsoNewReleases(excludingRelease: hero?.id) }
 
     private var changes: [String] {
+        guard let hero else { return [] }
         let key = (hero.keyChanges ?? []).filter { !$0.isEmpty }
         if !key.isEmpty { return Array(key.prefix(5)) }
         return Array(hero.notes.flatMap { $0.items.filter { $0.spoiler != true }.map(\.text) }.prefix(5))
@@ -510,12 +525,12 @@ struct AlsoNewPanel: View {
                 if all.isEmpty {
                     whatsNew(lines: shownChanges(width: geo.size.width - 24, available: avail), available: avail, width: geo.size.width - 24)
                 } else {
-                    ForEach(rows) { r in row(r, height: rowHeight) }
+                    ForEach(rows) { r in row(r, height: rowHeight).transition(.opacity) }
                 }
                 Spacer(minLength: 0)
                 if all.isEmpty {
                     // Iris: a 56 pt row pinned to the bottom, so the panel never ends half empty.
-                    Button { model.openGame(hero.gameID, chapter: .updates, releaseID: hero.id) } label: {
+                    Button { if let hero { model.openGame(hero.gameID, chapter: .updates, releaseID: hero.id) } } label: {
                         HStack {
                             Text("Read the full update").font(PlayscribeFont.subheadline.weight(.semibold))
                             Spacer(minLength: 0)
@@ -541,6 +556,8 @@ struct AlsoNewPanel: View {
             .padding(.horizontal, 12)
             .padding(.top, 12)
             .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
+            // Paging the deck swaps one row for another: a 200 ms cross fade, none under Reduce Motion.
+            .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: all.map(\.id))
         }
         .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .accessibilityElement(children: .contain)

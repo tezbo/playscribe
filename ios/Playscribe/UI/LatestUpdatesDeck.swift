@@ -33,6 +33,8 @@ extension AppModel {
             }
             return Array(info.sorted { ($0.date ?? .distantPast) > ($1.date ?? .distantPast) }.prefix(8))
         }
+        // QA (route one-update): only the one fresh update, so the deck is a single hero.
+        if qaSingleUpdate { cards = cards.filter(\.unread) }
         cards.sort { a, b in
             a.unread != b.unread ? a.unread : (a.date ?? .distantPast) > (b.date ?? .distantPast)
         }
@@ -52,9 +54,12 @@ struct LatestUpdatesDeck: View {
     @Environment(\.duo) private var duo
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     var cards: [DeckCard]
+    /// Open portrait: the deck is the left column beside the Also new panel, one card at a time.
+    var compact = false
     @State private var current: String?
 
     private var perScreen: CGFloat {
+        if compact { return 1 }
         // A lone card, or the wide Closed landscape screen, takes the full content width: no card
         // narrower than its row with an empty area beside it (Iris, dc27a53 polish item 6).
         if cards.count == 1 || (duo.pose == .closed && duo.isLandscape) { return 1 }
@@ -88,6 +93,9 @@ struct LatestUpdatesDeck: View {
                 }
             }
         }
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(compact || cards.count > 1
+            ? "Latest updates, page \((cards.firstIndex { $0.id == (current ?? cards.first?.id) } ?? 0) + 1) of \(cards.count)" : "Latest updates")
     }
 }
 
