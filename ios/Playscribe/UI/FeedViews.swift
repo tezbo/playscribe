@@ -114,6 +114,7 @@ struct SearchView: View {
 
     var body: some View {
         let tabletop = duo.pose == .tabletop
+        let book = duo.pose == .book && duo.division != nil
         let term = tabletop ? "" : query.trimmingCharacters(in: .whitespaces).lowercased()
         let active = tabletop ? letter != nil : !term.isEmpty
         let library = Set(model.data.collection.map(\.gameID))
@@ -130,7 +131,7 @@ struct SearchView: View {
                 TabletopSearch(letter: $letter, prompt: "Search games, patch notes, characters")
                     .listRowBackground(Color.clear)
             }
-            if !active {
+            if !active && !book {
                 Text(tabletop ? "Pick a letter to see games, patch notes and game book entries that start with it. Spoiler-tagged notes are left out."
                               : "Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
                     .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
@@ -202,6 +203,18 @@ struct SearchView: View {
         .modifier(SearchFieldIfTyping(enabled: !tabletop, drawer: duo.pose != .book, query: $query))
         // Book: Search lives on the right page, never across the fold (0.2.0 gate: field and hint ran full width).
         .padding(.leading, duo.pose == .book ? (duo.division.map { $0.maxX + 8 } ?? 0) : 0)
+        // Book: the hint sits on the left page under the title, so the left page is not empty and the
+        // field and results own the right page (Iris, #185 review).
+        .overlay(alignment: .topLeading) {
+            if book, !active, let fold = duo.division {
+                Text("Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
+                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(width: max(0, fold.minX - 16 - 24), alignment: .leading)
+                    .padding(.leading, 16).padding(.top, 120)
+                    .allowsHitTesting(false)
+            }
+        }
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
         .frame(maxHeight: tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
