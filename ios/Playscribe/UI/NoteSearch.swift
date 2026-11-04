@@ -18,6 +18,15 @@ extension AppModel {
     func noteHits(_ query: String, scope: NoteScope, gameID: String?) -> [NoteHit] {
         let q = PS5Index.fold(query)
         guard q.count >= 2 else { return [] }
+        return noteHits(scope: scope, gameID: gameID) { text, section in PS5Index.fold(text + " " + section).contains(q) }
+    }
+
+    /// Tabletop: the notes whose line starts with `letter` (the keyboard never opens there).
+    func noteHits(letter: String, scope: NoteScope, gameID: String?) -> [NoteHit] {
+        noteHits(scope: scope, gameID: gameID) { text, _ in LetterIndex.matches(text, letter) }
+    }
+
+    private func noteHits(scope: NoteScope, gameID: String?, matching test: (_ text: String, _ section: String) -> Bool) -> [NoteHit] {
         let games = scope == .thisGame ? [gameID].compactMap { $0 } : data.collection.map(\.gameID)
         var hits: [NoteHit] = []
         for g in games {
@@ -31,12 +40,12 @@ extension AppModel {
                 }
                 for (si, section) in r.notes.enumerated() {
                     for (ii, item) in section.items.enumerated() where item.spoiler != true {
-                        guard PS5Index.fold(item.text + " " + section.title).contains(q) else { continue }
+                        guard test(item.text, section.title) else { continue }
                         hits.append(NoteHit(id: "\(r.id)#\(si).\(ii)", release: r, line: item.text, section: section.title,
                                             pcOnly: !ps5 || item.isPCOnly))
                     }
                 }
-                for (ki, k) in (r.keyChanges ?? []).enumerated() where PS5Index.fold(k).contains(q) {
+                for (ki, k) in (r.keyChanges ?? []).enumerated() where test(k, "Key changes") {
                     hits.append(NoteHit(id: "\(r.id)#k\(ki)", release: r, line: k, section: "Key changes", pcOnly: !ps5 || PCOnly.matches(k)))
                 }
             }

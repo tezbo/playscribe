@@ -302,6 +302,16 @@ struct PS5Index {
         return scored.prefix(limit).map { game(entries[$0.1]) }
     }
 
+    /// Titles that start with `letter` ("A" to "Z", or "#" for digits and symbols), in popularity order.
+    func titles(startingWith letter: String, limit: Int = 60) -> [CatalogGame] {
+        var out: [CatalogGame] = []
+        for (k, name) in folded.enumerated() where LetterIndex.matches(name, letter) {
+            out.append(game(entries[k]))
+            if out.count >= limit { break }
+        }
+        return out
+    }
+
     func popular(limit: Int) -> [CatalogGame] {
         entries.prefix(limit).map(game)
     }
