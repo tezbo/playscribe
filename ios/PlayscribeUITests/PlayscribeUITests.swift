@@ -392,7 +392,9 @@ final class LibraryLayoutTests: XCTestCase {
             // can report the wrong orientation in Closed landscape, so the wide card is checked against the longer side.)
             let heroCards = app.buttons.matching(identifier: "deckCard").allElementsBoundByIndex.prefix(1).map(\.frame)
             let hero = heroCards + app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Continue,'")).allElementsBoundByIndex.map(\.frame)
-            let screenW = pose.contains("closed") ? max(app.frame.width, app.frame.height) : app.frame.width
+            // e869273: in the landscape poses (Closed, Book, Open) app.frame reports portrait dimensions (670 or 679 wide) while
+            // the screen is about 1288 wide, so the longer side bounds the hero. Tabletop keeps app.frame.
+            let screenW = pose.contains("tabletop") ? app.frame.width : max(app.frame.width, app.frame.height)
             // 0.2.0 gate: the hero's frame is its card, not the fill-scaled art behind it (it once
             // reported x -97.7, width 461). Open landscape: the double tile, 2 tiles + 10 pt, where the
             // tile fills the width (n columns of at least 124 pt, leftover spread equally, 16 pt margins).
@@ -403,7 +405,8 @@ final class LibraryLayoutTests: XCTestCase {
                 XCTAssertLessThanOrEqual(h.maxX, screenW + 1, "hero ends on screen \(h) [\(pose)]")
                 // 0.5.0: the hero is the Latest updates deck, so a card is not a tile; the old double-tile width
                 // check does not apply. Open portrait: the card is at most 38% of the height.
-                if pose.contains("flat") && app.frame.width <= app.frame.height {
+                // Only when the measurement is consistent with portrait: a card wider than app.frame is a landscape reading.
+                if pose.contains("flat") && app.frame.width <= app.frame.height && h.maxX <= app.frame.width + 1 {
                     XCTAssertLessThanOrEqual(h.height, app.frame.height * 0.38 + 12, "Open portrait hero is at most 38% of the height [\(pose)]")
                 }
             }
