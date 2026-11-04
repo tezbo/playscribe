@@ -20,7 +20,7 @@ so write it for testers. Release steps are in docs/release.md.
 - Alerts say what changed, not just that something did. Quiet hours (Settings) deliver alerts silently overnight, and a tap on a verification tag explains it.
 - PS Plus: this month's games on your Library, a "last chance" in the final three days, and an optional "PS Plus games leaving soon" reminder in Settings.
 - Settings has its own cog. Search has a Back button. A game with no pictures says so and points elsewhere, bookmarking offers "Open My book", and a game page can check for updates.
-- Tabletop: Playing, Upcoming, Settings and A to Z search sit on the lower rail.
+- Tabletop: Playing, Upcoming and Settings sit on the lower rail, and the A to Z search strip is in the lower half.
 
 Check on the Duo:
 
@@ -29,6 +29,11 @@ Check on the Duo:
 - Open Enshrouded: it should open on its newest patch.
 - Turn Quiet hours on in Settings and set it to cover the current time: the next alert should arrive without a sound.
 - Open Search, tap Back or swipe in from the left edge: you should land where you started.
+- Open an upcoming game in Upcoming and tap it to watch it: it moves to your watchlist, and a release-day alert is set for it.
+- Share an update: a picture card with the game and update appears in the share sheet.
+- Add a game by speaking, then by photo, then by camera: each asks permission first and each offers Type it.
+- Follow a known issue on a game page: it appears under Following. (The alert itself only arrives when an update fixes it.)
+- PS Plus on the Library shows this month's games with a claim-by date; in its last three days the heading says last chance.
 
 ## 0.2.0
 
