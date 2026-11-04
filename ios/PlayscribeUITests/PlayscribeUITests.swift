@@ -371,7 +371,7 @@ final class LibraryLayoutTests: XCTestCase {
             let tiles = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
                 .allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }
                 .map { e -> CGRect in
-                    // The cover's real width is in the identifier ("tile-100"); Closed fills its column (tile-0).
+                    // The cover's real width is in the identifier ("tile-100"); Closed measures its column width at layout.
                     let w = Double(e.identifier.dropFirst(5)).flatMap { $0 > 0 ? $0 : nil } ?? e.frame.width
                     return CGRect(x: e.frame.minX, y: e.frame.minY, width: w, height: (w * 4 / 3).rounded())
                 }

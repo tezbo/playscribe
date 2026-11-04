@@ -508,6 +508,8 @@ struct GameTile: View {
     var row: AppModel.LibraryRow
     /// nil: fill the column (Closed, 3 across).
     var size: CGFloat?
+    /// Closed fills its column, so the cover's width is only known once laid out.
+    @State private var measuredWidth: CGFloat = 0
 
     @ViewBuilder private func tileFrame(_ cover: some View) -> some View {
         if let size { cover.frame(width: size, height: (size * 4 / 3).rounded()) }
@@ -519,6 +521,7 @@ struct GameTile: View {
             // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             tileFrame(TileCover(game: row.game))
+                .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { measuredWidth = $0 }
                 .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
                 .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
                 .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
@@ -529,7 +532,7 @@ struct GameTile: View {
         .accessibilityElement(children: .ignore)
         // The accessibility frame runs 8 pt wider than the cover; the id carries the cover's real
         // width so the frame tests measure the cover, not the element (fold audit, J-5).
-        .accessibilityIdentifier("tile-\(size.map { Int($0) } ?? 0)")
+        .accessibilityIdentifier("tile-\(Int((size ?? measuredWidth).rounded()))")
         .accessibilityLabel(model.tileAccessibilityLabel(row))
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
