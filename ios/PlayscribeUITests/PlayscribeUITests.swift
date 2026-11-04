@@ -648,6 +648,13 @@ final class FinalFixTests: XCTestCase {
             XCTAssertTrue(button.waitForExistence(timeout: 5), "Tabletop: read-only search button")
             XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "letter-A").firstMatch.exists, "Tabletop: letter strip")
             XCTAssertFalse(app.keyboards.firstMatch.exists)
+            // Ruling: tapping the field never raises the keyboard; it explains why instead.
+            button.tap()
+            let hint = app.descendants(matching: .any).matching(identifier: "tabletopSearchHint").firstMatch
+            XCTAssertTrue(hint.waitForExistence(timeout: 3), "Tabletop: the field explains why there is no keyboard")
+            XCTAssertTrue(hint.label.contains("Typing needs the flat screen. Pick a letter below, or open your Duo flat to type."), "hint wording [\(hint.label)]")
+            sleep(1)
+            XCTAssertFalse(app.keyboards.firstMatch.exists, "Tabletop: the keyboard never opens")
         } else {
             // Closed portrait has its own text field (16 pt clear of the badge); the other poses use the system field.
             let own = app.textFields["searchField"]

@@ -135,6 +135,9 @@ struct SearchView: View {
             if tabletop {
                 TabletopSearch(letter: $letter, prompt: "Search games, patch notes, characters")
                     .listRowBackground(Color.clear)
+                    // Iris: the result cards are as wide as the list's sections, so the field row uses the
+                    // section's full width too (no extra content inset), matching their edges.
+                    .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
             }
             if ownField {
                 HStack(spacing: 8) {
@@ -188,7 +191,7 @@ struct SearchView: View {
                     .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                    .listRowInsets(EdgeInsets(top: 8, leading: tabletop ? 0 : 16, bottom: 8, trailing: tabletop ? 0 : 16))
             } else if gameHits.isEmpty && noteHits.isEmpty && entryHits.isEmpty {
                 ContentUnavailableView.search(text: tabletop ? (letter ?? "") : query)
             }
