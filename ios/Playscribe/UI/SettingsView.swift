@@ -71,7 +71,13 @@ struct SettingsView: View {
                     // Shown only while a PS Plus month exists, the same condition as the Library card.
                     if PlusLogic.current(PlusStore.shared.months) != nil {
                         // PS Plus: a reminder in the last three days a month's games can be claimed.
-                        Toggle("PS Plus games leaving soon", isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true }))
+                        Toggle(isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true })) {
+                            VStack(alignment: .leading, spacing: 6) {
+                                PlusBadge(height: 18)
+                                Text("Games leaving soon")
+                            }
+                        }
+                            .accessibilityLabel("PS Plus games leaving soon")
                             .accessibilityHint("A reminder in the last three days before this month's PS Plus games leave")
                             .accessibilityIdentifier("plusLeavingSoon")
                             .onChange(of: model.data.plusLeavingSoonOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }

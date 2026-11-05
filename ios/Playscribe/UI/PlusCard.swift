@@ -2,8 +2,8 @@ import SwiftUI
 
 /// PS Plus monthly games (0.5.0, r050-plus-card): this month's lineup in the Library as up to three
 /// cover tiles styled like the library's (3:4, 10 pt corners, name in the art, no text under), with
-/// "Last chance" in its last three days. No Sony logo or badge: only the words "PS Plus" (CLAUDE.md,
-/// brand: no PlayStation marks). A game you track opens its page. Hidden when no month holds today.
+/// "Last chance" in its last three days. Carries the PlayStation Plus badge (Terry's call, 2026-11-05;
+/// the trademark notice sits under the version in Settings). A game you track opens its page. Hidden when no month holds today.
 struct PlusCard: View {
     @Environment(AppModel.self) private var model
 
@@ -23,7 +23,8 @@ struct PlusCard: View {
             let shown = Array(month.games.prefix(Self.maxCovers))
             VStack(alignment: .leading, spacing: 10) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(lastChance ? "PS Plus: last chance" : "PS Plus this month").font(PlayscribeFont.title3)
+                    PlusBadge(height: 26)
+                    Text(lastChance ? "Last chance" : "This month").font(PlayscribeFont.title3)
                         .accessibilityAddTraits(.isHeader)
                     Text("Claim by \(claimBy)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
                 }
@@ -75,5 +76,18 @@ struct PlusCover: View {
             }
         }
         .aspectRatio(3 / 4, contentMode: .fit)
+    }
+}
+
+/// The PlayStation Plus badge, bundled (never hotlinked). The artwork has black type, so it sits on a vellum pill
+/// to stay readable on the ink card.
+struct PlusBadge: View {
+    var height: CGFloat
+    var body: some View {
+        Image("ps-plus-badge").resizable().scaledToFit().frame(height: height)
+            .padding(.horizontal, height * 0.4).padding(.vertical, height * 0.2)
+            .background(Color(red: 0.984, green: 0.957, blue: 0.902), in: Capsule())
+            .accessibilityLabel("PlayStation Plus")
+            .accessibilityAddTraits(.isImage)
     }
 }

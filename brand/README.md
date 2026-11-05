@@ -43,7 +43,7 @@ iOS icons are one 1024x1024 layered design. Appearances are default, dark, clear
 
 ## PlayStation
 
-Don't use the PlayStation or PS5 logos, the four button shapes, or PlayStation blue. Use "PS5" only as plain descriptive text, and show the notice in `tokens.json` (`voice.trademarkNotice`) in About.
+Don't use the PlayStation or PS5 logos (exception, Terry 2026-11-05: the bundled PlayStation Plus badge on the PS Plus card and its Settings toggle, with the notice under the version in Settings), the four button shapes, or PlayStation blue. Use "PS5" only as plain descriptive text, and show the notice in `tokens.json` (`voice.trademarkNotice`) in About.
 
 ## Rebuild
 
