@@ -61,9 +61,12 @@ private extension String {
 }
 
 struct WidgetView: View {
-    @Environment(\.widgetFamily) private var family
+    @Environment(\.widgetFamily) private var envFamily
     @Environment(\.colorScheme) private var scheme
     var entry: SnapshotEntry
+    /// Snapshot tests set this; WidgetKit's family is read-only outside a widget.
+    var forcedFamily: WidgetFamily?
+    private var family: WidgetFamily { forcedFamily ?? envFamily }
 
     private var limit: Int {
         switch family { case .systemSmall: 1; case .systemMedium: 3; default: 5 }
@@ -156,9 +159,11 @@ struct WidgetView: View {
 
 /// The widget's background: art edge to edge on the small, the left half of the medium and the top of the large.
 struct WidgetBackground: View {
-    @Environment(\.widgetFamily) private var family
+    @Environment(\.widgetFamily) private var envFamily
     @Environment(\.colorScheme) private var scheme
     var entry: SnapshotEntry
+    var forcedFamily: WidgetFamily?
+    private var family: WidgetFamily { forcedFamily ?? envFamily }
     var body: some View {
         let plate = scheme == .dark ? W.ink950 : W.vellum100
         if entry.snapshot.rows.isEmpty || !entry.snapshot.hasGames
@@ -200,12 +205,11 @@ struct WidgetCanvas: View {
     var covers: [String: UIImage] = [:]
     var tinted = false
     var body: some View {
-        WidgetView(entry: entry)
+        WidgetView(entry: entry, forcedFamily: family)
             .padding(16)
             .frame(width: size.width, height: size.height)
-            .background { WidgetBackground(entry: entry) }
+            .background { WidgetBackground(entry: entry, forcedFamily: family) }
             .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-            .environment(\.widgetFamily, family)
             .environment(\.colorScheme, scheme)
             .environment(\.injectedCovers, covers)
             .grayscale(tinted ? 1 : 0)
