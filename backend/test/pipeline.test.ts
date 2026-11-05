@@ -269,6 +269,24 @@ test('coverage audit: a Steam-assumed PS5 row dated before the PS5 launch is dro
   assert.equal(store.dropPreLaunchPs5(db), 0)
 })
 
+test('prelaunch gate (r051): Steam-only official PS5 rows announced before launch are dropped; launch-day and day-before (timezone) patches and press rows stay', async () => {
+  const { db } = await setup()
+  const t = new Date().toISOString()
+  db.prepare("UPDATE games SET ps5_release = '2023-09-06' WHERE id = 'dawnwalker'").run()
+  const add = (id: string, at: string, src: string) => {
+    db.prepare(`INSERT INTO releases (id, game_id, version_key, display_name, kind, kind_basis, announced_at, notes, source_ids, content_hash, created_at, updated_at) VALUES (?, 'dawnwalker', ?, ?, 'patch', 'studio', ?, '[]', ?, 'x', ?, ?)`).run(id, id, id, at, JSON.stringify([src]), t, t)
+    db.prepare(`INSERT INTO platform_releases (release_id, platform, status, verification, live_at, updated_at) VALUES (?, 'ps5', 'live', 'official', NULL, ?)`).run(id, t)
+  }
+  add('dawnwalker@old', '2021-08-31T10:00:00.000Z', 'dawnwalker-steam')
+  add('dawnwalker@launch', '2023-09-06T08:00:00.000Z', 'dawnwalker-steam')
+  add('dawnwalker@eve', '2023-09-05T23:00:00.000Z', 'dawnwalker-steam')
+  add('dawnwalker@press', '2021-08-31T10:00:00.000Z', 'pushsquare')
+  store.dropPreLaunchPs5(db)
+  const has = (id: string) => !!db.prepare("SELECT 1 FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").get(id)
+  assert.equal(has('dawnwalker@old'), false)
+  assert.ok(has('dawnwalker@launch') && has('dawnwalker@eve') && has('dawnwalker@press'))
+})
+
 // Roadmap duplicate audit: the same patch seen as "1.4" by the press and "1.4.0" by Steam is one release.
 const spelling = async (steamTitle: string, pressTitle: string, steamHoursAgo = 30, pressHoursAgo = 28) => {
   const db = openDb(':memory:')
