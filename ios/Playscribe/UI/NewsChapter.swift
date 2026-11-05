@@ -6,10 +6,10 @@ struct NewsItem: Codable, Hashable, Identifiable {
     var title: String
     var date: Date?
     var url: URL
-    /// "official" (a studio's own post) or "reported" (anything else). Older files carry none: they only ever held studio posts.
-    var kind: String?
+    /// "official" (a studio's own post) or "reported" (a press headline). Older files carry none: they only ever held studio posts.
+    var verification: String?
     var id: String { url.absoluteString }
-    var isReported: Bool { kind == "reported" }
+    var isReported: Bool { verification == "reported" }
     var tagText: String { isReported ? "Reported" : "Official" }
     /// At most 3 lines in a row: a long headline is cut at a clause (a comma, colon, dash or semicolon) when one falls
     /// late enough, else at a word.
@@ -73,7 +73,7 @@ final class NewsStore {
     private(set) var globalLoaded = false
 
     private struct GlobalFile: Decodable {
-        struct Row: Decodable { var gameId: String; var title: String; var date: Date?; var url: URL; var kind: String? }
+        struct Row: Decodable { var gameId: String; var title: String; var date: Date?; var url: URL; var verification: String? }
         var items: [Headline]
         init(from decoder: Decoder) throws {
             let c = try decoder.container(keyedBy: CodingKeys.self)
@@ -81,7 +81,7 @@ final class NewsStore {
             var out: [Headline] = []
             // One malformed item never costs the list.
             while !list.isAtEnd {
-                if let r = try? list.decode(Row.self) { out.append(Headline(gameID: r.gameId, item: NewsItem(title: r.title, date: r.date, url: r.url, kind: r.kind))) } else { _ = try? list.decode(File.Skip.self) }
+                if let r = try? list.decode(Row.self) { out.append(Headline(gameID: r.gameId, item: NewsItem(title: r.title, date: r.date, url: r.url, verification: r.verification))) } else { _ = try? list.decode(File.Skip.self) }
             }
             items = out
         }
@@ -97,7 +97,7 @@ final class NewsStore {
         let list = (0..<14).map { i in
             Headline(gameID: gameIDs[i % gameIDs.count],
                      item: NewsItem(title: i.isMultiple(of: 2) ? "Sample studio post \(i): \(long)" : "Sample headline \(i)",
-                                    date: .now.addingTimeInterval(-Double(i) * 86_400), url: URL(string: "https://example.com/\(i)")!, kind: i.isMultiple(of: 3) ? "reported" : "official"))
+                                    date: .now.addingTimeInterval(-Double(i) * 86_400), url: URL(string: "https://example.com/\(i)")!, verification: i.isMultiple(of: 3) ? "reported" : "official"))
         }
         global = list; globalLoaded = true
         for id in gameIDs { items[id] = list.filter { $0.gameID == id }.map(\.item); loaded.insert(id) }

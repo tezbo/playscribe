@@ -1,10 +1,10 @@
 import { createHash } from 'node:crypto'
 import { now, type DB } from './db.ts'
+import newsSources from './sources/news-sources.json' with { type: 'json' }
 import { alertOf } from './alerts.ts'
 import { artworkUrl, squareCoverUrl } from './artwork.ts'
 import { digestOf } from './digest.ts'
 import { tagNotes } from './ingest/notes.ts'
-import { registry } from './registry.ts'
 import type { Field, Game, KindBasis, NoteSection, Platform, PlatformRelease, PlatformStatus, Release, ReleaseKind, ReleaseLinks, Verification } from './types.ts'
 
 // Reads and writes for the release model. Rows hold the spec's nested types as JSON.
@@ -276,13 +276,8 @@ export const addNews = (db: DB, gameId: string, post: { url: string; title: stri
     .prepare('INSERT OR IGNORE INTO news (game_id, url, title, published_at, source_id) VALUES (?, ?, ?, ?, ?)')
     .run(gameId, post.url, post.title.trim().slice(0, 200), post.publishedAt, post.sourceId)
 
-/** The verification tag a headline carries in the app: `official` when its source is an official one (a studio's own post), else `reported`. The source itself is never exported. */
-export const newsKind = (sourceId: string): 'official' | 'reported' => {
-  const defs = [...registry.shared, ...Object.values(registry.games).flatMap((g) => g.sources)]
-  const def = defs.find((d) => d.id === sourceId)
-  // Steam sources for games outside the registry are made on the fly (`steam-<appid>`), and are the studio's own feed.
-  return def ? (def.trust === 'official' ? 'official' : 'reported') : /^steam-\d+$/.test(sourceId) ? 'official' : 'reported'
-}
+const newsVerification = (sourceId: string): 'official' | 'reported' =>
+  (newsSources.sources as Record<string, { verification?: string }>)[sourceId]?.verification === 'reported' ? 'reported' : 'official'
 
 export const newsOf = (db: DB, gameId: string, limit = 20) =>
   (db.prepare('SELECT title, published_at, url, source_id FROM news WHERE game_id = ? ORDER BY published_at DESC, url LIMIT ?').all(gameId, limit) as { title: string; published_at: string; url: string; source_id: string }[]).map((n) => ({
@@ -290,7 +285,7 @@ export const newsOf = (db: DB, gameId: string, limit = 20) =>
     title: n.title,
     date: n.published_at,
     url: n.url,
-    kind: newsKind(n.source_id),
+    verification: newsVerification(n.source_id),
   }))
 
 /** The newest headlines across every game, for the global News tab (v1/news.json). Same fields as a game's file. */
@@ -300,7 +295,7 @@ export const allNews = (db: DB, limit = 200) =>
     title: n.title,
     date: n.published_at,
     url: n.url,
-    kind: newsKind(n.source_id),
+    verification: newsVerification(n.source_id),
   }))
 
 /**

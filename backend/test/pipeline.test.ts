@@ -254,15 +254,11 @@ test('roadmap 17: official non-patch posts become news headlines (title, date, u
   assert.ok(art)
   assert.deepEqual(Object.keys(art).sort(), ['game_id', 'published_at', 'source_id', 'title', 'url'])
   assert.ok(!rows.some((r) => /Hotfix|Update 1\.1$/.test(r.title)))
-  assert.ok(newsOf(db, 'dawnwalker').every((n) => Object.keys(n).sort().join() === 'date,gameId,kind,title,url' && n.gameId === 'dawnwalker'))
-  // The global feed is the same rows across games, newest first, with the same four fields.
+  assert.ok(newsOf(db, 'dawnwalker').every((n) => Object.keys(n).sort().join() === 'date,gameId,title,url,verification' && n.gameId === 'dawnwalker'))
+  // The global feed is the same rows across games, newest first, with the same fields.
   const all = allNews(db)
   assert.ok(all.length >= newsOf(db, 'dawnwalker').length)
-  // The tag comes from the source's trust: a studio's own feed is official, anything else reported.
-  assert.equal(store.newsKind('steam-123456'), 'official')
-  assert.equal(store.newsKind('pushsquare'), 'reported')
-  assert.ok(all.every((n) => n.kind === 'official'))
-  assert.ok(all.every((n, i) => Object.keys(n).sort().join() === 'date,gameId,kind,title,url' && (i === 0 || all[i - 1]!.date >= n.date)))
+  assert.ok(all.every((n, i) => Object.keys(n).sort().join() === 'date,gameId,title,url,verification' && (i === 0 || all[i - 1]!.date >= n.date)))
 })
 
 test('coverage audit: a Steam-assumed PS5 row dated before the PS5 launch is dropped; official rows stay', async () => {
@@ -330,4 +326,25 @@ test('"Patch 10.2" and "Patch 10.2.0" months apart are different patches; "2.0" 
   db.prepare(`INSERT INTO releases (id, game_id, version_key, display_name, kind, kind_basis, announced_at, notes, source_ids, content_hash, created_at, updated_at) VALUES ('dawnwalker@10.2.0', 'dawnwalker', '10.2.0', 'Patch 10.2.0', 'patch', 'studio', '2026-09-15T15:07:00.000Z', '[]', '[]', 'x', ?, ?)`).run(t, t)
   assert.equal(equivalentRelease(db, 'dawnwalker', '10.2', '2026-10-29T15:06:00.000Z'), undefined)
   assert.equal(equivalentRelease(db, 'dawnwalker', '10.2', '2026-09-16T15:06:00.000Z')?.id, 'dawnwalker@10.2.0')
+})
+
+test('news: Push Square headlines that name a tracked game are Reported news (title, date, link); its patch and unrelated items are not', async () => {
+  const db = openDb(':memory:')
+  const fetchFn = fakeFetch({
+    'https://www.pushsquare.com/feeds/latest': rss([
+      { title: 'The Blood of Dawnwalker gets a free photo mode next week', link: 'https://www.pushsquare.com/news/2026/11/dawnwalker-photo-mode', date: recent(3), body: '<p>Long article text that must never be stored.</p>' },
+      { title: 'Dawnwalker Update 1.2 patch notes', link: 'https://www.pushsquare.com/news/2026/11/dawnwalker-1-2', date: recent(2), body: '<p>x</p>' },
+      { title: 'Some other game announced', link: 'https://www.pushsquare.com/news/2026/11/other', date: recent(1), body: '<p>y</p>' },
+    ]),
+  })
+  const deps = { db, fetchFn, igdb: null }
+  await seedGames(deps)
+  await runIngest(deps, { force: true })
+  const items = newsOf(db, 'dawnwalker').filter((n) => n.url.includes('pushsquare'))
+  assert.equal(items.length, 2) // photo mode headline and the patch-titled headline are both news here
+  assert.ok(items.every((n) => n.verification === 'reported'))
+  assert.deepEqual(Object.keys(items[0]!).sort(), ['date', 'gameId', 'title', 'url', 'verification'])
+  assert.ok(!JSON.stringify(items).includes('Long article text'))
+  assert.equal(db.prepare("SELECT COUNT(*) AS n FROM news WHERE url LIKE '%other%'").get()!.n, 0)
+  assert.ok(!db.prepare("SELECT 1 FROM releases WHERE game_id = 'dawnwalker' AND source_ids LIKE '%pushsquare-news%'").get(), 'the news feed never makes a release')
 })
