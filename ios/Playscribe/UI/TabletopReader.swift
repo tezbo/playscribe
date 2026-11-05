@@ -83,7 +83,7 @@ extension AppModel {
             let hidden = changes.filter { $0.spoiler == true }.count
             var body = "\(changes.count) listed changes"
             if !first.isEmpty { body += ", including: " + first.joined(separator: " ") }
-            if hidden > 0 && !shown { body += (first.isEmpty ? ", " : ". ") + "\(hidden) hidden for spoilers." }
+            if hidden > 0 && !shown { body += ". \(hidden) hidden for spoilers." }
             out.append(ReaderSection(id: "fixes", title: "Fixes", body: body))
         }
         var facts = ["Status: Released",
@@ -139,10 +139,13 @@ struct TabletopReaderStage: View {
                         .lineSpacing(4)
                         .minimumScaleFactor(0.7)
                         .accessibilityIdentifier("readerBody")
-                    Spacer(minLength: 0)
                 }
+                // The ink panel the other Tabletop stages use (Iris): 70% ink, 12 pt radius, 12 pt
+                // padding, so the art's own lettering never shows through the text.
+                .padding(12)
+                .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 // About 34 characters per line at 19 pt.
-                .frame(maxWidth: 380, maxHeight: .infinity, alignment: .topLeading)
+                .frame(maxWidth: 404, maxHeight: .infinity, alignment: .topLeading)
                 .padding(.horizontal, 28)
                 .padding(.vertical, 24)
                 .padding(.bottom, duo.clearance(forBottom: stageBottom))
