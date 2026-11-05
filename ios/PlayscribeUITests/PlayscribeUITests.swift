@@ -688,6 +688,19 @@ final class Release050Tests: XCTestCase {
         XCTAssertNotNil(text.range(of: #"\d+\.\d+\.\d+"#, options: .regularExpression), "Version reads like 1.2.3, got '\(text)' [\(pose)]")
     }
 
+    /// 0.5.1 spec 1: the per-game footer sits directly under the Notify me about row, and every toggle row is 52 pt.
+    func testSettingsFootersAndRows() throws {
+        let app = launch("settings")
+        let notify = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Notify me about'")).firstMatch
+        let footer = app.staticTexts["Change a single game from the bell on its page."]
+        XCTAssertTrue(notify.waitForExistence(timeout: 10), "Notify me about row")
+        XCTAssertTrue(footer.exists, "per-game footer is shown")
+        XCTAssertLessThanOrEqual(footer.frame.minY - notify.frame.maxY, 60, "footer sits directly under the Notify row")
+        let pause = app.switches["Pause all"]
+        if pause.exists { XCTAssertGreaterThanOrEqual(pause.frame.height, 51.5, "toggle rows are 52 pt") }
+        app.terminate()
+    }
+
     /// J-20: quiet hours. The switch is off by default; turning it on shows From and Until and the footer.
     func testQuietHours() throws {
         let app = launch("settings")
