@@ -688,6 +688,22 @@ final class Release050Tests: XCTestCase {
         XCTAssertNotNil(text.range(of: #"\d+\.\d+\.\d+"#, options: .regularExpression), "Version reads like 1.2.3, got '\(text)' [\(pose)]")
     }
 
+    /// 0.5.1 spec 2: while the pill shows, the page's top controls stay clear of it and tappable, and swiping the pill
+    /// away dismisses it (its VoiceOver "Dismiss" action does the same; XCUITest cannot list custom actions).
+    func testPillLeavesTheTopOfThePageAlone() throws {
+        let app = launch("pill")
+        let pill = app.buttons["newOnPS5Pill"]
+        XCTAssertTrue(pill.waitForExistence(timeout: 10), "the pill shows")
+        let cog = app.buttons["settingsButton"]
+        XCTAssertTrue(cog.exists && cog.isHittable, "Settings stays tappable while the pill shows")
+        XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(pill.frame), "the pill does not cover the cog")
+        let search = app.textFields.firstMatch
+        if search.exists { XCTAssertFalse(search.frame.insetBy(dx: 1, dy: 1).intersects(pill.frame), "the pill does not cover Search") }
+        pill.swipeRight()
+        XCTAssertFalse(pill.waitForExistence(timeout: 3), "swiping dismisses the pill")
+        app.terminate()
+    }
+
     /// J-20: quiet hours. The switch is off by default; turning it on shows From and Until and the footer.
     func testQuietHours() throws {
         let app = launch("settings")

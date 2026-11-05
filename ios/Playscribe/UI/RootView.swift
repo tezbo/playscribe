@@ -287,6 +287,8 @@ struct TabletopRail: View {
         }
         .padding(.vertical, 8)
         .frame(maxHeight: .infinity)
+        // The rail's buttons are 44 pt and do not grow with text (0.5.1 spec 3): at AX sizes the icons overlapped.
+        .dynamicTypeSize(...DynamicTypeSize.large)
     }
 
     private func moreItems(_ id: String) -> [ScreenAction.MenuSection] {
