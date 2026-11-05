@@ -571,6 +571,15 @@ final class AppModel {
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
         case "pill": holdQAPill()
+        // QA (INTERNAL, B-10): "quick/tip" shows the press-and-hold tip; "quick/undo" removes the first game so the
+        // 6 s Undo toast shows. The long-press menu and the yellow Wishlist disc show on the demo library as is.
+        case "quick" where parts.first == "tip": resetDemo(); showPressTipIfNeeded(force: true)
+        case "quick" where parts.first == "wishlist":
+            resetDemo()
+            setStatus("kcd2", .wishlist); setStatus("control-resonant", .wishlist)
+        case "quick" where parts.first == "undo":
+            resetDemo()
+            if let id = data.collection.first(where: { $0.status == .wishlist })?.gameID ?? data.collection.first?.gameID { removeGame(id) }
         case "long-text": qaLongText = true
         case "spoiler-demo": openSpoilerDemo(shown: parts.first == "shown")
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
@@ -709,9 +718,9 @@ final class AppModel {
     }
 
     /// Quick actions tip (Iris): one line the first two times the Library shows, then never again.
-    func showPressTipIfNeeded() {
-        guard !data.collection.isEmpty, (data.pressTipShows ?? 0) < 2, toast == nil, pill == nil,
-              !FoldAuditSwitch.enabled, !UIAccessibility.isVoiceOverRunning else { return }
+    func showPressTipIfNeeded(force: Bool = false) {
+        guard !data.collection.isEmpty, force || (data.pressTipShows ?? 0) < 2, toast == nil || force, pill == nil,
+              force || (!FoldAuditSwitch.enabled && !UIAccessibility.isVoiceOverRunning) else { return }
         data.pressTipShows = (data.pressTipShows ?? 0) + 1
         show(Toast(text: "Press and hold a game to change or remove it"))
     }
