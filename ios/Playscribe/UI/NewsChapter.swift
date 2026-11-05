@@ -23,6 +23,18 @@ struct NewsItem: Codable, Hashable, Identifiable {
     }
 }
 
+extension NewsItem {
+    /// Hero and caption text never carry an ellipsis (Iris): a long headline is cut whole at a clause, else at a word, to fit 2 lines.
+    var captionTitle: String {
+        let limit = 80
+        guard title.count > limit else { return title }
+        let head = String(title.prefix(limit))
+        let clause = head.lastIndex(where: { ",;:–—".contains($0) }).flatMap { head.distance(from: head.startIndex, to: $0) >= 30 ? $0 : nil }
+        let cut = clause.map { String(head[..<$0]) } ?? head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
+        return cut.trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-–—."))
+    }
+}
+
 /// The verification tag: Official for studio posts, Reported otherwise. The only provenance shown.
 struct NewsTag: View {
     var item: NewsItem
@@ -302,7 +314,7 @@ struct GlobalNewsView: View {
         .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
         .background(alignment: .top) {
-            if let lead, let fold = duo.division { NewsStage(headline: lead).frame(height: fold.maxY).allowsHitTesting(false) }
+            if let lead, let fold = duo.division { NewsStage(headline: lead).frame(height: fold.minY).allowsHitTesting(false) }
         }
         .overlay(alignment: .topLeading) {
             if duo.pose == .tabletop { Text("News").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false) }
@@ -358,7 +370,7 @@ struct NewsStage: View {
             ArtView(asset: model.backdrop(headline.gameID, chapter: .news, tall: false), game: game)
             LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
-                Text(headline.item.shortTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(3)
+                Text(headline.item.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(2)
                 HStack(spacing: 8) {
                     NewsTag(item: headline.item)
                     if let game { Text(game.name) }
@@ -366,7 +378,7 @@ struct NewsStage: View {
                 }
                 .font(PlayscribeFont.caption)
             }
-            .padding(.horizontal, 24).padding(.bottom, 16)
+            .padding(.horizontal, 24).padding(.bottom, 24)
             .padding(.trailing, TabletopRail.width)
         }
         .clipped()
@@ -389,9 +401,9 @@ struct NewsStageArt: View {
             LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 Text(game?.name ?? "").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                if let newest { Text(newest.shortTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(3) }
+                if let newest { Text(newest.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(2) }
             }
-            .padding(.horizontal, 24).padding(.bottom, 16)
+            .padding(.horizontal, 24).padding(.bottom, 24)
             .padding(.trailing, TabletopRail.width)
         }
         .clipped()
