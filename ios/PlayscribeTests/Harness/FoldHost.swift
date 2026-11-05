@@ -87,7 +87,7 @@ struct Rendered {
         func walk(_ v: UIView, _ depth: Int) {
             guard depth < 30, !v.isHidden, v.alpha > 0.01 else { return }
             let f = v.convert(v.bounds, to: window)
-            let name = String(describing: type(of: v))
+            let name = String(describing: Swift.type(of: v))
             let interesting = v is UIControl || name.contains("Button") || v.accessibilityLabel != nil
             if interesting, f.minY < 130, f.width > 1, f.height > 1, out.count < 24 {
                 out.append("\(name)[\(v.accessibilityLabel ?? "")|\((v as UIAccessibilityIdentification).accessibilityIdentifier ?? "")] \(Int(f.minX)),\(Int(f.minY)) \(Int(f.width))x\(Int(f.height))")
@@ -186,7 +186,7 @@ enum FoldHost {
             func walk(_ v: UIView, _ depth: Int) {
                 guard depth <= 7, lines.count < 70 else { return }
                 let f = v.convert(v.bounds, to: hc.view)
-                lines.append("\(String(repeating: " ", count: depth))\(String(describing: type(of: v))) \(Int(f.minX)),\(Int(f.minY)) \(Int(f.width))x\(Int(f.height)) safe \(v.safeAreaInsets.left)/\(v.safeAreaInsets.right) margins \(v.layoutMargins.left)/\(v.layoutMargins.right)")
+                lines.append("\(String(repeating: " ", count: depth))\(String(describing: Swift.type(of: v))) \(Int(f.minX)),\(Int(f.minY)) \(Int(f.width))x\(Int(f.height)) safe \(v.safeAreaInsets.left)/\(v.safeAreaInsets.right) margins \(v.layoutMargins.left)/\(v.layoutMargins.right)")
                 for c in v.subviews { walk(c, depth + 1) }
             }
             walk(hc.view, 0)
