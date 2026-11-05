@@ -460,7 +460,15 @@ struct LibraryShelf: View {
             .padding(.trailing, railWidth)
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
-        .contentMargins(.bottom, model.pill == nil && model.toast == nil ? 0 : 96, for: .scrollContent)
+        // One toast slot (Iris, #244): while a toast or the pill shows, the scroll view is shortened by the slot, so
+        // the chips, tiles and page dots above it are never covered. It grows back when the toast goes.
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            Color.clear
+                .frame(height: LowerMessages.inset(duo: duo, showing: model.pill != nil || model.toast != nil))
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
+        }
+        .contentMargins(.bottom, 0, for: .scrollContent)
         .refreshable { await model.refreshFeed() }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
