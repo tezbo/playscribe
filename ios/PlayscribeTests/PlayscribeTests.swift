@@ -449,6 +449,17 @@ struct SpoilerWarningTests {
     }
 }
 
+/// VoiceOver reads the playback position as time (R-11).
+struct PlayerTimeTests {
+    @Test("Spoken time is words, differs per second, never empty past zero")
+    func spoken() {
+        #expect(!PlayerTime.spoken(83).isEmpty)
+        #expect(PlayerTime.spoken(83) != PlayerTime.spoken(84))
+        #expect(PlayerTime.spoken(83).contains("minute"))
+        #expect(PlayerTime.format(83) == "1:23")
+    }
+}
+
 /// R-11, G-9: autoplay is opt-in.
 struct AutoplayTests {
     @Test("Player page autoplays only when asked (R-11)")
