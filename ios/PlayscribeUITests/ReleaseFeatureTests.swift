@@ -75,12 +75,12 @@ final class ReleaseFeatureTests: XCTestCase {
         // The grid is lazy and below the cards, so it is not in the tree at launch: wait for the Library, then scroll
         // the lower half (never the view-only upper half) until a tile exists and can be pressed.
         _ = app.descendants(matching: .any)["libraryTabPicker"].waitForExistence(timeout: 15)
+        // Swipe the Library's own scroll view (the one holding the tab picker): a hand-placed drag started on the
+        // Tabletop search button and never scrolled the pane (Mac, 20d340f).
+        let shelf = app.scrollViews.containing(.any, identifier: "libraryTabPicker").firstMatch
         var tries = 0
         while !(tile.exists && tile.isHittable) && tries < 10 {
-            let x: CGFloat = inTabletop ? 0.4 : 0.5
-            let from = app.coordinate(withNormalizedOffset: CGVector(dx: x, dy: 0.95))
-            let to = app.coordinate(withNormalizedOffset: CGVector(dx: x, dy: inTabletop ? 0.62 : 0.35))
-            from.press(forDuration: 0.1, thenDragTo: to)
+            if shelf.exists { shelf.swipeUp(velocity: .slow) } else { app.swipeUp() }
             tries += 1
         }
         if !tile.exists {
