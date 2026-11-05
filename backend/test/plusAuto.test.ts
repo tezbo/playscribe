@@ -22,6 +22,11 @@ test('parser: month, claim window (ends the day before the next lineup) and game
   assert.equal(parsePlusEssential(dec)?.until, '2027-01-04')
 })
 
+test('parser: the October wording ("starting Tuesday 6th October ... running until 2nd November", no year) parses too', () => {
+  const oct = readFileSync(new URL('./fixtures/ps-plus-essential-oct-2026.html', import.meta.url), 'utf8')
+  assert.deepEqual(parsePlusEssential(oct), { month: '2026-10', from: '2026-10-06', until: '2026-11-02', games: [{ name: 'F1 25' }, { name: 'Hunt: Showdown 1896' }, { name: 'Earth Defense Force: World Brothers 2' }] })
+})
+
 test('links: only monthly announcements, once each', () => {
   assert.deepEqual(announcementLinks(list), [URL_NOV])
 })
