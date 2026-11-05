@@ -69,6 +69,7 @@ struct RootView: View {
     @AppStorage("didShowSplash") private var didShowSplash = false
     @State private var splashVisible = false
     @State private var frames: [CGRect] = []
+    @State private var named: [String: CGRect] = [:]
 
     var body: some View {
         DuoReader { duo in
@@ -98,10 +99,11 @@ struct RootView: View {
             .animation(poseAnimation, value: duo.pose)
             .environment(\.qaSolid, BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaReduceTransparency"))
             .onPreferenceChange(TappableFrameKey.self) { frames = $0 }
+            .onPreferenceChange(NamedFrameKey.self) { named = $0 }
             .overlay {
                 if model.showDebugOverlay { DebugOverlay(frames: frames, duo: duo) }
                 #if INTERNAL
-                FoldAudit(frames: frames, duo: duo)
+                FoldAudit(frames: frames, duo: duo, named: named)
                 #endif
             }
         }
