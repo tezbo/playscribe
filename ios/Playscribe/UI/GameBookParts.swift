@@ -671,6 +671,7 @@ struct ReleaseTimeline: View {
 
 /// TT-2 in the Contents: the section outline with Previous and Next.
 struct TabletopOutline: View {
+    @State private var fullText = false
     @Environment(AppModel.self) private var model
     var gameID: String
     var body: some View {
@@ -691,6 +692,29 @@ struct TabletopOutline: View {
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()
+            }
+            // The stage caps long text (never mid-word); the whole of it is here, in the lower half.
+            if let sec = sections[safe: index], ReaderBody.isCapped(title: sec.title, body: sec.body) {
+                Button { fullText.toggle() } label: {
+                    HStack {
+                        Text(fullText ? "Hide full text" : "Full text").font(PlayscribeFont.subheadline.weight(.semibold))
+                        Spacer()
+                        Image(systemName: fullText ? "chevron.up" : "chevron.down")
+                    }
+                    .foregroundStyle(PlayscribeColor.accent)
+                    .padding(.horizontal, 10).frame(minHeight: 44).contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .tappableFrame()
+                .accessibilityIdentifier("readerFullText")
+                if fullText {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(sec.title).font(PlayscribeFont.headline)
+                        Text(sec.body).font(PlayscribeFont.body)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 10)
+                }
             }
             HStack(spacing: 12) {
                 pageButton("Previous", "chevron.backward", enabled: index > 0) { model.readerIndex[gameID] = index - 1 }

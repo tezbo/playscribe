@@ -105,7 +105,16 @@ enum ReaderBody {
         let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
         return cut + "…"
     }
+    /// The headline: at most `titleLimit` characters, cut at a word boundary with an ellipsis, so it never ends mid-word.
+    static let titleLimit = 56
+    static func title(_ t: String) -> String {
+        guard t.count > titleLimit else { return t }
+        let head = String(t.prefix(titleLimit))
+        let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
+        return cut.trimmingCharacters(in: .punctuationCharacters.union(.whitespaces)) + "…"
+    }
     static func isCapped(_ body: String) -> Bool { stage(body) != body }
+    static func isCapped(title t: String, body: String) -> Bool { title(t) != t || isCapped(body) }
 }
 
 struct TabletopReaderStage: View {
@@ -145,7 +154,7 @@ struct TabletopReaderStage: View {
                         .accessibilityLabel(release?.displayName ?? "")
                         .accessibilityAddTraits(.isStaticText)
                         .accessibilityIdentifier("releaseTitle")
-                    Text(section.title)
+                    Text(ReaderBody.title(section.title))
                         .font(PlayscribeFont.title)
                         .lineLimit(4)
                         .minimumScaleFactor(0.8)
@@ -176,7 +185,6 @@ struct TabletopReaderStage: View {
 }
 
 struct TabletopReaderControls: View {
-    @State private var fullText = false
     @Environment(AppModel.self) private var model
     @Environment(\.railWidth) private var railWidth
     var gameID: String
@@ -209,25 +217,6 @@ struct TabletopReaderControls: View {
                     }
                 }
                 .onChange(of: index) { _, i in withAnimation { proxy.scrollTo(i, anchor: .center) } }
-            }
-            if let body = sections[safe: index]?.body, ReaderBody.isCapped(body) {
-                Button { fullText.toggle() } label: {
-                    HStack {
-                        Text(fullText ? "Hide full text" : "Full text").font(PlayscribeFont.subheadline.weight(.semibold))
-                        Spacer()
-                        Image(systemName: fullText ? "chevron.up" : "chevron.down")
-                    }
-                    .foregroundStyle(PlayscribeColor.accent)
-                    .padding(.horizontal, 12).frame(minHeight: 44).contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .tappableFrame()
-                .accessibilityIdentifier("readerFullText")
-                if fullText {
-                    ScrollView { Text(body).font(PlayscribeFont.body).frame(maxWidth: .infinity, alignment: .leading) }
-                        .frame(maxHeight: 140)
-                        .padding(.horizontal, 12)
-                }
             }
             HStack(spacing: 12) {
                 pageButton("Previous", "chevron.backward", enabled: index > 0) { go(index - 1) }
