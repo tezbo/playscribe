@@ -76,6 +76,7 @@ struct SettingsView: View {
                                 PlusBadge(height: 18)
                                 Text("Games leaving soon")
                             }
+                            .frame(minHeight: 52, alignment: .leading)
                         }
                             .accessibilityLabel("PS Plus games leaving soon")
                             .accessibilityHint("A reminder in the last three days before this month's PS Plus games leave")

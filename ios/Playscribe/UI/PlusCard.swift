@@ -6,8 +6,13 @@ import SwiftUI
 /// under the version in Settings. A game you track opens its page. Hidden when no month holds today.
 struct PlusCard: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     static let maxCovers = 3
+    /// Accessibility sizes show two so a plate name stays readable; "+N more" counts the rest.
+    static func coverLimit(accessibility: Bool) -> Int { accessibility ? 2 : maxCovers }
+    /// No wider than a Library tile, whatever the pose (Iris, #242).
+    static let maxCoverWidth: CGFloat = 140
 
     /// The catalogue game behind a lineup name: the tracked game when `gameId` is set, else an exact
     /// (accent- and case-folded) title match in the bundled PS5 index. nil draws the name plate.
@@ -20,21 +25,24 @@ struct PlusCard: View {
     var body: some View {
         if let (month, lastChance) = PlusLogic.current(PlusStore.shared.months) {
             let claimBy = PlusLogic.claimByText(month)
-            let shown = Array(month.games.prefix(Self.maxCovers))
+            let limit = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
+            let shown = Array(month.games.prefix(limit))
             VStack(alignment: .leading, spacing: 10) {
                 VStack(alignment: .leading, spacing: 2) {
-                    PlusBadge(height: 26)
+                    PlusBadge(height: 26).accessibilityHidden(true)
                     Text(lastChance ? "Last chance" : "This month").font(PlayscribeFont.title3)
+                        .accessibilityLabel(lastChance ? "PS Plus, last chance" : "PS Plus, this month")
                         .accessibilityAddTraits(.isHeader)
                     Text("Claim by \(claimBy)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
                 }
                 HStack(spacing: 10) {
-                    ForEach(Array(shown.enumerated()), id: \.offset) { _, g in cover(g) }
-                    // Fewer than three: keep each cover the width of a third.
-                    ForEach(0..<(Self.maxCovers - shown.count), id: \.self) { _ in Color.clear.aspectRatio(3 / 4, contentMode: .fit) }
+                    ForEach(Array(shown.enumerated()), id: \.offset) { _, g in
+                        cover(g).frame(maxWidth: Self.maxCoverWidth)
+                    }
+                    Spacer(minLength: 0)
                 }
-                if month.games.count > Self.maxCovers {
-                    Text("+\(month.games.count - Self.maxCovers) more this month")
+                if month.games.count > limit {
+                    Text("+\(month.games.count - limit) more this month")
                         .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeColor.textSecondary)
                 }
             }
@@ -70,8 +78,8 @@ struct PlusCover: View {
             if let game { TileCover(game: game) }
             else {
                 RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.ink1)
-                    .overlay(Text(name).font(PlayscribeFont.title3).multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.6).padding(8).foregroundStyle(PlayscribeColor.textPrimary))
+                    .overlay(Text(name).font(PlayscribeFont.footnote.weight(.semibold)).multilineTextAlignment(.center)
+                        .lineLimit(4).padding(8).foregroundStyle(PlayscribeColor.textPrimary))
                     .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
             }
         }

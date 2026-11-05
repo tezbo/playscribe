@@ -67,6 +67,10 @@ struct PlusCoverTests {
     }
 
     @Test func atMostThreeCoversShow() {
-        #expect(PlusCard.maxCovers == 3)
+        #expect(PlusCard.coverLimit(accessibility: false) == 3)
+    }
+
+    @Test func accessibilitySizesShowTwoCovers() {
+        #expect(PlusCard.coverLimit(accessibility: true) == 2)
     }
 }
