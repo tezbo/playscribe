@@ -568,6 +568,7 @@ final class AppModel {
         case "two-update": resetToTwoUpdateDemo()
         case "pill": holdQAPill()
         case "long-text": qaLongText = true
+        case "plus": nav.tab = .library; nav.gameID = nil; PlusStore.shared.setQA(parts.first ?? "3")
         case "spoiler-demo": openSpoilerDemo(shown: parts.first == "shown")
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:

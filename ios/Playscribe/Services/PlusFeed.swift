@@ -59,6 +59,8 @@ enum PlusLogic {
 final class PlusStore {
     static let shared = PlusStore()
     private(set) var months: [PlusMonth] = []
+    /// QA only (INTERNAL route "plus/<variant>"): a fixed lineup that the feed no longer overwrites.
+    private var qaOverride = false
 
     private static var cacheURL: URL { URL.cachesDirectory.appending(path: "plus.json") }
 
@@ -66,12 +68,26 @@ final class PlusStore {
         if let raw = try? Data(contentsOf: Self.cacheURL), let f = try? JSONDecoder().decode(PlusFile.self, from: raw) { months = f.months }
     }
 
+    /// QA (INTERNAL route "plus/<variant>"): 1, 2, 3, 4 or 5 games, "plate" (3 names the index cannot match),
+    /// "last" (3 games, last chance) or "off" (no month, card hidden). Never written to the cache.
+    func setQA(_ variant: String, today: Date = .now) {
+        let cal = Calendar.current
+        let names = ["Hades II", "Alan Wake 2", "Stray", "Returnal", "Astro Bot"]
+        let n = Int(variant) ?? 3
+        var games = names.prefix(max(1, min(5, n))).map { PlusMonth.Game(name: $0, gameId: nil) }
+        if variant == "plate" { games = ["Zzzz Qa Plate Title One", "Zzzz Qa Plate Title Two", "Zzzz Qa Plate Title Three"].map { .init(name: $0, gameId: nil) } }
+        let until = cal.date(byAdding: .day, value: variant == "last" ? 1 : 20, to: today) ?? today
+        let from = cal.date(byAdding: .day, value: -5, to: today) ?? today
+        qaOverride = true
+        months = variant == "off" ? [] : [PlusMonth(month: "qa", from: PlusLogic.dayKey(from), until: PlusLogic.dayKey(until), games: games)]
+    }
+
     func load() async {
         guard let base = FeedClient.baseURL else { return }
         if let (data, response) = try? await URLSession.shared.data(from: base.appending(path: "plus.json")),
            (response as? HTTPURLResponse)?.statusCode == 200, let f = try? JSONDecoder().decode(PlusFile.self, from: data) {
             try? data.write(to: Self.cacheURL, options: .atomic)
-            months = f.months
+            if !qaOverride { months = f.months }
         }
         NotificationService.shared.syncPlusLeavingSoon()
     }

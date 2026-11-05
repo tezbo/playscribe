@@ -27,6 +27,6 @@ python3 tools/build_fixtures.py …      # regenerates bundled fixture JSON from
 ```
 
 Internal builds accept `-qaRoute <route>` at launch (`add`, `settings`, `release/<game>/<release>`,
-`video/<game>/<release>`, `first-run`, `demo`, `one-update`, `two-update`, `overlay`, `pill`, `spoiler-demo[/shown]`, `simulate/<game>/<major|hotfix>`), and Settings has
+`video/<game>/<release>`, `first-run`, `demo`, `one-update`, `two-update`, `overlay`, `pill`, `spoiler-demo[/shown]`, `plus/<1|2|3|4|5|plate|last|off>`, `simulate/<game>/<major|hotfix>`), and Settings has
 Simulate update, Reset to first run and a debug overlay of tappable frames and reserved regions.
 Simulated pushes: `xcrun simctl push booted co.codeconnectors.playscribe ios/tools/qa/release.apns`.
