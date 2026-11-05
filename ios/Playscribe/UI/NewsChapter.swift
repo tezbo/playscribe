@@ -11,12 +11,14 @@ struct NewsItem: Codable, Hashable, Identifiable {
     var id: String { url.absoluteString }
     var isReported: Bool { kind == "reported" }
     var tagText: String { isReported ? "Reported" : "Official" }
-    /// At most 3 lines in a row: a long headline is cut at a word.
+    /// At most 3 lines in a row: a long headline is cut at a clause (a comma, colon, dash or semicolon) when one falls
+    /// late enough, else at a word.
     var shortTitle: String {
         let limit = 120
         guard title.count > limit else { return title }
-        let head = title.prefix(limit)
-        let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? String(head)
+        let head = String(title.prefix(limit))
+        let clause = head.lastIndex(where: { ",;:–—".contains($0) }).flatMap { head.distance(from: head.startIndex, to: $0) >= 40 ? $0 : nil }
+        let cut = clause.map { String(head[..<$0]) } ?? head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
         return cut.trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-–—.")) + "…"
     }
 }
@@ -363,6 +365,31 @@ struct NewsStage: View {
                     if let d = headline.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
                 }
                 .font(PlayscribeFont.caption)
+            }
+            .padding(.horizontal, 24).padding(.bottom, 16)
+            .padding(.trailing, TabletopRail.width)
+        }
+        .clipped()
+        .accessibilityHidden(true)
+    }
+}
+
+
+/// Tabletop's standing half for a game's News chapter: the game's art to the fold, with its newest headline as the caption.
+/// View only (G-4); the headlines themselves are in the lower half.
+struct NewsStageArt: View {
+    @Environment(AppModel.self) private var model
+    var gameID: String
+
+    var body: some View {
+        let game = model.game(gameID)
+        let newest = (NewsStore.shared.items[gameID] ?? []).max { ($0.date ?? .distantPast) < ($1.date ?? .distantPast) }
+        ZStack(alignment: .bottomLeading) {
+            ArtView(asset: model.backdrop(gameID, chapter: .news, tall: false), game: game).ignoresSafeArea()
+            LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(game?.name ?? "").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                if let newest { Text(newest.shortTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(3) }
             }
             .padding(.horizontal, 24).padding(.bottom, 16)
             .padding(.trailing, TabletopRail.width)
