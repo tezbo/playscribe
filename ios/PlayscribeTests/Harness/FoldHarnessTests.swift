@@ -53,6 +53,9 @@ struct FoldHarnessTests {
         if !r.foldCrossings.isEmpty {
             print("harness error: [info, not asserted] \(p.id) TT-0: frames cross the injected fold \(String(describing: r.division)): \(r.foldCrossings.map(HarnessRules.brief))")
         }
+        if !r.navigationBandFrames.isEmpty {
+            print("harness error: [info, not asserted] \(p.id) G-4: navigation-bar band frames not asserted offscreen: \(r.navigationBandFrames.map(HarnessRules.brief))")
+        }
         HarnessRules.require(r.aboveTheFold.isEmpty, "\(p.id) G-4: tappable frames above the Tabletop fold: \(r.aboveTheFold.map(HarnessRules.brief))")
         HarnessRules.checkDeck(r, maxFraction: p.id == "tabletop" ? nil : 0.5)
         if p.id == "closed" || p.id == "open" { HarnessRules.checkDeck(r, maxFraction: 0.38) }

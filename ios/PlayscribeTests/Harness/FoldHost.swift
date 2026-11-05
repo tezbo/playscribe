@@ -42,8 +42,14 @@ struct Rendered {
     /// Tabletop: tappable frames that start above the fold (G-4).
     var aboveTheFold: [CGRect] {
         guard pose.expected == .tabletop, let fold = division else { return [] }
-        return frames.filter { $0.width > 1 && $0.height > 1 && $0.minY < fold.minY }
+        return frames.filter { $0.width > 1 && $0.height > 1 && $0.minY < fold.minY && !inNavigationBand($0) }
     }
+
+    /// Hosted offscreen, the system navigation bar puts SwiftUI toolbar content in the top band (CI saw a 220 x 44 frame there in
+    /// Tabletop; the real Duo, in the Mac calibration, has none). The bar is the system's, not the app's stage, so it belongs to
+    /// the real-hinge gate (TB-1, like the toolbar itself) and is reported, not asserted.
+    func inNavigationBand(_ f: CGRect) -> Bool { f.maxY <= 60 }
+    var navigationBandFrames: [CGRect] { frames.filter { $0.width > 1 && $0.height > 1 && inNavigationBand($0) } }
 
     /// A control UIKit drew, found by accessibility identifier or label in the real view and accessibility tree (toolbar
     /// items are UIKit's, so this is where the system's own dropping of items shows). Frame in container coordinates.

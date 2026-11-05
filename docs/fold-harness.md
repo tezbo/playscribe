@@ -70,3 +70,7 @@ The toolbar cause is also guarded structurally: `LibraryToolbar` gives each item
 
 G-4 nothing tappable above the Tabletop fold; TT-0 nothing crosses the fold; TB-1 each Library toolbar item has its own slot (the offscreen window cannot draw the bar, so the drawn-and-44-pt check stays on the sim);
 J-5 deck at most 38% of the height (Closed, Open) or 50% (any pose but Tabletop), at default and Accessibility text sizes.
+
+## Navigation-bar band (G-4)
+
+Hosted offscreen, UIKit's navigation bar puts SwiftUI toolbar content in the top band (a 220 x 44 frame appeared there in Tabletop on CI; the Mac calibration of the real Duo shows none). That band belongs to the system, so its frames are printed as `[info, not asserted]` and G-4 is asserted for everything below it. The real-hinge gate keeps asserting the toolbar (TB-1) and G-4 for the whole screen.
