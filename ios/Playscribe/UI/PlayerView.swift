@@ -116,6 +116,7 @@ struct PlayerView: View {
     @State private var controller: YouTubeController?
     @AppStorage(VideoReflection.key) private var reflectionMode = false
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
 
     var body: some View {
         NavigationStack {
@@ -158,7 +159,7 @@ struct PlayerView: View {
             // TT-4: the standing half shows only the video; the flat half holds the transport.
             ArrangementView {
                 TabletopTransport(controller: controller, video: video, game: gameName, release: release, onClose: close)
-                    .background(alignment: .top) { if reflectionMode && !reduceMotion { VideoReflection(controller: controller, poster: video.posterAsset) } }
+                    .background(alignment: .top) { if reflectionMode && !reduceMotion && !reduceTransparency { VideoReflection(controller: controller, poster: video.posterAsset) } }
             } secondary: {
                 surface
                     .overlay { if !controller.started { PosterCover(video: video) } }
