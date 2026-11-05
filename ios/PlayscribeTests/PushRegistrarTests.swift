@@ -101,6 +101,23 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         #expect(StubRelay.seen.count < 8, "bounded: \(paths())")
     }
 
+    @Test func aQuietHoursRecoveryRegistersWithTheCurrentFollows() async {
+        setUp()
+        StubRelay.handler = { r in r.url!.path == "/v1/devices" ? (200, Data(#"{"deviceKey":"fresh"}"#.utf8)) : (200, Data()) }
+        await PushRegistrar.register(token: "abc", follows: follows)?.value
+        let current = [PushRegistrar.Follow(gameId: "blue-prince", igdbId: nil, notify: "all")]
+        await PushRegistrar.syncFollows(current)?.value
+        StubRelay.seen = []
+        StubRelay.handler = { r in
+            if r.url!.path == "/v1/devices" { return (200, Data(#"{"deviceKey":"fresh2"}"#.utf8)) }
+            return r.value(forHTTPHeaderField: "Authorization") == "Bearer fresh2" ? (200, Data()) : (401, Data())
+        }
+        await PushRegistrar.syncQuietHours(QuietHours(from: 22 * 60, until: 8 * 60))?.value
+        let post = StubRelay.seen.first { $0.url!.path == "/v1/devices" }
+        let body = post?.httpBody.map { String(decoding: $0, as: UTF8.self) } ?? ""
+        #expect(body.contains("blue-prince") && !body.contains("dawnwalker"), "re-registered with the current list: \(body)")
+    }
+
     @Test func nothingIsSentBeforeTheDeviceIsRegistered() async {
         setUp(key: nil)
         let task = PushRegistrar.syncFollows([PushRegistrar.Follow(gameId: "x", igdbId: nil, notify: "all")])

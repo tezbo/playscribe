@@ -391,6 +391,8 @@ enum PushRegistrar {
         let signature = String(decoding: body, as: UTF8.self)
         guard signature != lastFollows else { return nil }
         lastFollows = signature
+        // A later 401 registers again with this list, not the one from launch.
+        registration?.follows = follows
         return Task {
             let ok = await authed(retry: true) { key in
                 var request = URLRequest(url: url)
