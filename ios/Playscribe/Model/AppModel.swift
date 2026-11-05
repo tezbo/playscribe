@@ -674,6 +674,8 @@ final class AppModel {
         let new = list.filter { entry($0.id) == nil }
         guard !new.isEmpty else { return }
         for g in new { insertGame(g, status: status == .owned && g.isUpcoming ? .wishlist : status) }
+        // Adding a game never floods the badge: whatever it already has before today's news is the past.
+        markPastAsRead(new.flatMap { releases($0.id) }, backCatalogue: true)
         let ids = new.map(\.id)
         nav.filter = .all
         highlight = new.count == 1 ? ids[0] : nil
