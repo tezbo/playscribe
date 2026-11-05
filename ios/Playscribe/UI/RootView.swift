@@ -42,7 +42,9 @@ struct LowerHalfPanel: View {
                 .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil; model.linksSheetOpen = false; model.tagExplainer = nil })
                 .environment(\.railWidth, 0)
                 .frame(width: duo.size.width, height: height)
-                .background(Color.ink0)
+                // Solid through the bottom safe area too: the Library's tiles used to show, and take
+                // taps, in the strip under the sheet.
+                .background(Color.ink0.ignoresSafeArea(edges: .bottom))
                 .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20))
                 .accessibilityAddTraits(.isModal)
             }
