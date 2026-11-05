@@ -348,10 +348,14 @@ struct LowerMessages: View {
                         UnreadDot()
                         Text("New on PS5: \(game.name) \(r.displayName)")
                             .font(PlayscribeFont.subheadline.weight(.semibold))
+                            // Wraps to two lines at accessibility sizes instead of truncating (0.5.1 spec 2).
                             .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .multilineTextAlignment(.leading)
                         Image(systemName: "chevron.forward").font(PlayscribeFont.caption)
                     }
                     .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
                     .frame(minHeight: 44)
                     // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
                     .background(Capsule().fill(PlayscribeColor.ink700))
@@ -392,7 +396,8 @@ struct LowerMessages: View {
             }
         }
         // Above the bottom tab bar only where the bars are horizontal (open portrait).
-        .padding(.bottom, duo.pose == .flat && !duo.isLandscape ? 96 : 16)
+        // Tabletop: 12 pt above the bottom, left of the rail (0.5.1 spec 2).
+        .padding(.bottom, duo.pose == .flat && !duo.isLandscape ? 96 : duo.pose == .tabletop ? 12 : 16)
         .padding(.trailing, duo.pose == .tabletop ? TabletopRail.width : 0)
         .padding(.horizontal, 16)
         // Book: the pill and toasts stay on the left page; they never straddle the fold.
