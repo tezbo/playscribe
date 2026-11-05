@@ -313,7 +313,7 @@ struct GlobalNewsView: View {
         .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
         .background(alignment: .top) {
-            if let lead, let fold = duo.division { NewsStage(headline: lead).frame(height: fold.minY).allowsHitTesting(false) }
+            if let lead, let fold = duo.division { NewsStage(headline: lead, bandTop: fold.minY).allowsHitTesting(false) }
         }
         .overlay(alignment: .topLeading) {
             if duo.pose == .tabletop { Text("News").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false) }
@@ -361,18 +361,17 @@ struct GlobalNewsRow: View {
 /// Tabletop's standing half: the newest post's game art with its caption above the band. View only (G-4).
 struct NewsStage: View {
     @Environment(AppModel.self) private var model
-    @Environment(\.duo) private var duo
-    /// The stage's bottom edge in screen space: the caption block ends 24 pt above the division band.
-    @State private var stageBottom: CGFloat = 0
+    /// The stage's top edge in screen space. The stage hangs from the top of the screen's safe area, so it is `bandTop` minus this
+    /// tall, which puts its bottom edge exactly on the band. It does not depend on the caption, so there is nothing to loop.
+    @State private var stageTop: CGFloat = 0
     var headline: NewsStore.Headline
+    /// The division band's top edge in screen space.
+    var bandTop: CGFloat
 
     var body: some View {
         let game = model.game(headline.gameID)
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: model.backdrop(headline.gameID, chapter: .news, tall: false), game: game)
-            // The art layer fills whatever the stage is offered and never depends on the caption, so measuring it cannot feed back
-            // into the caption's padding.
-            .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { if abs($0 - stageBottom) > 0.5 { stageBottom = $0 } }
             LinearGradient(colors: [.clear, .black.opacity(0.5)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 Text(headline.item.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(2)
@@ -386,15 +385,19 @@ struct NewsStage: View {
             // Iris: the whole caption on one solid ink panel, so contrast never depends on the art.
             .padding(12)
             .background(RoundedRectangle(cornerRadius: 12, style: .continuous).fill(PlayscribeColor.ink700.opacity(0.7)))
-            // Ends exactly 24 pt above the band: the clearance already includes the 24 pt gap.
-            .padding(.horizontal, 24).padding(.bottom, max(24, duo.clearance(forBottom: stageBottom)))
+            // The stage ends on the band, so the panel ends 24 pt above it.
+            .padding(.horizontal, 24).padding(.bottom, 24)
             .padding(.trailing, TabletopRail.width)
+        }
+        .frame(height: max(0, bandTop - stageTop))
+        .background(alignment: .top) {
+            Color.clear.frame(height: 1)
+                .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).minY } action: { if abs($0 - stageTop) > 0.5 { stageTop = $0 } }
         }
         .clipped()
         .accessibilityHidden(true)
     }
 }
-
 
 /// Tabletop's standing half for a game's News chapter: the game's art to the fold, with its newest headline as the caption.
 /// View only (G-4); the headlines themselves are in the lower half.
@@ -409,9 +412,6 @@ struct NewsStageArt: View {
         let newest = (NewsStore.shared.items[gameID] ?? []).max { ($0.date ?? .distantPast) < ($1.date ?? .distantPast) }
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: model.backdrop(gameID, chapter: .news, tall: false), game: game).ignoresSafeArea()
-            // The art layer fills whatever the stage is offered and never depends on the caption, so measuring it cannot feed back
-            // into the caption's padding.
-            .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { if abs($0 - stageBottom) > 0.5 { stageBottom = $0 } }
             LinearGradient(colors: [.clear, .black.opacity(0.5)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 Text(game?.name ?? "").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
@@ -423,6 +423,9 @@ struct NewsStageArt: View {
             .padding(.horizontal, 24).padding(.bottom, max(24, duo.clearance(forBottom: stageBottom)))
             .padding(.trailing, TabletopRail.width)
         }
+        // The stage's own frame (as the Reader stage does), not the art, which ignores the safe area. The art fills the stage and the
+        // caption is far smaller, so the stage's size never depends on the caption's padding.
+        .background(Color.clear.onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { if abs($0 - stageBottom) > 0.5 { stageBottom = $0 } })
         .clipped()
         .accessibilityHidden(true)
     }
