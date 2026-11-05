@@ -306,6 +306,7 @@ final class AppModel {
             try? await Task.sleep(for: .milliseconds(150))
             guard !Task.isCancelled else { return }
             self?.saveNow()
+            if let self { PushRegistrar.syncFollows(self.follows) }
         }
     }
 
