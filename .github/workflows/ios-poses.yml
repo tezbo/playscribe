@@ -1,0 +1,69 @@
+name: iOS poses (headless)
+
+# The pose-sensitive UI suites (fold audit, layout, accessibility audit, deck, 0.5.0 sheets) for every pose in parallel,
+# one job each, on hosted runners with no Device Hub: the app's Debug-only `qaPose` default stands in for the hinge
+# (ios/Playscribe/UI/Duo.swift, docs/ci.md). Dispatch only until QAPose.hinge and the panel size are calibrated against a
+# real gate run. It is a fast signal for PRs, not a release sign-off: that stays the real-hinge gate (gate.sh, TIER=full).
+on:
+  workflow_dispatch:
+  pull_request:
+    paths: ['.github/workflows/ios-poses.yml']
+
+concurrency:
+  group: ios-poses-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  XCODE_APP: /Applications/Xcode_27.1.app
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+
+jobs:
+  pose:
+    runs-on: xcode-27
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        pose: [closed, flat, book, tabletop]
+    steps:
+      - uses: actions/checkout@v4
+      - run: command -v xcodegen >/dev/null || brew install xcodegen; (cd ios && xcodegen generate)
+      - run: sudo xcode-select -s "$XCODE_APP" && xcodebuild -version
+      - name: Pick and boot the Duo simulator
+        id: sim
+        run: |
+          udid=$(xcrun simctl list devices available -j | python3 -c "
+          import json, sys
+          d = json.load(sys.stdin)['devices']
+          phones = [x for k in d if 'iOS-27-1' in k for x in d[k] if 'iPhone' in x['name']]
+          phones.sort(key=lambda x: 'Duo' not in x['name'])
+          print(phones[0]['udid'] if phones else '')
+          ")
+          [ -n "$udid" ] || { echo "::error::No iOS 27.1 iPhone simulator"; exit 1; }
+          echo "udid=$udid" >> "$GITHUB_OUTPUT"
+          xcrun simctl boot "$udid" 2>/dev/null || true
+          xcrun simctl bootstatus "$udid" -b >/dev/null 2>&1 || true
+      - name: Pose suites (${{ matrix.pose }})
+        run: |
+          udid=${{ steps.sim.outputs.udid }}
+          xcrun simctl spawn "$udid" defaults write co.codeconnectors.playscribe qaPose "${{ matrix.pose }}"
+          xcrun simctl spawn "$udid" defaults write co.codeconnectors.playscribe pageOnLeft -bool NO
+          only=""
+          for s in FoldAuditTests LibraryLayoutTests LatestUpdatesDeckTests Release050Tests ReleaseFeatureTests \
+                   PlayscribeUITests/testAccessibilityAudit PlayscribeUITests/testTabletopSheetsKeepControlsInTheLowerHalf \
+                   PlayscribeUITests/testScanFitsThePanel; do
+            only="$only -only-testing:PlayscribeUITests/$s"
+          done
+          status=0
+          xcodebuild test -project ios/Playscribe.xcodeproj -scheme PlayscribeUI -destination "id=$udid" \
+            $only -resultBundlePath build/Poses-${{ matrix.pose }}.xcresult CODE_SIGNING_ALLOWED=NO > poses.log 2>&1 || status=$?
+          grep -E 'error:|Test Case .* failed|Executed|\*\* TEST' poses.log | tail -40 | tee -a "$GITHUB_STEP_SUMMARY"
+          exit "$status"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: poses-${{ matrix.pose }}
+          path: |
+            build/Poses-${{ matrix.pose }}.xcresult
+            poses.log
