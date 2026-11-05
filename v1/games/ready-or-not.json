@@ -1,0 +1,1426 @@
+{
+ "game": {
+  "id": "ready-or-not",
+  "igdbId": 28489,
+  "name": "Ready or Not",
+  "cover": {
+   "imageId": "cocld8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cocld8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1bv1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1bv1.jpg"
+  },
+  "ps5Release": "2025-07-15",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "ready-or-not@1.5.3",
+   "gameId": "ready-or-not",
+   "displayName": "Update 1.5.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-13T17:05:03.000Z",
+   "notes": [
+    {
+     "title": "Attention Officers,",
+     "items": [
+      {
+       "text": "RoN Update v1.5.3 addresses many crashes and performance improvements across all platforms. Fixes for the Mission Editor, failures to authenticate to Epic Online Services on PS5, and issues with laser or flashlight attachments emitting from misaligned positions from weapons are also among the changes made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Update Day General FAQ",
+     "items": [
+      {
+       "text": "Q: ‘My game mods broke on PC with this update, why did that happen?’",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "> A: When Ready or Not or games in general release updates to the game, the files for the game in areas related to new game content or fixes then changes. If mods were using the old files to function that have since changed to new files, those mods will likely need to update in order to work properly with the new version of the game’s files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ready or Not Modding Update Tips: https://voidinteractive.net/community-resources/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Q: ‘Why does an update download initially seem frustratingly large in data/gigabytes, even when the game doesn’t actually take up that much more storage when the download finishes’",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "> A: Game service platforms such as Steam etc. may update games by overwriting the game's files with the new files to replace it. For example, this means a update download that initially shows as 6GB during the download may actually only expand the game by 1GB in size, since it is largely just overwriting old game files for the other 5GB of data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Q: ‘Why does an update take so long to download despite my fast internet’",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "> A: Other routine checks that a game service platform does to confirm game file integrity on the local storage device (e.g. your hard drive such as a HDD or SSD) during an update download can extend the perceived download size/time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Q: ‘Why didn’t my game update yet on my console platform?'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "> A: Console platforms do not necessarily support auto-updates, so you may have to trigger the update manually within your game library with an internet connection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Performance",
+     "items": [
+      {
+       "text": "General performance optimization increases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved loading times between levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Station",
+     "items": [
+      {
+       "text": "The firing range is now accessible within the Mission Editor Station",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "AI",
+     "items": [
+      {
+       "text": "Fixed Mission Editor suspects not spawning with Knifes and Bomb Vests at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Mission Editor \"Damage Cap\" setting’s changed values not getting saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Mission Editor \"Suspect Fire Rate\" setting's changed value not getting saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mission Editor Bomber Suspects being unable to fire weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mission Editor Active Shooter suspect archetype being present on missions that have Active Shooter by default despite being disabled in ME settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Fixed some calibers not translated into non-English Languages at the Advanced Suspects Tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pop-up “Ok” and “Cancel” buttons in non-English menus for Mission Editor not being localized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Casual/Standard/Hard Mission Editor difficulties not being translated to every non-English Language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed needing to scroll down in order to see all available Entry Points within Mission Editor UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"My Missions\" Mission Editor list overlap with other UI elements on higher UI scales",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed appearance drop-down list automatically closing when scrolled after reaching the bottom of the list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed G-18C pistol missing letter \"C\" from it's name in localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed drop-down list of the Suspects/Civilian Appearance setting covering part of the Mission Editor's UI elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with scrolling up/down Hints of some Mission Editor settings at high UI scale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that Mission Objectives contained inconsistently placed dots in Polish and Spanish on various missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lost connection error code message after the Host closed the lobby missing localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minimum Suspect Count slider marker not visually reaching the end of the slider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Title of Buy Cheap, Buy Twice map being cut off in Mission Editor in certain languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Thank You, Come Again and 23 Megabytes a Second map titles overlapping in Polish and Japanese languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Front/Back\" armor setting text not fitting the designated UI area in certain languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Weapon attachments' category names in loadout do not fitting the designated UI area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text overlapping in Mission Editor when trying to select uncompleted mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing ‘stick’ controller language used in Item & Command Menu Navigation option description missing in Turkish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mission Editor Mission Debrief updating incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "(PS5) Fixed sound effects being heard by player across unintentionally far distances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Animation",
+     "items": [
+      {
+       "text": "Fixed MK-V checking ammo animation being incomplete when viewed from 3rd person",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Ides of March",
+     "items": [
+      {
+       "text": "(PS5) Fixed rare crash loading into mission with Mission Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Valley of the Dolls",
+     "items": [
+      {
+       "text": "(PS5) Fixed crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "23 Megabytes A Second",
+     "items": [
+      {
+       "text": "Fixed rare Mission Editor crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Greased Palms",
+     "items": [
+      {
+       "text": "Fixed rare crash loading into mission with Mission Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Ends of the Earth",
+     "items": [
+      {
+       "text": "Fixed rare crash loading into mission with Mission Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous Fixes",
+     "items": [
+      {
+       "text": "(PS5) Fixed failures to Authenticate connection to Epic Online Services",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed flashlight and laser attachments emitting from misaligned positions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various gameplay freezes and crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI-related controls softlock between the Host and Client in the Mission Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(PS5) Fixed rare crash while returning to Station from a mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed setting traps to 0 in Mission Editor not fully removing all traps on some missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(XBOX) Fixed multiplayer Host not receiving indication about network instability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 35,
+    "balance": 0,
+    "other": 14,
+    "ps5": 6
+   },
+   "sourceIds": [
+    "ready-or-not-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1144200/view/1846018067944803",
+    "ps5Page": "https://voidinteractive.net/community-resources/"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-13T17:05:03.000Z",
+      "verification": "official",
+      "sourceId": "ready-or-not-steam",
+      "checkedAt": "2026-11-05T08:41:24.711Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-13T17:05:03.000Z",
+      "verification": "assumed",
+      "sourceId": "ready-or-not-steam",
+      "checkedAt": "2026-11-05T08:41:24.711Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-13T17:05:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:24.711Z"
+  },
+  {
+   "id": "ready-or-not@1.5",
+   "gameId": "ready-or-not",
+   "displayName": "Update 1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-03T19:09:44.000Z",
+   "notes": [
+    {
+     "title": "Attention Officers,",
+     "items": [
+      {
+       "text": "[p align=\"start\"]In the v1.5 Update for RoN we are releasing the Mission Editor, a new feature allowing granular tweaking of gameplay variables within an existing mission, with a particular focus on customizing non-playable characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]This is our initial introductory launch for the Mission Editor feature; be on the lookout for improvements to Mission Editor in the future, along with more bug fixes and content for the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Free New Styles of the Triple Weapon Pack Weapons, Released to All Players:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]The Ready or Not Triple Weapon Pack weapons, which were initially added with RoN’s console release, are now being released for free as three new cosmetic styles to all players regardless of platform or game edition. These new free styles are the MK-V 'HC' (Hard Chrome) pistol, 590M 'FDE' (Flat Dark Earth) shotgun, and M32A1 'LSPD' Blue rotary grenade launcher.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Players who were already eligible for the triple weapon pack weapons previously (i.e. PC platform players, console pre-order owners, or console Triple Weapon Pack owners) will now have access to both the original style and the new style of each of these weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]We are continuously monitoring your bug reports. Please report any bugs you find in our official Ready or Not Discord, using the bug report channels! There they can be structured and collected in one place so we can most effectively deal with them: Ready or Not Bug Reports",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Please check our official Discord for an updated list of some known issues in the #known-issues-and-fixes channel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update Day General FAQ",
+     "items": [
+      {
+       "text": "Q: ‘My game mods broke on PC with this update, why did that happen?’",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "> A: When Ready or Not or games in general release updates to the game, the files for the game in areas related to new game content or fixes then changes. If mods were using the old files to function that have since changed to new files, those mods will likely need to update in order to work properly with the new version of the game’s files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ready or Not Modding Update Tips: https://voidinteractive.net/community-resources/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Q: ‘Why does an update download initially seem frustratingly large in data/gigabytes, even when the game doesn’t actually take up that much more storage when the download finishes’",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "> A: Game service platforms such as Steam etc. may update games by overwriting the game's files with the new files to replace it. For example, this means a update download that initially shows as 6GB during the download may actually only expand the game by 1GB in size, since it is largely just overwriting old game files for the other 5GB of data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Q: ‘Why does an update take so long to download despite my fast internet’",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "> A: Other routine checks that a game service platform does to confirm game file integrity on the local storage device (e.g. your hard drive such as a HDD or SSD) during an update download can extend the perceived download size/time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Q: ‘Why didn’t my game update yet on my console platform?'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "> A: Console platforms do not necessarily support auto-updates, so you may have to trigger the update manually within your game library with an internet connection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "AI",
+     "items": [
+      {
+       "text": "Mission Editor Options ('Basic' and ‘Advanced’ tabs)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Basic' Tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SWAT AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SWAT Health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SWAT Accuracy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SWAT Fire Rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Suspect AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Suspect Health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Suspect Start Morale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stun Resistance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Suspect Accuracy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Suspect Fire Rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Civilian AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Civilian Health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Advanced' Tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visit the VOID website changelog for an expandable list of Advanced AI options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Engineering",
+     "items": [
+      {
+       "text": "Mission Editor Playable in Singleplayer and Multiplayer Friends-Only Lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mission Editor Options ('Basic' and ‘Advanced’ tabs)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Basic' tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Limited Bandages (2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage Cap (max amount of damage received by player in a single hit)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Door Trap Count",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Door Trap Types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tripwire Alarm Trap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IR Alarm Trap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flashbang Trap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Explosive Trap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toxic Gas Trap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Default NPC Spawn Points (Enabled/Disabled)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "‘Advanced’ tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player Health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Limited Bandage (Expanded Selection)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shielded Melee Damage Multiplier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rules of Engagement: Friendly Fire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rules of Engagement: Friendly Fire Penalty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Door Trap Count (expanded selection)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Max Locked Doors Percentage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Max Open Doors Percentage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chance of Suspect Death by Suicide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Weapons",
+     "items": [
+      {
+       "text": "3 free new 'Triple Weapon Pack' cosmetic styles, available for use by all players regardless of platform or game edition. (Note: The original styles for these weapons will still also be available for all players who are already eligible for the triple weapon pack items.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MK-V ‘HC’ (Hard Chrome) pistol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "590M ‘FDE’ (Flat Dark Earth) shotgun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "M32A1 ' LSPD' (LSPD Blue) rotary grenade launcher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New animation set for the MK-V pistol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/36750080/bb5c5444eaa9293829ca367ea10c5f9cd6868f58.png\"][img src=\"{STEAM_CLAN_IMAGE}/36750080/eddf43de08329647f335444f147446f60361c515.png\"][img src=\"{STEAM_CLAN_IMAGE}/36750080/fca9f09463affc70f88c677d4c11f087ac4fc213.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "User Interface and Experience",
+     "items": [
+      {
+       "text": "Mission Editor added to main menu screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "AI",
+     "items": [
+      {
+       "text": "Fixed suspects sometimes being unable to surrender, move or shoot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Animation",
+     "items": [
+      {
+       "text": "Fixed death animations sometimes playing at the wrong time for clients in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being unable to see shield wielding clients' pistols as host.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sliding third person animations while flipping the magnifier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed G18-C magazine clipping through the gun at the end of the quick reload animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed taser cartridge leaving the taser during arrest/bash animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed clipping when changing scope magnification during canted aim on certain guns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed stuttery SWAT AI grenade throw animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed M14S-16 fire selector not rotating properly when changing from single fire to full auto.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed RWTC-6.5, F90, ARWC and SCP9 trigger pull animations not playing correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed teleporting pistol magazines during certain pistols' reloading animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pump action shotgun dry fire trigger pull animations not playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed misaligned backup iron sights when equipping the XE Sight on the MP5A3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 590M magazine leaving the gun during arrest animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed slight hand misalignment after changing magnification of the SDR optic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed C2 detonator clipping in first person.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hands clipping into optics during 870CQB empty reload first person animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Levels",
+     "items": [
+      {
+       "text": "Fixed traps sometimes spawning slightly too far away from certain doorframes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed suspects sometimes vanishing from helicopter camera views.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Station",
+     "items": [
+      {
+       "text": "Fixed clipping during certain animations of NPCs in the holding cell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed twitchy facial animations of certain NPCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed static mop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing head.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rifle magazines appearing in certain station NPCs' shotguns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed instances of necks clipping through the shirts of various station NPCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Narcos",
+     "items": [
+      {
+       "text": "Fixed TV screen not breaking when shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Stolen Valor",
+     "items": [
+      {
+       "text": "Fixed SWAT AI getting stuck on bathroom doors when ordered to slide.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "No Good Deed",
+     "items": [
+      {
+       "text": "Fixed certain windows not breaking when throwing grenades through them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to walk onto bumper car’s antenna.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "All Gods Burn",
+     "items": [
+      {
+       "text": "Fixed bandana LOD issues of bandana wearing suspects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed necks clipping through the shirts of various suspects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "A New America",
+     "items": [
+      {
+       "text": "Fixed curtain desync between clients and host.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed certain windows not breaking when throwing grenades through them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed being able to climb onto an ammo box in the press conference room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed certain suspects using voicelines from the 3 Letter Triad mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Fixed being able to open the loadout menu/mission selection screen and the pause menu simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous Fixes",
+     "items": [
+      {
+       "text": "Fixed G18-C not changing magazine upon reloading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when pressing L1/LB when using a controller in the loadout menu while having the M32A1 launcher equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 6.5x48 JHP ammo being weaker than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed performance issues when firing shotguns at certain surface materials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mismatched skin tone between certain SWAT heads and arms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(PS5) Fixed being unable to unlock the ‘Eye of Providence’ achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "(XBOX & PS5) Fixed being unable to unlock the ‘Nosce Te Ipsum’ achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "(XBOX) Fixed rare crash when suspending the game while attempting to link an Epic account.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "(EGS) Fixed rare crash when loading into Neon Tomb.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Active shooter suspects can still be present in default active shooter levels even when disabled in the Mission Editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workaround: After disabling active shooter, enable any other suspect archetype.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"G18-C\" pistol is missing “-C\" from it's name in languages other than English",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Suspects assigned the Tactical Archetype via Mission Editor use MLO Voice Over",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Suspect Fire Rate\" setting's changed value does not get saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workaround: The difficulty you select at beginning of Mission Editor mission creation will dictate what Suspect Fire Rate is used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MK-V magazine-check third person perspective animation does not fully complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bomb count modifier does not change the number of the bombs on the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replay viewer camera may have issues with cycling between actors and orbiting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 41,
+    "balance": 0,
+    "other": 73,
+    "ps5": 2,
+    "topNew": [
+     "Fixed curtain desync between clients and host.",
+     "Fixed certain windows not breaking when throwing grenades through them.",
+     "Fixed being able to climb onto an ammo box in the press conference room."
+    ]
+   },
+   "sourceIds": [
+    "ready-or-not-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1144200/view/1842846814444426",
+    "ps5Page": "https://voidinteractive.net/community-resources/"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-03T19:09:44.000Z",
+      "verification": "official",
+      "sourceId": "ready-or-not-steam",
+      "checkedAt": "2026-11-05T08:41:24.709Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-03T19:09:44.000Z",
+      "verification": "assumed",
+      "sourceId": "ready-or-not-steam",
+      "checkedAt": "2026-11-05T08:41:24.710Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-03T19:09:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:24.710Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "99b099e01a1c",
+   "text": "Active shooter suspects can still be present in default active shooter levels even when disabled in the Mission Editor.",
+   "status": "open",
+   "firstReleaseId": "ready-or-not@1.5"
+  },
+  {
+   "id": "5d110a83b382",
+   "text": "Workaround: After disabling active shooter, enable any other suspect archetype.",
+   "status": "open",
+   "firstReleaseId": "ready-or-not@1.5"
+  },
+  {
+   "id": "a77363416377",
+   "text": "\"G18-C\" pistol is missing “-C\" from it's name in languages other than English",
+   "status": "open",
+   "firstReleaseId": "ready-or-not@1.5"
+  },
+  {
+   "id": "7c012f7dbabb",
+   "text": "Suspects assigned the Tactical Archetype via Mission Editor use MLO Voice Over",
+   "status": "open",
+   "firstReleaseId": "ready-or-not@1.5"
+  },
+  {
+   "id": "fad334126a58",
+   "text": "\"Suspect Fire Rate\" setting's changed value does not get saved",
+   "status": "addressed",
+   "firstReleaseId": "ready-or-not@1.5",
+   "addressedBy": "ready-or-not@1.5.3",
+   "addressedAt": "2026-10-13T17:05:03.000Z"
+  },
+  {
+   "id": "cc3215668492",
+   "text": "Workaround: The difficulty you select at beginning of Mission Editor mission creation will dictate what Suspect Fire Rate is used.",
+   "status": "open",
+   "firstReleaseId": "ready-or-not@1.5"
+  },
+  {
+   "id": "a3a93da6b33c",
+   "text": "MK-V magazine-check third person perspective animation does not fully complete",
+   "status": "open",
+   "firstReleaseId": "ready-or-not@1.5"
+  },
+  {
+   "id": "505b55cc0a40",
+   "text": "Bomb count modifier does not change the number of the bombs on the level",
+   "status": "open",
+   "firstReleaseId": "ready-or-not@1.5"
+  },
+  {
+   "id": "001a4afde36b",
+   "text": "Replay viewer camera may have issues with cycling between actors and orbiting",
+   "status": "open",
+   "firstReleaseId": "ready-or-not@1.5"
+  }
+ ]
+}
