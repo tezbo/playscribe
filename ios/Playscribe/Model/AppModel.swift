@@ -856,6 +856,8 @@ final class AppModel {
         data.simulated.insert(release, at: 0)
         tick()
         openRelease(gameID: gameID, releaseID: release.id)
+        // Tabletop's standing half pages through sections: land on "Fixes", where the spoiler lines are.
+        if let i = readerSections(release).firstIndex(where: { $0.id == "fixes" }) { readerIndex[gameID] = i }
     }
     #endif
 

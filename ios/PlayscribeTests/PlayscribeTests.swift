@@ -518,3 +518,27 @@ struct BuildChannelTests {
     }
     #endif
 }
+
+struct ReaderSpoilerTests {
+    @MainActor
+    private func fixes(shown: Bool) -> String {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "rs-\(UUID().uuidString).json"))
+        let gameID = "g"
+        m.setSpoilersShown(gameID, shown)
+        let when = Date(timeIntervalSince1970: 1_745_020_800)
+        let r = Release(id: "r", gameID: gameID, displayName: "Patch 1.2", kind: .hotfix, kindBasis: .studio, announcedAt: when,
+                        notes: [NoteSection(title: "Changes", items: ["Hello!", "Be advised, the following notes contain spoilers:",
+                                                                        "Fixed the final door.", "Fixed the ending letter."].map { NoteItem(text: $0) })],
+                        sourceIDs: [], platforms: [])
+        return m.readerSections(r).first { $0.id == "fixes" }?.body ?? ""
+    }
+
+    @Test("R-5: the standing half hides spoiler lines until the spoiler switch is on, and never lists the greeting or warning")
+    @MainActor func standingHalfRespectsSpoilers() {
+        let hidden = fixes(shown: false)
+        #expect(hidden.contains("2 listed changes") && hidden.contains("2 hidden for spoilers") && !hidden.contains("final door"))
+        #expect(!hidden.contains("Hello") && !hidden.contains("Be advised"))
+        let shown = fixes(shown: true)
+        #expect(shown.contains("final door") && !shown.contains("hidden for spoilers"))
+    }
+}
