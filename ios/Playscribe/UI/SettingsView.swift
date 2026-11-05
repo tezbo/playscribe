@@ -17,6 +17,7 @@ struct SettingsView: View {
     private func dismiss() { if let panelClose { panelClose() } else { systemDismiss() } }
     @Environment(\.duo) private var duo
     @AppStorage(YouTubeController.autoplayKey) private var autoplayVideos = false
+    @AppStorage(VideoReflection.key) private var reflectionMode = false
     @State private var simGame: String = ""
     @State private var simKind: AppModel.SimKind = .major
     @State private var simDelay: Double = 10
@@ -107,10 +108,11 @@ struct SettingsView: View {
 
                 Section {
                     Toggle("Autoplay videos", isOn: $autoplayVideos)
+                    Toggle("Reflection mode", isOn: $reflectionMode)
                 } header: {
                     Text("Video")
                 } footer: {
-                    Text("Trailers and update videos start as soon as they open. Off when Reduce Motion is on.")
+                    Text("Trailers and update videos start as soon as they open. Reflection mode adds a soft mirror of the video under the controls when the Duo stands folded like a laptop. Both are off when Reduce Motion is on.")
                 }
 
                 #if INTERNAL
