@@ -20,7 +20,7 @@ on the Mac. Hosted runners are headless, so they cannot press it either.
 | # | Change | Saves | Status |
 |---|---|---|---|
 | 1 | `ios.yml` runs unit tests and the UI-test compile as two parallel jobs; the compile uses a generic simulator destination (no boot). Measured: the compile job takes under 1 min, so on 0.5.0 (where it is an extra step) this keeps PR CI at the unit time | 0 on main, the compile step on 0.5.0 | this PR |
-| 2 | CI-only build settings: no previews, no index store, dwarf, active arch only. Being measured against the 4 min baseline; dropped if not faster. An early simulator boot was tried and removed: the unit job took 10 min with it | to be measured | this PR |
+| 2 | Measured and dropped: CI-only build settings (no previews, index store, dwarf) made no difference (unit 4m23 vs about 4m on main), and an early simulator boot made it worse (10 min). Not worth the risk | 0 | tried |
 | 3 | `xcodegen` installed only if missing, Homebrew auto-update and cleanup off; job timeouts so a hang costs 30 min, not 6 hours | ~1 min, hang cost | this PR |
 | 4 | Gate: `STILLS=0` by default (stills only on request or for release tags). Stills are re-presses of the pose, about 15 s each, plus 4 captures per pose | ~25 min of the 80 | next, on the 0.5.0 gate.sh |
 | 5 | Gate tiers: PR tier = Closed + Tabletop (the two layouts that differ most), full five poses nightly and on `v*` tags | PR gate ~80 to ~25 min | next |
