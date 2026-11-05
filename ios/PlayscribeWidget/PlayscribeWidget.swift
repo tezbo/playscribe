@@ -54,6 +54,7 @@ struct Notice: View {
     var message: String
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
+            Image(systemName: "book.closed.fill").font(W.big).foregroundStyle(W.accent).accessibilityHidden(true)
             Text(title).font(W.big)
             Text(message).font(W.body).foregroundStyle(.secondary)
         }
@@ -73,7 +74,7 @@ struct WidgetView: View {
     var entry: SnapshotEntry
 
     private var limit: Int {
-        switch family { case .systemSmall: 1; case .systemMedium: 3; default: 4 }
+        switch family { case .systemSmall: 1; case .systemMedium: 3; default: 5 }
     }
 
     var body: some View {
@@ -122,11 +123,11 @@ struct WidgetView: View {
         let rows = Array(snap.rows.prefix(limit))
         return Group {
             if !snap.hasGames {
-                Notice(title: "Add your games", message: "Open Playscribe to build your library.")
+                Notice(title: "Add your first game", message: "Open Playscribe to build your library.")
                     .accessibilityLabel("Add your games, open Playscribe to build your library")
                     .foregroundStyle(scheme == .dark ? W.primary : W.ink900)
             } else if rows.isEmpty {
-                Notice(title: "You're all caught up", message: "Playscribe will show new updates here.")
+                Notice(title: "All caught up", message: "Playscribe will show new updates here.")
                     .foregroundStyle(scheme == .dark ? W.primary : W.ink900)
             } else if family == .systemSmall, let r = rows.first {
                 HeroCard(row: r, tall: true).widgetURL(r.url)
@@ -172,19 +173,19 @@ struct HeroCard: View {
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             if let img = cover(row) {
-                Color.clear.overlay { Image(uiImage: img).resizable().scaledToFill() }.clipped()
+                Color.clear.overlay { Image(uiImage: img).resizable().scaledToFill().widgetAccentedRenderingMode(.desaturated) }.clipped()
             } else {
                 W.ink900
             }
-            LinearGradient(colors: [.clear, W.ink950.opacity(0.88)], startPoint: .center, endPoint: .bottom)
+            LinearGradient(colors: [W.ink950.opacity(0.15), W.ink950.opacity(0.92)], startPoint: .top, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 2) {
                 HStack(spacing: 6) {
                     if row.unread { NewChip() }
-                    if let c = row.chip { Text(c).font(W.chip).foregroundStyle(W.primary) }
+                    if !tall, let c = row.chip { Text(c).font(W.chip).foregroundStyle(W.primary) }
                 }
-                Text(row.game).font(W.title).lineLimit(tall ? 3 : 1)
+                Text(row.game).font(W.title).lineLimit(tall ? 1 : 1).minimumScaleFactor(0.85)
                 Text(row.update).font(W.body).lineLimit(1)
-                Text(row.date, style: .relative).font(W.body).opacity(0.75).lineLimit(1)
+                Text(age(row.date)).font(W.body).lineLimit(1)
             }
             .foregroundStyle(W.primary)
             .padding(10)
@@ -208,7 +209,7 @@ struct ThumbRow: View {
                         W.ink900
                     }
                 }
-                .frame(width: 40, height: 40).clipShape(RoundedRectangle(cornerRadius: 8))
+                .frame(width: 36, height: 36).clipShape(RoundedRectangle(cornerRadius: 8))
                 .overlay(alignment: .topTrailing) {
                     if row.unread { Circle().fill(W.accent).frame(width: 10, height: 10).offset(x: 3, y: -3) }
                 }
@@ -218,6 +219,7 @@ struct ThumbRow: View {
                 }
                 Spacer(minLength: 0)
             }
+            .frame(minHeight: 44)
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(voice(row))
