@@ -35,9 +35,9 @@ struct FoldHarnessTests {
             try? FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
             try? r.probeJSON.write(toFile: "\(dir)/\(p.id).json", atomically: true, encoding: .utf8)
         }
-        #expect(r.livePose == p.expected, "\(p.id): the injected fold produced the expected pose")
-        #expect(r.foldCrossings.isEmpty, "\(p.id) TT-0: tappable frames cross the fold: \(r.foldCrossings)")
-        #expect(r.aboveTheFold.isEmpty, "\(p.id) G-4: tappable frames above the Tabletop fold: \(r.aboveTheFold)")
+        HarnessRules.require(r.livePose == p.expected, "\(p.id): the injected fold gave pose \(r.livePose), expected \(p.expected)")
+        HarnessRules.require(r.foldCrossings.isEmpty, "\(p.id) TT-0: tappable frames cross the fold \(String(describing: r.division)): \(r.foldCrossings.map(HarnessRules.brief))")
+        HarnessRules.require(r.aboveTheFold.isEmpty, "\(p.id) G-4: tappable frames above the Tabletop fold: \(r.aboveTheFold.map(HarnessRules.brief))")
         HarnessRules.checkDeck(r, maxFraction: p.id == "tabletop" ? nil : 0.5)
         if p.id == "closed" || p.id == "open" { HarnessRules.checkDeck(r, maxFraction: 0.38) }
         if p.expected != .tabletop { HarnessRules.checkLibraryToolbar(r) }
@@ -52,33 +52,37 @@ struct FoldHarnessTests {
         let r = try #require(await FoldHost.render(p, type: size))
         defer { FoldHost.dispose(r) }
         HarnessRules.checkDeck(r, maxFraction: 0.5)
-        #expect(r.foldCrossings.isEmpty, "\(id) \(size.rawValue): nothing crosses the fold")
+        HarnessRules.require(r.foldCrossings.isEmpty, "\(id) \(size.rawValue): frames cross the fold: \(r.foldCrossings.map(HarnessRules.brief))")
     }
 }
 
 /// The frame rules, shared by the harness tests and (later) by sim-side captures.
 @MainActor
 enum HarnessRules {
+    /// One-line failures that say "failed", so the CI log's grep shows them (and so a reader sees the numbers).
+    static func require(_ ok: Bool, _ message: String, sourceLocation: SourceLocation = #_sourceLocation) {
+        if !ok { Issue.record("harness failed: \(message)", sourceLocation: sourceLocation) }
+    }
+    static func brief(_ r: CGRect) -> String { "\(Int(r.minX)),\(Int(r.minY)) \(Int(r.width))x\(Int(r.height))" }
     /// The deck is at most `maxFraction` of the container height, plus 12 pt of slack (the same slack as the UI test).
     static func checkDeck(_ r: Rendered, maxFraction: CGFloat?, sourceLocation: SourceLocation = #_sourceLocation) {
         guard let maxFraction else { return }
         guard let deck = r.named["latestDeck"] else {
-            Issue.record("\(r.pose.id): the Latest updates deck was not on screen", sourceLocation: sourceLocation)
+            Issue.record("harness failed: \(r.pose.id): the Latest updates deck was not on screen", sourceLocation: sourceLocation)
             return
         }
         let limit = r.pose.container.height * maxFraction + 12
-        #expect(deck.height <= limit, "\(r.pose.id) J-5: deck \(Int(deck.width)) x \(Int(deck.height)) pt is over \(Int(limit)) pt",
-                sourceLocation: sourceLocation)
+        require(deck.height <= limit, "\(r.pose.id) J-5: deck \(Int(deck.width)) x \(Int(deck.height)) pt is over \(Int(limit)) pt", sourceLocation: sourceLocation)
     }
 
     /// TB-1: Settings and Add are both drawn by UIKit, inside the window, and at least 44 pt to touch.
     static func checkLibraryToolbar(_ r: Rendered, sourceLocation: SourceLocation = #_sourceLocation) {
         for (name, frame) in [("Settings", r.uikitControl(identifier: "settingsButton")), ("Add game", r.uikitControl(label: "Add game"))] {
             guard let f = frame else {
-                Issue.record("\(r.pose.id) TB-1: the \(name) button was not drawn in the navigation bar", sourceLocation: sourceLocation)
+                Issue.record("harness failed: \(r.pose.id) TB-1: the \(name) button was not drawn in the navigation bar", sourceLocation: sourceLocation)
                 continue
             }
-            #expect(f.width >= 43.5 && f.height >= 43.5, "\(r.pose.id) TB-1: \(name) is \(f.size), under 44 pt", sourceLocation: sourceLocation)
+            require(f.width >= 43.5 && f.height >= 43.5, "\(r.pose.id) TB-1: \(name) is \(Int(f.width)) x \(Int(f.height)), under 44 pt", sourceLocation: sourceLocation)
         }
     }
 }
