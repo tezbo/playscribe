@@ -136,14 +136,22 @@ enum FoldHost {
         // for a 678 x 466 pose), so a pose that does not fit is hosted as a child view of exactly the pose's size, inside a
         // window that fits the screen. Views outside a window's bounds are still laid out.
         let screen = scene.screen.bounds.size
+        var hostShift = CGPoint.zero
         if pose.windowSize.width > screen.width || pose.windowSize.height > screen.height {
             let shell = UIViewController()
             shell.addChild(hc)
             shell.view.addSubview(hc.view)
-            hc.view.frame = CGRect(origin: .zero, size: pose.windowSize)
-            hc.didMove(toParent: shell)
             window.frame = CGRect(origin: .zero, size: screen)
             window.rootViewController = shell
+            window.isHidden = false
+            window.layoutIfNeeded()
+            // Negative additionalSafeAreaInsets cannot cancel an inherited inset (Closed landscape, Open portrait and Tabletop kept
+            // the window's own right 84). Shift the oversized view left so its right edge stops at the window's right inset: it then
+            // inherits none there and the pose's own right inset is exactly what is added below.
+            let shiftX = min(0, screen.width - window.safeAreaInsets.right - pose.windowSize.width)
+            hc.view.frame = CGRect(origin: CGPoint(x: shiftX, y: 0), size: pose.windowSize)
+            hc.didMove(toParent: shell)
+            hostShift = CGPoint(x: shiftX, y: 0)
         } else {
             window.frame = CGRect(origin: .zero, size: pose.windowSize)
             window.rootViewController = hc
@@ -161,17 +169,7 @@ enum FoldHost {
             window.layoutIfNeeded()
             try? await Task.sleep(for: settle / 4)
         }
-        // The inherited inset can arrive after the first read (a child laid out later inherits the window's own 84 on the
-        // right). Re-derive it from what is applied now and correct the difference, up to three times.
-        for _ in 0..<3 {
-            let a = hc.view.safeAreaInsets, add = hc.additionalSafeAreaInsets
-            let now = UIEdgeInsets(top: a.top - add.top, left: a.left - add.left, bottom: a.bottom - add.bottom, right: a.right - add.right)
-            if a == t { break }
-            hc.additionalSafeAreaInsets = UIEdgeInsets(top: t.top - now.top, left: t.left - now.left,
-                                                       bottom: t.bottom - now.bottom, right: t.right - now.right)
-            for _ in 0..<2 { window.layoutIfNeeded(); try? await Task.sleep(for: settle / 4) }
-        }
-        let origin = CGPoint(x: pose.safeArea.left, y: pose.safeArea.top)
+        let origin = CGPoint(x: hostShift.x + pose.safeArea.left, y: hostShift.y + pose.safeArea.top)
         func rel(_ r: CGRect) -> CGRect { r.offsetBy(dx: -origin.x, dy: -origin.y) }
         var r = Rendered(pose: pose, livePose: model.livePose, frames: box.frames.map(rel),
                          named: box.named.mapValues(rel), window: window, controller: hc)
