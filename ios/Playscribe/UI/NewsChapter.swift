@@ -6,7 +6,25 @@ struct NewsItem: Codable, Hashable, Identifiable {
     var title: String
     var date: Date?
     var url: URL
+    /// "official" (a studio's own post) or "reported" (anything else). Older files carry none: they only ever held studio posts.
+    var kind: String?
     var id: String { url.absoluteString }
+    var isReported: Bool { kind == "reported" }
+    var tagText: String { isReported ? "Reported" : "Official" }
+    /// At most 3 lines in a row: a long headline is cut at a word.
+    var shortTitle: String {
+        let limit = 120
+        guard title.count > limit else { return title }
+        let head = title.prefix(limit)
+        let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? String(head)
+        return cut.trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-–—.")) + "…"
+    }
+}
+
+/// The verification tag: Official for studio posts, Reported otherwise. The only provenance shown.
+struct NewsTag: View {
+    var item: NewsItem
+    var body: some View { Tag(text: item.tagText, tint: .secondary) }
 }
 
 @MainActor @Observable
@@ -42,7 +60,7 @@ final class NewsStore {
     private(set) var globalLoaded = false
 
     private struct GlobalFile: Decodable {
-        struct Row: Decodable { var gameId: String; var title: String; var date: Date?; var url: URL }
+        struct Row: Decodable { var gameId: String; var title: String; var date: Date?; var url: URL; var kind: String? }
         var items: [Headline]
         init(from decoder: Decoder) throws {
             let c = try decoder.container(keyedBy: CodingKeys.self)
@@ -50,7 +68,7 @@ final class NewsStore {
             var out: [Headline] = []
             // One malformed item never costs the list.
             while !list.isAtEnd {
-                if let r = try? list.decode(Row.self) { out.append(Headline(gameID: r.gameId, item: NewsItem(title: r.title, date: r.date, url: r.url))) } else { _ = try? list.decode(File.Skip.self) }
+                if let r = try? list.decode(Row.self) { out.append(Headline(gameID: r.gameId, item: NewsItem(title: r.title, date: r.date, url: r.url, kind: r.kind))) } else { _ = try? list.decode(File.Skip.self) }
             }
             items = out
         }
@@ -66,7 +84,7 @@ final class NewsStore {
         let list = (0..<14).map { i in
             Headline(gameID: gameIDs[i % gameIDs.count],
                      item: NewsItem(title: i.isMultiple(of: 2) ? "Sample studio post \(i): \(long)" : "Sample headline \(i)",
-                                    date: .now.addingTimeInterval(-Double(i) * 86_400), url: URL(string: "https://example.com/\(i)")!))
+                                    date: .now.addingTimeInterval(-Double(i) * 86_400), url: URL(string: "https://example.com/\(i)")!, kind: i.isMultiple(of: 3) ? "reported" : "official"))
         }
         global = list; globalLoaded = true
         for id in gameIDs { items[id] = list.filter { $0.gameID == id }.map(\.item); loaded.insert(id) }
@@ -157,10 +175,10 @@ struct NewsChapter: View {
             ForEach(list.prefix(20)) { item in
                 Link(destination: item.url) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(item.title).font(PlayscribeFont.headline).multilineTextAlignment(.leading)
+                        Text(item.shortTitle).font(PlayscribeFont.headline).multilineTextAlignment(.leading).lineLimit(3)
                         HStack(spacing: 8) {
                             if let d = item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
-                            Tag(text: "Official")
+                            NewsTag(item: item)
                         }
                         .font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     }
@@ -207,7 +225,7 @@ struct NewsStrip: View {
                                     .multilineTextAlignment(.leading).lineLimit(2)
                                 HStack(spacing: 8) {
                                     if let d = post.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated))) }
-                                    Tag(text: "Official")
+                                    NewsTag(item: post.item)
                                 }
                                 .font(PlayscribeFont.caption).foregroundStyle(.secondary)
                             }
@@ -216,7 +234,7 @@ struct NewsStrip: View {
                         }
                         .tappableFrame()
                         .accessibilityElement(children: .ignore)
-                        .accessibilityLabel("\(post.game), \(post.item.title), Official, opens in browser")
+                        .accessibilityLabel("\(post.game), \(post.item.title), \(post.item.tagText), opens in browser")
                     }
                 }
             }
@@ -239,7 +257,10 @@ struct GlobalNewsView: View {
     var body: some View {
         let mine = Set(model.data.collection.map(\.gameID))
         let sorted = store.global.sorted { ($0.item.date ?? .distantPast) > ($1.item.date ?? .distantPast) }
-        let items = sorted.filter { mine.contains($0.gameID) } + sorted.filter { !mine.contains($0.gameID) }
+        let all = sorted.filter { mine.contains($0.gameID) } + sorted.filter { !mine.contains($0.gameID) }
+        // Tabletop: the newest post is the stage art on the standing half; the list on the flat half starts from the second.
+        let lead: NewsStore.Headline? = duo.pose == .tabletop && all.count > 1 ? all.first : nil
+        let items = lead == nil ? all : Array(all.dropFirst())
         Group {
             if items.isEmpty {
                 ContentUnavailableView {
@@ -270,11 +291,17 @@ struct GlobalNewsView: View {
                 .frame(width: duo.size.width)
             } else {
                 List { ForEach(items.prefix(60)) { GlobalNewsRow(headline: $0) } }
-                    .contentMargins(.trailing, railWidth, for: .scrollContent)
+                    // Closed: the badge and clock sit top right and the tab capsule floats on the right edge, so the card
+                    // starts lower and keeps clear of the rail.
+                    .contentMargins(.top, duo.pose == .closed ? 24 : 0, for: .scrollContent)
+                    .contentMargins(.trailing, duo.pose == .closed ? 72 : railWidth, for: .scrollContent)
             }
         }
         .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
+        .background(alignment: .top) {
+            if let lead, let fold = duo.division { NewsStage(headline: lead).frame(height: fold.maxY).allowsHitTesting(false) }
+        }
         .overlay(alignment: .topLeading) {
             if duo.pose == .tabletop { Text("News").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false) }
         }
@@ -299,9 +326,9 @@ struct GlobalNewsRow: View {
             HStack(alignment: .top, spacing: 12) {
                 if let game { CoverView(game: game, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(headline.item.title).font(PlayscribeFont.subheadline.weight(.semibold)).multilineTextAlignment(.leading)
+                    Text(headline.item.shortTitle).font(PlayscribeFont.subheadline.weight(.semibold)).multilineTextAlignment(.leading).lineLimit(3)
                     HStack(spacing: 8) {
-                        Tag(text: "Official")
+                        NewsTag(item: headline.item)
                         if let game { Text(game.name) }
                         if let d = headline.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())).foregroundStyle(.secondary) }
                     }
@@ -313,6 +340,34 @@ struct GlobalNewsRow: View {
             .contentShape(Rectangle())
         }
         .tappableFrame()
-        .accessibilityLabel("\(game?.name ?? ""), \(headline.item.title), Official, opens in browser")
+        .accessibilityLabel("\(game?.name ?? ""), \(headline.item.title), \(headline.item.tagText), opens in browser")
+    }
+}
+
+
+/// Tabletop's standing half: the newest post's game art with its caption above the band. View only (G-4).
+struct NewsStage: View {
+    @Environment(AppModel.self) private var model
+    var headline: NewsStore.Headline
+
+    var body: some View {
+        let game = model.game(headline.gameID)
+        ZStack(alignment: .bottomLeading) {
+            ArtView(asset: model.backdrop(headline.gameID, chapter: .news, tall: false), game: game)
+            LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(headline.item.shortTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(3)
+                HStack(spacing: 8) {
+                    NewsTag(item: headline.item)
+                    if let game { Text(game.name) }
+                    if let d = headline.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
+                }
+                .font(PlayscribeFont.caption)
+            }
+            .padding(.horizontal, 24).padding(.bottom, 16)
+            .padding(.trailing, TabletopRail.width)
+        }
+        .clipped()
+        .accessibilityHidden(true)
     }
 }
