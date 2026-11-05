@@ -57,7 +57,26 @@ final class NewsStore {
         enum CodingKeys: String, CodingKey { case items }
     }
 
+    #if INTERNAL
+    /// QA: `-qaNews` seeds sample headlines (global and per game) so layouts can be checked in every pose without a feed.
+    static let qaSeeded = ProcessInfo.processInfo.arguments.contains("-qaNews")
+    func seedQA(gameIDs: [String]) {
+        guard Self.qaSeeded, !gameIDs.isEmpty else { return }
+        let long = "A headline long enough to wrap onto a second and a third line beside the cover, so the row shows how it behaves in every pose"
+        let list = (0..<14).map { i in
+            Headline(gameID: gameIDs[i % gameIDs.count],
+                     item: NewsItem(title: i.isMultiple(of: 2) ? "Sample studio post \(i): \(long)" : "Sample headline \(i)",
+                                    date: .now.addingTimeInterval(-Double(i) * 86_400), url: URL(string: "https://example.com/\(i)")!))
+        }
+        global = list; globalLoaded = true
+        for id in gameIDs { items[id] = list.filter { $0.gameID == id }.map(\.item); loaded.insert(id) }
+    }
+    #endif
+
     func loadGlobal() async {
+        #if INTERNAL
+        if Self.qaSeeded { return }
+        #endif
         if global.isEmpty, let raw = try? Data(contentsOf: Self.cacheURL("global")), let f = try? JSONCoding.decoder.decode(GlobalFile.self, from: raw) { global = f.items }
         if let (f, raw) = try? await FeedClient.fetch("news.json", as: GlobalFile.self) {
             try? raw.write(to: Self.cacheURL("global"), options: .atomic)
@@ -72,6 +91,9 @@ final class NewsStore {
     private static func cacheURL(_ id: String) -> URL { URL.cachesDirectory.appending(path: "news-\(id).json") }
 
     func load(gameID: String, igdbID: Int?) async {
+        #if INTERNAL
+        if Self.qaSeeded { return }
+        #endif
         failed.remove(gameID)
         if items[gameID] == nil, let raw = try? Data(contentsOf: Self.cacheURL(gameID)),
            let f = try? JSONCoding.decoder.decode(File.self, from: raw) { items[gameID] = f.items }
@@ -148,7 +170,12 @@ struct NewsChapter: View {
                 .tappableFrame()
             }
         }
-        .task(id: gameID) { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) }
+        .task(id: gameID) {
+            #if INTERNAL
+            store.seedQA(gameIDs: model.data.collection.map(\.gameID))
+            #endif
+            await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID)
+        }
     }
 }
 
@@ -252,7 +279,12 @@ struct GlobalNewsView: View {
             if duo.pose == .tabletop { Text("News").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false) }
         }
         .navigationTitle("News")
-        .task { await store.loadGlobal() }
+        .task {
+            #if INTERNAL
+            store.seedQA(gameIDs: model.data.collection.map(\.gameID))
+            #endif
+            await store.loadGlobal()
+        }
     }
 }
 
