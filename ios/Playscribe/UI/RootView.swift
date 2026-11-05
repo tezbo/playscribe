@@ -233,6 +233,7 @@ struct TabletopRail: View {
                         .labelStyle(.iconOnly)
                         .font(PlayscribeFont.title3)
                         .frame(width: 48, height: 48)
+                        .background(Circle().fill(.regularMaterial))
                         .tappableFrame()
                 }
                 // Settings has its own cog on the rail, not inside the View menu (Terry, 0.2.0 build 5).
@@ -256,14 +257,18 @@ struct TabletopRail: View {
             }
             .scrollBounceBehavior(.basedOnSize)
             .scrollIndicators(.hidden)
-            Divider().frame(width: 28)
-            tab(.library, "Library", "books.vertical", badge: model.totalUnread)
-            tab(.updates, "Updates", "newspaper")
-            tab(.search, "Search", "magnifyingglass")
+            // Iris: the same floating capsule as Closed's tab bar, no full-height strip or hairline.
+            VStack(spacing: 4) {
+                tab(.library, "Library", "books.vertical", badge: model.totalUnread)
+                tab(.updates, "Updates", "newspaper")
+                tab(.search, "Search", "magnifyingglass")
+            }
+            .padding(.vertical, 4)
+            .background(Capsule().fill(.regularMaterial))
+            .accessibilitySortPriority(2)   // VoiceOver: tabs first, then actions
         }
         .padding(.vertical, 8)
         .frame(maxHeight: .infinity)
-        .background(.bar)
     }
 
     private func tab(_ t: AppTab, _ title: String, _ symbol: String, badge: Int = 0) -> some View {
@@ -273,7 +278,7 @@ struct TabletopRail: View {
             Image(systemName: symbol)
                 .font(PlayscribeFont.title3)
                 .symbolVariant(model.nav.tab == t ? .fill : .none)
-                .foregroundStyle(model.nav.tab == t ? PlayscribeColor.accent : .secondary)
+                .foregroundStyle(model.nav.tab == t ? PlayscribeColor.accent : Color.primary)
                 .frame(width: 48, height: 48)
                 // The same selected treatment as the rail's action buttons (RailButton), so the rail reads as one style.
                 .background(Circle().fill(PlayscribeColor.accent.opacity(model.nav.tab == t ? 0.18 : 0)))
