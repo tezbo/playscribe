@@ -42,3 +42,7 @@ What each agent must know and use. Roles and reporting lines are in `AGENTS.md`.
 **Quinn, QA lead**
 - `docs/ux-acceptance.md` in every pose, feed and alert checks, and screenshot evidence saved per build.
 - Writing reproducible bugs with acceptance IDs and the SHA.
+
+**Mara, marketing and App Store lead**
+- App Store Connect marketing surface: name, subtitle, keywords, promotional text, screenshots, app preview, In-App Events, Product Page Optimization, custom product pages. Checks limits against current Apple docs, never memory.
+- Keyword research and competitor positioning (Patchbook.gg, Patch Pulse), web SEO basics, static sites on GitHub Pages.

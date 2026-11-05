@@ -33,7 +33,9 @@ console.log(JSON.stringify(summary, null, 2))
 if (!args.includes('--hot')) await fetchPlus(db, fetch, console.log)
 const { keyId, teamId, key, topic } = config.apns
 const apns = process.env.PUSH_ENABLED === '1' && keyId && teamId && key ? new Apns({ keyId, teamId, key, topic }) : null
-const alerts = await pushNewPs5(db, apns, { maxAgeHours: config.pushMaxAgeHours })
+// PUSH_DEFER=1: the Feed job could not load the relay's devices. Claiming a release now would lose its alert for everyone, so leave it for the next run.
+const alerts = process.env.PUSH_DEFER === '1' ? [] : await pushNewPs5(db, apns, { maxAgeHours: config.pushMaxAgeHours })
+if (process.env.PUSH_DEFER === '1') console.log('push deferred: relay devices not loaded')
 if (alerts.length) console.log('alerts:', JSON.stringify(alerts))
 apns?.close()
 if (exportDir) console.log('exported', exportStatic(db, exportDir))
