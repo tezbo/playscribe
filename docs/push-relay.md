@@ -1,0 +1,37 @@
+# Push relay
+
+Server push needs something always on to receive each phone's APNs token and followed games. GitHub Actions cannot, so a
+small Cloudflare Worker (`relay/worker.js`, free plan, one KV namespace) holds them. Nothing else about the architecture
+changes: the Feed job still polls the sources and sends the pushes itself, so the APNs key lives only in GitHub secrets.
+
+```
+phone ──POST /v1/devices──▶ relay (KV)          Feed job (GitHub Actions, :17 and :47)
+                               ▲                  1. relay-sync   GET /admin/devices ─┐ loads devices into the run's database
+                               └──────────────────────────────────────────────────────┘
+                                                  2. ingest       polls sources, notify.ts sends APNs, once per release
+                                                  3. relay-scrub  deletes every device, VACUUMs, fails if a token is left
+                                                  4. Publish      state database goes to the public `feed` branch
+```
+
+## Rules the code keeps
+- **A token never reaches the public `feed` branch.** The state database is published, so devices exist in it only between
+  steps 1 and 3. The scrub step runs even when an earlier step failed, deletes with `secure_delete`, rewrites the file, then searches
+  the file's bytes for every token it loaded; Publish does not run if one is found or any device row is left. Logs hold counts only.
+- **Switched off by default.** The Load and push steps run only when the repository variable `PUSH_ENABLED` is `1`, which
+  is Terry's switch. With it off, `ingest` marks releases alerted without sending (unchanged behaviour).
+- **APNs topic** is the TestFlight bundle id `tezbo.Playscribe` (set in feed.yml; the code default is the simulator id).
+- **Secrets:** `APNS_KEY_P8`, `APNS_KEY_ID`, `APNS_TEAM_ID`, `CLOUDFLARE_API_TOKEN` (Workers Scripts and KV edit). The relay's
+  admin token is derived from the Cloudflare token in `relay/deploy.sh` and feed.yml, so there is no extra secret.
+- **Relaunching spends no KV writes** (registration is idempotent per token and writes only on a change), because the free
+  plan allows 1,000 writes a day. Sized for hundreds of devices, not thousands; past that, upgrade the plan or batch.
+- The relay stores follows as sent (`gameId` or `igdbId`); the Feed job resolves them and counts follows for games it does
+  not track. A dead token (410) is only dropped for the run, since the relay's copy is the source; a push to it fails again, harmlessly.
+
+## Deploy
+`Relay deploy` workflow (on a change to `relay/**` on main, or by hand): runs the Worker tests, creates the KV namespace and the
+workers.dev subdomain if missing, uploads the Worker with its binding, smoke-tests `/health` and the admin route's auth. The
+URL goes in `relay/url.txt` (read by feed.yml) and in the app's `PlayscribeRelayURL` (Info.plist).
+
+## App
+Builds up to 0.5.1 build 7 use `PlayscribeAPIBaseURL` (the static feed on raw.githubusercontent.com) for the device routes too, so
+they cannot register anywhere. The next build adds a separate `PlayscribeRelayURL`; only builds with it can receive push.
