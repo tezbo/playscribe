@@ -217,7 +217,9 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     if (byKey || near || alike) store.addSource(db, releaseId, s.id)
     const version = consoleVersionOf(text, { ps5Only: true })
     const size = sizeBytesOf(post.body) ?? sizeBytesOf(post.title)
-    const status = pressStatusOf(post.title, post.body)
+    // An announcement more than 30 days old has happened ("Patch 2.12 Will Rebalance..." in 2021): history reads it as live.
+    const raw = pressStatusOf(post.title, post.body)
+    const status = raw === 'announced' && Date.now() - Date.parse(post.publishedAt) > 30 * 86400e3 ? 'live' : raw
     store.upsertPlatform(db, releaseId, 'ps5', {
       status,
       verification: 'reported',

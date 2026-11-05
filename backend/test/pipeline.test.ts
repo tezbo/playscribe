@@ -306,6 +306,13 @@ const spelling = async (steamTitle: string, pressTitle: string, steamHoursAgo = 
 }
 const dawnwalkerIds = (db: ReturnType<typeof openDb>) => (db.prepare("SELECT id FROM releases WHERE game_id = 'dawnwalker' ORDER BY id").all() as { id: string }[]).map((r) => r.id)
 
+test('a press announcement more than 30 days old reads as live in history; a fresh one stays announced', async () => {
+  const old = await spelling('The Blood of Dawnwalker - Update 1.5', 'Dawnwalker PS5 Update 1.9 Will Arrive Next Week', 100 * 24, 90 * 24)
+  assert.equal(store.getPlatformRow(old, 'dawnwalker@1.9', 'ps5')?.status, 'live')
+  const fresh = await spelling('The Blood of Dawnwalker - Update 1.6', 'Dawnwalker PS5 Update 1.8 Will Arrive Next Week', 30, 28)
+  assert.equal(store.getPlatformRow(fresh, 'dawnwalker@1.8', 'ps5')?.status, 'announced')
+})
+
 test('the same version number far apart is two patches: a press report keeps its own release (PS5 1.4 in the past, the later 1.4.0 from Steam)', async () => {
   const db = await spelling('The Blood of Dawnwalker - Update 1.4', 'Dawnwalker PS5 Update 1.4 Out Now', 100 * 24, 300 * 24)
   const ids = dawnwalkerIds(db)
