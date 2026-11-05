@@ -307,7 +307,7 @@ final class AppModel {
             guard !Task.isCancelled else { return }
             self?.saveNow()
             // Only the app's own model speaks for this device; a model on a scratch store (tests, previews) never does.
-            if let self, self.storeURL == AppModel.defaultStoreURL, !PushRegistrar.isTestHost { PushRegistrar.syncFollows(self.follows) }
+            if let self, self.storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.syncFollows(self.follows) }
         }
     }
 

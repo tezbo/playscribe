@@ -52,7 +52,7 @@ struct PlayscribeApp: App {
                     if p == .active {
                         model.tick()
                         // Quiet hours for server pushes: the relay needs the current window and zone (r050-quiet-hours-push).
-                        if !PushRegistrar.isTestHost { PushRegistrar.syncQuietHours(model.data.quietHours) }
+                        if PushRegistrar.appCallsEnabled { PushRegistrar.syncQuietHours(model.data.quietHours) }
                         Task { await model.refreshFeed() }
                         Task { await NotificationService.shared.refreshAuthorization() }
                         NotificationService.shared.updateBadge(model.badgeCount)

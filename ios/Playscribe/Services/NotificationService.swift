@@ -126,7 +126,7 @@ final class NotificationService: NSObject {
 
     func didRegister(token: Data) {
         deviceToken = token.map { String(format: "%02x", $0) }.joined()
-        if let model, !PushRegistrar.isTestHost { PushRegistrar.register(token: deviceToken!, follows: model.follows, quietHours: model.data.quietHours) }
+        if let model, PushRegistrar.appCallsEnabled { PushRegistrar.register(token: deviceToken!, follows: model.follows, quietHours: model.data.quietHours) }
     }
 
     func updateBadge(_ count: Int) {
@@ -316,9 +316,10 @@ enum PushRegistrar {
         return URL(string: s)
     }
 
-    /// True when the app runs as the host of unit tests. The app's own relay calls (follows on save, quiet hours on activation)
-    /// stand down there, so a test that stubs the session sees only its own requests.
-    static let isTestHost = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
+    /// Whether the app's own relay calls (follows on save, quiet hours on activation and in Settings, device registration)
+    /// run. They stand down in a test host, and tests also switch them off explicitly, so a test that stubs the session sees
+    /// only its own requests whatever the app does in the background.
+    nonisolated(unsafe) static var appCallsEnabled = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil
 
     /// Tests point these at a stub; the app uses the plist, the shared session and the Keychain.
     nonisolated(unsafe) static var relayOverride: URL?

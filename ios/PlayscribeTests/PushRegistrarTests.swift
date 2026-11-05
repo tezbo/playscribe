@@ -6,7 +6,15 @@ import Foundation
 /// retried on the next change, any non-2xx counts as failure, and a 401 registers again and retries once.
 nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
     nonisolated(unsafe) static var handler: ((URLRequest) -> (Int, Data))?
-    nonisolated(unsafe) static var seen: [URLRequest] = []
+
+    private static let lock = NSLock()
+    /// Requests the stub has served; read through `snapshot()` so a loading thread's append cannot race the assertion.
+    nonisolated(unsafe) private static var _seen: [URLRequest] = []
+    static var seen: [URLRequest] {
+        get { lock.lock(); defer { lock.unlock() }; return _seen }
+        set { lock.lock(); defer { lock.unlock() }; _seen = newValue }
+    }
+    static func record(_ r: URLRequest) { lock.lock(); _seen.append(r); lock.unlock() }
 
     override class func canInit(with request: URLRequest) -> Bool { true }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
@@ -19,7 +27,7 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
             while s.hasBytesAvailable { let n = s.read(&buf, maxLength: buf.count); if n <= 0 { break }; d.append(buf, count: n) }
             r.httpBody = d
         }
-        Self.seen.append(r)
+        Self.record(r)
         let (code, data) = Self.handler?(r) ?? (200, Data())
         let resp = HTTPURLResponse(url: request.url!, statusCode: code, httpVersion: nil, headerFields: nil)!
         client?.urlProtocol(self, didReceive: resp, cacheStoragePolicy: .notAllowed)
@@ -40,6 +48,7 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         PushRegistrar.keys = .memory(key)
         StubRelay.seen = []
         StubRelay.handler = nil
+        PushRegistrar.appCallsEnabled = false
         PushRegistrar.resetForTests()
     }
 
@@ -48,15 +57,13 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
     @Test func unchangedListSendsNothingTheSecondTime() async {
         setUp()
         StubRelay.handler = { _ in (200, Data()) }
+        func puts() -> [URLRequest] { StubRelay.seen.filter { $0.httpMethod == "PUT" && $0.url!.path == "/v1/devices/me/follows" } }
         await PushRegistrar.syncFollows(follows)?.value
+        let first = puts()
+        #expect(first.count == 1, "the first list is sent once: \(paths())")
+        #expect(first.first?.value(forHTTPHeaderField: "Authorization") == "Bearer key-1")
         await PushRegistrar.syncFollows(follows)?.value
-        // Only requests that carry the list under test count.
-        let puts = StubRelay.seen.filter {
-            $0.httpMethod == "PUT" && $0.url!.path == "/v1/devices/me/follows"
-                && ($0.httpBody.map { String(decoding: $0, as: UTF8.self).contains("dawnwalker") } ?? false)
-        }
-        #expect(puts.count == 1, "one PUT for two identical lists, got \(paths())")
-        #expect(puts.first?.value(forHTTPHeaderField: "Authorization") == "Bearer key-1")
+        #expect(puts().count == first.count, "the same list a second time sends nothing: \(paths())")
     }
 
     @Test func aFailedSendIsRetriedOnTheNextChange() async {

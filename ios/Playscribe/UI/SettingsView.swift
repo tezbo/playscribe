@@ -30,7 +30,7 @@ struct SettingsView: View {
             .frame(minHeight: 52)
             .accessibilityIdentifier("quietHours")
             // Tell the push relay when the window changes, so a push inside it is delivered passively.
-            .onChange(of: model.data.quietHours) { _, new in if !PushRegistrar.isTestHost { PushRegistrar.syncQuietHours(new) } }
+            .onChange(of: model.data.quietHours) { _, new in if PushRegistrar.appCallsEnabled { PushRegistrar.syncQuietHours(new) } }
         if let q = model.data.quietHours {
             quietPicker("From", minutes: q.from) { model.data.quietHours?.from = $0 }
             quietPicker("Until", minutes: q.until) { model.data.quietHours?.until = $0 }
