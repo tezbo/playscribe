@@ -9,7 +9,8 @@ API="https://api.cloudflare.com/client/v4/accounts/$ACC"
 : "${CLOUDFLARE_API_TOKEN:?CLOUDFLARE_API_TOKEN is required}"
 here="$(cd "$(dirname "$0")" && pwd)"
 cf() { curl -sS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "$@"; }
-must() { jq -e '.success == true' >/dev/null || { echo "Cloudflare refused: $(jq -c '[.errors[]?.message]')" >&2; exit 1; }; }
+# Reads a Cloudflare response on stdin; on failure prints it (responses carry no secrets) and stops.
+must() { local body; body="$(cat)"; echo "$body" | jq -e '.success == true' >/dev/null 2>&1 || { echo "Cloudflare refused: ${body:0:600}" >&2; exit 1; }; }
 
 ADMIN="$(printf 'relay-admin:%s' "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -d' ' -f1)"
 echo "::add-mask::$ADMIN"
