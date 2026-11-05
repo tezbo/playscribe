@@ -6,7 +6,7 @@ import WidgetKit
 enum WidgetBridge {
     @MainActor static func publish(_ model: AppModel) {
         let cards = model.latestDeck.filter { $0.release != nil }
-        var rows = cards.prefix(4).compactMap { c -> WidgetSnapshot.Row? in
+        var rows = cards.prefix(WidgetLayout.largeRowLimit).compactMap { c -> WidgetSnapshot.Row? in
             guard let r = c.release else { return nil }
             return .init(gameID: c.game.id, game: c.game.name, releaseID: r.id, update: r.displayName,
                          date: r.ps5Date, unread: c.unread, chip: r.versionChip)

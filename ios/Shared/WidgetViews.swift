@@ -12,6 +12,10 @@ struct SnapshotEntry: TimelineEntry {
 private enum W {
     static let primary = Color(red: 0.957, green: 0.933, blue: 0.890)
     static let secondary = Color(red: 0.725, green: 0.694, blue: 0.765)
+    /// Secondary text on the plate: 4.5:1 or better in both schemes (ink-ish on vellum, lavender on ink).
+    static func secondaryText(_ scheme: ColorScheme) -> Color {
+        scheme == .dark ? secondary : Color(red: 0.255, green: 0.235, blue: 0.298)
+    }
     static let ink900 = Color(red: 0.059, green: 0.055, blue: 0.078)
     static let ink950 = Color(red: 0.035, green: 0.031, blue: 0.047)
     static let vellum100 = Color(red: 0.984, green: 0.957, blue: 0.902)
@@ -38,17 +42,19 @@ struct NewChip: View {
         Text("New").font(W.chip).foregroundStyle(W.onAccent)
             .padding(.horizontal, 7).padding(.vertical, 2)
             .background(W.accent, in: Capsule())
+            .overlay(Capsule().strokeBorder(W.primary.opacity(0.55), lineWidth: 1))
     }
 }
 
 struct Notice: View {
+    @Environment(\.colorScheme) private var scheme
     var title: String
     var message: String
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Image(systemName: "book.closed.fill").font(W.big).foregroundStyle(W.accent).accessibilityHidden(true)
             Text(title).font(W.big)
-            Text(message).font(W.body).foregroundStyle(.secondary)
+            Text(message).font(W.body).foregroundStyle(W.secondaryText(scheme))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .accessibilityElement(children: .ignore)
@@ -72,6 +78,8 @@ struct WidgetView: View {
         switch family { case .systemSmall: 1; case .systemMedium: 3; default: 5 }
     }
 
+    private var snap: WidgetSnapshot { entry.snapshot.freshened(at: entry.date) }
+
     var body: some View {
         if family == .accessoryRectangular || family == .accessoryInline {
             lockScreen
@@ -82,7 +90,6 @@ struct WidgetView: View {
 
     /// Lock Screen: the newest unread update, else the newest. Tapping opens it.
     @ViewBuilder private var lockScreen: some View {
-        let snap = entry.snapshot
         let row = snap.rows.first { $0.unread } ?? snap.rows.first
         Group {
             if !snap.hasGames {
@@ -114,7 +121,6 @@ struct WidgetView: View {
     }
 
     private var home: some View {
-        let snap = entry.snapshot
         let rows = Array(snap.rows.prefix(limit))
         return Group {
             if !snap.hasGames {
@@ -132,28 +138,54 @@ struct WidgetView: View {
                         .frame(maxWidth: .infinity)
                         .widgetURL(r.url)
                     VStack(alignment: .leading, spacing: 8) {
-                        ForEach(rows.dropFirst()) { ThumbRow(row: $0) }
+                        ForEach(rows.dropFirst()) { ThumbRow(row: $0, lines: 2) }
                         if rows.count == 1 { Spacer(minLength: 0) }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     .foregroundStyle(scheme == .dark ? W.primary : W.ink900)
                 }
             } else if let r = rows.first {
-                VStack(alignment: .leading, spacing: 10) {
-                    HeroText(row: r, tall: false)
-                        .frame(height: 140)
-                        .widgetURL(r.url)
-                    if snap.unreadCount > 0 {
-                        Text(snap.unreadCount == 1 ? "1 new update" : "\(snap.unreadCount) new updates").font(W.big)
+                // The hero's height follows the row count (WidgetLayout), so the tile is never half empty.
+                GeometryReader { geo in
+                    let artH = (geo.size.height + 32) * WidgetLayout.largeHeroFraction(rowCount: rows.count)
+                    VStack(alignment: .leading, spacing: 12) {
+                        HeroText(row: r, tall: false)
+                            .padding(.bottom, 10)
+                            .frame(height: max(0, artH - 16))
+                            .widgetURL(r.url)
+                        if snap.unreadCount > 0 {
+                            Text(snap.unreadCount == 1 ? "1 new update" : "\(snap.unreadCount) new updates").font(W.big)
+                        }
+                        VStack(alignment: .leading, spacing: 0) {
+                            ForEach(Array(rows.dropFirst().enumerated()), id: \.element.id) { i, row in
+                                if i > 0 { Spacer(minLength: 6) }
+                                ThumbRow(row: row, lines: 1)
+                            }
+                        }
+                        .frame(maxHeight: .infinity, alignment: .top)
                     }
-                    ForEach(rows.dropFirst()) { ThumbRow(row: $0) }
-                    Spacer(minLength: 0)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .foregroundStyle(scheme == .dark ? W.primary : W.ink900)
             }
         }
         .containerBackground(for: .widget) { WidgetBackground(entry: entry) }
+    }
+}
+
+/// Large-widget geometry shared by the background and the content, and by tests.
+enum WidgetLayout {
+    /// Hero plus up to four rows.
+    static let largeRowLimit = 5
+    /// Share of the tile height the hero art takes: taller when there are fewer rows below it.
+    static func largeHeroFraction(rowCount: Int) -> CGFloat {
+        switch max(0, min(rowCount, largeRowLimit) - 1) {
+        case 0: 0.62
+        case 1: 0.50
+        case 2: 0.44
+        case 3: 0.38
+        default: 0.31
+        }
     }
 }
 
@@ -177,9 +209,13 @@ struct WidgetBackground: View {
                 plate.frame(maxWidth: .infinity)
             }
         } else {
-            VStack(spacing: 0) {
-                HeroArt(row: entry.snapshot.rows[0]).frame(height: 168)
-                plate
+            GeometryReader { geo in
+                VStack(spacing: 0) {
+                    HeroArt(row: entry.snapshot.rows[0])
+                        .frame(height: geo.size.height * WidgetLayout.largeHeroFraction(
+                            rowCount: min(entry.snapshot.rows.count, WidgetLayout.largeRowLimit)))
+                    plate
+                }
             }
         }
     }
@@ -237,7 +273,8 @@ struct HeroArt: View {
                 LinearGradient(colors: [Color(red: 0.231, green: 0.176, blue: 0.341), W.ink950],
                                startPoint: .topLeading, endPoint: .bottomTrailing)
             }
-            LinearGradient(colors: [W.ink950.opacity(0.25), W.ink950.opacity(0.92)], startPoint: .top, endPoint: .bottom)
+            LinearGradient(stops: [.init(color: W.ink950.opacity(0.10), location: 0), .init(color: W.ink950.opacity(0.60), location: 0.3),
+                                .init(color: W.ink950.opacity(0.92), location: 1)], startPoint: .top, endPoint: .bottom)
         }
     }
 }
@@ -251,7 +288,6 @@ struct HeroText: View {
             Spacer(minLength: 0)
             HStack(spacing: 6) {
                 if row.unread { NewChip() }
-                if !tall, let c = row.chip { Text(c).font(W.chip).foregroundStyle(W.primary) }
             }
             Text(row.game).font(W.title).lineLimit(2).minimumScaleFactor(0.85)
             Text(row.update).font(W.body).lineLimit(1)
@@ -280,6 +316,9 @@ struct HeroCard: View {
 /// Small cover, game, update and date. Tapping opens that update.
 struct ThumbRow: View {
     @Environment(\.injectedCovers) private var injected
+    @Environment(\.colorScheme) private var scheme
+    /// 2 lines in Medium, 1 in Large; same size and weight.
+    var lines = 1
     var row: WidgetSnapshot.Row
     var body: some View {
         Link(destination: row.url) {
@@ -296,8 +335,8 @@ struct ThumbRow: View {
                     if row.unread { Circle().fill(W.accent).frame(width: 10, height: 10).offset(x: 3, y: -3) }
                 }
                 VStack(alignment: .leading, spacing: 1) {
-                    Text(row.game).font(W.title).lineLimit(2).minimumScaleFactor(0.9)
-                    Text(row.update).font(W.body).foregroundStyle(.secondary).lineLimit(1)
+                    Text(row.game).font(W.title).lineLimit(lines)
+                    Text(row.update).font(W.body).foregroundStyle(W.secondaryText(scheme)).lineLimit(1)
                 }
                 Spacer(minLength: 0)
             }

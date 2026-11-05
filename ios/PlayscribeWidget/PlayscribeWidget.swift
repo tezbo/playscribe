@@ -7,8 +7,13 @@ struct SnapshotProvider: TimelineProvider {
         completion(SnapshotEntry(date: .now, snapshot: context.isPreview ? .sample : .load()))
     }
     func getTimeline(in context: Context, completion: @escaping (Timeline<SnapshotEntry>) -> Void) {
-        let entry = SnapshotEntry(date: .now, snapshot: .load())
-        completion(Timeline(entries: [entry], policy: .after(.now.addingTimeInterval(3600))))
+        let snap = WidgetSnapshot.load()
+        let now = Date.now
+        // One entry now and one at each moment a New chip expires (72 h after its update), so chips fade on time.
+        let expiries = snap.rows.filter(\.unread).map { $0.date.addingTimeInterval(WidgetSnapshot.freshWindow + 1) }
+            .filter { $0 > now }.sorted().prefix(4)
+        let entries = [SnapshotEntry(date: now, snapshot: snap)] + expiries.map { SnapshotEntry(date: $0, snapshot: snap) }
+        completion(Timeline(entries: entries, policy: .after(now.addingTimeInterval(3600))))
     }
 }
 

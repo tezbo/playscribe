@@ -30,6 +30,20 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     var unreadCount: Int
     var hasGames: Bool
 
+    /// The 72 hour rule (the app's "older updates count as read"): a row is New only while unread and
+    /// within 72 h of `now`. The widget applies it at render time so a chip expires without the app running.
+    static let freshWindow: TimeInterval = 72 * 3600
+    func freshened(at now: Date) -> WidgetSnapshot {
+        var copy = self
+        var expired = 0
+        for i in copy.rows.indices where copy.rows[i].unread && now.timeIntervalSince(copy.rows[i].date) > Self.freshWindow {
+            copy.rows[i].unread = false
+            expired += 1
+        }
+        copy.unreadCount = max(0, copy.unreadCount - expired)
+        return copy
+    }
+
     static let empty = WidgetSnapshot(rows: [], unreadCount: 0, hasGames: false)
 
     /// Gallery preview: three rows so the medium and large look complete, one new (same chip as the real widget).
