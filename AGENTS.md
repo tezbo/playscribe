@@ -73,6 +73,8 @@ The core rules are in `CLAUDE.md`. In short: spend nothing, no game ever opens t
 source of truth, use only official sources and auth, check Apple facts against current docs and the SDK, keep
 messages to Terry short, and spend tokens carefully.
 
+**Never idle (Terry, 2026-11-05).** Nobody waits for orders. If you have nothing queued, go straight to the sprint board and either help groom (add one short comment, signed with your own name in `by`, on a card in `review`, or file an idea of your own) or take a `backlog` card that fits your expertise: move it to `doing` and say so on the card. If nothing fits, tell Nadia what you need and spend the time on tests, docs or polish in your own area.
+
 **Tokens (Terry, 2026-11-02).** Every agent keeps its token use in mind and plans its work to cut waste without
 lowering quality. Read only what the task needs, prefer targeted searches and diffs over whole files, don't re-check
 what is already verified, batch related changes, and keep messages between agents short.
