@@ -29,6 +29,20 @@ extension FeedClient {
 
 extension AppModel {
     func loadCachedNews() {
+        #if INTERNAL
+        // QA: `-qaNews` seeds sample items so layouts can be checked in every pose without a feed.
+        if ProcessInfo.processInfo.arguments.contains("-qaNews") {
+            let day: TimeInterval = 86_400
+            let long = "A longer excerpt from the studio post that runs over three lines so the row shows how it wraps next to a cover in every pose, including the narrow closed layout."
+            let ids = data.collection.map { newsFeedID($0.gameID) }
+            news = (0..<12).map { i in
+                NewsItem(id: "qa-\(i)", gameId: i % 4 == 3 ? nil : ids[i % max(ids.count, 1)], title: i.isMultiple(of: 2) ? "Sample studio post number \(i) with a fairly long headline" : "Sample headline \(i)",
+                         publishedAt: .now.addingTimeInterval(-Double(i) * day), excerpt: i.isMultiple(of: 2) ? long : nil,
+                         url: "https://example.com/\(i)", kind: i.isMultiple(of: 2) ? "official" : "reported")
+            }
+            return
+        }
+        #endif
         if let raw = try? Data(contentsOf: FeedClient.newsCacheURL), let n = FeedClient.decodeNews(raw) { news = n.items }
         for c in data.collection {
             if let raw = try? Data(contentsOf: FeedClient.gameNewsCacheURL(newsFeedID(c.gameID))), let n = FeedClient.decodeNews(raw) {
