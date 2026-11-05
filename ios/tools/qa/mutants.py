@@ -5,11 +5,11 @@ import shutil, sys
 
 MUTANTS = {
     # 551d8ce: a second trailing item was dropped by iOS (Settings missing in every non-Tabletop pose).
-    "toolbar": ("Playscribe/UI/LibraryView.swift", '''            ToolbarItem(placement: .topBarTrailing) {
+    "toolbar": ("Playscribe/UI/LibraryView.swift", '''            ToolbarItem(placement: LibraryToolbar.add.placement) {
                 Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
                     .disabled(model.addSheetOpen)
             }
-            ToolbarItem(placement: .topBarLeading) {
+            ToolbarItem(placement: LibraryToolbar.settings.placement) {
                 Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
                     .accessibilityIdentifier("settingsButton")
                     .disabled(model.settingsOpen)

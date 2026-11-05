@@ -23,6 +23,16 @@ struct FoldHarnessTests {
         }
     }
 
+    // MARK: Toolbar slots (TB-1)
+
+    /// 551d8ce: Add and Settings shared one trailing group and the system dropped one in every pose but Tabletop. An
+    /// offscreen window cannot show that, so assert the cause: every Library toolbar item has a slot of its own.
+    @Test func libraryToolbarItemsEachHaveTheirOwnSlot() {
+        let slots = [LibraryToolbar.settings, LibraryToolbar.add, LibraryToolbar.viewMenu]
+        #expect(Set(slots).count == slots.count, "TB-1: two Library toolbar items share a slot: \(slots)")
+        #expect(LibraryToolbar.settings == .leading, "TB-1: Settings leads, so it is never collapsed with Add")
+    }
+
     // MARK: Layout rules at the default text size
 
     @Test(arguments: ["closed", "closedLandscape", "open", "openPortrait", "book", "tabletop"])
