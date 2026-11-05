@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Calibration: diff the fold harness against the simulator, pose by pose.
 
-    # 1. harness (any Mac or CI runner):  HARNESS_DUMP_DIR=/tmp/h xcodebuild test -scheme Playscribe … -only-testing:PlayscribeTests/FoldHarnessTests
+    # 1. harness (any Mac or CI runner):  TEST_RUNNER_HARNESS_DUMP_DIR=/tmp/h xcodebuild test -scheme Playscribe … -only-testing:PlayscribeTests
     # 2. simulator, per pose (gate.sh already runs UI tests in each pose):  run PoseProbeTests, keep the log
     # 3. compare_harness.py /tmp/h <pose>=<ui-test-log> …     e.g.  book=/tmp/gate/book.log tabletop=/tmp/gate/tabletop.log
 

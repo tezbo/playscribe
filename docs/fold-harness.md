@@ -48,7 +48,7 @@ Book's fold at 421 to 445 and Tabletop's at 405 to 429, so it could pass layouts
 
 ## Calibrate (one gate run, then trust)
 
-1. Harness: `HARNESS_DUMP_DIR=/tmp/h xcodebuild test -scheme Playscribe -destination 'platform=iOS Simulator,name=iPhone Duo' -only-testing:PlayscribeTests/FoldHarnessTests`
+1. Harness: `TEST_RUNNER_HARNESS_DUMP_DIR=/tmp/h xcodebuild test -scheme Playscribe -destination 'platform=iOS Simulator,name=iPhone Duo' -only-testing:PlayscribeTests`. The suite uses Swift Testing, so `-only-testing:PlayscribeTests/FoldHarnessTests` selects 0 tests, and xcodebuild forwards only variables that start with `TEST_RUNNER_`.
 2. Simulator: run `PlayscribeUITests/PoseProbeTests` in each pose (add it to `POSE_SUITES` in gate.sh); it prints `POSEPROBE {json}`.
 3. `tools/qa/compare_harness.py /tmp/h book=<log> tabletop=<log> …` prints CALIBRATED or the exact differences. Copy the
    differences into `PoseCatalog.swift` (safe area, fold y) and flip `source` to `.captured`. Rerun the gate's probe after

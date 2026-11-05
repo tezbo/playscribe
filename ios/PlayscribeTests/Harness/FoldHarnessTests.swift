@@ -19,7 +19,7 @@ struct FoldHarnessTests {
                                                division: p.division, occlusions: p.occlusions)
         #expect(ctx.pose == p.expected, "\(p.id)")
         if let fold = p.division {
-            #expect(CGRect(origin: .zero, size: p.container).contains(fold), "\(p.id): the fold lies inside the container")
+            #expect(CGRect(origin: .zero, size: p.windowSize).contains(fold), "\(p.id): the fold lies inside the window (it runs under the bottom inset in the sim)")
         }
     }
 
@@ -40,7 +40,7 @@ struct FoldHarnessTests {
         let p = HarnessPose.named(id)
         let r = try #require(await FoldHost.render(p), "\(p.id): a window scene to host in")
         defer { FoldHost.dispose(r) }
-        // `HARNESS_DUMP_DIR=/tmp/h xcodebuild test …` leaves <pose>.json for compare_harness.py.
+        // `TEST_RUNNER_HARNESS_DUMP_DIR=/tmp/h xcodebuild test …` leaves <pose>.json for compare_harness.py.
         if let dir = ProcessInfo.processInfo.environment["HARNESS_DUMP_DIR"] {
             try? FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
             try? r.probeJSON.write(toFile: "\(dir)/\(p.id).json", atomically: true, encoding: .utf8)

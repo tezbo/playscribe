@@ -28,18 +28,33 @@ struct HarnessPose: Identifiable, CustomStringConvertible {
 }
 
 extension HarnessPose {
-    /// The six poses the gate covers. Sizes are the points DuoReader reported in the 0.5.0 Mac stills (2a56de7);
-    /// the folds are the 40 pt reserved band measured from the same stills (book 455 to 495 across, as the fold audit
-    /// printed; tabletop 374 to 414 down).
+    /// The window the container lives in: container plus safe area.
+    var windowSize: CGSize {
+        CGSize(width: container.width + safeArea.left + safeArea.right, height: container.height + safeArea.top + safeArea.bottom)
+    }
+
+    /// The six poses the gate covers. Container sizes and folds are DuoReader's own numbers from the Mac stills (2a56de7).
+    /// Safe areas, occlusions and the Book fold height come from the first sim calibration (227-calibration.txt, 744fe8f);
+    /// the Closed landscape row is inferred from the same panel arithmetic (container plus insets is the 466 x 678 pt outer
+    /// panel, turned) and stays provisional until a sim run confirms it. Safe-area order here is top, left, bottom, right;
+    /// the probe prints top, leading, bottom, trailing.
     static let catalog: [HarnessPose] = [
-        HarnessPose(id: "closed", container: CGSize(width: 382, height: 644), compactWidth: true, expected: .closed),
-        HarnessPose(id: "closedLandscape", container: CGSize(width: 594, height: 432), compactWidth: true, expected: .closed),
-        HarnessPose(id: "open", container: CGSize(width: 867, height: 635), compactWidth: false, expected: .flat),
-        HarnessPose(id: "openPortrait", container: CGSize(width: 669, height: 835), compactWidth: false, expected: .flat),
-        HarnessPose(id: "book", container: CGSize(width: 867, height: 635), compactWidth: false,
-                    division: CGRect(x: 455, y: 0, width: 40, height: 635), expected: .book),
-        HarnessPose(id: "tabletop", container: CGSize(width: 669, height: 835), compactWidth: false,
-                    division: CGRect(x: 0, y: 374, width: 669, height: 40), expected: .tabletop),
+        HarnessPose(id: "closed", container: CGSize(width: 382, height: 644), safeArea: UIEdgeInsets(top: 0, left: 0, bottom: 34, right: 84),
+                    compactWidth: true,
+                    occlusions: [CGRect(x: 399.5, y: 29.5, width: 37, height: 37), CGRect(x: 382, y: 0, width: 84, height: 174)],
+                    expected: .closed),
+        HarnessPose(id: "closedLandscape", container: CGSize(width: 594, height: 432), safeArea: UIEdgeInsets(top: 0, left: 0, bottom: 34, right: 84),
+                    compactWidth: true, expected: .closed),
+        HarnessPose(id: "open", container: CGSize(width: 867, height: 635), safeArea: UIEdgeInsets(top: 0, left: 0, bottom: 34, right: 84),
+                    compactWidth: false, occlusions: [CGRect(x: 867, y: 0, width: 84, height: 124)], expected: .flat),
+        HarnessPose(id: "openPortrait", container: CGSize(width: 669, height: 835), safeArea: UIEdgeInsets(top: 82, left: 0, bottom: 34, right: 0),
+                    compactWidth: false, occlusions: [CGRect(x: 525, y: -82, width: 144, height: 82)], expected: .flat),
+        HarnessPose(id: "book", container: CGSize(width: 867, height: 635), safeArea: UIEdgeInsets(top: 0, left: 0, bottom: 34, right: 84),
+                    compactWidth: false, division: CGRect(x: 455.5, y: 0, width: 40, height: 669),
+                    occlusions: [CGRect(x: 867, y: 0, width: 84, height: 124)], expected: .book),
+        HarnessPose(id: "tabletop", container: CGSize(width: 669, height: 835), safeArea: UIEdgeInsets(top: 82, left: 0, bottom: 34, right: 0),
+                    compactWidth: false, division: CGRect(x: 0, y: 373.5, width: 669, height: 40),
+                    occlusions: [CGRect(x: 525, y: -82, width: 144, height: 82)], expected: .tabletop),
     ]
 
     static func named(_ id: String) -> HarnessPose { catalog.first { $0.id == id }! }

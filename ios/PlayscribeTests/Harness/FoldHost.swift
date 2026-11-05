@@ -120,9 +120,7 @@ enum FoldHost {
         hc.traitOverrides.horizontalSizeClass = pose.compactWidth ? .compact : .regular
         hc.traitOverrides.preferredContentSizeCategory = type
         let window = UIWindow(windowScene: scene)
-        window.frame = CGRect(x: 0, y: 0,
-                              width: pose.container.width + pose.safeArea.left + pose.safeArea.right,
-                              height: pose.container.height + pose.safeArea.top + pose.safeArea.bottom)
+        window.frame = CGRect(origin: .zero, size: pose.windowSize)
         window.rootViewController = hc
         window.isHidden = false
         for _ in 0..<4 {
