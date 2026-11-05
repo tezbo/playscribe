@@ -158,7 +158,7 @@ struct PlayerView: View {
             // TT-4: the standing half shows only the video; the flat half holds the transport.
             ArrangementView {
                 TabletopTransport(controller: controller, video: video, game: gameName, release: release, onClose: close)
-                    .background(alignment: .top) { if reflectionMode && !reduceMotion { VideoReflection(controller: controller) } }
+                    .background(alignment: .top) { if reflectionMode && !reduceMotion { VideoReflection(controller: controller, poster: video.posterAsset) } }
             } secondary: {
                 surface
                     .overlay { if !controller.started { PosterCover(video: video) } }
@@ -205,12 +205,14 @@ struct PlayerView: View {
 struct VideoReflection: View {
     static let key = "reflectionMode"
     var controller: YouTubeController
+    /// Shown until the first snapshot lands, the same still the stage shows before playback.
+    var poster: String?
     @State private var frame: UIImage?
 
     var body: some View {
         Group {
-            if let frame {
-                Image(uiImage: frame).resizable().aspectRatio(16 / 9, contentMode: .fit)
+            if let image = frame ?? poster.flatMap({ UIImage(named: $0) }) {
+                Image(uiImage: image).resizable().aspectRatio(16 / 9, contentMode: .fit)
                     .scaleEffect(x: 1, y: -1)
                     .blur(radius: 14)
                     .opacity(0.35)
