@@ -57,10 +57,6 @@ struct DuoReader<Content: View>: View {
     }
 
     static func context(proxy: GeometryProxy, compact: Bool) -> DuoContext {
-        #if DEBUG
-        // CI only (docs/ci.md): `-qaPose` stands in for the hinge so pose-sensitive tests can run without Device Hub.
-        if let forced = QAPose.forced { return forced.context(size: proxy.size) }
-        #endif
         let divisions = proxy.reservedRegions(kind: .division).filter(\.isActive)
         let occlusions = proxy.reservedRegions(kind: .occlusion).filter(\.isActive).map(\.frame)
         var ctx = DuoContext(size: proxy.size, occlusions: occlusions)
@@ -194,38 +190,3 @@ struct DebugOverlay: View {
         .ignoresSafeArea()
     }
 }
-
-
-#if DEBUG
-/// A launch argument that stands in for the hinge, so the layout and fold-audit tests can run headless and in
-/// parallel on hosted runners (docs/ci.md). Debug builds only: it is compiled out of Release, so TestFlight builds
-/// cannot be forced into a pose. It replaces the reserved regions, not the container, so it is only as realistic
-/// as the simulator's panel size: the real-hinge gate (tools/qa/gate.sh, TIER=full) still signs off a release.
-///
-///     -qaPose closed | flat | book | tabletop   (or the qaPose default)
-enum QAPose {
-    /// The hinge band's thickness, in points. An assumption until calibrated against a real Device Hub run
-    /// (compare with the "fold a-b" range in the fold-audit label from a real gate run).
-    static let hinge: CGFloat = 24
-
-    /// Read from UserDefaults, so it works as a launch argument (`-qaPose book`, which the argument domain feeds in)
-    /// and as `simctl spawn <udid> defaults write <bundle id> qaPose book`, which reaches every launch a test makes.
-    static var forced: Pose? { UserDefaults.standard.string(forKey: "qaPose").flatMap(Pose.init(rawValue:)) }
-}
-
-extension Pose {
-    func context(size: CGSize) -> DuoContext {
-        var ctx = DuoContext(size: size)
-        ctx.pose = self
-        switch self {
-        case .book:
-            ctx.division = CGRect(x: (size.width - QAPose.hinge) / 2, y: 0, width: QAPose.hinge, height: size.height)
-        case .tabletop:
-            ctx.division = CGRect(x: 0, y: (size.height - QAPose.hinge) / 2, width: size.width, height: QAPose.hinge)
-        case .closed, .flat:
-            break
-        }
-        return ctx
-    }
-}
-#endif

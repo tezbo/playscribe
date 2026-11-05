@@ -43,4 +43,3 @@ Terry's go (docs/release.md).
 
 ## Gate tiers (CI speed-up)
 - `TIER=pr tools/qa/gate.sh <out>`: Closed and Tabletop only, no stills, for PRs. `TIER=full` (default): all five poses with stills, for sign-off.
-- `.github/workflows/ios-poses.yml` runs the pose-sensitive suites headless, one job per pose, using the Debug-only `qaPose` default. It is a fast signal only: the hinge band size is an assumption until calibrated against a real gate run, and sign-off stays the real-hinge gate.
