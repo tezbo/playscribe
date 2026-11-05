@@ -66,6 +66,17 @@ struct GameBookView: View {
             .allowsHitTesting(false)
             // Not touchable, so not audited as tappable: a frame here is never a fold crossing (TT-1).
             .auditActive(false)
+        } else if duo.pose == .flat && !duo.isLandscape {
+            // Open portrait (Iris): the Page above the sheet. A whole line, not half a line, at the sheet's edge at
+            // rest: 12 pt of bottom room and a 24 pt fade to the sheet colour.
+            PageView(gameID: gameID)
+                .contentMargins(.bottom, 12, for: .scrollContent)
+                .overlay(alignment: .bottom) {
+                    LinearGradient(colors: [.clear, Color.ink0], startPoint: .top, endPoint: .bottom)
+                        .frame(height: 24)
+                        .allowsHitTesting(false)
+                        .accessibilityHidden(true)
+                }
         } else {
             PageView(gameID: gameID)
         }
