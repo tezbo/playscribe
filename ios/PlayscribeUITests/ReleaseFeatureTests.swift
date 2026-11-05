@@ -26,10 +26,17 @@ final class ReleaseFeatureTests: XCTestCase {
         return audit.exists ? audit.label : "unknown"
     }
 
-    /// The Playing / Upcoming switch. It is a segmented Picker, whose segments are not always exposed as buttons (the
-    /// e869273 gate found none in any pose), or a rail button in Tabletop: so any element with exactly that label.
-    private func control(_ label: String) -> XCUIElement {
-        app.descendants(matching: .any).matching(NSPredicate(format: "label == %@", label)).firstMatch
+    /// The Playing / Upcoming switch: a rail button in Tabletop, else a segmented Picker whose segments are not
+    /// reliably exposed (the gate found none by label in any pose), so the picker itself is tapped at its half.
+    private func switchTo(_ label: String) -> Bool {
+        let rail = app.descendants(matching: .any)[label == "Upcoming" ? "upcomingRail" : "playingRail"]
+        if rail.waitForExistence(timeout: 10) { rail.tap(); return true }
+        let seg = app.descendants(matching: .any).matching(NSPredicate(format: "label == %@", label)).firstMatch
+        if seg.exists { seg.tap(); return true }
+        let picker = app.descendants(matching: .any)["libraryTabPicker"]
+        guard picker.waitForExistence(timeout: 10) else { return false }
+        picker.coordinate(withNormalizedOffset: CGVector(dx: label == "Upcoming" ? 0.75 : 0.25, dy: 0.5)).tap()
+        return true
     }
 
     private func button(_ prefix: String) -> XCUIElement {
@@ -75,15 +82,13 @@ final class ReleaseFeatureTests: XCTestCase {
     /// 0.5.0 Upcoming: the switch, the empty state and tapping a tile open a game.
     func testUpcomingTabAndWatchlist() throws {
         launch("library")
-        let upcoming = control("Upcoming")
-        XCTAssertTrue(upcoming.waitForExistence(timeout: 10), "Upcoming control (picker, or the Tabletop rail)")
-        upcoming.tap()
+        XCTAssertTrue(switchTo("Upcoming"), "Upcoming control (picker, or the Tabletop rail)")
         let empty = app.staticTexts["Nothing on your watchlist yet"]
         let tile = app.buttons.matching(NSPredicate(format: "label CONTAINS 'releases' OR label CONTAINS 'Date to be announced'")).firstMatch
         XCTAssertTrue(empty.waitForExistence(timeout: 10) || tile.waitForExistence(timeout: 10), "empty copy or upcoming tiles")
         assertFrames("library-upcoming")
         attach("upcoming")
-        control("Playing").tap()
+        XCTAssertTrue(switchTo("Playing"), "Playing control")
         XCTAssertTrue(app.buttons["Add game"].firstMatch.waitForExistence(timeout: 5))
     }
 
@@ -233,12 +238,12 @@ final class ReleaseFeatureTests: XCTestCase {
             sleep(2)
             assertFrames(route)
             if route == "library" {
-                let upcoming = control("Upcoming")
-                XCTAssertTrue(upcoming.waitForExistence(timeout: 10), "Upcoming control")
                 if pose().contains("pose: tabletop") {
-                    XCTAssertGreaterThanOrEqual(upcoming.frame.minY, app.frame.midY - 1, "Upcoming rail button is on the flat half")
+                    let rail = app.descendants(matching: .any)["upcomingRail"]
+                    XCTAssertTrue(rail.waitForExistence(timeout: 10), "Upcoming rail button")
+                    XCTAssertGreaterThanOrEqual(rail.frame.minY, app.frame.midY - 1, "Upcoming rail button is on the flat half")
                 }
-                upcoming.tap()
+                XCTAssertTrue(switchTo("Upcoming"), "Upcoming control")
                 sleep(1)
                 assertFrames("library-upcoming")
             }

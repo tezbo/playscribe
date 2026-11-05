@@ -240,10 +240,12 @@ struct TabletopRail: View {
                                                     systemImage: model.libraryTab == .playing ? "gamecontroller.fill" : "gamecontroller",
                                                     kind: .button { model.libraryTab = .playing }))
                         .accessibilityAddTraits(model.libraryTab == .playing ? .isSelected : [])
+                        .accessibilityIdentifier("playingRail")
                     RailButton(action: ScreenAction(id: "upcoming", title: "Upcoming",
                                                     systemImage: model.libraryTab == .upcoming ? "calendar.badge.clock" : "calendar",
                                                     kind: .button { model.libraryTab = .upcoming }))
                         .accessibilityAddTraits(model.libraryTab == .upcoming ? .isSelected : [])
+                        .accessibilityIdentifier("upcomingRail")
                 }
             }
             Spacer(minLength: 8)
