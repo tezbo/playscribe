@@ -338,8 +338,9 @@ struct LowerMessages: View {
     var duo: DuoContext
 
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 0) {
             Spacer()
+            VStack(spacing: 8) {
             if let pill = model.pill, let game = model.game(pill.gameID), let r = model.release(pill.gameID, pill.releaseID) {
                 Button {
                     model.openRelease(gameID: pill.gameID, releaseID: pill.releaseID)
@@ -393,6 +394,14 @@ struct LowerMessages: View {
                     if let undo = toast.undo { Button(toast.actionLabel) { undo(); model.toastClear() } }
                     Button("Dismiss") { model.toastClear() }
                 }
+            }
+            }
+            // The Library reserves this much at its bottom edge (a safe-area inset), so the pill never covers its
+            // top-of-page controls: the content reflows above it (0.5.1 spec 2, Iris).
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in
+                let gap: CGFloat = duo.pose == .tabletop ? 12 : 16
+                let inset = h > 0 ? h + gap : 0
+                if model.messageInset != inset { model.messageInset = inset }
             }
         }
         // Above the bottom tab bar only where the bars are horizontal (open portrait).

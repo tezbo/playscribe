@@ -428,7 +428,8 @@ struct LibraryShelf: View {
             .padding(.trailing, railWidth)
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
-        .contentMargins(.bottom, model.pill == nil && model.toast == nil ? 0 : 96, for: .scrollContent)
+        // The pill and toasts sit at the bottom edge; the page reflows above them instead of being covered (0.5.1 spec 2).
+        .safeAreaInset(edge: .bottom, spacing: 0) { Color.clear.frame(height: model.messageInset) }
         .refreshable { await model.refreshFeed() }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
