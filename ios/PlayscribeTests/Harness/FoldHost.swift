@@ -132,30 +132,22 @@ enum FoldHost {
         hc.traitOverrides.horizontalSizeClass = pose.compactWidth ? .compact : .regular
         hc.traitOverrides.preferredContentSizeCategory = type
         let window = UIWindow(windowScene: scene)
-        // A window larger than the scene's screen is reshaped by UIKit (the first Closed landscape run got a 466 x 678 view
-        // for a 678 x 466 pose), so a pose that does not fit is hosted as a child view of exactly the pose's size, inside a
-        // window that fits the screen. Views outside a window's bounds are still laid out.
+        // The window's own safe area comes from the sim screen it sits on and differs by sim pose (CI's Duo gave right 84, the
+        // Mac's gave left 84), and a negative additionalSafeAreaInsets cannot cancel it. So every pose is hosted as a child
+        // view of exactly the pose's size inside a small window in the middle of the screen: a window that touches no screen
+        // edge has no safe area, the oversized child inherits none, and the pose's insets are exactly the ones added below.
+        // Views outside a window's bounds are still laid out.
         let screen = scene.screen.bounds.size
-        var hostShift = CGPoint.zero
-        if pose.windowSize.width > screen.width || pose.windowSize.height > screen.height {
-            let shell = UIViewController()
-            shell.addChild(hc)
-            shell.view.addSubview(hc.view)
-            window.frame = CGRect(origin: .zero, size: screen)
-            window.rootViewController = shell
-            window.isHidden = false
-            window.layoutIfNeeded()
-            // Negative additionalSafeAreaInsets cannot cancel an inherited inset (Closed landscape, Open portrait and Tabletop kept
-            // the window's own right 84). Shift the oversized view left so its right edge stops at the window's right inset: it then
-            // inherits none there and the pose's own right inset is exactly what is added below.
-            let shiftX = min(0, screen.width - window.safeAreaInsets.right - pose.windowSize.width)
-            hc.view.frame = CGRect(origin: CGPoint(x: shiftX, y: 0), size: pose.windowSize)
-            hc.didMove(toParent: shell)
-            hostShift = CGPoint(x: shiftX, y: 0)
-        } else {
-            window.frame = CGRect(origin: .zero, size: pose.windowSize)
-            window.rootViewController = hc
-        }
+        let hostShift = CGPoint.zero
+        let shell = UIViewController()
+        shell.view.clipsToBounds = false
+        shell.addChild(hc)
+        shell.view.addSubview(hc.view)
+        hc.view.frame = CGRect(origin: .zero, size: pose.windowSize)
+        hc.didMove(toParent: shell)
+        let side = min(200, screen.width / 3, screen.height / 3)
+        window.frame = CGRect(x: (screen.width - side) / 2, y: (screen.height - side) / 2, width: side, height: side)
+        window.rootViewController = shell
         window.isHidden = false
         // The window inherits a safe area from the scene's real screen (the sim's own camera side), which would add to the
         // pose's. Lay out once with none added, read what was inherited, then add only the difference.
