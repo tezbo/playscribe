@@ -424,6 +424,8 @@ struct LowerMessages: View {
                 .transition(.opacity)
                 // A toast with nothing to press (the tip, "Added") never blocks the chips or tiles under it.
                 .allowsHitTesting(toast.undo != nil)
+                // A swipe dismisses it early (Iris, #244); the 20 pt threshold leaves a tap on Undo alone.
+                .highPriorityGesture(DragGesture(minimumDistance: 20).onEnded { _ in model.toastClear() })
                 .accessibilityElement(children: .combine)
                 .accessibilityActions {
                     if let undo = toast.undo { Button(toast.actionLabel) { undo(); model.toastClear() } }
