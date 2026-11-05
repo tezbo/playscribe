@@ -46,21 +46,21 @@ struct PlusCard: View {
             let limit = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
             let shown = Array(month.games.prefix(limit))
             VStack(alignment: .leading, spacing: 10) {
-                VStack(alignment: .leading, spacing: 2) {
-                    PlusBadge(height: 26).accessibilityHidden(true)
-                    Text(lastChance ? "Last chance" : "This month").font(PlayscribeFont.title3)
-                        .accessibilityLabel(lastChance ? "PS Plus, last chance" : "PS Plus, this month")
-                        .accessibilityAddTraits(.isHeader)
-                    Text("Claim by \(claimBy)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
-                }
-                HStack(spacing: 10) {
-                    ForEach(Array(shown.enumerated()), id: \.offset) { _, g in
-                        cover(g).frame(maxWidth: Self.maxCoverWidth)
+                // Wide cards put the heading beside the covers; narrow ones stack it above (Iris, #242).
+                ViewThatFits(in: .horizontal) {
+                    HStack(alignment: .top, spacing: 16) {
+                        coverRow(shown, fixed: true)
+                        header(lastChance: lastChance, claimBy: claimBy).frame(minWidth: 200, alignment: .leading)
+                            .accessibilitySortPriority(1)
+                        Spacer(minLength: 0)
                     }
-                    Spacer(minLength: 0)
+                    VStack(alignment: .leading, spacing: 10) {
+                        header(lastChance: lastChance, claimBy: claimBy)
+                        coverRow(shown, fixed: false)
+                    }
                 }
                 // Games past the covers keep a name row, as the old card listed them: tracked ones open their page.
-                ForEach(Array(month.games.dropFirst(limit).enumerated()), id: \.offset) { _, g in nameRow(g) }
+                ForEach(Array(month.games.dropFirst(limit).enumerated()), id: \.offset) { n, g in nameRow(g, lead: n == 0 ? "and " : "") }
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -70,11 +70,30 @@ struct PlusCard: View {
         }
     }
 
-    @ViewBuilder private func nameRow(_ g: PlusMonth.Game) -> some View {
+    private func header(lastChance: Bool, claimBy: String) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            PlusBadge(height: 26).accessibilityHidden(true)
+            Text(lastChance ? "Last chance" : "This month").font(PlayscribeFont.title3)
+                .accessibilityLabel(lastChance ? "PS Plus, last chance" : "PS Plus, this month")
+                .accessibilityAddTraits(.isHeader)
+            Text("Claim by \(claimBy)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+        }
+    }
+
+    /// Covers at an explicit size, never larger than `maxCoverWidth` wide (a Library tile), so no pose can stretch them
+    /// (Quinn: Closed landscape drew 410 × 550 pt covers). `fixed` is the side-by-side layout; otherwise the row
+    /// measures its own width and shrinks the covers to fit.
+    @ViewBuilder private func coverRow(_ shown: [PlusMonth.Game], fixed: Bool) -> some View {
+        PlusCoverRow(games: shown, fixed: fixed) { g, w in
+            cover(g).frame(width: w, height: (w * 4 / 3).rounded())
+        }
+    }
+
+    @ViewBuilder private func nameRow(_ g: PlusMonth.Game, lead: String = "") -> some View {
         if let id = g.gameId, model.entry(id) != nil {
             Button { model.openGame(id) } label: {
                 HStack(spacing: 8) {
-                    Text(g.name).fixedSize(horizontal: false, vertical: true)
+                    Text(lead + g.name).fixedSize(horizontal: false, vertical: true)
                     Spacer(minLength: 8)
                     Image(systemName: "chevron.right").foregroundStyle(PlayscribeColor.textSecondary).accessibilityHidden(true)
                 }
@@ -85,7 +104,7 @@ struct PlusCard: View {
             .tappableFrame()
             .accessibilityHint("Opens the game")
         } else {
-            Text(g.name).font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
+            Text(lead + g.name).font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, minHeight: 28, alignment: .leading)
         }
     }
@@ -133,5 +152,29 @@ struct PlusBadge: View {
             .background(Color(red: 0.984, green: 0.957, blue: 0.902), in: Capsule())
             .accessibilityLabel("PlayStation Plus")
             .accessibilityAddTraits(.isImage)
+    }
+}
+
+/// Lays covers out at an explicit width: `PlusCard.maxCoverWidth`, or less when the row is narrower.
+struct PlusCoverRow<Content: View>: View {
+    var games: [PlusMonth.Game]
+    var fixed: Bool
+    @ViewBuilder var content: (PlusMonth.Game, CGFloat) -> Content
+    @State private var rowWidth: CGFloat = 0
+    private let spacing: CGFloat = 10
+
+    private var coverWidth: CGFloat {
+        let cap = PlusCard.maxCoverWidth
+        guard !fixed, rowWidth > 0, !games.isEmpty else { return cap }
+        return min(cap, ((rowWidth - spacing * CGFloat(games.count - 1)) / CGFloat(games.count)).rounded(.down))
+    }
+
+    var body: some View {
+        HStack(spacing: spacing) {
+            ForEach(Array(games.enumerated()), id: \.offset) { _, g in content(g, coverWidth) }
+            if !fixed { Spacer(minLength: 0) }
+        }
+        .frame(maxWidth: fixed ? nil : .infinity, alignment: .leading)
+        .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { rowWidth = $0 }
     }
 }

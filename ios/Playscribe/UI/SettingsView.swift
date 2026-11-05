@@ -68,6 +68,28 @@ struct SettingsView: View {
                     }
                     Toggle("Pause all", isOn: $model.data.pauseAll)
                     quietHoursRows
+                    let overrides = model.notifyOverrides
+                    if !overrides.isEmpty {
+                        NavigationLink("\(overrides.count) game\(overrides.count == 1 ? " has its" : "s have their") own setting") {
+                            List(overrides, id: \.game.id) { o in
+                                LabeledContent(o.game.name, value: o.level.label)
+                            }
+                            .navigationTitle("Own settings")
+                        }
+                    }
+                } header: {
+                    Text("Notifications")
+                } footer: {
+                    Text(NotificationService.shared.authorization == .denied
+                         ? "Notifications are off for \(Brand.name) in iOS Settings."
+                         : model.data.quietHours.map({ $0.from == $0.until }) == true
+                            ? "These hours are empty, so nothing is quiet. Choose different times, or turn quiet hours off."
+                         : model.data.quietHours != nil
+                            // The relay honours the window too (#198), so the plain promise is true again.
+                            ? "Alerts arrive silently during these hours."
+                            : "Change a single game from the bell on its page.")
+                }
+                Section {
                     // Not everyone has PS Plus: the Library card is on by default and can be hidden. Off also stops the reminder.
                     Toggle("PS Plus card in Library", isOn: Binding(get: { model.data.plusCardOff != true }, set: { model.data.plusCardOff = $0 ? nil : true }))
                         .accessibilityHint("Shows this month's PS Plus games in the Library, with a reminder before they leave")
@@ -89,26 +111,10 @@ struct SettingsView: View {
                             .onChange(of: model.data.plusLeavingSoonOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
                             .onChange(of: model.data.pauseAll) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
                     }
-                    let overrides = model.notifyOverrides
-                    if !overrides.isEmpty {
-                        NavigationLink("\(overrides.count) game\(overrides.count == 1 ? " has its" : "s have their") own setting") {
-                            List(overrides, id: \.game.id) { o in
-                                LabeledContent(o.game.name, value: o.level.label)
-                            }
-                            .navigationTitle("Own settings")
-                        }
-                    }
                 } header: {
-                    Text("Notifications")
+                    Text("PS Plus")
                 } footer: {
-                    Text(NotificationService.shared.authorization == .denied
-                         ? "Notifications are off for \(Brand.name) in iOS Settings."
-                         : model.data.quietHours.map({ $0.from == $0.until }) == true
-                            ? "These hours are empty, so nothing is quiet. Choose different times, or turn quiet hours off."
-                         : model.data.quietHours != nil
-                            // The relay honours the window too (#198), so the plain promise is true again.
-                            ? "Alerts arrive silently during these hours."
-                            : "Change a single game from the bell on its page.")
+                    Text("PS Plus reminders are separate from game notifications.")
                 }
                 Section {
                     Toggle("Sounds", isOn: Binding(get: { model.data.soundsOff != true }, set: { model.data.soundsOff = $0 ? nil : true }))
