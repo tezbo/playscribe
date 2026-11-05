@@ -76,7 +76,7 @@ struct ShareUpdateButton: View {
                     Image(systemName: "square.and.arrow.up").frame(width: 44, height: 44)
                 }
             } else if failed {
-                Button("Retry") { render() }.font(PlayscribeFont.footnote).frame(minHeight: 44)
+                Button { render() } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
                     .accessibilityHint("Couldn't make the card. Try again.")
             } else {
                 ProgressView().frame(width: 44, height: 44).accessibilityLabel("Making your card")

@@ -25,12 +25,13 @@ struct LibraryView: View {
         .navigationTitle("Library")
         .toolbarTitleDisplayMode(.large)
         .toolbar {
-            ToolbarItem(placement: .topBarPinnedTrailing) {
+            // Add trails, Settings leads: the system collapsed a second trailing item away in Closed and
+            // Open (0.5.0 Mac stills, TB-1), so the cog sits in its own region and is always drawn.
+            ToolbarItem(placement: .topBarTrailing) {
                 Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
                     .disabled(model.addSheetOpen)
             }
-            // Settings has its own cog (Terry, 0.2.0 build 5: "hard to find"), no longer inside the View menu.
-            ToolbarItem(placement: .topBarPinnedTrailing) {
+            ToolbarItem(placement: .topBarLeading) {
                 Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
                     .accessibilityIdentifier("settingsButton")
                     .disabled(model.settingsOpen)
@@ -256,7 +257,7 @@ struct LibraryShelf: View {
                     HStack {
                         Text(line).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                         if case .failed = model.feedStatus {
-                            Button("Retry") { Task { await model.retryCheck() } }.font(PlayscribeFont.footnote).hitTarget()
+                            Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
                         }
                     }
                 }

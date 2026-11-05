@@ -213,6 +213,8 @@ struct TabletopRail: View {
                     RailButton(action: ScreenAction(id: "links", title: "Links", systemImage: "link", kind: .button { model.linksSheetOpen = true }))
                         .accessibilityLabel("Links, opens a list")
                 }
+                // Share the open update as a card (lower rail, 44 pt target; TT-0).
+                if let r = model.readerRelease(id), r.isPS5Listed { ShareUpdateButton(release: r) }
             } else if model.nav.tab == .search {
                 // Search is a dead end without this: Back to where it was opened from (Terry, 0.2.0 build 5).
                 RailButton(action: ScreenAction(id: "back", title: "Back", systemImage: "chevron.backward",

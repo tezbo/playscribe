@@ -93,12 +93,30 @@ struct LatestUpdatesDeck: View {
                 deck(cardWidth: g.size.width, artHeight: axArtHeight)
             }
             .frame(height: axArtHeight + (cards.count > 1 ? Self.pageEdgeHeight : 0))
-        } else {
+        } else if duo.pose == .closed && duo.isLandscape {
             // Closed landscape: the wide card's height is set on the pager itself (40% of the container,
             // 168 to 240 pt); a horizontal ScrollView otherwise sizes to what it is offered (151 pt drawn).
-            deck(cardWidth: nil, artHeight: nil,
-                 scrollHeight: duo.pose == .closed && duo.isLandscape ? min(240, max(168, duo.size.height * 0.4)) : nil)
+            deck(cardWidth: nil, artHeight: nil, scrollHeight: min(240, max(168, duo.size.height * 0.4)))
+        } else {
+            // Full-width stacked layouts (Open landscape, Closed portrait) at the default text size: explicit geometry
+            // too. The unsized pager took the height it was offered, so with 28 games the card ran off the screen
+            // (e869273: 835 x 727 pt in Open, a screen-tall card in Closed portrait). Bounded to 38% of the height.
+            GeometryReader { g in
+                deck(cardWidth: Self.cardWidth(in: g.size.width, perScreen: perScreen), artHeight: stackedArtHeight)
+            }
+            .frame(height: stackedArtHeight + (cards.count > 1 ? Self.pageEdgeHeight : 0))
         }
+    }
+
+    /// One card's width so that `perScreen` cards fit the container (the next one peeking when it is 1.12), 12 pt apart.
+    static func cardWidth(in container: CGFloat, perScreen: CGFloat) -> CGFloat {
+        let gaps = max(0, perScreen.rounded(.up) - 1) * 12
+        return max(120, ((container - gaps) / perScreen).rounded(.down))
+    }
+
+    /// The art is 38% of the container height, less the page edge, 120 pt at least.
+    private var stackedArtHeight: CGFloat {
+        max(120, (duo.size.height * 0.38).rounded() - (cards.count > 1 ? Self.pageEdgeHeight : 0))
     }
 
     /// 40% of the container, 200 pt at least; independent of the column width so the frame and the card agree.
@@ -192,6 +210,7 @@ struct DeckCardView: View {
         .tappableFrame()
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(label)
+        .accessibilityIdentifier("deckCard")
         .accessibilityAddTraits(.isButton)
     }
 

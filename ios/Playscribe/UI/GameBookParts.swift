@@ -255,10 +255,10 @@ struct GameLinks: View {
             // One row, a 24 pt gap and no separators; wraps to a second line rather than truncating (Iris 0.5.0).
             FlowLayout(spacing: 24) {
                 if let url = links?.official {
-                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                 }
                 if let url = links?.patchNotes {
-                    Link(destination: url) { Label("All patch notes", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    Link(destination: url) { Label("All patch notes", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                 }
             }
             .font(PlayscribeFont.subheadline)
@@ -314,9 +314,9 @@ struct GameBasicsView: View {
                 HStack {
                     Text("Details need a connection").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
-                    Button("Retry") { Task { await store.load(igdbID: id) } }
+                    Button { Task { await store.load(igdbID: id) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                         .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                        .frame(minHeight: 44).tappableFrame()
+                        .tappableFrame()
                 }
                 .padding(.horizontal, 14)
                 .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
