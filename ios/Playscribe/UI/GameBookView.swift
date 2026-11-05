@@ -64,6 +64,8 @@ struct GameBookView: View {
                 if model.nav.chapter == .updates { TabletopReaderStage(gameID: gameID) } else { PageView(gameID: gameID) }
             }
             .allowsHitTesting(false)
+            // Not touchable, so not audited as tappable: a frame here is never a fold crossing (TT-1).
+            .auditActive(false)
         } else {
             PageView(gameID: gameID)
         }

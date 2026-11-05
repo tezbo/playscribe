@@ -193,6 +193,7 @@ final class ReleaseFeatureTests: XCTestCase {
     /// J-6c: the pinned bar is at least 44 pt and sits clear of the hinge.
     func testPinnedAddBar() throws {
         launch("add")
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard: its add search is read-only with an A to Z strip (#179)") }
         let search = app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: 10))
         search.tap()
