@@ -24,14 +24,13 @@ struct NewsItem: Codable, Hashable, Identifiable {
 }
 
 extension NewsItem {
-    /// Hero and caption text never carry an ellipsis (Iris): a long headline is cut whole at a clause, else at a word, to fit 2 lines.
+    /// A stage caption is at most 2 lines: a longer headline ends at a word with an ellipsis (the full headline opens on tap; Iris).
     var captionTitle: String {
         let limit = 80
         guard title.count > limit else { return title }
         let head = String(title.prefix(limit))
-        let clause = head.lastIndex(where: { ",;:–—".contains($0) }).flatMap { head.distance(from: head.startIndex, to: $0) >= 30 ? $0 : nil }
-        let cut = clause.map { String(head[..<$0]) } ?? head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
-        return cut.trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-–—."))
+        let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
+        return cut.trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-–—.")) + "…"
     }
 }
 
@@ -362,6 +361,9 @@ struct GlobalNewsRow: View {
 /// Tabletop's standing half: the newest post's game art with its caption above the band. View only (G-4).
 struct NewsStage: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
+    /// The stage's bottom edge in screen space: the caption block ends 24 pt above the division band.
+    @State private var stageBottom: CGFloat = 0
     var headline: NewsStore.Headline
 
     var body: some View {
@@ -377,10 +379,14 @@ struct NewsStage: View {
                     if let d = headline.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
                 }
                 .font(PlayscribeFont.caption)
+                // Its own fill, so the chip never sits on the art's studio logo.
+                .padding(.horizontal, 10).padding(.vertical, 4)
+                .background(Capsule().fill(PlayscribeColor.ink700.opacity(0.7)))
             }
-            .padding(.horizontal, 24).padding(.bottom, 24)
+            .padding(.horizontal, 24).padding(.bottom, 24 + duo.clearance(forBottom: stageBottom))
             .padding(.trailing, TabletopRail.width)
         }
+        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { stageBottom = $0 }
         .clipped()
         .accessibilityHidden(true)
     }
@@ -391,6 +397,8 @@ struct NewsStage: View {
 /// View only (G-4); the headlines themselves are in the lower half.
 struct NewsStageArt: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
+    @State private var stageBottom: CGFloat = 0
     var gameID: String
 
     var body: some View {
@@ -403,9 +411,10 @@ struct NewsStageArt: View {
                 Text(game?.name ?? "").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
                 if let newest { Text(newest.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(2) }
             }
-            .padding(.horizontal, 24).padding(.bottom, 24)
+            .padding(.horizontal, 24).padding(.bottom, 24 + duo.clearance(forBottom: stageBottom))
             .padding(.trailing, TabletopRail.width)
         }
+        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { stageBottom = $0 }
         .clipped()
         .accessibilityHidden(true)
     }
