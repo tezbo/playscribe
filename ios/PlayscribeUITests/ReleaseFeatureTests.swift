@@ -67,6 +67,23 @@ final class ReleaseFeatureTests: XCTestCase {
 
     // MARK: - Library
 
+    /// B-10 (gate only): hold a Library tile so the Mac can shoot the status menu. Attaches a still of the open menu,
+    /// then dismisses it. Skips when no tile is reachable (for example Tabletop's upper half is view only).
+    func testLongPressTileShowsStatusMenu() throws {
+        launch("quick/wishlist")
+        let tile = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH %@", "tile-")).firstMatch
+        guard tile.waitForExistence(timeout: 15), tile.isHittable else { throw XCTSkip("no tappable tile in this pose") }
+        tile.press(forDuration: 1.2)
+        let remove = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Remove ")).firstMatch
+        XCTAssertTrue(remove.waitForExistence(timeout: 5), "B-10: the long-press menu lists Remove")
+        XCTAssertTrue(app.buttons["Wishlist"].exists && app.buttons["Owned"].exists && app.buttons["Watching"].exists)
+        let shot = XCTAttachment(screenshot: app.screenshot())
+        shot.name = "quick-menu-\(pose().replacingOccurrences(of: " ", with: "-"))"
+        shot.lifetime = .keepAlways
+        add(shot)
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.05, dy: 0.05)).tap()
+    }
+
     /// J-1, J-2: the Latest updates hero. A card opens its update; the leaves are 44 pt targets.
     func testHeroDeckCardOpensItsUpdate() throws {
         launch("demo")

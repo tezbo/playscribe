@@ -384,6 +384,8 @@ struct LowerMessages: View {
                 .padding(.trailing, duo.pose == .closed ? 56 : 0)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .transition(.opacity)
+                // A toast with nothing to press (the tip, "Added") never blocks the chips or tiles under it.
+                .allowsHitTesting(toast.undo != nil)
                 .accessibilityElement(children: .combine)
                 .accessibilityActions {
                     if let undo = toast.undo { Button(toast.actionLabel) { undo(); model.toastClear() } }

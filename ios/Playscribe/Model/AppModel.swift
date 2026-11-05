@@ -573,12 +573,14 @@ final class AppModel {
         case "pill": holdQAPill()
         // QA (INTERNAL, B-10): "quick/tip" shows the press-and-hold tip; "quick/undo" removes the first game so the
         // 6 s Undo toast shows. The long-press menu and the yellow Wishlist disc show on the demo library as is.
-        case "quick" where parts.first == "tip": resetDemo(); showPressTipIfNeeded(force: true)
+        case "quick" where parts.first == "tip": resetDemo(); nav.anchors["library"] = "lib-kcd2"; showPressTipIfNeeded(force: true)
         case "quick" where parts.first == "wishlist":
             resetDemo()
             setStatus("kcd2", .wishlist); setStatus("control-resonant", .wishlist)
+            nav.anchors["library"] = "lib-kcd2"   // scroll the grid into view, clear of the tab capsule
         case "quick" where parts.first == "undo":
             resetDemo()
+            nav.anchors["library"] = "lib-kcd2"
             if let id = data.collection.first(where: { $0.status == .wishlist })?.gameID ?? data.collection.first?.gameID { removeGame(id) }
         case "long-text": qaLongText = true
         case "spoiler-demo": openSpoilerDemo(shown: parts.first == "shown")
