@@ -76,6 +76,10 @@ struct RootView: View {
             let _ = { model.livePose = duo.pose }()
             ZStack {
                 TabRoot(duo: duo)
+                    // One toast rule (Iris, #244): while a toast or the pill shows, scrolling content gets a matching
+                    // bottom margin so the last rows and chips can scroll clear of it.
+                    .contentMargins(.bottom, LowerMessages.inset(duo: duo, showing: model.toast != nil || model.pill != nil), for: .scrollContent)
+                    .animation(.snappy, value: model.toast != nil || model.pill != nil)
                     .environment(\.railWidth, duo.pose == .tabletop ? TabletopRail.width : 0)
                     .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.tagExplainer == nil && model.player == nil)
 
@@ -334,6 +338,14 @@ struct TabletopRail: View {
 
 /// The "New on PS5" pill (N-7) and toasts with Undo (B-8), above the tab bar or in the lower half.
 struct LowerMessages: View {
+    /// Distance from the bottom edge to the toast slot: above the tab bar in Open portrait, 12 pt in the lower half of Tabletop.
+    static func bottomPadding(duo: DuoContext) -> CGFloat {
+        duo.pose == .flat && !duo.isLandscape ? 96 : duo.pose == .tabletop ? 12 : 16
+    }
+
+    /// Room scrolling content leaves for a showing toast: its slot plus about 56 pt for the toast itself.
+    static func inset(duo: DuoContext, showing: Bool) -> CGFloat { showing ? bottomPadding(duo: duo) + 56 : 0 }
+
     @Environment(AppModel.self) private var model
     var duo: DuoContext
 
@@ -394,7 +406,7 @@ struct LowerMessages: View {
             }
         }
         // Above the bottom tab bar only where the bars are horizontal (open portrait).
-        .padding(.bottom, duo.pose == .flat && !duo.isLandscape ? 96 : 16)
+        .padding(.bottom, Self.bottomPadding(duo: duo))
         .padding(.trailing, duo.pose == .tabletop ? TabletopRail.width : 0)
         .padding(.horizontal, 16)
         // Book: the pill and toasts stay on the left page; they never straddle the fold.
