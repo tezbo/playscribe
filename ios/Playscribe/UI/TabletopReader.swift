@@ -90,6 +90,22 @@ extension AppModel {
     }
 }
 
+/// The stage's body is capped (Iris): at most `limit` characters, cut at the end of a sentence, else at a word
+/// boundary with an ellipsis; the full text is one tap away in the lower half (TabletopReaderControls).
+enum ReaderBody {
+    static let limit = 170
+    static func stage(_ body: String) -> String {
+        guard body.count > limit else { return body }
+        let head = String(body.prefix(limit))
+        if let end = head.lastIndex(where: { ".!?".contains($0) }), head.distance(from: head.startIndex, to: end) > limit / 3 {
+            return String(head[...end])
+        }
+        let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
+        return cut + "…"
+    }
+    static func isCapped(_ body: String) -> Bool { stage(body) != body }
+}
+
 struct TabletopReaderStage: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
@@ -126,11 +142,13 @@ struct TabletopReaderStage: View {
                         .font(PlayscribeFont.title)
                         // Wraps in full: no "and lar…" (Iris, no mid-sentence ellipsis).
                         .fixedSize(horizontal: false, vertical: true)
-                    Text(section.body)
+                    Text(ReaderBody.stage(section.body))
                         .font(PlayscribeFont.body)
                         .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.92))
                         .lineSpacing(4)
+                        .lineLimit(4)
                         .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityLabel(section.body)
                         .accessibilityIdentifier("readerBody")
                     Spacer(minLength: 0)
                 }
@@ -152,6 +170,7 @@ struct TabletopReaderStage: View {
 }
 
 struct TabletopReaderControls: View {
+    @State private var fullText = false
     @Environment(AppModel.self) private var model
     @Environment(\.railWidth) private var railWidth
     var gameID: String
@@ -184,6 +203,25 @@ struct TabletopReaderControls: View {
                     }
                 }
                 .onChange(of: index) { _, i in withAnimation { proxy.scrollTo(i, anchor: .center) } }
+            }
+            if let body = sections[safe: index]?.body, ReaderBody.isCapped(body) {
+                Button { fullText.toggle() } label: {
+                    HStack {
+                        Text(fullText ? "Hide full text" : "Full text").font(PlayscribeFont.subheadline.weight(.semibold))
+                        Spacer()
+                        Image(systemName: fullText ? "chevron.up" : "chevron.down")
+                    }
+                    .foregroundStyle(PlayscribeColor.accent)
+                    .padding(.horizontal, 12).frame(minHeight: 44).contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .tappableFrame()
+                .accessibilityIdentifier("readerFullText")
+                if fullText {
+                    ScrollView { Text(body).font(PlayscribeFont.body).frame(maxWidth: .infinity, alignment: .leading) }
+                        .frame(maxHeight: 140)
+                        .padding(.horizontal, 12)
+                }
             }
             HStack(spacing: 12) {
                 pageButton("Previous", "chevron.backward", enabled: index > 0) { go(index - 1) }
