@@ -124,13 +124,13 @@ struct TabletopReaderStage: View {
                         .accessibilityIdentifier("releaseTitle")
                     Text(section.title)
                         .font(PlayscribeFont.title)
-                        .lineLimit(3)
-                        .minimumScaleFactor(0.8)
+                        // Wraps in full: no "and lar…" (Iris, no mid-sentence ellipsis).
+                        .fixedSize(horizontal: false, vertical: true)
                     Text(section.body)
                         .font(PlayscribeFont.body)
                         .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.92))
                         .lineSpacing(4)
-                        .minimumScaleFactor(0.7)
+                        .fixedSize(horizontal: false, vertical: true)
                         .accessibilityIdentifier("readerBody")
                     Spacer(minLength: 0)
                 }
