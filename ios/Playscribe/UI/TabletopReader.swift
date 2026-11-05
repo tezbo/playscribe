@@ -83,7 +83,7 @@ extension AppModel {
             let hidden = changes.filter { $0.spoiler == true }.count
             var body = "\(changes.count) listed changes"
             if !first.isEmpty { body += ", including: " + first.joined(separator: " ") }
-            if hidden > 0 && !shown { body += " \(hidden) hidden for spoilers." }
+            if hidden > 0 && !shown { body += (first.isEmpty ? ", " : ". ") + "\(hidden) hidden for spoilers." }
             out.append(ReaderSection(id: "fixes", title: "Fixes", body: body))
         }
         var facts = ["Status: Released",
