@@ -721,7 +721,7 @@ struct ContinueText: View {
                     .foregroundStyle(PlayscribeColor.accent)
                 if fresh, let v = release.versionChip {
                     Text(v)
-                        .accessibilityLabel("Version \(v.dropFirst())")
+                        .accessibilityLabel(spokenVersion(v))
                         .font(PlayscribeFont.caption)
                         .monospacedDigit()
                         .foregroundStyle(PlayscribeColor.accent)
@@ -737,6 +737,12 @@ struct ContinueText: View {
         }
         .padding(.horizontal, 4)
     }
+}
+
+/// "v1.0.21" is not a word to VoiceOver or the accessibility audit: say "Version 1.0.21". Other chip text is read as it is.
+func spokenVersion(_ chip: String) -> String {
+    guard chip.first == "v", chip.dropFirst().first?.isNumber == true else { return chip }
+    return "Version " + chip.dropFirst()
 }
 
 extension Release {

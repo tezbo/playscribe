@@ -269,7 +269,7 @@ struct CompactDeckCard: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text).accessibilityLabel(spokenVersion(text)).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(height: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -311,7 +311,7 @@ struct WideDeckCard: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text).accessibilityLabel(spokenVersion(text)).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(height: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -355,7 +355,7 @@ struct DeckCardArt: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text).accessibilityLabel(spokenVersion(text)).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(height: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -416,7 +416,7 @@ struct DeckStage: View {
             VStack(alignment: .leading, spacing: 6) {
                 HStack(spacing: 8) {
                     if card.unread { Text("New update").foregroundStyle(PlayscribeColor.accent) }
-                    if let v = card.release?.versionChip { Text(v).monospacedDigit().foregroundStyle(PlayscribeColor.textSecondary) }
+                    if let v = card.release?.versionChip { Text(v).accessibilityLabel(spokenVersion(v)).monospacedDigit().foregroundStyle(PlayscribeColor.textSecondary) }
                 }
                 .font(PlayscribeFont.caption)
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
