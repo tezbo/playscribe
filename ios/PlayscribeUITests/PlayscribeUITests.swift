@@ -117,6 +117,25 @@ final class FoldAuditTests: XCTestCase {
     }
 }
 
+/// Fold harness calibration (docs/fold-harness.md): prints what the simulator's real fold gave the app, for
+/// `tools/qa/compare_harness.py` to diff against the harness. Run in each pose; it asserts nothing about layout.
+final class PoseProbeTests: XCTestCase {
+    @MainActor
+    func testPrintPoseProbe() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "library"]
+        app.launch()
+        sleep(4)
+        let probe = app.descendants(matching: .any)["poseProbe"]
+        XCTAssertTrue(probe.waitForExistence(timeout: 8))
+        print("POSEPROBE \(probe.label)")
+        let note = XCTAttachment(string: probe.label)
+        note.name = "pose-probe.json"
+        note.lifetime = .keepAlways
+        add(note)
+    }
+}
+
 /// D-13: every display choice survives a relaunch.
 @MainActor
 final class DisplayChoiceTests: XCTestCase {

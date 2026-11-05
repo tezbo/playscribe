@@ -194,6 +194,8 @@ final class AppModel {
     /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
     /// confirm a `-qaRoute` took effect.
     var qaRoute: String?
+    /// QA (INTERNAL, `-qaRoute long-text`): a long overview body, to show the Tabletop stage cap and the Full text row.
+    var qaLongText = false
     /// QA: the newest On PS5 update of the first `qaUpdateCount` different games are the only unread ones. Chosen
     /// when first asked (not at launch, when releases may not be merged yet), so a later feed refresh or the 72 hour
     /// rule cannot take them away.
@@ -544,6 +546,9 @@ final class AppModel {
         }
         #if INTERNAL
         // Internal routes so QA can script every screen in every pose with `simctl openurl`.
+        // The Release configuration also defines INTERNAL, so a TestFlight or App Store build
+        // (which carries a receipt) must still ignore them: any app or web page could send the URL.
+        guard BuildChannel.showsInternalTools else { return }
         qaRoute = url.host()
         switch url.host() {
         case "add":
@@ -566,6 +571,8 @@ final class AppModel {
         case "caught-up": resetToCaughtUpDemo()
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
+        case "long-text": qaLongText = true
+        case "spoiler-demo": openSpoilerDemo(shown: parts.first == "shown")
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
             Task {
@@ -823,6 +830,50 @@ final class AppModel {
         }
         return out
     }
+
+    #if INTERNAL
+    /// The `-qaRoute` / `-qaOverlay` launch arguments. Ignored in a distribution build (one with a
+    /// TestFlight or App Store receipt), exactly like the playscribe:// QA routes.
+    func applyQALaunch(route: String?, overlay: Bool) {
+        guard BuildChannel.showsInternalTools else { return }
+        if overlay { showDebugOverlay = true; FoldAuditSwitch.enabled = true }
+        if let route, let url = URL(string: "playscribe://\(route)") { handle(url: url) }
+    }
+
+    /// QA (INTERNAL, route "spoiler-demo"): opens a bundled-game patch dated 19 Apr 2025 whose notes
+    /// open with a greeting and a spoiler warning, as Blue Prince 1.2 does in the live feed, so the
+    /// reader's spoiler switch, counts and year can be stilled in the simulator with no network.
+    func openSpoilerDemo(shown: Bool = false) {
+        resetDemo()
+        guard let gameID = fixtures.games.first?.id else { return }
+        let when = Date(timeIntervalSince1970: 1_745_020_800)
+        var pcLine = NoteItem(text: "PC only: fixed a window mode crash.")
+        pcLine.pcOnly = true
+        let items = ["Hello!", "Be advised, the following notes contain spoilers so browse at your own peril:",
+                     "Fixed the final door staying shut after the lab sequence.",
+                     "Fixed the lab camera lock when the machine is reactivated on later days.",
+                     "Fixed the ending letter not appearing for players who skipped the parlour scene.",
+                     "Fixed a story note that could be read twice in the archive room.",
+                     "Fixed the keeper's dialogue repeating after the second reveal.",
+                     "Fixed the epilogue map not showing the secret room.",
+                     "Misc. typo and text format fixes."].map { NoteItem(text: $0) } + [pcLine]
+        let release = Release(
+            id: "qa-spoiler-demo", gameID: gameID, displayName: "Patch 1.2", kind: .hotfix, kindBasis: .studio, announcedAt: when,
+            notes: [NoteSection(title: "Changes", items: items)], sourceIDs: [],
+            platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                        version: Field(value: "01.002.000", verification: .official, sourceID: "qa", checkedAt: when),
+                                        liveAt: Field(value: when, verification: .official, sourceID: "qa", checkedAt: when),
+                                        bundles: [], verification: .official)],
+            headline: "Patch 1.2 (QA)", summary: "QA fixture for the spoiler warning reader.", simulated: true, arrivesAt: when)
+        setSpoilersShown(gameID, shown)
+        data.simulated.removeAll { $0.id == release.id }
+        data.simulated.insert(release, at: 0)
+        tick()
+        openRelease(gameID: gameID, releaseID: release.id)
+        // Tabletop's standing half pages through sections: land on "Fixes", where the spoiler lines are.
+        if let i = readerSections(release).firstIndex(where: { $0.id == "fixes" }) { readerIndex[gameID] = i }
+    }
+    #endif
 
     // MARK: - Simulated updates (internal builds)
 
