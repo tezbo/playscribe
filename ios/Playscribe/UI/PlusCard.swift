@@ -41,16 +41,34 @@ struct PlusCard: View {
                     }
                     Spacer(minLength: 0)
                 }
-                if month.games.count > limit {
-                    Text("+\(month.games.count - limit) more this month")
-                        .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeColor.textSecondary)
-                }
+                // Games past the covers keep a name row, as the old card listed them: tracked ones open their page.
+                ForEach(Array(month.games.dropFirst(limit).enumerated()), id: \.offset) { _, g in nameRow(g) }
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("plusCard")
+        }
+    }
+
+    @ViewBuilder private func nameRow(_ g: PlusMonth.Game) -> some View {
+        if let id = g.gameId, model.entry(id) != nil {
+            Button { model.openGame(id) } label: {
+                HStack(spacing: 8) {
+                    Text(g.name).fixedSize(horizontal: false, vertical: true)
+                    Spacer(minLength: 8)
+                    Image(systemName: "chevron.right").foregroundStyle(PlayscribeColor.textSecondary).accessibilityHidden(true)
+                }
+                .font(PlayscribeFont.subheadline)
+                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading).contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .tappableFrame()
+            .accessibilityHint("Opens the game")
+        } else {
+            Text(g.name).font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, minHeight: 28, alignment: .leading)
         }
     }
 
