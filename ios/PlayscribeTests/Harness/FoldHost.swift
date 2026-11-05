@@ -136,6 +136,11 @@ enum FoldHost {
             .foregroundStyle(PlayscribeColor.textPrimary))
         let hc = UIHostingController(rootView: root)
         hc.traitOverrides.horizontalSizeClass = pose.compactWidth ? .compact : .regular
+        // The hosting window is a small square, so UIKit gave the tab view a compact vertical size class and drew its tab bar
+        // as a vertical bar down the trailing edge (CI view tree: VerticalBarPocketView 83 pt wide, content safe area right 172
+        // = 84 + 88), where the Duo draws it along the bottom. That one trait is the 88 pt gap and the 14 pt shorter navigation
+        // bar. Set it from the pose's own height, as the real window has it.
+        hc.traitOverrides.verticalSizeClass = pose.windowSize.height > 500 ? .regular : .compact
         hc.traitOverrides.preferredContentSizeCategory = type
         let window = UIWindow(windowScene: scene)
         // The window's own safe area comes from the sim screen it sits on and differs by sim pose (CI's Duo gave right 84, the
@@ -180,18 +185,6 @@ enum FoldHost {
         let sceneNote = screen.width > screen.height ? "landscape \(scene.interfaceOrientation.rawValue)" : "portrait \(scene.interfaceOrientation.rawValue)"
         let rawMinX = (box.frames + Array(box.named.values)).map(\.minX).min() ?? .nan
         print("harness error: [info, diag] \(pose.id) window \(window.frame) host in window \(hc.view.convert(CGPoint.zero, to: nil)) host in screen \(hc.view.convert(CGPoint.zero, to: window.screen.coordinateSpace)) margins \(hc.view.layoutMargins) safe \(hc.view.safeAreaInsets) additional \(hc.additionalSafeAreaInsets) origin \(origin) rawMinX \(rawMinX) leftmost \(leftmost) scene \(sceneNote) screen \(screen)")
-        if pose.id == "closed" {
-            // One-off diagnostic for the 88 pt width gap seen on the Mac: which layer of the hosted tree is narrower than the view.
-            var lines: [String] = []
-            func walk(_ v: UIView, _ depth: Int) {
-                guard depth <= 7, lines.count < 70 else { return }
-                let f = v.convert(v.bounds, to: hc.view)
-                lines.append("\(String(repeating: " ", count: depth))\(String(describing: Swift.type(of: v))) \(Int(f.minX)),\(Int(f.minY)) \(Int(f.width))x\(Int(f.height)) safe \(v.safeAreaInsets.left)/\(v.safeAreaInsets.right) margins \(v.layoutMargins.left)/\(v.layoutMargins.right)")
-                for c in v.subviews { walk(c, depth + 1) }
-            }
-            walk(hc.view, 0)
-            print("harness error: [info, tree] closed " + lines.map { $0.trimmingCharacters(in: .whitespaces).isEmpty ? $0 : $0 }.joined(separator: " | "))
-        }
         return r
     }
 
