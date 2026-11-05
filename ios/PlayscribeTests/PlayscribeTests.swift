@@ -497,3 +497,24 @@ struct QARouteGuardTests {
         #expect(m.qaRoute == "add")
     }
 }
+
+/// The simulator has a sandboxReceipt, so the channel must not read it there, or every QA route is dead;
+/// a device with a receipt is a distribution build.
+struct BuildChannelTests {
+    @Test("A receipt marks a distribution build; none marks a developer build")
+    func receiptDecides() {
+        #expect(BuildChannel.isDistribution(receiptName: "sandboxReceipt"))
+        #expect(BuildChannel.isDistribution(receiptName: "receipt"))
+        #expect(!BuildChannel.isDistribution(receiptName: nil))
+        #expect(!BuildChannel.isDistribution(receiptName: "other"))
+    }
+
+    #if targetEnvironment(simulator)
+    @Test("The simulator is never a distribution build, so QA routes run there")
+    func simulatorShowsInternalTools() {
+        BuildChannel.overrideIsDistribution = nil
+        #expect(!BuildChannel.isDistribution)
+        #expect(BuildChannel.showsInternalTools)
+    }
+    #endif
+}
