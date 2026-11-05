@@ -84,14 +84,14 @@ enum HarnessRules {
         require(deck.height <= limit, "\(r.pose.id) J-5: deck \(Int(deck.width)) x \(Int(deck.height)) pt is over \(Int(limit)) pt", sourceLocation: sourceLocation)
     }
 
-    /// TB-1: Settings and Add are both drawn by UIKit, inside the window, and at least 44 pt to touch.
-    static func checkLibraryToolbar(_ r: Rendered, sourceLocation: SourceLocation = #_sourceLocation) {
-        for (name, frame) in [("Settings", r.uikitControl(identifier: "settingsButton")), ("Add game", r.uikitControl(label: "Add game"))] {
-            guard let f = frame else {
-                fail("\(r.pose.id) TB-1: the \(name) button was not drawn in the navigation bar. UIKit drew: \(r.topInventory)", sourceLocation: sourceLocation)
-                continue
-            }
-            require(f.width >= 43.5 && f.height >= 43.5, "\(r.pose.id) TB-1: \(name) is \(Int(f.width)) x \(Int(f.height)), under 44 pt", sourceLocation: sourceLocation)
+    /// TB-1, reported and not asserted. The first CI runs showed an offscreen window does not reproduce UIKit's toolbar:
+    /// Closed drew bar buttons without accessibility labels, and Open, Open portrait and Book drew none, where the Duo
+    /// simulator shows Settings and Add in every pose (UI test, 780c25a). So the toolbar stays a simulator check
+    /// (PlayscribeUITests, gate.sh), and this prints what UIKit drew so calibration can revisit it.
+    static func checkLibraryToolbar(_ r: Rendered) {
+        let settings = r.uikitControl(identifier: "settingsButton"), add = r.uikitControl(label: "Add game")
+        if settings == nil || add == nil {
+            print("harness error: [info, not asserted] \(r.pose.id) TB-1: toolbar not reproduced offscreen. UIKit drew: \(r.topInventory)")
         }
     }
 }
