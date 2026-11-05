@@ -61,14 +61,19 @@ struct FoldHarnessTests {
 enum HarnessRules {
     /// One-line failures that say "failed", so the CI log's grep shows them (and so a reader sees the numbers).
     static func require(_ ok: Bool, _ message: String, sourceLocation: SourceLocation = #_sourceLocation) {
-        if !ok { Issue.record("harness failed: \(message)", sourceLocation: sourceLocation) }
+        if !ok { fail(message, sourceLocation: sourceLocation) }
+    }
+    /// Also printed with "error:" so the CI step's grep shows it (Swift Testing's own issue lines are not matched).
+    static func fail(_ message: String, sourceLocation: SourceLocation = #_sourceLocation) {
+        print("harness error: \(message)")
+        Issue.record("harness failed: \(message)", sourceLocation: sourceLocation)
     }
     static func brief(_ r: CGRect) -> String { "\(Int(r.minX)),\(Int(r.minY)) \(Int(r.width))x\(Int(r.height))" }
     /// The deck is at most `maxFraction` of the container height, plus 12 pt of slack (the same slack as the UI test).
     static func checkDeck(_ r: Rendered, maxFraction: CGFloat?, sourceLocation: SourceLocation = #_sourceLocation) {
         guard let maxFraction else { return }
         guard let deck = r.named["latestDeck"] else {
-            Issue.record("harness failed: \(r.pose.id): the Latest updates deck was not on screen", sourceLocation: sourceLocation)
+            fail("\(r.pose.id): the Latest updates deck was not on screen", sourceLocation: sourceLocation)
             return
         }
         let limit = r.pose.container.height * maxFraction + 12
@@ -79,7 +84,7 @@ enum HarnessRules {
     static func checkLibraryToolbar(_ r: Rendered, sourceLocation: SourceLocation = #_sourceLocation) {
         for (name, frame) in [("Settings", r.uikitControl(identifier: "settingsButton")), ("Add game", r.uikitControl(label: "Add game"))] {
             guard let f = frame else {
-                Issue.record("harness failed: \(r.pose.id) TB-1: the \(name) button was not drawn in the navigation bar", sourceLocation: sourceLocation)
+                fail("\(r.pose.id) TB-1: the \(name) button was not drawn in the navigation bar", sourceLocation: sourceLocation)
                 continue
             }
             require(f.width >= 43.5 && f.height >= 43.5, "\(r.pose.id) TB-1: \(name) is \(Int(f.width)) x \(Int(f.height)), under 44 pt", sourceLocation: sourceLocation)
