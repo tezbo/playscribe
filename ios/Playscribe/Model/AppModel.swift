@@ -2,7 +2,7 @@ import Foundation
 import Observation
 import SwiftUI
 
-enum AppTab: String, Codable, Hashable { case library, updates, search }
+enum AppTab: String, Codable, Hashable { case library, updates, news, search }
 
 enum Chapter: String, Codable, CaseIterable, Hashable, Identifiable {
     case updates, news, world, companion, gallery, mybook
@@ -554,6 +554,7 @@ final class AppModel {
         case "tag" where parts.count == 1: if let v = Verification(rawValue: parts[0]) { tagExplainer = v }
         case "library": nav.tab = .library; nav.gameID = nil
         case "updates": nav.tab = .updates
+        case "news": nav.tab = .news
         case "search": nav.tab = .search
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))

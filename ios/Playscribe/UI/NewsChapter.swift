@@ -17,7 +17,7 @@ final class NewsStore {
     private(set) var loaded: Set<String> = []
     @ObservationIgnored private var index: FeedClient.Index?
 
-    private struct File: Decodable {
+    fileprivate struct File: Decodable {
         var items: [NewsItem]
         init(from decoder: Decoder) throws {
             let c = try decoder.container(keyedBy: CodingKeys.self)
@@ -29,6 +29,44 @@ final class NewsStore {
         }
         enum CodingKeys: String, CodingKey { case items }
         struct Skip: Decodable {}
+    }
+
+    /// The global feed (news.json): the newest headlines across every game, each with its feed game id.
+    struct Headline: Hashable, Identifiable {
+        var gameID: String
+        var item: NewsItem
+        var id: String { gameID + item.id }
+    }
+    private(set) var global: [Headline] = []
+    private(set) var globalFailed = false
+    private(set) var globalLoaded = false
+
+    private struct GlobalFile: Decodable {
+        struct Row: Decodable { var gameId: String; var title: String; var date: Date?; var url: URL }
+        var items: [Headline]
+        init(from decoder: Decoder) throws {
+            let c = try decoder.container(keyedBy: CodingKeys.self)
+            var list = try c.nestedUnkeyedContainer(forKey: .items)
+            var out: [Headline] = []
+            // One malformed item never costs the list.
+            while !list.isAtEnd {
+                if let r = try? list.decode(Row.self) { out.append(Headline(gameID: r.gameId, item: NewsItem(title: r.title, date: r.date, url: r.url))) } else { _ = try? list.decode(File.Skip.self) }
+            }
+            items = out
+        }
+        enum CodingKeys: String, CodingKey { case items }
+    }
+
+    func loadGlobal() async {
+        if global.isEmpty, let raw = try? Data(contentsOf: Self.cacheURL("global")), let f = try? JSONCoding.decoder.decode(GlobalFile.self, from: raw) { global = f.items }
+        if let (f, raw) = try? await FeedClient.fetch("news.json", as: GlobalFile.self) {
+            try? raw.write(to: Self.cacheURL("global"), options: .atomic)
+            global = f.items
+            globalFailed = false
+        } else if global.isEmpty {
+            globalFailed = true
+        }
+        globalLoaded = true
     }
 
     private static func cacheURL(_ id: String) -> URL { URL.cachesDirectory.appending(path: "news-\(id).json") }
@@ -161,5 +199,90 @@ struct NewsStrip: View {
         .task(id: ids) {
             for id in ids.prefix(12) { await store.load(gameID: id, igdbID: model.game(id)?.igdbID) }
         }
+    }
+}
+
+
+/// The News tab (Terry, 0.5.1): the newest official headlines across all games, your library's first.
+/// Same layout rules as Updates: cards either side of the fold in the book pose, the flat half in Tabletop.
+struct GlobalNewsView: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.railWidth) private var railWidth
+    @Environment(\.duo) private var duo
+    private var store: NewsStore { .shared }
+
+    var body: some View {
+        let mine = Set(model.data.collection.map(\.gameID))
+        let sorted = store.global.sorted { ($0.item.date ?? .distantPast) > ($1.item.date ?? .distantPast) }
+        let items = sorted.filter { mine.contains($0.gameID) } + sorted.filter { !mine.contains($0.gameID) }
+        Group {
+            if items.isEmpty {
+                ContentUnavailableView {
+                    Label(store.globalFailed ? "Couldn't load news" : (store.globalLoaded ? "No news yet" : "Loading news"), systemImage: "newspaper")
+                } description: {
+                    Text(store.globalFailed ? "Check your connection and try again." : "Official posts from studios will appear here.")
+                } actions: {
+                    if store.globalFailed {
+                        Button("Retry") { Task { await store.loadGlobal() } }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
+                            .tappableFrame(when: duo.pose != .tabletop)
+                    }
+                }
+            } else if duo.pose == .book, let fold = duo.division {
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.fixed(max(0, fold.minX - 32)), spacing: 0, alignment: .top),
+                                        GridItem(.fixed(fold.width + 32), spacing: 0),
+                                        GridItem(.flexible(), spacing: 0, alignment: .top)],
+                              alignment: .leading, spacing: 12) {
+                        ForEach(Array(items.prefix(60).enumerated()), id: \.element.id) { i, h in
+                            GlobalNewsRow(headline: h)
+                                .padding(12)
+                                .background(PlayscribeColor.ink700.opacity(0.5), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                            if i.isMultiple(of: 2) { Color.clear.frame(height: 1).accessibilityHidden(true) }
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                }
+                .frame(width: duo.size.width)
+            } else {
+                List { ForEach(items.prefix(60)) { GlobalNewsRow(headline: $0) } }
+                    .contentMargins(.trailing, railWidth, for: .scrollContent)
+            }
+        }
+        .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
+        .frame(maxHeight: .infinity, alignment: .bottom)
+        .overlay(alignment: .topLeading) {
+            if duo.pose == .tabletop { Text("News").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false) }
+        }
+        .navigationTitle("News")
+        .task { await store.loadGlobal() }
+    }
+}
+
+struct GlobalNewsRow: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
+    var headline: NewsStore.Headline
+
+    var body: some View {
+        let game = model.game(headline.gameID)
+        Link(destination: headline.item.url) {
+            HStack(alignment: .top, spacing: 12) {
+                if let game { CoverView(game: game, cornerRadius: 4).frame(width: 40) }
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(headline.item.title).font(PlayscribeFont.subheadline.weight(.semibold)).multilineTextAlignment(.leading)
+                    HStack(spacing: 8) {
+                        Tag(text: "Official")
+                        if let game { Text(game.name) }
+                        if let d = headline.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())).foregroundStyle(.secondary) }
+                    }
+                    .font(PlayscribeFont.caption)
+                }
+                Spacer(minLength: 0)
+            }
+            .frame(minHeight: 44)
+            .contentShape(Rectangle())
+        }
+        .tappableFrame(when: duo.pose != .tabletop)
+        .accessibilityLabel("\(game?.name ?? ""), \(headline.item.title), Official, opens in browser")
     }
 }
