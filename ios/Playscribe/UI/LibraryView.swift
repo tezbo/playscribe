@@ -430,6 +430,14 @@ struct LibraryShelf: View {
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
         // The pill and toasts sit at the bottom edge. The scroll view itself ends above them (a safe-area inset would still let
         // content scroll under the pill), so nothing is ever covered (0.5.1 spec 2, Iris).
+        // The scroll view ends above the pill; a soft edge there, not a hard cut through a card (Iris).
+        .mask(alignment: .bottom) {
+            VStack(spacing: 0) {
+                Rectangle()
+                LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
+                    .frame(height: model.messageInset > 0 ? 24 : 0)
+            }
+        }
         .padding(.bottom, model.messageInset)
         // The inset changes the moment the pill shows. It must not ride a running pose animation, or the old arrangement
         // lingers faintly under the new one (Book, ad54f44 stills).

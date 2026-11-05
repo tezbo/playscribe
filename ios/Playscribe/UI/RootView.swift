@@ -337,7 +337,6 @@ struct TabletopRail: View {
 /// The "New on PS5" pill (N-7) and toasts with Undo (B-8), above the tab bar or in the lower half.
 struct LowerMessages: View {
     @Environment(AppModel.self) private var model
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     var duo: DuoContext
 
     static func bottomPadding(_ duo: DuoContext) -> CGFloat {
@@ -354,10 +353,10 @@ struct LowerMessages: View {
                 } label: {
                     HStack(spacing: 8) {
                         UnreadDot()
-                        Text(dynamicTypeSize.isAccessibilitySize ? "New on PS5: \(game.name)" : "New on PS5: \(game.name) \(r.displayName)")
+                        Text("New on PS5: \(game.name) \(r.displayName)")
                             .font(PlayscribeFont.subheadline.weight(.semibold))
-                            // Wraps at accessibility sizes instead of truncating: a long title needs a third line in the narrow poses.
-                            .lineLimit(3)
+                            // Never cut mid-phrase: the pill grows to the whole text, up to four lines (Iris, 0.5.1 spec 2).
+                            .lineLimit(4)
                             .fixedSize(horizontal: false, vertical: true)
                             .multilineTextAlignment(.leading)
                         Image(systemName: "chevron.forward").font(PlayscribeFont.caption)
@@ -372,8 +371,6 @@ struct LowerMessages: View {
                 .buttonStyle(.plain)
                 .tappableFrame()
                 .accessibilityIdentifier("newOnPS5Pill")
-                // The visible text drops the update name at accessibility sizes; VoiceOver still gets all of it.
-                .accessibilityLabel("New on PS5: \(game.name) \(r.displayName)")
                 .highPriorityGesture(DragGesture(minimumDistance: 20).onEnded { _ in model.pill = nil })
                 .accessibilityAction(named: "Dismiss") { model.pill = nil }
                 .transition(.move(edge: .bottom).combined(with: .opacity))
