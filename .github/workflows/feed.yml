@@ -65,7 +65,6 @@ jobs:
       APNS_KEY_P8: ${{ secrets.APNS_KEY_P8 }}
       # The App Store Connect / TestFlight bundle id (the release lane overrides project.yml's), which APNs needs as the topic.
       APNS_TOPIC: tezbo.Playscribe
-      RELAY_TOKEN_FILE: ${{ runner.temp }}/relay-tokens
     steps:
       - uses: actions/checkout@v4
       - name: Fetch the current feed and state
@@ -95,7 +94,7 @@ jobs:
           export RELAY_URL="$(cat "$GITHUB_WORKSPACE/relay/url.txt")"
           export RELAY_ADMIN_TOKEN="$(printf 'relay-admin:%s' "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -d' ' -f1)"
           echo "::add-mask::$RELAY_ADMIN_TOKEN"
-          npx tsx scripts/relay-sync.ts "$RELAY_TOKEN_FILE"
+          npx tsx scripts/relay-sync.ts "$RUNNER_TEMP/relay-tokens"
       - name: Defer push when the relay did not load
         if: vars.PUSH_ENABLED == '1' && steps.load.outcome != 'success'
         run: |
@@ -156,7 +155,7 @@ jobs:
       - name: Scrub devices
         if: always()
         working-directory: backend
-        run: npx tsx scripts/relay-scrub.ts "$RELAY_TOKEN_FILE"
+        run: npx tsx scripts/relay-scrub.ts "$RUNNER_TEMP/relay-tokens"
       - name: Publish
         working-directory: out
         run: |
