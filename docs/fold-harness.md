@@ -84,3 +84,12 @@ Safe area, occlusions and the app-owned deck bound (J-5) reproduce in all six po
 - Open portrait, Book and Tabletop (container 669 wide) still read x offsets that do not match the Duo (CI and the portrait Mac both read -28 for Open portrait and Book). The hosting window is 155 pt wide, and these poses' pages are placed by the system against that window, not against the 669 pt container, so their x positions are reported but not compared. Their sizes, safe area and the deck bound are.
 
 The harness is evidence for app-owned geometry, not a replacement for the Duo simulator on system-owned layout.
+
+## Scope (Quinn, #227)
+
+The harness can fail a build on the fold, hinge, occlusion, safe-area and rail-placement checks. It never counts as a pass or a sign-off: sign-offs need real stills from the Mac gate. Known gaps against the Duo (Mac compare at 633ba89): frames 84-88 pt narrow in Closed, Open, Closed landscape and Tabletop; about 14 pt high in y; 44 pt left in Open portrait and Book. Therefore:
+
+- Do not assert widths, wrapping or x positions.
+- Keep above-the-fold and hinge-band checks one-sided with a margin of at least 14 pt: fail on something clearly inside the band, never claim a pass near the edge.
+- Say nothing about Tabletop's lower half (rail overflow, Previous/Next); those stay on the Mac gate.
+- Open backlog item: find why the tab view draws a vertical tab bar in the offscreen host (docs/roadmap.md).

@@ -6,6 +6,13 @@ import UIKit
 /// The fold harness (docs/fold-harness.md): the real RootView laid out at each pose's exact container, fold and size
 /// class in an offscreen UIKit window, with the layout rules asserted on the frames. No Device Hub, no pose driver.
 ///
+/// SCOPE (Quinn, #227; docs/fold-harness.md, qa test plan): this harness may FAIL a build on the pose, fold, occlusion, safe-area
+/// and rail-placement checks, but it never counts as a pass or a sign-off; sign-offs need real stills on the Mac gate.
+/// Frames are 84-88 pt narrow in Closed, Open, Closed landscape and Tabletop (the tab view draws a vertical tab bar here that
+/// the Duo does not), about 14 pt high in y, and 44 pt left in Open portrait and Book. So: do not assert widths, wrapping or x;
+/// keep any above-the-fold or hinge-band check one-sided with a margin of at least 14 pt (fail only on something clearly
+/// inside the band, never claim a pass near the edge); say nothing about Tabletop's lower half (rail overflow, Previous/Next).
+///
 /// Rules cited: G-4 (nothing tappable above the Tabletop fold), TT-0 (nothing crosses the fold), TB-1 (the Library
 /// toolbar always shows Settings and Add), J-5 (the hero deck is bounded; e869273 had 835 x 727 pt).
 @MainActor
