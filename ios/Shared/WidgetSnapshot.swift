@@ -32,11 +32,19 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
 
     static let empty = WidgetSnapshot(rows: [], unreadCount: 0, hasGames: false)
 
-    /// Gallery preview, same sample as the share card.
-    static let sample = WidgetSnapshot(
-        rows: [Row(gameID: "the-blood-of-dawnwalker", game: "The Blood of Dawnwalker", releaseID: "update-1-1",
-                   update: "Update 1.1", date: Date(timeIntervalSince1970: 1_792_627_200), unread: true)],
-        unreadCount: 1, hasGames: true)
+    /// Gallery preview: three rows so the medium and large look complete, one new (same chip as the real widget).
+    static let sample: WidgetSnapshot = {
+        let day: TimeInterval = 86_400
+        let t = Date(timeIntervalSince1970: 1_792_627_200)
+        return WidgetSnapshot(
+            rows: [Row(gameID: "the-blood-of-dawnwalker", game: "The Blood of Dawnwalker", releaseID: "update-1-1",
+                       update: "Update 1.1", date: t, unread: true, chip: "v1.1"),
+                   Row(gameID: "control-resonant", game: "CONTROL Resonant", releaseID: "hotfix-1-4-2",
+                       update: "Hotfix 1.4.2", date: t.addingTimeInterval(-day), unread: false, chip: "v1.4.2"),
+                   Row(gameID: "blue-prince", game: "Blue Prince", releaseID: "update-2-0",
+                       update: "Update 2.0", date: t.addingTimeInterval(-3 * day), unread: false, chip: "v2.0")],
+            unreadCount: 1, hasGames: true)
+    }()
 
     static var containerURL: URL? { FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: group) }
 
