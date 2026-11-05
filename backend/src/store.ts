@@ -301,7 +301,7 @@ export const dropPreLaunchPs5 = (db: DB) =>
            SELECT r.id FROM releases r JOIN games g ON g.id = r.game_id
            WHERE g.ps5_release IS NOT NULL AND (
              (platform_releases.verification = 'assumed' AND substr(r.announced_at, 1, 10) < g.ps5_release)
-             OR (NOT EXISTS (SELECT 1 FROM json_each(r.source_ids) WHERE value NOT LIKE '%-steam')
+             OR (json_array_length(r.source_ids) > 0 AND NOT EXISTS (SELECT 1 FROM json_each(r.source_ids) WHERE value NOT LIKE '%-steam')
                  AND substr(r.announced_at, 1, 10) < date(g.ps5_release, '-1 day'))))`,
       )
       .run().changes,

@@ -281,10 +281,13 @@ test('prelaunch gate (r051): Steam-only official PS5 rows announced before launc
   add('dawnwalker@launch', '2023-09-06T08:00:00.000Z', 'dawnwalker-steam')
   add('dawnwalker@eve', '2023-09-05T23:00:00.000Z', 'dawnwalker-steam')
   add('dawnwalker@press', '2021-08-31T10:00:00.000Z', 'pushsquare')
+  add('dawnwalker@nosrc', '2021-08-31T10:00:00.000Z', 'x')
+  db.prepare("UPDATE releases SET source_ids = '[]' WHERE id = 'dawnwalker@nosrc'").run()
   store.dropPreLaunchPs5(db)
   const has = (id: string) => !!db.prepare("SELECT 1 FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").get(id)
   assert.equal(has('dawnwalker@old'), false)
   assert.ok(has('dawnwalker@launch') && has('dawnwalker@eve') && has('dawnwalker@press'))
+  assert.ok(has('dawnwalker@nosrc'), 'a release with no recorded source is not Steam-only')
 })
 
 // Roadmap duplicate audit: the same patch seen as "1.4" by the press and "1.4.0" by Steam is one release.
