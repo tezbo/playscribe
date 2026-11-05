@@ -135,31 +135,33 @@ enum FoldHost {
         // A window larger than the scene's screen is reshaped by UIKit (the first Closed landscape run got a 466 x 678 view
         // for a 678 x 466 pose), so a pose that does not fit is hosted as a child view of exactly the pose's size, inside a
         // window that fits the screen. Views outside a window's bounds are still laid out.
-        // Always host as a child of exactly the pose's size, parked far outside the window. A view that does not overlap the
-        // window's own safe area inherits none of it (negative additionalSafeAreaInsets cannot cancel an inherited inset: the
-        // Closed landscape run kept right 84), so the pose's insets are exactly the ones added below.
         let screen = scene.screen.bounds.size
-        let park = CGPoint(x: screen.width + 60, y: screen.height + 60)
-        let shell = UIViewController()
-        shell.addChild(hc)
-        shell.view.addSubview(hc.view)
-        hc.view.frame = CGRect(origin: park, size: pose.windowSize)
-        hc.didMove(toParent: shell)
-        window.frame = CGRect(origin: .zero, size: screen)
-        window.rootViewController = shell
+        if pose.windowSize.width > screen.width || pose.windowSize.height > screen.height {
+            let shell = UIViewController()
+            shell.addChild(hc)
+            shell.view.addSubview(hc.view)
+            hc.view.frame = CGRect(origin: .zero, size: pose.windowSize)
+            hc.didMove(toParent: shell)
+            window.frame = CGRect(origin: .zero, size: screen)
+            window.rootViewController = shell
+        } else {
+            window.frame = CGRect(origin: .zero, size: pose.windowSize)
+            window.rootViewController = hc
+        }
         window.isHidden = false
+        // The window inherits a safe area from the scene's real screen (the sim's own camera side), which would add to the
+        // pose's. Lay out once with none added, read what was inherited, then add only the difference.
         window.layoutIfNeeded()
         hc.view.layoutIfNeeded()
         let inherited = hc.view.safeAreaInsets
-        hc.additionalSafeAreaInsets = pose.safeArea
+        let t = pose.safeArea
+        hc.additionalSafeAreaInsets = UIEdgeInsets(top: t.top - inherited.top, left: t.left - inherited.left,
+                                                   bottom: t.bottom - inherited.bottom, right: t.right - inherited.right)
         for _ in 0..<4 {
             window.layoutIfNeeded()
             try? await Task.sleep(for: settle / 4)
         }
-        // SwiftUI's global space is window-based here; if the reporters turn out host-relative, do not subtract the park.
-        let parked = (box.frames.first ?? box.named.values.first).map { $0.minX > screen.width } ?? true
-        let winOrigin = parked ? hc.view.convert(CGPoint.zero, to: nil) : .zero
-        let origin = CGPoint(x: winOrigin.x + pose.safeArea.left, y: winOrigin.y + pose.safeArea.top)
+        let origin = CGPoint(x: pose.safeArea.left, y: pose.safeArea.top)
         func rel(_ r: CGRect) -> CGRect { r.offsetBy(dx: -origin.x, dy: -origin.y) }
         var r = Rendered(pose: pose, livePose: model.livePose, frames: box.frames.map(rel),
                          named: box.named.mapValues(rel), window: window, controller: hc)
