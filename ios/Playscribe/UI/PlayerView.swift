@@ -18,7 +18,14 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     /// True once playback has begun at least once.
     var started = false
 
-    init(videoID: String) {
+    /// Settings key for "Autoplay videos". Off by default (R-11, G-9).
+    static let autoplayKey = "autoplayVideos"
+    /// True when videos should start on their own: the setting is on and Reduce Motion is off (G-9).
+    static var autoplayEnabled: Bool {
+        UserDefaults.standard.bool(forKey: autoplayKey) && !UIAccessibility.isReduceMotionEnabled
+    }
+
+    init(videoID: String, autoplay: Bool = YouTubeController.autoplayEnabled) {
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
         // D-11: the trailer keeps playing in Picture in Picture when the person leaves the app.
@@ -33,7 +40,7 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         webView.scrollView.isScrollEnabled = false
         super.init()
         content.add(self, name: "player")
-        webView.loadHTMLString(Self.html(videoID, captions: captionsOn), baseURL: URL(string: "https://playscribe.app"))
+        webView.loadHTMLString(Self.html(videoID, captions: captionsOn, autoplay: autoplay), baseURL: URL(string: "https://playscribe.app"))
     }
 
     nonisolated func userContentController(_ controller: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -68,7 +75,7 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     func stop() { run("player.stopVideo()") }
     private func run(_ js: String) { webView.evaluateJavaScript(js) }
 
-    static func html(_ id: String, captions: Bool) -> String {
+    static func html(_ id: String, captions: Bool, autoplay: Bool = false) -> String {
         """
         <!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1">
         <style>html,body{margin:0;height:100%;background:#000;overflow:hidden}#p{position:absolute;inset:0;width:100%;height:100%}</style>
@@ -79,8 +86,8 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         function post(m){window.webkit.messageHandlers.player.postMessage(m)}
         function onYouTubeIframeAPIReady(){
           player=new YT.Player('p',{videoId:'\(id)',host:'https://www.youtube-nocookie.com',
-            playerVars:{playsinline:1,controls:1,cc_load_policy:\(captions ? 1 : 0),rel:0,modestbranding:1,iv_load_policy:3,origin:'https://playscribe.app'},
-            events:{onReady:function(){post({event:'ready',duration:player.getDuration()})},
+            playerVars:{playsinline:1,controls:1,cc_load_policy:\(captions ? 1 : 0),autoplay:\(autoplay ? 1 : 0),rel:0,modestbranding:1,iv_load_policy:3,origin:'https://playscribe.app'},
+            events:{onReady:function(){post({event:'ready',duration:player.getDuration()});\(autoplay ? "player.playVideo();" : "")},
                     onStateChange:function(e){post({event:'state',state:e.data})},
                     onError:function(e){post({event:'error',code:e.data})}}});
           setInterval(function(){if(player&&player.getCurrentTime){post({event:'time',time:player.getCurrentTime(),duration:player.getDuration()})}},500);
