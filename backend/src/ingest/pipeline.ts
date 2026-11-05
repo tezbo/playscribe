@@ -122,8 +122,9 @@ export const seedGames = async (deps: IngestDeps) => {
   }
 }
 
-/** Press reports of one version number further apart than this from the stored release are a different patch. */
+/** A press report of a version this many days before the stored release of that number, or PS5_RECYCLED_DAYS after it, is a different patch. */
 const PS5_ERA_GAP_DAYS = 45
+const PS5_RECYCLED_DAYS = 365
 const BLOCK_RETRY_MS = 24 * 3600e3
 const due = (db: DB, s: SourceDef, force: boolean, minMs = MIN_POLL_MS) => {
   const st = db.prepare('SELECT * FROM source_state WHERE source_id = ?').get(s.id) as Record<string, any> | undefined
@@ -193,7 +194,10 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     // The same version number months or years apart is a different patch (PS5 "1.03" in 2023, the PC port's "1.03" in 2025):
     // beyond PS5_ERA_GAP_DAYS the press report gets its own release, keyed by version and date, so history stays true.
     const sameKey = db.prepare('SELECT id, announced_at FROM releases WHERE game_id = ? AND version_key = ?').get(game.id, naming.versionKey) as { id: string; announced_at: string } | undefined
-    const apart = sameKey ? Math.abs(Date.parse(sameKey.announced_at) - Date.parse(post.publishedAt)) / 86400e3 > PS5_ERA_GAP_DAYS : false
+    // Press earlier than the stored patch by more than 45 days (PS5 era before a PC port), or later by more than a year (a recycled
+    // version number). A port that merely lags by weeks or months is still the same patch.
+    const gapDays = sameKey ? (Date.parse(sameKey.announced_at) - Date.parse(post.publishedAt)) / 86400e3 : 0
+    const apart = gapDays > PS5_ERA_GAP_DAYS || gapDays < -PS5_RECYCLED_DAYS
     const byKey = apart ? undefined : sameKey
     if (apart) naming = { ...naming, versionKey: `${naming.versionKey}-${post.publishedAt.slice(0, 10)}` }
     // By date only when one side has no version: "Patch 1.7" is never the release "Update 1.6".
@@ -217,9 +221,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     if (byKey || near || alike) store.addSource(db, releaseId, s.id)
     const version = consoleVersionOf(text, { ps5Only: true })
     const size = sizeBytesOf(post.body) ?? sizeBytesOf(post.title)
-    // An announcement more than 30 days old has happened ("Patch 2.12 Will Rebalance..." in 2021): history reads it as live.
-    const raw = pressStatusOf(post.title, post.body)
-    const status = raw === 'announced' && Date.now() - Date.parse(post.publishedAt) > 30 * 86400e3 ? 'live' : raw
+    const status = pressStatusOf(post.title, post.body)
     store.upsertPlatform(db, releaseId, 'ps5', {
       status,
       verification: 'reported',
@@ -370,6 +372,8 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   const repaired = store.repairAssumedLiveAt(deps.db)
   if (repaired) deps.log?.(`ingest: moved ${repaired} Steam-assumed PS5 dates back to their Steam post`)
   const promoted = store.promoteAnnounced(deps.db)
+  const settled = store.settleOldAnnouncements(deps.db)
+  if (settled) deps.log?.(`ingest: ${settled} press announcements older than 30 days, with a later PS5 release live, now read as live`)
   deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)
   deps.log?.(`ingest: polled ${summary.polled.length}, new ${summary.created.length}, revised ${summary.revised.length}, review +${summary.review}, errors ${summary.errors.length}`)
   return summary

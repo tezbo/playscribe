@@ -7,6 +7,7 @@ import { alertCopy, headlineOf, pushPs5Release, pushNewPs5 } from '../src/push/n
 import type { Apns } from '../src/push/apns.ts'
 import * as store from '../src/store.ts'
 import { getRelease, newsOf, promoteAnnounced } from '../src/store.ts'
+import { clearRobotsCache } from '../src/http.ts'
 import { hotGameIds } from '../src/hot.ts'
 import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpers.ts'
 
@@ -306,11 +307,46 @@ const spelling = async (steamTitle: string, pressTitle: string, steamHoursAgo = 
 }
 const dawnwalkerIds = (db: ReturnType<typeof openDb>) => (db.prepare("SELECT id FROM releases WHERE game_id = 'dawnwalker' ORDER BY id").all() as { id: string }[]).map((r) => r.id)
 
-test('a press announcement more than 30 days old reads as live in history; a fresh one stays announced', async () => {
-  const old = await spelling('The Blood of Dawnwalker - Update 1.5', 'Dawnwalker PS5 Update 1.9 Will Arrive Next Week', 100 * 24, 90 * 24)
-  assert.equal(store.getPlatformRow(old, 'dawnwalker@1.9', 'ps5')?.status, 'live')
-  const fresh = await spelling('The Blood of Dawnwalker - Update 1.6', 'Dawnwalker PS5 Update 1.8 Will Arrive Next Week', 30, 28)
-  assert.equal(store.getPlatformRow(fresh, 'dawnwalker@1.8', 'ps5')?.status, 'announced')
+test('a press announcement older than 30 days reads as live only when a later release is live; a delayed one stays announced; a fresh one stays announced', async () => {
+  const ps5 = (db: ReturnType<typeof openDb>, id: string) => store.getPlatformRow(db, id, 'ps5')?.status
+  // Steam patch 1.5 is the earlier release, so nothing came after the announced 1.9: it stays announced.
+  const delayed = await spelling('The Blood of Dawnwalker - Update 1.5', 'Dawnwalker PS5 Update 1.9 Will Arrive Next Week', 100 * 24, 90 * 24)
+  assert.equal(ps5(delayed, 'dawnwalker@1.9'), 'announced')
+  // Steam patch 1.5 landed after the announcement and is live: the old announcement has happened.
+  const settled = await spelling('The Blood of Dawnwalker - Update 1.5', 'Dawnwalker PS5 Update 1.9 Will Arrive Next Week', 80 * 24, 90 * 24)
+  assert.equal(ps5(settled, 'dawnwalker@1.9'), 'live')
+  assert.equal(store.settleOldAnnouncements(settled), 0, 'idempotent')
+  const fresh = await spelling('The Blood of Dawnwalker - Update 1.5', 'Dawnwalker PS5 Update 1.8 Will Arrive Next Week', 20, 28)
+  assert.equal(ps5(fresh, 'dawnwalker@1.8'), 'announced')
+})
+
+test('a blocked source is retried once a day and the block clears on success; robots.txt is still honoured on the retry', async () => {
+  const blockedAt = (db: ReturnType<typeof openDb>, hoursAgo: number) =>
+    db.prepare("INSERT OR REPLACE INTO source_state (source_id, last_fetched_at, last_status, last_error, blocked, fail_streak) VALUES ('pushsquare', ?, 403, 'x', 1, 0)").run(new Date(Date.now() - hoursAgo * 3600e3).toISOString())
+  const state = (db: ReturnType<typeof openDb>) => db.prepare("SELECT blocked, last_status FROM source_state WHERE source_id = 'pushsquare'").get() as { blocked: number; last_status: number }
+  const run = async (db: ReturnType<typeof openDb>, routes: Record<string, string | { status: number; body?: string }> = {}) => {
+    const deps = { db, fetchFn: fakeFetch({ 'https://www.pushsquare.com/tags/updates': pressIndexPage([]), ...routes }), igdb: null }
+    await seedGames(deps)
+    return runIngest(deps, { force: true })
+  }
+  const recent1 = openDb(':memory:')
+  await seedGames({ db: recent1, fetchFn: fakeFetch({}), igdb: null })
+  blockedAt(recent1, 1)
+  assert.ok((await run(recent1)).skipped.includes('pushsquare'), 'blocked an hour ago: not asked again')
+  assert.equal(state(recent1).blocked, 1)
+  const old = openDb(':memory:')
+  await seedGames({ db: old, fetchFn: fakeFetch({}), igdb: null })
+  blockedAt(old, 25)
+  assert.ok((await run(old)).polled.includes('pushsquare'), 'blocked over a day ago: one retry')
+  assert.deepEqual({ ...state(old) }, { blocked: 0, last_status: 200 })
+  const robots = openDb(':memory:')
+  await seedGames({ db: robots, fetchFn: fakeFetch({}), igdb: null })
+  blockedAt(robots, 25)
+  clearRobotsCache()
+  const r = await run(robots, { 'https://www.pushsquare.com/robots.txt': 'User-agent: *\nDisallow: /' })
+  clearRobotsCache()
+  assert.ok(!r.polled.includes('pushsquare'))
+  assert.equal(state(robots).blocked, 1, 'a robots.txt disallow keeps it blocked')
 })
 
 test('the same version number far apart is two patches: a press report keeps its own release (PS5 1.4 in the past, the later 1.4.0 from Steam)', async () => {
