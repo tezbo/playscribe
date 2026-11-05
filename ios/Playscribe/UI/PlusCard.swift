@@ -47,16 +47,15 @@ struct PlusCard: View {
             let shown = Array(month.games.prefix(limit))
             VStack(alignment: .leading, spacing: 10) {
                 // Wide cards put the heading beside the covers; narrow ones stack it above (Iris, #242).
+                // Tries covers at 140, 120 then 100 pt beside the heading, so Open portrait, Tabletop and Closed
+                // landscape get a short card; Book's one-page column stacks.
                 ViewThatFits(in: .horizontal) {
-                    HStack(alignment: .top, spacing: 16) {
-                        coverRow(shown, fixed: true)
-                        header(lastChance: lastChance, claimBy: claimBy).frame(minWidth: 200, alignment: .leading)
-                            .accessibilitySortPriority(1)
-                        Spacer(minLength: 0)
-                    }
+                    sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: Self.maxCoverWidth)
+                    sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 120)
+                    sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 100)
                     VStack(alignment: .leading, spacing: 10) {
                         header(lastChance: lastChance, claimBy: claimBy)
-                        coverRow(shown, fixed: false)
+                        coverRow(shown, fixedWidth: nil)
                     }
                 }
                 // Games past the covers keep a name row, as the old card listed them: tracked ones open their page.
@@ -67,6 +66,15 @@ struct PlusCard: View {
             .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("plusCard")
+        }
+    }
+
+    private func sideBySide(_ shown: [PlusMonth.Game], lastChance: Bool, claimBy: String, width: CGFloat) -> some View {
+        HStack(alignment: .top, spacing: 16) {
+            coverRow(shown, fixedWidth: width)
+            header(lastChance: lastChance, claimBy: claimBy).frame(minWidth: 160, alignment: .leading)
+                .accessibilitySortPriority(1)
+            Spacer(minLength: 0)
         }
     }
 
@@ -81,10 +89,10 @@ struct PlusCard: View {
     }
 
     /// Covers at an explicit size, never larger than `maxCoverWidth` wide (a Library tile), so no pose can stretch them
-    /// (Quinn: Closed landscape drew 410 × 550 pt covers). `fixed` is the side-by-side layout; otherwise the row
+    /// (Quinn: Closed landscape drew 410 × 550 pt covers). `fixedWidth` is the side-by-side layout; nil: the row
     /// measures its own width and shrinks the covers to fit.
-    @ViewBuilder private func coverRow(_ shown: [PlusMonth.Game], fixed: Bool) -> some View {
-        PlusCoverRow(games: shown, fixed: fixed) { g, w in
+    @ViewBuilder private func coverRow(_ shown: [PlusMonth.Game], fixedWidth: CGFloat?) -> some View {
+        PlusCoverRow(games: shown, fixedWidth: fixedWidth) { g, w in
             cover(g).frame(width: w, height: (w * 4 / 3).rounded())
         }
     }
@@ -158,23 +166,24 @@ struct PlusBadge: View {
 /// Lays covers out at an explicit width: `PlusCard.maxCoverWidth`, or less when the row is narrower.
 struct PlusCoverRow<Content: View>: View {
     var games: [PlusMonth.Game]
-    var fixed: Bool
+    var fixedWidth: CGFloat?
     @ViewBuilder var content: (PlusMonth.Game, CGFloat) -> Content
     @State private var rowWidth: CGFloat = 0
     private let spacing: CGFloat = 10
 
     private var coverWidth: CGFloat {
         let cap = PlusCard.maxCoverWidth
-        guard !fixed, rowWidth > 0, !games.isEmpty else { return cap }
+        if let fixedWidth { return fixedWidth }
+        guard rowWidth > 0, !games.isEmpty else { return cap }
         return min(cap, ((rowWidth - spacing * CGFloat(games.count - 1)) / CGFloat(games.count)).rounded(.down))
     }
 
     var body: some View {
         HStack(spacing: spacing) {
             ForEach(Array(games.enumerated()), id: \.offset) { _, g in content(g, coverWidth) }
-            if !fixed { Spacer(minLength: 0) }
+            if fixedWidth == nil { Spacer(minLength: 0) }
         }
-        .frame(maxWidth: fixed ? nil : .infinity, alignment: .leading)
+        .frame(maxWidth: fixedWidth == nil ? .infinity : nil, alignment: .leading)
         .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { rowWidth = $0 }
     }
 }
