@@ -50,7 +50,11 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         StubRelay.handler = { _ in (200, Data()) }
         await PushRegistrar.syncFollows(follows)?.value
         await PushRegistrar.syncFollows(follows)?.value
-        let puts = StubRelay.seen.filter { $0.httpMethod == "PUT" && $0.url!.path == "/v1/devices/me/follows" }
+        // Only requests that carry the list under test count.
+        let puts = StubRelay.seen.filter {
+            $0.httpMethod == "PUT" && $0.url!.path == "/v1/devices/me/follows"
+                && ($0.httpBody.map { String(decoding: $0, as: UTF8.self).contains("dawnwalker") } ?? false)
+        }
         #expect(puts.count == 1, "one PUT for two identical lists, got \(paths())")
         #expect(puts.first?.value(forHTTPHeaderField: "Authorization") == "Bearer key-1")
     }

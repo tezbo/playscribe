@@ -126,7 +126,7 @@ final class NotificationService: NSObject {
 
     func didRegister(token: Data) {
         deviceToken = token.map { String(format: "%02x", $0) }.joined()
-        if let model { PushRegistrar.register(token: deviceToken!, follows: model.follows, quietHours: model.data.quietHours) }
+        if let model, !PushRegistrar.isTestHost { PushRegistrar.register(token: deviceToken!, follows: model.follows, quietHours: model.data.quietHours) }
     }
 
     func updateBadge(_ count: Int) {
@@ -315,6 +315,10 @@ enum PushRegistrar {
         guard let s = Bundle.main.object(forInfoDictionaryKey: "PlayscribeAPIBaseURL") as? String, !s.isEmpty else { return nil }
         return URL(string: s)
     }
+
+    /// True when the app runs as the host of unit tests. The app's own relay calls (follows on save, quiet hours on activation)
+    /// stand down there, so a test that stubs the session sees only its own requests.
+    static let isTestHost = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
 
     /// Tests point these at a stub; the app uses the plist, the shared session and the Keychain.
     nonisolated(unsafe) static var relayOverride: URL?
