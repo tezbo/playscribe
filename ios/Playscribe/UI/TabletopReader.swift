@@ -134,11 +134,14 @@ struct TabletopReaderStage: View {
             ArtView(asset: model.backdrop(gameID, chapter: .updates, tall: false), game: model.game(gameID))
                 .overlay(LinearGradient(colors: [.black.opacity(0.85), .black.opacity(0.35)], startPoint: .leading, endPoint: .trailing))
                 .ignoresSafeArea()
-                // Measure the art layer: its size never depends on the text, so the clearance cannot feed back into
-                // layout (the update loop in e6d8ab5). Ignore sub-half-point changes.
+            // Measure a clear layer that fills the stage and does not ignore the safe area: its size never depends on
+            // the text, so the clearance cannot feed back into layout (the update loop in e6d8ab5), and its bottom is
+            // the stage's own bottom, not the art's, which runs under the safe area (the panel sat ~50 pt too high).
+            Color.clear
                 .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { new in
                     if abs(new - stageBottom) > 0.5 { stageBottom = new }
                 }
+                .allowsHitTesting(false)
             if let section = sections[safe: index] {
                 VStack(alignment: .leading, spacing: 14) {
                     // Eyebrow: the game and the date; the release itself is the title below.
