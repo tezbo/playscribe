@@ -10,6 +10,19 @@ struct Rendered {
     var named: [String: CGRect]
     var window: UIWindow
     var controller: UIViewController
+    /// What UIKit actually gave the root view: its size and safe area. A pose is only reproduced when these equal the catalog.
+    var viewSize = CGSize.zero
+    var appliedInsets = UIEdgeInsets.zero
+    var inheritedInsets = UIEdgeInsets.zero
+
+    /// Nil when the root view has the pose's window size and safe area; otherwise the numbers, for the failure message.
+    var geometryProblem: String? {
+        func close(_ a: CGFloat, _ b: CGFloat) -> Bool { abs(a - b) < 0.5 }
+        let w = pose.windowSize, i = pose.safeArea, a = appliedInsets
+        let ok = close(viewSize.width, w.width) && close(viewSize.height, w.height)
+            && close(a.top, i.top) && close(a.left, i.left) && close(a.bottom, i.bottom) && close(a.right, i.right)
+        return ok ? nil : "view \(viewSize) insets \(a) (window's own \(inheritedInsets)) but the pose needs \(w) and \(i)"
+    }
 
     var division: CGRect? { pose.division }
 
@@ -17,8 +30,8 @@ struct Rendered {
     var probeJSON: String {
         var ctx = DuoReader<EmptyView>.context(size: pose.container, compact: pose.compactWidth,
                                                division: pose.division, occlusions: pose.occlusions)
-        ctx.safeArea = EdgeInsets(top: pose.safeArea.top, leading: pose.safeArea.left,
-                                  bottom: pose.safeArea.bottom, trailing: pose.safeArea.right)
+        ctx.safeArea = EdgeInsets(top: appliedInsets.top, leading: appliedInsets.left,
+                                  bottom: appliedInsets.bottom, trailing: appliedInsets.right)
         return FoldAudit.probeJSON(frames: frames, duo: ctx, named: named, origin: .zero)
     }
     /// Frames that touch the active fold (the same test as FoldAudit).
@@ -116,21 +129,32 @@ enum FoldHost {
             .tint(PlayscribeColor.accent)
             .foregroundStyle(PlayscribeColor.textPrimary))
         let hc = UIHostingController(rootView: root)
-        hc.additionalSafeAreaInsets = pose.safeArea
         hc.traitOverrides.horizontalSizeClass = pose.compactWidth ? .compact : .regular
         hc.traitOverrides.preferredContentSizeCategory = type
         let window = UIWindow(windowScene: scene)
         window.frame = CGRect(origin: .zero, size: pose.windowSize)
         window.rootViewController = hc
         window.isHidden = false
+        // The window inherits a safe area from the scene's real screen (the sim's own camera side), which would add to the
+        // pose's. Lay out once with none added, read what was inherited, then add only the difference.
+        window.layoutIfNeeded()
+        hc.view.layoutIfNeeded()
+        let inherited = hc.view.safeAreaInsets
+        let t = pose.safeArea
+        hc.additionalSafeAreaInsets = UIEdgeInsets(top: t.top - inherited.top, left: t.left - inherited.left,
+                                                   bottom: t.bottom - inherited.bottom, right: t.right - inherited.right)
         for _ in 0..<4 {
             window.layoutIfNeeded()
             try? await Task.sleep(for: settle / 4)
         }
         let origin = CGPoint(x: pose.safeArea.left, y: pose.safeArea.top)
         func rel(_ r: CGRect) -> CGRect { r.offsetBy(dx: -origin.x, dy: -origin.y) }
-        return Rendered(pose: pose, livePose: model.livePose, frames: box.frames.map(rel),
-                        named: box.named.mapValues(rel), window: window, controller: hc)
+        var r = Rendered(pose: pose, livePose: model.livePose, frames: box.frames.map(rel),
+                         named: box.named.mapValues(rel), window: window, controller: hc)
+        r.viewSize = hc.view.bounds.size
+        r.appliedInsets = hc.view.safeAreaInsets
+        r.inheritedInsets = inherited
+        return r
     }
 
     /// Tear down so the next pose starts clean.

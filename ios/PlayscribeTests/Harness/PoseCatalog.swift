@@ -37,16 +37,17 @@ extension HarnessPose {
 
     /// The six poses the gate covers. Container sizes and folds are DuoReader's own numbers from the Mac stills (2a56de7).
     /// Safe areas, occlusions and the Book fold height come from the first sim calibration (227-calibration.txt, 744fe8f);
-    /// the Closed landscape row is inferred from the same panel arithmetic (container plus insets is the 466 x 678 pt outer
-    /// panel, turned) and stays provisional until a sim run confirms it. Safe-area order here is top, left, bottom, right;
-    /// the probe prints top, leading, bottom, trailing.
+    /// the Closed landscape row from the second calibration (e0773f2: the camera side is leading, 84 pt). Safe-area order here
+    /// is top, left, bottom, right; the probe prints top, leading, bottom, trailing.
     static let catalog: [HarnessPose] = [
         HarnessPose(id: "closed", container: CGSize(width: 382, height: 644), safeArea: UIEdgeInsets(top: 0, left: 0, bottom: 34, right: 84),
                     compactWidth: true,
                     occlusions: [CGRect(x: 399.5, y: 29.5, width: 37, height: 37), CGRect(x: 382, y: 0, width: 84, height: 174)],
                     expected: .closed),
-        HarnessPose(id: "closedLandscape", container: CGSize(width: 594, height: 432), safeArea: UIEdgeInsets(top: 0, left: 0, bottom: 34, right: 84),
-                    compactWidth: true, expected: .closed, inferred: true),
+        HarnessPose(id: "closedLandscape", container: CGSize(width: 594, height: 432), safeArea: UIEdgeInsets(top: 0, left: 84, bottom: 34, right: 0),
+                    compactWidth: true,
+                    occlusions: [CGRect(x: -54.5, y: 29.5, width: 37, height: 37), CGRect(x: -84, y: 0, width: 84, height: 82)],
+                    expected: .closed),
         HarnessPose(id: "open", container: CGSize(width: 867, height: 635), safeArea: UIEdgeInsets(top: 0, left: 0, bottom: 34, right: 84),
                     compactWidth: false, occlusions: [CGRect(x: 867, y: 0, width: 84, height: 124)], expected: .flat),
         HarnessPose(id: "openPortrait", container: CGSize(width: 669, height: 835), safeArea: UIEdgeInsets(top: 82, left: 0, bottom: 34, right: 0),

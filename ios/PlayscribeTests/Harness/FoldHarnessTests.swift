@@ -45,6 +45,7 @@ struct FoldHarnessTests {
             try? FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
             try? r.probeJSON.write(toFile: "\(dir)/\(p.id).json", atomically: true, encoding: .utf8)
         }
+        HarnessRules.require(r.geometryProblem == nil, "\(p.id): the harness did not reproduce the pose geometry: \(r.geometryProblem ?? "")")
         HarnessRules.require(r.livePose == p.expected, "\(p.id): the injected fold gave pose \(r.livePose), expected \(p.expected)")
         // TT-0 is reported, not asserted, where the system lays pages out (ArrangementView splits at the window's real
         // reserved region, which an offscreen window does not have): the first CI run put Book's right page at x 475, inside
