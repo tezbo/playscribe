@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto'
 import { now, type DB } from './db.ts'
+import newsSources from './sources/news-sources.json' with { type: 'json' }
 import { alertOf } from './alerts.ts'
 import { artworkUrl, squareCoverUrl } from './artwork.ts'
 import { digestOf } from './digest.ts'
@@ -275,12 +276,16 @@ export const addNews = (db: DB, gameId: string, post: { url: string; title: stri
     .prepare('INSERT OR IGNORE INTO news (game_id, url, title, published_at, source_id) VALUES (?, ?, ?, ?, ?)')
     .run(gameId, post.url, post.title.trim().slice(0, 200), post.publishedAt, post.sourceId)
 
+const newsVerification = (sourceId: string): 'official' | 'reported' =>
+  (newsSources.sources as Record<string, { verification?: string }>)[sourceId]?.verification === 'reported' ? 'reported' : 'official'
+
 export const newsOf = (db: DB, gameId: string, limit = 20) =>
-  (db.prepare('SELECT title, published_at, url FROM news WHERE game_id = ? ORDER BY published_at DESC, url LIMIT ?').all(gameId, limit) as { title: string; published_at: string; url: string }[]).map((n) => ({
+  (db.prepare('SELECT title, published_at, url, source_id FROM news WHERE game_id = ? ORDER BY published_at DESC, url LIMIT ?').all(gameId, limit) as { title: string; published_at: string; url: string; source_id: string }[]).map((n) => ({
     gameId,
     title: n.title,
     date: n.published_at,
     url: n.url,
+    verification: newsVerification(n.source_id),
   }))
 
 /**
