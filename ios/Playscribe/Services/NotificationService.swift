@@ -389,13 +389,20 @@ enum PushRegistrar {
     /// The last follows list sent, so an unchanged list costs no request (the relay's free plan allows 1,000 writes a day).
     nonisolated(unsafe) private static var lastFollows: String?
     private struct FollowsBody: Encodable { var follows: [Follow] }
+    /// Sorted keys: the encoded list is the dedupe signature, and Swift's JSONEncoder does not promise one key order from
+    /// one encode to the next, so an unchanged list could look changed and be sent again.
+    private static let stableEncoder: JSONEncoder = {
+        let e = JSONEncoder()
+        e.outputFormatting = [.sortedKeys]
+        return e
+    }()
 
     /// PUT /v1/devices/me/follows: the followed games and their notify level, when they change. Nothing before the device is
     /// registered or while PlayscribeRelayURL is unset. A failed send forgets the list, so the next change sends it again.
     @discardableResult
     static func syncFollows(_ follows: [Follow]) -> Task<Void, Never>? {
         guard let url = relayURL?.appending(path: "v1/devices/me/follows"), keys.read() != nil,
-              let body = try? JSONEncoder().encode(FollowsBody(follows: follows)) else { return nil }
+              let body = try? Self.stableEncoder.encode(FollowsBody(follows: follows)) else { return nil }
         let signature = String(decoding: body, as: UTF8.self)
         guard signature != lastFollows else { return nil }
         lastFollows = signature
