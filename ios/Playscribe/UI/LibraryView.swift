@@ -266,6 +266,16 @@ struct LibraryShelf: View {
                     .padding(.top, 4)
     }
 
+    @State private var messagePad: CGFloat = 0
+    /// This view's bottom edge in global coordinates, with the current pad applied.
+    @State private var libraryBottom: CGFloat = 0
+
+    /// Ends the page 8 pt above the pill (or toast) wherever it sits: the bottom without the pad, minus the pill's top.
+    private func updateMessagePad() {
+        let pad = model.messageTop.map { max(0, (libraryBottom + messagePad) - ($0 - 8)) } ?? 0
+        if abs(pad - messagePad) > 0.5 { messagePad = pad }
+    }
+
     var body: some View {
         @Bindable var model = model
         let rows = duo.pose == .tabletop && letter != nil
@@ -462,13 +472,18 @@ struct LibraryShelf: View {
             VStack(spacing: 0) {
                 Rectangle()
                 LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
-                    .frame(height: model.messageInset > 0 ? 24 : 0)
+                    .frame(height: messagePad > 0 ? 24 : 0)
             }
         }
-        .padding(.bottom, model.messageInset)
-        // The inset changes the moment the pill shows. It must not ride a running pose animation, or the old arrangement
+        .padding(.bottom, messagePad)
+        // The page ends 8 pt above the pill wherever the pill actually sits. The pad is worked out from measured edges (this
+        // view's bottom without the pad, the pill's top), not from the pill's height and offsets, so it cannot leave a dead
+        // band or run under the pill in any pose (0.5.1 spec 2, ae0a608 Open portrait).
+        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { libraryBottom = $0; updateMessagePad() }
+        .onChange(of: model.messageTop) { _, _ in updateMessagePad() }
+        // The pad changes the moment the pill shows. It must not ride a running pose animation, or the old arrangement
         // lingers faintly under the new one (Book, ad54f44 stills).
-        .transaction(value: model.messageInset) { $0.animation = nil }
+        .transaction(value: messagePad) { $0.animation = nil }
         .refreshable { await model.refreshFeed() }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {

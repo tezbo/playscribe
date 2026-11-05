@@ -433,10 +433,13 @@ struct LowerMessages: View {
             }
             // The Library reserves this much at its bottom edge (a safe-area inset), so the pill never covers its
             // top-of-page controls: the content reflows above it (0.5.1 spec 2, Iris).
-            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in
+            .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { frame in
+                let h = frame.height
                 // Everything from the bottom edge up to the top of the messages, plus 8 pt of air.
                 let inset = h > 0 ? h + Self.bottomPadding(duo) + 8 : 0
                 if model.messageInset != inset { model.messageInset = inset }
+                let top: CGFloat? = h > 0 ? frame.minY : nil
+                if model.messageTop != top { model.messageTop = top }
             }
         }
         // Above the bottom tab bar only where the bars are horizontal (open portrait).
