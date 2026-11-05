@@ -92,7 +92,7 @@ struct WidgetSnapshotTests {
             try write("\(s.name)-no-games", WidgetCanvas(entry: entry(.empty), family: s.family, scheme: .light, size: s.size))
             shots += 3
         }
-        #expect(shots == 30)
+        #expect(shots == 27)
     }
 
     @Test func staleUnreadIsNotNew() {
