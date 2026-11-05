@@ -313,8 +313,16 @@ struct LibraryShelf: View {
                     // right tiles under the deck; order is the left page top to bottom, then the right page. The
                     // tiles share each page's width equally (min 124 pt, 10 pt gaps).
                     let left = Self.pageFit(width: leftWidth), right = Self.pageFit(width: rightWidth)
-                    let leftCount = layout == .tiles
-                        ? min(rows.count, Int((Double(rows.count) * Double(left.count) / Double(left.count + right.count)).rounded(.up))) : 0
+                    let proportional = min(rows.count, Int((Double(rows.count) * Double(left.count) / Double(left.count + right.count)).rounded(.up)))
+                    // No hero: the caught-up card is short, so split for equal rows on both pages and, on a tie, as evenly as
+                    // possible (4 games: 2 and 2, not 3 and 1; Iris, dda3857). With a hero the proportional split stands.
+                    let leftCount: Int = {
+                        guard layout == .tiles else { return 0 }
+                        guard model.latestDeck.isEmpty else { return proportional }
+                        let n = rows.count
+                        func rowsFor(_ k: Int) -> Int { max((k + left.count - 1) / left.count, (n - k + right.count - 1) / right.count) }
+                        return (0...n).min { (rowsFor($0), abs(2 * $0 - n)) < (rowsFor($1), abs(2 * $1 - n)) } ?? proportional
+                    }()
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
                             LibraryTabPicker()
