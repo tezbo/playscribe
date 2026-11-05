@@ -542,6 +542,9 @@ final class AppModel {
         }
         #if INTERNAL
         // Internal routes so QA can script every screen in every pose with `simctl openurl`.
+        // The Release configuration also defines INTERNAL, so a TestFlight or App Store build
+        // (which carries a receipt) must still ignore them: any app or web page could send the URL.
+        guard BuildChannel.showsInternalTools else { return }
         qaRoute = url.host()
         switch url.host() {
         case "add":
@@ -562,7 +565,7 @@ final class AppModel {
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
         case "pill": holdQAPill()
-        case "spoiler-demo": openSpoilerDemo()
+        case "spoiler-demo": openSpoilerDemo(shown: parts.first == "shown")
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
             Task {
@@ -818,15 +821,20 @@ final class AppModel {
     /// QA (INTERNAL, route "spoiler-demo"): opens a bundled-game patch dated 19 Apr 2025 whose notes
     /// open with a greeting and a spoiler warning, as Blue Prince 1.2 does in the live feed, so the
     /// reader's spoiler switch, counts and year can be stilled in the simulator with no network.
-    func openSpoilerDemo() {
+    func openSpoilerDemo(shown: Bool = false) {
         resetDemo()
         guard let gameID = fixtures.games.first?.id else { return }
         let when = Date(timeIntervalSince1970: 1_745_020_800)
         var pcLine = NoteItem(text: "PC only: fixed a window mode crash.")
         pcLine.pcOnly = true
         let items = ["Hello!", "Be advised, the following notes contain spoilers so browse at your own peril:",
-                     "Fixed camera lock in the lab.", "Misc. typo and text format fixes.", "Fixed rarity and directory data being read from old save files.",
-                     "Fixed a rare room appearing less often than it should.", "Fixed a door that could stay shut."].map { NoteItem(text: $0) } + [pcLine]
+                     "Fixed the final door staying shut after the lab sequence.",
+                     "Fixed the lab camera lock when the machine is reactivated on later days.",
+                     "Fixed the ending letter not appearing for players who skipped the parlour scene.",
+                     "Fixed a story note that could be read twice in the archive room.",
+                     "Fixed the keeper's dialogue repeating after the second reveal.",
+                     "Fixed the epilogue map not showing the secret room.",
+                     "Misc. typo and text format fixes."].map { NoteItem(text: $0) } + [pcLine]
         let release = Release(
             id: "qa-spoiler-demo", gameID: gameID, displayName: "Patch 1.2", kind: .hotfix, kindBasis: .studio, announcedAt: when,
             notes: [NoteSection(title: "Changes", items: items)], sourceIDs: [],
@@ -835,6 +843,7 @@ final class AppModel {
                                         liveAt: Field(value: when, verification: .official, sourceID: "qa", checkedAt: when),
                                         bundles: [], verification: .official)],
             headline: "Patch 1.2 (QA)", summary: "QA fixture for the spoiler warning reader.", simulated: true, arrivesAt: when)
+        setSpoilersShown(gameID, shown)
         data.simulated.removeAll { $0.id == release.id }
         data.simulated.insert(release, at: 0)
         tick()

@@ -35,12 +35,14 @@ struct PlayscribeApp: App {
                     model.startFresh()
                     model.loadCachedFeed()
                     #if INTERNAL
+                    if BuildChannel.showsInternalTools {
                     // QA: `simctl launch <device> co.codeconnectors.playscribe -qaRoute add` opens a
                     // screen without the system's "Open in" prompt that URL schemes trigger.
                     // `-qaOverlay YES` shows the debug overlay of tappable frames and reserved regions.
                     if UserDefaults.standard.bool(forKey: "qaOverlay") { model.showDebugOverlay = true; FoldAuditSwitch.enabled = true }
                     if let route = UserDefaults.standard.string(forKey: "qaRoute"), let url = URL(string: "playscribe://\(route)") {
                         model.handle(url: url)
+                    }
                     }
                     #endif
                 }

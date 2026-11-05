@@ -137,7 +137,7 @@ struct AddGameSheet: View {
                 .tappableFrame()
             }
             .padding(.horizontal, 16)
-            .padding(.top, titleHidden ? 8 : 24)
+            .frame(height: 56)
             .background(Color.ink0)
         }
     }

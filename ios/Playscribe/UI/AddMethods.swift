@@ -76,6 +76,9 @@ enum AddMatcher {
 
 /// The entry sheet: one 52 pt row per method.
 struct AddEntryView: View {
+    @Environment(\.duo) private var duo
+    /// Tabletop (Iris): 64 pt rows so all four fit in the lower half with no scrolling.
+    private var compact: Bool { duo.pose == .tabletop }
     var choose: (AddMethod) -> Void
 
     var body: some View {
@@ -93,22 +96,25 @@ struct AddEntryView: View {
                             Spacer(minLength: 0)
                             Image(systemName: "chevron.forward").font(.footnote).foregroundStyle(.secondary)
                         }
-                        .frame(minHeight: 52)
+                        .frame(minHeight: compact ? 64 : 52)
                         .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .accessibilityLabel("\(m.title), \(m.detail.lowercasedFirst)")
                     .accessibilityAddTraits(.isButton)
+                    .listRowInsets(compact ? EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16) : nil)
                     .tappableFrame()
                 }
             }
         }
+        .contentMargins(.top, compact ? 4 : 0, for: .scrollContent)
         // Pinned in the sheet's own bottom inset so nothing behind or below can run into it.
         .safeAreaInset(edge: .bottom, spacing: 0) {
             Text("PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password.")
                 .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 20).padding(.top, 10).padding(.bottom, 16)
+                .padding(.horizontal, 20).padding(.vertical, compact ? 8 : 12)
+                .frame(minHeight: compact ? 56 : 0)
                 .background(Color.ink0)
         }
     }
