@@ -214,13 +214,11 @@ struct TabletopRail: View {
             if let id = model.nav.gameID, model.nav.tab == .library {
                 RailButton(action: ScreenAction(id: "back", title: "Library", systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
-                ForEach(model.gameActions(id)) { RailButton(action: $0) }
-                if LinksSheet.hasLinks(model, id) {
-                    RailButton(action: ScreenAction(id: "links", title: "Links", systemImage: "link", kind: .button { model.linksSheetOpen = true }))
-                        .accessibilityLabel("Links, opens a list")
-                }
+                // Only five buttons fit the lower half (297a799): Check for updates and Links go in a More menu.
+                ForEach(model.gameActions(id).filter { $0.id != "refresh" }) { RailButton(action: $0) }
                 // Share the open update as a card (lower rail, 44 pt target; TT-0).
                 if let r = model.readerRelease(id), r.isPS5Listed { ShareUpdateButton(release: r) }
+                RailButton(action: ScreenAction(id: "more", title: "More", systemImage: "ellipsis", kind: .menu(moreItems(id))))
             } else if model.nav.tab == .search {
                 // Search is a dead end without this: Back to where it was opened from (Terry, 0.2.0 build 5).
                 RailButton(action: ScreenAction(id: "back", title: "Back", systemImage: "chevron.backward",
@@ -279,6 +277,21 @@ struct TabletopRail: View {
         }
         .padding(.vertical, 8)
         .frame(maxHeight: .infinity)
+    }
+
+    private func moreItems(_ id: String) -> [ScreenAction.MenuSection] {
+        var items: [ScreenAction.MenuItem] = [
+            .init(id: "refresh", title: "Check for updates") {
+                Task {
+                    await model.refreshFeed(); await model.refreshHistories([id])
+                    await NewsStore.shared.load(gameID: id, igdbID: model.game(id)?.igdbID)
+                }
+            },
+        ]
+        if LinksSheet.hasLinks(model, id) {
+            items.append(.init(id: "links", title: "Links") { model.linksSheetOpen = true })
+        }
+        return [.init(items: items)]
     }
 
     private func tab(_ t: AppTab, _ title: String, _ symbol: String, badge: Int = 0) -> some View {
