@@ -33,6 +33,7 @@ extension AppModel {
 
 struct LibraryTabPicker: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var body: some View {
         @Bindable var model = model
         Picker("Library", selection: $model.libraryTab) {
@@ -40,6 +41,9 @@ struct LibraryTabPicker: View {
         }
         .pickerStyle(.segmented)
         .frame(minHeight: 44)
+        .accessibilityIdentifier("libraryTabPicker")
+        // Book: exactly the left page wide, so the control never crosses the fold (AX3, 7fe84f4).
+        .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
         .tappableFrame()
     }
 }
@@ -89,9 +93,9 @@ struct UpcomingView: View {
                 HStack {
                     Text("Couldn't load upcoming games. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
-                    Button("Retry") { Task { await UpcomingStore.shared.load() } }
+                    Button { Task { await UpcomingStore.shared.load() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                         .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                        .frame(minHeight: 44).tappableFrame()
+                        .tappableFrame()
                 }
             }
             if watched.isEmpty {

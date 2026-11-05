@@ -101,13 +101,24 @@ struct PageView: View {
     }
 }
 
+private struct ExtensionUnlessSlim: ViewModifier {
+    var slim: Bool
+    @ViewBuilder func body(content: Content) -> some View {
+        if slim { content } else { content.backgroundExtensionEffect() }
+    }
+}
+
 /// The art band at the top of the Page, extended under the rail. The faded key-art header is the
 /// default (A8, header-fade handoff): key art top-trailing under a left and a bottom fade into
 /// ink; a portrait cover alone sits right over a blurred copy of itself; no art at all falls back
 /// to the Playscribe landscape.
 struct PageArtBand: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
+    /// Closed landscape is wide and short (594 x 432 pt): a fixed 170 pt band took 40% of the screen and the
+    /// extension effect stretched catalogue art past it (Terry, 0.5.0 build 6). There it is a slim, clipped band.
+    private var slim: Bool { duo.isLandscape && duo.pose == .closed }
     var body: some View {
         let game = model.game(gameID)
         let asset = model.backdrop(gameID, chapter: model.nav.chapter, tall: false)
@@ -121,8 +132,10 @@ struct PageArtBand: View {
                     .modifier(hasArt ? FadeMask() : FadeMask(enabled: false))
             }
         }
-        .frame(height: 170)
-        .backgroundExtensionEffect()
+        .frame(height: slim ? 96 : 170)
+        .frame(maxWidth: .infinity)
+        .clipped()
+        .modifier(ExtensionUnlessSlim(slim: slim))
         .accessibilityHidden(true)
     }
 }
@@ -255,10 +268,10 @@ struct GameLinks: View {
             // One row, a 24 pt gap and no separators; wraps to a second line rather than truncating (Iris 0.5.0).
             FlowLayout(spacing: 24) {
                 if let url = links?.official {
-                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                 }
                 if let url = links?.patchNotes {
-                    Link(destination: url) { Label("All patch notes", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    Link(destination: url) { Label("All patch notes", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                 }
             }
             .font(PlayscribeFont.subheadline)
@@ -314,9 +327,9 @@ struct GameBasicsView: View {
                 HStack {
                     Text("Details need a connection").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
-                    Button("Retry") { Task { await store.load(igdbID: id) } }
+                    Button { Task { await store.load(igdbID: id) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                         .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                        .frame(minHeight: 44).tappableFrame()
+                        .tappableFrame()
                 }
                 .padding(.horizontal, 14)
                 .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
