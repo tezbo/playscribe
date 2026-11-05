@@ -202,23 +202,23 @@ struct TabletopRail: View {
     static let width: CGFloat = 56
     @Environment(AppModel.self) private var model
     var duo: DuoContext
+    /// True only while the actions overflow and more lies below the visible part (Iris: no fade at rest).
+    @State private var moreBelow = false
 
     var body: some View {
-        VStack(spacing: 4) {
+        VStack(spacing: 6) {
             // The screen's controls scroll when they outgrow the lower half (a centred overflow pushed the first
             // button above the fold, 468 vs 474.5: G-4); the tabs stay pinned below.
             ScrollView {
-              VStack(spacing: 4) {
+              VStack(spacing: 6) {
             if let id = model.nav.gameID, model.nav.tab == .library {
                 RailButton(action: ScreenAction(id: "back", title: "Library", systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
-                ForEach(model.gameActions(id)) { RailButton(action: $0) }
-                if LinksSheet.hasLinks(model, id) {
-                    RailButton(action: ScreenAction(id: "links", title: "Links", systemImage: "link", kind: .button { model.linksSheetOpen = true }))
-                        .accessibilityLabel("Links, opens a list")
-                }
+                // Only five buttons fit the lower half (297a799): Check for updates and Links go in a More menu.
+                ForEach(model.gameActions(id).filter { $0.id != "refresh" }) { RailButton(action: $0) }
                 // Share the open update as a card (lower rail, 44 pt target; TT-0).
                 if let r = model.readerRelease(id), r.isPS5Listed { ShareUpdateButton(release: r) }
+                RailButton(action: ScreenAction(id: "more", title: "More", systemImage: "ellipsis", kind: .menu(moreItems(id))))
             } else if model.nav.tab == .search {
                 // Search is a dead end without this: Back to where it was opened from (Terry, 0.2.0 build 5).
                 RailButton(action: ScreenAction(id: "back", title: "Back", systemImage: "chevron.backward",
@@ -232,7 +232,8 @@ struct TabletopRail: View {
                     LibraryViewMenu()
                         .labelStyle(.iconOnly)
                         .font(PlayscribeFont.title3)
-                        .frame(width: 48, height: 48)
+                        .frame(width: 44, height: 44)
+                        .background(Circle().fill(.regularMaterial))
                         .tappableFrame()
                 }
                 // Settings has its own cog on the rail, not inside the View menu (Terry, 0.2.0 build 5).
@@ -242,12 +243,12 @@ struct TabletopRail: View {
                 if !model.data.collection.isEmpty {
                     RailButton(action: ScreenAction(id: "playing", title: "Playing",
                                                     systemImage: model.libraryTab == .playing ? "gamecontroller.fill" : "gamecontroller",
-                                                    kind: .button { model.libraryTab = .playing }))
+                                                    kind: .button { model.libraryTab = .playing }, selected: model.libraryTab == .playing))
                         .accessibilityAddTraits(model.libraryTab == .playing ? .isSelected : [])
                         .accessibilityIdentifier("playingRail")
                     RailButton(action: ScreenAction(id: "upcoming", title: "Upcoming",
                                                     systemImage: model.libraryTab == .upcoming ? "calendar.badge.clock" : "calendar",
-                                                    kind: .button { model.libraryTab = .upcoming }))
+                                                    kind: .button { model.libraryTab = .upcoming }, selected: model.libraryTab == .upcoming))
                         .accessibilityAddTraits(model.libraryTab == .upcoming ? .isSelected : [])
                         .accessibilityIdentifier("upcomingRail")
                 }
@@ -256,14 +257,41 @@ struct TabletopRail: View {
             }
             .scrollBounceBehavior(.basedOnSize)
             .scrollIndicators(.hidden)
-            Divider().frame(width: 28)
-            tab(.library, "Library", "books.vertical", badge: model.totalUnread)
-            tab(.updates, "Updates", "newspaper")
-            tab(.search, "Search", "magnifyingglass")
+            // When the lower half is short the controls scroll: fade the edge so a cut-off button reads as "more",
+            // and leave room so the last one scrolls clear of the tab capsule.
+            .contentMargins(.bottom, 8, for: .scrollContent)
+            .onScrollGeometryChange(for: Bool.self) { g in
+                g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1
+            } action: { _, more in moreBelow = more }
+            .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.9 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
+                                 startPoint: .top, endPoint: .bottom))
+            // Iris: the same floating capsule as Closed's tab bar, no full-height strip or hairline.
+            VStack(spacing: 0) {
+                tab(.library, "Library", "books.vertical", badge: model.totalUnread)
+                tab(.updates, "Updates", "newspaper")
+                tab(.search, "Search", "magnifyingglass")
+            }
+            .padding(.vertical, 4)
+            .background(Capsule().fill(.regularMaterial))
+            .accessibilitySortPriority(2)   // VoiceOver: tabs first, then actions
         }
         .padding(.vertical, 8)
         .frame(maxHeight: .infinity)
-        .background(.bar)
+    }
+
+    private func moreItems(_ id: String) -> [ScreenAction.MenuSection] {
+        var items: [ScreenAction.MenuItem] = [
+            .init(id: "refresh", title: "Check for updates") {
+                Task {
+                    await model.refreshFeed(); await model.refreshHistories([id])
+                    await NewsStore.shared.load(gameID: id, igdbID: model.game(id)?.igdbID)
+                }
+            },
+        ]
+        if LinksSheet.hasLinks(model, id) {
+            items.append(.init(id: "links", title: "Links") { model.linksSheetOpen = true })
+        }
+        return [.init(items: items)]
     }
 
     private func tab(_ t: AppTab, _ title: String, _ symbol: String, badge: Int = 0) -> some View {
@@ -273,8 +301,10 @@ struct TabletopRail: View {
             Image(systemName: symbol)
                 .font(PlayscribeFont.title3)
                 .symbolVariant(model.nav.tab == t ? .fill : .none)
-                .foregroundStyle(model.nav.tab == t ? PlayscribeColor.accent : .secondary)
-                .frame(width: 48, height: 48)
+                .foregroundStyle(model.nav.tab == t ? PlayscribeColor.accent : Color.primary)
+                .frame(width: 44, height: 44)
+                // The same selected treatment as the rail's action buttons (RailButton), so the rail reads as one style.
+                .background(Circle().fill(PlayscribeColor.accent.opacity(model.nav.tab == t ? 0.18 : 0)))
                 .overlay(alignment: .topTrailing) {
                     if badge > 0 {
                         Text("\(badge)").font(PlayscribeFont.caption2.bold()).padding(.horizontal, 4)
@@ -283,6 +313,8 @@ struct TabletopRail: View {
                 }
                 .contentShape(Rectangle())
         }
+        .buttonStyle(RailPressStyle())
+        .buttonStyle(RailPressStyle())
         .accessibilityLabel(title)
         .accessibilityValue(badge > 0 ? "\(badge) unread" : "")
         .accessibilityAddTraits(model.nav.tab == t ? .isSelected : [])
