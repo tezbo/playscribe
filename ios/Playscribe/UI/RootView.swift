@@ -275,6 +275,8 @@ struct TabletopRail: View {
                 .symbolVariant(model.nav.tab == t ? .fill : .none)
                 .foregroundStyle(model.nav.tab == t ? PlayscribeColor.accent : .secondary)
                 .frame(width: 48, height: 48)
+                // The same selected treatment as the rail's action buttons (RailButton), so the rail reads as one style.
+                .background(Circle().fill(PlayscribeColor.accent.opacity(model.nav.tab == t ? 0.18 : 0)))
                 .overlay(alignment: .topTrailing) {
                     if badge > 0 {
                         Text("\(badge)").font(PlayscribeFont.caption2.bold()).padding(.horizontal, 4)
@@ -283,6 +285,7 @@ struct TabletopRail: View {
                 }
                 .contentShape(Rectangle())
         }
+        .buttonStyle(RailPressStyle())
         .accessibilityLabel(title)
         .accessibilityValue(badge > 0 ? "\(badge) unread" : "")
         .accessibilityAddTraits(model.nav.tab == t ? .isSelected : [])
