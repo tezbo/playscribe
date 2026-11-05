@@ -36,7 +36,6 @@ const steam = async (fetchFn: FetchFn, s: SourceDef, count: number, until?: stri
   const seen = new Set<string>()
   return items
     .filter((n) => !seen.has(n.gid) && !!seen.add(n.gid))
-    .filter((n) => n.tags?.includes('patchnotes') || looksLikePatch(n.title))
     .map((n) => ({
       sourceId: s.id,
       postId: n.gid,
@@ -44,6 +43,7 @@ const steam = async (fetchFn: FetchFn, s: SourceDef, count: number, until?: stri
       title: n.title,
       publishedAt: new Date(n.date * 1000).toISOString(),
       body: n.contents,
+      ...(n.tags?.includes('patchnotes') || looksLikePatch(n.title) ? {} : { news: true }),
     }))
 }
 

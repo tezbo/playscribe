@@ -24,8 +24,16 @@ struct ScreenAction: Identifiable {
     var title: String
     var systemImage: String
     var kind: Kind
+    /// Shown as the current choice: accent colour and a tinted backing, the same in every pose.
+    var selected = false
     /// Higher stays visible longer (visibilityPriority).
     var priority: ToolbarItemVisibilityPriority = .automatic
+}
+
+extension Array where Element == ScreenAction.MenuSection {
+    /// Which items are ticked. Keying a Menu on this rebuilds it when a choice changes, so a toolbar or rail menu never
+    /// shows the old tick (Terry, 0.2.0 build 5: Major only reverted to All updates on return).
+    var tickKey: String { flatMap(\.items).filter(\.checked).map(\.id).joined(separator: ",") }
 }
 
 struct ActionMenuContent: View {
@@ -43,6 +51,13 @@ struct ActionMenuContent: View {
     }
 }
 
+/// Pressed feedback for rail buttons: a visible dim in every pose (the default plain style showed none).
+struct RailPressStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label.opacity(configuration.isPressed ? 0.45 : 1)
+    }
+}
+
 /// A rail button: icon with the title as its accessibility label, 44 pt hit target.
 struct RailButton: View {
     var action: ScreenAction
@@ -51,8 +66,10 @@ struct RailButton: View {
             switch action.kind {
             case .button(let run):
                 Button(action: run) { icon }
+                    .buttonStyle(RailPressStyle())
             case .menu(let sections):
                 Menu { ActionMenuContent(sections: sections) } label: { icon }
+                    .id(sections.tickKey)
             }
         }
         .accessibilityLabel(action.title)
@@ -62,7 +79,11 @@ struct RailButton: View {
     private var icon: some View {
         Image(systemName: action.systemImage)
             .font(PlayscribeFont.title3)
-            .frame(width: 48, height: 48)
+            .foregroundStyle(action.selected ? PlayscribeColor.accent : Color.primary)
+            .frame(width: 44, height: 44)
+            // Round buttons like Closed's rail: a material disc, tinted when selected.
+            .background(Circle().fill(.regularMaterial))
+            .background(Circle().fill(PlayscribeColor.accent.opacity(action.selected ? 0.18 : 0)))
             .contentShape(Rectangle())
     }
 }
@@ -92,15 +113,13 @@ extension AppModel {
         return sections
     }
 
+    /// Status and Remove only. Notifications have their own bell menu (Terry, 0.2.0 build 5: the controller icon showed both).
     func statusMenu(_ gameID: String) -> [ScreenAction.MenuSection] {
         let current = entry(gameID)?.status
         let name = game(gameID)?.name ?? "game"
         return [
             .init(title: "Status", items: OwnershipStatus.allCases.map { s in
                 .init(id: s.rawValue, title: s.label, checked: s == current) { [weak self] in self?.setStatus(gameID, s) }
-            }),
-            .init(title: "Notifications", items: NotifyLevel.allCases.map { l in
-                .init(id: "n-" + l.rawValue, title: l.label, checked: l == notifyLevel(gameID)) { [weak self] in self?.setNotify(gameID, l) }
             }),
             .init(items: [.init(id: "remove", title: "Remove \(name)", destructive: true) { [weak self] in self?.removeGame(gameID) }]),
         ]
@@ -118,6 +137,13 @@ extension AppModel {
             if !menu.isEmpty { menu[0].title = "\(name) is in your library as…" }
             out.append(ScreenAction(id: "status", title: "Status: \(status.label)", systemImage: status.symbol, kind: .menu(menu), priority: .high))
         }
+        // A way to ask for an update check from the game itself (Terry): the same refresh as the Library's pull.
+        out.append(ScreenAction(id: "refresh", title: "Check for updates", systemImage: "arrow.clockwise",
+                                kind: .button { [weak self] in Task {
+                                    await self?.refreshFeed(); await self?.refreshHistories([gameID])
+                                    // Tabletop's News page is view only, so this is also its retry.
+                                    await NewsStore.shared.load(gameID: gameID, igdbID: self?.game(gameID)?.igdbID)
+                                } }))
         return out
     }
 }

@@ -4,28 +4,78 @@ import SwiftUI
 /// nothing here asks for credentials.
 struct AddGameSheet: View {
     @Environment(AppModel.self) private var model
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss) private var systemDismiss
+    @Environment(\.panelClose) private var panelClose
+    /// In Tabletop the sheet is the lower-half panel, which is not presented, so it closes itself.
+    private func dismiss() { if let panelClose { panelClose() } else { systemDismiss() } }
     @Environment(\.duo) private var duo
     @State private var status: OwnershipStatus = .owned
     @State private var query = ""
     @State private var debounced = ""
+    /// Tabletop: first-letter filter instead of typing (the keyboard never opens there).
+    @State private var letter: String?
+    @State private var hintShown = false
     @State private var custom = false
     @State private var customName = ""
     @State private var customPlatform: Platform = .ps5
     /// GR-7: games picked so far; kept while the query changes.
     @State private var picked: [String: CatalogGame] = [:]
     @State private var pickOrder: [String] = []
+    /// nil shows the entry sheet; `matches` non-nil shows the shared results list.
+    @State private var method: AddMethod?
+    @State private var matches: [AddMatch]?
+    /// Keyboard height while it is up (Iris, 0.5.0 Tabletop sheets: if the lower half minus the
+    /// keyboard leaves under 200 pt, hide the title and keep Done and search only).
+    @State private var keyboardHeight: CGFloat = 0
+    @FocusState private var searchFocused: Bool
+    private var titleHidden: Bool {
+        guard duo.pose == .tabletop, keyboardHeight > 0 else { return false }
+        let lowerHalf = duo.size.height - (duo.division?.maxY ?? duo.size.height / 2)
+        return lowerHalf - keyboardHeight < 200
+    }
 
     var body: some View {
         NavigationStack {
             Group {
-                if custom { customForm } else { list }
+                if custom { customForm }
+                else if let matches {
+                    AddResultsView(matches: matches, status: status, picked: picked, toggle: tap) { self.matches = nil }
+                } else if let method {
+                    switch method {
+                    case .typeIt: list
+                    case .sayIt: SayItView(find: { showMatches(AddMatcher.titles(from: $0)) }, typeInstead: { self.method = .typeIt })
+                    case .camera: CameraAddView(find: { showMatches($0, sureOnly: true) }, typeInstead: { self.method = .typeIt }, photoInstead: { self.method = .photo })
+                    case .photo: PhotoAddView(find: { showMatches($0, sureOnly: true) }, typeInstead: { self.method = .typeIt })
+                    default: list
+                    }
+                } else { AddEntryView { method = $0 } }
             }
-            .navigationTitle(custom ? "Add your own game" : "Add game")
+            .onAppear {
+                if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
+                if model.addSearchFocus { model.addSearchFocus = false; Task { try? await Task.sleep(for: .milliseconds(600)); searchFocused = true } }
+            }
+            .navigationTitle(titleHidden || duo.pose == .tabletop ? "" : custom ? "Add your own game" : matches != nil ? "Found games" : method == nil ? "Add games" : method!.title)
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillChangeFrameNotification)) { note in
+                let end = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) ?? .zero
+                keyboardHeight = end.minY >= UIScreen.main.bounds.height ? 0 : end.height
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in keyboardHeight = 0 }
             .toolbarTitleDisplayMode(.inline)
+            // Tabletop (0.2.0 gate): the empty nav bar cost about 100 pt of the lower half, so the
+            // bar is hidden and Close sits in the search row instead; three rows then fit.
+            .toolbar(duo.pose == .tabletop && !custom ? .hidden : .automatic, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button { dismiss() } label: { Label("Close", systemImage: "xmark") }
+                    if duo.pose == .tabletop {
+                        Button { dismiss() } label: { Text("Done").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.accessibilityIdentifier("close")
+                    } else {
+                        Button { dismiss() } label: { Label("Close", systemImage: "xmark") }
+                    }
+                }
+                if method != nil && !custom {
+                    ToolbarItem(placement: .navigation) {
+                        Button { if matches != nil { matches = nil } else { method = nil } } label: { Label("Back", systemImage: "chevron.backward") }
+                    }
                 }
             }
             // One confirm bar pinned to the bottom of the sheet (Terry, 0.2.0): no scrolling back
@@ -36,13 +86,14 @@ struct AddGameSheet: View {
                         Text("Add \(picked.count) game\(picked.count == 1 ? "" : "s")")
                             .font(PlayscribeFont.headline)
                             .foregroundStyle(PlayscribeColor.onAccent)
-                            .frame(maxWidth: .infinity, minHeight: 50)
+                            .frame(maxWidth: .infinity, minHeight: 56)
                             .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
                     .buttonStyle(.plain)
                     .accessibilityIdentifier("addPicked")
                     .padding(.horizontal, 16)
-                    .padding(.vertical, 10)
+                    // Tabletop (Iris): 56 pt button in a 72 pt strip pinned to the bottom of the panel.
+                    .frame(minHeight: 72)
                     .background(.bar)
                     .tappableFrame()
                 }
@@ -66,6 +117,10 @@ struct AddGameSheet: View {
 
     /// A-3: one row per IGDB id; the curated record (with art) wins; added games go last.
     private var results: [CatalogGame] {
+        if duo.pose == .tabletop, let letter {
+            let all = PS5Index.shared.titles(startingWith: letter)
+            return all.filter { model.entry($0.id) == nil } + all.filter { model.entry($0.id) != nil }
+        }
         let q = debounced.trimmingCharacters(in: .whitespaces)
         let curated = model.fixtures.games
         let curatedByIGDB = Dictionary(curated.compactMap { g in g.igdbID.map { ($0, g) } }, uniquingKeysWith: { a, _ in a })
@@ -93,19 +148,52 @@ struct AddGameSheet: View {
     private var list: some View {
         List {
             Section {
-                statusPicker
-                TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
-                    .autocorrectionDisabled()
-                    .submitLabel(.search)
-                    .frame(minHeight: 44)
+                if duo.pose == .tabletop {
+                    // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
+                    // at least three results stay visible in the lower half.
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack(spacing: 8) {
+                            Button { dismiss() } label: {
+                                Image(systemName: "xmark").font(PlayscribeFont.headline)
+                                    .frame(width: 44, height: 44).contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            .foregroundStyle(PlayscribeColor.accent)
+                            .accessibilityLabel("Close")
+                            .tappableFrame()
+                            Picker("Add as", selection: $status) {
+                                ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
+                            }
+                            .pickerStyle(.menu)
+                            .fixedSize()
+                            .frame(minHeight: 44)
+                            TabletopSearchButton(letter: letter, prompt: "Search PS5 games", hintShown: $hintShown)
+                        }
+                        TabletopSearchHint(shown: hintShown)
+                        TabletopLetterStrip(letter: $letter)
+                    }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                } else {
+                    statusPicker
+                    TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
+                        .autocorrectionDisabled()
+                        .submitLabel(.search)
+                        .focused($searchFocused)
+                        .frame(minHeight: 44)
+                }
+                // Offline state 7: rows keep their placeholder covers; say why.
+                if case .failed(offline: true) = model.checkState {
+                    Label("Covers need a connection", systemImage: "wifi.slash")
+                        .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                }
             }
             let rows = results
-            Section(debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
+            Section(letter != nil && duo.pose == .tabletop ? "Starting with \(letter ?? "")" : debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
                 if rows.isEmpty {
                     Text("No PS5 game matches '\(debounced)'").foregroundStyle(.secondary)
                     Button("Add '\(debounced)' yourself") { customName = debounced; custom = true }.hitTarget()
                 }
-                ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
+                ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { tap(g) } }
             }
             Section {
                 Button { customName = query; custom = true } label: {
@@ -141,10 +229,24 @@ struct AddGameSheet: View {
         }
     }
 
+    /// Every method lands here: sure matches not yet in the library are pre-ticked, the rest wait.
+    /// `sureOnly` (photos): a picture is full of other words, so unsure lines are dropped unless
+    /// nothing at all matched.
+    private func showMatches(_ titles: [String], sureOnly: Bool = false) {
+        var found = AddMatcher.match(titles, curated: model.fixtures.games)
+        if sureOnly, found.contains(where: \.sure) { found = found.filter(\.sure) }
+        for m in found { if let g = m.best, model.entry(g.id) == nil, picked[g.id] == nil { toggle(g) } }
+        matches = found
+        if found.isEmpty { Haptics.warning() }
+    }
+
     private func add(_ g: CatalogGame) {
         model.addGame(g, status: status)
         dismiss()
     }
+
+    /// A person's own tick (not the pre-ticked sure matches).
+    private func tap(_ g: CatalogGame) { Haptics.selection(); toggle(g) }
 
     private func toggle(_ g: CatalogGame) {
         if picked[g.id] != nil { picked[g.id] = nil; pickOrder.removeAll { $0 == g.id } } else { picked[g.id] = g; pickOrder.append(g.id) }
@@ -179,12 +281,14 @@ struct AddRow: View {
                     .foregroundStyle(added ? .secondary : PlayscribeColor.accent)
                     .frame(width: 44, height: 44)
             }
+            .frame(minHeight: 64)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .disabled(added)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(added ? "\(game.name), in your library" : "\(game.name), \(subtitle)")
+        .accessibilityIdentifier("addRow")
         .accessibilityAddTraits(selected ? [.isButton, .isSelected] : .isButton)
         .tappableFrame()
     }
@@ -204,48 +308,147 @@ struct AddRow: View {
 /// half (display only), the button and covers on the flat half.
 struct OnboardingView: View {
     @Environment(\.duo) private var duo
+    @Environment(\.railWidth) private var railWidth
+
+    /// Content width of the left page in Book (clear of the fold), nil in other poses.
+    private var pageWidth: CGFloat? {
+        guard duo.pose == .book, let fold = duo.division else { return nil }
+        return max(0, fold.minX - 24 - 32)
+    }
 
     var body: some View {
         if duo.pose == .tabletop {
             ArrangementView {
                 OnboardingStage().allowsHitTesting(false)
             } secondary: {
+                // The trailing rail sits over the lower half: keep the actions clear of it (0.2.0 gate).
                 ScrollView { OnboardingActions().padding(16) }
+                    .contentMargins(.trailing, railWidth, for: .scrollContent)
             }
             .arrangementViewStyle(.split)
         } else {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
-                    OnboardingActions().padding(.horizontal, 16)
+            HStack(alignment: .top, spacing: 0) {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+                        OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
+                        OnboardingActions(pageWidth: pageWidth, bookLeft: pageWidth != nil).padding(.horizontal, 16)
+                    }
+                    .padding(.bottom, 24)
                 }
-                .padding(.bottom, 24)
+                // Book: one page wide, so nothing crosses the fold (0.2.0 gate, first-run Library).
+                .frame(width: pageWidth.map { $0 + 32 })
+                if let fold = duo.division, duo.pose == .book {
+                    // The right page is never blank (Iris, book-first-run): Popular on PS5 as a grid,
+                    // 24 pt clear of the hinge.
+                    let start = fold.maxX + 24
+                    let width = max(0, duo.size.width - railWidth - start - 16)
+                    OnboardingRightPage(width: width)
+                        .frame(width: width)
+                        .padding(.leading, max(0, start - (fold.minX - 24 - 32 + 32)))
+                    Spacer(minLength: 0)
+                } else {
+                    Spacer(minLength: 0)
+                }
+            }
+            .overlay(alignment: .topLeading) {
+                if FoldAuditSwitch.enabled {
+                    let fold = duo.division.map { "fold \(Int($0.minX))-\(Int($0.maxX))" } ?? "no fold"
+                    let label = "library-duo pose: \(duo.pose.rawValue); \(fold); width \(Int(duo.size.width)); onboarding page \(Int(pageWidth ?? -1))"
+                    Text(label).font(.system(size: 1)).opacity(0.01).allowsHitTesting(false)
+                        .accessibilityIdentifier("libraryDuo").accessibilityLabel(label)
+                }
             }
         }
     }
 }
 
 struct OnboardingStage: View {
+    @Environment(AppModel.self) private var model
+    private var welcomeDone: Bool { model.data.welcomeDone ?? false }
+    @Environment(\.duo) private var duo
+    /// The stage's bottom edge in screen space, before any clearance is applied.
+    @State private var bottom: CGFloat = 0
+
+    /// Tabletop: the stage ends at least 24 pt above the division band, never across it (the
+    /// headline's accessibility frame is the stage, so the stage itself must clear). The frame is
+    /// read in screen space: the old local-height check ignored the stage's own top offset (0.2.0 gate).
+    private var clearance: CGFloat {
+        guard duo.pose == .tabletop, let d = duo.division, bottom > 0 else { return 0 }
+        return max(0, bottom - (d.minY - 24))
+    }
+
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: nil, game: nil)
             LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .center, endPoint: .bottom)
-            Text("Follow a game to get its PS5 patch notes in one place.")
+            Text(welcomeDone ? "Follow a game to get its PS5 patch notes in one place." : "Add your games to see every update")
                 .font(PlayscribeFont.title)
                 .foregroundStyle(PlayscribeColor.textPrimary)
                 .padding(20)
         }
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .padding(.horizontal, 16)
         .accessibilityElement(children: .combine)
+        .padding(.bottom, clearance)
+        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { new in
+            // The padding shrinks the stage inside this frame, so the frame's bottom is unchanged.
+            bottom = new
+        }
+        .padding(.horizontal, 16)
     }
 }
 
 struct OnboardingActions: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    /// Book: the width of one page; only whole covers that fit are shown.
+    var pageWidth: CGFloat?
+    /// Book left page: the covers and the footer move to the right page.
+    var bookLeft = false
 
     var body: some View {
+        if !(model.data.welcomeDone ?? false) {
+            welcome
+        } else {
+            plain
+        }
+    }
+
+    /// 0.5.0 guided welcome (first run only): the four ways to add, then Skip for now.
+    private var welcome: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Tell Playscribe what you play and it keeps every update in one place.")
+                .font(PlayscribeFont.body).foregroundStyle(.secondary)
+            ForEach(AddMethod.available) { m in
+                Button {
+                    model.data.welcomeDone = true
+                    model.addSheetMethod = m
+                    model.addSheetOpen = true
+                } label: {
+                    HStack(spacing: 14) {
+                        Image(systemName: m.symbol).font(.title3).frame(width: 32)
+                            .foregroundStyle(PlayscribeColor.accent)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(m.title).font(PlayscribeFont.headline)
+                            Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                        }
+                        Spacer(minLength: 0)
+                    }
+                    .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("\(m.title), \(m.detail.lowercasedFirst)")
+                .tappableFrame()
+            }
+            Button("Skip for now") { model.data.welcomeDone = true }
+                .font(PlayscribeFont.headline)
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .accessibilityHint("Goes to your empty Library")
+                .tappableFrame()
+        }
+    }
+
+    private var plain: some View {
         VStack(alignment: .leading, spacing: 16) {
             Button { model.addSheetOpen = true } label: {
                 Text("Add your first game")
@@ -256,11 +459,13 @@ struct OnboardingActions: View {
             }
             .buttonStyle(.plain)
             .tappableFrame()
-            Text("Popular on PS5").font(PlayscribeFont.headline)
+            if !bookLeft { Text("Popular on PS5").font(PlayscribeFont.headline) }
             let size: CGFloat = duo.pose == .closed ? 96 : 108
+            let fit = pageWidth.map { max(1, Int(($0 + 10) / (size + 10))) } ?? 6
+            if !bookLeft {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
-                    ForEach(PS5Index.shared.popular(limit: 6)) { g in
+                    ForEach(PS5Index.shared.popular(limit: fit)) { g in
                         Button { model.addGame(g, status: .owned) } label: {
                             TileCover(game: g).frame(width: size, height: (size * 4 / 3).rounded())
                         }
@@ -273,6 +478,37 @@ struct OnboardingActions: View {
             .edgeFade(40)
             Text("PlayStation account import is planned for a later version.")
                 .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+            }
         }
+    }
+}
+
+/// Book first-run, right page: Popular on PS5 as a 3-column grid of 3:4 tiles (10 pt gap), scrolling,
+/// with the account-import line at the foot. Tapping a cover adds it, as the strip does elsewhere.
+struct OnboardingRightPage: View {
+    @Environment(AppModel.self) private var model
+    var width: CGFloat
+
+    var body: some View {
+        let tile = max(40, ((width - 20) / 3).rounded(.down))
+        ScrollView {
+            VStack(alignment: .leading, spacing: 14) {
+                Text("Popular on PS5").font(PlayscribeFont.title3)
+                LazyVGrid(columns: Array(repeating: GridItem(.fixed(tile), spacing: 10, alignment: .top), count: 3), alignment: .leading, spacing: 10) {
+                    ForEach(PS5Index.shared.popular(limit: 18)) { g in
+                        Button { model.addGame(g, status: .owned) } label: {
+                            TileCover(game: g).frame(width: tile, height: (tile * 4 / 3).rounded())
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("Add \(g.name)")
+                        .tappableFrame()
+                    }
+                }
+                Text("PlayStation account import is planned for a later version.")
+                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+            }
+            .padding(.top, 16).padding(.bottom, 24)
+        }
+        .scrollIndicators(.hidden)
     }
 }

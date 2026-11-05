@@ -108,6 +108,22 @@ CREATE TABLE IF NOT EXISTS follows (
   PRIMARY KEY (device_id, game_id)
 );
 
+CREATE TABLE IF NOT EXISTS plus_months (
+  month TEXT PRIMARY KEY,
+  data TEXT NOT NULL,
+  fetched_at TEXT NOT NULL
+);
+
+-- Roadmap 17: news headlines per game. Title, date and link only, never the article text. source_id is kept for audit and never exported.
+CREATE TABLE IF NOT EXISTS news (
+  game_id TEXT NOT NULL REFERENCES games(id),
+  url TEXT NOT NULL,
+  title TEXT NOT NULL,
+  published_at TEXT NOT NULL,
+  source_id TEXT NOT NULL,
+  PRIMARY KEY (game_id, url)
+);
+
 CREATE TABLE IF NOT EXISTS push_log (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   release_id TEXT NOT NULL,
@@ -124,9 +140,14 @@ export const openDb = (path: string): DB => {
   db.exec(SCHEMA)
   // Columns added after the first feed went out; CREATE TABLE IF NOT EXISTS leaves old tables as they were.
   const has = (table: string, col: string) => (db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).some((c) => c.name === col)
+  if (!has('source_state', 'fail_streak')) db.exec('ALTER TABLE source_state ADD COLUMN fail_streak INTEGER NOT NULL DEFAULT 0')
   if (!has('games', 'ps5_release_precision')) db.exec('ALTER TABLE games ADD COLUMN ps5_release_precision TEXT')
   if (!has('games', 'artwork_image_id')) db.exec('ALTER TABLE games ADD COLUMN artwork_image_id TEXT')
   if (!has('releases', 'links')) db.exec("ALTER TABLE releases ADD COLUMN links TEXT NOT NULL DEFAULT '{}'")
+  if (!has('platform_releases', 'alert_from')) db.exec('ALTER TABLE platform_releases ADD COLUMN alert_from TEXT')
+  if (!has('devices', 'quiet_from')) db.exec('ALTER TABLE devices ADD COLUMN quiet_from INTEGER')
+  if (!has('devices', 'quiet_until')) db.exec('ALTER TABLE devices ADD COLUMN quiet_until INTEGER')
+  if (!has('devices', 'quiet_tz')) db.exec('ALTER TABLE devices ADD COLUMN quiet_tz TEXT')
   if (!has('games', 'square_cover_image_id')) db.exec('ALTER TABLE games ADD COLUMN square_cover_image_id TEXT')
   // Tile art picked under older rules (before concept art was excluded) is cleared once, so the next
   // seed asks IGDB again. Bump ART_RULES when src/artwork.ts changes what it picks.

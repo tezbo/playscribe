@@ -12,6 +12,9 @@ struct GameBasics: Codable, Hashable {
     var videos: [Video]?
     struct Links: Codable, Hashable { var official: URL?; var patchNotes: URL? }
     var links: Links?
+    struct Similar: Codable, Hashable { var igdbId: Int; var name: String; var coverId: String? }
+    /// Up to 8 related games (feed `similar`); nil on older data.
+    var similar: [Similar]?
 }
 
 @MainActor @Observable
@@ -19,6 +22,8 @@ final class GameInfoStore {
     static let shared = GameInfoStore()
     private(set) var basics: [Int: GameBasics] = [:]
     @ObservationIgnored private var loaded: Set<Int> = []
+    /// Shards whose last fetch failed: the page shows "Details need a connection" with Retry.
+    private(set) var failedShards: Set<Int> = []
 
     private struct Shard: Codable { var games: [String: GameBasics] }
 
@@ -31,7 +36,12 @@ final class GameInfoStore {
         guard !loaded.contains(shard), let base = FeedClient.baseURL else { return }
         loaded.insert(shard)
         guard let (data, response) = try? await URLSession.shared.data(from: base.appending(path: "info/\(shard).json")),
-              (response as? HTTPURLResponse)?.statusCode == 200 else { return }
+              (response as? HTTPURLResponse)?.statusCode == 200 else {
+            loaded.remove(shard)
+            failedShards.insert(shard)
+            return
+        }
+        failedShards.remove(shard)
         try? data.write(to: Self.cacheURL(shard), options: .atomic)
         merge(data)
     }

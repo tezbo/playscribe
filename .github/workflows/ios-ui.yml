@@ -1,0 +1,76 @@
+name: iOS UI
+
+# UI evidence without a Mac: the 0.5.0 feature XCUITests and a screenshot of every new surface,
+# in the simulator's default (Closed) pose. Not a required check; UI tests on a hosted runner can be
+# slow or flaky, so each step reports on its own and the artifacts are always uploaded. The five-pose
+# gate still runs on the Mac (docs/release-0.5.0-gate.md).
+on:
+  workflow_dispatch:
+  # A change to this workflow runs it on its own PR, so it proves itself before it merges.
+  pull_request:
+    paths: ['.github/workflows/ios-ui.yml']
+  push:
+    branches: ['release/0.5.0']
+    paths: ['ios/**', '.github/workflows/ios-ui.yml']
+
+concurrency:
+  group: ios-ui-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ui:
+    runs-on: xcode-27
+    timeout-minutes: 60
+    env:
+      XCODE_APP: /Applications/Xcode_27.1.app
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew install xcodegen && (cd ios && xcodegen generate)
+      - run: sudo xcode-select -s "$XCODE_APP" && xcodebuild -version
+      - name: Pick the Duo simulator
+        id: sim
+        run: |
+          udid=$(xcrun simctl list devices available -j | python3 -c "
+          import json, sys
+          d = json.load(sys.stdin)['devices']
+          phones = [x for k in d if 'iOS-27-1' in k for x in d[k] if 'iPhone' in x['name']]
+          phones.sort(key=lambda x: 'Duo' not in x['name'])
+          print(phones[0]['udid'] + ' ' + phones[0]['name'] if phones else '')
+          ")
+          [ -n "$udid" ] || { echo "::error::No iOS 27.1 iPhone simulator"; exit 1; }
+          echo "Using ${udid#* }"
+          echo "udid=${udid%% *}" >> "$GITHUB_OUTPUT"
+      - name: Build for testing
+        run: |
+          xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 \
+            || { grep -E 'error:' build.log | head -20; exit 1; }
+      - name: Feature UI tests (Closed)
+        id: uitests
+        continue-on-error: true
+        run: |
+          xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd \
+            -only-testing:PlayscribeUITests/ReleaseFeatureTests \
+            -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
+          grep -E 'error:|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
+          [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"
+          exit "${status:-0}"
+      - name: Export test screenshots
+        if: always()
+        run: |
+          mkdir -p build/attachments
+          [ -d build/UITests.xcresult ] && xcrun xcresulttool export attachments --path build/UITests.xcresult --output-path build/attachments || true
+      - name: Screenshots of every new surface (Closed)
+        if: always()
+        run: ios/tools/qa/ci-shots.sh "${{ steps.sim.outputs.udid }}" build/shots "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ui-evidence-closed
+          path: |
+            build/shots
+            build/attachments
+            build/UITests.xcresult
+            uitests.log
+            build.log

@@ -26,6 +26,7 @@ struct PageView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 PageArtBand(gameID: gameID)
+                StaleHint()
                 if withContents, let g = model.game(gameID) {
                     VStack(alignment: .leading, spacing: 6) {
                         GameTitleWithStatus(gameID: gameID, name: g.name)
@@ -36,14 +37,18 @@ struct PageView: View {
                     switch chapter {
                     case .updates:
                         if let r = model.selectedRelease(gameID) {
-                            ReleasePage(release: r)
-                            if let g = model.game(gameID) {
-                                Divider().overlay(PlayscribeColor.ink700)
-                                GameBasicsView(game: g)
+                            VStack(alignment: .leading, spacing: 16) {
+                                ReleasePage(release: r)
+                                if let g = model.game(gameID) {
+                                    Divider().overlay(PlayscribeColor.ink700)
+                                    GameBasicsView(game: g)
+                                }
                             }
+                            .pageTurn(key: r.id)
                         } else if let g = model.game(gameID) {
                             NoNotesPage(game: g)
                         }
+                    case .news: NewsChapter(gameID: gameID)
                     case .world, .companion: EntriesChapter(gameID: gameID, chapter: chapter)
                     case .gallery: GalleryChapter(gameID: gameID)
                     case .mybook: MyBookChapter(gameID: gameID)
@@ -96,18 +101,83 @@ struct PageView: View {
     }
 }
 
-/// The art band at the top of the Page, extended under the rail.
+private struct ExtensionUnlessSlim: ViewModifier {
+    var slim: Bool
+    @ViewBuilder func body(content: Content) -> some View {
+        if slim { content } else { content.backgroundExtensionEffect() }
+    }
+}
+
+/// The art band at the top of the Page, extended under the rail. The faded key-art header is the
+/// default (A8, header-fade handoff): key art top-trailing under a left and a bottom fade into
+/// ink; a portrait cover alone sits right over a blurred copy of itself; no art at all falls back
+/// to the Playscribe landscape.
 struct PageArtBand: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
+    /// Closed landscape is wide and short (594 x 432 pt): a fixed 170 pt band took 40% of the screen and the
+    /// extension effect stretched catalogue art past it (Terry, 0.5.0 build 6). There it is a slim, clipped band.
+    private var slim: Bool { duo.isLandscape && duo.pose == .closed }
     var body: some View {
-        ArtView(asset: model.backdrop(gameID, chapter: model.nav.chapter, tall: false), game: model.game(gameID))
-            .frame(height: 170)
-            .backgroundExtensionEffect()
-            .overlay(alignment: .bottom) {
+        let game = model.game(gameID)
+        let asset = model.backdrop(gameID, chapter: model.nav.chapter, tall: false)
+        let coverOnly = asset != nil && asset == game?.coverAsset && asset != game?.heroAsset
+        let hasArt = asset != nil || game?.heroArtURL != nil || game?.coverURL != nil
+        Group {
+            if coverOnly || (asset == nil && game?.heroArtURL == nil && game?.coverURL != nil) {
+                CoverHeader(game: game, asset: asset)
+            } else {
+                ArtView(asset: asset, game: game)
+                    .modifier(hasArt ? FadeMask() : FadeMask(enabled: false))
+            }
+        }
+        .frame(height: slim ? 96 : 170)
+        .frame(maxWidth: .infinity)
+        .clipped()
+        .modifier(ExtensionUnlessSlim(slim: slim))
+        .accessibilityHidden(true)
+    }
+}
+
+/// Two gradients, no hard edge: left to right from ink to clear at 55%, bottom clear at 55% to ink.
+struct FadeMask: ViewModifier {
+    var enabled = true
+    func body(content: Content) -> some View {
+        if enabled {
+            content
+                .overlay(LinearGradient(stops: [.init(color: Color.ink0, location: 0), .init(color: .clear, location: 0.55)],
+                                        startPoint: .leading, endPoint: .trailing))
+                .overlay(LinearGradient(stops: [.init(color: .clear, location: 0.55), .init(color: Color.ink0, location: 1)],
+                                        startPoint: .top, endPoint: .bottom))
+        } else {
+            content.overlay(alignment: .bottom) {
                 LinearGradient(colors: [.clear, Color.ink0], startPoint: .top, endPoint: .bottom).frame(height: 60)
             }
-            .accessibilityHidden(true)
+        }
+    }
+}
+
+/// Step 3 of the ladder: the portrait cover on the right at about 60% of the header height,
+/// over a heavily blurred, darkened copy of itself, in the same faded treatment.
+struct CoverHeader: View {
+    var game: CatalogGame?
+    var asset: String?
+    var body: some View {
+        GeometryReader { geo in
+            ZStack(alignment: .trailing) {
+                cover.scaledToFill().frame(width: geo.size.width, height: geo.size.height).blur(radius: 30).brightness(-0.35).clipped()
+                cover.scaledToFit().frame(height: geo.size.height * 0.6).padding(.trailing, 24)
+            }
+        }
+        .modifier(FadeMask())
+    }
+
+    @ViewBuilder private var cover: some View {
+        if let asset { Image(asset).resizable() }
+        else if let url = game?.coverURL {
+            AsyncImage(url: url) { $0.resizable() } placeholder: { Color.ink1 }
+        } else { Color.ink1 }
     }
 }
 
@@ -125,6 +195,8 @@ struct ReleasePage: View {
                 Text(r.displayName).font(PlayscribeFont.title3)
                     .accessibilityIdentifier("releaseTitle")
                 ReleaseTag(release: r)
+                Spacer(minLength: 0)
+                if r.isPS5Listed { ShareUpdateButton(release: r) }
             }
             HStack(spacing: 8) {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
@@ -132,6 +204,7 @@ struct ReleasePage: View {
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             SourceLinks(release: r)
+            ForYouCard(release: r)
             if r.notes.contains(where: { $0.items.contains { $0.spoiler == true } }) {
                 SpoilerLine(gameID: r.gameID)
             }
@@ -177,8 +250,7 @@ struct NoNotesPage: View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
                 Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
-                Text("No updates yet. Checked \(model.lastChecked.formatted(.relative(presentation: .named))).")
-                    .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                NoUpdatesLine()
             }
             GameBasicsView(game: game)
         }
@@ -193,12 +265,13 @@ struct GameLinks: View {
     var body: some View {
         let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
         if links?.official != nil || links?.patchNotes != nil {
-            HStack(spacing: 16) {
+            // One row, a 24 pt gap and no separators; wraps to a second line rather than truncating (Iris 0.5.0).
+            FlowLayout(spacing: 24) {
                 if let url = links?.official {
-                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                 }
                 if let url = links?.patchNotes {
-                    Link(destination: url) { Label("All patch notes", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    Link(destination: url) { Label("All patch notes", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                 }
             }
             .font(PlayscribeFont.subheadline)
@@ -216,11 +289,19 @@ struct GameBasicsView: View {
 
     var body: some View {
         let info = game.igdbID.flatMap { store.basics[$0] }
+        // A game not in the catalogue still opens with what the upcoming feed carries.
+        let fallback = game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }
+        let genres = info?.genres ?? fallback?.genres ?? []
+        let summary = info?.summary ?? fallback?.summary
+        let videos = info?.videos ?? fallback?.trailerId.map { [GameBasics.Video(youtubeId: $0, name: "Trailer")] } ?? []
         VStack(alignment: .leading, spacing: 14) {
-            if let genres = info?.genres, !genres.isEmpty {
+            if let move = fallback?.move?.line {
+                Text(move).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+            }
+            if !genres.isEmpty {
                 Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
-            if let videos = info?.videos, !videos.isEmpty {
+            if !videos.isEmpty {
                 // One video per title: the feed can carry two cuts named "Launch Trailer".
                 let unique = videos.reduce(into: [GameBasics.Video]()) { out, v in if !out.contains(where: { $0.name == v.name }) { out.append(v) } }
                 ForEach(unique.prefix(3), id: \.youtubeId) { v in
@@ -241,9 +322,21 @@ struct GameBasicsView: View {
                     .tappableFrame()
                 }
             }
+            // The slot is always reserved: when the details did not load, say so and offer Retry.
+            if info == nil, let id = game.igdbID, store.failedShards.contains(id % 100) {
+                HStack {
+                    Text("Details need a connection").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Spacer(minLength: 0)
+                    Button { Task { await store.load(igdbID: id) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
+                        .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                        .tappableFrame()
+                }
+                .padding(.horizontal, 14)
+                .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            }
             // Closed has no Contents panel, so the links sit with the basics.
             if duo.pose == .closed { GameLinks(game: game) }
-            if let summary = info?.summary {
+            if let summary {
                 Text("About").font(PlayscribeFont.headline)
                 LinkedTextView(text: summary).font(PlayscribeFont.body)
             }
@@ -253,8 +346,57 @@ struct GameBasicsView: View {
                 Button(storyOpen ? "Less" : "More") { withAnimation(.snappy) { storyOpen.toggle() } }
                     .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minHeight: 44).tappableFrame()
             }
+            SimilarGamesRow(game: game)
         }
         .task(id: game.igdbID) { if let id = game.igdbID { await store.load(igdbID: id) } }
+    }
+}
+
+/// "You might also like": up to 8 PS5 games related to this one, none already in the library.
+/// Hidden when empty; a failed load shows nothing (0.5.0 item 18).
+struct SimilarGamesRow: View {
+    @Environment(AppModel.self) private var model
+    var game: CatalogGame
+    @State private var choosing: CatalogGame?
+
+    private var games: [CatalogGame] {
+        let inLibrary = Set(model.data.collection.compactMap { model.game($0.gameID)?.igdbID })
+        let similar = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.similar ?? []
+        return similar.compactMap { s -> CatalogGame? in
+            guard s.igdbId != game.igdbID, !inLibrary.contains(s.igdbId),
+                  let e = PS5Index.shared.entry(igdb: s.igdbId) else { return nil }
+            return PS5Index.shared.game(e)
+        }.prefix(8).map { $0 }
+    }
+
+    var body: some View {
+        let list = games
+        if !list.isEmpty {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("You might also like").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        ForEach(list) { g in
+                            Button { choosing = g } label: {
+                                TileCover(game: g).frame(width: 104, height: 139)
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel(g.name)
+                            .accessibilityHint("Choose how to add it")
+                            .tappableFrame()
+                        }
+                    }
+                }
+                .edgeFade(40)
+            }
+            .confirmationDialog(choosing?.name ?? "", isPresented: Binding(get: { choosing != nil }, set: { if !$0 { choosing = nil } }), titleVisibility: .visible) {
+                if let g = choosing {
+                    Button("Add to library") { model.addGame(g, status: .owned); model.openGame(g.id) }
+                    Button("Add to watchlist") { model.addGame(g, status: .wishlist); model.openGame(g.id) }
+                }
+                Button("Cancel", role: .cancel) {}
+            }
+        }
     }
 }
 
@@ -328,14 +470,14 @@ struct ContentsBody: View {
                     Spacer(minLength: 8)
                 } }
                 // Once per page (Terry): closed, the links sit with the game's basics instead.
-                if duo.pose != .closed, let game { GameLinks(game: game) }
+                if duo.pose != .closed && duo.pose != .tabletop, let game { GameLinks(game: game) }
                 if model.entry(gameID) == nil, let game {
                     Button("Add to library") { model.addGame(game, status: .watching) }
                         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
                 }
                 ChapterBar(gameID: gameID, selected: chapter)
                 NotesSearchField(gameID: gameID)
-                if model.noteQuery.count >= 2 {
+                if model.noteQuery.count >= 2 || (duo.pose == .tabletop && model.noteLetter != nil) {
                     InlineNoteResults(gameID: gameID)
                 } else if chapter == .updates {
                     let unread = model.releases(gameID).filter(model.isUnread).count
@@ -385,14 +527,27 @@ struct SwapSidesButton: View {
 /// GR-4 in the Contents: search this game's notes, or all my games.
 struct NotesSearchField: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
     var body: some View {
         @Bindable var model = model
-        let short = model.game(gameID).map(GameBookView.shortName) ?? "this game"
+        if duo.pose == .tabletop {
+            // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
+            VStack(alignment: .leading, spacing: 8) {
+                TabletopSearch(letter: $model.noteLetter,
+                               prompt: model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes")
+                if model.noteLetter != nil {
+                    Picker("Search in", selection: $model.noteScope) {
+                        ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
+                    }
+                    .pickerStyle(.segmented)
+                }
+            }
+        } else {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                TextField(model.noteScope == .thisGame ? "Search \(short)'s notes" : "Search all my games' notes", text: $model.noteQuery)
+                TextField(model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes", text: $model.noteQuery)
                     .autocorrectionDisabled()
                     .submitLabel(.search)
                     .onSubmit { model.rememberSearch(model.noteQuery) }
@@ -411,19 +566,28 @@ struct NotesSearchField: View {
                 .pickerStyle(.segmented)
             }
         }
+        }
     }
 }
 
 struct InlineNoteResults: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
     var body: some View {
-        let hits = model.noteHits(model.noteQuery, scope: model.noteScope, gameID: gameID)
+        let byLetter = duo.pose == .tabletop ? model.noteLetter : nil
+        let hits = byLetter.map { model.noteHits(letter: $0, scope: model.noteScope, gameID: gameID) }
+            ?? model.noteHits(model.noteQuery, scope: model.noteScope, gameID: gameID)
         VStack(alignment: .leading, spacing: 6) {
+            if !hits.isEmpty {
+                Text("\(hits.count) result\(hits.count == 1 ? "" : "s")")
+                    .font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    .accessibilityLabel("\(hits.count) results")
+            }
             if hits.isEmpty {
-                let name = model.game(gameID)?.name ?? "this game"
-                Text(model.noteScope == .thisGame ? "No mention of '\(model.noteQuery)' in \(name)'s PS5 notes" : "No mention of '\(model.noteQuery)' in your games' PS5 notes")
-                    .font(PlayscribeFont.subheadline)
+                let none = model.noteScope == .thisGame ? "Nothing in this game's notes matches" : "Nothing in your games' notes matches"
+                Text(byLetter.map { "No notes start with \($0)" } ?? none)
+                    .font(PlayscribeFont.headline)
                 if model.noteScope == .thisGame {
                     Button("Search all my games") { model.noteScope = .allGames }.hitTarget()
                 }
@@ -435,12 +599,13 @@ struct InlineNoteResults: View {
                     else { model.openGame(h.release.gameID, chapter: .updates, releaseID: h.release.id) }
                     model.highlight = h.release.id
                     model.noteQuery = ""
+                    model.noteLetter = nil
                 } label: {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(h.line).font(PlayscribeFont.subheadline).lineLimit(3)
+                        Text(NoteHit.bolded(h.line, query: model.noteQuery)).font(PlayscribeFont.subheadline).lineLimit(3)
                         HStack(spacing: 6) {
                             Text(h.release.displayName).font(PlayscribeFont.caption)
-                            Text(h.pcOnly ? "PC-specific" : h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                            Text(h.pcOnly ? "PC only" : h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                         }
                     }
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
@@ -464,7 +629,7 @@ struct ReleaseTimeline: View {
         let ps5 = model.ps5Releases(gameID)
         let pc = model.pcOnlyReleases(gameID)
         VStack(alignment: .leading, spacing: 4) {
-            Text("RELEASES").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+            Text("ALL UPDATES").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
             if ps5.isEmpty, let g = model.game(gameID) {
                 Text(g.ps5AvailabilityLine).font(PlayscribeFont.subheadline)
             }
@@ -579,6 +744,15 @@ struct GameTitleWithStatus: View {
     var name: String
 
     var body: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            titleRow
+            if model.entry(gameID)?.status == .wishlist, let g = model.game(gameID), g.isUpcoming || g.releasePrecision == .tbd {
+                Text("On your watchlist").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            }
+        }
+    }
+
+    private var titleRow: some View {
         HStack(alignment: .firstTextBaseline, spacing: 8) {
             Text(name).font(PlayscribeFont.title2).lineLimit(2).accessibilityAddTraits(.isHeader)
             if let e = model.entry(gameID) {
@@ -600,5 +774,64 @@ struct GameTitleWithStatus: View {
 
     static func symbol(_ s: OwnershipStatus) -> String {
         switch s { case .owned: "checkmark.circle.fill"; case .wishlist: "bookmark.fill"; case .watching: "eye.fill" }
+    }
+}
+
+
+/// J-11: the game's links as sheet rows, Tabletop only (the inline row stays in every other pose).
+struct LinksSheet: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.panelClose) private var panelClose
+    var gameID: String
+
+    private struct Row: Identifiable { var id: String; var title: String; var url: URL }
+
+    private var rows: [Row] {
+        var out: [Row] = []
+        if let game = model.game(gameID) {
+            let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
+            if let u = links?.official { out.append(Row(id: "official", title: "Official website", url: u)) }
+            if let u = links?.patchNotes { out.append(Row(id: "notes", title: "All patch notes", url: u)) }
+        }
+        if let r = model.readerRelease(gameID), let u = r.links?.steamNotes { out.append(Row(id: "steam", title: "Open in Steam", url: u)) }
+        return out
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            HStack {
+                Text("Links").font(PlayscribeFont.title3).accessibilityAddTraits(.isHeader)
+                Spacer()
+                Button { if let panelClose { panelClose() } else { model.linksSheetOpen = false } } label: {
+                    Image(systemName: "xmark.circle.fill").font(PlayscribeFont.title3).frame(width: 44, height: 44)
+                }
+                .foregroundStyle(.secondary)
+                .accessibilityLabel("Close links")
+                .tappableFrame()
+            }
+            .padding(.horizontal, 20).padding(.top, 8).padding(.bottom, 4)
+            ForEach(rows) { row in
+                Link(destination: row.url) {
+                    HStack {
+                        Text(row.title).font(PlayscribeFont.body)
+                        Spacer()
+                        Image(systemName: "arrow.up.right.square")
+                    }
+                    .padding(.horizontal, 20)
+                    .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
+                    .contentShape(Rectangle())
+                }
+                .foregroundStyle(PlayscribeColor.accent)
+                .accessibilityLabel("\(row.title), opens in browser")
+                .tappableFrame()
+            }
+            Spacer(minLength: 0)
+        }
+        .background(Color.ink1)
+    }
+
+    static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool {
+        let links = model.game(gameID)?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
+        return links?.official != nil || links?.patchNotes != nil || model.readerRelease(gameID)?.links?.steamNotes != nil
     }
 }

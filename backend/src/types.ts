@@ -1,3 +1,5 @@
+import type { Digest } from './digest.ts'
+
 // Wire types. These mirror docs/ps5-patch-data.md exactly; the iOS app decodes the same shapes.
 export type Platform = 'ps5' | 'xboxSeries' | 'switch2' | 'pc'
 export type ReleaseKind = 'dayOne' | 'hotfix' | 'patch' | 'major' | 'silent'
@@ -15,10 +17,16 @@ export interface Field<T> {
   checkedAt: string
 }
 
+export type NoteCategory = 'new' | 'fixed' | 'balance' | 'other'
+
 export interface NoteItem {
   text: string
   platforms?: Platform[]
   ps5ProOnly: boolean
+  /** Roadmap 4: the line is only about PC (Steam Deck, mouse and keyboard, PC graphics). A grouping flag on the line, never a release status. */
+  pcOnly: boolean
+  /** Roadmap: what kind of change the line is, from its section title ("New Features", "Bug Fixes", "Balance"…). Absent in older data: treat as other. */
+  category: NoteCategory
 }
 
 export interface NoteSection {
@@ -34,8 +42,8 @@ export interface PlatformRelease {
   liveAt: Field<string> | null
   bundles: string[]
   verification: Verification
-  /** PS5 only: the one alert this release earns, once it is live. quiet: the press reports it and neither Steam nor the studio has it. */
-  alert?: { style: 'standard' } | { style: 'quiet'; tag: 'Unconfirmed' }
+  /** PS5 only: the one alert this release earns, once it is live.  Absent for a release only the press reports. `from`: where its 72 h guard counts from (the moment a console-later update went live, else its live date). */
+  alert?: { style: 'standard'; from?: string }
 }
 
 export interface ReleaseLinks {
@@ -55,6 +63,8 @@ export interface Release {
   /** Where the notes came from: the Steam post, and the studio's own PS5 page for this update when one exists. */
   links: ReleaseLinks
   platforms: PlatformRelease[]
+  /** Catch-up summary derived from the notes (src/digest.ts). */
+  digest: Digest
   revision: number
   updatedAt: string
 }
@@ -85,6 +95,8 @@ export interface Post {
   body: string
   /** The site's own topic tags for the post (game names, systems), when it lists them. */
   tags?: string[]
+  /** An official post that is not a patch: kept as a news headline only (roadmap 17). */
+  news?: boolean
   /** Fetches the full post when the listing only had a teaser. Called only for posts that match a game. */
   expand?: () => Promise<Pick<Post, 'body'> & Partial<Pick<Post, 'publishedAt' | 'title'>>>
 }

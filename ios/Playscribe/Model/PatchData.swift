@@ -78,6 +78,8 @@ struct NoteItem: Codable, Hashable {
         platforms = try c.decodeIfPresent([Platform].self, forKey: .platforms)
         ps5ProOnly = try c.decodeIfPresent(Bool.self, forKey: .ps5ProOnly) ?? false
         spoiler = try c.decodeIfPresent(Bool.self, forKey: .spoiler)
+        category = try c.decodeIfPresent(String.self, forKey: .category)
+        pcOnly = try c.decodeIfPresent(Bool.self, forKey: .pcOnly) ?? false
     }
 
     var text: String
@@ -86,6 +88,10 @@ struct NoteItem: Codable, Hashable {
     var ps5ProOnly: Bool
     /// App extension: story content that is hidden until revealed.
     var spoiler: Bool?
+    /// The feed's change group: new, fixed, balance or other (other when unclear). nil on older data.
+    var category: String?
+    /// The feed marks a line that is only about PC (docs/api.md); a missing key is false.
+    var pcOnly: Bool = false
 }
 
 struct NoteSection: Codable, Hashable {
@@ -115,6 +121,9 @@ struct PlatformRelease: Codable, Hashable {
     /// (tag "Unconfirmed") when the press reports it live.
     struct Alert: Codable, Hashable {
         var style: String
+        /// When the 72 hour guard counts from (feed contract): the moment a consoles-later update
+        /// went live, else `liveAt`. nil on older data.
+        var from: Date?
         var tag: String?
         var isQuiet: Bool { style == "quiet" }
     }
@@ -159,11 +168,29 @@ struct Release: Codable, Hashable, Identifiable {
     var simulated: Bool?
     /// A simulated release stays hidden until its notification is due.
     var arrivesAt: Date?
+    /// Counts of what changed for a PS5 player (feed `digest`); nil on older data.
+    struct Digest: Codable, Hashable {
+        var new = 0, fixed = 0, balance = 0, other = 0, ps5 = 0
+        var topNew: [String]?
+        init(new: Int = 0, fixed: Int = 0, balance: Int = 0, other: Int = 0, ps5: Int = 0, topNew: [String]? = nil) {
+            self.new = new; self.fixed = fixed; self.balance = balance; self.other = other; self.ps5 = ps5; self.topNew = topNew
+        }
+        init(from decoder: Decoder) throws {
+            let c = try decoder.container(keyedBy: CodingKeys.self)
+            new = try c.decodeIfPresent(Int.self, forKey: .new) ?? 0
+            fixed = try c.decodeIfPresent(Int.self, forKey: .fixed) ?? 0
+            balance = try c.decodeIfPresent(Int.self, forKey: .balance) ?? 0
+            other = try c.decodeIfPresent(Int.self, forKey: .other) ?? 0
+            ps5 = try c.decodeIfPresent(Int.self, forKey: .ps5) ?? 0
+            topNew = try c.decodeIfPresent([String].self, forKey: .topNew)
+        }
+    }
+    var digest: Digest?
 
     // JSON keys follow docs/api.md (camelCase "Id").
     enum CodingKeys: String, CodingKey {
         case id, gameID = "gameId", displayName, kind, kindBasis, announcedAt, notes, sourceIDs = "sourceIds", platforms
-        case headline, summary, keyChanges, video, videoNote, pushLine, links, simulated, arrivesAt
+        case headline, summary, keyChanges, video, videoNote, pushLine, links, simulated, arrivesAt, digest
     }
 
     init(id: String, gameID: String, displayName: String, kind: ReleaseKind, kindBasis: KindBasis, announcedAt: Date,
@@ -195,6 +222,7 @@ struct Release: Codable, Hashable, Identifiable {
         links = try c.decodeIfPresent(Links.self, forKey: .links)
         simulated = try c.decodeIfPresent(Bool.self, forKey: .simulated)
         arrivesAt = try c.decodeIfPresent(Date.self, forKey: .arrivesAt)
+        digest = try? c.decodeIfPresent(Digest.self, forKey: .digest)
     }
 
     /// Combines a feed record with Playscribe's curated record for the same release: the feed's
@@ -246,6 +274,7 @@ enum PCOnly {
 extension NoteItem {
     /// Applies only to PC: tagged so, or naming PC-only hardware or features.
     var isPCOnly: Bool {
+        if pcOnly { return true }
         if let p = platforms, !p.contains(.ps5) { return true }
         return PCOnly.matches(text)
     }
@@ -273,22 +302,22 @@ enum PS5State: Hashable {
     case announced
     /// press only. A silent update is reported with no notes.
     case reported
-    /// not shown anywhere.
+    /// not shown anywhere: no PS5 row, or one without an official PS5 announcement. Never a status shown to the player.
     case pending
-    /// No PS5 row, or one that is announced/unknown without an official PS5 announcement.
-    case pcOnly
     /// An official post says it is not coming to PS5.
     case notPlanned
 }
 
 extension Release {
     var ps5: PlatformRelease? { platforms.first { $0.platform == .ps5 } }
+    /// The date the 72 hour alert guard counts from: the feed's `alert.from`, else the PS5 date.
+    var alertDate: Date { ps5?.alert?.from ?? ps5Date }
 
     var ps5State: PS5State {
         // Terry, 26 Oct: Steam is the source of truth. A release live on Steam counts as released
         // on PS5 unless we can confirm otherwise.
         let liveElsewhere = platforms.contains { $0.platform != .ps5 && $0.status == .live }
-        guard let p = ps5 else { return liveElsewhere ? .onPS5 : .pcOnly }
+        guard let p = ps5 else { return liveElsewhere ? .onPS5 : .pending }
         // Released (docs/ps5-patch-data.md): live and official, assumed, pending, or reported on
         // a release Steam or the studio has.
         if p.verification == .pending && p.status != .live { return .pending }
@@ -299,9 +328,9 @@ extension Release {
             let hasSource = links?.steamNotes != nil || links?.ps5Page != nil
             return p.verification != .reported || liveElsewhere || hasSource ? .onPS5 : .reported
         // Steam rule: unless an official post says otherwise, an update live on Steam is released.
-        case .announced: return p.verification == .official ? .announced : (liveElsewhere ? .onPS5 : .pcOnly)
-        case .notPlanned: return p.verification == .official ? .notPlanned : (liveElsewhere ? .onPS5 : .pcOnly)
-        case .unknown: return liveElsewhere ? .onPS5 : .pcOnly
+        case .announced: return p.verification == .official ? .announced : (liveElsewhere ? .onPS5 : .pending)
+        case .notPlanned: return p.verification == .official ? .notPlanned : (liveElsewhere ? .onPS5 : .pending)
+        case .unknown: return liveElsewhere ? .onPS5 : .pending
         }
     }
 

@@ -89,26 +89,113 @@ struct FeedRow: View {
 struct SearchView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.railWidth) private var railWidth
+    @Environment(\.duo) private var duo
     @State private var query = ""
+    /// Tabletop: first-letter filter instead of typing (the keyboard never opens there; Iris, 0.2.0).
+    @State private var letter: String?
+
+    private func noteLines(term: String, library: Set<String>, tabletop: Bool) -> [(Release, String)] {
+        if tabletop {
+            guard let l = letter else { return [] }
+            return model.noteHits(letter: l, scope: .allGames, gameID: nil).prefix(12).map { ($0.release, $0.line) }
+        }
+        guard !term.isEmpty else { return [] }
+        var out: [(Release, String)] = []
+        for g in library {
+            for r in model.releases(g) {
+                var hits: [(Release, String)] = []
+                if ([r.displayName, r.headline ?? "", r.summary ?? ""].joined(separator: " ")).lowercased().contains(term) { hits.append((r, r.headline ?? r.displayName)) }
+                for s in r.notes { for i in s.items where i.spoiler != true && i.text.lowercased().contains(term) { hits.append((r, i.text)) } }
+                out += hits.prefix(3)
+            }
+        }
+        return out
+    }
 
     var body: some View {
-        let term = query.trimmingCharacters(in: .whitespaces).lowercased()
+        let tabletop = duo.pose == .tabletop
+        // Every pose but Tabletop has its own field in the list: the system drawer field ran flush to
+        // the time and Wi-Fi badge (Mac, ea3af92) and could not be inset. The field and the hint card
+        // share the same insets, and the list keeps clear of any occlusion at the top (Iris, #185).
+        let ownField = !tabletop
+        let badgeExtra = duo.occlusions.filter { $0.minY < 190 && $0.maxY > 40 }
+            .map { max(0, duo.size.width - $0.minX) }.max() ?? 0
+        let term = tabletop ? "" : query.trimmingCharacters(in: .whitespaces).lowercased()
+        let active = tabletop ? letter != nil : !term.isEmpty
         let library = Set(model.data.collection.map(\.gameID))
-        let gameHits = term.isEmpty ? [] : model.games.values.filter { $0.name.lowercased().contains(term) }.sorted { $0.name < $1.name }
-        let noteHits: [(Release, String)] = term.isEmpty ? [] : library.flatMap { model.releases($0) }.flatMap { r -> [(Release, String)] in
-            var hits: [(Release, String)] = []
-            if ([r.displayName, r.headline ?? "", r.summary ?? ""].joined(separator: " ")).lowercased().contains(term) { hits.append((r, r.headline ?? r.displayName)) }
-            for s in r.notes { for i in s.items where i.spoiler != true && i.text.lowercased().contains(term) { hits.append((r, i.text)) } }
-            return Array(hits.prefix(3))
-        }
-        let entryHits = term.isEmpty ? [] : model.fixtures.book.filter { library.contains($0.gameID) && ($0.title + " " + $0.body).lowercased().contains(term) }
+        let gameHits: [CatalogGame] = tabletop
+            ? (letter.map { l in model.games.values.filter { LetterIndex.matches($0.name, l) }.sorted { $0.name < $1.name } } ?? [])
+            : term.isEmpty ? [] : model.games.values.filter { $0.name.lowercased().contains(term) }.sorted { $0.name < $1.name }
+        let noteHits = noteLines(term: term, library: library, tabletop: tabletop)
+        let entryHits: [BookEntry] = tabletop
+            ? (letter.map { l in model.fixtures.book.filter { library.contains($0.gameID) && LetterIndex.matches($0.title, l) } } ?? [])
+            : term.isEmpty ? [] : model.fixtures.book.filter { library.contains($0.gameID) && ($0.title + " " + $0.body).lowercased().contains(term) }
 
         List {
-            if term.isEmpty {
-                Text("Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
+            if tabletop {
+                TabletopSearch(letter: $letter, prompt: "Search games, patch notes, characters")
+                    .listRowBackground(Color.clear)
+                    // Iris: the result cards are as wide as the list's sections, so the field row uses the
+                    // section's full width too (no extra content inset), matching their edges.
+                    .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+            }
+            if ownField {
+                HStack(spacing: 8) {
+                    Image(systemName: "magnifyingglass").foregroundStyle(.secondary).accessibilityHidden(true)
+                    TextField("Games, patch notes, characters…", text: $query)
+                        .autocorrectionDisabled()
+                        .textInputAutocapitalization(.never)
+                        .submitLabel(.search)
+                        .onSubmit { model.rememberSearch(query) }
+                        .accessibilityIdentifier("searchField")
+                    if !query.isEmpty {
+                        Button { query = "" } label: {
+                            Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
+                                .frame(width: 44, height: 44).contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain).accessibilityLabel("Clear search").tappableFrame()
+                    }
+                }
+                .padding(.horizontal, 12)
+                .frame(minHeight: 44)
+                .background(PlayscribeColor.ink700, in: Capsule())
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 4, trailing: 16))
+                // Search is universal: every game and every patch note in the library. The scope picker that
+                // silently limited it to the last game opened is gone (Terry, 0.2.0 build 5); a game's own
+                // search lives in that game's Contents.
+                if query.isEmpty, !model.recentSearches.isEmpty {
+                    Section("Recent") {
+                        ForEach(model.recentSearches, id: \.self) { r in
+                            Button { query = r } label: { Label(r, systemImage: "clock.arrow.circlepath") }
+                                .buttonStyle(.plain).frame(minHeight: 44).tappableFrame()
+                        }
+                    }
+                }
+            }
+            if !active {
+                Text(tabletop ? "Typing needs the flat screen. Pick a letter above, or open your Duo flat to type."
+                              : "Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
                     .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                    // Iris: the hint card is exactly as wide as the field, ending at its trailing edge
+                    // (a list row's own background ran to the screen edge in every pose).
+                    .padding(12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 8, leading: tabletop ? 0 : 16, bottom: 8, trailing: tabletop ? 0 : 16))
             } else if gameHits.isEmpty && noteHits.isEmpty && entryHits.isEmpty {
-                ContentUnavailableView.search(text: query)
+                // Iris: the No Results card has the field's leading and trailing edges, like the hint card.
+                ContentUnavailableView.search(text: tabletop ? (letter ?? "") : query)
+                    .padding(12)
+                    .frame(maxWidth: .infinity)
+                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 8, leading: tabletop ? 0 : 16, bottom: 8, trailing: tabletop ? 0 : 16))
             }
             if !gameHits.isEmpty {
                 Section("Games") {
@@ -165,20 +252,30 @@ struct SearchView: View {
                 }
             }
         }
-        .contentMargins(.trailing, railWidth, for: .scrollContent)
-        .overlay {
-            if query.count >= 2 && model.noteScope == .thisGame && model.nav.lastGameID != nil {
-                NoteSearchResults(query: query, scope: .thisGame, gameID: model.nav.lastGameID) { model.noteScope = .allGames }
+        .contentMargins(.trailing, railWidth + (tabletop ? 0 : badgeExtra), for: .scrollContent)
+        // Book: Search lives on the right page, never across the fold (0.2.0 gate: field and hint ran full width).
+        .padding(.leading, duo.pose == .book ? (duo.division.map { $0.maxX + 8 } ?? 0) : 0)
+        // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
+        .frame(maxHeight: tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
+        .frame(maxHeight: .infinity, alignment: .bottom)
+        .overlay(alignment: .topLeading) {
+            if tabletop {
+                Text("Search").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
             }
         }
-        .searchable(text: $query, prompt: "Games, patch notes, characters…")
-        .searchScopes(Binding(get: { model.noteScope }, set: { model.noteScope = $0 })) {
-            ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
-        }
-        .searchSuggestions {
-            ForEach(model.recentSearches, id: \.self) { Text($0).searchCompletion($0) }
-        }
-        .onSubmit(of: .search) { model.rememberSearch(query) }
         .navigationTitle("Search")
+        .navigationBarTitleDisplayMode(.large)
+        // Back to where Search was opened from: a visible button (the rail has its own in Tabletop) and the edge swipe.
+        .toolbar {
+            if !tabletop {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button { model.leaveSearch() } label: { Label("Back", systemImage: "chevron.backward") }
+                        .accessibilityIdentifier("searchBack")
+                }
+            }
+        }
+        .simultaneousGesture(DragGesture(minimumDistance: 24).onEnded { v in
+            if v.startLocation.x < 28 && v.translation.width > 80 && abs(v.translation.height) < 60 { model.leaveSearch() }
+        })
     }
 }

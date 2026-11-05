@@ -83,19 +83,57 @@ platform :ios do
     section[0, 4000]
   end
 
-  desc 'Build, sign and upload to TestFlight. marketing_version: e.g. 0.3.0 (from the git tag)'
-  lane :beta do |options|
-    key = api_key
-    key_path = File.expand_path('../build/AuthKey.p8')
-    FileUtils.mkdir_p(File.dirname(key_path))
-    File.write(key_path, p8)
-    team = team_id
+  # "What to Test" is betaBuildLocalizations.whatsNew, one per locale. Testers see only the locale that
+  # matches their device, so notes in one locale and none in theirs show nothing.
+  def find_build(app, version, build_number)
+    Spaceship::ConnectAPI::Build.all(app_id: app.id, version: version.to_s, build_number: build_number.to_s).first ||
+      UI.user_error!("No build #{build_number} of #{version} on App Store Connect (yet)")
+  end
 
-    # Build numbers only go up: one past whatever TestFlight already has for this version.
-    build = latest_testflight_build_number(api_key: key, app_identifier: bundle_id, initial_build_number: 0) + 1
-    settings = ["CURRENT_PROJECT_VERSION=#{build}"]
-    settings << "MARKETING_VERSION=#{options[:marketing_version]}" unless options[:marketing_version].to_s.empty?
+  def print_whats_new(build, label)
+    locs = build.get_beta_build_localizations
+    UI.message("#{label}: #{locs.size} locale(s)")
+    locs.each { |l| UI.message("  #{l.locale}: #{l.whats_new.to_s[0, 60].inspect}") }
+    locs
+  end
 
+  # whatsNew = notes on every existing locale plus en-US and en-GB (created when missing).
+  def set_whats_new(build, notes)
+    # The cleanup upload_to_testflight applies (Apple rejects "<" and emoji, and caps the text at 4000 bytes). Not
+    # Pilot::BuildManager: that constant is only loaded inside upload_to_testflight (NameError, notes run 41901431426).
+    text = notes.delete('<').gsub(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}]/, '').strip
+    text = text.byteslice(0, 3997).scrub('') + '...' if text.bytesize > 4000
+    existing = build.get_beta_build_localizations
+    (existing.map(&:locale) | %w[en-US en-GB]).each do |locale|
+      loc = existing.find { |l| l.locale == locale }
+      if loc
+        Spaceship::ConnectAPI.patch_beta_build_localizations(localization_id: loc.id, attributes: { whatsNew: text })
+      else
+        Spaceship::ConnectAPI.post_beta_build_localizations(build_id: build.id, attributes: { locale: locale, whatsNew: text })
+      end
+    end
+  end
+
+  desc 'Print and set What to Test for a build already on TestFlight. version: 0.2.0, build: 5'
+  lane :notes do |options|
+    UI.user_error!('Pass version:0.2.0 build:5') if options[:version].to_s.empty? || options[:build].to_s.empty?
+    api_key
+    app = Spaceship::ConnectAPI::App.find(bundle_id)
+    UI.message("App primary locale: #{app.primary_locale}")
+    app_locs = app.get_beta_app_localizations
+    UI.message("Beta app localizations: #{app_locs.map(&:locale).join(', ')}")
+    notes = release_notes(options[:version])
+    build = find_build(app, options[:version], options[:build])
+    UI.message("Build #{build.version} of #{options[:version]}, processing state: #{build.processing_state}")
+    print_whats_new(build, 'Before')
+    set_whats_new(build, notes)
+    after = print_whats_new(build, 'After')
+    UI.user_error!('No locale has What to Test after the update') if after.none? { |l| !l.whats_new.to_s.strip.empty? }
+    UI.success("What to Test set for #{after.map(&:locale).join(', ')}")
+  end
+
+  # Archives and exports the Release build with automatic signing through the API key. Shared by `beta` and `signing_check`.
+  def archive_release(key_path, team, settings)
     build_app(
       project: project_path,
       scheme: ENV['IOS_SCHEME'].to_s.empty? ? 'Playscribe' : ENV['IOS_SCHEME'],
@@ -108,14 +146,94 @@ platform :ios do
         "-authenticationKeyID #{ENV.fetch('ASC_KEY_ID')}",
         "-authenticationKeyIssuerID #{ENV.fetch('ASC_ISSUER_ID')}",
         "DEVELOPMENT_TEAM=#{team}",
-        "PRODUCT_BUNDLE_IDENTIFIER=#{bundle_id}",
+        "PLAYSCRIBE_BUNDLE_ID=#{bundle_id}",
         *settings
       ].join(' '),
       export_options: { signingStyle: 'automatic', teamID: team }
     )
+  end
+
+  desc 'Archive and export Release with the widget, signed automatically, and check the result. Uploads NOTHING.'
+  lane :signing_check do |options|
+    api_key
+    key_path = File.expand_path('../build/AuthKey.p8')
+    FileUtils.mkdir_p(File.dirname(key_path))
+    File.write(key_path, p8)
+    team = team_id
+    # A build number far above any real one, and never uploaded.
+    archive_release(key_path, team, ['CURRENT_PROJECT_VERSION=99999', "MARKETING_VERSION=#{options[:marketing_version] || '0.5.0'}"])
+
+    ipa = lane_context[SharedValues::IPA_OUTPUT_PATH] || UI.user_error!('No .ipa was exported')
+    dir = Dir.mktmpdir('signing_check')
+    sh("unzip -q '#{ipa}' -d '#{dir}'", log: false)
+    app = Dir["#{dir}/Payload/*.app"].first || UI.user_error!('No .app inside the .ipa')
+    targets = { app: app }
+    Dir["#{app}/PlugIns/*.appex"].each { |x| targets[:widget] = x }
+    UI.user_error!('The exported app has no widget extension in PlugIns/') unless targets[:widget]
+
+    want = { app: bundle_id, widget: "#{bundle_id}.widget" }
+    group = "group.#{bundle_id}"
+    problems = []
+    targets.each do |name, path|
+      id = sh("/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' '#{path}/Info.plist'", log: false).strip
+      ents = sh("codesign -d --entitlements :- '#{path}' 2>/dev/null", log: false)
+      profile = File.exist?("#{path}/embedded.mobileprovision") ? sh("security cms -D -i '#{path}/embedded.mobileprovision'", log: false) : ''
+      UI.message("#{name}: bundle id #{id}")
+      UI.message("#{name}: in the entitlements, app group #{ents.include?(group) ? 'present' : 'MISSING'} (#{group})")
+      UI.message("#{name}: provisioning profile #{profile.empty? ? 'MISSING' : 'embedded'}; names the group: #{profile.include?(group)}")
+      problems << "#{name} bundle id is #{id}, wanted #{want[name]}" unless id == want[name]
+      problems << "#{name} entitlements lack #{group}" unless ents.include?(group)
+      problems << "#{name} has no embedded provisioning profile naming #{group}" unless profile.include?(group)
+    end
+    UI.user_error!("Signing check failed: #{problems.join('; ')}") unless problems.empty?
+    UI.success("Signing check passed: #{want[:app]} and #{want[:widget]} are signed with #{group}. Nothing was uploaded.")
+  ensure
+    File.delete(key_path) if key_path && File.exist?(key_path)
+  end
+
+  desc 'Build, sign and upload to TestFlight. marketing_version: e.g. 0.3.0 (from the git tag)'
+  lane :beta do |options|
+    # Fails before any build work when the CHANGELOG has no section for this version.
+    notes = release_notes(options[:marketing_version])
+    key = api_key
+    key_path = File.expand_path('../build/AuthKey.p8')
+    FileUtils.mkdir_p(File.dirname(key_path))
+    File.write(key_path, p8)
+    team = team_id
+
+    # Build numbers only go up: one past whatever TestFlight already has for this version.
+    build = latest_testflight_build_number(api_key: key, app_identifier: bundle_id, initial_build_number: 0) + 1
+    settings = ["CURRENT_PROJECT_VERSION=#{build}"]
+    settings << "MARKETING_VERSION=#{options[:marketing_version]}" unless options[:marketing_version].to_s.empty?
+
+    archive_release(key_path, team, settings)
 
     # "What to Test" is this version's CHANGELOG.md section. TestFlight only takes it once the build has processed.
-    upload_to_testflight(api_key: key, app_identifier: bundle_id, changelog: release_notes(options[:marketing_version]))
+    upload_to_testflight(api_key: key, app_identifier: bundle_id, changelog: notes)
+
+    # Read the notes back: a build never ships silently without them. If the upload left a build with none, set every
+    # locale once, then fail if it still has none. The build is already on TestFlight by now, so every failure here
+    # names the build and the way to fix it, and the tester group is still set up first.
+    fix = "Build #{build} of #{options[:marketing_version]} IS uploaded but may have no What to Test: " \
+          "run the 'TestFlight notes' workflow with version #{options[:marketing_version]} and build #{build}"
+    begin
+      app = Spaceship::ConnectAPI::App.find(bundle_id)
+      uploaded = find_build(app, options[:marketing_version], build)
+      locs = print_whats_new(uploaded, 'After upload')
+      if locs.none? { |l| !l.whats_new.to_s.strip.empty? }
+        UI.important('No locale has What to Test after the upload; setting it directly')
+        set_whats_new(uploaded, notes)
+        locs = print_whats_new(uploaded, 'After fix')
+      end
+      notes_missing = locs.none? { |l| !l.whats_new.to_s.strip.empty? }
+    rescue StandardError => e
+      ensure_internal_testers
+      UI.user_error!("#{fix} (#{e.class}: #{e.message})")
+    end
+    if notes_missing
+      ensure_internal_testers
+      UI.user_error!("#{fix} (no locale has text after setting it)")
+    end
     ensure_internal_testers
   ensure
     File.delete(key_path) if key_path && File.exist?(key_path)
