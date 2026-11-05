@@ -2,8 +2,8 @@ import SwiftUI
 
 /// PS Plus monthly games (0.5.0, r050-plus-card): this month's lineup in the Library as up to three
 /// cover tiles styled like the library's (3:4, 10 pt corners, name in the art, no text under), with
-/// "Last chance" in its last three days. Carries the PlayStation Plus badge (Terry's call, 2026-11-05;
-/// the trademark notice sits under the version in Settings). A game you track opens its page. Hidden when no month holds today.
+/// "Last chance" in its last three days. Carries the PlayStation Plus badge; the trademark notice sits
+/// under the version in Settings. A game you track opens its page. Hidden when no month holds today.
 struct PlusCard: View {
     @Environment(AppModel.self) private var model
 
