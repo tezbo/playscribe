@@ -178,6 +178,8 @@ struct SettingsView: View {
                     Text("Artwork and trailers belong to their publishers. \(Brand.trademarkNotice)")
                 }
             }
+            // 24 pt between a footer and the next section's title (Iris, 0.5.1 spec 1).
+            .listSectionSpacing(24)
             .navigationTitle("Settings")
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
