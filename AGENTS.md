@@ -16,6 +16,7 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 | Ezra | App artist, lore and documentation lead (the Draughtsman) | Iris | Build the iPhone Duo prototype |
 | Jun | Playtester (the Reader) | Sam | Review Playscribe as a gamer |
 | Quinn | QA lead (the Proofreader) | Sam | QA user journeys |
+| Mara | Marketing and App Store lead (the Herald) | Nadia | Mara, marketing and App Store lead |
 
 ## Scopes
 
@@ -35,6 +36,12 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 - **Ezra** owns art (covers, ink plates, icons, splash), lore and in-app copy, and keeps docs and the CHANGELOG
   readable for testers.
 - **Jun** plays each candidate as a real PS5 player and reports what confused, delighted or was missing.
+- **Mara** owns App Store presence and web SEO: ASO (name, subtitle, keywords, description), the screenshot story
+  across Duo poses, preview video, In-App Events, Product Page Optimization, competitor positioning, launch plan, and the
+  placeholder website (`site/`, GitHub Pages, privacy and support URLs). Works with Ezra and Iris on visuals and with
+  Nadia on positioning. Brings Terry only decisions: domain purchase, publisher naming, anything that costs money.
+  Public text never names the person behind the app (publisher is CodeConnectors), never uses Terry's email, never
+  mentions QA routes, and uses no PlayStation marks without Nadia and Terry's sign-off.
 - **Quinn** owns the front-end and backend/data sign-offs against `docs/ux-acceptance.md` and the feed.
 
 ## Handoffs
