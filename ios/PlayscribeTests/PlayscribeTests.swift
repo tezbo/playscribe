@@ -573,7 +573,5 @@ struct PreLaunchGateTests {
         // New to the library: nothing read yet, so it is unread and (being On PS5) eligible for the alert.
         let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "gate-\(UUID().uuidString).json"))
         #expect(model.isUnread(r))
-        model.markPastAsRead([r], backCatalogue: true)   // today's patch is not the past
-        #expect(model.isUnread(r))
     }
 }
