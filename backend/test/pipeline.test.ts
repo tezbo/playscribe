@@ -3,7 +3,7 @@ import { test } from 'node:test'
 import { confirmPlatform } from '../src/confirm.ts'
 import { openDb } from '../src/db.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
-import { pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
+import { alertCopy, headlineOf, pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
 import * as store from '../src/store.ts'
 import { getRelease, newsOf, promoteAnnounced } from '../src/store.ts'
@@ -141,7 +141,7 @@ test('an official PS5 post is pending until a person confirms; push fires once',
   assert.equal(first.sent, 2)
   assert.deepEqual(sent.map((s) => s.token).sort(), ['a'.repeat(64), 'b'.repeat(64)])
   assert.equal(sent[0]!.payload.releaseId, id)
-  assert.match(sent[0]!.payload.aps.alert.body, /Update 1\.6 is out on PS5 \(version 01\.006\.000\)/)
+  assert.match(sent[0]!.payload.aps.alert.body, /^Update 1\.6/)
   assert.equal(sent[0]!.payload.aps['interruption-level'], 'active')
   assert.equal(getRelease(db, id)!.platforms.find((p) => p.platform === 'ps5')!.alert?.style, 'standard')
   assert.equal((await pushPs5Release(db, apns, id, { maxAgeHours: 72 })).skipped, 'alreadyPushed')
@@ -164,7 +164,8 @@ test('every update live on PS5 earns one standard alert; a press-only report ear
   assert.equal(getRelease(db, (db.prepare("SELECT release_id FROM platform_releases WHERE release_id LIKE 'yotei@%' AND platform = 'ps5'").get() as { release_id: string }).release_id)!.platforms.find((p) => p.platform === 'ps5')!.alert, undefined)
   assert.ok(out.filter((o) => !o.releaseId.startsWith('yotei@')).every((o) => o.style === 'standard'))
   const p = sent.find((x) => x.releaseId === id)
-  assert.match(p.aps.alert.body, /Update 1\.1 is out on PS5/)
+  assert.match(p.aps.alert.body, /^Update /)
+  assert.ok(p.digest && typeof p.digest.new === 'number', 'payload carries digest counts')
   assert.equal(p.aps['interruption-level'], 'active')
   assert.equal((await pushNewPs5(db, apns, { maxAgeHours: 1e6 })).length, 0)
 
@@ -343,6 +344,26 @@ test('"Patch 10.2" and "Patch 10.2.0" months apart are different patches; "2.0" 
   db.prepare(`INSERT INTO releases (id, game_id, version_key, display_name, kind, kind_basis, announced_at, notes, source_ids, content_hash, created_at, updated_at) VALUES ('dawnwalker@10.2.0', 'dawnwalker', '10.2.0', 'Patch 10.2.0', 'patch', 'studio', '2026-09-15T15:07:00.000Z', '[]', '[]', 'x', ?, ?)`).run(t, t)
   assert.equal(equivalentRelease(db, 'dawnwalker', '10.2', '2026-10-29T15:06:00.000Z'), undefined)
   assert.equal(equivalentRelease(db, 'dawnwalker', '10.2', '2026-09-16T15:06:00.000Z')?.id, 'dawnwalker@10.2.0')
+})
+
+test('richer alerts (r050): counts in the title, headline body, counts fallback', () => {
+  const d = { new: 3, fixed: 12, balance: 0, other: 1, ps5: 2 }
+  assert.deepEqual(alertCopy('Dawnwalker', 'Update 1.1', { ...d, topNew: ['New skill tree'] }), { title: 'Dawnwalker: 3 new, 12 fixed, 2 PS5-only', body: 'Update 1.1: New skill tree' })
+  assert.equal(alertCopy('Dawnwalker', 'Update 1.1', d).body, '3 new, 12 fixed, 2 PS5-only.')
+  assert.deepEqual(alertCopy('Dawnwalker', 'Update 1.1', { new: 1, fixed: 0, balance: 0, other: 4, ps5: 0 }), { title: 'Dawnwalker: 1 new', body: '1 new.' })
+  assert.deepEqual(alertCopy('Dawnwalker', 'Update 1.1', { new: 0, fixed: 0, balance: 0, other: 4, ps5: 0 }), { title: 'Dawnwalker', body: 'A new update is out' })
+})
+
+test('headline: text before a colon, 60 characters at a word boundary, ellipsis only when cut', () => {
+  assert.equal(headlineOf('Added photo mode'), 'Added photo mode')
+  assert.equal(headlineOf('Photo mode: capture every fight in the dark forest'), 'Photo mode')
+  const long = 'Added a brand new endless survival mode with daily challenges and leaderboards for every player'
+  const h = headlineOf(long)!
+  assert.ok(h.length <= 60 && h.endsWith('…') && !h.slice(0, -1).endsWith(' '))
+  assert.ok(long.startsWith(h.slice(0, -1)))
+  assert.equal(headlineOf('x'.repeat(59)), 'x'.repeat(59))
+  assert.equal(headlineOf(undefined), null)
+  assert.equal(headlineOf(': nothing before'), null)
 })
 
 test('data audit: a later post for the same release never moves a Steam-assumed PS5 date later; repair fixes stored rows', async () => {
