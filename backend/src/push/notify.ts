@@ -1,3 +1,4 @@
+import type { Digest } from '../digest.ts'
 import { inQuietHours } from './quiet.ts'
 import { alertFromOf, alertStyleOf, type AlertStyle } from '../alerts.ts'
 import { now, type DB } from '../db.ts'
@@ -17,6 +18,37 @@ export interface PushOutcome {
   failed: number
   style?: AlertStyle
   skipped?: 'notLive' | 'alreadyPushed' | 'tooOld' | 'pushDisabled' | 'noApns'
+}
+
+/** Counts only, no generated text; null when there is nothing to count. */
+export const digestCounts = (d: Digest): string | null => {
+  if (d.new + d.fixed + d.balance + d.ps5 === 0) return null
+  return [d.new && `${d.new} new`, d.fixed && `${d.fixed} fixed`, d.balance && `${d.balance} balance`, d.ps5 && `${d.ps5} PS5-only`].filter(Boolean).join(', ')
+}
+
+const MAX_HEADLINE = 60
+
+/** Text before any colon, at most 60 characters, cut at a word boundary with an ellipsis only when cut. */
+export const headlineOf = (line: string | undefined): string | null => {
+  const text = (line ?? '').split(':')[0]!.replace(/\s+/g, ' ').trim()
+  if (!text) return null
+  if (text.length <= MAX_HEADLINE) return text
+  const cut = text.slice(0, MAX_HEADLINE - 1)
+  const at = cut.lastIndexOf(' ')
+  return `${(at > 20 ? cut.slice(0, at) : cut).replace(/[\s,;.-]+$/, '')}…`
+}
+
+/**
+ * Alert copy (Iris): counts in the title, body "Update <version>: <headline>". The headline is the first clean new line
+ * (digest.topNew); when it is missing, or the headings were poor, the body is the counts line, or "A new update is out" when there is nothing to count.
+ */
+export const alertCopy = (gameName: string, label: string, d: Digest): { title: string; body: string } => {
+  const counts = digestCounts(d)
+  const headline = headlineOf(d.topNew?.[0])
+  return {
+    title: counts ? `${gameName}: ${counts}` : gameName,
+    body: headline ? `${label}: ${headline}` : counts ? `${counts}.` : 'A new update is out',
+  }
 }
 
 export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: string, opts: { maxAgeHours: number; allow?: boolean }): Promise<PushOutcome> => {
@@ -45,7 +77,7 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
 
   const payload = {
     aps: {
-      alert: { title: game.name, body: `${release.displayName} is out on PS5${version ? ` (version ${version})` : ''}. See what changed.` },
+      alert: alertCopy(game.name, release.displayName, release.digest),
       sound: 'default',
       'thread-id': release.gameId,
       'interruption-level': 'active',
@@ -54,6 +86,7 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
     gameId: release.gameId,
     releaseId: release.id,
     kind: release.kind,
+    digest: { new: release.digest.new, fixed: release.digest.fixed, balance: release.digest.balance, ps5: release.digest.ps5 },
     verification: row.verification,
   }
   // Inside the device's registered quiet hours the push is passive and silent; the 72 h guard and the once-only claim are unchanged.

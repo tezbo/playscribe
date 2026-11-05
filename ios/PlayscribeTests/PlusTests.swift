@@ -32,6 +32,14 @@ struct PlusLogicTests {
         #expect(PlusLogic.current([nov], now: day("2026-11-28"), calendar: cal)?.lastChance == false)
     }
 
+    /// Terry 2026-11-05: the Settings switch hides the card; on by default (nil).
+    @Test func cardOffHidesTheCardAndDefaultShowsIt() {
+        let now = day("2026-11-10")
+        #expect(PlusLogic.visibleMonth([nov], cardOff: nil, now: now, calendar: cal) != nil)
+        #expect(PlusLogic.visibleMonth([nov], cardOff: false, now: now, calendar: cal) != nil)
+        #expect(PlusLogic.visibleMonth([nov], cardOff: true, now: now, calendar: cal) == nil)
+    }
+
     @Test func noMonthsOrNoGamesHidesTheCard() {
         #expect(PlusLogic.current([], now: day("2026-11-10"), calendar: cal) == nil)
         var empty = nov; empty.games = []

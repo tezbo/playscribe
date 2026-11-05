@@ -72,7 +72,7 @@ final class NotificationService: NSObject {
     /// after every plus.json load, on launch and when the switch changes; one identifier per month, so never twice.
     func syncPlusLeavingSoon() {
         guard let model else { return }
-        let on = model.data.plusLeavingSoonOff != true && !model.data.pauseAll
+        let on = model.data.plusCardOff != true && model.data.plusLeavingSoonOff != true && !model.data.pauseAll
             && (authorization == .authorized || authorization == .provisional)
         // Everything the closure needs is worked out here, on the main actor, as plain values.
         struct Item: Sendable { var id: String; var body: String; var passive: Bool; var parts: DateComponents }
