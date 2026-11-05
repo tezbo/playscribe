@@ -132,9 +132,9 @@ struct WidgetView: View {
             } else if family == .systemSmall, let r = rows.first {
                 HeroText(row: r, tall: true).widgetURL(r.url)
             } else if family == .systemMedium, let r = rows.first {
-                HStack(spacing: 10) {
-                    HeroCard(row: r, tall: true)
-                        .frame(maxWidth: .infinity).clipShape(RoundedRectangle(cornerRadius: 12))
+                HStack(spacing: 12) {
+                    HeroText(row: r, tall: true)
+                        .frame(maxWidth: .infinity)
                         .widgetURL(r.url)
                     VStack(alignment: .leading, spacing: 8) {
                         ForEach(rows.dropFirst()) { ThumbRow(row: $0) }
@@ -145,8 +145,8 @@ struct WidgetView: View {
                 }
             } else if let r = rows.first {
                 VStack(alignment: .leading, spacing: 10) {
-                    HeroCard(row: r, tall: false)
-                        .frame(maxHeight: 150).clipShape(RoundedRectangle(cornerRadius: 14))
+                    HeroText(row: r, tall: false)
+                        .frame(height: 140)
                         .widgetURL(r.url)
                     if snap.unreadCount > 0 {
                         Text(snap.unreadCount == 1 ? "1 new update" : "\(snap.unreadCount) new updates").font(W.big)
@@ -159,10 +159,23 @@ struct WidgetView: View {
             }
         }
         .containerBackground(for: .widget) {
-            if family == .systemSmall, !entry.snapshot.rows.isEmpty, entry.snapshot.hasGames {
+            let plate = scheme == .dark ? W.ink950 : W.vellum100
+            if entry.snapshot.rows.isEmpty || !entry.snapshot.hasGames {
+                plate
+            } else if family == .systemSmall {
                 HeroArt(row: entry.snapshot.rows[0])
+            } else if family == .systemMedium {
+                // Art fills the left half edge to edge; the rows sit on the plate at the right.
+                HStack(spacing: 0) {
+                    HeroArt(row: entry.snapshot.rows[0]).frame(maxWidth: .infinity)
+                    plate.frame(maxWidth: .infinity)
+                }
             } else {
-                scheme == .dark ? W.ink950 : W.vellum100
+                // Art fills the top of the tile edge to edge.
+                VStack(spacing: 0) {
+                    HeroArt(row: entry.snapshot.rows[0]).frame(height: 168)
+                    plate
+                }
             }
         }
     }
@@ -267,3 +280,28 @@ struct PlayscribeWidgetBundle: Widget {
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .accessoryRectangular, .accessoryInline])
     }
 }
+
+#if DEBUG
+private func previewEntry(_ snap: WidgetSnapshot) -> SnapshotEntry { SnapshotEntry(date: .now, snapshot: snap) }
+
+private var previewMany: WidgetSnapshot {
+    let base = WidgetSnapshot.sample.rows[0]
+    var rows = [base]
+    for (i, g) in ["Kingdom Come: Deliverance II", "CONTROL Resonant", "Blue Prince"].enumerated() {
+        var r = base
+        r.gameID = "g\(i)"; r.game = g; r.releaseID = "r\(i)"; r.update = "Update 1.\(i + 2)"
+        r.date = base.date.addingTimeInterval(-Double(i + 1) * 86_400); r.unread = i == 0; r.chip = "v1.\(i + 2)"
+        rows.append(r)
+    }
+    return WidgetSnapshot(rows: rows, unreadCount: 2, hasGames: true)
+}
+
+/// Preview harness: S/M/L, light and dark, plus the empty and no-games states.
+#Preview("Small", as: .systemSmall) { PlayscribeWidgetBundle() } timeline: { previewEntry(previewMany) }
+#Preview("Medium", as: .systemMedium) { PlayscribeWidgetBundle() } timeline: { previewEntry(previewMany) }
+#Preview("Large", as: .systemLarge) { PlayscribeWidgetBundle() } timeline: { previewEntry(previewMany) }
+#Preview("Caught up", as: .systemMedium) { PlayscribeWidgetBundle() } timeline: {
+    previewEntry(WidgetSnapshot(rows: [], unreadCount: 0, hasGames: true))
+}
+#Preview("No games", as: .systemSmall) { PlayscribeWidgetBundle() } timeline: { previewEntry(.empty) }
+#endif
