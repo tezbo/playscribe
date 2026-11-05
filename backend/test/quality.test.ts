@@ -68,3 +68,14 @@ test('0.2.0 contract: a malformed IGDB website URL (seen live in info/38) is cau
   assert.ok(isUrl('https://www.minecraft.net/en-us'))
   assert.equal(c.info({ games: { '296238': { links: { official: 'https://v.douyin.com/iDuoKPNm/ 8@4.com' } } } }).length, 1)
 })
+
+test('notes never name a source: a quoting line is dropped, a heading becomes Changes, an emptied section goes', async () => {
+  const { tagNotes } = await import('../src/ingest/notes.ts')
+  const out = tagNotes([
+    { title: 'Fixes', items: [{ text: 'Fixed a crash', pcOnly: false, category: 'fixed' }, { text: '"Best shooter of the year" - Gamespot', pcOnly: false, category: 'other' }] },
+    { title: 'IGN review', items: [{ text: 'Added a lobby', pcOnly: false, category: 'new' }] },
+    { title: 'Press', items: [{ text: 'Eurogamer says hello', pcOnly: false, category: 'other' }] },
+  ] as any)
+  assert.deepEqual(out.map((s) => [s.title, s.items.map((i) => i.text)]), [['Fixes', ['Fixed a crash']], ['Changes', ['Added a lobby']]])
+  assert.deepEqual(releaseProblems({ id: 'x@1', displayName: 'Update 1', notes: out, platforms: [] }), [])
+})
