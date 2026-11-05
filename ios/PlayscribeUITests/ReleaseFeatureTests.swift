@@ -72,22 +72,23 @@ final class ReleaseFeatureTests: XCTestCase {
     func testLongPressTileShowsStatusMenu() throws {
         launch("quick/wishlist")
         let tile = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH %@", "tile-")).firstMatch
-        guard tile.waitForExistence(timeout: 15) else {
-            // Evidence for the gate: what the accessibility tree held, and where the scroll views are.
-            let dump = XCTAttachment(string: app.debugDescription)
-            dump.name = "tree-no-tile-\(pose().replacingOccurrences(of: " ", with: "-"))"
-            dump.lifetime = .keepAlways
-            add(dump)
-            throw XCTSkip("no tile in this pose; the accessibility tree is attached")
-        }
-        // The grid sits below the cards, off screen at launch (Tabletop's lower half is short): scroll the lower
-        // half, never the view-only upper half, until a tile can be pressed.
+        // The grid is lazy and below the cards, so it is not in the tree at launch: wait for the Library, then scroll
+        // the lower half (never the view-only upper half) until a tile exists and can be pressed.
+        _ = app.descendants(matching: .any)["libraryTabPicker"].waitForExistence(timeout: 15)
         var tries = 0
-        while !tile.isHittable && tries < 8 {
-            let from = app.coordinate(withNormalizedOffset: CGVector(dx: inTabletop ? 0.4 : 0.5, dy: 0.85))
-            let to = app.coordinate(withNormalizedOffset: CGVector(dx: inTabletop ? 0.4 : 0.5, dy: inTabletop ? 0.6 : 0.35))
+        while !(tile.exists && tile.isHittable) && tries < 10 {
+            let x: CGFloat = inTabletop ? 0.4 : 0.5
+            let from = app.coordinate(withNormalizedOffset: CGVector(dx: x, dy: 0.95))
+            let to = app.coordinate(withNormalizedOffset: CGVector(dx: x, dy: inTabletop ? 0.62 : 0.35))
             from.press(forDuration: 0.1, thenDragTo: to)
             tries += 1
+        }
+        if !tile.exists {
+            let dump = XCTAttachment(string: app.debugDescription)
+            dump.name = "tree-no-tile-after-scroll-\(pose().replacingOccurrences(of: " ", with: "-"))"
+            dump.lifetime = .keepAlways
+            add(dump)
+            throw XCTSkip("no tile after scrolling; the accessibility tree is attached")
         }
         guard tile.isHittable else { throw XCTSkip("no tappable tile in this pose after scrolling") }
         tile.press(forDuration: 1.2)
