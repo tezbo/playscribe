@@ -11,8 +11,10 @@ struct GameBookView: View {
     var body: some View {
         let game = model.game(gameID)
         Group {
-            if duo.pose == .closed {
-                // Closed (or any compact width, D-11): the stacked game book, Contents hidden.
+            if duo.pose == .closed || (duo.pose == .flat && !duo.isLandscape) {
+                // Closed, or the inner display flat in portrait (no fold, so nothing to split on):
+                // one page that scrolls as one, the Contents below the Page. Two panes scrolling
+                // separately, with the Page cut off mid-line, was wrong on a flat screen.
                 PageView(gameID: gameID, withContents: true)
             } else if sideBySide {
                 // Side by side: Contents left, Page right by default (D-10).
