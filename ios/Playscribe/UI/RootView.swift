@@ -339,6 +339,10 @@ struct LowerMessages: View {
     @Environment(AppModel.self) private var model
     var duo: DuoContext
 
+    static func bottomPadding(_ duo: DuoContext) -> CGFloat {
+        duo.pose == .flat && !duo.isLandscape ? 96 : duo.pose == .tabletop ? 12 : 16
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
@@ -351,8 +355,8 @@ struct LowerMessages: View {
                         UnreadDot()
                         Text("New on PS5: \(game.name) \(r.displayName)")
                             .font(PlayscribeFont.subheadline.weight(.semibold))
-                            // Wraps to two lines at accessibility sizes instead of truncating (0.5.1 spec 2).
-                            .lineLimit(2)
+                            // Wraps at accessibility sizes instead of truncating: a long title needs a third line in the narrow poses.
+                            .lineLimit(3)
                             .fixedSize(horizontal: false, vertical: true)
                             .multilineTextAlignment(.leading)
                         Image(systemName: "chevron.forward").font(PlayscribeFont.caption)
@@ -401,14 +405,14 @@ struct LowerMessages: View {
             // The Library reserves this much at its bottom edge (a safe-area inset), so the pill never covers its
             // top-of-page controls: the content reflows above it (0.5.1 spec 2, Iris).
             .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in
-                let gap: CGFloat = duo.pose == .tabletop ? 12 : 16
-                let inset = h > 0 ? h + gap : 0
+                // Everything from the bottom edge up to the top of the messages, plus 8 pt of air.
+                let inset = h > 0 ? h + Self.bottomPadding(duo) + 8 : 0
                 if model.messageInset != inset { model.messageInset = inset }
             }
         }
         // Above the bottom tab bar only where the bars are horizontal (open portrait).
         // Tabletop: 12 pt above the bottom, left of the rail (0.5.1 spec 2).
-        .padding(.bottom, duo.pose == .flat && !duo.isLandscape ? 96 : duo.pose == .tabletop ? 12 : 16)
+        .padding(.bottom, Self.bottomPadding(duo))
         .padding(.trailing, duo.pose == .tabletop ? TabletopRail.width : 0)
         .padding(.horizontal, 16)
         // Book: the pill and toasts stay on the left page; they never straddle the fold.

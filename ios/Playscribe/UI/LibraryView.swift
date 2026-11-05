@@ -428,8 +428,9 @@ struct LibraryShelf: View {
             .padding(.trailing, railWidth)
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
-        // The pill and toasts sit at the bottom edge; the page reflows above them instead of being covered (0.5.1 spec 2).
-        .safeAreaInset(edge: .bottom, spacing: 0) { Color.clear.frame(height: model.messageInset) }
+        // The pill and toasts sit at the bottom edge. The scroll view itself ends above them (a safe-area inset would still let
+        // content scroll under the pill), so nothing is ever covered (0.5.1 spec 2, Iris).
+        .padding(.bottom, model.messageInset)
         .refreshable { await model.refreshFeed() }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
