@@ -205,6 +205,10 @@ struct TabletopRail: View {
 
     var body: some View {
         VStack(spacing: 4) {
+            // The screen's controls scroll when they outgrow the lower half (a centred overflow pushed the first
+            // button above the fold, 468 vs 474.5: G-4); the tabs stay pinned below.
+            ScrollView {
+              VStack(spacing: 4) {
             if let id = model.nav.gameID, model.nav.tab == .library {
                 RailButton(action: ScreenAction(id: "back", title: "Library", systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
@@ -240,13 +244,18 @@ struct TabletopRail: View {
                                                     systemImage: model.libraryTab == .playing ? "gamecontroller.fill" : "gamecontroller",
                                                     kind: .button { model.libraryTab = .playing }))
                         .accessibilityAddTraits(model.libraryTab == .playing ? .isSelected : [])
+                        .accessibilityIdentifier("playingRail")
                     RailButton(action: ScreenAction(id: "upcoming", title: "Upcoming",
                                                     systemImage: model.libraryTab == .upcoming ? "calendar.badge.clock" : "calendar",
                                                     kind: .button { model.libraryTab = .upcoming }))
                         .accessibilityAddTraits(model.libraryTab == .upcoming ? .isSelected : [])
+                        .accessibilityIdentifier("upcomingRail")
                 }
             }
-            Spacer(minLength: 8)
+              }
+            }
+            .scrollBounceBehavior(.basedOnSize)
+            .scrollIndicators(.hidden)
             Divider().frame(width: 28)
             tab(.library, "Library", "books.vertical", badge: model.totalUnread)
             tab(.updates, "Updates", "newspaper")
