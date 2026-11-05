@@ -286,6 +286,7 @@ struct TabletopRail: View {
                 .contentShape(Rectangle())
         }
         .buttonStyle(RailPressStyle())
+        .buttonStyle(RailPressStyle())
         .accessibilityLabel(title)
         .accessibilityValue(badge > 0 ? "\(badge) unread" : "")
         .accessibilityAddTraits(model.nav.tab == t ? .isSelected : [])
