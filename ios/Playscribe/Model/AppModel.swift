@@ -106,6 +106,8 @@ struct PersistedState: Codable {
     var quietHours: QuietHours?
     /// nil = on. Off silences the add pop.
     var soundsOff: Bool?
+    /// The PS Plus card and its "Leaving soon" reminder (Terry, 2026-11-05): nil = on. Off hides both.
+    var plusCardOff: Bool?
     /// The PS Plus "Leaving soon" reminder (0.5.0): nil = on.
     var plusLeavingSoonOff: Bool?
     var notificationCardShows = 0

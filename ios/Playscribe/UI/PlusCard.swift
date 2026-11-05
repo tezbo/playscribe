@@ -7,7 +7,7 @@ struct PlusCard: View {
     @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
-        if let (month, lastChance) = PlusLogic.current(PlusStore.shared.months) {
+        if model.data.plusCardOff != true, let (month, lastChance) = PlusLogic.current(PlusStore.shared.months) {
             let claimBy = PlusLogic.claimByText(month)
             VStack(alignment: .leading, spacing: 8) {
                 Text(lastChance ? "PS Plus: last chance" : "PS Plus this month").font(PlayscribeFont.title3)

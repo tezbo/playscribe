@@ -211,6 +211,21 @@ struct LibraryShelf: View {
         duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming && !model.latestDeck.isEmpty
     }
 
+    /// Catch-up, PS Plus and notification cards. In Book they are one page wide and never cross the fold (G-4).
+    @ViewBuilder
+    private func topCards(_ all: [AppModel.LibraryRow]) -> some View {
+        let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
+        VStack(alignment: .leading, spacing: 14) {
+            CatchUpCard()
+            PlusCard()
+            if model.showsNotificationCard, let first = all.first {
+                NotificationInviteCard(gameName: first.game.name)
+            }
+        }
+        .frame(width: pageWidth, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
     /// The library search field; one page wide in Book, and reported to the fold audit.
     private func searchField(binding: Binding<String>) -> some View {
                     // The same field as the notes search; the system rounded border read as a
@@ -261,11 +276,8 @@ struct LibraryShelf: View {
                         }
                     }
                 }
-                CatchUpCard()
-                PlusCard()
-                if model.showsNotificationCard, let first = all.first {
-                    NotificationInviteCard(gameName: first.game.name)
-                }
+                // Book: these cards stay on the left page; with a hero they sit in the left column below.
+                if !heroOnRightPage { topCards(all) }
                 if !all.isEmpty && duo.pose == .tabletop {
                     // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
                     TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4)
@@ -304,6 +316,7 @@ struct LibraryShelf: View {
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
                             LibraryTabPicker()
+                            topCards(all)
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                             NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                             if all.count >= 2 && layout == .tiles {

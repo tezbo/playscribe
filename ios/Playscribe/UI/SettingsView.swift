@@ -67,8 +67,13 @@ struct SettingsView: View {
                     }
                     Toggle("Pause all", isOn: $model.data.pauseAll)
                     quietHoursRows
-                    // Shown only while a PS Plus month exists, the same condition as the Library card.
-                    if PlusLogic.current(PlusStore.shared.months) != nil {
+                    // Not everyone has PS Plus: the Library card is on by default and can be hidden. Off also stops the reminder.
+                    Toggle("PS Plus card in Library", isOn: Binding(get: { model.data.plusCardOff != true }, set: { model.data.plusCardOff = $0 ? nil : true }))
+                        .accessibilityHint("Shows this month's PS Plus games in the Library, with a reminder before they leave")
+                        .accessibilityIdentifier("plusCardToggle")
+                        .onChange(of: model.data.plusCardOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
+                    // Shown only while a PS Plus month exists and the card is on, the same condition as the Library card.
+                    if model.data.plusCardOff != true, PlusLogic.current(PlusStore.shared.months) != nil {
                         // PS Plus: a reminder in the last three days a month's games can be claimed.
                         Toggle("PS Plus games leaving soon", isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true }))
                             .accessibilityHint("A reminder in the last three days before this month's PS Plus games leave")
