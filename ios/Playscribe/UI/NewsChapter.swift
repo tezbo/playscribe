@@ -78,6 +78,7 @@ struct NewsChapter: View {
                         Button { Task { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                             .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
                             .tappableFrame(when: duo.pose != .tabletop)
+                            .accessibilityHidden(duo.pose == .tabletop)  // view only on the standing half
                     }
                 } else if !store.loaded.contains(gameID) {
                     HStack(spacing: 10) {
@@ -108,6 +109,7 @@ struct NewsChapter: View {
                     .contentShape(Rectangle())
                 }
                 .tappableFrame(when: duo.pose != .tabletop)
+                .accessibilityHidden(duo.pose == .tabletop)
             }
         }
         .task(id: gameID) { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) }

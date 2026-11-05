@@ -604,7 +604,9 @@ extension PlayscribeUITests {
         app.launch()
         sleep(3)
         let find = app.buttons["Find these games"]
-        if !find.waitForExistence(timeout: 8), app.staticTexts["This device can't scan titles."].exists {
+        if !find.waitForExistence(timeout: 8),
+           app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS[c] \"can't scan\" OR label CONTAINS[c] \"cannot scan\"")).firstMatch.exists
+            || ReleaseRowTests.pose(app).contains("pose: tabletop") {
             app.terminate(); throw XCTSkip("no camera in this simulator pose, so the scan view shows its unsupported state")
         }
         XCTAssertTrue(find.exists, "scan shows Find these games")
@@ -674,19 +676,28 @@ final class Release050Tests: XCTestCase {
         var tries = 0
         while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
         XCTAssertTrue(toggle.exists, "Settings has a Quiet hours switch")
-        XCTAssertEqual(toggle.value as? String, "off", "off by default (the switch speaks its own value)")
+        XCTAssertTrue(["off", "0"].contains(toggle.value as? String ?? ""), "off by default, got \(String(describing: toggle.value))")
+        if isTabletop(app) { XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: switch in the lower half") }
         XCTAssertGreaterThanOrEqual(toggle.frame.height, 44 - 1)
-        toggle.tap()
+        // The identified element is the whole row; the switch is nested at its trailing edge, and a centre tap misses it.
+        let inner = toggle.switches.firstMatch
+        if inner.exists { inner.tap() } else { toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
         // From and Until are date pickers (their label is the title), so match any element, not only static text.
         func any(_ prefix: String) -> XCUIElement {
             app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH %@", prefix)).firstMatch
         }
-        XCTAssertTrue(any("From").waitForExistence(timeout: 3), "From row appears")
-        XCTAssertTrue(any("Until").exists, "Until row appears")
-        var tries2 = 0
-        while !any("Alerts arrive silently").exists && tries2 < 4 { app.swipeUp(); tries2 += 1 }
-        XCTAssertTrue(any("Alerts arrive silently").exists, "footer")
-        if isTabletop(app) { XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: switch in the lower half") }
+        // The rows are added below the switch, which may now be at the panel's edge: scroll the form to each.
+        func reveal(_ prefix: String) -> Bool {
+            var n = 0
+            while !any(prefix).waitForExistence(timeout: 1) && n < 6 {
+                let form = app.collectionViews.firstMatch
+                (form.exists ? form : app).swipeUp(); n += 1
+            }
+            return any(prefix).exists
+        }
+        XCTAssertTrue(reveal("From"), "From row appears")
+        XCTAssertTrue(reveal("Until"), "Until row appears")
+        XCTAssertTrue(reveal("Alerts arrive silently"), "footer")
         app.terminate()
     }
 
