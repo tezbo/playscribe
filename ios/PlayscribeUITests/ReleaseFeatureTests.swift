@@ -72,7 +72,14 @@ final class ReleaseFeatureTests: XCTestCase {
     func testLongPressTileShowsStatusMenu() throws {
         launch("quick/wishlist")
         let tile = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH %@", "tile-")).firstMatch
-        guard tile.waitForExistence(timeout: 15) else { throw XCTSkip("no tile in this pose") }
+        guard tile.waitForExistence(timeout: 15) else {
+            // Evidence for the gate: what the accessibility tree held, and where the scroll views are.
+            let dump = XCTAttachment(string: app.debugDescription)
+            dump.name = "tree-no-tile-\(pose().replacingOccurrences(of: " ", with: "-"))"
+            dump.lifetime = .keepAlways
+            add(dump)
+            throw XCTSkip("no tile in this pose; the accessibility tree is attached")
+        }
         // The grid sits below the cards, off screen at launch (Tabletop's lower half is short): scroll the lower
         // half, never the view-only upper half, until a tile can be pressed.
         var tries = 0
