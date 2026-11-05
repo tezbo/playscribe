@@ -1,6 +1,6 @@
 # CI plan: faster, and scalable
 
-Times are estimates (AEDT is irrelevant here; these are durations) from the 80-minute Mac gate and a typical hosted
+Times are estimates (durations) from the 80-minute Mac gate and a typical hosted
 `xcode-27` run. Measure the first runs after merge and correct this table.
 
 ## Where the time goes today
