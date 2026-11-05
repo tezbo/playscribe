@@ -59,7 +59,14 @@ Book's fold at 421 to 445 and Tabletop's at 405 to 429, so it could pass layouts
 `tools/qa/prove_harness.sh` puts each fixed bug back (`tools/qa/mutants.py`: the old toolbar group, the unbounded deck),
 requires the harness to fail, then requires the clean tree to pass. Run it once on the Mac or a CI runner before trusting the harness.
 
+## Where it runs
+
+`FoldHarnessTests` is in the `Playscribe` scheme, so the existing PR unit job runs it (about 25 s for six poses plus the
+accessibility sizes, no pose driver). The Mac gate (`gate.sh`) therefore only needs to confirm what the harness cannot:
+the toolbar as UIKit draws it, the system's page split in Book and Tabletop (TT-0), and real safe areas, until calibrated.
+The toolbar cause is also guarded structurally: `LibraryToolbar` gives each item its own slot and a unit test fails if two share one.
+
 ## Rules asserted (cite these IDs in commits)
 
-G-4 nothing tappable above the Tabletop fold; TT-0 nothing crosses the fold; TB-1 Settings and Add drawn and at least 44 pt;
+G-4 nothing tappable above the Tabletop fold; TT-0 nothing crosses the fold; TB-1 each Library toolbar item has its own slot (the offscreen window cannot draw the bar, so the drawn-and-44-pt check stays on the sim);
 J-5 deck at most 38% of the height (Closed, Open) or 50% (any pose but Tabletop), at default and Accessibility text sizes.
