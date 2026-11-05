@@ -562,6 +562,7 @@ final class AppModel {
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
         case "pill": holdQAPill()
+        case "spoiler-demo": openSpoilerDemo()
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
             Task {
@@ -812,6 +813,34 @@ final class AppModel {
         }
         return out
     }
+
+    #if INTERNAL
+    /// QA (INTERNAL, route "spoiler-demo"): opens a bundled-game patch dated 19 Apr 2025 whose notes
+    /// open with a greeting and a spoiler warning, as Blue Prince 1.2 does in the live feed, so the
+    /// reader's spoiler switch, counts and year can be stilled in the simulator with no network.
+    func openSpoilerDemo() {
+        resetDemo()
+        guard let gameID = fixtures.games.first?.id else { return }
+        let when = Date(timeIntervalSince1970: 1_745_020_800)
+        var pcLine = NoteItem(text: "PC only: fixed a window mode crash.")
+        pcLine.pcOnly = true
+        let items = ["Hello!", "Be advised, the following notes contain spoilers so browse at your own peril:",
+                     "Fixed camera lock in the lab.", "Misc. typo and text format fixes.", "Fixed rarity and directory data being read from old save files.",
+                     "Fixed a rare room appearing less often than it should.", "Fixed a door that could stay shut."].map { NoteItem(text: $0) } + [pcLine]
+        let release = Release(
+            id: "qa-spoiler-demo", gameID: gameID, displayName: "Patch 1.2", kind: .hotfix, kindBasis: .studio, announcedAt: when,
+            notes: [NoteSection(title: "Changes", items: items)], sourceIDs: [],
+            platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                        version: Field(value: "01.002.000", verification: .official, sourceID: "qa", checkedAt: when),
+                                        liveAt: Field(value: when, verification: .official, sourceID: "qa", checkedAt: when),
+                                        bundles: [], verification: .official)],
+            headline: "Patch 1.2 (QA)", summary: "QA fixture for the spoiler warning reader.", simulated: true, arrivesAt: when)
+        data.simulated.removeAll { $0.id == release.id }
+        data.simulated.insert(release, at: 0)
+        tick()
+        openRelease(gameID: gameID, releaseID: release.id)
+    }
+    #endif
 
     // MARK: - Simulated updates (internal builds)
 
