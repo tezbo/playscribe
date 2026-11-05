@@ -256,7 +256,7 @@ extension NotificationService: UNUserNotificationCenterDelegate {
 
 /// Where the relay's deviceKey lives. The key is a bearer secret, so it is in the Keychain (this device only, readable after
 /// the first unlock), not in UserDefaults. A key left in UserDefaults by an earlier build moves over on first read.
-struct DeviceKeyStore {
+nonisolated struct DeviceKeyStore {
     var read: () -> String?
     var write: (String?) -> Void
 
@@ -266,7 +266,7 @@ struct DeviceKeyStore {
         [kSecClass as String: kSecClassGenericPassword, kSecAttrService as String: service, kSecAttrAccount as String: account]
     }
 
-    static let keychain = DeviceKeyStore(read: readKeychain, write: writeKeychain)
+    nonisolated(unsafe) static let keychain = DeviceKeyStore(read: readKeychain, write: writeKeychain)
 
     private static func readKeychain() -> String? {
         var q = base
