@@ -381,18 +381,21 @@ struct LowerMessages: View {
                         UnreadDot()
                         Text("New on PS5: \(game.name) \(r.displayName)")
                             .font(PlayscribeFont.subheadline.weight(.semibold))
-                            // Never cut mid-phrase: the pill grows to the whole text, up to four lines (Iris, 0.5.1 spec 2).
-                            .lineLimit(4)
+                            // Never cut: up to three lines at the capped size (Iris, 0.5.1 spec 2).
+                            .lineLimit(3)
                             .fixedSize(horizontal: false, vertical: true)
                             .multilineTextAlignment(.leading)
                         Image(systemName: "chevron.forward").font(PlayscribeFont.caption)
                     }
+                    // Transient chrome stops scaling at AX1 before the page does; VoiceOver still reads all of it (Iris).
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                     .padding(.horizontal, 16)
-                    .padding(.vertical, 8)
+                    .padding(.vertical, 12)
                     .frame(minHeight: 44)
                     // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
-                    .background(Capsule().fill(PlayscribeColor.ink700))
-                    .adaptiveGlass(in: Capsule(), interactive: true)
+                    // A 24 pt corner: a full capsule on one line, a rounded rectangle on two or more.
+                    .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(PlayscribeColor.ink700))
+                    .adaptiveGlass(in: RoundedRectangle(cornerRadius: 24, style: .continuous), interactive: true)
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()
