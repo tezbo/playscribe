@@ -9,7 +9,17 @@ extension FeedClient {
         var updatedAt: Date
         var games: [Game]
     }
-    struct GameHistory: Decodable { var releases: [Release] }
+    struct GameHistory: Decodable {
+        var releases: [Release]
+        var issues: [KnownIssue]
+        enum CodingKeys: String, CodingKey { case releases, issues }
+        init(from decoder: Decoder) throws {
+            let c = try decoder.container(keyedBy: CodingKeys.self)
+            releases = try c.decode([Release].self, forKey: .releases)
+            // Additive: a bad or missing issues list never costs the history.
+            issues = (try? c.decodeIfPresent([KnownIssue].self, forKey: .issues)) ?? []
+        }
+    }
 
     static func fetch<T: Decodable>(_ path: String, as: T.Type) async throws -> (T, Data) {
         guard let url = baseURL?.appending(path: path) else { throw URLError(.badURL) }
@@ -31,6 +41,7 @@ extension AppModel {
             if let raw = try? Data(contentsOf: FeedClient.historyCacheURL(c.gameID)),
                let h = try? JSONCoding.decoder.decode(FeedClient.GameHistory.self, from: raw) {
                 out[c.gameID] = h.releases.map { $0.reassigned(to: c.gameID) }
+                gameIssues[c.gameID] = h.issues
                 markPastAsRead(out[c.gameID] ?? [])
             }
         }
@@ -55,7 +66,9 @@ extension AppModel {
             markPastAsRead(fresh)
             historyStamps[gameID] = stamp
             gameReleases[gameID] = fresh
+            gameIssues[gameID] = history.issues
         }
+        alertAddressedIssues()
         notifyNewlyOnPS5()
     }
 }
@@ -67,7 +80,7 @@ extension AppModel {
         let cutoff = Date.now.addingTimeInterval(-72 * 3600)
         var known = data.knownOnPS5 ?? []
         // Recent ones stay unknown so notifyNewlyOnPS5 can alert for them.
-        for r in releases where (force || !known.contains(r.id)) && r.ps5Date < cutoff {
+        for r in releases where (force || !known.contains(r.id)) && r.alertDate < cutoff {
             known.insert(r.id)
             if data.read[r.id] == nil { data.read[r.id] = .now }
         }

@@ -1,8 +1,10 @@
+import { hotGameIds, HOT_POLL_MS } from '../hot.ts'
 import { now, tx, type DB } from '../db.ts'
 import { Blocked, allowedByRobots, type FetchFn } from '../http.ts'
 import { registry, type SourceDef } from '../registry.ts'
 import * as store from '../store.ts'
 import type { PlatformStatus, Post } from '../types.ts'
+import newsSources from '../sources/news-sources.json' with { type: 'json' }
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import type { Igdb } from './igdb.ts'
@@ -11,10 +13,9 @@ import { extractNotes, mentionsPs5, ps5PageOf } from './notes.ts'
 // The poll job from docs/ps5-patch-data.md. Rules that matter:
 //  - An official source that names PS5 decides its PS5 row. When the post says outright that
 //    the update is live on PS5 (ps5LiveStated) the row is official at once (Terry, 2026-10-26:
-//    "Unconfirmed" should be rare); otherwise it is `pending` until a person confirms it (confirm.ts).
+//    press-only reports should be rare); otherwise it is `pending` until a person confirms it (confirm.ts).
 //  - Press (trust: secondary) fills PS5 facts as `reported`. A press report that an update is live
-//    earns one quiet alert tagged "Unconfirmed" (push/notify.ts, after the poll); it never makes a
-//    row official.
+//    earns no alert and is not shown until Steam or the studio has it; it never makes a row official.
 //  - Steam is the source of truth for updates (Terry, 2026-10-27): every Steam patch is taken as out
 //    on PS5 too (verification `assumed`, alerted like any other) unless the post says PS5 gets it later
 //    or not at all, the game's Steam version is a separate PC port, or the post predates the PS5
@@ -121,21 +122,22 @@ export const seedGames = async (deps: IngestDeps) => {
   }
 }
 
-const due = (db: DB, s: SourceDef, force: boolean) => {
+const due = (db: DB, s: SourceDef, force: boolean, minMs = MIN_POLL_MS) => {
   const st = db.prepare('SELECT * FROM source_state WHERE source_id = ?').get(s.id) as Record<string, any> | undefined
   if (s.fetch !== 'auto' || st?.blocked) return false
   if (force) return true
-  return !st?.last_fetched_at || Date.now() - Date.parse(st.last_fetched_at) >= MIN_POLL_MS
+  return !st?.last_fetched_at || Date.now() - Date.parse(st.last_fetched_at) >= minMs
 }
 
 const recordState = (db: DB, sourceId: string, status: number, error: string | null, blocked = false) =>
   db
     .prepare(
-      `INSERT INTO source_state (source_id, last_fetched_at, last_status, last_error, blocked) VALUES (?, ?, ?, ?, ?)
+      `INSERT INTO source_state (source_id, last_fetched_at, last_status, last_error, blocked, fail_streak) VALUES (?, ?, ?, ?, ?, CASE WHEN ? = 200 THEN 0 ELSE 1 END)
        ON CONFLICT (source_id) DO UPDATE SET last_fetched_at = excluded.last_fetched_at, last_status = excluded.last_status,
-         last_error = excluded.last_error, blocked = MAX(blocked, excluded.blocked)`,
+         last_error = excluded.last_error, blocked = MAX(blocked, excluded.blocked),
+         fail_streak = CASE WHEN excluded.last_status = 200 THEN 0 ELSE fail_streak + 1 END`,
     )
-    .run(sourceId, now(), status, error, blocked ? 1 : 0)
+    .run(sourceId, now(), status, error, blocked ? 1 : 0, status)
 
 const poll = async (deps: IngestDeps, s: SourceDef, summary: IngestSummary, opts: PageOpts = {}): Promise<Post[] | null> => {
   try {
@@ -193,12 +195,15 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
              ORDER BY ABS(julianday(announced_at) - julianday(?))`,
           )
           .all(game.id, post.publishedAt, post.publishedAt) as { id: string; version_key: string }[]).find((r) => dateKey.test(naming.versionKey) || dateKey.test(r.version_key))
+    // The same patch under another spelling of its version ("1.4" and "1.4.0"), announced within 3 days.
+    const alike = byKey || near ? null : store.equivalentRelease(db, game.id, naming.versionKey, post.publishedAt)
     const releaseId =
       byKey?.id ??
       near?.id ??
+      alike?.id ??
       // A press headline is the site's words, not a release name: without a version it is just a PS5 update.
       track(store.upsertRelease(db, { gameId: game.id, versionKey: naming.versionKey, displayName: /^[a-z]+-\d{4}-/.test(naming.versionKey) ? 'PS5 update' : naming.displayName, kind: 'silent', kindBasis: 'inferred', announcedAt: post.publishedAt, notes: [], sourceId: s.id }))
-    if (byKey || near) store.addSource(db, releaseId, s.id)
+    if (byKey || near || alike) store.addSource(db, releaseId, s.id)
     const version = consoleVersionOf(text, { ps5Only: true })
     const size = sizeBytesOf(post.body) ?? sizeBytesOf(post.title)
     const status = pressStatusOf(post.title, post.body)
@@ -234,7 +239,9 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   if (!pcOnly && !namesPs5) return null // an official multi-platform post that doesn't name PS5 says nothing about PS5
 
   const k = kind()
-  const releaseId = track(store.upsertRelease(db, { gameId: game.id, versionKey: naming.versionKey, displayName: naming.displayName, kind: k.kind, kindBasis: k.kindBasis, announcedAt: post.publishedAt, notes, sourceId: s.id }))
+  // A studio or Steam post spelling a version another way ("1.4.0" for "1.4") joins the release already stored.
+  const versionKey = store.equivalentRelease(db, game.id, naming.versionKey, post.publishedAt)?.version_key ?? naming.versionKey
+  const releaseId = track(store.upsertRelease(db, { gameId: game.id, versionKey, displayName: naming.displayName, kind: k.kind, kindBasis: k.kindBasis, announcedAt: post.publishedAt, notes, sourceId: s.id }))
 
   if (pcOnly) {
     store.upsertPlatform(db, releaseId, 'pc', { status: 'live', verification: 'official', liveAt: store.field(post.publishedAt, 'official', s.id) })
@@ -272,15 +279,18 @@ export interface IngestOpts {
   force?: boolean
   /** Backfill: read each source's history back to this date (Steam's last 100 posts, press list pages). */
   until?: string
+  /** Poll only the hot set (hot.ts), at the shorter hot interval, and skip the shared press sources. */
+  hot?: boolean
 }
 
 export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promise<IngestSummary> => {
   const summary: IngestSummary = { polled: [], skipped: [], errors: [], created: [], revised: [], review: 0 }
-  const games = trackedGames(deps.db)
+  const hot = hotGameIds(deps.db)
+  const games = trackedGames(deps.db).filter((g) => !opts.hot || hot.has(g.id))
 
   for (const game of games) {
     for (const s of sourcesFor(game)) {
-      if (!due(deps.db, s, !!opts.force)) {
+      if (!due(deps.db, s, !!opts.force, hot.has(game.id) ? HOT_POLL_MS : MIN_POLL_MS)) {
         summary.skipped.push(s.id)
         continue
       }
@@ -290,12 +300,19 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
         // A backfill re-reads official posts already seen, so new rules apply to old releases; reading
       // is idempotent. Press posts are not re-read (each costs a page at the site's Crawl-delay).
       if (store.isSeen(deps.db, s.id, post.postId) && !(opts.until && s.trust === 'official')) continue
+        if (post.news) {
+          tx(deps.db, () => {
+            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources) store.addNews(deps.db, game.id, post)
+            store.markSeen(deps.db, s.id, post.postId, null)
+          })
+          continue
+        }
         tx(deps.db, () => store.markSeen(deps.db, s.id, post.postId, handlePost(deps, game, s, post, summary)))
       }
     }
   }
 
-  for (const s of registry.shared) {
+  for (const s of opts.hot ? [] : registry.shared) {
     if (!due(deps.db, s, !!opts.force)) {
       summary.skipped.push(s.id)
       continue
@@ -306,6 +323,14 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       if (opts.until && post.publishedAt < opts.until) continue
       // Shared feeds cover every game: a post counts only if it names the game and reads like a patch;
       // a press list counts only posts about PS5.
+      // The PlayStation Blog's non-patch posts that name a tracked game are news headlines (title, date, link).
+      if (s.id in newsSources.sources && !looksLikePatch(post.title)) {
+        tx(deps.db, () => {
+          for (const g of games.filter((g) => matchesPost(g, post))) store.addNews(deps.db, g.id, post)
+          store.markSeen(deps.db, s.id, post.postId, null)
+        })
+        continue
+      }
       const aboutPs5 = s.kind !== 'pressIndex' || mentionsPs5(post.title) || (post.tags ?? []).some((t) => /^PS5$/i.test(t))
       const matched = looksLikePatch(post.title) && aboutPs5 ? games.filter((g) => matchesPost(g, post)) : []
       let full = post
@@ -324,6 +349,10 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       })
     }
   }
+  const folded = store.mergeSilentDuplicates(deps.db)
+  if (folded) deps.log?.(`ingest: folded ${folded} press-only duplicates into the release they report`)
+  const dropped = store.dropPreLaunchPs5(deps.db)
+  if (dropped) deps.log?.(`ingest: dropped ${dropped} Steam-assumed PS5 rows dated before the game's PS5 launch`)
   const promoted = store.promoteAnnounced(deps.db)
   deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)
   deps.log?.(`ingest: polled ${summary.polled.length}, new ${summary.created.length}, revised ${summary.revised.length}, review +${summary.review}, errors ${summary.errors.length}`)

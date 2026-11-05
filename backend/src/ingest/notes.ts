@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs'
-import type { NoteItem, NoteSection, Platform } from '../types.ts'
+import type { NoteCategory, NoteItem, NoteSection, Platform } from '../types.ts'
 
 // Turns a post body (Steam BBCode, feed HTML or plain text) into grouped notes.
 const ENTITIES: Record<string, string> = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', '#39': "'" }
@@ -23,6 +23,7 @@ export const toLines = (body: string) =>
       .replace(/\[\*\]|<li[^>]*>/gi, '\n- ')
       .replace(/<br\s*\/?>|<\/p>|<\/li>|<\/div>|\[\/?p\]|\[\/?list\]|\[\/?olist\]/gi, '\n')
       .replace(/\[img\][\s\S]*?\[\/img\]|\[previewyoutube[^\]]*\][\s\S]*?\[\/previewyoutube\]/gi, '')
+      .replace(/\[\/\*\]/g, '')
       .replace(/\[\/?[a-z0-9]+(=[^\]]*)?\]/gi, '')
       .replace(/<[^>]+>/g, ''),
   )
@@ -54,6 +55,28 @@ export const platformsFor = (text: string, section?: Platform[]): Platform[] | u
   if (PC.test(text) || (NAMES.pc.test(text) && !NAMES.consoles.test(text))) p.push('pc')
   if (xbox) p.push('xboxSeries')
   return p.length ? p : undefined
+}
+
+/** A line tagged for PC and no console. */
+export const isPcOnly = (platforms: Platform[] | undefined) => !!platforms?.length && platforms.every((p) => p === 'pc')
+
+/** The kind of change a section lists, from its title. Fixes win over new when a title says both ("Fixes and additions"). */
+export const categoryOf = (title: string): NoteCategory =>
+  /\b(fix(es|ed)?|bug\s*fix(es)?|bugs?|crash(es)?|stability|resolved)\b/i.test(title)
+    ? 'fixed'
+    : /\b(balanc\w*|tuning|tweaks?|nerfs?|buffs?|adjustments?|difficulty)\b/i.test(title)
+      ? 'balance'
+      : /\b(new|added|additions?|features?|content|introduc\w*|improvements?|enhancements?|highlights?)\b/i.test(title)
+        ? 'new'
+        : 'other'
+
+/** A section titled "Changes" or "Patch Notes" says nothing about its items, so an item whose own first words name the kind of change decides for itself. */
+export const itemCategoryOf = (text: string, section: NoteCategory): NoteCategory => {
+  if (section !== 'other') return section
+  if (/^(fix(ed|es)?|resolved|corrected|addressed|prevented)\b/i.test(text)) return 'fixed'
+  if (/^(added|adds|new|introduced|implemented|improved|enhanced|now (supports?|includes?|has))\b/i.test(text)) return 'new'
+  if (/^(adjusted|increased|decreased|reduced|reworked|tuned|nerfed|buffed|rebalanced|lowered|raised)\b/i.test(text)) return 'balance'
+  return 'other'
 }
 
 const sectionPlatforms = (title: string): Platform[] | undefined => {
@@ -101,9 +124,10 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSecti
     }
     if (bullet) inList = true
     if (!current) open(fallbackTitle)
-    const item: NoteItem = { text, ps5ProOnly: currentPro || PRO.test(text) }
+    const item: NoteItem = { text, ps5ProOnly: currentPro || PRO.test(text), pcOnly: false, category: itemCategoryOf(text, categoryOf(current!.title)) }
     const platforms = platformsFor(text, currentPlatforms)
     if (platforms) item.platforms = platforms
+    item.pcOnly = isPcOnly(platforms)
     current!.items.push(item)
     lastItem = bullet ? item : null
   }
@@ -118,7 +142,8 @@ export const tagNotes = (sections: NoteSection[]): NoteSection[] =>
       ...s,
       items: s.items.map(({ platforms: _old, ...i }) => {
         const platforms = platformsFor(i.text, section)
-        return platforms ? { ...i, platforms } : i
+        const category = itemCategoryOf(i.text, categoryOf(s.title))
+        return platforms ? { ...i, platforms, pcOnly: isPcOnly(platforms), category } : { ...i, pcOnly: false, category }
       }),
     }
   })

@@ -28,6 +28,12 @@ struct ScreenAction: Identifiable {
     var priority: ToolbarItemVisibilityPriority = .automatic
 }
 
+extension Array where Element == ScreenAction.MenuSection {
+    /// Which items are ticked. Keying a Menu on this rebuilds it when a choice changes, so a toolbar or rail menu never
+    /// shows the old tick (Terry, 0.2.0 build 5: Major only reverted to All updates on return).
+    var tickKey: String { flatMap(\.items).filter(\.checked).map(\.id).joined(separator: ",") }
+}
+
 struct ActionMenuContent: View {
     var sections: [ScreenAction.MenuSection]
     var body: some View {
@@ -53,6 +59,7 @@ struct RailButton: View {
                 Button(action: run) { icon }
             case .menu(let sections):
                 Menu { ActionMenuContent(sections: sections) } label: { icon }
+                    .id(sections.tickKey)
             }
         }
         .accessibilityLabel(action.title)
@@ -92,15 +99,13 @@ extension AppModel {
         return sections
     }
 
+    /// Status and Remove only. Notifications have their own bell menu (Terry, 0.2.0 build 5: the controller icon showed both).
     func statusMenu(_ gameID: String) -> [ScreenAction.MenuSection] {
         let current = entry(gameID)?.status
         let name = game(gameID)?.name ?? "game"
         return [
             .init(title: "Status", items: OwnershipStatus.allCases.map { s in
                 .init(id: s.rawValue, title: s.label, checked: s == current) { [weak self] in self?.setStatus(gameID, s) }
-            }),
-            .init(title: "Notifications", items: NotifyLevel.allCases.map { l in
-                .init(id: "n-" + l.rawValue, title: l.label, checked: l == notifyLevel(gameID)) { [weak self] in self?.setNotify(gameID, l) }
             }),
             .init(items: [.init(id: "remove", title: "Remove \(name)", destructive: true) { [weak self] in self?.removeGame(gameID) }]),
         ]
@@ -118,6 +123,13 @@ extension AppModel {
             if !menu.isEmpty { menu[0].title = "\(name) is in your library as…" }
             out.append(ScreenAction(id: "status", title: "Status: \(status.label)", systemImage: status.symbol, kind: .menu(menu), priority: .high))
         }
+        // A way to ask for an update check from the game itself (Terry): the same refresh as the Library's pull.
+        out.append(ScreenAction(id: "refresh", title: "Check for updates", systemImage: "arrow.clockwise",
+                                kind: .button { [weak self] in Task {
+                                    await self?.refreshFeed(); await self?.refreshHistories([gameID])
+                                    // Tabletop's News page is view only, so this is also its retry.
+                                    await NewsStore.shared.load(gameID: gameID, igdbID: self?.game(gameID)?.igdbID)
+                                } }))
         return out
     }
 }

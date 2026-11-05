@@ -18,19 +18,34 @@ extension AppModel {
     func noteHits(_ query: String, scope: NoteScope, gameID: String?) -> [NoteHit] {
         let q = PS5Index.fold(query)
         guard q.count >= 2 else { return [] }
+        return noteHits(scope: scope, gameID: gameID) { text, section in PS5Index.fold(text + " " + section).contains(q) }
+    }
+
+    /// Tabletop: the notes whose line starts with `letter` (the keyboard never opens there).
+    func noteHits(letter: String, scope: NoteScope, gameID: String?) -> [NoteHit] {
+        noteHits(scope: scope, gameID: gameID) { text, _ in LetterIndex.matches(text, letter) }
+    }
+
+    private func noteHits(scope: NoteScope, gameID: String?, matching test: (_ text: String, _ section: String) -> Bool) -> [NoteHit] {
         let games = scope == .thisGame ? [gameID].compactMap { $0 } : data.collection.map(\.gameID)
         var hits: [NoteHit] = []
         for g in games {
             for r in releases(g) {
                 let ps5 = r.isPS5Listed
+                // A5: update titles match too, shown as the update's own headline.
+                let title = [r.displayName, r.headline].compactMap { $0 }.joined(separator: " ")
+                if test(title, "") {
+                    hits.append(NoteHit(id: "\(r.id)#title", release: r, line: r.ps5Headline ?? r.displayName, section: "Update",
+                                        pcOnly: !ps5))
+                }
                 for (si, section) in r.notes.enumerated() {
                     for (ii, item) in section.items.enumerated() where item.spoiler != true {
-                        guard PS5Index.fold(item.text + " " + section.title).contains(q) else { continue }
+                        guard test(item.text, section.title) else { continue }
                         hits.append(NoteHit(id: "\(r.id)#\(si).\(ii)", release: r, line: item.text, section: section.title,
                                             pcOnly: !ps5 || item.isPCOnly))
                     }
                 }
-                for (ki, k) in (r.keyChanges ?? []).enumerated() where PS5Index.fold(k).contains(q) {
+                for (ki, k) in (r.keyChanges ?? []).enumerated() where test(k, "Key changes") {
                     hits.append(NoteHit(id: "\(r.id)#k\(ki)", release: r, line: k, section: "Key changes", pcOnly: !ps5 || PCOnly.matches(k)))
                 }
             }
@@ -72,7 +87,7 @@ struct NoteSearchResults: View {
             }
             group(ps5)
             if !pc.isEmpty {
-                Section("PC-specific") { rows(pc) }
+                Section("PC only") { rows(pc) }
             }
         }
         .scrollContentBackground(.hidden)
@@ -118,7 +133,12 @@ struct NoteSearchResults: View {
         }
     }
 
-    private func bolded(_ line: String) -> AttributedString {
+    private func bolded(_ line: String) -> AttributedString { NoteHit.bolded(line, query: query) }
+}
+
+extension NoteHit {
+    /// The matching text in bold ember (A5).
+    static func bolded(_ line: String, query: String) -> AttributedString {
         var a = AttributedString(line)
         if let r = a.range(of: query, options: [.caseInsensitive, .diacriticInsensitive]) {
             a[r].font = PlayscribeFont.subheadline.bold()

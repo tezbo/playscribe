@@ -6,6 +6,8 @@
 	<array>
 		<string>co.codeconnectors.playscribe.refresh</string>
 	</array>
+	<key>PlayscribeAppGroup</key>
+	<string>group.$(PLAYSCRIBE_BUNDLE_ID)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -33,10 +35,18 @@
 			</array>
 		</dict>
 	</array>
+	<key>PlayscribeGitSHA</key>
+	<string></string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>Playscribe uses the camera to read game titles on cases and shelves. Nothing is recorded or uploaded.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Playscribe listens only while you hold the button, to hear the game titles you say. Speech is recognised on your device.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Playscribe turns the titles you say into a list of games to add. Recognition happens on your device.</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>PlayscribeAPIBaseURL</key>

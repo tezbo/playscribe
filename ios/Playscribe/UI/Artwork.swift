@@ -54,21 +54,12 @@ struct ArtView: View {
                 let tones = (game?.tones ?? ["#1b1d24", "#0b0d12"]).map(Color.init(hex:))
                 LinearGradient(colors: tones, startPoint: .top, endPoint: .bottom)
                 if let asset {
-                    Image(asset)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: geo.size.width, height: geo.size.height)
-                        // G-9: slow drift only when motion is allowed.
-                        .scaleEffect(drift && !reduceMotion ? (phase ? 1.06 : 1.0) : 1.0)
-                        .clipped()
+                    fill(Image(asset).resizable(), geo.size)
                 } else if let url = game?.heroArtURL {
                     // Catalogue games have no bundled art: the official key art from the index.
                     AsyncImage(url: url, transaction: Transaction(animation: .easeOut(duration: 0.2))) { phase in
                         if let image = phase.image {
-                            image.resizable().scaledToFill()
-                                .frame(width: geo.size.width, height: geo.size.height)
-                                .scaleEffect(drift && !reduceMotion ? (self.phase ? 1.06 : 1.0) : 1.0)
-                                .clipped()
+                            fill(image.resizable(), geo.size)
                         } else if case .failure = phase {
                             defaultHeader(geo.size)
                         }
@@ -78,6 +69,10 @@ struct ArtView: View {
                     defaultHeader(geo.size)
                 }
             }
+            // Never larger than the space offered, whatever the image's own size (Terry: Tabletop
+            // heroes for Enshrouded and Dawnwalker were far too big).
+            .frame(width: geo.size.width, height: geo.size.height)
+            .clipped()
         }
         .clipped()
         .accessibilityHidden(true)
@@ -85,6 +80,18 @@ struct ArtView: View {
             guard drift, !reduceMotion else { return }
             withAnimation(.easeInOut(duration: 18).repeatForever(autoreverses: true)) { phase = true }
         }
+    }
+
+    /// Fills the offered size exactly: the image is an overlay of a fixed frame, so its own size
+    /// can never grow the layout. G-9: slow drift only when motion is allowed.
+    private func fill(_ image: Image, _ size: CGSize) -> some View {
+        Color.clear
+            .frame(width: size.width, height: size.height)
+            .overlay {
+                image.scaledToFill()
+                    .scaleEffect(drift && !reduceMotion ? (phase ? 1.06 : 1.0) : 1.0)
+            }
+            .clipped()
     }
 
     /// brand/hero default headers: 16:9 for wide spaces, 9:16 for tall ones.

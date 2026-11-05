@@ -9,6 +9,49 @@ extension EnvironmentValues {
     }
 }
 
+/// Tabletop: a sheet's controls must sit in the lower half (the upper half is view only), so
+/// sheets there are this panel, bottom-aligned under the division, instead of a presented sheet.
+private struct PanelCloseKey: EnvironmentKey { static let defaultValue: (() -> Void)? = nil }
+extension EnvironmentValues {
+    var panelClose: (() -> Void)? {
+        get { self[PanelCloseKey.self] }
+        set { self[PanelCloseKey.self] = newValue }
+    }
+}
+
+struct LowerHalfPanel: View {
+    @Environment(AppModel.self) private var model
+    var duo: DuoContext
+    var fold: CGRect
+
+    private var open: Bool { model.addSheetOpen || model.settingsOpen || model.trailer != nil || model.linksSheetOpen || model.tagExplainer != nil }
+
+    var body: some View {
+        if open {
+            let height = max(0, duo.size.height - fold.maxY)
+            ZStack(alignment: .bottom) {
+                // The stage above stays view only: a dimmer that takes no touches.
+                Color.black.opacity(0.4).ignoresSafeArea().allowsHitTesting(false)
+                Group {
+                    if model.addSheetOpen { AddGameSheet() }
+                    else if model.settingsOpen { SettingsView() }
+                    else if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
+                    else if model.linksSheetOpen, let id = model.nav.gameID { LinksSheet(gameID: id) }
+                    else if let k = model.tagExplainer { VerificationExplainer(kind: k) }
+                }
+                .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil; model.linksSheetOpen = false; model.tagExplainer = nil })
+                .environment(\.railWidth, 0)
+                .frame(width: duo.size.width, height: height)
+                .background(Color.ink0)
+                .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20))
+                .accessibilityAddTraits(.isModal)
+            }
+            .transition(.move(edge: .bottom))
+            .zIndex(5)
+        }
+    }
+}
+
 struct RootView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -27,16 +70,18 @@ struct RootView: View {
             ZStack {
                 TabRoot(duo: duo)
                     .environment(\.railWidth, duo.pose == .tabletop ? TabletopRail.width : 0)
-                    .auditActive(!model.addSheetOpen && !model.settingsOpen && model.player == nil)
+                    .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.tagExplainer == nil && model.player == nil)
 
                 if duo.pose == .tabletop, let fold = duo.division {
                     TabletopRail(duo: duo)
-                        .auditActive(!model.addSheetOpen && !model.settingsOpen && model.player == nil)
+                        .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.tagExplainer == nil && model.player == nil)
                         .frame(width: TabletopRail.width, height: max(0, duo.size.height - fold.maxY))
                         .position(x: duo.size.width - TabletopRail.width / 2, y: fold.maxY + (duo.size.height - fold.maxY) / 2)
                 }
 
                 LowerMessages(duo: duo)
+
+                if duo.pose == .tabletop, let fold = duo.division { LowerHalfPanel(duo: duo, fold: fold) }
 
                 if splashVisible {
                     SplashView(duo: duo) { splashVisible = false }
@@ -45,6 +90,7 @@ struct RootView: View {
                 }
             }
             .animation(poseAnimation, value: duo.pose)
+            .environment(\.qaSolid, BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaReduceTransparency"))
             .onPreferenceChange(TappableFrameKey.self) { frames = $0 }
             .overlay {
                 if model.showDebugOverlay { DebugOverlay(frames: frames, duo: duo) }
@@ -65,16 +111,19 @@ struct RootView: View {
         .onChange(of: NotificationService.shared.launchedFromNotification) { _, fromNotification in
             if fromNotification { splashVisible = false }
         }
-        .sheet(isPresented: Binding(get: { model.addSheetOpen }, set: { model.addSheetOpen = $0 })) {
+        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.addSheetOpen = false } })) {
             AddGameSheet()
         }
-        .sheet(isPresented: Binding(get: { model.settingsOpen }, set: { model.settingsOpen = $0 })) {
+        .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.settingsOpen = false } })) {
             SettingsView()
+        }
+        .sheet(item: Binding(get: { model.livePose == .tabletop ? nil : model.tagExplainer }, set: { if $0 == nil && model.livePose != .tabletop { model.tagExplainer = nil } })) { kind in
+            VerificationExplainer(kind: kind).presentationDetents([.medium])
         }
         .fullScreenCover(isPresented: Binding(get: { model.player != nil }, set: { if !$0 { model.player = nil } })) {
             if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID) }
         }
-        .fullScreenCover(isPresented: Binding(get: { model.trailer != nil }, set: { if !$0 { model.trailer = nil } })) {
+        .fullScreenCover(isPresented: Binding(get: { model.trailer != nil && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.trailer = nil } })) {
             if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
         }
     }
@@ -100,6 +149,7 @@ struct TabRoot: View {
                 NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search)
             }
         }
+        .onChange(of: model.data.nav.tab) { old, new in if new == .search && old != .search { model.searchReturnTab = old } }
     }
 }
 
@@ -155,26 +205,57 @@ struct TabletopRail: View {
 
     var body: some View {
         VStack(spacing: 4) {
+            // The screen's controls scroll when they outgrow the lower half (a centred overflow pushed the first
+            // button above the fold, 468 vs 474.5: G-4); the tabs stay pinned below.
+            ScrollView {
+              VStack(spacing: 4) {
             if let id = model.nav.gameID, model.nav.tab == .library {
                 RailButton(action: ScreenAction(id: "back", title: "Library", systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
                 ForEach(model.gameActions(id)) { RailButton(action: $0) }
+                if LinksSheet.hasLinks(model, id) {
+                    RailButton(action: ScreenAction(id: "links", title: "Links", systemImage: "link", kind: .button { model.linksSheetOpen = true }))
+                        .accessibilityLabel("Links, opens a list")
+                }
+                // Share the open update as a card (lower rail, 44 pt target; TT-0).
+                if let r = model.readerRelease(id), r.isPS5Listed { ShareUpdateButton(release: r) }
+            } else if model.nav.tab == .search {
+                // Search is a dead end without this: Back to where it was opened from (Terry, 0.2.0 build 5).
+                RailButton(action: ScreenAction(id: "back", title: "Back", systemImage: "chevron.backward",
+                                                kind: .button { model.leaveSearch() }))
             } else if model.nav.tab == .library {
                 if !model.addSheetOpen {
                     RailButton(action: ScreenAction(id: "add", title: "Add game", systemImage: "plus", kind: .button { model.addSheetOpen = true }))
                 }
-                // D-12: the View menu under Add (Settings lives inside it).
+                // D-12: the View menu under Add.
                 if !model.data.collection.isEmpty {
                     LibraryViewMenu()
                         .labelStyle(.iconOnly)
                         .font(PlayscribeFont.title3)
                         .frame(width: 48, height: 48)
                         .tappableFrame()
-                } else {
-                    RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
+                }
+                // Settings has its own cog on the rail, not inside the View menu (Terry, 0.2.0 build 5).
+                RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
+                    .accessibilityIdentifier("settingsButton")
+                // 0.5.0: Playing and Upcoming on the rail (Tabletop's lower half), not above the fold.
+                if !model.data.collection.isEmpty {
+                    RailButton(action: ScreenAction(id: "playing", title: "Playing",
+                                                    systemImage: model.libraryTab == .playing ? "gamecontroller.fill" : "gamecontroller",
+                                                    kind: .button { model.libraryTab = .playing }))
+                        .accessibilityAddTraits(model.libraryTab == .playing ? .isSelected : [])
+                        .accessibilityIdentifier("playingRail")
+                    RailButton(action: ScreenAction(id: "upcoming", title: "Upcoming",
+                                                    systemImage: model.libraryTab == .upcoming ? "calendar.badge.clock" : "calendar",
+                                                    kind: .button { model.libraryTab = .upcoming }))
+                        .accessibilityAddTraits(model.libraryTab == .upcoming ? .isSelected : [])
+                        .accessibilityIdentifier("upcomingRail")
                 }
             }
-            Spacer(minLength: 8)
+              }
+            }
+            .scrollBounceBehavior(.basedOnSize)
+            .scrollIndicators(.hidden)
             Divider().frame(width: 28)
             tab(.library, "Library", "books.vertical", badge: model.totalUnread)
             tab(.updates, "Updates", "newspaper")
@@ -203,6 +284,7 @@ struct TabletopRail: View {
                 .contentShape(Rectangle())
         }
         .accessibilityLabel(title)
+        .accessibilityValue(badge > 0 ? "\(badge) unread" : "")
         .accessibilityAddTraits(model.nav.tab == t ? .isSelected : [])
         .tappableFrame()
     }
@@ -229,18 +311,23 @@ struct LowerMessages: View {
                     }
                     .padding(.horizontal, 16)
                     .frame(minHeight: 44)
-                    .glassEffect(.regular.interactive(), in: Capsule())
+                    // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
+                    .background(Capsule().fill(PlayscribeColor.ink700))
+                    .adaptiveGlass(in: Capsule(), interactive: true)
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()
-                .gesture(DragGesture(minimumDistance: 20).onEnded { _ in model.pill = nil })
+                .accessibilityIdentifier("newOnPS5Pill")
+                .highPriorityGesture(DragGesture(minimumDistance: 20).onEnded { _ in model.pill = nil })
+                .accessibilityAction(named: "Dismiss") { model.pill = nil }
                 .transition(.move(edge: .bottom).combined(with: .opacity))
             }
             if let toast = model.toast {
                 HStack(spacing: 12) {
-                    Text(toast.text).font(PlayscribeFont.subheadline)
+                    // Wraps to two lines at large sizes instead of shrinking (Iris, AX3).
+                    Text(toast.text).font(PlayscribeFont.subheadline).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     if let undo = toast.undo {
-                        Button("Undo") { undo(); model.toastClear() }
+                        Button(toast.actionLabel) { undo(); model.toastClear() }
                             .font(PlayscribeFont.subheadline.weight(.semibold))
                             .hitTarget()
                             .tappableFrame()
@@ -257,7 +344,7 @@ struct LowerMessages: View {
                 .transition(.opacity)
                 .accessibilityElement(children: .combine)
                 .accessibilityActions {
-                    if let undo = toast.undo { Button("Undo") { undo(); model.toastClear() } }
+                    if let undo = toast.undo { Button(toast.actionLabel) { undo(); model.toastClear() } }
                     Button("Dismiss") { model.toastClear() }
                 }
             }
@@ -266,6 +353,9 @@ struct LowerMessages: View {
         .padding(.bottom, duo.pose == .flat && !duo.isLandscape ? 96 : 16)
         .padding(.trailing, duo.pose == .tabletop ? TabletopRail.width : 0)
         .padding(.horizontal, 16)
+        // Book: the pill and toasts stay on the left page; they never straddle the fold.
+        .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 8) : .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .animation(.snappy, value: model.toast)
         .animation(.snappy, value: model.pill?.releaseID)
     }

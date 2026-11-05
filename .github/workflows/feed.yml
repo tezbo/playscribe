@@ -4,9 +4,13 @@ name: Feed
 # branch, served at https://raw.githubusercontent.com/tezbo/playscribe/feed/v1/index.json.
 # The SQLite state travels with it (state/playscribe.db). The branch holds one commit, replaced on
 # every run, so it never grows. Free on a public repository.
+# At :47 a short hot run polls only the hot set (backend/src/hot.ts: games with a patch in the last 14
+# days plus backend/src/sources/hot-pinned.json), so followed games get faster alerts. About 1 to 2
+# minutes a run, so roughly 1,000 to 1,500 extra Actions minutes a month, free on a public repository.
 on:
   schedule:
     - cron: '17 * * * *'
+    - cron: '47 * * * *'
   workflow_dispatch:
     inputs:
       action:
@@ -76,7 +80,9 @@ jobs:
       - name: Poll
         if: github.event_name == 'schedule' || inputs.action == 'poll'
         working-directory: backend
-        run: npm run ingest --silent -- --export "$GITHUB_WORKSPACE/out"
+        env:
+          HOT_RUN: ${{ github.event.schedule == '47 * * * *' && '--hot' || '' }}
+        run: npm run ingest --silent -- $HOT_RUN --export "$GITHUB_WORKSPACE/out"
       - name: Backfill
         if: inputs.action == 'backfill'
         working-directory: backend
@@ -107,12 +113,20 @@ jobs:
       # Every game's description, genres, first release and trailers (v1/info), so no game page is
       # ever blank. Refreshed weekly, or now with the info action.
       - name: Game info
-        if: github.event_name == 'schedule' || inputs.action == 'poll' || inputs.action == 'info'
+        if: (github.event_name == 'schedule' && github.event.schedule != '47 * * * *') || inputs.action == 'poll' || inputs.action == 'info'
         working-directory: backend
         run: |
           stamp="$GITHUB_WORKSPACE/out/v1/info/fetched-at"
           if [ "${{ inputs.action }}" != info ] && [ -f "$stamp" ] && [ $(( $(date +%s) - $(date -d "$(cat "$stamp")" +%s) )) -lt 604800 ]; then echo "Info is fresh"; exit 0; fi
           npm run game-info --silent -- "$GITHUB_WORKSPACE/out" && date -u +%FT%TZ > "$stamp"
+      # Upcoming PS5 games for the watchlist (v1/upcoming), refreshed daily, or now with the info action.
+      - name: Upcoming games
+        if: (github.event_name == 'schedule' && github.event.schedule != '47 * * * *') || inputs.action == 'poll' || inputs.action == 'info'
+        working-directory: backend
+        run: |
+          stamp="$GITHUB_WORKSPACE/out/v1/upcoming/fetched-at"
+          if [ "${{ inputs.action }}" != info ] && [ -f "$stamp" ] && [ $(( $(date +%s) - $(date -d "$(cat "$stamp")" +%s) )) -lt 82800 ]; then echo "Upcoming is fresh"; exit 0; fi
+          npm run upcoming --silent -- "$GITHUB_WORKSPACE/out" && date -u +%FT%TZ > "$stamp"
       - name: Publish
         working-directory: out
         run: |

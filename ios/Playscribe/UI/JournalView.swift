@@ -16,6 +16,7 @@ struct JournalView: View {
         // A Group, not a stack: each release is a direct child of the reading panel's lazy stack,
         // so deep links can scroll it to the top (R-1, N-6).
         Group {
+            FollowingList(gameID: gameID)
             if !announced.isEmpty {
                 SectionHeader(title: "Coming to PS5")
                 ForEach(announced) { ReleaseEntry(release: $0, defaultOpen: false).id("rel-\($0.id)") }
@@ -26,8 +27,7 @@ struct JournalView: View {
                 // GR-1: never an empty game. When it's out, and that we're watching for notes.
                 VStack(alignment: .leading, spacing: 6) {
                     Text(game.ps5AvailabilityLine).font(PlayscribeFont.headline)
-                    Text("No updates yet. Checked \(model.lastChecked.formatted(.relative(presentation: .named))).")
-                        .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    NoUpdatesLine()
                 }
                 .padding(.vertical, 8)
             }
@@ -133,7 +133,6 @@ struct ReleaseTag: View {
         case .onPS5: if release.simulated == true { Tag(text: "Simulated", tint: .simulated) }
         case .announced: Tag(text: "Announced", tint: .ember)
         case .reported: EmptyView()
-        case .pcOnly: EmptyView()
         case .notPlanned: Tag(text: "Not planned for PS5", tint: .secondary)
         case .pending: EmptyView()
         }
@@ -165,6 +164,8 @@ struct ReleaseBody: View {
         VStack(alignment: .leading, spacing: 14) {
             if let h = ps5Page ? r.ps5Headline : r.headline {
                 Text(h).font(PlayscribeFont.title3)
+            } else if !r.notes.isEmpty {
+                Text("Fixes and tuning").font(PlayscribeFont.title3)
             }
             if let summary = ps5Page ? r.ps5Summary : r.summary {
                 VStack(alignment: .leading, spacing: 4) {
@@ -180,9 +181,14 @@ struct ReleaseBody: View {
                     }
                 }
             }
+            if let minutes = r.readMinutes {
+                Text("\(minutes) min read").font(PlayscribeFont.footnote.weight(.semibold)).foregroundStyle(.secondary)
+                    .accessibilityLabel("About \(minutes) minute\(minutes == 1 ? "" : "s") to read")
+            }
             let keys = ps5Page ? r.ps5KeyChanges : (r.keyChanges ?? [])
             if !keys.isEmpty {
                 VStack(alignment: .leading, spacing: 8) {
+                    Text("What's new").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
                     ForEach(keys, id: \.self) { k in
                         HStack(alignment: .firstTextBaseline, spacing: 10) {
                             Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
@@ -210,8 +216,14 @@ struct ReleaseBody: View {
             if r.isSilent && r.notes.isEmpty {
                 Text("No official notes").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
-            ForEach(Array(r.notes.enumerated()), id: \.offset) { _, section in
-                NoteSectionView(release: r, section: section)
+            // A-reader: changes grouped New, Fixed, Balance, each heading with its count.
+            let groups = ChangeKind.grouped(r.notes, ps5Only: ps5Page)
+            ForEach(groups, id: \.kind) { g in
+                Text("\(g.kind.rawValue) \(g.count)").font(PlayscribeFont.title3).padding(.top, 6)
+                    .accessibilityAddTraits(.isHeader)
+                ForEach(Array(g.sections.enumerated()), id: \.offset) { _, section in
+                    NoteSectionView(release: r, section: section)
+                }
             }
             HStack(spacing: 10) {
                 let marked = model.isBookmarked(kind: .release, id: r.id)
@@ -240,7 +252,7 @@ enum FactsLine {
     static func text(for r: Release) -> String {
         let date = (r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth
         switch r.ps5State {
-        case .onPS5, .pcOnly, .pending: return "Released \(date)"
+        case .onPS5, .pending: return "Released \(date)"
         case .announced: return "Announced for PS5, \(date)"
         case .reported: return "Released \(date)"
         case .notPlanned: return "Not planned for PS5"
@@ -294,7 +306,7 @@ struct Facts: View {
             if let size = p?.sizeBytes {
                 row("Download", HStack(spacing: 6) {
                     Text(ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal))
-                    if size.verification == .reported { Tag(text: "Reported") }
+                    if size.verification == .reported { VerificationTag(kind: .reported) }
                 })
             } else if !r.isPS5Listed, let size = r.platforms.first(where: { $0.platform == .pc })?.sizeBytes {
                 row("Download", Text("\(ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal)) on PC"))
@@ -323,7 +335,7 @@ struct Facts: View {
         case .announced: "Announced for PS5"
         case .reported: "Reported on PS5"
         case .notPlanned: "Not planned for PS5"
-        case .pcOnly, .pending: "Released"
+        case .pending: "Released"
         }
     }
 
@@ -379,6 +391,7 @@ struct NoteSectionView: View {
     var release: Release
     var section: NoteSection
     @State private var showPC = false
+    @State private var allShown = false
 
     var body: some View {
         let key = "cat:\(release.id):\(section.title)"
@@ -401,14 +414,19 @@ struct NoteSectionView: View {
             .buttonStyle(.plain)
             .tappableFrame()
             if open {
-                ForEach(Array(ps5Items.enumerated()), id: \.offset) { i, item in
+                let visible = allShown ? ps5Items.count : min(5, ps5Items.count)
+                ForEach(Array(ps5Items.prefix(visible).enumerated()), id: \.offset) { i, item in
                     // An item that was only Steam markup (an image) has nothing to show.
                     if !LinkedText.clean(item.text).isEmpty {
                         NoteItemView(item: item, gameID: release.gameID, key: "\(key):\(i)")
                     }
                 }
+                if ps5Items.count > 5 {
+                    Button(allShown ? "Show fewer" : "Show \(ps5Items.count - 5) more") { allShown.toggle() }
+                        .font(PlayscribeFont.footnote).hitTarget()
+                }
                 if !pcOnly.isEmpty {
-                    Button(showPC ? "Hide PC-specific changes" : "Show PC-specific changes (\(pcOnly.count))") { showPC.toggle() }
+                    Button(showPC ? "Hide PC only" : "Show PC only (\(pcOnly.count))") { showPC.toggle() }
                         .font(PlayscribeFont.footnote).hitTarget()
                     if showPC {
                         ForEach(Array(pcOnly.enumerated()), id: \.offset) { i, item in
@@ -435,6 +453,10 @@ struct NoteItemView: View {
             VStack(alignment: .leading, spacing: 4) {
                 if item.spoiler == true { SpoilerText(text: item.text, gameID: gameID, key: key) } else { LinkedTextView(text: item.text) }
                 if item.ps5ProOnly { Tag(text: "PS5 Pro") }
+            }
+            if let issue = model.knownIssue(for: item, in: gameID) {
+                Spacer(minLength: 0)
+                FollowIssueButton(issue: issue)
             }
         }
         .font(PlayscribeFont.subheadline)
@@ -481,11 +503,51 @@ struct SourceLinks: View {
                     .frame(minHeight: 44).tappableFrame()
             }
             if let url = release.links?.steamNotes {
-                Link(destination: url) { Label("Open in Steam", systemImage: "arrow.up.right.square") }
-                    .frame(minHeight: 44).tappableFrame()
+                Link(destination: url) { Label("Open in Steam", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
+                    .padding(.trailing, 8)
+                    .tappableFrame()
             }
         }
         .font(PlayscribeFont.subheadline)
         .foregroundStyle(PlayscribeColor.accent)
+    }
+}
+
+/// New, Fixed and Balance: the reader's change groups, chosen from the section title.
+enum ChangeKind: String, CaseIterable {
+    case new = "New", fixed = "Fixed", balance = "Balance", other = "Other changes"
+
+    /// Keywords in the section title; a title the guess cannot place goes under Other changes,
+    /// never into a wrong group (Iris). Replace with the feed's category field when it lands.
+    static func of(_ title: String) -> ChangeKind {
+        let t = title.lowercased()
+        if t.contains("fix") || t.contains("bug") || t.contains("crash") || t.contains("stabil") { return .fixed }
+        if t.contains("balanc") || t.contains("tuning") || t.contains("adjust") || t.contains("tweak") { return .balance }
+        if t.contains("new") || t.contains("add") || t.contains("feature") || t.contains("introduc") { return .new }
+        return .other
+    }
+
+    /// The feed's category when present, else the keyword guess on the section title.
+    static func of(_ item: NoteItem, in title: String) -> ChangeKind {
+        switch item.category {
+        case "new": .new
+        case "fixed": .fixed
+        case "balance": .balance
+        case "other": .other
+        default: of(title)
+        }
+    }
+
+    /// Non-empty groups in New, Fixed, Balance, Other order; the count leaves out PC-only lines on a PS5 page.
+    static func grouped(_ notes: [NoteSection], ps5Only: Bool) -> [(kind: ChangeKind, sections: [NoteSection], count: Int)] {
+        allCases.compactMap { kind in
+            let sections = notes.compactMap { sec -> NoteSection? in
+                let items = sec.items.filter { of($0, in: sec.title) == kind }
+                return items.isEmpty ? nil : NoteSection(title: sec.title, items: items)
+            }
+            guard !sections.isEmpty else { return nil }
+            let count = sections.reduce(0) { total, sec in total + sec.items.filter { item in !(ps5Only && item.isPCOnly) }.count }
+            return (kind, sections, count)
+        }
     }
 }

@@ -1,0 +1,9 @@
+{
+  "$comment": "Roadmap 17. The only sources that may feed news headlines. Anything not listed here is never read for news (press sites included). We keep the title, date and link only, never article text, and the app shows no source names. Terms checked 2026-11-03 by Priya. The PlayStation Blog was removed from this list the same day: playstation.com's website terms (section on text and data mining) bar bots, scrapers and other automated tools from accessing or copying any part of the site, and it is not clear that the public RSS feed is carved out. Add it back only after Terry or Theo confirms in writing.",
+  "sources": {
+    "steamNews": {
+      "what": "Official posts on each game's own Steam news feed (Steam Web API ISteamNews, public, no key), the studio's own announcements.",
+      "terms": "Same endpoint the patch ingest already uses; only the headline, date and Steam link are kept."
+    }
+  }
+}

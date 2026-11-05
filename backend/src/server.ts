@@ -10,6 +10,7 @@ import { classify, nameRelease } from './ingest/classify.ts'
 import type { Apns } from './push/apns.ts'
 import { pushPs5Release } from './push/notify.ts'
 import * as store from './store.ts'
+import { parseQuietHours } from './push/quiet.ts'
 import type { FetchFn } from './http.ts'
 import type { NotifyLevel, Platform } from './types.ts'
 
@@ -119,10 +120,12 @@ export const createApp = (deps: AppDeps) => {
   }
 
   app.post('/v1/devices', async (c) => {
-    const body = (await c.req.json().catch(() => ({}))) as { apnsToken?: string; environment?: string; locale?: string; follows?: unknown }
+    const body = (await c.req.json().catch(() => ({}))) as { apnsToken?: string; environment?: string; locale?: string; follows?: unknown; quietHours?: unknown }
     const env = body.environment ?? 'production'
     if (env !== 'sandbox' && env !== 'production') return bad(c, 'environment must be sandbox or production')
     if (body.apnsToken && !/^[0-9a-f]{64,200}$/i.test(body.apnsToken)) return bad(c, 'apnsToken must be hex')
+    const quiet = body.quietHours === undefined ? null : parseQuietHours(body.quietHours)
+    if (quiet && 'error' in quiet) return bad(c, quiet.error)
     const id = randomUUID()
     const key = randomBytes(32).toString('base64url')
     const t = now()
@@ -131,6 +134,7 @@ export const createApp = (deps: AppDeps) => {
     db.prepare('INSERT INTO devices (id, key_hash, apns_token, environment, locale, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)').run(
       id, sha(key), body.apnsToken?.toLowerCase() ?? null, env, body.locale ?? null, t, t,
     )
+    if (quiet) db.prepare('UPDATE devices SET quiet_from = ?, quiet_until = ?, quiet_tz = ? WHERE id = ?').run(quiet.from, quiet.until, quiet.timeZone, id)
     const f = body.follows ? await writeFollows(id, body.follows) : { follows: [], unknown: [] }
     if ('error' in f) return bad(c, f.error!)
     return c.json({ deviceId: id, deviceKey: key, ...f }, 201)
@@ -139,12 +143,15 @@ export const createApp = (deps: AppDeps) => {
   app.patch('/v1/devices/me', async (c) => {
     const d = device(c)
     if (!d) return bad(c, 'unknown device key', 401)
-    const body = (await c.req.json().catch(() => ({}))) as { apnsToken?: string | null; environment?: string; locale?: string }
+    const body = (await c.req.json().catch(() => ({}))) as { apnsToken?: string | null; environment?: string; locale?: string; quietHours?: unknown }
     if (body.environment && body.environment !== 'sandbox' && body.environment !== 'production') return bad(c, 'environment must be sandbox or production')
     if (body.apnsToken && !/^[0-9a-f]{64,200}$/i.test(body.apnsToken)) return bad(c, 'apnsToken must be hex')
+    const quiet = body.quietHours === undefined ? undefined : parseQuietHours(body.quietHours)
+    if (quiet && 'error' in quiet) return bad(c, quiet.error)
     const token = body.apnsToken === undefined ? d.apns_token : body.apnsToken?.toLowerCase() ?? null
     if (token) db.prepare('UPDATE devices SET apns_token = NULL WHERE apns_token = ? AND id != ?').run(token, d.id)
     db.prepare('UPDATE devices SET apns_token = ?, environment = ?, locale = ?, updated_at = ? WHERE id = ?').run(token, body.environment ?? d.environment, body.locale ?? d.locale, now(), d.id)
+    if (quiet !== undefined) db.prepare('UPDATE devices SET quiet_from = ?, quiet_until = ?, quiet_tz = ? WHERE id = ?').run(quiet?.from ?? null, quiet?.until ?? null, quiet?.timeZone ?? null, d.id)
     return c.json({ deviceId: d.id })
   })
 
