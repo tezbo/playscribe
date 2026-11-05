@@ -12,6 +12,7 @@ struct SettingsView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dismiss) private var dismiss
     @Environment(\.duo) private var duo
+    @AppStorage(YouTubeController.autoplayKey) private var autoplayVideos = false
     @State private var simGame: String = ""
     @State private var simKind: AppModel.SimKind = .major
     @State private var simDelay: Double = 10
@@ -41,6 +42,14 @@ struct SettingsView: View {
                     Text(NotificationService.shared.authorization == .denied
                          ? "Notifications are off for \(Brand.name) in iOS Settings."
                          : "Change a single game from the bell on its page.")
+                }
+
+                Section {
+                    Toggle("Autoplay videos", isOn: $autoplayVideos)
+                } header: {
+                    Text("Video")
+                } footer: {
+                    Text("Trailers and update videos start as soon as they open. Off when Reduce Motion is on.")
                 }
 
                 #if INTERNAL
