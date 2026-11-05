@@ -2,14 +2,15 @@ import Foundation
 import Observation
 import SwiftUI
 
-enum AppTab: String, Codable, Hashable { case library, updates, search }
+enum AppTab: String, Codable, Hashable { case library, updates, news, search }
 
 enum Chapter: String, Codable, CaseIterable, Hashable, Identifiable {
-    case updates, world, companion, gallery, mybook
+    case updates, news, world, companion, gallery, mybook
     var id: String { rawValue }
     var title: String {
         switch self {
         case .updates: "Updates"
+        case .news: "News"
         case .world: "World"
         case .companion: "Companion"
         case .gallery: "Gallery"
@@ -19,6 +20,7 @@ enum Chapter: String, Codable, CaseIterable, Hashable, Identifiable {
     var symbol: String {
         switch self {
         case .updates: "list.bullet.rectangle.portrait"
+        case .news: "megaphone"
         case .world: "globe.europe.africa"
         case .companion: "lightbulb"
         case .gallery: "photo.on.rectangle"
@@ -181,6 +183,10 @@ final class AppModel {
     /// Full per-game histories (games/<id>.json), keyed by the app's game id.
     var gameReleases: [String: [Release]] = [:] { didSet { rebuildMerged() } }
     @ObservationIgnored var historyStamps: [String: String] = [:]
+    /// News (NewsFeed.swift): everything the global file holds, each library game's own file, and the feed id for games whose id differs.
+    var news: [NewsItem] = []
+    var gameNews: [String: [NewsItem]] = [:]
+    var feedIDs: [String: String] = [:]
 
     private func rebuildMerged() {
         let curated = Dictionary(fixtures.releases.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
@@ -330,7 +336,7 @@ final class AppModel {
     func chapters(_ gameID: String) -> [Chapter] {
         Chapter.allCases.filter { c in
             switch c {
-            case .updates, .mybook, .gallery: true
+            case .updates, .news, .mybook, .gallery: true
             case .world: fixtures.book.contains { $0.gameID == gameID && $0.chapter == .world }
             case .companion: fixtures.book.contains { $0.gameID == gameID && $0.chapter == .companion }
             }
@@ -434,6 +440,7 @@ final class AppModel {
         case "settings": settingsOpen = true
         case "library": nav.tab = .library; nav.gameID = nil
         case "updates": nav.tab = .updates
+        case "news": nav.tab = .news
         case "search": nav.tab = .search
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))

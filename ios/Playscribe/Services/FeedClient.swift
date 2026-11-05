@@ -50,6 +50,7 @@ extension AppModel {
     /// Loads the cached feed at launch without notifying.
     func loadCachedFeed() {
         loadCachedHistories()
+        loadCachedNews()
         if let cached = FeedClient.loadCache() {
             feedReleases = cached.releases
             feedStatus = .updated(cached.updatedAt)
@@ -71,6 +72,7 @@ extension AppModel {
             feedStatus = .updated(latest.updatedAt)
             notifyNewlyOnPS5()
             await refreshHistories()
+            await refreshNews()
         } catch let error as URLError where [.notConnectedToInternet, .networkConnectionLost, .timedOut].contains(error.code) {
             feedStatus = .offline(previous)
         } catch {

@@ -10,6 +10,7 @@
 import { config } from '../config.ts'
 import { openDb } from '../db.ts'
 import { exportStatic } from '../export.ts'
+import { exportNews } from '../news.ts'
 import { Igdb } from '../ingest/igdb.ts'
 import { runIngest, seedGames } from '../ingest/pipeline.ts'
 import { Apns } from '../push/apns.ts'
@@ -29,6 +30,14 @@ const apns = process.env.PUSH_ENABLED === '1' && keyId && teamId && key ? new Ap
 const alerts = await pushNewPs5(db, apns, { maxAgeHours: config.pushMaxAgeHours })
 if (alerts.length) console.log('alerts:', JSON.stringify(alerts))
 apns?.close()
-if (exportDir) console.log('exported', exportStatic(db, exportDir))
+if (exportDir) {
+  console.log('exported', exportStatic(db, exportDir))
+  // News is best effort: it never fails the patch feed.
+  try {
+    console.log('news', JSON.stringify(await exportNews(fetch, exportDir, console.log)))
+  } catch (e) {
+    console.log(`::warning::news: ${(e as Error).message}`)
+  }
+}
 if (summary.errors.length) for (const e of summary.errors) console.log(`::warning::${e.sourceId}: ${e.error}`)
 db.close()

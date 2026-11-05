@@ -19,7 +19,7 @@ Apple sources (read 2026-10-24): Designing for iPhone Duo, Preparing your app fo
 | **Book** (landscape, folded) | inner, divided vertically | vertical rail | left page / right page via ArrangementView split |
 | **Tabletop** (portrait, folded) | inner, divided horizontally | **custom: every control on a trailing rail in the lower half** (Terry's rule, overriding the system's horizontal bars) | upper = stage (view only), lower = controls + content, via ArrangementView overlay |
 
-- **G-1** Navigation: a `TabView` with three tabs: Library, Updates and Search (search role). Library pushes the game book onto a `NavigationStack`. In open landscape it is a `NavigationSplitView` (sidebar = library, detail = game book). Navigation containers sit outside every ArrangementView.
+- **G-1** Navigation: a `TabView` with four tabs: Library, Updates, News and Search (search role). Library pushes the game book onto a `NavigationStack`. In open landscape it is a `NavigationSplitView` (sidebar = library, detail = game book). Navigation containers sit outside every ArrangementView.
 - **G-2** Leaving a game book is **Back** (chevron, accessibility label "Library") in every pose. **Close (X)** is used only for modal content: the Add game sheet, the video player and Settings.
 - **G-3** Toolbar items have both a title and an SF Symbol. Back sits at the top of the vertical axis, then the pinned action, then the groups. Overflow uses the system menu.
 - **G-4** Tabletop: **no tappable element has its frame above the top of the fold region.** This includes alerts the app draws, banners, pills, sheet headers and video posters. The stage view is `.allowsHitTesting(false)`. System alerts and the permission prompt are exempt because the system places them.
@@ -168,6 +168,11 @@ Decision: the native launch screen is a plain background colour matching the Lib
   - Never for Pending, PC only or Announced. At most one Reported alert per release.
   - Tapping it opens the release as N-6, showing its Reported tag.
   - Acceptance: after confirm, Notification Center holds exactly one entry for the release (`getDeliveredNotifications`). Its text is the On PS5 text. No sound and no screen wake happen on either post.
+
+## 7a. News
+
+- **N-9** News is a tab (`megaphone`) and a chapter on every game. It holds posts and headlines that are not patch notes. The tab lists your games' news first ("Your games"), then "Around PS5". Each row has cover, title, an Official (studio post, with a short excerpt) or Reported (press headline only) tag, and date; tapping opens the link in the default browser. No source names or URLs are shown.
+- **N-10** A game's News chapter is never blank: with nothing yet it says so. The tab with nothing says "News will appear here". News reads from the cache offline (E-1).
 
 ## 7. Updates tab
 

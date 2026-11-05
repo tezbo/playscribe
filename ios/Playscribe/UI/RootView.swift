@@ -96,6 +96,10 @@ struct TabRoot: View {
                 NavigationStack { UpdatesView().tabletopChrome(duo) }.auditActive(model.nav.tab == .updates)
             }
 
+            Tab("News", systemImage: "megaphone", value: AppTab.news) {
+                NavigationStack { NewsView().tabletopChrome(duo) }.auditActive(model.nav.tab == .news)
+            }
+
             Tab(value: AppTab.search, role: .search) {
                 NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search)
             }
@@ -178,6 +182,7 @@ struct TabletopRail: View {
             Divider().frame(width: 28)
             tab(.library, "Library", "books.vertical", badge: model.totalUnread)
             tab(.updates, "Updates", "newspaper")
+            tab(.news, "News", "megaphone")
             tab(.search, "Search", "magnifyingglass")
         }
         .padding(.vertical, 8)

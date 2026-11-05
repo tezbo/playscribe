@@ -11,6 +11,20 @@ struct ModelTests {
         return AppModel(storeURL: url)
     }
 
+    @Test("N-1: news decodes with fractional dates, a bad link cannot fail the file, and a game gets its own items plus the global ones")
+    func news() throws {
+        let raw = Data(#"{"updatedAt":"2026-11-04T10:00:00.000Z","items":[{"id":"a","gameId":"g1","title":"T","publishedAt":"2026-11-04T10:00:00.000Z","excerpt":"E","url":"https://x.test/a","kind":"official"},{"id":"b","gameId":null,"title":"U","publishedAt":"2026-11-03T10:00:00.000Z","url":"not a url","kind":"reported"}]}"#.utf8)
+        let n = try #require(FeedClient.decodeNews(raw))
+        #expect(n.items.count == 2)
+        #expect(n.items[0].link != nil && n.items[0].isOfficial)
+        #expect(n.items[1].link == nil && !n.items[1].isOfficial)
+        let m = freshModel()
+        m.news = n.items
+        m.gameNews["g1"] = [n.items[0]]
+        #expect(m.newsFor("g1").map(\.id) == ["a"])
+        #expect(m.newsAroundPS5.map(\.id).contains("b"))
+    }
+
     @Test("Fixtures decode and every release follows the PS5 spec")
     func fixtures() {
         let f = Fixtures.shared

@@ -45,6 +45,7 @@ struct PageView: View {
                             NoNotesPage(game: g)
                         }
                     case .world, .companion: EntriesChapter(gameID: gameID, chapter: chapter)
+                    case .news: NewsChapter(gameID: gameID)
                     case .gallery: GalleryChapter(gameID: gameID)
                     case .mybook: MyBookChapter(gameID: gameID)
                     }
