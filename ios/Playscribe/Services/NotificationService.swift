@@ -258,7 +258,10 @@ extension NotificationService: UNUserNotificationCenterDelegate {
 /// the first unlock), not in UserDefaults. A key left in UserDefaults by an earlier build moves over on first read.
 nonisolated struct DeviceKeyStore {
     var read: () -> String?
-    var write: (String?) -> Void
+    var store: (String?) -> Bool
+
+    /// Stores (or, with nil, forgets) the key. False when the Keychain refused it, for example in an unsigned build.
+    @discardableResult func write(_ value: String?) -> Bool { store(value) }
 
     private static let service = "co.codeconnectors.playscribe.push"
     private static let account = "deviceKey"
@@ -266,7 +269,7 @@ nonisolated struct DeviceKeyStore {
         [kSecClass as String: kSecClassGenericPassword, kSecAttrService as String: service, kSecAttrAccount as String: account]
     }
 
-    nonisolated(unsafe) static let keychain = DeviceKeyStore(read: readKeychain, write: writeKeychain)
+    nonisolated(unsafe) static let keychain = DeviceKeyStore(read: readKeychain, store: writeKeychain)
 
     private static func readKeychain() -> String? {
         var q = base
@@ -278,25 +281,25 @@ nonisolated struct DeviceKeyStore {
         }
         // Migrate a key an earlier build kept in UserDefaults.
         guard let old = UserDefaults.standard.string(forKey: account) else { return nil }
-        writeKeychain(old)
-        UserDefaults.standard.removeObject(forKey: account)
+        // Only forget the old copy once the Keychain has the key; if it refuses, the key stays where it was.
+        if writeKeychain(old) { UserDefaults.standard.removeObject(forKey: account) }
         return old
     }
 
-    private static func writeKeychain(_ value: String?) {
+    private static func writeKeychain(_ value: String?) -> Bool {
         SecItemDelete(base as CFDictionary)
-        guard let value else { return }
+        guard let value else { return true }
         var a = base
         a[kSecValueData as String] = Data(value.utf8)
         a[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
-        SecItemAdd(a as CFDictionary, nil)
+        return SecItemAdd(a as CFDictionary, nil) == errSecSuccess
     }
 
     /// A store that lives and dies with the process, for tests.
     static func memory(_ initial: String? = nil) -> DeviceKeyStore {
         final class Box: @unchecked Sendable { var value: String?; init(_ v: String?) { value = v } }
         let box = Box(initial)
-        return DeviceKeyStore(read: { box.value }, write: { box.value = $0 })
+        return DeviceKeyStore(read: { box.value }, store: { box.value = $0; return true })
     }
 }
 

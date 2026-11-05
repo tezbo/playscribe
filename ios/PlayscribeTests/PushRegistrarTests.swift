@@ -146,14 +146,21 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         store.write(nil)
         UserDefaults.standard.removeObject(forKey: "deviceKey")
         #expect(store.read() == nil)
-        store.write("k-test")
-        #expect(store.read() == "k-test")
-        store.write(nil)
-        #expect(store.read() == nil)
-        // An earlier build's UserDefaults key moves over and is removed.
-        UserDefaults.standard.set("old", forKey: "deviceKey")
-        #expect(store.read() == "old")
-        #expect(UserDefaults.standard.string(forKey: "deviceKey") == nil)
-        store.write(nil)
+        if store.write("k-test") {
+            #expect(store.read() == "k-test")
+            store.write(nil)
+            #expect(store.read() == nil)
+            // An earlier build's UserDefaults key moves over and is removed.
+            UserDefaults.standard.set("old", forKey: "deviceKey")
+            #expect(store.read() == "old")
+            #expect(UserDefaults.standard.string(forKey: "deviceKey") == nil)
+            store.write(nil)
+        } else {
+            // An unsigned build has no Keychain entitlement. The key must not be lost: it stays in UserDefaults.
+            UserDefaults.standard.set("old", forKey: "deviceKey")
+            #expect(store.read() == "old")
+            #expect(UserDefaults.standard.string(forKey: "deviceKey") == "old", "the old copy stays while the Keychain refuses")
+            UserDefaults.standard.removeObject(forKey: "deviceKey")
+        }
     }
 }
