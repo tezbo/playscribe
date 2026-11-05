@@ -11,8 +11,10 @@ struct GameBookView: View {
     var body: some View {
         let game = model.game(gameID)
         Group {
-            if duo.pose == .closed {
-                // Closed (or any compact width, D-11): the stacked game book, Contents hidden.
+            if duo.pose == .closed || (duo.pose == .flat && !duo.isLandscape) {
+                // Closed, or the inner display flat in portrait (no fold, so nothing to split on):
+                // one page that scrolls as one, the Contents below the Page. Two panes scrolling
+                // separately, with the Page cut off mid-line, was wrong on a flat screen.
                 PageView(gameID: gameID, withContents: true)
             } else if sideBySide {
                 // Side by side: Contents left, Page right by default (D-10).
@@ -66,6 +68,20 @@ struct GameBookView: View {
             .allowsHitTesting(false)
             // Not touchable, so not audited as tappable: a frame here is never a fold crossing (TT-1).
             .auditActive(false)
+        } else if duo.pose == .flat && !duo.isLandscape {
+            // Open portrait (Iris): the Page above the sheet. A whole line, not half a line, at the sheet's edge at
+            // rest: 12 pt of bottom room and a 24 pt fade to the sheet colour.
+            PageView(gameID: gameID)
+                .contentMargins(.bottom, 12, for: .scrollContent)
+                .overlay(alignment: .bottom) {
+                    // A 24 pt fade left a half line readable at the edge (0c93f25); 44 pt, solid for the last 8 pt,
+                    // so a line cut by the sheet is faded out, never shown half drawn.
+                    LinearGradient(stops: [.init(color: .clear, location: 0), .init(color: Color.ink0, location: 0.82)],
+                                   startPoint: .top, endPoint: .bottom)
+                        .frame(height: 44)
+                        .allowsHitTesting(false)
+                        .accessibilityHidden(true)
+                }
         } else {
             PageView(gameID: gameID)
         }
@@ -107,9 +123,10 @@ struct ChapterBar: View {
                     }
                 }
                 .padding(.horizontal, 2)
-                .padding(.trailing, 24)
+                .padding(.trailing, 44)
             }
-            .edgeFade()
+            // A wider fade so a half-seen last chip reads as "more this way", not as a bug.
+            .edgeFade(44)
             .onAppear { proxy.scrollTo(selected, anchor: .center) }
             .onChange(of: selected) { _, c in withAnimation { proxy.scrollTo(c, anchor: .center) } }
         }

@@ -17,6 +17,7 @@ struct SettingsView: View {
     private func dismiss() { if let panelClose { panelClose() } else { systemDismiss() } }
     @Environment(\.duo) private var duo
     @AppStorage(YouTubeController.autoplayKey) private var autoplayVideos = false
+    @AppStorage(VideoReflection.key) private var reflectionMode = false
     @State private var simGame: String = ""
     @State private var simKind: AppModel.SimKind = .major
     @State private var simDelay: Double = 10
@@ -67,8 +68,13 @@ struct SettingsView: View {
                     }
                     Toggle("Pause all", isOn: $model.data.pauseAll)
                     quietHoursRows
-                    // Shown only while a PS Plus month exists, the same condition as the Library card.
-                    if PlusLogic.current(PlusStore.shared.months) != nil {
+                    // Not everyone has PS Plus: the Library card is on by default and can be hidden. Off also stops the reminder.
+                    Toggle("PS Plus card in Library", isOn: Binding(get: { model.data.plusCardOff != true }, set: { model.data.plusCardOff = $0 ? nil : true }))
+                        .accessibilityHint("Shows this month's PS Plus games in the Library, with a reminder before they leave")
+                        .accessibilityIdentifier("plusCardToggle")
+                        .onChange(of: model.data.plusCardOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
+                    // Shown only while a PS Plus month exists and the card is on, the same condition as the Library card.
+                    if model.data.plusCardOff != true, PlusLogic.current(PlusStore.shared.months) != nil {
                         // PS Plus: a reminder in the last three days a month's games can be claimed.
                         Toggle("PS Plus games leaving soon", isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true }))
                             .accessibilityHint("A reminder in the last three days before this month's PS Plus games leave")
@@ -107,10 +113,11 @@ struct SettingsView: View {
 
                 Section {
                     Toggle("Autoplay videos", isOn: $autoplayVideos)
+                    Toggle("Reflection mode", isOn: $reflectionMode)
                 } header: {
                     Text("Video")
                 } footer: {
-                    Text("Trailers and update videos start as soon as they open. Off when Reduce Motion is on.")
+                    Text("Trailers and update videos start as soon as they open. Reflection mode adds a soft mirror of the video under the controls when the Duo stands folded like a laptop. Both are off when Reduce Motion is on.")
                 }
 
                 #if INTERNAL

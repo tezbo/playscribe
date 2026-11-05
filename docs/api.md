@@ -75,7 +75,7 @@ Sent once per release, when its PS5 row becomes live, to followers whose `notify
 ```json
 {
   "aps": {
-    "alert": { "title": "The Blood of Dawnwalker", "body": "Update 1.1 is out on PS5 (version 01.004.000). See what changed." },
+    "alert": { "title": "The Blood of Dawnwalker: 4 new, 9 fixed", "body": "Update 1.1: Added photo mode" },
     "sound": "default", "thread-id": "dawnwalker", "interruption-level": "active", "relevance-score": 1
   },
   "gameId": "dawnwalker", "releaseId": "dawnwalker@1.1", "kind": "major", "verification": "official"
@@ -146,6 +146,10 @@ The app holds follows on the device and reads static JSON, so an "event" is a ch
 Each `upcoming/<n>.json` entry also carries, when IGDB has them: `summary` (cut to 300 characters at a word, ends with an ellipsis), `genres` (at most 3), `trailerId` (a YouTube id; a video named like a trailer, else the first), and `hypes` (IGDB's count of people waiting; a sort key for "Coming to PS5", never shown). A game that is not in the bundled catalogue therefore opens with a description and a trailer, not a blank page.
 
 `move`, `{ kind: delayed|earlier|dated, previousDate?, previousPrecision, movedAt }`, is present for 14 days after a real change in the date, found by comparing with the previous run: a later day, or an exact day that became vague or tbd, is `delayed`; an earlier exact day is `earlier`; a vague or tbd date that became an exact day is `dated`. A vague date that only narrows ("Q4" to "November") is not a move. Show it as "Delayed from March" or "Now dated"; the app has no need to store anything.
+
+### Push alert payload: digest counts (r050-richer-alerts)
+
+Alert copy (Iris): counts in the title, body `Update <version>: <headline>`, where `<version>` is the release's display name ("Update 1.1"), the same label the app's local alert uses, never a PC version, and `<headline>` is the digest's first `topNew` line: text before any colon, at most 60 characters, cut at a word boundary with an ellipsis only when cut. Title is `<Game>: 3 new, 12 fixed, 2 balance, 1 PS5-only` (zero counts left out), or just the game name when there is nothing to count. The headline is the digest's first `topNew` line. When it is missing (poor headings), the body is the counts line (`3 new, 12 fixed.`), or `A new update is out` when there is nothing to count. The payload also carries `digest: {new, fixed, balance, ps5}` beside `gameId`, `releaseId`, `kind`, `verification`. The 72-hour guard and once-only claim are unchanged.
 
 ### Quiet hours on the relay (r050-quiet-hours-push)
 

@@ -54,7 +54,7 @@ export const exportStatic = (db: DB, outDir: string) => {
   // latest.json's updatedAt must always be a date: the 0.2.0 app (Latest.updatedAt: Date) cannot decode null from an empty feed.
   write(join(root, 'latest.json'), { updatedAt: newest || '1970-01-01T00:00:00.000Z', releases: latest })
   const news = allNews(db)
-  write(join(root, 'news.json'), { updatedAt: news[0]?.date ?? null, items: news })
+  write(join(root, 'news.json'), { updatedAt: news[0]?.date ?? '1970-01-01T00:00:00.000Z', items: news })
   write(join(root, 'review.json'), { items: review })
   // Manual months override the automatic ones, month by month.
   const manual = loadPlus(undefined, new Set(games.map((g) => g.id)))

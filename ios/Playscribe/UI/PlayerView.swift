@@ -114,6 +114,9 @@ struct PlayerView: View {
     var gameID: String
     var releaseID: String
     @State private var controller: YouTubeController?
+    @AppStorage(VideoReflection.key) private var reflectionMode = false
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
 
     var body: some View {
         NavigationStack {
@@ -156,6 +159,7 @@ struct PlayerView: View {
             // TT-4: the standing half shows only the video; the flat half holds the transport.
             ArrangementView {
                 TabletopTransport(controller: controller, video: video, game: gameName, release: release, onClose: close)
+                    .background(alignment: .top) { if reflectionMode && !reduceMotion && !reduceTransparency { VideoReflection(controller: controller, poster: video.posterAsset) } }
             } secondary: {
                 surface
                     .overlay { if !controller.started { PosterCover(video: video) } }
@@ -193,6 +197,40 @@ struct PlayerView: View {
     private func close() {
         controller?.stop()
         dismiss()
+    }
+}
+
+/// Reflection mode: a faint, blurred mirror of the playing video under the controls on the flat
+/// half of the Tabletop pose. This is drawn by the app from snapshots of the player, not a system
+/// feature (no public API exists for one). View only: it never takes touches (tabletop rule).
+struct VideoReflection: View {
+    static let key = "reflectionMode"
+    var controller: YouTubeController
+    /// Shown until the first snapshot lands, the same still the stage shows before playback.
+    var poster: String?
+    @State private var frame: UIImage?
+
+    var body: some View {
+        Group {
+            if let image = frame ?? poster.flatMap({ UIImage(named: $0) }) {
+                Image(uiImage: image).resizable().aspectRatio(16 / 9, contentMode: .fit)
+                    .scaleEffect(x: 1, y: -1)
+                    .blur(radius: 14)
+                    .opacity(0.35)
+                    .mask(LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom))
+            }
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+        .task(id: controller.isPlaying) {
+            guard controller.isPlaying else { return }
+            while !Task.isCancelled {
+                let cfg = WKSnapshotConfiguration()
+                cfg.snapshotWidth = 320
+                if let img = try? await controller.webView.takeSnapshot(configuration: cfg) { frame = img }
+                try? await Task.sleep(for: .milliseconds(250))
+            }
+        }
     }
 }
 

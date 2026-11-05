@@ -70,6 +70,7 @@ internal-only trial for one game is planned after 0.2.0 ships. Brief: docs/game-
 - Parked: patch size hint (only 3% of PS5 updates list a size).
 - Parked until Sony opens an official route: trophy data (Terry), PlayStation sign-in, price watch.
 - Other consoles once PS5 is excellent.
+- Low priority, nothing holds on it: find why the fold harness's offscreen host draws a vertical tab bar (frames 84-88 pt narrow in Closed, Open, Closed landscape and Tabletop; 44 pt left in Open portrait and Book). See docs/fold-harness.md, Scope.
 
 ## Suggestions and agent ideas
 

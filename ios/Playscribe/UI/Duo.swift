@@ -21,6 +21,8 @@ struct DuoContext: Equatable {
     var division: CGRect?
     /// Active occlusions (cameras), in the root container's coordinates.
     var occlusions: [CGRect] = []
+    /// The container's safe-area insets, as the system reports them (fold harness calibration).
+    var safeArea = EdgeInsets()
     var isLandscape: Bool { size.width > size.height }
     var isFolded: Bool { division != nil }
 
@@ -43,24 +45,55 @@ extension EnvironmentValues {
     }
 }
 
+/// Reserved regions a test supplies in place of the system's, in the root container's coordinates
+/// (fold harness, docs/fold-harness.md). Nil in the app: the real regions are read from the proxy.
+struct InjectedRegions: Equatable {
+    var division: CGRect?
+    var occlusions: [CGRect] = []
+}
+
+private struct InjectedRegionsKey: EnvironmentKey {
+    static let defaultValue: InjectedRegions? = nil
+}
+
+extension EnvironmentValues {
+    var injectedRegions: InjectedRegions? {
+        get { self[InjectedRegionsKey.self] }
+        set { self[InjectedRegionsKey.self] = newValue }
+    }
+}
+
 /// Reads the scene-level container and its reserved regions, and publishes the pose.
 struct DuoReader<Content: View>: View {
     @Environment(\.horizontalSizeClass) private var hSize
+    @Environment(\.injectedRegions) private var injected
     @ViewBuilder var content: (DuoContext) -> Content
 
     var body: some View {
         GeometryReader { proxy in
-            let ctx = Self.context(proxy: proxy, compact: hSize == .compact)
+            let ctx = Self.context(proxy: proxy, compact: hSize == .compact, injected: injected)
             content(ctx)
                 .environment(\.duo, ctx)
         }
     }
 
-    static func context(proxy: GeometryProxy, compact: Bool) -> DuoContext {
-        let divisions = proxy.reservedRegions(kind: .division).filter(\.isActive)
-        let occlusions = proxy.reservedRegions(kind: .occlusion).filter(\.isActive).map(\.frame)
-        var ctx = DuoContext(size: proxy.size, occlusions: occlusions)
-        if let fold = divisions.first?.frame {
+    static func context(proxy: GeometryProxy, compact: Bool, injected: InjectedRegions? = nil) -> DuoContext {
+        var ctx: DuoContext
+        if let injected {
+            ctx = context(size: proxy.size, compact: compact, division: injected.division, occlusions: injected.occlusions)
+        } else {
+            let divisions = proxy.reservedRegions(kind: .division).filter(\.isActive)
+            let occlusions = proxy.reservedRegions(kind: .occlusion).filter(\.isActive).map(\.frame)
+            ctx = context(size: proxy.size, compact: compact, division: divisions.first?.frame, occlusions: occlusions)
+        }
+        ctx.safeArea = proxy.safeAreaInsets
+        return ctx
+    }
+
+    /// The pose from a container size and its active fold. Pure, so the whole pose catalog is unit-testable.
+    static func context(size: CGSize, compact: Bool, division: CGRect?, occlusions: [CGRect]) -> DuoContext {
+        var ctx = DuoContext(size: size, occlusions: occlusions)
+        if let fold = division {
             ctx.division = fold
             ctx.pose = fold.height > fold.width ? .book : .tabletop
         } else {
@@ -124,6 +157,29 @@ private struct TappableFrameReporter: ViewModifier {
     }
 }
 
+/// Frames of named containers (the Library deck, the toolbar) for the fold harness and its sim calibration.
+struct NamedFrameKey: PreferenceKey {
+    static let defaultValue: [String: CGRect] = [:]
+    static func reduce(value: inout [String: CGRect], nextValue: () -> [String: CGRect]) {
+        value.merge(nextValue()) { $1 }
+    }
+}
+
+extension View {
+    /// Reports this view's frame (global coordinates) under a name. Audit builds only, like `tappableFrame`.
+    @ViewBuilder func namedFrame(_ name: String) -> some View {
+        if FoldAuditSwitch.enabled {
+            background {
+                GeometryReader { g in
+                    Color.clear.preference(key: NamedFrameKey.self, value: [name: g.frame(in: .global)])
+                }
+            }
+        } else {
+            self
+        }
+    }
+}
+
 extension View {
     /// Reports a layout container's frame to the fold audit (TT-0), without marking it tappable.
     func foldAudited() -> some View { tappableFrame() }
@@ -134,6 +190,28 @@ extension View {
 struct FoldAudit: View {
     var frames: [CGRect]
     var duo: DuoContext
+    var named: [String: CGRect] = [:]
+
+    /// One JSON object with everything the fold harness needs to be compared with the simulator: the container, the
+    /// safe area, the reserved regions, every tappable frame and the named frames, all relative to the container
+    /// origin and rounded to 0.5 pt. `tools/qa/compare_harness.py` diffs it against the harness's own dump.
+    static func probeJSON(frames: [CGRect], duo: DuoContext, named: [String: CGRect], origin: CGPoint) -> String {
+        func r(_ x: CGFloat) -> Double { (Double(x) * 2).rounded() / 2 }
+        func box(_ c: CGRect) -> [Double] { [r(c.minX), r(c.minY), r(c.width), r(c.height)] }
+        let rel: (CGRect) -> CGRect = { $0.offsetBy(dx: -origin.x, dy: -origin.y) }
+        var obj: [String: Any] = [
+            "pose": duo.pose.rawValue,
+            "size": [r(duo.size.width), r(duo.size.height)],
+            "safeArea": [r(duo.safeArea.top), r(duo.safeArea.leading), r(duo.safeArea.bottom), r(duo.safeArea.trailing)],
+            "occlusions": duo.occlusions.map(box),
+            "frames": frames.map { box(rel($0)) }.sorted { ($0[1], $0[0]) < ($1[1], $1[0]) },
+            "named": named.mapValues { box(rel($0)) },
+        ]
+        if let d = duo.division { obj["division"] = box(d) }
+        let data = (try? JSONSerialization.data(withJSONObject: obj, options: [.sortedKeys])) ?? Data()
+        return String(decoding: data, as: UTF8.self)
+    }
+
     var body: some View {
         GeometryReader { geo in
             let origin = geo.frame(in: .global).origin
@@ -149,6 +227,11 @@ struct FoldAudit: View {
                 .opacity(0.01)
                 .accessibilityIdentifier("foldAudit")
                 .accessibilityLabel(label)
+            Text("probe")
+                .font(.system(size: 1))
+                .opacity(0.01)
+                .accessibilityIdentifier("poseProbe")
+                .accessibilityLabel(Self.probeJSON(frames: frames, duo: duo, named: named, origin: origin))
         }
         .allowsHitTesting(false)
         .ignoresSafeArea()
