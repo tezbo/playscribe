@@ -32,22 +32,51 @@ struct Rendered {
         return frames.filter { $0.width > 1 && $0.height > 1 && $0.minY < fold.minY }
     }
 
-    /// A control UIKit drew, found by accessibility identifier or label in the real view tree (toolbar items are
-    /// UIKit's, so this is the one place the system's own dropping of items shows). Frame in container coordinates.
+    /// A control UIKit drew, found by accessibility identifier or label in the real view and accessibility tree (toolbar
+    /// items are UIKit's, so this is where the system's own dropping of items shows). Frame in container coordinates.
     func uikitControl(identifier: String? = nil, label: String? = nil) -> CGRect? {
-        func walk(_ v: UIView) -> CGRect? {
-            if !v.isHidden, v.alpha > 0.01, v.window != nil {
-                let hit = (identifier != nil && v.accessibilityIdentifier == identifier)
-                    || (label != nil && v.accessibilityLabel == label)
-                let r = v.convert(v.bounds, to: window)
-                if hit, r.width > 1, r.height > 1, window.bounds.intersects(r) {
-                    return r.offsetBy(dx: -pose.safeArea.left, dy: -pose.safeArea.top)
-                }
+        func matches(_ o: NSObject) -> Bool {
+            let id = (o as? UIAccessibilityIdentification)?.accessibilityIdentifier
+            return (identifier != nil && id == identifier) || (label != nil && o.accessibilityLabel == label)
+        }
+        func frame(_ o: NSObject) -> CGRect? {
+            if let v = o as? UIView {
+                guard !v.isHidden, v.alpha > 0.01, v.window != nil else { return nil }
+                return v.convert(v.bounds, to: window)
             }
-            for s in v.subviews { if let f = walk(s) { return f } }
+            return window.convert(o.accessibilityFrame, from: window.screen.coordinateSpace)
+        }
+        func walk(_ o: NSObject, _ depth: Int) -> CGRect? {
+            if depth > 40 { return nil }
+            if matches(o), let f = frame(o), f.width > 1, f.height > 1, window.bounds.intersects(f) {
+                return f.offsetBy(dx: -pose.safeArea.left, dy: -pose.safeArea.top)
+            }
+            var kids: [NSObject] = []
+            if let v = o as? UIView { kids += v.subviews }
+            kids += (o.accessibilityElements as? [NSObject]) ?? []
+            let n = o.accessibilityElementCount()
+            if n != NSNotFound, n > 0 { kids += (0..<min(n, 200)).compactMap { o.accessibilityElement(at: $0) as? NSObject } }
+            for k in kids { if let f = walk(k, depth + 1) { return f } }
             return nil
         }
-        return walk(window)
+        return walk(window, 0)
+    }
+
+    /// What UIKit drew in the top 130 pt of the window, for failure messages (which classes, labels and frames).
+    var topInventory: String {
+        var out: [String] = []
+        func walk(_ v: UIView, _ depth: Int) {
+            guard depth < 30, !v.isHidden, v.alpha > 0.01 else { return }
+            let f = v.convert(v.bounds, to: window)
+            let name = String(describing: type(of: v))
+            let interesting = v is UIControl || name.contains("Button") || v.accessibilityLabel != nil
+            if interesting, f.minY < 130, f.width > 1, f.height > 1, out.count < 24 {
+                out.append("\(name)[\(v.accessibilityLabel ?? "")|\((v as UIAccessibilityIdentification).accessibilityIdentifier ?? "")] \(Int(f.minX)),\(Int(f.minY)) \(Int(f.width))x\(Int(f.height))")
+            }
+            for s in v.subviews { walk(s, depth + 1) }
+        }
+        walk(window, 0)
+        return out.joined(separator: "; ")
     }
 }
 
