@@ -23,17 +23,19 @@ if [ -z "$nsid" ]; then
   nsid="$(echo "$made" | jq -r '.result.id')"; echo "created KV namespace"
 fi
 
-# 2. The account's workers.dev subdomain.
-sub="$(cf "$API/workers/subdomain" | jq -r '.result.subdomain // empty')"
-if [ -z "$sub" ]; then
-  made="$(cf -X PUT "$API/workers/subdomain" -H 'Content-Type: application/json' -d '{"subdomain":"playscribe"}')"; echo "$made" | must
-  sub="$(echo "$made" | jq -r '.result.subdomain')"; echo "created workers.dev subdomain"
-fi
+# 2. The account's workers.dev subdomain. Terry registered "playscribe" in the dashboard; the API token cannot read or set it
+# (Cloudflare answers "Authentication error" to the subdomain endpoint), so the name is taken from RELAY_SUBDOMAIN.
+sub="${RELAY_SUBDOMAIN:-playscribe}"
+got="$(cf "$API/workers/subdomain" | jq -r '.result.subdomain // empty' 2>/dev/null || true)"
+[ -n "$got" ] && sub="$got"
 
 # 3. The script, with its KV binding and the admin secret.
 meta="$(jq -nc --arg ns "$nsid" --arg admin "$ADMIN" '{main_module:"worker.js",compatibility_date:"2026-11-01",bindings:[{type:"kv_namespace",name:"KV",namespace_id:$ns},{type:"secret_text",name:"ADMIN_TOKEN",text:$admin}]}')"
 cf -X PUT "$API/workers/scripts/$NAME" -F "metadata=$meta;type=application/json" -F "worker.js=@$here/worker.js;type=application/javascript+module;filename=worker.js" | must
-cf -X POST "$API/workers/scripts/$NAME/subdomain" -H 'Content-Type: application/json' -d '{"enabled":true}' | must
+# Putting the script on workers.dev; a refusal here is not fatal because new scripts are usually on it already, and the smoke test below decides.
+en="$(cf -X POST "$API/workers/scripts/$NAME/subdomain" -H 'Content-Type: application/json' -d '{"enabled":true}')"
+echo "$en" | jq -e '.success == true' >/dev/null 2>&1 || echo "workers.dev enable not confirmed: ${en:0:300}"
+
 
 url="https://$NAME.$sub.workers.dev"
 echo "relay url: $url"
