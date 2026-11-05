@@ -373,7 +373,7 @@ struct NewsStage: View {
             // The art layer fills whatever the stage is offered and never depends on the caption, so measuring it cannot feed back
             // into the caption's padding.
             .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { if abs($0 - stageBottom) > 0.5 { stageBottom = $0 } }
-            LinearGradient(stops: [.init(color: .clear, location: 0.25), .init(color: .black.opacity(0.88), location: 0.7), .init(color: .black.opacity(0.92), location: 1)], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [.clear, .black.opacity(0.5)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 Text(headline.item.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(2)
                 HStack(spacing: 8) {
@@ -382,11 +382,12 @@ struct NewsStage: View {
                     if let d = headline.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
                 }
                 .font(PlayscribeFont.caption)
-                // Its own fill, so the chip never sits on the art's studio logo.
-                .padding(.horizontal, 10).padding(.vertical, 4)
-                .background(Capsule().fill(PlayscribeColor.ink700.opacity(0.7)))
             }
-            .padding(.horizontal, 24).padding(.bottom, 24 + duo.clearance(forBottom: stageBottom))
+            // Iris: the whole caption on one solid ink panel, so contrast never depends on the art.
+            .padding(12)
+            .background(RoundedRectangle(cornerRadius: 12, style: .continuous).fill(PlayscribeColor.ink700.opacity(0.7)))
+            // Ends exactly 24 pt above the band: the clearance already includes the 24 pt gap.
+            .padding(.horizontal, 24).padding(.bottom, max(24, duo.clearance(forBottom: stageBottom)))
             .padding(.trailing, TabletopRail.width)
         }
         .clipped()
@@ -411,12 +412,15 @@ struct NewsStageArt: View {
             // The art layer fills whatever the stage is offered and never depends on the caption, so measuring it cannot feed back
             // into the caption's padding.
             .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { if abs($0 - stageBottom) > 0.5 { stageBottom = $0 } }
-            LinearGradient(stops: [.init(color: .clear, location: 0.25), .init(color: .black.opacity(0.88), location: 0.7), .init(color: .black.opacity(0.92), location: 1)], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [.clear, .black.opacity(0.5)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 Text(game?.name ?? "").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
                 if let newest { Text(newest.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(2) }
             }
-            .padding(.horizontal, 24).padding(.bottom, 24 + duo.clearance(forBottom: stageBottom))
+            // Iris: the whole caption on one solid ink panel; it ends exactly 24 pt above the band.
+            .padding(12)
+            .background(RoundedRectangle(cornerRadius: 12, style: .continuous).fill(PlayscribeColor.ink700.opacity(0.7)))
+            .padding(.horizontal, 24).padding(.bottom, max(24, duo.clearance(forBottom: stageBottom)))
             .padding(.trailing, TabletopRail.width)
         }
         .clipped()
