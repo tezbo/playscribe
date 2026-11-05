@@ -457,6 +457,15 @@ struct AutoplayTests {
         let on = YouTubeController.html("abc", captions: true, autoplay: true)
         #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
     }
+
+    @Test("Reflection is on by default and accessibility settings win (R-11, G-9)")
+    @MainActor func reflectionDefault() {
+        #expect(VideoReflection.defaultOn)
+        #expect(VideoReflection.isShown(setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false))
+        #expect(!VideoReflection.isShown(setting: true, reduceMotion: true, reduceTransparency: false))
+        #expect(!VideoReflection.isShown(setting: true, reduceMotion: false, reduceTransparency: true))
+        #expect(!VideoReflection.isShown(setting: false, reduceMotion: false, reduceTransparency: false))
+    }
 }
 
 /// Release also defines INTERNAL, so the QA routes must be switched off by the build channel:
@@ -540,5 +549,36 @@ struct ReaderSpoilerTests {
         #expect(!hidden.contains("Hello") && !hidden.contains("Be advised"))
         let shown = fixes(shown: true)
         #expect(shown.contains("final door") && !shown.contains("hidden for spoilers"))
+    }
+}
+
+/// r051-unread-flood: adding a game must not mark its back catalogue unread (0.5.1, Jun's review).
+@MainActor
+struct BackCatalogueTests {
+    private func release(_ id: String, patchedDaysAgo: Double, alertDaysAgo: Double) -> Release {
+        let patched = Date.now.addingTimeInterval(-patchedDaysAgo * 86_400)
+        var p = PlatformRelease(platform: .ps5, status: .live, liveAt: Field(value: patched, verification: .official, sourceID: "s", checkedAt: .now),
+                                verification: .official)
+        p.alert = PlatformRelease.Alert(style: "standard", from: Date.now.addingTimeInterval(-alertDaysAgo * 86_400), tag: nil)
+        return Release(id: id, gameID: "g", displayName: id, kind: .patch, kindBasis: .inferred, announcedAt: patched,
+                       notes: [], sourceIDs: [], platforms: [p])
+    }
+
+    @Test("A port's old patches are read on first sight, a patch from today stays unread")
+    func firstSightHistory() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
+        let old = release("g@2021", patchedDaysAgo: 1_800, alertDaysAgo: 1)   // alert date is the recent PS5 launch
+        let fresh = release("g@today", patchedDaysAgo: 1, alertDaysAgo: 1)
+        model.markPastAsRead([old, fresh], backCatalogue: true)
+        #expect(model.data.read[old.id] != nil)
+        #expect(model.data.read[fresh.id] == nil)
+    }
+
+    @Test("Without the back-catalogue rule the alert date still decides (an update for a followed game)")
+    func followedGameUnchanged() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
+        let ported = release("g@port", patchedDaysAgo: 1_800, alertDaysAgo: 1)
+        model.markPastAsRead([ported])
+        #expect(model.data.read[ported.id] == nil)
     }
 }

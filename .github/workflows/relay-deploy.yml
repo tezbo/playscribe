@@ -1,0 +1,29 @@
+name: Relay deploy
+# Deploys the push relay (relay/worker.js) to Cloudflare. Run it by hand, or it runs when the Worker changes on main.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['relay/**', '.github/workflows/relay-deploy.yml']
+  pull_request:
+    paths: ['relay/**', '.github/workflows/relay-deploy.yml']
+concurrency: relay-deploy
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test relay/test/worker.test.mjs
+  deploy:
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: relay/deploy.sh

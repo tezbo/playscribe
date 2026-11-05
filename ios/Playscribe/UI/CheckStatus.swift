@@ -122,7 +122,6 @@ struct CaughtUpCard: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
         .background(PlayscribeColor.ink800, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .padding(.horizontal, 16)
         .accessibilityElement(children: .combine)
     }
 }

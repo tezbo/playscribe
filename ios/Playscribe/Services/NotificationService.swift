@@ -72,7 +72,7 @@ final class NotificationService: NSObject {
     /// after every plus.json load, on launch and when the switch changes; one identifier per month, so never twice.
     func syncPlusLeavingSoon() {
         guard let model else { return }
-        let on = model.data.plusLeavingSoonOff != true && !model.data.pauseAll
+        let on = model.data.plusCardOff != true && model.data.plusLeavingSoonOff != true && !model.data.pauseAll
             && (authorization == .authorized || authorization == .provisional)
         // Everything the closure needs is worked out here, on the main actor, as plain values.
         struct Item: Sendable { var id: String; var body: String; var passive: Bool; var parts: DateComponents }
@@ -254,7 +254,7 @@ extension NotificationService: UNUserNotificationCenterDelegate {
 }
 
 /// Registers the device with the backend (docs/api.md): POST /v1/devices returns a deviceKey
-/// used as the Bearer token for later calls. Does nothing until PlayscribeAPIBaseURL is set.
+/// used as the Bearer token for later calls. Does nothing until PlayscribeRelayURL is set.
 enum PushRegistrar {
     struct Follow: Encodable { var gameId: String?; var igdbId: Int?; var notify: String }
     private struct Body: Encodable { var apnsToken: String; var environment: String; var follows: [Follow] }
@@ -265,8 +265,15 @@ enum PushRegistrar {
         return URL(string: s)
     }
 
+    /// The push relay (docs/push-relay.md): device tokens, follows and the quiet window go here, not to the static
+    /// feed (`baseURL`), which has no device routes. Builds without PlayscribeRelayURL cannot receive server push.
+    static var relayURL: URL? {
+        guard let s = Bundle.main.object(forInfoDictionaryKey: "PlayscribeRelayURL") as? String, !s.isEmpty else { return nil }
+        return URL(string: s)
+    }
+
     static func register(token: String, follows: [Follow], quietHours: QuietHours? = nil) {
-        guard let url = baseURL?.appending(path: "v1/devices") else { return }
+        guard let url = relayURL?.appending(path: "v1/devices") else { return }
         #if DEBUG
         let environment = "sandbox"
         #else
@@ -281,6 +288,30 @@ enum PushRegistrar {
                   let reply = try? JSONDecoder().decode(Reply.self, from: data) else { return }
             UserDefaults.standard.set(reply.deviceKey, forKey: "deviceKey")
             syncQuietHours(quietHours)
+        }
+    }
+
+    /// The last follows list sent, so an unchanged list costs no request (the relay's free plan allows 1,000 writes a day).
+    nonisolated(unsafe) private static var lastFollows: String?
+    private struct FollowsBody: Encodable { var follows: [Follow] }
+
+    /// PUT /v1/devices/me/follows: the followed games and their notify level, when they change. Nothing before the device is
+    /// registered or while PlayscribeRelayURL is unset.
+    static func syncFollows(_ follows: [Follow]) {
+        guard let url = relayURL?.appending(path: "v1/devices/me/follows"),
+              let key = UserDefaults.standard.string(forKey: "deviceKey"),
+              let body = try? JSONEncoder().encode(FollowsBody(follows: follows)) else { return }
+        let signature = String(decoding: body, as: UTF8.self)
+        guard signature != lastFollows else { return }
+        lastFollows = signature
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+        request.httpBody = body
+        Task {
+            // A failed request is retried at the next change: forget the signature.
+            if (try? await URLSession.shared.data(for: request)) == nil { lastFollows = nil }
         }
     }
 
@@ -302,9 +333,9 @@ enum PushRegistrar {
     }
 
     /// PATCH /v1/devices/me { quietHours }. Does nothing before the device is registered (no push can
-    /// reach it then, so there is nothing to quiet) or while PlayscribeAPIBaseURL is unset.
+    /// reach it then, so there is nothing to quiet) or while PlayscribeRelayURL is unset.
     static func syncQuietHours(_ q: QuietHours?) {
-        guard let url = baseURL?.appending(path: "v1/devices/me"),
+        guard let url = relayURL?.appending(path: "v1/devices/me"),
               let key = UserDefaults.standard.string(forKey: "deviceKey") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "PATCH"

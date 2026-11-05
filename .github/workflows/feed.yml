@@ -63,6 +63,8 @@ jobs:
       APNS_KEY_ID: ${{ secrets.APNS_KEY_ID }}
       APNS_TEAM_ID: ${{ secrets.APNS_TEAM_ID }}
       APNS_KEY_P8: ${{ secrets.APNS_KEY_P8 }}
+      # The App Store Connect / TestFlight bundle id (the release lane overrides project.yml's), which APNs needs as the topic.
+      APNS_TOPIC: tezbo.Playscribe
     steps:
       - uses: actions/checkout@v4
       - name: Fetch the current feed and state
@@ -77,6 +79,27 @@ jobs:
           cache-dependency-path: backend/package-lock.json
       - run: npm ci
         working-directory: backend
+      # Push: load the devices the relay holds for the length of this run. They are scrubbed again before Publish.
+      # Never fatal: if the relay is down, not deployed yet, or the Cloudflare token changed, the poll and the publish still
+      # run and push is DEFERRED (no release is claimed as pushed), so the alert goes out on the next run that loads.
+      - name: Load devices from the relay
+        id: load
+        if: vars.PUSH_ENABLED == '1'
+        continue-on-error: true
+        working-directory: backend
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          [ -s "$GITHUB_WORKSPACE/relay/url.txt" ] || { echo "relay/url.txt is missing: the relay is not deployed yet"; exit 1; }
+          export RELAY_URL="$(cat "$GITHUB_WORKSPACE/relay/url.txt")"
+          export RELAY_ADMIN_TOKEN="$(printf 'relay-admin:%s' "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -d' ' -f1)"
+          echo "::add-mask::$RELAY_ADMIN_TOKEN"
+          npx tsx scripts/relay-sync.ts "$RUNNER_TEMP/relay-tokens"
+      - name: Defer push when the relay did not load
+        if: vars.PUSH_ENABLED == '1' && steps.load.outcome != 'success'
+        run: |
+          echo "PUSH_DEFER=1" >> "$GITHUB_ENV"
+          echo "::warning::Push skipped this run: the relay devices did not load. Releases stay unclaimed and are pushed on the next run that loads."
       - name: Poll
         if: github.event_name == 'schedule' || inputs.action == 'poll'
         working-directory: backend
@@ -127,6 +150,12 @@ jobs:
           stamp="$GITHUB_WORKSPACE/out/v1/upcoming/fetched-at"
           if [ "${{ inputs.action }}" != info ] && [ -f "$stamp" ] && [ $(( $(date +%s) - $(date -d "$(cat "$stamp")" +%s) )) -lt 82800 ]; then echo "Upcoming is fresh"; exit 0; fi
           npm run upcoming --silent -- "$GITHUB_WORKSPACE/out" && date -u +%FT%TZ > "$stamp"
+      # Always runs, and Publish does not run if it fails: the state database goes to a public branch, so it must hold
+      # no device and no APNs token. Counts only in the log.
+      - name: Scrub devices
+        if: always()
+        working-directory: backend
+        run: npx tsx scripts/relay-scrub.ts "$RUNNER_TEMP/relay-tokens"
       - name: Publish
         working-directory: out
         run: |
