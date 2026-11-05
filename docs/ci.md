@@ -5,9 +5,11 @@ Times are estimates (durations) from the 80-minute Mac gate and a typical hosted
 
 ## Where the time goes today
 
+GitHub CI is already about 4 min. The slow part is the Mac gate.
+
 | Stage | Where | Now |
 |---|---|---|
-| Unit tests, then UI compile (two builds, in series) | GitHub, `ios.yml` | ~14 min |
+| Build and unit tests | GitHub, `ios.yml` on main (measured: run #224, 4 min) | ~4 min |
 | Five-pose gate (`gate.sh`, 5 to 6 poses serial, ~17 min each with stills) | Terry's Mac, one Device Hub window | ~80 min |
 
 The gate is slow because a pose is set by pressing Device Hub through Accessibility, which is one GUI, so poses cannot overlap
@@ -17,8 +19,8 @@ on the Mac. Hosted runners are headless, so they cannot press it either.
 
 | # | Change | Saves | Status |
 |---|---|---|---|
-| 1 | `ios.yml` runs unit tests and the UI-test compile as two parallel jobs; the compile uses a generic simulator destination (no boot) | ~5 min per PR | this PR |
-| 2 | CI-only build settings: no previews, no index store, dwarf not dwarf-with-dsym, active arch only; boot the simulator while building | ~1 to 3 min per job | this PR |
+| 1 | `ios.yml` runs unit tests and the UI-test compile as two parallel jobs; the compile uses a generic simulator destination (no boot). Measured: the compile job takes under 1 min, so on 0.5.0 (where it is an extra step) this keeps PR CI at the unit time | 0 on main, the compile step on 0.5.0 | this PR |
+| 2 | CI-only build settings: no previews, no index store, dwarf, active arch only. Being measured against the 4 min baseline; dropped if not faster. An early simulator boot was tried and removed: the unit job took 10 min with it | to be measured | this PR |
 | 3 | `xcodegen` installed only if missing, Homebrew auto-update and cleanup off; job timeouts so a hang costs 30 min, not 6 hours | ~1 min, hang cost | this PR |
 | 4 | Gate: `STILLS=0` by default (stills only on request or for release tags). Stills are re-presses of the pose, about 15 s each, plus 4 captures per pose | ~25 min of the 80 | next, on the 0.5.0 gate.sh |
 | 5 | Gate tiers: PR tier = Closed + Tabletop (the two layouts that differ most), full five poses nightly and on `v*` tags | PR gate ~80 to ~25 min | next |

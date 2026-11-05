@@ -54,8 +54,6 @@ jobs:
           if [ -z "$udid" ]; then echo "::error::No iOS 27.1 iPhone simulator on this runner"; xcrun simctl list runtimes; exit 1; fi
           echo "Using ${udid#* }"
           echo "udid=${udid%% *}" >> "$GITHUB_OUTPUT"
-          # Boot now, in the background, so the boot overlaps the compile instead of following it.
-          xcrun simctl boot "${udid%% *}" 2>/dev/null || true
       - name: Build and test
         run: |
           status=0
