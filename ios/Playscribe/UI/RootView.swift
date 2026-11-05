@@ -42,10 +42,16 @@ struct LowerHalfPanel: View {
                 .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil; model.linksSheetOpen = false; model.tagExplainer = nil })
                 .environment(\.railWidth, 0)
                 .frame(width: duo.size.width, height: height)
-                .background(Color.ink0)
+                // Solid through the bottom safe area too: the Library's tiles used to show, and take
+                // taps, in the strip under the sheet.
+                .background(Color.ink0.ignoresSafeArea(edges: .bottom))
                 .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20))
                 .accessibilityAddTraits(.isModal)
             }
+            // The panel stops at the bottom safe area, so the Library's chips showed, and took taps,
+            // in the strip below it. A solid filler hangs below the panel's bottom edge (outside the
+            // clip) to cover it; the panel itself still starts exactly at the fold.
+            .overlay(alignment: .bottom) { Color.ink0.frame(height: 120).offset(y: 120) }
             .transition(.move(edge: .bottom))
             .zIndex(5)
         }
@@ -63,6 +69,7 @@ struct RootView: View {
     @AppStorage("didShowSplash") private var didShowSplash = false
     @State private var splashVisible = false
     @State private var frames: [CGRect] = []
+    @State private var named: [String: CGRect] = [:]
 
     var body: some View {
         DuoReader { duo in
@@ -92,10 +99,11 @@ struct RootView: View {
             .animation(poseAnimation, value: duo.pose)
             .environment(\.qaSolid, BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaReduceTransparency"))
             .onPreferenceChange(TappableFrameKey.self) { frames = $0 }
+            .onPreferenceChange(NamedFrameKey.self) { named = $0 }
             .overlay {
                 if model.showDebugOverlay { DebugOverlay(frames: frames, duo: duo) }
                 #if INTERNAL
-                FoldAudit(frames: frames, duo: duo)
+                FoldAudit(frames: frames, duo: duo, named: named)
                 #endif
             }
         }
@@ -112,7 +120,8 @@ struct RootView: View {
             if fromNotification { splashVisible = false }
         }
         .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.addSheetOpen = false } })) {
-            AddGameSheet()
+            // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
+            AddGameSheet().presentationDetents([.large])
         }
         .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.settingsOpen = false } })) {
             SettingsView()
@@ -219,6 +228,7 @@ struct TabletopRail: View {
                 // Share the open update as a card (lower rail, 44 pt target; TT-0).
                 if let r = model.readerRelease(id), r.isPS5Listed { ShareUpdateButton(release: r) }
                 RailButton(action: ScreenAction(id: "more", title: "More", systemImage: "ellipsis", kind: .menu(moreItems(id))))
+                    .accessibilityHint("Check for updates, Links")
             } else if model.nav.tab == .search {
                 // Search is a dead end without this: Back to where it was opened from (Terry, 0.2.0 build 5).
                 RailButton(action: ScreenAction(id: "back", title: "Back", systemImage: "chevron.backward",

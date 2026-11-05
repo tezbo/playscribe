@@ -77,7 +77,9 @@ struct LatestUpdatesDeck: View {
         }
     }
 
-    var body: some View {
+    var body: some View { content.namedFrame("latestDeck") }
+
+    @ViewBuilder private var content: some View {
         if compact {
             // Explicit geometry: every card is exactly the column wide, so a swipe snaps card to card, and the
             // art is capped so the deck never grows past maxHeight (the 727 pt card, 20d77ea).
@@ -416,9 +418,10 @@ struct DeckStage: View {
             VStack(alignment: .leading, spacing: 6) {
                 HStack(spacing: 8) {
                     if card.unread { Text("New update").foregroundStyle(PlayscribeColor.accent) }
-                    if let v = card.release?.versionChip { Text(v).monospacedDigit().foregroundStyle(PlayscribeColor.textSecondary) }
+                    if let v = card.release?.versionChip { Text(v).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
                 .font(PlayscribeFont.caption)
+                .shadow(color: .black.opacity(0.6), radius: 3)
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).lineLimit(3)
                 HStack(spacing: 8) {

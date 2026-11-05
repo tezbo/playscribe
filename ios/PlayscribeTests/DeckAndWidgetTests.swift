@@ -49,6 +49,7 @@ struct DeckAndWidgetTests {
         #expect(back == WidgetSnapshot.sample)
         #expect(back.rows.first?.url.absoluteString == "playscribe://release/the-blood-of-dawnwalker/update-1-1")
         #expect(WidgetSnapshot.empty.rows.isEmpty && !WidgetSnapshot.empty.hasGames)
+        #expect(WidgetSnapshot.coverFile(for: "update-1-1") == "widget-cover-update-1-1.jpg")
     }
 
     /// The version chip is "v" plus the last token when it starts with a digit, and nil otherwise.

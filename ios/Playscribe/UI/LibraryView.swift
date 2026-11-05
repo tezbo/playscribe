@@ -1,5 +1,23 @@
 import SwiftUI
 
+/// Where each Library toolbar item sits. One item per slot: the system collapsed a second item sharing a trailing
+/// slot (TB-1, 551d8ce), and an offscreen window cannot show it, so `FoldHarnessTests` asserts the slots are distinct.
+enum LibraryToolbar {
+    enum Slot: String, CaseIterable {
+        case leading, trailing, primary
+        var placement: ToolbarItemPlacement {
+            switch self {
+            case .leading: .topBarLeading
+            case .trailing: .topBarTrailing
+            case .primary: .primaryAction
+            }
+        }
+    }
+    static let settings = Slot.leading
+    static let add = Slot.trailing
+    static let viewMenu = Slot.primary
+}
+
 struct LibraryView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
@@ -27,18 +45,18 @@ struct LibraryView: View {
         .toolbar {
             // Add trails, Settings leads: the system collapsed a second trailing item away in Closed and
             // Open (0.5.0 Mac stills, TB-1), so the cog sits in its own region and is always drawn.
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: LibraryToolbar.add.placement) {
                 Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
                     .disabled(model.addSheetOpen)
             }
-            ToolbarItem(placement: .topBarLeading) {
+            ToolbarItem(placement: LibraryToolbar.settings.placement) {
                 Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
                     .accessibilityIdentifier("settingsButton")
                     .disabled(model.settingsOpen)
             }
             // D-7: nothing to arrange in an empty library.
             if !model.data.collection.isEmpty {
-                ToolbarItem(placement: .primaryAction) {
+                ToolbarItem(placement: LibraryToolbar.viewMenu.placement) {
                     LibraryViewMenu()
                 }
             }
