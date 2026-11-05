@@ -166,14 +166,16 @@ struct TabletopReaderStage: View {
                         .minimumScaleFactor(0.7)
                         .accessibilityLabel(section.body)
                         .accessibilityIdentifier("readerBody")
-                    Spacer(minLength: 0)
                 }
-                // About 34 characters per line at 19 pt.
-                .frame(maxWidth: 380, maxHeight: .infinity, alignment: .topLeading)
-                .padding(.horizontal, 28)
-                .padding(.vertical, 24)
+                // Iris (same rule as #232, every Tabletop stage): the whole block sits on one ink panel, 70%, 12 pt
+                // radius and padding, so the text keeps 4.5:1 over any art, logo or banner. Left on the 16 pt margin,
+                // up to 560 pt wide, its bottom edge 24 pt above the division; it grows upward only.
+                .padding(12)
+                .frame(maxWidth: 560, alignment: .leading)
+                .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .padding(.horizontal, 16)
                 .padding(.bottom, duo.clearance(forBottom: stageBottom))
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
                 .id(section.id)
                 .transition(.opacity)
             }
