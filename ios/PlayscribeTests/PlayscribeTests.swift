@@ -424,7 +424,7 @@ struct SpoilerWarningTests {
             NoteItem(text: "Hello!"),
             NoteItem(text: "Be advised, the following notes contain spoilers so browse at your own peril:"),
             NoteItem(text: "Fixed camera lock in the lab."),
-            NoteItem(text: "Fixed a crash.", pcOnly: false),
+            NoteItem(text: "Fixed a crash."),
         ])
     }
 
