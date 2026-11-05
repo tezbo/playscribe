@@ -106,6 +106,8 @@ struct PersistedState: Codable {
     var quietHours: QuietHours?
     /// nil = on. Off silences the add pop.
     var soundsOff: Bool?
+    /// The PS Plus card and its "Leaving soon" reminder (Terry, 2026-11-05): nil = on. Off hides both.
+    var plusCardOff: Bool?
     /// The PS Plus "Leaving soon" reminder (0.5.0): nil = on.
     var plusLeavingSoonOff: Bool?
     var notificationCardShows = 0
@@ -308,6 +310,7 @@ final class AppModel {
             try? await Task.sleep(for: .milliseconds(150))
             guard !Task.isCancelled else { return }
             self?.saveNow()
+            if let self { PushRegistrar.syncFollows(self.follows) }
         }
     }
 
@@ -570,6 +573,8 @@ final class AppModel {
         case "demo": resetDemo()
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
+        case "caught-up": resetToCaughtUpDemo()
+        case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
         // QA (INTERNAL, B-10): "quick/tip" shows the press-and-hold tip; "quick/undo" removes the first game so the
         // 6 s Undo toast shows. The long-press menu and the yellow Wishlist disc show on the demo library as is.
@@ -689,6 +694,8 @@ final class AppModel {
         let new = list.filter { entry($0.id) == nil }
         guard !new.isEmpty else { return }
         for g in new { insertGame(g, status: status == .owned && g.isUpcoming ? .wishlist : status) }
+        // Adding a game never floods the badge: whatever it already has before today's news is the past.
+        markPastAsRead(new.flatMap { releases($0.id) }, backCatalogue: true)
         let ids = new.map(\.id)
         nav.filter = .all
         highlight = new.count == 1 ? ids[0] : nil
@@ -819,6 +826,13 @@ final class AppModel {
     func resetToOneUpdateDemo() {
         resetDemo()
         qaUpdateCount = 1
+    }
+
+    /// QA (route "caught-up"): every update read, so the Library has no hero (Book shows the caught-up card).
+    func resetToCaughtUpDemo() {
+        resetDemo()
+        qaUpdateCount = 1
+        qaFreshCache = []
     }
 
     /// QA and tests (route "two-update"): as the one-update demo with two fresh updates, from different games.

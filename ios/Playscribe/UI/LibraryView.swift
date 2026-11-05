@@ -231,7 +231,24 @@ struct LibraryShelf: View {
 
     /// Book with any recent update: the hero carousel takes the right page's top; the left page keeps the controls, chips and grid.
     private var heroOnRightPage: Bool {
-        duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming && !model.latestDeck.isEmpty
+        // No recent update: the caught-up card takes the hero's place, so the two pages flow the same way (Iris, 41f0310).
+        duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming
+            && (!model.latestDeck.isEmpty || !model.data.collection.isEmpty)
+    }
+
+    /// Catch-up, PS Plus and notification cards. In Book they are one page wide and never cross the fold (G-4).
+    @ViewBuilder
+    private func topCards(_ all: [AppModel.LibraryRow]) -> some View {
+        let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
+        VStack(alignment: .leading, spacing: 14) {
+            CatchUpCard()
+            PlusCard()
+            if model.showsNotificationCard, let first = all.first {
+                NotificationInviteCard(gameName: first.game.name)
+            }
+        }
+        .frame(width: pageWidth, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     /// The library search field; one page wide in Book, and reported to the fold audit.
@@ -284,11 +301,8 @@ struct LibraryShelf: View {
                         }
                     }
                 }
-                CatchUpCard()
-                PlusCard()
-                if model.showsNotificationCard, let first = all.first {
-                    NotificationInviteCard(gameName: first.game.name)
-                }
+                // Book: these cards stay on the left page; with a hero they sit in the left column below.
+                if !heroOnRightPage { topCards(all) }
                 if !all.isEmpty && duo.pose == .tabletop {
                     // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
                     TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4)
@@ -322,11 +336,20 @@ struct LibraryShelf: View {
                     // right tiles under the deck; order is the left page top to bottom, then the right page. The
                     // tiles share each page's width equally (min 124 pt, 10 pt gaps).
                     let left = Self.pageFit(width: leftWidth), right = Self.pageFit(width: rightWidth)
-                    let leftCount = layout == .tiles
-                        ? min(rows.count, Int((Double(rows.count) * Double(left.count) / Double(left.count + right.count)).rounded(.up))) : 0
+                    let proportional = min(rows.count, Int((Double(rows.count) * Double(left.count) / Double(left.count + right.count)).rounded(.up)))
+                    // No hero: the caught-up card is short, so split for equal rows on both pages and, on a tie, as evenly as
+                    // possible (4 games: 2 and 2, not 3 and 1; Iris, dda3857). With a hero the proportional split stands.
+                    let leftCount: Int = {
+                        guard layout == .tiles else { return 0 }
+                        guard model.latestDeck.isEmpty else { return proportional }
+                        let n = rows.count
+                        func rowsFor(_ k: Int) -> Int { max((k + left.count - 1) / left.count, (n - k + right.count - 1) / right.count) }
+                        return (0...n).min { (rowsFor($0), abs(2 * $0 - n)) < (rowsFor($1), abs(2 * $1 - n)) } ?? proportional
+                    }()
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
                             LibraryTabPicker()
+                            topCards(all)
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                             NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                             if all.count >= 2 && layout == .tiles {
@@ -338,7 +361,11 @@ struct LibraryShelf: View {
                         VStack(alignment: .leading, spacing: 14) {
                             // 16:9 art at the page's width plus the page edge, sized explicitly: left to the pager the
                             // card came out as tall as the screen and pushed the grid off (834a5eb).
-                            LatestUpdatesDeck(cards: model.latestDeck, compact: true, maxHeight: (rightWidth * 9 / 16).rounded() + 52)
+                            if model.latestDeck.isEmpty {
+                                CaughtUpCard().frame(width: rightWidth, alignment: .leading)
+                            } else {
+                                LatestUpdatesDeck(cards: model.latestDeck, compact: true, maxHeight: (rightWidth * 9 / 16).rounded() + 52)
+                            }
                             if layout == .tiles { pageGrid(Array(rows.dropFirst(leftCount)), fit: right) }
                         }
                         .frame(width: rightWidth, alignment: .topLeading)

@@ -19,6 +19,31 @@ extension EnvironmentValues {
     }
 }
 
+/// Book: Settings is a panel on the left page, not a system sheet, so its edge never runs into the hinge band
+/// (Quinn, 6b01082; no chrome on the hinge). The right page is dimmed and takes no touches.
+struct BookPagePanel: View {
+    @Environment(AppModel.self) private var model
+    var duo: DuoContext
+    var fold: CGRect
+
+    var body: some View {
+        if model.settingsOpen {
+            ZStack(alignment: .leading) {
+                Color.black.opacity(0.4).ignoresSafeArea()
+                SettingsView()
+                    .environment(\.panelClose, { model.settingsOpen = false })
+                    .environment(\.railWidth, 0)
+                    .frame(width: max(0, fold.minX), height: duo.size.height)
+                    .background(Color.ink0)
+                    .clipShape(UnevenRoundedRectangle(bottomTrailingRadius: 20, topTrailingRadius: 20))
+                    .accessibilityAddTraits(.isModal)
+            }
+            .transition(.move(edge: .leading))
+            .zIndex(5)
+        }
+    }
+}
+
 struct LowerHalfPanel: View {
     @Environment(AppModel.self) private var model
     var duo: DuoContext
@@ -93,6 +118,7 @@ struct RootView: View {
                 LowerMessages(duo: duo)
 
                 if duo.pose == .tabletop, let fold = duo.division { LowerHalfPanel(duo: duo, fold: fold) }
+                if duo.pose == .book, let fold = duo.division { BookPagePanel(duo: duo, fold: fold) }
 
                 if splashVisible {
                     SplashView(duo: duo) { splashVisible = false }
@@ -127,7 +153,7 @@ struct RootView: View {
             // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
             AddGameSheet().presentationDetents([.large])
         }
-        .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.settingsOpen = false } })) {
+        .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop && model.livePose != .book }, set: { if !$0 && model.livePose != .tabletop && model.livePose != .book { model.settingsOpen = false } })) {
             SettingsView()
         }
         .sheet(item: Binding(get: { model.livePose == .tabletop ? nil : model.tagExplainer }, set: { if $0 == nil && model.livePose != .tabletop { model.tagExplainer = nil } })) { kind in

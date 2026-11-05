@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs'
+import { SOURCE_NAMES } from '../quality.ts'
 import type { NoteCategory, NoteItem, NoteSection, Platform } from '../types.ts'
 
 // Turns a post body (Steam BBCode, feed HTML or plain text) into grouped notes.
@@ -134,19 +135,24 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSecti
   return sections.filter((s) => s.items.length)
 }
 
-/** Re-applies the platform rules to notes stored earlier, so a rule change reaches old releases. */
+/**
+ * Re-applies the platform rules to notes stored earlier, so a rule change reaches old releases. Also keeps source
+ * names out of the notes (Terry's rule): a line that names one (a quoted review in a studio's post, say) is dropped,
+ * a heading that names one becomes "Changes", and a section left empty goes.
+ */
 export const tagNotes = (sections: NoteSection[]): NoteSection[] =>
   sections.map((s) => {
     const section = sectionPlatforms(s.title)
     return {
       ...s,
-      items: s.items.map(({ platforms: _old, ...i }) => {
+      title: SOURCE_NAMES.test(s.title) ? 'Changes' : s.title,
+      items: s.items.filter((i) => !SOURCE_NAMES.test(i.text)).map(({ platforms: _old, ...i }) => {
         const platforms = platformsFor(i.text, section)
         const category = itemCategoryOf(i.text, categoryOf(s.title))
         return platforms ? { ...i, platforms, pcOnly: isPcOnly(platforms), category } : { ...i, pcOnly: false, category }
       }),
     }
-  })
+  }).filter((s) => s.items.length)
 
 export const mentionsPs5 = (text: string) => PS5.test(text)
 export const mentionsXbox = (text: string) => XBOX.test(text)

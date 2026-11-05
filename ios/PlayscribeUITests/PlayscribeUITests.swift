@@ -688,6 +688,19 @@ final class Release050Tests: XCTestCase {
         XCTAssertNotNil(text.range(of: #"\d+\.\d+\.\d+"#, options: .regularExpression), "Version reads like 1.2.3, got '\(text)' [\(pose)]")
     }
 
+    /// 0.5.1 spec 1: the per-game footer sits directly under the Notify me about row, and every toggle row is 52 pt.
+    func testSettingsFootersAndRows() throws {
+        let app = launch("settings")
+        let notify = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Notify me about'")).firstMatch
+        let footer = app.staticTexts["Change a single game from the bell on its page."]
+        XCTAssertTrue(notify.waitForExistence(timeout: 10), "Notify me about row")
+        XCTAssertTrue(footer.exists, "per-game footer is shown")
+        XCTAssertLessThanOrEqual(footer.frame.minY - notify.frame.maxY, 60, "footer sits directly under the Notify row")
+        let pause = app.switches["Pause all"]
+        if pause.exists { XCTAssertGreaterThanOrEqual(pause.frame.height, 51.5, "toggle rows are 52 pt") }
+        app.terminate()
+    }
+
     /// J-20: quiet hours. The switch is off by default; turning it on shows From and Until and the footer.
     func testQuietHours() throws {
         let app = launch("settings")
@@ -717,6 +730,44 @@ final class Release050Tests: XCTestCase {
         XCTAssertTrue(reveal("From"), "From row appears")
         XCTAssertTrue(reveal("Until"), "Until row appears")
         XCTAssertTrue(reveal("Alerts arrive silently"), "footer")
+        app.terminate()
+    }
+
+    /// Terry 2026-11-05: the PS Plus card is on by default; the Settings switch turns it, and its reminder row, off.
+    func testPlusCardSwitch() throws {
+        let app = launch("plus-demo")
+        let card = app.descendants(matching: .any)["plusCard"]
+        XCTAssertTrue(card.waitForExistence(timeout: 10), "PS Plus card shows by default")
+        XCTAssertTrue(ReleaseRowTests.pose(app).hasPrefix("fold-crossings: 0;"), "card crosses no fold: \(ReleaseRowTests.pose(app))")
+        let cog = app.buttons["settingsButton"]
+        XCTAssertTrue(cog.waitForExistence(timeout: 5)); cog.tap()
+        let toggle = app.switches["plusCardToggle"]
+        var tries = 0
+        while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
+        XCTAssertTrue(toggle.exists, "Settings has the PS Plus card switch")
+        XCTAssertTrue(["on", "1"].contains(toggle.value as? String ?? ""), "on by default, got \(String(describing: toggle.value))")
+        let reminder = app.descendants(matching: .any)["plusLeavingSoon"]
+        XCTAssertTrue(reminder.exists, "the reminder row shows while the card is on")
+        let inner = toggle.switches.firstMatch
+        if inner.exists { inner.tap() } else { toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
+        XCTAssertTrue(["off", "0"].contains(toggle.value as? String ?? ""), "off after the tap, got \(String(describing: toggle.value))")
+        XCTAssertFalse(reminder.waitForExistence(timeout: 2), "the reminder row goes with the card")
+        // Close Settings: the Library card is gone. Then back on: it returns (Quinn, #245).
+        func flip() {
+            let t = app.switches["plusCardToggle"]
+            var n = 0
+            while !t.exists && n < 6 { app.swipeUp(); n += 1 }
+            let i = t.switches.firstMatch
+            if i.exists { i.tap() } else { t.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
+        }
+        app.buttons["Close"].tap()
+        XCTAssertFalse(card.waitForExistence(timeout: 3), "the Library card is hidden with the switch off")
+        app.buttons["settingsButton"].tap()
+        flip()
+        XCTAssertTrue(["on", "1"].contains(app.switches["plusCardToggle"].value as? String ?? ""), "on again")
+        XCTAssertTrue(app.descendants(matching: .any)["plusLeavingSoon"].waitForExistence(timeout: 2), "the reminder row returns")
+        app.buttons["Close"].tap()
+        XCTAssertTrue(card.waitForExistence(timeout: 3), "the Library card returns with the switch on")
         app.terminate()
     }
 

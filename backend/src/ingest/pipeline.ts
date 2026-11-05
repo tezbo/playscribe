@@ -354,6 +354,8 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   if (folded) deps.log?.(`ingest: folded ${folded} press-only duplicates into the release they report`)
   const dropped = store.dropPreLaunchPs5(deps.db)
   if (dropped) deps.log?.(`ingest: dropped ${dropped} Steam-assumed PS5 rows dated before the game's PS5 launch`)
+  const repaired = store.repairAssumedLiveAt(deps.db)
+  if (repaired) deps.log?.(`ingest: moved ${repaired} Steam-assumed PS5 dates back to their Steam post`)
   const promoted = store.promoteAnnounced(deps.db)
   deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)
   deps.log?.(`ingest: polled ${summary.polled.length}, new ${summary.created.length}, revised ${summary.revised.length}, review +${summary.review}, errors ${summary.errors.length}`)
