@@ -1,3 +1,4 @@
+import SwiftUI
 import Testing
 import UIKit
 @testable import Playscribe
@@ -11,9 +12,7 @@ import UIKit
 struct FoldHarnessTests {
     // MARK: Pose derivation (pure)
 
-    static let ids = ["closed", "closedLandscape", "open", "openPortrait", "book", "tabletop"]
-
-    @Test(arguments: ids)
+    @Test(arguments: ["closed", "closedLandscape", "open", "openPortrait", "book", "tabletop"])
     func catalogPoseMatchesWhatDuoReaderDerives(_ id: String) {
         let p = HarnessPose.named(id)
         let ctx = DuoReader<EmptyView>.context(size: p.container, compact: p.compactWidth,
@@ -26,7 +25,7 @@ struct FoldHarnessTests {
 
     // MARK: Layout rules at the default text size
 
-    @Test(arguments: ids)
+    @Test(arguments: ["closed", "closedLandscape", "open", "openPortrait", "book", "tabletop"])
     func libraryRulesHold(_ id: String) async throws {
         let p = HarnessPose.named(id)
         let r = try #require(await FoldHost.render(p), "\(p.id): a window scene to host in")
