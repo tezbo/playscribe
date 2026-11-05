@@ -343,7 +343,18 @@ extension View {
 private struct MessageInsetModifier: ViewModifier {
     @Environment(AppModel.self) private var model
     func body(content: Content) -> some View {
-        content.padding(.bottom, model.messageInset)
+        content
+            // The page ends above the pill; a soft edge there, not a hard cut through a card (Iris, #246).
+            .mask(alignment: .bottom) {
+                VStack(spacing: 0) {
+                    Rectangle()
+                    LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
+                        .frame(height: model.messageInset > 0 ? 24 : 0)
+                }
+            }
+            .padding(.bottom, model.messageInset)
+            // The inset changes the moment the pill shows: it must not ride a running pose animation.
+            .transaction(value: model.messageInset) { $0.animation = nil }
     }
 }
 
@@ -368,8 +379,8 @@ struct LowerMessages: View {
                         UnreadDot()
                         Text("New on PS5: \(game.name) \(r.displayName)")
                             .font(PlayscribeFont.subheadline.weight(.semibold))
-                            // Wraps at accessibility sizes instead of truncating: a long title needs a third line in the narrow poses.
-                            .lineLimit(3)
+                            // Never cut mid-phrase: the pill grows to the whole text, up to four lines (Iris, 0.5.1 spec 2).
+                            .lineLimit(4)
                             .fixedSize(horizontal: false, vertical: true)
                             .multilineTextAlignment(.leading)
                         Image(systemName: "chevron.forward").font(PlayscribeFont.caption)
