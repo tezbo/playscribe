@@ -431,6 +431,9 @@ struct LibraryShelf: View {
         // The pill and toasts sit at the bottom edge. The scroll view itself ends above them (a safe-area inset would still let
         // content scroll under the pill), so nothing is ever covered (0.5.1 spec 2, Iris).
         .padding(.bottom, model.messageInset)
+        // The inset changes the moment the pill shows. It must not ride a running pose animation, or the old arrangement
+        // lingers faintly under the new one (Book, ad54f44 stills).
+        .transaction(value: model.messageInset) { $0.animation = nil }
         .refreshable { await model.refreshFeed() }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
