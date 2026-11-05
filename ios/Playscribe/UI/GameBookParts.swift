@@ -69,6 +69,16 @@ struct PageView: View {
         // swapping sides rebuilds this view; it comes back where the reader was.
         .scrollPosition($position)
         .accessibilityIdentifier("pageScroll")
+        // A stacked Page ends at the Contents' edge: dissolve the last lines instead of cutting
+        // them mid-letter under the game title.
+        .mask {
+            if withContents || duo.pose == .closed { Rectangle() } else {
+                VStack(spacing: 0) {
+                    Rectangle()
+                    LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom).frame(height: 28)
+                }
+            }
+        }
         // J-1: Back from a pushed release lands on its row (Closed shares this scroll).
         .onChange(of: model.nav.detailReleaseID) { old, new in
             // After the restore of the saved offset, which no longer points at the row.
@@ -344,7 +354,7 @@ struct GameBasicsView: View {
                 Text("Story").font(PlayscribeFont.headline)
                 LinkedTextView(text: story).font(PlayscribeFont.body).lineLimit(storyOpen ? nil : 4)
                 Button(storyOpen ? "Less" : "More") { withAnimation(.snappy) { storyOpen.toggle() } }
-                    .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minHeight: 44).tappableFrame()
+                    .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
             }
             SimilarGamesRow(game: game)
         }

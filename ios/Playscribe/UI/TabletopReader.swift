@@ -76,10 +76,17 @@ extension AppModel {
                 out.append(ReaderSection(id: "key-\(i)", title: parsed.title, body: parsed.body))
             }
         }
-        if r.noteCount > 0 {
-            let first = r.notes.flatMap(\.items).filter { $0.spoiler != true }.prefix(3).map(\.text)
-            out.append(ReaderSection(id: "fixes", title: "Fixes",
-                                     body: "\(r.noteCount) listed changes, including: " + first.joined(separator: " ")))
+        // Greetings and the spoiler warning are not changes; spoiler lines stay out of the standing
+        // half until the game's spoiler switch is on (R-5), which is the same switch as the Page's.
+        let changes = r.notes.flatMap(\.items).filter { !ChangeKind.isPreamble($0.text) && !(r.isPS5Listed && $0.isPCOnly) }
+        if !changes.isEmpty {
+            let shown = spoilersShown(r.gameID)
+            let first = changes.filter { shown || $0.spoiler != true }.prefix(3).map { LinkedText.clean($0.text) }
+            let hidden = changes.filter { $0.spoiler == true }.count
+            var body = "\(changes.count) listed changes"
+            if !first.isEmpty { body += ", including: " + first.joined(separator: " ") }
+            if hidden > 0 && !shown { body += ". \(hidden) hidden for spoilers." }
+            out.append(ReaderSection(id: "fixes", title: "Fixes", body: body))
         }
         var facts = ["Status: Released",
                      "PS5 version: " + (r.ps5Version ?? "not published yet")]

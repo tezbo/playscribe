@@ -27,19 +27,27 @@ export const parsePlusEssential = (html: string): PlusMonth | null => {
   if (!title || !monthNo(title[1]!)) return null
   const month = `${title[2]}-${pad(monthNo(title[1]!))}`
   const body = /<div class="body body-text[^>]*>(.*?)<\/article>/is.exec(html)?.[1] ?? ''
-  const lead = text(/<p>(.*?)<\/p>/is.exec(body)?.[1] ?? '')
-  const start = /from (?:\w+day,? )?(\d{1,2})(?:st|nd|rd|th)? (\w+) (\d{4})/i.exec(lead)
+  const prose = text(body.split(/<ul>/i)[0] + ' ' + (body.split(/<\/ul>/i)[1] ?? ''))
+  // Wording varies month to month: "from Tuesday, 3rd November 2026", "starting Tuesday 6th October". The year may be missing.
+  const lineupYear = Number(title[2])
+  const start = /(?:from|starting)\s+(?:\w+day,?\s+)?(\d{1,2})(?:st|nd|rd|th)?\s+(\w+)(?:\s+(\d{4}))?/i.exec(prose)
   if (!start || !monthNo(start[2]!)) return null
-  const from = `${start[3]}-${pad(monthNo(start[2]!))}-${pad(Number(start[1]))}`
+  const startYear = Number(start[3] ?? lineupYear)
+  const from = `${startYear}-${pad(monthNo(start[2]!))}-${pad(Number(start[1]))}`
   const list = /<\/p>\s*<ul>(.*?)<\/ul>/is.exec(body)?.[1] ?? ''
   const games = [...list.matchAll(/<li>\s*<a [^>]*>(.*?)<\/a>/gis)].map((m) => ({ name: text(m[1]!) })).filter((g) => g.name)
-  // The window ends the day before the next lineup ("rotated out ... on 1st December"), or at the end of the month.
-  const next = /rotated out[^.]*?\bon (\d{1,2})(?:st|nd|rd|th)? (\w+)/i.exec(text(body))
+  // The window ends the day before the next lineup ("rotated out ... on 1st December"), on the stated last day ("running until
+  // 2nd November"), or at the end of the month.
+  const rotated = /rotated out[^.]*?\bon (\d{1,2})(?:st|nd|rd|th)? (\w+)/i.exec(prose)
+  const until_ = /(?:running )?until (\d{1,2})(?:st|nd|rd|th)? (\w+)/i.exec(prose)
+  const yearFor = (nm: number) => startYear + (nm < monthNo(start[2]!) ? 1 : 0)
   let until: string
-  if (next && monthNo(next[2]!)) {
-    const nm = monthNo(next[2]!)
-    const year = Number(start[3]) + (nm < monthNo(start[2]!) ? 1 : 0)
-    until = new Date(Date.UTC(year, nm - 1, Number(next[1]) - 1)).toISOString().slice(0, 10)
+  if (rotated && monthNo(rotated[2]!)) {
+    const nm = monthNo(rotated[2]!)
+    until = new Date(Date.UTC(yearFor(nm), nm - 1, Number(rotated[1]) - 1)).toISOString().slice(0, 10)
+  } else if (until_ && monthNo(until_[2]!)) {
+    const nm = monthNo(until_[2]!)
+    until = `${yearFor(nm)}-${pad(nm)}-${pad(Number(until_[1]))}`
   } else {
     const [y, m] = month.split('-').map(Number) as [number, number]
     until = new Date(Date.UTC(y, m, 0)).toISOString().slice(0, 10)

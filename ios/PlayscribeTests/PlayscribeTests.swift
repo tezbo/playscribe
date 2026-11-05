@@ -417,6 +417,38 @@ struct OneUpdateDemoTests {
     }
 }
 
+/// Reader polish from the 0.5.0 build 6 device pass: spoiler warnings, counts, greetings.
+struct SpoilerWarningTests {
+    private func section() -> NoteSection {
+        NoteSection(title: "Changes", items: [
+            NoteItem(text: "Hello!"),
+            NoteItem(text: "Be advised, the following notes contain spoilers so browse at your own peril:"),
+            NoteItem(text: "Fixed camera lock in the lab."),
+            NoteItem(text: "Fixed a crash."),
+        ])
+    }
+
+    @Test("R-5: lines after a spoiler warning hide behind the spoiler switch; lines before it do not")
+    func linesAfterWarningAreSpoilers() {
+        let items = section().items
+        #expect(items[0].spoiler == nil)
+        #expect(items[2].spoiler == true)
+        #expect(items[3].spoiler == true)
+    }
+
+    @Test("A greeting and the warning are not counted as changes")
+    func preambleIsNotCounted() {
+        let g = ChangeKind.grouped([section()], ps5Only: true)
+        #expect(g.reduce(0) { $0 + $1.count } == 2)
+    }
+
+    @Test("Notes without a warning are untouched")
+    func noWarningNoChange() {
+        let s = NoteSection(title: "Fixes", items: [NoteItem(text: "Fixed a crash."), NoteItem(text: "Be advised: servers restart.")])
+        #expect(s.items.allSatisfy { $0.spoiler == nil })
+    }
+}
+
 /// R-11, G-9: autoplay is opt-in.
 struct AutoplayTests {
     @Test("Player page autoplays only when asked (R-11)")
@@ -424,5 +456,89 @@ struct AutoplayTests {
         #expect(YouTubeController.html("abc", captions: true).contains("autoplay:0"))
         let on = YouTubeController.html("abc", captions: true, autoplay: true)
         #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
+    }
+}
+
+/// Release also defines INTERNAL, so the QA routes must be switched off by the build channel:
+/// a TestFlight or App Store build (it carries a receipt) ignores them, and so do URLs from other apps.
+@MainActor
+struct QARouteGuardTests {
+    private func model() -> AppModel { AppModel(storeURL: URL.temporaryDirectory.appending(path: "qa-\(UUID().uuidString).json")) }
+
+    @Test("A distribution build ignores playscribe:// QA routes")
+    func distributionIgnoresURLRoutes() {
+        BuildChannel.overrideIsDistribution = true
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        m.handle(url: URL(string: "playscribe://add")!)
+        m.handle(url: URL(string: "playscribe://first-run")!)
+        #expect(!m.addSheetOpen)
+        #expect(m.qaRoute == nil)
+    }
+
+    @Test("A distribution build ignores the -qaRoute launch argument and the overlay")
+    func distributionIgnoresLaunchArguments() {
+        BuildChannel.overrideIsDistribution = true
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        m.applyQALaunch(route: "add", overlay: true)
+        #expect(!m.addSheetOpen)
+        #expect(!m.showDebugOverlay)
+        #expect(m.qaRoute == nil)
+    }
+
+    @Test("A developer or simulator build still runs QA routes")
+    func internalBuildRunsRoutes() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        m.applyQALaunch(route: "add", overlay: false)
+        #expect(m.addSheetOpen)
+        #expect(m.qaRoute == "add")
+    }
+}
+
+/// The simulator has a sandboxReceipt, so the channel must not read it there, or every QA route is dead;
+/// a device with a receipt is a distribution build.
+struct BuildChannelTests {
+    @Test("A receipt marks a distribution build; none marks a developer build")
+    func receiptDecides() {
+        #expect(BuildChannel.isDistribution(receiptName: "sandboxReceipt"))
+        #expect(BuildChannel.isDistribution(receiptName: "receipt"))
+        #expect(!BuildChannel.isDistribution(receiptName: nil))
+        #expect(!BuildChannel.isDistribution(receiptName: "other"))
+    }
+
+    #if targetEnvironment(simulator)
+    @Test("The simulator is never a distribution build, so QA routes run there")
+    func simulatorShowsInternalTools() {
+        BuildChannel.overrideIsDistribution = nil
+        #expect(!BuildChannel.isDistribution)
+        #expect(BuildChannel.showsInternalTools)
+    }
+    #endif
+}
+
+struct ReaderSpoilerTests {
+    @MainActor
+    private func fixes(shown: Bool) -> String {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "rs-\(UUID().uuidString).json"))
+        let gameID = "g"
+        m.setSpoilersShown(gameID, shown)
+        let when = Date(timeIntervalSince1970: 1_745_020_800)
+        let r = Release(id: "r", gameID: gameID, displayName: "Patch 1.2", kind: .hotfix, kindBasis: .studio, announcedAt: when,
+                        notes: [NoteSection(title: "Changes", items: ["Hello!", "Be advised, the following notes contain spoilers:",
+                                                                        "Fixed the final door.", "Fixed the ending letter."].map { NoteItem(text: $0) })],
+                        sourceIDs: [], platforms: [])
+        return m.readerSections(r).first { $0.id == "fixes" }?.body ?? ""
+    }
+
+    @Test("R-5: the standing half hides spoiler lines until the spoiler switch is on, and never lists the greeting or warning")
+    @MainActor func standingHalfRespectsSpoilers() {
+        let hidden = fixes(shown: false)
+        #expect(hidden.contains("2 listed changes") && hidden.contains("2 hidden for spoilers") && !hidden.contains("final door"))
+        #expect(!hidden.contains("Hello") && !hidden.contains("Be advised"))
+        let shown = fixes(shown: true)
+        #expect(shown.contains("final door") && !shown.contains("hidden for spoilers"))
     }
 }
