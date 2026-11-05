@@ -11,8 +11,10 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         var update: String
         var date: Date
         var unread: Bool
-        /// A cover thumbnail was written for this row (first row only, for the small widget).
+        /// A cover thumbnail was written for this row (official art only; see `coverData(for:)`).
         var hasCover = false
+        /// Version chip such as "v1.1", when the update name ends in a version.
+        var chip: String?
         var id: String { releaseID }
         var url: URL { URL(string: "playscribe://release/\(gameID)/\(releaseID)")! }
     }
@@ -21,7 +23,7 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     static var group: String {
         Bundle.main.object(forInfoDictionaryKey: "PlayscribeAppGroup") as? String ?? "group.co.codeconnectors.playscribe"
     }
-    static let coverFile = "widget-cover.jpg"
+    static let coverPrefix = "widget-cover-"
     static let fileName = "widget-snapshot.json"
 
     var rows: [Row]
@@ -38,8 +40,10 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
 
     static var containerURL: URL? { FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: group) }
 
-    static func coverData() -> Data? {
-        containerURL.flatMap { try? Data(contentsOf: $0.appendingPathComponent(coverFile)) }
+    static func coverFile(for releaseID: String) -> String { "\(coverPrefix)\(releaseID).jpg" }
+
+    static func coverData(for row: Row) -> Data? {
+        containerURL.flatMap { try? Data(contentsOf: $0.appendingPathComponent(coverFile(for: row.releaseID))) }
     }
 
     static func load() -> WidgetSnapshot {

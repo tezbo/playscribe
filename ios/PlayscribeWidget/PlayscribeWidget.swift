@@ -49,27 +49,6 @@ struct NewChip: View {
     }
 }
 
-struct UpdateRow: View {
-    var row: WidgetSnapshot.Row
-    var body: some View {
-        Link(destination: row.url) {
-            HStack(alignment: .firstTextBaseline) {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(row.game).font(W.title).lineLimit(1)
-                    Text(row.update).font(W.body).foregroundStyle(.secondary).lineLimit(1)
-                }
-                Spacer(minLength: 8)
-                VStack(alignment: .trailing, spacing: 2) {
-                    if row.unread { NewChip() }
-                    Text(row.date, format: .dateTime.day().month(.abbreviated)).font(W.body).foregroundStyle(.secondary)
-                }
-            }
-        }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(voice(row))
-    }
-}
-
 struct Notice: View {
     var title: String
     var message: String
@@ -94,7 +73,7 @@ struct WidgetView: View {
     var entry: SnapshotEntry
 
     private var limit: Int {
-        switch family { case .systemSmall: 1; case .systemMedium: 2; default: 4 }
+        switch family { case .systemSmall: 1; case .systemMedium: 3; default: 4 }
     }
 
     var body: some View {
@@ -145,37 +124,103 @@ struct WidgetView: View {
             if !snap.hasGames {
                 Notice(title: "Add your games", message: "Open Playscribe to build your library.")
                     .accessibilityLabel("Add your games, open Playscribe to build your library")
+                    .foregroundStyle(scheme == .dark ? W.primary : W.ink900)
             } else if rows.isEmpty {
                 Notice(title: "You're all caught up", message: "Playscribe will show new updates here.")
+                    .foregroundStyle(scheme == .dark ? W.primary : W.ink900)
             } else if family == .systemSmall, let r = rows.first {
-                VStack(alignment: .leading, spacing: 4) {
-                    if r.unread { NewChip() }
-                    Spacer(minLength: 0)
-                    if r.hasCover, let data = WidgetSnapshot.coverData(), let img = UIImage(data: data) {
-                        Image(uiImage: img).resizable().scaledToFill()
-                            .frame(height: 44).clipShape(RoundedRectangle(cornerRadius: 8)).accessibilityHidden(true)
+                HeroCard(row: r, tall: true).widgetURL(r.url)
+            } else if family == .systemMedium, let r = rows.first {
+                HStack(spacing: 10) {
+                    HeroCard(row: r, tall: true)
+                        .frame(maxWidth: .infinity).clipShape(RoundedRectangle(cornerRadius: 12))
+                        .widgetURL(r.url)
+                    VStack(alignment: .leading, spacing: 8) {
+                        ForEach(rows.dropFirst()) { ThumbRow(row: $0) }
+                        if rows.count == 1 { Spacer(minLength: 0) }
                     }
-                    Text(r.game).font(W.title).lineLimit(3)
-                    Text(r.update).font(W.body).foregroundStyle(.secondary).lineLimit(1)
-                    Text(age(r.date)).font(W.body).foregroundStyle(.secondary).lineLimit(1)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .foregroundStyle(scheme == .dark ? W.primary : W.ink900)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel(voice(r))
-                .widgetURL(r.url)
-            } else {
+            } else if let r = rows.first {
                 VStack(alignment: .leading, spacing: 10) {
-                    if family == .systemLarge, snap.unreadCount > 0 {
+                    HeroCard(row: r, tall: false)
+                        .frame(maxHeight: 150).clipShape(RoundedRectangle(cornerRadius: 14))
+                        .widgetURL(r.url)
+                    if snap.unreadCount > 0 {
                         Text(snap.unreadCount == 1 ? "1 new update" : "\(snap.unreadCount) new updates").font(W.big)
                     }
-                    ForEach(rows) { UpdateRow(row: $0) }
+                    ForEach(rows.dropFirst()) { ThumbRow(row: $0) }
                     Spacer(minLength: 0)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .foregroundStyle(scheme == .dark ? W.primary : W.ink900)
             }
         }
-        .foregroundStyle(scheme == .dark ? W.primary : W.ink900)
         .containerBackground(scheme == .dark ? W.ink950 : W.vellum100, for: .widget)
+    }
+}
+
+private func cover(_ r: WidgetSnapshot.Row) -> UIImage? {
+    r.hasCover ? WidgetSnapshot.coverData(for: r).flatMap { UIImage(data: $0) } : nil
+}
+
+/// Full-bleed official art with a scrim, game, update, version chip and age. Art is decorative; no note text.
+struct HeroCard: View {
+    var row: WidgetSnapshot.Row
+    var tall: Bool
+    var body: some View {
+        ZStack(alignment: .bottomLeading) {
+            if let img = cover(row) {
+                Color.clear.overlay { Image(uiImage: img).resizable().scaledToFill() }.clipped()
+            } else {
+                W.ink900
+            }
+            LinearGradient(colors: [.clear, W.ink950.opacity(0.88)], startPoint: .center, endPoint: .bottom)
+            VStack(alignment: .leading, spacing: 2) {
+                HStack(spacing: 6) {
+                    if row.unread { NewChip() }
+                    if let c = row.chip { Text(c).font(W.chip).foregroundStyle(W.primary) }
+                }
+                Text(row.game).font(W.title).lineLimit(tall ? 3 : 1)
+                Text(row.update).font(W.body).lineLimit(1)
+                Text(row.date, style: .relative).font(W.body).opacity(0.75).lineLimit(1)
+            }
+            .foregroundStyle(W.primary)
+            .padding(10)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(voice(row))
+    }
+}
+
+/// Small cover, game, update and date. Tapping opens that update.
+struct ThumbRow: View {
+    var row: WidgetSnapshot.Row
+    var body: some View {
+        Link(destination: row.url) {
+            HStack(spacing: 8) {
+                Group {
+                    if let img = cover(row) {
+                        Image(uiImage: img).resizable().scaledToFill()
+                    } else {
+                        W.ink900
+                    }
+                }
+                .frame(width: 40, height: 40).clipShape(RoundedRectangle(cornerRadius: 8))
+                .overlay(alignment: .topTrailing) {
+                    if row.unread { Circle().fill(W.accent).frame(width: 10, height: 10).offset(x: 3, y: -3) }
+                }
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(row.game).font(W.title).lineLimit(1)
+                    Text(row.update).font(W.body).foregroundStyle(.secondary).lineLimit(1)
+                }
+                Spacer(minLength: 0)
+            }
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(voice(row))
     }
 }
 
