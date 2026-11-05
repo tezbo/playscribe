@@ -114,7 +114,7 @@ struct PlayerView: View {
     var gameID: String
     var releaseID: String
     @State private var controller: YouTubeController?
-    @AppStorage(VideoReflection.key) private var reflectionMode = false
+    @AppStorage(VideoReflection.key) private var reflectionMode = true
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
 
