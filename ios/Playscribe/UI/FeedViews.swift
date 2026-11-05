@@ -33,6 +33,7 @@ struct UpdatesView: View {
                     .padding(.horizontal, 16)
 
                 }
+                .reservesMessageInset()
                 .frame(width: duo.size.width)
             } else {
                 List {
@@ -40,6 +41,7 @@ struct UpdatesView: View {
 
                 }
                 .contentMargins(.trailing, railWidth, for: .scrollContent)
+                .reservesMessageInset()
             }
         }
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
@@ -253,6 +255,7 @@ struct SearchView: View {
             }
         }
         .contentMargins(.trailing, railWidth + (tabletop ? 0 : badgeExtra), for: .scrollContent)
+        .reservesMessageInset()
         // Book: Search lives on the right page, never across the fold (0.2.0 gate: field and hint ran full width).
         .padding(.leading, duo.pose == .book ? (duo.division.map { $0.maxX + 8 } ?? 0) : 0)
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.

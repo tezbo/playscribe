@@ -334,6 +334,19 @@ struct TabletopRail: View {
     }
 }
 
+extension View {
+    /// A scrolling page ends above the pill and toasts instead of under them (N-7, B-8, 0.5.1 spec 2): one
+    /// mechanism for the Library, Updates, the game Page, Contents and release detail.
+    func reservesMessageInset() -> some View { modifier(MessageInsetModifier()) }
+}
+
+private struct MessageInsetModifier: ViewModifier {
+    @Environment(AppModel.self) private var model
+    func body(content: Content) -> some View {
+        content.safeAreaInset(edge: .bottom, spacing: 0) { Color.clear.frame(height: model.messageInset) }
+    }
+}
+
 /// The "New on PS5" pill (N-7) and toasts with Undo (B-8), above the tab bar or in the lower half.
 struct LowerMessages: View {
     @Environment(AppModel.self) private var model
