@@ -130,7 +130,7 @@ struct WidgetView: View {
                 Notice(title: "All caught up", message: "Playscribe will show new updates here.")
                     .foregroundStyle(scheme == .dark ? W.primary : W.ink900)
             } else if family == .systemSmall, let r = rows.first {
-                HeroCard(row: r, tall: true).widgetURL(r.url)
+                HeroText(row: r, tall: true).widgetURL(r.url)
             } else if family == .systemMedium, let r = rows.first {
                 HStack(spacing: 10) {
                     HeroCard(row: r, tall: true)
@@ -158,7 +158,13 @@ struct WidgetView: View {
                 .foregroundStyle(scheme == .dark ? W.primary : W.ink900)
             }
         }
-        .containerBackground(scheme == .dark ? W.ink950 : W.vellum100, for: .widget)
+        .containerBackground(for: .widget) {
+            if family == .systemSmall, !entry.snapshot.rows.isEmpty, entry.snapshot.hasGames {
+                HeroArt(row: entry.snapshot.rows[0])
+            } else {
+                scheme == .dark ? W.ink950 : W.vellum100
+            }
+        }
     }
 }
 
@@ -166,33 +172,57 @@ private func cover(_ r: WidgetSnapshot.Row) -> UIImage? {
     r.hasCover ? WidgetSnapshot.coverData(for: r).flatMap { UIImage(data: $0) } : nil
 }
 
-/// Full-bleed official art with a scrim, game, update, version chip and age. Art is decorative; no note text.
+/// Official art with a scrim that keeps white text at 4.5:1 or better on any cover. With no art (gallery
+/// preview, no cover written) a plum plate stands in so the tile is never blank.
+struct HeroArt: View {
+    var row: WidgetSnapshot.Row
+    var body: some View {
+        ZStack {
+            if let img = cover(row) {
+                Color.clear.overlay {
+                    Image(uiImage: img).resizable().widgetAccentedRenderingMode(.desaturated).scaledToFill()
+                }.clipped()
+            } else {
+                LinearGradient(colors: [Color(red: 0.231, green: 0.176, blue: 0.341), W.ink950],
+                               startPoint: .topLeading, endPoint: .bottomTrailing)
+            }
+            LinearGradient(colors: [W.ink950.opacity(0.25), W.ink950.opacity(0.92)], startPoint: .top, endPoint: .bottom)
+        }
+    }
+}
+
+/// The text block that sits on the art: chips, game, update, age. No note text.
+struct HeroText: View {
+    var row: WidgetSnapshot.Row
+    var tall: Bool
+    var body: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Spacer(minLength: 0)
+            HStack(spacing: 6) {
+                if row.unread { NewChip() }
+                if !tall, let c = row.chip { Text(c).font(W.chip).foregroundStyle(W.primary) }
+            }
+            Text(row.game).font(W.title).lineLimit(2).minimumScaleFactor(0.85)
+            Text(row.update).font(W.body).lineLimit(1)
+            Text(age(row.date)).font(W.body).lineLimit(1)
+        }
+        .foregroundStyle(W.primary)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(voice(row))
+    }
+}
+
+/// Inset art card for the medium and large widgets.
 struct HeroCard: View {
     var row: WidgetSnapshot.Row
     var tall: Bool
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
-            if let img = cover(row) {
-                Color.clear.overlay { Image(uiImage: img).resizable().widgetAccentedRenderingMode(.desaturated).scaledToFill() }.clipped()
-            } else {
-                W.ink900
-            }
-            LinearGradient(colors: [W.ink950.opacity(0.15), W.ink950.opacity(0.92)], startPoint: .top, endPoint: .bottom)
-            VStack(alignment: .leading, spacing: 2) {
-                HStack(spacing: 6) {
-                    if row.unread { NewChip() }
-                    if !tall, let c = row.chip { Text(c).font(W.chip).foregroundStyle(W.primary) }
-                }
-                Text(row.game).font(W.title).lineLimit(tall ? 1 : 1).minimumScaleFactor(0.85)
-                Text(row.update).font(W.body).lineLimit(1)
-                Text(age(row.date)).font(W.body).lineLimit(1)
-            }
-            .foregroundStyle(W.primary)
-            .padding(10)
+        ZStack {
+            HeroArt(row: row)
+            HeroText(row: row, tall: tall).padding(10)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(voice(row))
     }
 }
 
