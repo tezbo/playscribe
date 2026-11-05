@@ -270,6 +270,27 @@ test('coverage audit: a Steam-assumed PS5 row dated before the PS5 launch is dro
   assert.equal(store.dropPreLaunchPs5(db), 0)
 })
 
+test('prelaunch gate (r051): Steam-only official PS5 rows announced before launch are dropped; launch-day and day-before (timezone) patches and press rows stay', async () => {
+  const { db } = await setup()
+  const t = new Date().toISOString()
+  db.prepare("UPDATE games SET ps5_release = '2023-09-06' WHERE id = 'dawnwalker'").run()
+  const add = (id: string, at: string, src: string) => {
+    db.prepare(`INSERT INTO releases (id, game_id, version_key, display_name, kind, kind_basis, announced_at, notes, source_ids, content_hash, created_at, updated_at) VALUES (?, 'dawnwalker', ?, ?, 'patch', 'studio', ?, '[]', ?, 'x', ?, ?)`).run(id, id, id, at, JSON.stringify([src]), t, t)
+    db.prepare(`INSERT INTO platform_releases (release_id, platform, status, verification, live_at, updated_at) VALUES (?, 'ps5', 'live', 'official', NULL, ?)`).run(id, t)
+  }
+  add('dawnwalker@old', '2021-08-31T10:00:00.000Z', 'dawnwalker-steam')
+  add('dawnwalker@launch', '2023-09-06T08:00:00.000Z', 'dawnwalker-steam')
+  add('dawnwalker@eve', '2023-09-05T23:00:00.000Z', 'dawnwalker-steam')
+  add('dawnwalker@press', '2021-08-31T10:00:00.000Z', 'pushsquare')
+  add('dawnwalker@nosrc', '2021-08-31T10:00:00.000Z', 'x')
+  db.prepare("UPDATE releases SET source_ids = '[]' WHERE id = 'dawnwalker@nosrc'").run()
+  store.dropPreLaunchPs5(db)
+  const has = (id: string) => !!db.prepare("SELECT 1 FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").get(id)
+  assert.equal(has('dawnwalker@old'), false)
+  assert.ok(has('dawnwalker@launch') && has('dawnwalker@eve') && has('dawnwalker@press'))
+  assert.ok(has('dawnwalker@nosrc'), 'a release with no recorded source is not Steam-only')
+})
+
 // Roadmap duplicate audit: the same patch seen as "1.4" by the press and "1.4.0" by Steam is one release.
 const spelling = async (steamTitle: string, pressTitle: string, steamHoursAgo = 30, pressHoursAgo = 28) => {
   const db = openDb(':memory:')
@@ -343,6 +364,22 @@ test('headline: text before a colon, 60 characters at a word boundary, ellipsis 
   assert.equal(headlineOf('x'.repeat(59)), 'x'.repeat(59))
   assert.equal(headlineOf(undefined), null)
   assert.equal(headlineOf(': nothing before'), null)
+})
+
+test('data audit: a later post for the same release never moves a Steam-assumed PS5 date later; repair fixes stored rows', async () => {
+  const { db } = await setup()
+  const ps5 = () => store.getPlatformRow(db, 'dawnwalker@1.1.1', 'ps5')!
+  const live = () => JSON.parse(ps5().live_at as string).value as string
+  const first = live()
+  // A second Steam-assumed write with a later date keeps the first.
+  store.upsertPlatform(db, 'dawnwalker@1.1.1', 'ps5', { status: 'live', verification: 'assumed', liveAt: store.field(new Date(Date.parse(first) + 3 * 86400e3).toISOString(), 'assumed', 'dawnwalker-steam') })
+  assert.equal(live(), first)
+  // Stored rows already moved later are repaired to the PC row's Steam date.
+  const pc = JSON.parse(store.getPlatformRow(db, 'dawnwalker@1.1.1', 'pc')!.live_at as string).value as string
+  db.prepare("UPDATE platform_releases SET live_at = ? WHERE release_id = 'dawnwalker@1.1.1' AND platform = 'ps5'").run(JSON.stringify({ ...JSON.parse(ps5().live_at as string), value: new Date(Date.parse(pc) + 86400e3).toISOString() }))
+  assert.ok(store.repairAssumedLiveAt(db) >= 1)
+  assert.equal(live(), pc)
+  assert.equal(store.repairAssumedLiveAt(db), 0)
 })
 
 test('news: Push Square headlines that name a tracked game are Reported news (title, date, link); its patch and unrelated items are not', async () => {

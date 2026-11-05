@@ -74,7 +74,7 @@ Sent once per release, when its PS5 row becomes live, to followers whose `notify
 ```json
 {
   "aps": {
-    "alert": { "title": "The Blood of Dawnwalker: 4 new, 9 fixed", "body": "Update 01.004.000: Added photo mode" },
+    "alert": { "title": "The Blood of Dawnwalker: 4 new, 9 fixed", "body": "Update 1.1: Added photo mode" },
     "sound": "default", "thread-id": "dawnwalker", "interruption-level": "active", "relevance-score": 1
   },
   "gameId": "dawnwalker", "releaseId": "dawnwalker@1.1", "kind": "major", "verification": "official"
