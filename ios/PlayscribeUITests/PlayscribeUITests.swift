@@ -752,6 +752,22 @@ final class Release050Tests: XCTestCase {
         if inner.exists { inner.tap() } else { toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
         XCTAssertTrue(["off", "0"].contains(toggle.value as? String ?? ""), "off after the tap, got \(String(describing: toggle.value))")
         XCTAssertFalse(reminder.waitForExistence(timeout: 2), "the reminder row goes with the card")
+        // Close Settings: the Library card is gone. Then back on: it returns (Quinn, #245).
+        func flip() {
+            let t = app.switches["plusCardToggle"]
+            var n = 0
+            while !t.exists && n < 6 { app.swipeUp(); n += 1 }
+            let i = t.switches.firstMatch
+            if i.exists { i.tap() } else { t.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
+        }
+        app.buttons["Close"].tap()
+        XCTAssertFalse(card.waitForExistence(timeout: 3), "the Library card is hidden with the switch off")
+        app.buttons["settingsButton"].tap()
+        flip()
+        XCTAssertTrue(["on", "1"].contains(app.switches["plusCardToggle"].value as? String ?? ""), "on again")
+        XCTAssertTrue(app.descendants(matching: .any)["plusLeavingSoon"].waitForExistence(timeout: 2), "the reminder row returns")
+        app.buttons["Close"].tap()
+        XCTAssertTrue(card.waitForExistence(timeout: 3), "the Library card returns with the switch on")
         app.terminate()
     }
 
