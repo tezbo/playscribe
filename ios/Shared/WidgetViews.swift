@@ -52,12 +52,12 @@ struct Notice: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(title), \(message.lowercasedFirst)")
+        .accessibilityLabel("\(title), \(message.widgetLowercasedFirst)")
     }
 }
 
 private extension String {
-    var lowercasedFirst: String { prefix(1).lowercased() + dropFirst() }
+    var widgetLowercasedFirst: String { prefix(1).lowercased() + dropFirst() }
 }
 
 struct WidgetView: View {
