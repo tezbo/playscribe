@@ -42,6 +42,7 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 - Ideas go to Nadia, from anyone, at any time. Bugs go to Theo. Design questions go to Iris.
 - Agents message each other's threads directly only when their work depends on it. Anything for Terry goes through
   Sam or Nadia.
+- **New agents (Terry, 2026-11-05).** Any request for a new agent goes to Sam first. Sam takes it to Terry with a justification, and nobody is added without his approval.
 - Every PR names the acceptance IDs it touches. Sign-offs name the exact commit SHA.
 
 ## Sprint board
