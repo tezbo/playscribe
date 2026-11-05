@@ -73,10 +73,18 @@ struct ShareUpdateButton: View {
             if let image {
                 ShareLink(item: image, message: Text(model.shareText(release)),
                           preview: SharePreview(model.game(release.gameID)?.name ?? "Update", image: image)) {
-                    Image(systemName: "square.and.arrow.up").frame(width: 44, height: 44)
+                    // Same disc and weight as the rail's other buttons (Quinn: it looked paler, as if disabled).
+                    Image(systemName: "square.and.arrow.up")
+                        .font(PlayscribeFont.title3)
+                        .foregroundStyle(Color.primary)
+                        .frame(width: 44, height: 44)
+                        .background(Circle().fill(.regularMaterial))
+                        .contentShape(Rectangle())
                 }
+                .buttonStyle(RailPressStyle())
             } else if failed {
-                Button("Retry") { render() }.font(PlayscribeFont.footnote).frame(minHeight: 44)
+                Button { render() } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
+                    .accessibilityHint("Couldn't make the card. Try again.")
             } else {
                 ProgressView().frame(width: 44, height: 44).accessibilityLabel("Making your card")
             }

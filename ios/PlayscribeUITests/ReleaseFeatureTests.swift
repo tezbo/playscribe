@@ -18,10 +18,25 @@ final class ReleaseFeatureTests: XCTestCase {
         app.launch()
     }
 
+    private var inTabletop: Bool { pose().contains("pose: tabletop") }
+
     private func pose() -> String {
         let audit = app.descendants(matching: .any)["foldAudit"]
         _ = audit.waitForExistence(timeout: 5)
         return audit.exists ? audit.label : "unknown"
+    }
+
+    /// The Playing / Upcoming switch: a rail button in Tabletop, else a segmented Picker whose segments are not
+    /// reliably exposed (the gate found none by label in any pose), so the picker itself is tapped at its half.
+    private func switchTo(_ label: String) -> Bool {
+        let rail = app.descendants(matching: .any)[label == "Upcoming" ? "upcomingRail" : "playingRail"]
+        if rail.waitForExistence(timeout: 10) { rail.tap(); return true }
+        let seg = app.descendants(matching: .any).matching(NSPredicate(format: "label == %@", label)).firstMatch
+        if seg.exists { seg.tap(); return true }
+        let picker = app.descendants(matching: .any)["libraryTabPicker"]
+        guard picker.waitForExistence(timeout: 10) else { return false }
+        picker.coordinate(withNormalizedOffset: CGVector(dx: label == "Upcoming" ? 0.75 : 0.25, dy: 0.5)).tap()
+        return true
     }
 
     private func button(_ prefix: String) -> XCUIElement {
@@ -55,8 +70,9 @@ final class ReleaseFeatureTests: XCTestCase {
     /// J-1, J-2: the Latest updates hero. A card opens its update; the leaves are 44 pt targets.
     func testHeroDeckCardOpensItsUpdate() throws {
         launch("demo")
-        let card = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'New update,' OR label BEGINSWITH 'Continue,'")).firstMatch
-        XCTAssertTrue(card.waitForExistence(timeout: 10), "a hero card")
+        let card = app.buttons.matching(NSPredicate(format: "identifier == 'deckCard' OR identifier == 'continueHero' OR label BEGINSWITH 'New update,' OR label BEGINSWITH 'Continue,'")).firstMatch
+        if !card.waitForExistence(timeout: 10), inTabletop { throw XCTSkip("Tabletop's upper half is view only: its deck card is not an accessibility target") }
+        XCTAssertTrue(card.exists, "a hero card")
         assertFrames("library")
         if card.isHittable { card.tap() } else { throw XCTSkip("hero not tappable in this pose (Tabletop standing half is view only)") }
         XCTAssertTrue(app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'Update'")).firstMatch.waitForExistence(timeout: 10))
@@ -66,15 +82,13 @@ final class ReleaseFeatureTests: XCTestCase {
     /// 0.5.0 Upcoming: the switch, the empty state and tapping a tile open a game.
     func testUpcomingTabAndWatchlist() throws {
         launch("library")
-        let upcoming = button("Upcoming")
-        XCTAssertTrue(upcoming.waitForExistence(timeout: 10), "Upcoming control (picker, or the Tabletop rail)")
-        upcoming.tap()
+        XCTAssertTrue(switchTo("Upcoming"), "Upcoming control (picker, or the Tabletop rail)")
         let empty = app.staticTexts["Nothing on your watchlist yet"]
         let tile = app.buttons.matching(NSPredicate(format: "label CONTAINS 'releases' OR label CONTAINS 'Date to be announced'")).firstMatch
         XCTAssertTrue(empty.waitForExistence(timeout: 10) || tile.waitForExistence(timeout: 10), "empty copy or upcoming tiles")
         assertFrames("library-upcoming")
         attach("upcoming")
-        button("Playing").tap()
+        XCTAssertTrue(switchTo("Playing"), "Playing control")
         XCTAssertTrue(app.buttons["Add game"].firstMatch.waitForExistence(timeout: 5))
     }
 
@@ -109,7 +123,8 @@ final class ReleaseFeatureTests: XCTestCase {
     func testShareUpdateButton() throws {
         launch("release/dawnwalker/dawnwalker@1.1")
         let share = app.buttons["Share update"]
-        XCTAssertTrue(share.waitForExistence(timeout: 10))
+        XCTAssertTrue(share.waitForExistence(timeout: 10), "Share update is offered (Tabletop: on the lower rail)")
+        if inTabletop { XCTAssertGreaterThanOrEqual(share.frame.minY, app.frame.midY - 1, "Tabletop: Share sits in the lower half") }
         XCTAssertGreaterThanOrEqual(share.frame.height, 44, "44 pt target")
         assertFrames("release")
     }
@@ -133,7 +148,9 @@ final class ReleaseFeatureTests: XCTestCase {
         assertFrames("first-run")
         attach("welcome")
         let skip = app.buttons["Skip for now"]
-        XCTAssertTrue(skip.isHittable)
+        var swipes = 0
+        while !skip.isHittable && swipes < 4 { app.swipeUp(); swipes += 1 }
+        XCTAssertTrue(skip.isHittable, "Skip for now is reachable (scrolling if the welcome is taller than the screen)")
         skip.tap()
         XCTAssertTrue(app.buttons["Add your first game"].waitForExistence(timeout: 5), "the empty Library, not a blank page")
     }
@@ -144,6 +161,7 @@ final class ReleaseFeatureTests: XCTestCase {
         let type = button("Type it")
         XCTAssertTrue(type.waitForExistence(timeout: 10))
         type.tap()
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard: Type it opens a read-only search with an A to Z strip") }
         XCTAssertTrue(app.textFields.firstMatch.waitForExistence(timeout: 10) || app.searchFields.firstMatch.waitForExistence(timeout: 5))
         attach("add-type-it")
     }
@@ -159,6 +177,7 @@ final class ReleaseFeatureTests: XCTestCase {
         }
         XCTAssertTrue(app.buttons["Continue"].exists)
         app.buttons["Not now"].tap()
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard: Not now opens the read-only search") }
         XCTAssertTrue(app.textFields.firstMatch.waitForExistence(timeout: 5) || app.searchFields.firstMatch.waitForExistence(timeout: 5),
                       "Not now goes to Type it")
     }
@@ -179,6 +198,7 @@ final class ReleaseFeatureTests: XCTestCase {
     /// J-6c: the pinned bar is at least 44 pt and sits clear of the hinge.
     func testPinnedAddBar() throws {
         launch("add")
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard: its add search is read-only with an A to Z strip (#179)") }
         let search = app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: 10))
         search.tap()
@@ -186,7 +206,7 @@ final class ReleaseFeatureTests: XCTestCase {
         let result = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Hades'")).firstMatch
         guard result.waitForExistence(timeout: 10) else { throw XCTSkip("no catalogue match for Hades in this fixture") }
         result.tap()
-        let bar = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add ' AND label ENDSWITH 'game' OR label ENDSWITH 'games'")).firstMatch
+        let bar = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add ' AND (label ENDSWITH ' game' OR label ENDSWITH ' games')")).firstMatch
         XCTAssertTrue(bar.waitForExistence(timeout: 5))
         XCTAssertGreaterThanOrEqual(bar.frame.height, 44)
         assertFrames("add-bar")
@@ -218,12 +238,12 @@ final class ReleaseFeatureTests: XCTestCase {
             sleep(2)
             assertFrames(route)
             if route == "library" {
-                let upcoming = button("Upcoming")
-                XCTAssertTrue(upcoming.waitForExistence(timeout: 10), "Upcoming control")
                 if pose().contains("pose: tabletop") {
-                    XCTAssertGreaterThanOrEqual(upcoming.frame.minY, app.frame.midY - 1, "Upcoming rail button is on the flat half")
+                    let rail = app.descendants(matching: .any)["upcomingRail"]
+                    XCTAssertTrue(rail.waitForExistence(timeout: 10), "Upcoming rail button")
+                    XCTAssertGreaterThanOrEqual(rail.frame.minY, app.frame.midY - 1, "Upcoming rail button is on the flat half")
                 }
-                upcoming.tap()
+                XCTAssertTrue(switchTo("Upcoming"), "Upcoming control")
                 sleep(1)
                 assertFrames("library-upcoming")
             }

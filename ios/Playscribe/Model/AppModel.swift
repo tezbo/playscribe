@@ -102,6 +102,12 @@ struct PersistedState: Codable {
     var selectedArtwork: [String: String] = [:]
     var nav = NavState()
     var pauseAll = false
+    /// Quiet hours (0.5.0, Iris): nil = off, the default. Local scheduling only.
+    var quietHours: QuietHours?
+    /// nil = on. Off silences the add pop.
+    var soundsOff: Bool?
+    /// The PS Plus "Leaving soon" reminder (0.5.0): nil = on.
+    var plusLeavingSoonOff: Bool?
     var notificationCardShows = 0
     var notificationCardDismissed = false
     /// Releases already announced by a notification, so a release never pushes twice (N-3).
@@ -124,6 +130,8 @@ struct PersistedState: Codable {
 struct Toast: Equatable {
     var text: String
     var undo: (@MainActor () -> Void)?
+    /// The button's label: "Undo" by default, "Open My book" on a new bookmark.
+    var actionLabel = "Undo"
     var token = UUID()
     static func == (a: Toast, b: Toast) -> Bool { a.token == b.token }
 }
@@ -135,12 +143,17 @@ final class AppModel {
 
     // Transient
     var toast: Toast?
+    /// The tab Search was opened from, so Search can go back to it (Terry, 0.2.0 build 5).
+    var searchReturnTab: AppTab = .library
+    func leaveSearch() { if nav.tab == .search { nav.tab = searchReturnTab == .search ? .library : searchReturnTab } }
     var pill: (gameID: String, releaseID: String)?
     var addSheetOpen = false
     /// QA (route add/scan): the camera scan shows a fixed feed, since simulators have no camera.
     var simulatedScan = false
     /// Opens the Add games sheet straight on this method (first-run welcome rows).
     var addSheetMethod: AddMethod?
+    /// QA: route add/keyboard focuses the Add search field so the keyboard is up.
+    var addSearchFocus = false
     var settingsOpen = false
     var player: (gameID: String, releaseID: String)?
     /// A game's trailer from its basics (no release).
@@ -148,6 +161,8 @@ final class AppModel {
     var highlight: String?
     /// GR-4: the in-book and Search tab note query, and its scope. Kept across pose changes (P-1).
     var noteQuery = ""
+    /// Tabletop: first-letter filter for the notes search (the keyboard never opens there).
+    var noteLetter: String?
     /// D-13: the notes-search scope persists.
     var noteScope: NoteScope = NoteScope(rawValue: UserDefaults.standard.string(forKey: "noteScope") ?? "") ?? .thisGame {
         didSet { UserDefaults.standard.set(noteScope.rawValue, forKey: "noteScope") }
@@ -157,13 +172,42 @@ final class AppModel {
     var deckSelection: String?
     /// Tabletop's Links sheet (J-11).
     var linksSheetOpen = false
+    /// The verification tag whose explainer is open (0.5.0).
+    var tagExplainer: Verification?
     var libraryTab: LibraryTab = .playing
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
+    /// Order games were just added in, for the pop stagger.
+    var addedOrder: [String] = []
     /// Set when a deep link asks the journal to bring a release to the top.
     var focusReleaseID: String?
     var focusToken = 0
     var showDebugOverlay = false
+    /// QA (routes "one-update", "two-update") and tests: how many fresh unread updates the demo has; 0 is the normal demo.
+    var qaUpdateCount = 0
+    var qaSingleUpdate: Bool {
+        get { qaUpdateCount > 0 }
+        set { qaUpdateCount = newValue ? 1 : 0 }
+    }
+    /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
+    /// confirm a `-qaRoute` took effect.
+    var qaRoute: String?
+    /// QA: the newest On PS5 update of the first `qaUpdateCount` different games are the only unread ones. Chosen
+    /// when first asked (not at launch, when releases may not be merged yet), so a later feed refresh or the 72 hour
+    /// rule cannot take them away.
+    @ObservationIgnored private var qaFreshCache: Set<String>?
+    private func qaFreshIDs() -> Set<String> {
+        if let ids = qaFreshCache { return ids }
+        var newestPerGame: [Release] = []
+        for entry in data.collection {
+            let best = releases(entry.gameID).filter { $0.ps5State == .onPS5 }.max { $0.ps5Date < $1.ps5Date }
+            if let best { newestPerGame.append(best) }
+        }
+        newestPerGame.sort { $0.ps5Date > $1.ps5Date }
+        let ids = Set(newestPerGame.prefix(qaUpdateCount).map(\.id))
+        qaFreshCache = ids
+        return ids
+    }
     /// The pose being laid out right now, written by RootView as it renders. Lets navigation
     /// bindings tell a user's Back from a container being torn down by a pose change. Not observed.
     @ObservationIgnored var livePose: Pose = .closed
@@ -292,7 +336,15 @@ final class AppModel {
         return (data.simulated + allReleasesMerged)
             // Steam is the source of truth (Terry, 26 Oct): a release only the press reports is not shown.
             .filter { $0.gameID == gameID && $0.ps5State != .pending && $0.ps5State != .reported && ($0.arrivesAt ?? .distantPast) <= now }
-            .sorted { $0.latestDate > $1.latestDate }
+            .sorted { Self.newer($0, $1, by: \.latestDate) }
+    }
+
+    /// Newest first by a date, ties broken by when the update was announced, then by id, so equal PS5 dates
+    /// (a launch batch) never leave an old patch in front of the latest (Terry, 0.2.0 build 5: Enshrouded opened on patch 1).
+    static func newer(_ a: Release, _ b: Release, by date: KeyPath<Release, Date>) -> Bool {
+        if a[keyPath: date] != b[keyPath: date] { return a[keyPath: date] > b[keyPath: date] }
+        if a.announcedAt != b.announcedAt { return a.announcedAt > b.announcedAt }
+        return a.id > b.id
     }
 
     func release(_ gameID: String, _ releaseID: String) -> Release? {
@@ -300,14 +352,17 @@ final class AppModel {
     }
 
     func ps5Releases(_ gameID: String) -> [Release] {
-        releases(gameID).filter(\.isPS5Listed).sorted { $0.ps5Date > $1.ps5Date }
+        releases(gameID).filter(\.isPS5Listed).sorted { Self.newer($0, $1, by: \.ps5Date) }
     }
 
     func pcOnlyReleases(_ gameID: String) -> [Release] {
         releases(gameID).filter { !$0.isPS5Listed }
     }
 
-    func isUnread(_ r: Release) -> Bool { r.ps5State == .onPS5 && data.read[r.id] == nil }
+    func isUnread(_ r: Release) -> Bool {
+        if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) }
+        return r.ps5State == .onPS5 && data.read[r.id] == nil
+    }
 
     func unreadCount(_ gameID: String) -> Int { releases(gameID).filter(isUnread).count }
 
@@ -487,9 +542,16 @@ final class AppModel {
         }
         #if INTERNAL
         // Internal routes so QA can script every screen in every pose with `simctl openurl`.
+        qaRoute = url.host()
         switch url.host() {
-        case "add": addSheetOpen = true; if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
-        case "settings": settingsOpen = true
+        case "add":
+            addSheetOpen = true
+            if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
+            if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
+        case "settings":
+            settingsOpen = true
+            if parts.first == "quiet" { data.quietHours = QuietHours() }
+        case "tag" where parts.count == 1: if let v = Verification(rawValue: parts[0]) { tagExplainer = v }
         case "library": nav.tab = .library; nav.gameID = nil
         case "updates": nav.tab = .updates
         case "search": nav.tab = .search
@@ -497,6 +559,9 @@ final class AppModel {
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
+        case "one-update": resetToOneUpdateDemo()
+        case "two-update": resetToTwoUpdateDemo()
+        case "pill": holdQAPill()
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
             Task {
@@ -504,7 +569,7 @@ final class AppModel {
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
         case "links" where parts.count == 1: openGame(parts[0]); linksSheetOpen = true
-        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false
+        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; addSearchFocus = false
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
             if let n = Int(parts[0]) {
@@ -562,7 +627,8 @@ final class AppModel {
             show(Toast(text: "Bookmark removed"))
         } else {
             data.bookmarks.insert(Bookmark(kind: kind, id: id, gameID: gameID, at: .now), at: 0)
-            show(Toast(text: "Bookmarked. Find it in My book"))
+            // The destination is one tap away (Terry, 0.2.0 build 5: "there is no My Book").
+            show(Toast(text: "Bookmarked", undo: { [weak self] in self?.openGame(gameID, chapter: .mybook) }, actionLabel: "Open My book"))
         }
     }
 
@@ -605,9 +671,11 @@ final class AppModel {
         nav.filter = .all
         highlight = new.count == 1 ? ids[0] : nil
         highlightSet = Set(ids)
+        addedOrder = ids
         nav.anchors["library"] = "lib-\(ids[0])"
         let text = new.count == 1 ? "Added \(new[0].name)" : "Added \(new.count) games"
         show(Toast(text: text, undo: { [weak self] in ids.forEach { self?.removeGame($0, toast: false) } }))
+        if data.soundsOff != true { PopSound.play(count: new.count, quiet: data.quietHours) }
         NotificationService.shared.updateBadge(badgeCount)
     }
 
@@ -691,9 +759,58 @@ final class AppModel {
     }
 
     func resetDemo() {
+        qaUpdateCount = 0
+        qaFreshCache = nil
         data = PersistedState(collection: fixtures.seedCollection)
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
+    }
+
+    /// QA (INTERNAL, `-qaRoute pill`): hold the "New on PS5" pill on screen (no 4 s timeout) so a swipe-dismiss
+    /// can be tested. Uses the newest On PS5 release in the collection. Nothing user-facing changes.
+    func holdQAPill() {
+        var newest: Release?
+        var gameID = ""
+        for entry in data.collection {
+            for r in releases(entry.gameID) where r.ps5State == .onPS5 {
+                if let n = newest, n.ps5Date >= r.ps5Date { continue }
+                newest = r
+                gameID = entry.gameID
+            }
+        }
+        guard let r = newest else { return }
+        showPill(gameID: gameID, releaseID: r.id, after: 3600)
+    }
+
+    /// QA and tests: the full demo library with exactly one fresh, unread On PS5 update (so the Library
+    /// hero shows), every other update read, and the "Also new" panel seeing no other updates, which
+    /// is the panel's "What's new" fallback.
+    func resetToOneUpdateDemo() {
+        resetDemo()
+        qaUpdateCount = 1
+    }
+
+    /// QA and tests (route "two-update"): as the one-update demo with two fresh updates, from different games.
+    func resetToTwoUpdateDemo() {
+        resetDemo()
+        qaUpdateCount = 2
+    }
+
+    /// The updates beside the deck in the Library (Open portrait): every update in the deck except the
+    /// front card's, newest first, so nothing repeats.
+    func alsoNewReleases(excludingRelease id: String?, limit: Int = 6) -> [Release] {
+        let all = latestDeck.compactMap(\.release)
+        // One row per game (its latest update), and never the deck's front game (Iris, 3548a21).
+        let frontGame = all.first { $0.id == id }?.gameID
+        var seen = Set<String>()
+        var out: [Release] = []
+        for r in all.sorted(by: { $0.ps5Date > $1.ps5Date }) {
+            // Updates only: a headline-only post (no version in its name) is News, not an update (Iris, 20d77ea).
+            guard r.versionChip != nil, r.gameID != frontGame, seen.insert(r.gameID).inserted else { continue }
+            out.append(r)
+            if out.count == limit { break }
+        }
+        return out
     }
 
     // MARK: - Simulated updates (internal builds)
@@ -747,7 +864,18 @@ final class AppModel {
     func releaseArrivedInForeground(gameID: String, releaseID: String) {
         tick()
         highlight = releaseID
-        if nav.gameID != gameID { pill = (gameID, releaseID) }
+        if nav.gameID != gameID { showPill(gameID: gameID, releaseID: releaseID) }
         NotificationService.shared.updateBadge(badgeCount)
+    }
+
+    /// The "New on PS5" pill dismisses itself after 4 s (Iris, 0.2.0 gate); a swipe also dismisses it.
+    /// Under VoiceOver it stays until dismissed.
+    func showPill(gameID: String, releaseID: String, after seconds: Double = 4) {
+        pill = (gameID, releaseID)
+        guard !UIAccessibility.isVoiceOverRunning else { return }
+        Task { [weak self] in
+            try? await Task.sleep(for: .seconds(seconds))
+            if self?.pill?.releaseID == releaseID { self?.pill = nil }
+        }
     }
 }

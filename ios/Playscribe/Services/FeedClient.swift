@@ -71,6 +71,7 @@ extension AppModel {
             feedStatus = .updated(latest.updatedAt)
             notifyNewlyOnPS5()
             await refreshHistories()
+            await PlusStore.shared.load()
         } catch let error as URLError where [.notConnectedToInternet, .networkConnectionLost, .timedOut].contains(error.code) {
             feedStatus = .offline(previous)
         } catch {

@@ -172,6 +172,9 @@ struct Release: Codable, Hashable, Identifiable {
     struct Digest: Codable, Hashable {
         var new = 0, fixed = 0, balance = 0, other = 0, ps5 = 0
         var topNew: [String]?
+        init(new: Int = 0, fixed: Int = 0, balance: Int = 0, other: Int = 0, ps5: Int = 0, topNew: [String]? = nil) {
+            self.new = new; self.fixed = fixed; self.balance = balance; self.other = other; self.ps5 = ps5; self.topNew = topNew
+        }
         init(from decoder: Decoder) throws {
             let c = try decoder.container(keyedBy: CodingKeys.self)
             new = try c.decodeIfPresent(Int.self, forKey: .new) ?? 0

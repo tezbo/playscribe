@@ -217,3 +217,20 @@ Audit of the live feed (1,298 releases; the five games with most releases checke
 ## Data trust audit, 2026-11-04 (Priya)
 
 Checked every live PS5 row in the feed (1,487 rows, 1,916 releases, not just a sample of 25) for internal consistency: date against the Steam post, verification against evidence, version never copied from PC. Pattern found: 87 Steam-assumed PS5 rows carried a "went live" date later than their Steam post (Indiana Jones Update 8 by 30 days, Apex by hours). Cause: a second post for the same release replaced the date of an equal-rank non-official field, while the release kept its earliest date. Fix: `liveAt` of an equal-rank non-official field keeps the earliest value (`mergeLiveAt`), and each ingest runs `repairAssumedLiveAt` to move stored rows back to the Steam post's date. Not checked from here: comparison against each studio's own PS5 page (no readable official feed for most games; Quinn's double-check should do that on the shortlist).
+
+**Automatic PS Plus lineup (2026-11-04).** `src/plusAuto.ts` reads Push Square's "PS Plus Essential games for <month> announced" article (found on its `/tags/ps-plus` page, spaced by its Crawl-delay) and stores month, claim window and game names in the `plus_months` table; article text is never kept. The window ends the day before the next lineup ("rotated out ... on 1st December"). `plus.json` still works and overrides a month typed in by hand. Failure leaves what is stored; run with `--hot` skips it.
+
+## PS Plus lineup sources, checked 2026-11-04 (Priya)
+
+Goal: fill `plus.json` automatically (see docs/api.md, PS Plus monthly games). Manual entry stays as the fallback.
+
+| Source | Result |
+| --- | --- |
+| PlayStation Blog / playstation.com | Website terms bar bots and scrapers. Not used. |
+| Push Square | robots.txt allows articles and the public RSS feed (`/feeds/latest`, linked in its footer; Crawl-delay 5). Its terms page (`/terms`) has no bot, scraper or feed clause apart from competition entries. Feed items are teasers; the lineup is in the article page, which robots.txt allows. Candidate, same facts-only rules as the press pipeline: names and dates, text never stored. |
+| PlayStation LifeStyle | robots.txt allows everything but `/tag`; its terms not yet read. Possible second source. |
+| PSU.com | Cloudflare challenge returns 403 to automated clients. Not used. |
+| Wikipedia | The API rate-limited this run (429) and its list pages are not a monthly feed. Not used. |
+| IGDB | No PS Plus data. |
+
+Next step: parse the monthly "PS Plus Essential games for <month>" article from Push Square when one is published, fill `plus.json` from it, and keep manual entry as the override. Not built yet: the month's article was not in the feed during this check, so there is no real sample to parse against.

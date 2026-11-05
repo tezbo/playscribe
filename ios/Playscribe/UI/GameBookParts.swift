@@ -101,13 +101,24 @@ struct PageView: View {
     }
 }
 
+private struct ExtensionUnlessSlim: ViewModifier {
+    var slim: Bool
+    @ViewBuilder func body(content: Content) -> some View {
+        if slim { content } else { content.backgroundExtensionEffect() }
+    }
+}
+
 /// The art band at the top of the Page, extended under the rail. The faded key-art header is the
 /// default (A8, header-fade handoff): key art top-trailing under a left and a bottom fade into
 /// ink; a portrait cover alone sits right over a blurred copy of itself; no art at all falls back
 /// to the Playscribe landscape.
 struct PageArtBand: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
+    /// Closed landscape is wide and short (594 x 432 pt): a fixed 170 pt band took 40% of the screen and the
+    /// extension effect stretched catalogue art past it (Terry, 0.5.0 build 6). There it is a slim, clipped band.
+    private var slim: Bool { duo.isLandscape && duo.pose == .closed }
     var body: some View {
         let game = model.game(gameID)
         let asset = model.backdrop(gameID, chapter: model.nav.chapter, tall: false)
@@ -121,8 +132,10 @@ struct PageArtBand: View {
                     .modifier(hasArt ? FadeMask() : FadeMask(enabled: false))
             }
         }
-        .frame(height: 170)
-        .backgroundExtensionEffect()
+        .frame(height: slim ? 96 : 170)
+        .frame(maxWidth: .infinity)
+        .clipped()
+        .modifier(ExtensionUnlessSlim(slim: slim))
         .accessibilityHidden(true)
     }
 }
@@ -252,12 +265,13 @@ struct GameLinks: View {
     var body: some View {
         let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
         if links?.official != nil || links?.patchNotes != nil {
-            HStack(spacing: 16) {
+            // One row, a 24 pt gap and no separators; wraps to a second line rather than truncating (Iris 0.5.0).
+            FlowLayout(spacing: 24) {
                 if let url = links?.official {
-                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                 }
                 if let url = links?.patchNotes {
-                    Link(destination: url) { Label("All patch notes", systemImage: "arrow.up.right.square") }.frame(minHeight: 44).tappableFrame()
+                    Link(destination: url) { Label("All patch notes", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                 }
             }
             .font(PlayscribeFont.subheadline)
@@ -313,9 +327,9 @@ struct GameBasicsView: View {
                 HStack {
                     Text("Details need a connection").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
-                    Button("Retry") { Task { await store.load(igdbID: id) } }
+                    Button { Task { await store.load(igdbID: id) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                         .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                        .frame(minHeight: 44).tappableFrame()
+                        .tappableFrame()
                 }
                 .padding(.horizontal, 14)
                 .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
@@ -463,7 +477,7 @@ struct ContentsBody: View {
                 }
                 ChapterBar(gameID: gameID, selected: chapter)
                 NotesSearchField(gameID: gameID)
-                if model.noteQuery.count >= 2 {
+                if model.noteQuery.count >= 2 || (duo.pose == .tabletop && model.noteLetter != nil) {
                     InlineNoteResults(gameID: gameID)
                 } else if chapter == .updates {
                     let unread = model.releases(gameID).filter(model.isUnread).count
@@ -513,9 +527,23 @@ struct SwapSidesButton: View {
 /// GR-4 in the Contents: search this game's notes, or all my games.
 struct NotesSearchField: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
     var body: some View {
         @Bindable var model = model
+        if duo.pose == .tabletop {
+            // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
+            VStack(alignment: .leading, spacing: 8) {
+                TabletopSearch(letter: $model.noteLetter,
+                               prompt: model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes")
+                if model.noteLetter != nil {
+                    Picker("Search in", selection: $model.noteScope) {
+                        ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
+                    }
+                    .pickerStyle(.segmented)
+                }
+            }
+        } else {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
@@ -538,14 +566,18 @@ struct NotesSearchField: View {
                 .pickerStyle(.segmented)
             }
         }
+        }
     }
 }
 
 struct InlineNoteResults: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
     var body: some View {
-        let hits = model.noteHits(model.noteQuery, scope: model.noteScope, gameID: gameID)
+        let byLetter = duo.pose == .tabletop ? model.noteLetter : nil
+        let hits = byLetter.map { model.noteHits(letter: $0, scope: model.noteScope, gameID: gameID) }
+            ?? model.noteHits(model.noteQuery, scope: model.noteScope, gameID: gameID)
         VStack(alignment: .leading, spacing: 6) {
             if !hits.isEmpty {
                 Text("\(hits.count) result\(hits.count == 1 ? "" : "s")")
@@ -553,7 +585,8 @@ struct InlineNoteResults: View {
                     .accessibilityLabel("\(hits.count) results")
             }
             if hits.isEmpty {
-                Text(model.noteScope == .thisGame ? "Nothing in this game's notes matches" : "Nothing in your games' notes matches")
+                let none = model.noteScope == .thisGame ? "Nothing in this game's notes matches" : "Nothing in your games' notes matches"
+                Text(byLetter.map { "No notes start with \($0)" } ?? none)
                     .font(PlayscribeFont.headline)
                 if model.noteScope == .thisGame {
                     Button("Search all my games") { model.noteScope = .allGames }.hitTarget()
@@ -566,6 +599,7 @@ struct InlineNoteResults: View {
                     else { model.openGame(h.release.gameID, chapter: .updates, releaseID: h.release.id) }
                     model.highlight = h.release.id
                     model.noteQuery = ""
+                    model.noteLetter = nil
                 } label: {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(NoteHit.bolded(h.line, query: model.noteQuery)).font(PlayscribeFont.subheadline).lineLimit(3)

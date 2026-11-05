@@ -83,14 +83,22 @@ struct ModelTests {
         let r = m.release("dawnwalker", "dawnwalker@1.1")!
         let c = NotificationService.content(for: r, game: m.game("dawnwalker")!, badge: 1)
         #expect(c.title == "The Blood of Dawnwalker")
-        #expect(c.body == "Update 1.1 is live on PS5: respec with Draught of Mind Rebirth, and a new Story mode.")
-        #expect(c.body.count <= 110)
-        // Without an editorial line: the two shortest headlines, one colon, a full stop.
+        #expect(c.body.hasPrefix("Update 1.1: "))
+        #expect(c.body.count <= 60 && !c.body.contains("PS5"))
+        // Without an editorial line: the first key change, still one line, one colon.
         var plain = r
         plain.pushLine = nil
         let fallback = NotificationService.body(for: plain)
-        #expect(fallback.filter { $0 == ":" }.count == 1)
-        #expect(fallback.count <= 110 && fallback.hasSuffix("."))
+        #expect(fallback.filter { $0 == ":" }.count == 1 && fallback.count <= 60)
+        // Nothing to say: the plain fallback.
+        plain.keyChanges = nil
+        plain.digest = nil
+        #expect(NotificationService.body(for: plain) == "A new update is out")
+        plain.digest = .init(new: 3, fixed: 5, ps5: 2)
+        #expect(NotificationService.body(for: plain) == "3 new, 5 fixes, 2 PS5 only")
+        plain.digest = nil
+        #expect(NotificationService.latestBody(for: plain) == "New updates are out")
+        #expect(NotificationService.title(game: m.game("dawnwalker")!, count: 3) == "The Blood of Dawnwalker, 3 new updates")
         #expect(c.threadIdentifier == "dawnwalker")
         #expect(c.interruptionLevel == .active)
         #expect(c.userInfo["releaseId"] as? String == "dawnwalker@1.1")
@@ -363,5 +371,58 @@ struct ReadTimeTests {
         #expect(release([NoteItem(text: long)]).readMinutes == 2)
         var pc = NoteItem(text: long); pc.pcOnly = true
         #expect(release([NoteItem(text: "Fixed a crash"), pc]).readMinutes == 1)
+    }
+}
+
+@MainActor
+struct OneUpdateDemoTests {
+    /// The `one-update` QA route: the Library hero shows (one fresh unread update) and the "Also new"
+    /// panel has nothing else to list, so it falls back to "What's new".
+    @Test func oneUpdateRouteLeavesExactlyOneFreshUpdate() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "one-\(UUID().uuidString).json"))
+        m.resetToOneUpdateDemo()
+        #expect(m.data.collection.count > 1, "the full demo library is kept")
+        let hero = m.continueItem
+        #expect(hero != nil, "the hero shows")
+        let unread = m.data.collection.flatMap { m.releases($0.gameID) }.filter(m.isUnread)
+        #expect(unread.count == 1)
+        if let hero { #expect(m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
+    }
+
+    /// The `two-update` QA route: exactly two fresh unread updates, from different games.
+    @Test func twoUpdateRouteLeavesTwoFreshUpdatesFromDifferentGames() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "two-\(UUID().uuidString).json"))
+        m.resetToTwoUpdateDemo()
+        let unread = m.data.collection.flatMap { m.releases($0.gameID) }.filter(m.isUnread)
+        #expect(unread.count == 2)
+        #expect(Set(unread.map(\.gameID)).count == 2)
+        #expect(m.latestDeck.count == 2)
+    }
+
+    @Test func demoRouteListsOtherUpdatesBesideTheHero() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
+        m.resetDemo()
+        if let hero = m.continueItem { #expect(!m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
+    }
+
+    /// Also new: one row per game, never the deck front card's game (Iris, 3548a21).
+    @Test func alsoNewHasOneRowPerGameAndSkipsTheFrontGame() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
+        m.resetDemo()
+        guard let front = m.latestDeck.first?.release else { return }
+        let rows = m.alsoNewReleases(excludingRelease: front.id)
+        let games = rows.map(\.gameID)
+        #expect(Set(games).count == games.count)
+        #expect(!games.contains(front.gameID))
+    }
+}
+
+/// R-11, G-9: autoplay is opt-in.
+struct AutoplayTests {
+    @Test("Player page autoplays only when asked (R-11)")
+    func html() {
+        #expect(YouTubeController.html("abc", captions: true).contains("autoplay:0"))
+        let on = YouTubeController.html("abc", captions: true, autoplay: true)
+        #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
     }
 }

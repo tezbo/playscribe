@@ -1,0 +1,53 @@
+import Foundation
+import Testing
+@testable import Playscribe
+
+/// PS Plus card and "Leaving soon" (r050-plus-card): which month shows, when it is the last chance, when the reminder fires.
+@MainActor
+struct PlusLogicTests {
+    private var cal: Calendar { var c = Calendar(identifier: .gregorian); c.timeZone = .gmt; return c }
+    private func day(_ s: String, hour: Int = 12) -> Date {
+        let p = s.split(separator: "-").compactMap { Int($0) }
+        return cal.date(from: DateComponents(year: p[0], month: p[1], day: p[2], hour: hour))!
+    }
+    private let nov = PlusMonth(month: "2026-11", from: "2026-11-04", until: "2026-12-01", games: [.init(name: "A", gameId: nil), .init(name: "B", gameId: "kcd2")])
+    private let dec = PlusMonth(month: "2026-12", from: "2026-12-02", until: "2027-01-05", games: [.init(name: "C", gameId: nil)])
+
+    @Test func showsTheMonthWhoseWindowHoldsToday() {
+        let r = PlusLogic.current([dec, nov], now: day("2026-11-10"), calendar: cal)
+        #expect(r?.month.month == "2026-11")
+        #expect(r?.lastChance == false)
+    }
+
+    @Test func windowIsInclusiveOnBothDays() {
+        #expect(PlusLogic.current([nov], now: day("2026-11-04"), calendar: cal) != nil)
+        #expect(PlusLogic.current([nov], now: day("2026-12-01"), calendar: cal) != nil)
+        #expect(PlusLogic.current([nov], now: day("2026-11-03"), calendar: cal) == nil)
+        #expect(PlusLogic.current([nov], now: day("2026-12-02"), calendar: cal) == nil)
+    }
+
+    @Test func lastChanceIsTheLastThreeClaimDays() {
+        #expect(PlusLogic.current([nov], now: day("2026-11-29"), calendar: cal)?.lastChance == true)
+        #expect(PlusLogic.current([nov], now: day("2026-12-01"), calendar: cal)?.lastChance == true)
+        #expect(PlusLogic.current([nov], now: day("2026-11-28"), calendar: cal)?.lastChance == false)
+    }
+
+    @Test func noMonthsOrNoGamesHidesTheCard() {
+        #expect(PlusLogic.current([], now: day("2026-11-10"), calendar: cal) == nil)
+        var empty = nov; empty.games = []
+        #expect(PlusLogic.current([empty], now: day("2026-11-10"), calendar: cal) == nil)
+    }
+
+    @Test func reminderFiresAtTenOnTheFirstOfTheLastThreeDays() {
+        let fire = PlusLogic.leavingSoonFire(nov, now: day("2026-11-10"), calendar: cal)
+        #expect(fire == day("2026-11-29", hour: 10))
+        #expect(PlusLogic.leavingSoonFire(nov, now: day("2026-11-29", hour: 11), calendar: cal) == nil, "already past")
+    }
+
+    @Test func decodingIgnoresUnknownKeys() throws {
+        let json = #"{"version":1,"extra":true,"months":[{"month":"2026-11","from":"2026-11-04","until":"2026-12-01","note":"x","games":[{"name":"A","extra":1},{"name":"B","gameId":"kcd2"}]}]}"#
+        let f = try JSONDecoder().decode(PlusFile.self, from: Data(json.utf8))
+        #expect(f.months.first?.games.count == 2)
+        #expect(f.months.first?.games.last?.gameId == "kcd2")
+    }
+}

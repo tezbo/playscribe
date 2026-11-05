@@ -1,0 +1,56 @@
+name: TestFlight notes
+
+# Prints and sets What to Test for a build already on TestFlight (no build step).
+on:
+  workflow_dispatch:
+    inputs:
+      version: {description: "Marketing version, e.g. 0.2.0", required: true}
+      build: {description: "Build number, e.g. 5", required: true}
+
+concurrency: testflight-notes
+
+jobs:
+  notes:
+    # Xcode 27.1 is only on GitHub's xcode-27 image (see ios.yml).
+    runs-on: xcode-27
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+      ASC_KEY_P8_BASE64: ${{ secrets.ASC_KEY_P8_BASE64 }}
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      IOS_SCHEME: ${{ vars.IOS_SCHEME }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate the project (XcodeGen)
+        if: hashFiles('ios/project.yml') != ''
+        run: brew install xcodegen && (cd ios && xcodegen generate)
+      - name: Check prerequisites
+        id: ready
+        run: |
+          if ! ls -d ios/*.xcodeproj >/dev/null 2>&1; then echo "::notice::No Xcode project yet"; exit 0; fi
+          for v in ASC_KEY_ID ASC_ISSUER_ID; do
+            if [ -z "${!v}" ]; then echo "::warning::$v is not set; see ios/fastlane/README.md"; exit 0; fi
+          done
+          if [ -z "$ASC_KEY_P8$ASC_KEY_P8_BASE64" ]; then echo "::warning::ASC_KEY_P8 is not set; see ios/fastlane/README.md"; exit 0; fi
+          echo "ok=true" >> "$GITHUB_OUTPUT"
+      - name: Select Xcode 27.1
+        if: steps.ready.outputs.ok
+        run: sudo xcode-select -s /Applications/Xcode_27.1.app && xcodebuild -version
+      - uses: ruby/setup-ruby@v1
+        if: steps.ready.outputs.ok
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+          working-directory: ios
+      - name: Check the lanes' fastlane API use
+        if: steps.ready.outputs.ok
+        working-directory: ios
+        run: bundle exec ruby fastlane/check_api.rb
+      - name: Set What to Test
+        if: steps.ready.outputs.ok
+        working-directory: ios
+        env:
+          VERSION: ${{ inputs.version }}
+          BUILD: ${{ inputs.build }}
+        run: bundle exec fastlane notes version:"$VERSION" build:"$BUILD"

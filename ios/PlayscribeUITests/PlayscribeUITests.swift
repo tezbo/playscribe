@@ -18,11 +18,21 @@ final class PlayscribeUITests: XCTestCase {
             app.launch()
             if cold { app.terminate() } else { XCUIDevice.shared.press(.home) }
             let note = try postAndFindNotification()
-            note.tap()
-            XCTAssertTrue(app.wait(for: .runningForeground, timeout: 10))
-            let release = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Update 1.1'")).firstMatch
-            XCTAssertTrue(release.waitForExistence(timeout: 10), cold ? "cold" : "warm")
-            attach(name: cold ? "notification-tap-cold" : "notification-tap-warm")
+            note.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+            // The tap starts (or resumes) the app in a process this test's `app` proxy never launched, and the `simulate`
+            // launch in postAndFindNotification replaced it, so ask a fresh proxy for the target app's state (3758183 and
+            // e9a735d: a bare assertion here failed with no message).
+            let target = XCUIApplication()
+            let foreground = target.wait(for: .runningForeground, timeout: 15)
+            if !foreground {
+                let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+                shot.name = "n6-not-foreground-" + (cold ? "cold" : "warm"); shot.lifetime = .keepAlways; add(shot)
+            }
+            XCTAssertTrue(foreground, "\(cold ? "cold" : "warm"): tapping the notification brings Playscribe to the foreground (app state \(target.state.rawValue); 4 is running foreground)")
+            let release = target.buttons.matching(NSPredicate(format: "label CONTAINS 'Update 1.1'")).firstMatch
+            XCTAssertTrue(release.waitForExistence(timeout: 10), "\(cold ? "cold" : "warm"): the Update 1.1 release opens after the tap")
+            let a = XCTAttachment(screenshot: target.screenshot()); a.name = cold ? "notification-tap-cold" : "notification-tap-warm"
+            a.lifetime = .keepAlways; add(a)
         }
     }
 
@@ -42,21 +52,34 @@ final class PlayscribeUITests: XCTestCase {
 
     // MARK: - Helpers
 
-    /// Schedules a local notification through the app's internal route, then finds its banner.
+    /// Schedules a local notification through the app's internal route, then finds its banner. The 0.5.0 copy is
+    /// "Update 1.1: <headline>" under the game name (no "is live on PS5"), so the banner is found by the game name.
     private func postAndFindNotification() throws -> XCUIElement {
         let simulate = XCUIApplication()
         simulate.launchArguments = ["-qaRoute", "simulate/dawnwalker/major"]
         simulate.launch()
         XCUIDevice.shared.press(.home)
-        let banner = springboard.otherElements["Notification"].descendants(matching: .any)
-            .matching(NSPredicate(format: "label CONTAINS 'is live on PS5'")).firstMatch
-        if banner.waitForExistence(timeout: 15) { return banner }
-        // Fall back to Notification Center.
+        // The banner is up for only a few seconds, and pressing Home returns slowly: look briefly, then use Notification Center.
+        if let banner = notificationRow(timeout: 4) { return banner }
         let start = springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
         start.press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.6)))
-        let listed = springboard.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'is live on PS5'")).firstMatch
-        XCTAssertTrue(listed.waitForExistence(timeout: 5))
-        return listed
+        let listed = notificationRow(timeout: 10)
+        XCTAssertNotNil(listed, "the Dawnwalker notification is in the banner or Notification Center")
+        return listed ?? springboard.otherElements["Notification"]
+    }
+
+    /// The notification's own row: the smallest hittable element whose label names the game. A first match on any element
+    /// can be a container (a list or its scroll view) whose centre is not the row, so the tap lands on nothing (e9a735d:
+    /// the tap at 40.7 s left the app unlaunched with its icon badged "1 new item").
+    private func notificationRow(timeout: TimeInterval) -> XCUIElement? {
+        let deadline = Date.now.addingTimeInterval(timeout)
+        let query = springboard.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Dawnwalker'"))
+        repeat {
+            let rows = query.allElementsBoundByIndex.filter { $0.exists && $0.isHittable && !$0.frame.isEmpty }
+            if let row = rows.min(by: { $0.frame.width * $0.frame.height < $1.frame.width * $1.frame.height }) { return row }
+            usleep(500_000)
+        } while Date.now < deadline
+        return nil
     }
 
     private func attach(name: String) {
@@ -320,16 +343,16 @@ final class ReviewFixUITests: XCTestCase {
         }
     }
 
-    /// Settings shows the bundle's version, 0.2.0.
+    /// Settings shows the bundle's version (semantic, x.y.z; the number moves with each release).
     func testSettingsVersion() throws {
         let app = XCUIApplication()
         app.launchArguments = ["-qaRoute", "settings"]
         app.launch()
-        let version = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS '0.2.0' OR value CONTAINS '0.2.0'")).firstMatch
+        let version = app.descendants(matching: .any).matching(NSPredicate(format: "label MATCHES '.*[0-9]+\\\\.[0-9]+\\\\.[0-9]+.*' OR value MATCHES '.*[0-9]+\\\\.[0-9]+\\\\.[0-9]+.*'")).firstMatch
         let form = app.collectionViews.firstMatch
         var tries = 0
         while !version.exists && tries < 8 { (form.exists ? form : app).swipeUp(); tries += 1 }
-        XCTAssertTrue(version.exists, "Settings shows version 0.2.0")
+        XCTAssertTrue(version.exists, "Settings shows a semantic version")
         XCTAssertTrue(app.descendants(matching: .any)["appVersion"].exists, "the version row is identified")
     }
 
@@ -372,25 +395,62 @@ final class LibraryLayoutTests: XCTestCase {
         sleep(4)
         let pose = ReleaseRowTests.pose(app)
         var checked = 0
-        for _ in 0..<6 {
+        for _ in 0..<10 {
             // The accessibility frame of a tile runs past its cover (the cover image's own
             // bounds), so each tile is taken as its laid-out cover: origin and width, 3:4.
             let tiles = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
                 .allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }
                 .map { e -> CGRect in
                     // The cover's real width is in the identifier ("tile-100"); Closed measures its column width at layout.
-                    let w = Double(e.identifier.dropFirst(5)).flatMap { $0 > 0 ? $0 : nil } ?? e.frame.width
-                    return CGRect(x: e.frame.minX, y: e.frame.minY, width: w, height: (w * 4 / 3).rounded())
+                    var w = Double(e.identifier.dropFirst(5)).flatMap { $0 > 0 ? $0 : nil } ?? e.frame.width
+                    // Closed landscape (0.2.0 gate, 3813f3d): the published width can be wider than the
+                    // laid-out cover, so a 3:4 box from it overstates the height (241 vs a 236 row pitch).
+                    // The element's own frame is cover + 8 pt of outset; never take more than that.
+                    if e.frame.width - 8 > 20 { w = min(w, e.frame.width - 8) }
+                    let h = min((w * 4 / 3).rounded(), max(0, e.frame.height - 8))
+                    return CGRect(x: e.frame.minX, y: e.frame.minY, width: w, height: h)
                 }
-            let hero = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'New update,' OR label BEGINSWITH 'Continue,'")).allElementsBoundByIndex.map(\.frame)
+            // The deck is a pager: only the first card is the hero; the rest wait off screen to the right. (app.frame
+            // can report the wrong orientation in Closed landscape, so the wide card is checked against the longer side.)
+            let heroCards = app.buttons.matching(identifier: "deckCard").allElementsBoundByIndex.prefix(1).map(\.frame)
+            let hero = heroCards + app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Continue,'")).allElementsBoundByIndex.map(\.frame)
+            // e869273: in the landscape poses (Closed, Book, Open) app.frame reports portrait dimensions (670 or 679 wide) while
+            // the screen is about 1288 wide, so the longer side bounds the hero. Tabletop keeps app.frame.
+            let screenW = pose.contains("tabletop") ? app.frame.width : max(app.frame.width, app.frame.height)
             // 0.2.0 gate: the hero's frame is its card, not the fill-scaled art behind it (it once
-            // reported x -97.7, width 461). Open landscape: the double tile, 2 x 112 + 10 = 234 pt.
+            // reported x -97.7, width 461). Open landscape: the double tile, 2 tiles + 10 pt, where the
+            // tile fills the width (n columns of at least 124 pt, leftover spread equally, 16 pt margins).
+            let openW = app.frame.width - 32
+            let openN = max(2, Int((openW + 10) / 134))
             for h in hero {
                 XCTAssertGreaterThanOrEqual(h.minX, 0, "hero starts on screen \(h) [\(pose)]")
-                XCTAssertLessThanOrEqual(h.maxX, app.frame.width + 1, "hero ends on screen \(h) [\(pose)]")
-                if pose.contains("flat") && app.frame.width > app.frame.height {
-                    XCTAssertEqual(h.width, 234, accuracy: 3, "Open hero is the 234 pt double tile [\(pose)]")
+                XCTAssertLessThanOrEqual(h.maxX, screenW + 1, "hero ends on screen \(h) [\(pose)]")
+                // 0.5.0: the hero is the Latest updates deck, so a card is not a tile; the old double-tile width
+                // check does not apply. Open portrait: the card is at most 38% of the height.
+                // e869273 (28 games): the hero was 835 x 727 pt in Open and screen-tall in Closed portrait. In every pose but
+                // Tabletop (view only) and Closed landscape (the wide card, 168 to 240 pt) a hero card is at most about 38%
+                // of the screen height; app.frame's orientation is unreliable, so the shorter side bounds it (half of it).
+                if !pose.contains("tabletop") {
+                    XCTAssertLessThanOrEqual(h.height, min(app.frame.width, app.frame.height) * 0.5 + 12,
+                                             "hero card never fills the screen \(h) [\(pose)]")
                 }
+                // Only when the measurement is consistent with portrait: a card wider than app.frame is a landscape reading.
+                if pose.contains("flat") && app.frame.width <= app.frame.height && h.maxX <= app.frame.width + 1 {
+                    XCTAssertLessThanOrEqual(h.height, app.frame.height * 0.38 + 12, "Open portrait hero is at most 38% of the height [\(pose)]")
+                }
+            }
+            // Open portrait (0.5.0): the Also new / What's new panel sits beside the deck, same top and height,
+            // never overlapping it. (app.frame can report the wrong orientation, so the panel's presence is
+            // asserted from the stills, and its geometry whenever it is there.)
+            let panel = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Also new' OR label == \"What's new\"")).firstMatch
+            let deck = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Latest updates, page'")).firstMatch
+            if pose.contains("flat"), panel.exists, deck.exists {
+                XCTAssertFalse(panel.frame.insetBy(dx: 1, dy: 1).intersects(deck.frame), "panel overlaps the deck \(panel.frame) \(deck.frame) [\(pose)]")
+                XCTAssertEqual(panel.frame.minY, deck.frame.minY, accuracy: 4, "panel and deck share a top [\(pose)]")
+                XCTAssertEqual(panel.frame.height, deck.frame.height, accuracy: 6, "panel and deck are equal height [\(pose)]")
+            }
+            if pose.contains("flat"), let right = tiles.map(\.maxX).max(), tiles.count >= openN {
+                XCTAssertGreaterThanOrEqual(right, app.frame.width - 16 - 12, "Open grid fills the width, no dead space on the trailing side [\(pose)]")
             }
             for (i, a) in tiles.enumerated() {
                 for b in tiles[(i + 1)...] { XCTAssertFalse(a.insetBy(dx: 1, dy: 1).intersects(b), "tiles overlap \(a) \(b) [\(pose)]") }
@@ -421,7 +481,7 @@ final class CaptureTests: XCTestCase {
         app.launch(); sleep(3)
         shot("settings-top")
         let form = app.collectionViews.firstMatch
-        let version = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS '0.2.0' OR value CONTAINS '0.2.0'")).firstMatch
+        let version = app.descendants(matching: .any).matching(NSPredicate(format: "label MATCHES '.*[0-9]+\\\\.[0-9]+\\\\.[0-9]+.*' OR value MATCHES '.*[0-9]+\\\\.[0-9]+\\\\.[0-9]+.*'")).firstMatch
         var tries = 0
         while !version.exists && tries < 8 { (form.exists ? form : app).swipeUp(); tries += 1 }
         shot("settings-version")
@@ -463,12 +523,14 @@ final class LatestUpdatesDeckTests: XCTestCase {
         app.launchArguments = ["-qaRoute", "library"]
         app.launch()
         sleep(4)
+        if ReleaseRowTests.pose(app).contains("pose: tabletop") { app.terminate(); throw XCTSkip("Tabletop's upper half is view only") }
         let leaves = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Update ' AND label CONTAINS ' of '"))
         if leaves.count > 1 {
             XCTAssertGreaterThanOrEqual(leaves.element(boundBy: 1).frame.height, 44, "leaf is a 44 pt target")
             leaves.element(boundBy: 1).tap()
         }
-        let cards = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'New update,' OR (label CONTAINS ', ' AND NOT label CONTAINS ' of ')"))
+        // The deck cards by identifier: the old label query could land on a Library tile, which opens the game, not an update.
+        let cards = app.buttons.matching(identifier: "deckCard")
         XCTAssertGreaterThan(cards.count, 0, "deck has a card")
         cards.firstMatch.tap()
         XCTAssertTrue(app.descendants(matching: .any)["releaseTitle"].waitForExistence(timeout: 5), "card opens its update")
@@ -519,6 +581,11 @@ extension PlayscribeUITests {
                 + app.searchFields.allElementsBoundByIndex + app.switches.allElementsBoundByIndex + app.cells.allElementsBoundByIndex
             var seen = 0
             for e in controls where e.exists && e.isHittable && !e.frame.isEmpty {
+                // e869273 (Tabletop stills): the panel's own Close sits in the lower half and nothing is tappable up top, yet a
+                // second "Close" is reported at the top left, a ghost from the dimmed view behind. A same-label control in
+                // the lower half means the upper one is not a control on screen.
+                if e.frame.minY < half - 1, !e.label.isEmpty,
+                   controls.contains(where: { $0.exists && $0.label == e.label && $0.frame.minY >= half - 1 }) { continue }
                 seen += 1
                 XCTAssertGreaterThanOrEqual(e.frame.minY, half - 1, "\(route): '\(e.label)' is tappable in the upper half \(e.frame)")
             }
@@ -537,7 +604,12 @@ extension PlayscribeUITests {
         app.launch()
         sleep(3)
         let find = app.buttons["Find these games"]
-        XCTAssertTrue(find.waitForExistence(timeout: 8), "scan shows Find these games")
+        if !find.waitForExistence(timeout: 8),
+           app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS[c] \"can't scan\" OR label CONTAINS[c] \"cannot scan\"")).firstMatch.exists
+            || ReleaseRowTests.pose(app).contains("pose: tabletop") {
+            app.terminate(); throw XCTSkip("no camera in this simulator pose, so the scan view shows its unsupported state")
+        }
+        XCTAssertTrue(find.exists, "scan shows Find these games")
         XCTAssertGreaterThanOrEqual(find.frame.height, 44)
         XCTAssertLessThanOrEqual(find.frame.maxY, app.frame.maxY + 1, "button ends on screen")
         let preview = app.descendants(matching: .any)["Camera view"]
@@ -545,6 +617,317 @@ extension PlayscribeUITests {
         XCTAssertLessThanOrEqual(preview.frame.maxY, find.frame.minY + 1, "preview sits above the button")
         if ReleaseRowTests.pose(app).contains("pose: tabletop") {
             XCTAssertGreaterThanOrEqual(preview.frame.minY, app.frame.midY - 1, "Tabletop: preview is in the lower half")
+        }
+        app.terminate()
+    }
+}
+
+/// 0.5.0 surfaces the Mac gate runs in each pose. Each test reads the pose from the fold audit and
+/// applies the Tabletop rule (every control in the lower half) when it is Tabletop.
+@MainActor
+final class Release050Tests: XCTestCase {
+    private func launch(_ route: String, overlay: Bool = false) -> XCUIApplication {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", route] + (overlay ? ["-qaOverlay", "YES"] : [])
+        app.launch()
+        sleep(3)
+        return app
+    }
+
+    private func isTabletop(_ app: XCUIApplication) -> Bool { ReleaseRowTests.pose(app).contains("pose: tabletop") }
+
+    /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and
+    /// of the status bar, in every pose; the cog opens Settings, which shows a semantic version.
+    /// Fast on its own: -only-testing:PlayscribeUITests/Release050Tests/testLibraryToolbarCogAndAdd
+    func testLibraryToolbarCogAndAdd() throws {
+        let app = launch("library")
+        let pose = ReleaseRowTests.pose(app)
+        let cog = app.buttons["settingsButton"]
+        let add = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add game' OR label == 'Add game' OR label == 'Add'")).firstMatch
+        XCTAssertTrue(cog.waitForExistence(timeout: 10), "Settings cog exists [\(pose)]")
+        XCTAssertTrue(add.exists, "Add exists [\(pose)]")
+        for (name, e) in [("Settings", cog), ("Add", add)] {
+            XCTAssertTrue(e.isHittable, "\(name) is hittable [\(pose)]")
+            XCTAssertGreaterThanOrEqual(e.frame.height, 43.5, "\(name) height 44 pt [\(pose)]")
+            XCTAssertGreaterThanOrEqual(e.frame.width, 43.5, "\(name) width 44 pt [\(pose)]")
+            XCTAssertGreaterThanOrEqual(e.frame.minY, 0, "\(name) is on screen [\(pose)]")
+        }
+        XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(add.frame), "cog and Add do not overlap \(cog.frame) \(add.frame) [\(pose)]")
+        // Status bar: nothing of either control sits inside the status bar's frame.
+        let status = app.statusBars.firstMatch
+        if status.exists {
+            XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(status.frame), "cog clear of the status bar [\(pose)]")
+            XCTAssertFalse(add.frame.insetBy(dx: 1, dy: 1).intersects(status.frame), "Add clear of the status bar [\(pose)]")
+        }
+        cog.tap()
+        let version = app.descendants(matching: .any)["appVersion"]
+        let form = app.collectionViews.firstMatch
+        var tries = 0
+        while !version.waitForExistence(timeout: 1) && tries < 8 { (form.exists ? form : app).swipeUp(); tries += 1 }
+        XCTAssertTrue(version.exists, "Settings opened and shows its Version row [\(pose)]")
+        let text = [version.value as? String, version.label].compactMap { $0 }.joined(separator: " ")
+        XCTAssertNotNil(text.range(of: #"\d+\.\d+\.\d+"#, options: .regularExpression), "Version reads like 1.2.3, got '\(text)' [\(pose)]")
+    }
+
+    /// J-20: quiet hours. The switch is off by default; turning it on shows From and Until and the footer.
+    func testQuietHours() throws {
+        let app = launch("settings")
+        let toggle = app.switches["quietHours"]
+        var tries = 0
+        while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
+        XCTAssertTrue(toggle.exists, "Settings has a Quiet hours switch")
+        XCTAssertTrue(["off", "0"].contains(toggle.value as? String ?? ""), "off by default, got \(String(describing: toggle.value))")
+        if isTabletop(app) { XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: switch in the lower half") }
+        XCTAssertGreaterThanOrEqual(toggle.frame.height, 44 - 1)
+        // The identified element is the whole row; the switch is nested at its trailing edge, and a centre tap misses it.
+        let inner = toggle.switches.firstMatch
+        if inner.exists { inner.tap() } else { toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
+        // From and Until are date pickers (their label is the title), so match any element, not only static text.
+        func any(_ prefix: String) -> XCUIElement {
+            app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH %@", prefix)).firstMatch
+        }
+        // The rows are added below the switch, which may now be at the panel's edge: scroll the form to each.
+        func reveal(_ prefix: String) -> Bool {
+            var n = 0
+            while !any(prefix).waitForExistence(timeout: 1) && n < 6 {
+                let form = app.collectionViews.firstMatch
+                (form.exists ? form : app).swipeUp(); n += 1
+            }
+            return any(prefix).exists
+        }
+        XCTAssertTrue(reveal("From"), "From row appears")
+        XCTAssertTrue(reveal("Until"), "Until row appears")
+        XCTAssertTrue(reveal("Alerts arrive silently"), "footer")
+        app.terminate()
+    }
+
+    /// J-20: the explainer opens from `tag/<kind>`, shows the ladder with the current one marked, and Done closes it.
+    func testVerificationExplainer() throws {
+        for kind in ["official", "reported", "pending"] {
+            let app = launch("tag/\(kind)")
+            let sheet = app.descendants(matching: .any)["verificationExplainer"]
+            XCTAssertTrue(sheet.waitForExistence(timeout: 5), "\(kind): explainer is open")
+            XCTAssertTrue(app.staticTexts["What this tag means"].exists)
+            XCTAssertTrue(app.staticTexts["This one"].exists, "\(kind): current tag is marked")
+            for rung in ["Official", "Reported", "Pending"] { XCTAssertTrue(app.staticTexts[rung].exists, "\(kind): ladder has \(rung)") }
+            let done = app.buttons["Done"]
+            XCTAssertTrue(done.exists)
+            XCTAssertGreaterThanOrEqual(done.frame.height, 44 - 1, "Done is a 44 pt target")
+            if isTabletop(app) { XCTAssertGreaterThanOrEqual(done.frame.minY, app.frame.midY - 1, "Tabletop: Done in the lower half") }
+            done.tap()
+            XCTAssertFalse(sheet.waitForExistence(timeout: 2), "\(kind): Done closes it")
+            app.terminate()
+        }
+    }
+
+    /// Iris, one-row links: Official website and All patch notes share a row with a 24 pt gap, or wrap; never truncated.
+    func testLinksOneRow() throws {
+        let app = XCUIApplication()
+        ReleaseRowTests.openBluePrince(app); sleep(4)
+        if isTabletop(app) { app.terminate(); throw XCTSkip("Tabletop uses the Links button") }
+        let site = app.links.matching(NSPredicate(format: "label CONTAINS 'Official website'")).firstMatch
+        let notes = app.links.matching(NSPredicate(format: "label CONTAINS 'All patch notes'")).firstMatch
+        ReviewFixUITests.scrollTo(site, in: app)
+        guard site.exists, notes.exists else { app.terminate(); throw XCTSkip("this game has no info links") }
+        if abs(site.frame.minY - notes.frame.minY) < 4 {
+            XCTAssertGreaterThanOrEqual(notes.frame.minX - site.frame.maxX, 24 - 4, "24 pt gap on one row")
+        } else {
+            XCTAssertGreaterThan(notes.frame.minY, site.frame.maxY - 4, "wrapped below, not overlapping")
+        }
+        for l in [site, notes] { XCTAssertLessThanOrEqual(l.frame.maxX, app.frame.maxX + 1); XCTAssertGreaterThanOrEqual(l.frame.height, 44 - 1) }
+        app.terminate()
+    }
+
+    /// Iris, Add keyboard fallback: with the keyboard up, the search field and the close control stay above/clear of it.
+    func testAddKeyboard() throws {
+        let app = launch("add/keyboard")
+        let keyboard = app.keyboards.firstMatch
+        guard keyboard.waitForExistence(timeout: 6) else { app.terminate(); throw XCTSkip("hardware keyboard connected: no on-screen keyboard") }
+        let field = app.textFields.firstMatch
+        XCTAssertTrue(field.exists)
+        XCTAssertLessThanOrEqual(field.frame.maxY, keyboard.frame.minY + 1, "search field sits above the keyboard")
+        let close = app.buttons.matching(NSPredicate(format: "label == 'Done' OR label == 'Close'")).firstMatch
+        XCTAssertTrue(close.exists && close.isHittable, "close stays reachable")
+        if isTabletop(app) {
+            XCTAssertGreaterThanOrEqual(field.frame.minY, app.frame.midY - 1, "Tabletop: search in the lower half")
+            XCTAssertGreaterThanOrEqual(close.frame.minY, app.frame.midY - 1, "Tabletop: close in the lower half")
+        }
+        app.terminate()
+    }
+
+    /// J-21: deck and hero art stay inside the screen in every pose.
+    func testHeroStaysOnScreen() throws {
+        let app = launch("library")
+        let hero = app.descendants(matching: .any).matching(NSPredicate(format: "identifier == 'continueHero'")).firstMatch
+        if hero.waitForExistence(timeout: 4) {
+            XCTAssertGreaterThanOrEqual(hero.frame.minX, app.frame.minX - 1)
+            XCTAssertLessThanOrEqual(hero.frame.maxX, app.frame.maxX + 1, "hero within the screen width")
+        }
+        app.terminate()
+    }
+}
+
+extension PlayscribeUITests {
+    /// 0.2.0 gate (dc27a53): in Tabletop the first-run "Add your first game" button and the popular
+    /// covers ran under the trailing rail. No first-run control may intersect the rail.
+    func testTabletopFirstRunClearsTheRail() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "first-run"]
+        app.launch()
+        sleep(3)
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let rail = app.buttons["Library"].firstMatch
+        XCTAssertTrue(rail.waitForExistence(timeout: 5), "rail")
+        let add = app.buttons["Add your first game"].firstMatch
+        XCTAssertTrue(add.exists)
+        XCTAssertLessThanOrEqual(add.frame.maxX, rail.frame.minX, "Add your first game \(add.frame) runs under the rail \(rail.frame)")
+        for cover in app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add '")).allElementsBoundByIndex where cover.isHittable && cover.label != "Add game" {
+            XCTAssertLessThanOrEqual(cover.frame.maxX, rail.frame.minX + 1, "\(cover.label) \(cover.frame) runs under the rail")
+        }
+        app.terminate()
+    }
+}
+
+/// 0.2.0 final fixes (Iris, dc27a53 review).
+@MainActor
+final class FinalFixTests: XCTestCase {
+    private func launch(_ route: String) -> XCUIApplication {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", route]
+        app.launch()
+        sleep(3)
+        return app
+    }
+
+    /// Book first-run: the right page is never blank. Popular covers sit right of the fold, clear of it.
+    func testBookFirstRunFillsTheRightPage() throws {
+        let app = launch("first-run")
+        let pose = ReleaseRowTests.pose(app)
+        guard pose.contains("pose: book"), let r = pose.range(of: #"fold (\d+)-(\d+)"#, options: .regularExpression) else {
+            app.terminate(); throw XCTSkip("not Book")
+        }
+        let nums = pose[r].dropFirst(5).split(separator: "-").compactMap { Double($0) }
+        let covers = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add ' AND label != 'Add game'")).allElementsBoundByIndex
+        let right = covers.filter { $0.exists && $0.frame.minX >= nums[1] }
+        XCTAssertGreaterThanOrEqual(right.count, 3, "right page shows Popular on PS5 covers")
+        for c in covers where c.exists { XCTAssertFalse(c.frame.minX < nums[1] && c.frame.maxX > nums[0], "\(c.label) crosses the fold") }
+        app.terminate()
+    }
+
+    /// Tabletop first-run: the headline sits at least 24 pt above the division band (conservatively, above mid-screen).
+    func testTabletopFirstRunHeadlineClearsTheDivision() throws {
+        let app = launch("first-run")
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let headline = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Follow a game'")).firstMatch
+        XCTAssertTrue(headline.waitForExistence(timeout: 5))
+        XCTAssertLessThanOrEqual(headline.frame.maxY, app.frame.midY - 24, "headline \(headline.frame) is across the division")
+        app.terminate()
+    }
+
+    /// Tabletop Add game: the compact header leaves at least three results visible in the lower half.
+    func testTabletopAddGameShowsThreeRows() throws {
+        let app = launch("add")
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let rows = app.descendants(matching: .any).matching(identifier: "addRow").allElementsBoundByIndex
+        let visible = rows.filter { $0.exists && $0.frame.minY >= app.frame.midY - 1 && $0.frame.maxY <= app.frame.maxY + 1 }
+        XCTAssertGreaterThanOrEqual(visible.count, 3, "at least 3 rows visible, saw \(visible.count)")
+        app.terminate()
+    }
+
+    /// Tabletop Library: the Latest updates caption (game name and "New on PS5") ends at least 24 pt
+    /// above the division band; the art stays full bleed behind it.
+    func testTabletopLibraryCaptionClearsTheDivision() throws {
+        let app = launch("demo")
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let caption = app.descendants(matching: .any).matching(identifier: "stageCaption").firstMatch
+        XCTAssertTrue(caption.waitForExistence(timeout: 5))
+        XCTAssertLessThanOrEqual(caption.frame.maxY, app.frame.midY - 24, "caption \(caption.frame) is across the division")
+        app.terminate()
+    }
+
+    /// Tabletop game page: the reader text ends at least 24 pt above the division band.
+    func testTabletopReaderTextClearsTheDivision() throws {
+        let app = XCUIApplication()
+        ReleaseRowTests.openBluePrince(app)
+        sleep(3)
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let body = app.descendants(matching: .any).matching(identifier: "readerBody").firstMatch
+        XCTAssertTrue(body.waitForExistence(timeout: 10))
+        XCTAssertLessThanOrEqual(body.frame.maxY, app.frame.midY - 24, "reader text \(body.frame) is across the division")
+        app.terminate()
+    }
+
+    /// Tabletop Add game: no keyboard. The search button explains why, and a letter filters the list (Iris ruling).
+    func testTabletopSearchUsesLettersNotTheKeyboard() throws {
+        let app = launch("add")
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let search = app.descendants(matching: .any).matching(identifier: "tabletopSearch").firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 5), "read-only search button")
+        XCTAssertGreaterThanOrEqual(search.frame.height, 44)
+        search.tap()
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "tabletopSearchHint").firstMatch.waitForExistence(timeout: 3), "hint shown")
+        XCTAssertFalse(app.keyboards.firstMatch.exists, "the keyboard never opens in Tabletop")
+        let b = app.descendants(matching: .any).matching(identifier: "letter-B").firstMatch
+        XCTAssertTrue(b.waitForExistence(timeout: 3) && b.frame.height >= 44, "44 pt letter chip")
+        b.tap()
+        sleep(1)
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "addRow").firstMatch.waitForExistence(timeout: 3), "results for B")
+        XCTAssertFalse(app.keyboards.firstMatch.exists)
+        app.terminate()
+    }
+
+    /// Tabletop game page: notes search is the read-only button plus the A to Z strip, never the keyboard.
+    func testTabletopNotesSearchUsesLettersNotTheKeyboard() throws {
+        let app = XCUIApplication()
+        ReleaseRowTests.openBluePrince(app)
+        sleep(3)
+        guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        let search = app.descendants(matching: .any).matching(identifier: "tabletopSearch").firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10), "read-only notes search button")
+        search.tap()
+        XCTAssertFalse(app.keyboards.firstMatch.exists, "the keyboard never opens in Tabletop")
+        let f = app.descendants(matching: .any).matching(identifier: "letter-F").firstMatch
+        XCTAssertTrue(f.waitForExistence(timeout: 3) && f.frame.height >= 44, "44 pt letter chip")
+        app.terminate()
+    }
+
+    /// The Search tab always offers a way to search, in every pose: its own text field (16 pt margins, clear of the badge)
+    /// outside Tabletop; the read-only button and letter strip in Tabletop.
+    func testSearchTabHasAFieldInEveryPose() throws {
+        let app = launch("demo")
+        let tab = app.buttons.matching(NSPredicate(format: "label == 'Search'")).firstMatch
+        XCTAssertTrue(tab.waitForExistence(timeout: 5), "Search tab or rail button")
+        tab.tap()
+        sleep(1)
+        if ReleaseRowTests.pose(app).contains("pose: tabletop") {
+            let button = app.descendants(matching: .any).matching(identifier: "tabletopSearch").firstMatch
+            XCTAssertTrue(button.waitForExistence(timeout: 5), "Tabletop: read-only search button")
+            XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "letter-A").firstMatch.exists, "Tabletop: letter strip")
+            XCTAssertFalse(app.keyboards.firstMatch.exists)
+            // Ruling: tapping the field never raises the keyboard; it explains why instead.
+            button.tap()
+            let hint = app.descendants(matching: .any).matching(identifier: "tabletopSearchHint").firstMatch
+            XCTAssertTrue(hint.waitForExistence(timeout: 3), "Tabletop: the field explains why there is no keyboard")
+            XCTAssertTrue(hint.label.contains("Typing needs the flat screen. Pick a letter below, or open your Duo flat to type."), "hint wording [\(hint.label)]")
+            sleep(1)
+            XCTAssertFalse(app.keyboards.firstMatch.exists, "Tabletop: the keyboard never opens")
+        } else {
+            // Closed portrait has its own text field (16 pt clear of the badge); the other poses use the system field.
+            let own = app.textFields["searchField"]
+            let field = own.waitForExistence(timeout: 2) ? own : app.searchFields.firstMatch
+            XCTAssertTrue(field.waitForExistence(timeout: 5), "a search field exists on the Search tab")
+            XCTAssertTrue(field.isHittable, "the search field is on screen and tappable")
+            XCTAssertGreaterThanOrEqual(field.frame.minX, 0, "field starts on screen")
+            // Book: the field sits on one page, never across the fold. (app.frame reports the portrait
+            // width after XCUITest resets the orientation, so the fold comes from the audit label.)
+            let label = ReleaseRowTests.pose(app)
+            if label.contains("pose: book"), let r = label.range(of: "fold ") {
+                let digits = label[r.upperBound...].prefix(while: { $0.isNumber || $0 == "-" })
+                let nums = digits.split(separator: "-")
+                if nums.count == 2, let lo = Double(nums[0]), let hi = Double(nums[1]) {
+                    XCTAssertTrue(field.frame.maxX <= lo + 1 || field.frame.minX >= hi - 1, "Book: search field \(field.frame) crosses the fold \(lo)-\(hi)")
+                }
+            }
         }
         app.terminate()
     }

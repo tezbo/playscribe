@@ -109,7 +109,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 - **R-8** Game actions live in the toolbar only (no duplicate pills): Notifications (bell), Spoilers (eye), Status (tag), Mark all read (checkmark, shown only when unread exists), Bookmark the release (per release, inline).
 - **R-9** Book: the left page holds key art and the contents of releases (tap to jump); the right page holds the reading pane.
 - **R-10** Tabletop: the upper stage shows the release's key art and display name. The lower half holds chapters, release jump chips and reading. No release header straddles the fold.
-- **R-11** Video: tapping the video row opens the player modal. Close is at the top of the rail, or in the lower half in tabletop. In tabletop, video is in the upper half and Play/Pause, scrubber, mute and Close are in the lower half from the start (ArrangementView overlay: controls primary, video secondary). Closing returns to the same scroll anchor. No autoplay with sound.
+- **R-11** Video: tapping the video row opens the player modal. Close is at the top of the rail, or in the lower half in tabletop. In tabletop, video is in the upper half and Play/Pause, scrubber, mute and Close are in the lower half from the start (ArrangementView overlay: controls primary, video secondary). Closing returns to the same scroll anchor. Autoplay only when Settings > Video > Autoplay videos is on (default off) and Reduce Motion is off (G-9); otherwise the person taps play.
 - **R-12** Video unavailable: the row shows "Video unavailable" plus "Watch on YouTube" (opens in Safari).
 
 ### PS5 verification states (from the data spec)
@@ -149,11 +149,11 @@ Decision: the native launch screen is a plain background colour matching the Lib
 - **N-1** Permission is asked in context, never at launch. After the first game is added, a card at the top of the Library reads "Get a note when <Game> updates on PS5". It has one button, **Continue**, which opens the system prompt, and the card is swipe-dismissable. The card shows at most twice (two separate sessions) and never after a decision.
 - **N-2** Tapping the bell before a decision skips the card and opens the system prompt directly. If permission is denied, the bell menu shows "Notifications are off for Gamebook" plus "Open Settings". The per-game choice is still stored.
 - **N-3** A push is sent only when a release reaches On PS5 for a followed game whose level allows it. "Major only" covers `major` and `dayOne`. Hotfix and patch go out with interruption level `.passive`; major and dayOne with `.active`. Never Time Sensitive. There is one push per release, ever.
-- **N-4** Content:
+- **N-4** Content (0.5.0 copy, Iris: counts in titles only, body `Update <version>: <headline>`, one line up to 60 characters; no headline falls back to the digest counts line, then "A new update is out"):
   - title = game name
-  - body = "<Display name> is live on PS5: <first two key changes>." Sentence case, no app name, no emoji.
+  - body = "<Display name>: <first PS5 change>". Sentence case, no app name, no emoji.
   - `threadIdentifier` = game id
-  - `hiddenPreviewsBodyPlaceholder` = "New update".
+  - `hiddenPreviewsBodyPlaceholder` = "A game you follow has an update".
 - **N-5** If 3 or more games update within 10 minutes, they are summarised by the system thread grouping. No custom digest.
 - **N-6** Tapping a notification (cold, warm, closed or open) opens the game book, Updates chapter, with that release expanded at the top, in whatever pose the device is in. Back goes to Library. In open landscape, the sidebar shows the game selected.
 - **N-7** In the foreground, no banner is shown (`willPresent` returns `.badge` and `.list`). The release is inserted into the current list with a 0.3 s highlight. If the user is elsewhere, a pill "New on PS5: <Game> <Display name>" appears above the tab bar or rail. In tabletop it appears in the lower half. The pill stays until tapped or until that game is opened, and swiping dismisses it.
