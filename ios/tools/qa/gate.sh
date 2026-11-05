@@ -9,14 +9,14 @@
 # Poses are set through Duo Pose Driver (a GUI press on one Device Hub window), so poses stay serial.
 export DEVELOPER_DIR=${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}
 out=${1:?out dir}; shift; mkdir -p $out
-# TIER=pr (PRs, docs/ci.md): Closed and Tabletop only (the two layouts that differ most), no stills. TIER=full (default,
+# TIER=pr (PRs, docs/ci.md): Closed and Tabletop only (the two layouts that differ most), no stills, no once-suites. TIER=full (default,
 # release sign-off): all five poses, with stills. Poses named on the command line win.
 TIER=${TIER:-full}
 poses=(${=@})
 if (( ! $#poses )); then
   [[ $TIER == pr ]] && poses=(closed tabletop) || poses=(closed book open open-portrait tabletop)
 fi
-[[ $TIER == pr ]] && : ${STILLS:=0}
+[[ $TIER == pr ]] && : ${STILLS:=0} ${ONCE:=0}   # the pose-independent suites and unit tests run in TIER=full; GitHub CI runs the unit tests on every PR
 here=${0:A:h}; cd ${here:h:h} || exit 1   # ios/: xcodebuild and xcodegen run from here
 source $here/poselib.sh
 app=co.codeconnectors.playscribe
