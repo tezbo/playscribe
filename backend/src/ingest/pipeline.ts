@@ -122,9 +122,15 @@ export const seedGames = async (deps: IngestDeps) => {
   }
 }
 
+/** Press reports of one version number further apart than this from the stored release are a different patch. */
+const PS5_ERA_GAP_DAYS = 45
+const BLOCK_RETRY_MS = 24 * 3600e3
 const due = (db: DB, s: SourceDef, force: boolean, minMs = MIN_POLL_MS) => {
   const st = db.prepare('SELECT * FROM source_state WHERE source_id = ?').get(s.id) as Record<string, any> | undefined
-  if (s.fetch !== 'auto' || st?.blocked) return false
+  if (s.fetch !== 'auto') return false
+  // A block (403/429, or robots.txt) is retried politely, one request every BLOCK_RETRY_MS, and cleared by a success.
+  // Push Square's 403 on 2026-10-31 was sticky: the press list was never read again, so no press report arrived after it.
+  if (st?.blocked && Date.now() - Date.parse(st.last_fetched_at ?? 0) < BLOCK_RETRY_MS) return false
   if (force) return true
   return !st?.last_fetched_at || Date.now() - Date.parse(st.last_fetched_at) >= minMs
 }
@@ -134,7 +140,7 @@ const recordState = (db: DB, sourceId: string, status: number, error: string | n
     .prepare(
       `INSERT INTO source_state (source_id, last_fetched_at, last_status, last_error, blocked, fail_streak) VALUES (?, ?, ?, ?, ?, CASE WHEN ? = 200 THEN 0 ELSE 1 END)
        ON CONFLICT (source_id) DO UPDATE SET last_fetched_at = excluded.last_fetched_at, last_status = excluded.last_status,
-         last_error = excluded.last_error, blocked = MAX(blocked, excluded.blocked),
+         last_error = excluded.last_error, blocked = excluded.blocked,
          fail_streak = CASE WHEN excluded.last_status = 200 THEN 0 ELSE fail_streak + 1 END`,
     )
     .run(sourceId, now(), status, error, blocked ? 1 : 0, status)
@@ -176,7 +182,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     return null
   }
 
-  const naming = nameRelease(post.title, post.publishedAt)
+  let naming = nameRelease(post.title, post.publishedAt)
   const notes = extractNotes(post.body)
   const kind = () =>
     classify({ title: post.title, notes, announcedAt: post.publishedAt, previousAnnouncedAt: store.previousAnnouncedAt(db, game.id, post.publishedAt), platformReleaseDate: game.ps5_release })
@@ -184,7 +190,12 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   if (s.trust === 'secondary') {
     // Press: attach to the release it reports on, or record a silent update.
     if (!looksLikePatch(post.title)) return null
-    const byKey = db.prepare('SELECT id FROM releases WHERE game_id = ? AND version_key = ?').get(game.id, naming.versionKey) as { id: string } | undefined
+    // The same version number months or years apart is a different patch (PS5 "1.03" in 2023, the PC port's "1.03" in 2025):
+    // beyond PS5_ERA_GAP_DAYS the press report gets its own release, keyed by version and date, so history stays true.
+    const sameKey = db.prepare('SELECT id, announced_at FROM releases WHERE game_id = ? AND version_key = ?').get(game.id, naming.versionKey) as { id: string; announced_at: string } | undefined
+    const apart = sameKey ? Math.abs(Date.parse(sameKey.announced_at) - Date.parse(post.publishedAt)) / 86400e3 > PS5_ERA_GAP_DAYS : false
+    const byKey = apart ? undefined : sameKey
+    if (apart) naming = { ...naming, versionKey: `${naming.versionKey}-${post.publishedAt.slice(0, 10)}` }
     // By date only when one side has no version: "Patch 1.7" is never the release "Update 1.6".
     const dateKey = /^[a-z]+-\d{4}-\d{2}-\d{2}$/
     const near = byKey

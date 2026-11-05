@@ -306,6 +306,17 @@ const spelling = async (steamTitle: string, pressTitle: string, steamHoursAgo = 
 }
 const dawnwalkerIds = (db: ReturnType<typeof openDb>) => (db.prepare("SELECT id FROM releases WHERE game_id = 'dawnwalker' ORDER BY id").all() as { id: string }[]).map((r) => r.id)
 
+test('the same version number far apart is two patches: a press report keeps its own release (PS5 1.4 in the past, the later 1.4.0 from Steam)', async () => {
+  const db = await spelling('The Blood of Dawnwalker - Update 1.4', 'Dawnwalker PS5 Update 1.4 Out Now', 100 * 24, 300 * 24)
+  const ids = dawnwalkerIds(db)
+  assert.equal(ids.length, 2, ids.join())
+  const press = ids.find((i) => i !== 'dawnwalker@1.4')!
+  assert.match(press, /^dawnwalker@1\.4-\d{4}-\d{2}-\d{2}$/)
+  assert.equal(getRelease(db, press)!.displayName, 'Update 1.4')
+  assert.equal(store.getPlatformRow(db, 'dawnwalker@1.4', 'ps5')?.verification, 'assumed', 'the later Steam patch is untouched by the old press report')
+  assert.equal(store.getPlatformRow(db, press, 'ps5')?.verification, 'reported')
+})
+
 test('one patch under two spellings of its version is one release; its PS5 facts and sources fold in', async () => {
   const db = await spelling('The Blood of Dawnwalker - Update 1.4.0', 'Dawnwalker PS5 Update 1.4 Out Now')
   assert.deepEqual(dawnwalkerIds(db), ['dawnwalker@1.4.0'])
