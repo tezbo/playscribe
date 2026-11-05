@@ -113,14 +113,6 @@ struct SettingsView: View {
                     Text("Trailers and update videos start as soon as they open. Off when Reduce Motion is on.")
                 }
 
-                Section {
-                    Toggle("Autoplay videos", isOn: $autoplayVideos)
-                } header: {
-                    Text("Video")
-                } footer: {
-                    Text("Trailers and update videos start as soon as they open. Off when Reduce Motion is on.")
-                }
-
                 #if INTERNAL
                 if BuildChannel.showsInternalTools {
                 Section {
