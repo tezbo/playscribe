@@ -367,7 +367,11 @@ struct GameBasicsView: View {
 struct SimilarGamesRow: View {
     @Environment(AppModel.self) private var model
     var game: CatalogGame
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var choosing: CatalogGame?
+
+    /// "Same studio" is spoken as "same studio" after the name.
+    static func spoken(_ why: String) -> String { why.prefix(1).lowercased() + why.dropFirst() }
 
     /// A suggestion and the feed's reason for it, when it has one.
     struct Suggestion: Identifiable { var game: CatalogGame; var why: String?; var id: String { game.id } }
@@ -389,20 +393,23 @@ struct SimilarGamesRow: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text("You might also like").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 10) {
+                    HStack(alignment: .top, spacing: 10) {
                         ForEach(list) { item in
                             VStack(alignment: .leading, spacing: 4) {
                                 Button { choosing = item.game } label: {
                                     TileCover(game: item.game).frame(width: 104, height: 139)
                                 }
                                 .buttonStyle(.plain)
-                                .accessibilityLabel(item.why.map { "\(item.game.name), \($0)" } ?? item.game.name)
+                                .accessibilityLabel(item.why.map { "\(item.game.name), \(Self.spoken($0))" } ?? item.game.name)
                                 .accessibilityHint("Choose how to add it")
                                 .tappableFrame()
                                 // The reason line: only when the feed gives one (Priya, #253).
                                 if let why = item.why {
                                     Text(why).font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                                        .lineLimit(2).multilineTextAlignment(.leading)
+                                        // At accessibility sizes the reason is never cut mid-phrase (Iris).
+                                        .lineLimit(typeSize.isAccessibilitySize ? nil : 2)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                        .multilineTextAlignment(.leading)
                                         .frame(width: 104, alignment: .leading)
                                         .accessibilityHidden(true)   // spoken with the tile's label
                                 }

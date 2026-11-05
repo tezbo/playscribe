@@ -131,3 +131,13 @@ struct ForYouTests {
         #expect(model.forYouLines(for: r) == ["Fixes an issue you follow: Crash on load"])
     }
 }
+
+@MainActor
+struct SimilarReasonSpeechTests {
+    @Test("The reason is spoken in lower case after the name")
+    func spoken() {
+        #expect(SimilarGamesRow.spoken("Same studio") == "same studio")
+        #expect(SimilarGamesRow.spoken("Same genre: RPG") == "same genre: RPG")
+        #expect(SimilarGamesRow.spoken("") == "")
+    }
+}
