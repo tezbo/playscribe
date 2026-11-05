@@ -699,6 +699,9 @@ final class Release050Tests: XCTestCase {
         XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(pill.frame), "the pill does not cover the cog")
         let search = app.textFields.firstMatch
         if search.exists { XCTAssertFalse(search.frame.insetBy(dx: 1, dy: 1).intersects(pill.frame), "the pill does not cover Search") }
+        // The Library's scroll view ends above the pill, so no row or tile can sit under it.
+        let page = app.scrollViews.firstMatch
+        if page.exists { XCTAssertLessThanOrEqual(page.frame.maxY, pill.frame.minY + 1, "the Library ends above the pill") }
         pill.swipeRight()
         XCTAssertFalse(pill.waitForExistence(timeout: 3), "swiping dismisses the pill")
         app.terminate()
