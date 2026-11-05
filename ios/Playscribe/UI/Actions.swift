@@ -80,7 +80,7 @@ struct RailButton: View {
         Image(systemName: action.systemImage)
             .font(PlayscribeFont.title3)
             .foregroundStyle(action.selected ? PlayscribeColor.accent : Color.primary)
-            .frame(width: 48, height: 48)
+            .frame(width: 44, height: 44)
             // Round buttons like Closed's rail: a material disc, tinted when selected.
             .background(Circle().fill(.regularMaterial))
             .background(Circle().fill(PlayscribeColor.accent.opacity(action.selected ? 0.18 : 0)))

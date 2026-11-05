@@ -204,11 +204,11 @@ struct TabletopRail: View {
     var duo: DuoContext
 
     var body: some View {
-        VStack(spacing: 4) {
+        VStack(spacing: 2) {
             // The screen's controls scroll when they outgrow the lower half (a centred overflow pushed the first
             // button above the fold, 468 vs 474.5: G-4); the tabs stay pinned below.
             ScrollView {
-              VStack(spacing: 4) {
+              VStack(spacing: 2) {
             if let id = model.nav.gameID, model.nav.tab == .library {
                 RailButton(action: ScreenAction(id: "back", title: "Library", systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
@@ -232,7 +232,7 @@ struct TabletopRail: View {
                     LibraryViewMenu()
                         .labelStyle(.iconOnly)
                         .font(PlayscribeFont.title3)
-                        .frame(width: 48, height: 48)
+                        .frame(width: 44, height: 44)
                         .background(Circle().fill(.regularMaterial))
                         .tappableFrame()
                 }
@@ -257,8 +257,13 @@ struct TabletopRail: View {
             }
             .scrollBounceBehavior(.basedOnSize)
             .scrollIndicators(.hidden)
+            // When the lower half is short the controls scroll: fade the edge so a cut-off button reads as "more",
+            // and leave room so the last one scrolls clear of the tab capsule.
+            .contentMargins(.bottom, 8, for: .scrollContent)
+            .mask(LinearGradient(stops: [.init(color: .black, location: 0.9), .init(color: .clear, location: 1)],
+                                 startPoint: .top, endPoint: .bottom))
             // Iris: the same floating capsule as Closed's tab bar, no full-height strip or hairline.
-            VStack(spacing: 4) {
+            VStack(spacing: 0) {
                 tab(.library, "Library", "books.vertical", badge: model.totalUnread)
                 tab(.updates, "Updates", "newspaper")
                 tab(.search, "Search", "magnifyingglass")
@@ -279,7 +284,7 @@ struct TabletopRail: View {
                 .font(PlayscribeFont.title3)
                 .symbolVariant(model.nav.tab == t ? .fill : .none)
                 .foregroundStyle(model.nav.tab == t ? PlayscribeColor.accent : Color.primary)
-                .frame(width: 48, height: 48)
+                .frame(width: 44, height: 44)
                 // The same selected treatment as the rail's action buttons (RailButton), so the rail reads as one style.
                 .background(Circle().fill(PlayscribeColor.accent.opacity(model.nav.tab == t ? 0.18 : 0)))
                 .overlay(alignment: .topTrailing) {
