@@ -1,4 +1,8 @@
+import Foundation
+import Testing
+@testable import Playscribe
 
+/// Library > Upcoming: games filed as Watching appear on the watchlist beside Wishlist ones.
 @MainActor
 struct UpcomingWatchlistTests {
     @Test func watchedUpcomingIncludesWishlistAndWatching() {
