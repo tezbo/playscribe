@@ -373,7 +373,7 @@ struct NewsStage: View {
             // The art layer fills whatever the stage is offered and never depends on the caption, so measuring it cannot feed back
             // into the caption's padding.
             .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { if abs($0 - stageBottom) > 0.5 { stageBottom = $0 } }
-            LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
+            LinearGradient(stops: [.init(color: .clear, location: 0.25), .init(color: .black.opacity(0.88), location: 0.7), .init(color: .black.opacity(0.92), location: 1)], startPoint: .top, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 Text(headline.item.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(2)
                 HStack(spacing: 8) {
@@ -411,7 +411,7 @@ struct NewsStageArt: View {
             // The art layer fills whatever the stage is offered and never depends on the caption, so measuring it cannot feed back
             // into the caption's padding.
             .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { if abs($0 - stageBottom) > 0.5 { stageBottom = $0 } }
-            LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
+            LinearGradient(stops: [.init(color: .clear, location: 0.25), .init(color: .black.opacity(0.88), location: 0.7), .init(color: .black.opacity(0.92), location: 1)], startPoint: .top, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 Text(game?.name ?? "").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
                 if let newest { Text(newest.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(2) }
