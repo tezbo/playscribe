@@ -721,6 +721,7 @@ struct ContinueText: View {
                     .foregroundStyle(PlayscribeColor.accent)
                 if fresh, let v = release.versionChip {
                     Text(v)
+                        .accessibilityLabel("Version \(v.dropFirst())")
                         .font(PlayscribeFont.caption)
                         .monospacedDigit()
                         .foregroundStyle(PlayscribeColor.accent)
