@@ -39,6 +39,21 @@ struct ModelTests {
         #expect(m.isExpanded("rel:dawnwalker@1.1"))
     }
 
+    @Test("Quick menu: ticks the current status in the library, offers adds outside it (B-10)")
+    func quickMenu() {
+        let m = freshModel()
+        guard let g = m.game("dawnwalker") else { return }
+        if m.entry("dawnwalker") == nil { m.addGame(g, status: .owned) }
+        m.setStatus("dawnwalker", .watching)
+        let items = m.quickMenu(g).flatMap(\.items)
+        #expect(items.first { $0.checked }?.id == OwnershipStatus.watching.rawValue)
+        #expect(items.contains { $0.id == "remove" && $0.destructive })
+        m.removeGame("dawnwalker", toast: false)
+        let adds = m.quickMenu(g).flatMap(\.items)
+        #expect(!adds.contains { $0.id == "remove" })
+        #expect(adds.contains { $0.id == OwnershipStatus.wishlist.rawValue })
+    }
+
     @Test("Remove then Undo restores status, level, bookmarks and notes (B-8)")
     func removeUndo() {
         let m = freshModel()
