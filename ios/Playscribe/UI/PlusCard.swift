@@ -14,12 +14,30 @@ struct PlusCard: View {
     /// No wider than a Library tile, whatever the pose (Iris, #242).
     static let maxCoverWidth: CGFloat = 140
 
+    private static let romans: [String: String] = ["ii": "2", "iii": "3", "iv": "4", "v": "5", "vi": "6", "vii": "7", "viii": "8", "ix": "9", "x": "10"]
+
+    /// Title key for matching: folded, roman numerals as digits ("Alan Wake II" and "Alan Wake 2" agree), no leading "the".
+    static func matchKey(_ name: String) -> String {
+        var words = PS5Index.fold(name).split(separator: " ").map(String.init)
+        if words.first == "the", words.count > 1 { words.removeFirst() }
+        return words.map { romans[$0] ?? $0 }.joined(separator: " ")
+    }
+
+    /// The same title with its last digit word as a roman numeral, so the index's own spelling is searched too.
+    private static func romanVariant(_ name: String) -> String {
+        let flip = Dictionary(uniqueKeysWithValues: romans.map { ($0.value, $0.key) })
+        return name.split(separator: " ").map { flip[String($0)]?.uppercased() ?? String($0) }.joined(separator: " ")
+    }
+
     /// The catalogue game behind a lineup name: the tracked game when `gameId` is set, else an exact
-    /// (accent- and case-folded) title match in the bundled PS5 index. nil draws the name plate.
+    /// title match (see `matchKey`) in the bundled PS5 index. nil draws the name plate, never a near miss.
     static func resolve(_ g: PlusMonth.Game, tracked: (String) -> CatalogGame?) -> CatalogGame? {
         if let id = g.gameId, let t = tracked(id) { return t }
-        let want = PS5Index.fold(g.name)
-        return PS5Index.shared.search(g.name, limit: 5).first { PS5Index.fold($0.name) == want }
+        let want = matchKey(g.name)
+        for query in [g.name, romanVariant(g.name)] {
+            if let hit = PS5Index.shared.search(query, limit: 10).first(where: { matchKey($0.name) == want }) { return hit }
+        }
+        return nil
     }
 
     var body: some View {

@@ -74,6 +74,17 @@ struct PlusCoverTests {
         #expect(PlusCard.resolve(g, tracked: { $0 == "kcd2" ? tracked : nil })?.id == "kcd2")
     }
 
+    @Test func romanAndArabicNumeralsMatchTheSameTitle() {
+        #expect(PlusCard.matchKey("Alan Wake 2") == PlusCard.matchKey("Alan Wake II"))
+        #expect(PlusCard.matchKey("The Last of Us Part II") == PlusCard.matchKey("Last of Us Part 2"))
+        #expect(PlusCard.matchKey("Alan Wake 2") != PlusCard.matchKey("Alan Wake Remastered"))
+    }
+
+    @Test func alanWake2FindsTheIndexCoverNotAPlate() {
+        let g = PlusMonth.Game(name: "Alan Wake 2", gameId: nil)
+        #expect(PlusCard.resolve(g, tracked: { _ in nil })?.igdbID == 185246)
+    }
+
     @Test func atMostThreeCoversShow() {
         #expect(PlusCard.coverLimit(accessibility: false) == 3)
     }
