@@ -72,8 +72,11 @@ struct GameBookView: View {
             PageView(gameID: gameID)
                 .contentMargins(.bottom, 12, for: .scrollContent)
                 .overlay(alignment: .bottom) {
-                    LinearGradient(colors: [.clear, Color.ink0], startPoint: .top, endPoint: .bottom)
-                        .frame(height: 24)
+                    // A 24 pt fade left a half line readable at the edge (0c93f25); 44 pt, solid for the last 8 pt,
+                    // so a line cut by the sheet is faded out, never shown half drawn.
+                    LinearGradient(stops: [.init(color: .clear, location: 0), .init(color: Color.ink0, location: 0.82)],
+                                   startPoint: .top, endPoint: .bottom)
+                        .frame(height: 44)
                         .allowsHitTesting(false)
                         .accessibilityHidden(true)
                 }
