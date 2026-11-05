@@ -180,6 +180,18 @@ enum FoldHost {
         let sceneNote = screen.width > screen.height ? "landscape \(scene.interfaceOrientation.rawValue)" : "portrait \(scene.interfaceOrientation.rawValue)"
         let rawMinX = (box.frames + Array(box.named.values)).map(\.minX).min() ?? .nan
         print("harness error: [info, diag] \(pose.id) window \(window.frame) host in window \(hc.view.convert(CGPoint.zero, to: nil)) host in screen \(hc.view.convert(CGPoint.zero, to: window.screen.coordinateSpace)) margins \(hc.view.layoutMargins) safe \(hc.view.safeAreaInsets) additional \(hc.additionalSafeAreaInsets) origin \(origin) rawMinX \(rawMinX) leftmost \(leftmost) scene \(sceneNote) screen \(screen)")
+        if pose.id == "closed" {
+            // One-off diagnostic for the 88 pt width gap seen on the Mac: which layer of the hosted tree is narrower than the view.
+            var lines: [String] = []
+            func walk(_ v: UIView, _ depth: Int) {
+                guard depth <= 7, lines.count < 70 else { return }
+                let f = v.convert(v.bounds, to: hc.view)
+                lines.append("\(String(repeating: " ", count: depth))\(String(describing: type(of: v))) \(Int(f.minX)),\(Int(f.minY)) \(Int(f.width))x\(Int(f.height)) safe \(v.safeAreaInsets.left)/\(v.safeAreaInsets.right) margins \(v.layoutMargins.left)/\(v.layoutMargins.right)")
+                for c in v.subviews { walk(c, depth + 1) }
+            }
+            walk(hc.view, 0)
+            print("harness error: [info, tree] closed\n" + lines.joined(separator: "\n"))
+        }
         return r
     }
 
