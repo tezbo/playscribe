@@ -716,11 +716,14 @@ final class Release050Tests: XCTestCase {
         guard isTabletop(app) else { app.terminate(); return }
         XCTAssertTrue(pill.isHittable, "the pill itself takes taps")
         let letters = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'letter-'")).allElementsBoundByIndex
-        for letter in letters where letter.frame.minY >= pill.frame.minY {
-            XCTAssertFalse(letter.isHittable, "\(letter.identifier) sits at or below the pill's top edge and must not take a tap")
+        // isHittable tests the element's centre. A letter's frame may reach a few points below the page's edge (the part
+        // past the edge is clipped and takes no tap), so judge the centre: below the pill's top edge it must not be hittable,
+        // and a hittable letter's centre must be above the pill.
+        for letter in letters where letter.frame.midY >= pill.frame.minY {
+            XCTAssertFalse(letter.isHittable, "\(letter.identifier) has its centre at or under the pill and must not take a tap")
         }
         for letter in letters where letter.isHittable {
-            XCTAssertLessThanOrEqual(letter.frame.maxY, pill.frame.minY + 1, "\(letter.identifier) is tappable only above the pill")
+            XCTAssertLessThan(letter.frame.midY, pill.frame.minY, "\(letter.identifier) is tappable only with its centre above the pill")
         }
         app.terminate()
     }
