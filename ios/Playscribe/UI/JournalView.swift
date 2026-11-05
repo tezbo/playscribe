@@ -175,7 +175,8 @@ struct ReleaseBody: View {
                     if summary.count > 120 {
                         Button(summaryOpen ? "Less" : "More") { withAnimation(.snappy) { summaryOpen.toggle() } }
                             .font(PlayscribeFont.subheadline.weight(.semibold))
-                            .frame(minHeight: 44)
+                            .frame(minWidth: 44, minHeight: 44)
+                            .contentShape(Rectangle())
                             .accessibilityHint(summaryOpen ? "Shows less of the summary" : "Shows the full summary")
                             .tappableFrame()
                     }

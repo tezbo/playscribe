@@ -341,7 +341,7 @@ struct GameBasicsView: View {
                 Text("Story").font(PlayscribeFont.headline)
                 LinkedTextView(text: story).font(PlayscribeFont.body).lineLimit(storyOpen ? nil : 4)
                 Button(storyOpen ? "Less" : "More") { withAnimation(.snappy) { storyOpen.toggle() } }
-                    .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minHeight: 44).tappableFrame()
+                    .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
             }
             SimilarGamesRow(game: game)
         }
