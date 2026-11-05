@@ -10,16 +10,16 @@ API="https://api.cloudflare.com/client/v4/accounts/$ACC"
 here="$(cd "$(dirname "$0")" && pwd)"
 cf() { curl -sS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "$@"; }
 # Reads a Cloudflare response on stdin; on failure prints it (responses carry no secrets) and stops.
-must() { local body; body="$(cat)"; echo "$body" | jq -e '.success == true' >/dev/null 2>&1 || { echo "Cloudflare refused: ${body:0:600}" >&2; exit 1; }; }
+must() { local body; body="$(cat)"; echo "$body" | jq -e '.success == true' >/dev/null 2>&1 || { echo "Cloudflare refused ${1:-a call}: ${body:0:600}" >&2; exit 1; }; }
 
 ADMIN="$(printf 'relay-admin:%s' "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -d' ' -f1)"
 echo "::add-mask::$ADMIN"
 
 # 1. The KV namespace.
-ns="$(cf "$API/storage/kv/namespaces?per_page=100")"; echo "$ns" | must
+ns="$(cf "$API/storage/kv/namespaces?per_page=100")"; echo "$ns" | must "list KV namespaces"
 nsid="$(echo "$ns" | jq -r --arg n "$NAME" '.result[] | select(.title == $n) | .id' | head -1)"
 if [ -z "$nsid" ]; then
-  made="$(cf -X POST "$API/storage/kv/namespaces" -H 'Content-Type: application/json' -d "{\"title\":\"$NAME\"}")"; echo "$made" | must
+  made="$(cf -X POST "$API/storage/kv/namespaces" -H 'Content-Type: application/json' -d "{\"title\":\"$NAME\"}")"; echo "$made" | must "create KV namespace"
   nsid="$(echo "$made" | jq -r '.result.id')"; echo "created KV namespace"
 fi
 
@@ -31,7 +31,7 @@ got="$(cf "$API/workers/subdomain" | jq -r '.result.subdomain // empty' 2>/dev/n
 
 # 3. The script, with its KV binding and the admin secret.
 meta="$(jq -nc --arg ns "$nsid" --arg admin "$ADMIN" '{main_module:"worker.js",compatibility_date:"2026-11-01",bindings:[{type:"kv_namespace",name:"KV",namespace_id:$ns},{type:"secret_text",name:"ADMIN_TOKEN",text:$admin}]}')"
-cf -X PUT "$API/workers/scripts/$NAME" -F "metadata=$meta;type=application/json" -F "worker.js=@$here/worker.js;type=application/javascript+module;filename=worker.js" | must
+cf -X PUT "$API/workers/scripts/$NAME" -F "metadata=$meta;type=application/json" -F "worker.js=@$here/worker.js;type=application/javascript+module;filename=worker.js" | must "upload Worker script"
 # Putting the script on workers.dev; a refusal here is not fatal because new scripts are usually on it already, and the smoke test below decides.
 en="$(cf -X POST "$API/workers/scripts/$NAME/subdomain" -H 'Content-Type: application/json' -d '{"enabled":true}')"
 echo "$en" | jq -e '.success == true' >/dev/null 2>&1 || echo "workers.dev enable not confirmed: ${en:0:300}"
