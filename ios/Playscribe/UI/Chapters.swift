@@ -58,7 +58,8 @@ struct GalleryChapter: View {
         let videos = items.filter { $0.kind == .video }
         let picked = model.data.selectedArtwork[gameID]
         VStack(alignment: .leading, spacing: 14) {
-            Text("Choose a picture to use as this game's backdrop.").font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+            if items.isEmpty { GalleryEmpty(gameID: gameID) }
+            if !art.isEmpty { Text("Choose a picture to use as this game's backdrop.").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 10)], spacing: 10) {
                 ForEach(art) { item in
                     Button { model.selectArtwork(gameID, item.id) } label: {
@@ -98,6 +99,36 @@ struct GalleryChapter: View {
                 }
             }
         }
+    }
+}
+
+/// A game with no pictures or videos (Terry, 0.2.0 build 5, Fortnite): say so, and point to media elsewhere.
+struct GalleryEmpty: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
+    var gameID: String
+
+    var body: some View {
+        let game = model.game(gameID)
+        let links = game?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
+        let search = game.flatMap { g in
+            "https://www.youtube.com/results?search_query=\(g.name) PS5 trailer"
+                .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed).flatMap(URL.init(string:))
+        }
+        VStack(alignment: .leading, spacing: 8) {
+            Text("No pictures or videos here yet").font(PlayscribeFont.headline)
+            Text("You can find trailers and screenshots elsewhere.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            FlowLayout(spacing: 24) {
+                if let url = links?.official {
+                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame(when: duo.pose != .tabletop).accessibilityHidden(duo.pose == .tabletop)
+                }
+                if let url = search {
+                    Link(destination: url) { Label("Find trailers online", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame(when: duo.pose != .tabletop).accessibilityHidden(duo.pose == .tabletop)
+                }
+            }
+            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.accent)
+        }
+        .accessibilityElement(children: .contain)
     }
 }
 

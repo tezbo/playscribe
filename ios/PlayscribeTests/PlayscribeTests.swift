@@ -389,6 +389,16 @@ struct OneUpdateDemoTests {
         if let hero { #expect(m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
     }
 
+    /// The `two-update` QA route: exactly two fresh unread updates, from different games.
+    @Test func twoUpdateRouteLeavesTwoFreshUpdatesFromDifferentGames() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "two-\(UUID().uuidString).json"))
+        m.resetToTwoUpdateDemo()
+        let unread = m.data.collection.flatMap { m.releases($0.gameID) }.filter(m.isUnread)
+        #expect(unread.count == 2)
+        #expect(Set(unread.map(\.gameID)).count == 2)
+        #expect(m.latestDeck.count == 2)
+    }
+
     @Test func demoRouteListsOtherUpdatesBesideTheHero() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
         m.resetDemo()
@@ -404,5 +414,15 @@ struct OneUpdateDemoTests {
         let games = rows.map(\.gameID)
         #expect(Set(games).count == games.count)
         #expect(!games.contains(front.gameID))
+    }
+}
+
+/// R-11, G-9: autoplay is opt-in.
+struct AutoplayTests {
+    @Test("Player page autoplays only when asked (R-11)")
+    func html() {
+        #expect(YouTubeController.html("abc", captions: true).contains("autoplay:0"))
+        let on = YouTubeController.html("abc", captions: true, autoplay: true)
+        #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
     }
 }

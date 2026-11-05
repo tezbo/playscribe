@@ -106,16 +106,27 @@ extension String {
 }
 
 
+/// QA (internal builds, launch with `-qaReduceTransparency YES`): every material is drawn solid, as under
+/// Reduce Transparency, which the simulator cannot switch on (Iris, 0.5.0 accessibility pass).
+private struct QASolidKey: EnvironmentKey { static let defaultValue = false }
+extension EnvironmentValues {
+    var qaSolid: Bool {
+        get { self[QASolidKey.self] }
+        set { self[QASolidKey.self] = newValue }
+    }
+}
+
 /// Glass that becomes solid ink with a 1 pt vellum border under Reduce Transparency or Increase
 /// Contrast (Iris, 0.5.0 accessibility pass).
 private struct AdaptiveGlass<S: InsettableShape>: ViewModifier {
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.qaSolid) private var qaSolid
     var shape: S
     var interactive: Bool
 
     func body(content: Content) -> some View {
-        if reduceTransparency || contrast == .increased {
+        if reduceTransparency || contrast == .increased || qaSolid {
             content
                 .background(Color.ink2, in: shape)
                 .overlay(shape.strokeBorder(PlayscribeColor.vellum500, lineWidth: 1))

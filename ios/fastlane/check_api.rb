@@ -7,6 +7,8 @@ abort("Fastfile uses constants that are only loaded inside actions: #{bad.join('
 
 begin
   require 'fastlane'
+  require 'spaceship' # fastlane loads it lazily; without it the Spaceship::ConnectAPI.* delegators do not exist yet
+  require 'spaceship' # fastlane loads it lazily; without it the Spaceship::ConnectAPI.* delegators do not exist yet
 rescue LoadError
   puts 'fastlane is not installed here; only the static check ran'
   exit 0

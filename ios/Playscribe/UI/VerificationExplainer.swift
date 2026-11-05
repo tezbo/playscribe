@@ -52,8 +52,11 @@ struct VerificationExplainer: View {
             HStack {
                 Text("What this tag means").font(PlayscribeFont.title3)
                 Spacer()
-                Button("Done") { if let panelClose { panelClose() } else { systemDismiss() } }
-                    .frame(minHeight: 44).accessibilityHint("Closes the explainer").accessibilityIdentifier("close").tappableFrame()
+                // The 44 pt frame and its hit shape sit inside the label, so the button's own frame is 44 pt tall.
+                Button { if let panelClose { panelClose() } else { systemDismiss() } } label: {
+                    Text("Done").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+                }
+                .accessibilityHint("Closes the explainer").accessibilityIdentifier("close").tappableFrame()
             }
             .frame(minHeight: 52)
             Text(kind.tagName).font(PlayscribeFont.headline)

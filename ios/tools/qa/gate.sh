@@ -9,7 +9,7 @@
 # Poses are set through Duo Pose Driver (a GUI press on one Device Hub window), so poses stay serial.
 export DEVELOPER_DIR=${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}
 out=${1:?out dir}; shift; mkdir -p $out
-poses=(${@:-closed book open open-portrait tabletop})
+poses=(${=@}); (( $#poses )) || poses=(closed book open open-portrait tabletop)
 here=${0:A:h}; cd ${here:h:h} || exit 1   # ios/: xcodebuild and xcodegen run from here
 source $here/poselib.sh
 app=co.codeconnectors.playscribe
@@ -26,8 +26,9 @@ POSE_SUITES=(FoldAuditTests LibraryLayoutTests LatestUpdatesDeckTests Release050
   PlayscribeUITests/testScanFitsThePanel)
 # Only meaningful when two pages are side by side.
 TWO_PAGE_SUITES=(SwapSidesTests)
-# Pose-independent: logic, data, navigation. Once, in Closed.
-ONCE_SUITES=(ReleaseRowTests JourneyTests ReviewFixUITests DisplayChoiceTests CaptureTests ReaderPerformanceTests
+# Pose-independent: logic, data, navigation. Once, in Closed. (JourneyTests is not here: it needs the device
+# unfolded mid-test, which only tools/qa/journey.sh does.)
+ONCE_SUITES=(ReleaseRowTests ReviewFixUITests DisplayChoiceTests CaptureTests ReaderPerformanceTests
   PlayscribeUITests/testNotificationTapOpensRelease)
 
 note "gate $sha $(date '+%F %T')"
@@ -45,7 +46,10 @@ run() {  # run <label> <only-testing…>
     "$@" -resultBundlePath $out/$label.xcresult > $out/$label.log 2>&1
   local r=$(grep -E '\*\* TEST (SUCCEEDED|FAILED)' $out/$label.log)
   note "$label: ${r:-NO RESULT}"
-  grep -E "error:" $out/$label.log | sed 's/.*error: -\[/  [/' | head -8 | tee -a $sum
+  # Every error, never a capped list (the old head -8 hid most of the e869273 failures), then the failing-test count.
+  grep -E "error:" $out/$label.log | sed 's/.*error: -\[/  [/' | tee -a $sum
+  note "$label: $(grep -E "^Test Case .* failed" $out/$label.log | sort -u | wc -l | tr -d ' ') failing test(s)"
+  grep -E "^Test Case .* failed" $out/$label.log | sort -u | sed 's/^Test Case .-\[/  FAILED [/;s/. failed.*//' | tee -a $sum
   [[ $r == *SUCCEEDED* ]]
 }
 verify_pose() {  # verify_pose <pose>: panel and orientation must match, or the run is void.
@@ -63,10 +67,12 @@ verify_pose() {  # verify_pose <pose>: panel and orientation must match, or the 
 fails=0
 note "== once, in closed"
 set_pose closed; verify_pose closed || exit 1
+if [[ ${ONCE:-1} == 1 ]]; then
 # Unit tests live in the Playscribe scheme (PlayscribeUI's xctestrun has only the UI target).
 timed xcodebuild -scheme Playscribe -destination $dest -derivedDataPath $dd test > $out/unit.log 2>&1
 unit=$(grep -E '\*\* TEST (SUCCEEDED|FAILED)' $out/unit.log); note "unit: ${unit:-NO RESULT}"; [[ $unit == *SUCCEEDED* ]] || ((fails++))
 timed run once $(for s in $ONCE_SUITES; do ui $s; done) || ((fails++))
+fi
 
 for p in $poses; do
   note "== $p"

@@ -63,10 +63,9 @@ struct CheckedLine: View {
 struct RetryButton: View {
     @Environment(AppModel.self) private var model
     var body: some View {
-        Button("Retry") { Task { await model.retryCheck() } }
+        Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
             .font(PlayscribeFont.subheadline.weight(.semibold))
             .foregroundStyle(PlayscribeColor.accent)
-            .frame(minHeight: 44)
             .tappableFrame()
     }
 }

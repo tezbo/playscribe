@@ -67,7 +67,7 @@ struct AddGameSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     if duo.pose == .tabletop {
-                        Button("Done") { dismiss() }.frame(minHeight: 44).accessibilityIdentifier("close")
+                        Button { dismiss() } label: { Text("Done").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.accessibilityIdentifier("close")
                     } else {
                         Button { dismiss() } label: { Label("Close", systemImage: "xmark") }
                     }

@@ -25,9 +25,16 @@ struct LibraryView: View {
         .navigationTitle("Library")
         .toolbarTitleDisplayMode(.large)
         .toolbar {
-            ToolbarItem(placement: .topBarPinnedTrailing) {
+            // Add trails, Settings leads: the system collapsed a second trailing item away in Closed and
+            // Open (0.5.0 Mac stills, TB-1), so the cog sits in its own region and is always drawn.
+            ToolbarItem(placement: .topBarTrailing) {
                 Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
                     .disabled(model.addSheetOpen)
+            }
+            ToolbarItem(placement: .topBarLeading) {
+                Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
+                    .accessibilityIdentifier("settingsButton")
+                    .disabled(model.settingsOpen)
             }
             // D-7: nothing to arrange in an empty library.
             if !model.data.collection.isEmpty {
@@ -97,6 +104,7 @@ struct LibraryShelf: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @Environment(\.railWidth) private var railWidth
+    @Environment(\.dynamicTypeSize) private var typeSize
     @AppStorage(LibraryLayout.key) private var layout: LibraryLayout = .tiles
     /// Tabletop: first-letter filter instead of typing (the keyboard never opens there).
     @State private var letter: String?
@@ -136,6 +144,21 @@ struct LibraryShelf: View {
             return Array(repeating: GridItem(.fixed(flatFit.size), spacing: 10, alignment: .top), count: flatFit.count)
         }
         return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 10, alignment: .top)]
+    }
+
+    /// Columns that fill a Book page: at least 124 pt tiles, 10 pt gaps, the leftover shared equally.
+    static func pageFit(width: CGFloat) -> (count: Int, size: CGFloat) {
+        let n = max(2, Int((width + 10) / 134))
+        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
+    }
+
+    /// One Book page's tiles, top to bottom, on that page's own columns.
+    private func pageGrid(_ rows: [AppModel.LibraryRow], fit: (count: Int, size: CGFloat)) -> some View {
+        LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: 10, alignment: .top), count: fit.count),
+                  alignment: .leading, spacing: 10) {
+            ForEach(rows) { row in GameTile(row: row, size: fit.size).id("lib-\(row.id)") }
+        }
+        .padding(.top, 2)
     }
 
     /// Book (D-12): the same number of tiles on each page (Apple: prefer an even number of
@@ -180,9 +203,12 @@ struct LibraryShelf: View {
         return out
     }
 
-    /// Book with 3 or more recent updates: the hero carousel takes the right page's top.
+    /// Closed landscape (container wider than tall): the compact first screen.
+    private var closedWide: Bool { duo.pose == .closed && duo.isLandscape }
+
+    /// Book with any recent update: the hero carousel takes the right page's top; the left page keeps the controls, chips and grid.
     private var heroOnRightPage: Bool {
-        duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming && model.latestDeck.count >= 3
+        duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming && !model.latestDeck.isEmpty
     }
 
     /// The library search field; one page wide in Book, and reported to the fold audit.
@@ -196,6 +222,7 @@ struct LibraryShelf: View {
                             .autocorrectionDisabled()
                     }
                     .padding(.horizontal, 12)
+                    .padding(.vertical, typeSize.isAccessibilitySize ? 12 : 0)
                     .frame(minHeight: 44)
                     .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     // Book: one page wide (like the chip row), and reported to the fold audit.
@@ -211,7 +238,18 @@ struct LibraryShelf: View {
         let all = model.libraryRows
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
-                LibraryTabPicker()
+                // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
+                if closedWide {
+                    // Closed landscape: the control and the search field share one row, 44 pt each (Iris, cf6c889).
+                    HStack(spacing: 12) {
+                        LibraryTabPicker().frame(width: 220, height: 44)
+                        if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                    }
+                } else if !heroOnRightPage {
+                    LibraryTabPicker()
+                        .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
                 if model.libraryTab == .upcoming {
                     UpcomingView()
                 } else {
@@ -219,18 +257,19 @@ struct LibraryShelf: View {
                     HStack {
                         Text(line).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
                         if case .failed = model.feedStatus {
-                            Button("Retry") { Task { await model.retryCheck() } }.font(PlayscribeFont.footnote).hitTarget()
+                            Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
                         }
                     }
                 }
                 CatchUpCard()
+                PlusCard()
                 if model.showsNotificationCard, let first = all.first {
                     NotificationInviteCard(gameName: first.game.name)
                 }
                 if !all.isEmpty && duo.pose == .tabletop {
                     // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
                     TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4)
-                } else if !heroOnRightPage, !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                } else if !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
                     HStack(spacing: 12) {
@@ -250,23 +289,37 @@ struct LibraryShelf: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 40)
                 }
-                // Book, 3 or more recent updates (Iris, hero-wide-layouts): search, news and filters stay on
+                // Book, any recent update (Iris, hero-wide-layouts): search, news and filters stay on
                 // the left page and the carousel spans the top of the RIGHT page; the tiles start below both.
                 if heroOnRightPage, let fold = duo.division {
+                    let leftWidth = max(0, fold.minX - 24 - 16)
                     let rightStart = fold.maxX + 24 - 16
                     let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
+                    // Each page flows on its own (Iris, cf6c889): the left tiles start 16 pt under the filters, the
+                    // right tiles under the deck; order is the left page top to bottom, then the right page. The
+                    // tiles share each page's width equally (min 124 pt, 10 pt gaps).
+                    let left = Self.pageFit(width: leftWidth), right = Self.pageFit(width: rightWidth)
+                    let leftCount = layout == .tiles
+                        ? min(rows.count, Int((Double(rows.count) * Double(left.count) / Double(left.count + right.count)).rounded(.up))) : 0
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
+                            LibraryTabPicker()
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                             NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                             if all.count >= 2 && layout == .tiles {
                                 FilterBar().frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
                             }
+                            if layout == .tiles { pageGrid(Array(rows.prefix(leftCount)), fit: left) }
                         }
-                        .frame(width: max(0, fold.minX - 24 - 16), alignment: .topLeading)
-                        LatestUpdatesDeck(cards: model.latestDeck)
-                            .frame(width: rightWidth, alignment: .leading)
-                            .padding(.leading, max(0, rightStart - max(0, fold.minX - 24 - 16)))
+                        .frame(width: leftWidth, alignment: .topLeading)
+                        VStack(alignment: .leading, spacing: 14) {
+                            // 16:9 art at the page's width plus the page edge, sized explicitly: left to the pager the
+                            // card came out as tall as the screen and pushed the grid off (834a5eb).
+                            LatestUpdatesDeck(cards: model.latestDeck, compact: true, maxHeight: (rightWidth * 9 / 16).rounded() + 52)
+                            if layout == .tiles { pageGrid(Array(rows.dropFirst(leftCount)), fit: right) }
+                        }
+                        .frame(width: rightWidth, alignment: .topLeading)
+                        .padding(.leading, max(0, rightStart - leftWidth))
                     }
                     .id(poseKey)
                 }
@@ -281,6 +334,15 @@ struct LibraryShelf: View {
                     let deck = model.latestDeck
                     let front = deck.first { $0.id == model.deckSelection } ?? deck.first
                     let deckHeight = (duo.size.height * 0.38).rounded()
+                    if typeSize.isAccessibilitySize {
+                        // Accessibility sizes (Iris): the deck full width, Also new below it as a list.
+                        VStack(alignment: .leading, spacing: 14) {
+                            // Taller than the 38% side-by-side deck: the title needs up to 4 lines at AX3 (no ellipsis).
+                            LatestUpdatesDeck(cards: deck, compact: true, maxHeight: (duo.size.height * 0.46).rounded())
+                            AlsoNewPanel(hero: front?.release).frame(height: 460)
+                        }
+                        .id(poseKey)
+                    } else {
                     HStack(alignment: .top, spacing: 10) {
                         LatestUpdatesDeck(cards: deck, compact: true, maxHeight: deckHeight)
                             .frame(width: max(0, (duo.size.width - railWidth - 32 - 10) * 0.46), alignment: .leading)
@@ -289,6 +351,7 @@ struct LibraryShelf: View {
                     }
                     .frame(height: deckHeight)
                     .id(poseKey)
+                    }
                 } else if duo.pose != .tabletop && !heroOnRightPage {
                     let deck = model.latestDeck
                     if !deck.isEmpty {
@@ -319,6 +382,8 @@ struct LibraryShelf: View {
                 }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
+                } else if heroOnRightPage {
+                    EmptyView()   // the two page grids above carry the tiles
                 } else if duo.pose == .flat && duo.isLandscape {
                     FlowLayout(spacing: 10) {
                         ForEach(rows) { row in GameTile(row: row, size: tileSize).id("lib-\(row.id)") }
@@ -403,8 +468,6 @@ struct LibraryViewMenu: View {
                 }
             }
             .pickerStyle(.menu)
-            Divider()
-            Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
         } label: {
             Label("View", systemImage: model.nav.filter == .all ? layout.symbol : "line.3.horizontal.decrease.circle.fill")
         }
@@ -416,29 +479,44 @@ struct LibraryViewMenu: View {
 /// Filter pills on one line; Sort lives in the View menu (D-12).
 struct FilterBar: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    private func chip(_ f: LibraryFilter, rows: [AppModel.LibraryRow]) -> some View {
+        let n = f.status.map { s in rows.filter { $0.status == s }.count } ?? rows.count
+        let on = model.nav.filter == f
+        return Button { model.nav.filter = f } label: {
+            Text("\(f.label) \(n)")
+                .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
+                // Never cut mid-glyph: one unbroken line in the scrolling row, two at accessibility sizes.
+                .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
+                .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
+                .padding(.horizontal, 10)
+                .padding(.vertical, typeSize.isAccessibilitySize ? 6 : 0)
+                .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil, minHeight: 44)
+                .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(on ? .isSelected : [])
+        .tappableFrame()
+    }
 
     var body: some View {
         let rows = model.libraryRows
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                ForEach(LibraryFilter.allCases) { f in
-                    let n = f.status.map { s in rows.filter { $0.status == s }.count } ?? rows.count
-                    let on = model.nav.filter == f
-                    Button { model.nav.filter = f } label: {
-                        Text("\(f.label) \(n)")
-                            .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
-                            .padding(.horizontal, 10)
-                            .frame(minHeight: 44)
-                            .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityAddTraits(on ? .isSelected : [])
-                    .tappableFrame()
-                }
+        if typeSize.isAccessibilitySize {
+            // Accessibility sizes: one chip per row at the full column width, so "Watching 1" stays on one line
+            // inside its pill and tap frame (Closed AX3, 382 pt); a row grows if it must wrap.
+            LazyVGrid(columns: [GridItem(.flexible())], spacing: 8) {
+                ForEach(LibraryFilter.allCases) { f in chip(f, rows: rows) }
             }
-            .padding(.trailing, 24)
+        } else {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(LibraryFilter.allCases) { f in chip(f, rows: rows) }
+                }
+                .padding(.trailing, 24)
+            }
+            .edgeFade(40)
         }
-        .edgeFade(40)
     }
 }
 
@@ -490,6 +568,7 @@ struct ContinueRow: View {
 struct AlsoNewPanel: View {
     @Environment(AppModel.self) private var model
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.dynamicTypeSize) private var typeSize
     /// The deck's front card's update: left out of the list, and the "What's new" source when it is alone.
     var hero: Release?
 
@@ -512,17 +591,20 @@ struct AlsoNewPanel: View {
             // Iris's fill rule: 72 pt rows (3 to 6, what fits), grown evenly to 96 pt when 24 pt or more
             // is spare, a heading block above and a pinned 56 pt footer below.
             // Top padding 12, heading 26 + 12 to the first row, footer 56: the whole stack fits the panel exactly.
-            let avail = max(0, geo.size.height - 12 - 38 - 56)
-            let fit = min(6, max(3, Int(avail / 72)))
+            let headingH: CGFloat = typeSize.isAccessibilitySize ? 44 : 26
+            let avail = max(0, geo.size.height - 12 - (headingH + 12) - 56)
+            // Accessibility sizes (0.5.0 a11y): rows grow to 2-line names, so fewer fit (never a clipped row).
+            let unit: CGFloat = typeSize.isAccessibilitySize ? 104 : 72
+            let fit = min(6, max(typeSize.isAccessibilitySize ? 1 : 3, Int(avail / unit)))
             let rows = Array(all.prefix(fit))
-            let spare = avail - CGFloat(rows.count) * 72
+            let spare = avail - CGFloat(rows.count) * unit
             // Three rows are the floor: when they do not quite fit, they give up a few points each (never below 64).
-            let rowHeight: CGFloat = rows.isEmpty ? 72 : spare < 0 ? max(64, avail / CGFloat(rows.count))
-                : spare <= 24 ? 72 : min(96, 72 + spare / CGFloat(rows.count))
+            let rowHeight: CGFloat = rows.isEmpty ? unit : spare < 0 ? max(typeSize.isAccessibilitySize ? 88 : 64, avail / CGFloat(rows.count))
+                : spare <= 24 ? unit : min(unit + 24, unit + spare / CGFloat(rows.count))
             VStack(alignment: .leading, spacing: 0) {
                 Text(all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
                     .accessibilityAddTraits(.isHeader)
-                    .frame(height: 26, alignment: .topLeading)
+                    .frame(minHeight: headingH, alignment: .topLeading)
                     .padding(.bottom, 12)
                 if all.isEmpty {
                     whatsNew(lines: shownChanges(width: geo.size.width - 24, available: avail), available: avail, width: geo.size.width - 24)
@@ -607,14 +689,15 @@ struct AlsoNewPanel: View {
             HStack(spacing: 10) {
                 if let g = game { CoverView(game: g, cornerRadius: 4).frame(width: 48) }
                 VStack(alignment: .leading, spacing: 1) {
-                    Text(game?.name ?? "").font(PlayscribeFont.headline).lineLimit(1)
+                    // Game names never truncate below two lines (0.5.0 a11y).
+                    Text(game?.name ?? "").font(PlayscribeFont.headline).lineLimit(2)
                     Text("\(r.displayName), \(age)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
                         .lineLimit(2).minimumScaleFactor(0.85)
                 }
                 Spacer(minLength: 0)
                 Image(systemName: "chevron.right").font(PlayscribeFont.caption).foregroundStyle(.secondary).accessibilityHidden(true)
             }
-            .frame(height: height)
+            .frame(minHeight: height)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -873,6 +956,9 @@ struct DatePill: View {
     var row: AppModel.LibraryRow
     var body: some View {
         let state = model.tileDate(row)
+        // Accessibility sizes: the pill would cover the art, so it is hidden; the date stays in the label
+        // and on the game page (Iris, 0.5.0 a11y).
+        if !typeSize.isAccessibilitySize {
         HStack(spacing: 4) {
             switch state.kind {
             case .unread: SparkShape().fill(PlayscribeColor.onAccent).frame(width: 9, height: 9)
@@ -890,6 +976,7 @@ struct DatePill: View {
         .background {
             if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
             else { Capsule().fill(.clear).adaptiveGlass(in: Capsule()) }
+        }
         }
     }
 }

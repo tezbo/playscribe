@@ -16,6 +16,7 @@ struct SettingsView: View {
     /// In Tabletop the sheet is the lower-half panel, which is not presented, so it closes itself.
     private func dismiss() { if let panelClose { panelClose() } else { systemDismiss() } }
     @Environment(\.duo) private var duo
+    @AppStorage(YouTubeController.autoplayKey) private var autoplayVideos = false
     @State private var simGame: String = ""
     @State private var simKind: AppModel.SimKind = .major
     @State private var simDelay: Double = 10
@@ -66,6 +67,15 @@ struct SettingsView: View {
                     }
                     Toggle("Pause all", isOn: $model.data.pauseAll)
                     quietHoursRows
+                    // Shown only while a PS Plus month exists, the same condition as the Library card.
+                    if PlusLogic.current(PlusStore.shared.months) != nil {
+                        // PS Plus: a reminder in the last three days a month's games can be claimed.
+                        Toggle("PS Plus games leaving soon", isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true }))
+                            .accessibilityHint("A reminder in the last three days before this month's PS Plus games leave")
+                            .accessibilityIdentifier("plusLeavingSoon")
+                            .onChange(of: model.data.plusLeavingSoonOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
+                            .onChange(of: model.data.pauseAll) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
+                    }
                     let overrides = model.notifyOverrides
                     if !overrides.isEmpty {
                         NavigationLink("\(overrides.count) game\(overrides.count == 1 ? " has its" : "s have their") own setting") {
@@ -93,6 +103,14 @@ struct SettingsView: View {
                         .accessibilityIdentifier("sounds")
                 } footer: {
                     Text("A soft pop when you add games. Never plays while you are listening to something else.")
+                }
+
+                Section {
+                    Toggle("Autoplay videos", isOn: $autoplayVideos)
+                } header: {
+                    Text("Video")
+                } footer: {
+                    Text("Trailers and update videos start as soon as they open. Off when Reduce Motion is on.")
                 }
 
                 #if INTERNAL
