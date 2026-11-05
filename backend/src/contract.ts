@@ -96,6 +96,43 @@ export const contractProblems = {
   },
 }
 
+const VERIFICATION = ['official', 'reported']
+
+/** One headline: the app skips a row it cannot read, so a bad row is a lost headline, not a failed feed. */
+export const newsItemProblems = (n: J, where: string): string[] => {
+  if (!isObj(n)) return [`${where}: not an object`]
+  const out: string[] = []
+  if (typeof n.title !== 'string' || !n.title.trim()) out.push(`${where}.title: missing`)
+  if (!isUrl(n.url)) out.push(`${where}.url: not a URL`)
+  if (n.date != null && !isDate(n.date)) out.push(`${where}.date: not an ISO date`)
+  if (n.verification != null && !VERIFICATION.includes(n.verification)) out.push(`${where}.verification: "${n.verification}" is not official or reported`)
+  return out
+}
+
+/** news.json (`{updatedAt, items}`, each item with a gameId) and news/<id>.json (`{items}`). Reported as warnings. */
+export const newsContractProblems = (root: string): string[] => {
+  const out: string[] = []
+  const check = (file: string, withGame: boolean) => {
+    let j: J
+    try {
+      j = readJson(root, file)
+    } catch {
+      return
+    }
+    if (!Array.isArray(j?.items)) return void out.push(`${file}: items is not an array`)
+    if (withGame && !isDate(j.updatedAt)) out.push(`${file}: updatedAt is not an ISO date`)
+    j.items.forEach((n: J, i: number) => {
+      out.push(...newsItemProblems(n, `${file} items[${i}]`))
+      if (withGame && typeof n?.gameId !== 'string') out.push(`${file} items[${i}].gameId: missing`)
+    })
+  }
+  check('news.json', true)
+  try {
+    for (const f of readdirSync(join(root, 'v1', 'news')).filter((x) => x.endsWith('.json'))) check(`news/${f}`, false)
+  } catch {}
+  return out
+}
+
 const readJson = (root: string, p: string) => JSON.parse(readFileSync(join(root, 'v1', p), 'utf8'))
 
 /** latest.json and every games/<id>.json under a feed root (the folder holding v1/). These block publishing. */

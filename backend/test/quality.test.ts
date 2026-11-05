@@ -68,3 +68,19 @@ test('0.2.0 contract: a malformed IGDB website URL (seen live in info/38) is cau
   assert.ok(isUrl('https://www.minecraft.net/en-us'))
   assert.equal(c.info({ games: { '296238': { links: { official: 'https://v.douyin.com/iDuoKPNm/ 8@4.com' } } } }).length, 1)
 })
+
+test('news contract: a real export is clean; bad rows are named', async () => {
+  const { newsContractProblems, newsItemProblems } = await import('../src/contract.ts')
+  const db = openDb(':memory:')
+  await seedGames({ db, fetchFn: fakeFetch({}), igdb: null })
+  const out = mkdtempSync(`${tmpdir()}/qn-`)
+  exportStatic(db, out)
+  assert.deepEqual(newsContractProblems(out), [])
+  const ok = { title: 'Photo mode', url: 'https://example.com/a', date: '2026-11-01T00:00:00.000Z', verification: 'reported' }
+  assert.deepEqual(newsItemProblems(ok, 'x'), [])
+  assert.equal(newsItemProblems({ ...ok, url: 'nope' }, 'x').length, 1)
+  assert.equal(newsItemProblems({ ...ok, date: 'yesterday' }, 'x').length, 1)
+  assert.equal(newsItemProblems({ ...ok, verification: 'rumour' }, 'x').length, 1)
+  assert.equal(newsItemProblems({ ...ok, title: ' ' }, 'x').length, 1)
+  assert.deepEqual(newsItemProblems({ ...ok, date: null, verification: undefined }, 'x'), [])
+})
