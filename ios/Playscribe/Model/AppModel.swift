@@ -306,7 +306,8 @@ final class AppModel {
             try? await Task.sleep(for: .milliseconds(150))
             guard !Task.isCancelled else { return }
             self?.saveNow()
-            if let self { PushRegistrar.syncFollows(self.follows) }
+            // Only the app's own model speaks for this device; a model on a scratch store (tests, previews) never does.
+            if let self, self.storeURL == AppModel.defaultStoreURL { PushRegistrar.syncFollows(self.follows) }
         }
     }
 
