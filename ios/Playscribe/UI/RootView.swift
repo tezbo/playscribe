@@ -42,10 +42,16 @@ struct LowerHalfPanel: View {
                 .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil; model.linksSheetOpen = false; model.tagExplainer = nil })
                 .environment(\.railWidth, 0)
                 .frame(width: duo.size.width, height: height)
-                .background(Color.ink0)
+                // Solid through the bottom safe area too: the Library's tiles used to show, and take
+                // taps, in the strip under the sheet.
+                .background(Color.ink0.ignoresSafeArea(edges: .bottom))
                 .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20))
                 .accessibilityAddTraits(.isModal)
             }
+            // The panel stops at the bottom safe area, so the Library's chips showed, and took taps,
+            // in the strip below it. A solid filler hangs below the panel's bottom edge (outside the
+            // clip) to cover it; the panel itself still starts exactly at the fold.
+            .overlay(alignment: .bottom) { Color.ink0.frame(height: 120).offset(y: 120) }
             .transition(.move(edge: .bottom))
             .zIndex(5)
         }
@@ -112,7 +118,8 @@ struct RootView: View {
             if fromNotification { splashVisible = false }
         }
         .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.addSheetOpen = false } })) {
-            AddGameSheet()
+            // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
+            AddGameSheet().presentationDetents([.large])
         }
         .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.settingsOpen = false } })) {
             SettingsView()
