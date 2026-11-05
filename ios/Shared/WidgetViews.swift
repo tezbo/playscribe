@@ -317,9 +317,9 @@ struct HeroCard: View {
 struct ThumbRow: View {
     @Environment(\.injectedCovers) private var injected
     @Environment(\.colorScheme) private var scheme
+    var row: WidgetSnapshot.Row
     /// 2 lines in Medium, 1 in Large; same size and weight.
     var lines = 1
-    var row: WidgetSnapshot.Row
     var body: some View {
         Link(destination: row.url) {
             HStack(spacing: 8) {
