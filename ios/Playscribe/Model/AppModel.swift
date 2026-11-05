@@ -192,6 +192,8 @@ final class AppModel {
     /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
     /// confirm a `-qaRoute` took effect.
     var qaRoute: String?
+    /// QA (INTERNAL, `-qaRoute long-text`): a long overview body, to show the Tabletop stage cap and the Full text row.
+    var qaLongText = false
     /// QA: the newest On PS5 update of the first `qaUpdateCount` different games are the only unread ones. Chosen
     /// when first asked (not at launch, when releases may not be merged yet), so a later feed refresh or the 72 hour
     /// rule cannot take them away.
@@ -565,6 +567,7 @@ final class AppModel {
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
         case "pill": holdQAPill()
+        case "long-text": qaLongText = true
         case "spoiler-demo": openSpoilerDemo(shown: parts.first == "shown")
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:

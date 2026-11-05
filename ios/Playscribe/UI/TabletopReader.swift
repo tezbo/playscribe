@@ -61,9 +61,11 @@ extension AppModel {
         return selectedRelease(gameID) ?? releases(gameID).first
     }
 
+    private static let qaLongBody = "A long overview for checking the Tabletop stage. The first sentence is short. The second sentence runs on a little further so the cap has something to cut. The third sentence adds a good deal more detail about balance changes, performance work, new options and fixes across every mode. The fourth sentence keeps going to be sure the whole text is far longer than four lines on the stage, so that the Full text row appears in the lower half."
+
     /// Overview, each key change, Fixes, then PS5 facts and video.
     func readerSections(_ r: Release) -> [ReaderSection] {
-        var out = [ReaderSection(id: "overview", title: r.headline ?? r.displayName, body: r.summary ?? "")]
+        var out = [ReaderSection(id: "overview", title: r.headline ?? r.displayName, body: qaLongText ? Self.qaLongBody : (r.summary ?? ""))]
         for (i, k) in (r.keyChanges ?? []).enumerated() {
             let parts = k.split(separator: ":", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
             let parsed = ReaderTitle.parse(k)
@@ -97,6 +99,31 @@ extension AppModel {
     }
 }
 
+/// The stage's body is capped (Iris): at most `limit` characters, cut at the end of a sentence, else at a word
+/// boundary with an ellipsis; the full text is one tap away in the lower half (TabletopReaderControls).
+enum ReaderBody {
+    static let limit = 170
+    static func stage(_ body: String) -> String {
+        guard body.count > limit else { return body }
+        let head = String(body.prefix(limit))
+        if let end = head.lastIndex(where: { ".!?".contains($0) }), head.distance(from: head.startIndex, to: end) > limit / 3 {
+            return String(head[...end])
+        }
+        let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
+        return cut + "…"
+    }
+    /// The headline: at most `titleLimit` characters, cut at a word boundary with an ellipsis, so it never ends mid-word.
+    static let titleLimit = 56
+    static func title(_ t: String) -> String {
+        guard t.count > titleLimit else { return t }
+        let head = String(t.prefix(titleLimit))
+        let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
+        return cut.trimmingCharacters(in: .punctuationCharacters.union(.whitespaces)) + "…"
+    }
+    static func isCapped(_ body: String) -> Bool { stage(body) != body }
+    static func isCapped(title t: String, body: String) -> Bool { title(t) != t || isCapped(body) }
+}
+
 struct TabletopReaderStage: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
@@ -114,6 +141,11 @@ struct TabletopReaderStage: View {
             ArtView(asset: model.backdrop(gameID, chapter: .updates, tall: false), game: model.game(gameID))
                 .overlay(LinearGradient(colors: [.black.opacity(0.85), .black.opacity(0.35)], startPoint: .leading, endPoint: .trailing))
                 .ignoresSafeArea()
+                // Measure the art layer: its size never depends on the text, so the clearance cannot feed back into
+                // layout (the update loop in e6d8ab5). Ignore sub-half-point changes.
+                .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { new in
+                    if abs(new - stageBottom) > 0.5 { stageBottom = new }
+                }
             if let section = sections[safe: index] {
                 VStack(alignment: .leading, spacing: 14) {
                     // Eyebrow: the game and the date; the release itself is the title below.
@@ -129,29 +161,32 @@ struct TabletopReaderStage: View {
                         .accessibilityLabel(release?.displayName ?? "")
                         .accessibilityAddTraits(.isStaticText)
                         .accessibilityIdentifier("releaseTitle")
-                    Text(section.title)
+                    Text(ReaderBody.title(section.title))
                         .font(PlayscribeFont.title)
-                        .lineLimit(3)
+                        .lineLimit(4)
                         .minimumScaleFactor(0.8)
-                    Text(section.body)
+                    Text(ReaderBody.stage(section.body))
                         .font(PlayscribeFont.body)
                         .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.92))
                         .lineSpacing(4)
+                        .lineLimit(4)
                         .minimumScaleFactor(0.7)
+                        .accessibilityLabel(section.body)
                         .accessibilityIdentifier("readerBody")
-                    Spacer(minLength: 0)
                 }
-                // About 34 characters per line at 19 pt.
-                .frame(maxWidth: 380, maxHeight: .infinity, alignment: .topLeading)
-                .padding(.horizontal, 28)
-                .padding(.vertical, 24)
+                // Iris (same rule as #232, every Tabletop stage): the whole block sits on one ink panel, 70%, 12 pt
+                // radius and padding, so the text keeps 4.5:1 over any art, logo or banner. Left on the 16 pt margin,
+                // up to 560 pt wide, its bottom edge 24 pt above the division; it grows upward only.
+                .padding(12)
+                .frame(maxWidth: 560, alignment: .leading)
+                .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .padding(.horizontal, 16)
                 .padding(.bottom, duo.clearance(forBottom: stageBottom))
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
                 .id(section.id)
                 .transition(.opacity)
             }
         }
-        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { stageBottom = $0 }
         .animation(.easeInOut(duration: 0.2), value: index)
         // Its parts stay separate elements, so the release title is findable (J-4).
         .accessibilityElement(children: .contain)
