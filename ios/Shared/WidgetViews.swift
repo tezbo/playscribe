@@ -147,7 +147,7 @@ struct WidgetView: View {
             } else if let r = rows.first {
                 // The hero's height follows the row count (WidgetLayout), so the tile is never half empty.
                 GeometryReader { geo in
-                    let artH = (geo.size.height + 32) * WidgetLayout.largeHeroFraction(rowCount: rows.count)
+                    let artH = WidgetLayout.largeHeroHeight(total: geo.size.height + 32, snap: snap)
                     VStack(alignment: .leading, spacing: 12) {
                         HeroText(row: r, tall: false)
                             .padding(.bottom, 10)
@@ -158,8 +158,13 @@ struct WidgetView: View {
                         }
                         VStack(alignment: .leading, spacing: 0) {
                             ForEach(Array(rows.dropFirst().enumerated()), id: \.element.id) { i, row in
-                                if i > 0 { Spacer(minLength: 6) }
+                                if i > 0 { Spacer(minLength: 6).frame(maxHeight: WidgetLayout.maxRowPitch - 44) }
                                 ThumbRow(row: row, lines: 1)
+                            }
+                            if WidgetLayout.moreCount(snap) > 0 {
+                                Text("and \(WidgetLayout.moreCount(snap)) more").font(W.body)
+                                    .foregroundStyle(W.secondaryText(scheme)).padding(.top, 4)
+                                    .accessibilityLabel("and \(WidgetLayout.moreCount(snap)) more updates")
                             }
                         }
                         .frame(maxHeight: .infinity, alignment: .top)
@@ -184,8 +189,25 @@ enum WidgetLayout {
         case 1: 0.50
         case 2: 0.44
         case 3: 0.38
-        default: 0.31
+        default: 0.26
         }
+    }
+
+    /// Updates beyond the rows shown, for the "and N more" line.
+    static func moreCount(_ snap: WidgetSnapshot) -> Int {
+        let shown = snap.rows.prefix(largeRowLimit).filter(\.unread).count
+        return max(0, snap.unreadCount - shown)
+    }
+
+    /// Hero height on the large widget. Rows sit at most `maxRowPitch` apart; leftover height goes to the hero, up to half the tile.
+    static let maxRowPitch: CGFloat = 64
+    static func largeHeroHeight(total H: CGFloat, snap: WidgetSnapshot) -> CGFloat {
+        let rows = min(snap.rows.count, largeRowLimit)
+        let n = CGFloat(max(0, rows - 1))
+        let below: CGFloat = 12 + (snap.unreadCount > 0 ? 38 : 0) + n * 44 + max(0, n - 1) * (maxRowPitch - 44)
+            + (moreCount(snap) > 0 ? 20 : 0) + 16
+        let base = H * largeHeroFraction(rowCount: rows)
+        return min(H * 0.5, max(base, H - below))
     }
 }
 
@@ -212,8 +234,8 @@ struct WidgetBackground: View {
             GeometryReader { geo in
                 VStack(spacing: 0) {
                     HeroArt(row: entry.snapshot.rows[0])
-                        .frame(height: geo.size.height * WidgetLayout.largeHeroFraction(
-                            rowCount: min(entry.snapshot.rows.count, WidgetLayout.largeRowLimit)))
+                        .frame(height: WidgetLayout.largeHeroHeight(
+                            total: geo.size.height, snap: entry.snapshot.freshened(at: entry.date)))
                     plate
                 }
             }

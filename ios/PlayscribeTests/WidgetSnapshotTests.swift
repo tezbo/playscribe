@@ -95,6 +95,18 @@ struct WidgetSnapshotTests {
         #expect(shots == 27)
     }
 
+    /// Iris: "and N more" counts unread updates beyond the rows shown; the hero never exceeds half the tile.
+    @Test func largeLayoutIsHonest() {
+        var snap = fresh
+        snap.unreadCount = 5
+        #expect(WidgetLayout.moreCount(snap) == 4, "5 unread, 1 shown unread row, so 4 more")
+        snap.unreadCount = 1
+        #expect(WidgetLayout.moreCount(snap) == 0)
+        let two = WidgetSnapshot(rows: Array(fresh.rows.prefix(2)), unreadCount: 1, hasGames: true)
+        let h = WidgetLayout.largeHeroHeight(total: 354, snap: two)
+        #expect(h <= 354 * 0.5 + 0.01 && h >= 354 * 0.5 - 0.01, "two rows: leftover goes to the hero, capped at half")
+    }
+
     @Test func staleUnreadIsNotNew() {
         let stale = WidgetSnapshot.sample.freshened(at: .now)
         #expect(stale.rows.allSatisfy { !$0.unread } && stale.unreadCount == 0)
@@ -116,7 +128,7 @@ struct WidgetSnapshotTests {
         }
         // Large: sample inside the hero band where its text sits (45% down the band).
         let size = Self.sizes[2].size
-        let band = WidgetLayout.largeHeroFraction(rowCount: fresh.rows.count)
+        let band = WidgetLayout.largeHeroHeight(total: size.height, snap: fresh) / size.height
         let r = ImageRenderer(content: WidgetCanvas(entry: entry(fresh), family: .systemLarge, scheme: .light, size: size, covers: white))
         r.scale = 2
         let ratio = try whiteContrast(try #require(r.uiImage), x: 0.95, y: band * 0.45)
