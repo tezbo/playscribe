@@ -132,8 +132,22 @@ enum FoldHost {
         hc.traitOverrides.horizontalSizeClass = pose.compactWidth ? .compact : .regular
         hc.traitOverrides.preferredContentSizeCategory = type
         let window = UIWindow(windowScene: scene)
-        window.frame = CGRect(origin: .zero, size: pose.windowSize)
-        window.rootViewController = hc
+        // A window larger than the scene's screen is reshaped by UIKit (the first Closed landscape run got a 466 x 678 view
+        // for a 678 x 466 pose), so a pose that does not fit is hosted as a child view of exactly the pose's size, inside a
+        // window that fits the screen. Views outside a window's bounds are still laid out.
+        let screen = scene.screen.bounds.size
+        if pose.windowSize.width > screen.width || pose.windowSize.height > screen.height {
+            let shell = UIViewController()
+            shell.addChild(hc)
+            shell.view.addSubview(hc.view)
+            hc.view.frame = CGRect(origin: .zero, size: pose.windowSize)
+            hc.didMove(toParent: shell)
+            window.frame = CGRect(origin: .zero, size: screen)
+            window.rootViewController = shell
+        } else {
+            window.frame = CGRect(origin: .zero, size: pose.windowSize)
+            window.rootViewController = hc
+        }
         window.isHidden = false
         // The window inherits a safe area from the scene's real screen (the sim's own camera side), which would add to the
         // pose's. Lay out once with none added, read what was inherited, then add only the difference.
