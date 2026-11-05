@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// Library "Upcoming" (0.5.0 item 14, PR 1): games not out yet. Watching a game files it as
-/// Wishlist, so the existing status, menu and game page all apply; it moves to Playing on release day.
+/// Wishlist (a game added as Watching shows here too), so the existing status, menu and game page all apply; it moves to Playing on release day.
 enum LibraryTab: String, CaseIterable, Identifiable {
     case playing, upcoming
     var id: String { rawValue }
@@ -12,7 +12,7 @@ extension AppModel {
     /// Watched games first (soonest first), then the catalogue's unreleased PS5 games.
     var upcomingWatched: [CatalogGame] {
         data.collection.compactMap { c -> CatalogGame? in
-            guard c.status == .wishlist, let g = game(c.gameID), g.isUpcoming || g.releasePrecision == .tbd else { return nil }
+            guard c.status == .wishlist || c.status == .watching, let g = game(c.gameID), g.isUpcoming || g.releasePrecision == .tbd else { return nil }
             return g
         }.sorted { ($0.releaseDate?.isoDay ?? .distantFuture) < ($1.releaseDate?.isoDay ?? .distantFuture) }
     }
