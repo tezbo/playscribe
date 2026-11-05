@@ -123,6 +123,11 @@ struct TabletopReaderStage: View {
             ArtView(asset: model.backdrop(gameID, chapter: .updates, tall: false), game: model.game(gameID))
                 .overlay(LinearGradient(colors: [.black.opacity(0.85), .black.opacity(0.35)], startPoint: .leading, endPoint: .trailing))
                 .ignoresSafeArea()
+                // Measure the art layer: its size never depends on the text, so the clearance cannot feed back into
+                // layout (the update loop in e6d8ab5). Ignore sub-half-point changes.
+                .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { new in
+                    if abs(new - stageBottom) > 0.5 { stageBottom = new }
+                }
             if let section = sections[safe: index] {
                 VStack(alignment: .leading, spacing: 14) {
                     // Eyebrow: the game and the date; the release itself is the title below.
@@ -140,14 +145,14 @@ struct TabletopReaderStage: View {
                         .accessibilityIdentifier("releaseTitle")
                     Text(section.title)
                         .font(PlayscribeFont.title)
-                        // Wraps in full: no "and lar…" (Iris, no mid-sentence ellipsis).
-                        .fixedSize(horizontal: false, vertical: true)
+                        .lineLimit(4)
+                        .minimumScaleFactor(0.8)
                     Text(ReaderBody.stage(section.body))
                         .font(PlayscribeFont.body)
                         .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.92))
                         .lineSpacing(4)
                         .lineLimit(4)
-                        .fixedSize(horizontal: false, vertical: true)
+                        .minimumScaleFactor(0.7)
                         .accessibilityLabel(section.body)
                         .accessibilityIdentifier("readerBody")
                     Spacer(minLength: 0)
@@ -162,7 +167,6 @@ struct TabletopReaderStage: View {
                 .transition(.opacity)
             }
         }
-        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { stageBottom = $0 }
         .animation(.easeInOut(duration: 0.2), value: index)
         // Its parts stay separate elements, so the release title is findable (J-4).
         .accessibilityElement(children: .contain)

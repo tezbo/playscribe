@@ -420,7 +420,7 @@ struct DeckStage: View {
                 }
                 .font(PlayscribeFont.caption)
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
-                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
+                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).lineLimit(3)
                 HStack(spacing: 8) {
                     Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
                     if let d = card.date { Text(AppModel.tileDay(d)).foregroundStyle(PlayscribeColor.textSecondary) }
