@@ -173,7 +173,7 @@ struct HeroCard: View {
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             if let img = cover(row) {
-                Color.clear.overlay { Image(uiImage: img).resizable().scaledToFill().widgetAccentedRenderingMode(.desaturated) }.clipped()
+                Color.clear.overlay { Image(uiImage: img).widgetAccentedRenderingMode(.desaturated).resizable().scaledToFill() }.clipped()
             } else {
                 W.ink900
             }
