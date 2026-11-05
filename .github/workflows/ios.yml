@@ -1,5 +1,9 @@
 name: iOS
 
+# Two jobs run side by side, so a PR waits for the slower one instead of both added together:
+#   unit     the Playscribe scheme's unit tests (the required check)
+#   ui-build compiles the PlayscribeUI scheme, so a UI test compile error surfaces on the PR and not first
+#            at the Mac gate. The UI tests themselves run at the gate (docs/ci.md).
 on:
   pull_request:
     paths: ['ios/**', '.github/workflows/ios.yml']
@@ -12,56 +16,45 @@ concurrency:
   group: ios-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  XCODE_APP: /Applications/Xcode_27.1.app
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+  HOMEBREW_NO_ANALYTICS: 1
+
 jobs:
-  build-and-test:
+  unit:
     # The app targets iOS 27.1 (the Duo APIs need it). macos-latest only has Xcode 26, so this uses
     # GitHub's free Xcode 27 image (public preview, label xcode-27) and pins the stable 27.1.
     runs-on: xcode-27
-    env:
-      XCODE_APP: /Applications/Xcode_27.1.app
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - name: Generate the project (XcodeGen)
-        if: hashFiles('ios/project.yml') != ''
-        run: brew install xcodegen && (cd ios && xcodegen generate)
-      - name: Find the Xcode project
-        id: project
-        run: |
-          proj=$(ls -d ios/*.xcodeproj 2>/dev/null | head -1 || true)
-          if [ -z "$proj" ]; then echo "::notice::No Xcode project in ios/ yet; nothing to build"; exit 0; fi
-          echo "path=$proj" >> "$GITHUB_OUTPUT"
+        run: command -v xcodegen >/dev/null || brew install xcodegen; (cd ios && xcodegen generate)
       - name: Select Xcode 27.1
-        if: steps.project.outputs.path
         run: |
-          if [ ! -d "$XCODE_APP" ]; then
-            echo "::error::$XCODE_APP is not on this runner. Installed: $(ls -d /Applications/Xcode*.app | tr '\n' ' ')"
-            exit 1
-          fi
+          [ -d "$XCODE_APP" ] || { echo "::error::$XCODE_APP is not on this runner. Installed: $(ls -d /Applications/Xcode*.app | tr '\n' ' ')"; exit 1; }
           sudo xcode-select -s "$XCODE_APP"
           xcodebuild -version
       - name: Pick an iOS 27.1 simulator
-        if: steps.project.outputs.path
         id: sim
         run: |
           udid=$(xcrun simctl list devices available -j | python3 -c "
           import json, sys
           d = json.load(sys.stdin)['devices']
-          runtimes = [k for k in d if 'iOS-27-1' in k]
-          phones = [x for k in runtimes for x in d[k] if 'iPhone' in x['name']]
-          # Prefer the Duo when the runtime has one.
-          phones.sort(key=lambda x: 'Duo' not in x['name'])
+          phones = [x for k in d if 'iOS-27-1' in k for x in d[k] if 'iPhone' in x['name']]
+          phones.sort(key=lambda x: 'Duo' not in x['name'])  # prefer the Duo when the runtime has one
           print(phones[0]['udid'] + ' ' + phones[0]['name'] if phones else '')
           ")
           if [ -z "$udid" ]; then echo "::error::No iOS 27.1 iPhone simulator on this runner"; xcrun simctl list runtimes; exit 1; fi
           echo "Using ${udid#* }"
           echo "udid=${udid%% *}" >> "$GITHUB_OUTPUT"
       - name: Build and test
-        if: steps.project.outputs.path
         run: |
           status=0
           xcodebuild test \
-            -project "${{ steps.project.outputs.path }}" \
-            -scheme "${SCHEME:-Playscribe}" \
+            -project ios/Playscribe.xcodeproj -scheme "${SCHEME:-Playscribe}" \
             -destination "id=${{ steps.sim.outputs.udid }}" \
             -resultBundlePath build/TestResults.xcresult \
             CODE_SIGNING_ALLOWED=NO > build.log 2>&1 || status=$?
@@ -71,9 +64,32 @@ jobs:
         env:
           SCHEME: ${{ vars.IOS_SCHEME }}
       - uses: actions/upload-artifact@v4
-        if: failure() && steps.project.outputs.path
+        if: failure()
         with:
           name: test-results
           path: |
             build/TestResults.xcresult
             build.log
+
+  ui-build:
+    runs-on: xcode-27
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: command -v xcodegen >/dev/null || brew install xcodegen; (cd ios && xcodegen generate)
+      - run: sudo xcode-select -s "$XCODE_APP" && xcodebuild -version
+      - name: Compile the UI tests
+        run: |
+          status=0
+          # Generic simulator destination: compiling needs no booted device, so there is no boot or pick step.
+          xcodebuild build-for-testing \
+            -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO > build-ui.log 2>&1 || status=$?
+          grep -E 'error:|\*\* (BUILD|TEST)' build-ui.log || true
+          exit "$status"
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: ui-build-log
+          path: build-ui.log
