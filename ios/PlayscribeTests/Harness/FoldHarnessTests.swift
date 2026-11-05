@@ -91,7 +91,12 @@ enum HarnessRules {
             return
         }
         let limit = r.pose.container.height * maxFraction + 12
-        require(deck.height <= limit, "\(r.pose.id) J-5: deck \(Int(deck.width)) x \(Int(deck.height)) pt is over \(Int(limit)) pt", sourceLocation: sourceLocation)
+        let message = "\(r.pose.id) J-5: deck \(Int(deck.width)) x \(Int(deck.height)) pt is over \(Int(limit)) pt"
+        if r.pose.inferred {
+            if deck.height > limit { print("harness error: [info, not asserted, insets inferred] \(message)") }
+        } else {
+            require(deck.height <= limit, message, sourceLocation: sourceLocation)
+        }
     }
 
     /// TB-1, reported and not asserted. The first CI runs showed an offscreen window does not reproduce UIKit's toolbar:

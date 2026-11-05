@@ -22,6 +22,8 @@ struct HarnessPose: Identifiable, CustomStringConvertible {
     var expected: Pose
     var landscape: Bool { container.width > container.height }
     var source: Source = .provisional
+    /// Insets inferred, not measured: layout rules are reported but not asserted until a sim run confirms them.
+    var inferred = false
     var description: String { id }
 
     var regions: InjectedRegions { InjectedRegions(division: division, occlusions: occlusions) }
@@ -44,7 +46,7 @@ extension HarnessPose {
                     occlusions: [CGRect(x: 399.5, y: 29.5, width: 37, height: 37), CGRect(x: 382, y: 0, width: 84, height: 174)],
                     expected: .closed),
         HarnessPose(id: "closedLandscape", container: CGSize(width: 594, height: 432), safeArea: UIEdgeInsets(top: 0, left: 0, bottom: 34, right: 84),
-                    compactWidth: true, expected: .closed),
+                    compactWidth: true, expected: .closed, inferred: true),
         HarnessPose(id: "open", container: CGSize(width: 867, height: 635), safeArea: UIEdgeInsets(top: 0, left: 0, bottom: 34, right: 84),
                     compactWidth: false, occlusions: [CGRect(x: 867, y: 0, width: 84, height: 124)], expected: .flat),
         HarnessPose(id: "openPortrait", container: CGSize(width: 669, height: 835), safeArea: UIEdgeInsets(top: 82, left: 0, bottom: 34, right: 0),
