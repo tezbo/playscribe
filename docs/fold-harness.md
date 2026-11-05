@@ -74,3 +74,12 @@ J-5 deck at most 38% of the height (Closed, Open) or 50% (any pose but Tabletop)
 ## Navigation-bar band (G-4)
 
 Hosted offscreen, UIKit's navigation bar puts SwiftUI toolbar content in the top band (a 220 x 44 frame appeared there in Tabletop on CI; the Mac calibration of the real Duo shows none). That band belongs to the system, so its frames are printed as `[info, not asserted]` and G-4 is asserted for everything below it. The real-hinge gate keeps asserting the toolbar (TB-1) and G-4 for the whole screen.
+
+## Limits found by the Mac calibration (55240fc)
+
+Safe area, occlusions and the app-owned deck bound (J-5) reproduce in all six poses. Two things do not, and both come from the system's ArrangementView, which splits pages at the window's real reserved region and cannot be given one offscreen:
+
+- Tabletop's rail came out as a horizontal row across the fold (y 335 and 393) where the Duo has a vertical column at x 619. Tabletop G-4 is therefore printed, not asserted, by the harness, and stays asserted by the real-hinge gate.
+- Content sat 84 pt (Closed, Open) or 42 pt (Book, Open portrait) further in than the Duo. The cause is not yet pinned down; each pose now prints a `[info, diag]` line (window, host origin, margins, insets, raw minimum x) so the next calibration can name it.
+
+The harness is evidence for app-owned geometry, not a replacement for the Duo simulator on system-owned layout.
