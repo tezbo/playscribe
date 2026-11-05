@@ -190,7 +190,7 @@ enum FoldHost {
                 for c in v.subviews { walk(c, depth + 1) }
             }
             walk(hc.view, 0)
-            print("harness error: [info, tree] closed\n" + lines.joined(separator: "\n"))
+            print("harness error: [info, tree] closed " + lines.map { $0.trimmingCharacters(in: .whitespaces).isEmpty ? $0 : $0 }.joined(separator: " | "))
         }
         return r
     }
