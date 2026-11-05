@@ -563,6 +563,8 @@ final class AppModel {
         case "demo": resetDemo()
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
+        case "caught-up": resetToCaughtUpDemo()
+        case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
@@ -790,6 +792,13 @@ final class AppModel {
     func resetToOneUpdateDemo() {
         resetDemo()
         qaUpdateCount = 1
+    }
+
+    /// QA (route "caught-up"): every update read, so the Library has no hero (Book shows the caught-up card).
+    func resetToCaughtUpDemo() {
+        resetDemo()
+        qaUpdateCount = 1
+        qaFreshCache = []
     }
 
     /// QA and tests (route "two-update"): as the one-update demo with two fresh updates, from different games.

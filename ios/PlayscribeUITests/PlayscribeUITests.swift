@@ -701,6 +701,28 @@ final class Release050Tests: XCTestCase {
         app.terminate()
     }
 
+    /// Terry 2026-11-05: the PS Plus card is on by default; the Settings switch turns it, and its reminder row, off.
+    func testPlusCardSwitch() throws {
+        let app = launch("plus-demo")
+        let card = app.descendants(matching: .any)["plusCard"]
+        XCTAssertTrue(card.waitForExistence(timeout: 10), "PS Plus card shows by default")
+        XCTAssertTrue(ReleaseRowTests.pose(app).hasPrefix("fold-crossings: 0;"), "card crosses no fold: \(ReleaseRowTests.pose(app))")
+        let cog = app.buttons["settingsButton"]
+        XCTAssertTrue(cog.waitForExistence(timeout: 5)); cog.tap()
+        let toggle = app.switches["plusCardToggle"]
+        var tries = 0
+        while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
+        XCTAssertTrue(toggle.exists, "Settings has the PS Plus card switch")
+        XCTAssertTrue(["on", "1"].contains(toggle.value as? String ?? ""), "on by default, got \(String(describing: toggle.value))")
+        let reminder = app.descendants(matching: .any)["plusLeavingSoon"]
+        XCTAssertTrue(reminder.exists, "the reminder row shows while the card is on")
+        let inner = toggle.switches.firstMatch
+        if inner.exists { inner.tap() } else { toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
+        XCTAssertTrue(["off", "0"].contains(toggle.value as? String ?? ""), "off after the tap, got \(String(describing: toggle.value))")
+        XCTAssertFalse(reminder.waitForExistence(timeout: 2), "the reminder row goes with the card")
+        app.terminate()
+    }
+
     /// J-20: the explainer opens from `tag/<kind>`, shows the ladder with the current one marked, and Done closes it.
     func testVerificationExplainer() throws {
         for kind in ["official", "reported", "pending"] {
