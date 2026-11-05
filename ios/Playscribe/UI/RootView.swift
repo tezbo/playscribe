@@ -48,9 +48,10 @@ struct LowerHalfPanel: View {
                 .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20))
                 .accessibilityAddTraits(.isModal)
             }
-            // Down to the screen edge: the panel used to stop at the bottom safe area, and the Library's
-            // chips (All, Owned, Wishlist, Watching) showed, and took taps, in the strip below it.
-            .ignoresSafeArea(.container, edges: .bottom)
+            // The panel stops at the bottom safe area, so the Library's chips showed, and took taps,
+            // in the strip below it. A solid filler hangs below the panel's bottom edge (outside the
+            // clip) to cover it; the panel itself still starts exactly at the fold.
+            .overlay(alignment: .bottom) { Color.ink0.frame(height: 120).offset(y: 120) }
             .transition(.move(edge: .bottom))
             .zIndex(5)
         }
