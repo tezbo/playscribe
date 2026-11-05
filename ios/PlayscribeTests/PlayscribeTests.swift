@@ -457,6 +457,15 @@ struct AutoplayTests {
         let on = YouTubeController.html("abc", captions: true, autoplay: true)
         #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
     }
+
+    @Test("Reflection is on by default and accessibility settings win (R-11, G-9)")
+    @MainActor func reflectionDefault() {
+        #expect(VideoReflection.defaultOn)
+        #expect(VideoReflection.isShown(setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false))
+        #expect(!VideoReflection.isShown(setting: true, reduceMotion: true, reduceTransparency: false))
+        #expect(!VideoReflection.isShown(setting: true, reduceMotion: false, reduceTransparency: true))
+        #expect(!VideoReflection.isShown(setting: false, reduceMotion: false, reduceTransparency: false))
+    }
 }
 
 /// Release also defines INTERNAL, so the QA routes must be switched off by the build channel:

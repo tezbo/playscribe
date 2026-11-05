@@ -17,7 +17,7 @@ struct SettingsView: View {
     private func dismiss() { if let panelClose { panelClose() } else { systemDismiss() } }
     @Environment(\.duo) private var duo
     @AppStorage(YouTubeController.autoplayKey) private var autoplayVideos = false
-    @AppStorage(VideoReflection.key) private var reflectionMode = false
+    @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
     @State private var simGame: String = ""
     @State private var simKind: AppModel.SimKind = .major
     @State private var simDelay: Double = 10
