@@ -115,8 +115,7 @@ struct NewsChapter: View {
                         Spacer(minLength: 0)
                         Button { Task { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                             .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                            .tappableFrame(when: duo.pose != .tabletop)
-                            .accessibilityHidden(duo.pose == .tabletop)  // view only on the standing half
+                            .tappableFrame()
                     }
                 } else if !store.loaded.contains(gameID) {
                     HStack(spacing: 10) {
@@ -146,8 +145,7 @@ struct NewsChapter: View {
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                     .contentShape(Rectangle())
                 }
-                .tappableFrame(when: duo.pose != .tabletop)
-                .accessibilityHidden(duo.pose == .tabletop)
+                .tappableFrame()
             }
         }
         .task(id: gameID) { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) }
@@ -224,7 +222,7 @@ struct GlobalNewsView: View {
                 } actions: {
                     if store.globalFailed {
                         Button("Retry") { Task { await store.loadGlobal() } }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
-                            .tappableFrame(when: duo.pose != .tabletop)
+                            .tappableFrame()
                     }
                 }
             } else if duo.pose == .book, let fold = duo.division {
@@ -282,7 +280,7 @@ struct GlobalNewsRow: View {
             .frame(minHeight: 44)
             .contentShape(Rectangle())
         }
-        .tappableFrame(when: duo.pose != .tabletop)
+        .tappableFrame()
         .accessibilityLabel("\(game?.name ?? ""), \(headline.item.title), Official, opens in browser")
     }
 }
