@@ -69,7 +69,7 @@ let n = 0
 for (let offset = 0; ; offset += 500) {
   const page = await igdb.query<any>(
     'games',
-    'fields summary,storyline,genres.name,first_release_date,videos.video_id,videos.name,websites.url,websites.type,similar_games.name,similar_games.cover.image_id;' +
+    'fields summary,storyline,genres.name,first_release_date,videos.video_id,videos.name,websites.url,websites.type,involved_companies.developer,involved_companies.company.name,similar_games.name,similar_games.cover.image_id,similar_games.genres.name,similar_games.involved_companies.developer,similar_games.involved_companies.company.name;' +
       `where platforms = (${ps5.id}) & game_type = (${typeIds.join(',')}) & version_parent = null; sort id asc; limit 500; offset ${offset};`,
   )
   for (const g of page) {
@@ -86,7 +86,7 @@ for (let offset = 0; ; offset += 500) {
       firstRelease: g.first_release_date ? new Date(g.first_release_date * 1000).toISOString().slice(0, 10) : undefined,
       videos: videos.length ? videos : undefined,
       links: linksOf(g),
-      similar: similarOf(g.similar_games, g.id),
+      similar: similarOf(g.similar_games, g.id, g),
     }
     shards[g.id % SHARDS]![g.id] = JSON.parse(JSON.stringify(info))
     n++

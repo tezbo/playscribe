@@ -185,7 +185,7 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 
 ## 0.5.0 similar games (roadmap 18)
 
-- `similar[]` in the info shard comes from IGDB `similar_games` (`src/similar.ts`): `{ igdbId, name, coverId? }`, at most 8, unique, never the game itself. It is the weekly info refresh, so it costs no extra IGDB request.
+- `similar[]` in the info shard comes from IGDB `similar_games` (`src/similar.ts`): `{ igdbId, name, coverId? }`, at most 8, unique, never the game itself. It is the weekly info refresh, so it costs no extra IGDB request. `why` is optional and set only where the data supports it: `Same studio` (a shared IGDB developer, publishers don't count) or `Same genre: <genre>` (a shared genre other than the broad Indie and Adventure). No data, no reason line.
 
 ## 0.5.0 news (roadmap 17)
 
