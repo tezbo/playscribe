@@ -566,15 +566,32 @@ struct FilterBar: View {
 }
 
 extension View {
-    /// R-7: a scrolling chip row fades at its edges instead of clipping hard.
-    func edgeFade(_ width: CGFloat = 24) -> some View {
-        mask {
-            HStack(spacing: 0) {
-                LinearGradient(colors: [.clear, .black], startPoint: .leading, endPoint: .trailing).frame(width: 8)
-                Rectangle()
-                LinearGradient(colors: [.black, .clear], startPoint: .leading, endPoint: .trailing).frame(width: width)
+    /// R-7: a scrolling chip row fades at its edges instead of clipping hard. 0.5.1: only where there is more to
+    /// scroll to: a trailing fade while chips are off screen, a leading one once scrolled. Apply to the ScrollView.
+    func edgeFade(_ width: CGFloat = 24) -> some View { modifier(ScrollEdgeFade(width: width)) }
+}
+
+private struct ScrollEdgeFade: ViewModifier {
+    var width: CGFloat
+    private struct FadeEdges: Equatable { var leading: Bool; var trailing: Bool }
+    /// Starts as the old behaviour (trailing fade) until the first measurement says otherwise.
+    @State private var edges = FadeEdges(leading: false, trailing: true)
+
+    func body(content: Content) -> some View {
+        content
+            .onScrollGeometryChange(for: FadeEdges.self) { g in
+                FadeEdges(leading: g.contentOffset.x > 1,
+                      trailing: g.contentOffset.x + g.containerSize.width < g.contentSize.width - 1)
+            } action: { _, new in edges = new }
+            .mask {
+                HStack(spacing: 0) {
+                    LinearGradient(colors: [edges.leading ? .clear : .black, .black], startPoint: .leading, endPoint: .trailing)
+                        .frame(width: edges.leading ? width : 8)
+                    Rectangle()
+                    LinearGradient(colors: [.black, edges.trailing ? .clear : .black], startPoint: .leading, endPoint: .trailing)
+                        .frame(width: edges.trailing ? width : 0)
+                }
             }
-        }
     }
 }
 
