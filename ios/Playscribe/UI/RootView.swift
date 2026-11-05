@@ -438,8 +438,8 @@ struct LowerMessages: View {
                 // Everything from the bottom edge up to the top of the messages, plus 8 pt of air.
                 let inset = h > 0 ? h + Self.bottomPadding(duo) + 8 : 0
                 if model.messageInset != inset { model.messageInset = inset }
-                let top: CGFloat? = h > 0 ? frame.minY : nil
-                if model.messageTop != top { model.messageTop = top }
+                let shown: CGRect? = h > 0 ? frame : nil
+                if model.messageFrame != shown { model.messageFrame = shown }
             }
         }
         // Above the bottom tab bar only where the bars are horizontal (open portrait).

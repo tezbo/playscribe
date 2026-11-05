@@ -147,8 +147,9 @@ final class AppModel {
     var toast: Toast?
     /// Height the pill and toasts take at the bottom of the screen (0 when none): the Library reserves it as a bottom inset.
     var messageInset: CGFloat = 0
-    /// Top edge of the pill and toasts in global coordinates, nil while none shows. The Library ends its scroll view 8 pt above it.
-    var messageTop: CGFloat?
+    /// Frame of the pill and toasts in global coordinates, nil while none shows. A Library page that the frame overlaps ends
+    /// its scroll view 12 pt above its top edge.
+    var messageFrame: CGRect?
     /// The tab Search was opened from, so Search can go back to it (Terry, 0.2.0 build 5).
     var searchReturnTab: AppTab = .library
     func leaveSearch() { if nav.tab == .search { nav.tab = searchReturnTab == .search ? .library : searchReturnTab } }
