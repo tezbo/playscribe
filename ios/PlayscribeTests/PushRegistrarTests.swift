@@ -4,7 +4,7 @@ import Foundation
 
 /// The relay client against a stubbed URLProtocol (0.5.1 push): an unchanged follows list sends nothing, a failed send is
 /// retried on the next change, any non-2xx counts as failure, and a 401 registers again and retries once.
-final class StubRelay: URLProtocol, @unchecked Sendable {
+nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
     nonisolated(unsafe) static var handler: ((URLRequest) -> (Int, Data))?
     nonisolated(unsafe) static var seen: [URLRequest] = []
 
