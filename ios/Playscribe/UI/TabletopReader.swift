@@ -76,7 +76,7 @@ extension AppModel {
         }
         // Greetings and the spoiler warning are not changes; spoiler lines stay out of the standing
         // half until the game's spoiler switch is on (R-5), which is the same switch as the Page's.
-        let changes = r.notes.flatMap(\.items).filter { !ChangeKind.isPreamble($0.text) }
+        let changes = r.notes.flatMap(\.items).filter { !ChangeKind.isPreamble($0.text) && !(r.isPS5Listed && $0.isPCOnly) }
         if !changes.isEmpty {
             let shown = spoilersShown(r.gameID)
             let first = changes.filter { shown || $0.spoiler != true }.prefix(3).map { LinkedText.clean($0.text) }

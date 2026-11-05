@@ -401,7 +401,7 @@ struct NoteSectionView: View {
         let shown = section.items.filter { !ChangeKind.isPreamble($0.text) }
         let ps5Items = release.isPS5Listed ? shown.filter { !$0.isPCOnly } : shown
         let pcOnly = release.isPS5Listed ? shown.filter(\.isPCOnly) : []
-        let hidden = shown.filter { $0.spoiler == true }.count
+        let hidden = ps5Items.filter { $0.spoiler == true }.count
         VStack(alignment: .leading, spacing: 8) {
             Button { model.setExpanded(key, !open) } label: {
                 HStack {
