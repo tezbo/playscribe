@@ -1,0 +1,3883 @@
+{
+ "game": {
+  "id": "remnant-2",
+  "igdbId": 228535,
+  "name": "Remnant II",
+  "cover": {
+   "imageId": "co6lnp",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6lnp.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar21rt",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar21rt.jpg"
+  },
+  "ps5Release": "2023-07-25",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "remnant-2@hotfix-2024-11-12",
+   "gameId": "remnant-2",
+   "displayName": "Remnant II Hotfix Notes: 453,438- 11/12/2024",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-12T16:55:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Remnant II Hotfix Notes: 453,438- 11/12/2024",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "--|Performance and Crashes|--",
+     "items": [
+      {
+       "text": "Reverted FSR 3.1.1 to FSR 3.1 as it wasn’t working with Frame Generation.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "--|Gear / Items|--",
+     "items": [
+      {
+       "text": "-|Weapons & Mods|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Bonesaw’s fire rate was incorrect.: -|Misc Fixes|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players were unable to acquire the Meat Shake and other concoctions from Duane if they had the chef medal.: DEV NOTE: If you previously made the concoction or have the concoction in your inventory you cannot do the quest for it with Duane. Chef Medal no longer prevents crafting concoctions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "remnant-2-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1282100/view/6148070194801762307"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-12T16:55:18.000Z",
+      "verification": "official",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.168Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-12T17:17:08.000Z",
+      "verification": "assumed",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.168Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-12T17:17:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:25.168Z"
+  },
+  {
+   "id": "remnant-2@post-2024-11-05",
+   "gameId": "remnant-2",
+   "displayName": "Remnant II Patch Notes: 451,008- 11/5/2024",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-05T16:55:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Remnant II Patch Notes: 451,008- 11/5/2024",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "--|Performance and Crashes|--",
+     "items": [
+      {
+       "text": "We have updated to support FSR 3.1.1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We have updated to support DLSS 3.7.20.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "--|Archetypes|--",
+     "items": [
+      {
+       "text": "|Engineer|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Engineer and Warden summons were incorrectly applying pressure.: DEV NOTE: This issue was causing the Turret and Drone to take turns attacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Impact Cannon and Hellfire were incorrectly applying pressure.: |Invoker|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where casting an Invoker skill sequentially caused communion to stop working.: |Medic|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Medic Redemption skill glow was not turning off and could visually stack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "--|Gear / Items|--",
+     "items": [
+      {
+       "text": "-|Weapons|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Repeater Pistol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Damage: 15 to 16",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Horizontal Recoil: 0.2 to 0.05",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Vertical Recoil: 0.7 to 0.6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Recoil Decay Delay: 0.13 to 0.06",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Overall Accuracy (Still & Moving): DEV NOTE: The classic Repeater was falling behind even though, with frame-perfect input from the player, it could deal a ton of damage. We lightened up the dexterity requirement by increasing the damage slightly. Overall, much more accurate as well.: Western Classic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased WS Damage Bonus: 105% to 110%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Reload Speed: 1.15 to 1.3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Horizontal Recoil: 0.4 to 0.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Vertical Recoil: 1.6 to 1.05",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Recoil Recovery Delay: 0.1 to 0.075",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Accuracy (Still & Moving): DEV NOTE: Weakspot Damage Bonus Increase, Reload Speed Bonus, and an overall Accuracy Increase? Yes please! The Western Classic always had great burst damage. The buff to Reload will boost the sustain damage as well.: Service Pistol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Magazine Capacity: 10 to 12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Total Ammo: 110 to 120",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Horizontal Recoil: 0.2 to 0.15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Vertical Recoil: 1.15 to 1.05",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Overall Accuracy (Still & Moving)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Spread per shot: DEV NOTE: These are basically all Quality of Life changes. Service Pistol has always been a very high damaging sidearm, but the magazine was a bit small. We increased it while also making the gun more accurate.: Wrangler",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Fire Rate: 2.1 to 2.25",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Horizontal Recoil: 0.275 to 0.165",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Vertical Recoil: 2.15 to 2.05",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Spread per shot: 1.5 to 1.4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Spread Decay delay: 0.19 to 0.135",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Slightly Increased Reload Speed: DEV NOTE: Properly befitting a true gunslinger, the Wrangler fires more quickly and can remain on target more easily. The overall damage increase is slight, but the handling adjustments should be noticeable for any fans of this Lever Action.: Huntmaster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Damage: 70 to 105",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Fire Rate: 1.5 to 1.05",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Reserves: 49 to 35",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Horizontal Recoil: 0.2 to 0.15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Vertical Recoil: 4.0 to 3.0 - Slightly Increased Reload Speed: DEV NOTE: A huge adjustment to the true Hunting Rifle. All changes lead to much higher burst and sustain. The reduction in reserves was to help compensate and keep total damage in line, but it is important to know that it still deals more total damage than it did before due to the per-shot damage increase. Aim and be rewarded!: Tech 22",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased DMG: 8 to 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced RPS: 16 to 15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Reload Speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Magazine Size: 30 to 32",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Total Ammo: 330 to 352",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Min/Max Accuracy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Vertical Recoil: 0.4 to 0.3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Horizontal Recoil: 0.4 to 0.1: DEV NOTE: If you ever wanted a scalpel disguised as a pistol… today is the day.: SMG",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Reload Speed by about 18%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Horizontal Recoil: 0.6 to 0.25",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Vertical Recoil: 0.45 to 0.4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Accuracy (Still & Moving)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted Reticle Size (Smaller): DEV NOTE: Qualify of Life changes. More accuracy across the board. The reload will help with sustain, but burst remains the same.: Blackmaw",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Magazine Capacity: 37 to 40",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Total Ammo from 190 to 200",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Horizontal Recoil: 0.45 to 0.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Vertical Recoil: 1.1 to 1.05: DEV NOTE: Quality of Life changes to allow Blackmaw to remain a viable Primary option in a sea of great alternatives. Damage is basically the same, but you can damage for a bit longer, and stay on target much easier.: Chicago Typewriter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Fire Rate from 11 to 11.75",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Reload Speed by 15%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Horizontal Recoil",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Reticle Contraction per shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Accuracy at Max Reticle Contraction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added 0.25 Delay before Spread Enlarges: DEV NOTE: Fires slightly faster and reloads more quickly. The reticle contracts quicker as well so you can focus your fire sooner.: Bonesaw",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced Heat per shot from 0.02 to 0.01335",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Heat Decay Rate from 0.5 to 0.7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Overheat Anim Play Rate from 0.7 to 0.8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Fire Rate from 9.5 to 9.65",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Base Reload Speed by 10%: DEV NOTE: With the head adjustments, the LMG can now be fired for 75 rounds before overheating as opposed to the 50 before. Combined with the small Fire Rate increase, this increases burst, while the reload speed helps to increase the sustain. We also slightly reduced the penalty for overheating.: Coachgun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Reload Speed by 18%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Recoil per shot: 7 to 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Ideal Range: 15m to 16m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Falloff Range: 33m to 35m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Accuracy (Still & Moving): DEV NOTE: Reload increased to up the sustain damage. Minor Quality of Life adjustments to ensure you can hit stuff while moving.: Ford's Scattergun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Fire Rate: 1.1 to 1.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Reload Speed by about 5%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Magazine Capacity: 7 to 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Total Ammo: 28 to 30: DEV NOTE: Ford doesn’t play… and now, neither do you.: Bulldog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Fire Rate from 2.5 to 3.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Reload Speed by 5%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Falloff Range from 32m to 40m (Ideal remains at 10m)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Recoil per shot from 4.0 to 3.15: DEV NOTE: Time to destroy anything that stands in your path. The goal here was to better convey the Auto Shotgun fantasy. You be the judge!: Sureshot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased DMG: 110 to 115",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased WS Bonus: 110% to 115%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Stagger Bonus: 10% to 20%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Horizontal Recoil: 0.25 to 0.15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Vertical Recoil: 5.0 to 3.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Reload Speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "More Responsive Fire after Reloading: DEV NOTE: Some changes to better reward accuracy, and some accuracy changes to assist in putting the damage where it’s most needed. This pocket sniper was already strong in certain builds and should stand out even more with the changes.: Widowmaker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Damage: 125 to 150",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Recoil: 7 to 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Recoil Speed: 100 to 75",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Horizontal Recoil: 0.4 to 0.25",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Slightly Increased Reload Speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More Responsive Fire after Reloading: DEV NOTE: A considerable damage increase to help the Sniper Rifle remain as a viable one-shot damage option. Between the damage and reload increase, this weapon will be hitting hard and do it much more frequently.: Crossbow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased DMG: 120 to 125",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Projectile Speed: 15000 to 16500",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Reserves: 27 to 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Ideal Range: 23 to 26",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Falloff Range: 70 to 75",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Stagger Bonus: 10% to 20%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Slightly Increased Reload Speed: DEV NOTE: With the Widowmaker increase, the Crossbow also needed some love to allow it to remain enticing. It now hits a bit harder, can hit from farther, and can do it more often. The Stagger was increased to help balance out the single-shot nature.: Trinity Crossbow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Fire Rate from 0.635 to 0.78",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Recoil per shot from 1.0 to 0.65",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Projectile Speed from 12000 to 15000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Ideal Range from 22m to 24m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Falloff Range from 65m to 70m: DEV NOTE: The damage of Trinity was always decent, but getting the bolts where you wanted them was tricker than intended. Besides increasing the fire rate, we reduced the per-shot recoil so more of your bolts can hit the intended target. The Projectile Speed increase will also help the bolts get to where you want them sooner.: Royal Hunting Bow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Perfect Charge Damage Scalar: 1.7 to 1.8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Overcharge Damage Scalar: 1.4 to 1.45",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Stagger Bonus: 5% to 10%: DEV NOTE: The Royal Hunting Bow was falling off a bit compared to some of the other options. This should bring it up to par while still providing a bow that can use Standard Mods.: Bolt Driver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Pre-Burst Fire Rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Ideal Range: 17m to 18m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Horizontal Recoil: 0.2 to 0.15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Vertical Recoil: 0.65 to 0.55: DEV NOTE: The changes to this weapon increase both the burst and sustain damage. The Pre-Burst fire rate is not the “Wind-Up”. It is the time after shooting which happens between each shot, before the Wind-Up begins. What this means is that the gun recovers a bit faster between shots, thus increasing damage output.: Repair Tool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Ideal Range: 15m to 16m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Heat Decay: 0.33 to 0.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Heat Decay Delay: 0.05 to 0.075: DEV NOTE: Minor Quality of Life changes to make the gun more than just a Drone buffer. The Heat Decay allows the gun to cool down much faster between shots.: Sporebloom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Damage: 200 to 250",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Reload Speed: 1.25 to 1.35",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Max Spread from 6 to 5 (17%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed Reticle Visualization (was too large): DEV NOTE: Returned to HEAVY HITTER status.: Starkiller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased Reload Speed: 15%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Overall Accuracy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Dramatically Increased Moving Accuracy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gravity Core: Increased Base Damage: 350 to 750",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gravity Core: Increased Add Damage: 250 to 500",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gravity Core: Fixed Suck/Explosion Range (was previously halved)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gravity Core: Reduced Mod Cost: 1500 to 1000: DEV NOTE: Perhaps today is the day this thing actually kills some stars!? Accuracy Buffs for the Primary to make it more appealing. The Mod has gained significant damage buffs and is most likely going to kill you and your friends. We fixed a bug that was causing the range to show as twice as large as it was. The range is now as large as the original value said it was, which means we doubled what it was actually doing before.: Anguish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Reload Speed by 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Fire Rate: 1.7 to 1.85",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Primary Shot Projectile Speed: 4500 to 6000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Charge Shot Projectile Speed: 9000 to 12000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Loathe The Weak: Reduced Low Health Bonus by about 17%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loathe the Weak: Increased Projectile Speed: 6000 to 7500",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loathe the Weak: Increased Duration: 10s to 15s: DEV NOTE: An overall boost to the Primary functionality and a slight reduction to the maximum damage that Loathe the Weak deals. Very powerful weapon.: Rune Pistol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Weakspot Damage: 100% to 105%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Pre-Burst Fire Rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Magazine Size: 43 to 45",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Total Ammo: 168 to 180",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "MOD: Reduced Cost: 850 to 750",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MOD: Increased Orb Duration: 10s to 15s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MOD: Increased Healing: 20% to 25%: DEV NOTE: A decent sidearm that was always hampered by the fact that it was generally considered to be primarily a healing option. The damage and functionality have been brought up to par and the healing has been buffed as well.: Aphelion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Damage: 62 to 70",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increase Reload Speed by about 7%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Magazine: 7 to 8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Total Ammo: 49 to 56",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Fire Rate: 2 to 1.85",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Stagger Penalty: -25% to -10%: DEV NOTE: A few minor quality of life changes to buff the overall DPS and trash clearing ability. Should prove more versatile in more situations.: Monolith",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased EXPOSE Duration: 1s to 3s per application",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Sustain Fire requirement for EXPOSE: 0.25 to 0.65",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "MOD: No longer applies EXPOSE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MOD: Reduced Cost: 1500 to 1250: DEV NOTE: Since Sandstorm was applying EXPOSE, it ended up making the primary fire irrelevant. We increased the duration that the primary fire applies EXPOSE and removed the application from the Mod itself. It’s much easier to ramp up EXPOSE using the primary.: Nebula",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced DOT duration from 15s to 10s (Damage remains the same).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "MOD: Reduced Base Damage: 4 to 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MOD: Reduced Total Duration: 15s to 10s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MOD: Reduced Base DOT Damage: 65 to 50",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MOD: Reduced DOT Duration: 10s to 5s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MOD: Reduced Cost: 1250 to 1000: DEV NOTE: Like Monolith’s Sandstorm, the Mod was outclassing the benefit of the primary fire in every way. As an applicator that grants a 10% damage bonus, we wanted to make a few adjustments that toned down the strength of the cast-and-forget swarm. With the reduced duration on the DOT, it still deals more damage per second. The primary fire DOT remains damaging and damages more quickly.: Cube Gun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cube Shield: Increased Min Damage: 40 to 60",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cube Shield: Increased Max Damage: 200 to 300",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cube Shield: Reduced Mod Cost: 1000 to 500",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cube Shield: Reduced Speed: 250 to 200: DEV NOTE: Only changes to the Mod. Cube shield now travels slightly slower and hits considerably harder both uncharged and charged (absorbing damage).: Black Greatsword",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Base Damage: 115 to 120",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Charge Speed: 0.5 to 0.33 per Stack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Damage per Stack: 25% to 30%: DEV NOTE: It takes guts to make a berserk change like this.: -|Mods|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Big Bang’s mod’s DoT was scaling 10x when paired with Legendary Prism.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Healing Effectiveness did not benefit Red Doe Staff's lifeline mod and the Spirit Healer mutator.: Astral Burst",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased Charges: 2 to 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Damage: 35 to 70",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Weakspot Damage Bonus: 75% to 85%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Bounce Bonus: 35% to 10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Cost: 450 to 500",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Initial Spread: DEV NOTE: Astral Burst has been one of the weaker Mods for quite a while. These tweaks should bring it more in line as a versatile damage addition to close-range buids.: Knight Guard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Damage: 15 to 65",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Duration: 20s to 30s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Cost: 450 to 1000: DEV NOTE: The Knights are here. Basically, we fixed a bug that was causing Knight Guard to deal the “default” damage. Now it deals the proper amount. With a huge damage buff, and a duration increase, we increased the cost to balance it out.: Familiar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Duration: 15s to 20s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Cost: 1000 to 750: DEV NOTE: Small balancing changes to make this more appealing.: Prismatic Driver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Beam Damage: 25 to 125 DPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Explosive Damage: 150 to 300",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Hits to Explode: 6 to 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Clear Delay: 1.5s to 3.0s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Clear Tolerance: 2m to 3m: DEV NOTE: Prismatic Driver was always meant to be somewhat of a weapon that works as an attachment to standard weapons. Huge damage increase. Clear Delay represents time between hits, and Clear Tolerance represents distance in-world that the shots can be apart.: Rotted Arrow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Base Damage: 75 to 110",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased WS Bonus: 125% to 150%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased AOE: 1.5m to 4m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Direct Hit AOE Delay: 0.8s to 0.5s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Cost: 400 to 500: DEV NOTE: A classic simple MOD, the damage fell off compared to other more powerful options. Should now be more competitive for more builds.: Concussive Shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added Explosive Damage Tag",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced Base Damage: 155 to 150: DEV NOTE: New builds unlocked!: Skewer 2.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Impact Damage: 125 to 200",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Trap Damage: 20 to 50 per hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Direct Hit AOE Delay: 0.75s to 0.6s: DEV NOTE: A damage boost to bring Skewer back into the light. There is a hidden Stagger Modifier (which has always existed) that will now be more obvious with the higher damage. In addition, the Trap Damage is huge.: Voltaic Rondure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Orb Damage: 20 to 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Lightning Range: 3m to 6m: DEV NOTE: Upping the damage and range allows Voltaic Rondure to absolutely shred trash mobs. Be sure to power it by shooting at it!: Witchfire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Fire Line Damage: 55 to 150",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Fire Line Duration: 5s to 10s: DEV NOTE: Uh… well then.: Voidlight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Voidlight was not working in some boss fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Voidlight functionality was not matching description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Voidlight was allowing multiple explosion triggers to occur.: DEV NOTE: We planned to fix some more typos instead of fixing this, but Chaos convinced us to make it work as intended! Καλά Χριστούγεννα!!!: -|Trinkets, Mutators, Relics|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Tempest Conduit did not affect the damage of Superheated’s Pulse AoE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a player in a group was able to obtain Prismatic Stone Blue, however one of the players did not receive it, but could still not receive it when attempting again and would instead get scrap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the Range of Burden of the Divine.: DEV NOTE: Internally, the range was a meager 10m. It is now 30m.: -|Prisms|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Prisms were not able to be cleansed unless they were maxed out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the EXP requirement to level a Prism from 0-50 by about 50%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the EXP requirement to level a Prism from 50-51 (Legendary) by about 150%.: DEV NOTE: This change brings back the original Legendary EXP requirement.: Legendary: Altruistic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Shared Lifesteal: 30% to 50%: DEV NOTE: This change should allow players to create more powerful support / healing builds.: Legendary: Critical Situation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Critical Bonus: 25% to 35%: DEV NOTE: It's not too hard to get into the Light Armor Class while still having lots of armor. For some builds, this may be more enticing than some of the other damage options.: Legendary: Impervious",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Damage Resistance: 20% to 30%: DEV NOTE: It's almost like having a free armor set!: Legendary: Jack of All Trades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Bonus: 45% to 40%: DEV NOTE: A slight nerf for an extremely powerful and well-rounded Legendary option. Great for any build.: Legendary: Master Killer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Bonus: 1.25x to 1.35x: DEV NOTE: A noticeable damage buff that will outperform the other damage options given the right build and good aim.: Legendary: Sadistic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Chance: 25% to 50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Damage Bonus: 50% to 100%: DEV NOTE: Combined with the Jack of All Trades reduction, this should make for a more interesting choice. Jack may still be more enticing due to the all-around bonus, but if you are going pure Status, you may want to give this a try.: Legendary: Sharpshooter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Bonus: 75% to 60%: DEV NOTE: One of the 2 most powerful Legendary options in the game, this reduction should keep it viable, while not drowning out all other choices. Players now have a more meaningful choice between Sharpshooter, Jack of all Trades, Spectrum, Master Killer, or even Critical Situation.: Legendary: Spectrum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Red Bonus: 3% to 5% (All Damage)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Yellow Bonus: 3% to 5% (Movement Speed): DEV NOTE: Players can now get a maximum of 45% All Damage or 45% Movement Speed if they build a Prism with entirely Red or Yellow. Even without building entirely into one color, the per-color bonuses are considerably more valuable.: Legendary: Speed Demon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue that prevented Speed Demon from applying maximum speed bonuses.: DEV NOTE: Gotta go fast!: Legendary: Steel Plating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased Armor: 100 to 150: DEV NOTE: This change brings the base Armor DR value up to 42.9% (from 33.3%). Since it is pure armor DR, it's more valuable when you have less armor, and less valuable when you have more armor.: Legendary: Unbridled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue that prevented Unbridled from working with Engineer’s High Tech Prime perk.: DEV NOTE: While technically a Prime, we wanted to enable this like we did for other Skill Cooldown related elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "--|Boss Rush|--",
+     "items": [
+      {
+       "text": "Fixed an issue where clients would not be able to select a buff to upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where client’s results would show up as no stats or name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworked Boss Rush EXP rewards for individual Boss Kills and Full Completion.: DEV NOTE: Players should gain considerably more Experience in Boss Rush for killing Bosses even without completing the run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "--|UI|--",
+     "items": [
+      {
+       "text": "Fixed an issue where \"You are dead screen\" persisted and players didn’t respawn at the last checkpoint after dying in pitfall under fog door/arena entrance in Harvester miniboss encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several spelling mistakes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "--|Misc Fixes|--",
+     "items": [
+      {
+       "text": "Fixed an issue where Spark was not rewarding crafted items to all players.: DEV NOTE: We had applied a fix for this in the last patch, however it wasn’t a complete fix. Spark should be fully working now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Ancient Canopy sand room could become inaccessible for clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could get stuck in a loop waiting for Meat Shake from Duane.: DEV NOTE: If you have the Chef Medal, you can no longer craft concoctions from Duane, the cooking quests are considered completed at that time. If you do not have a concoction, he makes available on Mudtooth, you either need to join someone else’s game, purchase it in their Ward and bring it back to your Ward to unlock it OR find it in your campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 23,
+    "balance": 166,
+    "other": 32,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "remnant-2-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1282100/view/6146943657174067328"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-05T16:55:12.000Z",
+      "verification": "official",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.166Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-05T17:11:03.000Z",
+      "verification": "assumed",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.167Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-05T17:11:03.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-05T08:41:25.167Z"
+  },
+  {
+   "id": "remnant-2@post-2024-10-17",
+   "gameId": "remnant-2",
+   "displayName": "Remnant II Patch Notes: 448,817 - 10/17/24",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-17T15:55:25.000Z",
+   "notes": [
+    {
+     "title": "--|Quality of Life|--",
+     "items": [
+      {
+       "text": "--|General|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enabled Prism Legendary Reroll.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased EXP gain required to go from 50 to 51.: DEV NOTE: Players can now reroll ONLY the Legendary Segment on their Prism in addition to rerolling the ENTIRE Prism. This is done with a different button. Depends on Console or PC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Chef’s Medal no longer triggers Empathy Boss affix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where players could see other sessions for Boss Rush as valid even though they were not joinable. This would result in a “Connection Lost” message after attempting to join.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players would not get credit for Hardcore or other type of kills on various World Bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could potentially miss achievements / trophies for NPCs in The Dark Horizon.: DEV NOTE: If you received the appropriate item related to the achievement / trophy for Spark, The Custodian or The Prototype talking to them again should unlock the related achievement / trophy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could get stuck in a loop with McCabe attempting to get the Great Blacksword.: DEV NOTE: Players who are stuck in this state should just need to ask her \"Is it done?\" then run outside the warehouse to the World Stone then return back and ask again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players would not share in Spark’s alloy related rewards that used quest items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where loading into zones would sometimes swap out handgun for long gun and vice versa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "--|Player|--",
+     "items": [
+      {
+       "text": "--|Archetypes|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "|Engineer|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Impact Cannon was calculating stats at the wrong time and resulting in numerous issues.: |Handler|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Handler skills to be executed without going on cooldown.: |Invoker|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Invoker Prime Perk Visionary was not calculating cooldown reduction correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "--|Gear / Items|--",
+     "items": [
+      {
+       "text": "-|Weapons & Mods|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clarified Black Greatsword Mod Text (Indomitable).: DEV NOTE: Max Damage has not changed. This is just a text clarification to represent actual dmg.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Monorail and Redeemer were not scaling correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Starkiller’s base damage was incorrect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Extender Metagem was not working with Monorail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Monorail’s Overdaw shots were not counting as charged shots for Sequenced Shot and Closed Loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Genesis Bow projectiles could show up as misaligned for clients with slower connections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Detonator was not proccing correctly when equipped with Provisioner’s Ring: or when is ammo is added via range dummy or World Stone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Big Bang Mod damage when combined with Power Trip Prism was scaling damage x10 instead of the intended x5 amount.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Sorrow’s Mod, Eulogy was not receiving damage buff from Spellweaver/Harmonizer Mutator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Hyper charger Mutator didn’t increase charge melee damage for the Dark Matter Gauntlets while using Darkness Beam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Sealed Resin Loop allowed Monorail recoil animation to be evade cancelled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Darkness Beam from the Dark Matter Gauntlets persisted after 10 stacks of Rage animation from the Challenger archetype, causing an invisible beam to deal significant damage to enemies.: -|Trinkets, Mutators, Relics|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Shiny hog lure was not giving mod power to long gun mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Pressure Point Mutator Level 10 bonus was not triggering from Twisted Arbalest mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Endaira's loop was not reliably working only while sprinting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where during combat, all quick slot consumables would become unusable if the player had the Feeding Tube equipped and a value of zero for the left most quick slot item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Space Crabs were not dealing the appropriate amount of damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Reaction Chain did not correctly provide the correct amount of mod power to stowed weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "--|Boss Rush|--",
+     "items": [
+      {
+       "text": "Increased Boss Rush EXP Rewards from 1.0, 1.15, 1.25, 1.5 to 1.0, 1.2, 1.5, 2.0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Readjusted Boss Rush Scaling for all difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made minor balance adjustments to some Aberration Affixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Damage of Hexer Pylon Power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Effectiveness of Stave Pylon Power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added AOE Stat interaction with Lighting Pylon Power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased Detonate Pylon Power and enabled interaction w/ Explosive Scaling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where client players could potentially receive scrap as a reward instead of an item if the host already had all of the items of the specific reward type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could be pushed off the map while viewing stats at the end of Boss Rush and need to restart the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where \"Kill nearby enemies\" pop up text was appearing behind the aberration health bar, making it unreadable in Boss Rush.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where sometimes buffs would skip a level when upgraded in Boss Rush for clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where when inside the glitch puddle of the Boss Rush buff Trapper, Engineer turrets would take damage from the player’s puddle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where it was possible for two aberrations to spawn in Boss Rush unintentionally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if Plasma Cutter was used in Annihilation fight in Boss Rush, potentially the firing sound would persist until fired again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "--|Enemies|--",
+     "items": [
+      {
+       "text": "Fixed an issue where Annihilation’s Orb attack was doing too little damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Annihilation’s Invasion attack was still spawning mines and visual effects upon death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Red Prince’s Tribute “kill” in Hardcore mode would leave players stuck on the ground if they had Black Cat Ring equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Dran grenades would explode several times when they hit Monolith's Sandstorm Mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Anguish explosions were not damaging Lydusa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Alepsis Taura Reverb Laser could remain if the boss transitioned into the final phase during the attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the 3 blue homing lasers would fire at a singular point, instead of homing in on the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Alepsis Taura could continue to fire the white screen projectiles when it transitioned to the final phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Root Horror would sometimes vanish instead of dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Ravager’s Ground Wave attack was set to the incorrect damage type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Amalgam would sometimes freeze on the ladder when player drops down the ladder during a chase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Lydusa’s wall phase was lasting too long on higher difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where in rare circumstances the Nightweaver could spam her projectile attack even if she had died.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "--|UI|--",
+     "items": [
+      {
+       "text": "Fixed an issue where it was not clear that dream consumables can now only be used in campaign by adding “Restricted to Campaign Use Only” text to description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Mudtooth’s Snake Oil cooldown was not updated on tooltip when using Ring of the Castaway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where The Cotton Kiln was listed as the Ethereal Manor on the mini map until you died.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Legendary Relic Fragments didn’t have a +1 on their label.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Void Light descriptions had a misspelling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where “Pirate” combo Prism was displaying incorrect colors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "--|Audio|--",
+     "items": [
+      {
+       "text": "Fixed an issue where the Dark Matter Gauntlet’s charge loop sound effects could potentially play indefinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Perfect Shot sound effect was not audibly falling off correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "--|Misc Fixes|--",
+     "items": [
+      {
+       "text": "Fixed an issue where sometimes Mudtooth's DLC 1 dialogue would continue to trigger even after completing it.: DEV NOTE: Forgive Mudtooth, sometimes the stories just take hold of him and he can’t remember which one he told and which one he hasn’t.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if players were able to acquire cooking rewards outside of Duane's interaction as a client and received the chef medal from him, having the recipe materials later could potentially cause Duane to not correctly update his dialogue.: DEV NOTE: All that time over a hot stove hasn’t done much for Duane’s focus or memory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the incorrect skybox would sometimes show up in N’Erud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if players lost access to Meat Shake, Egg Drink or Numbing agent; if they have the correct ingredients to make them, they can now reengage with Duane to restart the quest.: DEV NOTE: Duane is always down to cook something, even if he’s done it before. The guy loves cooking!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could get locked in T-Pose while doing a melee attack and swapping mods on a slow connection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Simulacrums were not spawning in parts of The Dark Horizon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Medic’s jacket could get stuck inside the player’s body during certain attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Gunslinger’s cape could get stuck inside the player’s body during certain attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could get stuck in statue form after getting backstabbed by a certain character in The Forgotten Kingdom storyline if the player had Black Cat Band equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where after using a skill then throwing, players could potentially be locked in place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where minions would sometimes not correctly zone with the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision issues in various locations that allowed the player to get out of the world or get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where VFX would sometimes turn off completely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 67,
+    "balance": 5,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "remnant-2-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1282100/view/6212244583176288549"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-17T15:55:25.000Z",
+      "verification": "official",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.164Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-17T16:18:53.000Z",
+      "verification": "assumed",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.165Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-17T16:18:53.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-05T08:41:25.164Z"
+  },
+  {
+   "id": "remnant-2@post-2024-10-03",
+   "gameId": "remnant-2",
+   "displayName": "Remnant II Patch Notes: 446,618 - 10/03/2024",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-03T16:05:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "--|Performance and Crashes|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where using Bulwark and a shield could potentially crash the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could crash while using inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could potentially crash when joining a game from the World Stone.: --|General|--: --|Prisms|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lowered Minimum Prism Cleanse Level from 51 to 10.: DEV NOTE: We have more adjustments coming for the Prism System, including the ability to cleanse only the Legendary Fragment, as well as some balance changes. These changes will be included in a future patch.: --|Boss Rush|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where clients would see “defeated” message and not receive XP for Boss Rush.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Readjusted the overall health scaling of enemies in Boss Rush.: DEV NOTE: This should see bosses be slightly more challenging early on and less challenging at the end of a long run, especially Gauntlet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the EXP gain of Veteran, Nightmare, and Apocalypse difficulty in Boss Rush from 5%, 10%, 15% to 10%, 25%, 50% respectively.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Scholar, Sagestone, and Mudtooth’s Elixir were not affecting XP gain in Boss Rush.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the Relic Dust drop in Boss Rush.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where it was still possible to receive items players already possessed as Boss Rush mode rewards.: DEV NOTE: The chance was previously very low, but we removed the potential to receive duplicate items from the rewards table completely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Vortex could potentially pull Bosses, Player Summons and Very Good Boy in Boss Rush.: --|Misc|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could get into a state where Duane would not complete Numbing Agent recipe.: DEV NOTE: Duane was just trying to keep that delicious recipe to himself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where it was possible to not receive Alloy Extractor from Spark when accepting her quest.: DEV NOTE: This should also fix an issue where it was possible to refuse to accept her quest the first time, but then some players were unable to try to acquire it later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Players were unable to load a profile with DLC3 content after removing entitlements to the DLC.: DEV NOTE: Now players will be sent back to Ward 13 and their DLC3 items will be unequipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some players could not get sword reward from Ava McCabe if they changed their system clock or played Boss Rush mode after giving Black Metal Bars to McCabe.: --|Player|--: --|Archetypes|--: |Warden|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Warden Trait Barrier was not unlocking account-wide at level 10.: |Engineer|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Vulcan cannon was not allowing windup when dodging.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Overclock wasn’t resetting at the Worldstone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Heavy Weapon: Vulcan was firing shots at a slow constant rate dealing less DPS per second.: |Archon|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced Havoc Form Lighting Hands Damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Lightning Dash AOE Damage.: DEV NOTE: Havoc Form was doing too much damage all around, often handily beating any other build by a large margin. These changes are designed to bring it more in line with other builds. We will keep an eye on it and make additional adjustments where necessary.: |Invoker|: -Reverted Line of Sight change on Way of Kaeula, Miasma, and Eruption.: DEV NOTE: While this behavior can still cause certain unintended issues, the addition of the LOS check had too much of an impact on the fun-factor of these skills. We will look to address any balance issues that pop-up from this change in a future patch.: --|Gear / Items|--: -|Weapons & Mods|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Mod Generation was not working correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Monorail windup/charge was not increasing damage properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Genesis Bow was scaling incorrectly.: DEV NOTE: Now uses boss scaling, but damage was reduced so that at max level, the primary fire still does the same damage as before. From 75x2 (150) to 50x3 (150).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced Megadrive Damage Scaling on returning bolts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Voidlight was not functioning properly with certain projectiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Voidlight was not correctly accumulating with certain damage types.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an Issue with Black Greatsword basic attacks counting as Charge Attacks.: DEV NOTE: This also allows Weaponlord Mutator to properly function with the sword.: -|Trinkets, Mutators, Relics|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the same character affixes were able to be applied more than once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased Hardcore Metal Band Max Stacks from 2 to 3 as intended in last patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated text on Dull Steel Ring to better represent the effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that was enabling Burden of the Mason to grant full benefits from Zero Hour and Gul Signet while at Medium Armor Weight encumbrance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that allowed Hypercharger to benefit all Melee Damage instead of Charge only.: -|Enemies|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Sentinel Drones would sometimes get stuck in cliffs in DLC 3.: -|UI|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the number of shrines activated was displaying as 0 in Boss Rush in Detailed Info panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the screen would go black in spectator mode when observed player used yellow door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Brabus had visible markup language in one of his lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Ritualist skill Deathwish was not displaying duration on the tooltip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Warden Archetype on character selection screen was not displaying descriptive text.: -|Misc Fixes|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where navigation was sometimes broken the first time loading into DLC3 in campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could vault out of the world in Gas Chamber level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Simulacrum was not spawning correctly in DLC3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with audio on Warden Drone Summon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Clients could see outside of world when falling out of map in Cargo Belt section of DLC 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players would spawn to close into Sha’Hala fight in Boss Rush Mode causing one player to get kicked out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could re-acquire Black Metal Bars from Brabus if previous ones were turned in to Ava McCabe but Sword was not yet collected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could return to destroyed N’Erud after defeating Sha’Hala by way of DLC3 dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where sometimes Mudtooth's DLC 1 dialogue would continue to trigger even after completing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various locations where players could glide out of the world in DLC3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues with textures in environment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Full patch list of fixes and updates can be found here",
+     "items": [
+      {
+       "text": "https://steamcommunity.com/app/1282100/discussions/0/4844274928144374013/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "or",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "https://gunfiregames.com/blog-five/2024/10/3/awh17dfix90h8qd538bjvz4srrnwlq",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 44,
+    "balance": 7,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "remnant-2-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1282100/view/6350729003494638743"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-03T16:05:16.000Z",
+      "verification": "official",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.162Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-03T16:05:16.000Z",
+      "verification": "assumed",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.162Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-03T16:05:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:25.162Z"
+  },
+  {
+   "id": "remnant-2@post-2024-09-24",
+   "gameId": "remnant-2",
+   "displayName": "Remnant II Patch Notes: 444,163 - 9/24/2024",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-24T16:04:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "--|The Dark Horizon DLC Launch|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The wait is over, The Dark Horizon DLC is available September 24th! Discover hidden secrets, explore new dungeons, collect powerful gear, encounter unexpected allies, and face fresh dangers as you strive to solve the mystery of The Dark Horizon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introducing the Warden Archetype!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No matter your playstyle, the new Warden Archetype has you covered—especially with its secret weapon: The Drone. This fully automated ally can shield you from danger, heal your wounds, and even strike at enemies, making it the ultimate battlefield companion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Dark Horizon storyline is seamlessly integrated into all new campaigns!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To dive straight into The Dark Horizon content, simply head to “Adventure Mode” from the Ward 13 World Stone and select “One Shot.” Like the original DLC, this will fill your Adventure with the latest quests, NPCs, enemies, and, of course, new loot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--|Free Content: Boss Rush Launch|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss Rush is the ultimate game mode for players who crave non-stop action and boss battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jump into the mode solo or team up with fellow Travelers in multiplayer and choose from three intense challenges: Triple Threat (a three-boss run), Trial by Fire (a seven-boss run), or The Gauntlet (a grueling nineteen-boss showdown). Test your survival skills as you fight through waves of enemies, including challenging Aberrations, on your way to face off against powerful bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During the run, you'll also earn temporary buffs—stat boosts and powerful passive bonuses—that will give you an edge when the battles heat up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Getting started is easy. Simply head to the World Stone in Ward 13, select Boss Rush from the menu (just like you would for Campaign or Adventure), pick your difficulty, and dive in!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--|Free Content: Prism System|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A brand-new power-boosting system that’s part of the free update. It works directly with the preexisting Fragments that have been in the game since day 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "For a full list of all bug fixes and updates",
+     "items": [
+      {
+       "text": "https://gunfiregames.com/blog-five/2024/9/24/remnant-ii-patch-notes-444163-9242024",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "or",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "https://steamcommunity.com/app/1282100/discussions/0/4846526057021960410/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "remnant-2-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1282100/view/6341720536521320955"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-24T16:04:10.000Z",
+      "verification": "official",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.161Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-24T16:04:10.000Z",
+      "verification": "assumed",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.161Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-24T16:04:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:25.161Z"
+  },
+  {
+   "id": "remnant-2@major-2024-09-24",
+   "gameId": "remnant-2",
+   "displayName": "The Dark Horizon DLC & Free Major Update - Patch Notes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-24T15:45:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "--|The Dark Horizon DLC Launch|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The wait is over, The Dark Horizon DLC is available September 24th! Discover hidden secrets, explore new dungeons, collect powerful gear, encounter unexpected allies, and face fresh dangers as you strive to solve the mystery of The Dark Horizon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introducing the Warden Archetype!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No matter your playstyle, the new Warden Archetype has you covered—especially with its secret weapon: The Drone. This fully automated ally can shield you from danger, heal your wounds, and even strike at enemies, making it the ultimate battlefield companion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Dark Horizon storyline is seamlessly integrated into all new campaigns!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To dive straight into The Dark Horizon content, simply head to “Adventure Mode” from the Ward 13 World Stone and select “One Shot.” Like the original DLC, this will fill your Adventure with the latest quests, NPCs, enemies, and, of course, new loot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--|Free Content: Boss Rush Launch|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss Rush is the ultimate game mode for players who crave non-stop action and boss battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jump into the mode solo or team up with fellow Travelers in multiplayer and choose from three intense challenges: Triple Threat (a three-boss run), Trial by Fire (a seven-boss run), or The Gauntlet (a grueling nineteen-boss showdown). Test your survival skills as you fight through waves of enemies, including challenging Aberrations, on your way to face off against powerful bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During the run, you'll also earn temporary buffs—stat boosts and powerful passive bonuses—that will give you an edge when the battles heat up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Getting started is easy. Simply head to the World Stone in Ward 13, select Boss Rush from the menu (just like you would for Campaign or Adventure), pick your difficulty, and dive in!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--|Free Content: Prism System|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A brand-new power-boosting system that’s part of the free update. It works directly with the preexisting Fragments that have been in the game since day 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PATCH NOTES",
+     "items": [
+      {
+       "text": "--|Performance and Crashes|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Atonement Fold could potentially cause hitching after prolonged use.: --|Quality of Life|--: -|General|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Dale was too chatty.: DEV NOTE: We had a talk with Dale and let him know not everyone is as enthusiastic about his hunting excursions as he is.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a small amount of players were unable to unlock Achievements.: DEV NOTE: Using the World Stone in Ward 13 should reward the achievements that were not previously unlocked when they should have been.: --|Player|--: --|Archetypes|--: |Engineer|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where turret would shoot past Mother Mind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Engineer’s Flamethrower would sometimes create floating fire after destroying a projectile.: |Archon|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Reality Rune skill was reducing player’s damage when inside the bubble.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where entering Havoc Form while the Ravenous status was active would cause players to flinch repeatedly.: |Invoker|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Way of Kaeula lightning strikes could go beyond outer ring indicator when scaled by Amplitude Trait.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Line of Sight check for Way of Kauela lighting strikes.: DEV NOTE: Reverting the change from the previous build as it caused too many issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where Visionary was not granting the 10% cooldown reduction on some skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where when two players are using Way of Lydusa, sometimes activating it could cause the generated Sand Devils to instead go to the other player and not the original caster, preventing the original caster from manually detonating it.: |Gunslinger|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where single shot weapons wouldn’t perform an instant reload for clients after Bulletstorm killed an enemy during multiplayer.: |Invader|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Included Grey Health in Reboot calculation / memory (will restore previous amount).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Worm Hole would not trigger Bitter Memento's effect when used twice in a row.: |Hunter|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Intuition perk would start reducing the duration of Hunter skills after 6 relic uses.: |Handler|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where skill cooldowns could be bypassed through animation canceling.: |Ritualist|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Deathwish was not doing correct damage and tooltip description was inconsistent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Line of Sight check for Miasma and Eruption.: DEV NOTE: Reverting the change from the previous build as it caused too many issues.: |Medic|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where using Healing Shields in multiplayer would potentially cancel each other out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Healing Shield's radius was not affected by effects that increase AOE radius.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Redemption was not benefiting from healing effectiveness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Redemption was not capping the skill use speed stat to determine how quickly the skill becomes fully charged. Subsequent casts of Redemption now refresh the heal.: |Challenger|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Challenger's DieHard prime perk triggered after Bitter Memento activated at low health.: --|Gear / Items|--: -|Weapons & Mods|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Nebula Mod Nano Swarm was incorrectly considered Ranged Damage type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced damage of Nebula Nano Swarm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Sporebloom was not benefiting from Physical Damage bonuses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Micronova Mod was dealing more damage than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Defrag Mod was generating Mod Power while the Mod was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Thorn explosions could destroy multiple weak points off The Labyrinth Sentinel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Monolith Sandstorm Mod would jitter when used on some bridges in the Labyrinth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced damage of Monolith Sandstorm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Anguish’s secondary fire was not doing splash AOE damage if fired at the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a fix to prevent multiple stacks of Monolith Sandstorm from being active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where Gravity Core Mod was double dipping on mod and explosive damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Anguish charge grey health persisted on melee weapon when player did a charged melee attack just before crouching.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Aphelion and Corrupted Aphelion would sometimes not hit enemies when having a high fire rate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Merciless Bleed could trigger Bandit Mutator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Star Shot mod and Corrupted Savior’s mod, Fusion Cannon, did not have their maximum amount of charges consumed on activation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Hellfire was not using the correct animations which was causing issues while firing projectiles during the recoil,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Deceit Mod was not deactivating once the final Sword Throw was thrown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased Reload Buff Duration of Polygun from 5s to 10s.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Reload Buff Lock duration of Polygun from 5s to 10s.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Polygun Rifle and Shotgun Recoil",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Polygun Shotgun Mode Fire Rate from 1.6 to 1.75.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Polygun Shotgun Mode Spread",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Alpha / Omega was inconsistently auto-reloading after depleting ammo rounds to destroy Beta Rays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased Alpha / Omega fire rate from 6.89 to 7.42",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Alpha / Omega Charge Buff decay delay from 1.5s to 3.5s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Alpha / Omega Charged Shots required to reach max speed from 3 to 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Alpha / Omega Beta Ray Mod base damage from 225 to 275.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Trinity Damage from 44 to 48 per bolt (132 to 144)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Trinity Magazine Size from 18 to 24",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Trinity Reserves from 90 to 96",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Trinity Reload Speed slightly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Corrupted Savior magazine from 40 to 50",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Corrupted Savior Mod Drain Delay from 5s to 10s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Corrupted Savior Mod Drain Rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Corrupted Savior mod drain can count as a \"cast\" for Pressure Point and Spell Weaver.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Savior mod was not benefiting from mod damage trinkets.: -|Trinkets, Mutators, Relics|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where performing a perfect dodge while Symbol of Royalty was equipped was causing the player to receive 2 stacks of Bulwark instead of the intended 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Effigy Pendent was not activating correctly in all cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Overloaded effect applied from Enigma was granting a stack of Repercussion on explosion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Overloaded was inconsistent when stacking in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Timelapse Mod could cause enemies to disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Weightless Weight would sometimes not apply bonuses consistently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Shocker Melee Mutator had an inconsistent Overloaded duration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Flying Bomb Trap could damage summons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where client players could sometimes not move freely when struck by Ring of Spears Mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Ring of the Damned was calculating damage incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced Hardcore Metal Band max Bulwark from 5 to 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Gift of the Unbound's movement speed buff did not re-apply when removing every burden ring currently equipped on character and re-equipping them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where equipping Painless Obsidian Ring was not granting Bulwark stack when equipped if Bulwark was already active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Soul Stone would not work on Rootlash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Bitter Memento was not working with Ring of the Damned in relation to Health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Burden of the Audacious wass doubling up value giving 50% to healing instead of 25%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Kolket Eyelet was not giving stack of Bulwark after picking up turret.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Faerin's Sigil was not calculating mod power correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Pressure Point was increasing damage when it shouldn't have.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Jester's Bell's buff duration did not match the description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Defrag had no effect when you sacrificed Summons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Ring of Spears sounds persisted along with its sped-up state as if there were enemies around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Sapphire Dreamstone's cooldown was not being visually represented for client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Pressure Point’s detonation worked off of single charge cost, not total power spent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if activating Dreadwalker mod with 0 ammo in clip; after the mod action is completed, the ammo in the clip was still 0, when it should have been full.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where New Stacks of Reverie applied from using Dreamwave were not refreshing buff timer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Tainted Blood effect from Ouroboros mod could be extended by applying SLOW to an enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues where Slow was not being applied correctly in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Birthright of the Lost effect was not applying to flying enemies when triggered via Worm Hole.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Soul Anchor wouldn’t activate if the Handler archetype was already active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Soul Stone Amulet was not increasing damage and move speed for Rootlash, Space Crabs, and Fargazer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Space Crabs were not being affected by Soul Link or Soul Stone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Atonement fold bleed effect was not removed after unequipping the Atonement Fold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Vengeful Strike was constantly activating and deactivating when equipping the Broken Heart relic and getting to 50% health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Extender Mutator was not resetting the clip size of Trinity Crossbow when detached from the weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Lydusa’s Curse was not triggering Neckbone Necklace.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Elixir of Life would revive players well after the Living Will effect ran out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Spirit Wisp Amulet did not account for multiple charges being spent when determining the amount of cool reduction it should apply.: -|Enemies|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Shrewd could not be targeted by some Mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could get trapped in a wall when successfully escaping a Dran Immolator’s grab attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Mirage charged cyclone damage was not scaling up with weapon level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where kiln enemies could get stuck on ladders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Root Zombies resist the killing blow when damaged by Sandstorm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could get stuck momentarily if enemies were frozen by Time Lapse during a grab interaction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Custodian Eye homing missile attack would sometimes not follow target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Fae Knight Assassin froze in midair after the One True King was defeated if he didn’t backstab the One True King.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Bridge Warden was unable to follow the player through some tunnel openings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where arrow bolts would hang in air when Fae Golden Knight used smoke ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where bow weapons could not shoot off the Preacher’s hat in Forlorn Coast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Way of Kaeula wave crash and drenched effect was failing to deal damage to Annihilation orbs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if orbs in 2nd phase of Annihilation fight were destroyed too quickly by certain weapons, it would cause the boss to just stand still.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Mother Mind was not able to destroy platforms in boss fight with slam attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Tal’Ratha was not being attacked by Rootlash or Reaver’s melee attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some enemy attacks ignored Damage Reduction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could still receive Bloody Steel Splinter from Red Prince even if they had Blood Draw mod.: -|UI|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Thorn tooltip was not updating when equipping items with explosive damage bonuses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some items had a white outline around their image in their icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Corrupted Sorrow Mod tooltip was incorrectly showing the wrong value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where upgrading Amplitude was not changing the tooltip description for Way of Lydusa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Blood Draw tooltip values were not updated when equipping objects with explosive damage bonuses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where ranged Lifesteal was not displaying in Advanced Stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where shields and buffs could potentially overlap on allies’ display in the upper left-hand side of the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Crystal Heart had an inaccurate tooltip value when hovering over the item in the character menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the door leading to the Annihilation fight was marked as a side dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where trait points could be removed if players switched",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where at level 10, Sleeper mutator tooltip description for critical chance and damage were reversed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Fire Rate and Evade Speed were displayed inconsistently from other bonus increases on the stats screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Sapphire Dreamstone was not displaying cooldown icon when it procced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Thaen Protection was displaying the incorrect icon in tooltip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Dwell’s shop tabs were not displaying correctly in some instances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Rot Stalker aberration copies would each get a named health bar on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Current Mission icon appeared stretched when the current objective was displayed on multiple lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed numerous typos in functional descriptions of weapons and items.: -|Misc Fixes|-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if a player entered the fog door to the Nightweaver fight during the transition to the 2nd phase of the fight, the player would no longer be able to damage enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if players defeated the Custodian Eye at the same time the floor would drop, it could cause the player to get stuck on the lowered section of the room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Lighthouse Key would be in the wrong visual state when inspecting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Some Dran would get stuck using a ladder if a player used it at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Resolute Trait was not consistently being awarded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Alchemist Engram description and lore were incorrect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the One True King was missing dialogue responses when the player wearing the True Crimson Crown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if players exited the game as they placed the Cherished Fracture in the shrine, when they reloaded the game, they would see Lydusa’s character mesh hovering room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Havoc Form Lightning VFX persisted for clients when the player died while shooting lightning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Havoc Form Lightning VFX visually fired in the wrong direction when viewed by client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Character Aura Buff VFX persisted where player died after using any of the 3Vial skills as an Alchemist.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Founder Ford’s path would reset if players quit before meeting him at the entrance to old Ward 13.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players in specific circumstances could escape the Mother Mind’s arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player character could get stuck in state transition when doing a Charge Attack at 0 Stamina and still holding the attack button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Campaign dialogue choice was showing up in Adventure mode when speaking to Custodian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where ring in Derelict Lighthouse would sometimes spawn under the ground, making it impossible to pick up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Hatchery could be exploited for XP grinding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the “health” of the walls in Lydusa fight we scaling too high on Apocalyptic difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Flop damage was not scaling with player level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Archetypes or Archetype skills could no longer be selected for a small portion of players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players were unable to obtain the same archetype if another player buys it from Wallace.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues where players could end up out of the world while using Wormhole in different locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues of small visual and collision gaps through the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 132,
+    "balance": 19,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "remnant-2-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1282100/view/6341720536521273254"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-24T15:45:21.000Z",
+      "verification": "official",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.160Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-24T15:45:21.000Z",
+      "verification": "assumed",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.161Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-24T15:45:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:25.161Z"
+  },
+  {
+   "id": "remnant-2@post-2024-08-13",
+   "gameId": "remnant-2",
+   "displayName": "Remnant II Patch Notes: 08/13/24",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-08-13T19:00:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "--|Performance and Crashes|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that was causing some players to crash when loading into their character.: If you are still experiencing Out Of Memory/Shader Decompression crashes on 13th/14th generation Intel Processors when loading the game, here are some supporting articles: https://community.intel.com/t5/Processors/July-2024-Update-on-Instability-Reports-on-Intel-Core-13th-and/m-p/1617113#M74792: Additional information and possible support solutions can also be found at Epic owned RAD tools post: https://www.radgametools.com/oodleintel.htm: --|Quality of Life|--",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated FSR to FSR 3.1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "remnant-2-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1282100/view/5963414363409580564"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-13T19:00:14.000Z",
+      "verification": "official",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.158Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-13T19:10:45.000Z",
+      "verification": "assumed",
+      "sourceId": "remnant-2-steam",
+      "checkedAt": "2026-11-05T08:41:25.158Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-13T19:10:45.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-05T08:41:25.158Z"
+  }
+ ],
+ "issues": []
+}

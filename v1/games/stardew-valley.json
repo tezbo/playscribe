@@ -1,0 +1,4477 @@
+{
+ "game": {
+  "id": "stardew-valley",
+  "igdbId": 17000,
+  "name": "Stardew Valley",
+  "cover": {
+   "imageId": "coa93h",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa93h.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4yuh",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4yuh.jpg"
+  },
+  "ps5Release": null,
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "stardew-valley@1.6.15",
+   "gameId": "stardew-valley",
+   "displayName": "Patch 1.6.15",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-20T18:14:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The 1.6.15 patch is now available. This fixes a few lingering issues in Stardew Valley, balances some things, and adds some quality of life improvements. To new and seasoned players alike, I hope you are enjoying Stardew Valley.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(for people with mods, please be aware there are several \"beta\" branches available which can help you ease into the new update. For example, there is a previous_version branch which is set to 1.6.14, as well as a few other version targets.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance changes",
+     "items": [
+      {
+       "text": "Legendary fish ponds now produce roe much more often and have a higher average daily value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Quality of life changes",
+     "items": [
+      {
+       "text": "Performance optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the Junimo bundle button to fridge and mini-fridge UIs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed debris able to spread under giant crops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bad-word filtering added to some extra text boxes in 1.6. Those are now only filtered on platforms that require it, as originally intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay fixes",
+     "items": [
+      {
+       "text": "Fixed Krobus' shop not accessible on Fridays for Japanese players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some achievements not unlocked retroactively in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some things being less random than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed new-game data corruption issue, where viewing the load screen before creating a new save in rare cases would incorrectly copy data from one of the load slots into the new save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some older items in the lost & found not correctly retrieveable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when collecting empty crab pots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when farm animals somehow end up in multiple locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when failing to play/resume/pause/stop sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash in raccoon menu if you have a base flavored item in your inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash if a shop somehow has a null item from a player to sell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare crash in Calico Jack minigame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed error loading pre-1.6 saves with case-sensitive stat key conflicts; conflicting stats are now merged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed selected tool lost in some cases when obtaining a stardrop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer fixes",
+     "items": [
+      {
+       "text": "Fixed some mail getting re-sent to farmhands every day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unable to join a server whose invite code contains a bad word.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the host's mine levels could be frozen in time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash in WeGame version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when a farmhand passes out while warping between locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed `/unlinkPlayer` and other multiplayer chat commands sometimes using the first player instead of the intended one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed co-op menu scroll not reset when switching tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Display text and localization fixes",
+     "items": [
+      {
+       "text": "Improved Hungarian, Japanese, and Russian translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a missing period in the shears description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some item tooltips on the collection tab in some languages showing a raw `{1}` token.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gray box behind Russian railroad sign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Robin's start-construction message showing the general building name inconsistently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few translated dialogues with broken dialogue commands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Cosmetic fixes",
+     "items": [
+      {
+       "text": "Fixed Alex's hand in one of his portraits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed butterflies spawned by statue of blessings glitching out in summer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changes for modded players",
+     "items": [
+      {
+       "text": "Fixed support for fridges with a larger capacity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed buildings visually matching the calendar season even if their location has a different season.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed interior doors not working if you wake up in their location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash on powers tab hover if a mod added an entry with no display name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added logs to track game load timing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes for mod authors",
+     "items": [
+      {
+       "text": "See mod author notes on the wiki",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for playing Stardew Valley!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Ape ːstardropː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 34,
+    "balance": 1,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/1786573930663336"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-20T18:14:21.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.421Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-20T18:14:21.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.421Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-20T18:14:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.421Z"
+  },
+  {
+   "id": "stardew-valley@1.6.14",
+   "gameId": "stardew-valley",
+   "displayName": "Update 1.6.14",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-12T08:07:20.000Z",
+   "notes": [
+    {
+     "title": "Changes for vanilla players",
+     "items": [
+      {
+       "text": "Added a few extra spouse reactions when interacting with them without dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You no longer lose a fish if you pass out while holding it, or pass out while fishing into a fish pond",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed animal products always harvesting with 0 quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved efficiency of playing sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed spouses being warped to 0,0 for farmhands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some cases where spouses would point the wrong direction after interactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent rare crash when updating Robin's construction animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent rare crash when obtaining Stardrops with stowed tools.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix chimney duplication when creating a new 1.6.9+ save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix crash when homeless farmhands remain after deleting cabins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix players inside farm buildings mis-positioned on world map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made geode menu more stable if you resize the window during geode opening",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed roommates requiring 2 house upgrades instead of 1 like marriage candidates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements to Russian translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes for modded players",
+     "items": [
+      {
+       "text": "Fix crash when mods add too many streamed .ogg sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changes for mod authors",
+     "items": [
+      {
+       "text": "Allow for multiple instances of the same streamed .ogg sound effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/6148070194801749418"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-12T08:07:20.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.419Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-12T08:07:20.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.420Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-12T08:07:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.420Z"
+  },
+  {
+   "id": "stardew-valley@1.6.13",
+   "gameId": "stardew-valley",
+   "displayName": "Update 1.6.13",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-08T07:04:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small update that fixes some bugs and adjusts a few things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance changes",
+     "items": [
+      {
+       "text": "Fixed legendary fish in fish ponds being more profitable than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Visual Changes",
+     "items": [
+      {
+       "text": "Signs placed on legendary fish ponds no longer show a \"1\" under the fish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed NPC's not being able to walk over beach bridge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller rumble being disabled after 1.6.9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added support for more controller types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed all phone calls being redirected to Robin after 1.6.9.12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Technical changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated SDL from 2.30.4 to 2.30.9 (used for input and windowing)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes for mod authors",
+     "items": [
+      {
+       "text": "Added tool.PlayUseSounds field, which allows disabling sound effects for a particular tool.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/6148070194801619948"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-08T07:04:25.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.419Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-08T07:04:25.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.419Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-08T07:04:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.419Z"
+  },
+  {
+   "id": "stardew-valley@1.6.12",
+   "gameId": "stardew-valley",
+   "displayName": "Update 1.6.12",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-07T08:25:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small update which adjusts a few things and fixes some bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Digging up special dirt spots, panning, harvesting ginger, and chopping twigs now grant foraging experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chopping trees and stumps grant a little more foraging experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sandy now sells basic pants in her shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where you could harvest unusual quantities of items from crab pots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed secret gift recipient hint no longer showing up on Skills Tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare crash when making a call using the telephone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sound effects sounding different when using headphones after 1.6.11",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when trying to connect to an improperly formatted IP address",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare crash in LAN multiplayer when not connected to a server",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minor visual issues with Cyrillic characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changes for modded players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed rare crash when streaming .ogg Vorbis sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NOTE: If you use mods that are not yet compatible with 1.6.9+, you can roll back to 1.6.8 by switching to \"Legacy_1.6.8\" in the betas tab. (Right click Stardew Valley in library > Properties > Betas)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/6148070194801588759"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-07T08:25:48.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.417Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-07T08:25:48.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.418Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-07T08:25:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.418Z"
+  },
+  {
+   "id": "stardew-valley@1.6.11",
+   "gameId": "stardew-valley",
+   "displayName": "Update 1.6.11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-06T06:46:34.000Z",
+   "notes": [
+    {
+     "title": "Minor bug fix patch",
+     "items": [
+      {
+       "text": "Bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potentially fixed farm animals disappearing in rare cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPCs not responding the first time you talk to them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being unable to grab furniture from walls with a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated OpenAL to the latest version to fix a rare crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changes for modded players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When you enter the /unlinkPlayer chat command, it'll now write technical info to the log.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled 'light source ... already exists' warnings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/6148070194801553515"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-06T06:46:34.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.417Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-06T06:46:34.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.417Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-06T06:46:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.417Z"
+  },
+  {
+   "id": "stardew-valley@1.6.10",
+   "gameId": "stardew-valley",
+   "displayName": "Patch 1.6.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-05T00:04:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch fixes a few bugs from today's earlier 1.6.9 patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixess & Changes",
+     "items": [
+      {
+       "text": "Improved some French and Russian translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when the lost items shop sells Penny's 14-heart event items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed chickens disappearing on newly created Meadowlands farms in 1.6.9.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare crash when transitioning between mine locations in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fixes for mod authors",
+     "items": [
+      {
+       "text": "Reverted changes to how map tilesheets are loaded in 1.6.9 to resolve mod issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash in some cases when creating furniture from an invalid item ID.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/6146943657174044314"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-05T00:04:17.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.416Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-05T00:04:17.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.416Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-05T00:04:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.416Z"
+  },
+  {
+   "id": "stardew-valley@1.6.9",
+   "gameId": "stardew-valley",
+   "displayName": "Update 1.6.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-04T17:57:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here is the latest Stardew Valley update for you. I hope you have been enjoying everything new in 1.6. Thanks for playing Stardew Valley!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Ape ːstardropː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.6.9 Changelog",
+     "items": [
+      {
+       "text": "### New content & features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* If you lost an item that can't be found again, a new friend appears in the secret woods who can get it back (for a price).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* You can now put legendary fish in fish ponds. These are limited to one per pond and produce legendary fish roe. Each fish has a unique water color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* You can now place beds and sleep inside any constructed buildings that allow furniture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Items dropped in water now float for a short time, so you can collect them if you're quick or have a magnet ring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Sam and Shane now have work portraits while working at JojaMart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Slightly tweaked some dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added new Easter eggs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added hidden cheat commands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "### Balance changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Blue grass no longer grows slower than normal grass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fruit tree growth is no longer blocked by grass and seed spots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Pine trees now drop one extra wood when chopped down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* The initiation quest now counts wild slimes killed on the farm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Thorns ring damage now stacks if you equip two of them, and monsters killed by a thorns ring now drop loot like regular kills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* With the Gatherer skill, the chance to double harvested forage now applies when using an iridium scythe too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Son of Crimsonfish can now be caught during the night market.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Robin no longer constructs buildings during green rain in year 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Placing a bomb and then switching to a weapon no longer applies its enchantments to the bomb damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "* Added some items to shops",
+     "items": [
+      {
+       "text": "* Adventurer's Guild: Rusty Sword, Femur, Elf Blade, Steel Smallsword, Crystal Dagger, Obsidian Edge, and Work Boots. These unlock after you reach a certain mine level, regardless of whether you found them in a mine chest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Marnie's shop: Cow Decal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Hat mouse: Sports Cap.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "* Willy's shop: Advanced Iridium Rod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Passing trains are now more likely to happen multiple times in the same session, but can no longer appear on consecutive days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Willy's shop now opens on spring 2 in the first year even if you didn't read his letter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed Queen of Sauce reruns being affected by the recipes needed by unclaimed farmhands in empty cabins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed being able to receive monster damage while jumping down a mine shaft before the screen fades to black.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed spa not fully recovering energy when a max-energy buff is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed sleeping late while exhausted not reducing stamina as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed the catalogue and Furniture Catalogue selling items from themed catalogues like Retro Catalogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed exploit where a fish pond with a golden cracker could produce unlimited output. Fish pond output bonuses are now applied once when the output is created.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed exploit where you could cancel cow milking and still get the friendship boost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed unintended extra chance of spontaneous green rain trees when loading a save in fall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed skill buffs affecting shop item requirements in 1.6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed sturdy ring no longer halving debuff times in 1.6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed lower chance of catching lava eels in caldera after 1.6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed forage crops harvested from garden pots always being low-quality and providing no XP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed iridium scythe with forage crops not giving XP or applying the forage level quality boost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Fixed some weapons never dropping from crates when legacy randomization is enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "### Quality of life changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* The game now recovers most saves automatically if they're broken, corrupted, or missing the `SaveGameInfo` file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* The game now resends most achievements, recipes, and important mail if you somehow missed them. For PlayStation/Xbox players, [missed trophies are readded when perform a specific action instead](https://stardewvalleywiki.com/Achievements#Retroactive_achievements).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "* Fish ponds now show the number of roe or other output items to collect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* The wedding event now replays if you exit & reload the day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* The tailoring UI is now a bit more intuitive: slots that can't accept the held item are now disabled, and you can no longer pick up some items that can't be tailored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Colored items like flowers now also sort by color. That avoids items being reordered randomly each time you sort your inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* You can now only sell books to the bookseller via the book purchase menu, not the trade-in menu. This reduces the chance of accidentally selling a book when trying to trade it in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* The collections tab now shows artifacts, gems, and minerals once they're donated to the museum (not as soon as you find it).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Clint now refills your watering can when upgrading it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Tweaked save process to reduce the chance of corruption.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Anvils no longer accept parrot eggs if you can't re-roll their level yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "* Improved chatbox commands",
+     "items": [
+      {
+       "text": "* Chat commands are now case-insensitive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Changed `/help` format to make room for more commands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added `/help` descriptions for `/emote`, `/mapScreenshot`, and `/unbanAll`.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added consistent messages when you can't use a multiplayer-only or host-only command.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Performance optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "### Technical changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Migrated from FAudio to OpenAL, which should improve performance when playing audio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Updated SDL from 2.0.x to 2.30.4 (used for input and windowing).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed compatibility with newer Windows systems when using some older GPUs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "### Gameplay fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* You can no longer swap a chest's type if the new type is too small to store its current items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "* Fixed NPC issues",
+     "items": [
+      {
+       "text": "* NPCs no longer avoid passable terrain features like flooring and grass when pathfinding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed kicking Krobus out of the house triggering divorce dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed Leo following his island schedule after moving to the mainland.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed a Lewis schedule where he would overlap Marnie.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed a Penny resort dialogue when married that was never shown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed Pierre sometimes showing a closed-on-Wednesday dialogue after his shop hours are extended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed mom or dad sending duplicate mail if you change gender later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed some dialogue based on location + heart level only being shown if you have 10 or more hearts with the NPC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed special NPC gift reaction dialogue sometimes not matching their gift taste (e.g. Willy giving a positive dialogue for triple shot espresso).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed unable to talk to Robin after accepting a house upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed incorrectly split dialogue in Linus' first heart event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed NPCs unable to pathfind through tiles that had a tent at the start of the day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed NPCs not loading their green rain dialogue if you started the day on the island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed NPCs saying \"...\" in 1.6 if they bought an item you sold to a shop but they don't have a relevant dialogue for it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed your spouse sometimes saying \"...\" instead of the intended neutral dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed your fiancée/spouse reacting to a mermaid's pendant as if you're engaged/married to someone else.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "* Fixed UI issues",
+     "items": [
+      {
+       "text": "* Fixed world map not always showing players at the right spot when they're inside a constructed building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed links in credits no longer opening a browser page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed able to interact with HUD elements like the toolbar when they're hidden (e.g. when the game is paused).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "* Fixed issues when resizing the game window",
+     "items": [
+      {
+       "text": "* advanced game options layout being messed up;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* collections page losing its selected tab and page;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* social page losing its scroll position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed themed catalogues not having category tabs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed forge UI destroying any item held by the cursor after unforging.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed museum menu clicks on the OK button sometimes grabbing the artifact behind it instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed tailoring menu letting you trash some non-trashable items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed organize button in inventory UIs letting you put any item in special chests like enrichers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed issue where phoning Robin to get building prices and then resizing the window would enable the build/demolish/etc options as if you'd visited the shop directly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "* Fixed specific items and machines",
+     "items": [
+      {
+       "text": "* Fixed chest color getting reset when you swap chest type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed crab pots not producing double catches correctly with wild bait.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed crab pots duplicating bait when loaded by a hopper.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed crab pots not applying deluxe bait and wild bait bonuses in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed fences destroyed on click when surrounded by impassable objects on three sides (above + left + right) instead of four as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed geode crushers incrementing the 'geodes crushed' stat when hovering, which allowed unintended RNG manipulation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed magic quiver trinket sometimes doing nothing if both a valid and invalid target are in range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed mannequins losing their clothes if they're moved into storage to make space (e.g. for an event). They now re-equip their previous clothes when they're put back down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed tents not blocking item placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed watering cans with bottomless enchantment sometimes shown with a half-empty meter. Bottomless watering cans are now always full.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed building upgrades not placing interior items (like the coop incubator) if...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* furniture is in the way. The furniture is now moved just like other objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* an item blocking placement can't be moved. It's now moved into the lost & found in that case.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed cases where the Pirate's Wife quest chain could lock you out:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* If you have the quest but lost the required item, you now get a new War Memento overnight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* If the quest was cancelled, you can now talk to Birdie to restart it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* NPCs can no longer mistakenly accept the quest items as gifts or refuse to accept their quest item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "* Fixed location/map issues",
+     "items": [
+      {
+       "text": "* Fixed screen viewport at wrong position right after warping on horseback in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed wilderness farm not pre-building the first cabin in separate-cabins mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed grass in Marnie's cow field never regrowing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed Willy's bait barrel missing during night market.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed some missing map tiles which let you walk off-screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed able to leave Stardew Valley Fair's festival area in odd years.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed weed/stone debris spawning on top of placed paths in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed able to dig up buried treasure from non-diggable tiles in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed forest fish no longer catchable on the four corners farm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed bug where using the standard farm's wallpaper/flooring in farmhouses of another farm type would reset them to that farm's themed defaults.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed pre-1.6 saves sometimes losing the Dwarvish Translation Guide. The fix is retroactive for affected players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed pre-1.6 farmhand stats not migrated correctly. The fix is retroactive for affected farmhands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed pre-1.6 tubs o' flowers never blooming again if their first day in 1.6 was in fall or winter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed raccoon bundle accepting anything for preserve items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed level requirement for farmer titles lowered by one in 1.6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed fish ponds accepting multiple golden crackers before the first one lands in the water. They now register the first golden cracker immediately (but still delay the visual change until it lands).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed two Desert Festival makeover outfits that applied male shirts to female players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed strange behavior of shop items with both a stock limit and stack size (e.g. items in several desert festival shops).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed edge cases where viewing a previous year's secret santa letter in the collections tab would show the current year's secret santa in the game menu during the Feast of the Winter Star week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed the throw-item-into-shipping-bin animation drawing the base uncolored sprite for colored items like roe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed error loading mobile saves on other platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed crash when loading a save file in some rare cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed crash when using a tent on Ginger Island during a night event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed some cat gifts applying fishing bonuses from the main player's equipped fishing rod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed movie theater scene failing in some cases when players have previously unequipped trinkets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed Junimo harvesters losing the item color when dropping a crop on the ground due to their hut being full.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed rare edge case where a Junimo hut output chest has too many item slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "### Multiplayer fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Added an `/unlinkPlayer ` chat command, which lets the host player release a farmhand so it can be reclaimed by the next person who connects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed being able to steal another player's roommate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed farmhands able to claim multiple Desert Festival fishing quests per day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed crash when reconnecting later in the day after leaving a festival.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed host crash if a farmhand disconnects while they're between locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed NPC duplication in multiplayer fish derbies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed crab pots & farm animals owned by an offline farmhand checking the main player's professions instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed crab pots with no owner checking professions from the main player instead of the player adding bait.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed farmhands sometimes not seing the message when they can't enter an NPC's bedroom.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed Marlon's desert festival quests not displaying the Calico Egg reward to farmhands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed some multiplayer logic not handling an offline/invalid player correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed some potential 'null reference exception' crashes in multiplayer code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed crab pots with no owner checking the Mariner profession instead of Luremaster for the bait requirement in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed Willy not sending fishing rod mail to farmhands who join after spring 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed 'waiting for players' check including disconnecting players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed trains not playing chugga chugga sounds for farmhands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "### Display text and localization fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* In the credits, replaced the Reddit/Twitter links with a \"News & Community\" link.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed a huge number of translation issues for non-English players, and added automated tests to keep translations more in sync going forward. For example, this fixes...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* dialogue/event changes in 1.6 which weren't applied in some languages;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* missing dialogues and event actions;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* missing, outdated, or incorrect translations;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* missing event preconditions (e.g. Leah's 10-heart event could play on a rainy day in some languages);",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* events playing the wrong music, not being skippable, or placing players or NPCs at the wrong spot;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* translations having different dialogue portraits/breaks/etc;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* conversation topics not started when something happens;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* text being shown with one word per dialogue box;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* improved grammar (e.g. gender conjugation);",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* various errors and typos;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* and many other issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Many improvements and fixes to translations and sprites, including some re-translated item names.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Renamed \"cranberries jelly/juice/wine\" to \"cranberry jelly/juice/wine\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed some bad words being produced by the random name generator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed NPC text signs and some chat/UI messages in multiplayer not always shown in your language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed flavored items in some chat/UI messages not shown correctly (like \"Player put 'Smoked' into the potluck soup\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed various typos in English text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed special order objectives not re-translated when the language changes. (This fix only applies to new special orders going forward.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed Robin showing the wrong number of hardwood required for a house upgrade in some languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed some languages showing Willy's back room invite mail as \"???\" in the collections tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed some languages having inconsistent hat hair behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed some languages producing items with a different internal name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed French players not seeing prismatic effect for Magic Cowboy Hat and Magic Turban.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed French and Japanese showing a 'needs 5 coal' message for the dehydrator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed Russian club coin and slots offset issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed Russian Joja movie theater tilesheet not showing up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed Russian tool tooltips having overlapped names.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed Spanish jukebox showing blank name for 'Ginger Island' song.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed buy-ticket messages showing an unformatted price (like 1000g instead of 1,000g).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "### Cosmetic fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Added lights to Marcello's book stand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Sam now changes uniform when he enters JojaMart, instead of only when he reaches his work tile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed many bugs related to light sources (e.g. lights stuck on screen, shown in the wrong location, removed before they should be, etc).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed issues with the golden walnut & Qi gem drop-down display:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Added support for showing both at once (e.g. another player finds a golden walnut while you're in the Qi gem shop).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed display sometimes stuck on screen permanently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed display showing the wrong type in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed display sometimes appearing in multiplayer when the value didn't change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed line wrapping for movie concession description tooltips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed visual glitch during the even-year Spirit's Eve if you have the Joja movie theater.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed issue with padding on the edge of maximized game windows on Windows.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "* Fixed a shirt that looked weird.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed tooltip display issues, like an empty space for edible items that don't recover any stamina/health (like sweet pea and crocus) or an unintended double space in tooltip buff names.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed missing shadows behind some colored items (like wine) in menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed texture wrapping issue with Joja door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed glitched hidden emote animations in NPC profile menu in some cases. NPCs now use always their default sprite in the profile view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed red slime item sprite drawn one pixel lower than other colors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed missing pixels in anvil sprite's outline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed stray pixel in dried mushroom color mask.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed Krobus showing a gift icon for the void ghost pendant when he can't accept it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed the item-received message cutting off part of the item name if it contains a `#` character (like 'Tropical Fish #173').",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed the item-received message sometimes showing no count or a wrong count.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed some farm animals having double shadows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed stardrop tooltips showing incorrect health/energy recovery amounts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed timing of Easter egg in summit event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "### Gamepad fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed various issues/crashes with gamepad support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* When buying animals or buildings with a gamepad, you can now use the D-pad to move the cursor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* In the community center bundle UI, using gamepad triggers to move to donation slots and back now returns you to the same spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Added a small delay before you can cancel a waiting-for-players dialogue using a gamepad, to prevent accidentally closing it immediately after pressing the OK button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed gamepad issues on the new game screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed dresser tabs not selectable with a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "### Changes for modded players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Added a `Content/ContentHashes.json` file containing the MD5 hash for every vanilla content asset. This can be used by SMAPI and other tools to detect corrupted or modified game files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "*Improved debug console commands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* When you leave a horse/mount in a temporary location, it now returns home when that location is removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed 'Jewels Of The Sea' book producing roe for custom fishing catches that normally don't have roe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed forage crops outside the farm being removed each week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed meteorite, strange capsule, and stone owl only appearing in the top-left 64x64 tile area on large custom farm maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed pagination in powers tab when mods add more powers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed edge cases throughout the game code related to items whose stacks can't be reduced to zero (e.g. tools).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed various errors when custom items have no name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed error when mods apply audio changes if there's no audio device available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed error if there are no movies available due to a mod bug. The game will now log a warning and choose from the full list of movies instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed crash if a farm animal is in a broken building or location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed crash if a smoked fish's original fish data no longer exists. You now get a delicious smoked Error Item instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed crash when custom sounds loaded from a mod's `.ogg` files are paused/resumed many times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed map tilesheet crash in some cases when playing split-screen mode with mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed issues when the game's `whichFarm` and `whichModFarm` fields are out of sync.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed 'light source already exists' and 'changing net field parent' warnings in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed mod data getting reset on chest type swap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed berry bushes showing wrong sprite in locations where seeds can be planted in any season.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed stardrop gift reaction dialogue for custom NPCs defaulting to some raw data instead of their loved dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed able to enter the Adventurer's Guild back room without meeting the requirement if the door is open after a custom event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed triggered actions being logged twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "### Changes for mod authors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* See the 1.6.9 mod author migration guide for new APIs, dialogue keys, game state queries, debug commands, map properties, C# constants/fields/methods, data fields, and many other technical changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 31,
+    "fixed": 178,
+    "balance": 0,
+    "other": 33,
+    "ps5": 1,
+    "topNew": [
+     "* Marnie's shop: Cow Decal.",
+     "* Willy's shop: Advanced Iridium Rod.",
+     "* Willy's shop now opens on spring 2 in the first year even if you didn't read his letter."
+    ]
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/6146943657174036265",
+    "ps5Page": "https://stardewvalleywiki.com/Modding:Migrate_to_Stardew_Valley_1.6.9#Debug_command_changes"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-04T17:57:56.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.414Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-04T17:57:56.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.415Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-04T17:57:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.415Z"
+  },
+  {
+   "id": "stardew-valley@1.6.7",
+   "gameId": "stardew-valley",
+   "displayName": "Update 1.6.7",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-04-28T01:10:00.000Z",
+   "notes": [
+    {
+     "title": "1.6.7 change notes",
+     "items": [
+      {
+       "text": "-Fixes a bug preventing players from giving Pierre the Missing Stock List",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed some machines and desert festival logic not working for Linux/MacOS players using the compatibility branch.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "EDIT",
+     "items": [
+      {
+       "text": "1.6.8 out now which fixes a crash introduced in 1.6.7 (it would crash when NPC's reach the island resort changing room)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/5759616966673665763"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-28T01:10:00.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.412Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-28T01:10:00.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.412Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-28T01:10:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.412Z"
+  },
+  {
+   "id": "stardew-valley@1.6.6",
+   "gameId": "stardew-valley",
+   "displayName": "Patch 1.6.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-26T19:39:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone, here's the latest update. There's nothing too big in terms of gameplay additions or changes, but there are some important bug fixes, and translation adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stardew Valley 1.6.6 Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance and Gameplay changes",
+     "items": [
+      {
+       "text": "-Bee houses now work with flowers in garden pots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-“Minecart depot” alternative layout now only appears in the upper or lava mine areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-You can now turn the gold clock on or off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Added coal -> mahogany seed trade at raccoons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-50% mastery XP now only applies to farming, as originally intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Translation changes",
+     "items": [
+      {
+       "text": "-Reverted Chinese text to 1.6.3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reverted Chinese default font to the original",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added an option to use the smooth font introduced in 1.6.4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a dialogue font size slider for Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added complete Russian translated movie & desert festival sprites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added option for Russian to use the “old” font",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "-Fixed a case where Mr. raccoon could disappear during the raccoon cutscene in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed being able to trash Pierre’s Missing Stocklist, or give it away at the Feast of the Winter Star.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed being able to give a wilted bouquet to your spouse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed issue causing only 1 omni geode to be produced from the skull cavern chest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed crash when a save contains some invalid animal home data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a crash when talking to Penny in French.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a malformed Willy farm event in German.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an incorrectly blocking map tile in the Forest Farm map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed some machines and some desert festival logic not working for Linux/macOS players using the compatibility branch.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Fixed a case where an area was inaccessible in the volcano dungeon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed sewer event in German",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed cases where you’d see Mayor Lewis’ giftbox note again when collecting 15 parsnips from a different chest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed emily makeover event from being hard to skip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed Calico Egg Rating prize edge cases for farmhands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed prismatic hat effects not working in French.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed being able to “advance” the ready check menu by pressing Y, which lead to many issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed island outfits not being loaded for farmhands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Minor optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fixes for modded players",
+     "items": [
+      {
+       "text": "-Fixed error showing non-flavored roe items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed error if a mod sets an NPC’s ‘friends and family’ data to null.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed error loading a save containing enchanted weapons whose ID changed or data was removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed soft lock when watching weather TV channel if tomorrow’s weather is custom.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed temporary maps that aren’t part of a location not using seasonal tilesheets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed summit cutscene showing custom fish with wrong sprites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changes for mod authors",
+     "items": [
+      {
+       "text": "-In Data/Objects, added two new fields: CanBeGivenAsGift and CanBeTrashed. Setting CanBeGivenAsGift: false adds the not_giftable context tag automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for playing Stardew Valley!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Ape ːstardropː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 23,
+    "balance": 5,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/5759616966669183785"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-26T19:39:05.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.412Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-26T19:39:05.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.412Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-26T19:39:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.412Z"
+  },
+  {
+   "id": "stardew-valley@1.6.5",
+   "gameId": "stardew-valley",
+   "displayName": "Patch 1.6.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-19T17:29:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "After quickly fixing a few issues with 1.6.4, we are now on 1.6.5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This one fixes a rare crash that could happen in the mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It should also help with some people who use mods that were having trouble loading their saves after 1.6.4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed crash when loading dark mine levels in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Broken villager NPCs (usually due to a removed mod) are now deleted on load. They'll respawn when they're re-added to the data.: Thank you: -Ape ːstardropː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/5762994032395159679"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-19T17:29:01.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.411Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-19T17:29:01.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.411Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-19T17:29:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.411Z"
+  },
+  {
+   "id": "stardew-valley@1",
+   "gameId": "stardew-valley",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-19T08:39:32.000Z",
+   "notes": [
+    {
+     "title": "1.6.4 hotfix #1 fixes a few bugs in 1.6.4",
+     "items": [
+      {
+       "text": "-Fixes issue when dropping a big chest into a small chest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Quarry mine level can no longer be an alternate layout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Prevents the player from running through barriers in certain transit cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Mine levels 45 and 85 are now also refreshed at the beginning of the year",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/5762994032393818369"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-19T08:39:32.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.411Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-19T08:39:32.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.411Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-19T08:39:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.411Z"
+  },
+  {
+   "id": "stardew-valley@1.6.4",
+   "gameId": "stardew-valley",
+   "displayName": "Patch 1.6.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-18T20:08:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "hey bobo, hope you've been enjoying the update so far",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here is the latest patch, which includes some new content, as well as a bunch of balance changes, quality of life features, translation improvements, and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stardew Valley 1.6.4",
+     "items": [
+      {
+       "text": "New content & features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "– Added 20 new ‘alternate’ mine layouts, which can start appearing after reaching the bottom of the mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Added 20 new volcano mines layouts, which can appear after you’ve unlocked the shortcut between the caldera and the volcano entrance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Added fish frenzies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Added a special cutscene after you’ve helped your new neighbors grow their family to the max.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Added 4 new fairy styles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– You can now place 8 additional non-fish items into fish tanks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Raccoon shop now includes a trade for mystery boxes and golden mystery boxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Vinegar can now be poured onto trees to stop them from ever growing moss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Shaving enchantment now causes tree-specific drops: (fern → fiddlehead fern, mushroom → red mushroom, mahogany → hardwood)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Translation changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Many edits and improvements to the Chinese version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Edits to the Russian, Portuguese, Hungarian, Turkish, and Korean translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Changed the Chinese fonts to make them more appealing and readable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Changed Hungarian number spacing character from a comma to a period.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Some improvements to Russian font.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– When you load a save, you’ll now unlock missed Steam achievements if needed (e.g. achievements gained while playing offline).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "– Added mini-shipping bin as an expensive Qi gem shop purchase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Added more variety, and improvements, to Skull Cave treasure chests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Life elixirs now only restores health, and energy tonics now only restore energy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Wild seed spots are now rarer, but yield more seeds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Doubled the Iridium Golem’s chance to drop iridium.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– The monsters in the volcano entry level are now randomized each day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Using a treasure totem indoors no longer works. This prevents them from being wasted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Going down a level in the mines now makes you invulnerable for 1 second.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Increased raccoon mystery box reward from 4 to 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Farming experience now contributes to mastery experience at a 50% rate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Ice orb will no longer freeze a spider while it is in the air jumping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Removed red snapper from winter fishing quest pool, and sardines from the summer quest pool.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– You will no longer get calico rating points from going down the normal mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Golden mystery boxes now have a small chance to yield an auto petter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Slightly reduced chance to find mystery boxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Mine barrels and coal carts will now “refresh” at the start of each year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– The order of mystery box rewards is now randomized per-player instead of per-save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Qi club coins now show up in the shop menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Various map edits and fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Removed Maru’s glasses from all beach portraits for consistency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Improvements to signage in some non-english languages (i.e. Chinese, French, and Russian)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quality of life changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Added a 1.2-second delay after dropping an item, before it’s picked back up by the same player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Napalm rings are now non-destructive on the farm and inside the slime hutch (i.e. the explosion will only damage monsters).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Added ctrl + right-click as an alternate toolbar drop hotkey.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Receiving a “special notification” (e.g. first geode message) will no longer cancel out player actions such as eating or warping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Flopping fish no longer fall back into fish ponds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Crab pots now have a short time period after harvesting from them during which they can’t be removed (750ms).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– The Junimo bundle menu now only highlights items that can actually be placed in the selected bundle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Minor optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Added two inappropriate names to the list to exclude from the name generator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– You can no longer give gifts to NPC’s during green rain year 1 (prevents incongruous attitudes). This also prevents a portrait issue with Demetrius.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed disappearing pets bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fishing splash zones and ore pan points are now removed overnight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– The prize ticket machine now consumes your ticket when you get the reward, rather than when you first press the button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– For the purposes of perfection, the level 100 mines stardrop now has a more robust way to check if it’s been acquired.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed Monster Compendium not actually doubling all loot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed geodes no longer dropping on the farm in normal circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed rare crash when spawning items overnight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed player colliding with stuff during event cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed pre-1.6 forged weapons having reduced stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed not being able to put a torch on the sprinkler you get as a CC reward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed various bugs/crashes related to building a cabin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed wild seeds in garden pots putting their final crop in the top-left corner of the map instead of the pot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed “lost and found” chests (from night market and elsewhere) not working anymore in 1.6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed a duplication bug with the “lost and found” chests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed slime hutch floors reverting to the default after reloading a game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed malformed casino shop red fireworks ID.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed pet adoption catch-all case only working with the animal catalogue, and only applying in year 2 specifically, rather than for any year 2 or beyond.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed ‘use legacy randomization’ option applied inconsistently when loading a save, which caused weird issues like broken green rain days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed the case where you could permanently miss the ancient seed recipe if you grabbed the ancient seed packet but not the associated recipe, and then closed the museum rewards menu. Missing recipes will also be restored upon loading a file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed issue with duplicated animals & building interiors from pre ~1.3 saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed end tables not being rotateable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed an issue where empty barns/coops could not be removed by Robin on old saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed slime egg incubators letting you reclaim the egg before it hatches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed farmhouse placement bounds to match the object placement restrictions around it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiplayer fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Synced some NPC Gift data in other languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed fireworks (and possibly other sprites) drawing behind stuff in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed “Build a Silo” quest not being completed for farmhands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed Raccoon quest not being removed for all players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed double trinket issue when a farmhand disconnects/reconnects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed double and/or missing derby participants sprite issue in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Display text and localization fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Many edits and fixes in translation text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed a text parsing error for Asian languages which caused them to incorrectly wrap in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed spacing issues in Asian languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed several localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed Russian line break issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed events not consistently handling gender-dependent text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cosmetic fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Adjusted the draw order of basic objects so that debris will not be drawn underneath them as often.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Placeable grass now offsets vertically a little if it would clip through a front-layer tile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed seasonal world map not working for non-English players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed flying monsters not being draw above things on the farm & volcano.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed reward icon in completed quest menu being visually offset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed george’s TV clipping with farmer during green rain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed movies not showing layered sprites (e.g. the eyeball in Mysterium).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed Qi club coins drawn below the lightmap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed Qi coin overlay drawn during minigames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed crane game audio not stopping when the game is forcefully closed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed some tooltip padding issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed movie theater display issues on the world map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed repeated dialogue selection sound if a control was plugged in but you are using a mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "– Fixed quest reward icon input offset issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed Joja Warehouse roof drawing above the weather (and possibly other similar cases).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed various map tile issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed a visual issue with a shadow in the farm house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed able to swap two chests of the same type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Fixed machines sometimes wobbling when they’re not processing anything.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are also some changes for modded players and mod authors, if those are of interest to you, check the full patch notes here or here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for playing Stardew Valley!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Ape ːstardropː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 113,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/5762994032391918138"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-18T20:08:40.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.409Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-18T20:08:40.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.410Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-18T20:08:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.410Z"
+  },
+  {
+   "id": "stardew-valley@1.6.3",
+   "gameId": "stardew-valley",
+   "displayName": "Patch 1.6.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-27T20:53:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The 1.6.3 update is here, which includes some \"Quality of Life\" changes, bug fixes, and balance adjustments. Patch notes below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-You can now access Clint's shop and geode service while your tool is being upgraded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Increased raccoon bug meat and bat wing request amount",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Harvesting moss now grants 1 foraging exp per moss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Infinite Power achievement is now more generous with how it activates, allowing pre-1.6 saves to trigger the achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adds mine cart shortcut to year 1 Spirit's Eve festival",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-You now have to collect (not just donate) the 4 prismatic shards for the \"Four Precious Stones\" Qi Quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The JunimoKart Qi Quest now rewards 20 Qi gems (up from 10)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adds new cabins to starter layouts for multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Starter cabins now appear in the actual order intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adult mossy green rain trees boost the moss growth rate of nearby trees",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-If a Journal quest title is too wide, the clock icon and the rest of the text will be shifted down to make room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-You can now press the Escape or menu button to \"go back\" on a shipping menu category page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjustments to moss growth (grows slower on sunny summer days, recovers slower after harvest)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reduced meteorite prismatic shard chance (100% -> 25%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-You can now paint the new cabins (at 3rd upgrade level)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Ancient seed packets excluded from sale at traveling cart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made waterfall and other ambient positional sounds fade out more smoothly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a catch-all case: if it's year 2 and you don't have a pet (for any reason), you can start adoptinng them from Marnie's",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made berry bush state consistent overnight and on load (both at 20% plus a small new random bonus chance)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Minor graphical fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixes several translation errors and missing translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixes large character sprites having a visual glitch (e.g. bear, island frog, clint hammering)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a visual error in the shop menu if an item's name was longer than the width of the menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix a crash related to the new festival",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix a bug that was causing excess trash to be fished",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed bug preventing Emily's 10 heart mail and event from triggering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed some graphics issues with Shipping menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed several more spawn-out-of-bounds cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added Krobus portrait",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Ape ːstardropː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 33,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/5749481331434481650"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-27T20:53:54.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.408Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-27T20:53:54.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.409Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-27T20:53:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.409Z"
+  },
+  {
+   "id": "stardew-valley@1.6.2",
+   "gameId": "stardew-valley",
+   "displayName": "Patch 1.6.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-21T04:24:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With these major Stardew Valley updates, it's typical that there are near-daily patches for a few days after launch. There's always a few weird bugs that are only discovered once the update is out and all of you are playing it. So here is the second post-launch patch for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Change log",
+     "items": [
+      {
+       "text": "-Fixes an issue with Willy's rod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix for invisible tea sprites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an error in the Luau event in Portuguese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix for pre-1.6 basic wines looking messed up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix for a soft lock if you charged a tool and then strafed to a warp spot, and released the tool while warping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix inedible ingredients being poisonous after turning into jelly or pickles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adds scaling edibility to juice, jellies, wine and pickles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Volcano dwarf bombs now match regular dwarf bombs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Void egg is now poisonous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted adventure guild open hours on map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Various translation fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wishing you all a fun time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Ape ːstardropː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "stardew-valley-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/413150/view/5686430301716627452"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-21T04:24:01.000Z",
+      "verification": "official",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.408Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-21T04:24:01.000Z",
+      "verification": "assumed",
+      "sourceId": "stardew-valley-steam",
+      "checkedAt": "2026-11-05T08:41:27.408Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-21T04:24:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-05T08:41:27.408Z"
+  }
+ ],
+ "issues": []
+}
