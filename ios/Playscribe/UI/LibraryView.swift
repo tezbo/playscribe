@@ -208,7 +208,9 @@ struct LibraryShelf: View {
 
     /// Book with any recent update: the hero carousel takes the right page's top; the left page keeps the controls, chips and grid.
     private var heroOnRightPage: Bool {
-        duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming && !model.latestDeck.isEmpty
+        // No recent update: the caught-up card takes the hero's place, so the two pages flow the same way (Iris, 41f0310).
+        duo.pose == .book && duo.division != nil && model.libraryTab != .upcoming
+            && (!model.latestDeck.isEmpty || !model.data.collection.isEmpty)
     }
 
     /// Catch-up, PS Plus and notification cards. In Book they are one page wide and never cross the fold (G-4).
@@ -328,7 +330,11 @@ struct LibraryShelf: View {
                         VStack(alignment: .leading, spacing: 14) {
                             // 16:9 art at the page's width plus the page edge, sized explicitly: left to the pager the
                             // card came out as tall as the screen and pushed the grid off (834a5eb).
-                            LatestUpdatesDeck(cards: model.latestDeck, compact: true, maxHeight: (rightWidth * 9 / 16).rounded() + 52)
+                            if model.latestDeck.isEmpty {
+                                CaughtUpCard().frame(width: rightWidth, alignment: .leading)
+                            } else {
+                                LatestUpdatesDeck(cards: model.latestDeck, compact: true, maxHeight: (rightWidth * 9 / 16).rounded() + 52)
+                            }
                             if layout == .tiles { pageGrid(Array(rows.dropFirst(leftCount)), fit: right) }
                         }
                         .frame(width: rightWidth, alignment: .topLeading)
