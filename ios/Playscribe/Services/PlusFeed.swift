@@ -18,6 +18,11 @@ struct PlusFile: Codable, Equatable {
 }
 
 enum PlusLogic {
+    /// The Library card's rule (Terry, 2026-11-05): shown unless switched off in Settings, and only while a month holds today.
+    static func visibleMonth(_ months: [PlusMonth], cardOff: Bool?, now: Date = .now, calendar: Calendar = .current) -> (month: PlusMonth, lastChance: Bool)? {
+        cardOff == true ? nil : current(months, now: now, calendar: calendar)
+    }
+
     /// Today as "YYYY-MM-DD" in the device's calendar; day strings compare in order.
     static func dayKey(_ date: Date, calendar: Calendar = .current) -> String {
         let c = calendar.dateComponents([.year, .month, .day], from: date)
@@ -65,6 +70,15 @@ final class PlusStore {
     init() {
         if let raw = try? Data(contentsOf: Self.cacheURL), let f = try? JSONDecoder().decode(PlusFile.self, from: raw) { months = f.months }
     }
+
+    #if INTERNAL
+    /// QA (route plus-demo): a month that holds today, so the card shows without the feed.
+    func qaShowDemoMonth() {
+        let f = DateFormatter(); f.calendar = Calendar(identifier: .gregorian); f.dateFormat = "yyyy-MM-dd"
+        let day: (Int) -> String = { f.string(from: Calendar.current.date(byAdding: .day, value: $0, to: .now)!) }
+        months = [PlusMonth(month: "qa", from: day(-1), until: day(20), games: [.init(name: "QA Game One", gameId: nil), .init(name: "QA Game Two", gameId: nil)])]
+    }
+    #endif
 
     func load() async {
         guard let base = FeedClient.baseURL else { return }
