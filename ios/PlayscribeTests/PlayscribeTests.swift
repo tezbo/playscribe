@@ -460,6 +460,15 @@ struct PlayerTimeTests {
     }
 }
 
+/// TT-2: VoiceOver hears where a section sits in the update.
+struct ReaderPositionTests {
+    @Test("Position reads as a place, from one")
+    func position() {
+        #expect(ReaderBody.position(0, of: 5) == "1 of 5")
+        #expect(ReaderBody.position(4, of: 5) == "5 of 5")
+    }
+}
+
 /// R-11, G-9: autoplay is opt-in.
 struct AutoplayTests {
     @Test("Player page autoplays only when asked (R-11)")
