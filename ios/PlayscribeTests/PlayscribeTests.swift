@@ -458,3 +458,42 @@ struct AutoplayTests {
         #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
     }
 }
+
+/// Release also defines INTERNAL, so the QA routes must be switched off by the build channel:
+/// a TestFlight or App Store build (it carries a receipt) ignores them, and so do URLs from other apps.
+@MainActor
+struct QARouteGuardTests {
+    private func model() -> AppModel { AppModel(storeURL: URL.temporaryDirectory.appending(path: "qa-\(UUID().uuidString).json")) }
+
+    @Test("A distribution build ignores playscribe:// QA routes")
+    func distributionIgnoresURLRoutes() {
+        BuildChannel.overrideIsDistribution = true
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        m.handle(url: URL(string: "playscribe://add")!)
+        m.handle(url: URL(string: "playscribe://first-run")!)
+        #expect(!m.addSheetOpen)
+        #expect(m.qaRoute == nil)
+    }
+
+    @Test("A distribution build ignores the -qaRoute launch argument and the overlay")
+    func distributionIgnoresLaunchArguments() {
+        BuildChannel.overrideIsDistribution = true
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        m.applyQALaunch(route: "add", overlay: true)
+        #expect(!m.addSheetOpen)
+        #expect(!m.showDebugOverlay)
+        #expect(m.qaRoute == nil)
+    }
+
+    @Test("A developer or simulator build still runs QA routes")
+    func internalBuildRunsRoutes() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        m.applyQALaunch(route: "add", overlay: false)
+        #expect(m.addSheetOpen)
+        #expect(m.qaRoute == "add")
+    }
+}

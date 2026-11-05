@@ -818,6 +818,14 @@ final class AppModel {
     }
 
     #if INTERNAL
+    /// The `-qaRoute` / `-qaOverlay` launch arguments. Ignored in a distribution build (one with a
+    /// TestFlight or App Store receipt), exactly like the playscribe:// QA routes.
+    func applyQALaunch(route: String?, overlay: Bool) {
+        guard BuildChannel.showsInternalTools else { return }
+        if overlay { showDebugOverlay = true; FoldAuditSwitch.enabled = true }
+        if let route, let url = URL(string: "playscribe://\(route)") { handle(url: url) }
+    }
+
     /// QA (INTERNAL, route "spoiler-demo"): opens a bundled-game patch dated 19 Apr 2025 whose notes
     /// open with a greeting and a spoiler warning, as Blue Prince 1.2 does in the live feed, so the
     /// reader's spoiler switch, counts and year can be stilled in the simulator with no network.
