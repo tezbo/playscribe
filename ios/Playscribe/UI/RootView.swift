@@ -35,7 +35,7 @@ struct BookPagePanel: View {
                     .environment(\.railWidth, 0)
                     .frame(width: max(0, fold.minX), height: duo.size.height)
                     .background(Color.ink0)
-                    .clipShape(UnevenRoundedRectangle(topTrailingRadius: 20, bottomTrailingRadius: 20))
+                    .clipShape(UnevenRoundedRectangle(bottomTrailingRadius: 20, topTrailingRadius: 20))
                     .accessibilityAddTraits(.isModal)
             }
             .transition(.move(edge: .leading))
