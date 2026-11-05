@@ -51,3 +51,22 @@ struct PlusLogicTests {
         #expect(f.months.first?.games.last?.gameId == "kcd2")
     }
 }
+
+/// The PS Plus card's cover art: a lineup name resolves to a catalogue game only on an exact title match.
+@MainActor
+struct PlusCoverTests {
+    @Test func unknownTitleDrawsThePlateNotAWrongCover() {
+        let g = PlusMonth.Game(name: "Zzzz Not A Real Game Title 9999", gameId: nil)
+        #expect(PlusCard.resolve(g, tracked: { _ in nil }) == nil)
+    }
+
+    @Test func aTrackedGameIdWinsOverTheIndex() {
+        let tracked = CatalogGame(id: "kcd2", name: "Kingdom Come: Deliverance II", platforms: [.ps5], coverage: .none)
+        let g = PlusMonth.Game(name: "Anything", gameId: "kcd2")
+        #expect(PlusCard.resolve(g, tracked: { $0 == "kcd2" ? tracked : nil })?.id == "kcd2")
+    }
+
+    @Test func atMostThreeCoversShow() {
+        #expect(PlusCard.maxCovers == 3)
+    }
+}
