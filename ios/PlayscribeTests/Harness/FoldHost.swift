@@ -175,8 +175,11 @@ enum FoldHost {
         r.appliedInsets = hc.view.safeAreaInsets
         r.inheritedInsets = inherited
         // Diagnostics for the next calibration: where the 84 pt leading offset on the Mac comes from.
+        let all = box.frames.map { ("frame", $0) } + box.named.map { ($0.key, $0.value) }
+        let leftmost = all.min { $0.1.minX < $1.1.minX }.map { "\($0.0) \($0.1)" } ?? "none"
+        let sceneNote = screen.width > screen.height ? "landscape \(scene.interfaceOrientation.rawValue)" : "portrait \(scene.interfaceOrientation.rawValue)"
         let rawMinX = (box.frames + Array(box.named.values)).map(\.minX).min() ?? .nan
-        print("harness error: [info, diag] \(pose.id) window \(window.frame) host in window \(hc.view.convert(CGPoint.zero, to: nil)) host in screen \(hc.view.convert(CGPoint.zero, to: window.screen.coordinateSpace)) margins \(hc.view.layoutMargins) safe \(hc.view.safeAreaInsets) additional \(hc.additionalSafeAreaInsets) origin \(origin) rawMinX \(rawMinX) screen \(screen)")
+        print("harness error: [info, diag] \(pose.id) window \(window.frame) host in window \(hc.view.convert(CGPoint.zero, to: nil)) host in screen \(hc.view.convert(CGPoint.zero, to: window.screen.coordinateSpace)) margins \(hc.view.layoutMargins) safe \(hc.view.safeAreaInsets) additional \(hc.additionalSafeAreaInsets) origin \(origin) rawMinX \(rawMinX) leftmost \(leftmost) scene \(sceneNote) screen \(screen)")
         return r
     }
 
