@@ -11,8 +11,10 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         var update: String
         var date: Date
         var unread: Bool
-        /// A cover thumbnail was written for this row (first row only, for the small widget).
+        /// A cover thumbnail was written for this row (official art only; see `coverData(for:)`).
         var hasCover = false
+        /// Version chip such as "v1.1", when the update name ends in a version.
+        var chip: String?
         var id: String { releaseID }
         var url: URL { URL(string: "playscribe://release/\(gameID)/\(releaseID)")! }
     }
@@ -21,25 +23,49 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     static var group: String {
         Bundle.main.object(forInfoDictionaryKey: "PlayscribeAppGroup") as? String ?? "group.co.codeconnectors.playscribe"
     }
-    static let coverFile = "widget-cover.jpg"
+    static let coverPrefix = "widget-cover-"
     static let fileName = "widget-snapshot.json"
 
     var rows: [Row]
     var unreadCount: Int
     var hasGames: Bool
 
+    /// The 72 hour rule (the app's "older updates count as read"): a row is New only while unread and
+    /// within 72 h of `now`. The widget applies it at render time so a chip expires without the app running.
+    static let freshWindow: TimeInterval = 72 * 3600
+    func freshened(at now: Date) -> WidgetSnapshot {
+        var copy = self
+        var expired = 0
+        for i in copy.rows.indices where copy.rows[i].unread && now.timeIntervalSince(copy.rows[i].date) > Self.freshWindow {
+            copy.rows[i].unread = false
+            expired += 1
+        }
+        copy.unreadCount = max(0, copy.unreadCount - expired)
+        return copy
+    }
+
     static let empty = WidgetSnapshot(rows: [], unreadCount: 0, hasGames: false)
 
-    /// Gallery preview, same sample as the share card.
-    static let sample = WidgetSnapshot(
-        rows: [Row(gameID: "the-blood-of-dawnwalker", game: "The Blood of Dawnwalker", releaseID: "update-1-1",
-                   update: "Update 1.1", date: Date(timeIntervalSince1970: 1_792_627_200), unread: true)],
-        unreadCount: 1, hasGames: true)
+    /// Gallery preview: three rows so the medium and large look complete, one new (same chip as the real widget).
+    static let sample: WidgetSnapshot = {
+        let day: TimeInterval = 86_400
+        let t = Date(timeIntervalSince1970: 1_792_627_200)
+        return WidgetSnapshot(
+            rows: [Row(gameID: "the-blood-of-dawnwalker", game: "The Blood of Dawnwalker", releaseID: "update-1-1",
+                       update: "Update 1.1", date: t, unread: true, chip: "v1.1"),
+                   Row(gameID: "control-resonant", game: "CONTROL Resonant", releaseID: "hotfix-1-4-2",
+                       update: "Hotfix 1.4.2", date: t.addingTimeInterval(-day), unread: false, chip: "v1.4.2"),
+                   Row(gameID: "blue-prince", game: "Blue Prince", releaseID: "update-2-0",
+                       update: "Update 2.0", date: t.addingTimeInterval(-3 * day), unread: false, chip: "v2.0")],
+            unreadCount: 1, hasGames: true)
+    }()
 
     static var containerURL: URL? { FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: group) }
 
-    static func coverData() -> Data? {
-        containerURL.flatMap { try? Data(contentsOf: $0.appendingPathComponent(coverFile)) }
+    static func coverFile(for releaseID: String) -> String { "\(coverPrefix)\(releaseID).jpg" }
+
+    static func coverData(for row: Row) -> Data? {
+        containerURL.flatMap { try? Data(contentsOf: $0.appendingPathComponent(coverFile(for: row.releaseID))) }
     }
 
     static func load() -> WidgetSnapshot {

@@ -175,7 +175,8 @@ struct ReleaseBody: View {
                     if summary.count > 120 {
                         Button(summaryOpen ? "Less" : "More") { withAnimation(.snappy) { summaryOpen.toggle() } }
                             .font(PlayscribeFont.subheadline.weight(.semibold))
-                            .frame(minHeight: 44)
+                            .frame(minWidth: 44, minHeight: 44)
+                            .contentShape(Rectangle())
                             .accessibilityHint(summaryOpen ? "Shows less of the summary" : "Shows the full summary")
                             .tappableFrame()
                     }
@@ -250,7 +251,8 @@ struct ReleaseBody: View {
 /// "Released 22 Oct" (GR-3), with the version and size as secondary detail.
 enum FactsLine {
     static func text(for r: Release) -> String {
-        let date = (r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth
+        // "19 Apr 2025" once the year is not this one, so an old update never reads as recent.
+        let date = (r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear
         switch r.ps5State {
         case .onPS5, .pending: return "Released \(date)"
         case .announced: return "Announced for PS5, \(date)"
@@ -396,14 +398,15 @@ struct NoteSectionView: View {
     var body: some View {
         let key = "cat:\(release.id):\(section.title)"
         let open = model.isExpanded(key)
-        let ps5Items = release.isPS5Listed ? section.items.filter { !$0.isPCOnly } : section.items
-        let pcOnly = release.isPS5Listed ? section.items.filter(\.isPCOnly) : []
-        let hidden = section.items.filter { $0.spoiler == true }.count
+        let shown = section.items.filter { !ChangeKind.isPreamble($0.text) }
+        let ps5Items = release.isPS5Listed ? shown.filter { !$0.isPCOnly } : shown
+        let pcOnly = release.isPS5Listed ? shown.filter(\.isPCOnly) : []
+        let hidden = ps5Items.filter { $0.spoiler == true }.count
         VStack(alignment: .leading, spacing: 8) {
             Button { model.setExpanded(key, !open) } label: {
                 HStack {
                     Text(LinkedText.clean(section.title)).font(PlayscribeFont.subheadline.weight(.semibold))
-                    Text("\(section.items.count)\(hidden > 0 && !model.spoilersShown(release.gameID) ? ", \(hidden) hidden for spoilers" : "")")
+                    Text("\(ps5Items.count)\(hidden > 0 && !model.spoilersShown(release.gameID) ? ", \(hidden) hidden for spoilers" : "")")
                         .font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     Spacer()
                     Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
@@ -538,11 +541,15 @@ enum ChangeKind: String, CaseIterable {
         }
     }
 
+    /// A greeting or the spoiler warning itself is not a change: never a bullet or part of a count.
+    /// The warning's job is done by the spoiler switch it turns on for the lines after it.
+    static func isPreamble(_ text: String) -> Bool { NoteItem.isGreeting(text) || NoteItem.isSpoilerWarning(text) }
+
     /// Non-empty groups in New, Fixed, Balance, Other order; the count leaves out PC-only lines on a PS5 page.
     static func grouped(_ notes: [NoteSection], ps5Only: Bool) -> [(kind: ChangeKind, sections: [NoteSection], count: Int)] {
         allCases.compactMap { kind in
             let sections = notes.compactMap { sec -> NoteSection? in
-                let items = sec.items.filter { of($0, in: sec.title) == kind }
+                let items = sec.items.filter { of($0, in: sec.title) == kind && !isPreamble($0.text) }
                 return items.isEmpty ? nil : NoteSection(title: sec.title, items: items)
             }
             guard !sections.isEmpty else { return nil }
