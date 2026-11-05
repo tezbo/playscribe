@@ -16,6 +16,7 @@ struct SettingsView: View {
     /// In Tabletop the sheet is the lower-half panel, which is not presented, so it closes itself.
     private func dismiss() { if let panelClose { panelClose() } else { systemDismiss() } }
     @Environment(\.duo) private var duo
+    @AppStorage(YouTubeController.autoplayKey) private var autoplayVideos = false
     @State private var simGame: String = ""
     @State private var simKind: AppModel.SimKind = .major
     @State private var simDelay: Double = 10
@@ -102,6 +103,14 @@ struct SettingsView: View {
                         .accessibilityIdentifier("sounds")
                 } footer: {
                     Text("A soft pop when you add games. Never plays while you are listening to something else.")
+                }
+
+                Section {
+                    Toggle("Autoplay videos", isOn: $autoplayVideos)
+                } header: {
+                    Text("Video")
+                } footer: {
+                    Text("Trailers and update videos start as soon as they open. Off when Reduce Motion is on.")
                 }
 
                 #if INTERNAL

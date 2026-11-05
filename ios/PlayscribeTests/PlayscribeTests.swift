@@ -448,3 +448,13 @@ struct SpoilerWarningTests {
         #expect(s.items.allSatisfy { $0.spoiler == nil })
     }
 }
+
+/// R-11, G-9: autoplay is opt-in.
+struct AutoplayTests {
+    @Test("Player page autoplays only when asked (R-11)")
+    func html() {
+        #expect(YouTubeController.html("abc", captions: true).contains("autoplay:0"))
+        let on = YouTubeController.html("abc", captions: true, autoplay: true)
+        #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
+    }
+}
