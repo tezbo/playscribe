@@ -72,7 +72,17 @@ final class ReleaseFeatureTests: XCTestCase {
     func testLongPressTileShowsStatusMenu() throws {
         launch("quick/wishlist")
         let tile = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH %@", "tile-")).firstMatch
-        guard tile.waitForExistence(timeout: 15), tile.isHittable else { throw XCTSkip("no tappable tile in this pose") }
+        guard tile.waitForExistence(timeout: 15) else { throw XCTSkip("no tile in this pose") }
+        // The grid sits below the cards, off screen at launch (Tabletop's lower half is short): scroll the lower
+        // half, never the view-only upper half, until a tile can be pressed.
+        var tries = 0
+        while !tile.isHittable && tries < 8 {
+            let from = app.coordinate(withNormalizedOffset: CGVector(dx: inTabletop ? 0.4 : 0.5, dy: 0.85))
+            let to = app.coordinate(withNormalizedOffset: CGVector(dx: inTabletop ? 0.4 : 0.5, dy: inTabletop ? 0.6 : 0.35))
+            from.press(forDuration: 0.1, thenDragTo: to)
+            tries += 1
+        }
+        guard tile.isHittable else { throw XCTSkip("no tappable tile in this pose after scrolling") }
         tile.press(forDuration: 1.2)
         let remove = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Remove ")).firstMatch
         XCTAssertTrue(remove.waitForExistence(timeout: 5), "B-10: the long-press menu lists Remove")
