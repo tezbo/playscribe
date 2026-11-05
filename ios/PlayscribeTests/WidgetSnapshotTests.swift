@@ -116,7 +116,7 @@ struct WidgetSnapshotTests {
         }
         // Large: sample inside the hero band where its text sits (45% down the band).
         let size = Self.sizes[2].size
-        let band = WidgetLayout.largeHeroFraction(rowCount: 5)
+        let band = WidgetLayout.largeHeroFraction(rowCount: fresh.rows.count)
         let r = ImageRenderer(content: WidgetCanvas(entry: entry(fresh), family: .systemLarge, scheme: .light, size: size, covers: white))
         r.scale = 2
         let ratio = try whiteContrast(try #require(r.uiImage), x: 0.95, y: band * 0.45)
