@@ -139,7 +139,7 @@ enum FoldHost {
         // window's own safe area inherits none of it (negative additionalSafeAreaInsets cannot cancel an inherited inset: the
         // Closed landscape run kept right 84), so the pose's insets are exactly the ones added below.
         let screen = scene.screen.bounds.size
-        let park = CGPoint(x: 20000, y: 20000)
+        let park = CGPoint(x: screen.width + 60, y: screen.height + 60)
         let shell = UIViewController()
         shell.addChild(hc)
         shell.view.addSubview(hc.view)
@@ -157,7 +157,7 @@ enum FoldHost {
             try? await Task.sleep(for: settle / 4)
         }
         // SwiftUI's global space is window-based here; if the reporters turn out host-relative, do not subtract the park.
-        let parked = (box.frames.first ?? box.named.values.first).map { $0.minX > 10000 } ?? true
+        let parked = (box.frames.first ?? box.named.values.first).map { $0.minX > screen.width } ?? true
         let winOrigin = parked ? hc.view.convert(CGPoint.zero, to: nil) : .zero
         let origin = CGPoint(x: winOrigin.x + pose.safeArea.left, y: winOrigin.y + pose.safeArea.top)
         func rel(_ r: CGRect) -> CGRect { r.offsetBy(dx: -origin.x, dy: -origin.y) }
