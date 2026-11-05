@@ -679,7 +679,9 @@ final class Release050Tests: XCTestCase {
         XCTAssertTrue(["off", "0"].contains(toggle.value as? String ?? ""), "off by default, got \(String(describing: toggle.value))")
         if isTabletop(app) { XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: switch in the lower half") }
         XCTAssertGreaterThanOrEqual(toggle.frame.height, 44 - 1)
-        toggle.tap()
+        // The identified element is the whole row; the switch is nested at its trailing edge, and a centre tap misses it.
+        let inner = toggle.switches.firstMatch
+        if inner.exists { inner.tap() } else { toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
         // From and Until are date pickers (their label is the title), so match any element, not only static text.
         func any(_ prefix: String) -> XCUIElement {
             app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH %@", prefix)).firstMatch
