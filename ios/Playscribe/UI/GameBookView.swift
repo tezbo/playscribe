@@ -107,9 +107,10 @@ struct ChapterBar: View {
                     }
                 }
                 .padding(.horizontal, 2)
-                .padding(.trailing, 24)
+                .padding(.trailing, 44)
             }
-            .edgeFade()
+            // A wider fade so a half-seen last chip reads as "more this way", not as a bug.
+            .edgeFade(44)
             .onAppear { proxy.scrollTo(selected, anchor: .center) }
             .onChange(of: selected) { _, c in withAnimation { proxy.scrollTo(c, anchor: .center) } }
         }

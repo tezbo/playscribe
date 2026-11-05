@@ -112,7 +112,8 @@ struct RootView: View {
             if fromNotification { splashVisible = false }
         }
         .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.addSheetOpen = false } })) {
-            AddGameSheet()
+            // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
+            AddGameSheet().presentationDetents([.large])
         }
         .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.settingsOpen = false } })) {
             SettingsView()

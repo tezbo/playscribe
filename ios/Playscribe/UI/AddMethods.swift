@@ -101,9 +101,15 @@ struct AddEntryView: View {
                     .accessibilityAddTraits(.isButton)
                     .tappableFrame()
                 }
-            } footer: {
-                Text("PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password.")
             }
+        }
+        // Pinned in the sheet's own bottom inset so nothing behind or below can run into it.
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            Text("PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password.")
+                .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 20).padding(.top, 10).padding(.bottom, 16)
+                .background(Color.ink0)
         }
     }
 }

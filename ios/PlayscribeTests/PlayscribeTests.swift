@@ -416,3 +416,35 @@ struct OneUpdateDemoTests {
         #expect(!games.contains(front.gameID))
     }
 }
+
+/// Reader polish from the 0.5.0 build 6 device pass: spoiler warnings, counts, greetings.
+struct SpoilerWarningTests {
+    private func section() -> NoteSection {
+        NoteSection(title: "Changes", items: [
+            NoteItem(text: "Hello!"),
+            NoteItem(text: "Be advised, the following notes contain spoilers so browse at your own peril:"),
+            NoteItem(text: "Fixed camera lock in the lab."),
+            NoteItem(text: "Fixed a crash.", pcOnly: false),
+        ])
+    }
+
+    @Test("R-5: lines after a spoiler warning hide behind the spoiler switch; lines before it do not")
+    func linesAfterWarningAreSpoilers() {
+        let items = section().items
+        #expect(items[0].spoiler == nil)
+        #expect(items[2].spoiler == true)
+        #expect(items[3].spoiler == true)
+    }
+
+    @Test("A greeting and the warning are not counted as changes")
+    func preambleIsNotCounted() {
+        let g = ChangeKind.grouped([section()], ps5Only: true)
+        #expect(g.reduce(0) { $0 + $1.count } == 2)
+    }
+
+    @Test("Notes without a warning are untouched")
+    func noWarningNoChange() {
+        let s = NoteSection(title: "Fixes", items: [NoteItem(text: "Fixed a crash."), NoteItem(text: "Be advised: servers restart.")])
+        #expect(s.items.allSatisfy { $0.spoiler == nil })
+    }
+}
