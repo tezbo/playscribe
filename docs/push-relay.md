@@ -24,6 +24,12 @@ phone ──POST /v1/devices──▶ relay (KV)          Feed job (GitHub Actio
   admin token is derived from the Cloudflare token in `relay/deploy.sh` and feed.yml, so there is no extra secret.
 - **Relaunching spends no KV writes** (registration is idempotent per token and writes only on a change), because the free
   plan allows 1,000 writes a day. Sized for hundreds of devices, not thousands; past that, upgrade the plan or batch.
+- **Never blocks the feed.** If the relay cannot be reached (down, not deployed, token rotated: the admin token is derived from
+  `CLOUDFLARE_API_TOKEN`, so a new token needs a redeploy), the Load step fails without failing the job, push is deferred
+  (`PUSH_DEFER=1`: no release is claimed as pushed, so nothing is lost) and polling and publishing carry on.
+- **Ceilings (free plan):** 1,000 KV writes a day; about 2,000 devices before the Feed job's reads (48 runs a day, one read per
+  device) pass 100,000 a day. `POST /v1/devices` is unauthenticated, so someone could burn the daily writes; add a Cloudflare
+  rate-limit rule before the app is public.
 - The relay stores follows as sent (`gameId` or `igdbId`); the Feed job resolves them and counts follows for games it does
   not track. A dead token (410) is only dropped for the run, since the relay's copy is the source; a push to it fails again, harmlessly.
 
