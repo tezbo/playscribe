@@ -126,7 +126,7 @@ final class NotificationService: NSObject {
 
     func didRegister(token: Data) {
         deviceToken = token.map { String(format: "%02x", $0) }.joined()
-        if let model { PushRegistrar.register(token: deviceToken!, follows: model.follows, quietHours: model.data.quietHours) }
+        if let model, PushRegistrar.appCallsEnabled { PushRegistrar.register(token: deviceToken!, follows: model.follows, quietHours: model.data.quietHours) }
     }
 
     func updateBadge(_ count: Int) {
@@ -316,6 +316,11 @@ enum PushRegistrar {
         return URL(string: s)
     }
 
+    /// Whether the app's own relay calls (follows on save, quiet hours on activation and in Settings, device registration)
+    /// run. They stand down in a test host, and tests also switch them off explicitly, so a test that stubs the session sees
+    /// only its own requests whatever the app does in the background.
+    nonisolated(unsafe) static var appCallsEnabled = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil
+
     /// Tests point these at a stub; the app uses the plist, the shared session and the Keychain.
     nonisolated(unsafe) static var relayOverride: URL?
     nonisolated(unsafe) static var session: URLSession = .shared
@@ -384,13 +389,20 @@ enum PushRegistrar {
     /// The last follows list sent, so an unchanged list costs no request (the relay's free plan allows 1,000 writes a day).
     nonisolated(unsafe) private static var lastFollows: String?
     private struct FollowsBody: Encodable { var follows: [Follow] }
+    /// Sorted keys: the encoded list is the dedupe signature, and Swift's JSONEncoder does not promise one key order from
+    /// one encode to the next, so an unchanged list could look changed and be sent again.
+    private static let stableEncoder: JSONEncoder = {
+        let e = JSONEncoder()
+        e.outputFormatting = [.sortedKeys]
+        return e
+    }()
 
     /// PUT /v1/devices/me/follows: the followed games and their notify level, when they change. Nothing before the device is
     /// registered or while PlayscribeRelayURL is unset. A failed send forgets the list, so the next change sends it again.
     @discardableResult
     static func syncFollows(_ follows: [Follow]) -> Task<Void, Never>? {
         guard let url = relayURL?.appending(path: "v1/devices/me/follows"), keys.read() != nil,
-              let body = try? JSONEncoder().encode(FollowsBody(follows: follows)) else { return nil }
+              let body = try? Self.stableEncoder.encode(FollowsBody(follows: follows)) else { return nil }
         let signature = String(decoding: body, as: UTF8.self)
         guard signature != lastFollows else { return nil }
         lastFollows = signature
