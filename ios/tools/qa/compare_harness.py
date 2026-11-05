@@ -30,7 +30,11 @@ def diff(h, s):
         out.append(f"division: harness {h.get('division')} sim {s.get('division')}")
     if len(h["occlusions"]) != len(s["occlusions"]) or any(not close(a, b) for a, b in zip(h["occlusions"], s["occlusions"])):
         out.append(f"occlusions: harness {h['occlusions']} sim {s['occlusions']}")
-    hf, sf = list(h["frames"]), list(s["frames"])
+    # The harness reports frames relative to the safe-area origin (rules are written against it); the simulator probe reports
+    # them in the container's own coordinates. Add the origin back so both sides are in the same space.
+    top, lead = h["safeArea"][0], h["safeArea"][1]
+    def shift(f): return [f[0] + lead, f[1] + top, f[2], f[3]]
+    hf, sf = [shift(f) for f in h["frames"]], list(s["frames"])
     for f in sf:
         m = next((g for g in hf if close(f, g)), None)
         if m: hf.remove(m)
@@ -38,6 +42,7 @@ def diff(h, s):
     out += [f"harness-only tappable frame {g}" for g in hf]
     for name in sorted(set(h["named"]) | set(s["named"])):
         a, b = h["named"].get(name), s["named"].get(name)
+        if a is not None: a = shift(a)
         if a is None or b is None or not close(a, b): out.append(f"named {name}: harness {a} sim {b}")
     return out
 
