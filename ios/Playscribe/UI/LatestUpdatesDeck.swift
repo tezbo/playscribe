@@ -77,7 +77,9 @@ struct LatestUpdatesDeck: View {
         }
     }
 
-    var body: some View {
+    var body: some View { content.namedFrame("latestDeck") }
+
+    @ViewBuilder private var content: some View {
         if compact {
             // Explicit geometry: every card is exactly the column wide, so a swipe snaps card to card, and the
             // art is capped so the deck never grows past maxHeight (the 727 pt card, 20d77ea).
