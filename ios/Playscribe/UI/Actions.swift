@@ -24,6 +24,8 @@ struct ScreenAction: Identifiable {
     var title: String
     var systemImage: String
     var kind: Kind
+    /// Shown as the current choice: accent colour and a tinted backing, the same in every pose.
+    var selected = false
     /// Higher stays visible longer (visibilityPriority).
     var priority: ToolbarItemVisibilityPriority = .automatic
 }
@@ -49,6 +51,13 @@ struct ActionMenuContent: View {
     }
 }
 
+/// Pressed feedback for rail buttons: a visible dim in every pose (the default plain style showed none).
+struct RailPressStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label.opacity(configuration.isPressed ? 0.45 : 1)
+    }
+}
+
 /// A rail button: icon with the title as its accessibility label, 44 pt hit target.
 struct RailButton: View {
     var action: ScreenAction
@@ -57,6 +66,7 @@ struct RailButton: View {
             switch action.kind {
             case .button(let run):
                 Button(action: run) { icon }
+                    .buttonStyle(RailPressStyle())
             case .menu(let sections):
                 Menu { ActionMenuContent(sections: sections) } label: { icon }
                     .id(sections.tickKey)
@@ -69,7 +79,9 @@ struct RailButton: View {
     private var icon: some View {
         Image(systemName: action.systemImage)
             .font(PlayscribeFont.title3)
+            .foregroundStyle(action.selected ? PlayscribeColor.accent : Color.accentColor)
             .frame(width: 48, height: 48)
+            .background(Circle().fill(PlayscribeColor.accent.opacity(action.selected ? 0.18 : 0)))
             .contentShape(Rectangle())
     }
 }

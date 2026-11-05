@@ -242,12 +242,12 @@ struct TabletopRail: View {
                 if !model.data.collection.isEmpty {
                     RailButton(action: ScreenAction(id: "playing", title: "Playing",
                                                     systemImage: model.libraryTab == .playing ? "gamecontroller.fill" : "gamecontroller",
-                                                    kind: .button { model.libraryTab = .playing }))
+                                                    kind: .button { model.libraryTab = .playing }, selected: model.libraryTab == .playing))
                         .accessibilityAddTraits(model.libraryTab == .playing ? .isSelected : [])
                         .accessibilityIdentifier("playingRail")
                     RailButton(action: ScreenAction(id: "upcoming", title: "Upcoming",
                                                     systemImage: model.libraryTab == .upcoming ? "calendar.badge.clock" : "calendar",
-                                                    kind: .button { model.libraryTab = .upcoming }))
+                                                    kind: .button { model.libraryTab = .upcoming }, selected: model.libraryTab == .upcoming))
                         .accessibilityAddTraits(model.libraryTab == .upcoming ? .isSelected : [])
                         .accessibilityIdentifier("upcomingRail")
                 }
