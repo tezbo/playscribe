@@ -202,13 +202,15 @@ struct TabletopRail: View {
     static let width: CGFloat = 56
     @Environment(AppModel.self) private var model
     var duo: DuoContext
+    /// True only while the actions overflow and more lies below the visible part (Iris: no fade at rest).
+    @State private var moreBelow = false
 
     var body: some View {
-        VStack(spacing: 2) {
+        VStack(spacing: 6) {
             // The screen's controls scroll when they outgrow the lower half (a centred overflow pushed the first
             // button above the fold, 468 vs 474.5: G-4); the tabs stay pinned below.
             ScrollView {
-              VStack(spacing: 2) {
+              VStack(spacing: 6) {
             if let id = model.nav.gameID, model.nav.tab == .library {
                 RailButton(action: ScreenAction(id: "back", title: "Library", systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
@@ -260,7 +262,10 @@ struct TabletopRail: View {
             // When the lower half is short the controls scroll: fade the edge so a cut-off button reads as "more",
             // and leave room so the last one scrolls clear of the tab capsule.
             .contentMargins(.bottom, 8, for: .scrollContent)
-            .mask(LinearGradient(stops: [.init(color: .black, location: 0.9), .init(color: .clear, location: 1)],
+            .onScrollGeometryChange(for: Bool.self) { g in
+                g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1
+            } action: { _, more in moreBelow = more }
+            .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.9 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
                                  startPoint: .top, endPoint: .bottom))
             // Iris: the same floating capsule as Closed's tab bar, no full-height strip or hairline.
             VStack(spacing: 0) {
