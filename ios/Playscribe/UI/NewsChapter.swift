@@ -370,6 +370,9 @@ struct NewsStage: View {
         let game = model.game(headline.gameID)
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: model.backdrop(headline.gameID, chapter: .news, tall: false), game: game)
+            // The art layer fills whatever the stage is offered and never depends on the caption, so measuring it cannot feed back
+            // into the caption's padding.
+            .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { if abs($0 - stageBottom) > 0.5 { stageBottom = $0 } }
             LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 Text(headline.item.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(2)
@@ -386,7 +389,6 @@ struct NewsStage: View {
             .padding(.horizontal, 24).padding(.bottom, 24 + duo.clearance(forBottom: stageBottom))
             .padding(.trailing, TabletopRail.width)
         }
-        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { stageBottom = $0 }
         .clipped()
         .accessibilityHidden(true)
     }
@@ -406,6 +408,9 @@ struct NewsStageArt: View {
         let newest = (NewsStore.shared.items[gameID] ?? []).max { ($0.date ?? .distantPast) < ($1.date ?? .distantPast) }
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: model.backdrop(gameID, chapter: .news, tall: false), game: game).ignoresSafeArea()
+            // The art layer fills whatever the stage is offered and never depends on the caption, so measuring it cannot feed back
+            // into the caption's padding.
+            .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { if abs($0 - stageBottom) > 0.5 { stageBottom = $0 } }
             LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 Text(game?.name ?? "").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
@@ -414,7 +419,6 @@ struct NewsStageArt: View {
             .padding(.horizontal, 24).padding(.bottom, 24 + duo.clearance(forBottom: stageBottom))
             .padding(.trailing, TabletopRail.width)
         }
-        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { stageBottom = $0 }
         .clipped()
         .accessibilityHidden(true)
     }
