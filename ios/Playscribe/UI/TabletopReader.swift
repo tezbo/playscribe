@@ -61,9 +61,11 @@ extension AppModel {
         return selectedRelease(gameID) ?? releases(gameID).first
     }
 
+    private static let qaLongBody = "A long overview for checking the Tabletop stage. The first sentence is short. The second sentence runs on a little further so the cap has something to cut. The third sentence adds a good deal more detail about balance changes, performance work, new options and fixes across every mode. The fourth sentence keeps going to be sure the whole text is far longer than four lines on the stage, so that the Full text row appears in the lower half."
+
     /// Overview, each key change, Fixes, then PS5 facts and video.
     func readerSections(_ r: Release) -> [ReaderSection] {
-        var out = [ReaderSection(id: "overview", title: r.headline ?? r.displayName, body: r.summary ?? "")]
+        var out = [ReaderSection(id: "overview", title: r.headline ?? r.displayName, body: qaLongText ? Self.qaLongBody : (r.summary ?? ""))]
         for (i, k) in (r.keyChanges ?? []).enumerated() {
             let parts = k.split(separator: ":", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
             let parsed = ReaderTitle.parse(k)
