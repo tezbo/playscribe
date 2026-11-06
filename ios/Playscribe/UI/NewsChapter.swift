@@ -165,8 +165,5 @@ struct NewsStrip: View {
                 }
             }
         }
-        .task(id: ids) {
-            for id in ids.prefix(12) { await store.load(gameID: id, igdbID: model.game(id)?.igdbID) }
-        }
     }
 }

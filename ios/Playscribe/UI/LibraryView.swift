@@ -494,6 +494,11 @@ struct LibraryShelf: View {
         // lingers faintly under the new one (Book, ad54f44 stills).
         .transaction(value: messagePad) { $0.animation = nil }
         .refreshable { await model.refreshFeed() }
+        // The News strip's headlines load from here, not from the strip: a task on a view that is empty
+        // until the headlines arrive never runs, so the strip stayed hidden (TestFlight build 8, Mac 9506116).
+        .task(id: model.data.collection.map(\.gameID)) {
+            for id in model.data.collection.map(\.gameID).prefix(12) { await NewsStore.shared.load(gameID: id, igdbID: model.game(id)?.igdbID) }
+        }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
                 ZStack {
