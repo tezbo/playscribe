@@ -4,6 +4,18 @@ import UIKit
 import Security
 import UserNotifications
 
+/// N-1: when the invitation card shows. Pure, so it is tested without the notification centre.
+enum NotificationAsk {
+    static let snoozeDays = 7
+    static let maxAsks = 3
+
+    static func shows(hasGames: Bool, status: UNAuthorizationStatus, asks: Int, snoozedUntil: Date?, now: Date = .now) -> Bool {
+        guard hasGames, status == .notDetermined || status == .denied, asks < maxAsks else { return false }
+        if let snoozedUntil, snoozedUntil > now { return false }
+        return true
+    }
+}
+
 /// Local and remote notifications: asking in context (N-1, N-2), content and interruption
 /// levels (N-3, N-4), foreground handling (N-7), deep links (N-6) and the badge (N-8).
 @Observable
@@ -25,9 +37,19 @@ final class NotificationService: NSObject {
         Task { await refreshAuthorization(); syncReleaseDayAlerts(); syncPlusLeavingSoon() }
     }
 
+    #if INTERNAL
+    /// QA (`-qaRoute alerts` / `alerts-denied`): pins the status the invitation card and Settings see.
+    var qaForcedAuthorization: UNAuthorizationStatus? {
+        didSet { if let s = qaForcedAuthorization { authorization = s } }
+    }
+    #endif
+
     func refreshAuthorization() async {
         let settings = await center.notificationSettings()
         authorization = settings.authorizationStatus
+        #if INTERNAL
+        if let s = qaForcedAuthorization { authorization = s; return }
+        #endif
         if authorization == .authorized || authorization == .provisional {
             UIApplication.shared.registerForRemoteNotifications()
         }

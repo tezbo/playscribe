@@ -241,11 +241,11 @@ struct LibraryShelf: View {
     private func topCards(_ all: [AppModel.LibraryRow]) -> some View {
         let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
         VStack(alignment: .leading, spacing: 14) {
-            CatchUpCard()
-            PlusCard()
             if model.showsNotificationCard, let first = all.first {
                 NotificationInviteCard(gameName: first.game.name)
             }
+            CatchUpCard()
+            PlusCard()
         }
         // Never wider than the column it sits in (Iris: the card ran past the left page's search field in Book).
         .frame(maxWidth: pageWidth, alignment: .leading)
@@ -1157,38 +1157,83 @@ struct SquareCover: View {
 
 /// The open-flat banner: the featured game's art with the wordmark, so it reads as the app.
 
-/// N-1: asked in context after the first game is added. One Continue button, swipe to dismiss.
+/// N-1: asked in context once a game is in the library. "Turn on" opens the system prompt (or iOS Settings if
+/// notifications were denied); "Not now" or a swipe rests the card for a week.
 struct NotificationInviteCard: View {
     @Environment(AppModel.self) private var model
     var gameName: String
-    @State private var counted = false
+    @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private func snooze() {
+        withAnimation(reduceMotion ? .easeOut(duration: 0.2) : .smooth) { model.snoozeNotificationCard() }
+    }
+
+    private var denied: Bool { NotificationService.shared.authorization == .denied }
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.accent)
             VStack(alignment: .leading, spacing: 8) {
-                Text("Get a note when \(gameName) updates on PS5").font(PlayscribeFont.headline)
-                Button("Continue") {
-                    model.data.notificationCardDismissed = true
-                    Task { await NotificationService.shared.requestAuthorization() }
+                Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
+                    .fixedSize(horizontal: false, vertical: true)
+                    // The body is dropped from view at AX sizes, never from VoiceOver (Iris).
+                    .accessibilityLabel(denied ? "Alerts are off" : "Be first to know when a patch drops. Get a note the moment any game in your library gets an update on PS5.")
+                    .accessibilityAddTraits(.isHeader)
+                // At the largest sizes the ask card keeps its title and buttons only; denied keeps one short line.
+                if !typeSize.isAccessibilitySize {
+                    Text(denied
+                         ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
+                         : "Get a note the moment any game in your library gets an update on PS5.")
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                } else if denied {
+                    Text("Turn notifications on in Settings.")
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
-                .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
-                .hitTarget()
-                .tappableFrame()
+                // Accessibility sizes stack the buttons outright: ViewThatFits let a label squeeze to "Turn on al…" (AX3, Closed).
+                if typeSize.isAccessibilitySize {
+                    VStack(alignment: .leading, spacing: 12) { buttons }.padding(.top, 6)
+                } else {
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: 12) { buttons }
+                        VStack(alignment: .leading, spacing: 8) { buttons }
+                    }
+                }
             }
             Spacer(minLength: 0)
         }
         .padding(16)
         .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .gesture(DragGesture(minimumDistance: 30).onEnded { v in
-            if abs(v.translation.width) > 60 { model.data.notificationCardDismissed = true }
+            if abs(v.translation.width) > 60 { snooze() }
         })
-        .accessibilityAction(named: "Dismiss") { model.data.notificationCardDismissed = true }
-        .onAppear {
-            guard !counted else { return }
-            counted = true
-            model.data.notificationCardShows += 1
+        .accessibilityAction(named: "Not now") { snooze() }
+        .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
+    }
+
+    @ViewBuilder private var buttons: some View {
+        Button {
+            if denied {
+                snooze()
+                if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+            } else {
+                Task { if !(await NotificationService.shared.requestAuthorization()) { snooze() } }
+            }
+        } label: {
+            Text(denied ? "Open Settings" : "Turn on alerts").frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
         }
+        .buttonStyle(.borderedProminent).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
+        .foregroundStyle(PlayscribeColor.onAccent)
+        .hitTarget()
+        .tappableFrame()
+        Button { snooze() } label: {
+            Text("Not now").frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
+        }
+            .buttonStyle(.bordered).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
+            .hitTarget()
+            .tappableFrame()
     }
 }
 
