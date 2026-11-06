@@ -41,13 +41,13 @@ struct DeckAndWidgetTests {
     /// The card's summary line never ends mid-word (Iris, 2026-11-06).
     @Test func deckSummaryCutsAtWholeWords() {
         let long = "Fixes a crash on load and improves frame pacing in the big city district when many characters appear at once during night"
-        let cut = CompactDeckCard.wholeWords(long, limit: 100)
+        let cut = CompactCaption.wholeWords(long, limit: 100)
         #expect(cut.hasSuffix("…"))
         let body = String(cut.dropLast())
         #expect(long.hasPrefix(body))
         #expect(long.dropFirst(body.count).first == " ")
-        #expect(CompactDeckCard.wholeWords("Short one. Second sentence.", limit: 100) == "Short one.")
-        #expect(CompactDeckCard.wholeWords("No stop here", limit: 100) == "No stop here")
+        #expect(CompactCaption.wholeWords("Short one. Second sentence.", limit: 100) == "Short one.")
+        #expect(CompactCaption.wholeWords("No stop here", limit: 100) == "No stop here")
     }
 
     /// The widget file round trips, and its rows deep link to the release (no source names or URLs shown).
