@@ -68,9 +68,10 @@ jobs:
       - name: Closed portrait and landscape, standard and AX3 (risk 2 step A)
         if: always()
         run: ios/tools/qa/ci-closed-ax3.sh "${{ steps.sim.outputs.udid }}" build/shots-ax3 "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
-      - name: Closed landscape by XCUIDevice orientation (fallback for the osascript rotate)
+      - name: Real Closed landscape probe (XCUIDevice orientation; informational)
         if: always()
         id: landscape
+        continue-on-error: true
         run: |
           rm -rf build/Landscape.xcresult
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
@@ -81,6 +82,24 @@ jobs:
           grep -E 'error:|Test Case .* (passed|failed)|Executed|\*\* TEST' landscape.log | tail -30 | tee -a "$GITHUB_STEP_SUMMARY"
           mkdir -p build/shots-ax3/landscape
           [ -d build/Landscape.xcresult ] && xcrun xcresulttool export attachments --path build/Landscape.xcresult --output-path build/shots-ax3/landscape || true
+          if [ "${status:-0}" != 0 ]; then
+            echo "::warning::real Closed landscape not reached"
+            echo "### WARNING: real Closed landscape not reached (the runner cannot rotate the outer panel). Green here does NOT cover Closed landscape; the Mac gate still shoots it." | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          exit "${status:-0}"
+      - name: Harness Closed landscape stills (not a sign-off)
+        if: always()
+        run: |
+          rm -rf build/Harness.xcresult
+          mkdir -p build/shots-ax3/harness
+          xcodebuild test -project ios/Playscribe.xcodeproj -scheme Playscribe \
+            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd-unit \
+            -only-testing:PlayscribeTests/HarnessLandscapeShotTests \
+            -resultBundlePath build/Harness.xcresult CODE_SIGNING_ALLOWED=NO \
+            TEST_RUNNER_HARNESS_SHOT_DIR="$PWD/build/shots-ax3/harness" > harness.log 2>&1 || status=$?
+          grep -E 'error:|Test Case .* (passed|failed)|Executed|\*\* TEST' harness.log | tail -20 | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "Harness stills (harness-closed-land-*.png) are fold-harness output, frames 84-88 pt off the Duo: NOT a Closed landscape sign-off. The Mac gate keeps that." | tee -a "$GITHUB_STEP_SUMMARY"
+          ls build/shots-ax3/harness | tee -a "$GITHUB_STEP_SUMMARY"
           exit "${status:-0}"
       - uses: actions/upload-artifact@v4
         if: always()
@@ -92,6 +111,8 @@ jobs:
             build/attachments
             build/UITests.xcresult
             build/Landscape.xcresult
+            build/Harness.xcresult
+            harness.log
             landscape.log
             uitests.log
             build.log
