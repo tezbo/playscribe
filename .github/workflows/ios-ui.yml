@@ -92,14 +92,14 @@ jobs:
         run: |
           rm -rf build/Harness.xcresult
           mkdir -p build/shots-ax3/harness
-          xcodebuild test -project ios/Playscribe.xcodeproj -scheme Playscribe \
+          TEST_RUNNER_HARNESS_SHOT_DIR="$PWD/build/shots-ax3/harness" xcodebuild test -project ios/Playscribe.xcodeproj -scheme Playscribe \
             -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd-unit \
             -only-testing:PlayscribeTests/HarnessLandscapeShotTests \
-            -resultBundlePath build/Harness.xcresult CODE_SIGNING_ALLOWED=NO \
-            TEST_RUNNER_HARNESS_SHOT_DIR="$PWD/build/shots-ax3/harness" > harness.log 2>&1 || status=$?
+            -resultBundlePath build/Harness.xcresult CODE_SIGNING_ALLOWED=NO > harness.log 2>&1 || status=$?
           grep -E 'error:|Test Case .* (passed|failed)|Executed|\*\* TEST' harness.log | tail -20 | tee -a "$GITHUB_STEP_SUMMARY"
           echo "Harness stills (harness-closed-land-*.png) are fold-harness output, frames 84-88 pt off the Duo: NOT a Closed landscape sign-off. The Mac gate keeps that." | tee -a "$GITHUB_STEP_SUMMARY"
           ls build/shots-ax3/harness | tee -a "$GITHUB_STEP_SUMMARY"
+          [ -n "$(ls build/shots-ax3/harness)" ] || { echo "::error::no harness stills written"; status=1; }
           exit "${status:-0}"
       - uses: actions/upload-artifact@v4
         if: always()
