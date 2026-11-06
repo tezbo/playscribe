@@ -108,6 +108,7 @@ The local server has the same operations under `/v1/admin`, with `Authorization:
 ## 0.5.0 additions: notes lines and checked date
 
 - `NoteItem.category: new|fixed|balance|other` is the kind of change a notes line is, derived from its Steam section title ("New Features", "Bug Fixes", "Balance Changes"…); `other` when the title says nothing. Missing in older data: treat as `other`. Fixes win when a title says both.
+- `Release.ps4: true` (optional, absent otherwise) marks a PS4 patch for a game that plays on PS5 through backward compatibility. Label it "PS4 update"; the release still has a PS5 row (live, reported) with no version. Older apps ignore the key.
 - `NoteItem.pcOnly: boolean` marks a notes line that is only about PC. The app may fold these lines into a group; it never turns a release into "PC only".
 - `Field.checkedAt` is the time of the latest fetch that read the fact. PS5 `version` is never a PC number.
 

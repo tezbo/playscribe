@@ -143,6 +143,7 @@ export const openDb = (path: string): DB => {
   if (!has('source_state', 'fail_streak')) db.exec('ALTER TABLE source_state ADD COLUMN fail_streak INTEGER NOT NULL DEFAULT 0')
   if (!has('games', 'ps5_release_precision')) db.exec('ALTER TABLE games ADD COLUMN ps5_release_precision TEXT')
   if (!has('games', 'artwork_image_id')) db.exec('ALTER TABLE games ADD COLUMN artwork_image_id TEXT')
+  if (!has('releases', 'ps4')) db.exec('ALTER TABLE releases ADD COLUMN ps4 INTEGER NOT NULL DEFAULT 0')
   if (!has('releases', 'links')) db.exec("ALTER TABLE releases ADD COLUMN links TEXT NOT NULL DEFAULT '{}'")
   if (!has('platform_releases', 'alert_from')) db.exec('ALTER TABLE platform_releases ADD COLUMN alert_from TEXT')
   if (!has('devices', 'quiet_from')) db.exec('ALTER TABLE devices ADD COLUMN quiet_from INTEGER')

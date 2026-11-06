@@ -402,3 +402,29 @@ test('news: Push Square headlines that name a tracked game are Reported news (ti
   assert.equal(db.prepare("SELECT COUNT(*) AS n FROM news WHERE url LIKE '%other%'").get()!.n, 0)
   assert.ok(!db.prepare("SELECT 1 FROM releases WHERE game_id = 'dawnwalker' AND source_ids LIKE '%pushsquare-news%'").get(), 'the news feed never makes a release')
 })
+
+// Terry 2026-11-06: PS4 games play on PS5, so a PS4 patch for a game with no native PS5 version counts, labelled ps4.
+test('a PS4 patch post for a backward-compatible game is a labelled PS4 update; a native PS5 game ignores PS4 posts after its launch', async () => {
+  const title = 'Dawnwalker PS4 Patch 1.9 Out Now'
+  const build = async (ps5Release: string | null) => {
+    const db = openDb(':memory:')
+    const fetchFn = fakeFetch({
+      'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews([]),
+      'https://www.pushsquare.com/news/dw4': pressArticle(title, 'The patch is 1.2GB on PS4.'),
+      'https://www.pushsquare.com/tags/updates': pressIndexPage([{ title, path: 'news/dw4', date: recent(50), tags: ['PS4', 'Dawnwalker', 'Updates'] }]),
+    })
+    const deps = { db, fetchFn, igdb: null }
+    await seedGames(deps)
+    db.prepare('UPDATE games SET ps5_release = ? WHERE id = ?').run(ps5Release, 'dawnwalker')
+    await runIngest(deps)
+    return db
+  }
+  const compat = await build(null)
+  const r = getRelease(compat, 'dawnwalker@1.9')!
+  assert.equal(r.ps4, true)
+  assert.equal(r.displayName.includes('PS5'), false)
+  assert.equal(r.platforms.find((p) => p.platform === 'ps5')!.verification, 'reported')
+  assert.equal(store.dropPreLaunchPs5(compat), 0)
+  const native = await build('2020-01-01')
+  assert.equal(getRelease(native, 'dawnwalker@1.9'), null)
+})

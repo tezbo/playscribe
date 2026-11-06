@@ -8,7 +8,7 @@ import newsSources from '../sources/news-sources.json' with { type: 'json' }
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import type { Igdb } from './igdb.ts'
-import { extractNotes, mentionsPs5, ps5PageOf } from './notes.ts'
+import { extractNotes, mentionsPs4, mentionsPs5, ps5PageOf } from './notes.ts'
 
 // The poll job from docs/ps5-patch-data.md. Rules that matter:
 //  - An official source that names PS5 decides its PS5 row. When the post says outright that
@@ -158,7 +158,7 @@ const poll = async (deps: IngestDeps, s: SourceDef, summary: IngestSummary, opts
   }
 }
 
-const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, post: Post, summary: IngestSummary) => {
+const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, post: Post, summary: IngestSummary, ps4 = false) => {
   const { db } = deps
   const text = `${post.title}\n${post.body}`
   const track = (r: { id: string; created: boolean; revised: boolean }) => {
@@ -202,7 +202,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
       near?.id ??
       alike?.id ??
       // A press headline is the site's words, not a release name: without a version it is just a PS5 update.
-      track(store.upsertRelease(db, { gameId: game.id, versionKey: naming.versionKey, displayName: /^[a-z]+-\d{4}-/.test(naming.versionKey) ? 'PS5 update' : naming.displayName, kind: 'silent', kindBasis: 'inferred', announcedAt: post.publishedAt, notes: [], sourceId: s.id }))
+      track(store.upsertRelease(db, { gameId: game.id, versionKey: naming.versionKey, displayName: /^[a-z]+-\d{4}-/.test(naming.versionKey) ? (ps4 ? 'PS4 update' : 'PS5 update') : naming.displayName, kind: 'silent', kindBasis: 'inferred', announcedAt: post.publishedAt, notes: [], sourceId: s.id, ps4 }))
     if (byKey || near || alike) store.addSource(db, releaseId, s.id)
     const version = consoleVersionOf(text, { ps5Only: true })
     const size = sizeBytesOf(post.body) ?? sizeBytesOf(post.title)
@@ -333,7 +333,11 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
         continue
       }
       const aboutPs5 = s.kind !== 'pressIndex' || mentionsPs5(post.title) || (post.tags ?? []).some((t) => /^PS5$/i.test(t))
-      const matched = looksLikePatch(post.title) && aboutPs5 ? games.filter((g) => matchesPost(g, post)) : []
+      // A PS4 patch counts for a game that plays on PS5 by backward compatibility: no native PS5 release, or the post
+      // predates it (docs/ps5-patch-data.md). It is stored on the PS5 row and labelled ps4 on the release.
+      const aboutPs4 = !aboutPs5 && (mentionsPs4(post.title) || (post.tags ?? []).some((t) => /^PS4$/i.test(t)))
+      const playsOnPs5 = (g: Record<string, any>) => !g.ps5_release || post.publishedAt.slice(0, 10) < g.ps5_release
+      const matched = looksLikePatch(post.title) && (aboutPs5 || aboutPs4) ? games.filter((g) => matchesPost(g, post) && (aboutPs5 || playsOnPs5(g))) : []
       let full = post
       if (matched.length && post.expand) {
         try {
@@ -345,7 +349,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       }
       tx(deps.db, () => {
         let releaseId: string | null = null
-        for (const game of matched) releaseId = handlePost(deps, game, s, full, summary) ?? releaseId
+        for (const game of matched) releaseId = handlePost(deps, game, s, full, summary, aboutPs4) ?? releaseId
         store.markSeen(deps.db, s.id, post.postId, releaseId)
       })
     }
