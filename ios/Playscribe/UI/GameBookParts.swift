@@ -661,14 +661,22 @@ struct ReleaseTimeline: View {
                 model.select(gameID, releaseID: r.id)
             }
         } label: {
-            HStack(spacing: 8) {
+            let title = TitleWithTags(release: r) {
+                Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular))
+                    .lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
+            }
+            let date = Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+            HStack(alignment: .top, spacing: 8) {
                 if model.isUnread(r) { UnreadDot() } else { Color.clear.frame(width: 8, height: 8) }
-                TitleWithTags(release: r) {
-                    Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular))
-                        .lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
+                if typeSize.isAccessibilitySize {
+                    // No trailing date column at AX: the date takes its own full-width line under the title and tags.
+                    VStack(alignment: .leading, spacing: 4) { title; date }
+                    Spacer(minLength: 0)
+                } else {
+                    title
+                    Spacer(minLength: 4)
+                    date
                 }
-                Spacer(minLength: 4)
-                Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).font(PlayscribeFont.caption).foregroundStyle(.secondary)
             }
             .padding(.horizontal, 10)
             .frame(minHeight: 44)
