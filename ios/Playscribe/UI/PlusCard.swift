@@ -106,7 +106,7 @@ struct PlusCard: View {
             PlusBadge(height: 20).accessibilityHidden(true)
             Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
                 .font(PlayscribeFont.subheadline.weight(.semibold))
-                .foregroundStyle(lastChance ? Color.ember : PlayscribeColor.textPrimary)
+                .foregroundStyle(lastChance ? PlayscribeColor.ember500 : PlayscribeColor.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityLabel(lastChance ? "PS Plus, last chance, claim by \(claimBy)" : "PS Plus, this month, claim by \(claimBy)")
                 .accessibilityAddTraits(.isHeader)
