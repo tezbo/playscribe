@@ -815,8 +815,11 @@ struct GameTitleWithStatus: View {
     }
 
     private var titleRow: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 8) {
-            // Accessibility sizes: up to 3 lines, wrapped on whole words (Iris on #289, "Kingdom Come: Delive…" at AX3).
+        // Accessibility sizes: the status glyph sits under the title instead of beside it, so the title gets the whole
+        // column and "Deliverance" is never cut mid-word (Iris on #289, b5b0b1a).
+        let layout = typeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 0)) : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 8))
+        return layout {
             // Up to 4 lines, and the title text stops growing at AX3: at AX5 one long word ("Deliverance") is wider than a
             // Closed portrait column and cut mid-word (c240de9). The reader shows the true size.
             Text(name).font(PlayscribeFont.title2).lineLimit(typeSize.isAccessibilitySize ? 4 : 2)
