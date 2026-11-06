@@ -16,7 +16,12 @@ struct DeckCard: Identifiable, Hashable {
 extension AppModel {
     /// Up to 8 cards: unread On PS5 updates first, then the rest from the last 90 days, newest first.
     /// With nothing in 90 days, the newest release dates of the library's games.
-    var latestDeck: [DeckCard] {
+    var latestDeck: [DeckCard] { Array(latestDeckAll.prefix(8)) }
+
+    /// Updates beyond the deck's 8 cards: the Open portrait "+N more updates" chip opens the Updates list.
+    var latestDeckOverflow: Int { max(0, latestDeckAll.count - 8) }
+
+    private var latestDeckAll: [DeckCard] {
         let cutoff = Date.now.addingTimeInterval(-90 * 86400)
         var cards: [DeckCard] = []
         for c in data.collection {
@@ -31,7 +36,7 @@ extension AppModel {
                 guard let g = game(c.gameID), let d = g.releaseDate?.isoDay, d <= .now else { return nil }
                 return DeckCard(game: g, release: nil, unread: false, date: d)
             }
-            return Array(info.sorted { ($0.date ?? .distantPast) > ($1.date ?? .distantPast) }.prefix(8))
+            return info.sorted { ($0.date ?? .distantPast) > ($1.date ?? .distantPast) }
         }
         // QA (route one-update): only the one fresh update, so the deck is a single hero.
         if qaSingleUpdate { cards = cards.filter(\.unread) }
@@ -44,7 +49,7 @@ extension AppModel {
             perGame[c.game.id, default: 0] += 1
             return perGame[c.game.id]! <= 2
         }
-        return Array(spread.prefix(8))
+        return spread
     }
 }
 
@@ -59,6 +64,8 @@ struct LatestUpdatesDeck: View {
     var compact = false
     /// Compact only: the whole deck (card, caption, page edge) is at most this tall (Iris: 38% of the height).
     var maxHeight: CGFloat = 0
+    /// Compact only: updates beyond the deck's cards; a trailing "+N more updates" chip in the dots row opens the list.
+    var moreCount: Int = 0
     @State private var current: String?
 
     /// The page edge (44 pt leaves) and the 8 pt gap above it; the card takes the rest of maxHeight.
@@ -157,7 +164,26 @@ struct LatestUpdatesDeck: View {
             // Closed landscape (scrollHeight set): the dots sit inside the hero's bottom edge, centred, so the
             // first screen still shows the chips and the first tile row (Iris, cf6c889).
             .overlay(alignment: .bottom) { if scrollHeight != nil && cards.count > 1 { pageEdge } }
-            if cards.count > 1 && scrollHeight == nil { pageEdge }
+            if scrollHeight == nil && (cards.count > 1 || (compact && moreCount > 0)) {
+                // The dots row: dots centred, the "+N more updates" chip trailing (Iris), a 44 pt control that wraps at AX.
+                ZStack(alignment: .trailing) {
+                    if cards.count > 1 { pageEdge }
+                    if compact && moreCount > 0 {
+                        Button { model.nav.tab = .updates } label: {
+                            HStack(spacing: 4) {
+                                Text("+\(moreCount) more updates").multilineTextAlignment(.trailing)
+                                Image(systemName: "chevron.right").accessibilityHidden(true)
+                            }
+                            .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                            .frame(minHeight: 44)
+                            .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                        .tappableFrame()
+                        .accessibilityLabel("\(moreCount) more updates, opens the Updates list")
+                    }
+                }
+            }
         }
         .accessibilityElement(children: .contain)
         .accessibilityLabel(compact || cards.count > 1

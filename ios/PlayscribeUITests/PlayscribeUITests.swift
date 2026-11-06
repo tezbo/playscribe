@@ -455,7 +455,7 @@ final class LibraryLayoutTests: XCTestCase {
                 }
                 // Only when the measurement is consistent with portrait: a card wider than app.frame is a landscape reading.
                 if pose.contains("flat") && app.frame.width <= app.frame.height && h.maxX <= app.frame.width + 1 {
-                    XCTAssertLessThanOrEqual(h.height, app.frame.height * 0.38 + 12, "Open portrait hero is at most 38% of the height [\(pose)]")
+                    XCTAssertLessThanOrEqual(h.height, app.frame.height * 0.42 + 12, "Open portrait hero is at most 42% of the height [\(pose)]")
                 }
             }
             // Open portrait: the deck takes the full content width, nothing sits beside it (the Also new panel is gone).

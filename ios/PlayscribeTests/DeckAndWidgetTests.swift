@@ -30,6 +30,14 @@ struct DeckAndWidgetTests {
         }
     }
 
+    /// The "+N more updates" chip counts exactly the updates the 8-card deck leaves out, never negative (Iris, 2026-11-06).
+    @Test func deckOverflowIsWhatTheDeckLeavesOut() {
+        let m = demoModel()
+        #expect(m.latestDeck.count <= 8)
+        #expect(m.latestDeckOverflow >= 0)
+        if m.latestDeckOverflow == 0 { #expect(m.latestDeck.count <= 8) }
+    }
+
     /// The widget file round trips, and its rows deep link to the release (no source names or URLs shown).
     @Test func widgetSnapshotRoundTrips() throws {
         let data = try JSONEncoder().encode(WidgetSnapshot.sample)

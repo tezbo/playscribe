@@ -401,8 +401,12 @@ struct LibraryShelf: View {
                     // Open portrait: the deck takes the full content width (Terry and Iris, 2026-11-06: the Also new
                     // panel only repeated the carousel and its rows moved with every swipe, so it is gone).
                     // The card carries headline, game, date and the summary line; taller at accessibility sizes.
+                    // Art at 16:9 across the content width (Iris: never cropped tighter than 16:10), plus the dots row.
+                    let contentWidth = max(0, duo.size.width - railWidth - 32)
                     LatestUpdatesDeck(cards: model.latestDeck, compact: true,
-                                      maxHeight: (duo.size.height * (typeSize.isAccessibilitySize ? 0.46 : 0.38)).rounded())
+                                      maxHeight: min((contentWidth * 9 / 16).rounded() + 52,
+                                                     (duo.size.height * (typeSize.isAccessibilitySize ? 0.46 : 0.42)).rounded()),
+                                      moreCount: model.latestDeckOverflow)
                         .id(poseKey)
                 } else if duo.pose != .tabletop && !heroOnRightPage {
                     let deck = model.latestDeck
