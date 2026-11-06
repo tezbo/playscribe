@@ -132,8 +132,11 @@ struct LibraryShelf: View {
     /// Tabletop: first-letter filter instead of typing (the keyboard never opens there).
     @State private var letter: String?
     /// Book at accessibility sizes: the heights of each page above its tiles, to split the tiles so the pages end level.
-    @State private var leftHeaderH: CGFloat = 0
     @State private var rightHeaderH: CGFloat = 0
+    /// Book with a hero: the measured heights of the left page's controls (tabs, search, offers, filters) and of the news
+    /// strip on its own, so the strip can move to the right page when that ends the pages level (0.5.2, Iris).
+    @State private var leftControlsH: CGFloat = 0
+    @State private var newsH: CGFloat = 0
 
     /// D-12: one square tile size per pose.
     private var tileSize: CGFloat {
@@ -360,24 +363,43 @@ struct LibraryShelf: View {
                     let proportional = min(rows.count, Int((Double(rows.count) * Double(left.count) / Double(left.count + right.count)).rounded(.up)))
                     // No hero: the caught-up card is short, so split for equal rows on both pages and, on a tie, as evenly as
                     // possible (4 games: 2 and 2, not 3 and 1; Iris, dda3857). With a hero the proportional split stands.
-                    let leftCount: Int = {
-                        guard layout == .tiles else { return 0 }
-                        // Accessibility sizes (0.5.1 spec 4): the left page's controls are tall, so split by height: tiles
-                        // continue from the left page onto the right in order, ending the pages about level, no hole.
-                        if typeSize.isAccessibilitySize, leftHeaderH > 0, rightHeaderH > 0 {
-                            let n = rows.count
-                            let rowH = left.size * 4 / 3 + 56 + 10
-                            func tall(_ k: Int) -> CGFloat {
-                                max(leftHeaderH + CGFloat((k + left.count - 1) / left.count) * rowH,
-                                    rightHeaderH + CGFloat((n - k + right.count - 1) / right.count) * rowH)
-                            }
-                            return (0...n).min { (tall($0), $0) < (tall($1), $1) } ?? proportional
-                        }
-                        guard model.latestDeck.isEmpty else { return proportional }
+                    // Both pages end level (0.5.2, Iris): choose how many tiles go on the left and whether the news strip
+                    // sits on the left (under the offers) or on the right (after its tiles), minimising the taller page.
+                    // Heights are measured, tile rows estimated; the strip only moves when it was measured.
+                    let balance: (leftCount: Int, newsRight: Bool) = {
+                        guard layout == .tiles else { return (0, false) }
                         let n = rows.count
-                        func rowsFor(_ k: Int) -> Int { max((k + left.count - 1) / left.count, (n - k + right.count - 1) / right.count) }
-                        return (0...n).min { (rowsFor($0), abs(2 * $0 - n)) < (rowsFor($1), abs(2 * $1 - n)) } ?? proportional
+                        let measured = leftControlsH > 0 && rightHeaderH > 0
+                        guard measured, n > 0 else {
+                            // Not measured yet (first pass): the previous rules.
+                            if model.latestDeck.isEmpty {
+                                func rowsFor(_ k: Int) -> Int { max((k + left.count - 1) / left.count, (n - k + right.count - 1) / right.count) }
+                                return ((0...n).min { (rowsFor($0), abs(2 * $0 - n)) < (rowsFor($1), abs(2 * $1 - n)) } ?? proportional, false)
+                            }
+                            return (proportional, false)
+                        }
+                        let rowH = left.size * 4 / 3 + 56 + 10
+                        let gap: CGFloat = 14
+                        let news = newsH > 0 ? newsH + gap : 0
+                        func tall(_ k: Int, _ newsRight: Bool) -> CGFloat {
+                            let l = leftControlsH + (newsRight ? 0 : news)
+                                + (k > 0 ? gap + CGFloat((k + left.count - 1) / left.count) * rowH : 0)
+                            let r = rightHeaderH + (n - k > 0 ? gap + CGFloat((n - k + right.count - 1) / right.count) * rowH : 0)
+                                + (newsRight ? news : 0)
+                            return max(l, r)
+                        }
+                        var best = (k: 0, news: false, h: CGFloat.greatestFiniteMagnitude)
+                        for newsRight in (news > 0 ? [false, true] : [false]) {
+                            for k in 0...n {
+                                let h = tall(k, newsRight)
+                                // Ties keep the strip on the left and the tiles in order; a move needs a real gain (one row).
+                                let gain: CGFloat = newsRight ? rowH / 2 : 0
+                                if h + gain < best.h - 0.5 { best = (k, newsRight, h + gain) }
+                            }
+                        }
+                        return (best.k, best.news)
                     }()
+                    let leftCount = balance.leftCount
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
                             VStack(alignment: .leading, spacing: typeSize.isAccessibilitySize ? 16 : 14) {
@@ -385,12 +407,18 @@ struct LibraryShelf: View {
                             // Controls first, the offer second (Iris, Book compact card).
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                             topCards(all)
-                            NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
+                            if !balance.newsRight {
+                                NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
+                                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { newsH = $0 }
+                            }
                             if all.count >= 2 && layout == .tiles {
                                 FilterBar(accessibilityColumns: 2).frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
                             }
                             }
-                            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { leftHeaderH = $0 }
+                            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in
+                                // The controls without the strip, so the choice above never depends on where the strip is now.
+                                leftControlsH = h - (balance.newsRight || newsH == 0 ? 0 : newsH + (typeSize.isAccessibilitySize ? 16 : 14))
+                            }
                             if layout == .tiles { pageGrid(Array(rows.prefix(leftCount)), fit: left) }
                         }
                         .frame(width: leftWidth, alignment: .topLeading)
@@ -406,6 +434,10 @@ struct LibraryShelf: View {
                             }
                             .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { rightHeaderH = $0 }
                             if layout == .tiles { pageGrid(Array(rows.dropFirst(leftCount)), fit: right) }
+                            if balance.newsRight {
+                                NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
+                                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { newsH = $0 }
+                            }
                         }
                         .frame(width: rightWidth, alignment: .topLeading)
                         .padding(.leading, max(0, rightStart - leftWidth))
