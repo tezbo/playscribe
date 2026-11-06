@@ -530,3 +530,15 @@ test('a title naming PS4 and PS5 is a PS5 post, not labelled ps4; a PS5 report j
   await runIngest(deps, { force: true })
   assert.equal(getRelease(labelled, 'dawnwalker@1.9')?.ps4, undefined)
 })
+
+test('a PS4-only post from an RSS feed is labelled ps4, not stored as a PS5 update', async () => {
+  const db = openDb(':memory:')
+  const fetchFn = fakeFetch({
+    'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews([]),
+    'https://www.playstationlifestyle.net/feed': rss([{ title: 'Dawnwalker PS4 Patch 1.9 Is Out Now', link: 'https://www.playstationlifestyle.net/dw19', date: recent(50), body: '<p>Patch 1.9 is 1GB.</p>' }]),
+  } as never)
+  const deps = { db, fetchFn, igdb: null }
+  await seedGames(deps)
+  await runIngest(deps)
+  assert.equal(getRelease(db, 'dawnwalker@1.9')?.ps4, true)
+})

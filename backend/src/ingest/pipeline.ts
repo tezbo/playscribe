@@ -351,12 +351,16 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
         })
         continue
       }
-      const aboutPs5 = s.kind !== 'pressIndex' || mentionsPs5(post.title) || (post.tags ?? []).some((t) => /^PS5$/i.test(t))
+      const namesPs5 = mentionsPs5(post.title) || (post.tags ?? []).some((t) => /^PS5$/i.test(t))
       // A PS4 patch counts for a game that plays on PS5 by backward compatibility: no native PS5 release, or the post
-      // predates it (docs/ps5-patch-data.md). It is stored on the PS5 row and labelled ps4 on the release.
-      const aboutPs4 = !aboutPs5 && (mentionsPs4(post.title) || (post.tags ?? []).some((t) => /^PS4$/i.test(t)))
+      // predates it (docs/ps5-patch-data.md). It is stored on the PS5 row and labelled ps4 on the release. This holds for
+      // every shared source, so a PS4-only post from an RSS feed is never stored as a PS5 update.
+      const aboutPs4 = !namesPs5 && (mentionsPs4(post.title) || (post.tags ?? []).some((t) => /^PS4$/i.test(t)))
+      const aboutPs5 = !aboutPs4 && (s.kind !== 'pressIndex' || namesPs5)
       const playsOnPs5 = (g: Record<string, any>) => !g.ps5_release || post.publishedAt.slice(0, 10) < g.ps5_release
-      const matched = looksLikePatch(post.title) && (aboutPs5 || aboutPs4) ? games.filter((g) => matchesPost(g, post) && (aboutPs5 || playsOnPs5(g))) : []
+      // Only the press path labels ps4; an official shared post (PlayStation Blog) is about PS5 or it is left alone.
+      const ps4Ok = aboutPs4 && s.trust === 'secondary'
+      const matched = looksLikePatch(post.title) && (aboutPs5 || ps4Ok) ? games.filter((g) => matchesPost(g, post) && (aboutPs5 || playsOnPs5(g))) : []
       let full = post
       if (matched.length && post.expand) {
         try {
@@ -368,7 +372,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       }
       tx(deps.db, () => {
         let releaseId: string | null = null
-        for (const game of matched) releaseId = handlePost(deps, game, s, full, summary, aboutPs4) ?? releaseId
+        for (const game of matched) releaseId = handlePost(deps, game, s, full, summary, ps4Ok) ?? releaseId
         store.markSeen(deps.db, s.id, post.postId, releaseId)
       })
     }
