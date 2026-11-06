@@ -688,6 +688,46 @@ final class Release050Tests: XCTestCase {
         XCTAssertNotNil(text.range(of: #"\d+\.\d+\.\d+"#, options: .regularExpression), "Version reads like 1.2.3, got '\(text)' [\(pose)]")
     }
 
+    /// 0.5.1 spec 2: while the pill shows, the page's top controls stay clear of it and tappable, and swiping the pill
+    /// away dismisses it (its VoiceOver "Dismiss" action does the same; XCUITest cannot list custom actions).
+    func testPillLeavesTheTopOfThePageAlone() throws {
+        let app = launch("pill")
+        let pill = app.buttons["newOnPS5Pill"]
+        XCTAssertTrue(pill.waitForExistence(timeout: 10), "the pill shows")
+        let cog = app.buttons["settingsButton"]
+        XCTAssertTrue(cog.exists && cog.isHittable, "Settings stays tappable while the pill shows")
+        XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(pill.frame), "the pill does not cover the cog")
+        let search = app.textFields.firstMatch
+        if search.exists { XCTAssertFalse(search.frame.insetBy(dx: 1, dy: 1).intersects(pill.frame), "the pill does not cover Search") }
+        // The Library's scroll view ends above the pill, so no row or tile can sit under it.
+        let page = app.scrollViews.firstMatch
+        if page.exists { XCTAssertLessThanOrEqual(page.frame.maxY, pill.frame.minY + 1, "the Library ends above the pill") }
+        pill.swipeRight()
+        XCTAssertFalse(pill.waitForExistence(timeout: 3), "swiping dismisses the pill")
+        app.terminate()
+    }
+
+    /// 0.5.1 spec 2 (Quinn, #246): in Tabletop the letter filter scrolls with the page, and a letter scrolled below the page's
+    /// edge is drawn under the pill by the overlay. It must not take a tap: the page is clipped above the pill.
+    func testPillCoversNoHittableLetterInTabletop() throws {
+        let app = launch("pill")
+        let pill = app.buttons["newOnPS5Pill"]
+        XCTAssertTrue(pill.waitForExistence(timeout: 10), "the pill shows")
+        guard isTabletop(app) else { app.terminate(); return }
+        XCTAssertTrue(pill.isHittable, "the pill itself takes taps")
+        let letters = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'letter-'")).allElementsBoundByIndex
+        // isHittable tests the element's centre. A letter's frame may reach a few points below the page's edge (the part
+        // past the edge is clipped and takes no tap), so judge the centre: below the pill's top edge it must not be hittable,
+        // and a hittable letter's centre must be above the pill.
+        for letter in letters where letter.frame.midY >= pill.frame.minY {
+            XCTAssertFalse(letter.isHittable, "\(letter.identifier) has its centre at or under the pill and must not take a tap")
+        }
+        for letter in letters where letter.isHittable {
+            XCTAssertLessThan(letter.frame.midY, pill.frame.minY, "\(letter.identifier) is tappable only with its centre above the pill")
+        }
+        app.terminate()
+    }
+
     /// 0.5.1 spec 1: the per-game footer sits directly under the Notify me about row, and every toggle row is 52 pt.
     func testSettingsFootersAndRows() throws {
         let app = launch("settings")

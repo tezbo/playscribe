@@ -279,6 +279,23 @@ export const promoteAnnounced = (db: DB, at = new Date()) => {
   return n
 }
 
+/**
+ * History: a press-only announcement ("Patch 2.12 Will Rebalance...") more than 30 days old, in a game that has since had a
+ * later release live on PS5, has happened. A patch announced and then delayed with nothing after it stays announced
+ * (never claim an unconfirmed release). Safe to run every ingest.
+ */
+export const settleOldAnnouncements = (db: DB, at = new Date()) => {
+  const rows = db
+    .prepare(
+      `SELECT r.id, r.announced_at FROM releases r JOIN platform_releases p ON p.release_id = r.id AND p.platform = 'ps5'
+       WHERE p.status = 'announced' AND p.verification = 'reported' AND r.announced_at < ?
+         AND EXISTS (SELECT 1 FROM releases l JOIN platform_releases lp ON lp.release_id = l.id AND lp.platform = 'ps5' AND lp.status = 'live' WHERE l.game_id = r.game_id AND l.announced_at > r.announced_at)`,
+    )
+    .all(new Date(at.getTime() - 30 * 86400e3).toISOString()) as { id: string; announced_at: string }[]
+  for (const r of rows) upsertPlatform(db, r.id, 'ps5', { status: 'live', verification: 'reported', liveAt: field(r.announced_at, 'reported', 'pushsquare') })
+  return rows.length
+}
+
 /** A news headline for a game: title, date and link only (roadmap 17). Never the post body. */
 export const addNews = (db: DB, gameId: string, post: { url: string; title: string; publishedAt: string; sourceId: string }) =>
   db

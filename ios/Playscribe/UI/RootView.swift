@@ -101,10 +101,6 @@ struct RootView: View {
             let _ = { model.livePose = duo.pose }()
             ZStack {
                 TabRoot(duo: duo)
-                    // One toast rule (Iris, #244): while a toast or the pill shows, scrolling content gets a matching
-                    // bottom margin so the last rows and chips can scroll clear of it.
-                    .contentMargins(.bottom, LowerMessages.inset(duo: duo, showing: model.toast != nil || model.pill != nil), for: .scrollContent)
-                    .animation(.snappy, value: model.toast != nil || model.pill != nil)
                     .environment(\.railWidth, duo.pose == .tabletop ? TabletopRail.width : 0)
                     .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.tagExplainer == nil && model.player == nil)
 
@@ -317,6 +313,8 @@ struct TabletopRail: View {
         }
         .padding(.vertical, 8)
         .frame(maxHeight: .infinity)
+        // The rail's buttons are 44 pt and do not grow with text (0.5.1 spec 3): at AX sizes the icons overlapped.
+        .dynamicTypeSize(...DynamicTypeSize.large)
     }
 
     private func moreItems(_ id: String) -> [ScreenAction.MenuSection] {
@@ -364,20 +362,17 @@ struct TabletopRail: View {
 
 /// The "New on PS5" pill (N-7) and toasts with Undo (B-8), above the tab bar or in the lower half.
 struct LowerMessages: View {
-    /// Distance from the bottom edge to the toast slot: above the tab bar in Open portrait, 12 pt in the lower half of Tabletop.
-    static func bottomPadding(duo: DuoContext) -> CGFloat {
-        duo.pose == .flat && !duo.isLandscape ? 96 : duo.pose == .tabletop ? 12 : 16
-    }
-
-    /// Room scrolling content leaves for a showing toast: its slot plus about 56 pt for the toast itself.
-    static func inset(duo: DuoContext, showing: Bool) -> CGFloat { showing ? bottomPadding(duo: duo) + 56 : 0 }
-
     @Environment(AppModel.self) private var model
     var duo: DuoContext
 
+    static func bottomPadding(_ duo: DuoContext) -> CGFloat {
+        duo.pose == .flat && !duo.isLandscape ? 96 : duo.pose == .tabletop ? 12 : 16
+    }
+
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 0) {
             Spacer()
+            VStack(spacing: 8) {
             if let pill = model.pill, let game = model.game(pill.gameID), let r = model.release(pill.gameID, pill.releaseID) {
                 Button {
                     model.openRelease(gameID: pill.gameID, releaseID: pill.releaseID)
@@ -386,14 +381,21 @@ struct LowerMessages: View {
                         UnreadDot()
                         Text("New on PS5: \(game.name) \(r.displayName)")
                             .font(PlayscribeFont.subheadline.weight(.semibold))
-                            .lineLimit(2)
+                            // Never cut: up to three lines at the capped size (Iris, 0.5.1 spec 2).
+                            .lineLimit(3)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .multilineTextAlignment(.leading)
                         Image(systemName: "chevron.forward").font(PlayscribeFont.caption)
                     }
+                    // Transient chrome stops scaling at AX1 before the page does; VoiceOver still reads all of it (Iris).
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                     .padding(.horizontal, 16)
+                    .padding(.vertical, 12)
                     .frame(minHeight: 44)
                     // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
-                    .background(Capsule().fill(PlayscribeColor.ink700))
-                    .adaptiveGlass(in: Capsule(), interactive: true)
+                    // A 24 pt corner: a full capsule on one line, a rounded rectangle on two or more.
+                    .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(PlayscribeColor.ink700))
+                    .adaptiveGlass(in: RoundedRectangle(cornerRadius: 24, style: .continuous), interactive: true)
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()
@@ -432,9 +434,21 @@ struct LowerMessages: View {
                     Button("Dismiss") { model.toastClear() }
                 }
             }
+            }
+            // The Library reserves this much at its bottom edge (a safe-area inset), so the pill never covers its
+            // top-of-page controls: the content reflows above it (0.5.1 spec 2, Iris).
+            .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { frame in
+                let h = frame.height
+                // Everything from the bottom edge up to the top of the messages, plus 8 pt of air.
+                let inset = h > 0 ? h + Self.bottomPadding(duo) + 8 : 0
+                if model.messageInset != inset { model.messageInset = inset }
+                let shown: CGRect? = h > 0 ? frame : nil
+                if model.messageFrame != shown { model.messageFrame = shown }
+            }
         }
         // Above the bottom tab bar only where the bars are horizontal (open portrait).
-        .padding(.bottom, Self.bottomPadding(duo: duo))
+        // Tabletop: 12 pt above the bottom, left of the rail (0.5.1 spec 2).
+        .padding(.bottom, Self.bottomPadding(duo))
         .padding(.trailing, duo.pose == .tabletop ? TabletopRail.width : 0)
         .padding(.horizontal, 16)
         // Book: the pill and toasts stay on the left page; they never straddle the fold.

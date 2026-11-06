@@ -271,6 +271,20 @@ struct LibraryShelf: View {
                     .padding(.top, 4)
     }
 
+    @State private var messagePad: CGFloat = 0
+    /// This view's frame in global coordinates. The pad sits inside it, so its bottom edge does not move with the pad.
+    @State private var libraryFrame: CGRect = .zero
+
+    /// One reserve: this page's scroll view ends 12 pt above the pill (or toast), and only where the pill overlaps the page
+    /// sideways (Book's right page gets none while the pill is on the left).
+    private func updateMessagePad() {
+        var pad: CGFloat = 0
+        if let m = model.messageFrame, libraryFrame.minX < m.maxX, libraryFrame.maxX > m.minX {
+            pad = max(0, libraryFrame.maxY - (m.minY - 12))
+        }
+        if abs(pad - messagePad) > 0.5 { messagePad = pad }
+    }
+
     var body: some View {
         @Bindable var model = model
         let rows = duo.pose == .tabletop && letter != nil
@@ -460,15 +474,25 @@ struct LibraryShelf: View {
             .padding(.trailing, railWidth)
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
-        // One toast slot (Iris, #244): while a toast or the pill shows, the scroll view is shortened by the slot, so
-        // the chips, tiles and page dots above it are never covered. It grows back when the toast goes.
-        .safeAreaInset(edge: .bottom, spacing: 0) {
-            Color.clear
-                .frame(height: LowerMessages.inset(duo: duo, showing: model.pill != nil || model.toast != nil))
-                .allowsHitTesting(false)
-                .accessibilityHidden(true)
+        // The pill and toasts sit at the bottom edge. The scroll view itself ends above them (a safe-area inset would still let
+        // content scroll under the pill), so nothing is ever covered (0.5.1 spec 2, Iris).
+        // The scroll view ends above the pill; a soft edge there, not a hard cut through a card (Iris).
+        .mask(alignment: .bottom) {
+            VStack(spacing: 0) {
+                Rectangle()
+                LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
+                    .frame(height: messagePad > 0 ? 24 : 0)
+            }
         }
-        .contentMargins(.bottom, 0, for: .scrollContent)
+        .padding(.bottom, messagePad)
+        // The page ends 8 pt above the pill wherever the pill actually sits. The pad is worked out from measured edges (this
+        // view's bottom without the pad, the pill's top), not from the pill's height and offsets, so it cannot leave a dead
+        // band or run under the pill in any pose (0.5.1 spec 2, ae0a608 Open portrait).
+        .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { libraryFrame = $0; updateMessagePad() }
+        .onChange(of: model.messageFrame) { _, _ in updateMessagePad() }
+        // The pad changes the moment the pill shows. It must not ride a running pose animation, or the old arrangement
+        // lingers faintly under the new one (Book, ad54f44 stills).
+        .transaction(value: messagePad) { $0.animation = nil }
         .refreshable { await model.refreshFeed() }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
