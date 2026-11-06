@@ -112,6 +112,8 @@ struct PersistedState: Codable {
     var plusLeavingSoonOff: Bool?
     var notificationCardShows = 0
     var notificationCardDismissed = false
+    /// How often the "press and hold" Library tip has shown (it stops after two). Optional so older saved state still decodes.
+    var pressTipShows: Int?
     /// Releases already announced by a notification, so a release never pushes twice (N-3).
     var notified: [String: Date] = [:]
     /// Releases already seen On PS5, so only newly confirmed ones notify (V-1). nil until first run.
@@ -135,6 +137,8 @@ struct Toast: Equatable {
     /// The button's label: "Undo" by default, "Open My book" on a new bookmark.
     var actionLabel = "Undo"
     var token = UUID()
+    /// How long the toast stays; nil uses the default (2.6 s, or 8 s with an action).
+    var seconds: Double?
     static func == (a: Toast, b: Toast) -> Bool { a.token == b.token }
 }
 
@@ -578,6 +582,17 @@ final class AppModel {
         case "caught-up": resetToCaughtUpDemo()
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
+        // QA (INTERNAL, B-10): "quick/tip" shows the press-and-hold tip; "quick/undo" removes the first game so the
+        // 6 s Undo toast shows. The long-press menu and the yellow Wishlist disc show on the demo library as is.
+        case "quick" where parts.first == "tip": resetDemo(); nav.anchors["library"] = "lib-kcd2"; showPressTipIfNeeded(force: true)
+        case "quick" where parts.first == "wishlist":
+            resetDemo()
+            setStatus("kcd2", .wishlist); setStatus("control-resonant", .wishlist)
+            nav.anchors["library"] = "lib-kcd2"   // scroll the grid into view, clear of the tab capsule
+        case "quick" where parts.first == "undo":
+            resetDemo()
+            nav.anchors["library"] = "lib-kcd2"
+            if let id = data.collection.first(where: { $0.status == .wishlist })?.gameID ?? data.collection.first?.gameID { removeGame(id) }
         case "long-text": qaLongText = true
         case "spoiler-demo": openSpoilerDemo(shown: parts.first == "shown")
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
@@ -712,8 +727,17 @@ final class AppModel {
     }
 
     func setStatus(_ gameID: String, _ status: OwnershipStatus) {
-        guard let i = data.collection.firstIndex(where: { $0.gameID == gameID }) else { return }
+        guard let i = data.collection.firstIndex(where: { $0.gameID == gameID }), data.collection[i].status != status else { return }
         data.collection[i].status = status
+        Haptics.selection()
+    }
+
+    /// Quick actions tip (Iris): one line the first two times the Library shows, then never again.
+    func showPressTipIfNeeded(force: Bool = false) {
+        guard !data.collection.isEmpty, force || (data.pressTipShows ?? 0) < 2, toast == nil || force, pill == nil,
+              force || (!FoldAuditSwitch.enabled && !UIAccessibility.isVoiceOverRunning) else { return }
+        data.pressTipShows = (data.pressTipShows ?? 0) + 1
+        show(Toast(text: "Press and hold a game to change or remove it"))
     }
 
     /// nil: use the default.
@@ -741,7 +765,7 @@ final class AppModel {
             self.data.bookmarks += saved.bookmarks
             self.data.notes += saved.notes
             NotificationService.shared.updateBadge(self.badgeCount)
-        }))
+        }, seconds: 6))
     }
 
     // MARK: - Toasts
@@ -755,7 +779,7 @@ final class AppModel {
             if t.undo != nil { return }
         }
         Task { [weak self] in
-            try? await Task.sleep(for: .seconds(t.undo == nil ? 2.6 : 8))
+            try? await Task.sleep(for: .seconds(t.seconds ?? (t.undo == nil ? 2.6 : 8)))
             if self?.toast?.token == token { self?.toast = nil }
         }
     }
