@@ -1,0 +1,73 @@
+name: Precheck
+
+# A quiet compile check for claude/* branches, run on every push BEFORE a pull request exists.
+# GitHub emails the account that triggered a workflow run whenever the run FAILS, and every agent push runs as
+# Terry. So this workflow never fails on a compile error: it finishes green, and reports the verdict in the
+# name of its "verdict" job (read it with get_check_runs / list_workflow_jobs for the head commit) and as a
+# commit status named "precheck" (success or failure; statuses send no email).
+# Cloud engineers have no Xcode, so this is their compiler: push, read the verdict, fix, push, and only open
+# or update a PR once it reads PASS. See AGENTS.md ("Precheck first").
+on:
+  push:
+    branches: ['claude/**']
+    paths: ['ios/**', '.github/workflows/precheck.yml']
+
+concurrency:
+  group: precheck-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  statuses: write
+
+env:
+  XCODE_APP: /Applications/Xcode_27.1.app
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+  HOMEBREW_NO_ANALYTICS: 1
+
+jobs:
+  compile:
+    runs-on: xcode-27
+    timeout-minutes: 20
+    outputs:
+      verdict: ${{ steps.build.outputs.verdict }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: command -v xcodegen >/dev/null || brew install xcodegen; (cd ios && xcodegen generate)
+      - run: sudo xcode-select -s "$XCODE_APP" && xcodebuild -version
+      - name: Compile the app, the unit tests and the UI tests
+        id: build
+        run: |
+          fail=""
+          # Generic simulator destination: compiling needs no booted device. Both test schemes, app included.
+          for scheme in Playscribe PlayscribeUI; do
+            if ! xcodebuild build-for-testing \
+                -project ios/Playscribe.xcodeproj -scheme "$scheme" \
+                -destination 'generic/platform=iOS Simulator' \
+                CODE_SIGNING_ALLOWED=NO > "build-$scheme.log" 2>&1; then
+              first=$(grep -m1 -E 'error:' "build-$scheme.log" | sed -E 's|.*/ios/||' | tr -d '"\\' | cut -c1-110)
+              fail="$scheme: ${first:-build failed, see the job log}"
+              grep -E 'error:|\*\* BUILD' "build-$scheme.log" | sort -u | head -40 || true
+              break
+            fi
+          done
+          if [ -z "$fail" ]; then verdict="PRECHECK PASS"; state=success; desc="Compiles: app, unit tests, UI tests"
+          else verdict="PRECHECK FAIL $fail"; state=failure; desc="$fail"; fi
+          echo "$verdict"
+          echo "verdict=$verdict" >> "$GITHUB_OUTPUT"
+          curl -sS -o /dev/null -w 'status API: %{http_code}\n' -X POST \
+            -H "Authorization: Bearer ${{ github.token }}" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }}" \
+            -d "$(python3 -c 'import json,sys; print(json.dumps({"state": sys.argv[1], "context": "precheck", "description": sys.argv[2][:130]}))' "$state" "$desc")"
+          exit 0
+
+  # The job's name carries the verdict, so it shows in the check list without opening any log.
+  verdict:
+    needs: compile
+    if: always()
+    name: ${{ needs.compile.outputs.verdict || 'PRECHECK did not run (runner problem)' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "${{ needs.compile.outputs.verdict }}"
