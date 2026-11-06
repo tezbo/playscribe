@@ -790,6 +790,30 @@ final class AppModel {
         }, seconds: 6))
     }
 
+    /// B-12: clears every game from the library in one step. Settings asks first; Undo restores everything
+    /// (statuses, notification levels, bookmarks and notes) for 8 s, and stays until dismissed under VoiceOver.
+    func clearLibrary() {
+        guard !data.collection.isEmpty else { return }
+        let saved = (collection: data.collection, notify: data.notify, bookmarks: data.bookmarks, notes: data.notes)
+        let count = saved.collection.count
+        data.collection = []
+        data.notify = [:]
+        data.bookmarks = []
+        data.notes = []
+        nav.gameID = nil
+        highlight = nil
+        highlightSet = []
+        NotificationService.shared.updateBadge(badgeCount)
+        show(Toast(text: "Cleared \(count) game\(count == 1 ? "" : "s")", undo: { [weak self] in
+            guard let self, self.data.collection.isEmpty else { return }
+            self.data.collection = saved.collection
+            self.data.notify = saved.notify
+            self.data.bookmarks = saved.bookmarks
+            self.data.notes = saved.notes
+            NotificationService.shared.updateBadge(self.badgeCount)
+        }, seconds: 8))
+    }
+
     // MARK: - Toasts
 
     func show(_ t: Toast) {

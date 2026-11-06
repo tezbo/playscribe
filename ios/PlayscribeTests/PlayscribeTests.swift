@@ -54,6 +54,20 @@ struct ModelTests {
         #expect(adds.contains { $0.id == OwnershipStatus.wishlist.rawValue })
     }
 
+    @Test("Clear library empties it, and Undo brings every game back (B-12)")
+    func clearLibraryUndo() {
+        let m = freshModel()
+        if m.entry("dawnwalker") == nil, let g = m.game("dawnwalker") { m.addGame(g, status: .owned) }
+        m.setNotify("dawnwalker", .major)
+        let before = m.data.collection.map(\.gameID)
+        m.clearLibrary()
+        #expect(m.data.collection.isEmpty)
+        #expect(m.data.notify.isEmpty)
+        m.toast?.undo?()
+        #expect(m.data.collection.map(\.gameID) == before)
+        #expect(m.data.notify["dawnwalker"]?.level == .major)
+    }
+
     @Test("Remove then Undo restores status, level, bookmarks and notes (B-8)")
     func removeUndo() {
         let m = freshModel()

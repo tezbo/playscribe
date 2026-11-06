@@ -75,6 +75,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 - **B-7** The ⋯ menu on a game has: Status (Owned / Wishlist / Watching), Notifications (All updates / Major only / Off) and Remove.
 - **B-8** Remove takes effect immediately and shows the toast "Removed <Game>" with **Undo**, visible for 6 s. Undo restores status, notification level, bookmarks and notes.
 - **B-10** Quick actions: a long press on a game (Library tile or row, Upcoming, Search result) opens the status menu (Owned, Wishlist, Watching with a tick on the current one, Remove in red); outside the library it offers the ways to add. VoiceOver gets the same choices as custom actions ("Set to…", "Remove…"). Search result rows also have a trailing swipe Remove (no full swipe). A status change gives a light haptic. The tip "Press and hold a game to change or remove it" shows twice, then never. Tabletop: nothing above the fold is interactive.
+- **B-12** Settings has a "Danger zone" section with "Remove all games from this library…" while the library has games. It asks first (a bottom confirmation naming the count), then removes every game with its bookmarks and notes, closes Settings and shows "Cleared N games" with Undo for 8 s, which restores everything.
 - **B-11** The Wishlist status circle on a tile is a solid #F5C84B disc with an ink glyph; Owned and Watching keep the translucent circle with a white glyph.
 - **B-9** A filter with no matches shows "No <filter> games" and a "Show all" button.
 
