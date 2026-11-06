@@ -160,6 +160,22 @@ struct SettingsView: View {
                 }
 
                 #if INTERNAL
+                if BuildChannel.showsTeamAlerts {
+                Section {
+                    Toggle("Team alerts", isOn: $teamAlerts)
+                        .frame(minHeight: 52)
+                        .accessibilityIdentifier("teamAlerts")
+                        .onChange(of: teamAlerts) { _, on in if PushRegistrar.appCallsEnabled { PushRegistrar.syncTeam(on) } }
+                } header: {
+                    Text("Team alerts (TestFlight and development builds)")
+                } footer: {
+                    Text("Also receive the team's test notifications from the push relay. Off by default; it never appears in an App Store build.")
+                }
+
+                }
+                #endif
+
+                #if INTERNAL
                 if BuildChannel.showsInternalTools {
                 Section {
                     Picker("Game", selection: $simGame) {
@@ -179,17 +195,6 @@ struct SettingsView: View {
                     Text("Simulate an update (internal builds)")
                 } footer: {
                     Text("Creates a release marked Simulated and schedules its notification. Close or lock the device to see it arrive on the outer display.")
-                }
-
-                Section {
-                    Toggle("Team alerts", isOn: $teamAlerts)
-                        .frame(minHeight: 52)
-                        .accessibilityIdentifier("teamAlerts")
-                        .onChange(of: teamAlerts) { _, on in if PushRegistrar.appCallsEnabled { PushRegistrar.syncTeam(on) } }
-                } header: {
-                    Text("Team alerts (internal builds)")
-                } footer: {
-                    Text("Also receive the team's test notifications from the push relay. Off by default; this never appears in a TestFlight or App Store build.")
                 }
 
                 Section("Testing") {

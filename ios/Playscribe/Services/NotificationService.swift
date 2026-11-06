@@ -372,7 +372,7 @@ enum PushRegistrar {
     static func register(token: String, follows: [Follow], quietHours: QuietHours? = nil) -> Task<Void, Never>? {
         guard relayURL != nil else { return nil }
         lastQuiet = quietWindow(quietHours)
-        lastTeam = BuildChannel.showsInternalTools ? UserDefaults.standard.object(forKey: teamKey) as? Bool : nil
+        lastTeam = BuildChannel.showsTeamAlerts ? UserDefaults.standard.object(forKey: teamKey) as? Bool : nil
         return Task {
             if await registerNow(token: token, follows: follows) {
                 await sendQuiet(lastQuiet, retry: true)
@@ -497,12 +497,12 @@ enum PushRegistrar {
         }
     }
 
-    /// PATCH /v1/devices/me { team }: internal builds only (the Settings "Team alerts" toggle; the relay sends team-only
-    /// pushes to devices that opted in). Does nothing on a distribution build, before the device is registered, or while
+    /// PATCH /v1/devices/me { team }: development and TestFlight builds only (the Settings "Team alerts" toggle; the relay sends
+    /// team-only pushes to devices that opted in). Does nothing on an App Store build, before the device is registered, or while
     /// PlayscribeRelayURL is unset.
     @discardableResult
     static func syncTeam(_ on: Bool) -> Task<Void, Never>? {
-        guard BuildChannel.showsInternalTools, relayURL != nil, keys.read() != nil else { return nil }
+        guard BuildChannel.showsTeamAlerts, relayURL != nil, keys.read() != nil else { return nil }
         lastTeam = on
         return Task { await sendTeam(on, retry: true) }
     }
