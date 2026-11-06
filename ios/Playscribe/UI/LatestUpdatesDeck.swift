@@ -85,13 +85,20 @@ struct LatestUpdatesDeck: View {
     /// `base`, or at accessibility sizes the tallest caption plus the page edge when that is more.
     private func grown(_ base: CGFloat) -> CGFloat {
         guard typeSize.isAccessibilitySize, captionH > 0 else { return base }
-        return max(base, captionH + (cards.count > 1 ? Self.pageEdgeHeight : 0))
+        return min(max(base, captionH + edgeHeight), max(base, axCap))
     }
 
-    /// The art height of a card: `base`, or at accessibility sizes tall enough for the whole caption.
+    /// The art height of a card: `base`, or at accessibility sizes tall enough for the whole caption, never past the
+    /// J-5 bound; a caption that still does not fit sheds its lowest-priority lines (`AdaptiveCaption`).
     private func grownArt(_ base: CGFloat) -> CGFloat {
-        typeSize.isAccessibilitySize ? max(base, captionH) : base
+        guard typeSize.isAccessibilitySize else { return base }
+        return min(max(base, captionH), max(base, axCap - edgeHeight))
     }
+
+    private var edgeHeight: CGFloat { cards.count > 1 ? Self.pageEdgeHeight : 0 }
+
+    /// J-5: the deck is at most half the container's height (the harness allows 12 pt more; 4 pt here for rounding).
+    private var axCap: CGFloat { (duo.size.height * 0.5).rounded(.down) + 4 }
 
     /// Accessibility sizes: every card's caption laid out invisibly at the card's width, so the tallest sets the card's
     /// height from a real measurement, not from what a scroll view offers (the headline was clipped off the top).
@@ -262,7 +269,7 @@ struct CompactDeckCard: View {
     var body: some View {
         // The caller gives a `height` that already holds the whole caption at accessibility sizes (measured by the deck's
         // ruler), so nothing can overflow the card; the art and its scrim are the background.
-        CompactCaption(card: card)
+        AdaptiveCaption(card: card)
             .frame(maxWidth: .infinity, alignment: .bottomLeading)
             .frame(height: height, alignment: .bottomLeading)
             .background {
@@ -294,21 +301,43 @@ struct CompactDeckCard: View {
 /// headline and byline, with its padding. The deck measures it, at the card's width, to size the card.
 struct CompactCaption: View {
     var card: DeckCard
+    /// 0 is the whole caption. Higher tiers (accessibility sizes, when the card is capped by J-5) shed lines in this
+    /// order: byline name to one line (1), headline to two lines (2), the chips row (3).
+    var tier = 0
     @Environment(\.dynamicTypeSize) private var typeSize
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
 
     var body: some View {
         VStack(alignment: .leading, spacing: typeSize.isAccessibilitySize ? 2 : 4) {
-            if typeSize.isAccessibilitySize { FlowLayout(spacing: 6) { DeckChips(card: card) } }
+            if typeSize.isAccessibilitySize && tier < 3 { FlowLayout(spacing: 6) { DeckChips(card: card) } }
             Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
                 .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                 // Three lines, the ellipsis only after a whole word, never scaled down (Iris, AX3 hero).
-                .lineLimit(3).fixedSize(horizontal: false, vertical: true)
-            DeckByline(card: card, dateText: dateText)
+                .lineLimit(tier < 2 ? 3 : 2).fixedSize(horizontal: false, vertical: true)
+            DeckByline(card: card, dateText: dateText, tight: tier >= 1)
         }
         .padding(.horizontal, 16)
         // Tighter top and bottom at accessibility sizes keeps the grown deck inside its 50% bound (J-5).
         .padding(.vertical, typeSize.isAccessibilitySize ? 12 : 16)
+    }
+}
+
+/// The caption at the card's height: the whole caption when it fits, else the first tier that does (J-5 caps the card).
+struct AdaptiveCaption: View {
+    var card: DeckCard
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    var body: some View {
+        if typeSize.isAccessibilitySize {
+            ViewThatFits(in: .vertical) {
+                CompactCaption(card: card, tier: 0)
+                CompactCaption(card: card, tier: 1)
+                CompactCaption(card: card, tier: 2)
+                CompactCaption(card: card, tier: 3)
+            }
+        } else {
+            CompactCaption(card: card)
+        }
     }
 }
 
@@ -335,13 +364,15 @@ struct DeckChips: View {
 struct DeckByline: View {
     var card: DeckCard
     var dateText: String
+    /// Accessibility sizes, when the card is capped: the name on one line.
+    var tight = false
     @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         if typeSize.isAccessibilitySize {
             VStack(alignment: .leading, spacing: 2) {
                 Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
-                    .lineLimit(2).fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(tight ? 1 : 2).fixedSize(horizontal: false, vertical: true)
                 if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
             }
             .font(PlayscribeFont.subheadline)
