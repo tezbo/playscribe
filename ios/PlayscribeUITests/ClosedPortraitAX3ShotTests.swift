@@ -42,6 +42,24 @@ final class ClosedPortraitAX3ShotTests: XCTestCase {
         app.terminate()
     }
 
+    /// The script's AX5 shot of Settings was blank (Quinn, 32380a7): it fired a fixed 4 s after launch. Wait for the screen's own title
+    /// instead, and shoot nothing until it exists, so a blank still means a blank screen.
+    func testSettingsTop() {
+        let app = launch("settings")
+        let title = app.staticTexts["Settings"]
+        XCTAssertTrue(title.waitForExistence(timeout: 15), "settings: the Settings screen never appeared (a real blank page?)")
+        sleep(1)
+        shoot("settings")
+        app.terminate()
+    }
+
+    func testLibraryTop() {
+        let app = launch("library")
+        XCTAssertTrue(app.staticTexts["Library"].waitForExistence(timeout: 15), "library: never appeared")
+        shoot("library")
+        app.terminate()
+    }
+
     func testUpdatesTab() {
         let app = launch("updates")
         shoot("updates")
@@ -51,12 +69,19 @@ final class ClosedPortraitAX3ShotTests: XCTestCase {
     func testAddSheetTopMiddleBottom() {
         let app = launch("add")
         shoot("add-top")
-        app.swipeUp()
+        // Scroll the sheet's own scroll view by dragging from the lower part up; a bare app.swipeUp() started over the pinned footer
+        // and moved nothing (add-bottom matched add-top). Record whether anything moved, so a still that cannot scroll says so.
+        let scroll = app.scrollViews.firstMatch
+        let target: XCUIElement = scroll.exists ? scroll : app
+        let before = XCUIScreen.main.screenshot().pngRepresentation
+        target.swipeUp(velocity: .slow)
         sleep(1)
         shoot("add-mid")
-        for _ in 0..<4 { app.swipeUp() }
+        for _ in 0..<4 { target.swipeUp(velocity: .fast) }
         sleep(1)
         shoot("add-bottom")
+        let after = XCUIScreen.main.screenshot().pngRepresentation
+        print("add sheet scrolled: \(before != after) (scroll view found: \(scroll.exists))")
         app.terminate()
     }
 }

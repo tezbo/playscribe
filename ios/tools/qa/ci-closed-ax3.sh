@@ -43,11 +43,11 @@ rotate_to_landscape() {
     -e 'tell application "System Events" to key code 124 using command down' >/dev/null 2>&1 || true
   sleep 3
 }
-for ax in "" "-ax5"; do
-  if [ -n "$ax" ]; then xcrun simctl ui "$dev" content_size accessibility-extra-extra-extra-large; else xcrun simctl ui "$dev" content_size large; fi
-  echo "content size: $(xcrun simctl ui "$dev" content_size)"
-  pass closed "$ax"
-done
+# Standard size only from this script: its AX5 stills came out blank or all the same screen (32380a7, a fixed sleep after a
+# simctl size change), so every AX5 still comes from ClosedPortraitAX3ShotTests, which waits for each screen.
+xcrun simctl ui "$dev" content_size large
+echo "content size: $(xcrun simctl ui "$dev" content_size)"
+pass closed ""
 # Landscape: rotate once, shoot both sizes, and prove the pose from the still's own shape.
 rotate_to_landscape
 probe="$out/.probe.png"; snap "$probe"
