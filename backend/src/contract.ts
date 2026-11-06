@@ -38,6 +38,7 @@ export const contractProblems = {
     for (const k of ['id', 'gameId', 'displayName']) if (typeof r[k] !== 'string') out.push(`${w}.${k}: missing string`)
     if (!KIND.includes(r.kind)) out.push(`${w}.kind: "${r.kind}" is not a 0.2.0 ReleaseKind`)
     if (!BASIS.includes(r.kindBasis)) out.push(`${w}.kindBasis: "${r.kindBasis}" is not a 0.2.0 KindBasis`)
+    if (r.ps4 !== undefined && r.ps4 !== true) out.push(`${w}.ps4: must be true or absent`)
     if (!isDate(r.announcedAt)) out.push(`${w}.announcedAt: not an ISO date`)
     if (!Array.isArray(r.sourceIds) || r.sourceIds.some((s: J) => typeof s !== 'string')) out.push(`${w}.sourceIds: not [String]`)
     if (!Array.isArray(r.notes)) out.push(`${w}.notes: not an array`)

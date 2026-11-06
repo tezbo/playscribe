@@ -7,6 +7,7 @@ import { alertCopy, headlineOf, pushPs5Release, pushNewPs5 } from '../src/push/n
 import type { Apns } from '../src/push/apns.ts'
 import * as store from '../src/store.ts'
 import { getRelease, newsOf, promoteAnnounced } from '../src/store.ts'
+import { clearRobotsCache } from '../src/http.ts'
 import { hotGameIds } from '../src/hot.ts'
 import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpers.ts'
 
@@ -306,6 +307,59 @@ const spelling = async (steamTitle: string, pressTitle: string, steamHoursAgo = 
 }
 const dawnwalkerIds = (db: ReturnType<typeof openDb>) => (db.prepare("SELECT id FROM releases WHERE game_id = 'dawnwalker' ORDER BY id").all() as { id: string }[]).map((r) => r.id)
 
+test('a press announcement older than 30 days reads as live only when a later release is live; a delayed one stays announced; a fresh one stays announced', async () => {
+  const ps5 = (db: ReturnType<typeof openDb>, id: string) => store.getPlatformRow(db, id, 'ps5')?.status
+  // Steam patch 1.5 is the earlier release, so nothing came after the announced 1.9: it stays announced.
+  const delayed = await spelling('The Blood of Dawnwalker - Update 1.5', 'Dawnwalker PS5 Update 1.9 Will Arrive Next Week', 100 * 24, 90 * 24)
+  assert.equal(ps5(delayed, 'dawnwalker@1.9'), 'announced')
+  // Steam patch 1.5 landed after the announcement and is live: the old announcement has happened.
+  const settled = await spelling('The Blood of Dawnwalker - Update 1.5', 'Dawnwalker PS5 Update 1.9 Will Arrive Next Week', 80 * 24, 90 * 24)
+  assert.equal(ps5(settled, 'dawnwalker@1.9'), 'live')
+  assert.equal(store.settleOldAnnouncements(settled), 0, 'idempotent')
+  const fresh = await spelling('The Blood of Dawnwalker - Update 1.5', 'Dawnwalker PS5 Update 1.8 Will Arrive Next Week', 20, 28)
+  assert.equal(ps5(fresh, 'dawnwalker@1.8'), 'announced')
+})
+
+test('a blocked source is retried once a day and the block clears on success; robots.txt is still honoured on the retry', async () => {
+  const blockedAt = (db: ReturnType<typeof openDb>, hoursAgo: number) =>
+    db.prepare("INSERT OR REPLACE INTO source_state (source_id, last_fetched_at, last_status, last_error, blocked, fail_streak) VALUES ('pushsquare', ?, 403, 'x', 1, 0)").run(new Date(Date.now() - hoursAgo * 3600e3).toISOString())
+  const state = (db: ReturnType<typeof openDb>) => db.prepare("SELECT blocked, last_status FROM source_state WHERE source_id = 'pushsquare'").get() as { blocked: number; last_status: number }
+  const run = async (db: ReturnType<typeof openDb>, routes: Record<string, string | { status: number; body?: string }> = {}) => {
+    const deps = { db, fetchFn: fakeFetch({ 'https://www.pushsquare.com/tags/updates': pressIndexPage([]), ...routes }), igdb: null }
+    await seedGames(deps)
+    return runIngest(deps, { force: true })
+  }
+  const recent1 = openDb(':memory:')
+  await seedGames({ db: recent1, fetchFn: fakeFetch({}), igdb: null })
+  blockedAt(recent1, 1)
+  assert.ok((await run(recent1)).skipped.includes('pushsquare'), 'blocked an hour ago: not asked again')
+  assert.equal(state(recent1).blocked, 1)
+  const old = openDb(':memory:')
+  await seedGames({ db: old, fetchFn: fakeFetch({}), igdb: null })
+  blockedAt(old, 25)
+  assert.ok((await run(old)).polled.includes('pushsquare'), 'blocked over a day ago: one retry')
+  assert.deepEqual({ ...state(old) }, { blocked: 0, last_status: 200 })
+  const robots = openDb(':memory:')
+  await seedGames({ db: robots, fetchFn: fakeFetch({}), igdb: null })
+  blockedAt(robots, 25)
+  clearRobotsCache()
+  const r = await run(robots, { 'https://www.pushsquare.com/robots.txt': 'User-agent: *\nDisallow: /' })
+  clearRobotsCache()
+  assert.ok(!r.polled.includes('pushsquare'))
+  assert.equal(state(robots).blocked, 1, 'a robots.txt disallow keeps it blocked')
+})
+
+test('the same version number far apart is two patches: a press report keeps its own release (PS5 1.4 in the past, the later 1.4.0 from Steam)', async () => {
+  const db = await spelling('The Blood of Dawnwalker - Update 1.4', 'Dawnwalker PS5 Update 1.4 Out Now', 100 * 24, 300 * 24)
+  const ids = dawnwalkerIds(db)
+  assert.equal(ids.length, 2, ids.join())
+  const press = ids.find((i) => i !== 'dawnwalker@1.4')!
+  assert.match(press, /^dawnwalker@1\.4-\d{4}-\d{2}-\d{2}$/)
+  assert.equal(getRelease(db, press)!.displayName, 'Update 1.4')
+  assert.equal(store.getPlatformRow(db, 'dawnwalker@1.4', 'ps5')?.verification, 'assumed', 'the later Steam patch is untouched by the old press report')
+  assert.equal(store.getPlatformRow(db, press, 'ps5')?.verification, 'reported')
+})
+
 test('one patch under two spellings of its version is one release; its PS5 facts and sources fold in', async () => {
   const db = await spelling('The Blood of Dawnwalker - Update 1.4.0', 'Dawnwalker PS5 Update 1.4 Out Now')
   assert.deepEqual(dawnwalkerIds(db), ['dawnwalker@1.4.0'])
@@ -401,4 +455,90 @@ test('news: Push Square headlines that name a tracked game are Reported news (ti
   assert.ok(!JSON.stringify(items).includes('Long article text'))
   assert.equal(db.prepare("SELECT COUNT(*) AS n FROM news WHERE url LIKE '%other%'").get()!.n, 0)
   assert.ok(!db.prepare("SELECT 1 FROM releases WHERE game_id = 'dawnwalker' AND source_ids LIKE '%pushsquare-news%'").get(), 'the news feed never makes a release')
+})
+
+// Terry 2026-11-06: PS4 games play on PS5, so a PS4 patch for a game with no native PS5 version counts, labelled ps4.
+test('a PS4 patch post for a backward-compatible game is a labelled PS4 update; a native PS5 game ignores PS4 posts after its launch', async () => {
+  const title = 'Dawnwalker PS4 Patch 1.9 Out Now'
+  const build = async (ps5Release: string | null) => {
+    const db = openDb(':memory:')
+    const fetchFn = fakeFetch({
+      'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews([]),
+      'https://www.pushsquare.com/news/dw4': pressArticle(title, 'The patch is 1.2GB on PS4.'),
+      'https://www.pushsquare.com/tags/updates': pressIndexPage([{ title, path: 'news/dw4', date: recent(50), tags: ['PS4', 'Dawnwalker', 'Updates'] }]),
+    })
+    const deps = { db, fetchFn, igdb: null }
+    await seedGames(deps)
+    db.prepare('UPDATE games SET ps5_release = ? WHERE id = ?').run(ps5Release, 'dawnwalker')
+    await runIngest(deps)
+    return db
+  }
+  const compat = await build(null)
+  const r = getRelease(compat, 'dawnwalker@1.9')!
+  assert.equal(r.ps4, true)
+  assert.equal(r.displayName.includes('PS5'), false)
+  assert.equal(r.platforms.find((p) => p.platform === 'ps5')!.verification, 'reported')
+  assert.equal(store.dropPreLaunchPs5(compat), 0)
+  const native = await build('2020-01-01')
+  assert.equal(getRelease(native, 'dawnwalker@1.9'), null)
+})
+
+// Quinn's review of the PS4 history rule (#280).
+const ps4World = async (posts: { title: string; body?: string; hoursAgo: number; tags?: string[] }[], ps5Release: string | null) => {
+  const db = openDb(':memory:')
+  const pages: Record<string, unknown> = {
+    'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews([]),
+  }
+  posts.forEach((p, i) => (pages[`https://www.pushsquare.com/news/p${i}`] = pressArticle(p.title, p.body ?? 'The patch is 1.2GB.')))
+  pages['https://www.pushsquare.com/tags/updates'] = pressIndexPage(posts.map((p, i) => ({ title: p.title, path: `news/p${i}`, date: recent(p.hoursAgo), tags: p.tags ?? ['PS4', 'Dawnwalker', 'Updates'] })))
+  const deps = { db, fetchFn: fakeFetch(pages as never), igdb: null }
+  await seedGames(deps)
+  db.prepare('UPDATE games SET ps5_release = ? WHERE id = ?').run(ps5Release, 'dawnwalker')
+  await runIngest(deps)
+  return db
+}
+
+test('a PS4 build number is never the PS5 version', async () => {
+  const db = await ps4World([{ title: 'Dawnwalker PS4 Patch 1.9 Out Now', body: 'Brings the game to Ver. 1.005.000 on PS4.', hoursAgo: 50 }], null)
+  const r = getRelease(db, 'dawnwalker@1.9')!
+  assert.equal(r.ps4, true)
+  assert.equal(r.platforms.find((p) => p.platform === 'ps5')!.version, null)
+})
+
+test('a PS4 post is kept when it predates the native PS5 release and ignored after it', async () => {
+  const launch = new Date(Date.now() - 20 * 86400e3).toISOString().slice(0, 10)
+  const db = await ps4World([
+    { title: 'Dawnwalker PS4 Patch 1.8 Out Now', hoursAgo: 24 * 40 },
+    { title: 'Dawnwalker PS4 Patch 1.9 Out Now', hoursAgo: 24 * 5 },
+  ], launch)
+  assert.equal(getRelease(db, 'dawnwalker@1.8')?.ps4, true)
+  assert.equal(getRelease(db, 'dawnwalker@1.9'), null)
+})
+
+test('a title naming PS4 and PS5 is a PS5 post, not labelled ps4; a PS5 report joining a ps4 release clears the label', async () => {
+  const db = await ps4World([{ title: 'Dawnwalker PS5, PS4 Patch 1.9 Out Now', hoursAgo: 50, tags: ['PS5', 'PS4', 'Dawnwalker', 'Updates'] }], null)
+  assert.equal(getRelease(db, 'dawnwalker@1.9')?.ps4, undefined)
+  const labelled = await ps4World([{ title: 'Dawnwalker PS4 Patch 1.9 Out Now', hoursAgo: 50 }], null)
+  assert.equal(getRelease(labelled, 'dawnwalker@1.9')?.ps4, true)
+  labelled.prepare("UPDATE releases SET ps4 = 1 WHERE id = 'dawnwalker@1.9'").run()
+  const deps = { db: labelled, fetchFn: fakeFetch({
+    'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews([]),
+    'https://www.pushsquare.com/news/n': pressArticle('Dawnwalker PS5 Patch 1.9 Out Now', 'The patch is 3GB on PS5.'),
+    'https://www.pushsquare.com/tags/updates': pressIndexPage([{ title: 'Dawnwalker PS5 Patch 1.9 Out Now', path: 'news/n', date: recent(40), tags: ['PS5', 'Dawnwalker', 'Updates'] }]),
+  } as never), igdb: null }
+  labelled.prepare("DELETE FROM source_state").run()
+  await runIngest(deps, { force: true })
+  assert.equal(getRelease(labelled, 'dawnwalker@1.9')?.ps4, undefined)
+})
+
+test('a PS4-only post from an RSS feed is labelled ps4, not stored as a PS5 update', async () => {
+  const db = openDb(':memory:')
+  const fetchFn = fakeFetch({
+    'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews([]),
+    'https://www.playstationlifestyle.net/feed': rss([{ title: 'Dawnwalker PS4 Patch 1.9 Is Out Now', link: 'https://www.playstationlifestyle.net/dw19', date: recent(50), body: '<p>Patch 1.9 is 1GB.</p>' }]),
+  } as never)
+  const deps = { db, fetchFn, igdb: null }
+  await seedGames(deps)
+  await runIngest(deps)
+  assert.equal(getRelease(db, 'dawnwalker@1.9')?.ps4, true)
 })

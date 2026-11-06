@@ -40,6 +40,11 @@ struct LibraryView: View {
             }
         }
         .background(Color.ink0)
+        .task {
+            // Quick actions tip, twice only; after the launch splash has gone.
+            try? await Task.sleep(for: .seconds(1.5))
+            model.showPressTipIfNeeded()
+        }
         .navigationTitle("Library")
         .toolbarTitleDisplayMode(.large)
         .toolbar {
@@ -133,18 +138,16 @@ struct LibraryShelf: View {
         case .closed: 88
         case .flat: flatFit.size
         case .book: 100
-        case .tabletop: 84
+        // Accessibility sizes: wider tiles, so fewer columns and the caption under the cover never truncates.
+        case .tabletop: typeSize.isAccessibilitySize ? 124 : 84
         }
     }
 
-    /// Open (flat), 0.2.0 gate: the column count comes from the container width (tiles at least 124 pt,
-    /// 10 pt gaps) and the leftover is spread equally, so the grid fills the width between the 16 pt
+    /// Open (flat), 0.2.0 gate: the column count comes from the container width (tiles 120 to 168 pt,
+    /// 16 pt gaps) and the leftover is spread equally, so the grid fills the width between the 16 pt
     /// margins with no dead space on the trailing side.
     private var flatFit: (count: Int, size: CGFloat) {
-        let width = max(0, duo.size.width - railWidth - 32)
-        let n = max(2, Int((width + 10) / (124 + 10)))
-        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
-        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
+        Self.pageFit(width: max(0, duo.size.width - railWidth - 32))
     }
 
     /// Book: an even column count across both pages (Apple: prefer an even number of columns).
@@ -159,20 +162,24 @@ struct LibraryShelf: View {
             return [GridItem(.fixed(book.lead), spacing: 0)] + tiles(book.perPage) + [GridItem(.fixed(book.gap), spacing: 0)] + tiles(book.perPage)
         }
         if duo.pose == .flat {
-            return Array(repeating: GridItem(.fixed(flatFit.size), spacing: 10, alignment: .top), count: flatFit.count)
+            return Array(repeating: GridItem(.fixed(flatFit.size), spacing: Self.tileGap, alignment: .top), count: flatFit.count)
         }
         return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 10, alignment: .top)]
     }
 
-    /// Columns that fill a Book page: at least 124 pt tiles, 10 pt gaps, the leftover shared equally.
+    /// The one tile metric for Library and Upcoming (Iris, #287): tiles 120 to 168 pt, 16 pt gaps, at least
+    /// 3 columns (about 6 in Open landscape), the leftover shared equally, never stretched past 168.
+    static let tileGap: CGFloat = 16
     static func pageFit(width: CGFloat) -> (count: Int, size: CGFloat) {
-        let n = max(2, Int((width + 10) / 134))
-        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
+        let n = max(3, Int((width + tileGap) / (120 + tileGap)))
+        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
+        let size = (((width - CGFloat(n - 1) * tileGap) / CGFloat(n)) * 100).rounded(.down) / 100
+        return (n, min(168, size))
     }
 
     /// One Book page's tiles, top to bottom, on that page's own columns.
     private func pageGrid(_ rows: [AppModel.LibraryRow], fit: (count: Int, size: CGFloat)) -> some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: 10, alignment: .top), count: fit.count),
+        LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: Self.tileGap, alignment: .top), count: fit.count),
                   alignment: .leading, spacing: 10) {
             ForEach(rows) { row in GameTile(row: row, size: fit.size).id("lib-\(row.id)") }
         }
@@ -236,13 +243,14 @@ struct LibraryShelf: View {
     private func topCards(_ all: [AppModel.LibraryRow]) -> some View {
         let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
         VStack(alignment: .leading, spacing: 14) {
-            CatchUpCard()
-            PlusCard()
             if model.showsNotificationCard, let first = all.first {
                 NotificationInviteCard(gameName: first.game.name)
             }
+            CatchUpCard()
+            PlusCard()
         }
-        .frame(width: pageWidth, alignment: .leading)
+        // Never wider than the column it sits in (Iris: the card ran past the left page's search field in Book).
+        .frame(maxWidth: pageWidth, alignment: .leading)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
@@ -264,6 +272,20 @@ struct LibraryShelf: View {
                     .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                     .tappableFrame()
                     .padding(.top, 4)
+    }
+
+    @State private var messagePad: CGFloat = 0
+    /// This view's frame in global coordinates. The pad sits inside it, so its bottom edge does not move with the pad.
+    @State private var libraryFrame: CGRect = .zero
+
+    /// One reserve: this page's scroll view ends 12 pt above the pill (or toast), and only where the pill overlaps the page
+    /// sideways (Book's right page gets none while the pill is on the left).
+    private func updateMessagePad() {
+        var pad: CGFloat = 0
+        if let m = model.messageFrame, libraryFrame.minX < m.maxX, libraryFrame.maxX > m.minX {
+            pad = max(0, libraryFrame.maxY - (m.minY - 12))
+        }
+        if abs(pad - messagePad) > 0.5 { messagePad = pad }
     }
 
     var body: some View {
@@ -297,11 +319,12 @@ struct LibraryShelf: View {
                     }
                 }
                 // Book: these cards stay on the left page; with a hero they sit in the left column below.
-                if !heroOnRightPage { topCards(all) }
+                if !heroOnRightPage && duo.pose != .book { topCards(all) }
                 if !all.isEmpty && duo.pose == .tabletop {
                     // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
                     TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4)
                 } else if !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                if !heroOnRightPage && duo.pose == .book { topCards(all) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
                     HStack(spacing: 12) {
@@ -329,7 +352,7 @@ struct LibraryShelf: View {
                     let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
                     // Each page flows on its own (Iris, cf6c889): the left tiles start 16 pt under the filters, the
                     // right tiles under the deck; order is the left page top to bottom, then the right page. The
-                    // tiles share each page's width equally (min 124 pt, 10 pt gaps).
+                    // tiles share each page's width equally (120 to 168 pt, 16 pt gaps).
                     let left = Self.pageFit(width: leftWidth), right = Self.pageFit(width: rightWidth)
                     let proportional = min(rows.count, Int((Double(rows.count) * Double(left.count) / Double(left.count + right.count)).rounded(.up)))
                     // No hero: the caught-up card is short, so split for equal rows on both pages and, on a tie, as evenly as
@@ -344,8 +367,9 @@ struct LibraryShelf: View {
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
                             LibraryTabPicker()
-                            topCards(all)
+                            // Controls first, the offer second (Iris, Book compact card).
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                            topCards(all)
                             NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                             if all.count >= 2 && layout == .tiles {
                                 FilterBar().frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
@@ -455,7 +479,20 @@ struct LibraryShelf: View {
             .padding(.trailing, railWidth)
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
-        .contentMargins(.bottom, model.pill == nil && model.toast == nil ? 0 : 96, for: .scrollContent)
+        // The pill and toasts sit at the bottom edge. The scroll view itself ends above them (a safe-area inset would still let
+        // content scroll under the pill), so nothing is ever covered (0.5.1 spec 2, Iris).
+        // No `.mask` here: from #246 the Open portrait large "Library" title vanished (354d15c, 9914a80), with the picker still
+        // in its place. The mask on this scroll view is the prime suspect (a masked scroll view is no longer the one the
+        // navigation bar tracks); the soft edge returns once a Mac still shows the title back.
+        .padding(.bottom, messagePad)
+        // The page ends 8 pt above the pill wherever the pill actually sits. The pad is worked out from measured edges (this
+        // view's bottom without the pad, the pill's top), not from the pill's height and offsets, so it cannot leave a dead
+        // band or run under the pill in any pose (0.5.1 spec 2, ae0a608 Open portrait).
+        .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { libraryFrame = $0; updateMessagePad() }
+        .onChange(of: model.messageFrame) { _, _ in updateMessagePad() }
+        // The pad changes the moment the pill shows. It must not ride a running pose animation, or the old arrangement
+        // lingers faintly under the new one (Book, ad54f44 stills).
+        .transaction(value: messagePad) { $0.animation = nil }
         .refreshable { await model.refreshFeed() }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
@@ -860,6 +897,7 @@ struct GameRow: View {
             }
             .buttonStyle(.plain)
             .tappableFrame()
+            .gameQuickActions(row.game)
             .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.15) : .clear)
             .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
             GameMenuButton(gameID: row.id)
@@ -908,6 +946,7 @@ struct GameMenuButton: View {
 /// Long-press opens the game's actions.
 struct GameTile: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var row: AppModel.LibraryRow
     /// nil: fill the column (Closed, 3 across).
     var size: CGFloat?
@@ -932,15 +971,28 @@ struct GameTile: View {
         Button { model.openGame(row.id) } label: {
             // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
-            tileFrame(TileCover(game: row.game))
-                .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
-                .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
-                .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
-                            in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            VStack(alignment: .leading, spacing: 4) {
+                tileFrame(TileCover(game: row.game))
+                    .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
+                    .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
+                    .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
+                                in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                // Accessibility sizes: the pill would cover the art, so the date or status sits under
+                // the cover instead, wrapping to two lines (GR-1, D-12; Iris, 0.5.0 a11y).
+                if typeSize.isAccessibilitySize {
+                    let state = model.tileDate(row)
+                    Text(state.text)
+                        .font(PlayscribeFont.caption.weight(.semibold))
+                        .foregroundStyle(state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .accessibilityHidden(true)
+                }
+            }
         }
         .buttonStyle(.plain)
         .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
-        .contextMenu { ActionMenuContent(sections: model.statusMenu(row.id)) }
         .accessibilityElement(children: .ignore)
         // The accessibility frame runs 8 pt wider than the cover; the id carries the cover's real
         // width so the frame tests measure the cover, not the element (fold audit, J-5).
@@ -949,6 +1001,7 @@ struct GameTile: View {
         .accessibilityAddTraits(.isButton)
         .accessibilityValue(FoldAuditSwitch.enabled ? "probe id=\(Int((size ?? measuredWidth).rounded())) cover=\(Int(measuredWidth.rounded())) outer=\(Int(outerWidth.rounded()))" : "")
         .onGeometryChange(for: CGFloat.self) { FoldAuditSwitch.enabled ? $0.size.width : 0 } action: { outerWidth = $0 }
+        .gameQuickActions(row.game)
     }
 }
 
@@ -981,11 +1034,22 @@ struct TileCover: View {
 struct StatusCircle: View {
     var status: OwnershipStatus
     var body: some View {
-        Image(systemName: Self.symbol(status))
-            .font(.system(size: 11, weight: .bold))
-            .foregroundStyle(.white)
-            .frame(width: 20, height: 20)
-            .adaptiveGlass(in: Circle())
+        // Wishlist alone is a solid yellow disc with an ink glyph (Iris, 0.5.1): the one state that needs
+        // attention, distinct by glyph, fill and colour. Tick and eye stay translucent with a white glyph.
+        if status == .wishlist {
+            Image(systemName: Self.symbol(status))
+                .font(.system(size: 12, weight: .semibold))
+                .foregroundStyle(Color.ink0)
+                .offset(y: 0.5)
+                .frame(width: 20, height: 20)
+                .background(Circle().fill(Color.wishlist))
+        } else {
+            Image(systemName: Self.symbol(status))
+                .font(.system(size: 11, weight: .bold))
+                .foregroundStyle(.white)
+                .frame(width: 20, height: 20)
+                .adaptiveGlass(in: Circle())
+        }
             // 20 pt so titles on art stay readable; the whole tile remains the 44 pt+ tap target.
     }
     static func symbol(_ s: OwnershipStatus) -> String {
@@ -1015,7 +1079,7 @@ struct DatePill: View {
                 // Accessibility sizes: wrap to two lines inside the tile instead of running off it.
                 .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
                 .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
-                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : state.kind == .none ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
+                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
         }
         .padding(.horizontal, 7).padding(.vertical, 3)
         .background {
@@ -1027,7 +1091,7 @@ struct DatePill: View {
 }
 
 extension AppModel {
-    enum TileDateKind { case unread, recent, older, none }
+    enum TileDateKind { case unread, recent, older, none, playsOnPS5, notOnPS5 }
 
     func tileDate(_ row: LibraryRow) -> (kind: TileDateKind, text: String) {
         if let r = row.latest {
@@ -1036,6 +1100,8 @@ extension AppModel {
             return (d > .now.addingTimeInterval(-7 * 86400) ? .recent : .older, Self.tileDay(d))
         }
         if let d = row.game.releaseDate?.isoDay { return (.none, Self.tileDay(d)) }
+        if row.game.notOnPS5Line != nil { return (.notOnPS5, "Not on PS5") }
+        if row.game.playsOnPS5AsPS4 { return (.playsOnPS5, "Plays on PS5") }
         return (.none, "TBA")
     }
 
@@ -1053,6 +1119,8 @@ extension AppModel {
         switch state.kind {
         case .unread: when = "new update \(state.text)"
         case .recent, .older: when = "last updated \(state.text)"
+        case .notOnPS5: return "\(row.game.name), not on PS5, \(row.status.label.lowercased())"
+        case .playsOnPS5: return "\(row.game.name), plays on PS5 as the PS4 version, \(row.status.label.lowercased())"
         case .none:
             // The pill is the short form; VoiceOver gets the full words (Iris, 6589abf).
             if state.text == "TBA" { when = "release date to be announced" }
@@ -1112,38 +1180,83 @@ struct SquareCover: View {
 
 /// The open-flat banner: the featured game's art with the wordmark, so it reads as the app.
 
-/// N-1: asked in context after the first game is added. One Continue button, swipe to dismiss.
+/// N-1: asked in context once a game is in the library. "Turn on" opens the system prompt (or iOS Settings if
+/// notifications were denied); "Not now" or a swipe rests the card for a week.
 struct NotificationInviteCard: View {
     @Environment(AppModel.self) private var model
     var gameName: String
-    @State private var counted = false
+    @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private func snooze() {
+        withAnimation(reduceMotion ? .easeOut(duration: 0.2) : .smooth) { model.snoozeNotificationCard() }
+    }
+
+    private var denied: Bool { NotificationService.shared.authorization == .denied }
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.accent)
             VStack(alignment: .leading, spacing: 8) {
-                Text("Get a note when \(gameName) updates on PS5").font(PlayscribeFont.headline)
-                Button("Continue") {
-                    model.data.notificationCardDismissed = true
-                    Task { await NotificationService.shared.requestAuthorization() }
+                Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
+                    .fixedSize(horizontal: false, vertical: true)
+                    // The body is dropped from view at AX sizes, never from VoiceOver (Iris).
+                    .accessibilityLabel(denied ? "Alerts are off" : "Be first to know when a patch drops. Get a note the moment any game in your library gets an update on PS5.")
+                    .accessibilityAddTraits(.isHeader)
+                // At the largest sizes the ask card keeps its title and buttons only; denied keeps one short line.
+                if !typeSize.isAccessibilitySize {
+                    Text(denied
+                         ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
+                         : "Get a note the moment any game in your library gets an update on PS5.")
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                } else if denied {
+                    Text("Turn notifications on in Settings.")
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
-                .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
-                .hitTarget()
-                .tappableFrame()
+                // Accessibility sizes stack the buttons outright: ViewThatFits let a label squeeze to "Turn on al…" (AX3, Closed).
+                if typeSize.isAccessibilitySize {
+                    VStack(alignment: .leading, spacing: 12) { buttons }.padding(.top, 6)
+                } else {
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: 12) { buttons }
+                        VStack(alignment: .leading, spacing: 8) { buttons }
+                    }
+                }
             }
             Spacer(minLength: 0)
         }
         .padding(16)
         .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .gesture(DragGesture(minimumDistance: 30).onEnded { v in
-            if abs(v.translation.width) > 60 { model.data.notificationCardDismissed = true }
+            if abs(v.translation.width) > 60 { snooze() }
         })
-        .accessibilityAction(named: "Dismiss") { model.data.notificationCardDismissed = true }
-        .onAppear {
-            guard !counted else { return }
-            counted = true
-            model.data.notificationCardShows += 1
+        .accessibilityAction(named: "Not now") { snooze() }
+        .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
+    }
+
+    @ViewBuilder private var buttons: some View {
+        Button {
+            if denied {
+                snooze()
+                if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+            } else {
+                Task { if !(await NotificationService.shared.requestAuthorization()) { snooze() } }
+            }
+        } label: {
+            Text(denied ? "Open Settings" : "Turn on alerts").frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
         }
+        .buttonStyle(.borderedProminent).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
+        .foregroundStyle(PlayscribeColor.onAccent)
+        .hitTarget()
+        .tappableFrame()
+        Button { snooze() } label: {
+            Text("Not now").frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
+        }
+            .buttonStyle(.bordered).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
+            .hitTarget()
+            .tappableFrame()
     }
 }
 
