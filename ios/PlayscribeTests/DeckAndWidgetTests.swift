@@ -2,7 +2,7 @@ import Foundation
 import Testing
 @testable import Playscribe
 
-/// 0.5.0 test debt (r050-test-debt): the Latest updates deck, Also new and the widget snapshot, checked
+/// 0.5.0 test debt (r050-test-debt): the Latest updates deck and the widget snapshot, checked
 /// without a simulator so the five-pose gate keeps only by-eye checks.
 @MainActor
 struct DeckAndWidgetTests {
@@ -28,18 +28,6 @@ struct DeckAndWidgetTests {
             if !card.unread { seenRead = true }
             #expect(!(seenRead && card.unread), "an unread card never follows a read one")
         }
-    }
-
-    /// Iris, 3548a21: Also new has one row per game, never the front card's game, and every row is an update.
-    @Test func alsoNewIsOnePerGameWithoutTheFrontGame() {
-        let m = demoModel()
-        guard let front = m.latestDeck.first?.release else { return }
-        let rows = m.alsoNewReleases(excludingRelease: front.id)
-        let games = rows.map(\.gameID)
-        #expect(Set(games).count == games.count)
-        #expect(!games.contains(front.gameID))
-        #expect(rows.allSatisfy { $0.versionChip != nil })
-        #expect(rows.count <= 6)
     }
 
     /// The widget file round trips, and its rows deep link to the release (no source names or URLs shown).

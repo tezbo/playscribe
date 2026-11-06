@@ -55,7 +55,7 @@ struct LatestUpdatesDeck: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.dynamicTypeSize) private var typeSize
     var cards: [DeckCard]
-    /// Open portrait: the deck is the left column beside the Also new panel, one card at a time.
+    /// Open portrait: the deck is full width, one card at a time.
     var compact = false
     /// Compact only: the whole deck (card, caption, page edge) is at most this tall (Iris: 38% of the height).
     var maxHeight: CGFloat = 0
@@ -218,7 +218,10 @@ struct DeckCardView: View {
 
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
     private var label: String {
-        if let r = card.release { return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(dateText)" }
+        if let r = card.release {
+            let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
+            return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(dateText)\(summary)"
+        }
         return "\(card.game.name), released \(dateText)"
     }
 }
@@ -248,6 +251,12 @@ struct CompactDeckCard: View {
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                     .lineLimit(typeSize.isAccessibilitySize ? 4 : 3)
                     .minimumScaleFactor(typeSize.isAccessibilitySize ? 0.85 : 1)
+                // One-line summary under the headline when there is room: whole words, at most 2 lines, dropped at
+                // accessibility sizes (its text stays in the VoiceOver label).
+                if !typeSize.isAccessibilitySize, let summary = card.release?.summary, !summary.isEmpty {
+                    Text(summary).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.85))
+                        .lineLimit(2)
+                }
                 HStack(spacing: 8) {
                     Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
                     if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }

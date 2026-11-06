@@ -475,8 +475,7 @@ struct ReadTimeTests {
 
 @MainActor
 struct OneUpdateDemoTests {
-    /// The `one-update` QA route: the Library hero shows (one fresh unread update) and the "Also new"
-    /// panel has nothing else to list, so it falls back to "What's new".
+    /// The `one-update` QA route: the Library hero shows (one fresh unread update).
     @Test func oneUpdateRouteLeavesExactlyOneFreshUpdate() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "one-\(UUID().uuidString).json"))
         m.resetToOneUpdateDemo()
@@ -485,7 +484,7 @@ struct OneUpdateDemoTests {
         #expect(hero != nil, "the hero shows")
         let unread = m.data.collection.flatMap { m.releases($0.gameID) }.filter(m.isUnread)
         #expect(unread.count == 1)
-        if let hero { #expect(m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
+        #expect(hero != nil)
     }
 
     /// The `two-update` QA route: exactly two fresh unread updates, from different games.
@@ -498,21 +497,17 @@ struct OneUpdateDemoTests {
         #expect(m.latestDeck.count == 2)
     }
 
-    @Test func demoRouteListsOtherUpdatesBesideTheHero() {
-        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
-        m.resetDemo()
-        if let hero = m.continueItem { #expect(!m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
-    }
-
-    /// Also new: one row per game, never the deck front card's game (Iris, 3548a21).
-    @Test func alsoNewHasOneRowPerGameAndSkipsTheFrontGame() {
-        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
-        m.resetDemo()
-        guard let front = m.latestDeck.first?.release else { return }
-        let rows = m.alsoNewReleases(excludingRelease: front.id)
-        let games = rows.map(\.gameID)
-        #expect(Set(games).count == games.count)
-        #expect(!games.contains(front.gameID))
+    /// The `three-update` and `four-update` QA routes: that many fresh unread updates from different games,
+    /// all in the one full-width deck (the Also new panel is gone, Terry 2026-11-06).
+    @Test func threeAndFourUpdateRoutesFillTheDeck() {
+        for (n, reset) in [(3, { (m: AppModel) in m.resetToUpdateDemo(count: 3) }), (4, { (m: AppModel) in m.resetToUpdateDemo(count: 4) })] {
+            let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "n\(n)-\(UUID().uuidString).json"))
+            reset(m)
+            let unread = m.data.collection.flatMap { m.releases($0.gameID) }.filter(m.isUnread)
+            #expect(unread.count == n)
+            #expect(Set(unread.map(\.gameID)).count == n)
+            #expect(m.latestDeck.count == n)
+        }
     }
 }
 

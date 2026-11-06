@@ -858,8 +858,7 @@ final class AppModel {
     }
 
     /// QA and tests: the full demo library with exactly one fresh, unread On PS5 update (so the Library
-    /// hero shows), every other update read, and the "Also new" panel seeing no other updates, which
-    /// is the panel's "What's new" fallback.
+    /// hero shows) and every other update read.
     func resetToOneUpdateDemo() {
         resetDemo()
         qaUpdateCount = 1
@@ -878,28 +877,11 @@ final class AppModel {
         qaUpdateCount = 2
     }
 
-    /// QA (routes "three-update", "four-update"): `count` fresh updates from different games, so Also new lists
-    /// count - 1 rows (the list from three unread games on, What's new below that).
+    /// QA (routes "three-update", "four-update"): `count` fresh updates from different games, so the deck
+    /// has that many unread cards.
     func resetToUpdateDemo(count: Int) {
         resetDemo()
         qaUpdateCount = count
-    }
-
-    /// The updates beside the deck in the Library (Open portrait): every update in the deck except the
-    /// front card's, newest first, so nothing repeats.
-    func alsoNewReleases(excludingRelease id: String?, limit: Int = 6) -> [Release] {
-        let all = latestDeck.compactMap(\.release)
-        // One row per game (its latest update), and never the deck's front game (Iris, 3548a21).
-        let frontGame = all.first { $0.id == id }?.gameID
-        var seen = Set<String>()
-        var out: [Release] = []
-        for r in all.sorted(by: { $0.ps5Date > $1.ps5Date }) {
-            // Updates only: a headline-only post (no version in its name) is News, not an update (Iris, 20d77ea).
-            guard r.versionChip != nil, r.gameID != frontGame, seen.insert(r.gameID).inserted else { continue }
-            out.append(r)
-            if out.count == limit { break }
-        }
-        return out
     }
 
     #if INTERNAL
