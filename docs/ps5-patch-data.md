@@ -247,4 +247,4 @@ Next step: parse the monthly "PS Plus Essential games for <month>" article from 
 
 ### Search aliases in the PS5 index (field `k`, #298)
 
-Each index entry may carry `k`, a list of up to 5 aliases players type: IGDB alternative names plus franchise short forms ("GTA V", "GTA5", "COD: Modern Warfare II", "RDR2", "AC Odyssey", "FF7", "BG3"); built by `src/search-aliases.ts`. The app folds them like the name and matches them after every name match, so a real title always outranks an alias.
+Each index entry may carry `k`, a list of up to 5 aliases players type: IGDB alternative names plus franchise short forms ("GTA V", "GTA5", "COD: Modern Warfare II", "AC Odyssey", "FF7", "BG3"); built by `src/search-aliases.ts`. The app folds them like the name and only checks them when the name did not match; an alias equal to the query or starting with it ranks like a name prefix, so "ac" and "ff" surface the franchise, and a name hit always outranks an alias for the same game.

@@ -19,8 +19,7 @@
 //   o  ow  the game's first release anywhere (ISO day) and the platform it came out on ("PC (Microsoft Windows)"). Only for a
 //      game that is already out (o not in the future) and has no `d` and no `b` (a tbd PS5 listing included: ETS2), so the app can say
 //      "Released on PC, <date>" instead of TBA (ETS2).
-//   k  search aliases players type ("GTA V", "RDR2", "COD"): IGDB alternative names plus franchise short forms (src/search-aliases.ts).
-//   k  search aliases players type ("GTA V", "RDR2", "COD"): IGDB alternative names plus franchise short forms (src/search-aliases.ts).
+//   k  search aliases players type ("GTA V", "FF7", "COD"): IGDB alternative names plus franchise short forms (src/search-aliases.ts).
 // Known IGDB gaps are corrected from scripts/ps5-date-overrides.json, each with its evidence.
 // Cover tones already in the file are kept.
 //

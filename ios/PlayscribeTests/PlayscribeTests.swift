@@ -160,6 +160,20 @@ struct ModelTests {
         let hits = PS5Index.shared.search("dawnwalker")
         #expect(!hits.isEmpty)
     }
+
+    @Test("Short forms find the franchise in the top 10: 'ac' Assassin's Creed, 'ff' Final Fantasy, 'gta' Grand Theft Auto (#298)")
+    func searchAliases() {
+        for (query, title) in [("ac", "Assassin"), ("ff", "Final Fantasy"), ("gta", "Grand Theft Auto")] {
+            let top = PS5Index.shared.search(query, limit: 10).map(\.name)
+            #expect(top.contains { $0.localizedCaseInsensitiveContains(title) }, "\(query): \(top)")
+        }
+    }
+
+    @Test("A name hit outranks an alias-only hit for the same query (#298)")
+    func nameBeatsAlias() {
+        let hits = PS5Index.shared.search("dawnwalker", limit: 5)
+        #expect(hits.first?.name.localizedCaseInsensitiveContains("dawnwalker") == true)
+    }
 }
 
 @MainActor

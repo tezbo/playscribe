@@ -296,7 +296,7 @@ struct PS5Index {
         var s: String?
         /// Official landscape key art (IGDB image id), for a square crop.
         var a: String?
-        /// Search aliases players type ("GTA V", "RDR2", "COD"), matched like the name but ranked after it.
+        /// Search aliases players type ("GTA V", "FF7", "COD"), matched like the name but only when the name did not match.
         var k: [String]?
     }
     private struct File: Decodable { var count: Int; var games: [Entry] }
@@ -335,10 +335,11 @@ struct PS5Index {
         var scored: [(Int, Int)] = []
         for (k, name) in folded.enumerated() {
             var score = name == q ? 0 : name.hasPrefix(q) ? 1 : name.contains(" " + q) ? 2 : name.contains(q) ? 3 : -1
-            // Aliases ("GTA", "RDR2") only count when the name itself did not match, and rank after every name match.
+            // Aliases ("GTA", "AC") only count when the name itself did not match. An alias equal to the query or starting
+            // with it ranks like a name prefix, so "ac" finds Assassin's Creed above substring hits; word-prefix aliases rank last.
             if score < 0 {
                 for a in foldedAliases[k] {
-                    let s = a == q ? 4 : a.hasPrefix(q) ? 5 : a.contains(" " + q) ? 6 : -1
+                    let s = a == q || a.hasPrefix(q) ? 1 : a.contains(" " + q) ? 4 : -1
                     if s >= 0 { score = score < 0 ? s : min(score, s) }
                 }
             }
