@@ -76,6 +76,7 @@ jobs:
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
             -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd \
             -only-testing:PlayscribeUITests/ClosedLandscapeShotTests \
+            -only-testing:PlayscribeUITests/ClosedPortraitAX3ShotTests \
             -resultBundlePath build/Landscape.xcresult CODE_SIGNING_ALLOWED=NO > landscape.log 2>&1 || status=$?
           grep -E 'error:|Test Case .* (passed|failed)|Executed|\*\* TEST' landscape.log | tail -30 | tee -a "$GITHUB_STEP_SUMMARY"
           mkdir -p build/shots-ax3/landscape
