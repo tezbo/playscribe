@@ -291,6 +291,24 @@ struct DatePrecisionTests {
         #expect(ps4Only("2021-03-04").ps5AvailabilityLine.range(of: #"\d+\.\d+"#, options: .regularExpression) == nil)
     }
 
+    @Test("GR-1, D-12: a game that is out elsewhere but not on PS5 or PS4 is never TBA")
+    func notOnPS5() {
+        func g(_ o: String?, _ on: String? = nil, _ p: DatePrecision? = .tbd) -> CatalogGame {
+            CatalogGame(id: "t", name: "T", platforms: [.ps5], releaseDate: nil, releasePrecision: p, playableSince: nil, releasedElsewhere: o, releasedElsewhereOn: on, coverage: .none)
+        }
+        #expect(g("2012-10-16", "PC").ps5DateLine == "Not on PS5 · PC, 2012")
+        #expect(g("2012-10-16", "PC").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
+        #expect(g("2012-10-16").ps5AvailabilityLine == "Not on PS5 · 2012")
+        #expect(g("2012-10-16").ps5ShortLine == "Not on PS5")
+        // Truly no release anywhere, or a release still to come, stays TBA.
+        #expect(g(nil).ps5AvailabilityLine == "Release date TBA")
+        #expect(g("2099-01-01").ps5AvailabilityLine == "Release date TBA")
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "notps5-\(UUID().uuidString).json"))
+        let row = AppModel.LibraryRow(game: g("2012-10-16", "PC"), status: .owned, addedAt: .now, unread: 0, latest: nil)
+        #expect(m.tileDate(row).text == "Not on PS5")
+        #expect(m.tileAccessibilityLabel(row) == "T, not on PS5, \(row.status.label.lowercased())")
+    }
+
     @Test("GR-1, D-12: TBA stays for a game with no date at all, or a date that is to be decided")
     func tbaStays() {
         #expect(ps4Only(nil).ps5AvailabilityLine == "Release date TBA")

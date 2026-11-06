@@ -1059,12 +1059,11 @@ struct DatePill: View {
                 // Accessibility sizes: wrap to two lines inside the tile instead of running off it.
                 .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
                 .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
-                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
+                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
         }
         .padding(.horizontal, 7).padding(.vertical, 3)
         .background {
-            if state.kind == .playsOnPS5 { Color.clear }
-            else if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
+            if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
             else { Capsule().fill(.clear).adaptiveGlass(in: Capsule()) }
         }
         }
@@ -1081,6 +1080,7 @@ extension AppModel {
             return (d > .now.addingTimeInterval(-7 * 86400) ? .recent : .older, Self.tileDay(d))
         }
         if let d = row.game.releaseDate?.isoDay { return (.none, Self.tileDay(d)) }
+        if row.game.notOnPS5Line != nil { return (.notOnPS5, "Not on PS5") }
         if row.game.playsOnPS5AsPS4 { return (.playsOnPS5, "Plays on PS5") }
         return (.none, "TBA")
     }
@@ -1099,6 +1099,7 @@ extension AppModel {
         switch state.kind {
         case .unread: when = "new update \(state.text)"
         case .recent, .older: when = "last updated \(state.text)"
+        case .notOnPS5: return "\(row.game.name), not on PS5, \(row.status.label.lowercased())"
         case .playsOnPS5: return "\(row.game.name), plays on PS5 as the PS4 version, \(row.status.label.lowercased())"
         case .none:
             // The pill is the short form; VoiceOver gets the full words (Iris, 6589abf).
