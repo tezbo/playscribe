@@ -70,3 +70,20 @@ test('lineup covers are resolved by exact title (roman numerals match digits) an
   await resolvePlusCovers(db, igdb) // answers are remembered
   assert.equal(asked.length, before)
 })
+
+test('a lineup title IGDB splits into separate games uses the evidence-backed stand-in cover', async () => {
+  const { openDb } = await import('../src/db.ts')
+  const { resolvePlusCovers } = await import('../src/plusAuto.ts')
+  const db = openDb(':memory:')
+  const month = { month: '2026-11', from: '2026-11-04', until: '2026-12-01', games: [{ name: 'Tomb Raider 4-6 Remastered' }] }
+  db.prepare('INSERT INTO plus_months (month, data, fetched_at) VALUES (?, ?, ?)').run(month.month, JSON.stringify(month), new Date().toISOString())
+  const igdb = {
+    async query(endpoint: string, body: string) {
+      if (endpoint === 'platforms') return [{ id: 167 }]
+      if (body.includes('where id = 319749')) return [{ cover: { image_id: 'co9fnl' } }]
+      return [{ name: 'Tomb Raider: Legend', cover: { image_id: 'wrong1' } }]
+    },
+  } as never
+  assert.equal(await resolvePlusCovers(db, igdb), 1)
+  assert.equal((db.prepare('SELECT cover_id FROM plus_covers').get() as { cover_id: string }).cover_id, 'co9fnl')
+})
