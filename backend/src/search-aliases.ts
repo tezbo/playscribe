@@ -60,7 +60,8 @@ export const searchAliases = (name: string, alternative: string[] = [], max = 5)
   const out = new Map<string, string>()
   const add = (a: string | null | undefined) => {
     const f = a ? fold(a) : ''
-    if (f.length >= 2 && f !== own && !out.has(f) && a!.length <= 40) out.set(f, a!)
+    // Latin text only, and never a file name (IGDB alternative names include "bootstrapper.exe").
+    if (f.length >= 2 && f !== own && !out.has(f) && a!.length <= 40 && /^[\x20-\x7e\u00c0-\u024f\u2019\u00ae\u2122]+$/.test(a!) && !/\.[a-z0-9]{2,4}$/i.test(a!)) out.set(f, a!)
   }
   let franchise = false
   const nameFold = name.replace(/’/g, "'")

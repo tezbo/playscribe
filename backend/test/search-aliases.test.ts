@@ -17,6 +17,8 @@ test('aliases never repeat the name, stay short, and come from IGDB too', () => 
   assert.ok(a.includes('GTA 5'))
   assert.ok(!a.includes('Grand Theft Auto V'))
   assert.ok(a.every((s) => s.length <= 40) && a.length <= 5)
+  const junk = searchAliases('Call of Duty: Modern Warfare II', ['bootstrapper.exe', '콜 오브 듀티®: 모던 워페어 II', 'COD: MWII'])
+  assert.ok(junk.includes('COD: MWII') && !junk.some((s) => /\.exe|콜/.test(s)))
   assert.equal(initialism('Elden Ring'), null)
   assert.equal(initialism('Red Dead Redemption 2'), 'RDR2')
 })
