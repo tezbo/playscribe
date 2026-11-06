@@ -5,7 +5,9 @@ description: Use when a Playscribe PR is ready for sign-off, when asked to revie
 
 # Review and merge handoff
 
-**Requesting a sign-off** (author): PR number, head SHA, Precheck PASS, acceptance IDs touched, stills filenames (`five-pose-stills`), what is "unshot", and CI state. One message, batched.
+**Requesting a sign-off** (author): PR number, head SHA, Precheck PASS, **the CI verdict for that SHA (green or red, with the run link)**, acceptance IDs touched, stills filenames (`five-pose-stills`), what is "unshot", and CI state. One message, batched.
+
+The author posts the CI verdict every time they ask for a review, because reviewers often cannot read CI. Re-post it if the head moves.
 
 **Signing** (Quinn, Iris, Jun): name the exact SHA; list what you opened (files, poses); give conditions as numbered items, blocking vs not; say "unshot" for anything inferred; state CI status or that you could not read it. Batch all feedback into one pass. Use `code-review` for diffs (see `playscribe-code-review`).
 
