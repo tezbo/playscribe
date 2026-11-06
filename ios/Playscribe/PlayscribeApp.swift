@@ -85,3 +85,6 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {}
 }
+
+// precheck failure self-test: delete
+let precheckSelfTest: Int = "not an int"
