@@ -4,7 +4,12 @@ import Observation
 /// The PS Plus monthly games (docs/api.md `v1/plus.json`, r050-plus-card): hand-curated, newest month first.
 /// Names and dates only. The card shows the month whose window holds today, and "Last chance" in its last three days.
 struct PlusMonth: Codable, Equatable {
-    struct Game: Codable, Equatable { var name: String; var gameId: String? }
+    struct Game: Codable, Equatable {
+        var name: String
+        var gameId: String?
+        /// IGDB image id for a title the bundled PS5 index has no cover for (supplied by the feed). Absent: the name plate.
+        var coverId: String?
+    }
     var month: String
     /// First and last day the lineup can be claimed ("YYYY-MM-DD", inclusive).
     var from: String

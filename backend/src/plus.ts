@@ -8,6 +8,8 @@ export interface PlusGame {
   name: string
   /** Id of a game the app tracks, when it is one. */
   gameId?: string
+  /** IGDB image id of the game's cover, for titles the app's bundled PS5 index lacks. The app shows the name plate without it. */
+  coverId?: string
 }
 export interface PlusMonth {
   /** YYYY-MM */
@@ -42,6 +44,7 @@ export const plusProblems = (raw: unknown, knownGameIds?: Set<string>): string[]
     for (const [j, g] of (m.games ?? []).entries()) {
       if (!g.name?.trim() || g.name.length > 80) out.push(`${at}.games[${j}].name must be 1 to 80 characters`)
       if (g.gameId && knownGameIds && !knownGameIds.has(g.gameId)) out.push(`${at}.games[${j}].gameId ${g.gameId} is not a tracked game`)
+      if (g.coverId !== undefined && !/^[a-z0-9]{4,40}$/.test(g.coverId)) out.push(`${at}.games[${j}].coverId must be an IGDB image id`)
       if (/https?:\/\//i.test(g.name ?? '')) out.push(`${at}.games[${j}].name must not be a link`)
     }
   }

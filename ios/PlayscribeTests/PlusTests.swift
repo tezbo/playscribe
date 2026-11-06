@@ -85,6 +85,15 @@ struct PlusCoverTests {
         #expect(PlusCard.resolve(g, tracked: { _ in nil })?.igdbID == 185246)
     }
 
+    @Test func aFeedCoverIdFillsAGapInTheIndexButNeverReplacesAMatch() {
+        let missing = PlusMonth.Game(name: "Zzzz Not In The Index 9999", gameId: nil, coverId: "co1abc")
+        let hit = PlusCard.resolve(missing, tracked: { _ in nil })
+        #expect(hit?.coverImageID == "co1abc")
+        #expect(hit?.coverURL?.absoluteString.hasSuffix("/co1abc.jpg") == true)
+        let indexed = PlusMonth.Game(name: "Alan Wake 2", gameId: nil, coverId: "co9wrong")
+        #expect(PlusCard.resolve(indexed, tracked: { _ in nil })?.igdbID == 185246)
+    }
+
     @Test func extraNamesReadAsOnePlusLine() {
         #expect(PlusCard.plusLine([]) == nil)
         #expect(PlusCard.plusLine(["Returnal"]) == "Plus Returnal")

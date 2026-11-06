@@ -167,7 +167,8 @@ struct SettingsView: View {
                         set: { model.showDebugOverlay = $0; if $0 { FoldAuditSwitch.enabled = true } }))
                     Button("Reset to first run", role: .destructive) { model.resetToFirstRun(); dismiss() }
                     Button("Reset to demo library") { model.resetDemo(); dismiss() }
-                    LabeledContent("Pose", value: duo.pose.rawValue)
+                    // The app's pose, from the root container: a sheet is outside the reader, so its own `duo` is the default (closed).
+                    LabeledContent("Pose", value: model.livePose.rawValue)
                     if let token = NotificationService.shared.deviceToken {
                         LabeledContent("APNs token", value: String(token.prefix(12)) + "…")
                     }

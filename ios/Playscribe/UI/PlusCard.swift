@@ -46,6 +46,10 @@ struct PlusCard: View {
         for query in [g.name, romanVariant(g.name)] {
             if let hit = PS5Index.shared.search(query, limit: 10).first(where: { matchKey($0.name) == want }) { return hit }
         }
+        // Not in the bundled index: a feed-supplied IGDB cover makes a cover-only game (never a wrong one).
+        if let cover = g.coverId, !cover.isEmpty {
+            return CatalogGame(id: "plus-\(want)", name: g.name, platforms: [.ps5], coverImageID: cover, coverage: .none)
+        }
         return nil
     }
 
