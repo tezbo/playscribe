@@ -596,6 +596,7 @@ final class AppModel {
         case "demo": resetDemo()
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
+        case "many-updates": resetToManyUpdatesDemo()
         case "three-update": resetToUpdateDemo(count: 3)
         case "four-update": resetToUpdateDemo(count: 4)
         case "caught-up": resetToCaughtUpDemo()
@@ -875,6 +876,15 @@ final class AppModel {
     func resetToTwoUpdateDemo() {
         resetDemo()
         qaUpdateCount = 2
+    }
+
+    /// QA (route "many-updates"): every catalog game with an On PS5 update joins the library, so the deck is full
+    /// and the Open portrait "+N more updates" chip shows when more than 8 updates qualify.
+    func resetToManyUpdatesDemo() {
+        resetDemo()
+        let have = Set(data.collection.map(\.gameID))
+        let more = fixtures.games.filter { !have.contains($0.id) && !ps5Releases($0.id).filter { $0.ps5State == .onPS5 }.isEmpty }
+        addGames(more, status: .owned)
     }
 
     /// QA (routes "three-update", "four-update"): `count` fresh updates from different games, so the deck
