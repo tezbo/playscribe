@@ -302,19 +302,20 @@ struct CompactDeckCard: View {
 struct CompactCaption: View {
     var card: DeckCard
     /// 0 is the whole caption. Higher tiers (accessibility sizes, when the card is capped by J-5) shed lines in this
-    /// order: byline name to one line (1), headline to two lines (2), the chips row (3).
+    /// order: byline name to one line (1), headline to two lines (2), the byline's date line (3). Chips never go.
     var tier = 0
     @Environment(\.dynamicTypeSize) private var typeSize
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
 
     var body: some View {
         VStack(alignment: .leading, spacing: typeSize.isAccessibilitySize ? 2 : 4) {
-            if typeSize.isAccessibilitySize && tier < 3 { FlowLayout(spacing: 6) { DeckChips(card: card) } }
+            // The chips stay in every tier: both chips show at AX in every pose (coordinator, 248b772 Book AX3).
+            if typeSize.isAccessibilitySize { FlowLayout(spacing: 6) { DeckChips(card: card) } }
             Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
                 .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                 // Three lines, the ellipsis only after a whole word, never scaled down (Iris, AX3 hero).
                 .lineLimit(tier < 2 ? 3 : 2).fixedSize(horizontal: false, vertical: true)
-            DeckByline(card: card, dateText: dateText, tight: tier >= 1)
+            DeckByline(card: card, dateText: tier >= 3 ? "" : dateText, tight: tier >= 1)
         }
         .padding(.horizontal, 16)
         // Tighter top and bottom at accessibility sizes keeps the grown deck inside its 50% bound (J-5).
@@ -345,10 +346,18 @@ struct AdaptiveCaption: View {
 struct DeckChips: View {
     var card: DeckCard
 
+    /// One entry per chip, drawn through a ForEach so a Layout (FlowLayout) gets one subview per chip; a multi-view body
+    /// was one subview there, and the chips drew on top of each other ("New update" lost under "v1.1", Book AX3).
+    private var items: [(text: String, filled: Bool)] {
+        var list: [(text: String, filled: Bool)] = []
+        if let v = card.release?.versionChip { list.append((v, false)) }
+        if card.unread { list.append(("New update", true)) }
+        if card.release == nil, let d = card.date { list.append(("Released " + AppModel.tileDay(d), false)) }
+        return list
+    }
+
     var body: some View {
-        if let v = card.release?.versionChip { chip(v, filled: false) }
-        if card.unread { chip("New update", filled: true) }
-        if card.release == nil, let d = card.date { chip("Released " + AppModel.tileDay(d), filled: false) }
+        ForEach(items, id: \.text) { chip($0.text, filled: $0.filled) }
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
