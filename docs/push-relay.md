@@ -2,7 +2,8 @@
 
 Server push needs something always on to receive each phone's APNs token and followed games. GitHub Actions cannot, so a
 small Cloudflare Worker (`relay/worker.js`, free plan, one KV namespace) holds them. Nothing else about the architecture
-changes: the Feed job still polls the sources and sends the pushes itself, so the APNs key lives only in GitHub secrets.
+changes: the Feed job still polls the sources and sends the pushes itself. The APNs key lives in GitHub secrets and, for one
+purpose only, in the Worker (see Team alerts).
 
 ```
 phone ──POST /v1/devices──▶ relay (KV)          Feed job (GitHub Actions, :17 and :47)
@@ -44,3 +45,15 @@ URL goes in `relay/url.txt` (read by feed.yml) and in the app's `PlayscribeRelay
 ## App
 Builds up to 0.5.1 build 7 use `PlayscribeAPIBaseURL` (the static feed on raw.githubusercontent.com) for the device routes too, so
 they cannot register anywhere. The next build adds a separate `PlayscribeRelayURL`; only builds with it can receive push.
+
+## Team alerts (TestFlight feedback)
+
+Apple's App Store Connect webhook posts to `POST /v1/webhooks/asc` when a tester sends feedback or a crash report. The Worker
+checks an HMAC-SHA256 signature (secret derived from the Cloudflare token in `relay/deploy.sh`; no signature, no secret or a
+mismatch is a 401), then sends one fixed-text push ("New TestFlight feedback" or "New TestFlight crash report") to devices that
+set `team: true`, which only internal builds do. The push never carries tester text.
+
+**Trust model change (Terry approved 2026-11-07 AEDT):** this is the one place the APNs key is held by the Worker. Deploy binds
+`APNS_KEY`, `APNS_KEY_ID`, `APNS_TEAM_ID` from the existing GitHub secrets (nothing is pasted). Blast radius: someone who could
+read Worker secrets could push to this app's devices. The Feed job's own sending is unchanged. Delivery is capped at 20 team
+devices a send (`tm:<id>` index keys) to stay inside the free plan's 50 subrequests per request.
