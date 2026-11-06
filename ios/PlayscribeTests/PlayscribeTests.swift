@@ -145,7 +145,7 @@ struct ModelTests {
             let g = PS5Index.shared.game(e)
             guard let line = g.ps5DateLine else { continue }
             if line.hasPrefix("Released ") || line.hasPrefix("PS5 version since "), let d = g.releaseDate?.isoDay { #expect(d >= launch, "\(g.name): \(line)") }
-            if line.hasPrefix("Playable on PS5 since "), let b = g.playableSince?.isoDay {
+            if line.hasPrefix("Plays on PS5 since "), let b = g.playableSince?.isoDay {
                 #expect(b >= launch, "\(g.name): \(line)")
                 #expect(line.hasSuffix(b.formatted(monthYear)))
             }
@@ -261,14 +261,34 @@ struct DatePrecisionTests {
     @Test("GR-1, D-12: a PS4-only game that plays on PS5 is not 'TBA'")
     func ps4OnlyIsPlayable() {
         // Before the PS5 launch (12 Nov 2020): the PS4 version plays on PS5.
-        #expect(ps4Only("2018-10-05").ps5AvailabilityLine == "Plays on PS5 (PS4 version)")
-        #expect(ps4Only("2018-10-05").ps5ShortLine == "Playable on PS5")
+        #expect(ps4Only("2018-10-05").ps5AvailabilityLine == "Plays on PS5 as the PS4 version")
+        #expect(ps4Only("2018-10-05").ps5ShortLine == "Plays on PS5")
+        #expect(ps4Only("2018-10-05").ps5AvailabilityLine.contains("2018") == false)
         // After the launch: since when.
-        #expect(ps4Only("2021-03-04").ps5AvailabilityLine == "Playable on PS5 since Mar 2021")
-        #expect(ps4Only("2021-03-04").ps5ShortLine == "Playable on PS5")
+        #expect(ps4Only("2021-03-04").ps5AvailabilityLine == "Plays on PS5 since Mar 2021")
+        #expect(ps4Only("2021-03-04").ps5ShortLine == "Plays on PS5")
+        // A future date never reads "since <future>".
+        #expect(ps4Only("2099-01-01").ps5AvailabilityLine == "Plays on PS5 as the PS4 version")
+        #expect(ps4Only("2099-01-01").ps5DateLine == "Plays on PS5 as the PS4 version")
         // The game page and the tile agree with the date line.
         #expect(ps4Only("2018-10-05").ps5DateLine == ps4Only("2018-10-05").ps5AvailabilityLine)
         #expect(ps4Only("2021-03-04").ps5DateLine == ps4Only("2021-03-04").ps5AvailabilityLine)
+    }
+
+    @Test("D-12: a PS4-only game's tile is a quiet caption, never unread, never TBA, and VoiceOver says what it is")
+    func ps4OnlyTile() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "ps4tile-\(UUID().uuidString).json"))
+        for since in ["2018-10-05", "2021-03-04"] {
+            let row = AppModel.LibraryRow(game: ps4Only(since), status: .owned, addedAt: .now, unread: 0, latest: nil)
+            #expect(m.tileDate(row).kind == .playsOnPS5)
+            #expect(m.tileDate(row).text == "Plays on PS5")
+            #expect(m.tileAccessibilityLabel(row) == "T, plays on PS5 as the PS4 version, \(row.status.label.lowercased())")
+            #expect(row.unread == 0 && m.unreadCount("t") == 0)
+        }
+        let tba = AppModel.LibraryRow(game: ps4Only(nil), status: .owned, addedAt: .now, unread: 0, latest: nil)
+        #expect(m.tileDate(tba).text == "TBA")
+        // No PC version number can leak into the line.
+        #expect(ps4Only("2021-03-04").ps5AvailabilityLine.range(of: #"\d+\.\d+"#, options: .regularExpression) == nil)
     }
 
     @Test("GR-1, D-12: TBA stays for a game with no date at all, or a date that is to be decided")
