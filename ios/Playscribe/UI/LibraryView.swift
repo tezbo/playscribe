@@ -317,11 +317,12 @@ struct LibraryShelf: View {
                     }
                 }
                 // Book: these cards stay on the left page; with a hero they sit in the left column below.
-                if !heroOnRightPage { topCards(all) }
+                if !heroOnRightPage && duo.pose != .book { topCards(all) }
                 if !all.isEmpty && duo.pose == .tabletop {
                     // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
                     TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4)
                 } else if !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                if !heroOnRightPage && duo.pose == .book { topCards(all) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
                     HStack(spacing: 12) {
@@ -364,8 +365,9 @@ struct LibraryShelf: View {
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
                             LibraryTabPicker()
-                            topCards(all)
+                            // Controls first, the offer second (Iris, Book compact card).
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                            topCards(all)
                             NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                             if all.count >= 2 && layout == .tiles {
                                 FilterBar().frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
