@@ -27,6 +27,14 @@ For PS5 players who want to know, fast, what an update changed and whether it is
 is Steam-only and web-only. Our edge: PS5-first ("on PS5" means a PS5 row, live and official),
 a game-book reading experience, and a Duo layout in every pose. Never claim more than the app does.
 
+## URLs (live 6 Nov 2026)
+
+- Marketing: https://playscribe.codeconnectors.co/
+- Privacy: https://playscribe.codeconnectors.co/privacy.html
+- Support: https://playscribe.codeconnectors.co/support.html
+
+Support shows an email only for now; confirm Apple's support URL requirement before submission.
+
 ## Metadata draft (for Nadia's sign-off)
 
 - Name: `Playscribe: PS5 Patch Notes` (27)
