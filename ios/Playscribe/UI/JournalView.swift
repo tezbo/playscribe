@@ -132,7 +132,7 @@ struct ReleaseTag: View {
         switch release.ps5State {
         case .onPS5: if release.simulated == true { Tag(text: "Simulated", tint: .simulated) }
         case .announced: Tag(text: "Announced", tint: .ember)
-        case .reported: EmptyView()
+        case .reported: if release.ps4 == true { Tag(text: "Reported", tint: .secondary) }
         case .notPlanned: Tag(text: "Not planned for PS5", tint: .secondary)
         case .pending: EmptyView()
         }
