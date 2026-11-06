@@ -138,7 +138,8 @@ struct LibraryShelf: View {
         case .closed: 88
         case .flat: flatFit.size
         case .book: 100
-        case .tabletop: 84
+        // Accessibility sizes: wider tiles, so fewer columns and the caption under the cover never truncates.
+        case .tabletop: typeSize.isAccessibilitySize ? 124 : 84
         }
     }
 
