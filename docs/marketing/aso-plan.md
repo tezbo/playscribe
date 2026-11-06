@@ -47,7 +47,7 @@ set and tune from App Store Connect analytics after launch.
 5. Duo Tabletop: "Made for the fold." (stage above, controls below)
 6. Duo Open/Book: "Two pages, one story."
 7. Library and add flow: "Your games, in seconds."
-Rules: real app captures, no PlayStation marks (the bundled PS Plus badge frames are the only exemption, per Nadia and Terry's sign-off), no source names, no fabricated data (use sample games the app ships).
+Rules: real app captures, no source names, no fabricated data (use sample games the app ships).
 
 ## Launch plan
 
