@@ -129,6 +129,7 @@ const register = async (env, request) => {
     follows = f.follows
   }
   const locale = typeof body.locale === 'string' ? body.locale.slice(0, 35) : null
+  const team = typeof body.team === 'boolean' ? body.team : undefined
 
   const existingId = await kv.get(`t:${token}`)
   const existing = existingId ? await getJson(kv, `d:${existingId}`) : null
@@ -140,13 +141,14 @@ const register = async (env, request) => {
       locale: locale ?? existing.locale,
       follows: follows ?? existing.follows,
       quiet: quiet === undefined ? existing.quiet : quiet,
+      team: team ?? existing.team ?? false,
     }
     if (JSON.stringify(next) !== JSON.stringify(existing)) await putJson(kv, `d:${existing.id}`, { ...next, updated: now() })
     return json(publicView(next), 200)
   }
   const id = crypto.randomUUID()
   const key = b64url(crypto.getRandomValues(new Uint8Array(32)))
-  const rec = { id, key, token, environment, locale, follows: follows ?? [], quiet: quiet ?? null, created: now(), updated: now() }
+  const rec = { id, key, token, environment, locale, follows: follows ?? [], quiet: quiet ?? null, team: team ?? false, created: now(), updated: now() }
   await claimToken(kv, token, id)
   await putJson(kv, `d:${id}`, rec)
   await kv.put(`k:${await sha(key)}`, id)
@@ -168,6 +170,7 @@ const patchMe = async (env, request) => {
   if (body.environment) next.environment = body.environment
   if (typeof body.locale === 'string') next.locale = body.locale.slice(0, 35)
   if (quiet !== undefined) next.quiet = quiet
+  if (typeof body.team === 'boolean') next.team = body.team
   if (body.apnsToken !== undefined) {
     const token = body.apnsToken ? body.apnsToken.toLowerCase() : null
     if (token !== d.token) {
@@ -198,9 +201,74 @@ const adminDevices = async (env, request) => {
   const devices = []
   for (const k of page.keys) {
     const d = await getJson(env.KV, k.name)
-    if (d?.token) devices.push({ id: d.id, token: d.token, environment: d.environment, locale: d.locale, quiet: d.quiet, follows: d.follows, updated: d.updated })
+    if (d?.token) devices.push({ id: d.id, token: d.token, environment: d.environment, locale: d.locale, quiet: d.quiet, team: d.team === true, follows: d.follows, updated: d.updated })
   }
   return json({ devices, cursor: page.list_complete ? null : page.cursor })
+}
+
+// ---- Team alerts: App Store Connect webhook -> a push to the devices that switched "Team alerts" on (internal builds). ----
+// The alert text is fixed. It never carries the tester's words, because the push is not the place for them.
+const hexToBytes = (h) => new Uint8Array((h.match(/../g) ?? []).map((x) => parseInt(x, 16)))
+
+/** HMAC-SHA256 of the raw body against ASC_WEBHOOK_SECRET. Fails closed: no secret, no header or a mismatch all say no.
+ *  The header name and format are read from Apple's docs and confirmed by the first webhookPing; the check accepts
+ *  either "hmacsha256=<hex>" or bare hex. */
+export const signatureOk = async (env, request, raw) => {
+  if (!env.ASC_WEBHOOK_SECRET) return false
+  const header = request.headers.get('x-apple-signature') ?? ''
+  const hexSig = header.replace(/^hmacsha256=/i, '').trim().toLowerCase()
+  if (!/^[0-9a-f]{64}$/.test(hexSig)) return false
+  const key = await crypto.subtle.importKey('raw', enc.encode(env.ASC_WEBHOOK_SECRET), { name: 'HMAC', hash: 'SHA-256' }, false, ['verify'])
+  return crypto.subtle.verify('HMAC', key, hexToBytes(hexSig), enc.encode(raw))
+}
+
+const pemBytes = (pem) => Uint8Array.from(atob(pem.replace(/-----[^-]+-----|\s/g, '')), (c) => c.charCodeAt(0))
+const apnsJwt = async (env) => {
+  const key = await crypto.subtle.importKey('pkcs8', pemBytes(env.APNS_KEY), { name: 'ECDSA', namedCurve: 'P-256' }, false, ['sign'])
+  const part = (o) => b64url(enc.encode(JSON.stringify(o)))
+  const head = `${part({ alg: 'ES256', kid: env.APNS_KEY_ID })}.${part({ iss: env.APNS_TEAM_ID, iat: Math.floor(Date.now() / 1000) })}`
+  const sig = await crypto.subtle.sign({ name: 'ECDSA', hash: 'SHA-256' }, key, enc.encode(head))
+  return `${head}.${b64url(new Uint8Array(sig))}`
+}
+
+const ALERT = { crash: 'New TestFlight crash report', screenshot: 'New TestFlight feedback' }
+const sendTeamAlert = async (env, kind) => {
+  if (!env.APNS_KEY || !env.APNS_KEY_ID || !env.APNS_TEAM_ID) return { sent: 0, skipped: 'push key not set' }
+  const jwt = await apnsJwt(env)
+  let sent = 0
+  let cursor
+  do {
+    const page = await env.KV.list({ prefix: 'd:', limit: PAGE, cursor })
+    for (const k of page.keys) {
+      const d = await getJson(env.KV, k.name)
+      if (!d?.team || !d.token) continue
+      const host = d.environment === 'sandbox' ? 'api.sandbox.push.apple.com' : 'api.push.apple.com'
+      const r = await fetch(`https://${host}/3/device/${d.token}`, {
+        method: 'POST',
+        headers: { authorization: `bearer ${jwt}`, 'apns-topic': env.APNS_TOPIC ?? 'tezbo.Playscribe', 'apns-push-type': 'alert', 'apns-priority': '10' },
+        body: JSON.stringify({ aps: { alert: { title: 'Playscribe', body: ALERT[kind] ?? ALERT.screenshot }, sound: 'default' } }),
+      })
+      if (r.ok) sent++
+    }
+    cursor = page.list_complete ? undefined : page.cursor
+  } while (cursor)
+  return { sent }
+}
+
+const ascWebhook = async (env, request) => {
+  const raw = await request.text()
+  if (raw.length > MAX_BODY) return bad('body too large', 413)
+  if (!(await signatureOk(env, request, raw))) return bad('not allowed', 401)
+  let ev
+  try { ev = JSON.parse(raw) } catch { return bad('bad json') }
+  const type = String(ev?.data?.attributes?.eventType ?? ev?.eventType ?? '')
+  const id = String(ev?.data?.id ?? '')
+  if (!/FEEDBACK/.test(type)) return json({ ok: true, ignored: true })
+  if (id) {
+    if (await env.KV.get(`w:${id}`)) return json({ ok: true, duplicate: true })
+    await env.KV.put(`w:${id}`, '1', { expirationTtl: 86400 })
+  }
+  return json({ ok: true, ...(await sendTeamAlert(env, /CRASH/.test(type) ? 'crash' : 'screenshot')) })
 }
 
 export default {
@@ -216,6 +284,7 @@ export default {
         const d = await deviceFor(env.KV, request)
         return d ? json({ follows: d.follows }) : bad('unknown device key', 401)
       }
+      if (pathname === '/v1/webhooks/asc' && m === 'POST') return await ascWebhook(env, request)
       if (pathname === '/admin/devices' && m === 'GET') return await adminDevices(env, request)
       return bad('not found', 404)
     } catch (e) {
