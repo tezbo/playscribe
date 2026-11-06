@@ -168,6 +168,7 @@ struct LatestUpdatesDeck: View {
 struct DeckCardView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     var card: DeckCard
     /// Open portrait: a fixed art height, so the card never outgrows its share of the screen.
     var artHeight: CGFloat?
@@ -197,12 +198,8 @@ struct DeckCardView: View {
                 DeckCardArt(card: card, height: artHeight)
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? game.name)
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
-                    .lineLimit(2).fixedSize(horizontal: false, vertical: true)
-                HStack(spacing: 8) {
-                    Text(game.name).foregroundStyle(PlayscribeColor.textPrimary)
-                    if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
-                }
-                .font(PlayscribeFont.subheadline).lineLimit(1)
+                    .lineLimit(typeSize.isAccessibilitySize ? 3 : 2).fixedSize(horizontal: false, vertical: true)
+                DeckByline(card: card, dateText: dateText)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .contentShape(Rectangle())
@@ -234,27 +231,30 @@ struct CompactDeckCard: View {
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
 
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
-            ArtView(asset: card.game.keyArtAsset, game: card.game)
-            // Increase Contrast / Reduce Transparency: a solid ink scrim behind the caption, not a fade.
-            if contrast == .increased || reduceTransparency || qaSolid {
-                PlayscribeColor.ink950.opacity(0.92).frame(height: height * 0.45)
-                    .frame(maxHeight: .infinity, alignment: .bottom)
-            } else {
-                LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.9)], startPoint: .center, endPoint: .bottom)
-            }
-            VStack(alignment: .leading, spacing: 4) {
-                Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
-                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
-                    .lineLimit(typeSize.isAccessibilitySize ? 4 : 3)
-                    .minimumScaleFactor(typeSize.isAccessibilitySize ? 0.85 : 1)
-                HStack(spacing: 8) {
-                    Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
-                    if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
+        // The caption sets the size (at least `height`); the art and its scrim are the background, so a tall
+        // caption at accessibility sizes grows the card instead of clipping or being squeezed.
+        VStack(alignment: .leading, spacing: 4) {
+            Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
+                .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
+                // Three lines, the ellipsis only after a whole word, never scaled down (Iris, AX3 hero).
+                .lineLimit(3).fixedSize(horizontal: false, vertical: true)
+            DeckByline(card: card, dateText: dateText)
+        }
+        .padding(16)
+        // Accessibility sizes: clear of the chips along the top.
+        .padding(.top, typeSize.isAccessibilitySize ? 34 : 0)
+        .frame(maxWidth: .infinity, minHeight: height, alignment: .bottomLeading)
+        .background {
+            ZStack(alignment: .bottomLeading) {
+                ArtView(asset: card.game.keyArtAsset, game: card.game)
+                // Increase Contrast / Reduce Transparency: a solid ink scrim behind the caption, not a fade.
+                if contrast == .increased || reduceTransparency || qaSolid {
+                    PlayscribeColor.ink950.opacity(0.92).frame(height: height * 0.45)
+                        .frame(maxHeight: .infinity, alignment: .bottom)
+                } else {
+                    LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.9)], startPoint: .center, endPoint: .bottom)
                 }
-                .font(PlayscribeFont.subheadline).lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
             }
-            .padding(16)
         }
         .overlay(alignment: .topLeading) {
             HStack(spacing: 6) {
@@ -264,7 +264,8 @@ struct CompactDeckCard: View {
             }
             .padding(12)
         }
-        .frame(height: height)
+        // Standard sizes keep the fixed height; accessibility sizes grow to hold the whole caption.
+        .frame(height: typeSize.isAccessibilitySize ? nil : height)
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
         .accessibilityHidden(true)
@@ -275,6 +276,31 @@ struct CompactDeckCard: View {
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(height: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
+    }
+}
+
+/// The game name and date under a hero headline. Standard sizes: one line, name then date. Accessibility
+/// sizes: the name wraps to two lines and the date takes its own line, so nothing truncates mid-word.
+struct DeckByline: View {
+    var card: DeckCard
+    var dateText: String
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    var body: some View {
+        if typeSize.isAccessibilitySize {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
+                    .lineLimit(2).fixedSize(horizontal: false, vertical: true)
+                if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
+            }
+            .font(PlayscribeFont.subheadline)
+        } else {
+            HStack(spacing: 8) {
+                Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
+                if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
+            }
+            .font(PlayscribeFont.subheadline).lineLimit(1)
+        }
     }
 }
 
