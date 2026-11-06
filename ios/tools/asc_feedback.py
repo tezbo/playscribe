@@ -18,7 +18,8 @@ ASC = "https://api.appstoreconnect.apple.com"
 GH = "https://api.github.com"
 LABEL = "testflight-feedback"
 ASSIGNEE = os.environ.get("FEEDBACK_ASSIGNEE", "tezbo")  # assigning him is what makes GitHub Mobile push to his phone
-BUNDLE_ID = os.environ.get("BUNDLE_ID", "co.codeconnectors.playscribe")
+# The TestFlight app's bundle id (the release lane overrides the project's co.codeconnectors one; docs/push-relay.md).
+BUNDLE_ID = os.environ.get("BUNDLE_ID", "tezbo.Playscribe")
 MIN_BUILD = int(os.environ.get("MIN_BUILD", "8"))  # backfill from 0.5.2 (8)
 MAX_NEW = int(os.environ.get("MAX_NEW", "30"))
 INCLUDE_COMMENT = os.environ.get("INCLUDE_COMMENT", "1") != "0"
