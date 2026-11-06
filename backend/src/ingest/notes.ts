@@ -155,6 +155,7 @@ export const tagNotes = (sections: NoteSection[]): NoteSection[] =>
   }).filter((s) => s.items.length)
 
 export const mentionsPs5 = (text: string) => PS5.test(text)
+export const mentionsPs4 = (text: string) => /\bPS4\b/i.test(text)
 export const mentionsXbox = (text: string) => XBOX.test(text)
 
 // Hosts that are never a studio's PS5 update page: Steam itself, stores, video and social sites, image CDNs.

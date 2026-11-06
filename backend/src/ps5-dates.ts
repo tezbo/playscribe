@@ -70,7 +70,8 @@ export const ps5DatesOf = (
     return r?.full && d && r.date > d ? r.date : undefined
   }
   const f = early && !override?.d ? fullOf(ids.ps4) : undefined
-  const b = override?.b ?? (ps4 && (!d || ps4 < d) ? ps4 : undefined)
+  // A PS4 date still ahead is not "playable since": the app would show a future date.
+  const b = override?.b ?? (ps4 && ps4 <= new Date().toISOString().slice(0, 10) && (!d || ps4 < d) ? ps4 : undefined)
   const tbd = !d && (rows ?? []).some((r) => r.platform === ids.ps5 && !r.date && precisionOf(r, formatName) === 'tbd')
   const q = override?.d ? undefined : (ps5?.precision ?? (tbd ? 'tbd' : undefined))
   return { d, ...(q ? { q } : {}), ...(early && !f ? { e: true as const } : {}), ...(f ? { f } : {}), b }
