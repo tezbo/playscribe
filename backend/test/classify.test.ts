@@ -165,3 +165,8 @@ test('promo and social lines are not patch notes, real changes that mention them
   assert.deepEqual(notes.map((n) => [n.title, n.items.map((i) => i.text)]), [['Other changes', ['Fixed a crash on load']]])
   assert.deepEqual(tagNotes([{ title: 'Other changes', items: [{ text: 'The saga is on sale now', ps5ProOnly: false, pcOnly: false, category: 'other' }, { text: 'Fixed a door', ps5ProOnly: false, pcOnly: false, category: 'fixed' }] }]).map((n) => n.items.length), [1])
 })
+
+test('in-game store and economy lines are kept even when they say sale or discount (Quinn, #332)', () => {
+  for (const line of ['Merchants now have items on sale', 'Shop discounts now stack', 'Prices are 50% off in the arena', 'Items on sale in the Store display the correct discounted Iridescent Shard price.']) assert.equal(isPromoLine(line), false, line)
+  for (const line of ['The Monster Hunter series is now on sale!', 'Games from the Monster Hunter series now on sale!', 'On Sale Now!']) assert.equal(isPromoLine(line), true, line)
+})

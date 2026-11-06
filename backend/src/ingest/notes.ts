@@ -114,7 +114,11 @@ const PROMO_LINE = new RegExp(
   ].join('|'),
   'i',
 )
-export const isPromoLine = (text: string) => /^\s*https?:\/\/\S+\s*$/i.test(text) || (PROMO_LINE.test(text) && !CHANGE_WORD.test(text))
+// Gameplay and in-game store lines can say "on sale" or "discount" without a change word ("Items on sale in the Store display
+// the correct price", "Prices are 50% off in the arena"). A line that names the in-game economy is kept, so the rule errs
+// towards leaving a promo line in rather than hiding a real note (Quinn, #332).
+const GAME_ECONOMY = /\b(?:vendors?|merchants?|shops?|stores?|traders?|stalls?|prices?|gold|coins?|shards?|cost|costs|currency|purchas(?:e|ed|es|able)|bundles?|coupons?|costumes?|outfits?|skins?|no longer|correct(?:ly)?|now (?:have|find|stack|show|display|appear|cost|sell))\b/i
+export const isPromoLine = (text: string) => /^\s*https?:\/\/\S+\s*$/i.test(text) || (PROMO_LINE.test(text) && !CHANGE_WORD.test(text) && !GAME_ECONOMY.test(text))
 
 export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSection[] => {
   const sections: NoteSection[] = []
