@@ -97,7 +97,7 @@ extension GameBookView {
     }
 }
 
-/// R-7: chapters as a scrolling row with an edge fade; the selected chip scrolls into view.
+/// R-7: chapters in one row when they fit, wrapped onto a second row when they do not.
 struct ChapterBar: View {
     @Environment(AppModel.self) private var model
     var gameID: String
@@ -127,20 +127,15 @@ struct ChapterBar: View {
     }
 
     var body: some View {
-        ScrollViewReader { proxy in
-            // Every chapter in view whenever the row can hold them: with icons, else titles only (Book's
-            // left page cut "My book" to "My b"). Only when even that is too wide does the row scroll.
-            ViewThatFits(in: .horizontal) {
-                row(icons: true).fixedSize(horizontal: true, vertical: false)
-                row(icons: false).fixedSize(horizontal: true, vertical: false)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    row(icons: true).padding(.trailing, 44)
-                }
-                // A wider fade so a half-seen last chip reads as "more this way", not as a bug.
-                .edgeFade(44)
+        // Every chapter is always in view (Quinn, #331): one row with icons, else one row of titles, else the
+        // chips wrap onto a second row (AX sizes, narrow columns). Nothing hides behind a scroll.
+        ViewThatFits(in: .horizontal) {
+            row(icons: true).fixedSize(horizontal: true, vertical: false)
+            row(icons: false).fixedSize(horizontal: true, vertical: false)
+            FlowLayout(spacing: 8) {
+                ForEach(model.chapters(gameID)) { chip($0, icons: false) }
             }
-            .onAppear { proxy.scrollTo(selected, anchor: .center) }
-            .onChange(of: selected) { _, c in withAnimation { proxy.scrollTo(c, anchor: .center) } }
+            .padding(.horizontal, 2)
         }
     }
 }

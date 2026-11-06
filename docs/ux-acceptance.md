@@ -107,7 +107,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 - **R-4** Notes are grouped by section. Items flagged `ps5ProOnly` carry a "PS5 Pro" tag. PC-only items inside a console release are hidden behind "Show PC-only changes (n)".
 - **R-5** Spoiler items are blurred with the label "Spoiler · tap to show". A per-game toggle (eye symbol) reveals all of them.
 - **R-6** A release becomes **read** when its expanded body has been at least 50% on screen for 1 s, or via "Mark all read". The app icon badge and the Library tab badge update at once.
-- **R-7** Chapters (Updates, World, Companion, Gallery, My book; empty chapters are hidden). On compact width they show as a horizontally scrolling row with an edge fade, and the selected chip is scrolled into view. All chapters are reachable in every pose.
+- **R-7** Chapters (Updates, World, Companion, Gallery, My book; empty chapters are hidden). Every chapter is always in view (#331): one row with icons when it fits, else one row of titles, else the chips wrap onto a second row (accessibility sizes, narrow columns). Nothing hides behind a scroll. All chapters are reachable in every pose.
 - **R-8** Game actions live in the toolbar only (no duplicate pills): Notifications (bell), Spoilers (eye), Status (tag), Mark all read (checkmark, shown only when unread exists), Bookmark the release (per release, inline).
 - **R-9** Book: the left page holds key art and the contents of releases (tap to jump); the right page holds the reading pane.
 - **R-10** Tabletop: the upper stage shows the release's key art and display name. The lower half holds chapters, release jump chips and reading. No release header straddles the fold.
