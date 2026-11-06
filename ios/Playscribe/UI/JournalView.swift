@@ -82,13 +82,12 @@ struct ReleaseEntry: View {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 8) {
                         if unread { UnreadDot() }
-                        Text(r.displayName).font(PlayscribeFont.headline)
-                        ReleaseTag(release: r)
+                        TitleWithTags(release: r) { Text(r.displayName).font(PlayscribeFont.headline) }
                         Spacer(minLength: 0)
                         Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
                     }
                     HStack(spacing: 8) {
-                        Text(r.ps4Label ?? r.kind.label)
+                        Text(r.kind.label)
                         Text(r.isPS5Listed ? r.ps5Date.shortDay : r.latestDate.shortDay)
                         // R-2 / V-2: the PS5 version exactly as the console shows it; never a PC number.
                         if let v = r.ps5Version { Text(v).monospacedDigit() }
@@ -129,12 +128,36 @@ struct ReleaseEntry: View {
 struct ReleaseTag: View {
     var release: Release
     var body: some View {
+        HStack(spacing: 6) {
+            // Every PS4 patch says so, whatever its state; the patch name stays the title (R-2).
+            if let l = release.ps4Label { Tag(text: l, tint: .secondary) }
+            state
+        }
+    }
+
+    @ViewBuilder private var state: some View {
         switch release.ps5State {
         case .onPS5: if release.simulated == true { Tag(text: "Simulated", tint: .simulated) }
         case .announced: Tag(text: "Announced", tint: .ember)
         case .reported: if release.ps4 == true { Tag(text: "Reported", tint: .secondary) }
         case .notPlanned: Tag(text: "Not planned for PS5", tint: .secondary)
         case .pending: EmptyView()
+        }
+    }
+}
+
+/// An update's title with its tags: beside it at standard sizes, stacked under it at accessibility sizes, so
+/// neither the title truncates nor a tag breaks mid-word.
+struct TitleWithTags<Title: View>: View {
+    var release: Release
+    @ViewBuilder var title: Title
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    var body: some View {
+        if typeSize.isAccessibilitySize {
+            VStack(alignment: .leading, spacing: 4) { title; ReleaseTag(release: release) }
+        } else {
+            HStack(spacing: 8) { title; ReleaseTag(release: release) }
         }
     }
 }

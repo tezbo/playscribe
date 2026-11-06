@@ -202,14 +202,14 @@ struct ReleasePage: View {
             HStack(spacing: 8) {
                 if model.isUnread(r) { UnreadDot() }
                 // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
-                Text(r.displayName).font(PlayscribeFont.title3)
-                    .accessibilityIdentifier("releaseTitle")
-                ReleaseTag(release: r)
+                TitleWithTags(release: r) {
+                    Text(r.displayName).font(PlayscribeFont.title3)
+                        .accessibilityIdentifier("releaseTitle")
+                }
                 Spacer(minLength: 0)
                 if r.isPS5Listed { ShareUpdateButton(release: r) }
             }
             HStack(spacing: 8) {
-                if let l = r.ps4Label { Text(l).fontWeight(.semibold) }
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
                 if let v = r.ps5Version { Text(v).monospacedDigit() }
             }
@@ -633,6 +633,7 @@ struct InlineNoteResults: View {
 struct ReleaseTimeline: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
 
     var body: some View {
@@ -662,8 +663,10 @@ struct ReleaseTimeline: View {
         } label: {
             HStack(spacing: 8) {
                 if model.isUnread(r) { UnreadDot() } else { Color.clear.frame(width: 8, height: 8) }
-                Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular)).lineLimit(1)
-                ReleaseTag(release: r)
+                TitleWithTags(release: r) {
+                    Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular))
+                        .lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
+                }
                 Spacer(minLength: 4)
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).font(PlayscribeFont.caption).foregroundStyle(.secondary)
             }
