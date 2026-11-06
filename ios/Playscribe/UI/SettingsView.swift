@@ -96,9 +96,8 @@ struct SettingsView: View {
                     Text("Notifications")
                 } footer: {
                     // The footer explains the row above it (0.5.1 spec 1).
-                    Text(NotificationService.shared.authorization == .denied
-                         ? "Notifications are off for \(Brand.name) in iOS Settings."
-                         : "Change a single game from the bell on its page.")
+                    // The denied state is said once, by the caption under "Open iOS Settings" (Quinn).
+                    Text("Change a single game from the bell on its page.")
                 }
                 Section {
                     Toggle("Pause all", isOn: $model.data.pauseAll).frame(minHeight: 52)
