@@ -48,14 +48,16 @@ struct PlusCard: View {
             VStack(alignment: .leading, spacing: 10) {
                 // Wide cards put the heading beside the covers; narrow ones stack it above (Iris, #242).
                 // Tries covers at 140, 120 then 100 pt beside the heading, so Open portrait, Tabletop and Closed
-                // landscape get a short card; Book's one-page column stacks.
-                ViewThatFits(in: .horizontal) {
-                    sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: Self.maxCoverWidth)
-                    sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 120)
-                    sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 100)
-                    VStack(alignment: .leading, spacing: 10) {
-                        header(lastChance: lastChance, claimBy: claimBy)
-                        coverRow(shown, fixedWidth: nil)
+                // landscape get a short card; Book's one-page column stacks. Accessibility sizes always stack: beside
+                // the covers the heading was squeezed to a word a line (Mac QA, AX3).
+                if typeSize.isAccessibilitySize {
+                    stacked(shown, lastChance: lastChance, claimBy: claimBy)
+                } else {
+                    ViewThatFits(in: .horizontal) {
+                        sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: Self.maxCoverWidth)
+                        sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 120)
+                        sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 100)
+                        stacked(shown, lastChance: lastChance, claimBy: claimBy)
                     }
                 }
                 // Games past the covers keep a name row, as the old card listed them: tracked ones open their page.
@@ -66,6 +68,13 @@ struct PlusCard: View {
             .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("plusCard")
+        }
+    }
+
+    private func stacked(_ shown: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            header(lastChance: lastChance, claimBy: claimBy)
+            coverRow(shown, fixedWidth: nil)
         }
     }
 

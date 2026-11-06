@@ -40,6 +40,11 @@ struct LibraryView: View {
             }
         }
         .background(Color.ink0)
+        .task {
+            // Quick actions tip, twice only; after the launch splash has gone.
+            try? await Task.sleep(for: .seconds(1.5))
+            model.showPressTipIfNeeded()
+        }
         .navigationTitle("Library")
         .toolbarTitleDisplayMode(.large)
         .toolbar {
@@ -267,6 +272,20 @@ struct LibraryShelf: View {
                     .padding(.top, 4)
     }
 
+    @State private var messagePad: CGFloat = 0
+    /// This view's frame in global coordinates. The pad sits inside it, so its bottom edge does not move with the pad.
+    @State private var libraryFrame: CGRect = .zero
+
+    /// One reserve: this page's scroll view ends 12 pt above the pill (or toast), and only where the pill overlaps the page
+    /// sideways (Book's right page gets none while the pill is on the left).
+    private func updateMessagePad() {
+        var pad: CGFloat = 0
+        if let m = model.messageFrame, libraryFrame.minX < m.maxX, libraryFrame.maxX > m.minX {
+            pad = max(0, libraryFrame.maxY - (m.minY - 12))
+        }
+        if abs(pad - messagePad) > 0.5 { messagePad = pad }
+    }
+
     var body: some View {
         @Bindable var model = model
         let rows = duo.pose == .tabletop && letter != nil
@@ -456,7 +475,20 @@ struct LibraryShelf: View {
             .padding(.trailing, railWidth)
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
-        .contentMargins(.bottom, model.pill == nil && model.toast == nil ? 0 : 96, for: .scrollContent)
+        // The pill and toasts sit at the bottom edge. The scroll view itself ends above them (a safe-area inset would still let
+        // content scroll under the pill), so nothing is ever covered (0.5.1 spec 2, Iris).
+        // No `.mask` here: from #246 the Open portrait large "Library" title vanished (354d15c, 9914a80), with the picker still
+        // in its place. The mask on this scroll view is the prime suspect (a masked scroll view is no longer the one the
+        // navigation bar tracks); the soft edge returns once a Mac still shows the title back.
+        .padding(.bottom, messagePad)
+        // The page ends 8 pt above the pill wherever the pill actually sits. The pad is worked out from measured edges (this
+        // view's bottom without the pad, the pill's top), not from the pill's height and offsets, so it cannot leave a dead
+        // band or run under the pill in any pose (0.5.1 spec 2, ae0a608 Open portrait).
+        .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { libraryFrame = $0; updateMessagePad() }
+        .onChange(of: model.messageFrame) { _, _ in updateMessagePad() }
+        // The pad changes the moment the pill shows. It must not ride a running pose animation, or the old arrangement
+        // lingers faintly under the new one (Book, ad54f44 stills).
+        .transaction(value: messagePad) { $0.animation = nil }
         .refreshable { await model.refreshFeed() }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
@@ -861,6 +893,7 @@ struct GameRow: View {
             }
             .buttonStyle(.plain)
             .tappableFrame()
+            .gameQuickActions(row.game)
             .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.15) : .clear)
             .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
             GameMenuButton(gameID: row.id)
@@ -941,7 +974,6 @@ struct GameTile: View {
         }
         .buttonStyle(.plain)
         .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
-        .contextMenu { ActionMenuContent(sections: model.statusMenu(row.id)) }
         .accessibilityElement(children: .ignore)
         // The accessibility frame runs 8 pt wider than the cover; the id carries the cover's real
         // width so the frame tests measure the cover, not the element (fold audit, J-5).
@@ -950,6 +982,7 @@ struct GameTile: View {
         .accessibilityAddTraits(.isButton)
         .accessibilityValue(FoldAuditSwitch.enabled ? "probe id=\(Int((size ?? measuredWidth).rounded())) cover=\(Int(measuredWidth.rounded())) outer=\(Int(outerWidth.rounded()))" : "")
         .onGeometryChange(for: CGFloat.self) { FoldAuditSwitch.enabled ? $0.size.width : 0 } action: { outerWidth = $0 }
+        .gameQuickActions(row.game)
     }
 }
 
@@ -982,11 +1015,22 @@ struct TileCover: View {
 struct StatusCircle: View {
     var status: OwnershipStatus
     var body: some View {
-        Image(systemName: Self.symbol(status))
-            .font(.system(size: 11, weight: .bold))
-            .foregroundStyle(.white)
-            .frame(width: 20, height: 20)
-            .adaptiveGlass(in: Circle())
+        // Wishlist alone is a solid yellow disc with an ink glyph (Iris, 0.5.1): the one state that needs
+        // attention, distinct by glyph, fill and colour. Tick and eye stay translucent with a white glyph.
+        if status == .wishlist {
+            Image(systemName: Self.symbol(status))
+                .font(.system(size: 12, weight: .semibold))
+                .foregroundStyle(Color.ink0)
+                .offset(y: 0.5)
+                .frame(width: 20, height: 20)
+                .background(Circle().fill(Color.wishlist))
+        } else {
+            Image(systemName: Self.symbol(status))
+                .font(.system(size: 11, weight: .bold))
+                .foregroundStyle(.white)
+                .frame(width: 20, height: 20)
+                .adaptiveGlass(in: Circle())
+        }
             // 20 pt so titles on art stay readable; the whole tile remains the 44 pt+ tap target.
     }
     static func symbol(_ s: OwnershipStatus) -> String {

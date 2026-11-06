@@ -22,6 +22,8 @@ extension Color {
     static let ink4 = PlayscribeColor.ink600
     static let ember = PlayscribeColor.vellum500
     static let ok = Color(hex: "#6fd3a0")
+    /// Wishlist (Iris, 0.5.1): a clear yellow, lighter than the amber ember so the two never read as one.
+    static let wishlist = Color(hex: "#F5C84B")
     static let simulated = Color(hex: "#c9a3ff")
     static let brand1 = PlayscribeColor.vellum300
     static let brand2 = PlayscribeColor.vellum100

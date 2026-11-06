@@ -38,6 +38,8 @@ export const getJson = async <T>(fetchFn: FetchFn, url: string, headers: Record<
 // robots.txt: the rules for our agent if it is named, else for *. Longest match wins, Allow beats
 // Disallow on a tie, as in RFC 9309.
 const robotsCache = new Map<string, { at: number; rules: { allow: boolean; path: string }[] }>()
+/** For tests: forget the robots.txt rules read so far. */
+export const clearRobotsCache = () => robotsCache.clear()
 
 /** The longest Crawl-delay any group that applies to us (or to *) asks for, in seconds. */
 export const crawlDelayOf = (txt: string, agent = 'playscribebot') => {

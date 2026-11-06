@@ -82,6 +82,7 @@ struct UpcomingView: View {
         .accessibilityLabel("\(g.name), \(dateLine(g))\(moveLine(g).map { ", " + $0 } ?? "")\(watching ? ", on your watchlist" : "")")
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
+        .gameQuickActions(g)
     }
 
     var body: some View {
