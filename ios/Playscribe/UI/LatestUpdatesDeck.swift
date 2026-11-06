@@ -456,17 +456,31 @@ struct WideDeckCard: View {
 
     /// Accessibility sizes: the card is as tall as its caption (at least the base height), so nothing is cut. J-5's half-container
     /// bound is not held here, only in Closed landscape: showing the whole caption wins (Iris, never drop chips or cut lines).
+    /// The headline at the AX3 cap, at most three lines: the whole text when it fits, else whole words and "…", never a cut word.
+    private var headline: some View {
+        let full = card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? "")
+        let words = full.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
+        let ax3 = UITraitCollection(preferredContentSizeCategory: .accessibilityExtraLarge)
+        let maxH = ceil(UIFont.preferredFont(forTextStyle: .subheadline, compatibleWith: ax3).lineHeight * 3)
+        let variants = [full] + (words.count > 1 ? Array(stride(from: words.count - 1, through: 1, by: -1)).map { words.prefix($0).joined(separator: " ") + "\u{2026}" } : [])
+        return ViewThatFits(in: .vertical) {
+            ForEach(variants, id: \.self) { v in
+                Text(v).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9))
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .frame(maxHeight: maxH, alignment: .topLeading)
+    }
+
     private var accessibilityCard: some View {
         VStack(alignment: .leading, spacing: 6) {
             if card.unread { chip("New update", filled: true) }
             Text(card.game.name).font(PlayscribeFont.title2.bold())
                 .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
-            Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
-                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9))
-                .lineLimit(3).fixedSize(horizontal: false, vertical: true)
+            headline
         }
-        .padding(.horizontal, 16).padding(.vertical, 22)
-        .frame(width: width * 0.72, alignment: .leading)
+        .padding(.horizontal, 16).padding(.vertical, 16)
+        .frame(width: width * 0.8, alignment: .leading)
         .frame(maxWidth: .infinity, minHeight: height, alignment: .leading)
         .background {
             ZStack {
