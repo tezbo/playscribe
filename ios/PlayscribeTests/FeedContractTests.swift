@@ -69,7 +69,11 @@ struct FeedContractTests {
         #expect(LinkHost.label("Read full notes", community) == "Read full notes on Steam")
         #expect(LinkHost.label("All patch notes", studio) == "All patch notes on Ubisoft")
         #expect(LinkHost.label("PS5 update page", URL(string: "https://www.playstation.com/en-gb/games/x")!) == "PS5 update page on PlayStation")
-        #expect(LinkHost.name(URL(string: "https://www.example.co.uk/a")!) == "Example")
+        // Known studio hosts map to brands; an unknown host never shows as a raw domain word.
+        #expect(LinkHost.label("All patch notes", URL(string: "https://www.remedygames.com/news")!) == "All patch notes on Remedy")
+        #expect(LinkHost.label("All patch notes", URL(string: "https://deepsilver.com/x")!) == "All patch notes on Deep Silver")
+        #expect(LinkHost.label("All patch notes", URL(string: "https://www.gamesci.cn/x")!) == "All patch notes on Game Science")
+        #expect(LinkHost.label("All patch notes", URL(string: "https://www.example.co.uk/a")!) == "All patch notes on the developer's site")
         #expect(LinkHost.label("Read", URL(string: "mailto:x")!) == "Read")
     }
 

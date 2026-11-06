@@ -561,23 +561,35 @@ enum ChangeKind: String, CaseIterable {
     }
 }
 
-/// Where an external link goes, as a brand name from its host, so a tap never surprises:
-/// "Read full notes on Steam", "All patch notes on Ubisoft". Never an address, never a credit (V-3).
+/// Where an external link goes, as a brand name, so a tap never surprises: "Read full notes on Steam",
+/// "All patch notes on Remedy". A host we don't know is "on the developer's site", never an address or a
+/// raw domain word (V-3).
 enum LinkHost {
-    private static let brands = ["steampowered": "Steam", "steamcommunity": "Steam", "playstation": "PlayStation",
-                                 "ea": "EA", "xbox": "Xbox", "nintendo": "Nintendo", "gog": "GOG", "epicgames": "Epic Games"]
+    private static let brands = [
+        "steampowered": "Steam", "steamcommunity": "Steam", "playstation": "PlayStation",
+        "ea": "EA", "xbox": "Xbox", "nintendo": "Nintendo", "gog": "GOG", "epicgames": "Epic Games",
+        "ubisoft": "Ubisoft", "remedygames": "Remedy", "deepsilver": "Deep Silver", "gamesci": "Game Science",
+        "dawnwalkergame": "Rebel Wolves", "bandainamcoent": "Bandai Namco", "bandainamco": "Bandai Namco",
+        "capcom": "Capcom", "square-enix": "Square Enix", "square-enix-games": "Square Enix", "sega": "Sega",
+        "bethesda": "Bethesda", "cdprojektred": "CD PROJEKT RED", "rockstargames": "Rockstar Games",
+        "activision": "Activision", "2k": "2K", "warhorsestudios": "Warhorse Studios", "konami": "Konami",
+        "pushsquare": "Push Square", "playstationlifestyle": "PlayStation LifeStyle"
+    ]
+    static let unknown = "the developer's site"
 
+    /// The brand for a known host; nil for one we don't know or a URL with no host.
     static func name(_ url: URL) -> String? {
         guard let host = url.host()?.lowercased(), !host.isEmpty else { return nil }
         var parts = host.split(separator: ".").map(String.init)
         // The label before the public suffix: "co.uk" and "com.au" take two parts.
         if parts.count >= 3, ["co", "com", "org", "net", "gov"].contains(parts[parts.count - 2]) { parts.removeLast(2) }
         else if parts.count >= 2 { parts.removeLast() }
-        guard let label = parts.last, !label.isEmpty else { return nil }
-        return brands[label] ?? label.prefix(1).uppercased() + label.dropFirst()
+        guard let label = parts.last else { return nil }
+        return brands[label]
     }
 
     static func label(_ base: String, _ url: URL) -> String {
-        name(url).map { "\(base) on \($0)" } ?? base
+        guard url.host()?.isEmpty == false else { return base }
+        return "\(base) on \(name(url) ?? unknown)"
     }
 }
