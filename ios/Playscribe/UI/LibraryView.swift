@@ -138,7 +138,8 @@ struct LibraryShelf: View {
         case .closed: 88
         case .flat: flatFit.size
         case .book: 100
-        case .tabletop: 84
+        // Accessibility sizes: wider tiles, so fewer columns and the caption under the cover never truncates.
+        case .tabletop: typeSize.isAccessibilitySize ? 124 : 84
         }
     }
 
@@ -942,6 +943,7 @@ struct GameMenuButton: View {
 /// Long-press opens the game's actions.
 struct GameTile: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var row: AppModel.LibraryRow
     /// nil: fill the column (Closed, 3 across).
     var size: CGFloat?
@@ -966,11 +968,25 @@ struct GameTile: View {
         Button { model.openGame(row.id) } label: {
             // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
-            tileFrame(TileCover(game: row.game))
-                .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
-                .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
-                .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
-                            in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            VStack(alignment: .leading, spacing: 4) {
+                tileFrame(TileCover(game: row.game))
+                    .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
+                    .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
+                    .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
+                                in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                // Accessibility sizes: the pill would cover the art, so the date or status sits under
+                // the cover instead, wrapping to two lines (GR-1, D-12; Iris, 0.5.0 a11y).
+                if typeSize.isAccessibilitySize {
+                    let state = model.tileDate(row)
+                    Text(state.text)
+                        .font(PlayscribeFont.caption.weight(.semibold))
+                        .foregroundStyle(state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .accessibilityHidden(true)
+                }
+            }
         }
         .buttonStyle(.plain)
         .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
@@ -1060,7 +1076,7 @@ struct DatePill: View {
                 // Accessibility sizes: wrap to two lines inside the tile instead of running off it.
                 .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
                 .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
-                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : state.kind == .none ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
+                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
         }
         .padding(.horizontal, 7).padding(.vertical, 3)
         .background {
@@ -1072,7 +1088,7 @@ struct DatePill: View {
 }
 
 extension AppModel {
-    enum TileDateKind { case unread, recent, older, none }
+    enum TileDateKind { case unread, recent, older, none, playsOnPS5, notOnPS5 }
 
     func tileDate(_ row: LibraryRow) -> (kind: TileDateKind, text: String) {
         if let r = row.latest {
@@ -1081,6 +1097,8 @@ extension AppModel {
             return (d > .now.addingTimeInterval(-7 * 86400) ? .recent : .older, Self.tileDay(d))
         }
         if let d = row.game.releaseDate?.isoDay { return (.none, Self.tileDay(d)) }
+        if row.game.notOnPS5Line != nil { return (.notOnPS5, "Not on PS5") }
+        if row.game.playsOnPS5AsPS4 { return (.playsOnPS5, "Plays on PS5") }
         return (.none, "TBA")
     }
 
@@ -1098,6 +1116,8 @@ extension AppModel {
         switch state.kind {
         case .unread: when = "new update \(state.text)"
         case .recent, .older: when = "last updated \(state.text)"
+        case .notOnPS5: return "\(row.game.name), not on PS5, \(row.status.label.lowercased())"
+        case .playsOnPS5: return "\(row.game.name), plays on PS5 as the PS4 version, \(row.status.label.lowercased())"
         case .none:
             // The pill is the short form; VoiceOver gets the full words (Iris, 6589abf).
             if state.text == "TBA" { when = "release date to be announced" }
