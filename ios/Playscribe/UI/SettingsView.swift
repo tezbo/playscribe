@@ -124,8 +124,14 @@ struct SettingsView: View {
                     // Shown only while a PS Plus month exists and the card is on, the same condition as the Library card.
                     if model.data.plusCardOff != true, PlusLogic.current(PlusStore.shared.months) != nil {
                         // PS Plus: a reminder in the last three days a month's games can be claimed.
-                        Toggle("PS Plus games leaving soon", isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true }))
-                            .frame(minHeight: 52)
+                        Toggle(isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true })) {
+                            VStack(alignment: .leading, spacing: 6) {
+                                PlusBadge(height: 18)
+                                Text("Games leaving soon")
+                            }
+                            .frame(minHeight: 52, alignment: .leading)
+                        }
+                            .accessibilityLabel("PS Plus games leaving soon")
                             .accessibilityHint("A reminder in the last three days before this month's PS Plus games leave")
                             .accessibilityIdentifier("plusLeavingSoon")
                             .onChange(of: model.data.plusLeavingSoonOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
@@ -180,7 +186,8 @@ struct SettingsView: View {
                         set: { model.showDebugOverlay = $0; if $0 { FoldAuditSwitch.enabled = true } }))
                     Button("Reset to first run", role: .destructive) { model.resetToFirstRun(); dismiss() }
                     Button("Reset to demo library") { model.resetDemo(); dismiss() }
-                    LabeledContent("Pose", value: duo.pose.rawValue)
+                    // The app's pose, from the root container: a sheet is outside the reader, so its own `duo` is the default (closed).
+                    LabeledContent("Pose", value: model.livePose.label)
                     if let token = NotificationService.shared.deviceToken {
                         LabeledContent("APNs token", value: String(token.prefix(12)) + "…")
                     }

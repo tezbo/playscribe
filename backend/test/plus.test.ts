@@ -35,3 +35,9 @@ test('export writes v1/plus.json; the shipped file is valid and empty until a mo
   assert.equal(out.version, 1)
   assert.ok(Array.isArray(out.months))
 })
+
+test('plus.json: coverId is optional and must look like an IGDB image id', () => {
+  const withCover = (coverId: string) => ({ months: [{ month: '2026-11', from: '2026-11-04', until: '2026-12-01', games: [{ name: 'Tomb Raider 4-6 Remastered', coverId }] }] })
+  assert.deepEqual(plusProblems(withCover('co1abc')), [])
+  assert.match(plusProblems(withCover('https://x.test/a.jpg')).join('\n'), /coverId must be an IGDB image id/)
+})

@@ -247,7 +247,8 @@ struct LibraryShelf: View {
             CatchUpCard()
             PlusCard()
         }
-        .frame(width: pageWidth, alignment: .leading)
+        // Never wider than the column it sits in (Iris: the card ran past the left page's search field in Book).
+        .frame(maxWidth: pageWidth, alignment: .leading)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 

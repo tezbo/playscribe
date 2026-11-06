@@ -12,6 +12,16 @@ enum Pose: String {
     case book
     /// Partly folded with a horizontal division: upper stage, lower controls.
     case tabletop
+
+    /// The name QA and the gate use for this pose (Closed, Open, Book, Tabletop), not the enum's own.
+    var label: String {
+        switch self {
+        case .closed: "Closed"
+        case .flat: "Open"
+        case .book: "Book"
+        case .tabletop: "Tabletop"
+        }
+    }
 }
 
 struct DuoContext: Equatable {
