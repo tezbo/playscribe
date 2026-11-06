@@ -245,16 +245,18 @@ struct CompactDeckCard: View {
     var body: some View {
         // The caption sets the size (at least `height`); the art and its scrim are the background, so a tall
         // caption at accessibility sizes grows the card instead of clipping or being squeezed.
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: typeSize.isAccessibilitySize ? 2 : 4) {
             // Accessibility sizes: the chips are their own row above the headline, in the flow, never overlaid.
-            if typeSize.isAccessibilitySize { FlowLayout(spacing: 6) { chips }.padding(.bottom, 4) }
+            if typeSize.isAccessibilitySize { FlowLayout(spacing: 6) { chips } }
             Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
                 .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                 // Three lines, the ellipsis only after a whole word, never scaled down (Iris, AX3 hero).
                 .lineLimit(3).fixedSize(horizontal: false, vertical: true)
             DeckByline(card: card, dateText: dateText)
         }
-        .padding(16)
+        .padding(.horizontal, 16)
+        // Tighter top and bottom at accessibility sizes keeps the grown deck inside its 50% bound (J-5).
+        .padding(.vertical, typeSize.isAccessibilitySize ? 12 : 16)
         .frame(maxWidth: .infinity, minHeight: height, alignment: .bottomLeading)
         .background {
             ZStack(alignment: .bottomLeading) {
