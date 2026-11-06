@@ -59,6 +59,8 @@ The live board is https://claude.ai/artifact/T5NNq75hBh7Yu9SGt28BEU (source: `do
 Agents read and write its database with the artifact data tools (`ArtifactData`, or `db_list`/`db_write` on the
 claude-artifacts connector). Terry can file ideas, move cards and comment on the page itself.
 
+**No work without a card (Terry, 2026-11-06).** All work is on the board, always. Every task, branch and PR has a card with an `owner`, the PR or branch URL in `links`, and the next step in `take`. The owner moves the card (`col`, `updatedAt`) on every state change: started, PR opened, in QA, merged. If you start something that has no card, file it first. Nadia checks the board against open PRs each grooming run.
+
 - **Cards** live in `cards`. Fields: `title`, `note`, `kind` (idea, feature, bug, release, chore), `col`, `release`
   (`0.3.0` … `1.0.0`, `1.x`, `Parked`, or empty), `owner`, `by` (your teammate name), `take` (Nadia's decision),
   `links` (PR or issue URLs), `createdAt`, `updatedAt` (epoch ms; set `updatedAt` on every write).
