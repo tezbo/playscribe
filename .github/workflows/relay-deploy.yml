@@ -26,4 +26,8 @@ jobs:
       - name: Deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Bound to the Worker as secrets only for internal Team alerts (TestFlight feedback pushes); see docs/push-relay.md.
+          APNS_KEY: ${{ secrets.APNS_KEY_P8 }}
+          APNS_KEY_ID: ${{ secrets.APNS_KEY_ID }}
+          APNS_TEAM_ID: ${{ secrets.APNS_TEAM_ID }}
         run: relay/deploy.sh

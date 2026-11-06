@@ -22,6 +22,10 @@ Nothing ships to TestFlight by itself. Merging to main never uploads a build; on
    `vX.Y.Z` and push the tag. `.github/workflows/testflight.yml` builds it, sets the version from the tag and
    the next build number, and uses the section as "What to Test".
 
+**Checking a TestFlight build.** A TestFlight or App Store build carries a receipt, so the `playscribe://` QA routes
+(including `playscribe://first-run`) do nothing there by design (#231). To see first run on such a build, delete the
+app and install it again; use Settings, Reset to first run only on a developer build.
+
 Versions: patch (0.2.1) for fixes only, minor (0.3.0) for features, 1.0.0 for the App Store launch.
 
 ## Bundle IDs and the Home Screen widget

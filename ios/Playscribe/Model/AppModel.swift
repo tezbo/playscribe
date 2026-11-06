@@ -227,6 +227,8 @@ final class AppModel {
     /// The pose being laid out right now, written by RootView as it renders. Lets navigation
     /// bindings tell a user's Back from a container being torn down by a pose change. Not observed.
     @ObservationIgnored var livePose: Pose = .closed
+    /// Book, or Open in landscape: two pages side by side, so the Add sheet is a right-page panel, not a system sheet.
+    @ObservationIgnored var liveRightPage = false
     /// Tabletop Reader: the section shown per game (TT-2). Transient.
     var readerIndex: [String: Int] = [:]
     var feedStatus: FeedStatus = .idle
@@ -363,7 +365,9 @@ final class AppModel {
         let now = clock
         return (data.simulated + allReleasesMerged)
             // Steam is the source of truth (Terry, 26 Oct): a release only the press reports is not shown.
-            .filter { $0.gameID == gameID && $0.ps5State != .pending && $0.ps5State != .reported && ($0.arrivesAt ?? .distantPast) <= now }
+            // A PS4 patch is the exception (Terry, 6 Nov: PS4 history counts): it has no Steam post, so it shows,
+            // tagged Reported, and never alerts or counts as unread.
+            .filter { $0.gameID == gameID && $0.ps5State != .pending && ($0.ps5State != .reported || $0.ps4 == true) && ($0.arrivesAt ?? .distantPast) <= now }
             .sorted { Self.newer($0, $1, by: \.latestDate) }
     }
 

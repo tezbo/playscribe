@@ -112,7 +112,11 @@ struct PlusCard: View {
                 .accessibilityAddTraits(.isHeader)
             Spacer().frame(height: 2)
             HStack(spacing: 8) {
-                ForEach(Array(shown.enumerated()), id: \.offset) { _, g in cover(g).frame(width: 54, height: 72) }
+                ForEach(Array(shown.enumerated()), id: \.offset) { _, g in
+                    // A title with no cover draws a wider plate (96 × 72) so its words wrap whole; art stays 3:4 (54 × 72).
+                    let plate = Self.resolve(g) { model.game($0) } == nil
+                    cover(g, plate: plate).frame(width: plate ? 96 : 54, height: 72)
+                }
                 if !rest.isEmpty {
                     Text("+\(rest.count)")
                         .font(PlayscribeFont.subheadline.weight(.semibold))
@@ -186,9 +190,9 @@ struct PlusCard: View {
         }
     }
 
-    @ViewBuilder private func cover(_ g: PlusMonth.Game) -> some View {
+    @ViewBuilder private func cover(_ g: PlusMonth.Game, plate: Bool = false) -> some View {
         let game = Self.resolve(g) { model.game($0) }
-        let art = PlusCover(name: g.name, game: game)
+        let art = PlusCover(name: g.name, game: game, wide: plate)
         if let id = g.gameId, model.entry(id) != nil {
             Button { model.openGame(id) } label: { art }
                 .buttonStyle(.plain)
@@ -205,18 +209,26 @@ struct PlusCard: View {
 struct PlusCover: View {
     var name: String
     var game: CatalogGame?
+    /// The compact Book plate: its frame is set by the caller, so it does not hold the 3:4 shape.
+    var wide = false
     var body: some View {
+        if wide { art } else { art.aspectRatio(3 / 4, contentMode: .fit) }
+    }
+
+    @ViewBuilder private var art: some View {
         Group {
             if let game { TileCover(game: game) }
             else {
                 RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.ink1)
                     // Never cut mid-title (Iris, AX3): a fixed 13 pt, wrapped in full, so it also stays above 12 pt.
+                    // A word wider than the plate scales down (never below 11 pt) before it would break; the plate is
+                    // a fixed 72 pt tall in the compact row, so the text is also capped at four lines.
                     .overlay(Text(name).font(.system(size: 13, weight: .semibold)).multilineTextAlignment(.center)
-                        .fixedSize(horizontal: false, vertical: true).padding(8).foregroundStyle(PlayscribeColor.textPrimary))
+                        .lineLimit(wide ? 4 : nil).minimumScaleFactor(wide ? 0.85 : 1)
+                        .fixedSize(horizontal: false, vertical: !wide).padding(wide ? 5 : 8).foregroundStyle(PlayscribeColor.textPrimary))
                     .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
             }
         }
-        .aspectRatio(3 / 4, contentMode: .fit)
     }
 }
 
