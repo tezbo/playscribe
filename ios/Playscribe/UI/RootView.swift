@@ -73,6 +73,9 @@ struct RightPagePanel: View {
                     .padding(.trailing, trailingInset)
                     .accessibilityAddTraits(.isModal)
             }
+            // The panel is placed against the whole container, not the safe area: the trailing rail's inset is applied
+            // once, by hand, so it is not counted twice (the sheet sat about 84 pt too far left, over the hinge).
+            .ignoresSafeArea(.container)
             .transition(.move(edge: .trailing))
             .zIndex(5)
         }
