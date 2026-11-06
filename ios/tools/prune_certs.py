@@ -34,8 +34,9 @@ def main():
     r.raise_for_status()
     ci = [c for c in r.json()["data"]
           if c["attributes"].get("certificateType") == "DEVELOPMENT"
-          and c["attributes"].get("displayName") == "Created via API"]
-    ci.sort(key=lambda c: c["attributes"].get("expirationDate") or "")  # oldest first
+          and c["attributes"].get("displayName") == "Created via API"
+          and c["attributes"].get("expirationDate")]  # no date: leave it alone
+    ci.sort(key=lambda c: c["attributes"]["expirationDate"])  # oldest first
     extra = ci[:max(0, len(ci) - KEEP)]
     print(f"{len(ci)} CI-created development certificates; keeping {min(KEEP, len(ci))}, revoking {len(extra)}")
     for c in extra:
