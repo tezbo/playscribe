@@ -58,6 +58,7 @@ struct UpdatesView: View {
 
 struct FeedRow: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
 
     var body: some View {
@@ -66,17 +67,28 @@ struct FeedRow: View {
             HStack(spacing: 12) {
                 if let g = model.game(release.gameID) { CoverView(game: g, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 3) {
-                    HStack(spacing: 6) {
+                    // At accessibility sizes the row stacks: the title takes the full width in whole words,
+                    // the tags and date each get their own line, the summary goes under.
+                    HStack(alignment: .top, spacing: 6) {
                         if unread { UnreadDot() }
-                        Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
-                        ReleaseTag(release: release)
+                        TitleWithTags(release: release) {
+                            Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
+                        }
                     }
-                    HStack(spacing: 8) {
-                        Text(model.game(release.gameID)?.name ?? "")
-                        Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
+                    if typeSize.isAccessibilitySize {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(model.game(release.gameID)?.name ?? "")
+                            Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
+                        }
+                        .font(PlayscribeFont.caption)
+                    } else {
+                        HStack(spacing: 8) {
+                            Text(model.game(release.gameID)?.name ?? "")
+                            Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
+                        }
+                        .font(PlayscribeFont.caption)
                     }
-                    .font(PlayscribeFont.caption)
-                    if let h = release.headline { Text(h).font(PlayscribeFont.footnote).lineLimit(2) }
+                    if let h = release.headline { Text(h).font(PlayscribeFont.footnote).lineLimit(typeSize.isAccessibilitySize ? 4 : 2) }
                 }
                 Spacer(minLength: 0)
             }
