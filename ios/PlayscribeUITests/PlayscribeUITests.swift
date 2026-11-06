@@ -461,7 +461,7 @@ final class LibraryLayoutTests: XCTestCase {
             // Open portrait (0.5.0): the Also new / What's new panel sits beside the deck, same top and height,
             // never overlapping it. (app.frame can report the wrong orientation, so the panel's presence is
             // asserted from the stills, and its geometry whenever it is there.)
-            let panel = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Also new' OR label == \"What's new\"")).firstMatch
+            let panel = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Also new' OR label == \"What's new\" OR label == \"You're all caught up\"")).firstMatch
             let deck = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Latest updates, page'")).firstMatch
             if pose.contains("flat"), panel.exists, deck.exists {
                 XCTAssertFalse(panel.frame.insetBy(dx: 1, dy: 1).intersects(deck.frame), "panel overlaps the deck \(panel.frame) \(deck.frame) [\(pose)]")
