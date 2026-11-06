@@ -14,6 +14,10 @@ must() { local body; body="$(cat)"; echo "$body" | jq -e '.success == true' >/de
 
 ADMIN="$(printf 'relay-admin:%s' "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -d' ' -f1)"
 echo "::add-mask::$ADMIN"
+# The App Store Connect webhook secret is derived the same way, so nobody pastes one. The APNs key is bound only when the
+# workflow supplies it (APNS_KEY, APNS_KEY_ID, APNS_TEAM_ID); without it the webhook still verifies and records, and sends nothing.
+HOOK="$(printf 'asc-webhook:%s' "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -d' ' -f1)"
+echo "::add-mask::$HOOK"
 
 # 1. The KV namespace.
 ns="$(cf "$API/storage/kv/namespaces?per_page=100")"; echo "$ns" | must "list KV namespaces"
@@ -30,7 +34,7 @@ got="$(cf "$API/workers/subdomain" | jq -r '.result.subdomain // empty' 2>/dev/n
 [ -n "$got" ] && sub="$got"
 
 # 3. The script, with its KV binding and the admin secret.
-meta="$(jq -nc --arg ns "$nsid" --arg admin "$ADMIN" '{main_module:"worker.js",compatibility_date:"2026-11-01",bindings:[{type:"kv_namespace",name:"KV",namespace_id:$ns},{type:"secret_text",name:"ADMIN_TOKEN",text:$admin}]}')"
+meta="$(jq -nc --arg ns "$nsid" --arg admin "$ADMIN" --arg hook "$HOOK" --arg key "${APNS_KEY:-}" --arg kid "${APNS_KEY_ID:-}" --arg team "${APNS_TEAM_ID:-}" '{main_module:"worker.js",compatibility_date:"2026-11-01",bindings:([{type:"kv_namespace",name:"KV",namespace_id:$ns},{type:"secret_text",name:"ADMIN_TOKEN",text:$admin},{type:"secret_text",name:"ASC_WEBHOOK_SECRET",text:$hook}] + (if $key != "" and $kid != "" and $team != "" then [{type:"secret_text",name:"APNS_KEY",text:$key},{type:"secret_text",name:"APNS_KEY_ID",text:$kid},{type:"secret_text",name:"APNS_TEAM_ID",text:$team}] else [] end))}')"
 cf -X PUT "$API/workers/scripts/$NAME" -F "metadata=$meta;type=application/json" -F "worker.js=@$here/worker.js;type=application/javascript+module;filename=worker.js" | must "upload Worker script"
 # Putting the script on workers.dev; a refusal here is not fatal because new scripts are usually on it already, and the smoke test below decides.
 en="$(cf -X POST "$API/workers/scripts/$NAME/subdomain" -H 'Content-Type: application/json' -d '{"enabled":true}')"
