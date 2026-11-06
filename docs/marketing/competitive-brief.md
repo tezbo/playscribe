@@ -17,7 +17,7 @@ source links and community reaction tools. Users follow games, vote on changes a
 | Price | Not stated | Free |
 
 ## Positioning gap we can own
-Patchbook answers "what changed in this PC patch". Nobody we found answers "did it land on my PS5, and what changed" in an
+Patchbook answers "what changed in this PC patch". We found no app that answers "did it land on my PS5, and what changed" in an
 iPhone app. Message: **Know what changed, and whether it reached your PS5.**
 
 Store copy holds to the evidence-based tag: the claim is only as strong as an "On PS5" result (PS5 row live and official).
