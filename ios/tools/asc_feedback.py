@@ -4,7 +4,7 @@
 One issue per submission, labelled testflight-feedback, deduplicated by a hidden marker with the submission id.
 The repo is public, so an issue carries only: type, build, device, OS, locale, date and the tester's comment
 (switch off with INCLUDE_COMMENT=0). Never the tester's email or name, never a screenshot or crash-log URL
-(they expire and are tied to the key). Logs print counts and ids only. Needs ASC_KEY_ID, ASC_ISSUER_ID and
+(they expire and are tied to the key). Runs every 15 minutes; exits 0 always. Logs print counts and ids only. Needs ASC_KEY_ID, ASC_ISSUER_ID and
 ASC_KEY_P8 or ASC_KEY_P8_BASE64, GITHUB_TOKEN and GITHUB_REPOSITORY, plus pyjwt, cryptography and requests.
 
 Endpoints and attributes checked against Apple's App Store Connect OpenAPI 4.6:
@@ -145,5 +145,14 @@ def main():
         print(f"{len(todo) - MAX_NEW} more wait for the next run")
 
 
+def run():
+    # Always exit green: a red run emails Terry. Problems become warnings with no tester text in them.
+    try:
+        main()
+    except Exception as e:  # noqa: BLE001
+        warn(f"Feedback run stopped: {type(e).__name__}")
+    return 0
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(run())

@@ -2,10 +2,10 @@ name: TestFlight feedback
 
 # Turns TestFlight beta feedback (screenshots and crashes) into labelled GitHub issues. Free: a script on a
 # Linux runner with the existing App Store Connect key. Public repo: issues carry no tester email (see
-# ios/tools/asc_feedback.py). Missing secrets or API errors are warnings, so a bad day never emails anyone.
+# ios/tools/asc_feedback.py). Runs every 15 minutes and stays quiet when nothing is new. Missing secrets or API errors are warnings, so a bad day never emails anyone.
 on:
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
     inputs:
       dry_run: {description: "Count new items without creating issues", type: boolean, default: true}
