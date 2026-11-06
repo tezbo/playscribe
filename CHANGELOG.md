@@ -3,6 +3,24 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
+## 0.5.2 (candidate, not released)
+
+- Playscribe can now tell you about a new PS5 update even when the app is closed. Allow notifications when asked. Quiet hours in Settings also apply to these alerts.
+- Home Screen widget redesigned: small, medium and large now lead with game art, with the version and how long ago the update landed.
+- Reflection mode is on by default for Tabletop video, and Settings has a switch for it.
+- The PlayStation Plus card stays on the left page in the open book, and Settings has a switch to hide it.
+- Adding a game no longer floods your unread count: updates older than 72 hours count as read.
+- Settings has bigger toggle rows, a footer under Notify me about, and a 44 pt Close button in Tabletop.
+- The "New on PS5" pill wraps onto two lines at the largest text sizes, and sits a little higher in Tabletop.
+- Press and hold a game in your Library, Upcoming or Search to change its status or remove it. A wishlist game has a yellow circle.
+
+Check on the Duo:
+
+- Allow notifications, then wait for the next PS5 update to one of your games: an alert should arrive with the app closed.
+- Add a game that has a long history: your unread count should not jump.
+- Press and hold a game tile: the menu offers Owned, Wishlist, Watching and Remove.
+- Turn the text size up to the largest setting: the pill should wrap to two lines and nothing should sit under it.
+
 ## 0.5.1
 
 - Tabletop: the text on the stage sits on one calm panel and stops at four lines, with a Full text row in the lower half when there is more to read.
