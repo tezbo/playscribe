@@ -5,19 +5,23 @@ import Testing
 /// Upcoming grid fills the width in every pose: no dead strip on the trailing side.
 @MainActor
 struct UpcomingFitTests {
-    @Test func columnsAlwaysFillTheWidth() {
-        for w in stride(from: CGFloat(220), through: 900, by: 7) {
+    @Test func tilesStayBetween120And168WithSixteenGaps() {
+        for w in stride(from: CGFloat(420), through: 1200, by: 7) {
             let f = UpcomingView.fit(width: w)
-            let used = CGFloat(f.count) * f.size + CGFloat(f.count - 1) * 10
+            let used = CGFloat(f.count) * f.size + CGFloat(f.count - 1) * 16
             #expect(used <= w)
-            #expect(w - used < CGFloat(f.count) * 0.01 + 0.01)
-            if w >= 238 { #expect(f.size >= 104) }
+            #expect(f.size >= 120 && f.size <= 168)
+            #expect(f.count >= 3)
         }
     }
 
-    @Test func wideContainersAddColumnsInsteadOfCappingTileSize() {
-        #expect(UpcomingView.fit(width: 700).count >= 5)
-        #expect(UpcomingView.fit(width: 700).size < 160)
+    @Test func openLandscapeGivesAboutSixColumns() {
+        // ~875 pt of content beside the rail.
+        #expect((5...7).contains(UpcomingView.fit(width: 875).count))
+    }
+
+    @Test func narrowWidthKeepsThreeColumns() {
+        #expect(UpcomingView.fit(width: 300).count == 3)
     }
 }
 

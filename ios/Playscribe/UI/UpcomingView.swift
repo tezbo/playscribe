@@ -61,36 +61,61 @@ struct UpcomingView: View {
         min(n, Int((Double(n) * Double(leftColumns) / Double(leftColumns + rightColumns)).rounded(.up)))
     }
 
-    /// One section's tiles. In Book each page gets its own columns, sharing the page width, so the fold
-    /// falls in the gap between the two grids and never through a tile (G-4); elsewhere one grid spans the width.
-    @ViewBuilder private func grid(_ games: [CatalogGame], watching: Bool, columns: [GridItem]) -> some View {
+    /// Iris (#287): fit columns to the width with tiles 120-168 pt and 16 pt gaps, at least 3 columns
+    /// (about 6 in Open landscape); tiles are never stretched past 168, so a short row sits left-aligned.
+    static let gap: CGFloat = 16
+    static func fit(width: CGFloat) -> (count: Int, size: CGFloat) {
+        let n = max(3, Int((width + gap) / (120 + gap)))
+        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
+        let size = (((width - CGFloat(n - 1) * gap) / CGFloat(n)) * 100).rounded(.down) / 100
+        return (n, min(168, size))
+    }
+
+    /// One section: its header (24 pt above, 12 pt below) and tiles. In Book each page gets its own
+    /// columns, so the fold falls in the gap between two grids and never through a tile or a header (G-4);
+    /// a section that spills onto the right page repeats its plain header there. Closed stays 3 across.
+    @ViewBuilder private func section(_ title: String, count: Int? = nil, games: [CatalogGame], watching: Bool) -> some View {
+        let spoken = count.map { "\(title), \($0) game\($0 == 1 ? "" : "s")" } ?? title
+        func header(_ spoken: String?) -> some View {
+            Text(title).font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                .accessibilityLabel(spoken ?? title)
+                .padding(.top, 10)   // 24 pt above with the stack's 14 pt spacing
+        }
+        func page(_ list: [CatalogGame], _ fit: (count: Int, size: CGFloat)) -> some View {
+            LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: Self.gap, alignment: .top), count: fit.count),
+                      alignment: .leading, spacing: 14) { ForEach(list) { tile($0, watching: watching) } }
+        }
         if duo.pose == .book, let fold = duo.division {
             // Same page geometry as the Library's Book layout (the grids share its scroll origin).
             let leftWidth = max(0, fold.minX - 24 - 16)
             let rightStart = fold.maxX + 24 - 16
             let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
-            let left = LibraryShelf.pageFit(width: leftWidth), right = LibraryShelf.pageFit(width: rightWidth)
+            let left = Self.fit(width: leftWidth), right = Self.fit(width: rightWidth)
             let k = Self.leftCount(of: games.count, leftColumns: left.count, rightColumns: right.count)
-            func page(_ list: [CatalogGame], _ fit: (count: Int, size: CGFloat)) -> some View {
-                LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: 10, alignment: .top), count: fit.count),
-                          alignment: .leading, spacing: 14) { ForEach(list) { tile($0, watching: watching) } }
-            }
             HStack(alignment: .top, spacing: 0) {
-                page(Array(games.prefix(k)), left).frame(width: leftWidth, alignment: .topLeading)
-                page(Array(games.dropFirst(k)), right).frame(width: rightWidth, alignment: .topLeading)
+                VStack(alignment: .leading, spacing: 12) {
+                    header(spoken)
+                    page(Array(games.prefix(k)), left)
+                }.frame(width: leftWidth, alignment: .topLeading)
+                VStack(alignment: .leading, spacing: 12) {
+                    if games.count > k { header(nil).accessibilityHidden(true); page(Array(games.dropFirst(k)), right) }
+                }.frame(width: rightWidth, alignment: .topLeading)
                     .padding(.leading, max(0, rightStart - leftWidth))
             }
         } else {
-            LazyVGrid(columns: columns, spacing: 14) { ForEach(games) { tile($0, watching: watching) } }
+            VStack(alignment: .leading, spacing: 12) {
+                header(spoken)
+                if duo.pose == .closed {
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: Self.gap, alignment: .top), count: 3),
+                              alignment: .leading, spacing: 14) { ForEach(games) { tile($0, watching: watching) } }
+                } else if width > 0 {
+                    page(games, Self.fit(width: width))
+                } else {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 120, maximum: 168), spacing: Self.gap, alignment: .top)],
+                              alignment: .leading, spacing: 14) { ForEach(games) { tile($0, watching: watching) } }
+                }
+            }
         }
-    }
-
-    /// Columns that fill the width: tiles at least 104 pt, 10 pt gaps, the leftover shared equally,
-    /// so no dead strip is left on the trailing side (a capped adaptive grid left one when wide).
-    static func fit(width: CGFloat) -> (count: Int, size: CGFloat) {
-        let n = max(2, Int((width + 10) / 114))
-        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
-        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
     }
 
     private func dateLine(_ g: CatalogGame) -> String {
@@ -112,8 +137,8 @@ struct UpcomingView: View {
         } label: {
             VStack(alignment: .leading, spacing: 6) {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit)
-                Text(g.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
-                Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2)
+                Text(g.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(3)
+                Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                 if let move = moveLine(g) {
                     Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).lineLimit(2)
                 }
@@ -130,13 +155,6 @@ struct UpcomingView: View {
     var body: some View {
         let watched = model.upcomingWatched
         let more = model.upcomingMore
-        let columns: [GridItem]
-        if width > 0 {
-            let f = Self.fit(width: width)
-            columns = Array(repeating: GridItem(.fixed(f.size), spacing: 10, alignment: .top), count: f.count)
-        } else {
-            columns = [GridItem(.adaptive(minimum: 104), spacing: 10, alignment: .top)]
-        }
         VStack(alignment: .leading, spacing: 14) {
             if UpcomingStore.shared.failed && more.isEmpty {
                 HStack {
@@ -163,15 +181,11 @@ struct UpcomingView: View {
                 }
                 let later = watched.filter { g in !soon.contains { $0.id == g.id } }
                 if !soon.isEmpty {
-                    Text("Out this week").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
-                        .accessibilityLabel("Out this week, \(soon.count) game\(soon.count == 1 ? "" : "s")")
-                    grid(soon, watching: true, columns: columns)
+                    section("Out this week", count: soon.count, games: soon, watching: true)
                 }
                 if !later.isEmpty {
                     let laterTitle = soon.isEmpty ? "On your watchlist" : "Coming later"
-                    Text(laterTitle).font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
-                        .accessibilityLabel("\(laterTitle), \(later.count) game\(later.count == 1 ? "" : "s")")
-                    grid(later, watching: true, columns: columns)
+                    section(laterTitle, count: later.count, games: later, watching: true)
                 }
             }
             if more.isEmpty && watched.isEmpty && UpcomingStore.shared.loading {
@@ -183,8 +197,7 @@ struct UpcomingView: View {
             } else if more.isEmpty && watched.isEmpty && !UpcomingStore.shared.failed {
                 Text("Nothing upcoming. Announced updates will show here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             } else if !more.isEmpty {
-                Text("Coming to PS5").font(PlayscribeFont.headline)
-                grid(more, watching: false, columns: columns)
+                section("Coming to PS5", games: more, watching: false)
             }
         }
         .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { width = $0 }
