@@ -301,21 +301,38 @@ struct CompactDeckCard: View {
 /// headline and byline, with its padding. The deck measures it, at the card's width, to size the card.
 struct CompactCaption: View {
     var card: DeckCard
-    /// 0 is the whole caption. Higher tiers (accessibility sizes, when the card is capped by J-5) shed lines in this
-    /// order: byline name to one line (1), headline to two lines (2), the byline's date line (3). Chips never go.
-    var tier = 0
+    /// Accessibility sizes, when the card is capped by J-5: how many words of the headline to show. Fewer than all of
+    /// them ends the headline in "..." after a whole word, never mid-word. nil is the whole headline. Chips never go.
+    var words: Int?
     @Environment(\.dynamicTypeSize) private var typeSize
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
 
+    static func headline(_ card: DeckCard) -> String {
+        card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name
+    }
+
+    private var headline: String {
+        let full = Self.headline(card)
+        guard let n = words else { return full }
+        let parts = full.split(separator: " ", omittingEmptySubsequences: true)
+        guard n < parts.count else { return full }
+        return parts.prefix(max(1, n)).joined(separator: " ") + "\u{2026}"
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: typeSize.isAccessibilitySize ? 2 : 4) {
-            // The chips stay in every tier: both chips show at AX in every pose (coordinator, 248b772 Book AX3).
-            if typeSize.isAccessibilitySize { FlowLayout(spacing: 6) { DeckChips(card: card) } }
-            Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
+            // Both chips show at AX in every pose: side by side when they fit, else stacked (coordinator, 28c6063 Book AX3).
+            if typeSize.isAccessibilitySize {
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 6) { DeckChips(card: card) }
+                    VStack(alignment: .leading, spacing: 6) { DeckChips(card: card) }
+                }
+            }
+            Text(headline)
                 .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
-                // Three lines, the ellipsis only after a whole word, never scaled down (Iris, AX3 hero).
-                .lineLimit(tier < 2 ? 3 : 2).fixedSize(horizontal: false, vertical: true)
-            DeckByline(card: card, dateText: tier >= 3 ? "" : dateText, tight: tier >= 1)
+                // The whole headline, or whole words and an ellipsis (AX rule: at most 4 lines), never scaled down.
+                .lineLimit(typeSize.isAccessibilitySize ? nil : 3).fixedSize(horizontal: false, vertical: true)
+            DeckByline(card: card, dateText: dateText)
         }
         .padding(.horizontal, 16)
         // Tighter top and bottom at accessibility sizes keeps the grown deck inside its 50% bound (J-5).
@@ -323,18 +340,20 @@ struct CompactCaption: View {
     }
 }
 
-/// The caption at the card's height: the whole caption when it fits, else the first tier that does (J-5 caps the card).
+/// The caption at the card's height: the whole caption when it fits, else the headline loses whole words from its end
+/// until it does (J-5 caps the card); the chips and the byline always stay.
 struct AdaptiveCaption: View {
     var card: DeckCard
     @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         if typeSize.isAccessibilitySize {
+            let count = CompactCaption.headline(card).split(separator: " ", omittingEmptySubsequences: true).count
             ViewThatFits(in: .vertical) {
-                CompactCaption(card: card, tier: 0)
-                CompactCaption(card: card, tier: 1)
-                CompactCaption(card: card, tier: 2)
-                CompactCaption(card: card, tier: 3)
+                CompactCaption(card: card, words: nil)
+                ForEach(Array(stride(from: count - 1, through: 1, by: -1)), id: \.self) { n in
+                    CompactCaption(card: card, words: n)
+                }
             }
         } else {
             CompactCaption(card: card)
@@ -533,14 +552,15 @@ struct DeckStage: View {
             ArtView(asset: card.game.keyArtAsset, game: card.game, drift: true)
             LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.85)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 6) {
-                HStack(spacing: 8) {
+                // Wraps instead of squeezing "New update" away at accessibility sizes (28c6063 Tabletop AX3).
+                FlowLayout(spacing: 8) {
                     if card.unread { Text("New update").foregroundStyle(PlayscribeColor.accent) }
                     if let v = card.release?.versionChip { Text(v).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
                 .font(PlayscribeFont.caption)
                 .shadow(color: .black.opacity(0.6), radius: 3)
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
-                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).lineLimit(3)
+                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).lineLimit(4)
                 HStack(spacing: 8) {
                     Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
                     if let d = card.date { Text(AppModel.tileDay(d)).foregroundStyle(PlayscribeColor.textSecondary) }
