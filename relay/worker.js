@@ -20,6 +20,7 @@ const MINUTES = 24 * 60
 const PAGE = 40
 const MAX_BODY = 64 * 1024
 const MAX_FOLLOWS = 500
+const MAX_TEAM = 20
 
 const enc = new TextEncoder()
 const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('')
@@ -79,6 +80,13 @@ const getJson = async (kv, key) => {
 }
 const now = () => new Date().toISOString()
 
+/** tm:<id> lists the team devices, so an alert reads a handful of keys and never walks every device (50 KV operations a request). */
+const syncTeamIndex = async (kv, id, team) => {
+  const has = (await kv.get(`tm:${id}`)) !== null
+  if (team && !has) await kv.put(`tm:${id}`, '1')
+  else if (!team && has) await kv.delete(`tm:${id}`)
+}
+
 const deviceFor = async (kv, request) => {
   const auth = request.headers.get('authorization') ?? ''
   const key = auth.startsWith('Bearer ') ? auth.slice(7) : ''
@@ -105,6 +113,7 @@ const claimToken = async (kv, token, id) => {
     const old = await getJson(kv, `d:${holder}`)
     if (old) {
       await kv.delete(`d:${holder}`)
+      await kv.delete(`tm:${holder}`)
       await kv.delete(`k:${await sha(old.key)}`)
     }
   }
@@ -144,6 +153,7 @@ const register = async (env, request) => {
       team: team ?? existing.team ?? false,
     }
     if (JSON.stringify(next) !== JSON.stringify(existing)) await putJson(kv, `d:${existing.id}`, { ...next, updated: now() })
+    if (team !== undefined) await syncTeamIndex(kv, existing.id, team)
     return json(publicView(next), 200)
   }
   const id = crypto.randomUUID()
@@ -152,6 +162,7 @@ const register = async (env, request) => {
   await claimToken(kv, token, id)
   await putJson(kv, `d:${id}`, rec)
   await kv.put(`k:${await sha(key)}`, id)
+  if (team) await syncTeamIndex(kv, id, true)
   return json(publicView(rec), 201)
 }
 
@@ -180,6 +191,7 @@ const patchMe = async (env, request) => {
     }
   }
   if (JSON.stringify(next) !== JSON.stringify(d)) await putJson(kv, `d:${d.id}`, { ...next, updated: now() })
+  if (typeof body.team === 'boolean') await syncTeamIndex(kv, d.id, body.team)
   return json({ deviceId: d.id })
 }
 
@@ -236,22 +248,19 @@ const sendTeamAlert = async (env, kind) => {
   if (!env.APNS_KEY || !env.APNS_KEY_ID || !env.APNS_TEAM_ID) return { sent: 0, skipped: 'push key not set' }
   const jwt = await apnsJwt(env)
   let sent = 0
-  let cursor
-  do {
-    const page = await env.KV.list({ prefix: 'd:', limit: PAGE, cursor })
-    for (const k of page.keys) {
-      const d = await getJson(env.KV, k.name)
-      if (!d?.team || !d.token) continue
-      const host = d.environment === 'sandbox' ? 'api.sandbox.push.apple.com' : 'api.push.apple.com'
-      const r = await fetch(`https://${host}/3/device/${d.token}`, {
-        method: 'POST',
-        headers: { authorization: `bearer ${jwt}`, 'apns-topic': env.APNS_TOPIC ?? 'tezbo.Playscribe', 'apns-push-type': 'alert', 'apns-priority': '10' },
-        body: JSON.stringify({ aps: { alert: { title: 'Playscribe', body: ALERT[kind] ?? ALERT.screenshot }, sound: 'default' } }),
-      })
-      if (r.ok) sent++
-    }
-    cursor = page.list_complete ? undefined : page.cursor
-  } while (cursor)
+  // At most MAX_TEAM devices: each send is a subrequest and the free plan allows 50 a request.
+  const ids = (await env.KV.list({ prefix: 'tm:', limit: MAX_TEAM })).keys.map((k) => k.name.slice(3))
+  for (const id of ids) {
+    const d = await getJson(env.KV, `d:${id}`)
+    if (!d?.team || !d.token) continue
+    const host = d.environment === 'sandbox' ? 'api.sandbox.push.apple.com' : 'api.push.apple.com'
+    const r = await fetch(`https://${host}/3/device/${d.token}`, {
+      method: 'POST',
+      headers: { authorization: `bearer ${jwt}`, 'apns-topic': env.APNS_TOPIC ?? 'tezbo.Playscribe', 'apns-push-type': 'alert', 'apns-priority': '10' },
+      body: JSON.stringify({ aps: { alert: { title: 'Playscribe', body: ALERT[kind] ?? ALERT.screenshot }, sound: 'default' } }),
+    })
+    if (r.ok) sent++
+  }
   return { sent }
 }
 
@@ -266,9 +275,11 @@ const ascWebhook = async (env, request) => {
   if (!/FEEDBACK/.test(type)) return json({ ok: true, ignored: true })
   if (id) {
     if (await env.KV.get(`w:${id}`)) return json({ ok: true, duplicate: true })
-    await env.KV.put(`w:${id}`, '1', { expirationTtl: 86400 })
   }
-  return json({ ok: true, ...(await sendTeamAlert(env, /CRASH/.test(type) ? 'crash' : 'screenshot')) })
+  // Marked done only after the send, so a failure part-way is retried by Apple rather than swallowed.
+  const result = await sendTeamAlert(env, /CRASH/.test(type) ? 'crash' : 'screenshot')
+  if (id) await env.KV.put(`w:${id}`, '1', { expirationTtl: 86400 })
+  return json({ ok: true, ...result })
 }
 
 export default {
