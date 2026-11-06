@@ -1,7 +1,20 @@
 import Foundation
 import Observation
 import UIKit
+import Security
 import UserNotifications
+
+/// N-1: when the invitation card shows. Pure, so it is tested without the notification centre.
+enum NotificationAsk {
+    static let snoozeDays = 7
+    static let maxAsks = 3
+
+    static func shows(hasGames: Bool, status: UNAuthorizationStatus, asks: Int, snoozedUntil: Date?, now: Date = .now) -> Bool {
+        guard hasGames, status == .notDetermined || status == .denied, asks < maxAsks else { return false }
+        if let snoozedUntil, snoozedUntil > now { return false }
+        return true
+    }
+}
 
 /// Local and remote notifications: asking in context (N-1, N-2), content and interruption
 /// levels (N-3, N-4), foreground handling (N-7), deep links (N-6) and the badge (N-8).
@@ -24,9 +37,19 @@ final class NotificationService: NSObject {
         Task { await refreshAuthorization(); syncReleaseDayAlerts(); syncPlusLeavingSoon() }
     }
 
+    #if INTERNAL
+    /// QA (`-qaRoute alerts` / `alerts-denied`): pins the status the invitation card and Settings see.
+    var qaForcedAuthorization: UNAuthorizationStatus? {
+        didSet { if let s = qaForcedAuthorization { authorization = s } }
+    }
+    #endif
+
     func refreshAuthorization() async {
         let settings = await center.notificationSettings()
         authorization = settings.authorizationStatus
+        #if INTERNAL
+        if let s = qaForcedAuthorization { authorization = s; return }
+        #endif
         if authorization == .authorized || authorization == .provisional {
             UIApplication.shared.registerForRemoteNotifications()
         }
@@ -125,7 +148,7 @@ final class NotificationService: NSObject {
 
     func didRegister(token: Data) {
         deviceToken = token.map { String(format: "%02x", $0) }.joined()
-        if let model { PushRegistrar.register(token: deviceToken!, follows: model.follows, quietHours: model.data.quietHours) }
+        if let model, PushRegistrar.appCallsEnabled { PushRegistrar.register(token: deviceToken!, follows: model.follows, quietHours: model.data.quietHours) }
     }
 
     func updateBadge(_ count: Int) {
@@ -253,8 +276,58 @@ extension NotificationService: UNUserNotificationCenterDelegate {
     }
 }
 
-/// Registers the device with the backend (docs/api.md): POST /v1/devices returns a deviceKey
-/// used as the Bearer token for later calls. Does nothing until PlayscribeAPIBaseURL is set.
+/// Where the relay's deviceKey lives. The key is a bearer secret, so it is in the Keychain (this device only, readable after
+/// the first unlock), not in UserDefaults. A key left in UserDefaults by an earlier build moves over on first read.
+nonisolated struct DeviceKeyStore {
+    var read: () -> String?
+    var store: (String?) -> Bool
+
+    /// Stores (or, with nil, forgets) the key. False when the Keychain refused it, for example in an unsigned build.
+    @discardableResult func write(_ value: String?) -> Bool { store(value) }
+
+    private static let service = "co.codeconnectors.playscribe.push"
+    private static let account = "deviceKey"
+    private static var base: [String: Any] {
+        [kSecClass as String: kSecClassGenericPassword, kSecAttrService as String: service, kSecAttrAccount as String: account]
+    }
+
+    nonisolated(unsafe) static let keychain = DeviceKeyStore(read: readKeychain, store: writeKeychain)
+
+    private static func readKeychain() -> String? {
+        var q = base
+        q[kSecReturnData as String] = true
+        q[kSecMatchLimit as String] = kSecMatchLimitOne
+        var out: CFTypeRef?
+        if SecItemCopyMatching(q as CFDictionary, &out) == errSecSuccess, let d = out as? Data, let k = String(data: d, encoding: .utf8) {
+            return k
+        }
+        // Migrate a key an earlier build kept in UserDefaults.
+        guard let old = UserDefaults.standard.string(forKey: account) else { return nil }
+        // Only forget the old copy once the Keychain has the key; if it refuses, the key stays where it was.
+        if writeKeychain(old) { UserDefaults.standard.removeObject(forKey: account) }
+        return old
+    }
+
+    private static func writeKeychain(_ value: String?) -> Bool {
+        SecItemDelete(base as CFDictionary)
+        guard let value else { return true }
+        var a = base
+        a[kSecValueData as String] = Data(value.utf8)
+        a[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
+        return SecItemAdd(a as CFDictionary, nil) == errSecSuccess
+    }
+
+    /// A store that lives and dies with the process, for tests.
+    static func memory(_ initial: String? = nil) -> DeviceKeyStore {
+        final class Box: @unchecked Sendable { var value: String?; init(_ v: String?) { value = v } }
+        let box = Box(initial)
+        return DeviceKeyStore(read: { box.value }, store: { box.value = $0; return true })
+    }
+}
+
+/// Registers the device with the push relay (docs/push-relay.md): POST /v1/devices returns a deviceKey used as the Bearer token
+/// for later calls. Does nothing until PlayscribeRelayURL is set. A request the relay answers with anything but 2xx counts as
+/// failed; a 401 (the relay no longer knows the key) forgets the key, registers again and retries once.
 enum PushRegistrar {
     struct Follow: Encodable { var gameId: String?; var igdbId: Int?; var notify: String }
     private struct Body: Encodable { var apnsToken: String; var environment: String; var follows: [Follow] }
@@ -265,8 +338,45 @@ enum PushRegistrar {
         return URL(string: s)
     }
 
-    static func register(token: String, follows: [Follow], quietHours: QuietHours? = nil) {
-        guard let url = baseURL?.appending(path: "v1/devices") else { return }
+    /// Whether the app's own relay calls (follows on save, quiet hours on activation and in Settings, device registration)
+    /// run. They stand down in a test host, and tests also switch them off explicitly, so a test that stubs the session sees
+    /// only its own requests whatever the app does in the background.
+    nonisolated(unsafe) static var appCallsEnabled = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil
+
+    /// Tests point these at a stub; the app uses the plist, the shared session and the Keychain.
+    nonisolated(unsafe) static var relayOverride: URL?
+    nonisolated(unsafe) static var session: URLSession = .shared
+    nonisolated(unsafe) static var keys: DeviceKeyStore = .keychain
+
+    /// The push relay: device tokens, follows and the quiet window go here, not to the static feed (`baseURL`), which has no
+    /// device routes. Builds without PlayscribeRelayURL cannot receive server push.
+    static var relayURL: URL? {
+        if let relayOverride { return relayOverride }
+        guard let s = Bundle.main.object(forInfoDictionaryKey: "PlayscribeRelayURL") as? String, !s.isEmpty else { return nil }
+        return URL(string: s)
+    }
+
+    /// Forgets what the client remembers between calls (tests start each case clean).
+    static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil }
+
+    /// What the last registration sent, so a 401 can register again without asking the app.
+    private struct Registration { var token: String; var follows: [Follow] }
+    nonisolated(unsafe) private static var registration: Registration?
+    nonisolated(unsafe) private static var lastQuiet: QuietWindow?
+
+    @discardableResult
+    static func register(token: String, follows: [Follow], quietHours: QuietHours? = nil) -> Task<Void, Never>? {
+        guard relayURL != nil else { return nil }
+        lastQuiet = quietWindow(quietHours)
+        return Task {
+            if await registerNow(token: token, follows: follows) { await sendQuiet(lastQuiet, retry: true) }
+        }
+    }
+
+    /// POST /v1/devices. True when the relay answered 2xx with a key, which is then stored.
+    private static func registerNow(token: String, follows: [Follow]) async -> Bool {
+        guard let url = relayURL?.appending(path: "v1/devices") else { return false }
+        registration = Registration(token: token, follows: follows)
         #if DEBUG
         let environment = "sandbox"
         #else
@@ -276,11 +386,60 @@ enum PushRegistrar {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try? JSONEncoder().encode(Body(apnsToken: token, environment: environment, follows: follows))
-        Task {
-            guard let (data, _) = try? await URLSession.shared.data(for: request),
-                  let reply = try? JSONDecoder().decode(Reply.self, from: data) else { return }
-            UserDefaults.standard.set(reply.deviceKey, forKey: "deviceKey")
-            syncQuietHours(quietHours)
+        guard let (data, response) = try? await session.data(for: request),
+              let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode),
+              let reply = try? JSONDecoder().decode(Reply.self, from: data) else { return false }
+        keys.write(reply.deviceKey)
+        return true
+    }
+
+    /// Sends a request with the device's Bearer key. False when there is no key, the request fails, or the relay answers
+    /// anything but 2xx. On a 401 the key is forgotten, the device registers again and the request is retried once.
+    private static func authed(retry: Bool, _ make: (String) -> URLRequest?) async -> Bool {
+        guard let key = keys.read(), let request = make(key) else { return false }
+        guard let (_, response) = try? await session.data(for: request), let http = response as? HTTPURLResponse else { return false }
+        if (200..<300).contains(http.statusCode) { return true }
+        if http.statusCode == 401, retry, let r = registration {
+            keys.write(nil)
+            guard await registerNow(token: r.token, follows: r.follows) else { return false }
+            await sendQuiet(lastQuiet, retry: false)
+            return await authed(retry: false, make)
+        }
+        return false
+    }
+
+    /// The last follows list sent, so an unchanged list costs no request (the relay's free plan allows 1,000 writes a day).
+    nonisolated(unsafe) private static var lastFollows: String?
+    private struct FollowsBody: Encodable { var follows: [Follow] }
+    /// Sorted keys: the encoded list is the dedupe signature, and Swift's JSONEncoder does not promise one key order from
+    /// one encode to the next, so an unchanged list could look changed and be sent again.
+    private static let stableEncoder: JSONEncoder = {
+        let e = JSONEncoder()
+        e.outputFormatting = [.sortedKeys]
+        return e
+    }()
+
+    /// PUT /v1/devices/me/follows: the followed games and their notify level, when they change. Nothing before the device is
+    /// registered or while PlayscribeRelayURL is unset. A failed send forgets the list, so the next change sends it again.
+    @discardableResult
+    static func syncFollows(_ follows: [Follow]) -> Task<Void, Never>? {
+        guard let url = relayURL?.appending(path: "v1/devices/me/follows"), keys.read() != nil,
+              let body = try? Self.stableEncoder.encode(FollowsBody(follows: follows)) else { return nil }
+        let signature = String(decoding: body, as: UTF8.self)
+        guard signature != lastFollows else { return nil }
+        lastFollows = signature
+        // A later 401 registers again with this list, not the one from launch.
+        registration?.follows = follows
+        return Task {
+            let ok = await authed(retry: true) { key in
+                var request = URLRequest(url: url)
+                request.httpMethod = "PUT"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+                request.httpBody = body
+                return request
+            }
+            if !ok { lastFollows = nil }
         }
     }
 
@@ -301,17 +460,27 @@ enum PushRegistrar {
         return QuietWindow(from: q.from, until: q.until, timeZone: timeZone.identifier)
     }
 
+    @discardableResult
+    private static func sendQuiet(_ window: QuietWindow?, retry: Bool) async -> Bool {
+        guard let url = relayURL?.appending(path: "v1/devices/me") else { return false }
+        return await authed(retry: retry) { key in
+            var request = URLRequest(url: url)
+            request.httpMethod = "PATCH"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+            request.httpBody = try? JSONEncoder().encode(QuietBody(quietHours: window))
+            return request
+        }
+    }
+
     /// PATCH /v1/devices/me { quietHours }. Does nothing before the device is registered (no push can
-    /// reach it then, so there is nothing to quiet) or while PlayscribeAPIBaseURL is unset.
-    static func syncQuietHours(_ q: QuietHours?) {
-        guard let url = baseURL?.appending(path: "v1/devices/me"),
-              let key = UserDefaults.standard.string(forKey: "deviceKey") else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "PATCH"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
-        request.httpBody = try? JSONEncoder().encode(QuietBody(quietHours: quietWindow(q)))
-        Task { _ = try? await URLSession.shared.data(for: request) }
+    /// reach it then, so there is nothing to quiet) or while PlayscribeRelayURL is unset.
+    @discardableResult
+    static func syncQuietHours(_ q: QuietHours?) -> Task<Void, Never>? {
+        guard relayURL != nil, keys.read() != nil else { return nil }
+        lastQuiet = quietWindow(q)
+        let window = lastQuiet
+        return Task { await sendQuiet(window, retry: true) }
     }
 }
 

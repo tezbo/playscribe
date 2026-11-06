@@ -44,6 +44,45 @@ struct BookPagePanel: View {
     }
 }
 
+/// Open (landscape) and Book: the Add sheet is a panel on the right page, one page's column wide less 24 pt clear of
+/// the hinge, never a system sheet that runs across it. The left page is dimmed and takes no touches.
+struct RightPagePanel: View {
+    @Environment(AppModel.self) private var model
+    var duo: DuoContext
+
+    /// The container the pose is read from (`duo.size`) stops at the trailing rail; the window runs on 84 pt or so past it.
+    /// Both edges below are in container coordinates. Leading edge: 24 pt right of the division in Book; in Open, which has
+    /// none, 24 pt right of the hinge, the centre of the whole window (container plus rail), not of the container.
+    /// Trailing edge: 16 pt clear of the rail. Container-based throughout, no device checks (Iris, #306).
+    private var trailingInset: CGFloat { duo.safeArea.trailing + 16 }
+    private var leadingEdge: CGFloat {
+        if let d = duo.division { return d.maxX + 24 }
+        return (duo.size.width + duo.safeArea.leading + duo.safeArea.trailing) / 2 + 24
+    }
+    private var panelWidth: CGFloat { duo.size.width - 16 - leadingEdge }
+
+    var body: some View {
+        if model.addSheetOpen {
+            ZStack(alignment: .trailing) {
+                Color.black.opacity(0.4).ignoresSafeArea()
+                AddGameSheet()
+                    .environment(\.panelClose, { model.addSheetOpen = false })
+                    .environment(\.railWidth, 0)
+                    .frame(width: max(0, panelWidth), height: duo.size.height)
+                    .background(Color.ink0)
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .padding(.trailing, trailingInset)
+                    .accessibilityAddTraits(.isModal)
+            }
+            // The panel is placed against the whole container, not the safe area: the trailing rail's inset is applied
+            // once, by hand, so it is not counted twice (the sheet sat about 84 pt too far left, over the hinge).
+            .ignoresSafeArea(.container)
+            .transition(.move(edge: .trailing))
+            .zIndex(5)
+        }
+    }
+}
+
 struct LowerHalfPanel: View {
     @Environment(AppModel.self) private var model
     var duo: DuoContext
@@ -98,7 +137,7 @@ struct RootView: View {
 
     var body: some View {
         DuoReader { duo in
-            let _ = { model.livePose = duo.pose }()
+            let _ = { model.livePose = duo.pose; model.liveRightPage = duo.pose == .book || (duo.pose == .flat && duo.isLandscape) }()
             ZStack {
                 TabRoot(duo: duo)
                     .environment(\.railWidth, duo.pose == .tabletop ? TabletopRail.width : 0)
@@ -115,6 +154,7 @@ struct RootView: View {
 
                 if duo.pose == .tabletop, let fold = duo.division { LowerHalfPanel(duo: duo, fold: fold) }
                 if duo.pose == .book, let fold = duo.division { BookPagePanel(duo: duo, fold: fold) }
+                if duo.pose == .book || (duo.pose == .flat && duo.isLandscape) { RightPagePanel(duo: duo) }
 
                 if splashVisible {
                     SplashView(duo: duo) { splashVisible = false }
@@ -145,7 +185,7 @@ struct RootView: View {
         .onChange(of: NotificationService.shared.launchedFromNotification) { _, fromNotification in
             if fromNotification { splashVisible = false }
         }
-        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.addSheetOpen = false } })) {
+        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && !model.liveRightPage }, set: { if !$0 && model.livePose != .tabletop && !model.liveRightPage { model.addSheetOpen = false } })) {
             // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
             AddGameSheet().presentationDetents([.large])
         }
@@ -313,6 +353,8 @@ struct TabletopRail: View {
         }
         .padding(.vertical, 8)
         .frame(maxHeight: .infinity)
+        // The rail's buttons are 44 pt and do not grow with text (0.5.1 spec 3): at AX sizes the icons overlapped.
+        .dynamicTypeSize(...DynamicTypeSize.large)
     }
 
     private func moreItems(_ id: String) -> [ScreenAction.MenuSection] {
@@ -363,9 +405,14 @@ struct LowerMessages: View {
     @Environment(AppModel.self) private var model
     var duo: DuoContext
 
+    static func bottomPadding(_ duo: DuoContext) -> CGFloat {
+        duo.pose == .flat && !duo.isLandscape ? 96 : duo.pose == .tabletop ? 12 : 16
+    }
+
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 0) {
             Spacer()
+            VStack(spacing: 8) {
             if let pill = model.pill, let game = model.game(pill.gameID), let r = model.release(pill.gameID, pill.releaseID) {
                 Button {
                     model.openRelease(gameID: pill.gameID, releaseID: pill.releaseID)
@@ -374,14 +421,21 @@ struct LowerMessages: View {
                         UnreadDot()
                         Text("New on PS5: \(game.name) \(r.displayName)")
                             .font(PlayscribeFont.subheadline.weight(.semibold))
-                            .lineLimit(2)
+                            // Never cut: up to three lines at the capped size (Iris, 0.5.1 spec 2).
+                            .lineLimit(3)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .multilineTextAlignment(.leading)
                         Image(systemName: "chevron.forward").font(PlayscribeFont.caption)
                     }
+                    // Transient chrome stops scaling at AX1 before the page does; VoiceOver still reads all of it (Iris).
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                     .padding(.horizontal, 16)
+                    .padding(.vertical, 12)
                     .frame(minHeight: 44)
                     // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
-                    .background(Capsule().fill(PlayscribeColor.ink700))
-                    .adaptiveGlass(in: Capsule(), interactive: true)
+                    // A 24 pt corner: a full capsule on one line, a rounded rectangle on two or more.
+                    .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(PlayscribeColor.ink700))
+                    .adaptiveGlass(in: RoundedRectangle(cornerRadius: 24, style: .continuous), interactive: true)
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()
@@ -410,15 +464,31 @@ struct LowerMessages: View {
                 .padding(.trailing, duo.pose == .closed ? 56 : 0)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .transition(.opacity)
+                // A toast with nothing to press (the tip, "Added") never blocks the chips or tiles under it.
+                .allowsHitTesting(toast.undo != nil)
+                // A swipe dismisses it early (Iris, #244); the 20 pt threshold leaves a tap on Undo alone.
+                .highPriorityGesture(DragGesture(minimumDistance: 20).onEnded { _ in model.toastClear() })
                 .accessibilityElement(children: .combine)
                 .accessibilityActions {
                     if let undo = toast.undo { Button(toast.actionLabel) { undo(); model.toastClear() } }
                     Button("Dismiss") { model.toastClear() }
                 }
             }
+            }
+            // The Library reserves this much at its bottom edge (a safe-area inset), so the pill never covers its
+            // top-of-page controls: the content reflows above it (0.5.1 spec 2, Iris).
+            .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { frame in
+                let h = frame.height
+                // Everything from the bottom edge up to the top of the messages, plus 8 pt of air.
+                let inset = h > 0 ? h + Self.bottomPadding(duo) + 8 : 0
+                if model.messageInset != inset { model.messageInset = inset }
+                let shown: CGRect? = h > 0 ? frame : nil
+                if model.messageFrame != shown { model.messageFrame = shown }
+            }
         }
         // Above the bottom tab bar only where the bars are horizontal (open portrait).
-        .padding(.bottom, duo.pose == .flat && !duo.isLandscape ? 96 : 16)
+        // Tabletop: 12 pt above the bottom, left of the rail (0.5.1 spec 2).
+        .padding(.bottom, Self.bottomPadding(duo))
         .padding(.trailing, duo.pose == .tabletop ? TabletopRail.width : 0)
         .padding(.horizontal, 16)
         // Book: the pill and toasts stay on the left page; they never straddle the fold.

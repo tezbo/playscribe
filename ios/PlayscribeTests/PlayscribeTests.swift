@@ -39,6 +39,21 @@ struct ModelTests {
         #expect(m.isExpanded("rel:dawnwalker@1.1"))
     }
 
+    @Test("Quick menu: ticks the current status in the library, offers adds outside it (B-10)")
+    func quickMenu() {
+        let m = freshModel()
+        guard let g = m.game("dawnwalker") else { return }
+        if m.entry("dawnwalker") == nil { m.addGame(g, status: .owned) }
+        m.setStatus("dawnwalker", .watching)
+        let items = m.quickMenu(g).flatMap(\.items)
+        #expect(items.first { $0.checked }?.id == OwnershipStatus.watching.rawValue)
+        #expect(items.contains { $0.id == "remove" && $0.destructive })
+        m.removeGame("dawnwalker", toast: false)
+        let adds = m.quickMenu(g).flatMap(\.items)
+        #expect(!adds.contains { $0.id == "remove" })
+        #expect(adds.contains { $0.id == OwnershipStatus.wishlist.rawValue })
+    }
+
     @Test("Remove then Undo restores status, level, bookmarks and notes (B-8)")
     func removeUndo() {
         let m = freshModel()
@@ -130,7 +145,7 @@ struct ModelTests {
             let g = PS5Index.shared.game(e)
             guard let line = g.ps5DateLine else { continue }
             if line.hasPrefix("Released ") || line.hasPrefix("PS5 version since "), let d = g.releaseDate?.isoDay { #expect(d >= launch, "\(g.name): \(line)") }
-            if line.hasPrefix("Playable on PS5 since "), let b = g.playableSince?.isoDay {
+            if line.hasPrefix("Plays on PS5 since "), let b = g.playableSince?.isoDay {
                 #expect(b >= launch, "\(g.name): \(line)")
                 #expect(line.hasSuffix(b.formatted(monthYear)))
             }
@@ -144,6 +159,20 @@ struct ModelTests {
     func search() {
         let hits = PS5Index.shared.search("dawnwalker")
         #expect(!hits.isEmpty)
+    }
+
+    @Test("Short forms find the franchise in the top 10: 'ac' Assassin's Creed, 'ff' Final Fantasy, 'gta' Grand Theft Auto (#298)")
+    func searchAliases() {
+        for (query, title) in [("ac", "Assassin"), ("ff", "Final Fantasy"), ("gta", "Grand Theft Auto")] {
+            let top = PS5Index.shared.search(query, limit: 10).map(\.name)
+            #expect(top.contains { $0.localizedCaseInsensitiveContains(title) }, "\(query): \(top)")
+        }
+    }
+
+    @Test("A name hit outranks an alias-only hit for the same query (#298)")
+    func nameBeatsAlias() {
+        let hits = PS5Index.shared.search("dawnwalker", limit: 5)
+        #expect(hits.first?.name.localizedCaseInsensitiveContains("dawnwalker") == true)
     }
 }
 
@@ -237,6 +266,76 @@ struct DatePrecisionTests {
         #expect(game("2099-12-31", .year).ps5DateLine == "Coming 2099")
         #expect(game(nil, .tbd).ps5DateLine == "Release date TBA")
         #expect(game(nil, nil).ps5DateLine == "Release date TBA")
+    }
+
+    func ps4Only(_ since: String?, _ p: DatePrecision? = nil) -> CatalogGame {
+        CatalogGame(id: "t", name: "T", platforms: [.ps5], releaseDate: nil, releasePrecision: p, playableSince: since, coverage: .none)
+    }
+
+    @Test("GR-1, D-12: a PS4-only game that plays on PS5 is not 'TBA'")
+    func ps4OnlyIsPlayable() {
+        // Before the PS5 launch (12 Nov 2020): the PS4 version plays on PS5.
+        #expect(ps4Only("2018-10-05").ps5AvailabilityLine == "Plays on PS5 as the PS4 version")
+        #expect(ps4Only("2018-10-05").ps5ShortLine == "Plays on PS5")
+        #expect(ps4Only("2018-10-05").ps5AvailabilityLine.contains("2018") == false)
+        // After the launch: since when.
+        #expect(ps4Only("2021-03-04").ps5AvailabilityLine == "Plays on PS5 since Mar 2021")
+        #expect(ps4Only("2021-03-04").ps5ShortLine == "Plays on PS5")
+        // A future date never reads "since <future>".
+        #expect(ps4Only("2099-01-01").ps5AvailabilityLine == "Plays on PS5 as the PS4 version")
+        #expect(ps4Only("2099-01-01").ps5DateLine == "Plays on PS5 as the PS4 version")
+        // The game page and the tile agree with the date line.
+        #expect(ps4Only("2018-10-05").ps5DateLine == ps4Only("2018-10-05").ps5AvailabilityLine)
+        #expect(ps4Only("2021-03-04").ps5DateLine == ps4Only("2021-03-04").ps5AvailabilityLine)
+    }
+
+    @Test("D-12: a PS4-only game's tile is a quiet caption, never unread, never TBA, and VoiceOver says what it is")
+    func ps4OnlyTile() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "ps4tile-\(UUID().uuidString).json"))
+        for since in ["2018-10-05", "2021-03-04"] {
+            let row = AppModel.LibraryRow(game: ps4Only(since), status: .owned, addedAt: .now, unread: 0, latest: nil)
+            #expect(m.tileDate(row).kind == .playsOnPS5)
+            #expect(m.tileDate(row).text == "Plays on PS5")
+            #expect(m.tileAccessibilityLabel(row) == "T, plays on PS5 as the PS4 version, \(row.status.label.lowercased())")
+            #expect(row.unread == 0 && m.unreadCount("t") == 0)
+        }
+        let tba = AppModel.LibraryRow(game: ps4Only(nil), status: .owned, addedAt: .now, unread: 0, latest: nil)
+        #expect(m.tileDate(tba).text == "TBA")
+        // No PC version number can leak into the line.
+        #expect(ps4Only("2021-03-04").ps5AvailabilityLine.range(of: #"\d+\.\d+"#, options: .regularExpression) == nil)
+    }
+
+    @Test("GR-1, D-12: a game that is out elsewhere but not on PS5 or PS4 is never TBA")
+    func notOnPS5() {
+        func g(_ o: String?, _ on: String? = nil, _ p: DatePrecision? = .tbd) -> CatalogGame {
+            CatalogGame(id: "t", name: "T", platforms: [.ps5], releaseDate: nil, releasePrecision: p, playableSince: nil, releasedElsewhere: o, releasedElsewhereOn: on, coverage: .none)
+        }
+        #expect(g("2012-10-16", "PC").ps5DateLine == "Not on PS5 · PC, 2012")
+        #expect(g("2012-10-16", "PC").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
+        #expect(g("2012-10-19", "PC (Microsoft Windows)").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
+        #expect(g("2012-10-16").ps5AvailabilityLine == "Not on PS5 · 2012")
+        #expect(g("2012-10-16").ps5ShortLine == "Not on PS5")
+        // Truly no release anywhere, or a release still to come, stays TBA.
+        #expect(g(nil).ps5AvailabilityLine == "Release date TBA")
+        #expect(g("2099-01-01").ps5AvailabilityLine == "Release date TBA")
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "notps5-\(UUID().uuidString).json"))
+        let row = AppModel.LibraryRow(game: g("2012-10-16", "PC"), status: .owned, addedAt: .now, unread: 0, latest: nil)
+        #expect(m.tileDate(row).text == "Not on PS5")
+        #expect(m.tileAccessibilityLabel(row) == "T, not on PS5, \(row.status.label.lowercased())")
+    }
+
+    @Test("GR-1, D-12: TBA stays for a game with no date at all, or a date that is to be decided")
+    func tbaStays() {
+        #expect(ps4Only(nil).ps5AvailabilityLine == "Release date TBA")
+        #expect(ps4Only(nil).ps5ShortLine == "Date TBA")
+        #expect(ps4Only("2018-10-05", .tbd).ps5AvailabilityLine == "Release date TBA")
+        #expect(ps4Only("2018-10-05", .tbd).ps5ShortLine == "Date TBA")
+    }
+
+    @Test("GR-1, D-12: a game with a PS5 date keeps its lines")
+    func ps5DateUnchanged() {
+        #expect(game("2099-11-19", .day).ps5AvailabilityLine == "Out 19 Nov 2099")
+        #expect(game("2024-05-02", .day).ps5ShortLine.hasPrefix("On PS5 since"))
     }
 
     @Test("GR-5: past imprecise dates never claim a day")
@@ -442,6 +541,22 @@ struct SpoilerWarningTests {
         #expect(g.reduce(0) { $0 + $1.count } == 2)
     }
 
+    @Test("Items with nothing to show (blank text) are not counted (#301)")
+    func emptyItemsAreNotCounted() {
+        let s = NoteSection(title: "Changes", items: [NoteItem(text: "Fixed a crash."), NoteItem(text: "   "), NoteItem(text: "")])
+        let g = ChangeKind.grouped([s], ps5Only: true)
+        #expect(g.reduce(0) { $0 + $1.count } == 1)
+    }
+
+    @Test("A section with only PC-only lines is left out of a PS5 page, not shown as 0 (#301)")
+    func pcOnlySectionIsHidden() {
+        let pc = NoteItem(text: "Fixed a PC plugin crash.", platforms: [.pc])
+        let s = NoteSection(title: "Plugin", items: [pc])
+        #expect(pc.isPCOnly)
+        #expect(ChangeKind.grouped([s], ps5Only: true).isEmpty)
+        #expect(ChangeKind.grouped([s], ps5Only: false).count == 1)
+    }
+
     @Test("Notes without a warning are untouched")
     func noWarningNoChange() {
         let s = NoteSection(title: "Fixes", items: [NoteItem(text: "Fixed a crash."), NoteItem(text: "Be advised: servers restart.")])
@@ -456,6 +571,15 @@ struct AutoplayTests {
         #expect(YouTubeController.html("abc", captions: true).contains("autoplay:0"))
         let on = YouTubeController.html("abc", captions: true, autoplay: true)
         #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
+    }
+
+    @Test("Reflection is on by default and accessibility settings win (R-11, G-9)")
+    @MainActor func reflectionDefault() {
+        #expect(VideoReflection.defaultOn)
+        #expect(VideoReflection.isShown(setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false))
+        #expect(!VideoReflection.isShown(setting: true, reduceMotion: true, reduceTransparency: false))
+        #expect(!VideoReflection.isShown(setting: true, reduceMotion: false, reduceTransparency: true))
+        #expect(!VideoReflection.isShown(setting: false, reduceMotion: false, reduceTransparency: false))
     }
 }
 
@@ -540,5 +664,36 @@ struct ReaderSpoilerTests {
         #expect(!hidden.contains("Hello") && !hidden.contains("Be advised"))
         let shown = fixes(shown: true)
         #expect(shown.contains("final door") && !shown.contains("hidden for spoilers"))
+    }
+}
+
+/// r051-unread-flood: adding a game must not mark its back catalogue unread (0.5.1, Jun's review).
+@MainActor
+struct BackCatalogueTests {
+    private func release(_ id: String, patchedDaysAgo: Double, alertDaysAgo: Double) -> Release {
+        let patched = Date.now.addingTimeInterval(-patchedDaysAgo * 86_400)
+        var p = PlatformRelease(platform: .ps5, status: .live, liveAt: Field(value: patched, verification: .official, sourceID: "s", checkedAt: .now),
+                                verification: .official)
+        p.alert = PlatformRelease.Alert(style: "standard", from: Date.now.addingTimeInterval(-alertDaysAgo * 86_400), tag: nil)
+        return Release(id: id, gameID: "g", displayName: id, kind: .patch, kindBasis: .inferred, announcedAt: patched,
+                       notes: [], sourceIDs: [], platforms: [p])
+    }
+
+    @Test("A port's old patches are read on first sight, a patch from today stays unread")
+    func firstSightHistory() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
+        let old = release("g@2021", patchedDaysAgo: 1_800, alertDaysAgo: 1)   // alert date is the recent PS5 launch
+        let fresh = release("g@today", patchedDaysAgo: 1, alertDaysAgo: 1)
+        model.markPastAsRead([old, fresh], backCatalogue: true)
+        #expect(model.data.read[old.id] != nil)
+        #expect(model.data.read[fresh.id] == nil)
+    }
+
+    @Test("Without the back-catalogue rule the alert date still decides (an update for a followed game)")
+    func followedGameUnchanged() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
+        let ported = release("g@port", patchedDaysAgo: 1_800, alertDaysAgo: 1)
+        model.markPastAsRead([ported])
+        #expect(model.data.read[ported.id] == nil)
     }
 }
