@@ -50,14 +50,16 @@ struct RightPagePanel: View {
     @Environment(AppModel.self) private var model
     var duo: DuoContext
 
-    /// Book: the page right of the division, less 24 pt clear of the hinge, flush to the trailing edge. Open has no
-    /// division: the leading edge is 24 pt right of the container's centre line and the trailing edge 16 pt clear of the
-    /// trailing rail (the safe-area inset), never centred on the hinge (Iris, #306). Container-based, no device checks.
-    private var trailingInset: CGFloat { duo.division == nil ? duo.safeArea.trailing + 16 : 0 }
-    private var panelWidth: CGFloat {
-        if let d = duo.division { return duo.size.width - d.maxX - 24 }
-        return duo.size.width - trailingInset - (duo.size.width / 2 + 24)
+    /// The container the pose is read from (`duo.size`) stops at the trailing rail; the window runs on 84 pt or so past it.
+    /// Both edges below are in container coordinates. Leading edge: 24 pt right of the division in Book; in Open, which has
+    /// none, 24 pt right of the hinge, the centre of the whole window (container plus rail), not of the container.
+    /// Trailing edge: 16 pt clear of the rail. Container-based throughout, no device checks (Iris, #306).
+    private var trailingInset: CGFloat { duo.safeArea.trailing + 16 }
+    private var leadingEdge: CGFloat {
+        if let d = duo.division { return d.maxX + 24 }
+        return (duo.size.width + duo.safeArea.leading + duo.safeArea.trailing) / 2 + 24
     }
+    private var panelWidth: CGFloat { duo.size.width - 16 - leadingEdge }
 
     var body: some View {
         if model.addSheetOpen {
@@ -68,8 +70,7 @@ struct RightPagePanel: View {
                     .environment(\.railWidth, 0)
                     .frame(width: max(0, panelWidth), height: duo.size.height)
                     .background(Color.ink0)
-                    .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, bottomLeadingRadius: 20,
-                                                      bottomTrailingRadius: trailingInset > 0 ? 20 : 0, topTrailingRadius: trailingInset > 0 ? 20 : 0))
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                     .padding(.trailing, trailingInset)
                     .accessibilityAddTraits(.isModal)
             }
