@@ -255,7 +255,7 @@ struct DatePrecisionTests {
     }
 
     func ps4Only(_ since: String?, _ p: DatePrecision? = nil) -> CatalogGame {
-        CatalogGame(id: "t", name: "T", platforms: [.ps4], releaseDate: nil, releasePrecision: p, playableSince: since, coverage: .none)
+        CatalogGame(id: "t", name: "T", platforms: [.ps5], releaseDate: nil, releasePrecision: p, playableSince: since, coverage: .none)
     }
 
     @Test("GR-1, D-12: a PS4-only game that plays on PS5 is not 'TBA'")
