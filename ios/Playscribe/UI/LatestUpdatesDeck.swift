@@ -287,7 +287,7 @@ struct CompactDeckCard: View {
                 // One-line summary under the headline when there is room: whole words, at most 2 lines, dropped at
                 // accessibility sizes (its text stays in the VoiceOver label).
                 if !typeSize.isAccessibilitySize, let summary = card.release?.summary, !summary.isEmpty {
-                    Text(summary).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.85))
+                    Text(Self.wholeWords(summary, limit: 100)).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.85))
                         .lineLimit(2)
                 }
                 HStack(spacing: 8) {
@@ -310,6 +310,19 @@ struct CompactDeckCard: View {
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
         .accessibilityHidden(true)
+    }
+
+    /// The summary cut at a word boundary (never mid-word, Iris 2026-11-06): the first sentence if it is short
+    /// enough, else whole words up to `limit` characters, then an ellipsis.
+    static func wholeWords(_ text: String, limit: Int) -> String {
+        let t = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let end = t.firstIndex(where: { ".!?".contains($0) }), t.distance(from: t.startIndex, to: end) < limit {
+            return String(t[...end])
+        }
+        guard t.count > limit else { return t }
+        let head = String(t.prefix(limit))
+        let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
+        return cut.trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-")) + "…"
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
