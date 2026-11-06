@@ -23,8 +23,8 @@ guidelines on trademarks in names and keywords.
 
 ## Positioning
 
-For PS5 players who want to know, fast, what an update changed and whether it is on their console. Competitors: Patchbook.gg
-is Steam-only and web-only; Patch Pulse on iOS is broken. Our edge: PS5-first ("on PS5" means a PS5 row, live and official),
+For PS5 players who want to know, fast, what an update changed and whether it is on their console. Competitor: Patchbook.gg
+is Steam-only and web-only. Our edge: PS5-first ("on PS5" means a PS5 row, live and official),
 a game-book reading experience, and a Duo layout in every pose. Never claim more than the app does.
 
 ## Metadata draft (for Nadia's sign-off)
@@ -47,7 +47,7 @@ set and tune from App Store Connect analytics after launch.
 5. Duo Tabletop: "Made for the fold." (stage above, controls below)
 6. Duo Open/Book: "Two pages, one story."
 7. Library and add flow: "Your games, in seconds."
-Rules: real app captures, no PlayStation marks, no source names, no fabricated data (use sample games the app ships).
+Rules: real app captures, no PlayStation marks (the bundled PS Plus badge frames are the only exemption, per Nadia and Terry's sign-off), no source names, no fabricated data (use sample games the app ships).
 
 ## Launch plan
 
