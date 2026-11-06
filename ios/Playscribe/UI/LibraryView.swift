@@ -1175,6 +1175,7 @@ struct NotificationInviteCard: View {
             Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.accent)
             VStack(alignment: .leading, spacing: 8) {
                 Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
+                    .fixedSize(horizontal: false, vertical: true)
                     .accessibilityAddTraits(.isHeader)
                 // At the largest sizes the ask card keeps its title and buttons only; denied keeps one short line.
                 if !typeSize.isAccessibilitySize {
@@ -1182,13 +1183,15 @@ struct NotificationInviteCard: View {
                          ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
                          : "Get a note the moment \(gameName) or any game in your library gets an update on PS5.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
                 } else if denied {
                     Text("Turn notifications on in Settings.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 // Accessibility sizes stack the buttons outright: ViewThatFits let a label squeeze to "Turn on al…" (AX3, Closed).
                 if typeSize.isAccessibilitySize {
-                    VStack(alignment: .leading, spacing: 8) { buttons }
+                    VStack(alignment: .leading, spacing: 10) { buttons }.padding(.top, 6)
                 } else {
                     ViewThatFits(in: .horizontal) {
                         HStack(spacing: 12) { buttons }
@@ -1204,7 +1207,6 @@ struct NotificationInviteCard: View {
             if abs(v.translation.width) > 60 { snooze() }
         })
         .accessibilityAction(named: "Not now") { snooze() }
-        .fixedSize(horizontal: false, vertical: true)
         .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
     }
 
@@ -1217,7 +1219,6 @@ struct NotificationInviteCard: View {
                 Task { if !(await NotificationService.shared.requestAuthorization()) { snooze() } }
             }
         }
-        .fixedSize(horizontal: false, vertical: true)
         .buttonStyle(.borderedProminent).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
         .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil).foregroundStyle(PlayscribeColor.onAccent)
         .hitTarget()
