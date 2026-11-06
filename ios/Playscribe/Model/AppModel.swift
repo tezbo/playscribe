@@ -227,6 +227,8 @@ final class AppModel {
     /// The pose being laid out right now, written by RootView as it renders. Lets navigation
     /// bindings tell a user's Back from a container being torn down by a pose change. Not observed.
     @ObservationIgnored var livePose: Pose = .closed
+    /// Book, or Open in landscape: two pages side by side, so the Add sheet is a right-page panel, not a system sheet.
+    @ObservationIgnored var liveRightPage = false
     /// Tabletop Reader: the section shown per game (TT-2). Transient.
     var readerIndex: [String: Int] = [:]
     var feedStatus: FeedStatus = .idle

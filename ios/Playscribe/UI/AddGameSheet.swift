@@ -306,7 +306,7 @@ struct AddRow: View {
                 // One mark per row: the circle on the right becomes a tick (no badge on the cover).
                 CoverView(game: game, cornerRadius: 4).frame(width: 40)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
+                    Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                 }
                 Spacer(minLength: 8)
