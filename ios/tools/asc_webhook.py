@@ -2,7 +2,7 @@
 """Registers the App Store Connect webhook that tells the relay about new TestFlight feedback, and pings it.
 Usage: asc_webhook.py register|ping|list. The shared secret is derived from CLOUDFLARE_API_TOKEN exactly as relay/deploy.sh
 does, so nothing is pasted. Prints ASC's refusals (they carry no secrets); never prints the secret."""
-import hashlib, os, sys, time
+import datetime, hashlib, os, sys, time
 import jwt, requests
 from prune_certs import pem
 
@@ -37,7 +37,7 @@ def main(mode):
     if mode == "debug":
         # What Apple delivered, and the header names the relay saw on a rejected delivery (names only, never values).
         for h in ours:
-            r = s.get(f"{ASC}/v1/webhooks/{h['id']}/deliveries", params={"limit": 5})
+            r = s.get(f"{ASC}/v1/webhooks/{h['id']}/deliveries", params={"limit": 5, "filter[createdDateGreaterThanOrEqualTo]": (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=2)).strftime("%Y-%m-%dT%H:%M:%SZ")})
             print("deliveries:", r.status_code, r.text[:1500])
         admin = hashlib.sha256(("relay-admin:" + os.environ["CLOUDFLARE_API_TOKEN"]).encode()).hexdigest()
         print("::add-mask::" + admin)
