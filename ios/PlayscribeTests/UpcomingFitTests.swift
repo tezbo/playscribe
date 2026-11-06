@@ -40,3 +40,17 @@ struct UpcomingBookSplitTests {
         #expect(UpcomingView.leftCount(of: 1, leftColumns: 2, rightColumns: 2) == 1)
     }
 }
+
+@MainActor
+struct UpcomingBookTileSizeTests {
+    @Test func bothPagesShareTheSmallerTileSize() {
+        for (l, r) in [(CGFloat(380), CGFloat(420)), (500, 380), (400, 400), (300, 760)] {
+            let f = UpcomingView.bookFits(leftWidth: l, rightWidth: r)
+            #expect(f.left.size == f.right.size)
+            #expect(f.left.size == min(UpcomingView.fit(width: l).size, UpcomingView.fit(width: r).size))
+            // Never wider than the page it sits on.
+            #expect(CGFloat(f.left.count) * f.left.size + CGFloat(f.left.count - 1) * UpcomingView.gap <= l + 0.01)
+            #expect(CGFloat(f.right.count) * f.right.size + CGFloat(f.right.count - 1) * UpcomingView.gap <= r + 0.01)
+        }
+    }
+}

@@ -65,6 +65,15 @@ struct UpcomingView: View {
     static let gap = LibraryShelf.tileGap
     static func fit(width: CGFloat) -> (count: Int, size: CGFloat) { LibraryShelf.pageFit(width: width) }
 
+    /// Book: both pages keep their own column count, but share one tile size, the smaller of the two, so a
+    /// tile never changes size across the fold (Iris, #287). The narrower page's fit is the one that always fits both.
+    static func bookFits(leftWidth: CGFloat, rightWidth: CGFloat) -> (left: (count: Int, size: CGFloat), right: (count: Int, size: CGFloat)) {
+        var l = fit(width: leftWidth), r = fit(width: rightWidth)
+        let size = min(l.size, r.size)
+        l.size = size; r.size = size
+        return (l, r)
+    }
+
     /// One section: its header (24 pt above, 12 pt below) and tiles. In Book each page gets its own
     /// columns, so the fold falls in the gap between two grids and never through a tile or a header (G-4);
     /// a section that spills onto the right page repeats its plain header there. Closed stays 3 across.
@@ -86,7 +95,7 @@ struct UpcomingView: View {
             let leftWidth = max(0, fold.minX - 24 - 16)
             let rightStart = fold.maxX + 24 - 16
             let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
-            let left = Self.fit(width: leftWidth), right = Self.fit(width: rightWidth)
+            let (left, right) = Self.bookFits(leftWidth: leftWidth, rightWidth: rightWidth)
             let k = Self.leftCount(of: games.count, leftColumns: left.count, rightColumns: right.count)
             HStack(alignment: .top, spacing: 0) {
                 VStack(alignment: .leading, spacing: 12) {
