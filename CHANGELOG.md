@@ -3,7 +3,7 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
-## 0.5.2 (candidate, not released)
+## 0.5.2
 
 - Playscribe can now tell you about a new PS5 update even when the app is closed. Allow notifications when asked. Quiet hours in Settings also apply to these alerts.
 - Home Screen widget redesigned: small, medium and large now lead with game art, with the version and how long ago the update landed.
