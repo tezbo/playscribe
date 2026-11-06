@@ -594,6 +594,7 @@ final class AppModel {
             nav.anchors["library"] = "lib-kcd2"
             if let id = data.collection.first(where: { $0.status == .wishlist })?.gameID ?? data.collection.first?.gameID { removeGame(id) }
         case "long-text": qaLongText = true
+        case "plus": nav.tab = .library; nav.gameID = nil; PlusStore.shared.setQA(parts.first ?? "3")
         case "spoiler-demo": openSpoilerDemo(shown: parts.first == "shown")
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
