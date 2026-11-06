@@ -20,6 +20,7 @@ permissions:
 jobs:
   feedback:
     runs-on: ubuntu-latest
+    continue-on-error: true  # a red setup step would email Terry; the script itself always exits 0
     env:
       ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
       ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
