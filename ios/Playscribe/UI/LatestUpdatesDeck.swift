@@ -135,7 +135,7 @@ struct LatestUpdatesDeck: View {
         } else if duo.pose == .closed && duo.isLandscape {
             // Closed landscape: the wide card's height is set on the pager itself (40% of the container,
             // 168 to 240 pt); a horizontal ScrollView otherwise sizes to what it is offered (151 pt drawn).
-            deck(cardWidth: nil, artHeight: nil, scrollHeight: min(240, max(168, duo.size.height * 0.4)))
+            deck(cardWidth: nil, artHeight: nil, scrollHeight: WideDeckCard.height(container: duo.size.height, accessibility: typeSize.isAccessibilitySize))
         } else {
             // Full-width stacked layouts (Open landscape, Closed portrait) at the default text size: explicit geometry
             // too. The unsized pager took the height it was offered, so with 28 games the card ran off the screen
@@ -213,7 +213,7 @@ struct DeckCardView: View {
     /// Closed landscape (container wider than tall): the wide hero card, never a device check.
     private var wide: Bool { duo.pose == .closed && duo.isLandscape }
     /// 40% of the container's height, 168 to 240 pt (Iris, hero-wide-layouts).
-    private var wideHeight: CGFloat { min(240, max(168, duo.size.height * 0.4)) }
+    private var wideHeight: CGFloat { WideDeckCard.height(container: duo.size.height, accessibility: typeSize.isAccessibilitySize) }
 
     var body: some View {
         let game = card.game
@@ -429,7 +429,13 @@ struct WideDeckCard: View {
     var height: CGFloat
     @Environment(\.dynamicTypeSize) private var typeSize
     /// Accessibility sizes: a little taller (still inside J-5's half of the container) so the caption is whole.
-    private var cardHeight: CGFloat { typeSize.isAccessibilitySize ? max(height, 232) : height }
+    private var cardHeight: CGFloat { height }
+    /// 40% of the container, 168 to 240 pt (Iris, hero-wide-layouts); at accessibility sizes up to 232 pt, never past the J-5
+    /// bound (half the container plus 4 pt). The pager's frame uses this same height, so it never clips the card.
+    static func height(container: CGFloat, accessibility: Bool) -> CGFloat {
+        let base = min(240, max(168, container * 0.4))
+        return accessibility ? max(base, min(232, (container * 0.5).rounded(.down) + 4)) : base
+    }
 
     var body: some View {
         GeometryReader { g in
@@ -446,7 +452,7 @@ struct WideDeckCard: View {
                         // Two lines, never an ellipsis mid-sentence (Iris, hero-wide-layouts).
                         .lineLimit(2).fixedSize(horizontal: false, vertical: true)
                 }
-                .padding(16)
+                .padding(.horizontal, 16).padding(.vertical, typeSize.isAccessibilitySize ? 22 : 16)
                 .frame(width: g.size.width * 0.55, alignment: .leading)
             }
             .overlay(alignment: .topTrailing) {
