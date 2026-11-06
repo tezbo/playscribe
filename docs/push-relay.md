@@ -31,7 +31,7 @@ phone ──POST /v1/devices──▶ relay (KV)          Feed job (GitHub Actio
   correctly not pushed.
 - **Ceilings (free plan):** 1,000 KV writes a day; about 2,000 devices before the Feed job's reads (48 runs a day, one read per
   device) pass 100,000 a day. `POST /v1/devices` is unauthenticated, so someone could burn the daily writes; the Worker therefore
-  accepts at most 150 new devices a day (429 with Retry-After after that; relaunches of known devices are never refused).
+  accepts at most 150 new devices a day (the count resets at 00:00 UTC, which is 11:00 AEDT; 429 with Retry-After after that; relaunches of known devices are never refused).
   A Cloudflare rate-limit rule per IP is still worth adding before the app is public.
 - The relay stores follows as sent (`gameId` or `igdbId`); the Feed job resolves them and counts follows for games it does
   not track. A dead token (410) is only dropped for the run, since the relay's copy is the source; a push to it fails again, harmlessly.

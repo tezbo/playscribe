@@ -155,7 +155,7 @@ const register = async (env, request) => {
     r.headers.set('retry-after', '3600')
     return r
   }
-  await kv.put(dayKey, String(todays + 1))
+  await kv.put(dayKey, String(todays + 1), { expirationTtl: 172800 }) // gone after two days, so old counters never pile up
   const id = crypto.randomUUID()
   const key = b64url(crypto.getRandomValues(new Uint8Array(32)))
   const rec = { id, key, token, environment, locale, follows: follows ?? [], quiet: quiet ?? null, created: now(), updated: now() }
