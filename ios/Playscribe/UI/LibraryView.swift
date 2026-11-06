@@ -1183,9 +1183,14 @@ struct NotificationInviteCard: View {
                          : "Get a note the moment \(gameName) or any game in your library gets an update on PS5.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
                 }
-                ViewThatFits(in: .horizontal) {
-                    HStack(spacing: 12) { buttons }
+                // Accessibility sizes stack the buttons outright: ViewThatFits let a label squeeze to "Turn on al…" (AX3, Closed).
+                if typeSize.isAccessibilitySize {
                     VStack(alignment: .leading, spacing: 8) { buttons }
+                } else {
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: 12) { buttons }
+                        VStack(alignment: .leading, spacing: 8) { buttons }
+                    }
                 }
             }
             Spacer(minLength: 0)
@@ -1208,6 +1213,7 @@ struct NotificationInviteCard: View {
                 Task { if !(await NotificationService.shared.requestAuthorization()) { snooze() } }
             }
         }
+        .fixedSize(horizontal: false, vertical: true)
         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
         .hitTarget()
         .tappableFrame()
