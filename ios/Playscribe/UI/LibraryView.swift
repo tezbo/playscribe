@@ -1177,22 +1177,24 @@ struct NotificationInviteCard: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
                     .fixedSize(horizontal: false, vertical: true)
+                    // The body is dropped from view at AX sizes, never from VoiceOver (Iris).
+                    .accessibilityLabel(denied ? "Alerts are off" : "Be first to know when a patch drops. Get a note the moment any game in your library gets an update on PS5.")
                     .accessibilityAddTraits(.isHeader)
                 // At the largest sizes the ask card keeps its title and buttons only; denied keeps one short line.
                 if !typeSize.isAccessibilitySize {
                     Text(denied
                          ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
-                         : "Get a note the moment \(gameName) or any game in your library gets an update on PS5.")
+                         : "Get a note the moment any game in your library gets an update on PS5.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
-                } else if denied {
+                } else {
                     Text("Turn notifications on in Settings.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 // Accessibility sizes stack the buttons outright: ViewThatFits let a label squeeze to "Turn on al…" (AX3, Closed).
                 if typeSize.isAccessibilitySize {
-                    VStack(alignment: .leading, spacing: 10) { buttons }.padding(.top, 6)
+                    VStack(alignment: .leading, spacing: 12) { buttons }.padding(.top, 6)
                 } else {
                     ViewThatFits(in: .horizontal) {
                         HStack(spacing: 12) { buttons }
@@ -1212,21 +1214,24 @@ struct NotificationInviteCard: View {
     }
 
     @ViewBuilder private var buttons: some View {
-        Button(denied ? "Open Settings" : "Turn on alerts") {
+        Button {
             if denied {
                 snooze()
                 if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
             } else {
                 Task { if !(await NotificationService.shared.requestAuthorization()) { snooze() } }
             }
+        } label: {
+            Text(denied ? "Open Settings" : "Turn on alerts").frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
         }
         .buttonStyle(.borderedProminent).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
-        .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil).foregroundStyle(PlayscribeColor.onAccent)
+        .foregroundStyle(PlayscribeColor.onAccent)
         .hitTarget()
         .tappableFrame()
-        Button("Not now") { snooze() }
+        Button { snooze() } label: {
+            Text("Not now").frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
+        }
             .buttonStyle(.bordered).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
-            .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
             .hitTarget()
             .tappableFrame()
     }
