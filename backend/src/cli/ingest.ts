@@ -17,7 +17,8 @@ import { feedProblems } from '../quality.ts'
 import { appendFileSync } from 'node:fs'
 import { Igdb } from '../ingest/igdb.ts'
 import { runIngest, seedGames } from '../ingest/pipeline.ts'
-import { fetchPlus } from '../plusAuto.ts'
+import { fetchPlus, resolvePlusCovers } from '../plusAuto.ts'
+import { loadPlus } from '../plus.ts'
 import { Apns } from '../push/apns.ts'
 import { pushNewPs5 } from '../push/notify.ts'
 
@@ -30,7 +31,10 @@ await seedGames(deps)
 const until = args.includes('--backfill') ? new Date(args[args.indexOf('--backfill') + 1]!).toISOString() : undefined
 const summary = await runIngest(deps, { force: args.includes('--force') || !!until, until, hot: args.includes('--hot') })
 console.log(JSON.stringify(summary, null, 2))
-if (!args.includes('--hot')) await fetchPlus(db, fetch, console.log)
+if (!args.includes('--hot')) {
+  await fetchPlus(db, fetch, console.log)
+  await resolvePlusCovers(db, igdb, console.log, loadPlus().months)
+}
 const { keyId, teamId, key, topic } = config.apns
 const apns = process.env.PUSH_ENABLED === '1' && keyId && teamId && key ? new Apns({ keyId, teamId, key, topic }) : null
 // PUSH_DEFER=1: the Feed job could not load the relay's devices. Claiming a release now would lose its alert for everyone, so leave it for the next run.
