@@ -28,12 +28,22 @@ def show(r):
 
 
 def main(mode):
-    if mode not in ("register", "ping", "list"):
-        print("mode must be register, ping or list"); return 1
+    if mode not in ("register", "ping", "list", "debug"):
+        print("mode must be register, ping, list or debug"); return 1
     s = session()
     app = s.get(f"{ASC}/v1/apps", params={"filter[bundleId]": BUNDLE_ID}).json()["data"][0]["id"]
     hooks = s.get(f"{ASC}/v1/apps/{app}/webhooks")
     ours = [h for h in (hooks.json().get("data", []) if hooks.ok else []) if h["attributes"].get("name") == NAME]
+    if mode == "debug":
+        # What Apple delivered, and the header names the relay saw on a rejected delivery (names only, never values).
+        for h in ours:
+            r = s.get(f"{ASC}/v1/webhooks/{h['id']}/deliveries", params={"limit": 5})
+            print("deliveries:", r.status_code, r.text[:1500])
+        admin = hashlib.sha256(("relay-admin:" + os.environ["CLOUDFLARE_API_TOKEN"]).encode()).hexdigest()
+        print("::add-mask::" + admin)
+        d = requests.get(URL.rsplit("/v1/", 1)[0] + "/admin/webhook-debug", headers={"Authorization": "Bearer " + admin})
+        print("relay probe:", d.status_code, d.text[:800])
+        return 0
     if mode == "list":
         print("webhooks:", [(h["id"], h["attributes"].get("enabled"), h["attributes"].get("url")) for h in ours]); return 0
     secret = hashlib.sha256(("asc-webhook:" + os.environ["CLOUDFLARE_API_TOKEN"]).encode()).hexdigest()
