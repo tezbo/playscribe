@@ -90,6 +90,36 @@ const sectionPlatforms = (title: string): Platform[] | undefined => {
   return named?.length === 1 ? named : undefined
 }
 
+// Studio and Steam promo lines are not changes: sale calls, follow-us and community calls, wishlist or buy prompts, "check
+// out our other game", giveaways, greetings and bare thank-yous. A line that states a change is always kept, even when it
+// mentions a sale or a thanks ("Thanks for reporting, the door is now fixed"), and "we are aware of X" stays (a known
+// issue). Whole lines only; the studio's words are never rewritten. Agreed with Ezra, r052-promo-filter.
+const CHANGE_WORD = /\b(fix(?:ed|es)?|add(?:ed|s)?|improv(?:ed|es|ement)s?|remov(?:ed|es)|chang(?:ed|es)|updat(?:ed|es)|resolv(?:ed|es)|reduc(?:ed|es)|increas(?:ed|es)|adjust(?:ed|s)?|correct(?:ed|s)|enabl(?:ed|es)|disabl(?:ed|es)|tweak(?:ed|s)?|rework(?:ed|s)?|crash(?:es)?|bug|aware of|working on|known issue|introduc(?:ed|es|ing)|rebalanc(?:ed|es|ing)|nerf(?:ed|s)?|buff(?:ed|s)?)\b/i
+const PROMO_LINE = new RegExp(
+  [
+    '\\bon sale\\b',
+    '\\b\\d+\\s?% off\\b',
+    '\\b(?:discount|special offer|limited[- ]time offer|steam sale|daily deal|publisher sale)\\b',
+    '\\bfollow (?:us|the (?:dev|studio|team)s?)\\b',
+    '\\bfollow .{0,80} on (?:social media|twitter|x|instagram|facebook|tiktok|youtube|twitch|bluesky|steam)\\b',
+    '\\b(?:join|visit) (?:us|our|the) .{0,40}(?:discord|community|newsletter|socials?)\\b',
+    '\\b(?:subscribe to|sign up for) (?:our |the )?(?:newsletter|channel|mailing list)\\b',
+    '\\bwish ?list (?:it|now|today|on steam|the next)\\b|\\bto your wish ?list\\b',
+    '\\b(?:buy now|pre-?order(?: \\w+){0,5} now)\\b',
+    '\\bcheck out our (?:other|new|latest|upcoming)\\b',
+    '\\bgiveaway\\b',
+    "\\b(?:merry christmas|happy (?:holidays|new year|halloween)|season'?s greetings)\\b",
+    '\\bcontinue your (?:adventure|journey)\\b',
+    '^(?:a big |a huge |many |so much )?thank(?:s| you)\\b[^.!?]{0,80}[.!]?$',
+  ].join('|'),
+  'i',
+)
+// Gameplay and in-game store lines can say "on sale" or "discount" without a change word ("Items on sale in the Store display
+// the correct price", "Prices are 50% off in the arena"). A line that names the in-game economy is kept, so the rule errs
+// towards leaving a promo line in rather than hiding a real note (Quinn, #332).
+const GAME_ECONOMY = /\b(?:vendors?|merchants?|shops?|stores?|traders?|stalls?|prices?|gold|coins?|shards?|cost|costs|currency|purchas(?:e|ed|es|able)|bundles?|coupons?|costumes?|outfits?|skins?|no longer|correct(?:ly)?|now (?:have|find|stack|show|display|appear|cost|sell))\b/i
+export const isPromoLine = (text: string) => /^\s*https?:\/\/\S+\s*$/i.test(text) || (PROMO_LINE.test(text) && !CHANGE_WORD.test(text) && !GAME_ECONOMY.test(text))
+
 export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSection[] => {
   const sections: NoteSection[] = []
   let current: NoteSection | null = null
@@ -124,6 +154,7 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSecti
       continue
     }
     if (bullet) inList = true
+    if (isPromoLine(text)) continue
     if (!current) open(fallbackTitle)
     const item: NoteItem = { text, ps5ProOnly: currentPro || PRO.test(text), pcOnly: false, category: itemCategoryOf(text, categoryOf(current!.title)) }
     const platforms = platformsFor(text, currentPlatforms)
@@ -146,7 +177,7 @@ export const tagNotes = (sections: NoteSection[]): NoteSection[] =>
     return {
       ...s,
       title: SOURCE_NAMES.test(s.title) ? 'Changes' : s.title,
-      items: s.items.filter((i) => !SOURCE_NAMES.test(i.text)).map(({ platforms: _old, ...i }) => {
+      items: s.items.filter((i) => !SOURCE_NAMES.test(i.text) && !isPromoLine(i.text)).map(({ platforms: _old, ...i }) => {
         const platforms = platformsFor(i.text, section)
         const category = itemCategoryOf(i.text, categoryOf(s.title))
         return platforms ? { ...i, platforms, pcOnly: isPcOnly(platforms), category } : { ...i, pcOnly: false, category }
