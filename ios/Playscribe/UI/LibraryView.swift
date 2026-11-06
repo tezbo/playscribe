@@ -131,6 +131,9 @@ struct LibraryShelf: View {
     @AppStorage(LibraryLayout.key) private var layout: LibraryLayout = .tiles
     /// Tabletop: first-letter filter instead of typing (the keyboard never opens there).
     @State private var letter: String?
+    /// Book at accessibility sizes: the heights of each page above its tiles, to split the tiles so the pages end level.
+    @State private var leftHeaderH: CGFloat = 0
+    @State private var rightHeaderH: CGFloat = 0
 
     /// D-12: one square tile size per pose.
     private var tileSize: CGFloat {
@@ -359,6 +362,17 @@ struct LibraryShelf: View {
                     // possible (4 games: 2 and 2, not 3 and 1; Iris, dda3857). With a hero the proportional split stands.
                     let leftCount: Int = {
                         guard layout == .tiles else { return 0 }
+                        // Accessibility sizes (0.5.1 spec 4): the left page's controls are tall, so split by height: tiles
+                        // continue from the left page onto the right in order, ending the pages about level, no hole.
+                        if typeSize.isAccessibilitySize, leftHeaderH > 0, rightHeaderH > 0 {
+                            let n = rows.count
+                            let rowH = left.size * 4 / 3 + 56 + 10
+                            func tall(_ k: Int) -> CGFloat {
+                                max(leftHeaderH + CGFloat((k + left.count - 1) / left.count) * rowH,
+                                    rightHeaderH + CGFloat((n - k + right.count - 1) / right.count) * rowH)
+                            }
+                            return (0...n).min { (tall($0), $0) < (tall($1), $1) } ?? proportional
+                        }
                         guard model.latestDeck.isEmpty else { return proportional }
                         let n = rows.count
                         func rowsFor(_ k: Int) -> Int { max((k + left.count - 1) / left.count, (n - k + right.count - 1) / right.count) }
@@ -366,25 +380,31 @@ struct LibraryShelf: View {
                     }()
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
+                            VStack(alignment: .leading, spacing: typeSize.isAccessibilitySize ? 16 : 14) {
                             LibraryTabPicker()
                             // Controls first, the offer second (Iris, Book compact card).
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                             topCards(all)
                             NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                             if all.count >= 2 && layout == .tiles {
-                                FilterBar().frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
+                                FilterBar(accessibilityColumns: 2).frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
                             }
+                            }
+                            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { leftHeaderH = $0 }
                             if layout == .tiles { pageGrid(Array(rows.prefix(leftCount)), fit: left) }
                         }
                         .frame(width: leftWidth, alignment: .topLeading)
                         VStack(alignment: .leading, spacing: 14) {
                             // 16:9 art at the page's width plus the page edge, sized explicitly: left to the pager the
                             // card came out as tall as the screen and pushed the grid off (834a5eb).
+                            Group {
                             if model.latestDeck.isEmpty {
                                 CaughtUpCard().frame(width: rightWidth, alignment: .leading)
                             } else {
                                 LatestUpdatesDeck(cards: model.latestDeck, compact: true, maxHeight: (rightWidth * 9 / 16).rounded() + 52)
                             }
+                            }
+                            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { rightHeaderH = $0 }
                             if layout == .tiles { pageGrid(Array(rows.dropFirst(leftCount)), fit: right) }
                         }
                         .frame(width: rightWidth, alignment: .topLeading)
@@ -562,6 +582,8 @@ struct LibraryViewMenu: View {
 struct FilterBar: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dynamicTypeSize) private var typeSize
+    /// Accessibility sizes: chips per row. One on the narrow Closed column, two on a Book page (0.5.1 spec 4).
+    var accessibilityColumns = 1
 
     private func chip(_ f: LibraryFilter, rows: [AppModel.LibraryRow]) -> some View {
         let n = f.status.map { s in rows.filter { $0.status == s }.count } ?? rows.count
@@ -587,7 +609,7 @@ struct FilterBar: View {
         if typeSize.isAccessibilitySize {
             // Accessibility sizes: one chip per row at the full column width, so "Watching 1" stays on one line
             // inside its pill and tap frame (Closed AX3, 382 pt); a row grows if it must wrap.
-            LazyVGrid(columns: [GridItem(.flexible())], spacing: 8) {
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: accessibilityColumns), spacing: 8) {
                 ForEach(LibraryFilter.allCases) { f in chip(f, rows: rows) }
             }
         } else {
