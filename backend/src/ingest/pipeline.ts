@@ -204,8 +204,11 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
       // A press headline is the site's words, not a release name: without a version it is just a PS5 update.
       track(store.upsertRelease(db, { gameId: game.id, versionKey: naming.versionKey, displayName: /^[a-z]+-\d{4}-/.test(naming.versionKey) ? (ps4 ? 'PS4 update' : 'PS5 update') : naming.displayName, kind: 'silent', kindBasis: 'inferred', announcedAt: post.publishedAt, notes: [], sourceId: s.id, ps4 }))
     if (byKey || near || alike) store.addSource(db, releaseId, s.id)
-    const version = consoleVersionOf(text, { ps5Only: true })
+    // A PS4 build number is never a PS5 version.
+    const version = ps4 ? null : consoleVersionOf(text, { ps5Only: true })
     const size = sizeBytesOf(post.body) ?? sizeBytesOf(post.title)
+    // A PS5-aware report joining a release once labelled PS4 means the game now has a native version: the label goes.
+    if (!ps4) db.prepare('UPDATE releases SET ps4 = 0 WHERE id = ? AND ps4 = 1').run(releaseId)
     const status = pressStatusOf(post.title, post.body)
     store.upsertPlatform(db, releaseId, 'ps5', {
       status,
@@ -220,6 +223,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   // A studio post that says the update is live on PS5: official without a person, so the release
   // is On PS5 and its pending review items are closed.
   const officialPs5 = (releaseId: string, ps5Only = true) => {
+    db.prepare('UPDATE releases SET ps4 = 0 WHERE id = ? AND ps4 = 1').run(releaseId)
     const version = consoleVersionOf(text, { ps5Only })
     const size = sizeBytesOf(text)
     store.upsertPlatform(db, releaseId, 'ps5', {

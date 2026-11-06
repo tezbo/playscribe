@@ -428,3 +428,51 @@ test('a PS4 patch post for a backward-compatible game is a labelled PS4 update; 
   const native = await build('2020-01-01')
   assert.equal(getRelease(native, 'dawnwalker@1.9'), null)
 })
+
+// Quinn's review of the PS4 history rule (#280).
+const ps4World = async (posts: { title: string; body?: string; hoursAgo: number; tags?: string[] }[], ps5Release: string | null) => {
+  const db = openDb(':memory:')
+  const pages: Record<string, unknown> = {
+    'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews([]),
+  }
+  posts.forEach((p, i) => (pages[`https://www.pushsquare.com/news/p${i}`] = pressArticle(p.title, p.body ?? 'The patch is 1.2GB.')))
+  pages['https://www.pushsquare.com/tags/updates'] = pressIndexPage(posts.map((p, i) => ({ title: p.title, path: `news/p${i}`, date: recent(p.hoursAgo), tags: p.tags ?? ['PS4', 'Dawnwalker', 'Updates'] })))
+  const deps = { db, fetchFn: fakeFetch(pages as never), igdb: null }
+  await seedGames(deps)
+  db.prepare('UPDATE games SET ps5_release = ? WHERE id = ?').run(ps5Release, 'dawnwalker')
+  await runIngest(deps)
+  return db
+}
+
+test('a PS4 build number is never the PS5 version', async () => {
+  const db = await ps4World([{ title: 'Dawnwalker PS4 Patch 1.9 Out Now', body: 'Brings the game to Ver. 1.005.000 on PS4.', hoursAgo: 50 }], null)
+  const r = getRelease(db, 'dawnwalker@1.9')!
+  assert.equal(r.ps4, true)
+  assert.equal(r.platforms.find((p) => p.platform === 'ps5')!.version, null)
+})
+
+test('a PS4 post is kept when it predates the native PS5 release and ignored after it', async () => {
+  const launch = new Date(Date.now() - 20 * 86400e3).toISOString().slice(0, 10)
+  const db = await ps4World([
+    { title: 'Dawnwalker PS4 Patch 1.8 Out Now', hoursAgo: 24 * 40 },
+    { title: 'Dawnwalker PS4 Patch 1.9 Out Now', hoursAgo: 24 * 5 },
+  ], launch)
+  assert.equal(getRelease(db, 'dawnwalker@1.8')?.ps4, true)
+  assert.equal(getRelease(db, 'dawnwalker@1.9'), null)
+})
+
+test('a title naming PS4 and PS5 is a PS5 post, not labelled ps4; a PS5 report joining a ps4 release clears the label', async () => {
+  const db = await ps4World([{ title: 'Dawnwalker PS5, PS4 Patch 1.9 Out Now', hoursAgo: 50, tags: ['PS5', 'PS4', 'Dawnwalker', 'Updates'] }], null)
+  assert.equal(getRelease(db, 'dawnwalker@1.9')?.ps4, undefined)
+  const labelled = await ps4World([{ title: 'Dawnwalker PS4 Patch 1.9 Out Now', hoursAgo: 50 }], null)
+  assert.equal(getRelease(labelled, 'dawnwalker@1.9')?.ps4, true)
+  labelled.prepare("UPDATE releases SET ps4 = 1 WHERE id = 'dawnwalker@1.9'").run()
+  const deps = { db: labelled, fetchFn: fakeFetch({
+    'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews([]),
+    'https://www.pushsquare.com/news/n': pressArticle('Dawnwalker PS5 Patch 1.9 Out Now', 'The patch is 3GB on PS5.'),
+    'https://www.pushsquare.com/tags/updates': pressIndexPage([{ title: 'Dawnwalker PS5 Patch 1.9 Out Now', path: 'news/n', date: recent(40), tags: ['PS5', 'Dawnwalker', 'Updates'] }]),
+  } as never), igdb: null }
+  labelled.prepare("DELETE FROM source_state").run()
+  await runIngest(deps, { force: true })
+  assert.equal(getRelease(labelled, 'dawnwalker@1.9')?.ps4, undefined)
+})
