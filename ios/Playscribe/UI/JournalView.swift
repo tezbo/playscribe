@@ -275,7 +275,11 @@ struct ReleaseBody: View {
                     NoteSectionView(release: r, section: section)
                 }
             }
-            HStack(spacing: 10) {
+            // Accessibility sizes: the Bookmark and Mark as read buttons stack, each the full width, so a label wraps on
+            // whole words ("Bookmar / k" at AX5, c240de9).
+            let actions = typeSize.isAccessibilitySize
+                ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10)) : AnyLayout(HStackLayout(spacing: 10))
+            actions {
                 let marked = model.isBookmarked(kind: .release, id: r.id)
                 Button { model.toggleBookmark(kind: .release, id: r.id, gameID: r.gameID) } label: {
                     Label(marked ? "Bookmarked" : "Bookmark", systemImage: marked ? "bookmark.fill" : "bookmark")

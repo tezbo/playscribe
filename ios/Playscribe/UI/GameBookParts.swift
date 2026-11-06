@@ -817,8 +817,11 @@ struct GameTitleWithStatus: View {
     private var titleRow: some View {
         HStack(alignment: .firstTextBaseline, spacing: 8) {
             // Accessibility sizes: up to 3 lines, wrapped on whole words (Iris on #289, "Kingdom Come: Delive…" at AX3).
-            Text(name).font(PlayscribeFont.title2).lineLimit(typeSize.isAccessibilitySize ? 3 : 2)
+            // Up to 4 lines, and the title text stops growing at AX3: at AX5 one long word ("Deliverance") is wider than a
+            // Closed portrait column and cut mid-word (c240de9). The reader shows the true size.
+            Text(name).font(PlayscribeFont.title2).lineLimit(typeSize.isAccessibilitySize ? 4 : 2)
                 .fixedSize(horizontal: false, vertical: true).accessibilityAddTraits(.isHeader)
+                .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             if let e = model.entry(gameID) {
                 Menu { ActionMenuContent(sections: model.statusMenu(gameID)) } label: {
                     Image(systemName: Self.symbol(e.status))
