@@ -1176,11 +1176,14 @@ struct NotificationInviteCard: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
                     .accessibilityAddTraits(.isHeader)
-                // At the largest sizes the heading and buttons carry the card, so it never crowds the PS Plus card.
+                // At the largest sizes the ask card keeps its title and buttons only; denied keeps one short line.
                 if !typeSize.isAccessibilitySize {
                     Text(denied
                          ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
                          : "Get a note the moment \(gameName) or any game in your library gets an update on PS5.")
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                } else if denied {
+                    Text("Turn notifications on in Settings.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
                 }
                 // Accessibility sizes stack the buttons outright: ViewThatFits let a label squeeze to "Turn on al…" (AX3, Closed).
@@ -1201,6 +1204,7 @@ struct NotificationInviteCard: View {
             if abs(v.translation.width) > 60 { snooze() }
         })
         .accessibilityAction(named: "Not now") { snooze() }
+        .fixedSize(horizontal: false, vertical: true)
         .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
     }
 
@@ -1214,11 +1218,13 @@ struct NotificationInviteCard: View {
             }
         }
         .fixedSize(horizontal: false, vertical: true)
-        .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
+        .buttonStyle(.borderedProminent).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
+        .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil).foregroundStyle(PlayscribeColor.onAccent)
         .hitTarget()
         .tappableFrame()
         Button("Not now") { snooze() }
-            .buttonStyle(.bordered)
+            .buttonStyle(.bordered).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
+            .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
             .hitTarget()
             .tappableFrame()
     }
