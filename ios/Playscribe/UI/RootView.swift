@@ -361,26 +361,45 @@ struct TabletopRail: View {
 }
 
 extension View {
-    /// A scrolling page ends above the pill and toasts instead of under them (N-7, B-8, 0.5.1 spec 2): one
-    /// mechanism for the Library, Updates, the game Page, Contents and release detail.
-    func reservesMessageInset() -> some View { modifier(MessageInsetModifier()) }
+    /// A scrolling page ends above the pill and toasts instead of under them (N-7, B-8, 0.5.1 spec 2): one mechanism for the
+    /// Library, Updates, the game Page, Contents and release detail. Apply it to the scroll view.
+    func clearsMessages() -> some View { modifier(MessageClearance()) }
 }
 
-private struct MessageInsetModifier: ViewModifier {
+/// The page ends 12 pt above the pill (or toast) wherever it actually sits, and only where the pill overlaps the page sideways
+/// (Book's right page gets none while the pill is on the left). The pad is worked out from measured edges (this view's frame
+/// without the pad, the pill's frame), not from heights and offsets, so it cannot leave a dead band or run under the pill in
+/// any pose (ae0a608, Open portrait).
+private struct MessageClearance: ViewModifier {
     @Environment(AppModel.self) private var model
+    @State private var pad: CGFloat = 0
+    /// This view's frame in global coordinates. The pad sits inside it, so its bottom edge does not move with the pad.
+    @State private var frame: CGRect = .zero
+
+    private func update() {
+        var next: CGFloat = 0
+        if let m = model.messageFrame, frame.minX < m.maxX, frame.maxX > m.minX {
+            next = max(0, frame.maxY - (m.minY - 12))
+        }
+        if abs(next - pad) > 0.5 { pad = next }
+    }
+
     func body(content: Content) -> some View {
         content
-            // The page ends above the pill; a soft edge there, not a hard cut through a card (Iris, #246).
+            // A soft edge above the pill, not a hard cut through a card (Iris).
             .mask(alignment: .bottom) {
                 VStack(spacing: 0) {
                     Rectangle()
                     LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
-                        .frame(height: model.messageInset > 0 ? 24 : 0)
+                        .frame(height: pad > 0 ? 24 : 0)
                 }
             }
-            .padding(.bottom, model.messageInset)
-            // The inset changes the moment the pill shows: it must not ride a running pose animation.
-            .transaction(value: model.messageInset) { $0.animation = nil }
+            .padding(.bottom, pad)
+            .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { frame = $0; update() }
+            .onChange(of: model.messageFrame) { _, _ in update() }
+            // The pad changes the moment the pill shows. It must not ride a running pose animation, or the old arrangement
+            // lingers faintly under the new one (Book, ad54f44 stills).
+            .transaction(value: pad) { $0.animation = nil }
     }
 }
 
@@ -457,10 +476,13 @@ struct LowerMessages: View {
             }
             // The Library reserves this much at its bottom edge (a safe-area inset), so the pill never covers its
             // top-of-page controls: the content reflows above it (0.5.1 spec 2, Iris).
-            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in
+            .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { frame in
+                let h = frame.height
                 // Everything from the bottom edge up to the top of the messages, plus 8 pt of air.
                 let inset = h > 0 ? h + Self.bottomPadding(duo) + 8 : 0
                 if model.messageInset != inset { model.messageInset = inset }
+                let shown: CGRect? = h > 0 ? frame : nil
+                if model.messageFrame != shown { model.messageFrame = shown }
             }
         }
         // Above the bottom tab bar only where the bars are horizontal (open portrait).
