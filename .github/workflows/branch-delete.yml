@@ -14,8 +14,12 @@ on:
         description: 'Full 40-character tip SHA you verified; the delete is refused if the tip differs'
         required: true
       approval:
-        description: "Where Terry said yes (message id or quote); required"
+        description: "Where Terry said yes (message id or quote), at least 10 characters"
         required: true
+      dry_run:
+        description: 'true runs every guard and stops before the delete; set false for the real run'
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -33,18 +37,22 @@ jobs:
           BRANCH: ${{ inputs.branch }}
           EXPECTED: ${{ inputs.expected_sha }}
           APPROVAL: ${{ inputs.approval }}
+          DRY_RUN: ${{ inputs.dry_run }}
           DEFAULT: ${{ github.event.repository.default_branch }}
         run: |
           set -euo pipefail
           case "$BRANCH" in claude/*) ;; *) echo "refused: only claude/* branches"; exit 1;; esac
           [ "$BRANCH" != "$DEFAULT" ] || { echo "refused: default branch"; exit 1; }
-          [ -n "$APPROVAL" ] || { echo "refused: no approval reference"; exit 1; }
+          [ "${#APPROVAL}" -ge 10 ] || { echo "refused: approval reference must be at least 10 characters"; exit 1; }
           case "$EXPECTED" in *[!0-9a-f]*|"") echo "refused: expected_sha must be 40 hex characters"; exit 1;; esac
           [ "${#EXPECTED}" -eq 40 ] || { echo "refused: expected_sha must be 40 hex characters"; exit 1; }
           tip=$(gh api "repos/$REPO/git/ref/heads/$BRANCH" --jq .object.sha)
           [ "$tip" = "$EXPECTED" ] || { echo "refused: tip is $tip, not $EXPECTED"; exit 1; }
           open=$(gh pr list --repo "$REPO" --head "$BRANCH" --state open --json number --jq length)
           [ "$open" = "0" ] || { echo "refused: $open open PR(s) on this branch"; exit 1; }
+          echo "Restore with: git push origin $tip:refs/heads/$BRANCH"
+          echo "  or: gh api -X POST repos/$REPO/git/refs -f ref=refs/heads/$BRANCH -f sha=$tip"
+          if [ "$DRY_RUN" = "true" ]; then echo "Dry run: every guard passed, nothing deleted."; exit 0; fi
           echo "Deleting $BRANCH at $tip. Approval: $APPROVAL"
           gh api -X DELETE "repos/$REPO/git/refs/heads/$BRANCH"
-          echo "Deleted. Restore with: git push origin $tip:refs/heads/$BRANCH"
+          echo "Deleted."
