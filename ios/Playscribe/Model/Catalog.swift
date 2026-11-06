@@ -119,7 +119,9 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         var cal = Calendar(identifier: .gregorian)
         cal.timeZone = .gmt
         let year = cal.component(.year, from: o)
-        return "Not on PS5 · " + [releasedElsewhereOn, String(year)].compactMap { $0 }.joined(separator: ", ")
+        // "PC (Microsoft Windows)" reads "PC": drop the parenthetical.
+        let platform = releasedElsewhereOn.map { String($0.split(separator: "(").first ?? "").trimmingCharacters(in: .whitespaces) }.flatMap { $0.isEmpty ? nil : $0 }
+        return "Not on PS5 · " + [platform, String(year)].compactMap { $0 }.joined(separator: ", ")
     }
 
     /// A PS4-only game that plays on PS5: no PS5 release date, but not "TBA".
