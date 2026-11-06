@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import worker from '../worker.js'
+import worker, { MAX_NEW_PER_DAY } from '../worker.js'
 
 // A KV that counts writes, because the free plan allows 1,000 a day and a relaunch must not spend any.
 const fakeKv = () => {
@@ -180,4 +180,14 @@ test('webhook: 60 non-team devices and 2 team devices alert exactly the 2, with 
   } finally {
     globalThis.fetch = realFetch
   }
+})
+
+test('register: past the daily cap new devices get 429, existing devices still register', async () => {
+  const { env } = setup()
+  const hexTok = (i) => i.toString(16).padStart(64, '0')
+  for (let i = 0; i < MAX_NEW_PER_DAY; i++) assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: hexTok(i) })).status, 201)
+  const over = await call(env, 'POST', '/v1/devices', { apnsToken: hexTok(MAX_NEW_PER_DAY + 1) })
+  assert.equal(over.status, 429)
+  assert.ok(over.headers.get('retry-after'))
+  assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: hexTok(0) })).status, 200)
 })
