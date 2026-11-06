@@ -195,10 +195,24 @@ struct CoverHeader: View {
 struct ReleasePage: View {
     @Environment(AppModel.self) private var model
     var release: Release
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         let r = release
         VStack(alignment: .leading, spacing: 12) {
+            // Accessibility sizes: the title and tags first, then the share button on its own row at the page's trailing
+            // edge, 24 pt clear of the rail, so it never sits under the rail's buttons (R-2, Iris on #288 at AX3).
+            if typeSize.isAccessibilitySize {
+                HStack(spacing: 8) {
+                    if model.isUnread(r) { UnreadDot() }
+                    TitleWithTags(release: r) {
+                        Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
+                    }
+                }
+                if r.isPS5Listed {
+                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }.padding(.trailing, 24)
+                }
+            } else {
             HStack(spacing: 8) {
                 if model.isUnread(r) { UnreadDot() }
                 // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
@@ -208,6 +222,7 @@ struct ReleasePage: View {
                 }
                 Spacer(minLength: 0)
                 if r.isPS5Listed { ShareUpdateButton(release: r) }
+            }
             }
             HStack(spacing: 8) {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)

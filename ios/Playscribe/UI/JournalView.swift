@@ -186,6 +186,7 @@ extension EnvironmentValues {
 struct ReleaseBody: View {
     @Environment(AppModel.self) private var model
     @Environment(\.marginReleaseID) private var marginReleaseID
+    @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
     /// D-13: facts expanded or collapsed persists.
     @AppStorage("factsOpen") private var factsOpen = false
@@ -233,14 +234,29 @@ struct ReleaseBody: View {
             }
             if marginReleaseID != r.id {
                 Button { withAnimation(.snappy) { factsOpen.toggle() } } label: {
-                    HStack {
-                        Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline)
-                        if let d = FactsLine.detail(for: r) { Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary) }
-                        Spacer()
-                        Image(systemName: "chevron.down").rotationEffect(.degrees(factsOpen ? 180 : 0)).foregroundStyle(.secondary)
+                    let chevron = Image(systemName: "chevron.down").rotationEffect(.degrees(factsOpen ? 180 : 0)).foregroundStyle(.secondary)
+                    if typeSize.isAccessibilitySize {
+                        // AX: one block, "Released ...", then the size, then the chevron, full width (R-2, Iris on #288 at AX3).
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
+                            if let d = FactsLine.detail(for: r) {
+                                Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                            HStack { Spacer(minLength: 0); chevron }
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                        .contentShape(Rectangle())
+                    } else {
+                        HStack {
+                            Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline)
+                            if let d = FactsLine.detail(for: r) { Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary) }
+                            Spacer()
+                            chevron
+                        }
+                        .frame(minHeight: 44)
+                        .contentShape(Rectangle())
                     }
-                    .frame(minHeight: 44)
-                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .accessibilityHint(factsOpen ? "Hides the PS5 facts" : "Shows the PS5 facts")
