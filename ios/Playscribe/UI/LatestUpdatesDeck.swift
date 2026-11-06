@@ -562,9 +562,18 @@ struct DeckStage: View {
     var body: some View {
         let headline = card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name
         let dateText = card.date.map { AppModel.tileDay($0) }
-        ZStack(alignment: .bottomLeading) {
-            ArtView(asset: card.game.keyArtAsset, game: card.game, drift: true)
-            LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.85)], startPoint: .center, endPoint: .bottom)
+        // The stage's own size comes only from its parent: art and scrim are a background and the caption an overlay,
+        // so neither the caption's height nor the clearance can change what the split layout measures. (A caption
+        // that set the stage's ideal size let ArrangementView re-pick its arrangement every pass at AX5: a hang.)
+        Color.clear
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background {
+                ZStack {
+                    ArtView(asset: card.game.keyArtAsset, game: card.game, drift: true)
+                    LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.85)], startPoint: .center, endPoint: .bottom)
+                }
+            }
+            .overlay(alignment: .bottomLeading) {
             VStack(alignment: .leading, spacing: 6) {
                 // Wraps instead of squeezing "New update" away at accessibility sizes (28c6063 Tabletop AX3).
                 FlowLayout(spacing: 8) {
@@ -590,13 +599,10 @@ struct DeckStage: View {
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             // The caption ends 24 pt above the division, measured in screen space (as in 0.2.0 #174/#176).
             .padding(.bottom, duo.clearance(forBottom: stageBottom))
-        }
-        // Sized by its parent and measured on a clear background of that outer frame, so the clearance padding
-        // inside can never change what is measured (Tabletop AX5 hang: padding -> height -> maxY -> padding loop).
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.clear.onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY.rounded() } action: { new in
-            if abs(new - stageBottom) > 0.5 { stageBottom = new }
-        })
+            }
+            .background(Color.clear.onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY.rounded() } action: { new in
+                if abs(new - stageBottom) > 0.5 { stageBottom = new }
+            })
         .allowsHitTesting(false)
         .accessibilityElement(children: .contain)
     }
