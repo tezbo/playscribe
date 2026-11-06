@@ -63,6 +63,9 @@ struct LatestUpdatesDeck: View {
     /// Accessibility sizes: each card's measured height. The deck's frame grows to the tallest, so a long headline
     /// grows the card instead of overflowing it upwards.
     @State private var captionH: CGFloat = 0
+    /// Closed landscape: the pager's own width, so a wide card is exactly that wide and never wider than its container
+    /// (AX5: the card ran past the right edge and lost its border and corner).
+    @State private var pagerWidth: CGFloat = 0
 
     /// The page edge (44 pt leaves) and the 8 pt gap above it; the card takes the rest of maxHeight.
     private static let pageEdgeHeight: CGFloat = 52
@@ -176,6 +179,8 @@ struct LatestUpdatesDeck: View {
                         Group {
                             if let w = cardWidth {
                                 DeckCardView(card: card, artHeight: artHeight).frame(width: w)
+                            } else if scrollHeight != nil, pagerWidth > 0 {
+                                DeckCardView(card: card).frame(width: pagerWidth)
                             } else {
                                 DeckCardView(card: card)
                                     .containerRelativeFrame(.horizontal, count: Int((perScreen * 100).rounded()), span: 100, spacing: 12)
@@ -187,6 +192,7 @@ struct LatestUpdatesDeck: View {
                 .scrollTargetLayout()
             }
             .frame(height: scrollHeight)
+            .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { if scrollHeight != nil, abs($0 - pagerWidth) > 0.5 { pagerWidth = $0 } }
             .scrollPosition(id: $current)
             .onChange(of: current) { _, new in model.deckSelection = new }
             .scrollTargetBehavior(.viewAligned)
