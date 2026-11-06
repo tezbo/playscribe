@@ -172,6 +172,8 @@ struct LatestUpdatesDeck: View {
     }
 
     private func deck(cardWidth: CGFloat?, artHeight: CGFloat?, scrollHeight: CGFloat? = nil) -> some View {
+        // Closed landscape at accessibility sizes: the pager is as tall as the card's caption, not a fixed height.
+        let wideAX = scrollHeight != nil && typeSize.isAccessibilitySize && pagerWidth > 0
         VStack(alignment: .leading, spacing: 8) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 12) {
@@ -180,7 +182,7 @@ struct LatestUpdatesDeck: View {
                             if let w = cardWidth {
                                 DeckCardView(card: card, artHeight: artHeight).frame(width: w)
                             } else if scrollHeight != nil, pagerWidth > 0 {
-                                DeckCardView(card: card).frame(width: pagerWidth)
+                                DeckCardView(card: card, wideWidth: pagerWidth).frame(width: pagerWidth)
                             } else {
                                 DeckCardView(card: card)
                                     .containerRelativeFrame(.horizontal, count: Int((perScreen * 100).rounded()), span: 100, spacing: 12)
@@ -191,7 +193,8 @@ struct LatestUpdatesDeck: View {
                 }
                 .scrollTargetLayout()
             }
-            .frame(height: scrollHeight)
+            .frame(height: wideAX ? nil : scrollHeight)
+            .fixedSize(horizontal: false, vertical: wideAX)
             .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { if scrollHeight != nil, abs($0 - pagerWidth) > 0.5 { pagerWidth = $0 } }
             .scrollPosition(id: $current)
             .onChange(of: current) { _, new in model.deckSelection = new }
@@ -215,6 +218,8 @@ struct DeckCardView: View {
     var card: DeckCard
     /// Open portrait: a fixed art height, so the card never outgrows its share of the screen.
     var artHeight: CGFloat?
+    /// Closed landscape: the pager's measured width (0 until known).
+    var wideWidth: CGFloat = 0
 
     /// Closed landscape (container wider than tall): the wide hero card, never a device check.
     private var wide: Bool { duo.pose == .closed && duo.isLandscape }
@@ -228,7 +233,7 @@ struct DeckCardView: View {
             else { model.openGame(game.id, chapter: .updates) }
         } label: {
             if wide {
-                WideDeckCard(card: card, height: wideHeight)
+                WideDeckCard(card: card, height: wideHeight, width: wideWidth)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .contentShape(Rectangle())
             } else if let h = artHeight {
@@ -433,6 +438,8 @@ struct DeckByline: View {
 struct WideDeckCard: View {
     var card: DeckCard
     var height: CGFloat
+    /// The pager's width once measured; the AX card sizes itself from its caption and this width.
+    var width: CGFloat = 0
     @Environment(\.dynamicTypeSize) private var typeSize
     /// Accessibility sizes: a little taller (still inside J-5's half of the container) so the caption is whole.
     private var cardHeight: CGFloat { height }
@@ -444,6 +451,40 @@ struct WideDeckCard: View {
     }
 
     var body: some View {
+        if typeSize.isAccessibilitySize && width > 0 { accessibilityCard } else { standardCard }
+    }
+
+    /// Accessibility sizes: the card is as tall as its caption (at least the base height), so nothing is cut. J-5's half-container
+    /// bound is not held here, only in Closed landscape: showing the whole caption wins (Iris, never drop chips or cut lines).
+    private var accessibilityCard: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            if card.unread { chip("New update", filled: true) }
+            Text(card.game.name).font(PlayscribeFont.title2.bold())
+                .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
+            Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
+                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9))
+                .lineLimit(3).fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(.horizontal, 16).padding(.vertical, 22)
+        .frame(width: width * 0.72, alignment: .leading)
+        .frame(maxWidth: .infinity, minHeight: height, alignment: .leading)
+        .background {
+            ZStack {
+                ArtView(asset: card.game.keyArtAsset, game: card.game)
+                LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.7), .clear],
+                               startPoint: .leading, endPoint: .trailing)
+            }
+        }
+        .overlay(alignment: .topTrailing) {
+            if let v = card.release?.versionChip { chip(v, filled: false).padding(12) }
+        }
+        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
+        .accessibilityHidden(true)
+    }
+
+    private var standardCard: some View {
         GeometryReader { g in
             ZStack(alignment: .leading) {
                 ArtView(asset: card.game.keyArtAsset, game: card.game)
