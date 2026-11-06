@@ -143,14 +143,11 @@ struct LibraryShelf: View {
         }
     }
 
-    /// Open (flat), 0.2.0 gate: the column count comes from the container width (tiles at least 124 pt,
-    /// 10 pt gaps) and the leftover is spread equally, so the grid fills the width between the 16 pt
+    /// Open (flat), 0.2.0 gate: the column count comes from the container width (tiles 120 to 168 pt,
+    /// 16 pt gaps) and the leftover is spread equally, so the grid fills the width between the 16 pt
     /// margins with no dead space on the trailing side.
     private var flatFit: (count: Int, size: CGFloat) {
-        let width = max(0, duo.size.width - railWidth - 32)
-        let n = max(2, Int((width + 10) / (124 + 10)))
-        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
-        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
+        Self.pageFit(width: max(0, duo.size.width - railWidth - 32))
     }
 
     /// Book: an even column count across both pages (Apple: prefer an even number of columns).
@@ -165,20 +162,24 @@ struct LibraryShelf: View {
             return [GridItem(.fixed(book.lead), spacing: 0)] + tiles(book.perPage) + [GridItem(.fixed(book.gap), spacing: 0)] + tiles(book.perPage)
         }
         if duo.pose == .flat {
-            return Array(repeating: GridItem(.fixed(flatFit.size), spacing: 10, alignment: .top), count: flatFit.count)
+            return Array(repeating: GridItem(.fixed(flatFit.size), spacing: Self.tileGap, alignment: .top), count: flatFit.count)
         }
         return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 10, alignment: .top)]
     }
 
-    /// Columns that fill a Book page: at least 124 pt tiles, 10 pt gaps, the leftover shared equally.
+    /// The one tile metric for Library and Upcoming (Iris, #287): tiles 120 to 168 pt, 16 pt gaps, at least
+    /// 3 columns (about 6 in Open landscape), the leftover shared equally, never stretched past 168.
+    static let tileGap: CGFloat = 16
     static func pageFit(width: CGFloat) -> (count: Int, size: CGFloat) {
-        let n = max(2, Int((width + 10) / 134))
-        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
+        let n = max(3, Int((width + tileGap) / (120 + tileGap)))
+        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
+        let size = (((width - CGFloat(n - 1) * tileGap) / CGFloat(n)) * 100).rounded(.down) / 100
+        return (n, min(168, size))
     }
 
     /// One Book page's tiles, top to bottom, on that page's own columns.
     private func pageGrid(_ rows: [AppModel.LibraryRow], fit: (count: Int, size: CGFloat)) -> some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: 10, alignment: .top), count: fit.count),
+        LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: Self.tileGap, alignment: .top), count: fit.count),
                   alignment: .leading, spacing: 10) {
             ForEach(rows) { row in GameTile(row: row, size: fit.size).id("lib-\(row.id)") }
         }
@@ -350,7 +351,7 @@ struct LibraryShelf: View {
                     let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
                     // Each page flows on its own (Iris, cf6c889): the left tiles start 16 pt under the filters, the
                     // right tiles under the deck; order is the left page top to bottom, then the right page. The
-                    // tiles share each page's width equally (min 124 pt, 10 pt gaps).
+                    // tiles share each page's width equally (120 to 168 pt, 16 pt gaps).
                     let left = Self.pageFit(width: leftWidth), right = Self.pageFit(width: rightWidth)
                     let proportional = min(rows.count, Int((Double(rows.count) * Double(left.count) / Double(left.count + right.count)).rounded(.up)))
                     // No hero: the caught-up card is short, so split for equal rows on both pages and, on a tie, as evenly as

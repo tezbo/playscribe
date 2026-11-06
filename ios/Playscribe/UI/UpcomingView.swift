@@ -61,15 +61,9 @@ struct UpcomingView: View {
         min(n, Int((Double(n) * Double(leftColumns) / Double(leftColumns + rightColumns)).rounded(.up)))
     }
 
-    /// Iris (#287): fit columns to the width with tiles 120-168 pt and 16 pt gaps, at least 3 columns
-    /// (about 6 in Open landscape); tiles are never stretched past 168, so a short row sits left-aligned.
-    static let gap: CGFloat = 16
-    static func fit(width: CGFloat) -> (count: Int, size: CGFloat) {
-        let n = max(3, Int((width + gap) / (120 + gap)))
-        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
-        let size = (((width - CGFloat(n - 1) * gap) / CGFloat(n)) * 100).rounded(.down) / 100
-        return (n, min(168, size))
-    }
+    /// The Library's tile metric (Iris, #287): 120-168 pt tiles, 16 pt gaps, at least 3 columns; a short row sits left-aligned.
+    static let gap = LibraryShelf.tileGap
+    static func fit(width: CGFloat) -> (count: Int, size: CGFloat) { LibraryShelf.pageFit(width: width) }
 
     /// One section: its header (24 pt above, 12 pt below) and tiles. In Book each page gets its own
     /// columns, so the fold falls in the gap between two grids and never through a tile or a header (G-4);
