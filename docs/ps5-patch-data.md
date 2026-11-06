@@ -240,3 +240,7 @@ Goal: fill `plus.json` automatically (see docs/api.md, PS Plus monthly games). M
 | IGDB | No PS Plus data. |
 
 Next step: parse the monthly "PS Plus Essential games for <month>" article from Push Square when one is published, fill `plus.json` from it, and keep manual entry as the override. Not built yet: the month's article was not in the feed during this check, so there is no real sample to parse against.
+
+### Push Square patch tag (2026-11-06)
+
+`pushsquare-patches` reads Push Square's `/tags/Patches` list beside `/tags/updates`. The older list is where its PS4-era patch articles live (Assassin's Creed Odyssey 1.0.3 to 1.50, 2018 to 2019), tagged PS4. Same rules as the updates list: facts only, reported, one request per page at the site's Crawl-delay. PS4 posts in it count only for a game that plays on PS5 (no native PS5 release, or the post predates it) and are labelled `ps4`.

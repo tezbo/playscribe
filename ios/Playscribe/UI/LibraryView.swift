@@ -138,7 +138,8 @@ struct LibraryShelf: View {
         case .closed: 88
         case .flat: flatFit.size
         case .book: 100
-        case .tabletop: 84
+        // Accessibility sizes: wider tiles, so fewer columns and the caption under the cover never truncates.
+        case .tabletop: typeSize.isAccessibilitySize ? 124 : 84
         }
     }
 
@@ -241,11 +242,11 @@ struct LibraryShelf: View {
     private func topCards(_ all: [AppModel.LibraryRow]) -> some View {
         let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
         VStack(alignment: .leading, spacing: 14) {
-            CatchUpCard()
-            PlusCard()
             if model.showsNotificationCard, let first = all.first {
                 NotificationInviteCard(gameName: first.game.name)
             }
+            CatchUpCard()
+            PlusCard()
         }
         // Never wider than the column it sits in (Iris: the card ran past the left page's search field in Book).
         .frame(maxWidth: pageWidth, alignment: .leading)
@@ -942,6 +943,7 @@ struct GameMenuButton: View {
 /// Long-press opens the game's actions.
 struct GameTile: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var row: AppModel.LibraryRow
     /// nil: fill the column (Closed, 3 across).
     var size: CGFloat?
@@ -966,11 +968,25 @@ struct GameTile: View {
         Button { model.openGame(row.id) } label: {
             // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
-            tileFrame(TileCover(game: row.game))
-                .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
-                .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
-                .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
-                            in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            VStack(alignment: .leading, spacing: 4) {
+                tileFrame(TileCover(game: row.game))
+                    .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
+                    .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
+                    .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
+                                in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                // Accessibility sizes: the pill would cover the art, so the date or status sits under
+                // the cover instead, wrapping to two lines (GR-1, D-12; Iris, 0.5.0 a11y).
+                if typeSize.isAccessibilitySize {
+                    let state = model.tileDate(row)
+                    Text(state.text)
+                        .font(PlayscribeFont.caption.weight(.semibold))
+                        .foregroundStyle(state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .accessibilityHidden(true)
+                }
+            }
         }
         .buttonStyle(.plain)
         .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
@@ -1060,7 +1076,7 @@ struct DatePill: View {
                 // Accessibility sizes: wrap to two lines inside the tile instead of running off it.
                 .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
                 .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
-                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : state.kind == .none ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
+                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
         }
         .padding(.horizontal, 7).padding(.vertical, 3)
         .background {
@@ -1072,7 +1088,7 @@ struct DatePill: View {
 }
 
 extension AppModel {
-    enum TileDateKind { case unread, recent, older, none }
+    enum TileDateKind { case unread, recent, older, none, playsOnPS5, notOnPS5 }
 
     func tileDate(_ row: LibraryRow) -> (kind: TileDateKind, text: String) {
         if let r = row.latest {
@@ -1081,6 +1097,8 @@ extension AppModel {
             return (d > .now.addingTimeInterval(-7 * 86400) ? .recent : .older, Self.tileDay(d))
         }
         if let d = row.game.releaseDate?.isoDay { return (.none, Self.tileDay(d)) }
+        if row.game.notOnPS5Line != nil { return (.notOnPS5, "Not on PS5") }
+        if row.game.playsOnPS5AsPS4 { return (.playsOnPS5, "Plays on PS5") }
         return (.none, "TBA")
     }
 
@@ -1098,6 +1116,8 @@ extension AppModel {
         switch state.kind {
         case .unread: when = "new update \(state.text)"
         case .recent, .older: when = "last updated \(state.text)"
+        case .notOnPS5: return "\(row.game.name), not on PS5, \(row.status.label.lowercased())"
+        case .playsOnPS5: return "\(row.game.name), plays on PS5 as the PS4 version, \(row.status.label.lowercased())"
         case .none:
             // The pill is the short form; VoiceOver gets the full words (Iris, 6589abf).
             if state.text == "TBA" { when = "release date to be announced" }
@@ -1157,38 +1177,83 @@ struct SquareCover: View {
 
 /// The open-flat banner: the featured game's art with the wordmark, so it reads as the app.
 
-/// N-1: asked in context after the first game is added. One Continue button, swipe to dismiss.
+/// N-1: asked in context once a game is in the library. "Turn on" opens the system prompt (or iOS Settings if
+/// notifications were denied); "Not now" or a swipe rests the card for a week.
 struct NotificationInviteCard: View {
     @Environment(AppModel.self) private var model
     var gameName: String
-    @State private var counted = false
+    @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private func snooze() {
+        withAnimation(reduceMotion ? .easeOut(duration: 0.2) : .smooth) { model.snoozeNotificationCard() }
+    }
+
+    private var denied: Bool { NotificationService.shared.authorization == .denied }
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.accent)
             VStack(alignment: .leading, spacing: 8) {
-                Text("Get a note when \(gameName) updates on PS5").font(PlayscribeFont.headline)
-                Button("Continue") {
-                    model.data.notificationCardDismissed = true
-                    Task { await NotificationService.shared.requestAuthorization() }
+                Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
+                    .fixedSize(horizontal: false, vertical: true)
+                    // The body is dropped from view at AX sizes, never from VoiceOver (Iris).
+                    .accessibilityLabel(denied ? "Alerts are off" : "Be first to know when a patch drops. Get a note the moment any game in your library gets an update on PS5.")
+                    .accessibilityAddTraits(.isHeader)
+                // At the largest sizes the ask card keeps its title and buttons only; denied keeps one short line.
+                if !typeSize.isAccessibilitySize {
+                    Text(denied
+                         ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
+                         : "Get a note the moment any game in your library gets an update on PS5.")
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                } else if denied {
+                    Text("Turn notifications on in Settings.")
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
-                .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
-                .hitTarget()
-                .tappableFrame()
+                // Accessibility sizes stack the buttons outright: ViewThatFits let a label squeeze to "Turn on al…" (AX3, Closed).
+                if typeSize.isAccessibilitySize {
+                    VStack(alignment: .leading, spacing: 12) { buttons }.padding(.top, 6)
+                } else {
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: 12) { buttons }
+                        VStack(alignment: .leading, spacing: 8) { buttons }
+                    }
+                }
             }
             Spacer(minLength: 0)
         }
         .padding(16)
         .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .gesture(DragGesture(minimumDistance: 30).onEnded { v in
-            if abs(v.translation.width) > 60 { model.data.notificationCardDismissed = true }
+            if abs(v.translation.width) > 60 { snooze() }
         })
-        .accessibilityAction(named: "Dismiss") { model.data.notificationCardDismissed = true }
-        .onAppear {
-            guard !counted else { return }
-            counted = true
-            model.data.notificationCardShows += 1
+        .accessibilityAction(named: "Not now") { snooze() }
+        .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
+    }
+
+    @ViewBuilder private var buttons: some View {
+        Button {
+            if denied {
+                snooze()
+                if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+            } else {
+                Task { if !(await NotificationService.shared.requestAuthorization()) { snooze() } }
+            }
+        } label: {
+            Text(denied ? "Open Settings" : "Turn on alerts").frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
         }
+        .buttonStyle(.borderedProminent).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
+        .foregroundStyle(PlayscribeColor.onAccent)
+        .hitTarget()
+        .tappableFrame()
+        Button { snooze() } label: {
+            Text("Not now").frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
+        }
+            .buttonStyle(.bordered).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
+            .hitTarget()
+            .tappableFrame()
     }
 }
 
