@@ -549,7 +549,9 @@ enum ChangeKind: String, CaseIterable {
         allCases.compactMap { kind in
             let sections = notes.compactMap { sec -> NoteSection? in
                 let items = sec.items.filter { of($0, in: sec.title) == kind && !isPreamble($0.text) }
-                return items.isEmpty ? nil : NoteSection(title: sec.title, items: items)
+                // On a PS5 page a section with nothing for PS5 (only PC-only or blank lines) is left out, never "0".
+                let shows = items.contains { !(ps5Only && $0.isPCOnly) && !LinkedText.clean($0.text).isEmpty }
+                return items.isEmpty || !shows ? nil : NoteSection(title: sec.title, items: items)
             }
             guard !sections.isEmpty else { return nil }
             let count = sections.reduce(0) { total, sec in total + sec.items.filter { item in !(ps5Only && item.isPCOnly) && !LinkedText.clean(item.text).isEmpty }.count }
