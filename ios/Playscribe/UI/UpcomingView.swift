@@ -68,17 +68,19 @@ struct UpcomingView: View {
     /// One section: its header (24 pt above, 12 pt below) and tiles. In Book each page gets its own
     /// columns, so the fold falls in the gap between two grids and never through a tile or a header (G-4);
     /// a section that spills onto the right page repeats its plain header there. Closed stays 3 across.
+    private func header(_ title: String, spoken: String?) -> some View {
+        Text(title).font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+            .accessibilityLabel(spoken ?? title)
+            .padding(.top, 10)   // 24 pt above with the stack's 14 pt spacing
+    }
+
+    private func page(_ list: [CatalogGame], _ fit: (count: Int, size: CGFloat), watching: Bool) -> some View {
+        LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: Self.gap, alignment: .top), count: fit.count),
+                  alignment: .leading, spacing: 14) { ForEach(list) { tile($0, watching: watching) } }
+    }
+
     @ViewBuilder private func section(_ title: String, count: Int? = nil, games: [CatalogGame], watching: Bool) -> some View {
         let spoken = count.map { "\(title), \($0) game\($0 == 1 ? "" : "s")" } ?? title
-        func header(_ spoken: String?) -> some View {
-            Text(title).font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
-                .accessibilityLabel(spoken ?? title)
-                .padding(.top, 10)   // 24 pt above with the stack's 14 pt spacing
-        }
-        func page(_ list: [CatalogGame], _ fit: (count: Int, size: CGFloat)) -> some View {
-            LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: Self.gap, alignment: .top), count: fit.count),
-                      alignment: .leading, spacing: 14) { ForEach(list) { tile($0, watching: watching) } }
-        }
         if duo.pose == .book, let fold = duo.division {
             // Same page geometry as the Library's Book layout (the grids share its scroll origin).
             let leftWidth = max(0, fold.minX - 24 - 16)
@@ -88,22 +90,22 @@ struct UpcomingView: View {
             let k = Self.leftCount(of: games.count, leftColumns: left.count, rightColumns: right.count)
             HStack(alignment: .top, spacing: 0) {
                 VStack(alignment: .leading, spacing: 12) {
-                    header(spoken)
-                    page(Array(games.prefix(k)), left)
+                    header(title, spoken: spoken)
+                    page(Array(games.prefix(k)), left, watching: watching)
                 }.frame(width: leftWidth, alignment: .topLeading)
                 VStack(alignment: .leading, spacing: 12) {
-                    if games.count > k { header(nil).accessibilityHidden(true); page(Array(games.dropFirst(k)), right) }
+                    if games.count > k { header(title, spoken: nil).accessibilityHidden(true); page(Array(games.dropFirst(k)), right, watching: watching) }
                 }.frame(width: rightWidth, alignment: .topLeading)
                     .padding(.leading, max(0, rightStart - leftWidth))
             }
         } else {
             VStack(alignment: .leading, spacing: 12) {
-                header(spoken)
+                header(title, spoken: spoken)
                 if duo.pose == .closed {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: Self.gap, alignment: .top), count: 3),
                               alignment: .leading, spacing: 14) { ForEach(games) { tile($0, watching: watching) } }
                 } else if width > 0 {
-                    page(games, Self.fit(width: width))
+                    page(games, Self.fit(width: width), watching: watching)
                 } else {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 120, maximum: 168), spacing: Self.gap, alignment: .top)],
                               alignment: .leading, spacing: 14) { ForEach(games) { tile($0, watching: watching) } }
