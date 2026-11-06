@@ -50,6 +50,78 @@ struct LibraryTabPicker: View {
 
 struct UpcomingView: View {
     @Environment(AppModel.self) private var model
+    /// Measured width of the grid area, so the columns can share it out exactly.
+    @State private var width: CGFloat = 0
+    @Environment(\.duo) private var duo
+    @Environment(\.railWidth) private var railWidth
+
+    /// Book: how many of `n` tiles go on the left page, in proportion to each page's column count
+    /// (the same split the Library uses), so the rest flow onto the right page and none crosses the fold.
+    static func leftCount(of n: Int, leftColumns: Int, rightColumns: Int) -> Int {
+        min(n, Int((Double(n) * Double(leftColumns) / Double(leftColumns + rightColumns)).rounded(.up)))
+    }
+
+    /// The Library's tile metric (Iris, #287): 120-168 pt tiles, 16 pt gaps, at least 3 columns; a short row sits left-aligned.
+    static let gap = LibraryShelf.tileGap
+    static func fit(width: CGFloat) -> (count: Int, size: CGFloat) { LibraryShelf.pageFit(width: width) }
+
+    /// Book: both pages keep their own column count, but share one tile size, the smaller of the two, so a
+    /// tile never changes size across the fold (Iris, #287). The narrower page's fit is the one that always fits both.
+    static func bookFits(leftWidth: CGFloat, rightWidth: CGFloat) -> (left: (count: Int, size: CGFloat), right: (count: Int, size: CGFloat)) {
+        var l = fit(width: leftWidth), r = fit(width: rightWidth)
+        let size = min(l.size, r.size)
+        l.size = size; r.size = size
+        return (l, r)
+    }
+
+    /// One section: its header (24 pt above, 12 pt below) and tiles. In Book each page gets its own
+    /// columns, so the fold falls in the gap between two grids and never through a tile or a header (G-4);
+    /// a section that spills onto the right page repeats its plain header there. Closed stays 3 across.
+    private func header(_ title: String, spoken: String?) -> some View {
+        Text(title).font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+            .accessibilityLabel(spoken ?? title)
+            .padding(.top, 10)   // 24 pt above with the stack's 14 pt spacing
+    }
+
+    private func page(_ list: [CatalogGame], _ fit: (count: Int, size: CGFloat), watching: Bool) -> some View {
+        LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: Self.gap, alignment: .top), count: fit.count),
+                  alignment: .leading, spacing: 14) { ForEach(list) { tile($0, watching: watching) } }
+    }
+
+    @ViewBuilder private func section(_ title: String, count: Int? = nil, games: [CatalogGame], watching: Bool) -> some View {
+        let spoken = count.map { "\(title), \($0) game\($0 == 1 ? "" : "s")" } ?? title
+        if duo.pose == .book, let fold = duo.division {
+            // Same page geometry as the Library's Book layout (the grids share its scroll origin).
+            let leftWidth = max(0, fold.minX - 24 - 16)
+            let rightStart = fold.maxX + 24 - 16
+            let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
+            let (left, right) = Self.bookFits(leftWidth: leftWidth, rightWidth: rightWidth)
+            let k = Self.leftCount(of: games.count, leftColumns: left.count, rightColumns: right.count)
+            HStack(alignment: .top, spacing: 0) {
+                VStack(alignment: .leading, spacing: 12) {
+                    header(title, spoken: spoken)
+                    page(Array(games.prefix(k)), left, watching: watching)
+                }.frame(width: leftWidth, alignment: .topLeading)
+                VStack(alignment: .leading, spacing: 12) {
+                    if games.count > k { header(title, spoken: nil).accessibilityHidden(true); page(Array(games.dropFirst(k)), right, watching: watching) }
+                }.frame(width: rightWidth, alignment: .topLeading)
+                    .padding(.leading, max(0, rightStart - leftWidth))
+            }
+        } else {
+            VStack(alignment: .leading, spacing: 12) {
+                header(title, spoken: spoken)
+                if duo.pose == .closed {
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: Self.gap, alignment: .top), count: 3),
+                              alignment: .leading, spacing: 14) { ForEach(games) { tile($0, watching: watching) } }
+                } else if width > 0 {
+                    page(games, Self.fit(width: width), watching: watching)
+                } else {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 120, maximum: 168), spacing: Self.gap, alignment: .top)],
+                              alignment: .leading, spacing: 14) { ForEach(games) { tile($0, watching: watching) } }
+                }
+            }
+        }
+    }
 
     private func dateLine(_ g: CatalogGame) -> String {
         // Ezra's copy: "Out today" on release day, otherwise the date line ("Out" only for dated, near releases).
@@ -70,8 +142,8 @@ struct UpcomingView: View {
         } label: {
             VStack(alignment: .leading, spacing: 6) {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit)
-                Text(g.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
-                Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2)
+                Text(g.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(3)
+                Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                 if let move = moveLine(g) {
                     Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).lineLimit(2)
                 }
@@ -88,7 +160,6 @@ struct UpcomingView: View {
     var body: some View {
         let watched = model.upcomingWatched
         let more = model.upcomingMore
-        let columns = [GridItem(.adaptive(minimum: 104, maximum: 160), spacing: 10, alignment: .top)]
         VStack(alignment: .leading, spacing: 14) {
             if UpcomingStore.shared.failed && more.isEmpty {
                 HStack {
@@ -115,15 +186,11 @@ struct UpcomingView: View {
                 }
                 let later = watched.filter { g in !soon.contains { $0.id == g.id } }
                 if !soon.isEmpty {
-                    Text("Out this week").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
-                        .accessibilityLabel("Out this week, \(soon.count) game\(soon.count == 1 ? "" : "s")")
-                    LazyVGrid(columns: columns, spacing: 14) { ForEach(soon) { tile($0, watching: true) } }
+                    section("Out this week", count: soon.count, games: soon, watching: true)
                 }
                 if !later.isEmpty {
                     let laterTitle = soon.isEmpty ? "On your watchlist" : "Coming later"
-                    Text(laterTitle).font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
-                        .accessibilityLabel("\(laterTitle), \(later.count) game\(later.count == 1 ? "" : "s")")
-                    LazyVGrid(columns: columns, spacing: 14) { ForEach(later) { tile($0, watching: true) } }
+                    section(laterTitle, count: later.count, games: later, watching: true)
                 }
             }
             if more.isEmpty && watched.isEmpty && UpcomingStore.shared.loading {
@@ -135,10 +202,10 @@ struct UpcomingView: View {
             } else if more.isEmpty && watched.isEmpty && !UpcomingStore.shared.failed {
                 Text("Nothing upcoming. Announced updates will show here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             } else if !more.isEmpty {
-                Text("Coming to PS5").font(PlayscribeFont.headline)
-                LazyVGrid(columns: columns, spacing: 14) { ForEach(more) { tile($0, watching: false) } }
+                section("Coming to PS5", games: more, watching: false)
             }
         }
+        .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { width = $0 }
         .task { await UpcomingStore.shared.load() }
     }
 }

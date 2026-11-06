@@ -438,9 +438,9 @@ final class LibraryLayoutTests: XCTestCase {
             let screenW = pose.contains("tabletop") ? app.frame.width : max(app.frame.width, app.frame.height)
             // 0.2.0 gate: the hero's frame is its card, not the fill-scaled art behind it (it once
             // reported x -97.7, width 461). Open landscape: the double tile, 2 tiles + 10 pt, where the
-            // tile fills the width (n columns of at least 124 pt, leftover spread equally, 16 pt margins).
+            // tile fills the width (n columns of 120 to 168 pt, 16 pt gaps, 16 pt margins).
             let openW = app.frame.width - 32
-            let openN = max(2, Int((openW + 10) / 134))
+            let openN = max(3, Int((openW + 16) / 136))
             for h in hero {
                 XCTAssertGreaterThanOrEqual(h.minX, 0, "hero starts on screen \(h) [\(pose)]")
                 XCTAssertLessThanOrEqual(h.maxX, screenW + 1, "hero ends on screen \(h) [\(pose)]")
