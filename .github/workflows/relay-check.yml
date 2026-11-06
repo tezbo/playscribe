@@ -47,7 +47,7 @@ jobs:
           curl -sS -o /dev/null -w 'status API: %{http_code}\n' -X POST \
             -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/$REPO/statuses/$SHA" \
-            -d "$(python3 -c 'import json,sys; print(json.dumps({"state": sys.argv[1], "context": "relay-tests", "description": sys.argv[2][:130]}))' "$state" "$desc")"
+            -d "$(python3 -c 'import json,sys; print(json.dumps({"state": sys.argv[1], "context": "relay-tests", "description": sys.argv[2][:130]}))' "$state" "$desc")" || true
           exit 0
 
   verdict:
