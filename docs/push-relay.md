@@ -37,6 +37,9 @@ phone ──POST /v1/devices──▶ relay (KV)          Feed job (GitHub Actio
 - The relay stores follows as sent (`gameId` or `igdbId`); the Feed job resolves them and counts follows for games it does
   not track. A dead token (410) is only dropped for the run, since the relay's copy is the source; a push to it fails again, harmlessly.
 
+## Forgetting a device
+`DELETE /v1/devices/me` (device key as Bearer) deletes `d:`, `k:`, `t:` (only if it still points at this device) and `tm:`. It is idempotent: an unknown key is `204`, no key is `401`. It spends up to 4 KV deletes, which count against the 1,000 writes a day.
+
 ## Deploy
 `Relay deploy` workflow (on a change to `relay/**` on main, or by hand): runs the Worker tests, creates the KV namespace and the
 workers.dev subdomain if missing, uploads the Worker with its binding, smoke-tests `/health` and the admin route's auth. The

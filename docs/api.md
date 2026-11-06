@@ -63,7 +63,7 @@ These only matter once APNs is on. For now the app keeps follows on the device.
    - `quietHours` is `{ from, until, timeZone }` (minutes since midnight, `from` may be after `until` to cross midnight, IANA zone) or `null` for none. Inside the window the relay sends `interruption-level: passive` and no `sound`; outside it, or when absent, nothing changes. The app sends it on every change, on launch and after registering.
    - `GET /v1/devices/me/follows` → `{ follows: [{ gameId, notify }] }`
    - `PUT /v1/devices/me/follows` `{ follows: [...] }` replaces the whole list. → `{ follows, unknown }`
-   - `DELETE /v1/devices/me` → `204`
+   - `DELETE /v1/devices/me` → `204`. Forgets this device: the relay removes the record, APNs token, key and team entry, so the Feed job no longer sees it. Call it when the player switches update alerts off for good or resets the app, then drop the stored `deviceKey`. On the relay a key it no longer knows is also `204` (already gone), so any `204` means done; a missing Authorization header is `401`. Registering again later creates a new device.
 
 Errors are `{ error: "<message>" }` with 400, 401 (bad or missing device key), 404 or 503.
 
