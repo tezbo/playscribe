@@ -1187,7 +1187,7 @@ struct NotificationInviteCard: View {
                          : "Get a note the moment any game in your library gets an update on PS5.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
-                } else {
+                } else if denied {
                     Text("Turn notifications on in Settings.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
