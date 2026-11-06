@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import worker from '../worker.js'
+import worker, { MAX_NEW_PER_DAY } from '../worker.js'
 
 // A KV that counts writes, because the free plan allows 1,000 a day and a relaunch must not spend any.
 const fakeKv = () => {
@@ -115,4 +115,14 @@ test('unknown routes 404, health is open, oversize bodies are refused', async ()
   assert.equal((await call(env, 'GET', '/health')).status, 200)
   assert.equal((await call(env, 'GET', '/nope')).status, 404)
   assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), pad: 'x'.repeat(70 * 1024) })).status, 413)
+})
+
+test('register: past the daily cap new devices get 429, existing devices still register', async () => {
+  const { env } = setup()
+  const hexTok = (i) => i.toString(16).padStart(64, '0')
+  for (let i = 0; i < MAX_NEW_PER_DAY; i++) assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: hexTok(i) })).status, 201)
+  const over = await call(env, 'POST', '/v1/devices', { apnsToken: hexTok(MAX_NEW_PER_DAY + 1) })
+  assert.equal(over.status, 429)
+  assert.ok(over.headers.get('retry-after'))
+  assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: hexTok(0) })).status, 200)
 })
