@@ -163,5 +163,5 @@ test('promo and social lines are not patch notes, real changes that mention them
   for (const line of kept) assert.equal(isPromoLine(line), false, line)
   const notes = extractNotes('[h2]Other changes[/h2][list][*]Time to continue your adventure? The saga is on sale now[*]Follow Kingdom Come: Deliverance II on social media[*]Fixed a crash on load[/list][h2]Thanks[/h2][list][*]Thank you for playing![/list]')
   assert.deepEqual(notes.map((n) => [n.title, n.items.map((i) => i.text)]), [['Other changes', ['Fixed a crash on load']]])
-  assert.deepEqual(tagNotes([{ title: 'Other changes', items: [{ text: 'The saga is on sale now', ps5ProOnly: false, pcOnly: false, category: 'other' }, { text: 'Fixed a door', ps5ProOnly: false, pcOnly: false, category: 'fix' }] }]).map((n) => n.items.length), [1])
+  assert.deepEqual(tagNotes([{ title: 'Other changes', items: [{ text: 'The saga is on sale now', ps5ProOnly: false, pcOnly: false, category: 'other' }, { text: 'Fixed a door', ps5ProOnly: false, pcOnly: false, category: 'fixed' }] }]).map((n) => n.items.length), [1])
 })
