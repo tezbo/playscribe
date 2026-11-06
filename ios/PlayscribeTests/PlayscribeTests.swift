@@ -160,6 +160,20 @@ struct ModelTests {
         let hits = PS5Index.shared.search("dawnwalker")
         #expect(!hits.isEmpty)
     }
+
+    @Test("Short forms find the franchise in the top 10: 'ac' Assassin's Creed, 'ff' Final Fantasy, 'gta' Grand Theft Auto (#298)")
+    func searchAliases() {
+        for (query, title) in [("ac", "Assassin"), ("ff", "Final Fantasy"), ("gta", "Grand Theft Auto")] {
+            let top = PS5Index.shared.search(query, limit: 10).map(\.name)
+            #expect(top.contains { $0.localizedCaseInsensitiveContains(title) }, "\(query): \(top)")
+        }
+    }
+
+    @Test("A name hit outranks an alias-only hit for the same query (#298)")
+    func nameBeatsAlias() {
+        let hits = PS5Index.shared.search("dawnwalker", limit: 5)
+        #expect(hits.first?.name.localizedCaseInsensitiveContains("dawnwalker") == true)
+    }
 }
 
 @MainActor
@@ -525,6 +539,22 @@ struct SpoilerWarningTests {
     func preambleIsNotCounted() {
         let g = ChangeKind.grouped([section()], ps5Only: true)
         #expect(g.reduce(0) { $0 + $1.count } == 2)
+    }
+
+    @Test("Items with nothing to show (blank text) are not counted (#301)")
+    func emptyItemsAreNotCounted() {
+        let s = NoteSection(title: "Changes", items: [NoteItem(text: "Fixed a crash."), NoteItem(text: "   "), NoteItem(text: "")])
+        let g = ChangeKind.grouped([s], ps5Only: true)
+        #expect(g.reduce(0) { $0 + $1.count } == 1)
+    }
+
+    @Test("A section with only PC-only lines is left out of a PS5 page, not shown as 0 (#301)")
+    func pcOnlySectionIsHidden() {
+        let pc = NoteItem(text: "Fixed a PC plugin crash.", platforms: [.pc])
+        let s = NoteSection(title: "Plugin", items: [pc])
+        #expect(pc.isPCOnly)
+        #expect(ChangeKind.grouped([s], ps5Only: true).isEmpty)
+        #expect(ChangeKind.grouped([s], ps5Only: false).count == 1)
     }
 
     @Test("Notes without a warning are untouched")

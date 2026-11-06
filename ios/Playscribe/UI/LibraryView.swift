@@ -143,14 +143,11 @@ struct LibraryShelf: View {
         }
     }
 
-    /// Open (flat), 0.2.0 gate: the column count comes from the container width (tiles at least 124 pt,
-    /// 10 pt gaps) and the leftover is spread equally, so the grid fills the width between the 16 pt
+    /// Open (flat), 0.2.0 gate: the column count comes from the container width (tiles 120 to 168 pt,
+    /// 16 pt gaps) and the leftover is spread equally, so the grid fills the width between the 16 pt
     /// margins with no dead space on the trailing side.
     private var flatFit: (count: Int, size: CGFloat) {
-        let width = max(0, duo.size.width - railWidth - 32)
-        let n = max(2, Int((width + 10) / (124 + 10)))
-        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
-        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
+        Self.pageFit(width: max(0, duo.size.width - railWidth - 32))
     }
 
     /// Book: an even column count across both pages (Apple: prefer an even number of columns).
@@ -165,20 +162,24 @@ struct LibraryShelf: View {
             return [GridItem(.fixed(book.lead), spacing: 0)] + tiles(book.perPage) + [GridItem(.fixed(book.gap), spacing: 0)] + tiles(book.perPage)
         }
         if duo.pose == .flat {
-            return Array(repeating: GridItem(.fixed(flatFit.size), spacing: 10, alignment: .top), count: flatFit.count)
+            return Array(repeating: GridItem(.fixed(flatFit.size), spacing: Self.tileGap, alignment: .top), count: flatFit.count)
         }
         return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 10, alignment: .top)]
     }
 
-    /// Columns that fill a Book page: at least 124 pt tiles, 10 pt gaps, the leftover shared equally.
+    /// The one tile metric for Library and Upcoming (Iris, #287): tiles 120 to 168 pt, 16 pt gaps, at least
+    /// 3 columns (about 6 in Open landscape), the leftover shared equally, never stretched past 168.
+    static let tileGap: CGFloat = 16
     static func pageFit(width: CGFloat) -> (count: Int, size: CGFloat) {
-        let n = max(2, Int((width + 10) / 134))
-        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
+        let n = max(3, Int((width + tileGap) / (120 + tileGap)))
+        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
+        let size = (((width - CGFloat(n - 1) * tileGap) / CGFloat(n)) * 100).rounded(.down) / 100
+        return (n, min(168, size))
     }
 
     /// One Book page's tiles, top to bottom, on that page's own columns.
     private func pageGrid(_ rows: [AppModel.LibraryRow], fit: (count: Int, size: CGFloat)) -> some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: 10, alignment: .top), count: fit.count),
+        LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: Self.tileGap, alignment: .top), count: fit.count),
                   alignment: .leading, spacing: 10) {
             ForEach(rows) { row in GameTile(row: row, size: fit.size).id("lib-\(row.id)") }
         }
@@ -318,11 +319,12 @@ struct LibraryShelf: View {
                     }
                 }
                 // Book: these cards stay on the left page; with a hero they sit in the left column below.
-                if !heroOnRightPage { topCards(all) }
+                if !heroOnRightPage && duo.pose != .book { topCards(all) }
                 if !all.isEmpty && duo.pose == .tabletop {
                     // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
                     TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4)
                 } else if !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                if !heroOnRightPage && duo.pose == .book { topCards(all) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
                     HStack(spacing: 12) {
@@ -350,7 +352,7 @@ struct LibraryShelf: View {
                     let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
                     // Each page flows on its own (Iris, cf6c889): the left tiles start 16 pt under the filters, the
                     // right tiles under the deck; order is the left page top to bottom, then the right page. The
-                    // tiles share each page's width equally (min 124 pt, 10 pt gaps).
+                    // tiles share each page's width equally (120 to 168 pt, 16 pt gaps).
                     let left = Self.pageFit(width: leftWidth), right = Self.pageFit(width: rightWidth)
                     let proportional = min(rows.count, Int((Double(rows.count) * Double(left.count) / Double(left.count + right.count)).rounded(.up)))
                     // No hero: the caught-up card is short, so split for equal rows on both pages and, on a tie, as evenly as
@@ -365,8 +367,9 @@ struct LibraryShelf: View {
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
                             LibraryTabPicker()
-                            topCards(all)
+                            // Controls first, the offer second (Iris, Book compact card).
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                            topCards(all)
                             NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                             if all.count >= 2 && layout == .tiles {
                                 FilterBar().frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
@@ -491,6 +494,11 @@ struct LibraryShelf: View {
         // lingers faintly under the new one (Book, ad54f44 stills).
         .transaction(value: messagePad) { $0.animation = nil }
         .refreshable { await model.refreshFeed() }
+        // The News strip's headlines load from here, not from the strip: a task on a view that is empty
+        // until the headlines arrive never runs, so the strip stayed hidden (TestFlight build 8, Mac 9506116).
+        .task(id: model.data.collection.map(\.gameID)) {
+            for id in model.data.collection.map(\.gameID).prefix(12) { await NewsStore.shared.load(gameID: id, igdbID: model.game(id)?.igdbID) }
+        }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
                 ZStack {
@@ -664,11 +672,20 @@ struct AlsoNewPanel: View {
         let f = RelativeDateTimeFormatter(); f.unitsStyle = .full; return f
     }()
 
+    /// Nothing new to say: no other updates, and the front card is not a fresh one (or is a release-info card).
+    /// The panel then says so instead of showing an empty or stale "What's new" (TestFlight #297).
+    private var caughtUp: Bool {
+        guard others.isEmpty else { return false }
+        guard let hero else { return true }
+        return !model.isUnread(hero)
+    }
+
     var body: some View {
         let all = others
-        // Fewer than two other games: one lone row leaves the panel mostly empty beside the hero, so it shows
+        let caughtUp = caughtUp
+        // Exactly one other game: one lone row leaves the panel mostly empty beside the hero, so it shows
         // the hero update's top changes instead ("What's new"), the same balanced fallback as with none (Iris rule).
-        let sparse = all.count < 2 && !changes.isEmpty
+        let sparse = !caughtUp && all.count < 2 && !changes.isEmpty
         GeometryReader { geo in
             // Iris's fill rule: 72 pt rows (3 to 6, what fits), grown evenly to 96 pt when 24 pt or more
             // is spare, a heading block above and a pinned 56 pt footer below.
@@ -684,17 +701,21 @@ struct AlsoNewPanel: View {
             let rowHeight: CGFloat = rows.isEmpty ? unit : spare < 0 ? max(typeSize.isAccessibilitySize ? 88 : 64, avail / CGFloat(rows.count))
                 : spare <= 24 ? unit : min(unit + 24, unit + spare / CGFloat(rows.count))
             VStack(alignment: .leading, spacing: 0) {
-                Text(sparse || all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
+                Text(caughtUp ? "You're all caught up" : sparse || all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
                     .accessibilityAddTraits(.isHeader)
                     .frame(minHeight: headingH, alignment: .topLeading)
                     .padding(.bottom, 12)
-                if sparse || all.isEmpty {
+                if caughtUp {
+                    Text("Nothing new right now. We'll tell you when a game you follow gets an update.")
+                        .font(PlayscribeFont.body).foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                } else if sparse || all.isEmpty {
                     whatsNew(lines: shownChanges(width: geo.size.width - 24, available: avail), available: avail, width: geo.size.width - 24)
                 } else {
                     ForEach(rows) { r in row(r, height: rowHeight).transition(.opacity) }
                 }
                 Spacer(minLength: 0)
-                if sparse || all.isEmpty {
+                if (sparse || all.isEmpty) && !caughtUp {
                     // Iris: a 56 pt row pinned to the bottom, so the panel never ends half empty.
                     Button { if let hero { model.openGame(hero.gameID, chapter: .updates, releaseID: hero.id) } } label: {
                         HStack {
@@ -727,7 +748,7 @@ struct AlsoNewPanel: View {
         }
         .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .accessibilityElement(children: .contain)
-        .accessibilityLabel(sparse || all.isEmpty ? "What's new" : "Also new, \(min(all.count, 6)) updates")
+        .accessibilityLabel(caughtUp ? "You're all caught up" : sparse || all.isEmpty ? "What's new" : "Also new, \(min(all.count, 6)) updates")
     }
 
     /// Estimated height of one change line at 17 pt: up to three lines of 22 pt plus 16 pt around it.

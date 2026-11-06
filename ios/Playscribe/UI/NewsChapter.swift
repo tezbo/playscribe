@@ -65,6 +65,7 @@ struct NewsChapter: View {
     var gameID: String
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.openURL) private var openURL
     private var store: NewsStore { .shared }
 
     var body: some View {
@@ -96,7 +97,7 @@ struct NewsChapter: View {
                 }
             }
             ForEach(list.prefix(20)) { item in
-                Link(destination: item.url) {
+                Button { openURL(item.url) } label: {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(item.title).font(PlayscribeFont.headline).multilineTextAlignment(.leading)
                         HStack(spacing: 8) {
@@ -108,7 +109,10 @@ struct NewsChapter: View {
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                     .contentShape(Rectangle())
                 }
+                .buttonStyle(.plain)
                 .tappableFrame(when: duo.pose != .tabletop)
+                .accessibilityAddTraits(.isLink)
+                .accessibilityHint("Opens in your browser")
                 .accessibilityHidden(duo.pose == .tabletop)
             }
         }
@@ -120,6 +124,7 @@ struct NewsChapter: View {
 /// newest first, game name above each title. Hidden when empty or when loading failed.
 struct NewsStrip: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.openURL) private var openURL
     private var store: NewsStore { .shared }
 
     private var ids: [String] { model.data.collection.map(\.gameID) }
@@ -137,7 +142,7 @@ struct NewsStrip: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("News").font(PlayscribeFont.title3).accessibilityAddTraits(.isHeader)
                     ForEach(list, id: \.item.id) { post in
-                        Link(destination: post.item.url) {
+                        Button { openURL(post.item.url) } label: {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(post.game).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                                 Text(post.item.title).font(PlayscribeFont.subheadline.weight(.semibold))
@@ -151,15 +156,14 @@ struct NewsStrip: View {
                             .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                             .contentShape(Rectangle())
                         }
+                        .buttonStyle(.plain)
                         .tappableFrame()
                         .accessibilityElement(children: .ignore)
+                        .accessibilityAddTraits(.isLink)
                         .accessibilityLabel("\(post.game), \(post.item.title), Official, opens in browser")
                     }
                 }
             }
-        }
-        .task(id: ids) {
-            for id in ids.prefix(12) { await store.load(gameID: id, igdbID: model.game(id)?.igdbID) }
         }
     }
 }

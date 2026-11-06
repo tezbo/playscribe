@@ -17,6 +17,7 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 | Jun | Playtester (the Reader) | Sam | Review Playscribe as a gamer |
 | Quinn | QA lead (the Proofreader) | Sam | QA user journeys |
 | Mara | Marketing and App Store lead (the Herald) | Nadia | Mara, marketing and App Store lead |
+| Gabrielle | Agent Resources: agent development and skills | Sam | Gabrielle: agent development and skills |
 
 ## Scopes
 
@@ -58,6 +59,8 @@ The live board is https://claude.ai/artifact/T5NNq75hBh7Yu9SGt28BEU (source: `do
 Agents read and write its database with the artifact data tools (`ArtifactData`, or `db_list`/`db_write` on the
 claude-artifacts connector). Terry can file ideas, move cards and comment on the page itself.
 
+**No work without a card (Terry, 2026-11-06).** All work is on the board, always. Every task, branch and PR has a card with an `owner`, the PR or branch URL in `links`, and the next step in `take`. The owner moves the card (`col`, `updatedAt`) on every state change: started, PR opened, in QA, merged. If you start something that has no card, file it first. Nadia checks the board against open PRs each grooming run.
+
 - **Cards** live in `cards`. Fields: `title`, `note`, `kind` (idea, feature, bug, release, chore), `col`, `release`
   (`0.3.0` … `1.0.0`, `1.x`, `Parked`, or empty), `owner`, `by` (your teammate name), `take` (Nadia's decision),
   `links` (PR or issue URLs), `createdAt`, `updatedAt` (epoch ms; set `updatedAt` on every write).
@@ -76,6 +79,10 @@ claude-artifacts connector). Terry can file ideas, move cards and comment on the
   `ideas` cards with id `sug-<suggestion id>` and `source: "suggestion:<id>"`.
 
 ## Rules every agent keeps
+
+**Estimates (Terry, 2026-11-07): nothing made up, one method for everyone.** When you pick up a card, write `est_work` (hours of agent work) and `est_wait` (hours you expect to wait for stills, sign-off or Terry) and `basis` (three parts: scope in one line; comparable past cards with their `actual`; the main risks). Produce it with the same method every time: the `playscribe-estimate` skill (PERT three-point, from `agent-estimate`). If you have no basis, write `n/e` in both, never a number. At `done`, write `actual_work` and `actual_wait` (same split) and one line on any gap larger than 2x in either. Gabrielle reports coverage (cards with an estimate) and accuracy (actual against est, work and wait separately) every 3 hours.
+
+**Skills (Terry, 2026-11-06).** Use a matching skill when one fits, repo skills in `.claude/skills/` first (index in `SKILLS.md`), and say "Skill: <name>" in your reply. Propose a new skill when a gap repeats. Gabrielle (Agent Resources) assesses agents every 3 hours and keeps `SKILLS.md` and this file current.
 
 The core rules are in `CLAUDE.md`. In short: spend nothing, no game ever opens to a blank page, Steam is the
 source of truth, use only official sources and auth, check Apple facts against current docs and the SDK, keep

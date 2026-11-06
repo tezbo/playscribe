@@ -60,6 +60,33 @@ struct FeedContractTests {
         #expect(partial.new == 2 && partial.fixed == 0 && partial.topNew == nil)
     }
 
+    @Test("R-2: a PS4 patch decodes with ps4 and is labelled 'PS4 update', never with a version")
+    func ps4Release() throws {
+        func release(_ extra: String) -> String {
+            #"{ "id": "r1", "gameId": "g", "displayName": "Patch 1.2", "kind": "patch", "announcedAt": "2021-03-04T10:00:00.000Z" \#(extra) }"#
+        }
+        let ps4 = try decoder.decode(Release.self, from: Data(release(#", "ps4": true"#).utf8))
+        #expect(ps4.ps4 == true && ps4.ps4Label == "PS4 update" && ps4.ps5Version == nil)
+        let plain = try decoder.decode(Release.self, from: Data(release("").utf8))
+        #expect(plain.ps4 == nil && plain.ps4Label == nil)
+        let off = try decoder.decode(Release.self, from: Data(release(#", "ps4": false"#).utf8))
+        #expect(off.ps4Label == nil)
+    }
+
+    @Test("R-2: a press-reported PS4 patch shows (read, no alert); a press-only PS5 release still does not")
+    func ps4ReportedShows() throws {
+        func release(_ id: String, _ extra: String) throws -> Release {
+            let json = #"{ "id": "\#(id)", "gameId": "zz-ps4-test", "displayName": "Patch", "kind": "patch", "announcedAt": "2019-05-01T10:00:00.000Z", "platforms": [{ "platform": "ps5", "status": "live", "verification": "reported", "liveAt": { "value": "2019-05-01T10:00:00.000Z", "verification": "reported", "sourceId": "pushsquare", "checkedAt": "2026-11-06T00:00:00.000Z" } }] \#(extra) }"#
+            return try decoder.decode(Release.self, from: Data(json.utf8))
+        }
+        let ps4 = try release("a", #", "ps4": true"#), plain = try release("b", "")
+        #expect(ps4.ps5State == .reported && plain.ps5State == .reported)
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "ps4rep-\(UUID().uuidString).json"))
+        m.data.simulated = [ps4, plain]
+        #expect(m.releases("zz-ps4-test").map(\.id) == ["a"])
+        #expect(m.isUnread(ps4) == false)
+    }
+
     @Test("Upcoming shards decode every precision, ignore richer fields, and keep tbd undated")
     func upcoming() throws {
         let json = """
