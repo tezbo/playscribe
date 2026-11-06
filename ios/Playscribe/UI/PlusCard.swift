@@ -7,6 +7,7 @@ import SwiftUI
 struct PlusCard: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.duo) private var duo
 
     static let maxCovers = 3
     /// Accessibility sizes show two so a plate name stays readable; "+N more" counts the rest.
@@ -58,6 +59,9 @@ struct PlusCard: View {
             let claimBy = PlusLogic.claimByText(month)
             let limit = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
             let shown = Array(month.games.prefix(limit))
+            if duo.pose == .book {
+                compact(month.games, lastChance: lastChance, claimBy: claimBy)
+            } else {
             VStack(alignment: .leading, spacing: 10) {
                 // Wide cards put the heading beside the covers; narrow ones stack it above (Iris, #242).
                 // Tries covers at 140, 120 then 100 pt beside the heading, so Open portrait, Tabletop and Closed
@@ -87,7 +91,48 @@ struct PlusCard: View {
             .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("plusCard")
+            }
         }
+    }
+
+    /// Book (Terry, 6139fbb too crowded; Iris spec): one short card, at most 140 pt tall, so no module takes a quarter of a
+    /// page. Badge and "title, claim by date" share a row; up to three 72 pt covers follow, then a "+N" chip for the rest.
+    private func compact(_ games: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
+        // AX sizes: two covers and the rest in the chip, so the card stays short while the text wraps (Mac QA, AX3).
+        let limit = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
+        let shown = Array(games.prefix(limit))
+        let rest = Array(games.dropFirst(limit))
+        return VStack(alignment: .leading, spacing: 4) {
+            PlusBadge(height: 20).accessibilityHidden(true)
+            Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
+                .font(PlayscribeFont.subheadline.weight(.semibold))
+                .foregroundStyle(lastChance ? PlayscribeColor.ember500 : PlayscribeColor.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityLabel(lastChance ? "PS Plus, last chance, claim by \(claimBy)" : "PS Plus, this month, claim by \(claimBy)")
+                .accessibilityAddTraits(.isHeader)
+            Spacer().frame(height: 2)
+            HStack(spacing: 8) {
+                ForEach(Array(shown.enumerated()), id: \.offset) { _, g in
+                    // A title with no cover draws a wider plate (96 × 72) so its words wrap whole; art stays 3:4 (54 × 72).
+                    let plate = Self.resolve(g) { model.game($0) } == nil
+                    cover(g, plate: plate).frame(width: plate ? 96 : 54, height: 72)
+                }
+                if !rest.isEmpty {
+                    Text("+\(rest.count)")
+                        .font(PlayscribeFont.subheadline.weight(.semibold))
+                        .foregroundStyle(PlayscribeColor.textSecondary)
+                        .frame(minWidth: 44, minHeight: 44)
+                        .background(Color.ink1, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        .accessibilityElement()
+                        .accessibilityLabel("And \(rest.count) more: " + rest.map(\.name).joined(separator: ", "))
+                }
+            }
+        }
+        .padding(8)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("plusCard")
     }
 
     private func stacked(_ shown: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
@@ -108,7 +153,7 @@ struct PlusCard: View {
 
     private func header(lastChance: Bool, claimBy: String) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            PlusBadge(height: 26).accessibilityHidden(true)
+            PlusBadge(height: 20).accessibilityHidden(true)
             Text(lastChance ? "Last chance" : "This month").font(PlayscribeFont.title3)
                 .accessibilityLabel(lastChance ? "PS Plus, last chance" : "PS Plus, this month")
                 .accessibilityAddTraits(.isHeader)
@@ -145,9 +190,9 @@ struct PlusCard: View {
         }
     }
 
-    @ViewBuilder private func cover(_ g: PlusMonth.Game) -> some View {
+    @ViewBuilder private func cover(_ g: PlusMonth.Game, plate: Bool = false) -> some View {
         let game = Self.resolve(g) { model.game($0) }
-        let art = PlusCover(name: g.name, game: game)
+        let art = PlusCover(name: g.name, game: game, wide: plate)
         if let id = g.gameId, model.entry(id) != nil {
             Button { model.openGame(id) } label: { art }
                 .buttonStyle(.plain)
@@ -164,31 +209,49 @@ struct PlusCard: View {
 struct PlusCover: View {
     var name: String
     var game: CatalogGame?
+    /// The compact Book plate: its frame is set by the caller, so it does not hold the 3:4 shape.
+    var wide = false
     var body: some View {
+        if wide { art } else { art.aspectRatio(3 / 4, contentMode: .fit) }
+    }
+
+    @ViewBuilder private var art: some View {
         Group {
             if let game { TileCover(game: game) }
             else {
                 RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.ink1)
                     // Never cut mid-title (Iris, AX3): a fixed 13 pt, wrapped in full, so it also stays above 12 pt.
+                    // A word wider than the plate scales down (never below 11 pt) before it would break; the plate is
+                    // a fixed 72 pt tall in the compact row, so the text is also capped at four lines.
                     .overlay(Text(name).font(.system(size: 13, weight: .semibold)).multilineTextAlignment(.center)
-                        .fixedSize(horizontal: false, vertical: true).padding(8).foregroundStyle(PlayscribeColor.textPrimary))
+                        .lineLimit(wide ? 4 : nil).minimumScaleFactor(wide ? 0.85 : 1)
+                        .fixedSize(horizontal: false, vertical: !wide).padding(wide ? 5 : 8).foregroundStyle(PlayscribeColor.textPrimary))
                     .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
             }
         }
-        .aspectRatio(3 / 4, contentMode: .fit)
     }
 }
 
-/// The PlayStation Plus badge, bundled (never hotlinked). The artwork has black type, so it sits on a vellum pill
-/// to stay readable on the ink card.
+/// The PlayStation Plus glyph, bundled (never hotlinked), beside the label in the app's own type. No plate: the glyph
+/// keeps its own colours on the ink card (Terry, Iris). One row, 24 pt tall at most; at accessibility sizes the label
+/// wraps under the glyph and is never truncated.
 struct PlusBadge: View {
-    var height: CGFloat
+    var height: CGFloat = 20
     var body: some View {
-        Image("ps-plus-badge").resizable().scaledToFit().frame(height: height)
-            .padding(.horizontal, height * 0.4).padding(.vertical, height * 0.2)
-            .background(Color(red: 0.984, green: 0.957, blue: 0.902), in: Capsule())
-            .accessibilityLabel("PlayStation Plus")
-            .accessibilityAddTraits(.isImage)
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 8) { glyph; label }
+            VStack(alignment: .leading, spacing: 4) { glyph; label }
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("PlayStation Plus")
+        .accessibilityAddTraits(.isImage)
+    }
+    private var glyph: some View {
+        Image("ps-plus-glyph").resizable().scaledToFit().frame(height: height)
+    }
+    private var label: some View {
+        Text("PlayStation Plus").font(.system(size: 13, weight: .semibold))
+            .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
     }
 }
 

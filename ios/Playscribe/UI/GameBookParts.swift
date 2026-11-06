@@ -195,18 +195,34 @@ struct CoverHeader: View {
 struct ReleasePage: View {
     @Environment(AppModel.self) private var model
     var release: Release
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         let r = release
         VStack(alignment: .leading, spacing: 12) {
+            // Accessibility sizes: the title and tags first, then the share button on its own row at the page's trailing
+            // edge, 24 pt clear of the rail, so it never sits under the rail's buttons (R-2, Iris on #288 at AX3).
+            if typeSize.isAccessibilitySize {
+                HStack(spacing: 8) {
+                    if model.isUnread(r) { UnreadDot() }
+                    TitleWithTags(release: r) {
+                        Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
+                    }
+                }
+                if r.isPS5Listed {
+                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }.padding(.trailing, 24)
+                }
+            } else {
             HStack(spacing: 8) {
                 if model.isUnread(r) { UnreadDot() }
                 // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
-                Text(r.displayName).font(PlayscribeFont.title3)
-                    .accessibilityIdentifier("releaseTitle")
-                ReleaseTag(release: r)
+                TitleWithTags(release: r) {
+                    Text(r.displayName).font(PlayscribeFont.title3)
+                        .accessibilityIdentifier("releaseTitle")
+                }
                 Spacer(minLength: 0)
                 if r.isPS5Listed { ShareUpdateButton(release: r) }
+            }
             }
             HStack(spacing: 8) {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
@@ -632,6 +648,7 @@ struct InlineNoteResults: View {
 struct ReleaseTimeline: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
 
     var body: some View {
@@ -659,12 +676,22 @@ struct ReleaseTimeline: View {
                 model.select(gameID, releaseID: r.id)
             }
         } label: {
-            HStack(spacing: 8) {
+            let title = TitleWithTags(release: r) {
+                Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular))
+                    .lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
+            }
+            let date = Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+            HStack(alignment: .top, spacing: 8) {
                 if model.isUnread(r) { UnreadDot() } else { Color.clear.frame(width: 8, height: 8) }
-                Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular)).lineLimit(1)
-                ReleaseTag(release: r)
-                Spacer(minLength: 4)
-                Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                if typeSize.isAccessibilitySize {
+                    // No trailing date column at AX: the date takes its own full-width line under the title and tags.
+                    VStack(alignment: .leading, spacing: 4) { title; date }
+                    Spacer(minLength: 0)
+                } else {
+                    title
+                    Spacer(minLength: 4)
+                    date
+                }
             }
             .padding(.horizontal, 10)
             .frame(minHeight: 44)
