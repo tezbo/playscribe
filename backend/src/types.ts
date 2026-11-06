@@ -57,6 +57,8 @@ export interface Release {
   displayName: string
   kind: ReleaseKind
   kindBasis: KindBasis
+  /** True: a PS4 patch for a game that plays on PS5 through backward compatibility (its PS5 row says live on PS5, but the build is the PS4 one). Absent otherwise; old apps ignore it. */
+  ps4?: true
   announcedAt: string
   notes: NoteSection[]
   sourceIds: string[]
