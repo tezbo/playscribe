@@ -941,6 +941,7 @@ struct GameMenuButton: View {
 /// Long-press opens the game's actions.
 struct GameTile: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var row: AppModel.LibraryRow
     /// nil: fill the column (Closed, 3 across).
     var size: CGFloat?
@@ -965,11 +966,25 @@ struct GameTile: View {
         Button { model.openGame(row.id) } label: {
             // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
-            tileFrame(TileCover(game: row.game))
-                .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
-                .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
-                .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
-                            in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            VStack(alignment: .leading, spacing: 4) {
+                tileFrame(TileCover(game: row.game))
+                    .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
+                    .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
+                    .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
+                                in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                // Accessibility sizes: the pill would cover the art, so the date or status sits under
+                // the cover instead, wrapping to two lines (GR-1, D-12; Iris, 0.5.0 a11y).
+                if typeSize.isAccessibilitySize {
+                    let state = model.tileDate(row)
+                    Text(state.text)
+                        .font(PlayscribeFont.caption.weight(.semibold))
+                        .foregroundStyle(state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .accessibilityHidden(true)
+                }
+            }
         }
         .buttonStyle(.plain)
         .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
