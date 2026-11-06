@@ -382,7 +382,7 @@ struct DeckByline: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
                     .lineLimit(tight ? 1 : 2).fixedSize(horizontal: false, vertical: true)
-                if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
+                if card.release != nil && !dateText.isEmpty { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
             }
             .font(PlayscribeFont.subheadline)
         } else {
