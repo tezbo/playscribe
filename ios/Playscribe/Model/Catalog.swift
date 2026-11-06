@@ -296,11 +296,14 @@ struct PS5Index {
         var s: String?
         /// Official landscape key art (IGDB image id), for a square crop.
         var a: String?
+        /// Search aliases players type ("GTA V", "RDR2", "COD"), matched like the name but ranked after it.
+        var k: [String]?
     }
     private struct File: Decodable { var count: Int; var games: [Entry] }
 
     let entries: [Entry]
     private let folded: [String]
+    private let foldedAliases: [[String]]
 
     static let shared = PS5Index()
 
@@ -308,6 +311,7 @@ struct PS5Index {
         let file: File = Fixtures.decode("ps5-index")
         entries = file.games
         folded = file.games.map { Self.fold($0.n) }
+        foldedAliases = file.games.map { ($0.k ?? []).map { Self.fold($0) } }
     }
 
     var count: Int { entries.count }
@@ -330,7 +334,14 @@ struct PS5Index {
         guard q.count >= 2 else { return [] }
         var scored: [(Int, Int)] = []
         for (k, name) in folded.enumerated() {
-            let score = name == q ? 0 : name.hasPrefix(q) ? 1 : name.contains(" " + q) ? 2 : name.contains(q) ? 3 : -1
+            var score = name == q ? 0 : name.hasPrefix(q) ? 1 : name.contains(" " + q) ? 2 : name.contains(q) ? 3 : -1
+            // Aliases ("GTA", "RDR2") only count when the name itself did not match, and rank after every name match.
+            if score < 0 {
+                for a in foldedAliases[k] {
+                    let s = a == q ? 4 : a.hasPrefix(q) ? 5 : a.contains(" " + q) ? 6 : -1
+                    if s >= 0 { score = score < 0 ? s : min(score, s) }
+                }
+            }
             if score >= 0 { scored.append((score, k)) }
         }
         scored.sort { $0.0 != $1.0 ? $0.0 < $1.0 : $0.1 < $1.1 }
