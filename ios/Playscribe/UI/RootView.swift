@@ -50,8 +50,14 @@ struct RightPagePanel: View {
     @Environment(AppModel.self) private var model
     var duo: DuoContext
 
-    /// One page: the width right of the division in Book, half the container in Open (no division there).
-    private var pageWidth: CGFloat { duo.division.map { duo.size.width - $0.maxX } ?? duo.size.width / 2 }
+    /// Book: the page right of the division, less 24 pt clear of the hinge, flush to the trailing edge. Open has no
+    /// division: the leading edge is 24 pt right of the container's centre line and the trailing edge 16 pt clear of the
+    /// trailing rail (the safe-area inset), never centred on the hinge (Iris, #306). Container-based, no device checks.
+    private var trailingInset: CGFloat { duo.division == nil ? duo.safeArea.trailing + 16 : 0 }
+    private var panelWidth: CGFloat {
+        if let d = duo.division { return duo.size.width - d.maxX - 24 }
+        return duo.size.width - trailingInset - (duo.size.width / 2 + 24)
+    }
 
     var body: some View {
         if model.addSheetOpen {
@@ -60,9 +66,11 @@ struct RightPagePanel: View {
                 AddGameSheet()
                     .environment(\.panelClose, { model.addSheetOpen = false })
                     .environment(\.railWidth, 0)
-                    .frame(width: max(0, pageWidth - 24), height: duo.size.height)
+                    .frame(width: max(0, panelWidth), height: duo.size.height)
                     .background(Color.ink0)
-                    .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, bottomLeadingRadius: 20))
+                    .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, bottomLeadingRadius: 20,
+                                                      bottomTrailingRadius: trailingInset > 0 ? 20 : 0, topTrailingRadius: trailingInset > 0 ? 20 : 0))
+                    .padding(.trailing, trailingInset)
                     .accessibilityAddTraits(.isModal)
             }
             .transition(.move(edge: .trailing))
