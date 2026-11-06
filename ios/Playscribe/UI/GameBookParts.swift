@@ -801,6 +801,7 @@ struct ReleaseDetailView: View {
 /// bookmark for Wishlist, an eye for Watching. Tapping the glyph opens the status choice.
 struct GameTitleWithStatus: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
     var name: String
 
@@ -815,7 +816,9 @@ struct GameTitleWithStatus: View {
 
     private var titleRow: some View {
         HStack(alignment: .firstTextBaseline, spacing: 8) {
-            Text(name).font(PlayscribeFont.title2).lineLimit(2).accessibilityAddTraits(.isHeader)
+            // Accessibility sizes: up to 3 lines, wrapped on whole words (Iris on #289, "Kingdom Come: Delive…" at AX3).
+            Text(name).font(PlayscribeFont.title2).lineLimit(typeSize.isAccessibilitySize ? 3 : 2)
+                .fixedSize(horizontal: false, vertical: true).accessibilityAddTraits(.isHeader)
             if let e = model.entry(gameID) {
                 Menu { ActionMenuContent(sections: model.statusMenu(gameID)) } label: {
                     Image(systemName: Self.symbol(e.status))
