@@ -7,6 +7,7 @@ import SwiftUI
 struct PlusCard: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.duo) private var duo
 
     static let maxCovers = 3
     /// Accessibility sizes show two so a plate name stays readable; "+N more" counts the rest.
@@ -58,6 +59,9 @@ struct PlusCard: View {
             let claimBy = PlusLogic.claimByText(month)
             let limit = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
             let shown = Array(month.games.prefix(limit))
+            if duo.pose == .book {
+                compact(month.games, lastChance: lastChance, claimBy: claimBy)
+            } else {
             VStack(alignment: .leading, spacing: 10) {
                 // Wide cards put the heading beside the covers; narrow ones stack it above (Iris, #242).
                 // Tries covers at 140, 120 then 100 pt beside the heading, so Open portrait, Tabletop and Closed
@@ -87,7 +91,44 @@ struct PlusCard: View {
             .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("plusCard")
+            }
         }
+    }
+
+    /// Book (Terry, 6139fbb too crowded; Iris spec): one short card, at most 140 pt tall, so no module takes a quarter of a
+    /// page. Badge and "title, claim by date" share a row; up to three 72 pt covers follow, then a "+N" chip for the rest.
+    private func compact(_ games: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
+        // AX sizes: two covers and the rest in the chip, so the card stays short while the text wraps (Mac QA, AX3).
+        let limit = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
+        let shown = Array(games.prefix(limit))
+        let rest = Array(games.dropFirst(limit))
+        return VStack(alignment: .leading, spacing: 4) {
+            PlusBadge(height: 20).accessibilityHidden(true)
+            Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
+                .font(PlayscribeFont.subheadline.weight(.semibold))
+                .foregroundStyle(lastChance ? PlayscribeColor.ember500 : PlayscribeColor.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityLabel(lastChance ? "PS Plus, last chance, claim by \(claimBy)" : "PS Plus, this month, claim by \(claimBy)")
+                .accessibilityAddTraits(.isHeader)
+            Spacer().frame(height: 2)
+            HStack(spacing: 8) {
+                ForEach(Array(shown.enumerated()), id: \.offset) { _, g in cover(g).frame(width: 54, height: 72) }
+                if !rest.isEmpty {
+                    Text("+\(rest.count)")
+                        .font(PlayscribeFont.subheadline.weight(.semibold))
+                        .foregroundStyle(PlayscribeColor.textSecondary)
+                        .frame(minWidth: 44, minHeight: 44)
+                        .background(Color.ink1, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        .accessibilityElement()
+                        .accessibilityLabel("And \(rest.count) more: " + rest.map(\.name).joined(separator: ", "))
+                }
+            }
+        }
+        .padding(8)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("plusCard")
     }
 
     private func stacked(_ shown: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
@@ -108,7 +149,7 @@ struct PlusCard: View {
 
     private func header(lastChance: Bool, claimBy: String) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            PlusBadge(height: 26).accessibilityHidden(true)
+            PlusBadge(height: 20).accessibilityHidden(true)
             Text(lastChance ? "Last chance" : "This month").font(PlayscribeFont.title3)
                 .accessibilityLabel(lastChance ? "PS Plus, last chance" : "PS Plus, this month")
                 .accessibilityAddTraits(.isHeader)
@@ -179,16 +220,26 @@ struct PlusCover: View {
     }
 }
 
-/// The PlayStation Plus badge, bundled (never hotlinked). The artwork has black type, so it sits on a vellum pill
-/// to stay readable on the ink card.
+/// The PlayStation Plus glyph, bundled (never hotlinked), beside the label in the app's own type. No plate: the glyph
+/// keeps its own colours on the ink card (Terry, Iris). One row, 24 pt tall at most; at accessibility sizes the label
+/// wraps under the glyph and is never truncated.
 struct PlusBadge: View {
-    var height: CGFloat
+    var height: CGFloat = 20
     var body: some View {
-        Image("ps-plus-badge").resizable().scaledToFit().frame(height: height)
-            .padding(.horizontal, height * 0.4).padding(.vertical, height * 0.2)
-            .background(Color(red: 0.984, green: 0.957, blue: 0.902), in: Capsule())
-            .accessibilityLabel("PlayStation Plus")
-            .accessibilityAddTraits(.isImage)
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 8) { glyph; label }
+            VStack(alignment: .leading, spacing: 4) { glyph; label }
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("PlayStation Plus")
+        .accessibilityAddTraits(.isImage)
+    }
+    private var glyph: some View {
+        Image("ps-plus-glyph").resizable().scaledToFit().frame(height: height)
+    }
+    private var label: some View {
+        Text("PlayStation Plus").font(.system(size: 13, weight: .semibold))
+            .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
     }
 }
 
