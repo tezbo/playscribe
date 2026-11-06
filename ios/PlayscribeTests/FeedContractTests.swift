@@ -60,6 +60,17 @@ struct FeedContractTests {
         #expect(partial.new == 2 && partial.fixed == 0 && partial.topNew == nil)
     }
 
+    @Test("An external link says where it goes, from its host")
+    func linkHost() {
+        let steam = URL(string: "https://store.steampowered.com/news/app/3751260/view/1")!
+        let community = URL(string: "https://steamcommunity.com/games/1/announcements/detail/2")!
+        let studio = URL(string: "https://www.ubisoft.com/en-us/game/assassins-creed/news")!
+        #expect(LinkHost.label("Read full notes", steam) == "Read full notes on Steam")
+        #expect(LinkHost.label("Read full notes", community) == "Read full notes on Steam")
+        #expect(LinkHost.label("All patch notes", studio) == "All patch notes on ubisoft.com")
+        #expect(LinkHost.label("Read", URL(string: "mailto:x")!) == "Read")
+    }
+
     @Test("Upcoming shards decode every precision, ignore richer fields, and keep tbd undated")
     func upcoming() throws {
         let json = """

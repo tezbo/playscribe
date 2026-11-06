@@ -502,11 +502,11 @@ struct SourceLinks: View {
     var body: some View {
         HStack(spacing: 16) {
             if let url = release.links?.ps5Page {
-                Link(destination: url) { Label("PS5 update page", systemImage: "arrow.up.right.square") }
+                Link(destination: url) { Label(LinkHost.label("PS5 update page", url), systemImage: "arrow.up.right.square") }
                     .frame(minHeight: 44).tappableFrame()
             }
             if let url = release.links?.steamNotes {
-                Link(destination: url) { Label("Open in Steam", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
+                Link(destination: url) { Label(LinkHost.label("Read full notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
                     .padding(.trailing, 8)
                     .tappableFrame()
             }
@@ -556,5 +556,20 @@ enum ChangeKind: String, CaseIterable {
             let count = sections.reduce(0) { total, sec in total + sec.items.filter { item in !(ps5Only && item.isPCOnly) }.count }
             return (kind, sections, count)
         }
+    }
+}
+
+/// Where an external link goes, from its host, so a tap never surprises: "Read full notes on Steam",
+/// "All patch notes on ubisoft.com". Only the destination is named, never a source credit.
+enum LinkHost {
+    static func name(_ url: URL) -> String? {
+        guard var host = url.host()?.lowercased(), !host.isEmpty else { return nil }
+        if host.hasSuffix("steampowered.com") || host.hasSuffix("steamcommunity.com") { return "Steam" }
+        if host.hasPrefix("www.") { host.removeFirst(4) }
+        return host
+    }
+
+    static func label(_ base: String, _ url: URL) -> String {
+        name(url).map { "\(base) on \($0)" } ?? base
     }
 }
