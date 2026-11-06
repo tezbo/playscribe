@@ -59,7 +59,7 @@ struct PlusCard: View {
             let claimBy = PlusLogic.claimByText(month)
             let limit = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
             let shown = Array(month.games.prefix(limit))
-            if duo.pose == .book && !typeSize.isAccessibilitySize {
+            if duo.pose == .book {
                 compact(month.games, lastChance: lastChance, claimBy: claimBy)
             } else {
             VStack(alignment: .leading, spacing: 10) {
@@ -98,8 +98,10 @@ struct PlusCard: View {
     /// Book (Terry, 6139fbb too crowded; Iris spec): one short card, at most 140 pt tall, so no module takes a quarter of a
     /// page. Badge and "title, claim by date" share a row; up to three 72 pt covers follow, then a "+N" chip for the rest.
     private func compact(_ games: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
-        let shown = Array(games.prefix(Self.maxCovers))
-        let rest = Array(games.dropFirst(Self.maxCovers))
+        // AX sizes: two covers and the rest in the chip, so the card stays short while the text wraps (Mac QA, AX3).
+        let limit = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
+        let shown = Array(games.prefix(limit))
+        let rest = Array(games.dropFirst(limit))
         return VStack(alignment: .leading, spacing: 4) {
             PlusBadge(height: 20).accessibilityHidden(true)
             Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
