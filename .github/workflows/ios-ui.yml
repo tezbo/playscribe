@@ -68,6 +68,19 @@ jobs:
       - name: Closed portrait and landscape, standard and AX3 (risk 2 step A)
         if: always()
         run: ios/tools/qa/ci-closed-ax3.sh "${{ steps.sim.outputs.udid }}" build/shots-ax3 "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
+      - name: Closed landscape by XCUIDevice orientation (fallback for the osascript rotate)
+        if: always()
+        id: landscape
+        run: |
+          rm -rf build/Landscape.xcresult
+          xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd \
+            -only-testing:PlayscribeUITests/ClosedLandscapeShotTests \
+            -resultBundlePath build/Landscape.xcresult CODE_SIGNING_ALLOWED=NO > landscape.log 2>&1 || status=$?
+          grep -E 'error:|Test Case .* (passed|failed)|Executed|\*\* TEST' landscape.log | tail -30 | tee -a "$GITHUB_STEP_SUMMARY"
+          mkdir -p build/shots-ax3/landscape
+          [ -d build/Landscape.xcresult ] && xcrun xcresulttool export attachments --path build/Landscape.xcresult --output-path build/shots-ax3/landscape || true
+          exit "${status:-0}"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -77,5 +90,7 @@ jobs:
             build/shots-ax3
             build/attachments
             build/UITests.xcresult
+            build/Landscape.xcresult
+            landscape.log
             uitests.log
             build.log

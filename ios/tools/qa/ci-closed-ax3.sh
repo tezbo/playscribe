@@ -32,6 +32,11 @@ pass() { # prefix suffix
     set -- "$1" "$2"
   done
 }
+echo "--- rotation diagnostics ---"
+xcrun simctl help 2>&1 | grep -i -E 'rotat|orient' || echo "simctl help: no rotate/orient entries"
+xcrun simctl ui "$dev" 2>&1 | head -20 || true
+pgrep -l Simulator || echo "Simulator.app is not running on this runner"
+echo "--- end diagnostics ---"
 rotate_to_landscape() {
   # Simulator.app: Device > Rotate Left/Right is Cmd+Left/Right. Verified by the still's shape, not by the keystroke.
   osascript -e 'tell application "Simulator" to activate' -e 'delay 1' \
