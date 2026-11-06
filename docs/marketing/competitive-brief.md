@@ -20,6 +20,8 @@ source links and community reaction tools. Users follow games, vote on changes a
 Patchbook answers "what changed in this PC patch". Nobody we found answers "did it land on my PS5, and what changed" in an
 iPhone app. Message: **Know what changed, and whether it reached your PS5.**
 
+Store copy holds to the evidence-based tag: the claim is only as strong as an "On PS5" result (PS5 row live and official).
+
 ## What we should not do
 - Copy community voting or discussion: it is their strength, needs moderation, and does not serve the north star.
 - Compare features we cannot show. No claims about their quality or reach.
