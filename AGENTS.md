@@ -17,6 +17,7 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 | Jun | Playtester (the Reader) | Sam | Review Playscribe as a gamer |
 | Quinn | QA lead (the Proofreader) | Sam | QA user journeys |
 | Mara | Marketing and App Store lead (the Herald) | Nadia | Mara, marketing and App Store lead |
+| Gabrielle | Agent Resources: agent development and skills | Sam | Gabrielle: agent development and skills |
 
 ## Scopes
 
@@ -76,6 +77,8 @@ claude-artifacts connector). Terry can file ideas, move cards and comment on the
   `ideas` cards with id `sug-<suggestion id>` and `source: "suggestion:<id>"`.
 
 ## Rules every agent keeps
+
+**Skills (Terry, 2026-11-06).** Use a matching skill when one fits, repo skills in `.claude/skills/` first (index in `SKILLS.md`), and say "Skill: <name>" in your reply. Propose a new skill when a gap repeats. Gabrielle (Agent Resources) assesses agents every 3 hours and keeps `SKILLS.md` and this file current.
 
 The core rules are in `CLAUDE.md`. In short: spend nothing, no game ever opens to a blank page, Steam is the
 source of truth, use only official sources and auth, check Apple facts against current docs and the SDK, keep
