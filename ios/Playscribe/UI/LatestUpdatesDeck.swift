@@ -337,6 +337,9 @@ struct CompactCaption: View {
         .padding(.horizontal, 16)
         // Tighter top and bottom at accessibility sizes keeps the grown deck inside its 50% bound (J-5).
         .padding(.vertical, typeSize.isAccessibilitySize ? 12 : 16)
+        // The hero is a bounded picture caption: its text stops growing at AX3 (the card's VoiceOver label is unchanged).
+        // At AX5 a 4-line headline, two chip rows and the byline cannot fit a card that J-5 holds to half the screen.
+        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
     }
 }
 
@@ -424,6 +427,9 @@ struct DeckByline: View {
 struct WideDeckCard: View {
     var card: DeckCard
     var height: CGFloat
+    @Environment(\.dynamicTypeSize) private var typeSize
+    /// Accessibility sizes: a little taller (still inside J-5's half of the container) so the caption is whole.
+    private var cardHeight: CGFloat { typeSize.isAccessibilitySize ? max(height, 232) : height }
 
     var body: some View {
         GeometryReader { g in
@@ -434,7 +440,7 @@ struct WideDeckCard: View {
                 VStack(alignment: .leading, spacing: 6) {
                     if card.unread { chip("New update", filled: true) }
                     Text(card.game.name).font(PlayscribeFont.title2.bold())
-                        .foregroundStyle(PlayscribeColor.textPrimary).lineLimit(2)
+                        .foregroundStyle(PlayscribeColor.textPrimary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9))
                         // Two lines, never an ellipsis mid-sentence (Iris, hero-wide-layouts).
@@ -447,7 +453,8 @@ struct WideDeckCard: View {
                 if let v = card.release?.versionChip { chip(v, filled: false).padding(12) }
             }
         }
-        .frame(height: height)
+        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+        .frame(height: cardHeight)
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
         .accessibilityHidden(true)
@@ -566,13 +573,19 @@ struct DeckStage: View {
                 .shadow(color: .black.opacity(0.6), radius: 3)
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).lineLimit(4)
-                HStack(spacing: 8) {
-                    Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
-                    if let d = card.date { Text(AppModel.tileDay(d)).foregroundStyle(PlayscribeColor.textSecondary) }
+                    .fixedSize(horizontal: false, vertical: true)
+                // One wrapping text (name, then date), so a long name wraps on whole words instead of cutting.
+                Group {
+                    if let d = card.date {
+                        Text("\(Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(AppModel.tileDay(d)).foregroundStyle(PlayscribeColor.textSecondary))")
+                    } else {
+                        Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
+                    }
                 }
-                .font(PlayscribeFont.subheadline)
+                .font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
             }
             .padding(20)
+            .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             // The caption ends 24 pt above the division, measured in screen space (as in 0.2.0 #174/#176).
             .padding(.bottom, duo.clearance(forBottom: stageBottom))
         }
