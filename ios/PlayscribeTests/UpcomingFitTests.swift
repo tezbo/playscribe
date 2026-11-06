@@ -20,3 +20,19 @@ struct UpcomingFitTests {
         #expect(UpcomingView.fit(width: 700).size < 160)
     }
 }
+
+@MainActor
+struct UpcomingBookSplitTests {
+    @Test func bookSplitNeverLosesOrDuplicatesATile() {
+        for n in 0...40 { for l in 2...4 { for r in 2...4 {
+            let k = UpcomingView.leftCount(of: n, leftColumns: l, rightColumns: r)
+            #expect(k >= 0 && k <= n)
+        } } }
+    }
+
+    @Test func bookSplitIsProportionalToColumns() {
+        #expect(UpcomingView.leftCount(of: 6, leftColumns: 3, rightColumns: 3) == 3)
+        #expect(UpcomingView.leftCount(of: 5, leftColumns: 2, rightColumns: 3) == 2)
+        #expect(UpcomingView.leftCount(of: 1, leftColumns: 2, rightColumns: 2) == 1)
+    }
+}

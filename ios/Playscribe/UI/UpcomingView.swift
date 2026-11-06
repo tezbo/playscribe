@@ -52,6 +52,38 @@ struct UpcomingView: View {
     @Environment(AppModel.self) private var model
     /// Measured width of the grid area, so the columns can share it out exactly.
     @State private var width: CGFloat = 0
+    @Environment(\.duo) private var duo
+    @Environment(\.railWidth) private var railWidth
+
+    /// Book: how many of `n` tiles go on the left page, in proportion to each page's column count
+    /// (the same split the Library uses), so the rest flow onto the right page and none crosses the fold.
+    static func leftCount(of n: Int, leftColumns: Int, rightColumns: Int) -> Int {
+        min(n, Int((Double(n) * Double(leftColumns) / Double(leftColumns + rightColumns)).rounded(.up)))
+    }
+
+    /// One section's tiles. In Book each page gets its own columns, sharing the page width, so the fold
+    /// falls in the gap between the two grids and never through a tile (G-4); elsewhere one grid spans the width.
+    @ViewBuilder private func grid(_ games: [CatalogGame], watching: Bool, columns: [GridItem]) -> some View {
+        if duo.pose == .book, let fold = duo.division {
+            // Same page geometry as the Library's Book layout (the grids share its scroll origin).
+            let leftWidth = max(0, fold.minX - 24 - 16)
+            let rightStart = fold.maxX + 24 - 16
+            let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
+            let left = LibraryShelf.pageFit(width: leftWidth), right = LibraryShelf.pageFit(width: rightWidth)
+            let k = Self.leftCount(of: games.count, leftColumns: left.count, rightColumns: right.count)
+            func page(_ list: [CatalogGame], _ fit: (count: Int, size: CGFloat)) -> some View {
+                LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: 10, alignment: .top), count: fit.count),
+                          alignment: .leading, spacing: 14) { ForEach(list) { tile($0, watching: watching) } }
+            }
+            HStack(alignment: .top, spacing: 0) {
+                page(Array(games.prefix(k)), left).frame(width: leftWidth, alignment: .topLeading)
+                page(Array(games.dropFirst(k)), right).frame(width: rightWidth, alignment: .topLeading)
+                    .padding(.leading, max(0, rightStart - leftWidth))
+            }
+        } else {
+            LazyVGrid(columns: columns, spacing: 14) { ForEach(games) { tile($0, watching: watching) } }
+        }
+    }
 
     /// Columns that fill the width: tiles at least 104 pt, 10 pt gaps, the leftover shared equally,
     /// so no dead strip is left on the trailing side (a capped adaptive grid left one when wide).
@@ -133,13 +165,13 @@ struct UpcomingView: View {
                 if !soon.isEmpty {
                     Text("Out this week").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
                         .accessibilityLabel("Out this week, \(soon.count) game\(soon.count == 1 ? "" : "s")")
-                    LazyVGrid(columns: columns, spacing: 14) { ForEach(soon) { tile($0, watching: true) } }
+                    grid(soon, watching: true, columns: columns)
                 }
                 if !later.isEmpty {
                     let laterTitle = soon.isEmpty ? "On your watchlist" : "Coming later"
                     Text(laterTitle).font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
                         .accessibilityLabel("\(laterTitle), \(later.count) game\(later.count == 1 ? "" : "s")")
-                    LazyVGrid(columns: columns, spacing: 14) { ForEach(later) { tile($0, watching: true) } }
+                    grid(later, watching: true, columns: columns)
                 }
             }
             if more.isEmpty && watched.isEmpty && UpcomingStore.shared.loading {
@@ -152,7 +184,7 @@ struct UpcomingView: View {
                 Text("Nothing upcoming. Announced updates will show here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             } else if !more.isEmpty {
                 Text("Coming to PS5").font(PlayscribeFont.headline)
-                LazyVGrid(columns: columns, spacing: 14) { ForEach(more) { tile($0, watching: false) } }
+                grid(more, watching: false, columns: columns)
             }
         }
         .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { width = $0 }
