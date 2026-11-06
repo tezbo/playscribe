@@ -209,6 +209,7 @@ struct ReleasePage: View {
                 if r.isPS5Listed { ShareUpdateButton(release: r) }
             }
             HStack(spacing: 8) {
+                if let l = r.ps4Label { Text(l).fontWeight(.semibold) }
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
                 if let v = r.ps5Version { Text(v).monospacedDigit() }
             }

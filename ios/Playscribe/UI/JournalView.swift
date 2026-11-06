@@ -88,7 +88,7 @@ struct ReleaseEntry: View {
                         Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
                     }
                     HStack(spacing: 8) {
-                        Text(r.kind.label)
+                        Text(r.ps4Label ?? r.kind.label)
                         Text(r.isPS5Listed ? r.ps5Date.shortDay : r.latestDate.shortDay)
                         // R-2 / V-2: the PS5 version exactly as the console shows it; never a PC number.
                         if let v = r.ps5Version { Text(v).monospacedDigit() }

@@ -60,6 +60,19 @@ struct FeedContractTests {
         #expect(partial.new == 2 && partial.fixed == 0 && partial.topNew == nil)
     }
 
+    @Test("R-2: a PS4 patch decodes with ps4 and is labelled 'PS4 update', never with a version")
+    func ps4Release() throws {
+        func release(_ extra: String) -> String {
+            #"{ "id": "r1", "gameId": "g", "displayName": "Patch 1.2", "kind": "patch", "announcedAt": "2021-03-04T10:00:00.000Z" \#(extra) }"#
+        }
+        let ps4 = try decoder.decode(Release.self, from: Data(release(#", "ps4": true"#).utf8))
+        #expect(ps4.ps4 == true && ps4.ps4Label == "PS4 update" && ps4.ps5Version == nil)
+        let plain = try decoder.decode(Release.self, from: Data(release("").utf8))
+        #expect(plain.ps4 == nil && plain.ps4Label == nil)
+        let off = try decoder.decode(Release.self, from: Data(release(#", "ps4": false"#).utf8))
+        #expect(off.ps4Label == nil)
+    }
+
     @Test("Upcoming shards decode every precision, ignore richer fields, and keep tbd undated")
     func upcoming() throws {
         let json = """
