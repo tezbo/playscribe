@@ -78,6 +78,8 @@ claude-artifacts connector). Terry can file ideas, move cards and comment on the
 
 ## Rules every agent keeps
 
+**Estimates (Terry, 2026-11-07).** When you pick up a card, write an estimate on it (`est`: hours of agent work, plus the wait you expect for stills or sign-off), using the effort/estimating skill (until it is named in `SKILLS.md`, `product-management:sprint-planning` for sizing). When the card moves to `done`, write the actual (`actual`) and one line on any gap larger than 2x. Gabrielle reads these in the 3-hourly report.
+
 **Skills (Terry, 2026-11-06).** Use a matching skill when one fits, repo skills in `.claude/skills/` first (index in `SKILLS.md`), and say "Skill: <name>" in your reply. Propose a new skill when a gap repeats. Gabrielle (Agent Resources) assesses agents every 3 hours and keeps `SKILLS.md` and this file current.
 
 The core rules are in `CLAUDE.md`. In short: spend nothing, no game ever opens to a blank page, Steam is the

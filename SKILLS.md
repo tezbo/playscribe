@@ -64,3 +64,5 @@ Claude Code loads these on its own in any session that checks out the repo, and 
 **General skills.** Teammates also see the shared design, engineering, marketing and product-management skills (for example `engineering:code-review`, `design:accessibility-review`, `marketing:brand-review`, `product-management:write-spec`). Say "Skill: <name>" in the reply when you use one.
 
 **Outside sources.** Candidates come from Anthropic's skills and agent docs and from the VoltAgent awesome-agent-skills list. That list only links to other repos, each with its own licence. Nothing is copied in until its licence is checked; a copied skill keeps its licence file and credit in its folder. Propose a new skill when the same gap shows up twice, to Gabrielle (the "Assess agents and plan skill growth" thread). Per-agent plans: `/mnt/project-files/team/improvement-plans.md`.
+
+**Estimating.** Every card gets `est` at pick-up and `actual` at Done (AGENTS.md, "Estimates"). Terry added an effort/estimating skill; its name is not visible to the project threads yet, so use `product-management:sprint-planning` for sizing until it is, then record the name here.
