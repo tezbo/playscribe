@@ -32,3 +32,7 @@ on the Mac. Hosted runners are headless, so they cannot press it either.
 - Caching DerivedData: the project has no SPM packages, and a fresh checkout changes every file's mtime, so Xcode rebuilds the
   Swift modules anyway. Revisit if packages are added.
 - Parallel simulator clones on the Mac for poses: Terry's notes say the Duo sim already overloads the Mac (load 800+).
+
+## Precheck (quiet compile check before a PR)
+
+`precheck.yml` runs on pushes to `claude/**` that touch `ios/**`. It runs `build-for-testing` for the `Playscribe` and `PlayscribeUI` schemes on the Xcode 27.1 runner and always finishes green, so GitHub sends no failed-run email. The verdict is the name of the `verdict` job (`PRECHECK PASS` or `PRECHECK FAIL <file>:<line> <error>`) and the `precheck` commit status. Engineers read it, fix, push again, and open the PR only on PASS (AGENTS.md, "Precheck first"). Compile errors then never reach the PR runs in `ios.yml`; test failures still do.
