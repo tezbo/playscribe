@@ -107,7 +107,7 @@ struct SettingsView: View {
                         // PS Plus: a reminder in the last three days a month's games can be claimed.
                         Toggle(isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true })) {
                             VStack(alignment: .leading, spacing: 6) {
-                                PlusBadge(height: 18)
+                                PlusBadge(height: 20)
                                 Text("Games leaving soon")
                             }
                             .frame(minHeight: 52, alignment: .leading)

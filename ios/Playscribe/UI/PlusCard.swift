@@ -100,16 +100,15 @@ struct PlusCard: View {
     private func compact(_ games: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
         let shown = Array(games.prefix(Self.maxCovers))
         let rest = Array(games.dropFirst(Self.maxCovers))
-        return VStack(alignment: .leading, spacing: 8) {
-            HStack(spacing: 10) {
-                PlusBadge(height: 28).accessibilityHidden(true)
-                Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
-                    .font(PlayscribeFont.subheadline.weight(.semibold))
-                    .foregroundStyle(lastChance ? Color.ember : PlayscribeColor.textPrimary)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .accessibilityLabel(lastChance ? "PS Plus, last chance, claim by \(claimBy)" : "PS Plus, this month, claim by \(claimBy)")
-                    .accessibilityAddTraits(.isHeader)
-            }
+        return VStack(alignment: .leading, spacing: 4) {
+            PlusBadge(height: 20).accessibilityHidden(true)
+            Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
+                .font(PlayscribeFont.subheadline.weight(.semibold))
+                .foregroundStyle(lastChance ? Color.ember : PlayscribeColor.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityLabel(lastChance ? "PS Plus, last chance, claim by \(claimBy)" : "PS Plus, this month, claim by \(claimBy)")
+                .accessibilityAddTraits(.isHeader)
+            Spacer().frame(height: 2)
             HStack(spacing: 8) {
                 ForEach(Array(shown.enumerated()), id: \.offset) { _, g in cover(g).frame(width: 54, height: 72) }
                 if !rest.isEmpty {
@@ -123,7 +122,7 @@ struct PlusCard: View {
                 }
             }
         }
-        .padding(10)
+        .padding(8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .accessibilityElement(children: .contain)
@@ -148,7 +147,7 @@ struct PlusCard: View {
 
     private func header(lastChance: Bool, claimBy: String) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            PlusBadge(height: 26).accessibilityHidden(true)
+            PlusBadge(height: 20).accessibilityHidden(true)
             Text(lastChance ? "Last chance" : "This month").font(PlayscribeFont.title3)
                 .accessibilityLabel(lastChance ? "PS Plus, last chance" : "PS Plus, this month")
                 .accessibilityAddTraits(.isHeader)
@@ -219,16 +218,26 @@ struct PlusCover: View {
     }
 }
 
-/// The PlayStation Plus badge, bundled (never hotlinked). The artwork has black type, so it sits on a vellum pill
-/// to stay readable on the ink card.
+/// The PlayStation Plus glyph, bundled (never hotlinked), beside the label in the app's own type. No plate: the glyph
+/// keeps its own colours on the ink card (Terry, Iris). One row, 24 pt tall at most; at accessibility sizes the label
+/// wraps under the glyph and is never truncated.
 struct PlusBadge: View {
-    var height: CGFloat
+    var height: CGFloat = 20
     var body: some View {
-        Image("ps-plus-badge").resizable().scaledToFit().frame(height: height)
-            .padding(.horizontal, height * 0.4).padding(.vertical, height * 0.2)
-            .background(Color(red: 0.984, green: 0.957, blue: 0.902), in: Capsule())
-            .accessibilityLabel("PlayStation Plus")
-            .accessibilityAddTraits(.isImage)
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 8) { glyph; label }
+            VStack(alignment: .leading, spacing: 4) { glyph; label }
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("PlayStation Plus")
+        .accessibilityAddTraits(.isImage)
+    }
+    private var glyph: some View {
+        Image("ps-plus-glyph").resizable().scaledToFit().frame(height: height)
+    }
+    private var label: some View {
+        Text("PlayStation Plus").font(.system(size: 13, weight: .semibold))
+            .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
     }
 }
 
