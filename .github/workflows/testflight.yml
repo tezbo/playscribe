@@ -48,6 +48,13 @@ jobs:
         if: steps.ready.outputs.ok
         working-directory: ios
         run: bundle exec ruby fastlane/check_api.rb
+      - name: Keep the account under the certificate cap
+        if: steps.ready.outputs.ok
+        continue-on-error: true
+        run: |
+          python3 -m venv /tmp/certvenv
+          /tmp/certvenv/bin/pip install -q pyjwt cryptography requests
+          /tmp/certvenv/bin/python ios/tools/prune_certs.py
       - name: Build and upload
         if: steps.ready.outputs.ok
         working-directory: ios

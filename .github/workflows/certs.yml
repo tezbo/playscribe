@@ -24,7 +24,14 @@ jobs:
         shell: python
         run: |
           import os, time, base64, jwt, requests
-          p8 = os.environ.get("ASC_KEY_P8") or base64.b64decode(os.environ["ASC_KEY_P8_BASE64"]).decode()
+          import re
+          raw = os.environ.get("ASC_KEY_P8") or base64.b64decode(os.environ["ASC_KEY_P8_BASE64"]).decode()
+          body = re.sub(r"\\n|[^A-Za-z0-9+/=]", "", re.sub(r"-----[A-Z ]+-----", "", raw))
+          i = body.find("MIG")
+          if i >= 0:
+              n = base64.b64decode(body[i:i+4])[2] + 3
+              body = body[i:i + (n + 2) // 3 * 4]
+          p8 = "-----BEGIN PRIVATE KEY-----\n" + "\n".join(body[k:k+64] for k in range(0, len(body), 64)) + "\n-----END PRIVATE KEY-----\n"
           tok = jwt.encode({"iss": os.environ["ASC_ISSUER_ID"], "iat": int(time.time()), "exp": int(time.time()) + 600, "aud": "appstoreconnect-v1"},
                            p8, algorithm="ES256", headers={"kid": os.environ["ASC_KEY_ID"]})
           h = {"Authorization": "Bearer " + tok}
