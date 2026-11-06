@@ -25,7 +25,14 @@ final class ClosedPortraitAX3ShotTests: XCTestCase {
 
     func testHeroWithUpdateChip() {
         let app = launch("one-update")
+        // 57da7e4 and 433c821 showed the N-1 alerts card and the PS Plus card, not the hero: the card sits above the deck.
+        // Dismiss it (Not now) so the hero is on screen, then shoot top and one scroll down.
+        let notNow = app.buttons["Not now"]
+        if notNow.waitForExistence(timeout: 5) { notNow.tap(); sleep(1) }
         shoot("hero-update")
+        app.swipeUp()
+        sleep(1)
+        shoot("hero-update-scrolled")
         app.terminate()
     }
 
