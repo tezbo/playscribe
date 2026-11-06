@@ -17,7 +17,7 @@
 //   b  the PS4 release, only when it came before `d` (or there is no `d`): PS4 games play on PS5,
 //      so this is when PS5 owners could first play it (Roblox: PS4 Oct 2023, native PS5 Apr 2026).
 //   o  ow  the game's first release anywhere (ISO day) and the platform it came out on ("PC (Microsoft Windows)"). Only for a
-//      game that is already out (o not in the future) and has no `d`, no `b` and no tbd PS5 listing, so the app can say
+//      game that is already out (o not in the future) and has no `d` and no `b` (a tbd PS5 listing included: ETS2), so the app can say
 //      "Released on PC, <date>" instead of TBA (ETS2).
 // Known IGDB gaps are corrected from scripts/ps5-date-overrides.json, each with its evidence.
 // Cover tones already in the file are kept.
@@ -58,9 +58,9 @@ for (let offset = 0; ; offset += 500) {
 }
 
 /** o/ow: see the header. Needs a game with nothing PS-side to show and a real release already behind it. */
-const firstRelease = (g: { first_release_date?: number; release_dates?: ReleaseDate[] }, dates: { d?: string; b?: string; q?: string }) => {
+const firstRelease = (g: { first_release_date?: number; release_dates?: ReleaseDate[] }, dates: { d?: string; b?: string }) => {
   const o = day(g.first_release_date)
-  if (!o || dates.d || dates.b || dates.q || o > new Date().toISOString().slice(0, 10)) return {}
+  if (!o || dates.d || dates.b || o > new Date().toISOString().slice(0, 10)) return {}
   const first = (g.release_dates ?? []).filter((r) => r.date && r.platform).sort((a, c) => a.date! - c.date!)[0]
   const ow = first ? platformName.get(first.platform!) : undefined
   return ow ? { o, ow } : {}
