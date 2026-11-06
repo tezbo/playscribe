@@ -38,6 +38,10 @@ jobs:
       - run: sudo xcode-select -s "$XCODE_APP" && xcodebuild -version
       - name: Compile the app, the unit tests and the UI tests
         id: build
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
         run: |
           fail=""
           # Generic simulator destination: compiling needs no booted device. Both test schemes, app included.
@@ -57,8 +61,8 @@ jobs:
           echo "$verdict"
           echo "verdict=$verdict" >> "$GITHUB_OUTPUT"
           curl -sS -o /dev/null -w 'status API: %{http_code}\n' -X POST \
-            -H "Authorization: Bearer ${{ github.token }}" -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }}" \
+            -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$REPO/statuses/$SHA" \
             -d "$(python3 -c 'import json,sys; print(json.dumps({"state": sys.argv[1], "context": "precheck", "description": sys.argv[2][:130]}))' "$state" "$desc")"
           exit 0
 
@@ -70,4 +74,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - run: echo "${{ needs.compile.outputs.verdict }}"
+      - run: echo "$V"
+        env:
+          V: ${{ needs.compile.outputs.verdict }}
