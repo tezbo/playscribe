@@ -527,6 +527,13 @@ struct SpoilerWarningTests {
         #expect(g.reduce(0) { $0 + $1.count } == 2)
     }
 
+    @Test("Items with nothing to show (image-only markup) are not counted (#301)")
+    func emptyItemsAreNotCounted() {
+        let s = NoteSection(title: "Changes", items: [NoteItem(text: "Fixed a crash."), NoteItem(text: "[img][/img]"), NoteItem(text: "")])
+        let g = ChangeKind.grouped([s], ps5Only: true)
+        #expect(g.reduce(0) { $0 + $1.count } == 1)
+    }
+
     @Test("Notes without a warning are untouched")
     func noWarningNoChange() {
         let s = NoteSection(title: "Fixes", items: [NoteItem(text: "Fixed a crash."), NoteItem(text: "Be advised: servers restart.")])

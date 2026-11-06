@@ -667,8 +667,17 @@ struct AlsoNewPanel: View {
         let f = RelativeDateTimeFormatter(); f.unitsStyle = .full; return f
     }()
 
+    /// Nothing new to say: no other updates, and the front card is not a fresh one (or is a release-info card).
+    /// The panel then says so instead of showing an empty or stale "What's new" (TestFlight #297).
+    private var caughtUp: Bool {
+        guard others.isEmpty else { return false }
+        guard let hero else { return true }
+        return !model.isUnread(hero)
+    }
+
     var body: some View {
         let all = others
+        let caughtUp = caughtUp
         GeometryReader { geo in
             // Iris's fill rule: 72 pt rows (3 to 6, what fits), grown evenly to 96 pt when 24 pt or more
             // is spare, a heading block above and a pinned 56 pt footer below.
@@ -684,17 +693,21 @@ struct AlsoNewPanel: View {
             let rowHeight: CGFloat = rows.isEmpty ? unit : spare < 0 ? max(typeSize.isAccessibilitySize ? 88 : 64, avail / CGFloat(rows.count))
                 : spare <= 24 ? unit : min(unit + 24, unit + spare / CGFloat(rows.count))
             VStack(alignment: .leading, spacing: 0) {
-                Text(all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
+                Text(caughtUp ? "You're all caught up" : all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
                     .accessibilityAddTraits(.isHeader)
                     .frame(minHeight: headingH, alignment: .topLeading)
                     .padding(.bottom, 12)
-                if all.isEmpty {
+                if caughtUp {
+                    Text("Nothing new right now. We'll tell you when a game you follow gets an update.")
+                        .font(PlayscribeFont.body).foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                } else if all.isEmpty {
                     whatsNew(lines: shownChanges(width: geo.size.width - 24, available: avail), available: avail, width: geo.size.width - 24)
                 } else {
                     ForEach(rows) { r in row(r, height: rowHeight).transition(.opacity) }
                 }
                 Spacer(minLength: 0)
-                if all.isEmpty {
+                if all.isEmpty && !caughtUp {
                     // Iris: a 56 pt row pinned to the bottom, so the panel never ends half empty.
                     Button { if let hero { model.openGame(hero.gameID, chapter: .updates, releaseID: hero.id) } } label: {
                         HStack {
@@ -727,7 +740,7 @@ struct AlsoNewPanel: View {
         }
         .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .accessibilityElement(children: .contain)
-        .accessibilityLabel(all.isEmpty ? "What's new" : "Also new, \(min(all.count, 6)) updates")
+        .accessibilityLabel(caughtUp ? "You're all caught up" : all.isEmpty ? "What's new" : "Also new, \(min(all.count, 6)) updates")
     }
 
     /// Estimated height of one change line at 17 pt: up to three lines of 22 pt plus 16 pt around it.
