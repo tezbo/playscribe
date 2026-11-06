@@ -279,7 +279,12 @@ const sendTeamAlert = async (env, kind) => {
 const ascWebhook = async (env, request) => {
   const raw = await request.text()
   if (raw.length > MAX_BODY) return bad('body too large', 413)
-  if (!(await signatureOk(env, request, raw))) return bad('not allowed', 401)
+  if (!(await signatureOk(env, request, raw))) {
+    // Header NAMES only (never values) so the first ping shows which header Apple signs with.
+    // At most one write a day, so forged requests cannot spend the KV write budget.
+    if (!(await env.KV.get('dbg:webhook'))) await env.KV.put('dbg:webhook', JSON.stringify({ at: now(), headers: [...request.headers.keys()].sort() }), { expirationTtl: 86400 })
+    return bad('not allowed', 401)
+  }
   let ev
   try { ev = JSON.parse(raw) } catch { return bad('bad json') }
   const type = String(ev?.data?.attributes?.eventType ?? ev?.eventType ?? '')
@@ -308,6 +313,7 @@ export default {
         return d ? json({ follows: d.follows }) : bad('unknown device key', 401)
       }
       if (pathname === '/v1/webhooks/asc' && m === 'POST') return await ascWebhook(env, request)
+      if (pathname === '/admin/webhook-debug' && m === 'GET') return (await isAdmin(env, request)) ? json((await getJson(env.KV, 'dbg:webhook')) ?? {}) : bad('not allowed', 401)
       if (pathname === '/admin/devices' && m === 'GET') return await adminDevices(env, request)
       return bad('not found', 404)
     } catch (e) {
