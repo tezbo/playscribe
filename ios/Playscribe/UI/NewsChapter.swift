@@ -223,6 +223,7 @@ struct NewsChapter: View {
 /// Library "News" strip (0.5.0 item 17, PR 2): up to 5 official headlines across the library,
 /// newest first, game name above each title. Hidden when empty or when loading failed.
 struct NewsStrip: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
     private var store: NewsStore { .shared }
 
@@ -244,8 +245,10 @@ struct NewsStrip: View {
                         Link(destination: post.item.url) {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(post.game).font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                                Text(post.item.title).font(PlayscribeFont.subheadline.weight(.semibold))
-                                    .multilineTextAlignment(.leading).lineLimit(2)
+                                Text(typeSize.isAccessibilitySize ? post.item.accessibleTitle() : post.item.captionTitle)
+                                    .font(PlayscribeFont.subheadline.weight(.semibold))
+                                    .multilineTextAlignment(.leading).lineLimit(typeSize.isAccessibilitySize ? 4 : 2)
+                                    .fixedSize(horizontal: false, vertical: true)
                                 HStack(spacing: 8) {
                                     if let d = post.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated))) }
                                     NewsTag(item: post.item)
