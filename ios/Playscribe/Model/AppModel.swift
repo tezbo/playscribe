@@ -582,6 +582,8 @@ final class AppModel {
         case "demo": resetDemo()
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
+        case "three-update": resetToUpdateDemo(count: 3)
+        case "four-update": resetToUpdateDemo(count: 4)
         case "caught-up": resetToCaughtUpDemo()
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
@@ -860,6 +862,13 @@ final class AppModel {
     func resetToTwoUpdateDemo() {
         resetDemo()
         qaUpdateCount = 2
+    }
+
+    /// QA (routes "three-update", "four-update"): `count` fresh updates from different games, so Also new lists
+    /// count - 1 rows (the list from three unread games on, What's new below that).
+    func resetToUpdateDemo(count: Int) {
+        resetDemo()
+        qaUpdateCount = count
     }
 
     /// The updates beside the deck in the Library (Open portrait): every update in the deck except the
