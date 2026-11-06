@@ -24,6 +24,15 @@ struct NewsItem: Codable, Hashable, Identifiable {
 }
 
 extension NewsItem {
+    /// At accessibility text sizes a headline gets at most 4 lines and ends at a word, never mid-word: the budget is small
+    /// enough that SwiftUI never has to cut a word itself (N-9; Iris, AX5). The full headline opens on tap.
+    func accessibleTitle(_ limit: Int = 40) -> String {
+        guard title.count > limit else { return title }
+        let head = String(title.prefix(limit + 1))
+        let words = head.split(separator: " ", omittingEmptySubsequences: true).dropLast()
+        let cut = words.isEmpty ? String(title.prefix(limit)) : words.joined(separator: " ")
+        return cut.trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-–—.")) + "…"
+    }
     /// A stage caption is at most 2 lines: a longer headline ends at a word with an ellipsis (the full headline opens on tap; Iris).
     var captionTitle: String {
         let limit = 80
@@ -153,6 +162,7 @@ extension View {
 }
 
 struct NewsChapter: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
@@ -188,7 +198,7 @@ struct NewsChapter: View {
             ForEach(list.prefix(20)) { item in
                 Link(destination: item.url) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(item.shortTitle).font(PlayscribeFont.headline).multilineTextAlignment(.leading).lineLimit(3)
+                        Text(typeSize.isAccessibilitySize ? item.accessibleTitle() : item.shortTitle).font(PlayscribeFont.headline).multilineTextAlignment(.leading).lineLimit(typeSize.isAccessibilitySize ? 4 : 3).fixedSize(horizontal: false, vertical: true)
                         HStack(spacing: 8) {
                             if let d = item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
                             NewsTag(item: item)
@@ -262,6 +272,7 @@ struct NewsStrip: View {
 /// The News tab (Terry, 0.5.1): the newest official headlines across all games, your library's first.
 /// Same layout rules as Updates: cards either side of the fold in the book pose, the flat half in Tabletop.
 struct GlobalNewsView: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
     @Environment(\.railWidth) private var railWidth
     @Environment(\.duo) private var duo
@@ -329,6 +340,7 @@ struct GlobalNewsView: View {
 }
 
 struct GlobalNewsRow: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     var headline: NewsStore.Headline
@@ -339,7 +351,7 @@ struct GlobalNewsRow: View {
             HStack(alignment: .top, spacing: 12) {
                 if let game { CoverView(game: game, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(headline.item.shortTitle).font(PlayscribeFont.subheadline.weight(.semibold)).multilineTextAlignment(.leading).lineLimit(3)
+                    Text(typeSize.isAccessibilitySize ? headline.item.accessibleTitle() : headline.item.shortTitle).font(PlayscribeFont.subheadline.weight(.semibold)).multilineTextAlignment(.leading).lineLimit(typeSize.isAccessibilitySize ? 4 : 3).fixedSize(horizontal: false, vertical: true)
                     HStack(spacing: 8) {
                         NewsTag(item: headline.item)
                         if let game { Text(game.name) }
@@ -360,6 +372,7 @@ struct GlobalNewsRow: View {
 
 /// Tabletop's standing half: the newest post's game art with its caption above the band. View only (G-4).
 struct NewsStage: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
     /// The stage's top edge in screen space. The stage hangs from the top of the screen's safe area, so it is `bandTop` minus this
     /// tall, which puts its bottom edge exactly on the band. It does not depend on the caption, so there is nothing to loop.
@@ -374,7 +387,7 @@ struct NewsStage: View {
             ArtView(asset: model.backdrop(headline.gameID, chapter: .news, tall: false), game: game)
             LinearGradient(colors: [.clear, .black.opacity(0.5)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
-                Text(headline.item.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(2)
+                Text(typeSize.isAccessibilitySize ? headline.item.accessibleTitle() : headline.item.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(typeSize.isAccessibilitySize ? 4 : 2).fixedSize(horizontal: false, vertical: true)
                 HStack(spacing: 8) {
                     NewsTag(item: headline.item)
                     if let game { Text(game.name) }
@@ -402,6 +415,7 @@ struct NewsStage: View {
 /// Tabletop's standing half for a game's News chapter: the game's art to the fold, with its newest headline as the caption.
 /// View only (G-4); the headlines themselves are in the lower half.
 struct NewsStageArt: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @State private var stageBottom: CGFloat = 0
@@ -415,7 +429,7 @@ struct NewsStageArt: View {
             LinearGradient(colors: [.clear, .black.opacity(0.5)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 Text(game?.name ?? "").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                if let newest { Text(newest.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(2) }
+                if let newest { Text(typeSize.isAccessibilitySize ? newest.accessibleTitle() : newest.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(typeSize.isAccessibilitySize ? 4 : 2).fixedSize(horizontal: false, vertical: true) }
             }
             // Iris: the whole caption on one solid ink panel; it ends exactly 24 pt above the band.
             .padding(12)
