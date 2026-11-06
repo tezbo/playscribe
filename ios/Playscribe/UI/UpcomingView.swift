@@ -50,6 +50,16 @@ struct LibraryTabPicker: View {
 
 struct UpcomingView: View {
     @Environment(AppModel.self) private var model
+    /// Measured width of the grid area, so the columns can share it out exactly.
+    @State private var width: CGFloat = 0
+
+    /// Columns that fill the width: tiles at least 104 pt, 10 pt gaps, the leftover shared equally,
+    /// so no dead strip is left on the trailing side (a capped adaptive grid left one when wide).
+    static func fit(width: CGFloat) -> (count: Int, size: CGFloat) {
+        let n = max(2, Int((width + 10) / 114))
+        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
+        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
+    }
 
     private func dateLine(_ g: CatalogGame) -> String {
         // Ezra's copy: "Out today" on release day, otherwise the date line ("Out" only for dated, near releases).
@@ -88,7 +98,13 @@ struct UpcomingView: View {
     var body: some View {
         let watched = model.upcomingWatched
         let more = model.upcomingMore
-        let columns = [GridItem(.adaptive(minimum: 104, maximum: 160), spacing: 10, alignment: .top)]
+        let columns: [GridItem]
+        if width > 0 {
+            let f = Self.fit(width: width)
+            columns = Array(repeating: GridItem(.fixed(f.size), spacing: 10, alignment: .top), count: f.count)
+        } else {
+            columns = [GridItem(.adaptive(minimum: 104), spacing: 10, alignment: .top)]
+        }
         VStack(alignment: .leading, spacing: 14) {
             if UpcomingStore.shared.failed && more.isEmpty {
                 HStack {
@@ -139,6 +155,7 @@ struct UpcomingView: View {
                 LazyVGrid(columns: columns, spacing: 14) { ForEach(more) { tile($0, watching: false) } }
             }
         }
+        .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { width = $0 }
         .task { await UpcomingStore.shared.load() }
     }
 }
