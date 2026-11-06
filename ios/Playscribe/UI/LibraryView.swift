@@ -1071,7 +1071,7 @@ struct DatePill: View {
 }
 
 extension AppModel {
-    enum TileDateKind { case unread, recent, older, none, playsOnPS5 }
+    enum TileDateKind { case unread, recent, older, none, playsOnPS5, notOnPS5 }
 
     func tileDate(_ row: LibraryRow) -> (kind: TileDateKind, text: String) {
         if let r = row.latest {
