@@ -76,6 +76,8 @@ struct SettingsView: View {
                         }
                         .frame(minHeight: 52)
                         .accessibilityIdentifier("openIOSSettings")
+                        Text("Alerts are off for \(Brand.name) in iOS Settings.")
+                            .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeColor.textSecondary)
                     default: EmptyView()
                     }
                     Picker("Notify me about", selection: Binding(get: { model.notifyDefault }, set: { model.data.notifyDefault = $0 })) {

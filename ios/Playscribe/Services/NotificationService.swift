@@ -37,9 +37,19 @@ final class NotificationService: NSObject {
         Task { await refreshAuthorization(); syncReleaseDayAlerts(); syncPlusLeavingSoon() }
     }
 
+    #if INTERNAL
+    /// QA (`-qaRoute alerts` / `alerts-denied`): pins the status the invitation card and Settings see.
+    var qaForcedAuthorization: UNAuthorizationStatus? {
+        didSet { if let s = qaForcedAuthorization { authorization = s } }
+    }
+    #endif
+
     func refreshAuthorization() async {
         let settings = await center.notificationSettings()
         authorization = settings.authorizationStatus
+        #if INTERNAL
+        if let s = qaForcedAuthorization { authorization = s; return }
+        #endif
         if authorization == .authorized || authorization == .provisional {
             UIApplication.shared.registerForRemoteNotifications()
         }

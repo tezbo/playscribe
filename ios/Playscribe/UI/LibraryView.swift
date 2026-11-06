@@ -241,11 +241,11 @@ struct LibraryShelf: View {
     private func topCards(_ all: [AppModel.LibraryRow]) -> some View {
         let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
         VStack(alignment: .leading, spacing: 14) {
-            CatchUpCard()
-            PlusCard()
             if model.showsNotificationCard, let first = all.first {
                 NotificationInviteCard(gameName: first.game.name)
             }
+            CatchUpCard()
+            PlusCard()
         }
         .frame(width: pageWidth, alignment: .leading)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -1161,6 +1161,12 @@ struct SquareCover: View {
 struct NotificationInviteCard: View {
     @Environment(AppModel.self) private var model
     var gameName: String
+    @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private func snooze() {
+        withAnimation(reduceMotion ? .easeOut(duration: 0.2) : .smooth) { model.snoozeNotificationCard() }
+    }
 
     private var denied: Bool { NotificationService.shared.authorization == .denied }
 
@@ -1169,10 +1175,14 @@ struct NotificationInviteCard: View {
             Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.accent)
             VStack(alignment: .leading, spacing: 8) {
                 Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
-                Text(denied
-                     ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
-                     : "Get a note the moment \(gameName) or any game in your library gets an update on PS5.")
-                    .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    .accessibilityAddTraits(.isHeader)
+                // At the largest sizes the heading and buttons carry the card, so it never crowds the PS Plus card.
+                if !typeSize.isAccessibilitySize {
+                    Text(denied
+                         ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
+                         : "Get a note the moment \(gameName) or any game in your library gets an update on PS5.")
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                }
                 ViewThatFits(in: .horizontal) {
                     HStack(spacing: 12) { buttons }
                     VStack(alignment: .leading, spacing: 8) { buttons }
@@ -1183,24 +1193,25 @@ struct NotificationInviteCard: View {
         .padding(16)
         .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .gesture(DragGesture(minimumDistance: 30).onEnded { v in
-            if abs(v.translation.width) > 60 { model.snoozeNotificationCard() }
+            if abs(v.translation.width) > 60 { snooze() }
         })
-        .accessibilityAction(named: "Not now") { model.snoozeNotificationCard() }
+        .accessibilityAction(named: "Not now") { snooze() }
+        .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
     }
 
     @ViewBuilder private var buttons: some View {
         Button(denied ? "Open Settings" : "Turn on alerts") {
             if denied {
-                model.snoozeNotificationCard()
+                snooze()
                 if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
             } else {
-                Task { if !(await NotificationService.shared.requestAuthorization()) { model.snoozeNotificationCard() } }
+                Task { if !(await NotificationService.shared.requestAuthorization()) { snooze() } }
             }
         }
         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
         .hitTarget()
         .tappableFrame()
-        Button("Not now") { model.snoozeNotificationCard() }
+        Button("Not now") { snooze() }
             .buttonStyle(.bordered)
             .hitTarget()
             .tappableFrame()

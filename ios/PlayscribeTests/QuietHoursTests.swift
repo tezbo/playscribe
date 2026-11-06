@@ -58,3 +58,32 @@ struct NotificationAskTests {
         #expect(!shows(.notDetermined, asks: NotificationAsk.maxAsks))
     }
 }
+
+struct NotificationSnoozeTests {
+    private func model() -> AppModel {
+        AppModel(storeURL: URL.temporaryDirectory.appending(path: "snooze-\(UUID().uuidString).json"))
+    }
+
+    @Test func snoozeCountsAskAndRestsAWeek() {
+        let m = model()
+        m.snoozeNotificationCard()
+        #expect(m.data.notificationAsks == 1)
+        let days = Calendar.current.dateComponents([.day], from: .now, to: m.data.notificationSnoozedUntil ?? .now).day ?? 0
+        #expect(days >= NotificationAsk.snoozeDays - 1)
+    }
+
+    @Test func thirdNotNowEndsTheAsking() {
+        let m = model()
+        for _ in 0..<NotificationAsk.maxAsks { m.snoozeNotificationCard() }
+        let later = Date.now.addingTimeInterval(30 * 86_400)
+        #expect(!NotificationAsk.shows(hasGames: true, status: .denied, asks: m.data.notificationAsks ?? 0, snoozedUntil: m.data.notificationSnoozedUntil, now: later))
+    }
+
+    @Test func deniedCardReturnsAfterTheWeek() {
+        let m = model()
+        m.snoozeNotificationCard()
+        let later = Date.now.addingTimeInterval(8 * 86_400)
+        #expect(NotificationAsk.shows(hasGames: true, status: .denied, asks: 1, snoozedUntil: m.data.notificationSnoozedUntil, now: later))
+        #expect(!NotificationAsk.shows(hasGames: true, status: .denied, asks: 1, snoozedUntil: m.data.notificationSnoozedUntil, now: .now))
+    }
+}

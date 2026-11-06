@@ -619,6 +619,10 @@ final class AppModel {
                 addGame(PS5Index.shared.game(e), status: .owned)
             }
         case "remove-game" where parts.count == 1: removeGame(parts[0])
+        case "alerts", "alerts-denied":
+            // QA: the Library with the alerts card showing, undecided or denied (N-1).
+            resetDemo()
+            NotificationService.shared.qaForcedAuthorization = url.host() == "alerts" ? .notDetermined : .denied
         case "ask-notifications": Task { await NotificationService.shared.requestAuthorization() }
         default: break
         }
