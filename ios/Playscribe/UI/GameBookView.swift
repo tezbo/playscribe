@@ -103,30 +103,42 @@ struct ChapterBar: View {
     var gameID: String
     var selected: Chapter
 
+    private func chip(_ c: Chapter, icons: Bool) -> some View {
+        let on = c == selected
+        return Button { model.nav.chapter = c } label: {
+            Group {
+                if icons { Label(c.title, systemImage: c.symbol) } else { Text(c.title) }
+            }
+            .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
+            .lineLimit(1)
+            .padding(.horizontal, 12)
+            .frame(minHeight: 44)
+            .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(on ? .isSelected : [])
+        .tappableFrame()
+        .id(c)
+    }
+
+    private func row(icons: Bool) -> some View {
+        HStack(spacing: 8) { ForEach(model.chapters(gameID)) { chip($0, icons: icons) } }
+            .padding(.horizontal, 2)
+    }
+
     var body: some View {
         ScrollViewReader { proxy in
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 8) {
-                    ForEach(model.chapters(gameID)) { c in
-                        let on = c == selected
-                        Button { model.nav.chapter = c } label: {
-                            Label(c.title, systemImage: c.symbol)
-                                .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
-                                .padding(.horizontal, 12)
-                                .frame(minHeight: 44)
-                                .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityAddTraits(on ? .isSelected : [])
-                        .tappableFrame()
-                        .id(c)
-                    }
+            // Every chapter in view whenever the row can hold them: with icons, else titles only (Book's
+            // left page cut "My book" to "My b"). Only when even that is too wide does the row scroll.
+            ViewThatFits(in: .horizontal) {
+                row(icons: true).fixedSize(horizontal: true, vertical: false)
+                row(icons: false).fixedSize(horizontal: true, vertical: false)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    row(icons: true).padding(.trailing, 44)
                 }
-                .padding(.horizontal, 2)
-                .padding(.trailing, 44)
+                // A wider fade so a half-seen last chip reads as "more this way", not as a bug.
+                .edgeFade(44)
             }
-            // A wider fade so a half-seen last chip reads as "more this way", not as a bug.
-            .edgeFade(44)
             .onAppear { proxy.scrollTo(selected, anchor: .center) }
             .onChange(of: selected) { _, c in withAnimation { proxy.scrollTo(c, anchor: .center) } }
         }
