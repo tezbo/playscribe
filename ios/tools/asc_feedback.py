@@ -17,6 +17,7 @@ from prune_certs import pem
 ASC = "https://api.appstoreconnect.apple.com"
 GH = "https://api.github.com"
 LABEL = "testflight-feedback"
+ASSIGNEE = os.environ.get("FEEDBACK_ASSIGNEE", "tezbo")  # assigning him is what makes GitHub Mobile push to his phone
 BUNDLE_ID = os.environ.get("BUNDLE_ID", "co.codeconnectors.playscribe")
 MIN_BUILD = int(os.environ.get("MIN_BUILD", "8"))  # backfill from 0.5.2 (8)
 MAX_NEW = int(os.environ.get("MAX_NEW", "30"))
@@ -138,7 +139,7 @@ def main():
             lines += ["", "Tester comment:", "", "> " + comment.replace("\n", "\n> ")]
         lines += ["", f"<!-- asc-feedback:{item['id']} -->"]
         r = gh.post(f"{GH}/repos/{os.environ['GITHUB_REPOSITORY']}/issues", timeout=60,
-                    json={"title": f"TestFlight: {head} ({build})", "body": "\n".join(lines), "labels": [LABEL]})
+                    json={"title": f"TestFlight: {head} ({build})", "body": "\n".join(lines), "labels": [LABEL], "assignees": [ASSIGNEE]})
         r.raise_for_status()
         print("created issue", r.json()["number"], "for", item["id"])
     if len(todo) > MAX_NEW:
