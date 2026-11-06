@@ -6,7 +6,6 @@ import type { DB } from './db.ts'
 import { getText, type FetchFn } from './http.ts'
 import { plusProblems, type PlusMonth } from './plus.ts'
 import type { Igdb } from './ingest/igdb.ts'
-import overrides from './sources/plus-covers.json' with { type: 'json' }
 
 const LIST_URL = 'https://www.pushsquare.com/tags/ps-plus'
 const SITE = 'https://www.pushsquare.com/'
@@ -113,9 +112,7 @@ export const resolvePlusCovers = async (db: DB, igdb: Pick<Igdb, 'query'> | null
       ps5 ??= (await igdb.query<{ id: number }>('platforms', 'fields id; where slug = "ps5"; limit 1;'))[0]
       const safe = name.replace(/["\\]/g, ' ').slice(0, 80)
       const rows = await igdb.query<{ name: string; cover?: { image_id: string } }>('games', `fields name,cover.image_id; search "${safe}"; where platforms = (${ps5!.id}) & cover != null; limit 10;`)
-      let hit = rows.find((r) => plusTitleKey(r.name) === plusTitleKey(name))?.cover?.image_id
-      const by = (overrides as Record<string, { igdbId?: number }>)[plusTitleKey(name)]
-      if (!hit && by?.igdbId) hit = (await igdb.query<{ cover?: { image_id: string } }>('games', `fields cover.image_id; where id = ${Math.trunc(by.igdbId)};`))[0]?.cover?.image_id
+      const hit = rows.find((r) => plusTitleKey(r.name) === plusTitleKey(name))?.cover?.image_id
       db.prepare('INSERT OR REPLACE INTO plus_covers (name, cover_id, checked_at) VALUES (?, ?, ?)').run(name, hit ?? null, new Date().toISOString())
       if (hit) found++
       else log(`plus: no IGDB cover found for "${name}"`)
