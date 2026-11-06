@@ -70,6 +70,7 @@ struct ReleaseEntry: View {
     var release: Release
     var defaultOpen: Bool
     @State private var readTask: Task<Void, Never>?
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         let r = release
@@ -86,11 +87,16 @@ struct ReleaseEntry: View {
                         Spacer(minLength: 0)
                         Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
                     }
-                    HStack(spacing: 8) {
+                    // At accessibility sizes the facts stack, each on its own full-width line, so the date never wraps by letter.
+                    let facts = Group {
                         Text(r.kind.label)
                         Text(r.isPS5Listed ? r.ps5Date.shortDay : r.latestDate.shortDay)
                         // R-2 / V-2: the PS5 version exactly as the console shows it; never a PC number.
                         if let v = r.ps5Version { Text(v).monospacedDigit() }
+                    }
+                    Group {
+                        if typeSize.isAccessibilitySize { VStack(alignment: .leading, spacing: 2) { facts } }
+                        else { HStack(spacing: 8) { facts } }
                     }
                     .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     if !open, let h = r.isPS5Listed ? r.ps5Headline : r.headline { Text(h).font(PlayscribeFont.subheadline).lineLimit(2) }
@@ -157,7 +163,11 @@ struct TitleWithTags<Title: View>: View {
         if typeSize.isAccessibilitySize {
             VStack(alignment: .leading, spacing: 4) { title; ReleaseTag(release: release) }
         } else {
-            HStack(spacing: 8) { title; ReleaseTag(release: release) }
+            // The title never truncates: when the tags don't fit beside it they drop under it.
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 8) { title.lineLimit(1).fixedSize(horizontal: true, vertical: false); ReleaseTag(release: release) }
+                VStack(alignment: .leading, spacing: 4) { title; ReleaseTag(release: release) }
+            }
         }
     }
 }
