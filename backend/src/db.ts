@@ -108,6 +108,13 @@ CREATE TABLE IF NOT EXISTS follows (
   PRIMARY KEY (device_id, game_id)
 );
 
+-- IGDB cover per PS Plus lineup title, resolved by name once (null = looked, not found; retried after a week).
+CREATE TABLE IF NOT EXISTS plus_covers (
+  name TEXT PRIMARY KEY,
+  cover_id TEXT,
+  checked_at TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS plus_months (
   month TEXT PRIMARY KEY,
   data TEXT NOT NULL,

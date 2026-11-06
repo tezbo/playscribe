@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import type { DB } from './db.ts'
 import { issuesOf } from './issues.ts'
 import { loadPlus } from './plus.ts'
-import { storedPlusMonths } from './plusAuto.ts'
+import { storedPlusMonths, withPlusCovers } from './plusAuto.ts'
 import { gameFromRow, getRelease, listReleases, newsOf, releaseFromRow } from './store.ts'
 
 // Writes the read side of the API as static files, so the app can sync from any static host
@@ -56,6 +56,6 @@ export const exportStatic = (db: DB, outDir: string) => {
   // Manual months override the automatic ones, month by month.
   const manual = loadPlus(undefined, new Set(games.map((g) => g.id)))
   const months = new Map([...storedPlusMonths(db), ...manual.months].map((m) => [m.month, m]))
-  write(join(root, 'plus.json'), { version: 1, months: [...months.values()].sort((a, b) => (a.month < b.month ? 1 : -1)) })
+  write(join(root, 'plus.json'), { version: 1, months: withPlusCovers(db, [...months.values()]).sort((a, b) => (a.month < b.month ? 1 : -1)) })
   return { games: games.length, files: readdirSync(join(root, 'games')).length * 2 + 3 }
 }
