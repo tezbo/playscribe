@@ -9,11 +9,11 @@ final class ClosedLandscapeShotTests: XCTestCase {
     ]
 
     private func shoot(ax3: Bool) {
-        let suffix = ax3 ? "-ax3" : ""
+        let suffix = ax3 ? "-ax5" : ""
         for screen in screens {
             let app = XCUIApplication()
             app.launchArguments = ["-qaRoute", screen.route]
-                + (ax3 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityL"] : [])
+                + (ax3 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] : [])
             XCUIDevice.shared.orientation = .landscapeLeft
             app.launch()
             XCUIDevice.shared.orientation = .landscapeLeft

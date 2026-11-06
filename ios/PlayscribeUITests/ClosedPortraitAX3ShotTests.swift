@@ -7,7 +7,7 @@ import XCTest
 final class ClosedPortraitAX3ShotTests: XCTestCase {
     private func launch(_ route: String) -> XCUIApplication {
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", route, "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityL"]
+        app.launchArguments = ["-qaRoute", route, "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
         XCUIDevice.shared.orientation = .portrait
         app.launch()
         sleep(4)
@@ -17,7 +17,7 @@ final class ClosedPortraitAX3ShotTests: XCTestCase {
     private func shoot(_ name: String) {
         let shot = XCUIScreen.main.screenshot()
         let attachment = XCTAttachment(screenshot: shot)
-        attachment.name = "closed-\(name)-ax3"
+        attachment.name = "closed-\(name)-ax5"
         attachment.lifetime = .keepAlways
         add(attachment)
         XCTAssertGreaterThan(shot.image.size.height, shot.image.size.width, "\(name): not portrait")

@@ -3,7 +3,7 @@ name: iOS UI
 # UI evidence without a Mac: the 0.5.0 feature XCUITests and a screenshot of every new surface,
 # in the simulator's default (Closed) pose. Not a required check; UI tests on a hosted runner can be
 # slow or flaky, so each step reports on its own and the artifacts are always uploaded. Closed portrait and
-# Closed landscape, standard and AX3, come from here; Book, Open, Open portrait and Tabletop stay with the
+# Closed landscape, standard and AX5, come from here; Book, Open, Open portrait and Tabletop stay with the
 # Mac gate (docs/release-0.5.0-gate.md).
 on:
   workflow_dispatch:
@@ -65,7 +65,7 @@ jobs:
       - name: Screenshots of every new surface (Closed)
         if: always()
         run: ios/tools/qa/ci-shots.sh "${{ steps.sim.outputs.udid }}" build/shots "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
-      - name: Closed portrait and landscape, standard and AX3 (risk 2 step A)
+      - name: Closed portrait and landscape, standard and AX5 (risk 2 step A)
         if: always()
         run: ios/tools/qa/ci-closed-ax3.sh "${{ steps.sim.outputs.udid }}" build/shots-ax3 "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
       - name: Real Closed landscape probe (XCUIDevice orientation; informational)

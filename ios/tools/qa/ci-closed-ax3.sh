@@ -1,8 +1,8 @@
 #!/bin/bash
-# Closed portrait and Closed landscape stills, at standard text size and at AX3, from the CI macOS runner
-# (risk 2 step A: the Mac no longer shoots these). AX3 = accessibilityExtraLarge, the same category the fold harness uses.
+# Closed portrait and Closed landscape stills, at standard text size and at AX5, from the CI macOS runner
+# (risk 2 step A: the Mac no longer shoots these). AX5 = accessibilityExtraExtraExtraLarge (UI spec G-8, the Mac gate size), the same category the fold harness uses.
 # Usage: tools/qa/ci-closed-ax3.sh <udid> <out-dir> <Playscribe.app>
-# Names: <sha>-closed-<screen>[-ax3].png and <sha>-closed-land-<screen>[-ax3].png. Exits 1 when a still is missing, empty or
+# Names: <sha>-closed-<screen>[-ax5].png and <sha>-closed-land-<screen>[-ax5].png. Exits 1 when a still is missing, empty or
 # landscape could not be reached, so the job says so instead of passing with fewer shots.
 set -u
 dev=${1:?simulator udid}; out=${2:?output dir}; bundle=${3:-}; app=co.codeconnectors.playscribe
@@ -43,8 +43,8 @@ rotate_to_landscape() {
     -e 'tell application "System Events" to key code 124 using command down' >/dev/null 2>&1 || true
   sleep 3
 }
-for ax in "" "-ax3"; do
-  if [ -n "$ax" ]; then xcrun simctl ui "$dev" content_size accessibility-extra-large; else xcrun simctl ui "$dev" content_size large; fi
+for ax in "" "-ax5"; do
+  if [ -n "$ax" ]; then xcrun simctl ui "$dev" content_size accessibility-extra-extra-extra-large; else xcrun simctl ui "$dev" content_size large; fi
   echo "content size: $(xcrun simctl ui "$dev" content_size)"
   pass closed "$ax"
 done
@@ -52,8 +52,8 @@ done
 rotate_to_landscape
 probe="$out/.probe.png"; snap "$probe"
 if [ -s "$probe" ] && [ "$(width "$probe")" -gt "$(height "$probe")" ]; then
-  for ax in "" "-ax3"; do
-    if [ -n "$ax" ]; then xcrun simctl ui "$dev" content_size accessibility-extra-large; else xcrun simctl ui "$dev" content_size large; fi
+  for ax in "" "-ax5"; do
+    if [ -n "$ax" ]; then xcrun simctl ui "$dev" content_size accessibility-extra-extra-extra-large; else xcrun simctl ui "$dev" content_size large; fi
     pass closed-land "$ax"
   done
 else

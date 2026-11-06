@@ -9,7 +9,7 @@ import UIKit
 /// (ios-ui.yml), so the normal unit run is untouched.
 @MainActor
 struct HarnessLandscapeShotTests {
-    @Test(arguments: [("", UIContentSizeCategory.large), ("-ax3", UIContentSizeCategory.accessibilityLarge)])
+    @Test(arguments: [("", UIContentSizeCategory.large), ("-ax5", UIContentSizeCategory.accessibilityExtraExtraExtraLarge)])
     func libraryClosedLandscape(_ suffix: String, _ type: UIContentSizeCategory) async throws {
         guard let dir = ProcessInfo.processInfo.environment["HARNESS_SHOT_DIR"] else { return }
         try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
