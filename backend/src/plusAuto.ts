@@ -104,11 +104,12 @@ export const resolvePlusCovers = async (db: DB, igdb: Pick<Igdb, 'query'> | null
   const names = new Set<string>()
   for (const m of [...storedPlusMonths(db), ...manual]) for (const g of m.games) if (!g.coverId) names.add(g.name)
   let found = 0
+  let ps5: { id: number } | undefined
   for (const name of names) {
     const row = db.prepare('SELECT cover_id, checked_at FROM plus_covers WHERE name = ?').get(name) as { cover_id: string | null; checked_at: string } | undefined
     if (row && (row.cover_id || Date.now() - Date.parse(row.checked_at) < COVER_RETRY_MS)) continue
     try {
-      const [ps5] = await igdb.query<{ id: number }>('platforms', 'fields id; where slug = "ps5"; limit 1;')
+      ps5 ??= (await igdb.query<{ id: number }>('platforms', 'fields id; where slug = "ps5"; limit 1;'))[0]
       const safe = name.replace(/["\\]/g, ' ').slice(0, 80)
       const rows = await igdb.query<{ name: string; cover?: { image_id: string } }>('games', `fields name,cover.image_id; search "${safe}"; where platforms = (${ps5!.id}) & cover != null; limit 10;`)
       const hit = rows.find((r) => plusTitleKey(r.name) === plusTitleKey(name))?.cover?.image_id
