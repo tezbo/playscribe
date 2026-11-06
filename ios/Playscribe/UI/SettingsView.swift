@@ -137,9 +137,11 @@ struct SettingsView: View {
                 // B-12: clear the whole library. Destructive, so it asks first; Undo follows.
                 if !model.data.collection.isEmpty {
                     Section {
-                        Button("Clear library…", role: .destructive) { confirmClear = true }
+                        Button("Remove all games from this library…", role: .destructive) { confirmClear = true }
                             .frame(minHeight: 52)
                             .accessibilityIdentifier("clearLibrary")
+                    } header: {
+                        Text("Danger zone")
                     } footer: {
                         Text("Removes all \(model.data.collection.count) games, with their bookmarks and notes. You can undo it right after.")
                     }
@@ -192,7 +194,7 @@ struct SettingsView: View {
             }
             // 24 pt between a footer and the next section's title (Iris, 0.5.1 spec 1).
             .listSectionSpacing(24)
-            .confirmationDialog("Clear your library?", isPresented: $confirmClear, titleVisibility: .visible) {
+            .confirmationDialog("Remove all games from this library?", isPresented: $confirmClear, titleVisibility: .visible) {
                 Button("Remove all \(model.data.collection.count) games", role: .destructive) {
                     model.clearLibrary()
                     dismiss()
