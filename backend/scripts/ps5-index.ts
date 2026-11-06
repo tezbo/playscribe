@@ -16,6 +16,9 @@
 //   e  true when `d` is early access and there is no full release yet.
 //   b  the PS4 release, only when it came before `d` (or there is no `d`): PS4 games play on PS5,
 //      so this is when PS5 owners could first play it (Roblox: PS4 Oct 2023, native PS5 Apr 2026).
+//   o  ow  the game's first release anywhere (ISO day) and the platform it came out on ("PC (Microsoft Windows)"). Only for a
+//      game that is already out (o not in the future) and has no `d` and no `b` (a tbd PS5 listing included: ETS2), so the app can say
+//      "Released on PC, <date>" instead of TBA (ETS2).
 // Known IGDB gaps are corrected from scripts/ps5-date-overrides.json, each with its evidence.
 // Cover tones already in the file are kept.
 //
@@ -46,6 +49,22 @@ const formatName = new Map(formats.map((f) => [f.id, f.format]))
 const artworkType = await artworkTypes((e, b) => igdb.query(e, b))
 const artOf = (rows: any) => artworkOf(rows, (i) => artworkType.get(i!))
 const squareOf = (rows: any) => squareCoverOf(rows, (i) => artworkType.get(i!))
+
+const platformName = new Map<number, string>()
+for (let offset = 0; ; offset += 500) {
+  const page = await igdb.query<{ id: number; name: string }>('platforms', `fields id,name; limit 500; offset ${offset};`)
+  for (const p of page) platformName.set(p.id, p.name)
+  if (page.length < 500) break
+}
+
+/** o/ow: see the header. Needs a game with nothing PS-side to show and a real release already behind it. */
+const firstRelease = (g: { first_release_date?: number; release_dates?: ReleaseDate[] }, dates: { d?: string; b?: string }) => {
+  const o = day(g.first_release_date)
+  if (!o || dates.d || dates.b || o > new Date().toISOString().slice(0, 10)) return {}
+  const first = (g.release_dates ?? []).filter((r) => r.date && r.platform).sort((a, c) => a.date! - c.date!)[0]
+  const ow = first ? platformName.get(first.platform!) : undefined
+  return ow ? { o, ow } : {}
+}
 
 const datesOf = (id: number, rows: ReleaseDate[] | undefined) =>
   ps5DatesOf(rows, { ps5: ps5.id, ps4: ps4.id }, (i) => statusName.get(i!), overrides[String(id)], (i) => formatName.get(i!))
@@ -79,17 +98,18 @@ for (let offset = 0; offset < 10000; offset += 500) {
 const old = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, 'utf8')) as { games: { i: number; t?: string[] }[] }) : { games: [] }
 const tones = new Map(old.games.filter((g) => g.t).map((g) => [g.i, g.t]))
 
-const games: { i: number; n: string; d?: string; q?: string; e?: true; f?: string; b?: string; v?: string; p?: string; c?: string; a?: string; s?: string; t?: string[]; r: number }[] = []
+const games: { i: number; n: string; d?: string; q?: string; e?: true; f?: string; b?: string; o?: string; ow?: string; v?: string; p?: string; c?: string; a?: string; s?: string; t?: string[]; r: number }[] = []
 for (let offset = 0; ; offset += 500) {
   const page = await igdb.query<any>(
     'games',
-    `fields name,cover.image_id,${artworkFields(artworkType)},release_dates.date,release_dates.platform,release_dates.status,release_dates.date_format,` +
+    `fields name,first_release_date,cover.image_id,${artworkFields(artworkType)},release_dates.date,release_dates.platform,release_dates.status,release_dates.date_format,` +
       'involved_companies.company.name,involved_companies.developer,involved_companies.publisher,total_rating_count;' +
       `where platforms = (${ps5.id}) & game_type = (${typeIds.join(',')}) & version_parent = null; sort id asc; limit 500; offset ${offset};`,
   )
   for (const g of page) {
     const company = (role: string) => (g.involved_companies ?? []).find((c: any) => c[role])?.company?.name
-    games.push({ i: g.id, n: g.name, ...datesOf(g.id, g.release_dates), v: company('developer'), p: company('publisher'), c: g.cover?.image_id, a: artOf(g.artworks), s: squareOf(g.artworks), t: tones.get(g.id), r: g.total_rating_count ?? 0 })
+    const dates = datesOf(g.id, g.release_dates)
+    games.push({ i: g.id, n: g.name, ...dates, ...firstRelease(g, dates), v: company('developer'), p: company('publisher'), c: g.cover?.image_id, a: artOf(g.artworks), s: squareOf(g.artworks), t: tones.get(g.id), r: g.total_rating_count ?? 0 })
   }
   if (page.length < 500) break
 }

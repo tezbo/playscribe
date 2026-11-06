@@ -3,7 +3,9 @@
 Nothing ships to TestFlight by itself. Merging to main never uploads a build; only a release tag does.
 
 1. **Scope.** The release manager lists what is in `## x.y.z` of CHANGELOG.md, adds connected feature
-   recommendations, and asks Terry whether anything else should go in.
+   recommendations, and asks Terry whether anything else should go in. Every `## x.y.z` section ends with this
+   standing line (Terry, 2026-11-06, while TestFlight feedback becomes public issues): "Feedback you send through
+   TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details."
 2. **Three sign-offs** on that exact commit, each naming its SHA:
    - **Backend and data** (QA thread): the feed, alerts and links for the release's games are right.
    - **Front end** (QA thread): docs/ux-acceptance.md passes in every pose, driven by taps, not stills alone: every

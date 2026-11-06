@@ -210,6 +210,13 @@ struct SearchView: View {
                             }
                         }
                         .buttonStyle(.plain)
+                        .gameQuickActions(g)
+                        // Iris: a deliberate swipe only (no full swipe), and only for games in the library.
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            if library.contains(g.id) {
+                                Button("Remove", role: .destructive) { model.removeGame(g.id) }
+                            }
+                        }
                     }
                 }
             }
