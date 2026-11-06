@@ -666,6 +666,9 @@ struct AlsoNewPanel: View {
 
     var body: some View {
         let all = others
+        // Fewer than two other games: one lone row leaves the panel mostly empty beside the hero, so it shows
+        // the hero update's top changes instead ("What's new"), the same balanced fallback as with none (Iris rule).
+        let sparse = all.count < 2 && !changes.isEmpty
         GeometryReader { geo in
             // Iris's fill rule: 72 pt rows (3 to 6, what fits), grown evenly to 96 pt when 24 pt or more
             // is spare, a heading block above and a pinned 56 pt footer below.
@@ -681,17 +684,17 @@ struct AlsoNewPanel: View {
             let rowHeight: CGFloat = rows.isEmpty ? unit : spare < 0 ? max(typeSize.isAccessibilitySize ? 88 : 64, avail / CGFloat(rows.count))
                 : spare <= 24 ? unit : min(unit + 24, unit + spare / CGFloat(rows.count))
             VStack(alignment: .leading, spacing: 0) {
-                Text(all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
+                Text(sparse || all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
                     .accessibilityAddTraits(.isHeader)
                     .frame(minHeight: headingH, alignment: .topLeading)
                     .padding(.bottom, 12)
-                if all.isEmpty {
+                if sparse || all.isEmpty {
                     whatsNew(lines: shownChanges(width: geo.size.width - 24, available: avail), available: avail, width: geo.size.width - 24)
                 } else {
                     ForEach(rows) { r in row(r, height: rowHeight).transition(.opacity) }
                 }
                 Spacer(minLength: 0)
-                if all.isEmpty {
+                if sparse || all.isEmpty {
                     // Iris: a 56 pt row pinned to the bottom, so the panel never ends half empty.
                     Button { if let hero { model.openGame(hero.gameID, chapter: .updates, releaseID: hero.id) } } label: {
                         HStack {
@@ -724,7 +727,7 @@ struct AlsoNewPanel: View {
         }
         .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .accessibilityElement(children: .contain)
-        .accessibilityLabel(all.isEmpty ? "What's new" : "Also new, \(min(all.count, 6)) updates")
+        .accessibilityLabel(sparse || all.isEmpty ? "What's new" : "Also new, \(min(all.count, 6)) updates")
     }
 
     /// Estimated height of one change line at 17 pt: up to three lines of 22 pt plus 16 pt around it.
