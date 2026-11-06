@@ -80,6 +80,10 @@ struct AddEntryView: View {
     /// Tabletop (Iris): 64 pt rows so all four fit in the lower half with no scrolling.
     private var compact: Bool { duo.pose == .tabletop }
     var choose: (AddMethod) -> Void
+    @Environment(\.dynamicTypeSize) private var typeSize
+    /// The icon column grows with the text, so a large keyboard glyph never sits over "Search by name".
+    @ScaledMetric(relativeTo: .title3) private var iconColumn: CGFloat = 32
+    private var footerText: String { "PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password." }
 
     var body: some View {
         List {
@@ -87,7 +91,7 @@ struct AddEntryView: View {
                 ForEach(AddMethod.available) { m in
                     Button { choose(m) } label: {
                         HStack(spacing: 14) {
-                            Image(systemName: m.symbol).font(.title3).frame(width: 32)
+                            Image(systemName: m.symbol).font(.title3).frame(width: iconColumn)
                                 .foregroundStyle(PlayscribeColor.accent)
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(m.title).font(PlayscribeFont.headline)
@@ -105,17 +109,22 @@ struct AddEntryView: View {
                     .listRowInsets(compact ? EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16) : nil)
                     .tappableFrame()
                 }
+            } footer: {
+                if typeSize.isAccessibilitySize { Text(footerText) }
             }
         }
         .contentMargins(.top, compact ? 4 : 0, for: .scrollContent)
-        // Pinned in the sheet's own bottom inset so nothing behind or below can run into it.
+        // Standard sizes pin the note in the sheet's bottom inset so nothing runs into it. At accessibility sizes it
+        // would take over half the screen, so it scrolls with the list instead (Quinn, AX5 Closed).
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            Text("PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password.")
-                .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 20).padding(.vertical, compact ? 8 : 12)
-                .frame(minHeight: compact ? 56 : 0)
-                .background(Color.ink0)
+            if !typeSize.isAccessibilitySize {
+                Text(footerText)
+                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 20).padding(.vertical, compact ? 8 : 12)
+                    .frame(minHeight: compact ? 56 : 0)
+                    .background(Color.ink0)
+            }
         }
     }
 }
