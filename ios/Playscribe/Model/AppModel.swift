@@ -197,6 +197,9 @@ final class AppModel {
     var focusReleaseID: String?
     var focusToken = 0
     var showDebugOverlay = false
+    /// QA (route "many-updates"): pad the deck with copies of its cards (distinct ids) up to 12, so the Open
+    /// portrait "+N more updates" chip shows whatever the library holds.
+    var qaPadDeck = false
     /// QA (routes "one-update", "two-update") and tests: how many fresh unread updates the demo has; 0 is the normal demo.
     var qaUpdateCount = 0
     var qaSingleUpdate: Bool {
@@ -835,6 +838,7 @@ final class AppModel {
     }
 
     func resetDemo() {
+        qaPadDeck = false
         qaUpdateCount = 0
         qaFreshCache = nil
         data = PersistedState(collection: fixtures.seedCollection)
@@ -885,6 +889,7 @@ final class AppModel {
         let have = Set(data.collection.map(\.gameID))
         let more = fixtures.games.filter { !have.contains($0.id) && !ps5Releases($0.id).filter { $0.ps5State == .onPS5 }.isEmpty }
         addGames(more, status: .owned)
+        qaPadDeck = true
     }
 
     /// QA (routes "three-update", "four-update"): `count` fresh updates from different games, so the deck

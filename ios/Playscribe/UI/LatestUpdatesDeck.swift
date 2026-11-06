@@ -49,7 +49,14 @@ extension AppModel {
             perGame[c.game.id, default: 0] += 1
             return perGame[c.game.id]! <= 2
         }
-        return spread
+        guard qaPadDeck, !spread.isEmpty else { return spread }
+        var padded = spread, n = 0
+        while padded.count < 12 {
+            var c = spread[n % spread.count]
+            if var r = c.release { r.id += "-qa\(n)"; c.release = r }
+            padded.append(c); n += 1
+        }
+        return padded
     }
 }
 
