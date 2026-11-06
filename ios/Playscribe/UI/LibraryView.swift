@@ -476,14 +476,9 @@ struct LibraryShelf: View {
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
         // The pill and toasts sit at the bottom edge. The scroll view itself ends above them (a safe-area inset would still let
         // content scroll under the pill), so nothing is ever covered (0.5.1 spec 2, Iris).
-        // The scroll view ends above the pill; a soft edge there, not a hard cut through a card (Iris).
-        .mask(alignment: .bottom) {
-            VStack(spacing: 0) {
-                Rectangle()
-                LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
-                    .frame(height: messagePad > 0 ? 24 : 0)
-            }
-        }
+        // No `.mask` here: from #246 the Open portrait large "Library" title vanished (354d15c, 9914a80), with the picker still
+        // in its place. The mask on this scroll view is the prime suspect (a masked scroll view is no longer the one the
+        // navigation bar tracks); the soft edge returns once a Mac still shows the title back.
         .padding(.bottom, messagePad)
         // The page ends 8 pt above the pill wherever the pill actually sits. The pad is worked out from measured edges (this
         // view's bottom without the pad, the pill's top), not from the pill's height and offsets, so it cannot leave a dead
