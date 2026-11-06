@@ -80,7 +80,10 @@ struct FeedRow: View {
                         Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
                     }
                     .font(PlayscribeFont.caption)
-                    if let h = release.headline { Text(h).font(PlayscribeFont.footnote).lineLimit(2) }
+                    if let h = release.headline {
+                        if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.footnote, lines: 3) }
+                        else { Text(h).font(PlayscribeFont.footnote).lineLimit(2) }
+                    }
                 }
                 Spacer(minLength: 0)
             }
@@ -290,5 +293,24 @@ struct SearchView: View {
         .simultaneousGesture(DragGesture(minimumDistance: 24).onEnded { v in
             if v.startLocation.x < 28 && v.translation.width > 80 && abs(v.translation.height) < 60 { model.leaveSearch() }
         })
+    }
+}
+
+
+/// Text that, when it does not fit in `lines` lines, ends on a whole word followed by "…" (never a cut word, which
+/// SwiftUI's own tail truncation can produce). Tries the whole text, then one word fewer each time.
+struct WholeWordText: View {
+    var text: String
+    var font: Font
+    var lines: Int
+    @ScaledMetric(relativeTo: .footnote) private var lineHeight: CGFloat = 18
+
+    var body: some View {
+        let words = text.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
+        let variants = [text] + (words.count > 1 ? stride(from: words.count - 1, through: 1, by: -1).map { words.prefix($0).joined(separator: " ") + "\u{2026}" } : [])
+        ViewThatFits(in: .vertical) {
+            ForEach(variants, id: \.self) { Text($0).font(font).fixedSize(horizontal: false, vertical: true) }
+        }
+        .frame(maxHeight: lineHeight * CGFloat(lines), alignment: .topLeading)
     }
 }
