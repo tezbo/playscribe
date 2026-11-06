@@ -504,11 +504,13 @@ struct SourceLinks: View {
             if let url = release.links?.ps5Page {
                 Link(destination: url) { Label(LinkHost.label("PS5 update page", url), systemImage: "arrow.up.right.square") }
                     .frame(minHeight: 44).tappableFrame()
+                    .accessibilityHint("Opens in browser")
             }
             if let url = release.links?.steamNotes {
                 Link(destination: url) { Label(LinkHost.label("Read full notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
                     .padding(.trailing, 8)
                     .tappableFrame()
+                    .accessibilityHint("Opens in browser")
             }
         }
         .font(PlayscribeFont.subheadline)
@@ -559,14 +561,20 @@ enum ChangeKind: String, CaseIterable {
     }
 }
 
-/// Where an external link goes, from its host, so a tap never surprises: "Read full notes on Steam",
-/// "All patch notes on ubisoft.com". Only the destination is named, never a source credit.
+/// Where an external link goes, as a brand name from its host, so a tap never surprises:
+/// "Read full notes on Steam", "All patch notes on Ubisoft". Never an address, never a credit (V-3).
 enum LinkHost {
+    private static let brands = ["steampowered": "Steam", "steamcommunity": "Steam", "playstation": "PlayStation",
+                                 "ea": "EA", "xbox": "Xbox", "nintendo": "Nintendo", "gog": "GOG", "epicgames": "Epic Games"]
+
     static func name(_ url: URL) -> String? {
-        guard var host = url.host()?.lowercased(), !host.isEmpty else { return nil }
-        if host.hasSuffix("steampowered.com") || host.hasSuffix("steamcommunity.com") { return "Steam" }
-        if host.hasPrefix("www.") { host.removeFirst(4) }
-        return host
+        guard let host = url.host()?.lowercased(), !host.isEmpty else { return nil }
+        var parts = host.split(separator: ".").map(String.init)
+        // The label before the public suffix: "co.uk" and "com.au" take two parts.
+        if parts.count >= 3, ["co", "com", "org", "net", "gov"].contains(parts[parts.count - 2]) { parts.removeLast(2) }
+        else if parts.count >= 2 { parts.removeLast() }
+        guard let label = parts.last, !label.isEmpty else { return nil }
+        return brands[label] ?? label.prefix(1).uppercased() + label.dropFirst()
     }
 
     static func label(_ base: String, _ url: URL) -> String {

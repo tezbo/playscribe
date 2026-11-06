@@ -67,7 +67,9 @@ struct FeedContractTests {
         let studio = URL(string: "https://www.ubisoft.com/en-us/game/assassins-creed/news")!
         #expect(LinkHost.label("Read full notes", steam) == "Read full notes on Steam")
         #expect(LinkHost.label("Read full notes", community) == "Read full notes on Steam")
-        #expect(LinkHost.label("All patch notes", studio) == "All patch notes on ubisoft.com")
+        #expect(LinkHost.label("All patch notes", studio) == "All patch notes on Ubisoft")
+        #expect(LinkHost.label("PS5 update page", URL(string: "https://www.playstation.com/en-gb/games/x")!) == "PS5 update page on PlayStation")
+        #expect(LinkHost.name(URL(string: "https://www.example.co.uk/a")!) == "Example")
         #expect(LinkHost.label("Read", URL(string: "mailto:x")!) == "Read")
     }
 

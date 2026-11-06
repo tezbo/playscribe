@@ -12,7 +12,7 @@ PS5-first patch notes for iPhone Duo. Read these before changing app behaviour o
 - **Tabletop: nothing tappable sits above the fold.** The upper half is a view-only stage (`allowsHitTesting(false)`); every control is in the lower half, on the trailing rail.
 - No tappable element intersects an active `.division` reserved region in any pose.
 - Pose comes from the container and its reserved regions (`DuoReader`), never from device or screen checks.
-- No source names, URLs or credits in the UI. Verification tags are the only provenance signal. The one exception (Terry, 2026-11-06): an external link names its destination ("Read full notes on Steam", "on ubisoft.com"), derived from the link host.
+- No source names, URLs or credits in the UI. Verification tags are the only provenance signal. The one exception (Terry, 2026-11-06): a link row names the destination it opens by brand ("Read full notes on Steam", "All patch notes on Ubisoft"), derived from the link host; never an address.
 - A PC version number is never shown as a PS5 version.
 - Navigation containers sit outside every `ArrangementView`.
 
