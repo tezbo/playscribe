@@ -62,7 +62,7 @@ struct LatestUpdatesDeck: View {
     @State private var current: String?
     /// Accessibility sizes: each card's measured height. The deck's frame grows to the tallest, so a long headline
     /// grows the card instead of overflowing it upwards.
-    @State private var cardHeights: [String: CGFloat] = [:]
+    @State private var captionH: CGFloat = 0
 
     /// The page edge (44 pt leaves) and the 8 pt gap above it; the card takes the rest of maxHeight.
     private static let pageEdgeHeight: CGFloat = 52
@@ -82,10 +82,29 @@ struct LatestUpdatesDeck: View {
 
     var body: some View { content.namedFrame("latestDeck") }
 
-    /// `base`, or at accessibility sizes the tallest measured card plus the page edge when that is more.
+    /// `base`, or at accessibility sizes the tallest caption plus the page edge when that is more.
     private func grown(_ base: CGFloat) -> CGFloat {
-        guard typeSize.isAccessibilitySize, let tallest = cardHeights.values.max() else { return base }
-        return max(base, tallest + (cards.count > 1 ? Self.pageEdgeHeight : 0))
+        guard typeSize.isAccessibilitySize, captionH > 0 else { return base }
+        return max(base, captionH + (cards.count > 1 ? Self.pageEdgeHeight : 0))
+    }
+
+    /// The art height of a card: `base`, or at accessibility sizes tall enough for the whole caption.
+    private func grownArt(_ base: CGFloat) -> CGFloat {
+        typeSize.isAccessibilitySize ? max(base, captionH) : base
+    }
+
+    /// Accessibility sizes: every card's caption laid out invisibly at the card's width, so the tallest sets the card's
+    /// height from a real measurement, not from what a scroll view offers (the headline was clipped off the top).
+    @ViewBuilder private func ruler(width: CGFloat) -> some View {
+        if typeSize.isAccessibilitySize {
+            ZStack(alignment: .topLeading) {
+                ForEach(cards) { card in
+                    CompactCaption(card: card).frame(width: width, alignment: .leading).fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            .opacity(0).allowsHitTesting(false).accessibilityHidden(true)
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { captionH = $0 }
+        }
     }
 
     @ViewBuilder private var content: some View {
@@ -93,15 +112,17 @@ struct LatestUpdatesDeck: View {
             // Explicit geometry: every card is exactly the column wide, so a swipe snaps card to card, and the
             // art is capped so the deck never grows past maxHeight (the 727 pt card, 20d77ea).
             GeometryReader { g in
-                let art = max(96, maxHeight - Self.pageEdgeHeight)
+                let art = grownArt(max(96, maxHeight - Self.pageEdgeHeight))
                 deck(cardWidth: g.size.width, artHeight: art)
+                    .background(alignment: .topLeading) { ruler(width: g.size.width) }
             }
             .frame(height: maxHeight > 0 ? grown(maxHeight) : nil)
         } else if typeSize.isAccessibilitySize && !(duo.pose == .closed && duo.isLandscape) {
             // Accessibility sizes: one card per screen at an explicit height. The unsized pager let the card fill the
             // screen (7fe84f4, AX3).
             GeometryReader { g in
-                deck(cardWidth: g.size.width, artHeight: axArtHeight)
+                deck(cardWidth: g.size.width, artHeight: grownArt(axArtHeight))
+                    .background(alignment: .topLeading) { ruler(width: g.size.width) }
             }
             .frame(height: grown(axArtHeight + (cards.count > 1 ? Self.pageEdgeHeight : 0)))
         } else if duo.pose == .closed && duo.isLandscape {
@@ -152,9 +173,6 @@ struct LatestUpdatesDeck: View {
                                 DeckCardView(card: card)
                                     .containerRelativeFrame(.horizontal, count: Int((perScreen * 100).rounded()), span: 100, spacing: 12)
                             }
-                        }
-                        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in
-                            if typeSize.isAccessibilitySize { cardHeights[card.id] = h }
                         }
                         .id(card.id)
                     }
@@ -240,14 +258,48 @@ struct CompactDeckCard: View {
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     @Environment(\.qaSolid) private var qaSolid
     @Environment(\.dynamicTypeSize) private var typeSize
+
+    var body: some View {
+        // The caller gives a `height` that already holds the whole caption at accessibility sizes (measured by the deck's
+        // ruler), so nothing can overflow the card; the art and its scrim are the background.
+        CompactCaption(card: card)
+            .frame(maxWidth: .infinity, alignment: .bottomLeading)
+            .frame(height: height, alignment: .bottomLeading)
+            .background {
+                ZStack(alignment: .bottomLeading) {
+                    ArtView(asset: card.game.keyArtAsset, game: card.game)
+                    // Increase Contrast / Reduce Transparency: a solid ink scrim behind the caption, not a fade.
+                    if contrast == .increased || reduceTransparency || qaSolid {
+                        PlayscribeColor.ink950.opacity(0.92).frame(height: height * 0.45)
+                            .frame(maxHeight: .infinity, alignment: .bottom)
+                    } else if typeSize.isAccessibilitySize {
+                        // A tall caption: the fade starts near the top so bright art never sits under the headline.
+                        LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.35), PlayscribeColor.ink950.opacity(0.92)],
+                                       startPoint: .top, endPoint: .bottom)
+                    } else {
+                        LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.9)], startPoint: .center, endPoint: .bottom)
+                    }
+                }
+            }
+            .overlay(alignment: .topLeading) {
+                if !typeSize.isAccessibilitySize { HStack(spacing: 6) { DeckChips(card: card) }.padding(12) }
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
+            .accessibilityHidden(true)
+    }
+}
+
+/// The caption of an Open portrait / Book / Closed hero card: chips (accessibility sizes only, as a row above the headline),
+/// headline and byline, with its padding. The deck measures it, at the card's width, to size the card.
+struct CompactCaption: View {
+    var card: DeckCard
+    @Environment(\.dynamicTypeSize) private var typeSize
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
 
     var body: some View {
-        // The caption sets the size (at least `height`); the art and its scrim are the background, so a tall
-        // caption at accessibility sizes grows the card instead of clipping or being squeezed.
         VStack(alignment: .leading, spacing: typeSize.isAccessibilitySize ? 2 : 4) {
-            // Accessibility sizes: the chips are their own row above the headline, in the flow, never overlaid.
-            if typeSize.isAccessibilitySize { FlowLayout(spacing: 6) { chips } }
+            if typeSize.isAccessibilitySize { FlowLayout(spacing: 6) { DeckChips(card: card) } }
             Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
                 .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                 // Three lines, the ellipsis only after a whole word, never scaled down (Iris, AX3 hero).
@@ -257,30 +309,14 @@ struct CompactDeckCard: View {
         .padding(.horizontal, 16)
         // Tighter top and bottom at accessibility sizes keeps the grown deck inside its 50% bound (J-5).
         .padding(.vertical, typeSize.isAccessibilitySize ? 12 : 16)
-        .frame(maxWidth: .infinity, minHeight: height, alignment: .bottomLeading)
-        .background {
-            ZStack(alignment: .bottomLeading) {
-                ArtView(asset: card.game.keyArtAsset, game: card.game)
-                // Increase Contrast / Reduce Transparency: a solid ink scrim behind the caption, not a fade.
-                if contrast == .increased || reduceTransparency || qaSolid {
-                    PlayscribeColor.ink950.opacity(0.92).frame(height: height * 0.45)
-                        .frame(maxHeight: .infinity, alignment: .bottom)
-                } else {
-                    LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.9)], startPoint: .center, endPoint: .bottom)
-                }
-            }
-        }
-        .overlay(alignment: .topLeading) {
-            if !typeSize.isAccessibilitySize { HStack(spacing: 6) { chips }.padding(12) }
-        }
-        // Standard sizes keep the fixed height; accessibility sizes grow to hold the whole caption.
-        .frame(height: typeSize.isAccessibilitySize ? nil : height)
-        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
-        .accessibilityHidden(true)
     }
+}
 
-    @ViewBuilder private var chips: some View {
+/// The version, "New update" and "Released" chips of a hero card.
+struct DeckChips: View {
+    var card: DeckCard
+
+    var body: some View {
         if let v = card.release?.versionChip { chip(v, filled: false) }
         if card.unread { chip("New update", filled: true) }
         if card.release == nil, let d = card.date { chip("Released " + AppModel.tileDay(d), filled: false) }
