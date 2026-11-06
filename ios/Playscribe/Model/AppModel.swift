@@ -340,8 +340,18 @@ final class AppModel {
         set { data.nav = newValue }
     }
 
+    /// Games opened from Upcoming without being filed anywhere. Memory only: never in the library or the saved data.
+    var browsedGames: [String: CatalogGame] = [:]
+
+    /// Opens a game page without adding it to the library (opening is not a watchlist action).
+    func browseGame(_ game: CatalogGame) {
+        if entry(game.id) == nil { browsedGames[game.id] = game }
+        openGame(game.id)
+    }
+
     var games: [String: CatalogGame] {
         var map = Dictionary(uniqueKeysWithValues: fixtures.games.map { ($0.id, $0) })
+        for g in browsedGames.values { map[g.id] = g }
         for g in data.customGames { map[g.id] = g }
         return map
     }

@@ -136,9 +136,8 @@ struct UpcomingView: View {
 
     private func tile(_ g: CatalogGame, watching: Bool) -> some View {
         Button {
-            if model.entry(g.id) == nil { model.addGame(g, status: .wishlist) }
-            NotificationService.shared.syncReleaseDayAlerts()
-            model.openGame(g.id)
+            // Opening a game never changes its status; watching is the game page's own control.
+            model.browseGame(g)
         } label: {
             VStack(alignment: .leading, spacing: 6) {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit)
