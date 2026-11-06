@@ -44,6 +44,45 @@ struct BookPagePanel: View {
     }
 }
 
+/// Open (landscape) and Book: the Add sheet is a panel on the right page, one page's column wide less 24 pt clear of
+/// the hinge, never a system sheet that runs across it. The left page is dimmed and takes no touches.
+struct RightPagePanel: View {
+    @Environment(AppModel.self) private var model
+    var duo: DuoContext
+
+    /// The container the pose is read from (`duo.size`) stops at the trailing rail; the window runs on 84 pt or so past it.
+    /// Both edges below are in container coordinates. Leading edge: 24 pt right of the division in Book; in Open, which has
+    /// none, 24 pt right of the hinge, the centre of the whole window (container plus rail), not of the container.
+    /// Trailing edge: 16 pt clear of the rail. Container-based throughout, no device checks (Iris, #306).
+    private var trailingInset: CGFloat { duo.safeArea.trailing + 16 }
+    private var leadingEdge: CGFloat {
+        if let d = duo.division { return d.maxX + 24 }
+        return (duo.size.width + duo.safeArea.leading + duo.safeArea.trailing) / 2 + 24
+    }
+    private var panelWidth: CGFloat { duo.size.width - 16 - leadingEdge }
+
+    var body: some View {
+        if model.addSheetOpen {
+            ZStack(alignment: .trailing) {
+                Color.black.opacity(0.4).ignoresSafeArea()
+                AddGameSheet()
+                    .environment(\.panelClose, { model.addSheetOpen = false })
+                    .environment(\.railWidth, 0)
+                    .frame(width: max(0, panelWidth), height: duo.size.height)
+                    .background(Color.ink0)
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .padding(.trailing, trailingInset)
+                    .accessibilityAddTraits(.isModal)
+            }
+            // The panel is placed against the whole container, not the safe area: the trailing rail's inset is applied
+            // once, by hand, so it is not counted twice (the sheet sat about 84 pt too far left, over the hinge).
+            .ignoresSafeArea(.container)
+            .transition(.move(edge: .trailing))
+            .zIndex(5)
+        }
+    }
+}
+
 struct LowerHalfPanel: View {
     @Environment(AppModel.self) private var model
     var duo: DuoContext
@@ -98,7 +137,7 @@ struct RootView: View {
 
     var body: some View {
         DuoReader { duo in
-            let _ = { model.livePose = duo.pose }()
+            let _ = { model.livePose = duo.pose; model.liveRightPage = duo.pose == .book || (duo.pose == .flat && duo.isLandscape) }()
             ZStack {
                 TabRoot(duo: duo)
                     .environment(\.railWidth, duo.pose == .tabletop ? TabletopRail.width : 0)
@@ -115,6 +154,7 @@ struct RootView: View {
 
                 if duo.pose == .tabletop, let fold = duo.division { LowerHalfPanel(duo: duo, fold: fold) }
                 if duo.pose == .book, let fold = duo.division { BookPagePanel(duo: duo, fold: fold) }
+                if duo.pose == .book || (duo.pose == .flat && duo.isLandscape) { RightPagePanel(duo: duo) }
 
                 if splashVisible {
                     SplashView(duo: duo) { splashVisible = false }
@@ -145,7 +185,7 @@ struct RootView: View {
         .onChange(of: NotificationService.shared.launchedFromNotification) { _, fromNotification in
             if fromNotification { splashVisible = false }
         }
-        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.addSheetOpen = false } })) {
+        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && !model.liveRightPage }, set: { if !$0 && model.livePose != .tabletop && !model.liveRightPage { model.addSheetOpen = false } })) {
             // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
             AddGameSheet().presentationDetents([.large])
         }
