@@ -51,6 +51,31 @@ struct ActionMenuContent: View {
     }
 }
 
+/// Long press opens the status menu; VoiceOver gets the same choices as custom actions. Nothing here is
+/// a swipe: swipe Remove lives only on list rows. Attach after the view's own accessibility modifiers.
+struct GameQuickActions: ViewModifier {
+    @Environment(AppModel.self) private var model
+    var game: CatalogGame
+
+    func body(content: Content) -> some View {
+        let sections = model.quickMenu(game)
+        let inLibrary = model.entry(game.id) != nil
+        content
+            .contextMenu { ActionMenuContent(sections: sections) }
+            .accessibilityActions {
+                ForEach(sections.flatMap(\.items)) { item in
+                    if !item.checked {
+                        Button(item.destructive ? item.title : "\(inLibrary ? "Set to" : "Add as") \(item.title)", action: item.action)
+                    }
+                }
+            }
+    }
+}
+
+extension View {
+    func gameQuickActions(_ game: CatalogGame) -> some View { modifier(GameQuickActions(game: game)) }
+}
+
 /// Pressed feedback for rail buttons: a visible dim in every pose (the default plain style showed none).
 struct RailPressStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
@@ -123,6 +148,27 @@ extension AppModel {
             }),
             .init(items: [.init(id: "remove", title: "Remove \(name)", destructive: true) { [weak self] in self?.removeGame(gameID) }]),
         ]
+    }
+
+    /// Quick actions on a game anywhere it appears (Terry, 0.5.1; Iris's call): in the library it is the status menu
+    /// (ticked current, Remove in red); outside it, the ways to add it.
+    func quickMenu(_ game: CatalogGame) -> [ScreenAction.MenuSection] {
+        if entry(game.id) != nil {
+            var menu = statusMenu(game.id)
+            // Accessibility text sizes on a short screen (Closed landscape AX3, 20d340f): the system menu ran off the
+            // bottom and Remove never showed. Drop the header and the game's name from Remove so every row fits.
+            if UIApplication.shared.preferredContentSizeCategory.isAccessibilityCategory {
+                for i in menu.indices {
+                    menu[i].title = nil
+                    for j in menu[i].items.indices where menu[i].items[j].destructive { menu[i].items[j].title = "Remove" }
+                }
+            }
+            return menu
+        }
+        let options = OwnershipStatus.allCases.filter { !(game.isUpcoming && $0 == .owned) }
+        return [.init(title: "Add to your library as…", items: options.map { s in
+            .init(id: s.rawValue, title: s.label) { [weak self] in self?.addGame(game, status: s) }
+        })]
     }
 
     /// D-6: the rail holds only actions that visibly do something: Notifications and Status.

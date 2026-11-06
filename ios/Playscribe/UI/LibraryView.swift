@@ -40,6 +40,11 @@ struct LibraryView: View {
             }
         }
         .background(Color.ink0)
+        .task {
+            // Quick actions tip, twice only; after the launch splash has gone.
+            try? await Task.sleep(for: .seconds(1.5))
+            model.showPressTipIfNeeded()
+        }
         .navigationTitle("Library")
         .toolbarTitleDisplayMode(.large)
         .toolbar {
@@ -892,6 +897,7 @@ struct GameRow: View {
             }
             .buttonStyle(.plain)
             .tappableFrame()
+            .gameQuickActions(row.game)
             .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.15) : .clear)
             .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
             GameMenuButton(gameID: row.id)
@@ -972,7 +978,6 @@ struct GameTile: View {
         }
         .buttonStyle(.plain)
         .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
-        .contextMenu { ActionMenuContent(sections: model.statusMenu(row.id)) }
         .accessibilityElement(children: .ignore)
         // The accessibility frame runs 8 pt wider than the cover; the id carries the cover's real
         // width so the frame tests measure the cover, not the element (fold audit, J-5).
@@ -981,6 +986,7 @@ struct GameTile: View {
         .accessibilityAddTraits(.isButton)
         .accessibilityValue(FoldAuditSwitch.enabled ? "probe id=\(Int((size ?? measuredWidth).rounded())) cover=\(Int(measuredWidth.rounded())) outer=\(Int(outerWidth.rounded()))" : "")
         .onGeometryChange(for: CGFloat.self) { FoldAuditSwitch.enabled ? $0.size.width : 0 } action: { outerWidth = $0 }
+        .gameQuickActions(row.game)
     }
 }
 
@@ -1013,11 +1019,22 @@ struct TileCover: View {
 struct StatusCircle: View {
     var status: OwnershipStatus
     var body: some View {
-        Image(systemName: Self.symbol(status))
-            .font(.system(size: 11, weight: .bold))
-            .foregroundStyle(.white)
-            .frame(width: 20, height: 20)
-            .adaptiveGlass(in: Circle())
+        // Wishlist alone is a solid yellow disc with an ink glyph (Iris, 0.5.1): the one state that needs
+        // attention, distinct by glyph, fill and colour. Tick and eye stay translucent with a white glyph.
+        if status == .wishlist {
+            Image(systemName: Self.symbol(status))
+                .font(.system(size: 12, weight: .semibold))
+                .foregroundStyle(Color.ink0)
+                .offset(y: 0.5)
+                .frame(width: 20, height: 20)
+                .background(Circle().fill(Color.wishlist))
+        } else {
+            Image(systemName: Self.symbol(status))
+                .font(.system(size: 11, weight: .bold))
+                .foregroundStyle(.white)
+                .frame(width: 20, height: 20)
+                .adaptiveGlass(in: Circle())
+        }
             // 20 pt so titles on art stay readable; the whole tile remains the 44 pt+ tap target.
     }
     static func symbol(_ s: OwnershipStatus) -> String {
