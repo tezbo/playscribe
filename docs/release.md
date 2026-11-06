@@ -3,7 +3,9 @@
 Nothing ships to TestFlight by itself. Merging to main never uploads a build; only a release tag does.
 
 1. **Scope.** The release manager lists what is in `## x.y.z` of CHANGELOG.md, adds connected feature
-   recommendations, and asks Terry whether anything else should go in.
+   recommendations, and asks Terry whether anything else should go in. Every `## x.y.z` section ends with this
+   standing line (Terry, 2026-11-06, while TestFlight feedback becomes public issues): "Feedback you send through
+   TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details."
 2. **Three sign-offs** on that exact commit, each naming its SHA:
    - **Backend and data** (QA thread): the feed, alerts and links for the release's games are right.
    - **Front end** (QA thread): docs/ux-acceptance.md passes in every pose, driven by taps, not stills alone: every
@@ -19,6 +21,10 @@ Nothing ships to TestFlight by itself. Merging to main never uploads a build; on
 5. **Go.** Only after Terry says go: make sure the heading no longer says "(candidate, not released)" (it is dropped when the notes are final), then tag that commit
    `vX.Y.Z` and push the tag. `.github/workflows/testflight.yml` builds it, sets the version from the tag and
    the next build number, and uses the section as "What to Test".
+
+**Checking a TestFlight build.** A TestFlight or App Store build carries a receipt, so the `playscribe://` QA routes
+(including `playscribe://first-run`) do nothing there by design (#231). To see first run on such a build, delete the
+app and install it again; use Settings, Reset to first run only on a developer build.
 
 Versions: patch (0.2.1) for fixes only, minor (0.3.0) for features, 1.0.0 for the App Store launch.
 

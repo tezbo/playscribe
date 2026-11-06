@@ -393,12 +393,14 @@ struct NoteSectionView: View {
     var release: Release
     var section: NoteSection
     @State private var showPC = false
-    @State private var allShown = false
 
     var body: some View {
         let key = "cat:\(release.id):\(section.title)"
         let open = model.isExpanded(key)
-        let shown = section.items.filter { !ChangeKind.isPreamble($0.text) }
+        // Kept in the model, not @State, so a re-created page never snaps it shut (TestFlight #302).
+        let allShown = model.isExpanded("\(key):more")
+        // Only items with something to show count, so the number matches the bullets (TestFlight #301).
+        let shown = section.items.filter { !ChangeKind.isPreamble($0.text) && !LinkedText.clean($0.text).isEmpty }
         let ps5Items = release.isPS5Listed ? shown.filter { !$0.isPCOnly } : shown
         let pcOnly = release.isPS5Listed ? shown.filter(\.isPCOnly) : []
         let hidden = ps5Items.filter { $0.spoiler == true }.count
@@ -419,13 +421,10 @@ struct NoteSectionView: View {
             if open {
                 let visible = allShown ? ps5Items.count : min(5, ps5Items.count)
                 ForEach(Array(ps5Items.prefix(visible).enumerated()), id: \.offset) { i, item in
-                    // An item that was only Steam markup (an image) has nothing to show.
-                    if !LinkedText.clean(item.text).isEmpty {
-                        NoteItemView(item: item, gameID: release.gameID, key: "\(key):\(i)")
-                    }
+                    NoteItemView(item: item, gameID: release.gameID, key: "\(key):\(i)")
                 }
                 if ps5Items.count > 5 {
-                    Button(allShown ? "Show fewer" : "Show \(ps5Items.count - 5) more") { allShown.toggle() }
+                    Button(allShown ? "Show fewer" : "Show \(ps5Items.count - 5) more") { model.setExpanded("\(key):more", !allShown) }
                         .font(PlayscribeFont.footnote).hitTarget()
                 }
                 if !pcOnly.isEmpty {
@@ -550,10 +549,12 @@ enum ChangeKind: String, CaseIterable {
         allCases.compactMap { kind in
             let sections = notes.compactMap { sec -> NoteSection? in
                 let items = sec.items.filter { of($0, in: sec.title) == kind && !isPreamble($0.text) }
-                return items.isEmpty ? nil : NoteSection(title: sec.title, items: items)
+                // On a PS5 page a section with nothing for PS5 (only PC-only or blank lines) is left out, never "0".
+                let shows = items.contains { !(ps5Only && $0.isPCOnly) && !LinkedText.clean($0.text).isEmpty }
+                return items.isEmpty || !shows ? nil : NoteSection(title: sec.title, items: items)
             }
             guard !sections.isEmpty else { return nil }
-            let count = sections.reduce(0) { total, sec in total + sec.items.filter { item in !(ps5Only && item.isPCOnly) }.count }
+            let count = sections.reduce(0) { total, sec in total + sec.items.filter { item in !(ps5Only && item.isPCOnly) && !LinkedText.clean(item.text).isEmpty }.count }
             return (kind, sections, count)
         }
     }

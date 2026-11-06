@@ -64,9 +64,27 @@ struct SettingsView: View {
                 }
                 // One default for every game (Terry, 0.2.0); a game's own setting lives on its bell.
                 Section {
+                    // N-1: a way back after "Not now" or a denial, always one tap from Settings.
+                    switch NotificationService.shared.authorization {
+                    case .notDetermined:
+                        Button("Turn on alerts") { Task { await NotificationService.shared.requestAuthorization() } }
+                            .frame(minHeight: 52)
+                            .accessibilityIdentifier("turnOnAlerts")
+                    case .denied:
+                        Button {
+                            if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+                        } label: {
+                            // The arrow reads as a link out of the app (Iris).
+                            HStack { Text("Open iOS Settings"); Spacer(minLength: 8); Image(systemName: "arrow.up.forward").font(PlayscribeFont.footnote) }
+                        }
+                        .frame(minHeight: 52)
+                        .accessibilityIdentifier("openIOSSettings")
+                    default: EmptyView()
+                    }
                     Picker("Notify me about", selection: Binding(get: { model.notifyDefault }, set: { model.data.notifyDefault = $0 })) {
                         ForEach(NotifyLevel.allCases) { Text($0.label).tag($0) }
                     }
+                    .opacity(NotificationService.shared.authorization == .denied ? 0.5 : 1)
                     let overrides = model.notifyOverrides
                     if !overrides.isEmpty {
                         NavigationLink("\(overrides.count) game\(overrides.count == 1 ? " has its" : "s have their") own setting") {
@@ -80,6 +98,7 @@ struct SettingsView: View {
                     Text("Notifications")
                 } footer: {
                     // The footer explains the row above it (0.5.1 spec 1).
+                    // Said once (Quinn, Iris): the footer carries the denied message.
                     Text(NotificationService.shared.authorization == .denied
                          ? "Notifications are off for \(Brand.name) in iOS Settings."
                          : "Change a single game from the bell on its page.")
@@ -105,8 +124,14 @@ struct SettingsView: View {
                     // Shown only while a PS Plus month exists and the card is on, the same condition as the Library card.
                     if model.data.plusCardOff != true, PlusLogic.current(PlusStore.shared.months) != nil {
                         // PS Plus: a reminder in the last three days a month's games can be claimed.
-                        Toggle("PS Plus games leaving soon", isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true }))
-                            .frame(minHeight: 52)
+                        Toggle(isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true })) {
+                            VStack(alignment: .leading, spacing: 6) {
+                                PlusBadge(height: 20)
+                                Text("Games leaving soon")
+                            }
+                            .frame(minHeight: 52, alignment: .leading)
+                        }
+                            .accessibilityLabel("PS Plus games leaving soon")
                             .accessibilityHint("A reminder in the last three days before this month's PS Plus games leave")
                             .accessibilityIdentifier("plusLeavingSoon")
                             .onChange(of: model.data.plusLeavingSoonOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
@@ -163,7 +188,8 @@ struct SettingsView: View {
                         set: { model.showDebugOverlay = $0; if $0 { FoldAuditSwitch.enabled = true } }))
                     Button("Reset to first run", role: .destructive) { model.resetToFirstRun(); dismiss() }
                     Button("Reset to demo library") { model.resetDemo(); dismiss() }
-                    LabeledContent("Pose", value: duo.pose.rawValue)
+                    // The app's pose, from the root container: a sheet is outside the reader, so its own `duo` is the default (closed).
+                    LabeledContent("Pose", value: model.livePose.label)
                     if let token = NotificationService.shared.deviceToken {
                         LabeledContent("APNs token", value: String(token.prefix(12)) + "…")
                     }
