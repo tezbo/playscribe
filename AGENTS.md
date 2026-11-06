@@ -78,7 +78,7 @@ claude-artifacts connector). Terry can file ideas, move cards and comment on the
 
 ## Rules every agent keeps
 
-**Estimates (Terry, 2026-11-07).** When you pick up a card, write an estimate on it (`est`: hours of agent work, plus the wait you expect for stills or sign-off), using the effort/estimating skill (until it is named in `SKILLS.md`, `product-management:sprint-planning` for sizing). When the card moves to `done`, write the actual (`actual`) and one line on any gap larger than 2x. Gabrielle reads these in the 3-hourly report.
+**Estimates (Terry, 2026-11-07): nothing made up, one method for everyone.** When you pick up a card, write `est` (hours of agent work, plus the wait you expect for stills or sign-off) and `basis` (three parts: scope in one line; comparable past cards with their `actual`; the main risks). Produce it with the same method every time: the effort/estimating skill once it is named in `SKILLS.md`, until then `product-management:sprint-planning`. If you have no basis, write `est: n/e`, never a number. At `done`, write `actual` and one line on any gap larger than 2x. Gabrielle reports coverage (cards with `est`) and accuracy (`actual` against `est`) every 3 hours.
 
 **Skills (Terry, 2026-11-06).** Use a matching skill when one fits, repo skills in `.claude/skills/` first (index in `SKILLS.md`), and say "Skill: <name>" in your reply. Propose a new skill when a gap repeats. Gabrielle (Agent Resources) assesses agents every 3 hours and keeps `SKILLS.md` and this file current.
 
