@@ -280,9 +280,13 @@ const ascWebhook = async (env, request) => {
   const raw = await request.text()
   if (raw.length > MAX_BODY) return bad('body too large', 413)
   if (!(await signatureOk(env, request, raw))) {
-    // Header NAMES only (never values) so the first ping shows which header Apple signs with.
-    // At most one write a day, so forged requests cannot spend the KV write budget.
-    if (!(await env.KV.get('dbg:webhook'))) await env.KV.put('dbg:webhook', JSON.stringify({ at: now(), headers: [...request.headers.keys()].sort() }), { expirationTtl: 86400 })
+    // Header NAMES only (never values), up to 5 distinct sets a day, so a scanner cannot hide Apple's ping and forged
+    // requests cannot spend the KV write budget. Remove this probe once the signature header is known.
+    const names = [...request.headers.keys()].sort().join(',')
+    const seen = (await getJson(env.KV, 'dbg:webhook')) ?? { sets: [] }
+    if (seen.sets.length < 5 && !seen.sets.some((x) => x.headers === names)) {
+      await env.KV.put('dbg:webhook', JSON.stringify({ sets: [...seen.sets, { at: now(), headers: names }] }), { expirationTtl: 86400 })
+    }
     return bad('not allowed', 401)
   }
   let ev

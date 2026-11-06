@@ -28,6 +28,8 @@ def show(r):
 
 
 def main(mode):
+    if mode not in ("register", "ping", "list"):
+        print("mode must be register, ping or list"); return 1
     s = session()
     app = s.get(f"{ASC}/v1/apps", params={"filter[bundleId]": BUNDLE_ID}).json()["data"][0]["id"]
     hooks = s.get(f"{ASC}/v1/apps/{app}/webhooks")
@@ -35,6 +37,7 @@ def main(mode):
     if mode == "list":
         print("webhooks:", [(h["id"], h["attributes"].get("enabled"), h["attributes"].get("url")) for h in ours]); return 0
     secret = hashlib.sha256(("asc-webhook:" + os.environ["CLOUDFLARE_API_TOKEN"]).encode()).hexdigest()
+    print("::add-mask::" + secret)  # the repo is public and logs are readable; Apple's replies are printed below
     if mode == "register" and not ours:
         body = {"data": {"type": "webhooks", "attributes": {"enabled": True, "eventTypes": EVENTS, "name": NAME, "secret": secret, "url": URL},
                          "relationships": {"app": {"data": {"type": "apps", "id": app}}}}}

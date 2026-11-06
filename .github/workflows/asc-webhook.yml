@@ -16,7 +16,8 @@ jobs:
       ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
       ASC_KEY_P8_BASE64: ${{ secrets.ASC_KEY_P8_BASE64 }}
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      MODE: ${{ inputs.mode }}
     steps:
       - uses: actions/checkout@v4
       - run: pip install pyjwt cryptography requests
-      - run: cd ios/tools && python3 asc_webhook.py "${{ inputs.mode }}"
+      - run: cd ios/tools && python3 asc_webhook.py "$MODE"
