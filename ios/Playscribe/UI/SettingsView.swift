@@ -18,6 +18,7 @@ struct SettingsView: View {
     @Environment(\.duo) private var duo
     @AppStorage(YouTubeController.autoplayKey) private var autoplayVideos = false
     @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
+    @AppStorage(PushRegistrar.teamKey) private var teamAlerts = false
     @State private var simGame: String = ""
     @State private var simKind: AppModel.SimKind = .major
     @State private var simDelay: Double = 10
@@ -178,6 +179,17 @@ struct SettingsView: View {
                     Text("Simulate an update (internal builds)")
                 } footer: {
                     Text("Creates a release marked Simulated and schedules its notification. Close or lock the device to see it arrive on the outer display.")
+                }
+
+                Section {
+                    Toggle("Team alerts", isOn: $teamAlerts)
+                        .frame(minHeight: 52)
+                        .accessibilityIdentifier("teamAlerts")
+                        .onChange(of: teamAlerts) { _, on in if PushRegistrar.appCallsEnabled { PushRegistrar.syncTeam(on) } }
+                } header: {
+                    Text("Team alerts (internal builds)")
+                } footer: {
+                    Text("Also receive the team's test notifications from the push relay. Off by default; this never appears in a TestFlight or App Store build.")
                 }
 
                 Section("Testing") {
