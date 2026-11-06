@@ -36,3 +36,9 @@ on the Mac. Hosted runners are headless, so they cannot press it either.
 ## Precheck (quiet compile check before a PR)
 
 `precheck.yml` runs on pushes to `claude/**` that touch `ios/**`. It runs `build-for-testing` for the `Playscribe` and `PlayscribeUI` schemes on the Xcode 27.1 runner and always finishes green, so GitHub sends no failed-run email. The verdict is the name of the `verdict` job (`PRECHECK PASS` or `PRECHECK FAIL <file>:<line> <error>`) and the `precheck` commit status. Engineers read it, fix, push again, and open the PR only on PASS (AGENTS.md, "Precheck first"). Compile errors then never reach the PR runs in `ios.yml`; test failures still do.
+
+## Relay check (quiet test run for relay changes)
+
+`.github/workflows/relay-check.yml` runs `relay/test/worker.test.mjs` on `claude/*` pushes that touch `relay/**`, because the
+iOS checks and Precheck only watch `ios/**`. Like Precheck it always finishes green (no failure email): read RELAY PASS or
+RELAY FAIL in the `verdict` job name, or the `relay-tests` commit status. Open or merge a relay PR only on RELAY PASS.
