@@ -408,6 +408,8 @@ struct PageEdge: View {
 /// Tabletop's standing half: the selected card as content only (G-4); the page edge below drives it.
 struct DeckStage: View {
     var card: DeckCard
+    /// Upcoming tab: the stage fronts the soonest unreleased game, so it carries an eyebrow and the date line, not an update.
+    var upcomingLine: String? = nil
     @Environment(\.duo) private var duo
     @State private var stageBottom: CGFloat = 0
 
@@ -417,6 +419,7 @@ struct DeckStage: View {
             LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.85)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 6) {
                 HStack(spacing: 8) {
+                    if upcomingLine != nil { Text("Coming soon").foregroundStyle(PlayscribeColor.accent) }
                     if card.unread { Text("New update").foregroundStyle(PlayscribeColor.accent) }
                     if let v = card.release?.versionChip { Text(v).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
@@ -425,8 +428,9 @@ struct DeckStage: View {
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).lineLimit(3)
                 HStack(spacing: 8) {
-                    Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
-                    if let d = card.date { Text(AppModel.tileDay(d)).foregroundStyle(PlayscribeColor.textSecondary) }
+                    if let line = upcomingLine { Text(line).foregroundStyle(PlayscribeColor.textSecondary) }
+                    else { Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary) }
+                    if upcomingLine == nil, let d = card.date { Text(AppModel.tileDay(d)).foregroundStyle(PlayscribeColor.textSecondary) }
                 }
                 .font(PlayscribeFont.subheadline)
             }
