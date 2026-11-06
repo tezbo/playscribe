@@ -11,7 +11,7 @@
 //   GET|PUT /v1/devices/me/follows      the followed games
 //   GET /admin/devices?cursor=          Feed job only (Bearer ADMIN_TOKEN), 40 devices a page
 //
-// KV keys: d:<id> device record, t:<apnsToken> -> id, k:<sha256 deviceKey> -> id.
+// KV keys: d:<id> device record, t:<apnsToken> -> id, k:<sha256 deviceKey> -> id, n:<UTC date> new devices that day.
 // Free-plan limits this is sized for: 1,000 KV writes a day (a relaunch with nothing changed writes nothing),
 // 50 KV operations per request (hence the 40 device page).
 
@@ -20,6 +20,10 @@ const MINUTES = 24 * 60
 const PAGE = 40
 const MAX_BODY = 64 * 1024
 const MAX_FOLLOWS = 500
+// A new device costs 4 KV writes (record, token, key, and the day counter); relaunches cost none. 150 new devices a day
+// is about 600 of the free plan's 1,000 writes, leaving the rest for changes by existing devices, so a flood of fake
+// registrations cannot starve real users. Existing devices are never refused.
+export const MAX_NEW_PER_DAY = 150
 
 const enc = new TextEncoder()
 const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('')
@@ -144,6 +148,14 @@ const register = async (env, request) => {
     if (JSON.stringify(next) !== JSON.stringify(existing)) await putJson(kv, `d:${existing.id}`, { ...next, updated: now() })
     return json(publicView(next), 200)
   }
+  const dayKey = `n:${now().slice(0, 10)}`
+  const todays = Number((await kv.get(dayKey)) ?? 0)
+  if (todays >= MAX_NEW_PER_DAY) {
+    const r = bad('too many new devices today, try again tomorrow', 429)
+    r.headers.set('retry-after', '3600')
+    return r
+  }
+  await kv.put(dayKey, String(todays + 1))
   const id = crypto.randomUUID()
   const key = b64url(crypto.getRandomValues(new Uint8Array(32)))
   const rec = { id, key, token, environment, locale, follows: follows ?? [], quiet: quiet ?? null, created: now(), updated: now() }
