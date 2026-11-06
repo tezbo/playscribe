@@ -174,7 +174,7 @@ struct LatestUpdatesDeck: View {
     private func deck(cardWidth: CGFloat?, artHeight: CGFloat?, scrollHeight: CGFloat? = nil) -> some View {
         // Closed landscape at accessibility sizes: the pager is as tall as the card's caption, not a fixed height.
         let wideAX = scrollHeight != nil && typeSize.isAccessibilitySize && pagerWidth > 0
-        VStack(alignment: .leading, spacing: 8) {
+        return VStack(alignment: .leading, spacing: 8) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 12) {
                     ForEach(cards) { card in
