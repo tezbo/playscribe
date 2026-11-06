@@ -1156,38 +1156,54 @@ struct SquareCover: View {
 
 /// The open-flat banner: the featured game's art with the wordmark, so it reads as the app.
 
-/// N-1: asked in context after the first game is added. One Continue button, swipe to dismiss.
+/// N-1: asked in context once a game is in the library. "Turn on" opens the system prompt (or iOS Settings if
+/// notifications were denied); "Not now" or a swipe rests the card for a week.
 struct NotificationInviteCard: View {
     @Environment(AppModel.self) private var model
     var gameName: String
-    @State private var counted = false
+
+    private var denied: Bool { NotificationService.shared.authorization == .denied }
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.accent)
             VStack(alignment: .leading, spacing: 8) {
-                Text("Get a note when \(gameName) updates on PS5").font(PlayscribeFont.headline)
-                Button("Continue") {
-                    model.data.notificationCardDismissed = true
-                    Task { await NotificationService.shared.requestAuthorization() }
+                Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
+                Text(denied
+                     ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
+                     : "Get a note the moment \(gameName) or any game in your library gets an update on PS5.")
+                    .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 12) { buttons }
+                    VStack(alignment: .leading, spacing: 8) { buttons }
                 }
-                .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
-                .hitTarget()
-                .tappableFrame()
             }
             Spacer(minLength: 0)
         }
         .padding(16)
         .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .gesture(DragGesture(minimumDistance: 30).onEnded { v in
-            if abs(v.translation.width) > 60 { model.data.notificationCardDismissed = true }
+            if abs(v.translation.width) > 60 { model.snoozeNotificationCard() }
         })
-        .accessibilityAction(named: "Dismiss") { model.data.notificationCardDismissed = true }
-        .onAppear {
-            guard !counted else { return }
-            counted = true
-            model.data.notificationCardShows += 1
+        .accessibilityAction(named: "Not now") { model.snoozeNotificationCard() }
+    }
+
+    @ViewBuilder private var buttons: some View {
+        Button(denied ? "Open Settings" : "Turn on alerts") {
+            if denied {
+                model.snoozeNotificationCard()
+                if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+            } else {
+                Task { if !(await NotificationService.shared.requestAuthorization()) { model.snoozeNotificationCard() } }
+            }
         }
+        .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
+        .hitTarget()
+        .tappableFrame()
+        Button("Not now") { model.snoozeNotificationCard() }
+            .buttonStyle(.bordered)
+            .hitTarget()
+            .tappableFrame()
     }
 }
 

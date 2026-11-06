@@ -64,6 +64,20 @@ struct SettingsView: View {
                 }
                 // One default for every game (Terry, 0.2.0); a game's own setting lives on its bell.
                 Section {
+                    // N-1: a way back after "Not now" or a denial, always one tap from Settings.
+                    switch NotificationService.shared.authorization {
+                    case .notDetermined:
+                        Button("Turn on alerts") { Task { await NotificationService.shared.requestAuthorization() } }
+                            .frame(minHeight: 52)
+                            .accessibilityIdentifier("turnOnAlerts")
+                    case .denied:
+                        Button("Open iOS Settings") {
+                            if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+                        }
+                        .frame(minHeight: 52)
+                        .accessibilityIdentifier("openIOSSettings")
+                    default: EmptyView()
+                    }
                     Picker("Notify me about", selection: Binding(get: { model.notifyDefault }, set: { model.data.notifyDefault = $0 })) {
                         ForEach(NotifyLevel.allCases) { Text($0.label).tag($0) }
                     }

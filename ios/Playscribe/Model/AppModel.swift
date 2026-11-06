@@ -112,6 +112,9 @@ struct PersistedState: Codable {
     var plusLeavingSoonOff: Bool?
     var notificationCardShows = 0
     var notificationCardDismissed = false
+    /// N-1 re-ask: how many times "Not now" was chosen, and until when the card rests. Optional so older saved state decodes.
+    var notificationAsks: Int?
+    var notificationSnoozedUntil: Date?
     /// How often the "press and hold" Library tip has shown (it stops after two). Optional so older saved state still decodes.
     var pressTipShows: Int?
     /// Releases already announced by a notification, so a release never pushes twice (N-3).
@@ -788,10 +791,17 @@ final class AppModel {
 
     // MARK: - First run and notification invitation
 
-    /// N-1: the invitation card shows after the first game is added, at most twice, never after a decision.
+    /// N-1: the invitation card shows once a game is in the library, until the person decides. "Not now" snoozes it
+    /// for a week, three times at most. If iOS notifications are denied it offers Open Settings, on the same schedule.
     var showsNotificationCard: Bool {
-        !data.collection.isEmpty && !data.notificationCardDismissed && data.notificationCardShows < 2
-            && NotificationService.shared.authorization == .notDetermined
+        NotificationAsk.shows(hasGames: !data.collection.isEmpty, status: NotificationService.shared.authorization,
+                              asks: data.notificationAsks ?? 0, snoozedUntil: data.notificationSnoozedUntil)
+    }
+
+    /// "Not now", a swipe, or a declined system prompt: ask again in a week (N-1).
+    func snoozeNotificationCard() {
+        data.notificationAsks = (data.notificationAsks ?? 0) + 1
+        data.notificationSnoozedUntil = Calendar.current.date(byAdding: .day, value: NotificationAsk.snoozeDays, to: .now)
     }
 
     func resetToFirstRun() {
