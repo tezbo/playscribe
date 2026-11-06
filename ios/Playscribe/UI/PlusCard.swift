@@ -14,6 +14,15 @@ struct PlusCard: View {
     /// No wider than a Library tile, whatever the pose (Iris, #242).
     static let maxCoverWidth: CGFloat = 140
 
+    /// "Plus A", "Plus A and B", "Plus A, B and C"; nil for none.
+    static func plusLine(_ names: [String]) -> String? {
+        switch names.count {
+        case 0: return nil
+        case 1: return "Plus \(names[0])"
+        default: return "Plus " + names.dropLast().joined(separator: ", ") + " and " + names.last!
+        }
+    }
+
     private static let romans: [String: String] = ["ii": "2", "iii": "3", "iv": "4", "v": "5", "vi": "6", "vii": "7", "viii": "8", "ix": "9", "x": "10"]
 
     /// Title key for matching: folded, roman numerals as digits ("Alan Wake II" and "Alan Wake 2" agree), no leading "the".
@@ -60,8 +69,14 @@ struct PlusCard: View {
                         stacked(shown, lastChance: lastChance, claimBy: claimBy)
                     }
                 }
-                // Games past the covers keep a name row, as the old card listed them: tracked ones open their page.
-                ForEach(Array(month.games.dropFirst(limit).enumerated()), id: \.offset) { n, g in nameRow(g, lead: n == 0 ? "and " : "") }
+                // Games past the covers (rule): the ones you track get their own tappable row; the rest are one
+                // "Plus A, B and C" line. Never a bare "and X" (Quinn).
+                let extra = Array(month.games.dropFirst(limit))
+                ForEach(Array(extra.filter { g in g.gameId.map { model.entry($0) != nil } ?? false }.enumerated()), id: \.offset) { _, g in nameRow(g) }
+                if let line = Self.plusLine(extra.filter { g in !(g.gameId.map { model.entry($0) != nil } ?? false) }.map(\.name)) {
+                    Text(line).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -150,8 +165,9 @@ struct PlusCover: View {
             if let game { TileCover(game: game) }
             else {
                 RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.ink1)
-                    .overlay(Text(name).font(PlayscribeFont.footnote.weight(.semibold)).multilineTextAlignment(.center)
-                        .lineLimit(4).padding(8).foregroundStyle(PlayscribeColor.textPrimary))
+                    // Never cut mid-title (Iris, AX3): a fixed 13 pt, wrapped in full, so it also stays above 12 pt.
+                    .overlay(Text(name).font(.system(size: 13, weight: .semibold)).multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true).padding(8).foregroundStyle(PlayscribeColor.textPrimary))
                     .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
             }
         }
@@ -188,11 +204,21 @@ struct PlusCoverRow<Content: View>: View {
     }
 
     var body: some View {
+        if fixedWidth != nil {
+            covers
+        } else {
+            // The row's width comes from a flexible spacer, never from its covers, so three 140 pt covers cannot
+            // widen the card past its column (Iris: the card ran across Book's hinge) and the measure cannot feed on itself.
+            Color.clear.frame(maxWidth: .infinity)
+                .frame(height: (coverWidth * 4 / 3).rounded())
+                .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { rowWidth = $0 }
+                .overlay(alignment: .leading) { covers }
+        }
+    }
+
+    private var covers: some View {
         HStack(spacing: spacing) {
             ForEach(Array(games.enumerated()), id: \.offset) { _, g in content(g, coverWidth) }
-            if fixedWidth == nil { Spacer(minLength: 0) }
         }
-        .frame(maxWidth: fixedWidth == nil ? .infinity : nil, alignment: .leading)
-        .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { rowWidth = $0 }
     }
 }

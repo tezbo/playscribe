@@ -85,6 +85,13 @@ struct PlusCoverTests {
         #expect(PlusCard.resolve(g, tracked: { _ in nil })?.igdbID == 185246)
     }
 
+    @Test func extraNamesReadAsOnePlusLine() {
+        #expect(PlusCard.plusLine([]) == nil)
+        #expect(PlusCard.plusLine(["Returnal"]) == "Plus Returnal")
+        #expect(PlusCard.plusLine(["Returnal", "Astro Bot"]) == "Plus Returnal and Astro Bot")
+        #expect(PlusCard.plusLine(["A", "B", "C"]) == "Plus A, B and C")
+    }
+
     @Test func atMostThreeCoversShow() {
         #expect(PlusCard.coverLimit(accessibility: false) == 3)
     }
