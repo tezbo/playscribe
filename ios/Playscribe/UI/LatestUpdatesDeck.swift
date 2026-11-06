@@ -398,11 +398,16 @@ struct DeckByline: View {
 
     var body: some View {
         if typeSize.isAccessibilitySize {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
-                    .lineLimit(tight ? 1 : 2).fixedSize(horizontal: false, vertical: true)
-                if card.release != nil && !dateText.isEmpty { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
+            // One text, name then date, so the date shares the name's last line: a line less than name and date
+            // stacked, which is what the headline needs under the J-5 cap.
+            Group {
+                if card.release != nil && !dateText.isEmpty {
+                    Text("\(Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.textSecondary))")
+                } else {
+                    Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
+                }
             }
+            .lineLimit(tight ? 2 : 3).fixedSize(horizontal: false, vertical: true)
             .font(PlayscribeFont.subheadline)
         } else {
             HStack(spacing: 8) {
