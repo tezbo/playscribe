@@ -252,7 +252,7 @@ struct DeckCardView: View {
 
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
     private var label: String {
-        if let r = card.release { return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(dateText)" }
+        if let r = card.release { return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)" }
         return "\(card.game.name), released \(dateText)"
     }
 }
@@ -428,6 +428,7 @@ struct WideDeckCard: View {
     var card: DeckCard
     var height: CGFloat
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.duo) private var duo
     /// Accessibility sizes: a little taller (still inside J-5's half of the container) so the caption is whole.
     private var cardHeight: CGFloat { typeSize.isAccessibilitySize ? max(height, 232) : height }
 
@@ -438,7 +439,14 @@ struct WideDeckCard: View {
                 LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.55), .clear],
                                startPoint: .leading, endPoint: .trailing)
                 VStack(alignment: .leading, spacing: 6) {
-                    if card.unread { chip("New update", filled: true) }
+                    if typeSize.isAccessibilitySize {
+                        // Both chips ride in the caption at AX (never a corner overlay that can be pushed out): side by
+                        // side, else stacked (Iris/Quinn, Closed landscape AX5).
+                        ViewThatFits(in: .horizontal) {
+                            HStack(spacing: 6) { DeckChips(card: card) }
+                            VStack(alignment: .leading, spacing: 6) { DeckChips(card: card) }
+                        }
+                    } else if card.unread { chip("New update", filled: true) }
                     Text(card.game.name).font(PlayscribeFont.title2.bold())
                         .foregroundStyle(PlayscribeColor.textPrimary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
@@ -447,10 +455,10 @@ struct WideDeckCard: View {
                         .lineLimit(2).fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(16)
-                .frame(width: g.size.width * 0.55, alignment: .leading)
+                .frame(width: min(g.size.width, duo.size.width) * (typeSize.isAccessibilitySize ? 0.8 : 0.55), alignment: .leading)
             }
             .overlay(alignment: .topTrailing) {
-                if let v = card.release?.versionChip { chip(v, filled: false).padding(12) }
+                if !typeSize.isAccessibilitySize, let v = card.release?.versionChip { chip(v, filled: false).padding(12) }
             }
         }
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
@@ -463,7 +471,7 @@ struct WideDeckCard: View {
     private func chip(_ text: String, filled: Bool) -> some View {
         Text(text).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
-            .padding(.horizontal, 8).frame(height: 22)
+            .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
     }
 }
@@ -507,7 +515,7 @@ struct DeckCardArt: View {
     private func chip(_ text: String, filled: Bool) -> some View {
         Text(text).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
-            .padding(.horizontal, 8).frame(height: 22)
+            .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
     }
 }
