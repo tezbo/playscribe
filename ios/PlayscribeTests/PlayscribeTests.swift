@@ -254,6 +254,37 @@ struct DatePrecisionTests {
         #expect(game(nil, nil).ps5DateLine == "Release date TBA")
     }
 
+    func ps4Only(_ since: String?, _ p: DatePrecision? = nil) -> CatalogGame {
+        CatalogGame(id: "t", name: "T", platforms: [.ps4], releaseDate: nil, releasePrecision: p, playableSince: since, coverage: .none)
+    }
+
+    @Test("GR-1, D-12: a PS4-only game that plays on PS5 is not 'TBA'")
+    func ps4OnlyIsPlayable() {
+        // Before the PS5 launch (12 Nov 2020): the PS4 version plays on PS5.
+        #expect(ps4Only("2018-10-05").ps5AvailabilityLine == "Plays on PS5 (PS4 version)")
+        #expect(ps4Only("2018-10-05").ps5ShortLine == "Playable on PS5")
+        // After the launch: since when.
+        #expect(ps4Only("2021-03-04").ps5AvailabilityLine == "Playable on PS5 since Mar 2021")
+        #expect(ps4Only("2021-03-04").ps5ShortLine == "Playable on PS5")
+        // The game page and the tile agree with the date line.
+        #expect(ps4Only("2018-10-05").ps5DateLine == ps4Only("2018-10-05").ps5AvailabilityLine)
+        #expect(ps4Only("2021-03-04").ps5DateLine == ps4Only("2021-03-04").ps5AvailabilityLine)
+    }
+
+    @Test("GR-1, D-12: TBA stays for a game with no date at all, or a date that is to be decided")
+    func tbaStays() {
+        #expect(ps4Only(nil).ps5AvailabilityLine == "Release date TBA")
+        #expect(ps4Only(nil).ps5ShortLine == "Date TBA")
+        #expect(ps4Only("2018-10-05", .tbd).ps5AvailabilityLine == "Release date TBA")
+        #expect(ps4Only("2018-10-05", .tbd).ps5ShortLine == "Date TBA")
+    }
+
+    @Test("GR-1, D-12: a game with a PS5 date keeps its lines")
+    func ps5DateUnchanged() {
+        #expect(game("2099-11-19", .day).ps5AvailabilityLine == "Out 19 Nov 2099")
+        #expect(game("2024-05-02", .day).ps5ShortLine.hasPrefix("On PS5 since"))
+    }
+
     @Test("GR-5: past imprecise dates never claim a day")
     func past() {
         #expect(game("2025-12-31", .year).ps5DateLine == "Released 2025")

@@ -131,6 +131,10 @@ struct CatalogGame: Codable, Hashable, Identifiable {
 
     /// GR-1: when the game is (or will be) out on PS5, for games with no notes yet.
     var ps5AvailabilityLine: String {
+        // A PS4-only game that plays on PS5 has no PS5 date, and is not "TBA" (Terry: PS4 games on PS5 count). Same wording as ps5DateLine.
+        if releasePrecision != .tbd, releaseDate?.isoDay == nil, let b = playableSince?.isoDay {
+            return b >= Self.ps5Launch ? "Playable on PS5 since \(b.formatted(.dateTime.month(.abbreviated).year()))" : "Plays on PS5 (PS4 version)"
+        }
         guard releasePrecision != .tbd, let d = releaseDate?.isoDay else { return "Release date TBA" }
         if d > .now { return Self.outLine(d, precision: releasePrecision ?? .day) }
         if let p = releasePrecision, p != .day, d >= Self.ps5Launch { return "Out on PS5 since " + Self.period(d, p) }
@@ -140,6 +144,7 @@ struct CatalogGame: Codable, Hashable, Identifiable {
 
     /// The tile form of the availability line (D-12): month and year, never a day.
     var ps5ShortLine: String {
+        if releasePrecision != .tbd, releaseDate?.isoDay == nil, playableSince?.isoDay != nil { return "Playable on PS5" }
         guard releasePrecision != .tbd, let d = releaseDate?.isoDay else { return "Date TBA" }
         if d > .now { return Self.outLine(d, precision: releasePrecision ?? .day) }
         let since = max(d, Self.ps5Launch)
