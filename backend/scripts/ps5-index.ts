@@ -63,7 +63,8 @@ const firstRelease = (g: { first_release_date?: number; release_dates?: ReleaseD
   if (!o || dates.d || dates.b || o > new Date().toISOString().slice(0, 10)) return {}
   const first = (g.release_dates ?? []).filter((r) => r.date && r.platform).sort((a, c) => a.date! - c.date!)[0]
   const ow = first ? platformName.get(first.platform!) : undefined
-  return ow ? { o, ow } : {}
+  // A released game whose release rows name no platform still gets its date; the app then says only "Released".
+  return ow ? { o, ow } : { o }
 }
 
 const datesOf = (id: number, rows: ReleaseDate[] | undefined) =>
@@ -98,6 +99,7 @@ for (let offset = 0; offset < 10000; offset += 500) {
 const old = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, 'utf8')) as { games: { i: number; t?: string[] }[] }) : { games: [] }
 const tones = new Map(old.games.filter((g) => g.t).map((g) => [g.i, g.t]))
 
+const firstDates = new Map<number, string>()
 const games: { i: number; n: string; d?: string; q?: string; e?: true; f?: string; b?: string; o?: string; ow?: string; v?: string; p?: string; c?: string; a?: string; s?: string; t?: string[]; r: number }[] = []
 for (let offset = 0; ; offset += 500) {
   const page = await igdb.query<any>(
@@ -109,11 +111,20 @@ for (let offset = 0; ; offset += 500) {
   for (const g of page) {
     const company = (role: string) => (g.involved_companies ?? []).find((c: any) => c[role])?.company?.name
     const dates = datesOf(g.id, g.release_dates)
+    firstDates.set(g.id, day(g.first_release_date) ?? '')
     games.push({ i: g.id, n: g.name, ...dates, ...firstRelease(g, dates), v: company('developer'), p: company('publisher'), c: g.cover?.image_id, a: artOf(g.artworks), s: squareOf(g.artworks), t: tones.get(g.id), r: g.total_rating_count ?? 0 })
   }
   if (page.length < 500) break
 }
 games.sort((a, b) => (rankOf.get(a.i) ?? Infinity) - (rankOf.get(b.i) ?? Infinity) || b.r - a.r)
+
+// Games with nothing to show are checked against IGDB's own first release date so a released game is never left as TBA.
+const bare = games.filter((g) => !g.d && !g.b && !g.o)
+console.log(`no d, b or o: ${bare.length} (${bare.filter((g) => g.q === 'tbd').length} with a tbd PS5 listing)`)
+const unknownFirst = bare.filter((g) => !firstDates.get(g.i))
+const futureFirst = bare.filter((g) => firstDates.get(g.i) && firstDates.get(g.i)! > new Date().toISOString().slice(0, 10))
+console.log(`  IGDB has no first release date: ${unknownFirst.length}; first release still ahead: ${futureFirst.length}; released but undated here: ${bare.length - unknownFirst.length - futureFirst.length}`)
+for (const g of bare.filter((g) => firstDates.get(g.i) && firstDates.get(g.i)! <= new Date().toISOString().slice(0, 10))) console.log(`  RELEASED ${g.i} ${g.n} ${firstDates.get(g.i)}`)
 
 const problems = problemsOf(games)
 if (problems.length) {
