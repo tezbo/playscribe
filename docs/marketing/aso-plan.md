@@ -19,7 +19,7 @@ no QA routes. Publisher is CodeConnectors.
 
 **Still to verify before submission:** exact screenshot sizes and whether iPhone Duo has its own slot (screenshot
 specifications page), privacy policy URL rules, In-App Events and Product Page Optimization limits, and the review
-guidelines on trademarks in names and keywords.
+guidelines on names and keywords.
 
 ## Positioning
 
