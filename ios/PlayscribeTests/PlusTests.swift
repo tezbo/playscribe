@@ -109,3 +109,13 @@ struct PlusCoverTests {
         #expect(PlusCard.coverLimit(accessibility: true) == 2)
     }
 }
+
+/// The Settings debug Pose row uses the gate's names, not the enum's (Mac QA, #242).
+struct PoseLabelTests {
+    @Test func everyPoseHasTheGateName() {
+        #expect(Pose.closed.label == "Closed")
+        #expect(Pose.flat.label == "Open")
+        #expect(Pose.book.label == "Book")
+        #expect(Pose.tabletop.label == "Tabletop")
+    }
+}
