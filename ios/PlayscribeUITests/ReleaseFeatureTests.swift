@@ -131,6 +131,17 @@ final class ReleaseFeatureTests: XCTestCase {
     /// News strip and News chapter: never a blank page; one of the three states is always shown.
     func testNewsChapterIsNeverBlank() throws {
         launch("chapter/dawnwalker/news")
+        // Tabletop (96e0e39): the page is the view-only stage in the upper half, which has no accessibility children, so the News
+        // body cannot be read from the tree. Check what the lower half can show: the News chip is the selected chapter, then
+        // keep a capture for the reviewer. Other poses read the body below.
+        if inTabletop {
+            let chip = button("News")
+            XCTAssertTrue(chip.waitForExistence(timeout: 10), "the News chapter chip is on the lower half")
+            XCTAssertTrue(chip.isSelected, "News is the selected chapter")
+            assertFrames("news")
+            attach("news-tabletop")
+            return
+        }
         let states = ["No news yet", "Loading news", "Official"]
         let failed = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH \"Couldn't load news\"")).firstMatch
         func shown() -> Bool {

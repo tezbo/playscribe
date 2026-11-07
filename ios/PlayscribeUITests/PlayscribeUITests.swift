@@ -61,8 +61,14 @@ final class PlayscribeUITests: XCTestCase {
                 shot.name = "n6-not-foreground-" + (cold ? "cold" : "warm"); shot.lifetime = .keepAlways; add(shot)
             }
             XCTAssertTrue(foreground, "\(cold ? "cold" : "warm"): tapping the notification brings Playscribe to the foreground (app state \(target.state.rawValue); 4 is running foreground)")
-            let release = target.buttons.matching(NSPredicate(format: "label CONTAINS 'Update 1.1'")).firstMatch
-            XCTAssertTrue(release.waitForExistence(timeout: 10), "\(cold ? "cold" : "warm"): the Update 1.1 release opens after the tap")
+            // The notification is for the simulated release ("Update N.0 (simulated)", the number counts earlier simulations), so the
+            // page that opens is that release's; "Update 1.1" is the real release and never what this notification carries (96e0e39).
+            let release = target.descendants(matching: .any).matching(NSPredicate(format: "identifier == 'releaseTitle' OR label CONTAINS[c] 'simulated'")).firstMatch
+            let opened = release.waitForExistence(timeout: 10) && target.descendants(matching: .any)["libraryTabPicker"].exists == false
+            if !opened {
+                let tree = XCTAttachment(string: target.debugDescription); tree.name = "n6-after-tap-hierarchy-" + (cold ? "cold" : "warm"); tree.lifetime = .keepAlways; add(tree)
+            }
+            XCTAssertTrue(opened, "\(cold ? "cold" : "warm"): the simulated release opens after the tap (its page, not the Library)")
             let a = XCTAttachment(screenshot: target.screenshot()); a.name = cold ? "notification-tap-cold" : "notification-tap-warm"
             a.lifetime = .keepAlways; add(a)
         }
@@ -405,16 +411,18 @@ final class ReviewFixUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments = ["-qaRoute", "settings"]
         app.launch()
-        let version = app.descendants(matching: .any).matching(NSPredicate(format: "label MATCHES '.*[0-9]+\\\\.[0-9]+\\\\.[0-9]+.*' OR value MATCHES '.*[0-9]+\\\\.[0-9]+\\\\.[0-9]+.*'")).firstMatch
-        let form = app.collectionViews.firstMatch
+        // The identified row, not "any element whose text looks like a version": at 96e0e39 a game card behind the sheet read
+        // "01.001.000" (a simulated release's date), matched at once, and the loop never scrolled to the real row.
+        let version = app.descendants(matching: .any)["appVersion"]
         var tries = 0
-        while !version.exists && tries < 8 { (form.exists ? form : app).swipeUp(); tries += 1 }
-        if !version.exists || !app.descendants(matching: .any)["appVersion"].exists {
+        while !version.exists && tries < 8 { Release050Tests.scrollForm(app); tries += 1 }
+        if !version.exists {
             let tree = XCTAttachment(string: app.debugDescription); tree.name = "settings-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
             let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "settings-window"; shot.lifetime = .keepAlways; add(shot)
         }
-        XCTAssertTrue(version.exists, "Settings shows a semantic version")
-        XCTAssertTrue(app.descendants(matching: .any)["appVersion"].exists, "the version row is identified")
+        XCTAssertTrue(version.exists, "the version row is identified")
+        let text = [version.value as? String, version.label].compactMap { $0 }.joined(separator: " ")
+        XCTAssertNotNil(text.range(of: #"\d+\.\d+\.\d+"#, options: .regularExpression), "Settings shows a semantic version, got '\(text)'")
     }
 
     /// Scrolling Dawnwalker's Update 1.1 page: hitch ratio recorded for each run.
@@ -443,6 +451,13 @@ final class ReviewFixUITests: XCTestCase {
 final class LibraryLayoutTests: XCTestCase {
     func checkNoOverlap(games: Int) throws {
         let app = XCUIApplication()
+        // The App Switcher was on screen in Open portrait and Tabletop (96e0e39): leave it, then bring the app up.
+        func leaveSwitcher() {
+            if XCUIApplication(bundleIdentifier: "com.apple.springboard").otherElements["AppSwitcherContentView"].exists {
+                XCUIDevice.shared.press(.home)
+            }
+        }
+        leaveSwitcher()
         app.launchArguments = ["-qaRoute", "demo"]
         app.launch()
         sleep(2)
@@ -454,6 +469,7 @@ final class LibraryLayoutTests: XCTestCase {
         app.launchArguments = ["-qaRoute", "library"]
         app.launch()
         // Open portrait (48404f1): the capture was the App Switcher and no tiles were found, so bring the app back first.
+        leaveSwitcher()
         if !app.wait(for: .runningForeground, timeout: 10) { app.activate() }
         sleep(4)
         let pose = ReleaseRowTests.pose(app)
@@ -698,7 +714,12 @@ final class Release050Tests: XCTestCase {
     /// view-only stage above it, so the form never scrolled (48404f1: the PS Plus and Quiet hours switches were never reached).
     static func scrollForm(_ app: XCUIApplication) {
         let form = app.collectionViews.firstMatch
-        (form.exists ? form : app).swipeUp()
+        guard form.exists else { app.swipeUp(); return }
+        // A short, slow drag (about a third of the panel): a fling moved Tabletop's half-height panel past whole rows, so the
+        // PS Plus switch was never on screen at a check (96e0e39).
+        form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.8))
+            .press(forDuration: 0.1, thenDragTo: form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.45)),
+                   withVelocity: .slow, thenHoldForDuration: 0.2)
     }
 
     /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and
@@ -814,6 +835,10 @@ final class Release050Tests: XCTestCase {
         XCTAssertTrue(["off", "0"].contains(toggle.value as? String ?? ""), "off by default, got \(String(describing: toggle.value))")
         if isTabletop(app) { XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: switch in the lower half") }
         XCTAssertGreaterThanOrEqual(toggle.frame.height, 44 - 1)
+        // Bring the row clear of the panel's bottom edge before tapping: at 96e0e39 it sat at the edge, the tap missed and the
+        // From and Until rows never appeared.
+        var lift = 0
+        while let form = Optional(app.collectionViews.firstMatch), form.exists, toggle.frame.maxY > form.frame.maxY - 60, lift < 4 { Self.scrollForm(app); lift += 1 }
         // The identified element is the whole row; the switch is nested at its trailing edge, and a centre tap misses it.
         let inner = toggle.switches.firstMatch
         if inner.exists { inner.tap() } else { toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
@@ -825,8 +850,7 @@ final class Release050Tests: XCTestCase {
         func reveal(_ prefix: String) -> Bool {
             var n = 0
             while !any(prefix).waitForExistence(timeout: 1) && n < 6 {
-                let form = app.collectionViews.firstMatch
-                (form.exists ? form : app).swipeUp(); n += 1
+                Self.scrollForm(app); n += 1
             }
             return any(prefix).exists
         }
