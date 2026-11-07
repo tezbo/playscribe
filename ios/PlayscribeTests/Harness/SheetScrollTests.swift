@@ -45,9 +45,9 @@ struct GamePageOverlapProbeTests {
     @Test(.timeLimit(.minutes(2)), arguments: ["closed", "open", "openPortrait", "book"], [0, 1])
     func gamePageOverlapProbe(_ id: String, _ sizeIndex: Int) async throws {
         let model = FoldHost.demoModel()
-        model.handle(url: try #require(URL(string: "playscribe://gamepage/kcd2")))
+        model.handle(url: try #require(URL(string: "playscribe://game/kcd2")))
         let size: UIContentSizeCategory = sizeIndex == 0 ? .large : .accessibilityExtraExtraExtraLarge
-        let r = try #require(await HarnessRules.timedRender(HarnessPose.named(id), type: size))
+        let r = try #require(await HarnessRules.timedRender(HarnessPose.named(id), type: size, model: model))
         defer { FoldHost.dispose(r) }
         let pairs = HarnessRules.overlappingPairs(r.frames)
         let label = sizeIndex == 0 ? "std" : "AX5"
