@@ -594,6 +594,7 @@ final class AppModel {
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
+        case "store-set": loadStoreSet()
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
         case "caught-up": resetToCaughtUpDemo()
