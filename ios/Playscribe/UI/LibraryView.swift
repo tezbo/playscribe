@@ -421,8 +421,6 @@ struct LibraryShelf: View {
                     }
                     .id(poseKey)
                 }
-                // Tabletop: the filter chips sit directly above the tiles, one row (Iris, v0.5.3).
-                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles { FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey) }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
                 } else if heroOnRightPage {
@@ -452,6 +450,7 @@ struct LibraryShelf: View {
                     let deck = model.latestDeck
                     if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
                     NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
+                    if all.count >= 2 && layout == .tiles { FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey) }
                 }
                 }
             }
