@@ -382,7 +382,7 @@ struct Facts: View {
             }
             row("Video", VideoFact(release: r))
             if let checked = p?.liveAt?.checkedAt, Date.now.timeIntervalSince(checked) > 86_400 {
-                row("Checked", Text(checked.shortDay).font(PlayscribeFont.footnote).foregroundStyle(.secondary))
+                row("Checked", Text(checked.localShortDay).font(PlayscribeFont.footnote).foregroundStyle(.secondary))
             }
         }
         .font(PlayscribeFont.subheadline)
