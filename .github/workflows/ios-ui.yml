@@ -2,8 +2,9 @@ name: iOS UI
 
 # UI evidence without a Mac: the 0.5.0 feature XCUITests and a screenshot of every new surface,
 # in the simulator's default (Closed) pose. Not a required check; UI tests on a hosted runner can be
-# slow or flaky, so each step reports on its own and the artifacts are always uploaded. The five-pose
-# gate still runs on the Mac (docs/release-0.5.0-gate.md).
+# slow or flaky, so each step reports on its own and the artifacts are always uploaded. Closed portrait and
+# Closed landscape, standard and AX5, come from here; Book, Open, Open portrait and Tabletop stay with the
+# Mac gate (docs/release-0.5.0-gate.md).
 on:
   workflow_dispatch:
   # A change to this workflow runs it on its own PR, so it proves itself before it merges.
@@ -64,13 +65,54 @@ jobs:
       - name: Screenshots of every new surface (Closed)
         if: always()
         run: ios/tools/qa/ci-shots.sh "${{ steps.sim.outputs.udid }}" build/shots "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
+      - name: Closed portrait and landscape, standard and AX5 (risk 2 step A)
+        if: always()
+        run: ios/tools/qa/ci-closed-ax3.sh "${{ steps.sim.outputs.udid }}" build/shots-ax3 "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
+      - name: Real Closed landscape probe (XCUIDevice orientation; informational)
+        if: always()
+        id: landscape
+        continue-on-error: true
+        run: |
+          rm -rf build/Landscape.xcresult
+          xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd \
+            -only-testing:PlayscribeUITests/ClosedLandscapeShotTests \
+            -only-testing:PlayscribeUITests/ClosedPortraitAX3ShotTests \
+            -resultBundlePath build/Landscape.xcresult CODE_SIGNING_ALLOWED=NO > landscape.log 2>&1 || status=$?
+          grep -E 'error:|Test Case .* (passed|failed)|Executed|\*\* TEST' landscape.log | tail -30 | tee -a "$GITHUB_STEP_SUMMARY"
+          mkdir -p build/shots-ax3/landscape
+          [ -d build/Landscape.xcresult ] && xcrun xcresulttool export attachments --path build/Landscape.xcresult --output-path build/shots-ax3/landscape || true
+          if [ "${status:-0}" != 0 ]; then
+            echo "::warning::real Closed landscape not reached"
+            echo "### WARNING: real Closed landscape not reached (the runner cannot rotate the outer panel). Green here does NOT cover Closed landscape; the Mac gate still shoots it." | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          exit "${status:-0}"
+      - name: Harness Closed landscape stills (not a sign-off)
+        if: always()
+        run: |
+          rm -rf build/Harness.xcresult
+          mkdir -p build/shots-ax3/harness
+          TEST_RUNNER_HARNESS_SHOT_DIR="$PWD/build/shots-ax3/harness" xcodebuild test -project ios/Playscribe.xcodeproj -scheme Playscribe \
+            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd-unit \
+            -only-testing:PlayscribeTests/HarnessLandscapeShotTests \
+            -resultBundlePath build/Harness.xcresult CODE_SIGNING_ALLOWED=NO > harness.log 2>&1 || status=$?
+          grep -E 'error:|Test Case .* (passed|failed)|Executed|\*\* TEST' harness.log | tail -20 | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "Harness stills (harness-closed-land-*.png) are fold-harness output, frames 84-88 pt off the Duo: NOT a Closed landscape sign-off. The Mac gate keeps that." | tee -a "$GITHUB_STEP_SUMMARY"
+          ls build/shots-ax3/harness | tee -a "$GITHUB_STEP_SUMMARY"
+          [ -n "$(ls build/shots-ax3/harness)" ] || { echo "::error::no harness stills written"; status=1; }
+          exit "${status:-0}"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: ui-evidence-closed
           path: |
             build/shots
+            build/shots-ax3
             build/attachments
             build/UITests.xcresult
+            build/Landscape.xcresult
+            build/Harness.xcresult
+            harness.log
+            landscape.log
             uitests.log
             build.log

@@ -15,7 +15,7 @@ open_game() { python3 -c 'import json,sys; print(json.load(sys.stdin).get("nav",
 
 set_pose closed
 if [[ $game == library ]]; then route=library; else route="chapter/$game/updates"; fi
-xcrun simctl launch --terminate-running-process $dev $app -qaRoute $route >/dev/null; sleep 3
+xcrun simctl launch --terminate-running-process $dev $app -qaRoute $route ${=poseargs} >/dev/null; sleep 3
 fail=0; step=0
 for p in closed book closed open tabletop closed; do
   step=$((step+1))

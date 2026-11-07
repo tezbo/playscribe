@@ -1,0 +1,100 @@
+name: Harness stills
+
+# PNG stills from the fold harness (FoldHost) on a hosted runner, uploaded as an artifact, for judging app-owned layout without the
+# Mac simulator. Not a gate. Runs on a push to claude/** that changes .github/stills-request.txt, or by hand (the workflow must be
+# on main before a manual dispatch works). The request file holds KEY=VALUE lines:
+#   APP_SHA=<sha>      take ios/Playscribe from this commit (e.g. a PR head) and the harness from this branch
+#   POSES=book,tabletop  SIZES=std,ax3,ax5  ROUTE=game/dawnwalker
+# Always finishes green, like Precheck, so a failed render sends no email; the job name carries the verdict.
+on:
+  push:
+    branches: ['claude/**']
+    paths: ['.github/stills-request.txt']
+  workflow_dispatch:
+    inputs:
+      app_sha: { description: 'Commit to take ios/Playscribe from (blank: this branch)', default: '' }
+      poses: { description: 'Comma list of pose ids', default: 'book' }
+      sizes: { description: 'std, ax3, ax5', default: 'ax5' }
+      route: { description: 'playscribe:// route, e.g. game/dawnwalker', default: '' }
+
+concurrency:
+  group: stills-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  XCODE_APP: /Applications/Xcode_27.1.app
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+  HOMEBREW_NO_ANALYTICS: 1
+
+jobs:
+  render:
+    runs-on: xcode-27
+    timeout-minutes: 30
+    outputs:
+      verdict: ${{ steps.run.outputs.verdict }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Read the request
+        id: req
+        run: |
+          if [ -f .github/stills-request.txt ] && [ -z "${{ inputs.poses }}" ]; then set -a; . ./.github/stills-request.txt; set +a; fi
+          echo "app_sha=${APP_SHA:-${{ inputs.app_sha }}}" >> "$GITHUB_OUTPUT"
+          echo "poses=${POSES:-${{ inputs.poses }}}" >> "$GITHUB_OUTPUT"
+          echo "sizes=${SIZES:-${{ inputs.sizes }}}" >> "$GITHUB_OUTPUT"
+          echo "route=${ROUTE:-${{ inputs.route }}}" >> "$GITHUB_OUTPUT"
+      - name: Take the app sources from the requested commit
+        if: steps.req.outputs.app_sha != ''
+        run: git checkout "${{ steps.req.outputs.app_sha }}" -- ios/Playscribe && git rev-parse --short "${{ steps.req.outputs.app_sha }}"
+      - run: command -v xcodegen >/dev/null || brew install xcodegen; (cd ios && xcodegen generate)
+      - run: sudo xcode-select -s "$XCODE_APP" && xcodebuild -version
+      - name: Pick an iOS 27.1 simulator
+        id: sim
+        run: |
+          udid=$(xcrun simctl list devices available -j | python3 -c "
+          import json, sys
+          d = json.load(sys.stdin)['devices']
+          phones = [x for k in d if 'iOS-27-1' in k for x in d[k] if 'iPhone' in x['name']]
+          phones.sort(key=lambda x: 'Duo' not in x['name'])
+          print(phones[0]['udid'] if phones else '')
+          ")
+          echo "udid=$udid" >> "$GITHUB_OUTPUT"
+      - name: Render the stills
+        id: run
+        env:
+          TEST_RUNNER_HARNESS_PNG_DIR: ${{ github.workspace }}/stills
+          TEST_RUNNER_HARNESS_POSES: ${{ steps.req.outputs.poses }}
+          TEST_RUNNER_HARNESS_SIZES: ${{ steps.req.outputs.sizes }}
+          TEST_RUNNER_HARNESS_ROUTE: ${{ steps.req.outputs.route }}
+        run: |
+          mkdir -p stills
+          xcodebuild test -project ios/Playscribe.xcodeproj -scheme Playscribe \
+            -destination "id=${{ steps.sim.outputs.udid }}" \
+            -only-testing:PlayscribeTests/HarnessStillsTests \
+            CODE_SIGNING_ALLOWED=NO > stills/build.log 2>&1 || true
+          grep -E 'harness still|error:|\*\* TEST' stills/build.log || true
+          n=$(ls stills/*.png 2>/dev/null | wc -l | tr -d ' ')
+          if [ "$n" -gt 0 ]; then verdict="STILLS $n PNG"; else verdict="STILLS none written (see build.log)"; fi
+          echo "verdict=$verdict" >> "$GITHUB_OUTPUT"
+          exit 0
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: harness-stills
+          path: stills/
+          if-no-files-found: ignore
+
+  verdict:
+    needs: render
+    if: always()
+    name: ${{ needs.render.outputs.verdict || 'STILLS did not run (runner problem)' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "$V"
+        env:
+          V: ${{ needs.render.outputs.verdict }}
