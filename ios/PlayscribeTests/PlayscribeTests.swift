@@ -559,6 +559,26 @@ struct SpoilerWarningTests {
     }
 }
 
+/// VoiceOver reads the playback position as time (R-11).
+struct PlayerTimeTests {
+    @Test("Spoken time is words, differs per second, never empty past zero")
+    func spoken() {
+        #expect(!PlayerTime.spoken(83).isEmpty)
+        #expect(PlayerTime.spoken(83) != PlayerTime.spoken(84))
+        #expect(PlayerTime.spoken(83).contains("minute"))
+        #expect(PlayerTime.format(83) == "1:23")
+    }
+}
+
+/// TT-2: VoiceOver hears where a section sits in the update.
+struct ReaderPositionTests {
+    @Test("Position reads as a place, from one")
+    func position() {
+        #expect(ReaderBody.position(0, of: 5) == "1 of 5")
+        #expect(ReaderBody.position(4, of: 5) == "5 of 5")
+    }
+}
+
 /// R-11, G-9: autoplay is opt-in.
 struct AutoplayTests {
     @Test("Player page autoplays only when asked (R-11)")

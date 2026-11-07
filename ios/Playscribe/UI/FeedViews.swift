@@ -33,6 +33,7 @@ struct UpdatesView: View {
                     .padding(.horizontal, 16)
 
                 }
+                .clearsMessages()
                 .frame(width: duo.size.width)
             } else {
                 List {
@@ -40,6 +41,7 @@ struct UpdatesView: View {
 
                 }
                 .contentMargins(.trailing, railWidth, for: .scrollContent)
+                .clearsMessages()
             }
         }
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
@@ -62,26 +64,37 @@ struct FeedRow: View {
     var body: some View {
         let unread = model.isUnread(release)
         Button { model.openGame(release.gameID, chapter: .updates, releaseID: release.id) } label: {
-            HStack(spacing: 12) {
+            // At accessibility sizes the thumbnail sits above the text so the column gets the row's full width: a game
+            // name never breaks inside a word and a date stays whole (Iris, AX5).
+            let rowLayout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 12))
+            rowLayout {
                 if let g = model.game(release.gameID) { CoverView(game: g, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 3) {
-                    // At accessibility sizes the game name takes the full row width and the date sits under it, so
-                    // a word never splits ("Dawn / walker") (G-8, AX5).
-                    let ax = typeSize.isAccessibilitySize
-                    let line = ax ? AnyLayout(VStackLayout(alignment: .leading, spacing: 2)) : AnyLayout(HStackLayout(spacing: 8))
-                    HStack(spacing: 6) {
-                        if unread { UnreadDot() }
-                        Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
-                            .fixedSize(horizontal: false, vertical: true)
-                        ReleaseTag(release: release)
+                    // At accessibility sizes the row stacks: the title takes the full width in whole words,
+                    // the tags and date each get their own line, the summary goes under.
+                    HStack(alignment: .firstTextBaseline, spacing: 6) {
+                        // Seated on the title's first line, not floating at the row's top (Iris).
+                        if unread { UnreadDot().alignmentGuide(.firstTextBaseline) { $0[.bottom] } }
+                        TitleWithTags(release: release) {
+                            Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
+                        }
                     }
-                    line {
-                        Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
-                        Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
+                    if typeSize.isAccessibilitySize {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
+                            Text(release.ps5Date.shortDay).foregroundStyle(.secondary).fixedSize()
+                        }
+                        .font(PlayscribeFont.caption)
+                    } else {
+                        HStack(spacing: 8) {
+                            Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
+                            Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
+                        }
+                        .font(PlayscribeFont.caption)
                     }
-                    .font(PlayscribeFont.caption)
                     if let h = release.headline {
-                        if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.footnote, lines: 3) }
+                        // Whole words only: a capped summary ends "…" at a word boundary (Iris, AX3).
+                        if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.footnote, lines: 4) }
                         else { Text(h).font(PlayscribeFont.footnote).lineLimit(2) }
                     }
                 }
@@ -269,6 +282,7 @@ struct SearchView: View {
             }
         }
         .contentMargins(.trailing, railWidth + (tabletop ? 0 : badgeExtra), for: .scrollContent)
+        .clearsMessages()
         // Book: Search lives on the right page, never across the fold (0.2.0 gate: field and hint ran full width).
         .padding(.leading, duo.pose == .book ? (duo.division.map { $0.maxX + 8 } ?? 0) : 0)
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
