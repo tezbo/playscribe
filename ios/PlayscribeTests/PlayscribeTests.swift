@@ -865,3 +865,18 @@ struct QAPoseTests {
         #expect(QAPose.injected(size: CGSize(width: 669, height: 835)) == nil)
     }
 }
+
+@MainActor
+struct SpineGapTests {
+    @Test func spineGapsMeasureFromTheBandEdge() {
+        let fold = CGRect(x: 455, y: 0, width: 40, height: 600)
+        let frames = [CGRect(x: 16, y: 10, width: 415, height: 100),   // left page ends 24 pt before the band
+                      CGRect(x: 519, y: 10, width: 200, height: 100),  // right page starts 24 pt after it
+                      CGRect(x: 440, y: 200, width: 80, height: 50),   // crosses the band: counts on neither side
+                      CGRect(x: 100, y: 300, width: 0, height: 0)]     // empty frame ignored
+        let g = FoldAudit.spineGaps(frames: frames, fold: fold)
+        #expect(g.left == 24)
+        #expect(g.right == 24)
+        #expect(FoldAudit.spineGaps(frames: [], fold: fold).left == nil)
+    }
+}

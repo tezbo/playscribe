@@ -258,6 +258,19 @@ struct FoldAudit: View {
         return String(decoding: data, as: UTF8.self)
     }
 
+    /// Book: the clear space between the hinge band and the nearest tappable frame on each side (left page, right page), in pt.
+    /// nil when no frame sits on that side. Frames that cross the band count on neither side. A page is meant to stay 24 pt clear of
+    /// the band's edge (RootView, LibraryView, UpcomingView use `minX - 24` and `maxX + 24`), so this reads 24 or more when it holds.
+    /// Exact, from the app's own frames and the same `division` it lays out against, so no pixel measuring of a still is needed.
+    static func spineGaps(frames: [CGRect], fold: CGRect) -> (left: CGFloat?, right: CGFloat?) {
+        let live = frames.filter { $0.width > 1 && $0.height > 1 }
+        let left = live.filter { $0.maxX <= fold.minX }.map { fold.minX - $0.maxX }.min()
+        let right = live.filter { $0.minX >= fold.maxX }.map { $0.minX - fold.maxX }.min()
+        return (left, right)
+    }
+
+    static func pt(_ v: CGFloat?) -> String { v.map { String(format: "%.1f", Double($0)) } ?? "-" }
+
     var body: some View {
         GeometryReader { geo in
             let origin = geo.frame(in: .global).origin
@@ -267,7 +280,9 @@ struct FoldAudit: View {
             } ?? []
             let detail = crossing.prefix(3).map { "\(Int($0.minX)),\(Int($0.minY)) \(Int($0.width))x\(Int($0.height))" }.joined(separator: " | ")
             let fold = duo.division.map { "fold \(Int($0.minX))-\(Int($0.maxX))" } ?? ""
-            let label = "fold-crossings: \(crossing.count); pose: \(duo.pose.rawValue); \(fold) \(detail)"
+            let gaps = duo.division.map { f in Self.spineGaps(frames: frames.map { $0.offsetBy(dx: -origin.x, dy: -origin.y) }, fold: f) }
+            let gap = duo.pose == .book ? "; spine-gap L \(Self.pt(gaps?.left)) R \(Self.pt(gaps?.right))" : ""
+            let label = "fold-crossings: \(crossing.count); pose: \(duo.pose.rawValue); \(fold) \(detail)\(gap)"
             Text(label)
                 .font(.system(size: 1))
                 .opacity(0.01)
