@@ -19,3 +19,10 @@ Weighed by Nadia, 7 Nov: B approved with conditions: the Mac still signs off Boo
 
 Weighed by Iris, 7 Nov: B signed. Her conditions: calibrate at AX3 and AX5 on two unlike games before the left page counts; name harness Book stills "calibrated, not signed"; record the Mac pair that justifies it.
 **Mac pair on record:** Mac `893a329-book-ax5.png` vs harness `harness-4beebaf-kcd2-book-ax5-calibrated-not-signed.png` (KCD II, AX5). Still to do: AX3, and a second unlike game (not KCD II).
+
+**Calibration result, 7 Nov (Iris's condition, Mac pairs on 4bb2740, harness on main + #360):** three pairs compared by eye on two unlike games.
+- Dawnwalker Book AX5: `mac-4bb2740-dawnwalker-book-ax5` vs `harness-e4daf3a-dawnwalker-book-ax5-calibrated-not-signed`. Left pane 47.9% vs 47.8%; title 2 lines, links 1+2, chips 2+2+2, "Update 1.1" on one line, "Read full notes on Steam" 3 lines, "Story" below: all equal.
+- Dawnwalker Book AX3: `mac-4bb2740-dawnwalker-book-ax3` vs `harness-e4daf3a-dawnwalker-book-ax3-calibrated-not-signed`. Chips 2+2+2, links 1+2, "Read full notes / on Steam" 2 lines, "Story spoilers hidden / Show" 3 lines, "Respec with" cut at the same line: all equal.
+- KCD II Book AX3: `mac-4bb2740-kcd2-book-ax3` vs `harness-f9d11a8-kcd2-book-ax3-calibrated-not-signed`. "Patch 1.5.6" on one line (was 2 before #360), chips 2+2, links 1+2, notes link 2 lines, headline 3 lines: all equal.
+Verdict: on these three the harness Book still agrees with the Mac on line counts, wraps and the split, so it is good for triage on both pages. The Mac still signs off Book. Not covered by the harness: the system side rail, the status area, the hinge, and anything on KCD II at AX5 (only the pre-#360 pair exists). Re-calibrate if #360's width rule or the Book layout changes.
+
