@@ -134,7 +134,13 @@ final class ReleaseFeatureTests: XCTestCase {
         let states = ["No news yet", "Loading news", "Official"]
         let failed = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH \"Couldn't load news\"")).firstMatch
         func shown() -> Bool {
-            states.contains { app.staticTexts[$0].waitForExistence(timeout: 3) } || failed.exists
+            // Tabletop: the stage is one read-only element (`tabletopStageText`) whose label is the page text.
+            if inTabletop {
+                let stage = app.descendants(matching: .any)["tabletopStageText"]
+                guard stage.waitForExistence(timeout: 5) else { return false }
+                return states.contains { stage.label.contains($0) } || stage.label.contains("Couldn't load news") || stage.label.contains("Official")
+            }
+            return states.contains { app.staticTexts[$0].waitForExistence(timeout: 3) } || failed.exists
                 || app.staticTexts.matching(NSPredicate(format: "label == 'Official'")).firstMatch.exists
         }
         var seen = shown()

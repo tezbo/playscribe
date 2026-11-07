@@ -67,9 +67,13 @@ final class PlayscribeUITests: XCTestCase {
             // Quinn: the title must be the simulated release's; an OR here would pass on opening the wrong release.
             let opened = release.waitForExistence(timeout: 10) && release.label.localizedCaseInsensitiveContains("simulated")
             if !opened {
+                // Did the tap's response reach the app at all? "none" = it never arrived (the tap went elsewhere); a value =
+                // it arrived and navigation did not follow, which is an app bug.
+                let resp = target.descendants(matching: .any)["qaNotificationResponse"]
+                let r = XCTAttachment(string: resp.exists ? resp.label : "no qaNotificationResponse element"); r.name = "n6-response-" + (cold ? "cold" : "warm"); r.lifetime = .keepAlways; add(r)
                 let tree = XCTAttachment(string: target.debugDescription); tree.name = "n6-after-tap-hierarchy-" + (cold ? "cold" : "warm"); tree.lifetime = .keepAlways; add(tree)
             }
-            XCTAssertTrue(opened, "\(cold ? "cold" : "warm"): the simulated release opens after the tap (its page, not the Library)")
+            XCTAssertTrue(opened, "\(cold ? "cold" : "warm"): the simulated release opens after the tap (its page, not the Library); response seen by the app: \(target.descendants(matching: .any)["qaNotificationResponse"].exists ? target.descendants(matching: .any)["qaNotificationResponse"].label : "no probe")")
             let a = XCTAttachment(screenshot: target.screenshot()); a.name = cold ? "notification-tap-cold" : "notification-tap-warm"
             a.lifetime = .keepAlways; add(a)
         }

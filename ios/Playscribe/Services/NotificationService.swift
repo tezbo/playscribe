@@ -26,6 +26,9 @@ final class NotificationService: NSObject {
     @ObservationIgnored weak var model: AppModel?
     /// Set when the app is launched by tapping a notification, so the splash is skipped (L-3).
     var launchedFromNotification = false
+    /// QA (INTERNAL): what the last notification tap delivered ("game/release"), so a test can tell "the response never arrived"
+    /// from "it arrived and navigation did not follow" (96e0e39, eab123c: the tap brought the app up on the Library).
+    var qaLastResponse: String?
     /// The APNs device token, hex encoded, once registered. The backend thread owns delivery.
     private(set) var deviceToken: String?
 
@@ -275,6 +278,7 @@ extension NotificationService: UNUserNotificationCenterDelegate {
         guard let gameID = info["gameId"] as? String, let releaseID = info["releaseId"] as? String else { return }
         await MainActor.run {
             self.launchedFromNotification = true
+            self.qaLastResponse = "\(gameID)/\(releaseID); model \(self.model == nil ? "nil" : "set")"
             self.model?.openRelease(gameID: gameID, releaseID: releaseID)
         }
     }

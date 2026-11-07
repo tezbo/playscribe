@@ -170,6 +170,9 @@ struct RootView: View {
                 if model.showDebugOverlay { DebugOverlay(frames: frames, duo: duo) }
                 #if INTERNAL
                 FoldAudit(frames: frames, duo: duo, named: named)
+                Text("qa-response: \(NotificationService.shared.qaLastResponse ?? "none")")
+                    .font(.system(size: 1)).opacity(0.01).accessibilityIdentifier("qaNotificationResponse")
+                    .allowsHitTesting(false)
                 #endif
             }
         }
