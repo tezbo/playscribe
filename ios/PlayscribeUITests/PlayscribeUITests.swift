@@ -63,8 +63,9 @@ final class PlayscribeUITests: XCTestCase {
             XCTAssertTrue(foreground, "\(cold ? "cold" : "warm"): tapping the notification brings Playscribe to the foreground (app state \(target.state.rawValue); 4 is running foreground)")
             // The notification is for the simulated release ("Update N.0 (simulated)", the number counts earlier simulations), so the
             // page that opens is that release's; "Update 1.1" is the real release and never what this notification carries (96e0e39).
-            let release = target.descendants(matching: .any).matching(NSPredicate(format: "identifier == 'releaseTitle' OR label CONTAINS[c] 'simulated'")).firstMatch
-            let opened = release.waitForExistence(timeout: 10) && target.descendants(matching: .any)["libraryTabPicker"].exists == false
+            let release = target.descendants(matching: .any)["releaseTitle"]
+            // Quinn: the title must be the simulated release's; an OR here would pass on opening the wrong release.
+            let opened = release.waitForExistence(timeout: 10) && release.label.localizedCaseInsensitiveContains("simulated")
             if !opened {
                 let tree = XCTAttachment(string: target.debugDescription); tree.name = "n6-after-tap-hierarchy-" + (cold ? "cold" : "warm"); tree.lifetime = .keepAlways; add(tree)
             }
