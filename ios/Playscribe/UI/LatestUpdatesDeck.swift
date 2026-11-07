@@ -83,6 +83,8 @@ struct LatestUpdatesDeck: View {
 
     /// The page edge (44 pt leaves) and the 8 pt gap above it; the card takes the rest of maxHeight.
     private static let pageEdgeHeight: CGFloat = 52
+    /// Accessibility sizes: room for the "+N more updates" chip on its own row (two wrapped lines and a gap).
+    private static let chipRowAX: CGFloat = 96
 
     private var perScreen: CGFloat {
         if compact { return 1 }
@@ -140,7 +142,8 @@ struct LatestUpdatesDeck: View {
                 deck(cardWidth: g.size.width, artHeight: art)
                     .background(alignment: .topLeading) { ruler(width: g.size.width) }
             }
-            .frame(height: maxHeight > 0 ? grown(maxHeight) : nil)
+            // The wrapped chip at accessibility sizes sits on its own row under the dots: the deck grows by that row.
+            .frame(height: maxHeight > 0 ? grown(maxHeight) + (typeSize.isAccessibilitySize && moreCount > 0 ? Self.chipRowAX : 0) : nil)
         } else if typeSize.isAccessibilitySize && !(duo.pose == .closed && duo.isLandscape) {
             // Accessibility sizes: one card per screen at an explicit height. The unsized pager let the card fill the
             // screen (7fe84f4, AX3).
@@ -207,7 +210,9 @@ struct LatestUpdatesDeck: View {
                 }
                 .scrollTargetLayout()
             }
-            .frame(height: wideAX ? nil : scrollHeight)
+            // Compact: the pager is exactly the card's height, so a taller dots row (the "+N more updates" chip wraps at
+            // accessibility sizes) can never squeeze the card and clip its bottom edge.
+            .frame(height: wideAX ? nil : (scrollHeight ?? (compact ? artHeight : nil)))
             .fixedSize(horizontal: false, vertical: wideAX)
             .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { if scrollHeight != nil, abs($0 - pagerWidth) > 0.5 { pagerWidth = $0 } }
             .scrollPosition(id: $current)
@@ -219,21 +224,29 @@ struct LatestUpdatesDeck: View {
             .overlay(alignment: .bottom) { if scrollHeight != nil && cards.count > 1 { pageEdge } }
             if scrollHeight == nil && (cards.count > 1 || (compact && moreCount > 0)) {
                 // The dots row: dots centred, the "+N more updates" chip trailing (Iris), a 44 pt control that wraps at AX.
-                ZStack(alignment: .trailing) {
-                    if cards.count > 1 { pageEdge }
-                    if compact && moreCount > 0 {
-                        Button { model.nav.tab = .updates } label: {
-                            HStack(spacing: 4) {
-                                Text("+\(moreCount) more updates").multilineTextAlignment(.trailing)
-                                Image(systemName: "chevron.right").accessibilityHidden(true)
-                            }
-                            .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                            .frame(minHeight: 44)
-                            .contentShape(Rectangle())
-                        }
-                        .buttonStyle(.plain)
-                        .tappableFrame()
-                        .accessibilityLabel("\(moreCount) more updates, opens the Updates list")
+                // At accessibility sizes the chip takes its own row under the dots, so the dots always read as dots.
+                let showChip = compact && moreCount > 0
+                let chip = Button { model.nav.tab = .updates } label: {
+                    HStack(spacing: 4) {
+                        Text("+\(moreCount) more updates").multilineTextAlignment(.trailing)
+                        Image(systemName: "chevron.right").accessibilityHidden(true)
+                    }
+                    .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                    .frame(minHeight: 44)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .tappableFrame()
+                .accessibilityLabel("\(moreCount) more updates, opens the Updates list")
+                if typeSize.isAccessibilitySize {
+                    VStack(alignment: .trailing, spacing: 0) {
+                        if cards.count > 1 { pageEdge.frame(maxWidth: .infinity) }
+                        if showChip { chip }
+                    }
+                } else {
+                    ZStack(alignment: .trailing) {
+                        if cards.count > 1 { pageEdge }
+                        if showChip { chip }
                     }
                 }
             }
