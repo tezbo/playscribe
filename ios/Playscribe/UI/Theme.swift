@@ -101,6 +101,10 @@ extension Date {
     /// A moment on this device ("Checked 7 Nov, 11:20"): the device's own zone, not the patch rule above.
     var localDayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated)) }
     var localShortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated).year()) }
+    /// The UTC calendar, for anything counted in days against a printed patch date ("Out today", "3 days ago"), so a label never disagrees with it.
+    static var utcCalendar: Calendar { utc }
+    /// Whether `a` and `b` fall on the same UTC calendar day.
+    static func sameUTCDay(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, inSameDayAs: b) }
     /// Whether `a` and `b` fall in the same UTC calendar year.
     static func sameUTCYear(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, equalTo: b, toGranularity: .year) }
 }
