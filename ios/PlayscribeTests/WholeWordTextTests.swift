@@ -2,6 +2,7 @@ import XCTest
 @testable import Playscribe
 
 /// G-8 (Iris, r054): a capped title ends on a whole word followed by "…", never a cut word.
+@MainActor
 final class WholeWordTextTests: XCTestCase {
     func testEveryVariantIsTheWholeTextOrAWholeWordPrefixWithEllipsis() {
         let title = "The Grand Autumn Rebalancing, Quality of Life and Stability Update, Including Every Hotfix Since Launch"
