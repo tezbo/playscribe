@@ -16,3 +16,6 @@ Weighed by Nadia, 7 Nov: B approved with conditions: the Mac still signs off Boo
 
 **Spike result, 7 Nov (e6fd747, 487b926):** the stand-in puts the left pane at ~48% and Quinn's KCD II Book AX5 left page matches 6 of 6. The right page matched 3 of 4: "Patch 1.5.6" wraps to 2 lines on the harness (one line on the Mac). A 9 pt rail-reserve trim widened the art but the title still wraps, so one iteration was spent and the kill rule applies: the Book split is **left page advisory only**; the right page and the Mac's side-rail reserve stay Mac-only. Stand-in kept (test-only, off unless `SPLIT=1`).
 
+
+Weighed by Iris, 7 Nov: B signed. Her conditions: calibrate at AX3 and AX5 on two unlike games before the left page counts; name harness Book stills "calibrated, not signed"; record the Mac pair that justifies it.
+**Mac pair on record:** Mac `893a329-book-ax5.png` vs harness `harness-4beebaf-kcd2-book-ax5-calibrated-not-signed.png` (KCD II, AX5). Still to do: AX3, and a second unlike game (not KCD II).
