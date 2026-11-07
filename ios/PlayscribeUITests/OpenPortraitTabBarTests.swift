@@ -14,7 +14,9 @@ final class OpenPortraitTabBarTests: XCTestCase {
 
     /// The lowest edge any content reaches, after scrolling the first scroll view or list to its end.
     private func lastContentMaxY(_ app: XCUIApplication) -> CGFloat {
-        let scroller = app.scrollViews.firstMatch.exists ? app.scrollViews.firstMatch : app.tables.firstMatch
+        // Library is a ScrollView; Updates is a List, which the system may expose as a table or a collection view.
+        let candidates = [app.scrollViews, app.tables, app.collectionViews].map { $0.firstMatch }.filter { $0.exists }
+        guard let scroller = candidates.max(by: { $0.frame.height < $1.frame.height }) else { return 0 }
         for _ in 0..<12 { scroller.swipeUp(velocity: .fast) }
         sleep(1)
         var maxY: CGFloat = 0
@@ -35,7 +37,8 @@ final class OpenPortraitTabBarTests: XCTestCase {
             return
         }
         let end = lastContentMaxY(app)
-        let attachment = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        XCTAssertGreaterThan(end, 0, "\(name): no scroll view, table or collection view found")
+        let attachment = XCTAttachment(screenshot: (XCUIScreen.screens.max { $0.screenshot().image.size.height < $1.screenshot().image.size.height } ?? XCUIScreen.main).screenshot())
         attachment.name = "open-portrait-\(name)-end\(ax5 ? "-ax5" : "")"
         attachment.lifetime = .keepAlways
         add(attachment)
