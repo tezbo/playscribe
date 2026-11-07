@@ -305,7 +305,6 @@ test('trust audit (r050): with no PS5 date, Steam-assumed rows before the PS5 la
   add('dawnwalker@press-new', '2021-03-01T10:00:00.000Z', ['pushsquare'], 'reported', '01.005.000')
   assert.equal(store.dropPreLaunchPs5(db) >= 1, true)
   const since = new Map([[db.prepare("SELECT igdb_id FROM games WHERE id = 'dawnwalker'").get()!.igdb_id as number, '2015-05-19']])
-  assert.equal(store.labelPreLaunchPs4(db, new Map()), 0, 'a game with no PS4 release is never relabelled')
   assert.equal(store.labelPreLaunchPs4(db, since), 1)
   const ps5 = (id: string) => db.prepare("SELECT version FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").get(id) as { version: string | null } | undefined
   const ps4 = (id: string) => (db.prepare('SELECT ps4 FROM releases WHERE id = ?').get(id) as { ps4: number }).ps4
@@ -329,6 +328,7 @@ test('trust audit (r050): a PS5 row over 90 days before the PS5 release with no 
   add('dawnwalker@dayone', '2026-07-05T10:00:00.000Z')
   const has = (id: string) => !!db.prepare("SELECT 1 FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").get(id)
   const igdb = db.prepare("SELECT igdb_id FROM games WHERE id = 'dawnwalker'").get()!.igdb_id as number
+  assert.equal(store.labelPreLaunchPs4(db, new Map()), 0, 'a game with a PS5 date and no PS4 release is never relabelled')
   assert.equal(store.dropEarlyPs5(db, new Map([[igdb, '2020-01-01']])), 0, 'a game with a PS4 release keeps its rows')
   assert.equal(store.dropEarlyPs5(db, new Map()), 1)
   assert.equal(has('dawnwalker@pc-patch'), false)
