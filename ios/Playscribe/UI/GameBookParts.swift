@@ -197,46 +197,64 @@ struct ReleasePage: View {
     @Environment(AppModel.self) private var model
     var release: Release
     @Environment(\.dynamicTypeSize) private var typeSize
-    /// Lifts the dot from the first line's baseline to half the cap height (centred on line 1; Iris) (same idea as FeedRow's dotLift).
+    /// Four lines of the title3 title, scaled with Dynamic Type; a taller title beside the share button sends the button
+    /// to its own row. One way within a release: the full-width title is shorter, so it cannot flip back.
+    @ScaledMetric(relativeTo: .title3) private var fourTitleLines: CGFloat = 104
+    @State private var shareOnOwnRow = false
+    /// Lifts the dot from the first line's baseline to half the cap height, so it sits on line 1 however many lines the
+    /// title wraps to (r061, Iris; same idea as FeedRow's dotLift).
     @ScaledMetric(relativeTo: .title3) private var dotLift: CGFloat = 7
 
-    /// The unread dot and the title block, the dot level with the title's FIRST line however many lines it wraps to.
-    @ViewBuilder private func dotAndTitle(_ r: Release) -> some View {
-        HStack(alignment: .firstTextBaseline, spacing: 12) {   // 12 pt clear of the text (Iris)
+    // Roles (Iris, PR #32): game name title2, update name title3, in every pose. At accessibility sizes the title is capped at
+    // 4 lines and ends on a whole word with "…" (WholeWordText; VoiceOver still reads all of it). `measure` is the row
+    // beside the share button: a hidden copy of the full title, laid out at that width, says whether it needs more than 4
+    // lines there, and if so the button moves to its own row (Iris, r054).
+    @ViewBuilder private func titleBlock(_ r: Release, measure: Bool) -> some View {
+        TitleWithTags(release: r) {
+            if typeSize.isAccessibilitySize {
+                WholeWordText(text: r.displayName, font: PlayscribeFont.title3, lines: 4, color: nil)
+                    .accessibilityIdentifier("releaseTitle")
+                    .background(alignment: .topLeading) {
+                        if measure {
+                            Text(r.displayName).font(PlayscribeFont.title3).fixedSize(horizontal: false, vertical: true)
+                                .hidden().accessibilityHidden(true)
+                                .onGeometryChange(for: Bool.self) { $0.size.height > fourTitleLines } action: { tooTall in
+                                    if tooTall { shareOnOwnRow = true }
+                                }
+                        }
+                    }
+            } else {
+                Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
+            }
+        }
+    }
+
+    /// The unread dot, 12 pt clear of the title, level with the title's FIRST line; then the title block.
+    @ViewBuilder private func dotAndTitle(_ r: Release, measure: Bool) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 12) {
             if model.isUnread(r) {
                 UnreadDot().alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
             }
-            TitleWithTags(release: r) {
-                // At accessibility sizes a plain Text wraps a word wider than the column by character and can leave a comma
-                // alone at the start of a line (r061, "Rebalancing" / ", Quality of"); WholeWordText cuts on a whole word.
-                if typeSize.isAccessibilitySize {
-                    WholeWordText(text: r.displayName, font: PlayscribeFont.title3, lines: 4, color: nil)
-                        .accessibilityIdentifier("releaseTitle")
-                } else {
-                    Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
-                }
-            }
+            titleBlock(r, measure: measure)
         }
     }
 
     var body: some View {
         let r = release
         VStack(alignment: .leading, spacing: 12) {
-            // Accessibility sizes: the title and tags first, then the share button on its own row, its right edge on the
-            // text column's trailing line (the one the headline and body wrap to), so it is clear of the rail and the
-            // hinge band without extra padding; the VStack's 12 pt is the gap above and below (R-2, r060, Iris).
-            if typeSize.isAccessibilitySize {
-                dotAndTitle(r)
-                if r.isPS5Listed {
-                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
-                }
+            // One row at every size (r054, R-2, G-8): the share button's trailing edge is the title row's trailing edge,
+            // top-aligned with the title at accessibility sizes, so it never floats on a row of its own. The title and
+            // tags take the width left of the 44 pt button and wrap in whole words. Iris's condition: a title that would
+            // wrap past 4 lines beside the button drops the button to its own row (the title then has the full width).
+            if shareOnOwnRow {
+                dotAndTitle(r, measure: false)
+                if r.isPS5Listed { HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) } }
             } else {
-            HStack(spacing: 8) {
-                // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
-                dotAndTitle(r)
-                Spacer(minLength: 0)
-                if r.isPS5Listed { ShareUpdateButton(release: r) }
-            }
+                HStack(alignment: typeSize.isAccessibilitySize ? .top : .center, spacing: 8) {
+                    dotAndTitle(r, measure: typeSize.isAccessibilitySize && r.isPS5Listed)
+                    Spacer(minLength: 0)
+                    if r.isPS5Listed { ShareUpdateButton(release: r) }
+                }
             }
             HStack(spacing: 8) {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
@@ -251,6 +269,7 @@ struct ReleasePage: View {
             ReleaseBody(release: r)
         }
         .id(r.id)
+        .onChange(of: r.id) { shareOnOwnRow = false }
     }
 }
 
