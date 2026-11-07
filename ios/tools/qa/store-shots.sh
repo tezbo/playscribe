@@ -13,7 +13,7 @@ panel() { xcrun devicectl device info displays --device $dev 2>/dev/null | grep 
 shot() { xcrun simctl io $dev screenshot --display=$(panel) "$out/$1-$pose.png" >/dev/null 2>&1; echo "$out/$1-$pose.png"; }
 route store-set;                                        shot 1-library
 route store-set/end;                                    shot 1b-library-last-row
-route release/store-lantern-reach/store-lantern-reach@update-1.3; shot 2-reader
+if [[ $pose == *landscape* ]]; then route reader/store-lantern-reach/store-lantern-reach@update-1.3/320; else route release/store-lantern-reach/store-lantern-reach@update-1.3; fi; shot 2-reader
 route gamepage/store-lantern-reach;                     shot 3-book-update
 route store-set/since;                                  shot 6-since-you-last-opened
 route add/photo;                                             shot 5-add-from-photo

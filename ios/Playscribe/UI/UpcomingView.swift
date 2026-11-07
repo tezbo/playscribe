@@ -117,7 +117,8 @@ struct UpcomingView: View {
         } else {
             VStack(alignment: .leading, spacing: 12) {
                 header(title, spoken: spoken)
-                if duo.pose == .closed {
+                // Closed landscape is wide: three flexible columns made a lone tile 500 pt across (Iris, ada480a), so it uses the measured fit below.
+                if duo.pose == .closed && !duo.isLandscape {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: Self.gap, alignment: .top), count: 3),
                               alignment: .leading, spacing: 14) { ForEach(games) { tile($0, watching: watching) } }
                 } else if width > 0 {

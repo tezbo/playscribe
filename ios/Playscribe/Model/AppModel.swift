@@ -610,6 +610,10 @@ final class AppModel {
             else if let t = parts.first.flatMap(LibraryTab.init(rawValue:)) { libraryTab = t }
         case "updates": nav.tab = .updates
         case "search": nav.tab = .search
+        // QA (INTERNAL): a reader opened and scrolled `<y>` points down, so a short landscape screen shows bullets, not a bare heading.
+        case "reader" where parts.count == 3:
+            openRelease(gameID: parts[0], releaseID: parts[1])
+            nav.anchors["page-\(parts[0])-\(Chapter.updates.rawValue)"] = parts[2]
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
