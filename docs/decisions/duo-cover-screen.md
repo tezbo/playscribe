@@ -9,3 +9,17 @@ Date / owner / card: 7 Nov 2026, Sam's research thread, cards `duo-closed-cover`
    Unused Duo APIs in the app today (grep of `ios/`): `onHingeChange` / `UIHingeInteraction` (live hinge angle in Book pose: page lifts, peek of next update); multiple scenes (`UIApplicationSupportsMultipleScenes` is false; two games' patches side by side in Split View, `UIWindowSceneActivationAction` hides itself on the outer display); `stateRestorationActivity` for scene reconnects.
    Stress test: (b) fails if the art motion fights G-9 or AX5 hero caption rules; best case for (a) is a delightful open-pose cover, but Apple says accessory content must never be essential and the session is unsupported.
 6. **Learning.** Check Apple's forums and talks, not just the HIG: DTS answered "is there a cover API?" in one line, and "the closed pose is the cover" was already ours.
+
+## Probe verdict (fill in when the Mac stills arrive)
+Question: with the app open on the inner display, does `ExternalNonInteractiveAccessory` (iOS 27.0, external-display role, view-only) or `CameraCaptureAccessory` (iOS 27.1) draw anything on the outer display? Verdict: **PENDING** (probe is last in the Mac queue; sim vs real Duo: ___).
+
+### Outcome A: an accessory draws on the outer display while open
+- Design: a view-only "Playscribe cover" scene on the outer display: the Continue game's art with slow motion, latest update chip, no controls (nothing to tap; it is `ExternalNonInteractiveAccessory`). It follows the open game, so opening a game book changes the cover.
+- Rules: Reduce Motion and Video Autoplay off give a still cover (G-9); it is an enhancement only, never the sole place for any information (Apple: the system can withdraw it); Settings toggle to turn it off; hidden when the system reports it unavailable (`onAvailabilityChange`). No source names or credits (CLAUDE.md). Art is the existing cover art, no new data.
+- Update G-12: replace "no outer-cover content while open" with the verified behaviour and the iOS version it needs.
+- Risks to test on a real Duo: the role may target a connected external screen only; thermal and battery cost of animating a second display; App Review treatment. Card: `duo-open-cover` (new), after Nadia and Iris weigh in.
+
+### Outcome B: neither draws (fallback)
+- G-12 stays as written. Scrap the open-pose cover and log the learning.
+- Ship the Closed-pose front cover instead (card `duo-closed-cover`), plus the hinge and two-games cards. Optional later: a Live Activity or StandBy widget for "update just landed" (system surfaces; needs its own decision note).
+- Learning: the SDK knew more than the docs; grep the swiftinterface before saying "no API", and probe before promising either way.
