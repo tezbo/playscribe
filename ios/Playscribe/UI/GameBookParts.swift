@@ -207,7 +207,14 @@ struct ReleasePage: View {
                 UnreadDot().alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
             }
             TitleWithTags(release: r) {
-                Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
+                // At accessibility sizes a plain Text wraps a word wider than the column by character and can leave a comma
+                // alone at the start of a line (r061, "Rebalancing" / ", Quality of"); WholeWordText cuts on a whole word.
+                if typeSize.isAccessibilitySize {
+                    WholeWordText(text: r.displayName, font: PlayscribeFont.title3, lines: 4, color: nil)
+                        .accessibilityIdentifier("releaseTitle")
+                } else {
+                    Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
+                }
             }
         }
     }
