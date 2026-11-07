@@ -13,3 +13,6 @@ Date / owner / card: 7 Nov 2026, Claude thread for Terry, card magic-companion (
 - **Updates and News:** keep both for now; revisit merging after the A stills are in the app. Owner: Nadia.
 - **Build order:** Theo starts the tokens PR (appearance-plan step 1) once the v0.5.3 tag is out; accent PR folds in the step 3 audit; light/dark waits.
 - **Accent spec (Iris):** /mnt/project-files/companion/per-game-accent-spec.md. Decorative only; every tappable stays amber. Hand-set colour per game at 5.1:1 contrast or better, neutral grey fallback, Increase Contrast drops the accent. Build as a hand-set table plus a unit test on contrast and hue distance, folded into the tokens/accent PR plan.
+
+## Correction (7 Nov 2026, Nadia's check against main 3835bc4)
+/mnt/project-files/companion/A-cut-taps-verified.md. Drop cuts #2 to #4 from the A scope: #2 removes Refresh (Terry's request, also Tabletop's News retry), #3 turns the Status menu into a tag (loses the only way to change or remove a game from its page), #4 cannot apply in Tabletop. Cut #1 (latest update opens in the reader) stays but its tap saving is unproven until counted in the app. "Taps saved" in Iris's list is unproven. Labelled rail, serif headings and accent are unaffected. Any navigation change returns to Terry as a short summary for his go.
