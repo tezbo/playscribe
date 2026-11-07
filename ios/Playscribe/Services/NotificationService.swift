@@ -169,7 +169,9 @@ final class NotificationService: NSObject {
     /// Remote pushes from the backend carry the same fields.
     func schedule(release: Release, game: CatalogGame?, level: NotifyLevel, pauseAll: Bool, delay: TimeInterval, model: AppModel) {
         guard let game, release.ps5State == .onPS5, !pauseAll else {
+            #if INTERNAL
             qaScheduleLog = "\(release.id): not scheduled (game \(game == nil ? "nil" : "ok"), state \(release.ps5State), pauseAll \(pauseAll))"
+            #endif
             return
         }
         guard level == .all || (level == .major && release.kind.countsAsMajor) else { return }
@@ -194,6 +196,7 @@ final class NotificationService: NSObject {
         }
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: max(1, delay), repeats: false)
         let request = UNNotificationRequest(identifier: release.id, content: content, trigger: trigger)
+        #if INTERNAL
         qaScheduleLog = "\(release.id): adding, due in \(Int(max(1, delay))) s"
         center.add(request) { error in
             Task { @MainActor in self.qaScheduleLog = "\(release.id): added" + (error.map { ", error \($0.localizedDescription)" } ?? "") }
@@ -207,6 +210,9 @@ final class NotificationService: NSObject {
                 }
             }
         }
+        #else
+        center.add(request)
+        #endif
 
         // Make the release visible once it is due, whether or not the notification is shown.
         Task { [weak model] in
@@ -306,7 +312,9 @@ extension NotificationService: UNUserNotificationCenterDelegate {
         Task { @MainActor in
             if let gameID, let releaseID {
                 self.launchedFromNotification = true
+                #if INTERNAL
                 self.qaLastResponse = "\(gameID)/\(releaseID); model \(self.model == nil ? "nil" : "set")"
+                #endif
                 self.model?.openRelease(gameID: gameID, releaseID: releaseID)
             }
             done()
