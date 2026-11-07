@@ -41,11 +41,18 @@ final class PlayscribeUITests: XCTestCase {
             // e9a735d: a bare assertion here failed with no message).
             step("tapped; app state \(XCUIApplication().state.rawValue)")
             // A tap on a Notification Center row can slide out its actions instead of opening the app (14516a5): tap "Open".
-            let openAction = springboard.buttons["Open"]
-            if XCUIApplication().state != .runningForeground, openAction.waitForExistence(timeout: 2) {
-                step("tapping the revealed Open action \(openAction.frame)")
-                openAction.tap()
+            // The slide-out is slow on a loaded Mac (898d946 at load 5.6: no Open button within 2 s, so the cold run never tapped it
+            // and failed after 1242 s, where the same code passed on 2537997), so wait for it up to 10 s.
+            func tapOpenIfRevealed() {
+                let openAction = springboard.buttons["Open"]
+                if XCUIApplication().state != .runningForeground, openAction.waitForExistence(timeout: 10) {
+                    step("tapping the revealed Open action \(openAction.frame)")
+                    openAction.tap()
+                } else {
+                    step("no Open action to tap (app state \(XCUIApplication().state.rawValue))")
+                }
             }
+            tapOpenIfRevealed()
             let target = XCUIApplication()
             // "Foreground" alone proves nothing: the app can be in front because the tap never reached SpringBoard's notification (a
             // locked sim, a missed row). The proof is that the app received the tap's response (INTERNAL probe), so wait for that,
@@ -75,6 +82,7 @@ final class PlayscribeUITests: XCTestCase {
                 guard let row = again else { break }
                 row.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
                 retries += 1
+                tapOpenIfRevealed()
                 foreground = target.wait(for: .runningForeground, timeout: 8)
                 delivered = foreground && responseDelivered(6)
             }
