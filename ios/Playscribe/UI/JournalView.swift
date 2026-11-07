@@ -70,6 +70,7 @@ struct ReleaseEntry: View {
     var release: Release
     var defaultOpen: Bool
     @State private var readTask: Task<Void, Never>?
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         let r = release
@@ -82,16 +83,20 @@ struct ReleaseEntry: View {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 8) {
                         if unread { UnreadDot() }
-                        Text(r.displayName).font(PlayscribeFont.headline)
-                        ReleaseTag(release: r)
+                        TitleWithTags(release: r) { Text(r.displayName).font(PlayscribeFont.headline) }
                         Spacer(minLength: 0)
                         Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
                     }
-                    HStack(spacing: 8) {
+                    // At accessibility sizes the facts stack, each on its own full-width line, so the date never wraps by letter.
+                    let facts = Group {
                         Text(r.kind.label)
                         Text(r.isPS5Listed ? r.ps5Date.shortDay : r.latestDate.shortDay)
                         // R-2 / V-2: the PS5 version exactly as the console shows it; never a PC number.
                         if let v = r.ps5Version { Text(v).monospacedDigit() }
+                    }
+                    Group {
+                        if typeSize.isAccessibilitySize { VStack(alignment: .leading, spacing: 2) { facts } }
+                        else { HStack(spacing: 8) { facts } }
                     }
                     .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     if !open, let h = r.isPS5Listed ? r.ps5Headline : r.headline { Text(h).font(PlayscribeFont.subheadline).lineLimit(2) }
@@ -129,12 +134,40 @@ struct ReleaseEntry: View {
 struct ReleaseTag: View {
     var release: Release
     var body: some View {
+        HStack(spacing: 6) {
+            // Every PS4 patch says so, whatever its state; the patch name stays the title (R-2).
+            if let l = release.ps4Label { Tag(text: l, tint: .secondary) }
+            state
+        }
+    }
+
+    @ViewBuilder private var state: some View {
         switch release.ps5State {
         case .onPS5: if release.simulated == true { Tag(text: "Simulated", tint: .simulated) }
         case .announced: Tag(text: "Announced", tint: .ember)
-        case .reported: EmptyView()
+        case .reported: if release.ps4 == true { Tag(text: "Reported", tint: .secondary) }
         case .notPlanned: Tag(text: "Not planned for PS5", tint: .secondary)
         case .pending: EmptyView()
+        }
+    }
+}
+
+/// An update's title with its tags: beside it at standard sizes, stacked under it at accessibility sizes, so
+/// neither the title truncates nor a tag breaks mid-word.
+struct TitleWithTags<Title: View>: View {
+    var release: Release
+    @ViewBuilder var title: Title
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    var body: some View {
+        if typeSize.isAccessibilitySize {
+            VStack(alignment: .leading, spacing: 4) { title; ReleaseTag(release: release) }
+        } else {
+            // The title never truncates: when the tags don't fit beside it they drop under it.
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 8) { title.lineLimit(1).fixedSize(horizontal: true, vertical: false); ReleaseTag(release: release) }
+                VStack(alignment: .leading, spacing: 4) { title; ReleaseTag(release: release) }
+            }
         }
     }
 }
@@ -153,6 +186,7 @@ extension EnvironmentValues {
 struct ReleaseBody: View {
     @Environment(AppModel.self) private var model
     @Environment(\.marginReleaseID) private var marginReleaseID
+    @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
     /// D-13: facts expanded or collapsed persists.
     @AppStorage("factsOpen") private var factsOpen = false
@@ -200,14 +234,29 @@ struct ReleaseBody: View {
             }
             if marginReleaseID != r.id {
                 Button { withAnimation(.snappy) { factsOpen.toggle() } } label: {
-                    HStack {
-                        Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline)
-                        if let d = FactsLine.detail(for: r) { Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary) }
-                        Spacer()
-                        Image(systemName: "chevron.down").rotationEffect(.degrees(factsOpen ? 180 : 0)).foregroundStyle(.secondary)
+                    let chevron = Image(systemName: "chevron.down").rotationEffect(.degrees(factsOpen ? 180 : 0)).foregroundStyle(.secondary)
+                    if typeSize.isAccessibilitySize {
+                        // AX: one block, "Released ...", then the size, then the chevron, full width (R-2, Iris on #288 at AX3).
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
+                            if let d = FactsLine.detail(for: r) {
+                                Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                            HStack { Spacer(minLength: 0); chevron }
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                        .contentShape(Rectangle())
+                    } else {
+                        HStack {
+                            Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline)
+                            if let d = FactsLine.detail(for: r) { Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary) }
+                            Spacer()
+                            chevron
+                        }
+                        .frame(minHeight: 44)
+                        .contentShape(Rectangle())
                     }
-                    .frame(minHeight: 44)
-                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .accessibilityHint(factsOpen ? "Hides the PS5 facts" : "Shows the PS5 facts")

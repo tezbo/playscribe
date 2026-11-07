@@ -31,6 +31,7 @@ struct CatchUpCard: View {
                                 Text(item.game.name).font(PlayscribeFont.headline).lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
                                 HStack(spacing: 8) {
                                     Text(item.release.displayName)
+                                    if let l = item.release.ps4Label { Text(l).fontWeight(.semibold) }
                                     if let v = item.release.ps5Version { Text(v).monospacedDigit() }
                                 }
                                 .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)

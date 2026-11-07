@@ -58,6 +58,8 @@ struct Tag: View {
     var body: some View {
         Text(text)
             .font(PlayscribeFont.caption2.weight(.semibold))
+            // Never broken mid-word ("Reporte/d"): one line at its natural width; rows stack tags under the title at AX.
+            .lineLimit(1).fixedSize()
             .foregroundStyle(tint)
             .padding(.horizontal, 7)
             .padding(.vertical, 2)

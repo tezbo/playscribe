@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf, studioKindOf } from '../src/ingest/classify.ts'
 import type { NoteSection } from '../src/types.ts'
-import { extractNotes, platformsFor, ps5PageOf, tagNotes } from '../src/ingest/notes.ts'
+import { extractNotes, isPromoLine, platformsFor, ps5PageOf, tagNotes } from '../src/ingest/notes.ts'
 
 test('only a post that says the update is out on PS5 counts as official PS5 evidence', () => {
   assert.ok(ps5LiveStated('Patch 1.04 is now live on PC, PS5 and Xbox Series X|S.'))
@@ -137,4 +137,36 @@ test('pcOnly: PC-specific headings and graphics-driver lines are PC; console-neu
   assert.ok(wilds[0]!.items.every((i) => i.pcOnly))
   const mixed = extractNotes('[list][*]Improved performance on PC and PS5[*]Fixed a crash on PS5[/list]')
   assert.ok(mixed[0]!.items.every((i) => !i.pcOnly))
+})
+
+test('promo and social lines are not patch notes, real changes that mention them are (r052-promo-filter)', () => {
+  const dropped = [
+    'Time to continue your adventure? The saga is on sale now',
+    'Follow Kingdom Come: Deliverance II on social media',
+    'Join our Discord community!',
+    'Wishlist the next game today',
+    '50% off until Monday',
+    'Check out our other game',
+    'Thank you for your patience and support!',
+    'Merry Christmas from the team',
+    'https://example.com/report-a-bug',
+  ]
+  for (const line of dropped) assert.equal(isPromoLine(line), true, line)
+  const kept = [
+    'Thanks for reporting, the stuck door is now fixed',
+    'We are aware of a crash in the lower mine and are working on a fix',
+    'Fixed a crash when opening the Discord overlay',
+    'Fixed the wishlist button not responding',
+    'Removed the discount banner from the main menu',
+    'Improved horse pathing',
+  ]
+  for (const line of kept) assert.equal(isPromoLine(line), false, line)
+  const notes = extractNotes('[h2]Other changes[/h2][list][*]Time to continue your adventure? The saga is on sale now[*]Follow Kingdom Come: Deliverance II on social media[*]Fixed a crash on load[/list][h2]Thanks[/h2][list][*]Thank you for playing![/list]')
+  assert.deepEqual(notes.map((n) => [n.title, n.items.map((i) => i.text)]), [['Other changes', ['Fixed a crash on load']]])
+  assert.deepEqual(tagNotes([{ title: 'Other changes', items: [{ text: 'The saga is on sale now', ps5ProOnly: false, pcOnly: false, category: 'other' }, { text: 'Fixed a door', ps5ProOnly: false, pcOnly: false, category: 'fixed' }] }]).map((n) => n.items.length), [1])
+})
+
+test('in-game store and economy lines are kept even when they say sale or discount (Quinn, #332)', () => {
+  for (const line of ['Merchants now have items on sale', 'Shop discounts now stack', 'Prices are 50% off in the arena', 'Items on sale in the Store display the correct discounted Iridescent Shard price.']) assert.equal(isPromoLine(line), false, line)
+  for (const line of ['The Monster Hunter series is now on sale!', 'Games from the Monster Hunter series now on sale!', 'On Sale Now!']) assert.equal(isPromoLine(line), true, line)
 })
