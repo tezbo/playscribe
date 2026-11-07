@@ -92,7 +92,7 @@ struct FoldHarnessTests {
     }
 
     /// Every pose at AX3 and AX5: it must render within the time budget (a layout loop or hang fails here, naming pose and size),
-    /// and overflow is reported. Overflow is reported, not asserted, until a CI run shows it clean on main (then promote it).
+    /// and no tappable frame may overflow the trailing edge (G-8).
     @Test(.timeLimit(.minutes(2)), arguments: ["closed", "closedLandscape", "open", "openPortrait", "book", "tabletop"], [0, 1])
     func everyPoseRendersAndStaysInsideAtAccessibilitySizes(_ id: String, _ sizeIndex: Int) async throws {
         let p = HarnessPose.named(id)
@@ -123,14 +123,12 @@ enum HarnessRules {
 
     /// One-sided: a tappable frame reaching past the container's trailing edge by more than 20 pt is clearly overflowing, even with the
     /// harness's 84 to 88 pt narrowing (which can only hide overflow, never invent it). Tabletop's rail is laid out by the system at the
-    /// real region and is skipped. Reported only for now.
+    /// real region and is skipped. Asserted since the first CI run (9bb77b3) showed no overflow in any pose at AX3 or AX5.
     static func reportOverflow(_ r: Rendered, size: String) {
         guard r.pose.expected != .tabletop else { return }
         let limit = r.pose.container.width + 20
         let over = r.frames.filter { $0.width > 1 && $0.height > 1 && $0.maxX > limit }
-        if !over.isEmpty {
-            print("harness error: [info, not asserted] \(r.pose.id) \(size): tappable frames past the trailing edge (\(Int(limit)) pt): \(over.map(brief))")
-        }
+        require(over.isEmpty, "\(r.pose.id) \(size) G-8: tappable frames past the trailing edge (\(Int(limit)) pt): \(over.map(brief))")
     }
 
     /// One-line failures that say "failed", so the CI log's grep shows them (and so a reader sees the numbers).
