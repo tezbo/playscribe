@@ -23,7 +23,19 @@ final class PlayscribeUITests: XCTestCase {
             // launch in postAndFindNotification replaced it, so ask a fresh proxy for the target app's state (3758183 and
             // e9a735d: a bare assertion here failed with no message).
             let target = XCUIApplication()
-            let foreground = target.wait(for: .runningForeground, timeout: 15)
+            var foreground = target.wait(for: .runningForeground, timeout: 8)
+            // A tap that lands while Notification Center is still sliding, or as the banner leaves, is swallowed by SpringBoard
+            // (10f6e004 Mac solo run: row found and tapped, app left in the background, state 3). A person would tap again, so
+            // find the row afresh and tap it once more, up to twice, before calling it a failure.
+            var retries = 0
+            while !foreground && retries < 2, let again = notificationRow(timeout: 3) {
+                again.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+                retries += 1
+                foreground = target.wait(for: .runningForeground, timeout: 8)
+            }
+            if !foreground {
+                let tree = XCTAttachment(string: springboard.debugDescription); tree.name = "n6-springboard-hierarchy-" + (cold ? "cold" : "warm"); tree.lifetime = .keepAlways; add(tree)
+            }
             if !foreground {
                 let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
                 shot.name = "n6-not-foreground-" + (cold ? "cold" : "warm"); shot.lifetime = .keepAlways; add(shot)
