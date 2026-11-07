@@ -15,6 +15,8 @@ route store-set;                                        shot 1-library
 route store-set/end;                                    shot 1b-library-last-row
 route release/store-lantern-reach/store-lantern-reach@update-1.3; shot 2-reader
 route gamepage/store-lantern-reach;                     shot 3-book-update
-route add;                                              shot 5-add-from-photo
+route store-set/since;                                  shot 6-since-you-last-opened
+route add/scan;                                              shot 5-add-from-photo
 route library/upcoming;                                 shot 7-upcoming
 route release/store-hollow-meridian/store-hollow-meridian@hotfix-1.1.2; shot 8-known-issue
+# 9 (Closed landscape) is the same store-set shots in the closed-landscape pose: run this script again in that pose.

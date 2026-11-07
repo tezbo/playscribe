@@ -614,6 +614,8 @@ final class AppModel {
         case "store-set":
             loadStoreSet(plus: parts.first == "plus")
             // "store-set/end" (alias "titles"): the Library scrolled to its last row (the long Orchard title), to check it clears the tab bar and shows whole titles.
+            // "store-set/since": the "Since you last opened" card, as if the previous open was a day ago (the unread Lantern Reach update).
+            if parts.first == "since" { catchUpSince = .now.addingTimeInterval(-86_400); catchUpHidden = false }
             if parts.first == "end" || parts.first == "titles", let last = StoreSet.gameIDs.last { nav.anchors["library"] = "lib-\(last)" }
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
