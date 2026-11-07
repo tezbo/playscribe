@@ -741,7 +741,7 @@ final class Release050Tests: XCTestCase {
         let app = launch("settings")
         let toggle = app.switches["quietHours"]
         var tries = 0
-        while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
+        while !toggle.exists && tries < 6 { (app.collectionViews.firstMatch.exists ? app.collectionViews.firstMatch : app).swipeUp(); tries += 1 }
         XCTAssertTrue(toggle.exists, "Settings has a Quiet hours switch")
         XCTAssertTrue(["off", "0"].contains(toggle.value as? String ?? ""), "off by default, got \(String(describing: toggle.value))")
         if isTabletop(app) { XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: switch in the lower half") }
@@ -778,7 +778,7 @@ final class Release050Tests: XCTestCase {
         XCTAssertTrue(cog.waitForExistence(timeout: 5)); cog.tap()
         let toggle = app.switches["plusCardToggle"]
         var tries = 0
-        while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
+        while !toggle.exists && tries < 6 { (app.collectionViews.firstMatch.exists ? app.collectionViews.firstMatch : app).swipeUp(); tries += 1 }
         XCTAssertTrue(toggle.exists, "Settings has the PS Plus card switch")
         XCTAssertTrue(["on", "1"].contains(toggle.value as? String ?? ""), "on by default, got \(String(describing: toggle.value))")
         let reminder = app.descendants(matching: .any)["plusLeavingSoon"]
@@ -791,7 +791,7 @@ final class Release050Tests: XCTestCase {
         func flip() {
             let t = app.switches["plusCardToggle"]
             var n = 0
-            while !t.exists && n < 6 { app.swipeUp(); n += 1 }
+            while !t.exists && n < 6 { (app.collectionViews.firstMatch.exists ? app.collectionViews.firstMatch : app).swipeUp(); n += 1 }
             let i = t.switches.firstMatch
             if i.exists { i.tap() } else { t.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
         }
