@@ -665,10 +665,13 @@ final class Release050Tests: XCTestCase {
         let add = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add game' OR label == 'Add game' OR label == 'Add'")).firstMatch
         XCTAssertTrue(cog.waitForExistence(timeout: 10), "Settings cog exists [\(pose)]")
         XCTAssertTrue(add.exists, "Add exists [\(pose)]")
+        // Exemption (Iris): only the system-drawn Closed toolbar buttons may be 36 pt (the app draws 38). Our own
+        // controls, which is every other pose's rail, stay at 44 pt.
+        let floor: CGFloat = pose.contains("pose: closed") ? 35.5 : 43.5
         for (name, e) in [("Settings", cog), ("Add", add)] {
             XCTAssertTrue(e.isHittable, "\(name) is hittable [\(pose)]")
-            XCTAssertGreaterThanOrEqual(e.frame.height, 35.5, "\(name) height at Iris's 36 pt toolbar floor [\(pose)]")
-            XCTAssertGreaterThanOrEqual(e.frame.width, 35.5, "\(name) width at Iris's 36 pt toolbar floor [\(pose)]")
+            XCTAssertGreaterThanOrEqual(e.frame.height, floor, "\(name) height at least \(floor) pt [\(pose)]")
+            XCTAssertGreaterThanOrEqual(e.frame.width, floor, "\(name) width at least \(floor) pt [\(pose)]")
             XCTAssertGreaterThanOrEqual(e.frame.minY, 0, "\(name) is on screen [\(pose)]")
         }
         XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(add.frame), "cog and Add do not overlap \(cog.frame) \(add.frame) [\(pose)]")
