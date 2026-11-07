@@ -206,6 +206,8 @@ final class AppModel {
     /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
     /// confirm a `-qaRoute` took effect.
     var qaRoute: String?
+    /// QA (INTERNAL, `-qaRoute library/news`): the Library scrolls to its News strip.
+    var qaScrollNews = false
     /// QA (INTERNAL, `-qaRoute long-text`): a long overview body, to show the Tabletop stage cap and the Full text row.
     var qaLongText = false
     /// QA: the newest On PS5 update of the first `qaUpdateCount` different games are the only unread ones. Chosen
@@ -589,7 +591,7 @@ final class AppModel {
         case "tag" where parts.count == 1: if let v = Verification(rawValue: parts[0]) { tagExplainer = v }
         case "library": nav.tab = .library; nav.gameID = nil
             // QA (INTERNAL, `-qaRoute library/news`): the Library already scrolled to the News strip.
-            if parts.first == "news" { nav.anchors["library"] = "news-strip" }
+            if parts.first == "news" { qaScrollNews = true }
         case "updates": nav.tab = .updates
         case "news": nav.tab = .news
         case "search": nav.tab = .search

@@ -293,6 +293,7 @@ struct LibraryShelf: View {
         let rows = duo.pose == .tabletop && letter != nil
             ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
         let all = model.libraryRows
+        ScrollViewReader { proxy in
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
@@ -501,6 +502,17 @@ struct LibraryShelf: View {
             NewsStore.shared.seedQA(gameIDs: model.data.collection.map(\.gameID))
             #endif
             for id in model.data.collection.map(\.gameID).prefix(12) { await NewsStore.shared.load(gameID: id, igdbID: model.game(id)?.igdbID) }
+        }
+        // QA (INTERNAL, `-qaRoute library/news`): scroll to the News strip once it has headlines (the strip is hidden until then).
+        .task(id: model.qaScrollNews) {
+            #if INTERNAL
+            guard model.qaScrollNews else { return }
+            for _ in 0..<8 {
+                try? await Task.sleep(for: .milliseconds(600))
+                withAnimation(nil) { proxy.scrollTo("news-strip", anchor: .top) }
+            }
+            #endif
+        }
         }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
