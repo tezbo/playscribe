@@ -52,6 +52,13 @@ struct FeedContractTests {
         #expect(list.count == 2 && list[0].coverId == "co2lbd" && list[1].coverId == nil)
     }
 
+    @Test("Similar games carry an optional reason (why), absent on older data")
+    func similarWhy() throws {
+        let json = #"[{ "igdbId": 1, "name": "A", "why": "Same studio" }, { "igdbId": 2, "name": "B", "why": "Same genre: RPG" }, { "igdbId": 3, "name": "C" }]"#
+        let list = try decoder.decode([GameBasics.Similar].self, from: Data(json.utf8))
+        #expect(list.map(\.why) == ["Same studio", "Same genre: RPG", nil])
+    }
+
     @Test("Digest is optional and tolerates missing counts")
     func digest() throws {
         let full = try decoder.decode(Release.Digest.self, from: Data(#"{ "new": 3, "fixed": 5, "balance": 1, "other": 0, "ps5": 9, "topNew": ["A", "B"] }"#.utf8))
@@ -166,5 +173,15 @@ struct ForYouTests {
         #expect(model.forYouLines(for: r).isEmpty)
         model.data.followedIssues = ["i1"]
         #expect(model.forYouLines(for: r) == ["Fixes an issue you follow: Crash on load"])
+    }
+}
+
+@MainActor
+struct SimilarReasonSpeechTests {
+    @Test("The reason is spoken in lower case after the name")
+    func spoken() {
+        #expect(SimilarGamesRow.spoken("Same studio") == "same studio")
+        #expect(SimilarGamesRow.spoken("Same genre: RPG") == "same genre: RPG")
+        #expect(SimilarGamesRow.spoken("") == "")
     }
 }
