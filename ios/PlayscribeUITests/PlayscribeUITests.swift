@@ -662,8 +662,8 @@ final class Release050Tests: XCTestCase {
         XCTAssertTrue(add.exists, "Add exists [\(pose)]")
         for (name, e) in [("Settings", cog), ("Add", add)] {
             XCTAssertTrue(e.isHittable, "\(name) is hittable [\(pose)]")
-            XCTAssertGreaterThanOrEqual(e.frame.height, 43.5, "\(name) height 44 pt [\(pose)]")
-            XCTAssertGreaterThanOrEqual(e.frame.width, 43.5, "\(name) width 44 pt [\(pose)]")
+            XCTAssertGreaterThanOrEqual(e.frame.height, 35.5, "\(name) height at Iris's 36 pt toolbar floor [\(pose)]")
+            XCTAssertGreaterThanOrEqual(e.frame.width, 35.5, "\(name) width at Iris's 36 pt toolbar floor [\(pose)]")
             XCTAssertGreaterThanOrEqual(e.frame.minY, 0, "\(name) is on screen [\(pose)]")
         }
         XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(add.frame), "cog and Add do not overlap \(cog.frame) \(add.frame) [\(pose)]")
