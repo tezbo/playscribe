@@ -4,7 +4,11 @@
 dev=${DEVICE:-01725EFD-2D6E-423D-B367-C5155D7E6623}
 _qa=${0:A:h}
 # Device Hub answers Accessibility reads reliably only when it's the active app.
-open -a /Applications/Xcode.app/Contents/Applications/DeviceHub.app 2>/dev/null; sleep 2
+# QA_HEADLESS_POSE=1 (needs a build with -qaPose): Book and Tabletop come from the launch argument, not Device Hub clicks, so
+# Device Hub is only touched to put the sim on the inner display (once) and for Closed. Launch lines add ${=poseargs}.
+poseargs=""
+_inner=""
+[[ -n $QA_HEADLESS_POSE ]] || { open -a /Applications/Xcode.app/Contents/Applications/DeviceHub.app 2>/dev/null; sleep 2; }
 press() {
   # Device Hub sometimes hides its toolbar until the window is active; retry, waking it with a tree read.
   for i in 1 2 3; do
@@ -18,7 +22,21 @@ press() {
 orientation() { xcrun devicectl device info displays --device $dev 2>/dev/null | awk -v d="$1" '($3==d || $3==d":"){f=1} f&&/currentOrientation/{print $NF; exit}'; }
 orient() { for i in 1 2 3 4; do [[ $(orientation $1) == $2 ]] && return; press "Rotate Right"; done; }
 panel() { xcrun devicectl device info displays --device $dev 2>/dev/null | grep -q "LCD-1 (active)" && echo LCD-1 || echo LCD; }
+inner_display() {
+  [[ -n $_inner ]] && return
+  open -a /Applications/Xcode.app/Contents/Applications/DeviceHub.app 2>/dev/null; sleep 2
+  press Open; _inner=1
+}
 set_pose() {
+  poseargs=""
+  if [[ -n $QA_HEADLESS_POSE ]]; then
+    case $1 in
+      book) inner_display; orient LCD-1 rot90; poseargs="-qaPose book"; return ;;
+      tabletop) inner_display; orient LCD-1 rot0; poseargs="-qaPose tabletop"; return ;;
+      closed) _inner="" ;;
+      open|open-portrait) _inner="" ;;
+    esac
+  fi
   case $1 in
     closed) press Closed; orient LCD rot0 ;;
     book) press "Partially Open"; orient LCD-1 rot90 ;;

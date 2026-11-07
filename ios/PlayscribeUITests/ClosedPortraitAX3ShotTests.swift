@@ -1,0 +1,87 @@
+import XCTest
+
+/// Closed portrait stills at AX3 that need a route a launch-only script cannot reach, or a scroll (risk 2 step A, Quinn's review of
+/// run 42293459096): the hero with the update chip, the Alerts card, the Updates tab, and the Add sheet at top, middle and bottom so a
+/// still shows whether the pinned footer covers the last row. Attached as `closed-<name>-ax3`; no assertions beyond the size, because the
+/// point is for Quinn to judge the stills.
+final class ClosedPortraitAX3ShotTests: XCTestCase {
+    private func launch(_ route: String) -> XCUIApplication {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", route, "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        XCUIDevice.shared.orientation = .portrait
+        app.launch()
+        sleep(4)
+        return app
+    }
+
+    private func shoot(_ name: String) {
+        let shot = XCUIScreen.main.screenshot()
+        let attachment = XCTAttachment(screenshot: shot)
+        attachment.name = "closed-\(name)-ax5"
+        attachment.lifetime = .keepAlways
+        add(attachment)
+        XCTAssertGreaterThan(shot.image.size.height, shot.image.size.width, "\(name): not portrait")
+    }
+
+    func testHeroWithUpdateChip() {
+        let app = launch("one-update")
+        // 57da7e4 and 433c821 showed the N-1 alerts card and the PS Plus card, not the hero: the card sits above the deck.
+        // Dismiss it (Not now) so the hero is on screen, then shoot top and one scroll down.
+        let notNow = app.buttons["Not now"]
+        if notNow.waitForExistence(timeout: 5) { notNow.tap(); sleep(1) }
+        shoot("hero-update")
+        app.swipeUp()
+        sleep(1)
+        shoot("hero-update-scrolled")
+        app.terminate()
+    }
+
+    func testAlertsCard() {
+        let app = launch("alerts")
+        shoot("alerts-card")
+        app.terminate()
+    }
+
+    /// The script's AX5 shot of Settings was blank (Quinn, 32380a7): it fired a fixed 4 s after launch. Wait for the screen's own title
+    /// instead, and shoot nothing until it exists, so a blank still means a blank screen.
+    func testSettingsTop() {
+        let app = launch("settings")
+        let title = app.staticTexts["Settings"]
+        XCTAssertTrue(title.waitForExistence(timeout: 15), "settings: the Settings screen never appeared (a real blank page?)")
+        sleep(1)
+        shoot("settings")
+        app.terminate()
+    }
+
+    func testLibraryTop() {
+        let app = launch("library")
+        XCTAssertTrue(app.staticTexts["Library"].waitForExistence(timeout: 15), "library: never appeared")
+        shoot("library")
+        app.terminate()
+    }
+
+    func testUpdatesTab() {
+        let app = launch("updates")
+        shoot("updates")
+        app.terminate()
+    }
+
+    func testAddSheetTopMiddleBottom() {
+        let app = launch("add")
+        shoot("add-top")
+        // Scroll the sheet's own scroll view by dragging from the lower part up; a bare app.swipeUp() started over the pinned footer
+        // and moved nothing (add-bottom matched add-top). Record whether anything moved, so a still that cannot scroll says so.
+        let scroll = app.scrollViews.firstMatch
+        let target: XCUIElement = scroll.exists ? scroll : app
+        let before = XCUIScreen.main.screenshot().pngRepresentation
+        target.swipeUp(velocity: .slow)
+        sleep(1)
+        shoot("add-mid")
+        for _ in 0..<4 { target.swipeUp(velocity: .fast) }
+        sleep(1)
+        shoot("add-bottom")
+        let after = XCUIScreen.main.screenshot().pngRepresentation
+        print("add sheet scrolled: \(before != after) (scroll view found: \(scroll.exists))")
+        app.terminate()
+    }
+}
