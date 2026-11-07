@@ -174,7 +174,8 @@ enum FoldHost {
         window.layoutIfNeeded()
         hc.view.layoutIfNeeded()
         let inherited = hc.view.safeAreaInsets
-        let t = pose.safeArea
+        var t = pose.safeArea
+        if pose.tabBarSuppliesTrailingInset { t.right = 0 }
         // `insetAdjust` is for width calibration only (HarnessWidthCalibrationTests); every asserting test passes none.
         hc.additionalSafeAreaInsets = UIEdgeInsets(top: t.top - inherited.top + insetAdjust.top, left: t.left - inherited.left + insetAdjust.left,
                                                    bottom: t.bottom - inherited.bottom + insetAdjust.bottom, right: t.right - inherited.right + insetAdjust.right)
