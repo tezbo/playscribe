@@ -36,6 +36,19 @@ final class ClosedPortraitAX3ShotTests: XCTestCase {
         app.terminate()
     }
 
+    /// r054: a release title past 4 lines beside the share button sends the button to its own row. The route seeds a very long
+    /// invented title; the button must sit below the title, not beside it, and the title must keep the full width.
+    func testLongTitleShareDropsToOwnRow() {
+        let app = launch("long-title/dawnwalker")
+        let title = app.descendants(matching: .any)["releaseTitle"]
+        XCTAssertTrue(title.waitForExistence(timeout: 15), "long-title: the release page never appeared")
+        let share = app.buttons["Share update"]
+        XCTAssertTrue(share.waitForExistence(timeout: 10), "long-title: Share update is missing")
+        XCTAssertGreaterThanOrEqual(share.frame.minY, title.frame.maxY - 1, "long-title: the share button must sit under a title past 4 lines")
+        shoot("long-title")
+        app.terminate()
+    }
+
     func testAlertsCard() {
         let app = launch("alerts")
         shoot("alerts-card")
