@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 import Testing
 @testable import Playscribe
 
@@ -52,5 +53,16 @@ struct UpcomingBookTileSizeTests {
             #expect(CGFloat(f.left.count) * f.left.size + CGFloat(f.left.count - 1) * UpcomingView.gap <= l + 0.01)
             #expect(CGFloat(f.right.count) * f.right.size + CGFloat(f.right.count - 1) * UpcomingView.gap <= r + 0.01)
         }
+    }
+}
+
+/// Upcoming at accessibility sizes: AX3 and up switch to one-column rows (Iris's option b); below that the #287 columns stay.
+@MainActor
+struct UpcomingRowSwitchTests {
+    @Test func rowsFromAX3Only() {
+        #expect(!UpcomingView.usesRows(.xxxLarge))
+        #expect(!UpcomingView.usesRows(.accessibility2))
+        #expect(UpcomingView.usesRows(.accessibility3))
+        #expect(UpcomingView.usesRows(.accessibility5))
     }
 }
