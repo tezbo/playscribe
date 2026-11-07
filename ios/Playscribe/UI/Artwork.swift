@@ -34,7 +34,7 @@ struct CoverView: View {
             .overlay {
                 if !plateName {
                     Text(String(game.name.first(where: \.isLetter) ?? game.name.first ?? "?").uppercased())
-                        .font(.custom("Literata24pt-SemiBold", size: 40))
+                        .font(.custom("Literata24pt-SemiBold", size: 28))
                         .foregroundStyle(.white.opacity(0.85))
                         .accessibilityHidden(true)
                 } else { Text(game.name)

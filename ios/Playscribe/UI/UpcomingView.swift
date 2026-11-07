@@ -169,7 +169,9 @@ struct UpcomingView: View {
         Button {
             model.browseGame(g)
         } label: {
-            HStack(alignment: .top, spacing: 16) {
+            // Closed is the narrowest page: the cover sits above the text there so the name and date get the whole column.
+            let layout = duo.pose == .closed ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10)) : AnyLayout(HStackLayout(alignment: .top, spacing: 16))
+            layout {
                 TileCover(game: g, plateName: false).aspectRatio(3 / 4, contentMode: .fit).frame(width: duo.pose == .closed ? 72 : 84)
                 VStack(alignment: .leading, spacing: 6) {
                     WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
