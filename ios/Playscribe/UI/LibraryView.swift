@@ -1331,14 +1331,18 @@ struct FlowLayout: Layout {
     }
     func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
         for (i, p) in place(bounds.width, subviews).points.enumerated() {
-            let size = subviews[i].sizeThatFits(.unspecified)
+            let size = subviews[i].sizeThatFits(Self.fit(bounds.width))
             subviews[i].place(at: CGPoint(x: bounds.minX + p.x, y: bounds.minY + p.y), proposal: ProposedViewSize(size))
         }
     }
+    /// An item is never offered more than the row: a long label wraps inside it rather than widening the whole
+    /// layout past the screen (which clipped the page at the left edge at AX3).
+    private static func fit(_ width: CGFloat) -> ProposedViewSize { ProposedViewSize(width: width.isFinite ? width : nil, height: nil) }
+
     private func place(_ width: CGFloat, _ subviews: Subviews) -> (points: [CGPoint], size: CGSize) {
         var points: [CGPoint] = [], x: CGFloat = 0, y: CGFloat = 0, row: CGFloat = 0, maxX: CGFloat = 0
         for v in subviews {
-            let s = v.sizeThatFits(.unspecified)
+            let s = v.sizeThatFits(Self.fit(width))
             if x > 0 && x + s.width > width { x = 0; y += row + spacing; row = 0 }
             points.append(CGPoint(x: x, y: y))
             x += s.width + spacing; row = max(row, s.height); maxX = max(maxX, x - spacing)
