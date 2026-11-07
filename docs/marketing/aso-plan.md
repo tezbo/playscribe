@@ -38,10 +38,10 @@ Support shows an email only for now; confirm Apple's support URL requirement bef
 ## Metadata draft (for Nadia's sign-off)
 
 - Name: `Playscribe: PS5 Patch Notes` (27)
-- Subtitle: `Every update, a new chapter` (27)
+- Subtitle: `The story of every update` (25)
 - Keywords (no repeats of name/subtitle words, no competitor names, no other brands):
   `changelog,hotfix,gaming,tracker,game news,wishlist,library,release dates,foldable,duo,alerts,widget`
-- Promotional text (170 max): `Know what changed, and whether it reached your PS5. Follow your games, get alerts when an update lands, read it as a book.`
+- Promotional text (170 max, 162 used): `Every update for the games you play, told in plain words. Built for the fold: two pages in Book, a table-top reader in Tabletop, and quiet alerts when it matters.`
 
 Keyword volume and difficulty need a paid tool or live Search Ads data; we spend nothing, so we start from this reasoned
 set and tune from App Store Connect analytics after launch.
