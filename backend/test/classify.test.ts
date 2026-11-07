@@ -170,3 +170,35 @@ test('in-game store and economy lines are kept even when they say sale or discou
   for (const line of ['Merchants now have items on sale', 'Shop discounts now stack', 'Prices are 50% off in the arena', 'Items on sale in the Store display the correct discounted Iridescent Shard price.']) assert.equal(isPromoLine(line), false, line)
   for (const line of ['The Monster Hunter series is now on sale!', 'Games from the Monster Hunter series now on sale!', 'On Sale Now!']) assert.equal(isPromoLine(line), true, line)
 })
+
+// r052-steam-playstation-tag (Quinn): on a Steam-only release a line that says only "PlayStation" or "PSN" is PC content.
+test('a bare PlayStation or PSN line on a Steam-only release tags pc, not ps5', () => {
+  const psn = 'Fixed an issue where in particular Steam Deck players who performed the initial boot while offline encountered a persistent PSN account link error message, preventing them from starting the game.'
+  assert.deepEqual(platformsFor(psn, undefined, true), ['pc'])
+  assert.deepEqual(platformsFor('Added support for displaying PlayStation friends and PlayStation user avatars.', undefined, true), ['pc'])
+  // Named PS5 still tags ps5 on Steam, and other sources keep the old rule.
+  assert.deepEqual(platformsFor('Fixed a crash on PS5 and PSN login', undefined, true), ['ps5'])
+  assert.deepEqual(platformsFor(psn), ['ps5', 'pc'])
+  assert.deepEqual(platformsFor('Fixed PlayStation trophies not unlocking'), ['ps5'])
+  // PS5 fixes written in Steam posts keep ps5: "PC and PlayStation" pairs and other consoles named on the line.
+  assert.deepEqual(platformsFor('Fixed a crash on PC and PlayStation', undefined, true), ['ps5', 'pc'])
+  assert.deepEqual(platformsFor('Xbox and PlayStation: fixed a stutter in the market', undefined, true), ['ps5', 'xboxSeries'])
+  assert.deepEqual(platformsFor('Fixed a crash on consoles and PlayStation', undefined, true), ['ps5'])
+})
+
+test('on read, a Steam-only release keeps ps5 tags once it has a PS5 row, and weakens them while it has none', async () => {
+  const { openDb } = await import('../src/db.ts')
+  const store = await import('../src/store.ts')
+  const db = openDb(':memory:')
+  store.upsertGame(db, { id: 'g', name: 'G' })
+  const note = (text: string) => [{ title: 'Changes', items: [{ text, ps5ProOnly: false, pcOnly: false, category: 'fixed' as const }] }]
+  const add = (key: string, text: string) =>
+    store.upsertRelease(db, { gameId: 'g', versionKey: key, displayName: key, kind: 'patch', kindBasis: 'inferred', announcedAt: '2026-01-01T00:00:00Z', notes: note(text), sourceId: 'g-steam' }).id
+  const psn = add('1', 'Fixed a persistent PSN account link error message.')
+  const both = add('2', 'Fixed a crash on PC and PlayStation')
+  const tags = (id: string) => store.getRelease(db, id)!.notes[0]!.items[0]!.platforms
+  assert.deepEqual(tags(psn), ['pc'])
+  assert.deepEqual(tags(both), ['ps5', 'pc'])
+  store.upsertPlatform(db, psn, 'ps5', { status: 'live', verification: 'official', liveAt: store.field('2026-01-01T00:00:00Z', 'official', 'g-steam') })
+  assert.deepEqual(tags(psn), ['ps5'])
+})

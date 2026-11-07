@@ -42,18 +42,28 @@ const TERMS = JSON.parse(readFileSync(new URL('./platform-terms.json', import.me
 const any = (list: string[]) => new RegExp(list.map((p) => `(?:${p})`).join('|'), 'i')
 const NAMES = { pc: any([...TERMS.pcNames, ...TERMS.pc]), ps5: any(TERMS.ps5), xboxSeries: any(TERMS.xboxSeries), consoles: any(TERMS.consoles) }
 
+// "PlayStation" not followed by a generation, and "PSN": the weak PS5 terms.
+const BARE_PLAYSTATION = /\bPlayStation\b(?!\s*®?\s*[45]\b)|\bPSN\b/gi
+
+const PC_PLAYSTATION_PAIR = /\bPC\s*(?:and|&|\/|,|or|\+)\s*PlayStation|\bPlayStation\s*(?:and|&|\/|,|or|\+)\s*PC\b/i
+
 /**
  * Which platforms an item is about, or undefined for every platform. A section heading ("PC",
  * "PS5 fixes") decides for its items; otherwise the item's own words do. PC-only words (FrameGen,
  * DLSS, AMD, Steam Deck, mouse and keyboard…) tag it PC unless it also names a console.
  */
-export const platformsFor = (text: string, section?: Platform[]): Platform[] | undefined => {
+export const platformsFor = (text: string, section?: Platform[], steamOnly = false): Platform[] | undefined => {
   if (section) return section
   const p: Platform[] = []
-  const ps5 = NAMES.ps5.test(text)
+  // On a Steam-only release a line that says only "PlayStation" or "PSN" (SDK, trophies, friends, account link) is about
+  // the PC build, not PS5 content: it tags PC (Quinn, r052-steam-playstation-tag).
+  // Not when the line also names another console, or pairs PC with PlayStation ("PC and PlayStation"): Steam posts for games that
+  // are on PS5 write their fixes that way, and those stay PS5 content.
+  const weakOnly = steamOnly && NAMES.ps5.test(text) && !NAMES.ps5.test(text.replace(BARE_PLAYSTATION, '')) && !NAMES.xboxSeries.test(text) && !NAMES.consoles.test(text) && !/\bSwitch\b/i.test(text) && !PC_PLAYSTATION_PAIR.test(text)
+  const ps5 = weakOnly ? false : NAMES.ps5.test(text)
   const xbox = NAMES.xboxSeries.test(text)
   if (ps5) p.push('ps5')
-  if (PC.test(text) || (NAMES.pc.test(text) && !NAMES.consoles.test(text))) p.push('pc')
+  if (weakOnly || PC.test(text) || (NAMES.pc.test(text) && !NAMES.consoles.test(text))) p.push('pc')
   if (xbox) p.push('xboxSeries')
   return p.length ? p : undefined
 }
@@ -120,7 +130,7 @@ const PROMO_LINE = new RegExp(
 const GAME_ECONOMY = /\b(?:vendors?|merchants?|shops?|stores?|traders?|stalls?|prices?|gold|coins?|shards?|cost|costs|currency|purchas(?:e|ed|es|able)|bundles?|coupons?|costumes?|outfits?|skins?|no longer|correct(?:ly)?|now (?:have|find|stack|show|display|appear|cost|sell))\b/i
 export const isPromoLine = (text: string) => /^\s*https?:\/\/\S+\s*$/i.test(text) || (PROMO_LINE.test(text) && !CHANGE_WORD.test(text) && !GAME_ECONOMY.test(text))
 
-export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSection[] => {
+export const extractNotes = (body: string, fallbackTitle = 'Changes', steamOnly = false): NoteSection[] => {
   const sections: NoteSection[] = []
   let current: NoteSection | null = null
   let currentPlatforms: Platform[] | undefined
@@ -157,7 +167,7 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSecti
     if (isPromoLine(text)) continue
     if (!current) open(fallbackTitle)
     const item: NoteItem = { text, ps5ProOnly: currentPro || PRO.test(text), pcOnly: false, category: itemCategoryOf(text, categoryOf(current!.title)) }
-    const platforms = platformsFor(text, currentPlatforms)
+    const platforms = platformsFor(text, currentPlatforms, steamOnly)
     if (platforms) item.platforms = platforms
     item.pcOnly = isPcOnly(platforms)
     current!.items.push(item)
@@ -171,14 +181,14 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSecti
  * names out of the notes (Terry's rule): a line that names one (a quoted review in a studio's post, say) is dropped,
  * a heading that names one becomes "Changes", and a section left empty goes.
  */
-export const tagNotes = (sections: NoteSection[]): NoteSection[] =>
+export const tagNotes = (sections: NoteSection[], steamOnly = false): NoteSection[] =>
   sections.map((s) => {
     const section = sectionPlatforms(s.title)
     return {
       ...s,
       title: SOURCE_NAMES.test(s.title) ? 'Changes' : s.title,
       items: s.items.filter((i) => !SOURCE_NAMES.test(i.text) && !isPromoLine(i.text)).map(({ platforms: _old, ...i }) => {
-        const platforms = platformsFor(i.text, section)
+        const platforms = platformsFor(i.text, section, steamOnly)
         const category = itemCategoryOf(i.text, categoryOf(s.title))
         return platforms ? { ...i, platforms, pcOnly: isPcOnly(platforms), category } : { ...i, pcOnly: false, category }
       }),

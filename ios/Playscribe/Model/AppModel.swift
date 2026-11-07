@@ -615,11 +615,11 @@ final class AppModel {
             loadStoreSet(plus: parts.first == "plus")
             // "store-set/end": the Library scrolled as far as it goes, to check the last row clears the tab bar.
             if parts.first == "end", let last = StoreSet.gameIDs.last { nav.anchors["library"] = "lib-\(last)" }
-        case "one-update": resetToOneUpdateDemo()
-        case "two-update": resetToTwoUpdateDemo()
-        case "many-updates": resetToManyUpdatesDemo()
-        case "three-update": resetToUpdateDemo(count: 3)
-        case "four-update": resetToUpdateDemo(count: 4)
+        case "one-update": resetToOneUpdateDemo(); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
+        case "two-update": resetToTwoUpdateDemo(); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
+        case "many-updates": resetToManyUpdatesDemo(); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
+        case "three-update": resetToUpdateDemo(count: 3); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
+        case "four-update": resetToUpdateDemo(count: 4); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "caught-up": resetToCaughtUpDemo()
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
