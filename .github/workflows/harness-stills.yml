@@ -4,7 +4,7 @@ name: Harness stills
 # Mac simulator. Not a gate. Runs on a push to claude/** that changes .github/stills-request.txt, or by hand (the workflow must be
 # on main before a manual dispatch works). The request file holds KEY=VALUE lines:
 #   APP_SHA=<sha>      take ios/Playscribe from this commit (e.g. a PR head) and the harness from this branch
-#   POSES=book,tabletop  SIZES=std,ax3,ax5  ROUTE=game/dawnwalker
+#   POSES=book,tabletop  SIZES=std,ax3,ax5  ROUTE=game/dawnwalker   (ROUTE may chain: updates,pill)
 # Always finishes green, like Precheck, so a failed render sends no email; the job name carries the verdict.
 on:
   push:

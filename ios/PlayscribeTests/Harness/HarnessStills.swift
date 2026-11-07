@@ -24,7 +24,10 @@ struct HarnessStillsTests {
         guard wanted("HARNESS_POSES", id), wanted("HARNESS_SIZES", size) else { return }
         let category = try #require(Self.sizes.first { $0.0 == size }?.1)
         let model = FoldHost.demoModel()
-        if let route = env["HARNESS_ROUTE"], !route.isEmpty, let url = URL(string: "playscribe://\(route)") { model.handle(url: url) }
+        // ROUTE may chain several routes with commas, in order (e.g. `updates,pill` for the Updates tab with the New on PS5 pill).
+        for route in (env["HARNESS_ROUTE"] ?? "").split(separator: ",").map({ $0.trimmingCharacters(in: .whitespaces) }) where !route.isEmpty {
+            if let url = URL(string: "playscribe://\(route)") { model.handle(url: url) }
+        }
         let r = try #require(await FoldHost.render(HarnessPose.named(id), type: category, model: model))
         defer { FoldHost.dispose(r) }
         try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
