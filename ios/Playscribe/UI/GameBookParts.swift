@@ -201,21 +201,10 @@ struct ReleasePage: View {
     var body: some View {
         let r = release
         VStack(alignment: .leading, spacing: 12) {
-            // Accessibility sizes: the title and tags first, then the share button on its own row, its right edge on the
-            // text column's trailing line (the one the headline and body wrap to), so it is clear of the rail and the
-            // hinge band without extra padding; the VStack's 12 pt is the gap above and below (R-2, r060, Iris).
-            if typeSize.isAccessibilitySize {
-                HStack(spacing: 8) {
-                    if model.isUnread(r) { UnreadDot() }
-                    TitleWithTags(release: r) {
-                        Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
-                    }
-                }
-                if r.isPS5Listed {
-                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
-                }
-            } else {
-            HStack(spacing: 8) {
+            // One row at every size (r054, R-2, G-8): the share button's trailing edge is the title row's trailing edge,
+            // top-aligned with the title at accessibility sizes, so it never floats on a row of its own. The title and
+            // tags take the width left of the 44 pt button and wrap in whole words (the headline below does the same).
+            HStack(alignment: typeSize.isAccessibilitySize ? .top : .center, spacing: 8) {
                 if model.isUnread(r) { UnreadDot() }
                 // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
                 TitleWithTags(release: r) {
@@ -224,7 +213,6 @@ struct ReleasePage: View {
                 }
                 Spacer(minLength: 0)
                 if r.isPS5Listed { ShareUpdateButton(release: r) }
-            }
             }
             HStack(spacing: 8) {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
