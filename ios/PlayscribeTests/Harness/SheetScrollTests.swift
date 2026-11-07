@@ -45,12 +45,38 @@ struct GamePageOverlapProbeTests {
     @Test(.timeLimit(.minutes(2)), arguments: ["closed", "open", "openPortrait", "book"], [0, 1])
     func gamePageOverlapProbe(_ id: String, _ sizeIndex: Int) async throws {
         let model = FoldHost.demoModel()
-        model.handle(url: try #require(URL(string: "playscribe://gamepage/kcd2")))
+        model.handle(url: try #require(URL(string: "playscribe://game/kcd2")))
         let size: UIContentSizeCategory = sizeIndex == 0 ? .large : .accessibilityExtraExtraExtraLarge
-        let r = try #require(await HarnessRules.timedRender(HarnessPose.named(id), type: size))
+        let r = try #require(await HarnessRules.timedRender(HarnessPose.named(id), type: size, model: model))
         defer { FoldHost.dispose(r) }
         let pairs = HarnessRules.overlappingPairs(r.frames)
         let label = sizeIndex == 0 ? "std" : "AX5"
         print("harness error: [info, probe] game page \(id) \(label): \(r.frames.count) tappable frames, \(pairs.count) crossing pair(s): \(pairs.prefix(6)); named: \(r.named.keys.sorted())")
+    }
+}
+
+/// r054-probe-updates-tab: the Updates tab (`many-updates/updates`) in every pose, unasserted. Prints the tappable frames that cross each
+/// other and the ones that enter a reserved occlusion (the Closed clock ring and badge/nav region where #382 found rows and tap
+/// frames running under the rail). Read before and after #382 (319e85b) to see whether the harness can see that class of bug.
+@MainActor
+@Suite(.serialized)
+struct UpdatesTabProbeTests {
+    @Test(.timeLimit(.minutes(2)), arguments: ["closed", "open", "openPortrait", "book"], [0, 1])
+    func updatesTabProbe(_ id: String, _ sizeIndex: Int) async throws {
+        let model = FoldHost.demoModel()
+        model.handle(url: try #require(URL(string: "playscribe://many-updates/updates")))
+        let size: UIContentSizeCategory = sizeIndex == 0 ? .large : .accessibilityExtraExtraExtraLarge
+        let r = try #require(await HarnessRules.timedRender(HarnessPose.named(id), type: size, model: model))
+        defer { FoldHost.dispose(r) }
+        let pairs = HarnessRules.overlappingPairs(r.frames)
+        var entered: [String] = []
+        for f in r.frames where f.width > 8 && f.height > 8 {
+            for o in r.pose.occlusions {
+                let x = f.intersection(o)
+                if !x.isNull, x.width > 4, x.height > 4 { entered.append("\(HarnessRules.brief(f)) in \(HarnessRules.brief(o))") }
+            }
+        }
+        let label = sizeIndex == 0 ? "std" : "AX5"
+        print("harness error: [info, probe] updates tab \(id) \(label): tab \(model.nav.tab), \(r.frames.count) tappable frames, \(pairs.count) crossing pair(s): \(pairs.prefix(6)); \(entered.count) frame(s) inside an occlusion: \(entered.prefix(6))")
     }
 }
