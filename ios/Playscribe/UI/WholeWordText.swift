@@ -8,27 +8,22 @@ struct WholeWordText: View {
     var font: Font
     var lines: Int
     var color: Color?
-    /// True: the box is as tall as the words it shows, not the whole `lines` allowance, so a one-line name leaves no gap
-    /// below it in a stack (#357). Same fit rule: the first variant that fits inside `lines` lines.
-    var hugs = false
     @State private var lineHeight: CGFloat = 0
-
-    init(text: String, font: Font, lines: Int, color: Color? = nil, hugs: Bool = false) {
-        self.text = text; self.font = font; self.lines = lines; self.color = color; self.hugs = hugs
-    }
 
     var body: some View {
         let words = text.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
         let variants = [text] + (words.count > 1 ? stride(from: words.count - 1, through: 1, by: -1).map { words.prefix($0).joined(separator: " ") + "\u{2026}" } : [])
+        // The variant is chosen against a height this view sets itself (lines x line height), never against what a List
+        // cell or pager proposes, so the cut is the same in every pose. The box is then as tall as the words shown, so a
+        // one-line name leaves no gap below it (#357).
         let cap: CGFloat? = lineHeight > 0 ? (lineHeight * CGFloat(lines)).rounded(.up) + 1 : nil
         let fit = ViewThatFits(in: .vertical) {
             ForEach(variants, id: \.self) { v in
                 Text(v).font(font).foregroundStyle(color ?? .primary).fixedSize(horizontal: false, vertical: true)
             }
         }
-        Group {
-            if hugs { HugHeight(cap: cap) { fit } } else { fit.frame(maxHeight: cap, alignment: .topLeading) }
-        }
+        HugHeight(cap: cap) { fit }
+        .clipped()
         .background(alignment: .topLeading) {
             Text("Ag").font(font).hidden().accessibilityHidden(true)
                 .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { lineHeight = $0 }

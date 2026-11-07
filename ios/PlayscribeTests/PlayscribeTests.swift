@@ -25,8 +25,9 @@ struct ModelTests {
         let dw = m.release("dawnwalker", "dawnwalker@1.1")
         #expect(dw?.ps5State == .onPS5)
         #expect(dw?.ps5Version == nil)
-        for r in m.releases("control-resonant") where r.ps5 == nil {
-            #expect(r.ps5State == .onPS5)
+        // A release with no PS5 row is not a PS5 update (r051-prelaunch-gate); a PS5 row never carries the PC version.
+        for r in m.releases("control-resonant") {
+            #expect(r.ps5State == (r.ps5 == nil ? .pending : .onPS5))
             #expect(r.ps5Version == nil)
         }
     }
@@ -559,6 +560,26 @@ struct SpoilerWarningTests {
     }
 }
 
+/// VoiceOver reads the playback position as time (R-11).
+struct PlayerTimeTests {
+    @Test("Spoken time is words, differs per second, never empty past zero")
+    func spoken() {
+        #expect(!PlayerTime.spoken(83).isEmpty)
+        #expect(PlayerTime.spoken(83) != PlayerTime.spoken(84))
+        #expect(PlayerTime.spoken(83).contains("minute"))
+        #expect(PlayerTime.format(83) == "1:23")
+    }
+}
+
+/// TT-2: VoiceOver hears where a section sits in the update.
+struct ReaderPositionTests {
+    @Test("Position reads as a place, from one")
+    func position() {
+        #expect(ReaderBody.position(0, of: 5) == "1 of 5")
+        #expect(ReaderBody.position(4, of: 5) == "5 of 5")
+    }
+}
+
 /// R-11, G-9: autoplay is opt-in.
 struct AutoplayTests {
     @Test("Player page autoplays only when asked (R-11)")
@@ -622,12 +643,41 @@ struct QARouteGuardTests {
     @Test("The store set loads five invented games in an internal build (r052-store-set-content)")
     func storeSetLoadsInternally() {
         BuildChannel.overrideIsDistribution = false
-        defer { BuildChannel.overrideIsDistribution = nil }
+        defer { BuildChannel.overrideIsDistribution = nil; NotificationService.shared.qaForcedAuthorization = nil }
         let m = model()
         m.handle(url: URL(string: "playscribe://store-set")!)
         #expect(m.data.collection.map(\.gameID) == StoreSet.gameIDs)
-        #expect(m.data.customGames.count == 5)
+        #expect(m.data.customGames.count == StoreSet.games().count + StoreSet.plusGames().count)
+        #expect(StoreSet.games().count == 5)
         #expect(m.data.simulated.count == 3)
+    }
+
+    @Test("The store set's PS Plus card carries only invented titles with designed covers (r052-store-set-content)")
+    func storeSetPlusCardIsDesignedCovers() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil; NotificationService.shared.qaForcedAuthorization = nil }
+        let m = model()
+        m.loadStoreSet(plus: true)
+        #expect(m.data.plusCardOff != true)
+        let games = PlusStore.shared.months.first?.games ?? []
+        #expect(games.count == 3)
+        for g in games {
+            // Invented titles with designed covers; none is a tracked game or a real catalogue match.
+            let game = PlusCard.resolve(g, tracked: { m.game($0) })
+            #expect(game?.coverAsset?.hasPrefix("store-plus-") == true)
+            #expect(m.entry(g.gameId ?? "") == nil)
+        }
+    }
+
+    @Test("The store set hides the PS Plus and alerts cards by default so the update hero comes first (r052-store-set-content)")
+    func storeSetHeroFirst() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil; NotificationService.shared.qaForcedAuthorization = nil }
+        let m = model()
+        m.loadStoreSet()
+        #expect(m.data.plusCardOff == true)
+        #expect(NotificationService.shared.authorization == .authorized)
+        #expect(!m.showsNotificationCard)
     }
 
     @Test("A developer or simulator build still runs QA routes")
@@ -683,6 +733,38 @@ struct ReaderSpoilerTests {
         #expect(!hidden.contains("Hello") && !hidden.contains("Be advised"))
         let shown = fixes(shown: true)
         #expect(shown.contains("final door") && !shown.contains("hidden for spoilers"))
+    }
+}
+
+/// r051-prelaunch-gate: a patch from before the PS5 launch has no PS5 row, so it is not a PS5 update.
+@MainActor
+struct PreLaunchGateTests {
+    private func steamOnly(_ id: String) -> Release {
+        let steam = PlatformRelease(platform: .pc, status: .live, verification: .official)
+        return Release(id: id, gameID: "valheim", displayName: id, kind: .patch, kindBasis: .inferred,
+                       announcedAt: Date(timeIntervalSince1970: 1_613_000_000), notes: [], sourceIDs: [], platforms: [steam])
+    }
+
+    @Test("Valheim 2021: a Steam-only patch is not On PS5, not listed, not unread")
+    func valheimSteamOnly() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "gate-\(UUID().uuidString).json"))
+        let r = steamOnly("valheim@0.147")
+        #expect(r.ps5State == .pending)
+        #expect(!r.isPS5Listed)
+        #expect(!model.isUnread(r))
+    }
+
+    @Test("From the PS5 launch on, a live official PS5 row is On PS5 as before")
+    func liveRowStillOnPS5() {
+        let ps5 = PlatformRelease(platform: .ps5, status: .live, liveAt: Field(value: .now, verification: .official, sourceID: "s", checkedAt: .now),
+                                  verification: .official)
+        let r = Release(id: "valheim@1.0", gameID: "valheim", displayName: "1.0", kind: .patch, kindBasis: .inferred,
+                        announcedAt: .now, notes: [], sourceIDs: [], platforms: [ps5])
+        #expect(r.ps5State == .onPS5)
+        #expect(r.isPS5Listed)
+        // New to the library: nothing read yet, so it is unread and (being On PS5) eligible for the alert.
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "gate-\(UUID().uuidString).json"))
+        #expect(model.isUnread(r))
     }
 }
 
