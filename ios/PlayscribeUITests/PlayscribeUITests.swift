@@ -547,6 +547,22 @@ final class ReviewFixUITests: XCTestCase {
 final class LibraryLayoutTests: XCTestCase {
     func checkNoOverlap(games: Int) throws {
         let app = XCUIApplication()
+        // Instrumented (f356586: EightGames in Tabletop ended on SpringBoard with 0 tiles and no crash): every step logs the app
+        // state, whether SpringBoard shows the lock screen or the App Switcher, and a screenshot of the PANEL (the largest of
+        // XCUIScreen.screens; XCUIScreen.main is the outer display on the Duo and came back black).
+        var log: [String] = []
+        func step(_ text: String) {
+            let sb = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+            let line = String(format: "%02d app state %d (4 = foreground); lock=%@ switcher=%@; %@", log.count + 1, app.state.rawValue,
+                              sb.descendants(matching: .any)["lockscreen-date-view"].exists ? "yes" : "no",
+                              sb.otherElements["AppSwitcherContentView"].exists ? "yes" : "no", text)
+            log.append(line)
+            let shots = XCUIScreen.screens.map { $0.screenshot() }
+            if let panel = shots.max(by: { $0.image.size.width * $0.image.size.height < $1.image.size.width * $1.image.size.height }) {
+                let a = XCTAttachment(screenshot: panel); a.name = String(format: "eight-step-%02d", log.count); a.lifetime = .keepAlways; add(a)
+            }
+            let n = XCTAttachment(string: "screens: \(XCUIScreen.screens.count)\n" + log.joined(separator: "\n")); n.name = "eight-log"; n.lifetime = .keepAlways; add(n)
+        }
         // The App Switcher was on screen in Open portrait and Tabletop (96e0e39): leave it, then bring the app up.
         func leaveSwitcher() {
             if XCUIApplication(bundleIdentifier: "com.apple.springboard").otherElements["AppSwitcherContentView"].exists {
@@ -554,16 +570,20 @@ final class LibraryLayoutTests: XCTestCase {
             }
         }
         leaveSwitcher()
+        step("start")
         app.launchArguments = ["-qaRoute", "demo"]
         app.launch()
         sleep(2)
+        step("demo launched")
         app.open(URL(string: "playscribe://fill-library/\(games)")!)
         let open = XCUIApplication(bundleIdentifier: "com.apple.springboard").buttons["Open"]
         if open.waitForExistence(timeout: 2) { open.tap() }
         sleep(2)
+        step("fill-library opened")
         app.terminate()
         app.launchArguments = ["-qaRoute", "library"]
         app.launch()
+        step("library launched")
         // Open portrait (48404f1): the capture was the App Switcher and no tiles were found, so bring the app back first.
         leaveSwitcher()
         if !app.wait(for: .runningForeground, timeout: 10) {
@@ -576,7 +596,9 @@ final class LibraryLayoutTests: XCTestCase {
             _ = app.wait(for: .runningForeground, timeout: 15)
         }
         sleep(4)
+        step("before pose probe")
         let pose = ReleaseRowTests.pose(app)
+        step("pose \(pose)")
         var checked = 0
         for _ in 0..<10 {
             // The accessibility frame of a tile runs past its cover (the cover image's own
@@ -635,6 +657,7 @@ final class LibraryLayoutTests: XCTestCase {
                 for h in hero { XCTAssertFalse(a.insetBy(dx: 1, dy: 1).intersects(h), "tile overlaps hero \(a) \(h) [\(pose)]") }
             }
             checked += tiles.count
+            step("scan: \(tiles.count) tiles, checked \(checked)")
             if pose.contains("tabletop") {
                 // Tabletop: the upper half is a view-only stage, so a swipe from the app's centre does not scroll anything, and
                 // a fast one that ends near the bottom edge is a Home gesture (2419534: all 8 tiles were there, below the first
@@ -642,6 +665,7 @@ final class LibraryLayoutTests: XCTestCase {
                 let from = app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.80))
                 let to = app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.58))
                 from.press(forDuration: 0.1, thenDragTo: to, withVelocity: .slow, thenHoldForDuration: 0.2)
+                step("dragged in the lower half")
             } else {
                 app.swipeUp(velocity: .fast)
             }
@@ -650,6 +674,7 @@ final class LibraryLayoutTests: XCTestCase {
         }
         XCTAssertGreaterThan(checked, 0, "found tiles [\(pose)]")
         let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "library-\(games) [\(pose)]"; shot.lifetime = .keepAlways; add(shot)
+        step("end: library-\(games) [\(pose)]")
     }
 
     func testEightGames() throws { try checkNoOverlap(games: 8) }
