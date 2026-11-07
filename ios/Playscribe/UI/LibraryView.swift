@@ -74,6 +74,9 @@ struct LibraryStage: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
+    @Environment(\.accessibilitySwitchControlEnabled) private var switchControl
+    @Environment(\.dynamicTypeSize) private var typeSize
     /// The stage's bottom edge in screen space; the caption lifts to end 24 pt above the division.
     @State private var stageBottom: CGFloat = 0
 
@@ -88,9 +91,10 @@ struct LibraryStage: View {
                 .id(g.id)
                 .transition(.opacity)
                 .animation(.easeInOut(duration: 0.3), value: g.id)
-                // Auto-advance every 6 s; any change of slide restarts the clock. Off under Reduce Motion (G-9).
-                .task(id: "\(g.id)-\(reduceMotion)") {
-                    guard UpcomingHero.autoAdvances(count: slides.count, reduceMotion: reduceMotion) else { return }
+                // Auto-advance every 8 s; a change of slide or of the pause restarts the clock (WCAG 2.2.2, G-9).
+                .task(id: "\(g.id)-\(model.upcomingHeroPaused)-\(reduceMotion)-\(voiceOver)-\(switchControl)-\(typeSize.isAccessibilitySize)") {
+                    guard UpcomingHero.autoAdvances(count: slides.count, reduceMotion: reduceMotion, assistive: voiceOver || switchControl,
+                                                    accessibilitySize: typeSize.isAccessibilitySize, paused: model.upcomingHeroPaused) else { return }
                     try? await Task.sleep(for: UpcomingHero.interval)
                     guard !Task.isCancelled else { return }
                     model.upcomingHeroIndex = UpcomingHero.moved(model.upcomingHeroIndex, by: 1, count: slides.count)

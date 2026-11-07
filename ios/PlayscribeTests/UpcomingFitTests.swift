@@ -90,6 +90,13 @@ struct UpcomingHeroTests {
         #expect(!UpcomingHero.autoAdvances(count: 1, reduceMotion: false))
     }
 
+    @Test func autoAdvanceStopsForAssistiveTechAccessibilitySizesAndAPause() {
+        #expect(!UpcomingHero.autoAdvances(count: 3, reduceMotion: false, assistive: true))
+        #expect(!UpcomingHero.autoAdvances(count: 3, reduceMotion: false, accessibilitySize: true))
+        #expect(!UpcomingHero.autoAdvances(count: 3, reduceMotion: false, paused: true))
+        #expect(UpcomingHero.interval == .seconds(8))
+    }
+
     @Test func onlyAHorizontalDragTurnsThePage() {
         #expect(UpcomingHero.swipeStep(CGSize(width: -80, height: 10)) == 1)
         #expect(UpcomingHero.swipeStep(CGSize(width: 80, height: -10)) == -1)
