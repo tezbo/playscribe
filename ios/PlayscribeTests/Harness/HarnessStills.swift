@@ -13,7 +13,7 @@ import UIKit
 struct HarnessStillsTests {
     static let sizes: [(String, UIContentSizeCategory)] = [("std", .large), ("ax3", .accessibilityExtraLarge), ("ax5", .accessibilityExtraExtraExtraLarge)]
 
-    @Test(arguments: HarnessPose.catalog.map(\.id), ["std", "ax3", "ax5"])
+    @Test(arguments: ["closed", "closedLandscape", "open", "openPortrait", "book", "tabletop"], ["std", "ax3", "ax5"])
     func writeStill(_ id: String, _ size: String) async throws {
         let env = ProcessInfo.processInfo.environment
         guard let dir = env["HARNESS_PNG_DIR"], !dir.isEmpty else { return }
