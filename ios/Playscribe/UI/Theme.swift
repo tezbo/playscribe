@@ -107,9 +107,26 @@ extension Date {
     static func sameUTCDay(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, inSameDayAs: b) }
     /// Whether `a` and `b` fall in the same UTC calendar year.
     static func sameUTCYear(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, equalTo: b, toGranularity: .year) }
+    /// Whether this release day is today or in the next six UTC days: the "coming this week" window. A day-precision release
+    /// date is a UTC day, so the window is counted in UTC days and never disagrees with the printed date (r060-utc-day-labels).
+    func isInUTCWeek(from now: Date = .now) -> Bool {
+        let start = Self.utc.startOfDay(for: now)
+        return self >= start && self < start.addingTimeInterval(7 * 86400)
+    }
 }
 
 extension String {
+    /// "Deliverance II" with a no-break space before a trailing Roman numeral, so the numeral never wraps onto a line of its own
+    /// (Open portrait showed "II ✓" alone under "Deliverance"; r060-nbsp-roman-numerals). Only a numeral up to XX after at least one
+    /// other word; every other title is returned unchanged.
+    var gluingTrailingNumeral: String {
+        guard let space = lastIndex(of: " ") else { return self }
+        let last = self[index(after: space)...]
+        let numerals: Set<Substring> = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"]
+        guard numerals.contains(last), self[..<space].contains(where: { !$0.isWhitespace }) else { return self }
+        return String(self[..<space]) + "\u{00A0}" + last
+    }
+
     /// ISO day ("2026-09-03") to a Date at noon UTC.
     var isoDay: Date? {
         var c = DateComponents()

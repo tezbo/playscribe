@@ -192,6 +192,23 @@ test('register: past the daily cap new devices get 429, existing devices still r
   assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: hexTok(0) })).status, 200)
 })
 
+test('register: a per-address limit refuses new devices from one address, never a known device, and counts per address', async () => {
+  const { env } = setup()
+  const seen = {}
+  env.REGISTER_LIMIT = { limit: async ({ key }) => ({ success: (seen[key] = (seen[key] ?? 0) + 1) <= 2 }) }
+  const hexTok = (i) => i.toString(16).padStart(64, '0')
+  const from = (ip, i) => worker.fetch(new Request('https://relay.test/v1/devices', { method: 'POST', headers: { 'content-type': 'application/json', 'cf-connecting-ip': ip }, body: JSON.stringify({ apnsToken: hexTok(i) }) }), env)
+  assert.equal((await from('1.1.1.1', 1)).status, 201)
+  assert.equal((await from('1.1.1.1', 2)).status, 201)
+  const over = await from('1.1.1.1', 3)
+  assert.equal(over.status, 429)
+  assert.equal(over.headers.get('retry-after'), '60')
+  assert.equal((await from('2.2.2.2', 4)).status, 201) // another address is untouched
+  assert.equal((await from('1.1.1.1', 1)).status, 200) // a known device relaunching is never limited
+  assert.equal(seen['1.1.1.1'], 3) // the known device did not spend a count
+  assert.equal(await env.KV.get(`t:${hexTok(3)}`), null) // the refused device wrote nothing
+})
+
 test('delete me: removes the record, token, key and team entry, and a second delete is still 204', async () => {
   const { env } = setup()
   const reg = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), team: true, follows: [{ gameId: 'dawnwalker' }] })).json()

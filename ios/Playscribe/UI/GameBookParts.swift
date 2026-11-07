@@ -849,7 +849,7 @@ struct GameTitleWithStatus: View {
         // The title text stops growing at AX3: at AX5 one long word is wider than a Closed portrait column.
         if typeSize.isAccessibilitySize { return AnyView(inlineTitleRow) }
         return AnyView(HStack(alignment: .firstTextBaseline, spacing: 8) {
-            Text(name).font(PlayscribeFont.title2).lineLimit(2)
+            Text(name.gluingTrailingNumeral).font(PlayscribeFont.title2).lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true).accessibilityAddTraits(.isHeader)
                 .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             statusMenu
@@ -857,7 +857,7 @@ struct GameTitleWithStatus: View {
     }
 
     private var inlineTitleRow: some View {
-        let words = name.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
+        let words = name.gluingTrailingNumeral.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
         return WordFlow(hSpacing: 8, vSpacing: 0) {
             ForEach(Array(words.enumerated()), id: \.offset) { i, w in
                 if i == words.count - 1 {
