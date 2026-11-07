@@ -262,24 +262,36 @@ final class NotificationService: NSObject {
 
 extension NotificationService: UNUserNotificationCenterDelegate {
     /// N-7: no banner in the foreground; the list and badge only, and the app shows its own pill.
-    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+    ///
+    /// The completion-handler form, with the handler called on the main actor. The `async` form let Swift's concurrency runtime call the
+    /// handler from a cooperative thread, and UIKit then aborted ("Call must be made on main thread", in
+    /// `_updateSnapshotAndStateRestorationWithAction`): tapping a release notification crashed the app (2e8f3d2 Mac crash report).
+    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification,
+                                            withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let info = notification.request.content.userInfo
         let gameID = info["gameId"] as? String
         let releaseID = info["releaseId"] as? String
-        await MainActor.run {
+        nonisolated(unsafe) let done = completionHandler
+        Task { @MainActor in
             if let gameID, let releaseID { self.model?.releaseArrivedInForeground(gameID: gameID, releaseID: releaseID) }
+            done([.badge, .list])
         }
-        return [.badge, .list]
     }
 
-    /// N-6: tapping opens that release in whatever pose the device is in.
-    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+    /// N-6: tapping opens that release in whatever pose the device is in. The handler is called on the main actor (see above).
+    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse,
+                                            withCompletionHandler completionHandler: @escaping () -> Void) {
         let info = response.notification.request.content.userInfo
-        guard let gameID = info["gameId"] as? String, let releaseID = info["releaseId"] as? String else { return }
-        await MainActor.run {
-            self.launchedFromNotification = true
-            self.qaLastResponse = "\(gameID)/\(releaseID); model \(self.model == nil ? "nil" : "set")"
-            self.model?.openRelease(gameID: gameID, releaseID: releaseID)
+        let gameID = info["gameId"] as? String
+        let releaseID = info["releaseId"] as? String
+        nonisolated(unsafe) let done = completionHandler
+        Task { @MainActor in
+            if let gameID, let releaseID {
+                self.launchedFromNotification = true
+                self.qaLastResponse = "\(gameID)/\(releaseID); model \(self.model == nil ? "nil" : "set")"
+                self.model?.openRelease(gameID: gameID, releaseID: releaseID)
+            }
+            done()
         }
     }
 }
