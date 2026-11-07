@@ -22,7 +22,9 @@ struct Rendered {
     /// Nil when the root view has the pose's window size and safe area; otherwise the numbers, for the failure message.
     var geometryProblem: String? {
         func close(_ a: CGFloat, _ b: CGFloat) -> Bool { abs(a - b) < 0.5 }
-        let w = pose.windowSize, i = pose.safeArea, a = appliedInsets
+        let w = pose.windowSize, a = appliedInsets
+        var i = pose.safeArea
+        if pose.tabBarSuppliesTrailingInset { i.right = 0 }
         let ok = close(viewSize.width, w.width) && close(viewSize.height, w.height)
             && close(a.top, i.top) && close(a.left, i.left) && close(a.bottom, i.bottom) && close(a.right, i.right)
         return ok ? nil : "view \(viewSize) insets \(a) (window's own \(inheritedInsets)) but the pose needs \(w) and \(i)"
@@ -35,7 +37,7 @@ struct Rendered {
         var ctx = DuoReader<EmptyView>.context(size: pose.container, compact: pose.compactWidth,
                                                division: pose.division, occlusions: pose.occlusions)
         ctx.safeArea = EdgeInsets(top: appliedInsets.top, leading: appliedInsets.left,
-                                  bottom: appliedInsets.bottom, trailing: appliedInsets.right)
+                                  bottom: appliedInsets.bottom, trailing: pose.tabBarSuppliesTrailingInset ? pose.safeArea.right : appliedInsets.right)
         return FoldAudit.probeJSON(frames: frames, duo: ctx, named: named, origin: .zero)
     }
     /// Frames that touch the active fold (the same test as FoldAudit).

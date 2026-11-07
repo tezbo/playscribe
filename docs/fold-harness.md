@@ -89,7 +89,7 @@ The harness is evidence for app-owned geometry, not a replacement for the Duo si
 
 The harness can fail a build on the fold, hinge, occlusion, safe-area and rail-placement checks. It never counts as a pass or a sign-off: sign-offs need real stills from the Mac gate. Known gaps against the Duo (Mac compare at 633ba89): frames 84-88 pt narrow in Closed, Open, Closed landscape and Tabletop; about 14 pt high in y; 44 pt left in Open portrait and Book. Therefore:
 
-- Do not assert widths, wrapping or x positions.
+- Widths: the 84 to 88 pt narrowing was the tab bar's own ~84 pt counted on top of the pose's trailing inset (#360). FoldHost now leaves that inset out for Closed, Open and Book (`tabBarSuppliesTrailingInset`); Closed is verified (deck 346 pt) and asserted one-sided. Open, Book, Closed landscape, Open portrait and Tabletop widths and x are still not asserted until each is read against the Mac.
 - Keep above-the-fold and hinge-band checks one-sided with a margin of at least 14 pt: fail on something clearly inside the band, never claim a pass near the edge.
 - Say nothing about Tabletop's lower half (rail overflow, Previous/Next); those stay on the Mac gate.
 - Open backlog item: find why the tab view draws a vertical tab bar in the offscreen host (docs/roadmap.md).

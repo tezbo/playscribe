@@ -3,7 +3,7 @@ import Testing
 import UIKit
 @testable import Playscribe
 
-/// Calibration, not rules (docs/fold-harness.md, "frames 84-88 pt narrow"). Hypothesis: the harness adds the pose's 84 pt
+/// Calibration, not rules (docs/fold-harness.md, "frames 84-88 pt narrow"). Result (#360 run 14e7788): Closed deck 262 pt with the pose's 84 pt trailing inset added, 346 pt without; the tab bar then sits at x 397 to 466 as on the Duo. FoldHost now leaves that inset out (PoseCatalog.tabBarSuppliesTrailingInset). Original hypothesis: the harness adds the pose's 84 pt
 /// trailing safe area AND the offscreen tab view draws its own ~88 pt vertical tab bar, where on the Duo the tab bar lives
 /// inside that 84 pt region. Each variant renders Closed and prints the widest tappable frame, the deck width and what UIKit
 /// reports for the tab bar, so one CI run says which adjustment makes the widths match the Duo (about 350 pt for the Closed
@@ -11,9 +11,8 @@ import UIKit
 @MainActor
 struct HarnessWidthCalibrationTests {
     @Test(.timeLimit(.minutes(2)), arguments: [
-        ("baseline", UIEdgeInsets.zero),
-        ("trailing-84", UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -84)),
-        ("trailing-88", UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -88)),
+        ("current (tab bar supplies the trailing inset)", UIEdgeInsets.zero),
+        ("legacy (inset added again, the old 84 pt narrowing)", UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 84)),
     ])
     func closedWidthVariants(_ name: String, _ adjust: UIEdgeInsets) async throws {
         let p = HarnessPose.named("closed")

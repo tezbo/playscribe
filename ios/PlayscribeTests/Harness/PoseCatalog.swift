@@ -25,6 +25,11 @@ struct HarnessPose: Identifiable, CustomStringConvertible {
     /// Insets inferred, not measured: layout rules are reported but not asserted until a sim run confirms them.
     var inferred = false
     var description: String { id }
+    /// Poses with an 84 pt trailing safe area (Closed, Open, Book): on the Duo the system's vertical tab bar lives inside that region.
+    /// Offscreen the tab view draws its own ~84 pt bar on top of an added 84 pt inset, so the harness counts it twice and every frame
+    /// came out 84 pt narrow (calibration, #360: Closed deck 262 pt with the inset added, 346 pt without). FoldHost therefore leaves
+    /// that trailing inset out and lets the tab bar supply it. Closed is verified; Open and Book are assumed the same, not yet read.
+    var tabBarSuppliesTrailingInset: Bool { safeArea.right >= 80 }
 
     var regions: InjectedRegions { InjectedRegions(division: division, occlusions: occlusions) }
 }

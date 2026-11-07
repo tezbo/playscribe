@@ -73,6 +73,11 @@ struct FoldHarnessTests {
         } else {
             HarnessRules.require(r.aboveTheFold.isEmpty, "\(p.id) G-4: tappable frames above the Tabletop fold: \(r.aboveTheFold.map(HarnessRules.brief))")
         }
+        // Widths: Closed is calibrated (deck 346 pt in the 382 pt container with 16 pt margins; before #360's fix 262 pt). One-sided, with
+        // margin: fail only when the deck is clearly narrower than the container allows. Other poses are not yet calibrated.
+        if p.id == "closed", let deck = r.named["latestDeck"] {
+            HarnessRules.require(deck.width >= 330, "closed: deck is \(Int(deck.width)) pt wide in a \(Int(p.container.width)) pt container (expected about 346; the trailing inset is counted twice if it is 262)")
+        }
         HarnessRules.checkDeck(r, maxFraction: p.id == "tabletop" ? nil : 0.5)
         if p.id == "closed" || p.id == "open" { HarnessRules.checkDeck(r, maxFraction: 0.38) }
         if p.expected != .tabletop { HarnessRules.checkLibraryToolbar(r) }
