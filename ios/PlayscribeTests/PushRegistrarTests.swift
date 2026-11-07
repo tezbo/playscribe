@@ -129,6 +129,7 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         #expect(body.contains("blue-prince") && !body.contains("dawnwalker"), "re-registered with the current list: \(body)")
     }
 
+    #if DEBUG
     private func teamBodies() -> [String] {
         StubRelay.seen.compactMap { r in r.httpBody.map { String(decoding: $0, as: UTF8.self) } }.filter { $0.contains("\"team\"") }
     }
@@ -172,6 +173,8 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         await PushRegistrar.register(token: "abc", follows: follows)?.value
         #expect(teamBodies().isEmpty)
     }
+
+    #endif
 
     @Test func nothingIsSentBeforeTheDeviceIsRegistered() async {
         setUp(key: nil)

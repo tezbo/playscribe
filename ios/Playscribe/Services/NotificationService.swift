@@ -361,7 +361,11 @@ enum PushRegistrar {
     }
 
     /// Forgets what the client remembers between calls (tests start each case clean).
-    static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil; lastTeam = nil; showsTeamForTests = nil }
+    static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil; lastTeam = nil
+        #if DEBUG
+        showsTeamForTests = nil
+        #endif
+    }
 
     /// What the last registration sent, so a 401 can register again without asking the app.
     private struct Registration { var token: String; var follows: [Follow] }
@@ -371,9 +375,13 @@ enum PushRegistrar {
     /// tester has chosen, so a normal build never sends the field.
     nonisolated(unsafe) private static var lastTeam: Bool?
     static let teamKey = "teamAlerts"
-    /// Tests stand in for the receipt check (a test host is never an App Store build).
+    #if DEBUG
+    /// Tests stand in for the receipt check (a test host is never an App Store build). Not compiled into a release build.
     nonisolated(unsafe) static var showsTeamForTests: Bool?
     private static var showsTeam: Bool { showsTeamForTests ?? BuildChannel.showsTeamAlerts }
+    #else
+    private static var showsTeam: Bool { BuildChannel.showsTeamAlerts }
+    #endif
 
     @discardableResult
     static func register(token: String, follows: [Follow], quietHours: QuietHours? = nil) -> Task<Void, Never>? {
