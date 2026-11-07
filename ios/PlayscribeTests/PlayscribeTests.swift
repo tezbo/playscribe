@@ -704,6 +704,13 @@ struct BuildChannelTests {
         #expect(!BuildChannel.isDistribution(receiptName: "other"))
     }
 
+    @Test("Team alerts show on development and TestFlight builds, never on the App Store")
+    func teamAlertsGuard() {
+        #expect(BuildChannel.showsTeamAlerts(receiptName: nil))
+        #expect(BuildChannel.showsTeamAlerts(receiptName: "sandboxReceipt"))
+        #expect(!BuildChannel.showsTeamAlerts(receiptName: "receipt"))
+    }
+
     #if targetEnvironment(simulator)
     @Test("The simulator is never a distribution build, so QA routes run there")
     func simulatorShowsInternalTools() {

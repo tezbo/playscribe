@@ -83,6 +83,10 @@ export interface Game {
   ps5Release: string | null
   /** How exact ps5Release is when it is not a day: "Q4 2027" is 2027-12-31 with quarter. Absent means a day. */
   ps5ReleasePrecision?: 'month' | 'quarter' | 'year' | 'tbd'
+  /** Present while the game is in IGDB "Early Access" on PS5 with the 1.0 still ahead: the first playable day (same as ps5Release). */
+  eaSince?: string
+  /** The 1.0 day, present with eaSince only while it is in the future. */
+  fullRelease?: string
   ps5TitleIds: string[]
 }
 

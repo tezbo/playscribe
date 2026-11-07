@@ -57,6 +57,10 @@ struct UpcomingView: View {
     @State private var width: CGFloat = 0
     @Environment(\.duo) private var duo
     @Environment(\.railWidth) private var railWidth
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    /// AX3 and larger: one-column list rows instead of the #287 columns (Iris's option b). Fixed by size category, never measured per tile.
+    static func usesRows(_ size: DynamicTypeSize) -> Bool { size >= .accessibility3 }
 
     /// Book: how many of `n` tiles go on the left page, in proportion to each page's column count
     /// (the same split the Library uses), so the rest flow onto the right page and none crosses the fold.
@@ -97,7 +101,29 @@ struct UpcomingView: View {
 
     @ViewBuilder private func section(_ title: String, count: Int? = nil, games: [CatalogGame], watching: Bool, packed: Bool = false) -> some View {
         let spoken = count.map { "\(title), \($0) game\($0 == 1 ? "" : "s")" } ?? title
-        if duo.pose == .book, let fold = duo.division {
+        if Self.usesRows(typeSize) {
+            if duo.pose == .book, let fold = duo.division {
+                let leftWidth = max(0, fold.minX - 24 - 16)
+                let rightStart = fold.maxX + 24 - 16
+                let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
+                let k = (games.count + 1) / 2
+                HStack(alignment: .top, spacing: 0) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        header(title, spoken: spoken)
+                        rows(Array(games.prefix(k)), watching: watching)
+                    }.frame(width: leftWidth, alignment: .topLeading)
+                    VStack(alignment: .leading, spacing: 12) {
+                        if games.count > k { header(title, spoken: nil).accessibilityHidden(true); rows(Array(games.dropFirst(k)), watching: watching) }
+                    }.frame(width: rightWidth, alignment: .topLeading)
+                        .padding(.leading, max(0, rightStart - leftWidth))
+                }
+            } else {
+                VStack(alignment: .leading, spacing: 12) {
+                    header(title, spoken: spoken)
+                    rows(games, watching: watching)
+                }
+            }
+        } else if duo.pose == .book, let fold = duo.division {
             // Same page geometry as the Library's Book layout (the grids share its scroll origin).
             let leftWidth = max(0, fold.minX - 24 - 16)
             let rightStart = fold.maxX + 24 - 16
@@ -138,11 +164,48 @@ struct UpcomingView: View {
         }
     }
 
+    private func rows(_ list: [CatalogGame], watching: Bool) -> some View {
+        LazyVStack(alignment: .leading, spacing: 20) { ForEach(list) { row($0, watching: watching) } }
+    }
+
+    /// AX row: cover 84 pt (72 in Closed, where the page is narrowest) (3:4) beside the text; name on whole words up to 4 lines, date on its own line, status on its own row.
+    private func row(_ g: CatalogGame, watching: Bool) -> some View {
+        Button {
+            model.browseGame(g)
+        } label: {
+            // Closed is the narrowest page: the cover sits above the text there so the name and date get the whole column.
+            let layout = duo.pose == .closed ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10)) : AnyLayout(HStackLayout(alignment: .top, spacing: 16))
+            layout {
+                TileCover(game: g, plateName: false).aspectRatio(3 / 4, contentMode: .fit).frame(width: duo.pose == .closed ? 72 : 84)
+                VStack(alignment: .leading, spacing: 6) {
+                    WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
+                    Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                    if let move = moveLine(g) {
+                        // Status on its own row, 24 pt clear of the rail; the name and date keep the full column.
+                        Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).fixedSize(horizontal: false, vertical: true)
+                            .padding(.trailing, 24)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .topLeading)
+            }
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(g.name), \(dateLine(g))\(moveLine(g).map { ", " + $0 } ?? "")\(watching ? ", on your watchlist" : "")")
+        .accessibilityAddTraits(.isButton)
+        .tappableFrame()
+        .gameQuickActions(g)
+    }
+
     private func dateLine(_ g: CatalogGame) -> String {
         // Ezra's copy: "Out today" on release day, otherwise the date line ("Out" only for dated, near releases).
         if (g.releasePrecision ?? .day) == .day, let d = g.releaseDate?.isoDay, Date.sameUTCDay(d, .now) { return "Out today" }
         let line = g.ps5DateLine ?? "Date to be announced"
-        return line == "Release date TBA" ? "Date to be announced" : line
+        if line == "Release date TBA" { return "Date to be announced" }
+        // A date is one unit: "Out" may drop to its own line, but "5 Feb 2027" never splits (Quinn, #357).
+        if line.hasPrefix("Out ") { return "Out " + line.dropFirst(4).replacingOccurrences(of: " ", with: "\u{00A0}") }
+        return line
     }
 
     private func moveLine(_ g: CatalogGame) -> String? {
@@ -156,7 +219,7 @@ struct UpcomingView: View {
         } label: {
             VStack(alignment: .leading, spacing: 6) {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit)
-                Text(g.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(3)
+                WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
                 Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                 if let move = moveLine(g) {
                     Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).lineLimit(2)
@@ -202,7 +265,8 @@ struct UpcomingView: View {
                 }
                 let later = watched.filter { g in !soon.contains { $0.id == g.id } }
                 let laterTitle = soon.isEmpty ? "On your watchlist" : "Coming later"
-                if duo.pose == .flat || duo.pose == .tabletop {
+                if (duo.pose == .flat || duo.pose == .tabletop) && !Self.usesRows(typeSize) {
+                    // At AX3+ the sections are one-column rows, stacked, never packed side by side.
                     // Blocks wrap: two short sections share a row, a long one takes its own (top-aligned).
                     FlowLayout(spacing: Self.gap) {
                         if !soon.isEmpty { section("Out this week", count: soon.count, games: soon, watching: true, packed: true) }

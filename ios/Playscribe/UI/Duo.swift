@@ -319,3 +319,52 @@ struct DebugOverlay: View {
         .ignoresSafeArea()
     }
 }
+
+private struct HarnessSplitKey: EnvironmentKey {
+    static let defaultValue = false
+}
+
+extension EnvironmentValues {
+    /// Tests only (fold harness): lay out `SplitArrangement` by the injected division instead of the system's ArrangementView,
+    /// which only splits against a real reserved region. Never set in the app. Triage, not a sign-off (r052-harness-book-split).
+    var harnessSplit: Bool {
+        get { self[HarnessSplitKey.self] }
+        set { self[HarnessSplitKey.self] = newValue }
+    }
+}
+
+/// `ArrangementView(.split)` in the app; under the harness a stand-in that gives the primary the area before the division and
+/// the secondary the area after it, so a headless still can show the Book split.
+struct SplitArrangement<Primary: View, Secondary: View>: View {
+    @Environment(\.harnessSplit) private var standIn
+    @Environment(\.injectedRegions) private var injected
+    @ViewBuilder var primary: () -> Primary
+    @ViewBuilder var secondary: () -> Secondary
+
+    /// The Mac's right page is about 9 pt wider than the plain split gives (Quinn, KCD II Book AX5, e6fd747: the system reserves
+    /// less for the side rail). Harness-only calibration; re-measure if the Mac still moves.
+    private static var railReserveTrim: CGFloat { 9 }
+
+    var body: some View {
+        if standIn, let d = injected?.division {
+            GeometryReader { proxy in
+                if d.height > d.width { // vertical bar: primary left, secondary right (Book, Open landscape)
+                    HStack(spacing: 0) {
+                        primary().frame(width: max(0, d.minX))
+                        Color.clear.frame(width: d.width)
+                        secondary().frame(width: max(0, proxy.size.width - d.maxX + Self.railReserveTrim))
+                    }
+                } else { // horizontal bar: primary above, secondary below (Tabletop)
+                    VStack(spacing: 0) {
+                        primary().frame(height: max(0, d.minY))
+                        Color.clear.frame(height: d.height)
+                        secondary().frame(height: max(0, proxy.size.height - d.maxY))
+                    }
+                }
+            }
+        } else {
+            ArrangementView { primary() } secondary: { secondary() }
+                .arrangementViewStyle(.split)
+        }
+    }
+}
