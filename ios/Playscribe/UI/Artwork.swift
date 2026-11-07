@@ -35,7 +35,8 @@ struct CoverView: View {
                 GeometryReader { geo in
                   if geo.size.height >= 32 {
                     Text(String(game.name.first(where: \.isLetter) ?? game.name.first ?? "?").uppercased())
-                        .font(.custom("Literata24pt-SemiBold", size: geo.size.height * 0.4))
+                        // fixedSize: a sized custom font also scales with Dynamic Type, which overflowed the plate at AX5.
+                        .font(.custom("Literata24pt-SemiBold", fixedSize: min(geo.size.height * 0.4, geo.size.width * 0.6)))
                         .foregroundStyle(.white.opacity(0.85))
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .accessibilityHidden(true)
