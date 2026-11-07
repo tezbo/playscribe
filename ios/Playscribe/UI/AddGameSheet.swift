@@ -86,6 +86,11 @@ struct AddGameSheet: View {
                         Text("Add \(picked.count) game\(picked.count == 1 ? "" : "s")")
                             .font(PlayscribeFont.headline)
                             .foregroundStyle(PlayscribeColor.onAccent)
+                            // 56 pt at least; at accessibility sizes the label wraps to two lines, never shrinks or clips.
+                            .multilineTextAlignment(.center)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.vertical, 8)
                             .frame(maxWidth: .infinity, minHeight: 56)
                             .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
