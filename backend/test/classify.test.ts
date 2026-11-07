@@ -193,7 +193,7 @@ test('on read, a Steam-only release keeps ps5 tags once it has a PS5 row, and we
   store.upsertGame(db, { id: 'g', name: 'G' })
   const note = (text: string) => [{ title: 'Changes', items: [{ text, ps5ProOnly: false, pcOnly: false, category: 'fixed' as const }] }]
   const add = (key: string, text: string) =>
-    store.upsertRelease(db, { gameId: 'g', versionKey: key, displayName: key, kind: 'patch', kindBasis: 'title', announcedAt: '2026-01-01T00:00:00Z', notes: note(text), sourceId: 'g-steam' }).id
+    store.upsertRelease(db, { gameId: 'g', versionKey: key, displayName: key, kind: 'patch', kindBasis: 'inferred', announcedAt: '2026-01-01T00:00:00Z', notes: note(text), sourceId: 'g-steam' }).id
   const psn = add('1', 'Fixed a persistent PSN account link error message.')
   const both = add('2', 'Fixed a crash on PC and PlayStation')
   const tags = (id: string) => store.getRelease(db, id)!.notes[0]!.items[0]!.platforms
