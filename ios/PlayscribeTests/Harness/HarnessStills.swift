@@ -24,7 +24,10 @@ struct HarnessStillsTests {
         guard wanted("HARNESS_POSES", id), wanted("HARNESS_SIZES", size) else { return }
         let category = try #require(Self.sizes.first { $0.0 == size }?.1)
         let model = FoldHost.demoModel()
-        if let route = env["HARNESS_ROUTE"], !route.isEmpty, let url = URL(string: "playscribe://\(route)") { model.handle(url: url) }
+        // ROUTE may chain several routes with commas, in order (e.g. `updates,pill` for the Updates tab with the New on PS5 pill).
+        for route in (env["HARNESS_ROUTE"] ?? "").split(separator: ",").map({ $0.trimmingCharacters(in: .whitespaces) }) where !route.isEmpty {
+            if let url = URL(string: "playscribe://\(route)") { model.handle(url: url) }
+        }
         // Whether a QA route (one-update, many-updates, ...) took effect: it must show in the log, not only in the still.
         print("harness route: \(env["HARNESS_ROUTE"] ?? "none") qaRoute \(model.qaRoute ?? "nil") games \(model.data.collection.count) hero \(model.continueItem?.release.id ?? "none")")
         // HARNESS_VIEW=settings: host that screen's view directly (the app presents it as a system sheet in Closed, which the
