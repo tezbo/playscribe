@@ -393,8 +393,12 @@ struct NewsStage: View {
         let maxLines = typeSize.isAccessibilitySize ? 4 : 2
         let lines = lineHeight > 0 && stageHeight > 0 ? max(1, min(maxLines, Int(room / lineHeight))) : maxLines
         ZStack(alignment: .bottomLeading) {
-            ArtView(asset: model.backdrop(headline.gameID, chapter: .news, tall: false), game: game)
-            LinearGradient(colors: [.clear, .black.opacity(0.5)], startPoint: .center, endPoint: .bottom)
+            // The same key art and scrim as the Library hero (DeckStage), so the crop and the logo read the same (Iris).
+            ArtView(asset: game?.keyArtAsset, game: game)
+            LinearGradient(stops: typeSize.isAccessibilitySize
+                               ? [.init(color: .clear, location: 0.1), .init(color: PlayscribeColor.ink950.opacity(0.9), location: 0.4)]
+                               : [.init(color: .clear, location: 0.3), .init(color: PlayscribeColor.ink950.opacity(0.8), location: 0.75)],
+                           startPoint: .top, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 WholeWordText(text: headline.item.title, font: PlayscribeFont.title3.weight(.semibold), lines: lines)
                 NewsMeta {
