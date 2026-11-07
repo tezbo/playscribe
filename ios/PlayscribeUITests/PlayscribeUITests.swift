@@ -49,8 +49,7 @@ final class PlayscribeUITests: XCTestCase {
             var retries = 0
             while !delivered && retries < 2 {
                 // Unlock (a swipe up from the bottom; harmless if not locked), pull Notification Center down, find the row, tap.
-                springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.99))
-                    .press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.4)))
+                unlockIfLocked()
                 var again = notificationRow(timeout: 3)
                 if again == nil {
                     springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
