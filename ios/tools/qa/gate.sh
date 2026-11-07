@@ -9,7 +9,14 @@
 # Poses are set through Duo Pose Driver (a GUI press on one Device Hub window), so poses stay serial.
 export DEVELOPER_DIR=${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}
 out=${1:?out dir}; shift; mkdir -p $out
-poses=(${=@}); (( $#poses )) || poses=(closed book open open-portrait tabletop)
+# TIER=pr (PRs, docs/ci.md): Closed and Tabletop only (the two layouts that differ most), no stills, no once-suites. TIER=full (default,
+# release sign-off): all five poses, with stills. Poses named on the command line win.
+TIER=${TIER:-full}
+poses=(${=@})
+if (( ! $#poses )); then
+  [[ $TIER == pr ]] && poses=(closed tabletop) || poses=(closed book open open-portrait tabletop)
+fi
+[[ $TIER == pr ]] && : ${STILLS:=0} ${ONCE:=0}   # the pose-independent suites and unit tests run in TIER=full; GitHub CI runs the unit tests on every PR
 here=${0:A:h}; cd ${here:h:h} || exit 1   # ios/: xcodebuild and xcodegen run from here
 source $here/poselib.sh
 app=co.codeconnectors.playscribe
@@ -22,6 +29,13 @@ ui() { echo "-only-testing:PlayscribeUITests/$1"; }
 
 # Pose-sensitive: these look at fold, reserved regions, layout and sheets, so they run in every pose.
 POSE_SUITES=(FoldAuditTests LibraryLayoutTests LatestUpdatesDeckTests Release050Tests ReleaseFeatureTests
+  PlayscribeUITests/testAccessibilityAudit PlayscribeUITests/testTabletopSheetsKeepControlsInTheLowerHalf
+  PlayscribeUITests/testScanFitsThePanel)
+# TIER=pr trims the pose suites to what changes with the pose, measured on the Mac at 6511ae4 (Closed 936 s, Tabletop 824 s with the full list).
+# LibraryLayoutTests (Closed 259 s) and the pose-independent ReleaseFeatureTests (news, share, camera, widget, first run) run in TIER=full.
+[[ $TIER == pr ]] && POSE_SUITES=(FoldAuditTests LatestUpdatesDeckTests Release050Tests
+  ReleaseFeatureTests/testNewSurfacesKeepFrameRules ReleaseFeatureTests/testUpcomingTabAndWatchlist
+  ReleaseFeatureTests/testPinnedAddBar ReleaseFeatureTests/testNewScreensPassAccessibilityAudit
   PlayscribeUITests/testAccessibilityAudit PlayscribeUITests/testTabletopSheetsKeepControlsInTheLowerHalf
   PlayscribeUITests/testScanFitsThePanel)
 # Only meaningful when two pages are side by side.
@@ -44,7 +58,7 @@ run() {  # run <label> <only-testing…>
   rm -rf $out/$label.xcresult   # xcodebuild refuses an existing result bundle
   xcodebuild test-without-building -xctestrun $xctestrun -destination $dest \
     "$@" -resultBundlePath $out/$label.xcresult > $out/$label.log 2>&1
-  local r=$(grep -E '\*\* TEST (SUCCEEDED|FAILED)' $out/$label.log)
+  local r=$(grep -E '\*\* TEST (EXECUTE )?(SUCCEEDED|FAILED)' $out/$label.log)
   note "$label: ${r:-NO RESULT}"
   # Every error, never a capped list (the old head -8 hid most of the e869273 failures), then the failing-test count.
   grep -E "error:" $out/$label.log | sed 's/.*error: -\[/  [/' | tee -a $sum
@@ -70,7 +84,7 @@ set_pose closed; verify_pose closed || exit 1
 if [[ ${ONCE:-1} == 1 ]]; then
 # Unit tests live in the Playscribe scheme (PlayscribeUI's xctestrun has only the UI target).
 timed xcodebuild -scheme Playscribe -destination $dest -derivedDataPath $dd test > $out/unit.log 2>&1
-unit=$(grep -E '\*\* TEST (SUCCEEDED|FAILED)' $out/unit.log); note "unit: ${unit:-NO RESULT}"; [[ $unit == *SUCCEEDED* ]] || ((fails++))
+unit=$(grep -E '\*\* TEST (EXECUTE )?(SUCCEEDED|FAILED)' $out/unit.log); note "unit: ${unit:-NO RESULT}"; [[ $unit == *SUCCEEDED* ]] || ((fails++))
 timed run once $(for s in $ONCE_SUITES; do ui $s; done) || ((fails++))
 fi
 

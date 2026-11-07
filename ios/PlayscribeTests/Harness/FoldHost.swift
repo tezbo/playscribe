@@ -139,6 +139,7 @@ enum FoldHost {
         let root = Probe(box: box, content: RootView()
             .environment(model)
             .environment(\.injectedRegions, pose.regions)
+            .environment(\.harnessSplit, ProcessInfo.processInfo.environment["HARNESS_SPLIT"] == "1")
             .preferredColorScheme(.dark)
             .font(PlayscribeFont.body)
             .tint(PlayscribeColor.accent)

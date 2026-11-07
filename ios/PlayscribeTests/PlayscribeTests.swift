@@ -25,8 +25,9 @@ struct ModelTests {
         let dw = m.release("dawnwalker", "dawnwalker@1.1")
         #expect(dw?.ps5State == .onPS5)
         #expect(dw?.ps5Version == nil)
-        for r in m.releases("control-resonant") where r.ps5 == nil {
-            #expect(r.ps5State == .onPS5)
+        // A release with no PS5 row is not a PS5 update (r051-prelaunch-gate); a PS5 row never carries the PC version.
+        for r in m.releases("control-resonant") {
+            #expect(r.ps5State == (r.ps5 == nil ? .pending : .onPS5))
             #expect(r.ps5Version == nil)
         }
     }
@@ -701,6 +702,13 @@ struct BuildChannelTests {
         #expect(!BuildChannel.isDistribution(receiptName: "other"))
     }
 
+    @Test("Team alerts show on development and TestFlight builds, never on the App Store")
+    func teamAlertsGuard() {
+        #expect(BuildChannel.showsTeamAlerts(receiptName: nil))
+        #expect(BuildChannel.showsTeamAlerts(receiptName: "sandboxReceipt"))
+        #expect(!BuildChannel.showsTeamAlerts(receiptName: "receipt"))
+    }
+
     #if targetEnvironment(simulator)
     @Test("The simulator is never a distribution build, so QA routes run there")
     func simulatorShowsInternalTools() {
@@ -732,6 +740,38 @@ struct ReaderSpoilerTests {
         #expect(!hidden.contains("Hello") && !hidden.contains("Be advised"))
         let shown = fixes(shown: true)
         #expect(shown.contains("final door") && !shown.contains("hidden for spoilers"))
+    }
+}
+
+/// r051-prelaunch-gate: a patch from before the PS5 launch has no PS5 row, so it is not a PS5 update.
+@MainActor
+struct PreLaunchGateTests {
+    private func steamOnly(_ id: String) -> Release {
+        let steam = PlatformRelease(platform: .pc, status: .live, verification: .official)
+        return Release(id: id, gameID: "valheim", displayName: id, kind: .patch, kindBasis: .inferred,
+                       announcedAt: Date(timeIntervalSince1970: 1_613_000_000), notes: [], sourceIDs: [], platforms: [steam])
+    }
+
+    @Test("Valheim 2021: a Steam-only patch is not On PS5, not listed, not unread")
+    func valheimSteamOnly() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "gate-\(UUID().uuidString).json"))
+        let r = steamOnly("valheim@0.147")
+        #expect(r.ps5State == .pending)
+        #expect(!r.isPS5Listed)
+        #expect(!model.isUnread(r))
+    }
+
+    @Test("From the PS5 launch on, a live official PS5 row is On PS5 as before")
+    func liveRowStillOnPS5() {
+        let ps5 = PlatformRelease(platform: .ps5, status: .live, liveAt: Field(value: .now, verification: .official, sourceID: "s", checkedAt: .now),
+                                  verification: .official)
+        let r = Release(id: "valheim@1.0", gameID: "valheim", displayName: "1.0", kind: .patch, kindBasis: .inferred,
+                        announcedAt: .now, notes: [], sourceIDs: [], platforms: [ps5])
+        #expect(r.ps5State == .onPS5)
+        #expect(r.isPS5Listed)
+        // New to the library: nothing read yet, so it is unread and (being On PS5) eligible for the alert.
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "gate-\(UUID().uuidString).json"))
+        #expect(model.isUnread(r))
     }
 }
 
