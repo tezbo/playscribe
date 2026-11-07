@@ -93,3 +93,8 @@ The harness can fail a build on the fold, hinge, occlusion, safe-area and rail-p
 - Keep above-the-fold and hinge-band checks one-sided with a margin of at least 14 pt: fail on something clearly inside the band, never claim a pass near the edge.
 - Say nothing about Tabletop's lower half (rail overflow, Previous/Next); those stay on the Mac gate.
 - Open backlog item: find why the tab view draws a vertical tab bar in the offscreen host (docs/roadmap.md).
+
+## Known gaps (Quinn, #360)
+
+- **Book has no overflow cover from the harness.** Offscreen, the system places Book's right page at x 475 (inside the 455 to 495 fold) instead of 495, so a full-width page overruns the 867 pt container by 23 pt. The G-8 overflow rule skips Book (as it skips Tabletop); the Mac gate is the check there.
+- **Open and Book widths are assumed, not read.** FoldHost leaves the pose's 84 pt trailing inset out for every pose that has one (the tab bar supplies it), and only Closed has been read against the Mac (deck 346 pt). Every harness still taken before #360 is 84 pt narrower than the Duo, so earlier Book left-page calibrations are stale: re-run them on the new widths before anyone trusts harness wraps.
