@@ -587,7 +587,10 @@ final class AppModel {
             settingsOpen = true
             if parts.first == "quiet" { data.quietHours = QuietHours() }
         case "tag" where parts.count == 1: if let v = Verification(rawValue: parts[0]) { tagExplainer = v }
-        case "library": nav.tab = .library; nav.gameID = nil
+        case "library":
+            nav.tab = .library; nav.gameID = nil
+            // QA: `library/upcoming` and `library/playing` pick the Library's Playing / Upcoming switch.
+            if let t = parts.first.flatMap(LibraryTab.init(rawValue:)) { libraryTab = t }
         case "updates": nav.tab = .updates
         case "search": nav.tab = .search
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
