@@ -5,6 +5,8 @@ import SwiftUI
 struct CoverView: View {
     var game: CatalogGame
     var cornerRadius: CGFloat = 8
+    /// False where the title is already printed beside the cover (the AX Upcoming rows), so a no-art plate never cuts it mid-word.
+    var plateName = true
 
     var body: some View {
         ZStack {
@@ -29,13 +31,13 @@ struct CoverView: View {
         let tones = (game.tones ?? ["#1b1d24", "#0b0d12"]).map(Color.init(hex:))
         return LinearGradient(colors: tones, startPoint: .topLeading, endPoint: .bottomTrailing)
             .overlay {
-                Text(game.name)
+                if plateName { Text(game.name)
                     .font(PlayscribeFont.caption.weight(.semibold))
                     
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.white.opacity(0.85))
                     .padding(6)
-                    .minimumScaleFactor(0.6)
+                    .minimumScaleFactor(0.6) }
             }
     }
 }

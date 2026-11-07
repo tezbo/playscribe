@@ -1027,11 +1027,12 @@ struct GameTile: View {
 /// else the ink plate with the name. 10 pt corners and a faint inner edge.
 struct TileCover: View {
     var game: CatalogGame
+    var plateName = true
     var body: some View {
         Color.ink1
             .overlay {
                 if game.coverAsset != nil || game.coverURL != nil {
-                    CoverView(game: game, cornerRadius: 0)
+                    CoverView(game: game, cornerRadius: 0, plateName: plateName)
                 } else if let art = game.keyArtAsset {
                     Image(art).resizable().scaledToFill()
                         .overlay(alignment: .top) {
@@ -1041,7 +1042,7 @@ struct TileCover: View {
                                 .background(LinearGradient(colors: [.black.opacity(0.7), .clear], startPoint: .top, endPoint: .bottom))
                         }
                 } else {
-                    CoverView(game: game, cornerRadius: 0)
+                    CoverView(game: game, cornerRadius: 0, plateName: plateName)
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))

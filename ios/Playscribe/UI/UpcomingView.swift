@@ -159,7 +159,7 @@ struct UpcomingView: View {
             model.browseGame(g)
         } label: {
             HStack(alignment: .top, spacing: 16) {
-                TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit).frame(width: 84)
+                TileCover(game: g, plateName: false).aspectRatio(3 / 4, contentMode: .fit).frame(width: 84)
                 VStack(alignment: .leading, spacing: 6) {
                     WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
                     Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
