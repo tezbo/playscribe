@@ -559,7 +559,7 @@ final class CaptureTests: XCTestCase {
 final class LatestUpdatesDeckTests: XCTestCase {
     func testCardAndLeafTaps() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", "library"]
+        app.launchArguments = ["-qaRoute", "demo"  // seeded: `library` shows the empty first-run Library after an earlier first-run test, and it has no deck]
         app.launch()
         sleep(4)
         if ReleaseRowTests.pose(app).contains("pose: tabletop") { app.terminate(); throw XCTSkip("Tabletop's upper half is view only") }
@@ -685,9 +685,9 @@ final class Release050Tests: XCTestCase {
         let add = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add game' OR label == 'Add game' OR label == 'Add'")).firstMatch
         XCTAssertTrue(cog.waitForExistence(timeout: 10), "Settings cog exists [\(pose)]")
         XCTAssertTrue(add.exists, "Add exists [\(pose)]")
-        // Exemption (Iris): only the system-drawn Closed toolbar buttons may be 36 pt (the app draws 38). Our own
-        // controls, which is every other pose's rail, stay at 44 pt.
-        let floor: CGFloat = pose.contains("pose: closed") ? 35.5 : 43.5
+        // Exemption (Iris): only the system-drawn navigation-bar buttons (Closed, Open, Book: the app draws 38) may be 36 pt.
+        // Our own controls, which is Tabletop's rail, stay at 44 pt. (Book hit the 44 branch at 48404f1: its bar is system-drawn too.)
+        let floor: CGFloat = pose.contains("pose: tabletop") ? 43.5 : 35.5
         for (name, e) in [("Settings", cog), ("Add", add)] {
             XCTAssertTrue(e.isHittable, "\(name) is hittable [\(pose)]")
             XCTAssertGreaterThanOrEqual(e.frame.height, floor, "\(name) height at least \(floor) pt [\(pose)]")
