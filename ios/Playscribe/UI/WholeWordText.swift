@@ -10,9 +10,14 @@ struct WholeWordText: View {
     var color: Color?
     @State private var lineHeight: CGFloat = 0
 
-    var body: some View {
+    /// The whole text first, then one word fewer each time with "…" after the last whole word. Never a cut word.
+    static func variants(of text: String) -> [String] {
         let words = text.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
-        let variants = [text] + (words.count > 1 ? stride(from: words.count - 1, through: 1, by: -1).map { words.prefix($0).joined(separator: " ") + "\u{2026}" } : [])
+        return [text] + (words.count > 1 ? stride(from: words.count - 1, through: 1, by: -1).map { words.prefix($0).joined(separator: " ") + "\u{2026}" } : [])
+    }
+
+    var body: some View {
+        let variants = Self.variants(of: text)
         // The variant is chosen against a height this view sets itself (lines x line height), never against what a List
         // cell or pager proposes, so the cut is the same in every pose. The box is then as tall as the words shown, so a
         // one-line name leaves no gap below it (#357).

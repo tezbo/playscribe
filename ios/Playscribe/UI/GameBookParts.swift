@@ -202,14 +202,27 @@ struct ReleasePage: View {
     @ScaledMetric(relativeTo: .title3) private var fourTitleLines: CGFloat = 104
     @State private var shareOnOwnRow = false
 
-    // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
-    private func titleBlock(_ r: Release, measure: Bool) -> some View {
+    // Roles (Iris, PR #32): game name title2, update name title3, in every pose. At accessibility sizes the title is capped at
+    // 4 lines and ends on a whole word with "…" (WholeWordText; VoiceOver still reads all of it). `measure` is the row
+    // beside the share button: a hidden copy of the full title, laid out at that width, says whether it needs more than 4
+    // lines there, and if so the button moves to its own row (Iris, r054).
+    @ViewBuilder private func titleBlock(_ r: Release, measure: Bool) -> some View {
         TitleWithTags(release: r) {
-            Text(r.displayName).font(PlayscribeFont.title3)
-                .accessibilityIdentifier("releaseTitle")
-                .onGeometryChange(for: Bool.self) { measure && $0.size.height > fourTitleLines } action: { tooTall in
-                    if tooTall { shareOnOwnRow = true }
-                }
+            if typeSize.isAccessibilitySize {
+                WholeWordText(text: r.displayName, font: PlayscribeFont.title3, lines: 4, color: nil)
+                    .accessibilityIdentifier("releaseTitle")
+                    .background(alignment: .topLeading) {
+                        if measure {
+                            Text(r.displayName).font(PlayscribeFont.title3).fixedSize(horizontal: false, vertical: true)
+                                .hidden().accessibilityHidden(true)
+                                .onGeometryChange(for: Bool.self) { $0.size.height > fourTitleLines } action: { tooTall in
+                                    if tooTall { shareOnOwnRow = true }
+                                }
+                        }
+                    }
+            } else {
+                Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
+            }
         }
     }
 

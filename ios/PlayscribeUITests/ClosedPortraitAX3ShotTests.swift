@@ -1,4 +1,5 @@
 import XCTest
+import UIKit
 
 /// Closed portrait stills at AX3 that need a route a launch-only script cannot reach, or a scroll (risk 2 step A, Quinn's review of
 /// run 42293459096): the hero with the update chip, the Alerts card, the Updates tab, and the Add sheet at top, middle and bottom so a
@@ -45,6 +46,11 @@ final class ClosedPortraitAX3ShotTests: XCTestCase {
         let share = app.buttons["Share update"]
         XCTAssertTrue(share.waitForExistence(timeout: 10), "long-title: Share update is missing")
         XCTAssertGreaterThanOrEqual(share.frame.minY, title.frame.maxY - 1, "long-title: the share button must sit under a title past 4 lines")
+        // Capped at 4 lines (Iris): a title3 line at AX5 is well over 40 pt, so 4 lines stay under 4 x 70 pt and a fifth would not.
+        let lineEstimate = UIFont.preferredFont(forTextStyle: .title3, compatibleWith: UITraitCollection(preferredContentSizeCategory: .accessibilityExtraExtraExtraLarge)).lineHeight
+        XCTAssertLessThanOrEqual(title.frame.height, lineEstimate * 4 * 1.4, "long-title: the title runs past 4 lines")
+        XCTAssertTrue(title.label.hasPrefix("The Grand Autumn"), "long-title: VoiceOver still reads the full title")
+        XCTAssertTrue(title.label.hasSuffix("Since Launch"), "long-title: VoiceOver still reads the full title")
         shoot("long-title")
         app.terminate()
     }
