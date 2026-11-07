@@ -279,6 +279,8 @@ struct TabletopRail: View {
     var duo: DuoContext
     /// True only while the actions overflow and more lies below the visible part (Iris: no fade at rest).
     @State private var moreBelow = false
+    /// True once the actions have scrolled, so the top edge fades too and a cut-off button above reads as "more".
+    @State private var moreAbove = false
 
     var body: some View {
         VStack(spacing: 6) {
@@ -339,8 +341,13 @@ struct TabletopRail: View {
             .onScrollGeometryChange(for: Bool.self) { g in
                 g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1
             } action: { _, more in moreBelow = more }
-            .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.9 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
-                                 startPoint: .top, endPoint: .bottom))
+            .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.y > 1 } action: { _, above in moreAbove = above }
+            .mask(LinearGradient(stops: [
+                .init(color: moreAbove ? .clear : .black, location: 0),
+                .init(color: .black, location: moreAbove ? 0.1 : 0),
+                .init(color: .black, location: moreBelow ? 0.9 : 1),
+                .init(color: moreBelow ? .clear : .black, location: 1),
+            ], startPoint: .top, endPoint: .bottom))
             // Iris: the same floating capsule as Closed's tab bar, no full-height strip or hairline.
             VStack(spacing: 0) {
                 tab(.library, "Library", "books.vertical", badge: model.totalUnread)
