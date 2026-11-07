@@ -188,7 +188,13 @@ final class PlayscribeUITests: XCTestCase {
             // Close it again before the next pull (a swipe up from the bottom), so the pull is a fresh gesture.
             unlockIfLocked()
         }
-        XCTFail("the Dawnwalker notification is in neither the banner nor Notification Center after 3 pulls")
+        // Rule out an app-side cause before failing: ask the app what schedule() decided and whether the system listed the
+        // notification as delivered when it was due (2537997: Notification Center empty, icon badge 1, app code reads clean).
+        let probeApp = XCUIApplication(); probeApp.activate()
+        let probe = probeApp.descendants(matching: .any)["qaScheduleLog"]
+        let text = probe.waitForExistence(timeout: 8) ? probe.label : "no qaScheduleLog element"
+        let sched = XCTAttachment(string: text); sched.name = "n6-schedule-log"; sched.lifetime = .keepAlways; add(sched)
+        XCTFail("the Dawnwalker notification is in neither the banner nor Notification Center after 3 pulls; app says: \(text)")
         return springboard.otherElements["Notification"]
     }
 
