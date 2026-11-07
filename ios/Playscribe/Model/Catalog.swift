@@ -132,7 +132,7 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     static func outLine(_ d: Date, precision: DatePrecision = .day) -> String {
         switch precision {
         case .day:
-            let sameYear = Calendar.current.component(.year, from: d) == Calendar.current.component(.year, from: .now)
+            let sameYear = Date.sameUTCYear(d, .now)
             return "Out " + (sameYear ? d.dayMonth : d.shortDay)
         case .tbd: return "Release date TBA"
         default: return "Coming " + period(d, precision)
