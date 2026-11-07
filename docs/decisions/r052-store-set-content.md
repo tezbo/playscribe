@@ -10,3 +10,4 @@
 - Follow-up (7 Nov, Quinn): the Lantern Reach sun sat under the caption (cream on orange). Art only: the sun and glow now end above 40% of the hero height and sit at 65% of its width, clear of the caption and of the top-left chips in the wide Closed card, independent of any scrim (#348).
 - Follow-up (7 Nov, Iris on #361): Hollow Meridian sun moved to the top right (same move as Lantern Reach); the three Plus titles now have designed covers (muted gradient, serif initial, title below) as untracked custom games; the Lantern Reach and Long Quiet Orchard summaries reworded so they add to the headline.
 - Plus covers (Iris): title baked at 112 px on a 900 px plate, two whole-word lines, so it is at least 11 pt on a 90 pt tile and scales with it at every type size.
+- Route `store-set/end` (7 Nov, Mara/Mac): scrolls the Library to the last row, so the Mac can check it clears the floating tab bar at max scroll.
