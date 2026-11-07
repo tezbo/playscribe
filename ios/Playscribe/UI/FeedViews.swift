@@ -5,7 +5,6 @@ struct UpdatesView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.railWidth) private var railWidth
     @Environment(\.duo) private var duo
-    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         let ids = model.data.collection.map(\.gameID)
@@ -28,10 +27,7 @@ struct UpdatesView: View {
                               alignment: .leading, spacing: 12) {
                         ForEach(Array(items.enumerated()), id: \.element.id) { i, r in
                             FeedRow(release: r)
-                                // At accessibility sizes the unread dot hangs 20 pt left of the text (no cover beside it), so the
-                                // card's leading padding makes room and the dot stays on the card, not out on the page (Mac, 18c34a3).
-                                .padding(.leading, typeSize.isAccessibilitySize ? 32 : 12)
-                                .padding([.top, .bottom, .trailing], 12)
+                                .padding(12)
                                 .background(PlayscribeColor.ink700.opacity(0.5), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                             if i.isMultiple(of: 2) { Color.clear.frame(height: 1).accessibilityHidden(true) }
                         }
@@ -117,6 +113,10 @@ struct FeedRow: View {
                 }
                 Spacer(minLength: 0)
             }
+            // One rule for every pose: at accessibility sizes there is no cover beside the text for the hung unread dot to sit
+            // against, so the row keeps its own 12 pt margin + 8 pt dot + 12 pt clearance (32 pt) before the text. The dot is then
+            // 12 pt inside the card's edge in Closed, Open and Book alike (Mac, 99a1f3b: flush with the edge in Closed and Open).
+            .padding(.leading, typeSize.isAccessibilitySize ? 32 : 0)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
