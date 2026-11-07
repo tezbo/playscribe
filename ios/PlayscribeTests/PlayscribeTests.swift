@@ -611,6 +611,30 @@ struct QARouteGuardTests {
         #expect(m.qaRoute == nil)
     }
 
+    @Test("The store set never loads in a distribution build (r052-store-set-content)")
+    func storeSetStaysOutOfDistribution() {
+        BuildChannel.overrideIsDistribution = true
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        let before = m.data.collection
+        m.handle(url: URL(string: "playscribe://store-set")!)
+        m.applyQALaunch(route: "store-set", overlay: false)
+        m.loadStoreSet()
+        #expect(m.data.collection == before)
+        #expect(m.data.customGames.isEmpty)
+    }
+
+    @Test("The store set loads five invented games in an internal build (r052-store-set-content)")
+    func storeSetLoadsInternally() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        m.handle(url: URL(string: "playscribe://store-set")!)
+        #expect(m.data.collection.map(\.gameID) == StoreSet.gameIDs)
+        #expect(m.data.customGames.count == 5)
+        #expect(m.data.simulated.count == 3)
+    }
+
     @Test("A developer or simulator build still runs QA routes")
     func internalBuildRunsRoutes() {
         BuildChannel.overrideIsDistribution = false
@@ -735,5 +759,30 @@ struct UTCDayTests {
             #expect(Date.sameUTCDay(before, before.addingTimeInterval(-86_000)))
             #expect(Date.sameUTCDay(after, after.addingTimeInterval(86_000)))
         }
+
+@Suite("QAPose launch argument")
+struct QAPoseTests {
+    @Test("book and tabletop give DuoReader a synthetic fold of the right shape, closed and open give none")
+    func foldShapes() {
+        let landscape = CGSize(width: 867, height: 635)
+        let book = QAPose.regions(named: "book", size: landscape)
+        let ctxBook = DuoReader<EmptyView>.context(size: landscape, compact: false, division: book?.division, occlusions: [])
+        #expect(ctxBook.pose == .book)
+        let portrait = CGSize(width: 669, height: 835)
+        let table = QAPose.regions(named: "tabletop", size: portrait)
+        let ctxTable = DuoReader<EmptyView>.context(size: portrait, compact: false, division: table?.division, occlusions: [])
+        #expect(ctxTable.pose == .tabletop)
+        #expect(abs((table?.division?.minY ?? 0) - 835 * 0.447) < 0.5)
+        #expect(QAPose.regions(named: "open", size: portrait) == nil)
+        #expect(QAPose.regions(named: nil, size: portrait) == nil)
+    }
+
+    @Test("a distribution build ignores -qaPose")
+    func distributionIgnores() {
+        BuildChannel.overrideIsDistribution = true
+        QAPose.overrideName = "tabletop"
+        defer { BuildChannel.overrideIsDistribution = nil; QAPose.overrideName = nil }
+        #expect(QAPose.name == nil)
+        #expect(QAPose.injected(size: CGSize(width: 669, height: 835)) == nil)
     }
 }

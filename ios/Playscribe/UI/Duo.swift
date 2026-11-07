@@ -73,6 +73,37 @@ extension EnvironmentValues {
     }
 }
 
+/// QA (internal builds only): `-qaPose book` or `-qaPose tabletop` gives DuoReader a synthetic fold in the container it is
+/// already in, so a pose can be set at launch with no Device Hub clicks and no focus change (docs/ci.md item 6). The fold
+/// sits where the real one did in the Mac stills (its leading edge at 0.525 of the width for Book and its top edge at 0.447 of the height for Tabletop, 40 pt thick, the PoseCatalog numbers; the real device may differ by a few percent until the calibration pair is read).
+/// Launch on the inner display, landscape for book and portrait for tabletop. Closed and Open need no fold, so they are not
+/// arguments. Ignored in a distribution build, like `-qaRoute`.
+enum QAPose {
+    /// Tests only: stands in for the launch argument.
+    nonisolated(unsafe) static var overrideName: String?
+
+    static var name: String? {
+        #if INTERNAL
+        guard BuildChannel.showsInternalTools else { return nil }
+        return overrideName ?? UserDefaults.standard.string(forKey: "qaPose")
+        #else
+        return nil
+        #endif
+    }
+
+    static func injected(size: CGSize) -> InjectedRegions? {
+        regions(named: name, size: size)
+    }
+
+    static func regions(named name: String?, size: CGSize) -> InjectedRegions? {
+        switch name {
+        case "book": InjectedRegions(division: CGRect(x: size.width * 0.525, y: 0, width: 40, height: size.height))
+        case "tabletop": InjectedRegions(division: CGRect(x: 0, y: size.height * 0.447, width: size.width, height: 40))
+        default: nil
+        }
+    }
+}
+
 /// Reads the scene-level container and its reserved regions, and publishes the pose.
 struct DuoReader<Content: View>: View {
     @Environment(\.horizontalSizeClass) private var hSize
@@ -92,6 +123,11 @@ struct DuoReader<Content: View>: View {
         if let injected {
             ctx = context(size: proxy.size, compact: compact, division: injected.division, occlusions: injected.occlusions)
         } else {
+            if let qa = QAPose.injected(size: proxy.size) {
+                var ctx = context(size: proxy.size, compact: compact, division: qa.division, occlusions: qa.occlusions)
+                ctx.safeArea = proxy.safeAreaInsets
+                return ctx
+            }
             let divisions = proxy.reservedRegions(kind: .division).filter(\.isActive)
             let occlusions = proxy.reservedRegions(kind: .occlusion).filter(\.isActive).map(\.frame)
             ctx = context(size: proxy.size, compact: compact, division: divisions.first?.frame, occlusions: occlusions)
