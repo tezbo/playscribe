@@ -47,6 +47,7 @@ jobs:
           echo "poses=${POSES:-${{ inputs.poses }}}" >> "$GITHUB_OUTPUT"
           echo "sizes=${SIZES:-${{ inputs.sizes }}}" >> "$GITHUB_OUTPUT"
           echo "route=${ROUTE:-${{ inputs.route }}}" >> "$GITHUB_OUTPUT"
+          echo "tall=${HARNESS_TALL:-}" >> "$GITHUB_OUTPUT"
       - name: Take the app sources from the requested commit
         if: steps.req.outputs.app_sha != ''
         run: git checkout "${{ steps.req.outputs.app_sha }}" -- ios/Playscribe && git rev-parse --short "${{ steps.req.outputs.app_sha }}"
@@ -70,6 +71,7 @@ jobs:
           TEST_RUNNER_HARNESS_POSES: ${{ steps.req.outputs.poses }}
           TEST_RUNNER_HARNESS_SIZES: ${{ steps.req.outputs.sizes }}
           TEST_RUNNER_HARNESS_ROUTE: ${{ steps.req.outputs.route }}
+          TEST_RUNNER_HARNESS_TALL: ${{ steps.req.outputs.tall }}
         run: |
           mkdir -p stills
           xcodebuild test -project ios/Playscribe.xcodeproj -scheme Playscribe \
