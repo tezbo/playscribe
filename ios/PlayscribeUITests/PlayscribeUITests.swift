@@ -35,6 +35,12 @@ final class PlayscribeUITests: XCTestCase {
             // launch in postAndFindNotification replaced it, so ask a fresh proxy for the target app's state (3758183 and
             // e9a735d: a bare assertion here failed with no message).
             step("tapped; app state \(XCUIApplication().state.rawValue)")
+            // A tap on a Notification Center row can slide out its actions instead of opening the app (14516a5): tap "Open".
+            let openAction = springboard.buttons["Open"]
+            if XCUIApplication().state != .runningForeground, openAction.waitForExistence(timeout: 2) {
+                step("tapping the revealed Open action \(openAction.frame)")
+                openAction.tap()
+            }
             let target = XCUIApplication()
             // "Foreground" alone proves nothing: the app can be in front because the tap never reached SpringBoard's notification (a
             // locked sim, a missed row). The proof is that the app received the tap's response (INTERNAL probe), so wait for that,
@@ -134,7 +140,11 @@ final class PlayscribeUITests: XCTestCase {
             // Cold: no Home press (it sends this sim to the lock screen, where taps land on a pile of old notifications and do
             // not launch the app, e411c788). Let the app schedule the 3 s notification, then end it; the system delivers it to
             // a dead app, which is the cold case, with the sim still on the home screen.
-            sleep(2)
+            sleep(1)
+            // Unlock now, before the notification is delivered, so it arrives as a top banner on an unlocked home screen (14516a5:
+            // unlocking after delivery loses the banner, and the Notification Center row only slides out an "Open" action).
+            unlockIfLocked()
+            sleep(1)
             simulate.terminate()
             step("terminated; \(lockState())")
         } else {
@@ -178,6 +188,8 @@ final class PlayscribeUITests: XCTestCase {
         }
         let origin = springboard.coordinate(withNormalizedOffset: .zero)
         step("before unlock: screen \(screen); \(lockState())")
+        // Not locked: do nothing (a flick up on the home screen is a different gesture).
+        if !springboard.descendants(matching: .any)["lockscreen-date-view"].exists { return }
         for i in 1...3 {
             let from = CGVector(dx: screen.midX, dy: screen.maxY - 2), to = CGVector(dx: screen.midX, dy: screen.maxY * 0.3)
             origin.withOffset(from).press(forDuration: 0.05, thenDragTo: origin.withOffset(to), withVelocity: .fast, thenHoldForDuration: 0)
