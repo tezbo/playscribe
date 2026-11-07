@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { confirmPlatform } from '../src/confirm.ts'
 import { openDb } from '../src/db.ts'
-import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
+import { runIngest, seedGames, ps4SinceFromIndex } from '../src/ingest/pipeline.ts'
 import { alertCopy, headlineOf, pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
 import * as store from '../src/store.ts'
@@ -314,6 +314,19 @@ test('trust audit (r050): with no PS5 date, Steam-assumed rows before the PS5 la
   assert.equal(ps4('dawnwalker@press-new'), 0)
   assert.ok(ps5('dawnwalker@press-new')!.version)
   assert.equal(store.labelPreLaunchPs4(db, since), 0, 'safe to run every ingest')
+})
+
+test('trust audit (r050): an unreadable or empty PS5 index fails closed, never reads as "no game had a PS4 release"', async () => {
+  const { writeFileSync, mkdtempSync } = await import('node:fs')
+  const { tmpdir } = await import('node:os')
+  const { join } = await import('node:path')
+  const dir = mkdtempSync(join(tmpdir(), 'idx-'))
+  assert.equal(ps4SinceFromIndex(new URL('file:///nonexistent/ps5-index.json')), undefined)
+  writeFileSync(join(dir, 'empty.json'), JSON.stringify({ games: [{ i: 1, n: 'A' }] }))
+  assert.equal(ps4SinceFromIndex(new URL(`file://${join(dir, 'empty.json')}`)), undefined)
+  writeFileSync(join(dir, 'ok.json'), JSON.stringify({ games: [{ i: 7, n: 'B', b: '2019-01-01' }] }))
+  assert.equal(ps4SinceFromIndex(new URL(`file://${join(dir, 'ok.json')}`))?.get(7), '2019-01-01')
+  assert.ok(ps4SinceFromIndex()?.size, 'the real bundled index is readable')
 })
 
 test('trust audit (r050): a PS5 row over 90 days before the PS5 release with no PS4 version is dropped; a day-one patch and a PS4 game are kept', async () => {
