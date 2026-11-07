@@ -41,4 +41,26 @@ struct WholeWordTextTests {
         let title = "One Two Three"
         #expect(WholeWordText.fittingVariants(of: title, wordWidths: [:], available: 0) == WholeWordText.variants(of: title))
     }
+
+    /// Punctuation stays attached to the word before it: words split on spaces only, so no word, and so no line the
+    /// layout can start a variant with, begins with a comma or other mark (r061).
+    @Test func punctuationStaysAttachedToItsWord() {
+        let title = "The Grand Autumn Rebalancing, Quality of Life and Stability Update (Hotfix 2), Every Fix; Finally."
+        let words = WholeWordText.words(of: title)
+        #expect(words.contains("Rebalancing,"))
+        #expect(words.allSatisfy { !(",.;:!?)".contains($0.first!)) }, "no word starts with punctuation")
+        for v in WholeWordText.variants(of: title).dropFirst() {
+            #expect(!v.dropLast().hasSuffix(" "), "no space before the ellipsis")
+            #expect(!v.contains(" ,"), "a comma is never split from its word")
+        }
+    }
+
+    /// Only the real column width decides: a word that fits one line in the column is kept, a wider one is not, with the
+    /// widest kept word deciding for every variant (the comma case: "Rebalancing," is wider than "Rebalancing").
+    @Test func theWordWithItsCommaDecidesNotTheWordAlone() {
+        let title = "The Grand Autumn Rebalancing, Quality of Life"
+        let widths: [Int: CGFloat] = [0: 30, 1: 50, 2: 60, 3: 101, 4: 80, 5: 20, 6: 40]   // "Rebalancing," = 101
+        let fit = WholeWordText.fittingVariants(of: title, wordWidths: widths, available: 100)
+        #expect(fit.first == "The Grand Autumn\u{2026}")
+    }
 }
