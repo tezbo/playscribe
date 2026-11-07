@@ -58,7 +58,8 @@ enum StoreSet {
 
 extension AppModel {
     /// QA (INTERNAL, route "store-set"): replaces the library with the store set. Only the lantern-reach update is unread.
-    func loadStoreSet() {
+    /// `plus: true` (route `store-set/plus`) keeps the PS Plus card, with invented plates; by default it is off so the update hero is the first thing in the frame.
+    func loadStoreSet(plus: Bool = false) {
         guard BuildChannel.showsInternalTools else { return }
         qaUpdateCount = 0
         var state = PersistedState(collection: StoreSet.entries.map { CollectionEntry(gameID: $0.id, status: $0.status, addedAt: .now.addingTimeInterval(-30 * 86400)) })
@@ -68,6 +69,9 @@ extension AppModel {
         for r in releases where !(StoreSet.entries.first { $0.id == r.gameID }?.update?.unread ?? false) { state.read[r.id] = .now }
         data = state
         PlusStore.shared.setQA("store")   // the PS Plus card shows invented plates, never real covers
+        data.plusCardOff = plus ? nil : true
+        // Alerts are treated as decided, so the invitation card never sits above the story.
+        NotificationService.shared.qaForcedAuthorization = .authorized
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
     }

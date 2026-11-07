@@ -6,3 +6,4 @@
 - Alternative: do nothing. Store frames would need real titles.
 - Decision: ship the set. Unit tests cover that distribution builds ignore the route and internal builds load all five.
 - Follow-up (7 Nov, Mara): the PS Plus card showed real covers in store frames. `store-set` now sets a Plus lineup of three invented titles (plates, no cover match); a unit test checks none resolves to a game.
+- Follow-up (7 Nov, Mara): hero first. `store-set` now turns the PS Plus card off and treats alerts as decided (card hidden); `store-set/plus` brings the Plus card back with its invented plates. Hero fold and tab bar overlap should clear with the cards gone; the Mac confirms on reshoot.
