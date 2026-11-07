@@ -212,7 +212,7 @@ struct UpcomingView: View {
         } label: {
             VStack(alignment: .leading, spacing: 6) {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit)
-                Text(g.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(3)
+                WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4, hugs: true)
                 Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                 if let move = moveLine(g) {
                     Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).lineLimit(2)
