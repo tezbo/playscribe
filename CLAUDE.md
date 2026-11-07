@@ -26,7 +26,7 @@ tools/qa/shots.sh closed /tmp/shots    # QA screen set in the simulator's curren
 python3 tools/build_fixtures.py …      # regenerates bundled fixture JSON from the web prototype
 ```
 
-Internal builds accept `-qaRoute <route>` at launch (`add`, `settings`, `quick/tip`, `quick/undo`, `quick/wishlist`, `release/<game>/<release>`,
+Internal builds accept `-qaRoute <route>` at launch (`add`, `add/search/<query>` (query typed in), `settings`, `quick/tip`, `quick/undo`, `quick/wishlist`, `release/<game>/<release>`,
 `video/<game>/<release>`, `gamepage/<game>`, `library/<playing|upcoming|upcoming-seeded>`, `first-run`, `demo`, `one-update`, `two-update`, `three-update`, `four-update`, `many-updates` (full deck, +N chip; add `/updates` to open the Updates tab, e.g. `two-update/updates`), `caught-up` (no hero), `plus-demo` (PS Plus card), `plus/<1|2|3|4|5|plate|last|off>`, `alerts` / `alerts-denied` (N-1 card), `overlay`, `pill`, `spoiler-demo[/shown]`, `simulate/<game>/<major|hotfix>`), and Settings has
 Simulate update, Reset to first run and a debug overlay of tappable frames and reserved regions.
 Simulated pushes: `xcrun simctl push booted co.codeconnectors.playscribe ios/tools/qa/release.apns`.

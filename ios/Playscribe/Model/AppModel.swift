@@ -168,6 +168,8 @@ final class AppModel {
     var addSheetMethod: AddMethod?
     /// QA: route add/keyboard focuses the Add search field so the keyboard is up.
     var addSearchFocus = false
+    /// QA (INTERNAL): `add/search/<query>` opens Add with the query already typed, so a still needs no keyboard taps.
+    var qaAddQuery: String?
     var settingsOpen = false
     var player: (gameID: String, releaseID: String)?
     /// A game's trailer from its basics (no release).
@@ -595,6 +597,7 @@ final class AppModel {
             addSheetOpen = true
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
+            if BuildChannel.showsInternalTools, parts.first == "search", parts.count > 1 { addSheetMethod = .typeIt; qaAddQuery = parts.dropFirst().joined(separator: " ") }
         case "settings":
             settingsOpen = true
             if parts.first == "quiet" { data.quietHours = QuietHours() }

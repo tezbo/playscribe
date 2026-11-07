@@ -254,6 +254,33 @@ struct DateCopyTests {
 }
 
 @MainActor
+struct EarlyAccessLineTests {
+    func game(ea: String?, fr: String?, frq: DatePrecision? = nil) -> CatalogGame {
+        CatalogGame(id: "t", name: "T", platforms: [.ps5], releaseDate: ea, earlyAccessSince: ea, fullRelease: fr, fullReleasePrecision: frq, coverage: .none)
+    }
+
+    @Test("Early access: two lines while the 1.0 is ahead, keyed off the precision field")
+    func twoLines() {
+        let exact = game(ea: "2024-12-06", fr: "2099-12-11")
+        #expect(exact.ps5DateLine == "Early access since 6 Dec 2024")
+        #expect(exact.fullReleaseLine == "Full release 11 Dec 2099")
+        // A year-end placeholder is a year because the field says so, not because of the date.
+        #expect(game(ea: "2026-06-11", fr: "2099-12-31", frq: .year).fullReleaseLine == "Full release 2099")
+        #expect(game(ea: "2026-06-11", fr: "2099-12-31").fullReleaseLine == "Full release 31 Dec 2099")
+        #expect(game(ea: "2026-06-11", fr: "2099-06-30", frq: .quarter).fullReleaseLine == "Full release Q2 2099")
+    }
+
+    @Test("Early access: once the 1.0 day has passed the extra lines go away, and never TBA")
+    func outOfDate() {
+        let past = game(ea: "2024-12-06", fr: "2025-12-11")
+        #expect(past.fullReleaseLine == nil)
+        #expect(past.ps5DateLine == "Released 6 Dec 2024")
+        #expect(game(ea: "2024-12-06", fr: nil).fullReleaseLine == nil)
+        #expect(game(ea: "2024-12-06", fr: "2099-01-01", frq: .tbd).fullReleaseLine == nil)
+    }
+}
+
+@MainActor
 struct DatePrecisionTests {
     func game(_ d: String?, _ p: DatePrecision?) -> CatalogGame {
         CatalogGame(id: "t", name: "T", platforms: [.ps5], releaseDate: d, releasePrecision: p, coverage: .none)
