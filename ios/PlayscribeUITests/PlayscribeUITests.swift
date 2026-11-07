@@ -660,12 +660,20 @@ final class Release050Tests: XCTestCase {
         let add = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add game' OR label == 'Add game' OR label == 'Add'")).firstMatch
         XCTAssertTrue(cog.waitForExistence(timeout: 10), "Settings cog exists [\(pose)]")
         XCTAssertTrue(add.exists, "Add exists [\(pose)]")
+        // Iris, 7 Nov (#368): in Closed these two are drawn by the system rail at 37 to 38 pt, and a 44 pt label does not change that.
+        // The floor is 36 pt there and only there, and only for these two system-drawn buttons. Every control we draw stays at 44 pt.
+        let systemRail = pose.contains("pose: closed")
+        let floor: CGFloat = systemRail ? 36 : 43.5
         for (name, e) in [("Settings", cog), ("Add", add)] {
             XCTAssertTrue(e.isHittable, "\(name) is hittable [\(pose)]")
-            XCTAssertGreaterThanOrEqual(e.frame.height, 43.5, "\(name) height 44 pt [\(pose)]")
-            XCTAssertGreaterThanOrEqual(e.frame.width, 43.5, "\(name) width 44 pt [\(pose)]")
+            XCTAssertGreaterThanOrEqual(e.frame.height, floor, "\(name) height \(systemRail ? "36 pt (system rail, Closed)" : "44 pt") [\(pose)]")
+            XCTAssertGreaterThanOrEqual(e.frame.width, floor, "\(name) width \(systemRail ? "36 pt (system rail, Closed)" : "44 pt") [\(pose)]")
             XCTAssertGreaterThanOrEqual(e.frame.minY, 0, "\(name) is on screen [\(pose)]")
         }
+        // At least 8 pt between the two, whichever way they are stacked.
+        let gapX = max(cog.frame.minX - add.frame.maxX, add.frame.minX - cog.frame.maxX)
+        let gapY = max(cog.frame.minY - add.frame.maxY, add.frame.minY - cog.frame.maxY)
+        XCTAssertGreaterThanOrEqual(max(gapX, gapY), 8, "cog and Add are at least 8 pt apart [\(pose)]")
         XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(add.frame), "cog and Add do not overlap \(cog.frame) \(add.frame) [\(pose)]")
         // Status bar: nothing of either control sits inside the status bar's frame.
         let status = app.statusBars.firstMatch
