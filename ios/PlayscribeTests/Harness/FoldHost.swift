@@ -129,6 +129,9 @@ enum FoldHost {
     static func render(_ pose: HarnessPose, type: UIContentSizeCategory = .large, model: AppModel = demoModel(),
                        settle: Duration = .milliseconds(1800)) async -> Rendered? {
         guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first else { return nil }
+        // Dates are formatted in the device's time zone, so a patch near midnight UTC reads 25 Jun on a UTC runner and 26 Jun on
+        // the AEDT Mac (Quinn, KCD II 1.5.6). Pin the harness to the Mac's zone so stills compare with the Mac's.
+        NSTimeZone.default = TimeZone(identifier: "Australia/Sydney") ?? .current
         FoldAuditSwitch.enabled = true
         let box = Box()
         let root = Probe(box: box, content: RootView()

@@ -1,0 +1,9 @@
+# Decision note: Which calendar day a patch date shows
+Date / owner / card: 7 Nov 2026, Theo (recommendation for Iris and Nadia), release-date-timezone
+
+1. **Why.** Quinn's calibration pair (#354): the KCD II 1.5.6 date read 25 Jun on the UTC runner and 26 Jun on the AEDT Mac. Terry asked for the harness to match the Mac.
+2. **Still needed?** Yes. "What changed, and when" is the core of the north star; a date that depends on where you stand is a trust problem, and a shared card (r050) would show a friend a different day.
+3. **Value and cost.** Finding (code read, not run): game release dates are plain days stored as noon UTC (`isoDay`) but formatted in the device zone (`Date.formatted`); patch dates (`ps5Date`, `latestDate`) are full ISO instants, also formatted in the device zone. So a patch posted after 14:00 UTC shows the next day in Sydney. Fix cost: small (pass a fixed time zone to the formatters, plus a test); worth it for consistency.
+4. **Alternatives.** (a) Keep local time: honest for "when it landed for me", but the same patch reads differently per player and per runner. (b) Show the UTC calendar day everywhere: stable, matches how sources date notes; a late-evening patch can read a day off for the Americas. (c) Do nothing, pin the harness zone only: cheapest, leaves players with the drift.
+5. **Decision (recommendation, Iris and Nadia to confirm).** Change: (b), UTC calendar day for patch and release dates, harness pinned to Australia/Sydney meanwhile. Pre-mortem: a player sees "26 Jun" for a patch that arrived the evening of the 25th locally. Steelman for (a): local time is what a person remembers.
+6. **Learning.** Say whether a date is a day or a moment where it is stored, and format it the same way everywhere, or screenshots from two zones will disagree.
