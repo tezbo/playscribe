@@ -599,28 +599,30 @@ test('a PS4-only post from an RSS feed is labelled ps4, not stored as a PS5 upda
 })
 
 const fakeIgdb = (info: Record<string, unknown>) =>
-  ({ byId: async () => ({ igdbId: 1, coverImageId: 'c', artworkImageId: 'a', squareCoverImageId: null, steamAppId: null, firstRelease: null, ps5Release: '2024-12-06', ps5ReleasePrecision: null, eaSince: null, fullRelease: null, ...info }), bySteamAppId: async () => null }) as never
+  ({ byId: async () => ({ igdbId: 1, coverImageId: 'c', artworkImageId: 'a', squareCoverImageId: null, steamAppId: null, firstRelease: null, ps5Release: '2024-12-06', ps5ReleasePrecision: null, eaSince: null, fullRelease: null, fullReleasePrecision: null, ...info }), bySteamAppId: async () => null }) as never
 
 test('early access before a later 1.0 is stored from IGDB and shown as eaSince/fullRelease while the 1.0 is ahead (r052)', async () => {
   const db = openDb(':memory:')
   const future = new Date(Date.now() + 30 * 86400_000).toISOString().slice(0, 10)
-  await seedGames({ db, fetchFn: fakeFetch({}), igdb: fakeIgdb({ eaSince: '2024-12-06', fullRelease: future }) })
+  await seedGames({ db, fetchFn: fakeFetch({}), igdb: fakeIgdb({ eaSince: '2024-12-06', fullRelease: future, fullReleasePrecision: 'year' }) })
   const g = store.gameFromRow(store.getGameRow(db, 'poe2')!)
   assert.equal(g.ps5Release, '2024-12-06')
   assert.equal(g.eaSince, '2024-12-06')
   assert.equal(g.fullRelease, future)
+  assert.equal(g.fullReleasePrecision, 'year')
   // The day the 1.0 arrives the label fields go, without another IGDB fetch.
   db.prepare("UPDATE games SET full_release = ? WHERE id = 'poe2'").run(new Date().toISOString().slice(0, 10))
   const after = store.gameFromRow(store.getGameRow(db, 'poe2')!)
   assert.equal(after.eaSince, undefined)
   assert.equal(after.fullRelease, undefined)
+  assert.equal(after.fullReleasePrecision, undefined)
   assert.equal(after.ps5Release, '2024-12-06')
 })
 
 test('a game last filled under older IGDB rules is asked again once, then left alone (igdb_rev)', async () => {
   const db = openDb(':memory:')
   let calls = 0
-  const igdb = { byId: async () => (calls++, { igdbId: 1, coverImageId: 'c', artworkImageId: 'a', squareCoverImageId: null, steamAppId: null, firstRelease: null, ps5Release: '2020-01-01', ps5ReleasePrecision: null, eaSince: null, fullRelease: null }), bySteamAppId: async () => null } as never
+  const igdb = { byId: async () => (calls++, { igdbId: 1, coverImageId: 'c', artworkImageId: 'a', squareCoverImageId: null, steamAppId: null, firstRelease: null, ps5Release: '2020-01-01', ps5ReleasePrecision: null, eaSince: null, fullRelease: null, fullReleasePrecision: null }), bySteamAppId: async () => null } as never
   await seedGames({ db, fetchFn: fakeFetch({}), igdb })
   const first = calls
   assert.ok(first > 0)

@@ -4,7 +4,7 @@ import overrides from '../../scripts/ps5-date-overrides.json' with { type: 'json
 import { PS5_LAUNCH, earlyAccessOf, releaseDateOf, type Precision } from '../ps5-dates.ts'
 
 /** Bump when the rules that turn IGDB rows into a game's dates change: the pipeline then asks IGDB again once for every game. */
-export const IGDB_REV = 1
+export const IGDB_REV = 2
 
 // IGDB, through a Twitch app token. Called only from the server: IGDB refuses browser calls and
 // the client secret must never reach the app. The limit is 4 requests a second.
@@ -20,6 +20,7 @@ export interface IgdbGame {
   ps5ReleasePrecision: Precision | null
   eaSince: string | null
   fullRelease: string | null
+  fullReleasePrecision: Precision | null
   firstRelease: string | null
   steamAppId: number | null
   onPs5: boolean
@@ -117,6 +118,7 @@ export class Igdb {
       ps5ReleasePrecision: access ? (access.precision ?? null) : (ps5Date?.precision ?? null),
       eaSince: ahead ? access.since : null,
       fullRelease: ahead ? access.full : null,
+      fullReleasePrecision: ahead ? (access.fullPrecision ?? null) : null,
       firstRelease: day(g.first_release_date),
       steamAppId: steamUid ? Number(steamUid) : null,
       onPs5: (g.platforms ?? []).includes(ps5),
