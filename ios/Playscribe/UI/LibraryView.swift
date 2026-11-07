@@ -78,7 +78,11 @@ struct LibraryStage: View {
 
     var body: some View {
         let deck = model.latestDeck
-        if let card = deck.first(where: { $0.id == model.deckSelection }) ?? deck.first {
+        // Upcoming tab: the stage fronts the soonest unreleased game, never an update of a game you already play.
+        if model.libraryTab == .upcoming, let g = model.upcomingWatched.first ?? model.upcomingMore.first {
+            DeckStage(card: DeckCard(game: g, release: nil, unread: false, date: g.releaseDate?.isoDay),
+                      upcomingLine: g.ps5DateLine ?? "Date to be announced")
+        } else if let card = deck.first(where: { $0.id == model.deckSelection }) ?? deck.first {
             DeckStage(card: card)
         } else {
             legacyStage
@@ -274,20 +278,6 @@ struct LibraryShelf: View {
                     .padding(.top, 4)
     }
 
-    @State private var messagePad: CGFloat = 0
-    /// This view's frame in global coordinates. The pad sits inside it, so its bottom edge does not move with the pad.
-    @State private var libraryFrame: CGRect = .zero
-
-    /// One reserve: this page's scroll view ends 12 pt above the pill (or toast), and only where the pill overlaps the page
-    /// sideways (Book's right page gets none while the pill is on the left).
-    private func updateMessagePad() {
-        var pad: CGFloat = 0
-        if let m = model.messageFrame, libraryFrame.minX < m.maxX, libraryFrame.maxX > m.minX {
-            pad = max(0, libraryFrame.maxY - (m.minY - 12))
-        }
-        if abs(pad - messagePad) > 0.5 { messagePad = pad }
-    }
-
     var body: some View {
         @Bindable var model = model
         let rows = duo.pose == .tabletop && letter != nil
@@ -466,20 +456,9 @@ struct LibraryShelf: View {
             .padding(.trailing, railWidth)
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
-        // The pill and toasts sit at the bottom edge. The scroll view itself ends above them (a safe-area inset would still let
-        // content scroll under the pill), so nothing is ever covered (0.5.1 spec 2, Iris).
-        // No `.mask` here: from #246 the Open portrait large "Library" title vanished (354d15c, 9914a80), with the picker still
-        // in its place. The mask on this scroll view is the prime suspect (a masked scroll view is no longer the one the
-        // navigation bar tracks); the soft edge returns once a Mac still shows the title back.
-        .padding(.bottom, messagePad)
-        // The page ends 8 pt above the pill wherever the pill actually sits. The pad is worked out from measured edges (this
-        // view's bottom without the pad, the pill's top), not from the pill's height and offsets, so it cannot leave a dead
-        // band or run under the pill in any pose (0.5.1 spec 2, ae0a608 Open portrait).
-        .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { libraryFrame = $0; updateMessagePad() }
-        .onChange(of: model.messageFrame) { _, _ in updateMessagePad() }
-        // The pad changes the moment the pill shows. It must not ride a running pose animation, or the old arrangement
-        // lingers faintly under the new one (Book, ad54f44 stills).
-        .transaction(value: messagePad) { $0.animation = nil }
+        // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.
+        // No soft-edge mask: it made the Open portrait large "Library" title vanish (354d15c, 9914a80), see MessageClearance.
+        .clearsMessages()
         .refreshable { await model.refreshFeed() }
         // The News strip's headlines load from here, not from the strip: a task on a view that is empty
         // until the headlines arrive never runs, so the strip stayed hidden (TestFlight build 8, Mac 9506116).

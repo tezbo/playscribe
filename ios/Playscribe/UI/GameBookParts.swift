@@ -64,6 +64,7 @@ struct PageView: View {
             }
             .padding(.bottom, 24)
         }
+        .clearsMessages()
         .scrollIndicators(.hidden)
         // D-2, T-5, D-10: the reading position is model state. Closing, opening, rotating or
         // swapping sides rebuilds this view; it comes back where the reader was.
@@ -467,6 +468,7 @@ struct ContentsView: View {
                 .padding(.vertical, 14)
                 .padding(.trailing, railWidth)
         }
+        .clearsMessages()
         .scrollPosition($position)
         .accessibilityIdentifier("contentsScroll")
         // J-1: Back from a pushed release (open portrait) lands on its row.
@@ -790,6 +792,7 @@ struct ReleaseDetailView: View {
             }
             .padding(.bottom, 24)
         }
+        .clearsMessages()
         .background(Color.ink0)
         .navigationTitle(model.release(gameID, releaseID)?.displayName ?? "")
         .toolbarTitleDisplayMode(.inline)
