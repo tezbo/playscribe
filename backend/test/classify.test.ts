@@ -170,3 +170,14 @@ test('in-game store and economy lines are kept even when they say sale or discou
   for (const line of ['Merchants now have items on sale', 'Shop discounts now stack', 'Prices are 50% off in the arena', 'Items on sale in the Store display the correct discounted Iridescent Shard price.']) assert.equal(isPromoLine(line), false, line)
   for (const line of ['The Monster Hunter series is now on sale!', 'Games from the Monster Hunter series now on sale!', 'On Sale Now!']) assert.equal(isPromoLine(line), true, line)
 })
+
+// r052-steam-playstation-tag (Quinn): on a Steam-only release a line that says only "PlayStation" or "PSN" is PC content.
+test('a bare PlayStation or PSN line on a Steam-only release tags pc, not ps5', () => {
+  const psn = 'Fixed an issue where in particular Steam Deck players who performed the initial boot while offline encountered a persistent PSN account link error message, preventing them from starting the game.'
+  assert.deepEqual(platformsFor(psn, undefined, true), ['pc'])
+  assert.deepEqual(platformsFor('Added support for displaying PlayStation friends and PlayStation user avatars.', undefined, true), ['pc'])
+  // Named PS5 still tags ps5 on Steam, and other sources keep the old rule.
+  assert.deepEqual(platformsFor('Fixed a crash on PS5 and PSN login', undefined, true), ['ps5'])
+  assert.deepEqual(platformsFor(psn), ['ps5', 'pc'])
+  assert.deepEqual(platformsFor('Fixed PlayStation trophies not unlocking'), ['ps5'])
+})
