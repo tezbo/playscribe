@@ -174,7 +174,7 @@ struct UpcomingView: View {
             layout {
                 TileCover(game: g, plateName: false).aspectRatio(3 / 4, contentMode: .fit).frame(width: duo.pose == .closed ? 72 : 84)
                 VStack(alignment: .leading, spacing: 6) {
-                    WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
+                    WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4, hugs: true)
                     Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                     if let move = moveLine(g) {
                         // Status on its own row, 24 pt clear of the rail; the name and date keep the full column.

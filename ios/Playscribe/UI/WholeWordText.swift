@@ -8,26 +8,45 @@ struct WholeWordText: View {
     var font: Font
     var lines: Int
     var color: Color?
+    /// True: the box is as tall as the words it shows, not the whole `lines` allowance, so a one-line name leaves no gap
+    /// below it in a stack (#357). Same fit rule: the first variant that fits inside `lines` lines.
+    var hugs = false
     @State private var lineHeight: CGFloat = 0
 
-    init(text: String, font: Font, lines: Int, color: Color? = nil) {
-        self.text = text; self.font = font; self.lines = lines; self.color = color
+    init(text: String, font: Font, lines: Int, color: Color? = nil, hugs: Bool = false) {
+        self.text = text; self.font = font; self.lines = lines; self.color = color; self.hugs = hugs
     }
 
     var body: some View {
         let words = text.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
         let variants = [text] + (words.count > 1 ? stride(from: words.count - 1, through: 1, by: -1).map { words.prefix($0).joined(separator: " ") + "\u{2026}" } : [])
-        ViewThatFits(in: .vertical) {
+        let cap: CGFloat? = lineHeight > 0 ? (lineHeight * CGFloat(lines)).rounded(.up) + 1 : nil
+        let fit = ViewThatFits(in: .vertical) {
             ForEach(variants, id: \.self) { v in
                 Text(v).font(font).foregroundStyle(color ?? .primary).fixedSize(horizontal: false, vertical: true)
             }
         }
-        .frame(maxHeight: lineHeight > 0 ? (lineHeight * CGFloat(lines)).rounded(.up) + 1 : nil, alignment: .topLeading)
+        Group {
+            if hugs { HugHeight(cap: cap) { fit } } else { fit.frame(maxHeight: cap, alignment: .topLeading) }
+        }
         .background(alignment: .topLeading) {
             Text("Ag").font(font).hidden().accessibilityHidden(true)
                 .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { lineHeight = $0 }
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(text)
+    }
+}
+
+/// Offers its child at most `cap` points of height and takes the size the child answers with (a plain flexible frame would
+/// take the whole offer). Only meant for a single child.
+private struct HugHeight: Layout {
+    var cap: CGFloat?
+    private func offer(_ p: ProposedViewSize) -> ProposedViewSize { ProposedViewSize(width: p.width, height: cap ?? p.height) }
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        subviews.first?.sizeThatFits(offer(proposal)) ?? .zero
+    }
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        subviews.first?.place(at: bounds.origin, anchor: .topLeading, proposal: offer(ProposedViewSize(width: bounds.width, height: bounds.height)))
     }
 }
