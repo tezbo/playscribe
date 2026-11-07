@@ -16,7 +16,12 @@ struct DeckCard: Identifiable, Hashable {
 extension AppModel {
     /// Up to 8 cards: unread On PS5 updates first, then the rest from the last 90 days, newest first.
     /// With nothing in 90 days, the newest release dates of the library's games.
-    var latestDeck: [DeckCard] {
+    var latestDeck: [DeckCard] { Array(latestDeckAll.prefix(8)) }
+
+    /// Updates beyond the deck's 8 cards: the Open portrait "+N more updates" chip opens the Updates list.
+    var latestDeckOverflow: Int { max(0, latestDeckAll.count - 8) }
+
+    private var latestDeckAll: [DeckCard] {
         let cutoff = Date.now.addingTimeInterval(-90 * 86400)
         var cards: [DeckCard] = []
         for c in data.collection {
@@ -31,7 +36,7 @@ extension AppModel {
                 guard let g = game(c.gameID), let d = g.releaseDate?.isoDay, d <= .now else { return nil }
                 return DeckCard(game: g, release: nil, unread: false, date: d)
             }
-            return Array(info.sorted { ($0.date ?? .distantPast) > ($1.date ?? .distantPast) }.prefix(8))
+            return info.sorted { ($0.date ?? .distantPast) > ($1.date ?? .distantPast) }
         }
         // QA (route one-update): only the one fresh update, so the deck is a single hero.
         if qaSingleUpdate { cards = cards.filter(\.unread) }
@@ -44,7 +49,14 @@ extension AppModel {
             perGame[c.game.id, default: 0] += 1
             return perGame[c.game.id]! <= 2
         }
-        return Array(spread.prefix(8))
+        guard qaPadDeck, !spread.isEmpty else { return spread }
+        var padded = spread, n = 0
+        while padded.count < 12 {
+            var c = spread[n % spread.count]
+            if var r = c.release { r.id += "-qa\(n)"; c.release = r }
+            padded.append(c); n += 1
+        }
+        return padded
     }
 }
 
@@ -55,10 +67,12 @@ struct LatestUpdatesDeck: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.dynamicTypeSize) private var typeSize
     var cards: [DeckCard]
-    /// Open portrait: the deck is the left column beside the Also new panel, one card at a time.
+    /// Open portrait: the deck is full width, one card at a time.
     var compact = false
     /// Compact only: the whole deck (card, caption, page edge) is at most this tall (Iris: 38% of the height).
     var maxHeight: CGFloat = 0
+    /// Compact only: updates beyond the deck's cards; a trailing "+N more updates" chip in the dots row opens the list.
+    var moreCount: Int = 0
     @State private var current: String?
     /// Accessibility sizes: each card's measured height. The deck's frame grows to the tallest, so a long headline
     /// grows the card instead of overflowing it upwards.
@@ -69,6 +83,8 @@ struct LatestUpdatesDeck: View {
 
     /// The page edge (44 pt leaves) and the 8 pt gap above it; the card takes the rest of maxHeight.
     private static let pageEdgeHeight: CGFloat = 52
+    /// Accessibility sizes: room for the "+N more updates" chip on its own row (two wrapped lines and a gap).
+    private static let chipRowAX: CGFloat = 96
 
     private var perScreen: CGFloat {
         if compact { return 1 }
@@ -126,7 +142,8 @@ struct LatestUpdatesDeck: View {
                 deck(cardWidth: g.size.width, artHeight: art)
                     .background(alignment: .topLeading) { ruler(width: g.size.width) }
             }
-            .frame(height: maxHeight > 0 ? grown(maxHeight) : nil)
+            // The wrapped chip at accessibility sizes sits on its own row under the dots: the deck grows by that row.
+            .frame(height: maxHeight > 0 ? grown(maxHeight) + (typeSize.isAccessibilitySize && moreCount > 0 ? Self.chipRowAX : 0) : nil)
         } else if typeSize.isAccessibilitySize && !(duo.pose == .closed && duo.isLandscape) {
             // Accessibility sizes: one card per screen at an explicit height. The unsized pager let the card fill the
             // screen (7fe84f4, AX3).
@@ -176,7 +193,7 @@ struct LatestUpdatesDeck: View {
         let wideAX = scrollHeight != nil && typeSize.isAccessibilitySize && pagerWidth > 0
         return VStack(alignment: .leading, spacing: 8) {
             ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(spacing: 12) {
+                LazyHStack(alignment: .top, spacing: 12) {
                     ForEach(cards) { card in
                         Group {
                             if let w = cardWidth {
@@ -193,7 +210,9 @@ struct LatestUpdatesDeck: View {
                 }
                 .scrollTargetLayout()
             }
-            .frame(height: wideAX ? nil : scrollHeight)
+            // Compact: the pager is exactly the card's height, so a taller dots row (the "+N more updates" chip wraps at
+            // accessibility sizes) can never squeeze the card and clip its bottom edge.
+            .frame(height: wideAX ? nil : (scrollHeight ?? (compact ? artHeight : nil)))
             .fixedSize(horizontal: false, vertical: wideAX)
             .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { if scrollHeight != nil, abs($0 - pagerWidth) > 0.5 { pagerWidth = $0 } }
             .scrollPosition(id: $current)
@@ -203,7 +222,34 @@ struct LatestUpdatesDeck: View {
             // Closed landscape (scrollHeight set): the dots sit inside the hero's bottom edge, centred, so the
             // first screen still shows the chips and the first tile row (Iris, cf6c889).
             .overlay(alignment: .bottom) { if scrollHeight != nil && cards.count > 1 { pageEdge } }
-            if cards.count > 1 && scrollHeight == nil { pageEdge }
+            if scrollHeight == nil && (cards.count > 1 || (compact && moreCount > 0)) {
+                // The dots row: dots centred, the "+N more updates" chip trailing (Iris), a 44 pt control that wraps at AX.
+                // At accessibility sizes the chip takes its own row under the dots, so the dots always read as dots.
+                let showChip = compact && moreCount > 0
+                let chip = Button { model.nav.tab = .updates } label: {
+                    HStack(spacing: 4) {
+                        Text("+\(moreCount) more updates").multilineTextAlignment(.trailing)
+                        Image(systemName: "chevron.right").accessibilityHidden(true)
+                    }
+                    .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                    .frame(minHeight: 44)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .tappableFrame()
+                .accessibilityLabel("\(moreCount) more updates, opens the Updates list")
+                if typeSize.isAccessibilitySize {
+                    VStack(alignment: .trailing, spacing: 0) {
+                        if cards.count > 1 { pageEdge.frame(maxWidth: .infinity) }
+                        if showChip { chip }
+                    }
+                } else {
+                    ZStack(alignment: .trailing) {
+                        if cards.count > 1 { pageEdge }
+                        if showChip { chip }
+                    }
+                }
+            }
         }
         .accessibilityElement(children: .contain)
         .accessibilityLabel(compact || cards.count > 1
@@ -263,7 +309,10 @@ struct DeckCardView: View {
 
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
     private var label: String {
-        if let r = card.release { return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)" }
+        if let r = card.release {
+            let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
+            return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
+        }
         return "\(card.game.name), released \(dateText)"
     }
 }
@@ -318,6 +367,19 @@ struct CompactCaption: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
 
+    /// The summary cut at a word boundary (never mid-word, Iris 2026-11-06): the first sentence if it is short
+    /// enough, else whole words up to `limit` characters, then an ellipsis.
+    static func wholeWords(_ text: String, limit: Int) -> String {
+        let t = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let end = t.firstIndex(where: { ".!?".contains($0) }), t.distance(from: t.startIndex, to: end) < limit {
+            return String(t[...end])
+        }
+        guard t.count > limit else { return t }
+        let head = String(t.prefix(limit))
+        let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
+        return cut.trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-")) + "…"
+    }
+
     static func headline(_ card: DeckCard) -> String {
         card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name
     }
@@ -343,6 +405,12 @@ struct CompactCaption: View {
                 .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                 // The whole headline, or whole words and an ellipsis (AX rule: at most 4 lines), never scaled down.
                 .lineLimit(typeSize.isAccessibilitySize ? nil : 3).fixedSize(horizontal: false, vertical: true)
+            // One-line summary under the headline: whole words, at most 2 lines, dropped at accessibility sizes (its
+            // text stays in the VoiceOver label).
+            if !typeSize.isAccessibilitySize, let summary = card.release?.summary, !summary.isEmpty {
+                Text(Self.wholeWords(summary, limit: 100)).font(PlayscribeFont.subheadline)
+                    .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.85)).lineLimit(2)
+            }
             DeckByline(card: card, dateText: dateText)
         }
         .padding(.horizontal, 16)
