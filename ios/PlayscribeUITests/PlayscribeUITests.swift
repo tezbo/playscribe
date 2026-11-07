@@ -17,7 +17,7 @@ final class PlayscribeUITests: XCTestCase {
         for cold in [true, false] {
             app.launch()
             if cold { app.terminate() } else { XCUIDevice.shared.press(.home) }
-            let note = try postAndFindNotification()
+            let note = try postAndFindNotification(cold: cold)
             note.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
             // The tap starts (or resumes) the app in a process this test's `app` proxy never launched, and the `simulate`
             // launch in postAndFindNotification replaced it, so ask a fresh proxy for the target app's state (3758183 and
@@ -111,12 +111,20 @@ final class PlayscribeUITests: XCTestCase {
 
     /// Schedules a local notification through the app's internal route, then finds its banner. The 0.5.0 copy is
     /// "Update 1.1: <headline>" under the game name (no "is live on PS5"), so the banner is found by the game name.
-    private func postAndFindNotification() throws -> XCUIElement {
+    private func postAndFindNotification(cold: Bool) throws -> XCUIElement {
         let simulate = XCUIApplication()
         simulate.launchArguments = ["-qaRoute", "simulate/dawnwalker/major"]
         simulate.launch()
-        XCUIDevice.shared.press(.home)
-        XCUIDevice.shared.press(.home)   // the second press wakes a sim that has gone to the lock screen (48404f1)
+        if cold {
+            // Cold: no Home press (it sends this sim to the lock screen, where taps land on a pile of old notifications and do
+            // not launch the app, e411c788). Let the app schedule the 3 s notification, then end it; the system delivers it to
+            // a dead app, which is the cold case, with the sim still on the home screen.
+            sleep(2)
+            simulate.terminate()
+        } else {
+            XCUIDevice.shared.press(.home)
+            XCUIDevice.shared.press(.home)   // the second press wakes a sim that has gone to the lock screen (48404f1)
+        }
         // The banner is up for only a few seconds, and pressing Home returns slowly: look briefly, then use Notification Center.
         if let banner = notificationRow(timeout: 4) { return banner }
         let start = springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
