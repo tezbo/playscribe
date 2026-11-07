@@ -69,6 +69,8 @@ struct TabletopSearchHint: View {
 
 struct TabletopLetterStrip: View {
     @Binding var letter: String?
+    /// True while more letters lie past the trailing edge, so a cut-off chip reads as "more" (chip-row fade rule; none at rest or at the end).
+    @State private var moreAhead = false
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -88,6 +90,15 @@ struct TabletopLetterStrip: View {
                     .accessibilityAddTraits(on ? [.isButton, .isSelected] : .isButton)
                     .tappableFrame()
                 }
+            }
+        }
+        .onScrollGeometryChange(for: Bool.self) { g in
+            g.contentOffset.x + g.containerSize.width < g.contentSize.width - 1
+        } action: { _, new in moreAhead = new }
+        .mask(alignment: .leading) {
+            HStack(spacing: 0) {
+                Rectangle().fill(.black)
+                LinearGradient(colors: [.black, .black.opacity(moreAhead ? 0 : 1)], startPoint: .leading, endPoint: .trailing).frame(width: 32)
             }
         }
     }

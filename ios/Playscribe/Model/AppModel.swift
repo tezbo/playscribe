@@ -613,8 +613,8 @@ final class AppModel {
         case "demo": resetDemo()
         case "store-set":
             loadStoreSet(plus: parts.first == "plus")
-            // "store-set/end": the Library scrolled as far as it goes, to check the last row clears the tab bar.
-            if parts.first == "end", let last = StoreSet.gameIDs.last { nav.anchors["library"] = "lib-\(last)" }
+            // "store-set/end" (alias "titles"): the Library scrolled to its last row (the long Orchard title), to check it clears the tab bar and shows whole titles.
+            if parts.first == "end" || parts.first == "titles", let last = StoreSet.gameIDs.last { nav.anchors["library"] = "lib-\(last)" }
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
         case "many-updates": resetToManyUpdatesDemo()

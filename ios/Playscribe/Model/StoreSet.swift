@@ -18,7 +18,7 @@ enum StoreSet {
                        ["night expeditions to the far shore", "a rebuilt, quicker map", "steadier frame rate in busy harbours"], unread: true)),
         Entry(id: "store-hollow-meridian", name: "Hollow Meridian", slug: "hollow-meridian", status: .watching, releaseDate: "2026-05-21",
               update: ("Hotfix 1.1.2", "Fixes for saves and a camera that drifted",
-                       "A small fix: saves load reliably after a long session and the camera no longer drifts in tight corridors.",
+                       "Saves load reliably after a long session, and the camera holds steady in tight spaces.",
                        ["saves load reliably after long sessions", "the camera no longer drifts in corridors"], unread: false)),
         Entry(id: "store-saltmarsh-cadence", name: "Saltmarsh Cadence", slug: "saltmarsh-cadence", status: .wishlist, releaseDate: "2026-08-04", update: nil),
         Entry(id: "store-ember-tides", name: "Ember Tides", slug: "ember-tides", status: .wishlist, releaseDate: "2027-03-12", update: nil),
