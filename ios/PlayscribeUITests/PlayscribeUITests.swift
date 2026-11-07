@@ -17,7 +17,18 @@ final class PlayscribeUITests: XCTestCase {
         for cold in [true, false] {
             app.launch()
             if cold { app.terminate() } else { XCUIDevice.shared.press(.home) }
-            let note = try postAndFindNotification(cold: cold)
+            var note = try postAndFindNotification(cold: cold)
+            // A lock-screen tap does not launch the app on this sim (17b7a0b: locked after the terminate, app state 1, two
+            // retries). The sim has no passcode, so unlock first (a swipe up from the bottom, harmless if already unlocked),
+            // then use the row in Notification Center, so the first tap is the one that counts.
+            springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.99))
+                .press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.4)))
+            sleep(1)
+            if notificationRow(timeout: 2) == nil {
+                springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
+                    .press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.6)))
+            }
+            if let row = notificationRow(timeout: 6) { note = row }
             note.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
             // The tap starts (or resumes) the app in a process this test's `app` proxy never launched, and the `simulate`
             // launch in postAndFindNotification replaced it, so ask a fresh proxy for the target app's state (3758183 and
