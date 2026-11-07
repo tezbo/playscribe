@@ -86,8 +86,10 @@ struct FeedRow: View {
                     .overlay(alignment: Alignment(horizontal: .leading, vertical: .firstTextBaseline)) {
                         if unread {
                             UnreadDot()
-                                .alignmentGuide(.leading) { $0[.trailing] + 12 }
                                 .alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
+                                // A plain offset, not a leading guide (Mac, fd23684: the guide left the dot on the first letter's stem):
+                                // the dot's right edge sits 12 pt left of the title's left edge, its left edge 8 pt right of the cover.
+                                .offset(x: -(8 + 12))
                         }
                     }
                     if typeSize.isAccessibilitySize {
