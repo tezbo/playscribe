@@ -341,6 +341,10 @@ struct SplitArrangement<Primary: View, Secondary: View>: View {
     @ViewBuilder var primary: () -> Primary
     @ViewBuilder var secondary: () -> Secondary
 
+    /// The Mac's right page is about 9 pt wider than the plain split gives (Quinn, KCD II Book AX5, e6fd747: the system reserves
+    /// less for the side rail). Harness-only calibration; re-measure if the Mac still moves.
+    private static var railReserveTrim: CGFloat { 9 }
+
     var body: some View {
         if standIn, let d = injected?.division {
             GeometryReader { proxy in
@@ -348,7 +352,7 @@ struct SplitArrangement<Primary: View, Secondary: View>: View {
                     HStack(spacing: 0) {
                         primary().frame(width: max(0, d.minX))
                         Color.clear.frame(width: d.width)
-                        secondary().frame(width: max(0, proxy.size.width - d.maxX))
+                        secondary().frame(width: max(0, proxy.size.width - d.maxX + Self.railReserveTrim))
                     }
                 } else { // horizontal bar: primary above, secondary below (Tabletop)
                     VStack(spacing: 0) {
