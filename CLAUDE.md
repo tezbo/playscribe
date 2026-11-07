@@ -12,7 +12,7 @@ PS5-first patch notes for iPhone Duo. Read these before changing app behaviour o
 - **Tabletop: nothing tappable sits above the fold.** The upper half is a view-only stage (`allowsHitTesting(false)`); every control is in the lower half, on the trailing rail.
 - No tappable element intersects an active `.division` reserved region in any pose.
 - Pose comes from the container and its reserved regions (`DuoReader`), never from device or screen checks.
-- No source names, URLs or credits in the UI. Verification tags are the only provenance signal. The one exception (V-3 in docs/ux-acceptance.md; Terry, 2026-11-06): a link row names the destination it opens by brand ("Read full notes on Steam", "All patch notes on Ubisoft"), derived from the link host; never an address.
+- No source names, URLs or credits in the UI. Verification tags are the only provenance signal. V-3 in `docs/ux-acceptance.md` is the full rule and has one exception: a link row names the destination it opens by brand, from the link host ("Read full notes on Steam", "PS5 update page on PlayStation", "All patch notes on Ubisoft"); never an address.
 - A PC version number is never shown as a PS5 version.
 - Navigation containers sit outside every `ArrangementView`.
 
@@ -27,6 +27,6 @@ python3 tools/build_fixtures.py …      # regenerates bundled fixture JSON from
 ```
 
 Internal builds accept `-qaRoute <route>` at launch (`add`, `settings`, `quick/tip`, `quick/undo`, `quick/wishlist`, `release/<game>/<release>`,
-`video/<game>/<release>`, `gamepage/<game>`, `library/<playing|upcoming|upcoming-seeded>`, `first-run`, `demo`, `one-update`, `two-update`, `three-update`, `four-update`, `many-updates` (full deck, +N chip), `caught-up` (no hero), `plus-demo` (PS Plus card), `plus/<1|2|3|4|5|plate|last|off>`, `alerts` / `alerts-denied` (N-1 card), `overlay`, `pill`, `spoiler-demo[/shown]`, `simulate/<game>/<major|hotfix>`), and Settings has
+`video/<game>/<release>`, `gamepage/<game>`, `library/<playing|upcoming|upcoming-seeded>`, `first-run`, `demo`, `one-update`, `two-update`, `three-update`, `four-update`, `many-updates` (full deck, +N chip; add `/updates` to open the Updates tab, e.g. `two-update/updates`), `caught-up` (no hero), `plus-demo` (PS Plus card), `plus/<1|2|3|4|5|plate|last|off>`, `alerts` / `alerts-denied` (N-1 card), `overlay`, `pill`, `spoiler-demo[/shown]`, `simulate/<game>/<major|hotfix>`), and Settings has
 Simulate update, Reset to first run and a debug overlay of tappable frames and reserved regions.
 Simulated pushes: `xcrun simctl push booted co.codeconnectors.playscribe ios/tools/qa/release.apns`.

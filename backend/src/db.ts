@@ -152,6 +152,7 @@ export const openDb = (path: string): DB => {
   // Early Access before a later full release (r052-early-access-dates); igdb_rev says which IGDB rules last filled the row.
   if (!has('games', 'ea_since')) db.exec('ALTER TABLE games ADD COLUMN ea_since TEXT')
   if (!has('games', 'full_release')) db.exec('ALTER TABLE games ADD COLUMN full_release TEXT')
+  if (!has('games', 'full_release_precision')) db.exec('ALTER TABLE games ADD COLUMN full_release_precision TEXT')
   if (!has('games', 'igdb_rev')) db.exec('ALTER TABLE games ADD COLUMN igdb_rev INTEGER NOT NULL DEFAULT 0')
   if (!has('games', 'artwork_image_id')) db.exec('ALTER TABLE games ADD COLUMN artwork_image_id TEXT')
   if (!has('releases', 'ps4')) db.exec('ALTER TABLE releases ADD COLUMN ps4 INTEGER NOT NULL DEFAULT 0')
