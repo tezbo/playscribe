@@ -22,7 +22,9 @@ struct Rendered {
     /// Nil when the root view has the pose's window size and safe area; otherwise the numbers, for the failure message.
     var geometryProblem: String? {
         func close(_ a: CGFloat, _ b: CGFloat) -> Bool { abs(a - b) < 0.5 }
-        let w = pose.windowSize, i = pose.safeArea, a = appliedInsets
+        let w = pose.windowSize, a = appliedInsets
+        var i = pose.safeArea
+        if pose.tabBarSuppliesTrailingInset { i.right = 0 }
         let ok = close(viewSize.width, w.width) && close(viewSize.height, w.height)
             && close(a.top, i.top) && close(a.left, i.left) && close(a.bottom, i.bottom) && close(a.right, i.right)
         return ok ? nil : "view \(viewSize) insets \(a) (window's own \(inheritedInsets)) but the pose needs \(w) and \(i)"
@@ -35,7 +37,7 @@ struct Rendered {
         var ctx = DuoReader<EmptyView>.context(size: pose.container, compact: pose.compactWidth,
                                                division: pose.division, occlusions: pose.occlusions)
         ctx.safeArea = EdgeInsets(top: appliedInsets.top, leading: appliedInsets.left,
-                                  bottom: appliedInsets.bottom, trailing: appliedInsets.right)
+                                  bottom: appliedInsets.bottom, trailing: pose.tabBarSuppliesTrailingInset ? pose.safeArea.right : appliedInsets.right)
         return FoldAudit.probeJSON(frames: frames, duo: ctx, named: named, origin: .zero)
     }
     /// Frames that touch the active fold (the same test as FoldAudit).
@@ -127,7 +129,7 @@ enum FoldHost {
 
     /// `settle` covers the splash (about 1.1 s) and the first layout passes.
     static func render(_ pose: HarnessPose, type: UIContentSizeCategory = .large, model: AppModel = demoModel(),
-                       settle: Duration = .milliseconds(1800)) async -> Rendered? {
+                       settle: Duration = .milliseconds(1800), insetAdjust: UIEdgeInsets = .zero) async -> Rendered? {
         guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first else { return nil }
         // Dates are formatted in the device's time zone, so a patch near midnight UTC reads 25 Jun on a UTC runner and 26 Jun on
         // the AEDT Mac (Quinn, KCD II 1.5.6). Pin the harness to the Mac's zone so stills compare with the Mac's.
@@ -172,9 +174,11 @@ enum FoldHost {
         window.layoutIfNeeded()
         hc.view.layoutIfNeeded()
         let inherited = hc.view.safeAreaInsets
-        let t = pose.safeArea
-        hc.additionalSafeAreaInsets = UIEdgeInsets(top: t.top - inherited.top, left: t.left - inherited.left,
-                                                   bottom: t.bottom - inherited.bottom, right: t.right - inherited.right)
+        var t = pose.safeArea
+        if pose.tabBarSuppliesTrailingInset { t.right = 0 }
+        // `insetAdjust` is for width calibration only (HarnessWidthCalibrationTests); every asserting test passes none.
+        hc.additionalSafeAreaInsets = UIEdgeInsets(top: t.top - inherited.top + insetAdjust.top, left: t.left - inherited.left + insetAdjust.left,
+                                                   bottom: t.bottom - inherited.bottom + insetAdjust.bottom, right: t.right - inherited.right + insetAdjust.right)
         // Wait for the layout to settle, not for a fixed number of passes: at least `settle` (the splash, about 1.1 s), then until the
         // reported frames are identical for three passes in a row, up to 8 s. Whatever the app does after that is not "settled".
         let step = Duration.milliseconds(150)
