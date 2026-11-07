@@ -1,0 +1,23 @@
+name: ASC webhook
+# Registers the App Store Connect webhook for TestFlight feedback (relay /v1/webhooks/asc) and pings it. Manual only.
+on:
+  workflow_dispatch:
+    inputs:
+      mode: {description: "register, ping or list", default: list}
+permissions:
+  contents: read
+jobs:
+  webhook:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+      ASC_KEY_P8_BASE64: ${{ secrets.ASC_KEY_P8_BASE64 }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      MODE: ${{ inputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pyjwt cryptography requests
+      - run: cd ios/tools && python3 asc_webhook.py "$MODE"

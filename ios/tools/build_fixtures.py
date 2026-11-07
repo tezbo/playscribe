@@ -115,7 +115,7 @@ releases = [
     },
 ]
 
-def pc_release(id, game, name, version, date, kind, headline, summary, keys, source, size=None, note=None):
+def pc_release(id, game, name, version, date, kind, headline, summary, keys, source, size=None, note=None, ps5_assumed=False):
     r = {
         "id": id, "gameId": game, "displayName": name, "kind": kind, "kindBasis": "studio",
         "announcedAt": day(date), "notes": [], "sourceIds": [source],
@@ -124,13 +124,17 @@ def pc_release(id, game, name, version, date, kind, headline, summary, keys, sou
         "headline": headline, "summary": summary, "keyChanges": keys,
     }
     if note: r["videoNote"] = note
+    # Demo data (not a verified fact): the game's newest Steam patch is taken as out on PS5 too (Steam rule), as an
+    # "assumed" PS5 row. A release with no PS5 row is not a PS5 update (docs/ps5-patch-data.md), so without this the
+    # demo library would have no On PS5 updates for these games. No PS5 version is invented.
+    if ps5_assumed: r["platforms"].insert(0, plat("ps5", "live", "assumed", date, source))
     return r
 
 releases += [
     pc_release("control-resonant@1.4.2", "control-resonant", "Hotfix 1.4.2", "1.4.2", "2026-10-08", "hotfix",
         "Fixes several quest blockers and a missing quest reward",
         "A follow-up to Game Update 1.4.0 that unblocks The House in Distress and other quests, and restores an Artifact reward for Every Dog Has Her Day.",
-        ["Quest progression fixes after 1.4.0", "Missing Artifact reward restored"], "control-resonant-steam"),
+        ["Quest progression fixes after 1.4.0", "Missing Artifact reward restored"], "control-resonant-steam", ps5_assumed=True),
     pc_release("control-resonant@1.4.1", "control-resonant", "Hotfix 1.4.1", "1.4.1", "2026-10-02", "hotfix",
         "Fixes The Park Resonant quest and dash momentum into Elevate",
         "Repairs two issues introduced by 1.4.0: a blocked quest step in The Park Resonant, and dash momentum no longer carrying into Elevate.",
@@ -143,7 +147,7 @@ releases += [
     pc_release("kcd2@1.5.6", "kcd2", "Patch 1.5.6", "1.5.6", "2026-06-25", "patch",
         "A Jester’s visit: a new quest and fixes",
         "Adds a short new quest that begins outside the Hangman’s Halter tavern, and Hardcore mode and control-scheme fixes.",
-        ["New Jester quest", "Hardcore mode fixes"], "kcd2-steam"),
+        ["New Jester quest", "Hardcore mode fixes"], "kcd2-steam", ps5_assumed=True),
     pc_release("kcd2@1.5.5", "kcd2", "Patch 1.5.5", "1.5.5", "2026-04-20", "patch",
         "Three Crusader Kings book, a Crusader Kings III collaboration",
         "A small update that adds the book Three Crusader Kings around Trosky and Kuttenberg.",
@@ -151,7 +155,7 @@ releases += [
     pc_release("wukong@1.0.21.23831", "wukong", "Patch 1.0.21.23831", "1.0.21.23831", "2026-01-14", "patch",
         "Version 1.0.21.23831",
         "The most recent patch.",
-        [], "wukong-steam", size=2_000_000_000),
+        [], "wukong-steam", size=2_000_000_000, ps5_assumed=True),
     pc_release("wukong@1.0.20.22023", "wukong", "Patch 1.0.20.22023", "1.0.20.22023", "2025-10-16", "patch",
         "Version 1.0.20.22023",
         "An earlier patch.",

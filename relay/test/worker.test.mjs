@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import worker from '../worker.js'
+import worker, { MAX_NEW_PER_DAY } from '../worker.js'
 
 // A KV that counts writes, because the free plan allows 1,000 a day and a relaunch must not spend any.
 const fakeKv = () => {
@@ -115,4 +115,107 @@ test('unknown routes 404, health is open, oversize bodies are refused', async ()
   assert.equal((await call(env, 'GET', '/health')).status, 200)
   assert.equal((await call(env, 'GET', '/nope')).status, 404)
   assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), pad: 'x'.repeat(70 * 1024) })).status, 413)
+})
+
+// ---- Team alerts ----
+const hmacHex = async (secret, body) => {
+  const k = await crypto.subtle.importKey('raw', new TextEncoder().encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign'])
+  return [...new Uint8Array(await crypto.subtle.sign('HMAC', k, new TextEncoder().encode(body)))].map((b) => b.toString(16).padStart(2, '0')).join('')
+}
+const hook = async (env, body, sig) => worker.fetch(new Request('https://relay.test/v1/webhooks/asc', { method: 'POST', headers: sig ? { 'x-apple-signature': sig } : {}, body }), env)
+
+test('team flag: stored on register, changed by PATCH, shown to the admin and nowhere else', async () => {
+  const { env } = setup()
+  const b = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('b'), team: true })).json()
+  assert.equal(b.team, undefined)
+  const list = async () => (await (await worker.fetch(new Request('https://relay.test/admin/devices', { headers: { authorization: `Bearer ${ADMIN}` } }), env)).json()).devices
+  assert.equal((await list())[0].team, true)
+  await call(env, 'PATCH', '/v1/devices/me', { team: false }, b.deviceKey)
+  assert.equal((await list())[0].team, false)
+})
+
+test('webhook fails closed: no secret, no signature or a wrong one is a 401', async () => {
+  const body = JSON.stringify({ data: { id: 'e1', attributes: { eventType: 'BETA_FEEDBACK_SCREENSHOT_SUBMISSION_CREATED' } } })
+  assert.equal((await hook({ KV: fakeKv() }, body, 'a'.repeat(64))).status, 401)
+  const env = { KV: fakeKv(), ASC_WEBHOOK_SECRET: 's3cret' }
+  assert.equal((await hook(env, body)).status, 401)
+  assert.equal((await hook(env, body, 'f'.repeat(64))).status, 401)
+})
+
+test('webhook: a signed feedback event is accepted once, a replay is a duplicate, other events are ignored', async () => {
+  const env = { KV: fakeKv(), ASC_WEBHOOK_SECRET: 's3cret' }
+  const body = JSON.stringify({ data: { id: 'e1', attributes: { eventType: 'BETA_FEEDBACK_CRASH_SUBMISSION_CREATED' } } })
+  const sig = 'hmacsha256=' + (await hmacHex('s3cret', body))
+  const first = await (await hook(env, body, sig)).json()
+  assert.equal(first.ok, true)
+  assert.equal(first.sent, 0) // no push key in this env
+  assert.equal((await (await hook(env, body, sig)).json()).duplicate, true)
+  const other = JSON.stringify({ data: { id: 'e2', attributes: { eventType: 'BUILD_UPLOAD_STATE_UPDATED' } } })
+  assert.equal((await (await hook(env, other, await hmacHex('s3cret', other))).json()).ignored, true)
+})
+
+test('webhook: 60 non-team devices and 2 team devices alert exactly the 2, with a bounded number of KV reads', async () => {
+  const kv = fakeKv()
+  let reads = 0
+  const get = kv.get
+  kv.get = async (k) => { reads++; return get(k) }
+  const env = { KV: kv, ASC_WEBHOOK_SECRET: 's3cret', APNS_KEY: 'x', APNS_KEY_ID: 'k', APNS_TEAM_ID: 't' }
+  for (let i = 0; i < 60; i++) await call(env, 'POST', '/v1/devices', { apnsToken: i.toString(16).padStart(2, '0').repeat(32) })
+  await call(env, 'POST', '/v1/devices', { apnsToken: 'aa'.repeat(32) + 'bb', team: true })
+  await call(env, 'POST', '/v1/devices', { apnsToken: 'cc'.repeat(33), team: true })
+  const sent = []
+  const realFetch = globalThis.fetch
+  globalThis.fetch = async (url) => { sent.push(String(url)); return new Response('', { status: 200 }) }
+  try {
+    // Stand-in for the signing key: a real P-256 PKCS8 key.
+    const kp = await crypto.subtle.generateKey({ name: 'ECDSA', namedCurve: 'P-256' }, true, ['sign'])
+    const der = new Uint8Array(await crypto.subtle.exportKey('pkcs8', kp.privateKey))
+    env.APNS_KEY = `-----BEGIN PRIVATE KEY-----\n${btoa(String.fromCharCode(...der))}\n-----END PRIVATE KEY-----`
+    const body = JSON.stringify({ data: { id: 'big', attributes: { eventType: 'BETA_FEEDBACK_SCREENSHOT_SUBMISSION_CREATED' } } })
+    reads = 0
+    const r = await (await hook(env, body, await hmacHex('s3cret', body))).json()
+    assert.equal(r.sent, 2)
+    assert.equal(sent.length, 2)
+    assert.ok(reads < 20, `reads ${reads}`)
+  } finally {
+    globalThis.fetch = realFetch
+  }
+})
+
+test('register: past the daily cap new devices get 429, existing devices still register', async () => {
+  const { env } = setup()
+  const hexTok = (i) => i.toString(16).padStart(64, '0')
+  for (let i = 0; i < MAX_NEW_PER_DAY; i++) assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: hexTok(i) })).status, 201)
+  const over = await call(env, 'POST', '/v1/devices', { apnsToken: hexTok(MAX_NEW_PER_DAY + 1) })
+  assert.equal(over.status, 429)
+  assert.ok(over.headers.get('retry-after'))
+  assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: hexTok(0) })).status, 200)
+})
+
+test('delete me: removes the record, token, key and team entry, and a second delete is still 204', async () => {
+  const { env } = setup()
+  const reg = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), team: true, follows: [{ gameId: 'dawnwalker' }] })).json()
+  assert.notEqual(await env.KV.get(`d:${reg.deviceId}`), null)
+  assert.notEqual(await env.KV.get(`tm:${reg.deviceId}`), null)
+  const del = await call(env, 'DELETE', '/v1/devices/me', undefined, reg.deviceKey)
+  assert.equal(del.status, 204)
+  assert.equal(await env.KV.get(`d:${reg.deviceId}`), null)
+  assert.equal(await env.KV.get(`t:${token('a')}`), null)
+  assert.equal(await env.KV.get(`tm:${reg.deviceId}`), null)
+  // The key no longer works for anything else, and the Feed job sees no device.
+  assert.equal((await call(env, 'GET', '/v1/devices/me/follows', undefined, reg.deviceKey)).status, 401)
+  const admin = await (await worker.fetch(new Request('https://relay.test/admin/devices', { headers: { authorization: `Bearer ${ADMIN}` } }), env)).json()
+  assert.deepEqual(admin.devices, [])
+  assert.equal((await call(env, 'DELETE', '/v1/devices/me', undefined, reg.deviceKey)).status, 204)
+})
+
+test('delete me: needs a key, leaves other devices alone, and a re-registration is a new device', async () => {
+  const { env } = setup()
+  const a = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a') })).json()
+  const b = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('b') })).json()
+  assert.equal((await call(env, 'DELETE', '/v1/devices/me')).status, 401)
+  await call(env, 'DELETE', '/v1/devices/me', undefined, a.deviceKey)
+  assert.notEqual(await env.KV.get(`d:${b.deviceId}`), null)
+  const again = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a') })).json()
+  assert.notEqual(again.deviceId, a.deviceId)
 })

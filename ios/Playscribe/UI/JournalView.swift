@@ -70,6 +70,7 @@ struct ReleaseEntry: View {
     var release: Release
     var defaultOpen: Bool
     @State private var readTask: Task<Void, Never>?
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         let r = release
@@ -82,16 +83,20 @@ struct ReleaseEntry: View {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 8) {
                         if unread { UnreadDot() }
-                        Text(r.displayName).font(PlayscribeFont.headline)
-                        ReleaseTag(release: r)
+                        TitleWithTags(release: r) { Text(r.displayName).font(PlayscribeFont.headline) }
                         Spacer(minLength: 0)
                         Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
                     }
-                    HStack(spacing: 8) {
+                    // At accessibility sizes the facts stack, each on its own full-width line, so the date never wraps by letter.
+                    let facts = Group {
                         Text(r.kind.label)
                         Text(r.isPS5Listed ? r.ps5Date.shortDay : r.latestDate.shortDay)
                         // R-2 / V-2: the PS5 version exactly as the console shows it; never a PC number.
                         if let v = r.ps5Version { Text(v).monospacedDigit() }
+                    }
+                    Group {
+                        if typeSize.isAccessibilitySize { VStack(alignment: .leading, spacing: 2) { facts } }
+                        else { HStack(spacing: 8) { facts } }
                     }
                     .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     if !open, let h = r.isPS5Listed ? r.ps5Headline : r.headline { Text(h).font(PlayscribeFont.subheadline).lineLimit(2) }
@@ -129,12 +134,40 @@ struct ReleaseEntry: View {
 struct ReleaseTag: View {
     var release: Release
     var body: some View {
+        HStack(spacing: 6) {
+            // Every PS4 patch says so, whatever its state; the patch name stays the title (R-2).
+            if let l = release.ps4Label { Tag(text: l, tint: .secondary) }
+            state
+        }
+    }
+
+    @ViewBuilder private var state: some View {
         switch release.ps5State {
         case .onPS5: if release.simulated == true { Tag(text: "Simulated", tint: .simulated) }
         case .announced: Tag(text: "Announced", tint: .ember)
-        case .reported: EmptyView()
+        case .reported: if release.ps4 == true { Tag(text: "Reported", tint: .secondary) }
         case .notPlanned: Tag(text: "Not planned for PS5", tint: .secondary)
         case .pending: EmptyView()
+        }
+    }
+}
+
+/// An update's title with its tags: beside it at standard sizes, stacked under it at accessibility sizes, so
+/// neither the title truncates nor a tag breaks mid-word.
+struct TitleWithTags<Title: View>: View {
+    var release: Release
+    @ViewBuilder var title: Title
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    var body: some View {
+        if typeSize.isAccessibilitySize {
+            VStack(alignment: .leading, spacing: 4) { title; ReleaseTag(release: release) }
+        } else {
+            // The title never truncates: when the tags don't fit beside it they drop under it.
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 8) { title.lineLimit(1).fixedSize(horizontal: true, vertical: false); ReleaseTag(release: release) }
+                VStack(alignment: .leading, spacing: 4) { title; ReleaseTag(release: release) }
+            }
         }
     }
 }
@@ -153,6 +186,7 @@ extension EnvironmentValues {
 struct ReleaseBody: View {
     @Environment(AppModel.self) private var model
     @Environment(\.marginReleaseID) private var marginReleaseID
+    @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
     /// D-13: facts expanded or collapsed persists.
     @AppStorage("factsOpen") private var factsOpen = false
@@ -169,8 +203,12 @@ struct ReleaseBody: View {
             }
             if let summary = ps5Page ? r.ps5Summary : r.summary {
                 VStack(alignment: .leading, spacing: 4) {
-                    LinkedTextView(text: summary)
-                        .lineLimit(summaryOpen ? nil : 3)
+                    if summaryOpen {
+                        LinkedTextView(text: summary)
+                    } else {
+                        // Collapsed: three lines ending on a whole word, never a cut one ("co…"); More shows it all, with links.
+                        WholeWordText(text: LinkedText.clean(summary), font: PlayscribeFont.body, lines: 3)
+                    }
                     // GR-3: a truncated summary always says how to read the rest.
                     if summary.count > 120 {
                         Button(summaryOpen ? "Less" : "More") { withAnimation(.snappy) { summaryOpen.toggle() } }
@@ -200,14 +238,29 @@ struct ReleaseBody: View {
             }
             if marginReleaseID != r.id {
                 Button { withAnimation(.snappy) { factsOpen.toggle() } } label: {
-                    HStack {
-                        Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline)
-                        if let d = FactsLine.detail(for: r) { Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary) }
-                        Spacer()
-                        Image(systemName: "chevron.down").rotationEffect(.degrees(factsOpen ? 180 : 0)).foregroundStyle(.secondary)
+                    let chevron = Image(systemName: "chevron.down").rotationEffect(.degrees(factsOpen ? 180 : 0)).foregroundStyle(.secondary)
+                    if typeSize.isAccessibilitySize {
+                        // AX: one block, "Released ...", then the size, then the chevron, full width (R-2, Iris on #288 at AX3).
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
+                            if let d = FactsLine.detail(for: r) {
+                                Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                            HStack { Spacer(minLength: 0); chevron }
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                        .contentShape(Rectangle())
+                    } else {
+                        HStack {
+                            Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline)
+                            if let d = FactsLine.detail(for: r) { Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary) }
+                            Spacer()
+                            chevron
+                        }
+                        .frame(minHeight: 44)
+                        .contentShape(Rectangle())
                     }
-                    .frame(minHeight: 44)
-                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .accessibilityHint(factsOpen ? "Hides the PS5 facts" : "Shows the PS5 facts")
@@ -226,7 +279,11 @@ struct ReleaseBody: View {
                     NoteSectionView(release: r, section: section)
                 }
             }
-            HStack(spacing: 10) {
+            // Accessibility sizes: the Bookmark and Mark as read buttons stack, each the full width, so a label wraps on
+            // whole words ("Bookmar / k" at AX5, c240de9).
+            let actions = typeSize.isAccessibilitySize
+                ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10)) : AnyLayout(HStackLayout(spacing: 10))
+            actions {
                 let marked = model.isBookmarked(kind: .release, id: r.id)
                 Button { model.toggleBookmark(kind: .release, id: r.id, gameID: r.gameID) } label: {
                     Label(marked ? "Bookmarked" : "Bookmark", systemImage: marked ? "bookmark.fill" : "bookmark")
@@ -325,7 +382,7 @@ struct Facts: View {
             }
             row("Video", VideoFact(release: r))
             if let checked = p?.liveAt?.checkedAt, Date.now.timeIntervalSince(checked) > 86_400 {
-                row("Checked", Text(checked.shortDay).font(PlayscribeFont.footnote).foregroundStyle(.secondary))
+                row("Checked", Text(checked.localShortDay).font(PlayscribeFont.footnote).foregroundStyle(.secondary))
             }
         }
         .font(PlayscribeFont.subheadline)
@@ -501,13 +558,15 @@ struct SourceLinks: View {
     var body: some View {
         HStack(spacing: 16) {
             if let url = release.links?.ps5Page {
-                Link(destination: url) { Label("PS5 update page", systemImage: "arrow.up.right.square") }
+                Link(destination: url) { Label(LinkHost.label("PS5 update page", url), systemImage: "arrow.up.right.square") }
                     .frame(minHeight: 44).tappableFrame()
+                    .accessibilityHint("Opens in browser")
             }
             if let url = release.links?.steamNotes {
-                Link(destination: url) { Label("Open in Steam", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
+                Link(destination: url) { Label(LinkHost.label("Read full notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
                     .padding(.trailing, 8)
                     .tappableFrame()
+                    .accessibilityHint("Opens in browser")
             }
         }
         .font(PlayscribeFont.subheadline)
@@ -557,5 +616,38 @@ enum ChangeKind: String, CaseIterable {
             let count = sections.reduce(0) { total, sec in total + sec.items.filter { item in !(ps5Only && item.isPCOnly) && !LinkedText.clean(item.text).isEmpty }.count }
             return (kind, sections, count)
         }
+    }
+}
+
+/// Where an external link goes, as a brand name, so a tap never surprises: "Read full notes on Steam",
+/// "All patch notes on Remedy". A host we don't know is "on the developer's site", never an address or a
+/// raw domain word (V-3).
+enum LinkHost {
+    private static let brands = [
+        "steampowered": "Steam", "steamcommunity": "Steam", "playstation": "PlayStation",
+        "ea": "EA", "xbox": "Xbox", "nintendo": "Nintendo", "gog": "GOG", "epicgames": "Epic Games",
+        "ubisoft": "Ubisoft", "remedygames": "Remedy", "deepsilver": "Deep Silver", "gamesci": "Game Science",
+        "dawnwalkergame": "Rebel Wolves", "bandainamcoent": "Bandai Namco", "bandainamco": "Bandai Namco",
+        "capcom": "Capcom", "square-enix": "Square Enix", "square-enix-games": "Square Enix", "sega": "Sega",
+        "bethesda": "Bethesda", "cdprojektred": "CD PROJEKT RED", "rockstargames": "Rockstar Games",
+        "activision": "Activision", "2k": "2K", "warhorsestudios": "Warhorse Studios", "konami": "Konami",
+        "pushsquare": "Push Square", "playstationlifestyle": "PlayStation LifeStyle"
+    ]
+    static let unknown = "the developer's site"
+
+    /// The brand for a known host; nil for one we don't know or a URL with no host.
+    static func name(_ url: URL) -> String? {
+        guard let host = url.host()?.lowercased(), !host.isEmpty else { return nil }
+        var parts = host.split(separator: ".").map(String.init)
+        // The label before the public suffix: "co.uk" and "com.au" take two parts.
+        if parts.count >= 3, ["co", "com", "org", "net", "gov"].contains(parts[parts.count - 2]) { parts.removeLast(2) }
+        else if parts.count >= 2 { parts.removeLast() }
+        guard let label = parts.last else { return nil }
+        return brands[label]
+    }
+
+    static func label(_ base: String, _ url: URL) -> String {
+        guard url.host()?.isEmpty == false else { return base }
+        return "\(base) on \(name(url) ?? unknown)"
     }
 }

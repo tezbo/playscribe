@@ -248,3 +248,12 @@ Next step: parse the monthly "PS Plus Essential games for <month>" article from 
 ### Search aliases in the PS5 index (field `k`, #298)
 
 Each index entry may carry `k`, a list of up to 5 aliases players type: IGDB alternative names plus franchise short forms ("GTA V", "GTA5", "COD: Modern Warfare II", "AC Odyssey", "FF7", "BG3"); built by `src/search-aliases.ts`. The app folds them like the name and only checks them when the name did not match; an alias equal to the query or starting with it ranks like a name prefix, so "ac" and "ff" surface the franchise, and a name hit always outranks an alias for the same game.
+
+## Trust audit rules (r050)
+
+Two store passes run every ingest, after the press posts are read:
+- `dropPreLaunchPs5`: Steam-only PS5 rows dated before the game's PS5 release are dropped. A game with no PS5 date uses the PS5 launch day (12 Nov 2020), so Stardew Valley's and Monster Hunter: World's 2016 to 2020 Steam patches no longer read as PS5 updates.
+- `labelPreLaunchPs4`: a press-reported PS5 row before the PS5 era, or before the game's PS5 release for a game that had a PS4 release by then, becomes a "PS4 update" with no PS5 version. A game with no PS5 date at all counts as a PS4 game.
+The PS4 release days come from the bundled index (`b`); a bare checkout without the index relabels nothing.
+
+A PS5 row is never dropped because it is dated long before the game's recorded PS5 release: that date can be a full-release or re-release date, not the first PS5 availability (early access, or a wrong IGDB date), so an early-row pass would drop real rows. A post within a week of the PS5 release is a day-one patch and is never relabelled.

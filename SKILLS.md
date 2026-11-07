@@ -46,3 +46,25 @@ What each agent must know and use. Roles and reporting lines are in `AGENTS.md`.
 **Mara, marketing and App Store lead**
 - App Store Connect marketing surface: name, subtitle, keywords, promotional text, screenshots, app preview, In-App Events, Product Page Optimization, custom product pages. Checks limits against current Apple docs, never memory.
 - Keyword research and competitor positioning (Patchbook.gg, Patch Pulse), web SEO basics, static sites on GitHub Pages.
+
+# Repo skills (`.claude/skills/`)
+
+Claude Code loads these on its own in any session that checks out the repo, and they are versioned with the code. Each `SKILL.md` description says when it triggers. Edit them by PR.
+
+| Skill | Use it when |
+|---|---|
+| `five-pose-stills` | A UI change needs stills, a shoot list or a layout sign-off across the Duo poses. |
+| `ax3-layout-check` | Adding or changing text-bearing SwiftUI, to avoid AX3 clipping, missing chips, overlap. |
+| `precheck-loop` | About to push or open a PR without Xcode: push, read PRECHECK PASS/FAIL, fix, then PR. |
+| `status-protocol` | A message is just "s", or a step is finished (`Next:` line). |
+| `review-merge-handoff` | Requesting or giving a sign-off, or merging. |
+| `playscribe-estimate` | Picking up, sizing or closing a card: `est_work`, `est_wait`, `basis`, then actuals (PERT, never invented). |
+| `decision-review` | About to add, change, remove or reverse anything: goal, still needed, worth, alternatives, decide, log the learning (`docs/decisions/TEMPLATE.md`). |
+| `workaround-first` | About to say "can't", "only", "missing" or "needs Terry": check repo, other thread, build it, then report the route. |
+| `playscribe-code-review` | Reviewing a diff with the repo rules first. |
+
+**General skills.** Teammates also see the shared design, engineering, marketing and product-management skills (for example `engineering:code-review`, `design:accessibility-review`, `marketing:brand-review`, `product-management:write-spec`). Say "Skill: <name>" in the reply when you use one.
+
+**Outside sources.** Candidates come from Anthropic's skills and agent docs and from the VoltAgent awesome-agent-skills list. That list only links to other repos, each with its own licence. Nothing is copied in until its licence is checked; a copied skill keeps its licence file and credit in its folder. Propose a new skill when the same gap shows up twice, to Gabrielle (the "Assess agents and plan skill growth" thread). Per-agent plans: `/mnt/project-files/team/improvement-plans.md`.
+
+**Estimating.** Every card gets `est_work`, `est_wait` and `basis` at pick-up, and `actual_work` and `actual_wait` at Done (AGENTS.md, "Estimates"). No basis means `n/e` in both, never a guessed number. The method is the `playscribe-estimate` skill, built on `agent-estimate` (PERT three-point, from the Anthropic Directory; upstream vendored in `.claude/skills/agent-estimate/`, Apache-2.0, credit in `SOURCE.md`). The CLI install is approved (Terry, 2026-11-07, message cmsg_0158fPo4KUquo5U1yUvNer8vT8XLJkrPTdpVzVsqmyJmGH: `pip install agent-estimate`); manual PERT is the fallback.

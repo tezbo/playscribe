@@ -82,7 +82,8 @@ final class NotificationService: NSObject {
                 content.title = g.name
                 content.body = "Out today on PS5"
                 content.sound = .default
-                var parts = Calendar.current.dateComponents([.year, .month, .day], from: day)
+                // The UTC day number, at 09:00 on the device: "out today" never disagrees with the printed date.
+                var parts = Date.utcCalendar.dateComponents([.year, .month, .day], from: day)
                 parts.hour = 9
                 let trigger = UNCalendarNotificationTrigger(dateMatching: parts, repeats: false)
                 center.add(UNNotificationRequest(identifier: "release-day-\(g.id)", content: content, trigger: trigger))

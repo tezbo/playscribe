@@ -11,6 +11,10 @@ struct Rendered {
     var window: UIWindow
     var controller: UIViewController
     /// What UIKit actually gave the root view: its size and safe area. A pose is only reproduced when these equal the catalog.
+    /// Whether the layout stopped changing before the time cap (the frames the app reports were identical for three passes in a
+    /// row), and how many passes that took. A feedback loop in layout (#292) shows here as `settled == false`.
+    var settled = true
+    var passes = 0
     var viewSize = CGSize.zero
     var appliedInsets = UIEdgeInsets.zero
     var inheritedInsets = UIEdgeInsets.zero
@@ -18,7 +22,9 @@ struct Rendered {
     /// Nil when the root view has the pose's window size and safe area; otherwise the numbers, for the failure message.
     var geometryProblem: String? {
         func close(_ a: CGFloat, _ b: CGFloat) -> Bool { abs(a - b) < 0.5 }
-        let w = pose.windowSize, i = pose.safeArea, a = appliedInsets
+        let w = pose.windowSize, a = appliedInsets
+        var i = pose.safeArea
+        if pose.tabBarSuppliesTrailingInset { i.right = 0 }
         let ok = close(viewSize.width, w.width) && close(viewSize.height, w.height)
             && close(a.top, i.top) && close(a.left, i.left) && close(a.bottom, i.bottom) && close(a.right, i.right)
         return ok ? nil : "view \(viewSize) insets \(a) (window's own \(inheritedInsets)) but the pose needs \(w) and \(i)"
@@ -31,7 +37,7 @@ struct Rendered {
         var ctx = DuoReader<EmptyView>.context(size: pose.container, compact: pose.compactWidth,
                                                division: pose.division, occlusions: pose.occlusions)
         ctx.safeArea = EdgeInsets(top: appliedInsets.top, leading: appliedInsets.left,
-                                  bottom: appliedInsets.bottom, trailing: appliedInsets.right)
+                                  bottom: appliedInsets.bottom, trailing: pose.tabBarSuppliesTrailingInset ? pose.safeArea.right : appliedInsets.right)
         return FoldAudit.probeJSON(frames: frames, duo: ctx, named: named, origin: .zero)
     }
     /// Frames that touch the active fold (the same test as FoldAudit).
@@ -123,8 +129,11 @@ enum FoldHost {
 
     /// `settle` covers the splash (about 1.1 s) and the first layout passes.
     static func render(_ pose: HarnessPose, type: UIContentSizeCategory = .large, model: AppModel = demoModel(),
-                       settle: Duration = .milliseconds(1800)) async -> Rendered? {
+                       settle: Duration = .milliseconds(1800), insetAdjust: UIEdgeInsets = .zero) async -> Rendered? {
         guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first else { return nil }
+        // Dates are formatted in the device's time zone, so a patch near midnight UTC reads 25 Jun on a UTC runner and 26 Jun on
+        // the AEDT Mac (Quinn, KCD II 1.5.6). Pin the harness to the Mac's zone so stills compare with the Mac's.
+        NSTimeZone.default = TimeZone(identifier: "Australia/Sydney") ?? .current
         FoldAuditSwitch.enabled = true
         let box = Box()
         let root = Probe(box: box, content: RootView()
@@ -165,17 +174,33 @@ enum FoldHost {
         window.layoutIfNeeded()
         hc.view.layoutIfNeeded()
         let inherited = hc.view.safeAreaInsets
-        let t = pose.safeArea
-        hc.additionalSafeAreaInsets = UIEdgeInsets(top: t.top - inherited.top, left: t.left - inherited.left,
-                                                   bottom: t.bottom - inherited.bottom, right: t.right - inherited.right)
-        for _ in 0..<4 {
+        var t = pose.safeArea
+        if pose.tabBarSuppliesTrailingInset { t.right = 0 }
+        // `insetAdjust` is for width calibration only (HarnessWidthCalibrationTests); every asserting test passes none.
+        hc.additionalSafeAreaInsets = UIEdgeInsets(top: t.top - inherited.top + insetAdjust.top, left: t.left - inherited.left + insetAdjust.left,
+                                                   bottom: t.bottom - inherited.bottom + insetAdjust.bottom, right: t.right - inherited.right + insetAdjust.right)
+        // Wait for the layout to settle, not for a fixed number of passes: at least `settle` (the splash, about 1.1 s), then until the
+        // reported frames are identical for three passes in a row, up to 8 s. Whatever the app does after that is not "settled".
+        let step = Duration.milliseconds(150)
+        let start = ContinuousClock.now
+        var passes = 0, same = 0
+        var last: [CGRect] = [], lastNamed: [String: CGRect] = [:]
+        while true {
             window.layoutIfNeeded()
-            try? await Task.sleep(for: settle / 4)
+            try? await Task.sleep(for: step)
+            passes += 1
+            same = (box.frames == last && box.named == lastNamed) ? same + 1 : 0
+            last = box.frames; lastNamed = box.named
+            let elapsed = ContinuousClock.now - start
+            if elapsed >= settle && same >= 3 { break }
+            if elapsed >= .seconds(8) { break }
         }
         let origin = CGPoint(x: hostShift.x + pose.safeArea.left, y: hostShift.y + pose.safeArea.top)
         func rel(_ r: CGRect) -> CGRect { r.offsetBy(dx: -origin.x, dy: -origin.y) }
         var r = Rendered(pose: pose, livePose: model.livePose, frames: box.frames.map(rel),
                          named: box.named.mapValues(rel), window: window, controller: hc)
+        r.settled = same >= 3
+        r.passes = passes
         r.viewSize = hc.view.bounds.size
         r.appliedInsets = hc.view.safeAreaInsets
         r.inheritedInsets = inherited
@@ -186,6 +211,30 @@ enum FoldHost {
         let rawMinX = (box.frames + Array(box.named.values)).map(\.minX).min() ?? .nan
         print("harness error: [info, diag] \(pose.id) window \(window.frame) host in window \(hc.view.convert(CGPoint.zero, to: nil)) host in screen \(hc.view.convert(CGPoint.zero, to: window.screen.coordinateSpace)) margins \(hc.view.layoutMargins) safe \(hc.view.safeAreaInsets) additional \(hc.additionalSafeAreaInsets) origin \(origin) rawMinX \(rawMinX) leftmost \(leftmost) scene \(sceneNote) screen \(screen)")
         return r
+    }
+
+    /// The rendered pose as a PNG, at 1x, the size of the window the pose needs. Hosted offscreen, so the system's own navigation
+    /// bar, Tabletop rail and hinge are not faithful (docs/fold-harness.md); this is for app-owned layout.
+    static func png(_ r: Rendered) -> Data? {
+        let size = r.pose.windowSize
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        // The system's own bars float over the page offscreen, where the Duo draws them in its own place (docs/fold-harness.md), so
+        // they are hidden for the still and put back after. What is left is the app's own layout.
+        var hidden: [UIView] = []
+        func hideChrome(_ v: UIView) {
+            let name = String(describing: Swift.type(of: v))
+            if !v.isHidden, ["TabBar", "NavigationBar", "FloatingBar", "PocketView", "Toolbar"].contains(where: name.contains) {
+                v.isHidden = true; hidden.append(v); return
+            }
+            v.subviews.forEach(hideChrome)
+        }
+        hideChrome(r.controller.view)
+        defer { hidden.forEach { $0.isHidden = false } }
+        let image = UIGraphicsImageRenderer(size: size, format: format).image { _ in
+            r.controller.view.drawHierarchy(in: CGRect(origin: .zero, size: size), afterScreenUpdates: true)
+        }
+        return image.pngData()
     }
 
     /// Tear down so the next pose starts clean.
