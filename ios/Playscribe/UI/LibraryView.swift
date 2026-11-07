@@ -309,7 +309,7 @@ struct LibraryShelf: View {
                     }
                 }
                 // Book: these cards stay on the left page; with a hero they sit in the left column below.
-                if !heroOnRightPage && duo.pose != .book { topCards(all) }
+                if !heroOnRightPage && duo.pose != .book && duo.pose != .tabletop { topCards(all) }
                 // Tabletop: the search button and A to Z strip come after the tiles (see below), so a first view shows games.
                 if duo.pose != .tabletop, !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 if !heroOnRightPage && duo.pose == .book { topCards(all) }
@@ -421,6 +421,8 @@ struct LibraryShelf: View {
                     }
                     .id(poseKey)
                 }
+                // Tabletop: the filter chips sit directly above the tiles, one row; tiles first wins if they would push it off (Iris, v0.5.3).
+                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles { FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey) }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
                 } else if heroOnRightPage {
@@ -443,9 +445,10 @@ struct LibraryShelf: View {
                     // (0.2.0 gate: Book showed the open-pose grid across the fold).
                     .id(poseKey)
                 }
-                // Tabletop lower half (Iris, v0.5.3): switch, PS Plus, then the tiles; search and A to Z, the page edge,
-                // News and the filter chips follow them. Order only; nothing else moves in any pose.
+                // Tabletop lower half (Iris, v0.5.3): switch, filter chips, tiles, then the alerts card, PS Plus, search and
+                // A to Z, the page edge and News. Order only; nothing else moves in any pose.
                 if duo.pose == .tabletop {
+                    if !heroOnRightPage { topCards(all) }
                     if !all.isEmpty { TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4) }
                     let deck = model.latestDeck
                     if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
