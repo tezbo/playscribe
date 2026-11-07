@@ -197,22 +197,39 @@ struct ReleasePage: View {
     @Environment(AppModel.self) private var model
     var release: Release
     @Environment(\.dynamicTypeSize) private var typeSize
+    /// Four lines of the title3 title, scaled with Dynamic Type; a taller title beside the share button sends the button
+    /// to its own row. One way within a release: the full-width title is shorter, so it cannot flip back.
+    @ScaledMetric(relativeTo: .title3) private var fourTitleLines: CGFloat = 104
+    @State private var shareOnOwnRow = false
+
+    // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
+    private func titleBlock(_ r: Release, measure: Bool) -> some View {
+        TitleWithTags(release: r) {
+            Text(r.displayName).font(PlayscribeFont.title3)
+                .accessibilityIdentifier("releaseTitle")
+                .onGeometryChange(for: Bool.self) { measure && $0.size.height > fourTitleLines } action: { tooTall in
+                    if tooTall { shareOnOwnRow = true }
+                }
+        }
+    }
 
     var body: some View {
         let r = release
         VStack(alignment: .leading, spacing: 12) {
             // One row at every size (r054, R-2, G-8): the share button's trailing edge is the title row's trailing edge,
             // top-aligned with the title at accessibility sizes, so it never floats on a row of its own. The title and
-            // tags take the width left of the 44 pt button and wrap in whole words (the headline below does the same).
-            HStack(alignment: typeSize.isAccessibilitySize ? .top : .center, spacing: 8) {
-                if model.isUnread(r) { UnreadDot() }
-                // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
-                TitleWithTags(release: r) {
-                    Text(r.displayName).font(PlayscribeFont.title3)
-                        .accessibilityIdentifier("releaseTitle")
+            // tags take the width left of the 44 pt button and wrap in whole words. Iris's condition: a title that would
+            // wrap past 4 lines beside the button drops the button to its own row (the title then has the full width).
+            if shareOnOwnRow {
+                HStack(spacing: 8) { if model.isUnread(r) { UnreadDot() }; titleBlock(r, measure: false) }
+                if r.isPS5Listed { HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) } }
+            } else {
+                HStack(alignment: typeSize.isAccessibilitySize ? .top : .center, spacing: 8) {
+                    if model.isUnread(r) { UnreadDot() }
+                    titleBlock(r, measure: typeSize.isAccessibilitySize && r.isPS5Listed)
+                    Spacer(minLength: 0)
+                    if r.isPS5Listed { ShareUpdateButton(release: r) }
                 }
-                Spacer(minLength: 0)
-                if r.isPS5Listed { ShareUpdateButton(release: r) }
             }
             HStack(spacing: 8) {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
@@ -227,6 +244,7 @@ struct ReleasePage: View {
             ReleaseBody(release: r)
         }
         .id(r.id)
+        .onChange(of: r.id) { shareOnOwnRow = false }
     }
 }
 
