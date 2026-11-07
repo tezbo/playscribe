@@ -58,6 +58,8 @@ struct UpdatesView: View {
 
 struct FeedRow: View {
     @Environment(AppModel.self) private var model
+    /// Half the title's cap height: lifts the dot's centre to the middle of the first line at every text size.
+    @ScaledMetric(relativeTo: .subheadline) private var dotLift: CGFloat = 5
     @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
 
@@ -72,9 +74,10 @@ struct FeedRow: View {
                 VStack(alignment: .leading, spacing: 3) {
                     // At accessibility sizes the row stacks: the title takes the full width in whole words,
                     // the tags and date each get their own line, the summary goes under.
-                    HStack(alignment: .firstTextBaseline, spacing: 6) {
-                        // Seated on the title's first line, not floating at the row's top (Iris).
-                        if unread { UnreadDot().alignmentGuide(.firstTextBaseline) { $0[.bottom] } }
+                    HStack(alignment: .firstTextBaseline, spacing: 10) {
+                        // Centred on the title's cap height with 10 pt of clearance, not floating at the row's top and
+                        // not flush against the first letter (Iris, Quinn).
+                        if unread { UnreadDot().alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift } }
                         TitleWithTags(release: release) {
                             Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
                         }
