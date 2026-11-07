@@ -22,7 +22,8 @@ final class OpenPortraitTabBarTests: XCTestCase {
         var maxY: CGFloat = 0
         for e in scroller.descendants(matching: .any).allElementsBoundByIndex {
             let l = e.label.lowercased()
-            if l.contains("scroll bar") || e.frame.isEmpty { continue }
+            // Only what is on screen after the scroll: a list reports rows it has not drawn, far below the screen.
+            if l.contains("scroll bar") || e.frame.isEmpty || !app.frame.contains(e.frame) { continue }
             maxY = max(maxY, e.frame.maxY)
         }
         return maxY
