@@ -5,20 +5,22 @@ so write it for testers. Release steps are in docs/release.md.
 
 ## 0.5.3
 
-- Settings has a new Team alerts switch (development and TestFlight builds only). Turn it on to join the team's alert test.
-- Turning alerts off now deletes your device on our server.
-- Upcoming: short sections share a row, the Upcoming cover shows the next game, and rows read as one column at big text sizes.
+- Settings has a new Team alerts switch (development and TestFlight builds only). Turn it on to help us test alerts.
+- Turning alerts off now removes your device from our alert list.
+- Upcoming fits more on screen: short sections share a row, the cover shows the next game, and at big text sizes everything stacks in one column.
 - The "Also new" panel is gone, and the deck runs full width in Open portrait.
-- At big text sizes, titles, summaries, status glyphs and hero captions wrap on whole words. The spoiler row, Journal and Updates rows wrap on whole words too, and the unread dot, share button and spoiler contrast are fixed.
-- The chips on a game page show every section when they fit. The page pill clears every page, and VoiceOver covers video and the Tabletop reader.
+- At big text sizes, titles, summaries and captions now wrap on whole words, and the spoiler row, Journal and Updates rows do too.
+- We also fixed the unread dot, the share button and spoiler contrast. At the largest sizes the share button lines up with the right edge of the text.
+- In Closed portrait the Updates rows stop short of the clock and the rail instead of running under them.
+- On a game page the section chips show every section when they fit, and no longer crowd the links. The page counter stays clear of the content, and VoiceOver covers video and the Tabletop reader.
 - Link rows say where they go, for example "Read full notes on Steam".
 - Pre-launch patches no longer show as PS5 updates.
 
 Check on the Duo:
 
-- Settings > Team alerts: turn it on. Take a screenshot, tap Share Beta Feedback and send it with the comment "alert test". A team alert should arrive within a minute. If nothing arrives, tell us; that is a useful result too.
+- Settings, then Team alerts: turn it on. Take a screenshot, tap Share Beta Feedback and send it with the comment "alert test". A team alert should arrive within a minute. If nothing arrives, tell us; that is a useful result too.
 - Turn Team alerts off and send another screenshot the same way: no team alert should arrive.
-- Settings > Accessibility > Display & Text Size > Larger Text, turn on Larger Accessibility Sizes and drag the slider to the end: titles and the spoiler row should wrap on whole words with nothing cut off.
+- Settings, then Accessibility, then Display & Text Size, then Larger Text: turn on Larger Accessibility Sizes and drag the slider to the end: titles and the spoiler row should wrap on whole words with nothing cut off.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
 
