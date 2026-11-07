@@ -148,9 +148,17 @@ final class PlayscribeUITests: XCTestCase {
             simulate.terminate()
             step("terminated; \(lockState())")
         } else {
-            XCUIDevice.shared.press(.home)
-            XCUIDevice.shared.press(.home)   // the second press wakes a sim that has gone to the lock screen (48404f1)
-            step("pressed Home twice; \(lockState())")
+            // Home presses did not background the app on the Duo sim (6089c7e: still on the Library, no banner). A bottom-edge swipe
+            // does (by hand, 190,676 to 190,400 in Closed): flick, then check the app state, up to 3 times, Home as the last resort.
+            let screen = springboard.frame.isEmpty ? CGRect(x: 0, y: 0, width: 466, height: 678) : springboard.frame
+            let origin = springboard.coordinate(withNormalizedOffset: .zero)
+            for _ in 0..<3 where simulate.state == .runningForeground {
+                origin.withOffset(CGVector(dx: screen.midX, dy: screen.maxY - 2))
+                    .press(forDuration: 0.05, thenDragTo: origin.withOffset(CGVector(dx: screen.midX, dy: screen.maxY * 0.59)), withVelocity: .fast, thenHoldForDuration: 0)
+                sleep(1)
+            }
+            if simulate.state == .runningForeground { XCUIDevice.shared.press(.home); sleep(1) }
+            step("backgrounded: app state \(simulate.state.rawValue) (4 is foreground); \(lockState())")
         }
         // The banner is up for only a few seconds, and pressing Home returns slowly: look briefly, then use Notification Center.
         if let banner = notificationRow(timeout: 4) { return banner }
