@@ -13,3 +13,6 @@ Date 2026-11-07 / owner: QA-poses thread (Theo builds) / card: harness Book spli
 6. **Learning.** A headless stand-in is only trustworthy for what it was calibrated against; record the Mac pair that justifies it.
 
 Weighed by Nadia, 7 Nov: B approved with conditions: the Mac still signs off Book (the stand-in is triage only), record the Mac and harness pair that justifies it, and C stays rejected. Board card: r052-harness-book-split.
+
+**Spike result, 7 Nov (e6fd747, 487b926):** the stand-in puts the left pane at ~48% and Quinn's KCD II Book AX5 left page matches 6 of 6. The right page matched 3 of 4: "Patch 1.5.6" wraps to 2 lines on the harness (one line on the Mac). A 9 pt rail-reserve trim widened the art but the title still wraps, so one iteration was spent and the kill rule applies: the Book split is **left page advisory only**; the right page and the Mac's side-rail reserve stay Mac-only. Stand-in kept (test-only, off unless `SPLIT=1`).
+
