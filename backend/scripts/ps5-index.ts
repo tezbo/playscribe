@@ -25,11 +25,12 @@
 //
 //   TWITCH_CLIENT_ID=… TWITCH_CLIENT_SECRET=… NODE_USE_ENV_PROXY=1 npm run ps5-index
 //   npm run ps5-index -- --inspect 1020,17269     # print every PS5/PS4 release_dates row for these ids
+//   npm run ps5-index -- --early-diagnostic       # read-only: list games whose earliest PS5 row (any status) is before `d`; writes nothing
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { Igdb } from '../src/ingest/igdb.ts'
 import { artworkFields, artworkOf, artworkTypes, squareCoverOf } from '../src/artwork.ts'
 import { searchAliases } from '../src/search-aliases.ts'
-import { day, ps5DatesOf, problemsOf, type Override, type ReleaseDate } from '../src/ps5-dates.ts'
+import { PS5_LAUNCH, day, ps5DatesOf, problemsOf, type Override, type ReleaseDate } from '../src/ps5-dates.ts'
 
 const OUT = new URL('../../ios/Playscribe/Resources/Data/ps5-index.json', import.meta.url)
 const { TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET } = process.env
@@ -104,6 +105,7 @@ const aliasesField = (g: { name: string; alternative_names?: { name: string }[] 
   const k = searchAliases(g.name, (g.alternative_names ?? []).map((a) => a.name))
   return k.length ? { k } : {}
 }
+const earlyRows: { i: number; n: string; first: string; firstStatus: string; d: string }[] = []
 const games: { i: number; n: string; d?: string; q?: string; e?: true; f?: string; b?: string; k?: string[]; o?: string; ow?: string; v?: string; p?: string; c?: string; a?: string; s?: string; t?: string[]; r: number }[] = []
 for (let offset = 0; ; offset += 500) {
   const page = await igdb.query<any>(
@@ -115,9 +117,21 @@ for (let offset = 0; ; offset += 500) {
   for (const g of page) {
     const company = (role: string) => (g.involved_companies ?? []).find((c: any) => c[role])?.company?.name
     const dates = datesOf(g.id, g.release_dates)
+    if (dates.d) {
+      const rows = (g.release_dates ?? []).filter((r: ReleaseDate) => r.platform === ps5.id && r.date && !/patch/i.test(statusName.get(r.status!) ?? '') && day(r.date)! >= PS5_LAUNCH).sort((a: ReleaseDate, b: ReleaseDate) => a.date! - b.date!)
+      const first = rows[0]
+      if (first && day(first.date)! < dates.d) earlyRows.push({ i: g.id, n: g.name, first: day(first.date)!, firstStatus: statusName.get(first.status!) ?? 'no status', d: dates.d })
+    }
     games.push({ i: g.id, n: g.name, ...dates, ...firstRelease(g, dates), ...aliasesField(g), v: company('developer'), p: company('publisher'), c: g.cover?.image_id, a: artOf(g.artworks), s: squareOf(g.artworks), t: tones.get(g.id), r: g.total_rating_count ?? 0 })
   }
   if (page.length < 500) break
+}
+if (args.includes('--early-diagnostic')) {
+  const today = new Date().toISOString().slice(0, 10)
+  console.log(`early-diagnostic: ${earlyRows.length} of ${games.length} games have a PS5 row (any status) before their index date d`)
+  console.log(`  of those, d is still in the future for ${earlyRows.filter((r) => r.d > today).length}`)
+  for (const r of earlyRows.sort((a, b) => b.d.localeCompare(a.d))) console.log(`  ${r.i} ${r.n}: first PS5 row ${r.first} (${r.firstStatus}), index d ${r.d}`)
+  process.exit(0)
 }
 games.sort((a, b) => (rankOf.get(a.i) ?? Infinity) - (rankOf.get(b.i) ?? Infinity) || b.r - a.r)
 
