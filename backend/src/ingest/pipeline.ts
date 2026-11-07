@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import { hotGameIds, HOT_POLL_MS } from '../hot.ts'
 import { now, tx, type DB } from '../db.ts'
 import { Blocked, allowedByRobots, type FetchFn } from '../http.ts'
@@ -381,6 +382,11 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   if (folded) deps.log?.(`ingest: folded ${folded} press-only duplicates into the release they report`)
   const dropped = store.dropPreLaunchPs5(deps.db)
   if (dropped) deps.log?.(`ingest: dropped ${dropped} Steam-assumed PS5 rows dated before the game's PS5 launch`)
+  const ps4Since = ps4SinceFromIndex()
+  if (ps4Since) {
+    const relabelled = store.labelPreLaunchPs4(deps.db, ps4Since)
+    if (relabelled) deps.log?.(`ingest: labelled ${relabelled} press-reported releases dated before the PS5 era as PS4 updates`)
+  } else deps.log?.('ingest: PS5 index not readable, skipped the PS4 relabel pass (fail closed)')
   const repaired = store.repairAssumedLiveAt(deps.db)
   if (repaired) deps.log?.(`ingest: moved ${repaired} Steam-assumed PS5 dates back to their Steam post`)
   const promoted = store.promoteAnnounced(deps.db)
@@ -395,3 +401,24 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
 let running: Promise<IngestSummary> | null = null
 export const runIngestExclusive = (deps: IngestDeps, opts: IngestOpts = {}) =>
   (running ??= runIngest(deps, opts).finally(() => (running = null)))
+
+/**
+ * IGDB id to PS4 release day, from the bundled PS5 index (`b`: set only when the game had a PS4 release before its PS5 one).
+ * Fails closed: undefined when the index cannot be read, and the passes that need it then do nothing (an empty map would
+ * read as "no game had a PS4 release" and drop real rows).
+ */
+const ps4SinceCache = new Map<string, Map<number, string>>()
+export const ps4SinceFromIndex = (url: URL = new URL('../../../ios/Playscribe/Resources/Data/ps5-index.json', import.meta.url)) => {
+  const cached = ps4SinceCache.get(url.href)
+  if (cached) return cached
+  try {
+    const raw = JSON.parse(readFileSync(url, 'utf8'))
+    const map = new Map<number, string>()
+    for (const g of raw.games ?? raw) if (typeof g.i === 'number' && typeof g.b === 'string') map.set(g.i, g.b)
+    if (!map.size) return undefined
+    ps4SinceCache.set(url.href, map)
+    return map
+  } catch {
+    return undefined
+  }
+}
