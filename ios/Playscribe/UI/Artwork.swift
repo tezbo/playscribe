@@ -29,14 +29,17 @@ struct CoverView: View {
         let tones = (game.tones ?? ["#1b1d24", "#0b0d12"]).map(Color.init(hex:))
         return LinearGradient(colors: tones, startPoint: .topLeading, endPoint: .bottomTrailing)
             .overlay {
-                // One serif initial, about 40% of the cover's height; the title is always printed beside or below the
-                // cover, never inside the plate, so it can't be cut mid-word (Iris, R-7).
+                // One serif initial, 40% of the cover's height (never below 13 pt: a cover under 32 pt tall shows the plain
+                // tinted plate). The title is always printed beside or below the cover, never inside the plate, so it can't
+                // be cut mid-word (Iris, R-7).
                 GeometryReader { geo in
+                  if geo.size.height >= 32 {
                     Text(String(game.name.first(where: \.isLetter) ?? game.name.first ?? "?").uppercased())
                         .font(.custom("Literata24pt-SemiBold", size: geo.size.height * 0.4))
                         .foregroundStyle(.white.opacity(0.85))
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .accessibilityHidden(true)
+                  }
                 }
             }
     }
