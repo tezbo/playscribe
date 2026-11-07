@@ -346,6 +346,7 @@ test('trust audit (r050): a PS5 row over 90 days before the PS5 release with no 
   assert.equal(store.dropEarlyPs5(db, new Map()), 1)
   assert.equal(has('dawnwalker@pc-patch'), false)
   assert.ok(has('dawnwalker@dayone'))
+  assert.equal(store.labelPreLaunchPs4(db, new Map([[igdb, '2020-01-01']])), 0, 'a day-one patch within a week of the PS5 release is never relabelled PS4')
 })
 
 // Roadmap duplicate audit: the same patch seen as "1.4" by the press and "1.4.0" by Steam is one release.

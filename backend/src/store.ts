@@ -345,6 +345,7 @@ export const dropPreLaunchPs5 = (db: DB) =>
  * compatibility, so it is labelled "PS4 update" and carries no PS5 version. A PS5-only game's day-one patch, announced
  * before launch, is not touched. Safe to run every ingest.
  */
+const shiftDay = (day: string, days: number) => new Date(Date.parse(`${day}T00:00:00Z`) + days * 86400e3).toISOString().slice(0, 10)
 export const labelPreLaunchPs4 = (db: DB, ps4Since: Map<number, string>) => {
   const rows = db
     .prepare(
@@ -361,7 +362,8 @@ export const labelPreLaunchPs4 = (db: DB, ps4Since: Map<number, string>) => {
   for (const r of rows) {
     // No PS5 date at all means the game reaches PS5 only as its PS4 version, so any PS4-era press row is a PS4 update.
     const since = r.igdb == null ? undefined : ps4Since.get(r.igdb)
-    if (r.ps5 !== null && (!since || r.day < since)) continue
+    // A post within a week of the game's PS5 release is its day-one patch (the Witcher 3 next-gen notes, two days ahead).
+    if (r.ps5 !== null && (!since || r.day < since || r.day >= shiftDay(r.ps5, -7))) continue
     label.run(r.id)
     noVersion.run(r.id)
     n++
