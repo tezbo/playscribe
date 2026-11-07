@@ -551,6 +551,10 @@ final class LibraryLayoutTests: XCTestCase {
         // state, whether SpringBoard shows the lock screen or the App Switcher, and a screenshot of the PANEL (the largest of
         // XCUIScreen.screens; XCUIScreen.main is the outer display on the Duo and came back black).
         var log: [String] = []
+        func panelPNG() -> Data {
+            let shots = XCUIScreen.screens.map { $0.screenshot() }
+            return (shots.max(by: { $0.image.size.width * $0.image.size.height < $1.image.size.width * $1.image.size.height }) ?? XCUIScreen.main.screenshot()).pngRepresentation
+        }
         func step(_ text: String) {
             let sb = XCUIApplication(bundleIdentifier: "com.apple.springboard")
             let line = String(format: "%02d app state %d (4 = foreground); lock=%@ switcher=%@; %@", log.count + 1, app.state.rawValue,
@@ -659,18 +663,26 @@ final class LibraryLayoutTests: XCTestCase {
             checked += tiles.count
             step("scan: \(tiles.count) tiles, checked \(checked)")
             if pose.contains("tabletop") {
-                // Tabletop: the upper half is a view-only stage, so a swipe from the app's centre does not scroll anything, and
-                // a fast one that ends near the bottom edge is a Home gesture (2419534: all 8 tiles were there, below the first
-                // lower-half screen; the earlier runs ended on SpringBoard). Drag inside the lower half, slowly, clear of both edges.
-                let from = app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.80))
-                let to = app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.58))
-                from.press(forDuration: 0.1, thenDragTo: to, withVelocity: .slow, thenHoldForDuration: 0.2)
+                // Tabletop: the upper half is a view-only stage, so a swipe there scrolls nothing, and the lower half is full of
+                // controls that eat a drag (the search field and the A to Z strip, 44e96db: 10 drags from 80% of the height moved
+                // nothing). The page scrolls from the bare band near the bottom (by hand: y 900 of a 951 pt window, over the page
+                // dots), so start there and drag up inside the lower half. Slow drags and Home-gesture flicks were both wrong.
+                if checked >= games { break }
+                let before = panelPNG()
+                let from = app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.946))
+                let to = app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.62))
+                from.press(forDuration: 0.05, thenDragTo: to)
+                sleep(1)
                 step("dragged in the lower half")
+                // A drag that moves nothing must fail loudly, not loop ten times and report "0 tiles" (44e96db).
+                if checked == 0 {
+                    let after = panelPNG()
+                    XCTAssertNotEqual(after, before, "the Tabletop drag scrolled nothing, so no tiles could appear [\(pose)]")
+                    if after == before { break }
+                }
             } else {
                 app.swipeUp(velocity: .fast)
             }
-            // Stop once the tiles have been seen and measured on a screen; further scrolling only repeats them.
-            if pose.contains("tabletop"), checked >= games { break }
         }
         XCTAssertGreaterThan(checked, 0, "found tiles [\(pose)]")
         let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "library-\(games) [\(pose)]"; shot.lifetime = .keepAlways; add(shot)
