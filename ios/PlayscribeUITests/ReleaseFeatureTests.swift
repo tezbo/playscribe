@@ -133,8 +133,22 @@ final class ReleaseFeatureTests: XCTestCase {
         launch("chapter/dawnwalker/news")
         let states = ["No news yet", "Loading news", "Official"]
         let failed = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH \"Couldn't load news\"")).firstMatch
-        let seen = states.contains { app.staticTexts[$0].waitForExistence(timeout: 10) } || failed.exists
-            || app.staticTexts.matching(NSPredicate(format: "label == 'Official'")).firstMatch.exists
+        func shown() -> Bool {
+            states.contains { app.staticTexts[$0].waitForExistence(timeout: 3) } || failed.exists
+                || app.staticTexts.matching(NSPredicate(format: "label == 'Official'")).firstMatch.exists
+        }
+        var seen = shown()
+        // Tabletop (48404f1): the chapter chips and search row fill the half-height page and the News body sits below them, in
+        // a lazy list that draws nothing until scrolled. Scroll the page itself, then look again.
+        var scrolls = 0
+        while !seen && scrolls < 4 {
+            let page = app.descendants(matching: .any)["pageScroll"]
+            (page.exists ? page : app).swipeUp(); scrolls += 1
+            seen = shown()
+        }
+        if !seen {
+            let tree = XCTAttachment(string: app.debugDescription); tree.name = "news-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+        }
         XCTAssertTrue(seen, "News shows a list, the empty copy or the retry")
         assertFrames("news")
         attach("news")
