@@ -52,6 +52,9 @@ final class NotificationService: NSObject {
         #endif
         if authorization == .authorized || authorization == .provisional {
             UIApplication.shared.registerForRemoteNotifications()
+        } else if authorization == .denied, PushRegistrar.appCallsEnabled {
+            // Alerts are off: the relay forgets this device (r052-device-delete). Retried here until it answers.
+            PushRegistrar.forgetDevice()
         }
     }
 
@@ -406,6 +409,25 @@ enum PushRegistrar {
             return await authed(retry: false, make)
         }
         return false
+    }
+
+    /// DELETE /v1/devices/me: asks the relay to forget this device (r052-device-delete), used when alerts go off. A 2xx means
+    /// done (the relay also answers 204 when the key is already gone) and a 401 means it no longer knows the key, so either
+    /// way the stored key and what the client remembers are dropped. Offline or any other answer keeps the key, so the next
+    /// time alerts are found off it tries again; it never blocks the toggle. Returns the task for tests.
+    @discardableResult
+    static func forgetDevice() -> Task<Void, Never>? {
+        guard let url = relayURL?.appending(path: "v1/devices/me"), let key = keys.read() else { return nil }
+        return Task {
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+            guard let (_, response) = try? await session.data(for: request), let http = response as? HTTPURLResponse else { return }
+            if (200..<300).contains(http.statusCode) || http.statusCode == 401 {
+                // Only if the key is still the one just deleted (a new registration may have stored another meanwhile).
+                if keys.read() == key { keys.write(nil); registration = nil; lastFollows = nil; lastQuiet = nil }
+            }
+        }
     }
 
     /// The last follows list sent, so an unchanged list costs no request (the relay's free plan allows 1,000 writes a day).
