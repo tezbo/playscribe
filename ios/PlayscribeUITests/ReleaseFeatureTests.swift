@@ -179,6 +179,32 @@ final class ReleaseFeatureTests: XCTestCase {
         let tree = XCTAttachment(string: app.debugDescription); tree.name = "tabletop-stage-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
     }
 
+    /// Iris (7 Nov, signing #393): in Tabletop the News headlines and the Gallery empty-state links are text in the stage's
+    /// accessibility tree, and none of them is an action: no button, no link trait.
+    func testTabletopNewsAndLinksAreReadableText() throws {
+        launch("chapter/dawnwalker/news")
+        guard inTabletop else { throw XCTSkip("the stage is a Tabletop surface") }
+        let any = app.descendants(matching: .any)
+        let row = any.matching(NSPredicate(format: "label CONTAINS 'Official' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news'")).firstMatch
+        XCTAssertTrue(row.waitForExistence(timeout: 10), "News (headline row, or its empty or loading copy) is in the tree")
+        XCTAssertFalse(row.label.isEmpty)
+        XCTAssertNotEqual(row.elementType, .button, "a News headline is text, not a button, in Tabletop")
+        XCTAssertNotEqual(row.elementType, .link, "a News headline is text, not a link, in Tabletop")
+        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label CONTAINS 'Official'")).count, 0, "no News headline is exposed as a button")
+        XCTAssertEqual(app.links.matching(NSPredicate(format: "label CONTAINS 'Official'")).count, 0, "no News headline is exposed as a link")
+        let newsTree = XCTAttachment(string: app.debugDescription); newsTree.name = "tabletop-news-hierarchy.txt"; newsTree.lifetime = .keepAlways; add(newsTree)
+
+        // The Gallery empty state (Astro Bot and Ghost of Yotei have no art or videos): "Find trailers online" is plain text.
+        app.terminate()
+        launch("chapter/astro-bot/gallery")
+        let trailers = app.descendants(matching: .any).matching(NSPredicate(format: "label == 'Find trailers online'")).firstMatch
+        XCTAssertTrue(trailers.waitForExistence(timeout: 10), "the Gallery empty state's trailer text is in the tree")
+        XCTAssertEqual(trailers.elementType, .staticText, "it is text in Tabletop, not a link or button")
+        XCTAssertEqual(app.links.matching(NSPredicate(format: "label CONTAINS 'Find trailers online' OR label CONTAINS 'Official website'")).count, 0, "no Gallery link has a link trait in Tabletop")
+        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label CONTAINS 'Find trailers online' OR label CONTAINS 'Official website'")).count, 0, "no Gallery link is a button in Tabletop")
+        let galleryTree = XCTAttachment(string: app.debugDescription); galleryTree.name = "tabletop-gallery-hierarchy.txt"; galleryTree.lifetime = .keepAlways; add(galleryTree)
+    }
+
     /// Known issues: following toggles and says so.
     func testFollowKnownIssue() throws {
         launch("release/dawnwalker/dawnwalker@1.1")
