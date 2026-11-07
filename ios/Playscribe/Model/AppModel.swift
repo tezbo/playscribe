@@ -519,9 +519,18 @@ final class AppModel {
         }
         nav = n
         readerIndex[gameID] = 0
-        if pill?.gameID == gameID { pill = nil }
+        // N-7: the pill goes only when the page it points to is the one now showing.
+        if let p = pill, isViewing(p.gameID, p.releaseID) { pill = nil }
         focusReleaseID = releaseID
         focusToken += 1
+    }
+
+    /// True when the update page for this release is the one on screen: its game is open and the release is the one
+    /// the Page shows or the pushed detail screen.
+    func isViewing(_ gameID: String, _ releaseID: String) -> Bool {
+        guard nav.tab == .library, nav.gameID == gameID else { return false }
+        if nav.detailReleaseID != nil { return nav.detailReleaseID == releaseID }
+        return nav.chapter == .updates && selectedRelease(gameID)?.id == releaseID
     }
 
     /// D-2/D-3: the release the Page shows: the one picked, else the newest On PS5 release.
@@ -1020,7 +1029,8 @@ final class AppModel {
     func releaseArrivedInForeground(gameID: String, releaseID: String) {
         tick()
         highlight = releaseID
-        if nav.gameID != gameID { showPill(gameID: gameID, releaseID: releaseID) }
+        // N-7: shown on every page except the exact update it points to, other pages of the same game included.
+        if !isViewing(gameID, releaseID) { showPill(gameID: gameID, releaseID: releaseID) }
         NotificationService.shared.updateBadge(badgeCount)
     }
 

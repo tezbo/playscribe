@@ -151,7 +151,9 @@ struct SettingsView: View {
 
                 Section {
                     Toggle("Autoplay videos", isOn: $autoplayVideos).frame(minHeight: 52)
+                        .accessibilityHint("Videos start as soon as they open. Off when Reduce Motion is on.")
                     Toggle("Reflection mode", isOn: $reflectionMode).frame(minHeight: 52)
+                        .accessibilityHint("A soft mirror of the video under the controls when the Duo stands folded. Off when Reduce Motion or Reduce Transparency is on.")
                 } header: {
                     Text("Video")
                 } footer: {

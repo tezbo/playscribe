@@ -73,6 +73,11 @@ struct FoldHarnessTests {
         } else {
             HarnessRules.require(r.aboveTheFold.isEmpty, "\(p.id) G-4: tappable frames above the Tabletop fold: \(r.aboveTheFold.map(HarnessRules.brief))")
         }
+        // Widths: Closed is calibrated (deck 346 pt in the 382 pt container with 16 pt margins; before #360's fix 262 pt). One-sided, with
+        // margin: fail only when the deck is clearly narrower than the container allows. Other poses are not yet calibrated.
+        if p.id == "closed", let deck = r.named["latestDeck"] {
+            HarnessRules.require(deck.width >= 330, "closed: deck is \(Int(deck.width)) pt wide in a \(Int(p.container.width)) pt container (expected about 346; the trailing inset is counted twice if it is 262)")
+        }
         HarnessRules.checkDeck(r, maxFraction: p.id == "tabletop" ? nil : 0.5)
         if p.id == "closed" || p.id == "open" { HarnessRules.checkDeck(r, maxFraction: 0.38) }
         if p.expected != .tabletop { HarnessRules.checkLibraryToolbar(r) }
@@ -125,10 +130,12 @@ enum HarnessRules {
     /// harness's 84 to 88 pt narrowing (which can only hide overflow, never invent it). Tabletop's rail is laid out by the system at the
     /// real region and is skipped. Asserted since the first CI run (9bb77b3) showed no overflow in any pose at AX3 or AX5.
     static func reportOverflow(_ r: Rendered, size: String) {
-        guard r.pose.expected != .tabletop else { return }
+        // Book's pages are split by the system's ArrangementView at the window's real fold, which offscreen starts the right page at
+        // x 475 (inside the fold) instead of 495, so a full-width page overruns by 23 pt (#360 run fa44e8e). Same limit as Tabletop.
+        guard r.pose.expected != .tabletop, r.pose.expected != .book else { return }
         let limit = r.pose.container.width + 20
         let over = r.frames.filter { $0.width > 1 && $0.height > 1 && $0.maxX > limit }
-        require(over.isEmpty, "\(r.pose.id) \(size) G-8: tappable frames past the trailing edge (\(Int(limit)) pt): \(over.map(brief))")
+        require(over.isEmpty, "\(r.pose.id) \(size) G-8 overflow: tappable frames past the trailing edge (\(Int(limit)) pt): \(over.map(brief))")
     }
 
     /// One-line failures that say "failed", so the CI log's grep shows them (and so a reader sees the numbers).

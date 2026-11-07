@@ -559,6 +559,26 @@ struct SpoilerWarningTests {
     }
 }
 
+/// VoiceOver reads the playback position as time (R-11).
+struct PlayerTimeTests {
+    @Test("Spoken time is words, differs per second, never empty past zero")
+    func spoken() {
+        #expect(!PlayerTime.spoken(83).isEmpty)
+        #expect(PlayerTime.spoken(83) != PlayerTime.spoken(84))
+        #expect(PlayerTime.spoken(83).contains("minute"))
+        #expect(PlayerTime.format(83) == "1:23")
+    }
+}
+
+/// TT-2: VoiceOver hears where a section sits in the update.
+struct ReaderPositionTests {
+    @Test("Position reads as a place, from one")
+    func position() {
+        #expect(ReaderBody.position(0, of: 5) == "1 of 5")
+        #expect(ReaderBody.position(4, of: 5) == "5 of 5")
+    }
+}
+
 /// R-11, G-9: autoplay is opt-in.
 struct AutoplayTests {
     @Test("Player page autoplays only when asked (R-11)")
@@ -628,6 +648,17 @@ struct QARouteGuardTests {
         #expect(m.data.collection.map(\.gameID) == StoreSet.gameIDs)
         #expect(m.data.customGames.count == 5)
         #expect(m.data.simulated.count == 3)
+    }
+
+    @Test("The store set's PS Plus card carries only invented titles that match no cover (r052-store-set-content)")
+    func storeSetPlusCardIsPlates() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        m.loadStoreSet()
+        let games = PlusStore.shared.months.first?.games ?? []
+        #expect(games.count == 3)
+        for g in games { #expect(PlusCard.resolve(g, tracked: { _ in nil }) == nil) }
     }
 
     @Test("A developer or simulator build still runs QA routes")

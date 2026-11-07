@@ -67,6 +67,7 @@ extension AppModel {
         state.simulated = releases
         for r in releases where !(StoreSet.entries.first { $0.id == r.gameID }?.update?.unread ?? false) { state.read[r.id] = .now }
         data = state
+        PlusStore.shared.setQA("store")   // the PS Plus card shows invented plates, never real covers
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
     }
