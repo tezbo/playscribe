@@ -453,7 +453,6 @@ struct LibraryShelf: View {
                     let deck = model.latestDeck
                     if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
                     NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
-                    if all.count >= 2 && layout == .tiles { FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey) }
                 }
                 }
             }
