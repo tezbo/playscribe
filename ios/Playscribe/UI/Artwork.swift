@@ -5,6 +5,9 @@ import SwiftUI
 struct CoverView: View {
     var game: CatalogGame
     var cornerRadius: CGFloat = 8
+    /// False where the title is already printed beside the cover (the AX Upcoming rows): the no-art plate then shows one serif
+    /// initial (Iris, #357), never title text, so a long name can't be cut mid-word.
+    var plateName = true
 
     var body: some View {
         ZStack {
@@ -29,13 +32,18 @@ struct CoverView: View {
         let tones = (game.tones ?? ["#1b1d24", "#0b0d12"]).map(Color.init(hex:))
         return LinearGradient(colors: tones, startPoint: .topLeading, endPoint: .bottomTrailing)
             .overlay {
-                Text(game.name)
+                if !plateName {
+                    Text(String(game.name.first(where: \.isLetter) ?? game.name.first ?? "?").uppercased())
+                        .font(.custom("Literata24pt-SemiBold", size: 28))
+                        .foregroundStyle(.white.opacity(0.85))
+                        .accessibilityHidden(true)
+                } else { Text(game.name)
                     .font(PlayscribeFont.caption.weight(.semibold))
                     
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.white.opacity(0.85))
                     .padding(6)
-                    .minimumScaleFactor(0.6)
+                    .minimumScaleFactor(0.6) }
             }
     }
 }

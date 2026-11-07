@@ -23,6 +23,8 @@ export const gameFromRow = (r: Row): Game => ({
   artwork: r.artwork_image_id ? { imageId: r.artwork_image_id, url: artworkUrl(r.artwork_image_id) } : null,
   ps5Release: r.ps5_release ?? null,
   ...(r.ps5_release_precision ? { ps5ReleasePrecision: r.ps5_release_precision } : {}),
+  // The label only runs while the 1.0 is ahead; the day it arrives the fields go without waiting for the next IGDB fetch.
+  ...(r.ea_since && (!r.full_release || r.full_release > now().slice(0, 10)) ? { eaSince: r.ea_since, ...(r.full_release ? { fullRelease: r.full_release } : {}) } : {}),
   ps5TitleIds: json(r.ps5_title_ids, []),
 })
 
@@ -36,14 +38,18 @@ export interface GameInput {
   steamAppId?: number | null
   ps5Release?: string | null
   ps5ReleasePrecision?: string | null
+  /** Set only by an IGDB fetch (with igdbRev): null then clears an earlier value. */
+  eaSince?: string | null
+  fullRelease?: string | null
+  igdbRev?: number
   firstRelease?: string | null
   ps5TitleIds?: string[]
 }
 
 export const upsertGame = (db: DB, g: GameInput) => {
   db.prepare(
-    `INSERT INTO games (id, igdb_id, name, cover_image_id, artwork_image_id, square_cover_image_id, steam_app_id, ps5_release, ps5_release_precision, first_release, ps5_title_ids, created_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `INSERT INTO games (id, igdb_id, name, cover_image_id, artwork_image_id, square_cover_image_id, steam_app_id, ps5_release, ps5_release_precision, first_release, ps5_title_ids, ea_since, full_release, igdb_rev, created_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
      ON CONFLICT (id) DO UPDATE SET
        igdb_id = COALESCE(excluded.igdb_id, igdb_id), name = excluded.name,
        cover_image_id = COALESCE(excluded.cover_image_id, cover_image_id),
@@ -54,9 +60,12 @@ export const upsertGame = (db: DB, g: GameInput) => {
        ps5_release = COALESCE(excluded.ps5_release, ps5_release),
        -- The precision belongs to whichever date is stored, so it changes with the date.
        ps5_release_precision = CASE WHEN excluded.ps5_release IS NOT NULL OR excluded.ps5_release_precision IS NOT NULL THEN excluded.ps5_release_precision ELSE ps5_release_precision END,
+       ea_since = CASE WHEN excluded.igdb_rev > 0 THEN excluded.ea_since ELSE ea_since END,
+       full_release = CASE WHEN excluded.igdb_rev > 0 THEN excluded.full_release ELSE full_release END,
+       igdb_rev = MAX(igdb_rev, excluded.igdb_rev),
        first_release = COALESCE(excluded.first_release, first_release),
        ps5_title_ids = CASE WHEN excluded.ps5_title_ids = '[]' THEN ps5_title_ids ELSE excluded.ps5_title_ids END`,
-  ).run(g.id, g.igdbId ?? null, g.name, g.coverImageId ?? null, g.artworkImageId ?? null, g.squareCoverImageId ?? null, g.steamAppId ?? null, g.ps5Release ?? null, g.ps5ReleasePrecision ?? null, g.firstRelease ?? null, JSON.stringify(g.ps5TitleIds ?? []), now())
+  ).run(g.id, g.igdbId ?? null, g.name, g.coverImageId ?? null, g.artworkImageId ?? null, g.squareCoverImageId ?? null, g.steamAppId ?? null, g.ps5Release ?? null, g.ps5ReleasePrecision ?? null, g.firstRelease ?? null, JSON.stringify(g.ps5TitleIds ?? []), g.eaSince ?? null, g.fullRelease ?? null, g.igdbRev ?? 0, now())
 }
 
 export const getGameRow = (db: DB, id: string) => db.prepare('SELECT * FROM games WHERE id = ?').get(id) as Row | undefined
@@ -75,7 +84,10 @@ const platformFromRow = (r: Row, links: ReleaseLinks): PlatformRelease => ({
 
 export const releaseFromRow = (db: DB, r: Row): Release => {
   // Tagged on read, so stored notes follow the current platform rules.
-  const notes = tagNotes(json(r.notes, []))
+  const sourceIds = json<string[]>(r.source_ids, [])
+  const platformRows = db.prepare('SELECT * FROM platform_releases WHERE release_id = ? ORDER BY platform').all(r.id) as Row[]
+  // Only a Steam-only release with no PS5 row: where a PS5 row exists the Steam post is about PS5 too (Quinn, #380).
+  const notes = tagNotes(json(r.notes, []), sourceIds.length > 0 && sourceIds.every((id) => id.endsWith('-steam')) && !platformRows.some((p) => p.platform === 'ps5'))
   return {
     id: r.id,
     gameId: r.game_id,
@@ -86,9 +98,9 @@ export const releaseFromRow = (db: DB, r: Row): Release => {
     announcedAt: r.announced_at,
     notes,
     digest: digestOf(notes),
-    sourceIds: json(r.source_ids, []),
+    sourceIds,
     links: json(r.links, {}),
-    platforms: (db.prepare('SELECT * FROM platform_releases WHERE release_id = ? ORDER BY platform').all(r.id) as Row[]).map((p) => platformFromRow(p, json(r.links, {}))),
+    platforms: platformRows.map((p) => platformFromRow(p, json(r.links, {}))),
     revision: r.revision,
     updatedAt: r.updated_at,
   }
