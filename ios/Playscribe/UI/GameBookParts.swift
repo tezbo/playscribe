@@ -246,6 +246,7 @@ struct ReleasePage: View {
 /// D-6: "Story spoilers hidden" with a Show button, only when the release has spoilers.
 struct SpoilerLine: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
     var body: some View {
         let shown = model.spoilersShown(gameID)
@@ -253,10 +254,17 @@ struct SpoilerLine: View {
             model.setSpoilersShown(gameID, !shown)
             model.show(Toast(text: shown ? "Spoilers hidden" : "Spoilers shown"))
         } label: {
-            HStack(spacing: 8) {
-                Image(systemName: shown ? "eye" : "eye.slash")
-                Text(shown ? "Story spoilers shown" : "Story spoilers hidden").foregroundStyle(.secondary)
+            // At accessibility sizes the label takes the full width in whole words and the Show button sits under it,
+            // on its own 44 pt line, so the label never breaks by letter and the button is never cut by the next row.
+            let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4)) : AnyLayout(HStackLayout(spacing: 8))
+            layout {
+                HStack(spacing: 8) {
+                    Image(systemName: shown ? "eye" : "eye.slash")
+                    Text(shown ? "Story spoilers shown" : "Story spoilers hidden").foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
                 Text(shown ? "Hide" : "Show").fontWeight(.semibold)
+                    .frame(minHeight: 44, alignment: .leading)
             }
             .font(PlayscribeFont.subheadline)
             .foregroundStyle(PlayscribeColor.accent)
