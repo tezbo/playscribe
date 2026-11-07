@@ -74,7 +74,7 @@ jobs:
           mkdir -p stills
           xcodebuild test -project ios/Playscribe.xcodeproj -scheme Playscribe \
             -destination "id=${{ steps.sim.outputs.udid }}" \
-            -only-testing:PlayscribeTests/HarnessStillsTests/writeStill \
+            -only-testing:PlayscribeTests/HarnessStillsTests \
             CODE_SIGNING_ALLOWED=NO > stills/build.log 2>&1 || true
           grep -E 'harness still|error:|\*\* TEST' stills/build.log || true
           n=$(ls stills/*.png 2>/dev/null | wc -l | tr -d ' ')
