@@ -24,7 +24,7 @@ on the Mac. Hosted runners are headless, so they cannot press it either.
 | 3 | `xcodegen` installed only if missing, Homebrew auto-update and cleanup off; job timeouts so a hang costs 30 min, not 6 hours | ~1 min, hang cost | this PR |
 | 4 | Gate: `STILLS=0` by default (stills only on request or for release tags). Stills are re-presses of the pose, about 15 s each, plus 4 captures per pose | ~25 min of the 80 | next, on the 0.5.0 gate.sh |
 | 5 | Gate tiers: PR tier = Closed + Tabletop (the two layouts that differ most), full five poses nightly and on `v*` tags | PR gate ~80 to ~25 min | next |
-| 6 | Pose without Device Hub: an internal-build launch argument `-qaPose book/tabletop/open` that feeds `DuoReader` a synthetic division. Pose-sensitive suites then run headless, in parallel (one job per pose, 6 jobs), on hosted runners; the real-fold gate stays for release only | PR gate ~80 to ~15 min, no Mac | needs Terry's call: it adds a debug hook to the layout path |
+| 6 | Pose without Device Hub: an internal-build launch argument `-qaPose book/tabletop/open` that feeds `DuoReader` a synthetic division. Pose-sensitive suites then run headless, in parallel (one job per pose, 6 jobs), on hosted runners; the real-fold gate stays for release only | PR gate ~80 to ~15 min, no Mac | Terry said yes (7 Nov 2026). Built as `QAPose` in `Duo.swift`, `-qaPose book` or `tabletop`, internal builds only. Mac scripts opt in with `QA_HEADLESS_POSE=1` |
 | 7 | Build once, test in shards: `build-for-testing` uploaded as an artifact, shards `test-without-building` | scales with suite size | after 6 |
 | 8 | Test selection by changed paths (docs, backend: no iOS jobs; already true via path filters) | n/a | done |
 
