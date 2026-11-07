@@ -32,7 +32,10 @@ final class StoreSetRouteTests: XCTestCase {
     func testReaderRouteShowsTheBullets() throws {
         launch("reader/store-lantern-reach/store-lantern-reach@update-1.3/320")
         let bullet = app.staticTexts["Night expeditions to the far shore."]
-        XCTAssertTrue(bullet.waitForExistence(timeout: 15), "the first bullet exists")
+        if !bullet.waitForExistence(timeout: 15) {
+            let a = XCTAttachment(string: app.debugDescription); a.lifetime = .keepAlways; add(a)   // the hierarchy, for the Mac report
+            XCTFail("the first bullet exists"); return
+        }
         sleep(2)
         XCTAssertGreaterThanOrEqual(bullet.frame.minY, 0, "the bullet is not scrolled off the top (\(bullet.frame))")
         XCTAssertLessThanOrEqual(bullet.frame.maxY, app.frame.maxY - 1, "the bullet ends on screen (\(bullet.frame) in \(app.frame))")
@@ -56,7 +59,10 @@ final class StoreSetRouteTests: XCTestCase {
         app.terminate()
         launch("release/store-hollow-meridian/store-hollow-meridian@hotfix-1.1.2")
         let issue = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'autosaves can fail'")).firstMatch
-        XCTAssertTrue(issue.waitForExistence(timeout: 15), "the known issue line shows")
+        if !issue.waitForExistence(timeout: 15) {
+            let a = XCTAttachment(string: app.debugDescription); a.lifetime = .keepAlways; add(a)   // the hierarchy, for the Mac report
+            XCTFail("the known issue line shows"); return
+        }
         XCTAssertTrue(app.buttons["Follow this issue"].waitForExistence(timeout: 5), "its Follow control shows")
     }
 }

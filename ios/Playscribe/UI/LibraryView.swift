@@ -465,6 +465,10 @@ struct LibraryShelf: View {
                 guard let id = model.qaLibraryScroll else { return }
                 try? await Task.sleep(for: .milliseconds(700))
                 proxy.scrollTo(id, anchor: .top)
+                // The grid is lazy: its first pass scrolls by estimated row heights, and the last tile (title included) can end below
+                // the screen (Mac, 37d0e1c: 691.7 pt against 678). Scroll again once the rows have real sizes, bottom-aligned.
+                try? await Task.sleep(for: .milliseconds(500))
+                proxy.scrollTo(id, anchor: .bottom)
                 model.qaLibraryScroll = nil
             }
           }
