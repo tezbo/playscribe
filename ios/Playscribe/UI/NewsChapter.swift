@@ -336,7 +336,9 @@ struct GlobalNewsRow: View {
         let game = model.game(headline.gameID)
         Button { openURL(headline.item.url) } label: {
             HStack(alignment: .top, spacing: 12) {
-                if let game { CoverView(game: game, cornerRadius: 4).frame(width: 40) }
+                // The cover plate is 40 pt wide, so at accessibility sizes its title placeholder can only show "L…". The game name is in the
+                // line under the headline, so the plate is dropped there and the headline gets the width (Quinn, AX5).
+                if let game, !typeSize.isAccessibilitySize { CoverView(game: game, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 4) {
                     WholeWordText(text: headline.item.title, font: PlayscribeFont.subheadline.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 3)
                     NewsMeta {
