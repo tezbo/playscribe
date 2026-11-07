@@ -155,10 +155,9 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         PushRegistrar.showsTeamForTests = false
         UserDefaults.standard.set(true, forKey: PushRegistrar.teamKey)
         defer { UserDefaults.standard.removeObject(forKey: PushRegistrar.teamKey); PushRegistrar.showsTeamForTests = nil }
+        // The relay fails every PATCH, including the team one (the handler never reads a body).
         StubRelay.handler = { r in
-            if r.url!.path == "/v1/devices" { return (200, Data(#"{"deviceKey":"fresh"}"#.utf8)) }
-            let body = r.httpBody.map { String(decoding: $0, as: UTF8.self) } ?? ""
-            return body.contains("\"team\"") ? (503, Data()) : (200, Data())
+            r.url!.path == "/v1/devices" ? (200, Data(#"{"deviceKey":"fresh"}"#.utf8)) : (503, Data())
         }
         await PushRegistrar.register(token: "abc", follows: follows)?.value
         #expect(UserDefaults.standard.bool(forKey: PushRegistrar.teamKey), "kept for the next launch")
