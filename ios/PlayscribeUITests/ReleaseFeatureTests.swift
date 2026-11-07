@@ -131,17 +131,6 @@ final class ReleaseFeatureTests: XCTestCase {
     /// News strip and News chapter: never a blank page; one of the three states is always shown.
     func testNewsChapterIsNeverBlank() throws {
         launch("chapter/dawnwalker/news")
-        // Tabletop (96e0e39): the page is the view-only stage in the upper half, which has no accessibility children, so the News
-        // body cannot be read from the tree. Check what the lower half can show: the News chip is the selected chapter, then
-        // keep a capture for the reviewer. Other poses read the body below.
-        if inTabletop {
-            let chip = button("News")
-            XCTAssertTrue(chip.waitForExistence(timeout: 10), "the News chapter chip is on the lower half")
-            XCTAssertTrue(chip.isSelected, "News is the selected chapter")
-            assertFrames("news")
-            attach("news-tabletop")
-            return
-        }
         let states = ["No news yet", "Loading news", "Official"]
         let failed = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH \"Couldn't load news\"")).firstMatch
         func shown() -> Bool {
@@ -153,19 +142,36 @@ final class ReleaseFeatureTests: XCTestCase {
         // a lazy list that draws nothing until scrolled. Scroll the page itself, then look again.
         var scrolls = 0
         while !seen && scrolls < 4 {
+            // Not on Tabletop's stage: view only means no touch, and the News body must be in the tree without any scrolling there.
             let page = app.descendants(matching: .any)["pageScroll"]
-            (page.exists ? page : app).swipeUp(); scrolls += 1
+            if !inTabletop { (page.exists ? page : app).swipeUp() }
+            scrolls += 1
             seen = shown()
         }
         if !seen {
             let tree = XCTAttachment(string: app.debugDescription); tree.name = "news-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
         }
-        XCTAssertTrue(seen, "News shows a list, the empty copy or the retry")
+        // Iris, 15:20: view only means no touch, never hidden from VoiceOver. In Tabletop the upper stage must still expose the News body.
+        XCTAssertTrue(seen, "News shows a list, the empty copy or the retry (Tabletop: readable by VoiceOver in the upper stage)")
         assertFrames("news")
         attach("news")
     }
 
     // MARK: - Reading
+
+    /// Iris (15:20): the Tabletop upper stage is view only, never hidden from VoiceOver. The Updates chapter shows the release's
+    /// title and body in the stage; both must be in the accessibility tree there, and neither may be an action.
+    func testTabletopStageIsReadable() throws {
+        launch("release/dawnwalker/dawnwalker@1.1")
+        guard inTabletop else { throw XCTSkip("the stage is a Tabletop surface") }
+        let title = app.descendants(matching: .any)["releaseTitle"]
+        let body = app.descendants(matching: .any)["readerBody"]
+        XCTAssertTrue(title.waitForExistence(timeout: 10), "the stage's release title is in the tree (VoiceOver can read it)")
+        XCTAssertTrue(body.waitForExistence(timeout: 5), "the stage's body is in the tree (VoiceOver can read it)")
+        XCTAssertFalse(title.label.isEmpty, "the title has a label")
+        XCTAssertFalse(body.label.isEmpty, "the body has text")
+        let tree = XCTAttachment(string: app.debugDescription); tree.name = "tabletop-stage-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+    }
 
     /// Known issues: following toggles and says so.
     func testFollowKnownIssue() throws {
