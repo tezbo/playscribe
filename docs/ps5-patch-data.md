@@ -257,3 +257,7 @@ Two store passes run every ingest, after the press posts are read:
 The PS4 release days come from the bundled index (`b`); a bare checkout without the index relabels nothing.
 
 A PS5 row is never dropped because it is dated long before the game's recorded PS5 release: that date can be a full-release or re-release date, not the first PS5 availability (early access, or a wrong IGDB date), so an early-row pass would drop real rows. A post within a week of the PS5 release is a day-one patch and is never relabelled.
+
+## Early Access before a later 1.0 (r052-early-access-dates)
+
+Only IGDB status "Early Access" counts, never Advanced Access (a few days of paid head start), Beta or Alpha. When a PS5 Early Access row comes before a later Full Release row, the game's PS5 date (`ps5Release`, `d` in the index) is the first playable day, so Steam patches from that period get PS5 rows. While the 1.0 is still ahead the feed and the index also carry `eaSince`/`fullRelease` (`ea`/`fr`). A game whose IGDB data mixes builds is set by hand in `scripts/ps5-date-overrides.json`. Games are refreshed from IGDB once when `IGDB_REV` (src/ingest/igdb.ts) is raised, and again while a 1.0 is still ahead. Diagnostic: the PS5 index workflow with `diagnose` lists every game whose earliest PS5 row precedes `d`; it writes nothing.
