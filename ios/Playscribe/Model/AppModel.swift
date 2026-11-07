@@ -623,8 +623,10 @@ final class AppModel {
         case "updates": nav.tab = .updates
         case "search": nav.tab = .search
         // QA (INTERNAL): a reader opened and scrolled `<y>` points down, so a short landscape screen shows bullets, not a bare heading.
-        case "reader" where parts.count == 3:
+        // A fourth part `issues` also opens the release's collapsed "Known issues" section (the hotfix shot shows the line and its Follow control).
+        case "reader" where parts.count == 3 || parts.count == 4:
             openRelease(gameID: parts[0], releaseID: parts[1])
+            if parts.count == 4, parts[3] == "issues" { setExpanded("cat:\(parts[1]):Known issues", true) }
             nav.anchors["page-\(parts[0])-\(Chapter.updates.rawValue)"] = parts[2]
             qaReaderScroll = Double(parts[2])
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])

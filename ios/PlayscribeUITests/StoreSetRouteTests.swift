@@ -23,6 +23,9 @@ final class StoreSetRouteTests: XCTestCase {
             sleep(2)   // the route scrolls 0.7 s after the Library appears
             XCTAssertTrue(tile.isHittable, "\(route): the Orchard tile is hittable")
             XCTAssertGreaterThanOrEqual(tile.frame.minY, 0, "\(route): the tile starts on screen")
+            if tile.frame.maxY > app.frame.maxY - 1 {
+                let a = XCTAttachment(string: app.debugDescription); a.lifetime = .keepAlways; add(a)   // the hierarchy: scroll view and tab frames
+            }
             XCTAssertLessThanOrEqual(tile.frame.maxY, app.frame.maxY - 1, "\(route): the tile and its title end on screen (\(tile.frame) in \(app.frame))")
             app.terminate()
         }
@@ -57,12 +60,14 @@ final class StoreSetRouteTests: XCTestCase {
         launch("store-set")
         sleep(3)
         app.terminate()
-        launch("release/store-hollow-meridian/store-hollow-meridian@hotfix-1.1.2")
+        launch("reader/store-hollow-meridian/store-hollow-meridian@hotfix-1.1.2/420/issues")   // the Known issues section is collapsed by design; the route opens it and scrolls
         let issue = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'autosaves can fail'")).firstMatch
         if !issue.waitForExistence(timeout: 15) {
             let a = XCTAttachment(string: app.debugDescription); a.lifetime = .keepAlways; add(a)   // the hierarchy, for the Mac report
             XCTFail("the known issue line shows"); return
         }
-        XCTAssertTrue(app.buttons["Follow this issue"].waitForExistence(timeout: 5), "its Follow control shows")
+        let follow = app.buttons["Follow this issue"]
+        XCTAssertTrue(follow.waitForExistence(timeout: 5), "its Follow control shows")
+        XCTAssertLessThanOrEqual(follow.frame.maxY, app.frame.maxY - 1, "the Follow control is on screen (\(follow.frame) in \(app.frame))")
     }
 }
