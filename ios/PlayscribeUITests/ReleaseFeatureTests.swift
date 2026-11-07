@@ -44,7 +44,8 @@ final class ReleaseFeatureTests: XCTestCase {
     }
 
     private func attach(_ name: String) {
-        let a = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        // The app window, not XCUIScreen.main: in Book the main screen is the outer display and the capture came back black (48404f1).
+        let a = XCTAttachment(screenshot: app.screenshot())
         a.name = name
         a.lifetime = .keepAlways
         add(a)
@@ -184,7 +185,11 @@ final class ReleaseFeatureTests: XCTestCase {
         attach("welcome")
         let skip = app.buttons["Skip for now"]
         var swipes = 0
-        while !skip.isHittable && swipes < 4 { app.swipeUp(); swipes += 1 }
+        // Swipe the welcome's own scroll view when there is one: in Book a swipe on the app's centre can land on the other page.
+        while !skip.isHittable && swipes < 8 { (app.scrollViews.firstMatch.exists ? app.scrollViews.firstMatch : app).swipeUp(); swipes += 1 }
+        if !skip.isHittable {
+            let tree = XCTAttachment(string: app.debugDescription); tree.name = "first-run-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+        }
         XCTAssertTrue(skip.isHittable, "Skip for now is reachable (scrolling if the welcome is taller than the screen)")
         skip.tap()
         XCTAssertTrue(app.buttons["Add your first game"].waitForExistence(timeout: 5), "the empty Library, not a blank page")

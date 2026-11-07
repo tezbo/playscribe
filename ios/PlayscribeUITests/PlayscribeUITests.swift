@@ -28,8 +28,20 @@ final class PlayscribeUITests: XCTestCase {
             // (10f6e004 Mac solo run: row found and tapped, app left in the background, state 3). A person would tap again, so
             // find the row afresh and tap it once more, up to twice, before calling it a failure.
             var retries = 0
-            while !foreground && retries < 2, let again = notificationRow(timeout: 3) {
-                again.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+            while !foreground && retries < 2 {
+                // 48404f1: the sim sat on the LOCK SCREEN, where a notification tap does not open the app. Swipe up from the
+                // bottom to unlock (a no-op on the Home Screen), then find the row again, in Notification Center if need be.
+                springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.99))
+                    .press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.4)))
+                if target.state == .runningForeground { foreground = true; break }
+                var again = notificationRow(timeout: 3)
+                if again == nil {
+                    springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
+                        .press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.6)))
+                    again = notificationRow(timeout: 5)
+                }
+                guard let row = again else { break }
+                row.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
                 retries += 1
                 foreground = target.wait(for: .runningForeground, timeout: 8)
             }
@@ -84,6 +96,7 @@ final class PlayscribeUITests: XCTestCase {
         simulate.launchArguments = ["-qaRoute", "simulate/dawnwalker/major"]
         simulate.launch()
         XCUIDevice.shared.press(.home)
+        XCUIDevice.shared.press(.home)   // the second press wakes a sim that has gone to the lock screen (48404f1)
         // The banner is up for only a few seconds, and pressing Home returns slowly: look briefly, then use Notification Center.
         if let banner = notificationRow(timeout: 4) { return banner }
         let start = springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
@@ -396,6 +409,10 @@ final class ReviewFixUITests: XCTestCase {
         let form = app.collectionViews.firstMatch
         var tries = 0
         while !version.exists && tries < 8 { (form.exists ? form : app).swipeUp(); tries += 1 }
+        if !version.exists || !app.descendants(matching: .any)["appVersion"].exists {
+            let tree = XCTAttachment(string: app.debugDescription); tree.name = "settings-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "settings-window"; shot.lifetime = .keepAlways; add(shot)
+        }
         XCTAssertTrue(version.exists, "Settings shows a semantic version")
         XCTAssertTrue(app.descendants(matching: .any)["appVersion"].exists, "the version row is identified")
     }
