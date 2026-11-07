@@ -72,8 +72,9 @@ struct FeedRow: View {
                 VStack(alignment: .leading, spacing: 3) {
                     // At accessibility sizes the row stacks: the title takes the full width in whole words,
                     // the tags and date each get their own line, the summary goes under.
-                    HStack(alignment: .top, spacing: 6) {
-                        if unread { UnreadDot() }
+                    HStack(alignment: .firstTextBaseline, spacing: 6) {
+                        // Seated on the title's first line, not floating at the row's top (Iris).
+                        if unread { UnreadDot().alignmentGuide(.firstTextBaseline) { $0[.bottom] } }
                         TitleWithTags(release: release) {
                             Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
                         }
