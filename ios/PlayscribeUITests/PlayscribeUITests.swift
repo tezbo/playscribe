@@ -21,9 +21,7 @@ final class PlayscribeUITests: XCTestCase {
             // A lock-screen tap does not launch the app on this sim (17b7a0b: locked after the terminate, app state 1, two
             // retries). The sim has no passcode, so unlock first (a swipe up from the bottom, harmless if already unlocked),
             // then use the row in Notification Center, so the first tap is the one that counts.
-            springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.99))
-                .press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.4)))
-            sleep(1)
+            unlockIfLocked()
             if notificationRow(timeout: 2) == nil {
                 springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
                     .press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.6)))
@@ -143,6 +141,25 @@ final class PlayscribeUITests: XCTestCase {
         let listed = notificationRow(timeout: 10)
         XCTAssertNotNil(listed, "the Dawnwalker notification is in the banner or Notification Center")
         return listed ?? springboard.otherElements["Notification"]
+    }
+
+    /// Swipes up from the bottom edge of SpringBoard's own frame (absolute points, not normalized offsets, which landed in the
+    /// bottom band and did nothing, ccabb9b) until home screen icons exist, i.e. the lock screen is gone; attaches the tree if not.
+    private func unlockIfLocked() {
+        var screen = springboard.frame
+        if screen.isEmpty {
+            screen = springboard.windows.allElementsBoundByIndex.map(\.frame).max { $0.width * $0.height < $1.width * $1.height } ?? .zero
+        }
+        let origin = springboard.coordinate(withNormalizedOffset: .zero)
+        for _ in 0..<4 {
+            if springboard.icons.count > 0 { return }
+            origin.withOffset(CGVector(dx: screen.midX, dy: screen.maxY - 2))
+                .press(forDuration: 0.1, thenDragTo: origin.withOffset(CGVector(dx: screen.midX, dy: screen.maxY * 0.45)))
+            sleep(1)
+        }
+        if springboard.icons.count == 0 {
+            let t = XCTAttachment(string: "still locked? frame \(screen)\n" + springboard.debugDescription); t.name = "n6-still-locked"; t.lifetime = .keepAlways; add(t)
+        }
     }
 
     /// The notification's own row: the smallest hittable element whose label names the game. A first match on any element
