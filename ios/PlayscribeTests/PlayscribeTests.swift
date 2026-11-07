@@ -646,7 +646,8 @@ struct QARouteGuardTests {
         let m = model()
         m.handle(url: URL(string: "playscribe://store-set")!)
         #expect(m.data.collection.map(\.gameID) == StoreSet.gameIDs)
-        #expect(m.data.customGames.count == 5)
+        #expect(m.data.customGames.count == StoreSet.games().count + StoreSet.plusGames().count)
+        #expect(StoreSet.games().count == 5)
         #expect(m.data.simulated.count == 3)
     }
 
