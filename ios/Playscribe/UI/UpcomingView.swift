@@ -83,7 +83,7 @@ struct UpcomingView: View {
 
     /// One section: its header (24 pt above, 12 pt below) and tiles. In Book each page gets its own
     /// columns, so the fold falls in the gap between two grids and never through a tile or a header (G-4);
-    /// a section that spills onto the right page repeats its plain header there. Closed stays 3 across.
+    /// a section that spills onto the right page continues under "<title>, continued" (Iris). Closed stays 3 across.
     private func header(_ title: String, spoken: String?) -> some View {
         Text(title).font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
             .accessibilityLabel(spoken ?? title)
@@ -113,7 +113,7 @@ struct UpcomingView: View {
                         rows(Array(games.prefix(k)), watching: watching)
                     }.frame(width: leftWidth, alignment: .topLeading)
                     VStack(alignment: .leading, spacing: 12) {
-                        if games.count > k { header(title, spoken: nil).accessibilityHidden(true); rows(Array(games.dropFirst(k)), watching: watching) }
+                        if games.count > k { header(title + ", continued", spoken: nil).accessibilityHidden(true); rows(Array(games.dropFirst(k)), watching: watching) }
                     }.frame(width: rightWidth, alignment: .topLeading)
                         .padding(.leading, max(0, rightStart - leftWidth))
                 }
@@ -136,7 +136,7 @@ struct UpcomingView: View {
                     page(Array(games.prefix(k)), left, watching: watching)
                 }.frame(width: leftWidth, alignment: .topLeading)
                 VStack(alignment: .leading, spacing: 12) {
-                    if games.count > k { header(title, spoken: nil).accessibilityHidden(true); page(Array(games.dropFirst(k)), right, watching: watching) }
+                    if games.count > k { header(title + ", continued", spoken: nil).accessibilityHidden(true); page(Array(games.dropFirst(k)), right, watching: watching) }
                 }.frame(width: rightWidth, alignment: .topLeading)
                     .padding(.leading, max(0, rightStart - leftWidth))
             }
@@ -176,7 +176,7 @@ struct UpcomingView: View {
             // Closed is the narrowest page: the cover sits above the text there so the name and date get the whole column.
             let layout = duo.pose == .closed ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10)) : AnyLayout(HStackLayout(alignment: .top, spacing: 16))
             layout {
-                TileCover(game: g, plateName: false).aspectRatio(3 / 4, contentMode: .fit).frame(width: duo.pose == .closed ? 72 : 84)
+                TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit).frame(width: duo.pose == .closed ? 72 : 84)
                 VStack(alignment: .leading, spacing: 6) {
                     WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
                     Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)

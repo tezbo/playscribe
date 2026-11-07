@@ -639,11 +639,11 @@ final class AppModel {
             // "store-set/since": the "Since you last opened" card, as if the previous open was a day ago (the unread Lantern Reach update).
             if parts.first == "since" { catchUpSince = .now.addingTimeInterval(-86_400); catchUpHidden = false }
             if parts.first == "end" || parts.first == "titles", let last = StoreSet.gameIDs.last { nav.anchors["library"] = "lib-\(last)"; qaLibraryScroll = "lib-\(last)" }
-        case "one-update": resetToOneUpdateDemo()
-        case "two-update": resetToTwoUpdateDemo()
-        case "many-updates": resetToManyUpdatesDemo()
-        case "three-update": resetToUpdateDemo(count: 3)
-        case "four-update": resetToUpdateDemo(count: 4)
+        case "one-update": resetToOneUpdateDemo(); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
+        case "two-update": resetToTwoUpdateDemo(); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
+        case "many-updates": resetToManyUpdatesDemo(); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
+        case "three-update": resetToUpdateDemo(count: 3); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
+        case "four-update": resetToUpdateDemo(count: 4); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "caught-up": resetToCaughtUpDemo()
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
