@@ -710,7 +710,7 @@ struct QAPoseTests {
         let table = QAPose.regions(named: "tabletop", size: portrait)
         let ctxTable = DuoReader<EmptyView>.context(size: portrait, compact: false, division: table?.division, occlusions: [])
         #expect(ctxTable.pose == .tabletop)
-        #expect(abs((table?.division?.midY ?? 0) - 835 * 0.447) < 0.5)
+        #expect(abs((table?.division?.minY ?? 0) - 835 * 0.447) < 0.5)
         #expect(QAPose.regions(named: "open", size: portrait) == nil)
         #expect(QAPose.regions(named: nil, size: portrait) == nil)
     }

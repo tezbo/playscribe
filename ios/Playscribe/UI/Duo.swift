@@ -75,7 +75,7 @@ extension EnvironmentValues {
 
 /// QA (internal builds only): `-qaPose book` or `-qaPose tabletop` gives DuoReader a synthetic fold in the container it is
 /// already in, so a pose can be set at launch with no Device Hub clicks and no focus change (docs/ci.md item 6). The fold
-/// sits where the real one did in the Mac stills (Book at 0.525 of the width, Tabletop at 0.447 of the height, 40 pt thick).
+/// sits where the real one did in the Mac stills (its leading edge at 0.525 of the width for Book and its top edge at 0.447 of the height for Tabletop, 40 pt thick, the PoseCatalog numbers; the real device may differ by a few percent until the calibration pair is read).
 /// Launch on the inner display, landscape for book and portrait for tabletop. Closed and Open need no fold, so they are not
 /// arguments. Ignored in a distribution build, like `-qaRoute`.
 enum QAPose {
@@ -97,8 +97,8 @@ enum QAPose {
 
     static func regions(named name: String?, size: CGSize) -> InjectedRegions? {
         switch name {
-        case "book": InjectedRegions(division: CGRect(x: size.width * 0.525 - 20, y: 0, width: 40, height: size.height))
-        case "tabletop": InjectedRegions(division: CGRect(x: 0, y: size.height * 0.447 - 20, width: size.width, height: 40))
+        case "book": InjectedRegions(division: CGRect(x: size.width * 0.525, y: 0, width: 40, height: size.height))
+        case "tabletop": InjectedRegions(division: CGRect(x: 0, y: size.height * 0.447, width: size.width, height: 40))
         default: nil
         }
     }
