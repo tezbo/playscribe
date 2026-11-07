@@ -203,8 +203,12 @@ struct ReleaseBody: View {
             }
             if let summary = ps5Page ? r.ps5Summary : r.summary {
                 VStack(alignment: .leading, spacing: 4) {
-                    LinkedTextView(text: summary)
-                        .lineLimit(summaryOpen ? nil : 3)
+                    if summaryOpen {
+                        LinkedTextView(text: summary)
+                    } else {
+                        // Collapsed: three lines ending on a whole word, never a cut one ("co…"); More shows it all, with links.
+                        WholeWordText(text: LinkedText.clean(summary), font: PlayscribeFont.body, lines: 3)
+                    }
                     // GR-3: a truncated summary always says how to read the rest.
                     if summary.count > 120 {
                         Button(summaryOpen ? "Less" : "More") { withAnimation(.snappy) { summaryOpen.toggle() } }
