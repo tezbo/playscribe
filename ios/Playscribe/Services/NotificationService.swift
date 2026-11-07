@@ -361,7 +361,11 @@ enum PushRegistrar {
     }
 
     /// Forgets what the client remembers between calls (tests start each case clean).
-    static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil; lastTeam = nil }
+    static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil; lastTeam = nil
+        #if DEBUG
+        showsTeamForTests = nil
+        #endif
+    }
 
     /// What the last registration sent, so a 401 can register again without asking the app.
     private struct Registration { var token: String; var follows: [Follow] }
@@ -371,12 +375,25 @@ enum PushRegistrar {
     /// tester has chosen, so a normal build never sends the field.
     nonisolated(unsafe) private static var lastTeam: Bool?
     static let teamKey = "teamAlerts"
+    #if DEBUG
+    /// Tests stand in for the receipt check (a test host is never an App Store build). Not compiled into a release build.
+    nonisolated(unsafe) static var showsTeamForTests: Bool?
+    private static var showsTeam: Bool { showsTeamForTests ?? BuildChannel.showsTeamAlerts }
+    #else
+    private static var showsTeam: Bool { BuildChannel.showsTeamAlerts }
+    #endif
 
     @discardableResult
     static func register(token: String, follows: [Follow], quietHours: QuietHours? = nil) -> Task<Void, Never>? {
         guard relayURL != nil else { return nil }
         lastQuiet = quietWindow(quietHours)
-        lastTeam = BuildChannel.showsTeamAlerts ? UserDefaults.standard.object(forKey: teamKey) as? Bool : nil
+        if showsTeam {
+            lastTeam = UserDefaults.standard.object(forKey: teamKey) as? Bool
+        } else {
+            // An App Store build installed over a TestFlight one: the tester's "on" is still in UserDefaults and the relay record
+            // still says team=true. Say team=false once; sendTeam clears the stored choice when the relay has it.
+            lastTeam = UserDefaults.standard.bool(forKey: teamKey) ? false : nil
+        }
         return Task {
             if await registerNow(token: token, follows: follows) {
                 await sendQuiet(lastQuiet, retry: true)
@@ -510,7 +527,7 @@ enum PushRegistrar {
     @discardableResult
     private static func sendTeam(_ on: Bool, retry: Bool) async -> Bool {
         guard let url = relayURL?.appending(path: "v1/devices/me") else { return false }
-        return await authed(retry: retry) { key in
+        let sent = await authed(retry: retry) { key in
             var request = URLRequest(url: url)
             request.httpMethod = "PATCH"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -518,6 +535,9 @@ enum PushRegistrar {
             request.httpBody = try? JSONEncoder().encode(TeamBody(team: on))
             return request
         }
+        // The relay now has team=false for an App Store build: forget the old "on" so this is never sent again.
+        if sent, !on, !showsTeam { UserDefaults.standard.removeObject(forKey: teamKey) }
+        return sent
     }
 
     /// PATCH /v1/devices/me { team }: development and TestFlight builds only (the Settings "Team alerts" toggle; the relay sends
@@ -525,7 +545,7 @@ enum PushRegistrar {
     /// PlayscribeRelayURL is unset.
     @discardableResult
     static func syncTeam(_ on: Bool) -> Task<Void, Never>? {
-        guard BuildChannel.showsTeamAlerts, relayURL != nil, keys.read() != nil else { return nil }
+        guard showsTeam, relayURL != nil, keys.read() != nil else { return nil }
         lastTeam = on
         return Task { await sendTeam(on, retry: true) }
     }
