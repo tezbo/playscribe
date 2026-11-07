@@ -146,6 +146,12 @@ final class PlayscribeUITests: XCTestCase {
             let allow = springboard.alerts.buttons[label]
             if allow.waitForExistence(timeout: 4) { step("accepting the notification permission prompt"); allow.tap(); sleep(1); break }
         }
+        // The notification is scheduled by the route a moment after launch (and after the permission prompt), and an app put in the
+        // background before that never schedules it (c4bced1: warm failed twice with Notification Center empty). The toast
+        // "Simulated major arrives in 3 s" is shown right after the schedule call, so wait for it.
+        let scheduled = simulate.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Simulated'")).firstMatch
+        if !scheduled.waitForExistence(timeout: 10) { sleep(2) }
+        step("schedule confirmed (toast \(scheduled.exists ? "seen" : "not seen"))")
         if cold {
             // Cold: no Home press (it sends this sim to the lock screen, where taps land on a pile of old notifications and do
             // not launch the app, e411c788). Let the app schedule the 3 s notification, then end it; the system delivers it to
