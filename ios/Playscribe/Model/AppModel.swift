@@ -2,7 +2,7 @@ import Foundation
 import Observation
 import SwiftUI
 
-enum AppTab: String, Codable, Hashable { case library, updates, search }
+enum AppTab: String, Codable, Hashable { case library, updates, news, search }
 
 enum Chapter: String, Codable, CaseIterable, Hashable, Identifiable {
     case updates, news, world, companion, gallery, mybook
@@ -206,6 +206,8 @@ final class AppModel {
     /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
     /// confirm a `-qaRoute` took effect.
     var qaRoute: String?
+    /// QA (INTERNAL, `-qaRoute library/news`): the Library scrolls to its News strip.
+    var qaScrollNews = false
     /// QA (INTERNAL, `-qaRoute long-text`): a long overview body, to show the Tabletop stage cap and the Full text row.
     var qaLongText = false
     /// QA: the newest On PS5 update of the first `qaUpdateCount` different games are the only unread ones. Chosen
@@ -588,7 +590,10 @@ final class AppModel {
             if parts.first == "quiet" { data.quietHours = QuietHours() }
         case "tag" where parts.count == 1: if let v = Verification(rawValue: parts[0]) { tagExplainer = v }
         case "library": nav.tab = .library; nav.gameID = nil
+            // QA (INTERNAL, `-qaRoute library/news`): the Library already scrolled to the News strip.
+            if parts.first == "news" { qaScrollNews = true }
         case "updates": nav.tab = .updates
+        case "news": nav.tab = .news
         case "search": nav.tab = .search
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))

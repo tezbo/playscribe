@@ -63,7 +63,7 @@ struct GameBookView: View {
         // G-4, TT-1: in Tabletop the standing half is never touchable, whatever the chapter.
         if duo.pose == .tabletop {
             Group {
-                if model.nav.chapter == .updates { TabletopReaderStage(gameID: gameID) } else { PageView(gameID: gameID) }
+                if model.nav.chapter == .updates { TabletopReaderStage(gameID: gameID) } else if model.nav.chapter == .news { NewsStageArt(gameID: gameID) } else { PageView(gameID: gameID) }
             }
             .allowsHitTesting(false)
             // Not touchable, so not audited as tappable: a frame here is never a fold crossing (TT-1).

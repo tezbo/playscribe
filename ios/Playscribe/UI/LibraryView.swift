@@ -293,6 +293,7 @@ struct LibraryShelf: View {
         let rows = duo.pose == .tabletop && letter != nil
             ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
         let all = model.libraryRows
+        ScrollViewReader { proxy in
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
@@ -434,7 +435,7 @@ struct LibraryShelf: View {
                     let deck = model.latestDeck
                     if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
                 }
-                if !heroOnRightPage { NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading) }
+                if !heroOnRightPage { NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading).id("news-strip") }
                 if !heroOnRightPage && all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
                     // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
@@ -497,7 +498,21 @@ struct LibraryShelf: View {
         // The News strip's headlines load from here, not from the strip: a task on a view that is empty
         // until the headlines arrive never runs, so the strip stayed hidden (TestFlight build 8, Mac 9506116).
         .task(id: model.data.collection.map(\.gameID)) {
+            #if INTERNAL
+            NewsStore.shared.seedQA(gameIDs: model.data.collection.map(\.gameID))
+            #endif
             for id in model.data.collection.map(\.gameID).prefix(12) { await NewsStore.shared.load(gameID: id, igdbID: model.game(id)?.igdbID) }
+        }
+        // QA (INTERNAL, `-qaRoute library/news`): scroll to the News strip once it has headlines (the strip is hidden until then).
+        .task(id: model.qaScrollNews) {
+            #if INTERNAL
+            guard model.qaScrollNews else { return }
+            for _ in 0..<8 {
+                try? await Task.sleep(for: .milliseconds(600))
+                withAnimation(nil) { proxy.scrollTo("news-strip", anchor: .top) }
+            }
+            #endif
+        }
         }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
@@ -821,6 +836,7 @@ struct ContinueText: View {
                     .foregroundStyle(PlayscribeColor.accent)
                 if fresh, let v = release.versionChip {
                     Text(v)
+                        .accessibilityLabel(spokenVersion(v))
                         .font(PlayscribeFont.caption)
                         .monospacedDigit()
                         .foregroundStyle(PlayscribeColor.accent)
@@ -836,6 +852,12 @@ struct ContinueText: View {
         }
         .padding(.horizontal, 4)
     }
+}
+
+/// "v1.0.21" is not a word to VoiceOver or the accessibility audit: say "Version 1.0.21". Other chip text is read as it is.
+func spokenVersion(_ chip: String) -> String {
+    guard chip.first == "v", chip.dropFirst().first?.isNumber == true else { return chip }
+    return "Version " + chip.dropFirst()
 }
 
 extension Release {

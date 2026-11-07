@@ -4,13 +4,14 @@ import type { DB } from './db.ts'
 import { issuesOf } from './issues.ts'
 import { loadPlus } from './plus.ts'
 import { storedPlusMonths, withPlusCovers } from './plusAuto.ts'
-import { gameFromRow, getRelease, listReleases, newsOf, releaseFromRow } from './store.ts'
+import { gameFromRow, getRelease, listReleases, newsOf, allNews, releaseFromRow } from './store.ts'
 
 // Writes the read side of the API as static files, so the app can sync from any static host
 // (the `feed` branch on GitHub, see .github/workflows/feed.yml). Shapes match docs/api.md.
 //   v1/index.json          every game, with its newest release and when it last changed
 //   v1/games/<id>.json     one game, all its releases and its known issues
 //   v1/news/<id>.json      one game's news headlines (title, date, url), newest first
+//   v1/news.json           the newest 200 headlines across every game
 //   v1/latest.json         the 100 most recently changed releases, for a cheap "anything new?" check
 //   v1/review.json         open review items (public post links only)
 //   v1/plus.json           the hand-curated PS Plus monthly games (src/sources/plus.json)
@@ -52,6 +53,8 @@ export const exportStatic = (db: DB, outDir: string) => {
   write(join(root, 'index.json'), { version: 1, updatedAt: newest || null, games: index })
   // latest.json's updatedAt must always be a date: the 0.2.0 app (Latest.updatedAt: Date) cannot decode null from an empty feed.
   write(join(root, 'latest.json'), { updatedAt: newest || '1970-01-01T00:00:00.000Z', releases: latest })
+  const news = allNews(db)
+  write(join(root, 'news.json'), { updatedAt: news[0]?.date ?? '1970-01-01T00:00:00.000Z', items: news })
   write(join(root, 'review.json'), { items: review })
   // Manual months override the automatic ones, month by month.
   const manual = loadPlus(undefined, new Set(games.map((g) => g.id)))

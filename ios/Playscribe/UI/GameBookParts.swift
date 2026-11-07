@@ -48,7 +48,8 @@ struct PageView: View {
                         } else if let g = model.game(gameID) {
                             NoNotesPage(game: g)
                         }
-                    case .news: NewsChapter(gameID: gameID)
+                    // Tabletop: the headlines are links, so they live in the lower half (ContentsBody), never on the view-only stage (G-4).
+                    case .news: if duo.pose != .tabletop { NewsChapter(gameID: gameID) }
                     case .world, .companion: EntriesChapter(gameID: gameID, chapter: chapter)
                     case .gallery: GalleryChapter(gameID: gameID)
                     case .mybook: MyBookChapter(gameID: gameID)
@@ -505,6 +506,8 @@ struct ContentsBody: View {
                 NotesSearchField(gameID: gameID)
                 if model.noteQuery.count >= 2 || (duo.pose == .tabletop && model.noteLetter != nil) {
                     InlineNoteResults(gameID: gameID)
+                } else if chapter == .news, duo.pose == .tabletop {
+                    NewsChapter(gameID: gameID)
                 } else if chapter == .updates {
                     let unread = model.releases(gameID).filter(model.isUnread).count
                     if unread > 0 {

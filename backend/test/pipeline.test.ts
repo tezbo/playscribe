@@ -6,7 +6,7 @@ import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { alertCopy, headlineOf, pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
 import * as store from '../src/store.ts'
-import { getRelease, newsOf, promoteAnnounced } from '../src/store.ts'
+import { allNews, getRelease, newsOf, promoteAnnounced } from '../src/store.ts'
 import { clearRobotsCache } from '../src/http.ts'
 import { hotGameIds } from '../src/hot.ts'
 import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpers.ts'
@@ -257,6 +257,10 @@ test('roadmap 17: official non-patch posts become news headlines (title, date, u
   assert.deepEqual(Object.keys(art).sort(), ['game_id', 'published_at', 'source_id', 'title', 'url'])
   assert.ok(!rows.some((r) => /Hotfix|Update 1\.1$/.test(r.title)))
   assert.ok(newsOf(db, 'dawnwalker').every((n) => Object.keys(n).sort().join() === 'date,gameId,title,url,verification' && n.gameId === 'dawnwalker'))
+  // The global feed is the same rows across games, newest first, with the same fields.
+  const all = allNews(db)
+  assert.ok(all.length >= newsOf(db, 'dawnwalker').length)
+  assert.ok(all.every((n, i) => Object.keys(n).sort().join() === 'date,gameId,title,url,verification' && (i === 0 || all[i - 1]!.date >= n.date)))
 })
 
 test('coverage audit: a Steam-assumed PS5 row dated before the PS5 launch is dropped; official rows stay', async () => {

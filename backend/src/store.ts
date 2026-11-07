@@ -318,6 +318,16 @@ export const newsOf = (db: DB, gameId: string, limit = 20) =>
     verification: newsVerification(n.source_id),
   }))
 
+/** The newest headlines across every game, for the global News tab (v1/news.json). Same fields as a game's file. */
+export const allNews = (db: DB, limit = 200) =>
+  (db.prepare('SELECT game_id, title, published_at, url, source_id FROM news ORDER BY published_at DESC, url LIMIT ?').all(limit) as { game_id: string; title: string; published_at: string; url: string; source_id: string }[]).map((n) => ({
+    gameId: n.game_id,
+    title: n.title,
+    date: n.published_at,
+    url: n.url,
+    verification: newsVerification(n.source_id),
+  }))
+
 /**
  * Coverage audit, 2026-11-03: Steam patches dated before a game's PS5 launch were flagged live on PS5 when the
  * row was made before IGDB gave the PS5 date. Only rows taken as out on PS5 from Steam alone (`assumed`) are
