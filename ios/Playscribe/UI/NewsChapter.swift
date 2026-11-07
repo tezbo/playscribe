@@ -123,6 +123,7 @@ struct NewsChapter: View {
 /// Library "News" strip (0.5.0 item 17, PR 2): up to 5 official headlines across the library,
 /// newest first, game name above each title. Hidden when empty or when loading failed.
 struct NewsStrip: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
     @Environment(\.openURL) private var openURL
     private var store: NewsStore { .shared }
@@ -145,8 +146,8 @@ struct NewsStrip: View {
                         Button { openURL(post.item.url) } label: {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(post.game).font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                                Text(post.item.title).font(PlayscribeFont.subheadline.weight(.semibold))
-                                    .multilineTextAlignment(.leading).lineLimit(2)
+                                // Whole words then "…", never a cut word like "Award N…" (G-8; Iris): 4 lines at accessibility sizes.
+                                WholeWordText(text: post.item.title, font: PlayscribeFont.subheadline.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 2)
                                 HStack(spacing: 8) {
                                     if let d = post.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated))) }
                                     Tag(text: "Official")
