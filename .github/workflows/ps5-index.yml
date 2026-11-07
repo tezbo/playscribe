@@ -9,6 +9,10 @@ on:
         description: 'Optional IGDB ids to print PS5 release rows for, e.g. 1020,17269'
         required: false
         default: '1020,17269'
+      diagnose:
+        description: 'Read-only: list games whose earliest PS5 row is before the index date (no rebuild, no push)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -34,14 +38,20 @@ jobs:
       - name: Check secrets
         run: |
           if [ -z "$TWITCH_CLIENT_ID" ] || [ -z "$TWITCH_CLIENT_SECRET" ]; then echo "::error::Set TWITCH_CLIENT_ID and TWITCH_CLIENT_SECRET in the development environment"; exit 1; fi
+      - name: Early-access diagnostic
+        if: inputs.diagnose
+        working-directory: backend
+        run: npm run ps5-index --silent -- --early-diagnostic
       - name: Inspect
         if: inputs.inspect
         working-directory: backend
         run: npm run ps5-index --silent -- --inspect "${{ inputs.inspect }}"
       - name: Rebuild
+        if: ${{ !inputs.diagnose }}
         working-directory: backend
         run: npm run ps5-index --silent
       - name: Push for review
+        if: ${{ !inputs.diagnose }}
         run: |
           git diff --quiet && { echo "No change"; exit 0; }
           git switch -c ps5-index-update

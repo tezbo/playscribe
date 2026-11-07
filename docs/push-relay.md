@@ -33,9 +33,12 @@ phone ──POST /v1/devices──▶ relay (KV)          Feed job (GitHub Actio
 - **Ceilings (free plan):** 1,000 KV writes a day; about 2,000 devices before the Feed job's reads (48 runs a day, one read per
   device) pass 100,000 a day. `POST /v1/devices` is unauthenticated, so someone could burn the daily writes; the Worker therefore
   accepts at most 150 new devices a day (the count resets at 00:00 UTC, which is 11:00 AEDT; 429 with Retry-After after that; relaunches of known devices are never refused).
-  A Cloudflare rate-limit rule per IP is still worth adding before the app is public.
+  A new device must also pass a per-address limit of 5 a minute (the `REGISTER_LIMIT` Workers Rate Limiting binding, keyed on `cf-connecting-ip`, set up by `relay/deploy.sh`; 429 with Retry-After 60). It spends no KV writes, and known devices relaunching are never limited. Without the binding the check is skipped.
 - The relay stores follows as sent (`gameId` or `igdbId`); the Feed job resolves them and counts follows for games it does
   not track. A dead token (410) is only dropped for the run, since the relay's copy is the source; a push to it fails again, harmlessly.
+
+## Forgetting a device
+`DELETE /v1/devices/me` (device key as Bearer) deletes `d:`, `k:`, `t:` (only if it still points at this device) and `tm:`. It is idempotent: an unknown key is `204`, no key is `401`. It spends up to 4 KV deletes, which count against the 1,000 writes a day.
 
 ## Deploy
 `Relay deploy` workflow (on a change to `relay/**` on main, or by hand): runs the Worker tests, creates the KV namespace and the

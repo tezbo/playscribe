@@ -3,13 +3,41 @@ import { test } from 'node:test'
 import { problemsOf, ps5DatesOf } from '../src/ps5-dates.ts'
 
 const ids = { ps5: 167, ps4: 48 }
-const names: Record<number, string> = { 1: 'Full Release', 2: 'Early Access', 3: 'Next-Gen Optimization Patch Release' }
+const names: Record<number, string> = { 1: 'Full Release', 2: 'Early Access', 3: 'Next-Gen Optimization Patch Release', 4: 'Beta', 5: 'Advanced Access' }
 const nameOf = (i?: number) => (i == null ? undefined : names[i])
 const at = (iso: string) => Date.parse(iso + 'T00:00:00Z') / 1000
 
-test('a full PS5 release beats early access', () => {
+test('early access before a full release past: d is the first playable day, no label fields', () => {
   const rows = [{ platform: 167, status: 2, date: at('2022-09-06') }, { platform: 167, status: 1, date: at('2023-12-05') }]
-  assert.deepEqual(ps5DatesOf(rows, ids, nameOf), { d: '2023-12-05', b: undefined })
+  assert.deepEqual(ps5DatesOf(rows, ids, nameOf, undefined, undefined, '2026-11-07'), { d: '2022-09-06', b: undefined })
+})
+
+test('early access with the full release still ahead: ea and fr (Path of Exile 2)', () => {
+  const rows = [{ platform: 167, status: 2, date: at('2024-12-06') }, { platform: 167, status: 1, date: at('2026-12-11') }]
+  assert.deepEqual(ps5DatesOf(rows, ids, nameOf, undefined, undefined, '2026-11-07'), { d: '2024-12-06', ea: '2024-12-06', fr: '2026-12-11', b: undefined })
+  // The day the 1.0 arrives the label fields go.
+  assert.deepEqual(ps5DatesOf(rows, ids, nameOf, undefined, undefined, '2026-12-11'), { d: '2024-12-06', b: undefined })
+})
+
+test('a 1.0 that IGDB only dates to a year carries frq year (Starseeker: Astroneer Expeditions)', () => {
+  const formats: Record<number, string> = { 1: 'YYYYMMMMDD', 2: 'YYYY' }
+  const rows = [{ platform: 167, status: 2, date: at('2026-06-11'), date_format: 1 }, { platform: 167, status: 1, date: at('2026-12-31'), date_format: 2 }]
+  assert.deepEqual(ps5DatesOf(rows, ids, nameOf, undefined, (i) => formats[i!], '2026-11-07'), { d: '2026-06-11', ea: '2026-06-11', fr: '2026-12-31', frq: 'year', b: undefined })
+  // An exact day carries no frq.
+  const exact = [rows[0]!, { platform: 167, status: 1, date: at('2026-12-31'), date_format: 1 }]
+  assert.deepEqual(ps5DatesOf(exact, ids, nameOf, undefined, (i) => formats[i!], '2026-11-07'), { d: '2026-06-11', ea: '2026-06-11', fr: '2026-12-31', b: undefined })
+})
+
+test('Advanced Access, Beta and Alpha are not early access: the full release stays d', () => {
+  for (const status of [4, 5]) {
+    const rows = [{ platform: 167, status, date: at('2025-09-19') }, { platform: 167, status: 1, date: at('2025-09-26') }]
+    assert.deepEqual(ps5DatesOf(rows, ids, nameOf, undefined, undefined, '2026-11-07'), { d: '2025-09-26', b: undefined })
+  }
+})
+
+test('early access on a later full release row of another status keeps old behaviour with an override', () => {
+  const rows = [{ platform: 167, status: 2, date: at('2024-12-06') }, { platform: 167, status: 1, date: at('2026-12-11') }]
+  assert.deepEqual(ps5DatesOf(rows, ids, nameOf, { d: '2025-01-01', evidence: 'x' }, undefined, '2026-11-07'), { d: '2025-01-01', b: undefined })
 })
 
 test('early access alone is kept and flagged', () => {

@@ -24,4 +24,17 @@ enum BuildChannel {
         return receiptName == "sandboxReceipt" || receiptName == "receipt"
     }
     static var showsInternalTools: Bool { !isDistribution }
+
+    /// The Team alerts toggle only (Terry's call, 6 Nov): shown on development builds and TestFlight (receipt "sandboxReceipt"),
+    /// hidden on the App Store ("receipt"). Every other internal tool stays behind the full `showsInternalTools` guard.
+    static var showsTeamAlerts: Bool {
+        if let forced = overrideIsDistribution { return !forced }
+        #if targetEnvironment(simulator)
+        return true
+        #else
+        return showsTeamAlerts(receiptName: Bundle.main.appStoreReceiptURL?.lastPathComponent)
+        #endif
+    }
+
+    static func showsTeamAlerts(receiptName: String?) -> Bool { receiptName != "receipt" }
 }

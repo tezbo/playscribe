@@ -9,6 +9,7 @@
 //   POST /v1/devices                    register (idempotent per APNs token), returns { deviceId, deviceKey, follows, unknown }
 //   PATCH /v1/devices/me                token, environment, locale, quietHours
 //   GET|PUT /v1/devices/me/follows      the followed games
+//   DELETE /v1/devices/me               forget this device: record, token, key and team entry are removed (204; idempotent)
 //   GET /admin/devices?cursor=          Feed job only (Bearer ADMIN_TOKEN), 40 devices a page
 //
 // KV keys: d:<id> device record, t:<apnsToken> -> id, k:<sha256 deviceKey> -> id, n:<UTC date> new devices that day.
@@ -160,6 +161,17 @@ const register = async (env, request) => {
     if (team !== undefined) await syncTeamIndex(kv, existing.id, team)
     return json(publicView(next), 200)
   }
+  // A new device also passes a per-address limit (Workers Rate Limiting binding: no KV writes, so it cannot spend the budget it
+  // protects). Known devices relaunching are never limited. Without the binding (tests, a deploy that omits it) this is skipped.
+  if (env.REGISTER_LIMIT) {
+    const ip = request.headers.get('cf-connecting-ip') ?? 'unknown'
+    const { success } = await env.REGISTER_LIMIT.limit({ key: ip })
+    if (!success) {
+      const r = bad('too many registrations from this address, try again in a minute', 429)
+      r.headers.set('retry-after', '60')
+      return r
+    }
+  }
   const dayKey = `n:${now().slice(0, 10)}`
   const todays = Number((await kv.get(dayKey)) ?? 0)
   if (todays >= MAX_NEW_PER_DAY) {
@@ -205,6 +217,23 @@ const patchMe = async (env, request) => {
   if (JSON.stringify(next) !== JSON.stringify(d)) await putJson(kv, `d:${d.id}`, { ...next, updated: now() })
   if (typeof body.team === 'boolean') await syncTeamIndex(kv, d.id, body.team)
   return json({ deviceId: d.id })
+}
+
+/** The device's own request to be forgotten (alerts switched off, app reset). Removes every key that names it. A key the
+ *  relay no longer knows means it is already gone, so that is 204 too and the app can treat any 204 as done. */
+const deleteMe = async (env, request) => {
+  const kv = env.KV
+  const auth = request.headers.get('authorization') ?? ''
+  const key = auth.startsWith('Bearer ') ? auth.slice(7) : ''
+  if (!key) return bad('missing device key', 401)
+  const d = await deviceFor(kv, request)
+  if (d) {
+    await kv.delete(`d:${d.id}`)
+    await kv.delete(`k:${await sha(d.key)}`)
+    if (d.token && (await kv.get(`t:${d.token}`)) === d.id) await kv.delete(`t:${d.token}`)
+    if ((await kv.get(`tm:${d.id}`)) !== null) await kv.delete(`tm:${d.id}`)
+  }
+  return new Response(null, { status: 204, headers: { 'cache-control': 'no-store' } })
 }
 
 const putFollows = async (env, request) => {
@@ -280,13 +309,6 @@ const ascWebhook = async (env, request) => {
   const raw = await request.text()
   if (raw.length > MAX_BODY) return bad('body too large', 413)
   if (!(await signatureOk(env, request, raw))) {
-    // Header NAMES only (never values), up to 5 distinct sets a day, so a scanner cannot hide Apple's ping and forged
-    // requests cannot spend the KV write budget. Remove this probe once the signature header is known.
-    const names = [...request.headers.keys()].sort().join(',')
-    const seen = (await getJson(env.KV, 'dbg:webhook')) ?? { sets: [] }
-    if (seen.sets.length < 5 && !seen.sets.some((x) => x.headers === names)) {
-      await env.KV.put('dbg:webhook', JSON.stringify({ sets: [...seen.sets, { at: now(), headers: names }] }), { expirationTtl: 86400 })
-    }
     return bad('not allowed', 401)
   }
   let ev
@@ -311,13 +333,13 @@ export default {
       if (pathname === '/' || pathname === '/health') return json({ ok: true })
       if (pathname === '/v1/devices' && m === 'POST') return await register(env, request)
       if (pathname === '/v1/devices/me' && m === 'PATCH') return await patchMe(env, request)
+      if (pathname === '/v1/devices/me' && m === 'DELETE') return await deleteMe(env, request)
       if (pathname === '/v1/devices/me/follows' && m === 'PUT') return await putFollows(env, request)
       if (pathname === '/v1/devices/me/follows' && m === 'GET') {
         const d = await deviceFor(env.KV, request)
         return d ? json({ follows: d.follows }) : bad('unknown device key', 401)
       }
       if (pathname === '/v1/webhooks/asc' && m === 'POST') return await ascWebhook(env, request)
-      if (pathname === '/admin/webhook-debug' && m === 'GET') return (await isAdmin(env, request)) ? json((await getJson(env.KV, 'dbg:webhook')) ?? {}) : bad('not allowed', 401)
       if (pathname === '/admin/devices' && m === 'GET') return await adminDevices(env, request)
       return bad('not found', 404)
     } catch (e) {

@@ -99,7 +99,10 @@ struct ReleaseEntry: View {
                         else { HStack(spacing: 8) { facts } }
                     }
                     .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
-                    if !open, let h = r.isPS5Listed ? r.ps5Headline : r.headline { Text(h).font(PlayscribeFont.subheadline).lineLimit(2) }
+                    if !open, let h = r.isPS5Listed ? r.ps5Headline : r.headline {
+                        if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.subheadline, lines: 4) }
+                        else { Text(h).font(PlayscribeFont.subheadline).lineLimit(2) }
+                    }
                 }
                 .contentShape(Rectangle())
                 .frame(minHeight: 44)
@@ -197,7 +200,9 @@ struct ReleaseBody: View {
         let ps5Page = r.isPS5Listed
         VStack(alignment: .leading, spacing: 14) {
             if let h = ps5Page ? r.ps5Headline : r.headline {
-                Text(h).font(PlayscribeFont.title3)
+                // At accessibility sizes: the standing 4 whole-word line cap, "…" only when it still overflows.
+                if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.title3, lines: 4) }
+                else { Text(h).font(PlayscribeFont.title3) }
             } else if !r.notes.isEmpty {
                 Text("Fixes and tuning").font(PlayscribeFont.title3)
             }
@@ -382,7 +387,7 @@ struct Facts: View {
             }
             row("Video", VideoFact(release: r))
             if let checked = p?.liveAt?.checkedAt, Date.now.timeIntervalSince(checked) > 86_400 {
-                row("Checked", Text(checked.shortDay).font(PlayscribeFont.footnote).foregroundStyle(.secondary))
+                row("Checked", Text(checked.localShortDay).font(PlayscribeFont.footnote).foregroundStyle(.secondary))
             }
         }
         .font(PlayscribeFont.subheadline)

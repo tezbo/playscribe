@@ -3,6 +3,27 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
+## 0.5.3
+
+- Settings has a new Team alerts switch (development and TestFlight builds only). Turn it on to help us test alerts.
+- Turning alerts off now removes your device from our alert list.
+- Upcoming fits more on screen: short sections share a row, the cover shows the next game, and at big text sizes everything stacks in one column.
+- The "Also new" panel is gone, and the deck runs full width in Open portrait.
+- At big text sizes, titles, summaries and captions now wrap on whole words, and the spoiler row, Journal and Updates rows do too.
+- We also fixed the unread dot, the share button and spoiler contrast. At the largest sizes the share button lines up with the right edge of the text.
+- In Closed portrait the Updates rows stop short of the clock and the rail instead of running under them.
+- On a game page the section chips show every section when they fit, and no longer crowd the links. The page counter stays clear of the content, and VoiceOver covers video and the Tabletop reader.
+- Link rows say where they go, for example "Read full notes on Steam".
+- Pre-launch patches no longer show as PS5 updates.
+
+Check on the Duo:
+
+- Settings, then Team alerts: turn it on. Take a screenshot, tap Share Beta Feedback and send it with the comment "alert test". A team alert should arrive within a minute. If nothing arrives, tell us; that is a useful result too.
+- Turn Team alerts off and send another screenshot the same way: no team alert should arrive.
+- Settings, then Accessibility, then Display & Text Size, then Larger Text: turn on Larger Accessibility Sizes and drag the slider to the end: titles and the spoiler row should wrap on whole words with nothing cut off.
+
+Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
+
 ## 0.5.2
 
 - Playscribe can now tell you about a new PS5 update even when the app is closed. Allow notifications when asked. Quiet hours in Settings also apply to these alerts.

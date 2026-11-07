@@ -33,8 +33,8 @@ sub="${RELAY_SUBDOMAIN:-playscribe}"
 got="$(cf "$API/workers/subdomain" | jq -r '.result.subdomain // empty' 2>/dev/null || true)"
 [ -n "$got" ] && sub="$got"
 
-# 3. The script, with its KV binding and the admin secret.
-meta="$(jq -nc --arg ns "$nsid" --arg admin "$ADMIN" --arg hook "$HOOK" --arg key "${APNS_KEY:-}" --arg kid "${APNS_KEY_ID:-}" --arg team "${APNS_TEAM_ID:-}" '{main_module:"worker.js",compatibility_date:"2026-11-01",bindings:([{type:"kv_namespace",name:"KV",namespace_id:$ns},{type:"secret_text",name:"ADMIN_TOKEN",text:$admin},{type:"secret_text",name:"ASC_WEBHOOK_SECRET",text:$hook}] + (if $key != "" and $kid != "" and $team != "" then [{type:"secret_text",name:"APNS_KEY",text:$key},{type:"secret_text",name:"APNS_KEY_ID",text:$kid},{type:"secret_text",name:"APNS_TEAM_ID",text:$team}] else [] end))}')"
+# 3. The script, with its KV binding, the admin secret and the register rate limit (5 new devices a minute per address).
+meta="$(jq -nc --arg ns "$nsid" --arg admin "$ADMIN" --arg hook "$HOOK" --arg key "${APNS_KEY:-}" --arg kid "${APNS_KEY_ID:-}" --arg team "${APNS_TEAM_ID:-}" '{main_module:"worker.js",compatibility_date:"2026-11-01",bindings:([{type:"kv_namespace",name:"KV",namespace_id:$ns},{type:"ratelimit",name:"REGISTER_LIMIT",namespace_id:"1001",simple:{limit:5,period:60}},{type:"secret_text",name:"ADMIN_TOKEN",text:$admin},{type:"secret_text",name:"ASC_WEBHOOK_SECRET",text:$hook}] + (if $key != "" and $kid != "" and $team != "" then [{type:"secret_text",name:"APNS_KEY",text:$key},{type:"secret_text",name:"APNS_KEY_ID",text:$kid},{type:"secret_text",name:"APNS_TEAM_ID",text:$team}] else [] end))}')"
 cf -X PUT "$API/workers/scripts/$NAME" -F "metadata=$meta;type=application/json" -F "worker.js=@$here/worker.js;type=application/javascript+module;filename=worker.js" | must "upload Worker script"
 # Putting the script on workers.dev; a refusal here is not fatal because new scripts are usually on it already, and the smoke test below decides.
 en="$(cf -X POST "$API/workers/scripts/$NAME/subdomain" -H 'Content-Type: application/json' -d '{"enabled":true}')"

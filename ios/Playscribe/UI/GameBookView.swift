@@ -21,20 +21,18 @@ struct GameBookView: View {
                 // Layout direction doesn't move ArrangementView's regions, so the swap places the
                 // pieces explicitly. Their state lives in the model (selection, search, scroll
                 // anchors), so it carries across.
-                ArrangementView {
+                SplitArrangement {
                     if pageOnLeft { page } else { ContentsView(gameID: gameID) }
                 } secondary: {
                     if pageOnLeft { ContentsView(gameID: gameID) } else { page }
                 }
-                .arrangementViewStyle(.split)
             } else {
                 // Stacked: the Page on top (the standing half in Tabletop), the Contents below.
-                ArrangementView {
+                SplitArrangement {
                     page
                 } secondary: {
                     ContentsView(gameID: gameID)
                 }
-                .arrangementViewStyle(.split)
             }
         }
         .background(Color.ink0)

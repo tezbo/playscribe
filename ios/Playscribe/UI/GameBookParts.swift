@@ -65,6 +65,7 @@ struct PageView: View {
             }
             .padding(.bottom, 24)
         }
+        .clearsMessages()
         .scrollIndicators(.hidden)
         // D-2, T-5, D-10: the reading position is model state. Closing, opening, rotating or
         // swapping sides rebuilds this view; it comes back where the reader was.
@@ -197,30 +198,43 @@ struct ReleasePage: View {
     @Environment(AppModel.self) private var model
     var release: Release
     @Environment(\.dynamicTypeSize) private var typeSize
+    /// Lifts the dot from the first line's baseline to half the cap height (centred on line 1; Iris) (same idea as FeedRow's dotLift).
+    @ScaledMetric(relativeTo: .title3) private var dotLift: CGFloat = 7
+
+    /// The unread dot and the title block, the dot level with the title's FIRST line however many lines it wraps to.
+    @ViewBuilder private func dotAndTitle(_ r: Release) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 12) {   // 12 pt clear of the text (Iris)
+            if model.isUnread(r) {
+                UnreadDot().alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
+            }
+            TitleWithTags(release: r) {
+                // At accessibility sizes a plain Text wraps a word wider than the column by character and can leave a comma
+                // alone at the start of a line (r061, "Rebalancing" / ", Quality of"); WholeWordText cuts on a whole word.
+                if typeSize.isAccessibilitySize {
+                    WholeWordText(text: r.displayName, font: PlayscribeFont.title3, lines: 4, color: nil)
+                        .accessibilityIdentifier("releaseTitle")
+                } else {
+                    Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
+                }
+            }
+        }
+    }
 
     var body: some View {
         let r = release
         VStack(alignment: .leading, spacing: 12) {
-            // Accessibility sizes: the title and tags first, then the share button on its own row at the page's trailing
-            // edge, 24 pt clear of the rail, so it never sits under the rail's buttons (R-2, Iris on #288 at AX3).
+            // Accessibility sizes: the title and tags first, then the share button on its own row, its right edge on the
+            // text column's trailing line (the one the headline and body wrap to), so it is clear of the rail and the
+            // hinge band without extra padding; the VStack's 12 pt is the gap above and below (R-2, r060, Iris).
             if typeSize.isAccessibilitySize {
-                HStack(spacing: 8) {
-                    if model.isUnread(r) { UnreadDot() }
-                    TitleWithTags(release: r) {
-                        Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
-                    }
-                }
+                dotAndTitle(r)
                 if r.isPS5Listed {
-                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }.padding(.trailing, 24)
+                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
                 }
             } else {
             HStack(spacing: 8) {
-                if model.isUnread(r) { UnreadDot() }
                 // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
-                TitleWithTags(release: r) {
-                    Text(r.displayName).font(PlayscribeFont.title3)
-                        .accessibilityIdentifier("releaseTitle")
-                }
+                dotAndTitle(r)
                 Spacer(minLength: 0)
                 if r.isPS5Listed { ShareUpdateButton(release: r) }
             }
@@ -246,6 +260,7 @@ struct ReleasePage: View {
 /// D-6: "Story spoilers hidden" with a Show button, only when the release has spoilers.
 struct SpoilerLine: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
     var body: some View {
         let shown = model.spoilersShown(gameID)
@@ -253,10 +268,17 @@ struct SpoilerLine: View {
             model.setSpoilersShown(gameID, !shown)
             model.show(Toast(text: shown ? "Spoilers hidden" : "Spoilers shown"))
         } label: {
-            HStack(spacing: 8) {
-                Image(systemName: shown ? "eye" : "eye.slash")
-                Text(shown ? "Story spoilers shown" : "Story spoilers hidden").foregroundStyle(.secondary)
+            // At accessibility sizes the label takes the full width in whole words and the Show button sits under it,
+            // on its own 44 pt line, so the label never breaks by letter and the button is never cut by the next row.
+            let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4)) : AnyLayout(HStackLayout(spacing: 8))
+            layout {
+                HStack(spacing: 8) {
+                    Image(systemName: shown ? "eye" : "eye.slash")
+                    Text(shown ? "Story spoilers shown" : "Story spoilers hidden").foregroundStyle(PlayscribeColor.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
                 Text(shown ? "Hide" : "Show").fontWeight(.semibold)
+                    .frame(minHeight: 44, alignment: .leading)
             }
             .font(PlayscribeFont.subheadline)
             .foregroundStyle(PlayscribeColor.accent)
@@ -289,20 +311,37 @@ struct NoNotesPage: View {
 /// In the Contents, so in Tabletop they're on the flat half.
 struct GameLinks: View {
     var game: CatalogGame
+    /// The row's available width and the width both links need side by side. FlowLayout reported one row's height
+    /// when asked with no width and then wrapped when placed, so the second link landed under the chip row
+    /// (Open and Book, std, r052-contents-chips-overlap). Here the stack is chosen from measured widths, so the
+    /// height always belongs to the layout that is drawn; until measured it is the tall, safe one.
+    @State private var available: CGFloat = 0
+    @State private var needed: CGFloat = .infinity
     var body: some View {
         let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
         if links?.official != nil || links?.patchNotes != nil {
-            // One row, a 24 pt gap and no separators; wraps to a second line rather than truncating (Iris 0.5.0).
-            FlowLayout(spacing: 24) {
-                if let url = links?.official {
-                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
-                }
-                if let url = links?.patchNotes {
-                    Link(destination: url) { Label(LinkHost.label("All patch notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame().accessibilityHint("Opens in browser")
-                }
-            }
-            .font(PlayscribeFont.subheadline)
-            .foregroundStyle(PlayscribeColor.accent)
+            let layout = needed <= available ? AnyLayout(HStackLayout(spacing: 24)) : AnyLayout(VStackLayout(alignment: .leading, spacing: 0))
+            layout { items(links) }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { available = $0 }
+                .background(
+                    HStack(spacing: 24) { items(links) }
+                        .fixedSize()
+                        .hidden()
+                        .accessibilityHidden(true)
+                        .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { needed = $0 }
+                )
+                .font(PlayscribeFont.subheadline)
+                .foregroundStyle(PlayscribeColor.accent)
+        }
+    }
+
+    @ViewBuilder private func items(_ links: GameBasics.Links?) -> some View {
+        if let url = links?.official {
+            Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
+        }
+        if let url = links?.patchNotes {
+            Link(destination: url) { Label(LinkHost.label("All patch notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame().accessibilityHint("Opens in browser")
         }
     }
 }
@@ -468,6 +507,7 @@ struct ContentsView: View {
                 .padding(.vertical, 14)
                 .padding(.trailing, railWidth)
         }
+        .clearsMessages()
         .scrollPosition($position)
         .accessibilityIdentifier("contentsScroll")
         // J-1: Back from a pushed release (open portrait) lands on its row.
@@ -793,6 +833,7 @@ struct ReleaseDetailView: View {
             }
             .padding(.bottom, 24)
         }
+        .clearsMessages()
         .background(Color.ink0)
         .navigationTitle(model.release(gameID, releaseID)?.displayName ?? "")
         .toolbarTitleDisplayMode(.inline)
@@ -823,7 +864,7 @@ struct GameTitleWithStatus: View {
         // The title text stops growing at AX3: at AX5 one long word is wider than a Closed portrait column.
         if typeSize.isAccessibilitySize { return AnyView(inlineTitleRow) }
         return AnyView(HStack(alignment: .firstTextBaseline, spacing: 8) {
-            Text(name).font(PlayscribeFont.title2).lineLimit(2)
+            Text(name.gluingTrailingNumeral).font(PlayscribeFont.title2).lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true).accessibilityAddTraits(.isHeader)
                 .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             statusMenu
@@ -831,7 +872,7 @@ struct GameTitleWithStatus: View {
     }
 
     private var inlineTitleRow: some View {
-        let words = name.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
+        let words = name.gluingTrailingNumeral.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
         return WordFlow(hSpacing: 8, vSpacing: 0) {
             ForEach(Array(words.enumerated()), id: \.offset) { i, w in
                 if i == words.count - 1 {

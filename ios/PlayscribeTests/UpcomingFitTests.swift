@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 import Testing
 @testable import Playscribe
 
@@ -51,6 +52,38 @@ struct UpcomingBookTileSizeTests {
             // Never wider than the page it sits on.
             #expect(CGFloat(f.left.count) * f.left.size + CGFloat(f.left.count - 1) * UpcomingView.gap <= l + 0.01)
             #expect(CGFloat(f.right.count) * f.right.size + CGFloat(f.right.count - 1) * UpcomingView.gap <= r + 0.01)
+        }
+    }
+}
+
+/// Upcoming at accessibility sizes: AX3 and up switch to one-column rows (Iris's option b); below that the #287 columns stay.
+@MainActor
+struct UpcomingRowSwitchTests {
+    @Test func rowsFromAX3Only() {
+        #expect(!UpcomingView.usesRows(.xxxLarge))
+        #expect(!UpcomingView.usesRows(.accessibility2))
+        #expect(UpcomingView.usesRows(.accessibility3))
+        #expect(UpcomingView.usesRows(.accessibility5))
+    }
+}
+
+/// Short Upcoming sections share a row in Open and Tabletop instead of leaving it half empty.
+@MainActor
+struct UpcomingPackedBlockTests {
+    @Test func blockIsAsWideAsItsTilesNeverWiderThanTheRow() {
+        #expect(UpcomingView.blockColumns(games: 3, available: 6) == 3)
+        #expect(UpcomingView.blockColumns(games: 2, available: 6) == 2)
+        #expect(UpcomingView.blockColumns(games: 20, available: 6) == 6)
+        #expect(UpcomingView.blockColumns(games: 0, available: 5) == 1)
+    }
+
+    @Test func threeAndTwoShareOneRowFromFiveColumns() {
+        // Blocks of 3 and 2 tiles plus one gap equal exactly 5 columns.
+        for w in stride(from: CGFloat(700), through: 1200, by: 11) {
+            let f = UpcomingView.fit(width: w)
+            guard f.count >= 5 else { continue }
+            let a = CGFloat(3) * f.size + 2 * UpcomingView.gap, b = CGFloat(2) * f.size + UpcomingView.gap
+            #expect(a + UpcomingView.gap + b <= w)
         }
     }
 }

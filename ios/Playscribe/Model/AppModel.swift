@@ -197,6 +197,9 @@ final class AppModel {
     var focusReleaseID: String?
     var focusToken = 0
     var showDebugOverlay = false
+    /// QA (route "many-updates"): pad the deck with copies of its cards (distinct ids) up to 12, so the Open
+    /// portrait "+N more updates" chip shows whatever the library holds.
+    var qaPadDeck = false
     /// QA (routes "one-update", "two-update") and tests: how many fresh unread updates the demo has; 0 is the normal demo.
     var qaUpdateCount = 0
     var qaSingleUpdate: Bool {
@@ -518,9 +521,18 @@ final class AppModel {
         }
         nav = n
         readerIndex[gameID] = 0
-        if pill?.gameID == gameID { pill = nil }
+        // N-7: the pill goes only when the page it points to is the one now showing.
+        if let p = pill, isViewing(p.gameID, p.releaseID) { pill = nil }
         focusReleaseID = releaseID
         focusToken += 1
+    }
+
+    /// True when the update page for this release is the one on screen: its game is open and the release is the one
+    /// the Page shows or the pushed detail screen.
+    func isViewing(_ gameID: String, _ releaseID: String) -> Bool {
+        guard nav.tab == .library, nav.gameID == gameID else { return false }
+        if nav.detailReleaseID != nil { return nav.detailReleaseID == releaseID }
+        return nav.chapter == .updates && selectedRelease(gameID)?.id == releaseID
     }
 
     /// D-2/D-3: the release the Page shows: the one picked, else the newest On PS5 release.
@@ -589,7 +601,12 @@ final class AppModel {
             settingsOpen = true
             if parts.first == "quiet" { data.quietHours = QuietHours() }
         case "tag" where parts.count == 1: if let v = Verification(rawValue: parts[0]) { tagExplainer = v }
-        case "library": nav.tab = .library; nav.gameID = nil
+        case "library":
+            nav.tab = .library; nav.gameID = nil
+            // QA: `library/upcoming` and `library/playing` pick the Library's Playing / Upcoming switch;
+            // `library/upcoming-seeded` also watches five upcoming games (3 out this week, 2 later) so the short sections pack.
+            if parts.first == "upcoming-seeded" { resetDemo(); seedUpcomingWatchlist(); libraryTab = .upcoming }
+            else if let t = parts.first.flatMap(LibraryTab.init(rawValue:)) { libraryTab = t }
             // QA (INTERNAL, `-qaRoute library/news`): the Library already scrolled to the News strip.
             if parts.first == "news" { qaScrollNews = true }
         case "updates": nav.tab = .updates
@@ -599,14 +616,23 @@ final class AppModel {
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
-        case "one-update": resetToOneUpdateDemo()
-        case "two-update": resetToTwoUpdateDemo()
+        case "store-set":
+            loadStoreSet(plus: parts.first == "plus")
+            // "store-set/end": the Library scrolled as far as it goes, to check the last row clears the tab bar.
+            if parts.first == "end", let last = StoreSet.gameIDs.last { nav.anchors["library"] = "lib-\(last)" }
+        case "one-update": resetToOneUpdateDemo(); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
+        case "two-update": resetToTwoUpdateDemo(); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
+        case "many-updates": resetToManyUpdatesDemo(); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
+        case "three-update": resetToUpdateDemo(count: 3); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
+        case "four-update": resetToUpdateDemo(count: 4); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "caught-up": resetToCaughtUpDemo()
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
         // QA (INTERNAL, B-10): "quick/tip" shows the press-and-hold tip; "quick/undo" removes the first game so the
         // 6 s Undo toast shows. The long-press menu and the yellow Wishlist disc show on the demo library as is.
         case "quick" where parts.first == "tip": resetDemo(); nav.anchors["library"] = "lib-kcd2"; showPressTipIfNeeded(force: true)
+        // QA (INTERNAL): "upcoming-demo" opens Library > Upcoming with watched games, one with a long name, so the AX rows can be judged.
+        case "upcoming-demo": resetDemo(); seedUpcomingDemo()
         case "quick" where parts.first == "wishlist":
             resetDemo()
             setStatus("kcd2", .wishlist); setStatus("control-resonant", .wishlist)
@@ -625,6 +651,41 @@ final class AppModel {
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
         case "links" where parts.count == 1: openGame(parts[0]); linksSheetOpen = true
+        // QA (INTERNAL): a PS5 update with a very long invented title, to exercise the share-button guard on the release page
+        // (r054: a title past 4 lines at AX drops the button to its own row).
+        case "long-title" where parts.count == 1:
+            let gameID = parts[0]
+            let now = Date.now
+            let release = Release(
+                id: "qa-long-title-\(gameID)", gameID: gameID,
+                displayName: "The Grand Autumn Rebalancing, Quality of Life and Stability Update, Including Every Hotfix Since Launch",
+                kind: .major, kindBasis: .studio, announcedAt: now, notes: [], sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: Field(value: "9.9", verification: .official, sourceID: "simulated", checkedAt: now),
+                                            liveAt: Field(value: now, verification: .official, sourceID: "simulated", checkedAt: now),
+                                            bundles: [], verification: .official)],
+                headline: "A long invented title for layout checks", summary: "QA fixture. Not a real release.", keyChanges: [],
+                simulated: true, arrivesAt: now)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+            openRelease(gameID: gameID, releaseID: release.id)
+        // QA (INTERNAL): a PS5 update whose headline holds one word wider than the AX5 column, shown in the Updates tab
+        // (WholeWordText must cut before that word, never mid-word).
+        case "long-word" where parts.count == 1:
+            let gameID = parts[0]
+            let now = Date.now
+            let release = Release(
+                id: "qa-long-word-\(gameID)", gameID: gameID, displayName: "Patch 9.9",
+                kind: .major, kindBasis: .studio, announcedAt: now, notes: [], sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: Field(value: "9.9", verification: .official, sourceID: "simulated", checkedAt: now),
+                                            liveAt: Field(value: now, verification: .official, sourceID: "simulated", checkedAt: now),
+                                            bundles: [], verification: .official)],
+                headline: "Reworked Weapon Rebalancing, Counterbalanced Overencumberment and Quality of Life",
+                summary: "QA fixture. Not a real release.", keyChanges: [], simulated: true, arrivesAt: now)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+            nav.tab = .updates
         // QA (INTERNAL): the game page itself (Contents in Open portrait and Book, the Page in Closed), never a pushed release.
         case "gamepage" where parts.count == 1:
             openGame(parts[0], chapter: .updates)
@@ -758,6 +819,35 @@ final class AppModel {
         if isFirst { data.notificationCardShows = max(data.notificationCardShows, 0) }
     }
 
+    /// QA only: watched, unreleased games (one this week, two later, one with a very long name) and the Upcoming tab selected.
+    func seedUpcomingDemo() {
+        let day = ISO8601DateFormatter(); day.formatOptions = [.withFullDate]
+        func iso(_ days: Int) -> String { day.string(from: Date().addingTimeInterval(Double(days) * 86400)) }
+        let samples: [(String, String, Int)] = [("qa-up-1", "The Long Quiet Orchard of Wending Hollow", 3), ("qa-up-2", "Ash and Ember", 40),
+                                                ("qa-up-3", "Mortal Shell: Hollow Bells", 90)]
+        for (i, s) in samples.enumerated() {
+            insertGame(CatalogGame(id: s.0, name: s.1, platforms: [.ps5], releaseDate: iso(s.2), releasePrecision: .day,
+                                   igdbID: 990000 + i, coverage: .none), status: .watching)
+        }
+        libraryTab = .upcoming
+        nav.tab = .library; nav.gameID = nil
+    }
+
+    /// QA (INTERNAL, route `library/upcoming-seeded`): five watched games dated 1, 2 and 4 days out, then 30 and 60.
+    private func seedUpcomingWatchlist() {
+        let offsets = [1, 2, 4, 30, 60]
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = .gmt
+        for (source, days) in zip(upcomingMore.prefix(5), offsets) {
+            var g = source
+            if let d = cal.date(byAdding: .day, value: days, to: .now) {
+                g.releaseDate = d.formatted(Date.ISO8601FormatStyle(timeZone: .gmt).year().month().day())
+                g.releasePrecision = .day
+            }
+            insertGame(g, status: .wishlist)
+        }
+    }
+
     func setStatus(_ gameID: String, _ status: OwnershipStatus) {
         guard let i = data.collection.firstIndex(where: { $0.gameID == gameID }), data.collection[i].status != status else { return }
         data.collection[i].status = status
@@ -842,6 +932,7 @@ final class AppModel {
     }
 
     func resetDemo() {
+        qaPadDeck = false
         qaUpdateCount = 0
         qaFreshCache = nil
         data = PersistedState(collection: fixtures.seedCollection)
@@ -866,8 +957,7 @@ final class AppModel {
     }
 
     /// QA and tests: the full demo library with exactly one fresh, unread On PS5 update (so the Library
-    /// hero shows), every other update read, and the "Also new" panel seeing no other updates, which
-    /// is the panel's "What's new" fallback.
+    /// hero shows) and every other update read.
     func resetToOneUpdateDemo() {
         resetDemo()
         qaUpdateCount = 1
@@ -886,21 +976,21 @@ final class AppModel {
         qaUpdateCount = 2
     }
 
-    /// The updates beside the deck in the Library (Open portrait): every update in the deck except the
-    /// front card's, newest first, so nothing repeats.
-    func alsoNewReleases(excludingRelease id: String?, limit: Int = 6) -> [Release] {
-        let all = latestDeck.compactMap(\.release)
-        // One row per game (its latest update), and never the deck's front game (Iris, 3548a21).
-        let frontGame = all.first { $0.id == id }?.gameID
-        var seen = Set<String>()
-        var out: [Release] = []
-        for r in all.sorted(by: { $0.ps5Date > $1.ps5Date }) {
-            // Updates only: a headline-only post (no version in its name) is News, not an update (Iris, 20d77ea).
-            guard r.versionChip != nil, r.gameID != frontGame, seen.insert(r.gameID).inserted else { continue }
-            out.append(r)
-            if out.count == limit { break }
-        }
-        return out
+    /// QA (route "many-updates"): every catalog game with an On PS5 update joins the library, so the deck is full
+    /// and the Open portrait "+N more updates" chip shows when more than 8 updates qualify.
+    func resetToManyUpdatesDemo() {
+        resetDemo()
+        let have = Set(data.collection.map(\.gameID))
+        let more = fixtures.games.filter { !have.contains($0.id) && !ps5Releases($0.id).filter { $0.ps5State == .onPS5 }.isEmpty }
+        addGames(more, status: .owned)
+        qaPadDeck = true
+    }
+
+    /// QA (routes "three-update", "four-update"): `count` fresh updates from different games, so the deck
+    /// has that many unread cards.
+    func resetToUpdateDemo(count: Int) {
+        resetDemo()
+        qaUpdateCount = count
     }
 
     #if INTERNAL
@@ -998,7 +1088,8 @@ final class AppModel {
     func releaseArrivedInForeground(gameID: String, releaseID: String) {
         tick()
         highlight = releaseID
-        if nav.gameID != gameID { showPill(gameID: gameID, releaseID: releaseID) }
+        // N-7: shown on every page except the exact update it points to, other pages of the same game included.
+        if !isViewing(gameID, releaseID) { showPill(gameID: gameID, releaseID: releaseID) }
         NotificationService.shared.updateBadge(badgeCount)
     }
 

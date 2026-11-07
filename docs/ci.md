@@ -33,6 +33,10 @@ on the Mac. Hosted runners are headless, so they cannot press it either.
   Swift modules anyway. Revisit if packages are added.
 - Parallel simulator clones on the Mac for poses: Terry's notes say the Duo sim already overloads the Mac (load 800+).
 
+## Runner queue (measured 7 Nov)
+
+Per PR run, the `unit` job time was a median 9.4 min before #355 and 8.7 min after (no change), but the wait for a runner before it started went from 1.6 min to 8.1 min (22 and 9 runs). Each push costs several macOS runners on one shared pool (Precheck compile, unit, and formerly ui-build), so the UI-test compile now runs as the last step of `unit` instead of as its own job. Check after about 10 runs: queue wait should drop and job time rise ~1.5 min. To revert, restore the `ui-build` job from the git history of `.github/workflows/ios.yml`.
+
 ## Precheck (quiet compile check before a PR)
 
 `precheck.yml` runs on pushes to `claude/**` that touch `ios/**`. It runs `build-for-testing` for the `Playscribe` and `PlayscribeUI` schemes on the Xcode 27.1 runner and always finishes green, so GitHub sends no failed-run email. The verdict is the name of the `verdict` job (`PRECHECK PASS` or `PRECHECK FAIL <file>:<line> <error>`) and the `precheck` commit status. Engineers read it, fix, push again, and open the PR only on PASS (AGENTS.md, "Precheck first"). Compile errors then never reach the PR runs in `ios.yml`; test failures still do.

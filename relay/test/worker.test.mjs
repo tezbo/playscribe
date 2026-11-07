@@ -191,3 +191,48 @@ test('register: past the daily cap new devices get 429, existing devices still r
   assert.ok(over.headers.get('retry-after'))
   assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: hexTok(0) })).status, 200)
 })
+
+test('register: a per-address limit refuses new devices from one address, never a known device, and counts per address', async () => {
+  const { env } = setup()
+  const seen = {}
+  env.REGISTER_LIMIT = { limit: async ({ key }) => ({ success: (seen[key] = (seen[key] ?? 0) + 1) <= 2 }) }
+  const hexTok = (i) => i.toString(16).padStart(64, '0')
+  const from = (ip, i) => worker.fetch(new Request('https://relay.test/v1/devices', { method: 'POST', headers: { 'content-type': 'application/json', 'cf-connecting-ip': ip }, body: JSON.stringify({ apnsToken: hexTok(i) }) }), env)
+  assert.equal((await from('1.1.1.1', 1)).status, 201)
+  assert.equal((await from('1.1.1.1', 2)).status, 201)
+  const over = await from('1.1.1.1', 3)
+  assert.equal(over.status, 429)
+  assert.equal(over.headers.get('retry-after'), '60')
+  assert.equal((await from('2.2.2.2', 4)).status, 201) // another address is untouched
+  assert.equal((await from('1.1.1.1', 1)).status, 200) // a known device relaunching is never limited
+  assert.equal(seen['1.1.1.1'], 3) // the known device did not spend a count
+  assert.equal(await env.KV.get(`t:${hexTok(3)}`), null) // the refused device wrote nothing
+})
+
+test('delete me: removes the record, token, key and team entry, and a second delete is still 204', async () => {
+  const { env } = setup()
+  const reg = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), team: true, follows: [{ gameId: 'dawnwalker' }] })).json()
+  assert.notEqual(await env.KV.get(`d:${reg.deviceId}`), null)
+  assert.notEqual(await env.KV.get(`tm:${reg.deviceId}`), null)
+  const del = await call(env, 'DELETE', '/v1/devices/me', undefined, reg.deviceKey)
+  assert.equal(del.status, 204)
+  assert.equal(await env.KV.get(`d:${reg.deviceId}`), null)
+  assert.equal(await env.KV.get(`t:${token('a')}`), null)
+  assert.equal(await env.KV.get(`tm:${reg.deviceId}`), null)
+  // The key no longer works for anything else, and the Feed job sees no device.
+  assert.equal((await call(env, 'GET', '/v1/devices/me/follows', undefined, reg.deviceKey)).status, 401)
+  const admin = await (await worker.fetch(new Request('https://relay.test/admin/devices', { headers: { authorization: `Bearer ${ADMIN}` } }), env)).json()
+  assert.deepEqual(admin.devices, [])
+  assert.equal((await call(env, 'DELETE', '/v1/devices/me', undefined, reg.deviceKey)).status, 204)
+})
+
+test('delete me: needs a key, leaves other devices alone, and a re-registration is a new device', async () => {
+  const { env } = setup()
+  const a = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a') })).json()
+  const b = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('b') })).json()
+  assert.equal((await call(env, 'DELETE', '/v1/devices/me')).status, 401)
+  await call(env, 'DELETE', '/v1/devices/me', undefined, a.deviceKey)
+  assert.notEqual(await env.KV.get(`d:${b.deviceId}`), null)
+  const again = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a') })).json()
+  assert.notEqual(again.deviceId, a.deviceId)
+})

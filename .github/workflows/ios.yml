@@ -1,9 +1,8 @@
 name: iOS
 
-# Two jobs run side by side, so a PR waits for the slower one instead of both added together:
-#   unit     the Playscribe scheme's unit tests (the required check)
-#   ui-build compiles the PlayscribeUI scheme, so a UI test compile error surfaces on the PR and not first
-#            at the Mac gate. The UI tests themselves run at the gate (docs/ci.md).
+# One job, one macOS runner per push (the runner queue, not job time, was the wait):
+#   unit     the Playscribe scheme's unit tests, then a compile of the PlayscribeUI scheme (formerly the ui-build job), so a UI
+#            test compile error surfaces on the PR and not first at the Mac gate. The UI tests themselves run at the gate (docs/ci.md).
 on:
   pull_request:
     paths: ['ios/**', '.github/workflows/ios.yml']
@@ -63,25 +62,15 @@ jobs:
           exit "$status"
         env:
           SCHEME: ${{ vars.IOS_SCHEME }}
-      - uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: test-results
-          path: |
-            build/TestResults.xcresult
-            build.log
-
-  ui-build:
-    runs-on: xcode-27
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v4
-      - run: command -v xcodegen >/dev/null || brew install xcodegen; (cd ios && xcodegen generate)
-      - run: sudo xcode-select -s "$XCODE_APP" && xcodebuild -version
-      - name: Compile the UI tests
+      # The UI-test compile used to be its own job (ui-build). A second job took a second macOS runner per push, and the runner
+      # queue (median wait 1.6 min before #355, 8.1 min after) cost more than the ~1.5 min this step adds. Same command, same
+      # failure meaning: a UI test compile error surfaces on the PR and not first at the Mac gate. It runs even when the unit
+      # tests failed, so one push shows both.
+      - name: Compile the UI tests (formerly the ui-build job)
+        if: ${{ !cancelled() }}
         run: |
           status=0
-          # Generic simulator destination: compiling needs no booted device, so there is no boot or pick step.
+          # Generic simulator destination: compiling needs no booted device.
           xcodebuild build-for-testing \
             -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
             -destination 'generic/platform=iOS Simulator' \
@@ -91,5 +80,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: ui-build-log
-          path: build-ui.log
+          name: test-results
+          path: |
+            build/TestResults.xcresult
+            build.log
+            build-ui.log
