@@ -309,11 +309,9 @@ struct LibraryShelf: View {
                     }
                 }
                 // Book: these cards stay on the left page; with a hero they sit in the left column below.
-                if !heroOnRightPage && duo.pose != .book { topCards(all) }
-                if !all.isEmpty && duo.pose == .tabletop {
-                    // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
-                    TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4)
-                } else if !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                if !heroOnRightPage && duo.pose != .book && duo.pose != .tabletop { topCards(all) }
+                // Tabletop: the search button and A to Z strip come after the tiles (see below), so a first view shows games.
+                if duo.pose != .tabletop, !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 if !heroOnRightPage && duo.pose == .book { topCards(all) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
@@ -407,12 +405,9 @@ struct LibraryShelf: View {
                         CaughtUpCard()
                             .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
                     }
-                } else if duo.pose == .tabletop {
-                    let deck = model.latestDeck
-                    if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
                 }
-                if !heroOnRightPage { NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading) }
-                if !heroOnRightPage && all.count >= 2 && layout == .tiles {
+                if !heroOnRightPage && duo.pose != .tabletop { NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading) }
+                if !heroOnRightPage && duo.pose != .tabletop && all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
                     // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
                     // accessibility frame never reaches the fold either.
@@ -426,6 +421,8 @@ struct LibraryShelf: View {
                     }
                     .id(poseKey)
                 }
+                // Tabletop: the filter chips sit directly above the tiles, one row; tiles first wins if they would push it off (Iris, v0.5.3).
+                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles { FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey) }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
                 } else if heroOnRightPage {
@@ -447,6 +444,15 @@ struct LibraryShelf: View {
                     // A pose or fold change rebuilds the grid: lazily cached cells kept their old frames
                     // (0.2.0 gate: Book showed the open-pose grid across the fold).
                     .id(poseKey)
+                }
+                // Tabletop lower half (Iris, v0.5.3): switch, filter chips, tiles, then the alerts card, PS Plus, search and
+                // A to Z, the page edge and News. Order only; nothing else moves in any pose.
+                if duo.pose == .tabletop {
+                    if !heroOnRightPage { topCards(all) }
+                    if !all.isEmpty { TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4) }
+                    let deck = model.latestDeck
+                    if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
+                    NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                 }
                 }
             }

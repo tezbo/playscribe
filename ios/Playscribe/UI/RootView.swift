@@ -412,6 +412,7 @@ extension View {
 /// any pose (ae0a608, Open portrait).
 private struct MessageClearance: ViewModifier {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     @State private var pad: CGFloat = 0
     /// This view's frame in global coordinates. The pad sits inside it, so its bottom edge does not move with the pad.
     @State private var frame: CGRect = .zero
@@ -420,6 +421,13 @@ private struct MessageClearance: ViewModifier {
         var next: CGFloat = 0
         if let m = model.messageFrame, frame.minX < m.maxX, frame.maxX > m.minX {
             next = max(0, frame.maxY - (m.minY - 12))
+        }
+        // Open portrait: the tab bar floats over the page and gives it no bottom inset, so the last row ended under it
+        // (r053-open-portrait-tabbar-covers-last-row). Measured, not assumed: only what still reaches into the band the bar
+        // occupies is padded, so a screen the system already insets gets nothing. The band is the one the pill sits above.
+        if duo.pose == .flat && !duo.isLandscape {
+            let windowBottom = duo.size.height + duo.safeArea.top + duo.safeArea.bottom
+            next = max(next, frame.maxY - (windowBottom - LowerMessages.bottomPadding(duo)))
         }
         if abs(next - pad) > 0.5 { pad = next }
     }
@@ -431,6 +439,7 @@ private struct MessageClearance: ViewModifier {
             .padding(.bottom, pad)
             .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { frame = $0; update() }
             .onChange(of: model.messageFrame) { _, _ in update() }
+            .onChange(of: duo) { _, _ in update() }
             // The pad changes the moment the pill shows. It must not ride a running pose animation, or the old arrangement
             // lingers faintly under the new one (Book, ad54f44 stills).
             .transaction(value: pad) { $0.animation = nil }
