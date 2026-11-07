@@ -41,7 +41,9 @@ final class PlayscribeUITests: XCTestCase {
         for route in ["library", "release/dawnwalker/dawnwalker@1.1", "add", "updates"] {
             app.launchArguments = ["-qaRoute", route]
             app.launch()
-            sleep(2)
+            // Wait for the page itself, then let art and fades settle: a first run on the Dawnwalker page audited a half-drawn screen.
+            _ = app.descendants(matching: .any).matching(identifier: "foldAudit").firstMatch.waitForExistence(timeout: 10)
+            sleep(3)
             try app.performAccessibilityAudit(for: [.hitRegion, .sufficientElementDescription, .elementDetection]) { issue in
                 // Game art, poster images and the system status bar aren't the app's controls.
                 issue.element?.elementType == .image || issue.element?.identifier.isEmpty == false && issue.element?.label.isEmpty == true
@@ -748,8 +750,18 @@ final class Release050Tests: XCTestCase {
     func testQuietHours() throws {
         let app = launch("settings")
         let toggle = app.switches["quietHours"]
+        // Settings is a lazy list: the row is not in the hierarchy until it is scrolled near. Alternate the list's own swipe with a
+        // drag that starts in the lower half (in Tabletop the upper half is a view-only stage, so a swipe there moves nothing).
         var tries = 0
-        while !toggle.exists && tries < 6 { (app.collectionViews.firstMatch.exists ? app.collectionViews.firstMatch : app).swipeUp(); tries += 1 }
+        while !(toggle.exists && toggle.isHittable) && tries < 10 {
+            let form = app.collectionViews.firstMatch
+            if tries % 2 == 0, form.exists { form.swipeUp() } else {
+                app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.9))
+                    .press(forDuration: 0.1, thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.6)))
+            }
+            tries += 1
+        }
+        if !toggle.exists { let a = XCTAttachment(string: app.debugDescription); a.lifetime = .keepAlways; add(a) }
         XCTAssertTrue(toggle.exists, "Settings has a Quiet hours switch")
         XCTAssertTrue(["off", "0"].contains(toggle.value as? String ?? ""), "off by default, got \(String(describing: toggle.value))")
         if isTabletop(app) { XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: switch in the lower half") }

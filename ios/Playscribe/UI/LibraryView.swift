@@ -1036,6 +1036,9 @@ struct NotificationInviteCard: View {
                          : "Get a note the moment any game in your library gets an update on PS5.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
+                        // The headline's label already carries this sentence for VoiceOver; a second 18 pt element on the same
+                        // card failed the hit-region audit in Tabletop (r052-mac-gate-failures). The denied line stays visible to it.
+                        .accessibilityHidden(!denied)
                 } else if denied {
                     Text("Turn notifications on in Settings.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
