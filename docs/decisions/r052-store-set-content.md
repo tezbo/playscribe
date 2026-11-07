@@ -5,3 +5,4 @@
 - Alternative: reuse the demo library with renamed games. Smaller, but it keeps real-game updates and cannot show a wishlist, a long title or an unread update by design.
 - Alternative: do nothing. Store frames would need real titles.
 - Decision: ship the set. Unit tests cover that distribution builds ignore the route and internal builds load all five.
+- Follow-up (7 Nov, Quinn): the Lantern Reach sun sat under the caption (cream on orange). Art only: the sun and glow now end above 40% of the hero height and sit at 65% of its width, clear of the caption and of the top-left chips in the wide Closed card, independent of any scrim (#348).
