@@ -25,6 +25,10 @@ struct CoverView: View {
         .accessibilityAddTraits(.isImage)
     }
 
+    /// The plate's serif initial is 40% of the cover's height and never below 13 pt, so a cover under 32 pt tall shows the
+    /// plain tinted plate (Iris, #377).
+    static func showsInitial(height: CGFloat) -> Bool { height >= 32 }
+
     private var plate: some View {
         let tones = (game.tones ?? ["#1b1d24", "#0b0d12"]).map(Color.init(hex:))
         return LinearGradient(colors: tones, startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -33,7 +37,7 @@ struct CoverView: View {
                 // tinted plate). The title is always printed beside or below the cover, never inside the plate, so it can't
                 // be cut mid-word (Iris, R-7).
                 GeometryReader { geo in
-                  if geo.size.height >= 32 {
+                  if Self.showsInitial(height: geo.size.height) {
                     Text(String(game.name.first(where: \.isLetter) ?? game.name.first ?? "?").uppercased())
                         // fixedSize: a sized custom font also scales with Dynamic Type, which overflowed the plate at AX5.
                         .font(.custom("Literata24pt-SemiBold", fixedSize: min(geo.size.height * 0.4, geo.size.width * 0.6)))

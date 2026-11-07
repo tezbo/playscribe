@@ -200,6 +200,8 @@ final class AppModel {
     /// QA (route "many-updates"): pad the deck with copies of its cards (distinct ids) up to 12, so the Open
     /// portrait "+N more updates" chip shows whatever the library holds.
     var qaPadDeck = false
+    /// QA (INTERNAL, route "no-art-updates"): every game answers without cover art, so the plate's serif initial shows in every row.
+    var qaNoArt = false
     /// QA (routes "one-update", "two-update") and tests: how many fresh unread updates the demo has; 0 is the normal demo.
     var qaUpdateCount = 0
     var qaSingleUpdate: Bool {
@@ -359,7 +361,11 @@ final class AppModel {
         return map
     }
 
-    func game(_ id: String) -> CatalogGame? { games[id] }
+    func game(_ id: String) -> CatalogGame? {
+        guard qaNoArt, var g = games[id] else { return games[id] }
+        g.coverAsset = nil; g.coverImageID = nil   // QA: every cover is a plate (route "no-art-updates")
+        return g
+    }
 
     func entry(_ gameID: String) -> CollectionEntry? { data.collection.first { $0.gameID == gameID } }
 
@@ -606,6 +612,7 @@ final class AppModel {
             if parts.first == "upcoming-seeded" { resetDemo(); seedUpcomingWatchlist(); libraryTab = .upcoming }
             else if let t = parts.first.flatMap(LibraryTab.init(rawValue:)) { libraryTab = t }
         case "updates": nav.tab = .updates
+        case "no-art-updates": resetToTwoUpdateDemo(); qaNoArt = true; nav.tab = .updates   // plate initials in Updates rows (Iris, #377)
         case "search": nav.tab = .search
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))

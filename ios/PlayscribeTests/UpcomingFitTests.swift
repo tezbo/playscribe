@@ -87,3 +87,15 @@ struct UpcomingPackedBlockTests {
         }
     }
 }
+
+/// The plate's serif initial (#377, R-7; Iris): 40% of the cover's height and never below 13 pt, so a cover under 32 pt
+/// tall shows the plain tinted plate.
+struct PlateInitialTests {
+    @Test func initialNeedsAtLeast32PtOfHeight() {
+        #expect(CoverView.showsInitial(height: 31.9) == false)
+        #expect(CoverView.showsInitial(height: 32))
+        #expect(0.4 * 32 >= 12.8)
+        #expect(CoverView.showsInitial(height: 72))
+        #expect(CoverView.showsInitial(height: 0) == false)
+    }
+}
