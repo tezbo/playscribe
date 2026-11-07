@@ -759,6 +759,8 @@ struct UTCDayTests {
             #expect(Date.sameUTCDay(before, before.addingTimeInterval(-86_000)))
             #expect(Date.sameUTCDay(after, after.addingTimeInterval(86_000)))
         }
+    }
+}
 
 @Suite("QAPose launch argument")
 struct QAPoseTests {
