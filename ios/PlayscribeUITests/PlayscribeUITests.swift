@@ -10,6 +10,10 @@ final class PlayscribeUITests: XCTestCase {
     override func setUp() async throws {
         continueAfterFailure = false
         app.launchArguments = ["-qaRoute", "demo"]
+        addUIInterruptionMonitor(withDescription: "Notification permission") { alert in
+            for label in ["Allow", "Allow Notifications", "OK"] where alert.buttons[label].exists { alert.buttons[label].tap(); return true }
+            return false
+        }
     }
 
     /// N-6: tapping the notification opens the game book on that release, cold and warm.
@@ -136,6 +140,12 @@ final class PlayscribeUITests: XCTestCase {
         step("before simulate launch; \(lockState())")
         simulate.launch()
         step("simulate launched; app state \(simulate.state.rawValue)")
+        // First launch on a fresh sim asks for notification permission (run 1 and 2 on 370e685 failed on it). The route asks for
+        // authorization, so the prompt is SpringBoard's: accept it before the notification can be scheduled.
+        for label in ["Allow", "Allow Notifications"] {
+            let allow = springboard.alerts.buttons[label]
+            if allow.waitForExistence(timeout: 4) { step("accepting the notification permission prompt"); allow.tap(); sleep(1); break }
+        }
         if cold {
             // Cold: no Home press (it sends this sim to the lock screen, where taps land on a pile of old notifications and do
             // not launch the app, e411c788). Let the app schedule the 3 s notification, then end it; the system delivers it to
@@ -160,13 +170,20 @@ final class PlayscribeUITests: XCTestCase {
             if simulate.state == .runningForeground { XCUIDevice.shared.press(.home); sleep(1) }
             step("backgrounded: app state \(simulate.state.rawValue) (4 is foreground); \(lockState())")
         }
-        // The banner is up for only a few seconds, and pressing Home returns slowly: look briefly, then use Notification Center.
-        if let banner = notificationRow(timeout: 4) { return banner }
-        let start = springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
-        start.press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.6)))
-        let listed = notificationRow(timeout: 10)
-        XCTAssertNotNil(listed, "the Dawnwalker notification is in the banner or Notification Center")
-        return listed ?? springboard.otherElements["Notification"]
+        // The banner is up for only a few seconds, and backgrounding returns slowly: look for it, then use Notification Center,
+        // pulling it down again and waiting longer each time (370e685 run 3: the notification arrived, badge 1, and no row was
+        // found in the one 10 s window).
+        if let banner = notificationRow(timeout: 6) { return banner }
+        for attempt in 1...3 {
+            let start = springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
+            start.press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.6)))
+            step("pulled Notification Center down (attempt \(attempt)); \(lockState())")
+            if let listed = notificationRow(timeout: 10 + 5 * Double(attempt)) { return listed }
+            // Close it again before the next pull (a swipe up from the bottom), so the pull is a fresh gesture.
+            unlockIfLocked()
+        }
+        XCTFail("the Dawnwalker notification is in neither the banner nor Notification Center after 3 pulls")
+        return springboard.otherElements["Notification"]
     }
 
     // MARK: N-6 instrumentation (eec2f1f: five fixes without logs). Every step appends a line and a screenshot.
