@@ -28,10 +28,17 @@ struct WholeWordText: View {
         return out
     }
 
+    /// `kept` without trailing , ; : . so the ellipsis follows the word ("Rebalancing…", never "Rebalancing,…").
+    static func trimmed(_ kept: String) -> String {
+        var t = Substring(kept)
+        while let last = t.last, ",;:.".contains(last), t.count > 1 { t = t.dropLast() }
+        return String(t)
+    }
+
     /// The whole text first, then one word fewer each time with "…" after the last whole word. Never a cut word.
     static func variants(of text: String) -> [String] {
         let words = text.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
-        return [text] + (words.count > 1 ? stride(from: words.count - 1, through: 1, by: -1).map { words.prefix($0).joined(separator: " ") + "\u{2026}" } : [])
+        return [text] + (words.count > 1 ? stride(from: words.count - 1, through: 1, by: -1).map { trimmed(words.prefix($0).joined(separator: " ")) + "\u{2026}" } : [])
     }
 
     var body: some View {

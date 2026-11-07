@@ -14,7 +14,8 @@ struct WholeWordTextTests {
         for v in variants.dropFirst() {
             #expect(v.hasSuffix("\u{2026}"), "a shortened title ends with an ellipsis")
             let kept = String(v.dropLast())
-            #expect(title.hasPrefix(kept + " "), "\(kept): the cut falls on a word boundary")
+            #expect(title.hasPrefix(kept), "\(kept): the cut falls on a word boundary")
+            #expect(title.dropFirst(kept.count).first.map { $0 == " " || ",;:.".contains($0) } ?? false, "\(kept): the next character is a space or the trimmed mark")
         }
     }
 
@@ -62,5 +63,19 @@ struct WholeWordTextTests {
         let widths: [Int: CGFloat] = [0: 30, 1: 50, 2: 60, 3: 101, 4: 80, 5: 20, 6: 40]   // "Rebalancing," = 101
         let fit = WholeWordText.fittingVariants(of: title, wordWidths: widths, available: 100)
         #expect(fit.first == "The Grand Autumn\u{2026}")
+    }
+
+    /// Iris (r061): the ellipsis follows the word, never a trailing , ; : . ("Rebalancing…", not "Rebalancing,…").
+    @Test func trailingPunctuationIsTrimmedBeforeTheEllipsis() {
+        let title = "The Grand Autumn Rebalancing, Quality of Life: Stability; Update. Hotfix"
+        let variants = WholeWordText.variants(of: title)
+        #expect(variants.contains("The Grand Autumn Rebalancing\u{2026}"))
+        #expect(variants.contains("The Grand Autumn Rebalancing, Quality of Life\u{2026}"))
+        #expect(variants.contains("The Grand Autumn Rebalancing, Quality of Life: Stability\u{2026}"))
+        #expect(variants.contains("The Grand Autumn Rebalancing, Quality of Life: Stability; Update\u{2026}"))
+        for v in variants.dropFirst() {
+            #expect(v.hasSuffix("\u{2026}") && !",;:.".contains(v.dropLast().last!), "\(v)")
+        }
+        #expect(variants.first == title, "the whole text is never trimmed")
     }
 }
