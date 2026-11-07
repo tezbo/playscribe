@@ -8,7 +8,7 @@ import type { PlatformStatus, Post } from '../types.ts'
 import newsSources from '../sources/news-sources.json' with { type: 'json' }
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
-import type { Igdb } from './igdb.ts'
+import { IGDB_REV, type Igdb } from './igdb.ts'
 import { extractNotes, mentionsPs4, mentionsPs5, ps5PageOf } from './notes.ts'
 
 // The poll job from docs/ps5-patch-data.md. Rules that matter:
@@ -98,7 +98,7 @@ export const seedGames = async (deps: IngestDeps) => {
     let info = null
     // Ask IGDB once per game, and again while its PS5 date is missing or still ahead (it can move or sharpen).
     const today = new Date().toISOString().slice(0, 10)
-    if (deps.igdb && (!existing?.cover_image_id || existing.artwork_image_id == null || !existing.ps5_release || existing.ps5_release >= today)) {
+    if (deps.igdb && (!existing?.cover_image_id || existing.artwork_image_id == null || !existing.ps5_release || existing.ps5_release >= today || (existing.igdb_rev ?? 0) < IGDB_REV || (existing.full_release && existing.full_release >= today))) {
       const steamSource = g.sources.find((s) => s.kind === 'steamNews')
       const appid = steamSource ? Number(steamSource.url.match(/\/app\/(\d+)/)?.[1]) : null
       try {
@@ -117,6 +117,7 @@ export const seedGames = async (deps: IngestDeps) => {
       steamAppId: info?.steamAppId,
       ps5Release: info?.ps5Release,
       ps5ReleasePrecision: info?.ps5ReleasePrecision,
+      ...(info ? { eaSince: info.eaSince, fullRelease: info.fullRelease, igdbRev: IGDB_REV } : {}),
       firstRelease: info?.firstRelease,
       ps5TitleIds: g.ps5TitleIds,
     })
