@@ -715,8 +715,10 @@ struct DeckStage: View {
                     LinearGradient(stops: typeSize.isAccessibilitySize
                                        ? [.init(color: .clear, location: 0.1),
                                           .init(color: PlayscribeColor.ink950.opacity(0.9), location: 0.4)]
-                                       : [.init(color: .clear, location: 0.3),
-                                          .init(color: PlayscribeColor.ink950.opacity(0.8), location: 0.75)],
+                                       // Clear down to 0.52: the art's sun sits at 43% of the stage, so the scrim starts below its
+                                       // bottom edge and never crosses it (Iris, #367 hero crops).
+                                       : [.init(color: .clear, location: 0.52),
+                                          .init(color: PlayscribeColor.ink950.opacity(0.8), location: 0.85)],
                                    startPoint: .top, endPoint: .bottom)
                 }
             }
