@@ -266,6 +266,9 @@ struct NewsStrip: View {
             }
         }
         .task(id: ids) {
+            #if INTERNAL
+            store.seedQA(gameIDs: ids)
+            #endif
             for id in ids.prefix(12) { await store.load(gameID: id, igdbID: model.game(id)?.igdbID) }
         }
     }
