@@ -189,6 +189,8 @@ final class AppModel {
     /// The verification tag whose explainer is open (0.5.0).
     var tagExplainer: Verification?
     var libraryTab: LibraryTab = .playing
+    /// Tabletop's Upcoming hero: which slide is showing (not persisted). Reset when the slide list shrinks.
+    var upcomingHeroIndex = 0
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
     /// Order games were just added in, for the pop stagger.
