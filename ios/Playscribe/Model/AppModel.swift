@@ -164,6 +164,8 @@ final class AppModel {
     var addSheetOpen = false
     /// QA (route add/scan): the camera scan shows a fixed feed, since simulators have no camera.
     var simulatedScan = false
+    /// QA (INTERNAL store-set route): the Upcoming tab lists invented games instead of the catalogue's real ones.
+    var qaStoreSet = false
     /// Opens the Add games sheet straight on this method (first-run welcome rows).
     var addSheetMethod: AddMethod?
     /// QA: route add/keyboard focuses the Add search field so the keyboard is up.
@@ -594,6 +596,7 @@ final class AppModel {
         case "add":
             addSheetOpen = true
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
+            if parts.first == "photo" { addSheetMethod = .photo }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
         case "settings":
             settingsOpen = true
@@ -878,6 +881,7 @@ final class AppModel {
     }
 
     func resetDemo() {
+        qaStoreSet = false
         qaPadDeck = false
         qaUpdateCount = 0
         qaFreshCache = nil

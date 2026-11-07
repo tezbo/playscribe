@@ -18,6 +18,9 @@ extension AppModel {
     }
 
     var upcomingMore: [CatalogGame] {
+        #if INTERNAL
+        if qaStoreSet { return StoreSet.upcomingGames() }
+        #endif
         let inLibrary = Set(data.collection.compactMap { game($0.gameID)?.igdbID })
         let source = UpcomingStore.shared.games.isEmpty ? Self.catalogueUpcoming : UpcomingStore.shared.games
         return source.filter { g in g.igdbID.map { !inLibrary.contains($0) } ?? true }
