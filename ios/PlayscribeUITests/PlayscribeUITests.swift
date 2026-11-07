@@ -21,16 +21,20 @@ final class PlayscribeUITests: XCTestCase {
             // A lock-screen tap does not launch the app on this sim (17b7a0b: locked after the terminate, app state 1, two
             // retries). The sim has no passcode, so unlock first (a swipe up from the bottom, harmless if already unlocked),
             // then use the row in Notification Center, so the first tap is the one that counts.
-            XCTAssertTrue(unlockIfLocked(), "\(cold ? "cold" : "warm"): the sim is stuck on the lock screen before the notification tap")
+            step("\(cold ? "cold" : "warm"): notification posted; row found: \(note.frame)")
+            unlockIfLocked()
             if notificationRow(timeout: 2) == nil {
                 springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
                     .press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.6)))
+                step("pulled Notification Center down; \(lockState())")
             }
             if let row = notificationRow(timeout: 6) { note = row }
+            step("tapping row \(note.frame) hittable=\(note.isHittable); \(lockState())")
             note.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
             // The tap starts (or resumes) the app in a process this test's `app` proxy never launched, and the `simulate`
             // launch in postAndFindNotification replaced it, so ask a fresh proxy for the target app's state (3758183 and
             // e9a735d: a bare assertion here failed with no message).
+            step("tapped; app state \(XCUIApplication().state.rawValue)")
             let target = XCUIApplication()
             // "Foreground" alone proves nothing: the app can be in front because the tap never reached SpringBoard's notification (a
             // locked sim, a missed row). The proof is that the app received the tap's response (INTERNAL probe), so wait for that,
@@ -49,6 +53,7 @@ final class PlayscribeUITests: XCTestCase {
             var retries = 0
             while !delivered && retries < 2 {
                 // Unlock (a swipe up from the bottom; harmless if not locked), pull Notification Center down, find the row, tap.
+                step("retry \(retries + 1): app state \(target.state.rawValue)")
                 unlockIfLocked()
                 var again = notificationRow(timeout: 3)
                 if again == nil {
@@ -122,16 +127,20 @@ final class PlayscribeUITests: XCTestCase {
     private func postAndFindNotification(cold: Bool) throws -> XCUIElement {
         let simulate = XCUIApplication()
         simulate.launchArguments = ["-qaRoute", "simulate/dawnwalker/major"]
+        step("before simulate launch; \(lockState())")
         simulate.launch()
+        step("simulate launched; app state \(simulate.state.rawValue)")
         if cold {
             // Cold: no Home press (it sends this sim to the lock screen, where taps land on a pile of old notifications and do
             // not launch the app, e411c788). Let the app schedule the 3 s notification, then end it; the system delivers it to
             // a dead app, which is the cold case, with the sim still on the home screen.
             sleep(2)
             simulate.terminate()
+            step("terminated; \(lockState())")
         } else {
             XCUIDevice.shared.press(.home)
             XCUIDevice.shared.press(.home)   // the second press wakes a sim that has gone to the lock screen (48404f1)
+            step("pressed Home twice; \(lockState())")
         }
         // The banner is up for only a few seconds, and pressing Home returns slowly: look briefly, then use Notification Center.
         if let banner = notificationRow(timeout: 4) { return banner }
@@ -142,34 +151,41 @@ final class PlayscribeUITests: XCTestCase {
         return listed ?? springboard.otherElements["Notification"]
     }
 
-    /// The lock screen itself: SpringBoard's Home tree stays in the accessibility tree underneath it, so home icons prove
-    /// nothing (46b9dce). The lock screen is the cover sheet's `lockscreen-date-view` (date and time) while it is on screen.
-    private func lockScreenShowing() -> Bool {
-        let date = springboard.descendants(matching: .any)["lockscreen-date-view"]
-        guard date.exists else { return false }
-        return date.isHittable && date.frame.minY > -50 && !date.frame.isEmpty
+    // MARK: N-6 instrumentation (eec2f1f: five fixes without logs). Every step appends a line and a screenshot.
+    private var n6Log: [String] = []
+    private func step(_ text: String) {
+        let line = String(format: "%02d %@", n6Log.count + 1, text)
+        n6Log.append(line)
+        let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        shot.name = String(format: "n6-step-%02d", n6Log.count); shot.lifetime = .keepAlways; add(shot)
+        let note = XCTAttachment(string: n6Log.joined(separator: "\n")); note.name = "n6-log"; note.lifetime = .keepAlways; add(note)
     }
 
-    /// Swipes up from the bottom edge of SpringBoard's own frame (absolute points; the sim has no passcode) until the lock
-    /// screen is gone. Returns false, with the tree attached, if it never goes (the test then fails instead of tapping a locked row).
-    @discardableResult
-    private func unlockIfLocked() -> Bool {
+    /// Lock-screen state as the tree reports it. `isHittable` is not trusted (a list covers the date view while locked, so it can be
+    /// false on a locked screen, which is how eec2f1f decided the sim was unlocked without swiping).
+    private func lockState() -> String {
+        let date = springboard.descendants(matching: .any)["lockscreen-date-view"]
+        let cover = springboard.windows["SBCoverSheetWindow"]
+        return "dateView exists=\(date.exists) frame=\(date.exists ? "\(date.frame)" : "-") hittable=\(date.exists ? "\(date.isHittable)" : "-") coverSheet exists=\(cover.exists) frame=\(cover.exists ? "\(cover.frame)" : "-")"
+    }
+
+    /// Fast upward flick from just above SpringBoard's bottom edge (the sim has no passcode). A slow press-and-drag does not
+    /// unlock. Always flicks at least once; logs state before and after each flick.
+    private func unlockIfLocked() {
         var screen = springboard.frame
         if screen.isEmpty {
             screen = springboard.windows.allElementsBoundByIndex.map(\.frame).max { $0.width * $0.height < $1.width * $1.height } ?? .zero
         }
         let origin = springboard.coordinate(withNormalizedOffset: .zero)
-        for _ in 0..<4 {
-            if !lockScreenShowing() { return true }
-            origin.withOffset(CGVector(dx: screen.midX, dy: screen.maxY - 2))
-                .press(forDuration: 0.1, thenDragTo: origin.withOffset(CGVector(dx: screen.midX, dy: screen.maxY * 0.45)))
+        step("before unlock: screen \(screen); \(lockState())")
+        for i in 1...3 {
+            let from = CGVector(dx: screen.midX, dy: screen.maxY - 2), to = CGVector(dx: screen.midX, dy: screen.maxY * 0.3)
+            origin.withOffset(from).press(forDuration: 0.05, thenDragTo: origin.withOffset(to), withVelocity: .fast, thenHoldForDuration: 0)
             sleep(1)
+            step("flick \(i) from \(from) to \(to); \(lockState())")
+            let date = springboard.descendants(matching: .any)["lockscreen-date-view"]
+            if !date.exists || date.frame.minY < -50 { return }
         }
-        if lockScreenShowing() {
-            let t = XCTAttachment(string: "still on the lock screen; frame \(screen)\n" + springboard.debugDescription); t.name = "n6-still-locked"; t.lifetime = .keepAlways; add(t)
-            return false
-        }
-        return true
     }
 
     /// The notification's own row: the smallest hittable element whose label names the game. A first match on any element
