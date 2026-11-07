@@ -31,7 +31,7 @@ final class StoreSetRouteTests: XCTestCase {
     /// `reader/<game>/<release>/<y>` opens the update scrolled, so its bullets are on screen and not just the "What's new" heading.
     func testReaderRouteShowsTheBullets() throws {
         launch("reader/store-lantern-reach/store-lantern-reach@update-1.3/320")
-        let bullet = app.staticTexts["Night expeditions to the far shore."]
+        let bullet = app.staticTexts["night expeditions to the far shore"]   // the "What's new" key-change line as the reader shows it (the full-sentence bullets sit in the collapsed "What's changed" section)
         if !bullet.waitForExistence(timeout: 15) {
             let a = XCTAttachment(string: app.debugDescription); a.lifetime = .keepAlways; add(a)   // the hierarchy, for the Mac report
             XCTFail("the first bullet exists"); return
