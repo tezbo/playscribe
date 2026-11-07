@@ -297,20 +297,37 @@ struct NoNotesPage: View {
 /// In the Contents, so in Tabletop they're on the flat half.
 struct GameLinks: View {
     var game: CatalogGame
+    /// The row's available width and the width both links need side by side. FlowLayout reported one row's height
+    /// when asked with no width and then wrapped when placed, so the second link landed under the chip row
+    /// (Open and Book, std, r052-contents-chips-overlap). Here the stack is chosen from measured widths, so the
+    /// height always belongs to the layout that is drawn; until measured it is the tall, safe one.
+    @State private var available: CGFloat = 0
+    @State private var needed: CGFloat = .infinity
     var body: some View {
         let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
         if links?.official != nil || links?.patchNotes != nil {
-            // One row, a 24 pt gap and no separators; wraps to a second line rather than truncating (Iris 0.5.0).
-            FlowLayout(spacing: 24) {
-                if let url = links?.official {
-                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
-                }
-                if let url = links?.patchNotes {
-                    Link(destination: url) { Label(LinkHost.label("All patch notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame().accessibilityHint("Opens in browser")
-                }
-            }
-            .font(PlayscribeFont.subheadline)
-            .foregroundStyle(PlayscribeColor.accent)
+            let layout = needed <= available ? AnyLayout(HStackLayout(spacing: 24)) : AnyLayout(VStackLayout(alignment: .leading, spacing: 0))
+            layout { items(links) }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { available = $0 }
+                .background(
+                    HStack(spacing: 24) { items(links) }
+                        .fixedSize()
+                        .hidden()
+                        .accessibilityHidden(true)
+                        .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { needed = $0 }
+                )
+                .font(PlayscribeFont.subheadline)
+                .foregroundStyle(PlayscribeColor.accent)
+        }
+    }
+
+    @ViewBuilder private func items(_ links: GameBasics.Links?) -> some View {
+        if let url = links?.official {
+            Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
+        }
+        if let url = links?.patchNotes {
+            Link(destination: url) { Label(LinkHost.label("All patch notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame().accessibilityHint("Opens in browser")
         }
     }
 }
