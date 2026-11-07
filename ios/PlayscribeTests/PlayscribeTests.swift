@@ -844,6 +844,17 @@ struct UTCDayTests {
             #expect(Date.sameUTCDay(after, after.addingTimeInterval(86_000)))
         }
     }
+
+    @Test("the coming-this-week window is today and the next six UTC days in every zone (r060-utc-day-labels)", arguments: ["Pacific/Auckland", "UTC", "Pacific/Pago_Pago"])
+    func weekWindow(_ zone: String) {
+        let now = Date(timeIntervalSince1970: 1_782_431_999)      // 2026-06-25T23:59:59Z: already 26 Jun in Auckland, still 25 Jun in Pago Pago
+        withZone(zone) {
+            #expect("2026-06-25".isoDay!.isInUTCWeek(from: now), "today (UTC) is in the window [\(zone)]")
+            #expect("2026-07-01".isoDay!.isInUTCWeek(from: now), "the sixth day after is in [\(zone)]")
+            #expect(!"2026-07-02".isoDay!.isInUTCWeek(from: now), "the seventh day after is out [\(zone)]")
+            #expect(!"2026-06-24".isoDay!.isInUTCWeek(from: now), "yesterday (UTC) is out [\(zone)]")
+        }
+    }
 }
 
 @Suite("QAPose launch argument")

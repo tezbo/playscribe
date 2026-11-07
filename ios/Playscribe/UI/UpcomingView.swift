@@ -257,7 +257,7 @@ struct UpcomingView: View {
             } else {
                 let soon = watched.filter { g in
                     guard (g.releasePrecision ?? .day) == .day, let d = g.releaseDate?.isoDay else { return false }
-                    return d >= Calendar.current.startOfDay(for: .now) && d.timeIntervalSinceNow < 7 * 86400
+                    return d.isInUTCWeek()
                 }
                 let later = watched.filter { g in !soon.contains { $0.id == g.id } }
                 let laterTitle = soon.isEmpty ? "On your watchlist" : "Coming later"
