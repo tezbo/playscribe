@@ -34,6 +34,14 @@ struct FoldHarnessTests {
 
     /// 551d8ce: Add and Settings shared one trailing group and the system dropped one in every pose but Tabletop. An
     /// offscreen window cannot show that, so assert the cause: every Library toolbar item has a slot of its own.
+    /// The overlap rule must fire on a crossing pair and stay quiet on containment and separate frames, or its green means nothing.
+    @Test func overlapRuleFindsCrossingFramesOnly() {
+        let a = CGRect(x: 0, y: 0, width: 100, height: 40)
+        #expect(HarnessRules.overlappingPairs([a, CGRect(x: 60, y: 20, width: 100, height: 40)]).count == 1)
+        #expect(HarnessRules.overlappingPairs([a, CGRect(x: 10, y: 5, width: 30, height: 30)]).isEmpty)
+        #expect(HarnessRules.overlappingPairs([a, CGRect(x: 0, y: 60, width: 100, height: 40)]).isEmpty)
+    }
+
     @Test func libraryToolbarItemsEachHaveTheirOwnSlot() {
         let slots = [LibraryToolbar.settings, LibraryToolbar.add, LibraryToolbar.viewMenu]
         #expect(Set(slots).count == slots.count, "TB-1: two Library toolbar items share a slot: \(slots)")
@@ -146,7 +154,16 @@ enum HarnessRules {
     /// only for Closed, Open and Open portrait, where the overflow rule is already calibrated against the Mac. Tabletop's rail is
     /// placed by the system and Book's pages are shifted offscreen, so those two are reported only.
     static func reportOverlap(_ r: Rendered, size: String) {
-        let fs = r.frames.filter { $0.width > 8 && $0.height > 8 }
+        let pairs = overlappingPairs(r.frames)
+        guard !pairs.isEmpty else { return }
+        let message = "\(r.pose.id) \(size) G-8 overlap: \(pairs.count) tappable pair(s) cross: \(pairs.prefix(6))"
+        let asserted = r.pose.expected != .tabletop && r.pose.expected != .book && !r.pose.inferred
+        if asserted { require(false, message) } else { print("harness error: [info, not asserted] \(message)") }
+    }
+
+    /// Pairs of frames that cross by more than 4 pt each way without one containing the other (2 pt slack).
+    static func overlappingPairs(_ frames: [CGRect]) -> [String] {
+        let fs = frames.filter { $0.width > 8 && $0.height > 8 }
         var pairs: [String] = []
         for i in fs.indices {
             for j in fs.indices where j > i {
@@ -156,10 +173,7 @@ enum HarnessRules {
                 pairs.append("\(brief(a)) x \(brief(b))")
             }
         }
-        guard !pairs.isEmpty else { return }
-        let message = "\(r.pose.id) \(size) G-8 overlap: \(pairs.count) tappable pair(s) cross: \(pairs.prefix(6))"
-        let asserted = r.pose.expected != .tabletop && r.pose.expected != .book && !r.pose.inferred
-        if asserted { require(false, message) } else { print("harness error: [info, not asserted] \(message)") }
+        return pairs
     }
 
     /// One-line failures that say "failed", so the CI log's grep shows them (and so a reader sees the numbers).
