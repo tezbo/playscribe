@@ -611,6 +611,30 @@ struct QARouteGuardTests {
         #expect(m.qaRoute == nil)
     }
 
+    @Test("The store set never loads in a distribution build (r052-store-set-content)")
+    func storeSetStaysOutOfDistribution() {
+        BuildChannel.overrideIsDistribution = true
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        let before = m.data.collection
+        m.handle(url: URL(string: "playscribe://store-set")!)
+        m.applyQALaunch(route: "store-set", overlay: false)
+        m.loadStoreSet()
+        #expect(m.data.collection == before)
+        #expect(m.data.customGames.isEmpty)
+    }
+
+    @Test("The store set loads five invented games in an internal build (r052-store-set-content)")
+    func storeSetLoadsInternally() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        m.handle(url: URL(string: "playscribe://store-set")!)
+        #expect(m.data.collection.map(\.gameID) == StoreSet.gameIDs)
+        #expect(m.data.customGames.count == 5)
+        #expect(m.data.simulated.count == 3)
+    }
+
     @Test("A developer or simulator build still runs QA routes")
     func internalBuildRunsRoutes() {
         BuildChannel.overrideIsDistribution = false
