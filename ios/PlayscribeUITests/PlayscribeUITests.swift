@@ -576,7 +576,7 @@ final class CaptureTests: XCTestCase {
 final class LatestUpdatesDeckTests: XCTestCase {
     func testCardAndLeafTaps() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", "demo"  // seeded: `library` shows the empty first-run Library after an earlier first-run test, and it has no deck]
+        app.launchArguments = ["-qaRoute", "demo"]   // seeded: `library` shows the empty first-run Library after an earlier first-run test, and it has no deck
         app.launch()
         sleep(4)
         if ReleaseRowTests.pose(app).contains("pose: tabletop") { app.terminate(); throw XCTSkip("Tabletop's upper half is view only") }
