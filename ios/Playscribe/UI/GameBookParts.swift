@@ -197,6 +197,20 @@ struct ReleasePage: View {
     @Environment(AppModel.self) private var model
     var release: Release
     @Environment(\.dynamicTypeSize) private var typeSize
+    /// Lifts the dot from the first line's baseline to the middle of its x-height (same idea as FeedRow's dotLift).
+    @ScaledMetric(relativeTo: .title3) private var dotLift: CGFloat = 6
+
+    /// The unread dot and the title block, the dot level with the title's FIRST line however many lines it wraps to.
+    @ViewBuilder private func dotAndTitle(_ r: Release) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 8) {
+            if model.isUnread(r) {
+                UnreadDot().alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
+            }
+            TitleWithTags(release: r) {
+                Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
+            }
+        }
+    }
 
     var body: some View {
         let r = release
@@ -205,23 +219,14 @@ struct ReleasePage: View {
             // text column's trailing line (the one the headline and body wrap to), so it is clear of the rail and the
             // hinge band without extra padding; the VStack's 12 pt is the gap above and below (R-2, r060, Iris).
             if typeSize.isAccessibilitySize {
-                HStack(spacing: 8) {
-                    if model.isUnread(r) { UnreadDot() }
-                    TitleWithTags(release: r) {
-                        Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
-                    }
-                }
+                dotAndTitle(r)
                 if r.isPS5Listed {
                     HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
                 }
             } else {
             HStack(spacing: 8) {
-                if model.isUnread(r) { UnreadDot() }
                 // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
-                TitleWithTags(release: r) {
-                    Text(r.displayName).font(PlayscribeFont.title3)
-                        .accessibilityIdentifier("releaseTitle")
-                }
+                dotAndTitle(r)
                 Spacer(minLength: 0)
                 if r.isPS5Listed { ShareUpdateButton(release: r) }
             }
