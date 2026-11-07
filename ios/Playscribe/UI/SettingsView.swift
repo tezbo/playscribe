@@ -61,7 +61,7 @@ struct SettingsView: View {
                 // Tabletop's panel is half a screen: the build version leads, so it is on screen
                 // without scrolling (Terry checks it to verify the build).
                 if duo.pose == .tabletop {
-                    Section { LabeledContent("Version", value: Self.version).accessibilityIdentifier("appVersion") }
+                    Section { LabeledContent("Version", value: Self.version).accessibilityElement(children: .combine).accessibilityIdentifier("appVersion") }
                 }
                 // One default for every game (Terry, 0.2.0); a game's own setting lives on its bell.
                 Section {
@@ -217,6 +217,7 @@ struct SettingsView: View {
                 Section {
                     if duo.pose != .tabletop {
                         LabeledContent("Version", value: Self.version)
+                            .accessibilityElement(children: .combine)
                             .accessibilityIdentifier("appVersion")
                     }
                 } footer: {

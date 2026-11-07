@@ -116,7 +116,7 @@ final class ReleaseFeatureTests: XCTestCase {
 
     /// 0.5.0 Upcoming: the switch, the empty state and tapping a tile open a game.
     func testUpcomingTabAndWatchlist() throws {
-        launch("library")
+        launch("demo")   // seeds the demo collection: the switch only shows with games (an earlier first-run test leaves the store empty)
         XCTAssertTrue(switchTo("Upcoming"), "Upcoming control (picker, or the Tabletop rail)")
         let empty = app.staticTexts["Nothing on your watchlist yet"]
         let tile = app.buttons.matching(NSPredicate(format: "label CONTAINS 'releases' OR label CONTAINS 'Date to be announced'")).firstMatch
@@ -232,8 +232,7 @@ final class ReleaseFeatureTests: XCTestCase {
 
     /// J-6c: the pinned bar is at least 44 pt and sits clear of the hinge.
     func testPinnedAddBar() throws {
-        // The Add sheet opens on its method chooser; the search field is behind "Type it" (keyboard route selects it).
-        launch("add/keyboard")
+        launch("add/keyboard")   // Type it, search focused: the sheet opens on the method choice otherwise
         if inTabletop { throw XCTSkip("Tabletop has no keyboard: its add search is read-only with an A to Z strip (#179)") }
         let search = app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: 10))
@@ -266,14 +265,14 @@ final class ReleaseFeatureTests: XCTestCase {
     /// Every 0.5.0 surface keeps the frame rules in the current pose: no frame crosses a division,
     /// and in Tabletop nothing tappable sits above the fold. Upcoming is reached from the rail.
     func testNewSurfacesKeepFrameRules() throws {
-        let routes = ["library", "chapter/dawnwalker/news", "updates", "release/dawnwalker/dawnwalker@1.1",
+        let routes = ["demo", "chapter/dawnwalker/news", "updates", "release/dawnwalker/dawnwalker@1.1",
                       "add", "settings", "first-run"]
         for route in routes {
             app.launchArguments = ["-qaRoute", route]
             app.launch()
             sleep(2)
             assertFrames(route)
-            if route == "library" {
+            if route == "demo" {
                 if pose().contains("pose: tabletop") {
                     let rail = app.descendants(matching: .any)["upcomingRail"]
                     XCTAssertTrue(rail.waitForExistence(timeout: 10), "Upcoming rail button")

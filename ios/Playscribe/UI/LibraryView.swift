@@ -835,12 +835,11 @@ struct GameTile: View {
 /// else the ink plate with the name. 10 pt corners and a faint inner edge.
 struct TileCover: View {
     var game: CatalogGame
-    var plateName = true
     var body: some View {
         Color.ink1
             .overlay {
                 if game.coverAsset != nil || game.coverURL != nil {
-                    CoverView(game: game, cornerRadius: 0, plateName: plateName)
+                    CoverView(game: game, cornerRadius: 0)
                 } else if let art = game.keyArtAsset {
                     Image(art).resizable().scaledToFill()
                         .overlay(alignment: .top) {
@@ -850,11 +849,13 @@ struct TileCover: View {
                                 .background(LinearGradient(colors: [.black.opacity(0.7), .clear], startPoint: .top, endPoint: .bottom))
                         }
                 } else {
-                    CoverView(game: game, cornerRadius: 0, plateName: plateName)
+                    CoverView(game: game, cornerRadius: 0)
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
+            // Art is decorative to VoiceOver: any title drawn in it is also the card's own label (never information only in the art).
+            .accessibilityHidden(true)
     }
 }
 

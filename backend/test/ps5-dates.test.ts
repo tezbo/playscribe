@@ -19,6 +19,15 @@ test('early access with the full release still ahead: ea and fr (Path of Exile 2
   assert.deepEqual(ps5DatesOf(rows, ids, nameOf, undefined, undefined, '2026-12-11'), { d: '2024-12-06', b: undefined })
 })
 
+test('a 1.0 that IGDB only dates to a year carries frq year (Starseeker: Astroneer Expeditions)', () => {
+  const formats: Record<number, string> = { 1: 'YYYYMMMMDD', 2: 'YYYY' }
+  const rows = [{ platform: 167, status: 2, date: at('2026-06-11'), date_format: 1 }, { platform: 167, status: 1, date: at('2026-12-31'), date_format: 2 }]
+  assert.deepEqual(ps5DatesOf(rows, ids, nameOf, undefined, (i) => formats[i!], '2026-11-07'), { d: '2026-06-11', ea: '2026-06-11', fr: '2026-12-31', frq: 'year', b: undefined })
+  // An exact day carries no frq.
+  const exact = [rows[0]!, { platform: 167, status: 1, date: at('2026-12-31'), date_format: 1 }]
+  assert.deepEqual(ps5DatesOf(exact, ids, nameOf, undefined, (i) => formats[i!], '2026-11-07'), { d: '2026-06-11', ea: '2026-06-11', fr: '2026-12-31', b: undefined })
+})
+
 test('Advanced Access, Beta and Alpha are not early access: the full release stays d', () => {
   for (const status of [4, 5]) {
     const rows = [{ platform: 167, status, date: at('2025-09-19') }, { platform: 167, status: 1, date: at('2025-09-26') }]

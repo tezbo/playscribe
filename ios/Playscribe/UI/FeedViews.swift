@@ -9,6 +9,8 @@ struct UpdatesView: View {
     var body: some View {
         let ids = model.data.collection.map(\.gameID)
         let items = ids.flatMap { model.ps5Releases($0) }.sorted { $0.ps5Date > $1.ps5Date }
+        let badgeExtra = duo.occlusions.filter { $0.minY < 190 && $0.maxY > 40 }
+            .map { max(0, duo.size.width - $0.minX) }.max() ?? 0
         Group {
             if ids.isEmpty {
                 ContentUnavailableView {
@@ -40,7 +42,9 @@ struct UpdatesView: View {
                     ForEach(items) { r in FeedRow(release: r) }
 
                 }
-                .contentMargins(.trailing, railWidth, for: .scrollContent)
+                // The inset is on the list itself: row backgrounds, separators and tap frames all stop at the
+                // rail and the time/Wi-Fi badge; scroll-content margins left them running underneath.
+                .padding(.trailing, railWidth + (duo.pose == .tabletop ? 0 : badgeExtra))
                 .clearsMessages()
             }
         }
@@ -58,6 +62,8 @@ struct UpdatesView: View {
 
 struct FeedRow: View {
     @Environment(AppModel.self) private var model
+    /// Half the title's cap height: lifts the dot's centre to the middle of the first line at every text size.
+    @ScaledMetric(relativeTo: .subheadline) private var dotLift: CGFloat = 5
     @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
 
@@ -66,17 +72,24 @@ struct FeedRow: View {
         Button { model.openGame(release.gameID, chapter: .updates, releaseID: release.id) } label: {
             // At accessibility sizes the thumbnail sits above the text so the column gets the row's full width: a game
             // name never breaks inside a word and a date stays whole (Iris, AX5).
-            let rowLayout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 12))
+            let rowLayout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 28))
             rowLayout {
                 if let g = model.game(release.gameID) { CoverView(game: g, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 3) {
                     // At accessibility sizes the row stacks: the title takes the full width in whole words,
                     // the tags and date each get their own line, the summary goes under.
-                    HStack(alignment: .firstTextBaseline, spacing: 6) {
-                        // Seated on the title's first line, not floating at the row's top (Iris).
-                        if unread { UnreadDot().alignmentGuide(.firstTextBaseline) { $0[.bottom] } }
-                        TitleWithTags(release: release) {
-                            Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
+                    // The dot hangs in the gutter left of the text (12 pt clear of the first letter, centred on the title's first
+                    // line), so read and unread rows share one title edge (Iris, Quinn).
+                    TitleWithTags(release: release) {
+                        Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
+                    }
+                    .overlay(alignment: Alignment(horizontal: .leading, vertical: .firstTextBaseline)) {
+                        if unread {
+                            UnreadDot()
+                                .alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
+                                // A plain offset, not a leading guide (Mac, fd23684: the guide left the dot on the first letter's stem):
+                                // the dot's right edge sits 12 pt left of the title's left edge, its left edge 8 pt right of the cover.
+                                .offset(x: -(8 + 12))
                         }
                     }
                     if typeSize.isAccessibilitySize {
@@ -100,6 +113,10 @@ struct FeedRow: View {
                 }
                 Spacer(minLength: 0)
             }
+            // One rule for every pose: at accessibility sizes there is no cover beside the text for the hung unread dot to sit
+            // against, so the row keeps its own 12 pt margin + 8 pt dot + 12 pt clearance (32 pt) before the text. The dot is then
+            // 12 pt inside the card's edge in Closed, Open and Book alike (Mac, 99a1f3b: flush with the edge in Closed and Open).
+            .padding(.leading, typeSize.isAccessibilitySize ? 32 : 0)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
