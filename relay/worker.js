@@ -9,6 +9,7 @@
 //   POST /v1/devices                    register (idempotent per APNs token), returns { deviceId, deviceKey, follows, unknown }
 //   PATCH /v1/devices/me                token, environment, locale, quietHours
 //   GET|PUT /v1/devices/me/follows      the followed games
+//   DELETE /v1/devices/me               forget this device: record, token, key and team entry are removed (204; idempotent)
 //   GET /admin/devices?cursor=          Feed job only (Bearer ADMIN_TOKEN), 40 devices a page
 //
 // KV keys: d:<id> device record, t:<apnsToken> -> id, k:<sha256 deviceKey> -> id, n:<UTC date> new devices that day.
@@ -207,6 +208,23 @@ const patchMe = async (env, request) => {
   return json({ deviceId: d.id })
 }
 
+/** The device's own request to be forgotten (alerts switched off, app reset). Removes every key that names it. A key the
+ *  relay no longer knows means it is already gone, so that is 204 too and the app can treat any 204 as done. */
+const deleteMe = async (env, request) => {
+  const kv = env.KV
+  const auth = request.headers.get('authorization') ?? ''
+  const key = auth.startsWith('Bearer ') ? auth.slice(7) : ''
+  if (!key) return bad('missing device key', 401)
+  const d = await deviceFor(kv, request)
+  if (d) {
+    await kv.delete(`d:${d.id}`)
+    await kv.delete(`k:${await sha(d.key)}`)
+    if (d.token && (await kv.get(`t:${d.token}`)) === d.id) await kv.delete(`t:${d.token}`)
+    if ((await kv.get(`tm:${d.id}`)) !== null) await kv.delete(`tm:${d.id}`)
+  }
+  return new Response(null, { status: 204, headers: { 'cache-control': 'no-store' } })
+}
+
 const putFollows = async (env, request) => {
   const d = await deviceFor(env.KV, request)
   if (!d) return bad('unknown device key', 401)
@@ -304,6 +322,7 @@ export default {
       if (pathname === '/' || pathname === '/health') return json({ ok: true })
       if (pathname === '/v1/devices' && m === 'POST') return await register(env, request)
       if (pathname === '/v1/devices/me' && m === 'PATCH') return await patchMe(env, request)
+      if (pathname === '/v1/devices/me' && m === 'DELETE') return await deleteMe(env, request)
       if (pathname === '/v1/devices/me/follows' && m === 'PUT') return await putFollows(env, request)
       if (pathname === '/v1/devices/me/follows' && m === 'GET') {
         const d = await deviceFor(env.KV, request)

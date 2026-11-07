@@ -191,3 +191,31 @@ test('register: past the daily cap new devices get 429, existing devices still r
   assert.ok(over.headers.get('retry-after'))
   assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: hexTok(0) })).status, 200)
 })
+
+test('delete me: removes the record, token, key and team entry, and a second delete is still 204', async () => {
+  const { env } = setup()
+  const reg = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), team: true, follows: [{ gameId: 'dawnwalker' }] })).json()
+  assert.notEqual(await env.KV.get(`d:${reg.deviceId}`), null)
+  assert.notEqual(await env.KV.get(`tm:${reg.deviceId}`), null)
+  const del = await call(env, 'DELETE', '/v1/devices/me', undefined, reg.deviceKey)
+  assert.equal(del.status, 204)
+  assert.equal(await env.KV.get(`d:${reg.deviceId}`), null)
+  assert.equal(await env.KV.get(`t:${token('a')}`), null)
+  assert.equal(await env.KV.get(`tm:${reg.deviceId}`), null)
+  // The key no longer works for anything else, and the Feed job sees no device.
+  assert.equal((await call(env, 'GET', '/v1/devices/me/follows', undefined, reg.deviceKey)).status, 401)
+  const admin = await (await worker.fetch(new Request('https://relay.test/admin/devices', { headers: { authorization: `Bearer ${ADMIN}` } }), env)).json()
+  assert.deepEqual(admin.devices, [])
+  assert.equal((await call(env, 'DELETE', '/v1/devices/me', undefined, reg.deviceKey)).status, 204)
+})
+
+test('delete me: needs a key, leaves other devices alone, and a re-registration is a new device', async () => {
+  const { env } = setup()
+  const a = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a') })).json()
+  const b = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('b') })).json()
+  assert.equal((await call(env, 'DELETE', '/v1/devices/me')).status, 401)
+  await call(env, 'DELETE', '/v1/devices/me', undefined, a.deviceKey)
+  assert.notEqual(await env.KV.get(`d:${b.deviceId}`), null)
+  const again = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a') })).json()
+  assert.notEqual(again.deviceId, a.deviceId)
+})

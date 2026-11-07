@@ -120,6 +120,8 @@ enum ReaderBody {
         let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
         return cut.trimmingCharacters(in: .punctuationCharacters.union(.whitespaces)) + "…"
     }
+    /// VoiceOver: "2 of 5", for a section's place in the update.
+    static func position(_ index: Int, of count: Int) -> String { "\(index + 1) of \(count)" }
     static func isCapped(_ body: String) -> Bool { stage(body) != body }
     static func isCapped(title t: String, body: String) -> Bool { title(t) != t || isCapped(body) }
 }
@@ -155,6 +157,8 @@ struct TabletopReaderStage: View {
                     }
                     .font(PlayscribeFont.subheadline.weight(.semibold))
                     .foregroundStyle(PlayscribeColor.accent)
+                    // One phrase ("Enshrouded, 5 November") instead of two stops.
+                    .accessibilityElement(children: .combine)
                     // The release name for VoiceOver (and J-4), when the title is a headline.
                     Color.clear.frame(width: 1, height: 1)
                         .accessibilityElement()
@@ -165,6 +169,9 @@ struct TabletopReaderStage: View {
                         .font(PlayscribeFont.title)
                         .lineLimit(4)
                         .minimumScaleFactor(0.8)
+                        // The stage caps the title; VoiceOver reads all of it, as a heading.
+                        .accessibilityLabel(section.title)
+                        .accessibilityAddTraits(.isHeader)
                     Text(ReaderBody.stage(section.body))
                         .font(PlayscribeFont.body)
                         .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.92))
@@ -196,6 +203,7 @@ struct TabletopReaderStage: View {
 struct TabletopReaderControls: View {
     @Environment(AppModel.self) private var model
     @Environment(\.railWidth) private var railWidth
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     var gameID: String
 
     var body: some View {
@@ -219,13 +227,15 @@ struct TabletopReaderControls: View {
                                 .contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
+                            .accessibilityLabel(s.title)
+                            .accessibilityValue(ReaderBody.position(i, of: sections.count))
                             .accessibilityAddTraits(i == index ? .isSelected : [])
                             .tappableFrame()
                             .id(i)
                         }
                     }
                 }
-                .onChange(of: index) { _, i in withAnimation { proxy.scrollTo(i, anchor: .center) } }
+                .onChange(of: index) { _, i in withAnimation(reduceMotion ? nil : .default) { proxy.scrollTo(i, anchor: .center) } }
             }
             HStack(spacing: 12) {
                 pageButton("Previous", "chevron.backward", enabled: index > 0) { go(index - 1) }
@@ -242,6 +252,11 @@ struct TabletopReaderControls: View {
     private func go(_ i: Int) {
         model.readerIndex[gameID] = i
         if let r = model.readerRelease(gameID), i > 0, model.isUnread(r) { model.markRead(r.id) }
+        // The page is on the stage, away from the button just pressed: say which section it is now.
+        let sections = model.readerRelease(gameID).map(model.readerSections) ?? []
+        if let s = sections[safe: i] {
+            UIAccessibility.post(notification: .announcement, argument: "\(s.title), \(ReaderBody.position(i, of: sections.count))")
+        }
     }
 
     private func pageButton(_ title: String, _ symbol: String, enabled: Bool, action: @escaping () -> Void) -> some View {
@@ -252,6 +267,7 @@ struct TabletopReaderControls: View {
                 .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(title + " section")
         .disabled(!enabled)
         .opacity(enabled ? 1 : 0.4)
         .tappableFrame()

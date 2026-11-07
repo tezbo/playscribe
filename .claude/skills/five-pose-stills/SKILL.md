@@ -8,7 +8,8 @@ description: Use when a Playscribe PR changes any UI and needs stills or a pose 
 Poses: `closed`, `book`, `open`, `open-portrait`, `tabletop` (+ `closed-landscape` where the view has a landscape layout). Pose comes from the container and reserved regions, never device checks (CLAUDE.md).
 
 1. **Scope from the diff.** Name each changed view and the acceptance IDs it touches (G-5 reserved regions, P-1..P-3, TT-0, B-/R- rules in `docs/ux-acceptance.md`). Shoot only poses the view appears in; say which are skipped and why.
-2. **Order: AX3 first**, in Book, Closed portrait, Open portrait and Closed landscape (button gaps and rail overlap failed in all four, not only Book and Closed portrait; #292). Then Open, Tabletop, Closed.
+2. **Gate size is AX5 (accessibility-extra-extra-extra-large); put the size in the filename (`-ax5`).** The Mac had been labelling AX3 shots as the AX5 gate until 1d553d4 (`docs/learnings.md` entry 9). Read AX3 below as the minimum; a sign-off names the size it actually shot.
+2a. **Order: AX3 first**, in Book, Closed portrait, Open portrait and Closed landscape (button gaps and rail overlap failed in all four, not only Book and Closed portrait; #292). Then Open, Tabletop, Closed.
 3. **Per pose, check:** nothing tappable crosses an active `.division` (G-5); Tabletop has nothing tappable above the fold; no text clipped or ellipsised that should wrap; no module over 25% of a page (Book); fonts match other poses; hero headline cap 3 lines in Book and Closed, 4 in Closed portrait, cut only on word boundaries, chips never dropped (#292); Book tile widths match within 1 pt across both pages (#287); the no-cover placeholder is checked in the smallest tile (#308).
    A still must show the whole card top. A cropped still counts as **unshot** for the top.
 4. **Capture** with `ios/tools/qa/gate.sh <out> [poses]` or `ios/tools/qa/shots.sh <pose> <dir>`; routes via `-qaRoute` (see CLAUDE.md). One gate or simctl run at a time on the Mac.
