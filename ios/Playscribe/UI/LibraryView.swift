@@ -73,15 +73,32 @@ struct LibraryView: View {
 struct LibraryStage: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
+    @Environment(\.accessibilitySwitchControlEnabled) private var switchControl
+    @Environment(\.dynamicTypeSize) private var typeSize
     /// The stage's bottom edge in screen space; the caption lifts to end 24 pt above the division.
     @State private var stageBottom: CGFloat = 0
 
     var body: some View {
         let deck = model.latestDeck
         // Upcoming tab: the stage fronts the soonest unreleased game, never an update of a game you already play.
-        if model.libraryTab == .upcoming, let g = model.upcomingWatched.first ?? model.upcomingMore.first {
+        let slides = model.upcomingHeroSlides
+        if model.libraryTab == .upcoming, !slides.isEmpty {
+            let g = slides[min(model.upcomingHeroIndex, slides.count - 1)]
             DeckStage(card: DeckCard(game: g, release: nil, unread: false, date: g.releaseDate?.isoDay),
                       upcomingLine: g.ps5DateLine ?? "Date to be announced")
+                .id(g.id)
+                .transition(.opacity)
+                .animation(.easeInOut(duration: 0.3), value: g.id)
+                // Auto-advance every 8 s; a change of slide or of the pause restarts the clock (WCAG 2.2.2, G-9).
+                .task(id: "\(g.id)-\(model.upcomingHeroPaused)-\(reduceMotion)-\(voiceOver)-\(switchControl)-\(typeSize.isAccessibilitySize)") {
+                    guard UpcomingHero.autoAdvances(count: slides.count, reduceMotion: reduceMotion, assistive: voiceOver || switchControl,
+                                                    accessibilitySize: typeSize.isAccessibilitySize, paused: model.upcomingHeroPaused) else { return }
+                    try? await Task.sleep(for: UpcomingHero.interval)
+                    guard !Task.isCancelled else { return }
+                    model.upcomingHeroIndex = UpcomingHero.moved(model.upcomingHeroIndex, by: 1, count: slides.count)
+                }
         } else if let card = deck.first(where: { $0.id == model.deckSelection }) ?? deck.first {
             DeckStage(card: card)
         } else {
@@ -436,7 +453,8 @@ struct LibraryShelf: View {
                     }
                 } else if duo.pose == .tabletop {
                     let deck = model.latestDeck
-                    if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
+                    if model.libraryTab == .upcoming { if model.upcomingHeroSlides.count > 1 { UpcomingHeroDots() } }
+                    else if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
                 }
                 if !heroOnRightPage { NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading) }
                 if !heroOnRightPage && all.count >= 2 && layout == .tiles {

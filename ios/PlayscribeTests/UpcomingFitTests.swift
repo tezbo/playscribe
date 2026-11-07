@@ -75,3 +75,32 @@ struct UpcomingPackedBlockTests {
         }
     }
 }
+
+/// Tabletop's Upcoming hero carousel (J-11, G-4, G-9).
+struct UpcomingHeroTests {
+    @Test func pagingWrapsBothWays() {
+        #expect(UpcomingHero.moved(4, by: 1, count: 5) == 0)
+        #expect(UpcomingHero.moved(0, by: -1, count: 5) == 4)
+        #expect(UpcomingHero.moved(0, by: 1, count: 0) == 0)
+    }
+
+    @Test func autoAdvanceStopsUnderReduceMotionOrASingleSlide() {
+        #expect(UpcomingHero.autoAdvances(count: 3, reduceMotion: false))
+        #expect(!UpcomingHero.autoAdvances(count: 3, reduceMotion: true))
+        #expect(!UpcomingHero.autoAdvances(count: 1, reduceMotion: false))
+    }
+
+    @Test func autoAdvanceStopsForAssistiveTechAccessibilitySizesAndAPause() {
+        #expect(!UpcomingHero.autoAdvances(count: 3, reduceMotion: false, assistive: true))
+        #expect(!UpcomingHero.autoAdvances(count: 3, reduceMotion: false, accessibilitySize: true))
+        #expect(!UpcomingHero.autoAdvances(count: 3, reduceMotion: false, paused: true))
+        #expect(UpcomingHero.interval == .seconds(8))
+    }
+
+    @Test func onlyAHorizontalDragTurnsThePage() {
+        #expect(UpcomingHero.swipeStep(CGSize(width: -80, height: 10)) == 1)
+        #expect(UpcomingHero.swipeStep(CGSize(width: 80, height: -10)) == -1)
+        #expect(UpcomingHero.swipeStep(CGSize(width: 20, height: 0)) == nil)
+        #expect(UpcomingHero.swipeStep(CGSize(width: 40, height: 90)) == nil)
+    }
+}

@@ -31,6 +31,102 @@ extension AppModel {
     }()
 }
 
+/// The Upcoming hero carousel (Terry, 7 Nov): the soonest watched games, then the catalogue's next
+/// releases, a few slides that cycle on their own and can be swiped (J-11, G-4, G-9).
+enum UpcomingHero {
+    static let limit = 5
+    static let interval: Duration = .seconds(8)
+
+    static func slides(watched: [CatalogGame], more: [CatalogGame]) -> [CatalogGame] {
+        var seen = Set<String>()
+        return (watched + more).filter { seen.insert($0.id).inserted }.prefix(limit).map { $0 }
+    }
+
+    /// Wraps at both ends; an empty list stays at 0.
+    static func moved(_ index: Int, by step: Int, count: Int) -> Int {
+        count > 0 ? (((index + step) % count) + count) % count : 0
+    }
+
+    /// Auto-advance runs only with more than one slide, and never under Reduce Motion (G-9), VoiceOver, Switch Control,
+    /// an accessibility text size, or after the person paused it or touched the strip (WCAG 2.2.2; Iris).
+    static func autoAdvances(count: Int, reduceMotion: Bool, assistive: Bool = false, accessibilitySize: Bool = false, paused: Bool = false) -> Bool {
+        count > 1 && !reduceMotion && !assistive && !accessibilitySize && !paused
+    }
+
+    /// A horizontal drag past 30 pt turns the page: leftward is next. Mostly vertical drags are left to scrolling.
+    static func swipeStep(_ t: CGSize) -> Int? {
+        guard abs(t.width) > 30, abs(t.width) > abs(t.height) else { return nil }
+        return t.width < 0 ? 1 : -1
+    }
+}
+
+extension AppModel {
+    var upcomingHeroSlides: [CatalogGame] { UpcomingHero.slides(watched: upcomingWatched, more: upcomingMore) }
+}
+
+/// Tabletop, lower half: the hero's control strip (Iris): page dots (44 pt each), a pause/play button and the swipe
+/// area. The swipe is horizontal on this strip only, so it never fights page scrolling; the hero above is view-only (G-4).
+struct UpcomingHeroDots: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
+    @Environment(\.accessibilitySwitchControlEnabled) private var switchControl
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    /// A manual change: stops auto-advance for good and tells VoiceOver where it landed.
+    private func turn(to i: Int, of n: Int) {
+        guard i != model.upcomingHeroIndex else { return }
+        model.upcomingHeroIndex = i
+        model.upcomingHeroPaused = true
+        AccessibilityNotification.Announcement("Game \(i + 1) of \(n)").post()
+    }
+
+    var body: some View {
+        let slides = model.upcomingHeroSlides
+        let current = min(model.upcomingHeroIndex, max(0, slides.count - 1))
+        let canAuto = UpcomingHero.autoAdvances(count: slides.count, reduceMotion: reduceMotion, assistive: voiceOver || switchControl,
+                                                accessibilitySize: typeSize.isAccessibilitySize)
+        HStack(spacing: 0) {
+            if canAuto {
+                Button { model.upcomingHeroPaused.toggle() } label: {
+                    Image(systemName: model.upcomingHeroPaused ? "play.fill" : "pause.fill")
+                        .font(.footnote).foregroundStyle(PlayscribeColor.textSecondary)
+                        .frame(width: 44, height: 44).contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .tappableFrame()
+                .accessibilityLabel(model.upcomingHeroPaused ? "Play slideshow" : "Pause slideshow")
+            }
+            HStack(spacing: 0) {
+                ForEach(Array(slides.enumerated()), id: \.element.id) { i, g in
+                    Button { turn(to: i, of: slides.count) } label: {
+                        Circle().fill(i == current ? PlayscribeColor.accent : PlayscribeColor.textSecondary.opacity(0.5))
+                            .frame(width: i == current ? 10 : 7, height: i == current ? 10 : 7)
+                            .frame(width: 44, height: 44).contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .tappableFrame()
+                    .accessibilityLabel("\(g.name), \(i + 1) of \(slides.count)")
+                    .accessibilityAddTraits(i == current ? [.isButton, .isSelected] : .isButton)
+                }
+            }
+            .frame(maxWidth: .infinity, minHeight: 44)
+            .contentShape(Rectangle())
+            .simultaneousGesture(DragGesture(minimumDistance: 20).onEnded { v in
+                model.upcomingHeroPaused = true
+                if let step = UpcomingHero.swipeStep(v.translation) {
+                    turn(to: UpcomingHero.moved(current, by: step, count: slides.count), of: slides.count)
+                }
+            })
+            .accessibilityElement(children: .contain)
+            .accessibilityAdjustableAction { dir in
+                turn(to: UpcomingHero.moved(current, by: dir == .increment ? 1 : -1, count: slides.count), of: slides.count)
+            }
+        }
+        .frame(maxWidth: .infinity, minHeight: 44)
+    }
+}
+
 struct LibraryTabPicker: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo

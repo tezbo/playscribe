@@ -426,7 +426,9 @@ struct DeckStage: View {
                 .font(PlayscribeFont.caption)
                 .shadow(color: .black.opacity(0.6), radius: 3)
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? card.game.name)
-                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).lineLimit(3)
+                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
+                    // Upcoming carousel: a fixed three-line block, so a cross-fade between titles never shifts the caption (Iris).
+                    .lineLimit(3, reservesSpace: upcomingLine != nil)
                 HStack(spacing: 8) {
                     if let line = upcomingLine { Text(line).foregroundStyle(PlayscribeColor.textSecondary) }
                     else { Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary) }
