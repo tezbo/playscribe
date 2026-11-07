@@ -4,6 +4,7 @@ import newsSources from './sources/news-sources.json' with { type: 'json' }
 import { alertOf } from './alerts.ts'
 import { artworkUrl, squareCoverUrl } from './artwork.ts'
 import { digestOf } from './digest.ts'
+import { PS5_LAUNCH } from './ps5-dates.ts'
 import { tagNotes } from './ingest/notes.ts'
 import type { Field, Game, KindBasis, NoteSection, Platform, PlatformRelease, PlatformStatus, Release, ReleaseKind, ReleaseLinks, Verification } from './types.ts'
 
@@ -329,13 +330,69 @@ export const dropPreLaunchPs5 = (db: DB) =>
       .prepare(
         `DELETE FROM platform_releases WHERE platform = 'ps5' AND release_id IN (
            SELECT r.id FROM releases r JOIN games g ON g.id = r.game_id
-           WHERE g.ps5_release IS NOT NULL AND r.ps4 = 0 AND (
-             (platform_releases.verification = 'assumed' AND substr(r.announced_at, 1, 10) < g.ps5_release)
+           WHERE r.ps4 = 0 AND (
+             (platform_releases.verification = 'assumed' AND substr(r.announced_at, 1, 10) < COALESCE(g.ps5_release, ?))
              OR (json_array_length(r.source_ids) > 0 AND NOT EXISTS (SELECT 1 FROM json_each(r.source_ids) WHERE value NOT LIKE '%-steam')
-                 AND substr(r.announced_at, 1, 10) < date(g.ps5_release, '-1 day'))))`,
+                 AND substr(r.announced_at, 1, 10) < date(COALESCE(g.ps5_release, ?), '-1 day'))))`,
       )
-      .run().changes,
+      .run(PS5_LAUNCH, PS5_LAUNCH).changes,
   )
+
+/**
+ * Data trust audit (r050): a PS5 row that a press source reported for a post dated before the game's PS5 release (or
+ * before the PS5 existed, when the game has no PS5 date) is a PS4-era patch when the game had a PS4 release by then
+ * (`ps4Since`: IGDB id to the PS4 release day, from the bundled index's `b`). It plays on PS5 through backward
+ * compatibility, so it is labelled "PS4 update" and carries no PS5 version. A PS5-only game's day-one patch, announced
+ * before launch, is not touched. Safe to run every ingest.
+ */
+export const labelPreLaunchPs4 = (db: DB, ps4Since: Map<number, string>) => {
+  const rows = db
+    .prepare(
+      `SELECT r.id, g.igdb_id AS igdb, g.ps5_release AS ps5, substr(r.announced_at, 1, 10) AS day FROM releases r JOIN games g ON g.id = r.game_id
+       JOIN platform_releases pr ON pr.release_id = r.id AND pr.platform = 'ps5'
+       WHERE r.ps4 = 0 AND pr.verification = 'reported'
+         AND substr(r.announced_at, 1, 10) < COALESCE(g.ps5_release, ?)
+         AND EXISTS (SELECT 1 FROM json_each(r.source_ids) WHERE value NOT LIKE '%-steam')`,
+    )
+    .all(PS5_LAUNCH) as { id: string; igdb: number | null; ps5: string | null; day: string }[]
+  const label = db.prepare('UPDATE releases SET ps4 = 1 WHERE id = ?')
+  const noVersion = db.prepare("UPDATE platform_releases SET version = NULL WHERE release_id = ? AND platform = 'ps5'")
+  let n = 0
+  for (const r of rows) {
+    // No PS5 date at all means the game reaches PS5 only as its PS4 version, so any PS4-era press row is a PS4 update.
+    const since = r.igdb == null ? undefined : ps4Since.get(r.igdb)
+    if (r.ps5 !== null && (!since || r.day < since)) continue
+    label.run(r.id)
+    noVersion.run(r.id)
+    n++
+  }
+  return n
+}
+
+/**
+ * A press-reported PS5 row more than 90 days before the game's PS5 release, for a game with no PS4 release, cannot be a
+ * PS5 patch (a day-one patch is announced days ahead, not months): the post was about another platform. Dropped, so the
+ * release no longer reads as PS5 (data rule: no PS5 row, not a PS5 update). Palworld and Path of Exile 2 PC patches
+ * were the cases found. Safe to run every ingest.
+ */
+export const dropEarlyPs5 = (db: DB, ps4Since: Map<number, string>) => {
+  const rows = db
+    .prepare(
+      `SELECT r.id, g.igdb_id AS igdb FROM releases r JOIN games g ON g.id = r.game_id
+       JOIN platform_releases pr ON pr.release_id = r.id AND pr.platform = 'ps5'
+       WHERE r.ps4 = 0 AND pr.verification = 'reported' AND g.ps5_release IS NOT NULL
+         AND substr(r.announced_at, 1, 10) < date(g.ps5_release, '-90 days')`,
+    )
+    .all() as { id: string; igdb: number | null }[]
+  const drop = db.prepare("DELETE FROM platform_releases WHERE release_id = ? AND platform = 'ps5'")
+  let n = 0
+  for (const r of rows) {
+    if (r.igdb != null && ps4Since.has(r.igdb)) continue
+    drop.run(r.id)
+    n++
+  }
+  return n
+}
 
 /** "1.4" and "1.4.0" are the same patch: trailing zero parts are dropped, keeping two parts ("2.0" stays "2.0"). */
 export const versionIdentity = (key: string) => {

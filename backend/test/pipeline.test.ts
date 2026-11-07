@@ -292,6 +292,49 @@ test('prelaunch gate (r051): Steam-only official PS5 rows announced before launc
   assert.ok(has('dawnwalker@nosrc'), 'a release with no recorded source is not Steam-only')
 })
 
+test('trust audit (r050): with no PS5 date, Steam-assumed rows before the PS5 launch go; press-reported ones become PS4 updates without a PS5 version', async () => {
+  const { db } = await setup()
+  const t = new Date().toISOString()
+  db.prepare("UPDATE games SET ps5_release = NULL WHERE id = 'dawnwalker'").run()
+  const add = (id: string, at: string, sources: string[], verification: string, version: string | null) => {
+    db.prepare(`INSERT INTO releases (id, game_id, version_key, display_name, kind, kind_basis, announced_at, notes, source_ids, content_hash, created_at, updated_at) VALUES (?, 'dawnwalker', ?, ?, 'patch', 'studio', ?, '[]', ?, 'x', ?, ?)`).run(id, id, id, at, JSON.stringify(sources), t, t)
+    db.prepare(`INSERT INTO platform_releases (release_id, platform, status, verification, version, live_at, updated_at) VALUES (?, 'ps5', 'live', ?, ?, NULL, ?)`).run(id, verification, version && JSON.stringify({ value: version, verification, sourceId: sources[0], checkedAt: t }), t)
+  }
+  add('dawnwalker@steam-old', '2019-12-13T19:24:32.000Z', ['dawnwalker-steam'], 'assumed', null)
+  add('dawnwalker@press-old', '2020-09-23T16:56:00.000Z', ['dawnwalker-steam', 'pushsquare'], 'reported', '01.004.000')
+  add('dawnwalker@press-new', '2021-03-01T10:00:00.000Z', ['pushsquare'], 'reported', '01.005.000')
+  assert.equal(store.dropPreLaunchPs5(db) >= 1, true)
+  const since = new Map([[db.prepare("SELECT igdb_id FROM games WHERE id = 'dawnwalker'").get()!.igdb_id as number, '2015-05-19']])
+  assert.equal(store.labelPreLaunchPs4(db, new Map()), 0, 'a game with no PS4 release is never relabelled')
+  assert.equal(store.labelPreLaunchPs4(db, since), 1)
+  const ps5 = (id: string) => db.prepare("SELECT version FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").get(id) as { version: string | null } | undefined
+  const ps4 = (id: string) => (db.prepare('SELECT ps4 FROM releases WHERE id = ?').get(id) as { ps4: number }).ps4
+  assert.equal(ps5('dawnwalker@steam-old'), undefined)
+  assert.equal(ps4('dawnwalker@press-old'), 1)
+  assert.equal(ps5('dawnwalker@press-old')!.version, null)
+  assert.equal(ps4('dawnwalker@press-new'), 0)
+  assert.ok(ps5('dawnwalker@press-new')!.version)
+  assert.equal(store.labelPreLaunchPs4(db, since), 0, 'safe to run every ingest')
+})
+
+test('trust audit (r050): a PS5 row over 90 days before the PS5 release with no PS4 version is dropped; a day-one patch and a PS4 game are kept', async () => {
+  const { db } = await setup()
+  const t = new Date().toISOString()
+  db.prepare("UPDATE games SET ps5_release = '2026-07-10' WHERE id = 'dawnwalker'").run()
+  const add = (id: string, at: string) => {
+    db.prepare(`INSERT INTO releases (id, game_id, version_key, display_name, kind, kind_basis, announced_at, notes, source_ids, content_hash, created_at, updated_at) VALUES (?, 'dawnwalker', ?, ?, 'patch', 'studio', ?, '[]', '["pushsquare"]', 'x', ?, ?)`).run(id, id, id, at, t, t)
+    db.prepare(`INSERT INTO platform_releases (release_id, platform, status, verification, live_at, updated_at) VALUES (?, 'ps5', 'live', 'reported', NULL, ?)`).run(id, t)
+  }
+  add('dawnwalker@pc-patch', '2024-12-23T15:00:00.000Z')
+  add('dawnwalker@dayone', '2026-07-05T10:00:00.000Z')
+  const has = (id: string) => !!db.prepare("SELECT 1 FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").get(id)
+  const igdb = db.prepare("SELECT igdb_id FROM games WHERE id = 'dawnwalker'").get()!.igdb_id as number
+  assert.equal(store.dropEarlyPs5(db, new Map([[igdb, '2020-01-01']])), 0, 'a game with a PS4 release keeps its rows')
+  assert.equal(store.dropEarlyPs5(db, new Map()), 1)
+  assert.equal(has('dawnwalker@pc-patch'), false)
+  assert.ok(has('dawnwalker@dayone'))
+})
+
 // Roadmap duplicate audit: the same patch seen as "1.4" by the press and "1.4.0" by Steam is one release.
 const spelling = async (steamTitle: string, pressTitle: string, steamHoursAgo = 30, pressHoursAgo = 28) => {
   const db = openDb(':memory:')

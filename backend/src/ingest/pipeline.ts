@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import { hotGameIds, HOT_POLL_MS } from '../hot.ts'
 import { now, tx, type DB } from '../db.ts'
 import { Blocked, allowedByRobots, type FetchFn } from '../http.ts'
@@ -381,6 +382,10 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   if (folded) deps.log?.(`ingest: folded ${folded} press-only duplicates into the release they report`)
   const dropped = store.dropPreLaunchPs5(deps.db)
   if (dropped) deps.log?.(`ingest: dropped ${dropped} Steam-assumed PS5 rows dated before the game's PS5 launch`)
+  const early = store.dropEarlyPs5(deps.db, ps4SinceFromIndex())
+  if (early) deps.log?.(`ingest: dropped ${early} press-reported PS5 rows dated over 90 days before the game's PS5 release (no PS4 version)`)
+  const relabelled = store.labelPreLaunchPs4(deps.db, ps4SinceFromIndex())
+  if (relabelled) deps.log?.(`ingest: labelled ${relabelled} press-reported releases dated before the PS5 era as PS4 updates`)
   const repaired = store.repairAssumedLiveAt(deps.db)
   if (repaired) deps.log?.(`ingest: moved ${repaired} Steam-assumed PS5 dates back to their Steam post`)
   const promoted = store.promoteAnnounced(deps.db)
@@ -395,3 +400,17 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
 let running: Promise<IngestSummary> | null = null
 export const runIngestExclusive = (deps: IngestDeps, opts: IngestOpts = {}) =>
   (running ??= runIngest(deps, opts).finally(() => (running = null)))
+
+/** IGDB id to PS4 release day, from the bundled PS5 index (`b`: set only when the game had a PS4 release before its PS5 one). */
+let ps4SinceCache: Map<number, string> | undefined
+export const ps4SinceFromIndex = () => {
+  if (ps4SinceCache) return ps4SinceCache
+  ps4SinceCache = new Map()
+  try {
+    const raw = JSON.parse(readFileSync(new URL('../../../ios/Playscribe/Resources/Data/ps5-index.json', import.meta.url), 'utf8'))
+    for (const g of raw.games ?? raw) if (typeof g.i === 'number' && typeof g.b === 'string') ps4SinceCache.set(g.i, g.b)
+  } catch {
+    // No index next to the backend (a bare checkout): nothing is relabelled.
+  }
+  return ps4SinceCache
+}
