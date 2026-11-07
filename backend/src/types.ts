@@ -87,6 +87,8 @@ export interface Game {
   eaSince?: string
   /** The 1.0 day, present with eaSince only while it is in the future. */
   fullRelease?: string
+  /** How exact fullRelease is when it is not a day (a year placeholder is the last day of the year). Absent means a day. */
+  fullReleasePrecision?: 'month' | 'quarter' | 'year'
   ps5TitleIds: string[]
 }
 

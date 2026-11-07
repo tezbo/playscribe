@@ -45,8 +45,8 @@ export const releaseDateOf = (
   return out(pick(on.filter((r) => r.status == null || /full release/i.test(nameOf(r.status) ?? ''))), true) ?? out(pick(on), false)
 }
 
-export interface Ps5Dates { d?: string; q?: Precision; e?: true; f?: string; b?: string; ea?: string; fr?: string }
-export interface EarlyAccess { since: string; precision?: Precision; full: string }
+export interface Ps5Dates { d?: string; q?: Precision; e?: true; f?: string; b?: string; ea?: string; fr?: string; frq?: Precision }
+export interface EarlyAccess { since: string; precision?: Precision; full: string; fullPrecision?: Precision }
 
 /**
  * A PS5 game that is playable in IGDB "Early Access" before its full release (r052-early-access-dates).
@@ -67,7 +67,8 @@ export const earlyAccessOf = (
   const full = on.filter((r) => r.status == null || /full release/i.test(nameOf(r.status) ?? '')).sort(byDate)[0]
   if (!ea || !full || full.date! <= ea.date!) return undefined
   const precision = precisionOf(ea, formatName)
-  return { since: day(ea.date)!, ...(precision ? { precision } : {}), full: day(full.date)! }
+  const fullPrecision = precisionOf(full, formatName)
+  return { since: day(ea.date)!, ...(precision ? { precision } : {}), full: day(full.date)!, ...(fullPrecision ? { fullPrecision } : {}) }
 }
 export interface Override { d?: string; e?: boolean; b?: string; evidence: string }
 
@@ -92,7 +93,7 @@ export const ps5DatesOf = (
   if (access) {
     const ps4 = releaseDateOf(rows, ids.ps4, nameOf)?.date
     const b = ps4 && ps4 <= today && ps4 < access.since ? ps4 : undefined
-    return { d: access.since, ...(access.precision ? { q: access.precision } : {}), ...(access.full > today ? { ea: access.since, fr: access.full } : {}), b }
+    return { d: access.since, ...(access.precision ? { q: access.precision } : {}), ...(access.full > today ? { ea: access.since, fr: access.full, ...(access.fullPrecision ? { frq: access.fullPrecision } : {}) } : {}), b }
   }
   const ps4 = releaseDateOf(rows, ids.ps4, nameOf)?.date
   const d = override?.d ?? ps5?.date

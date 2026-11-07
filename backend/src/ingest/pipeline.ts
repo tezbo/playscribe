@@ -117,7 +117,7 @@ export const seedGames = async (deps: IngestDeps) => {
       steamAppId: info?.steamAppId,
       ps5Release: info?.ps5Release,
       ps5ReleasePrecision: info?.ps5ReleasePrecision,
-      ...(info ? { eaSince: info.eaSince, fullRelease: info.fullRelease, igdbRev: IGDB_REV } : {}),
+      ...(info ? { eaSince: info.eaSince, fullRelease: info.fullRelease, fullReleasePrecision: info.fullReleasePrecision, igdbRev: IGDB_REV } : {}),
       firstRelease: info?.firstRelease,
       ps5TitleIds: g.ps5TitleIds,
     })
