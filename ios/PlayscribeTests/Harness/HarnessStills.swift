@@ -25,6 +25,8 @@ struct HarnessStillsTests {
         let category = try #require(Self.sizes.first { $0.0 == size }?.1)
         let model = FoldHost.demoModel()
         if let route = env["HARNESS_ROUTE"], !route.isEmpty, let url = URL(string: "playscribe://\(route)") { model.handle(url: url) }
+        // Whether a QA route (one-update, many-updates, ...) took effect: it must show in the log, not only in the still.
+        print("harness route: \(env["HARNESS_ROUTE"] ?? "none") qaRoute \(model.qaRoute ?? "nil") games \(model.data.collection.count) hero \(model.continueItem?.release.id ?? "none")")
         let r = try #require(await FoldHost.render(HarnessPose.named(id), type: category, model: model))
         defer { FoldHost.dispose(r) }
         try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
