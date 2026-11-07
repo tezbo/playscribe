@@ -197,12 +197,12 @@ struct ReleasePage: View {
     @Environment(AppModel.self) private var model
     var release: Release
     @Environment(\.dynamicTypeSize) private var typeSize
-    /// Lifts the dot from the first line's baseline to the middle of its x-height (same idea as FeedRow's dotLift).
-    @ScaledMetric(relativeTo: .title3) private var dotLift: CGFloat = 6
+    /// Lifts the dot from the first line's baseline to half the cap height (centred on line 1; Iris) (same idea as FeedRow's dotLift).
+    @ScaledMetric(relativeTo: .title3) private var dotLift: CGFloat = 7
 
     /// The unread dot and the title block, the dot level with the title's FIRST line however many lines it wraps to.
     @ViewBuilder private func dotAndTitle(_ r: Release) -> some View {
-        HStack(alignment: .firstTextBaseline, spacing: 8) {
+        HStack(alignment: .firstTextBaseline, spacing: 12) {   // 12 pt clear of the text (Iris)
             if model.isUnread(r) {
                 UnreadDot().alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
             }
