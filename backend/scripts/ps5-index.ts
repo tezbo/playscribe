@@ -14,6 +14,9 @@
 //      centre-crop to the square tile; absent when IGDB has none, and the app uses `c`.
 //   s  the studio's square cover (IGDB "Square cover" artwork), shown as the tile as it is. Rare.
 //   e  true when `d` is early access and there is no full release yet.
+//   ea fr  only for IGDB status "Early Access" (not Advanced Access, Beta or Alpha) before a later full release: `d` is then the first
+//      playable day, and while the 1.0 is still ahead `ea` is that same day and `fr` the 1.0 day ("Early access since"/"Full release").
+//      Both go once the 1.0 day arrives (the next index build); `d` stays the first playable day.
 //   b  the PS4 release, only when it came before `d` (or there is no `d`): PS4 games play on PS5,
 //      so this is when PS5 owners could first play it (Roblox: PS4 Oct 2023, native PS5 Apr 2026).
 //   o  ow  the game's first release anywhere (ISO day) and the platform it came out on ("PC (Microsoft Windows)"). Only for a
@@ -106,7 +109,7 @@ const aliasesField = (g: { name: string; alternative_names?: { name: string }[] 
   return k.length ? { k } : {}
 }
 const earlyRows: { i: number; n: string; first: string; firstStatus: string; d: string }[] = []
-const games: { i: number; n: string; d?: string; q?: string; e?: true; f?: string; b?: string; k?: string[]; o?: string; ow?: string; v?: string; p?: string; c?: string; a?: string; s?: string; t?: string[]; r: number }[] = []
+const games: { i: number; n: string; d?: string; q?: string; e?: true; f?: string; b?: string; ea?: string; fr?: string; k?: string[]; o?: string; ow?: string; v?: string; p?: string; c?: string; a?: string; s?: string; t?: string[]; r: number }[] = []
 for (let offset = 0; ; offset += 500) {
   const page = await igdb.query<any>(
     'games',

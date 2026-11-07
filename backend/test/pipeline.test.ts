@@ -597,3 +597,37 @@ test('a PS4-only post from an RSS feed is labelled ps4, not stored as a PS5 upda
   await runIngest(deps)
   assert.equal(getRelease(db, 'dawnwalker@1.9')?.ps4, true)
 })
+
+const fakeIgdb = (info: Record<string, unknown>) =>
+  ({ byId: async () => ({ igdbId: 1, coverImageId: 'c', artworkImageId: 'a', squareCoverImageId: null, steamAppId: null, firstRelease: null, ps5Release: '2024-12-06', ps5ReleasePrecision: null, eaSince: null, fullRelease: null, ...info }), bySteamAppId: async () => null }) as never
+
+test('early access before a later 1.0 is stored from IGDB and shown as eaSince/fullRelease while the 1.0 is ahead (r052)', async () => {
+  const db = openDb(':memory:')
+  const future = new Date(Date.now() + 30 * 86400_000).toISOString().slice(0, 10)
+  await seedGames({ db, fetchFn: fakeFetch({}), igdb: fakeIgdb({ eaSince: '2024-12-06', fullRelease: future }) })
+  const g = store.gameFromRow(store.getGameRow(db, 'poe2')!)
+  assert.equal(g.ps5Release, '2024-12-06')
+  assert.equal(g.eaSince, '2024-12-06')
+  assert.equal(g.fullRelease, future)
+  // The day the 1.0 arrives the label fields go, without another IGDB fetch.
+  db.prepare("UPDATE games SET full_release = ? WHERE id = 'poe2'").run(new Date().toISOString().slice(0, 10))
+  const after = store.gameFromRow(store.getGameRow(db, 'poe2')!)
+  assert.equal(after.eaSince, undefined)
+  assert.equal(after.fullRelease, undefined)
+  assert.equal(after.ps5Release, '2024-12-06')
+})
+
+test('a game last filled under older IGDB rules is asked again once, then left alone (igdb_rev)', async () => {
+  const db = openDb(':memory:')
+  let calls = 0
+  const igdb = { byId: async () => (calls++, { igdbId: 1, coverImageId: 'c', artworkImageId: 'a', squareCoverImageId: null, steamAppId: null, firstRelease: null, ps5Release: '2020-01-01', ps5ReleasePrecision: null, eaSince: null, fullRelease: null }), bySteamAppId: async () => null } as never
+  await seedGames({ db, fetchFn: fakeFetch({}), igdb })
+  const first = calls
+  assert.ok(first > 0)
+  // A past PS5 date and art present: the old rule would not ask again.
+  await seedGames({ db, fetchFn: fakeFetch({}), igdb })
+  assert.equal(calls, first, 'second seed does not ask IGDB again')
+  db.prepare('UPDATE games SET igdb_rev = 0').run()
+  await seedGames({ db, fetchFn: fakeFetch({}), igdb })
+  assert.equal(calls, first * 2, 'a row from before the rule change is refreshed')
+})
