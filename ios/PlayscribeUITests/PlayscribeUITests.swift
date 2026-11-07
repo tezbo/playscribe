@@ -635,7 +635,18 @@ final class LibraryLayoutTests: XCTestCase {
                 for h in hero { XCTAssertFalse(a.insetBy(dx: 1, dy: 1).intersects(h), "tile overlaps hero \(a) \(h) [\(pose)]") }
             }
             checked += tiles.count
-            app.swipeUp(velocity: .fast)
+            if pose.contains("tabletop") {
+                // Tabletop: the upper half is a view-only stage, so a swipe from the app's centre does not scroll anything, and
+                // a fast one that ends near the bottom edge is a Home gesture (2419534: all 8 tiles were there, below the first
+                // lower-half screen; the earlier runs ended on SpringBoard). Drag inside the lower half, slowly, clear of both edges.
+                let from = app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.80))
+                let to = app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.58))
+                from.press(forDuration: 0.1, thenDragTo: to, withVelocity: .slow, thenHoldForDuration: 0.2)
+            } else {
+                app.swipeUp(velocity: .fast)
+            }
+            // Stop once the tiles have been seen and measured on a screen; further scrolling only repeats them.
+            if pose.contains("tabletop"), checked >= games { break }
         }
         XCTAssertGreaterThan(checked, 0, "found tiles [\(pose)]")
         let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "library-\(games) [\(pose)]"; shot.lifetime = .keepAlways; add(shot)
