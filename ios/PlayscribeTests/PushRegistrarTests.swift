@@ -129,6 +129,52 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         #expect(body.contains("blue-prince") && !body.contains("dawnwalker"), "re-registered with the current list: \(body)")
     }
 
+    #if DEBUG
+    private func teamBodies() -> [String] {
+        StubRelay.seen.compactMap { r in r.httpBody.map { String(decoding: $0, as: UTF8.self) } }.filter { $0.contains("\"team\"") }
+    }
+
+    /// A tester who turned Team alerts on in TestFlight and then installed the App Store build: the relay record still says
+    /// team=true, so the App Store build says team=false once and forgets the stored choice.
+    @Test func anAppStoreBuildAfterTestFlightClearsTeamOnceAndForgetsTheChoice() async {
+        setUp()
+        PushRegistrar.showsTeamForTests = false
+        UserDefaults.standard.set(true, forKey: PushRegistrar.teamKey)
+        defer { UserDefaults.standard.removeObject(forKey: PushRegistrar.teamKey); PushRegistrar.showsTeamForTests = nil }
+        StubRelay.handler = { r in r.url!.path == "/v1/devices" ? (200, Data(#"{"deviceKey":"fresh"}"#.utf8)) : (200, Data()) }
+        await PushRegistrar.register(token: "abc", follows: follows)?.value
+        #expect(teamBodies() == [#"{"team":false}"#], "team=false once: \(teamBodies())")
+        #expect(UserDefaults.standard.object(forKey: PushRegistrar.teamKey) == nil, "the stored choice is forgotten")
+        StubRelay.seen = []
+        await PushRegistrar.register(token: "abc", follows: follows)?.value
+        #expect(teamBodies().isEmpty, "the next launch sends nothing about team")
+    }
+
+    @Test func aFailedClearKeepsTheChoiceSoItIsTriedAgain() async {
+        setUp()
+        PushRegistrar.showsTeamForTests = false
+        UserDefaults.standard.set(true, forKey: PushRegistrar.teamKey)
+        defer { UserDefaults.standard.removeObject(forKey: PushRegistrar.teamKey); PushRegistrar.showsTeamForTests = nil }
+        // The relay fails every PATCH, including the team one (the handler never reads a body).
+        StubRelay.handler = { r in
+            r.url!.path == "/v1/devices" ? (200, Data(#"{"deviceKey":"fresh"}"#.utf8)) : (503, Data())
+        }
+        await PushRegistrar.register(token: "abc", follows: follows)?.value
+        #expect(UserDefaults.standard.bool(forKey: PushRegistrar.teamKey), "kept for the next launch")
+    }
+
+    @Test func anAppStoreBuildThatNeverChoseSendsNothingAboutTeam() async {
+        setUp()
+        PushRegistrar.showsTeamForTests = false
+        UserDefaults.standard.removeObject(forKey: PushRegistrar.teamKey)
+        defer { PushRegistrar.showsTeamForTests = nil }
+        StubRelay.handler = { r in r.url!.path == "/v1/devices" ? (200, Data(#"{"deviceKey":"fresh"}"#.utf8)) : (200, Data()) }
+        await PushRegistrar.register(token: "abc", follows: follows)?.value
+        #expect(teamBodies().isEmpty)
+    }
+
+    #endif
+
     @Test func nothingIsSentBeforeTheDeviceIsRegistered() async {
         setUp(key: nil)
         let task = PushRegistrar.syncFollows([PushRegistrar.Follow(gameId: "x", igdbId: nil, notify: "all")])
@@ -173,5 +219,34 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
             #expect(UserDefaults.standard.string(forKey: "deviceKey") == "old", "the old copy stays while the Keychain refuses")
             UserDefaults.standard.removeObject(forKey: "deviceKey")
         }
+    }
+
+    @Test func forgetDeviceSendsDeleteAndDropsTheKeyOn204() async {
+        setUp()
+        StubRelay.handler = { _ in (204, Data()) }
+        await PushRegistrar.forgetDevice()?.value
+        let deletes = StubRelay.seen.filter { $0.httpMethod == "DELETE" }
+        #expect(deletes.count == 1 && deletes.first?.url?.path == "/v1/devices/me", "one DELETE /v1/devices/me: \(paths())")
+        #expect(deletes.first?.value(forHTTPHeaderField: "Authorization") == "Bearer key-1")
+        #expect(PushRegistrar.keys.read() == nil, "a 204 means done, so the stored key is dropped")
+        #expect(PushRegistrar.forgetDevice() == nil, "with no key there is nothing to send")
+    }
+
+    @Test func forgetDeviceKeepsTheKeyAndRetriesAfterAnOfflineFailure() async {
+        setUp()
+        StubRelay.handler = { _ in (503, Data()) }
+        await PushRegistrar.forgetDevice()?.value
+        #expect(PushRegistrar.keys.read() == "key-1", "a failed delete keeps the key so it can try again")
+        StubRelay.handler = { _ in (204, Data()) }
+        await PushRegistrar.forgetDevice()?.value
+        #expect(StubRelay.seen.filter { $0.httpMethod == "DELETE" }.count == 2, "the next call sends it again")
+        #expect(PushRegistrar.keys.read() == nil)
+    }
+
+    @Test func forgetDeviceTreats401AsDone() async {
+        setUp(key: "stale")
+        StubRelay.handler = { _ in (401, Data()) }
+        await PushRegistrar.forgetDevice()?.value
+        #expect(PushRegistrar.keys.read() == nil, "the relay no longer knows the key, so it is dropped")
     }
 }

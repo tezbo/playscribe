@@ -25,7 +25,30 @@ struct HarnessStillsTests {
         let category = try #require(Self.sizes.first { $0.0 == size }?.1)
         let model = FoldHost.demoModel()
         if let route = env["HARNESS_ROUTE"], !route.isEmpty, let url = URL(string: "playscribe://\(route)") { model.handle(url: url) }
-        let r = try #require(await FoldHost.render(HarnessPose.named(id), type: category, model: model))
+        // Whether a QA route (one-update, many-updates, ...) took effect: it must show in the log, not only in the still.
+        print("harness route: \(env["HARNESS_ROUTE"] ?? "none") qaRoute \(model.qaRoute ?? "nil") games \(model.data.collection.count) hero \(model.continueItem?.release.id ?? "none")")
+        // HARNESS_VIEW=settings: host that screen's view directly (the app presents it as a system sheet in Closed, which the
+        // capture of the hosting view does not include). HARNESS_TALL scales the height so its scroll content shows.
+        if let which = env["HARNESS_VIEW"], !which.isEmpty {
+            let scale = CGFloat(Double(env["HARNESS_TALL"] ?? "") ?? 1)
+            let hosted: Rendered?
+            switch which {
+            case "settings": hosted = await FoldHost.renderView(SettingsView(), pose: HarnessPose.named(id), type: category, model: model, heightScale: scale)
+            default: hosted = nil
+            }
+            let r = try #require(hosted, "unknown or unrenderable HARNESS_VIEW \(which)")
+            defer { FoldHost.dispose(r) }
+            try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
+            let data = try #require(FoldHost.png(r))
+            try data.write(to: URL(fileURLWithPath: dir).appending(path: "\(which)-\(id)-\(size).png"))
+            print("harness still: \(which)-\(id)-\(size).png \(Int(r.pose.windowSize.width))x\(Int(r.pose.windowSize.height))")
+            return
+        }
+        var pose = HarnessPose.named(id)
+        // HARNESS_TALL=<n>: host the pose in a window n times taller so a scrolling screen (the Library's deck sits below the alerts
+        // and PS Plus cards) shows more than its first screen. Advisory only: the real pose is not this tall.
+        if let t = env["HARNESS_TALL"], let n = Double(t), n > 1, !pose.landscape { pose.container.height *= CGFloat(n) }
+        let r = try #require(await FoldHost.render(pose, type: category, model: model))
         defer { FoldHost.dispose(r) }
         try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
         let data = try #require(FoldHost.png(r))

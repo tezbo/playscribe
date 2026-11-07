@@ -18,6 +18,7 @@ struct SettingsView: View {
     @Environment(\.duo) private var duo
     @AppStorage(YouTubeController.autoplayKey) private var autoplayVideos = false
     @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
+    @AppStorage(PushRegistrar.teamKey) private var teamAlerts = false
     @State private var simGame: String = ""
     @State private var simKind: AppModel.SimKind = .major
     @State private var simDelay: Double = 10
@@ -159,6 +160,22 @@ struct SettingsView: View {
                 } footer: {
                     Text("Trailers and update videos start as soon as they open. Reflection mode adds a soft mirror of the video under the controls when the Duo stands folded like a laptop. Both are off when Reduce Motion is on.")
                 }
+
+                #if INTERNAL
+                if BuildChannel.showsTeamAlerts {
+                Section {
+                    Toggle("Team alerts", isOn: $teamAlerts)
+                        .frame(minHeight: 52)
+                        .accessibilityIdentifier("teamAlerts")
+                        .onChange(of: teamAlerts) { _, on in if PushRegistrar.appCallsEnabled { PushRegistrar.syncTeam(on) } }
+                } header: {
+                    Text("Team alerts (TestFlight and development builds)")
+                } footer: {
+                    Text("Also receive the team's test notifications from the push relay. Off by default; it never appears in an App Store build.")
+                }
+
+                }
+                #endif
 
                 #if INTERNAL
                 if BuildChannel.showsInternalTools {

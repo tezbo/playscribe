@@ -52,6 +52,9 @@ final class NotificationService: NSObject {
         #endif
         if authorization == .authorized || authorization == .provisional {
             UIApplication.shared.registerForRemoteNotifications()
+        } else if authorization == .denied, PushRegistrar.appCallsEnabled {
+            // Alerts are off: the relay forgets this device (r052-device-delete). Retried here until it answers.
+            PushRegistrar.forgetDevice()
         }
     }
 
@@ -358,19 +361,44 @@ enum PushRegistrar {
     }
 
     /// Forgets what the client remembers between calls (tests start each case clean).
-    static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil }
+    static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil; lastTeam = nil
+        #if DEBUG
+        showsTeamForTests = nil
+        #endif
+    }
 
     /// What the last registration sent, so a 401 can register again without asking the app.
     private struct Registration { var token: String; var follows: [Follow] }
     nonisolated(unsafe) private static var registration: Registration?
     nonisolated(unsafe) private static var lastQuiet: QuietWindow?
+    /// Internal builds only: the "Team alerts" choice (UserDefaults `teamAlerts`), sent to the relay as `team`. Nil until the
+    /// tester has chosen, so a normal build never sends the field.
+    nonisolated(unsafe) private static var lastTeam: Bool?
+    static let teamKey = "teamAlerts"
+    #if DEBUG
+    /// Tests stand in for the receipt check (a test host is never an App Store build). Not compiled into a release build.
+    nonisolated(unsafe) static var showsTeamForTests: Bool?
+    private static var showsTeam: Bool { showsTeamForTests ?? BuildChannel.showsTeamAlerts }
+    #else
+    private static var showsTeam: Bool { BuildChannel.showsTeamAlerts }
+    #endif
 
     @discardableResult
     static func register(token: String, follows: [Follow], quietHours: QuietHours? = nil) -> Task<Void, Never>? {
         guard relayURL != nil else { return nil }
         lastQuiet = quietWindow(quietHours)
+        if showsTeam {
+            lastTeam = UserDefaults.standard.object(forKey: teamKey) as? Bool
+        } else {
+            // An App Store build installed over a TestFlight one: the tester's "on" is still in UserDefaults and the relay record
+            // still says team=true. Say team=false once; sendTeam clears the stored choice when the relay has it.
+            lastTeam = UserDefaults.standard.bool(forKey: teamKey) ? false : nil
+        }
         return Task {
-            if await registerNow(token: token, follows: follows) { await sendQuiet(lastQuiet, retry: true) }
+            if await registerNow(token: token, follows: follows) {
+                await sendQuiet(lastQuiet, retry: true)
+                if let team = lastTeam { await sendTeam(team, retry: true) }
+            }
         }
     }
 
@@ -404,9 +432,29 @@ enum PushRegistrar {
             keys.write(nil)
             guard await registerNow(token: r.token, follows: r.follows) else { return false }
             await sendQuiet(lastQuiet, retry: false)
+            if let team = lastTeam { await sendTeam(team, retry: false) }
             return await authed(retry: false, make)
         }
         return false
+    }
+
+    /// DELETE /v1/devices/me: asks the relay to forget this device (r052-device-delete), used when alerts go off. A 2xx means
+    /// done (the relay also answers 204 when the key is already gone) and a 401 means it no longer knows the key, so either
+    /// way the stored key and what the client remembers are dropped. Offline or any other answer keeps the key, so the next
+    /// time alerts are found off it tries again; it never blocks the toggle. Returns the task for tests.
+    @discardableResult
+    static func forgetDevice() -> Task<Void, Never>? {
+        guard let url = relayURL?.appending(path: "v1/devices/me"), let key = keys.read() else { return nil }
+        return Task {
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+            guard let (_, response) = try? await session.data(for: request), let http = response as? HTTPURLResponse else { return }
+            if (200..<300).contains(http.statusCode) || http.statusCode == 401 {
+                // Only if the key is still the one just deleted (a new registration may have stored another meanwhile).
+                if keys.read() == key { keys.write(nil); registration = nil; lastFollows = nil; lastQuiet = nil }
+            }
+        }
     }
 
     /// The last follows list sent, so an unchanged list costs no request (the relay's free plan allows 1,000 writes a day).
@@ -472,6 +520,34 @@ enum PushRegistrar {
             request.httpBody = try? JSONEncoder().encode(QuietBody(quietHours: window))
             return request
         }
+    }
+
+    private struct TeamBody: Encodable { var team: Bool }
+
+    @discardableResult
+    private static func sendTeam(_ on: Bool, retry: Bool) async -> Bool {
+        guard let url = relayURL?.appending(path: "v1/devices/me") else { return false }
+        let sent = await authed(retry: retry) { key in
+            var request = URLRequest(url: url)
+            request.httpMethod = "PATCH"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+            request.httpBody = try? JSONEncoder().encode(TeamBody(team: on))
+            return request
+        }
+        // The relay now has team=false for an App Store build: forget the old "on" so this is never sent again.
+        if sent, !on, !showsTeam { UserDefaults.standard.removeObject(forKey: teamKey) }
+        return sent
+    }
+
+    /// PATCH /v1/devices/me { team }: development and TestFlight builds only (the Settings "Team alerts" toggle; the relay sends
+    /// team-only pushes to devices that opted in). Does nothing on an App Store build, before the device is registered, or while
+    /// PlayscribeRelayURL is unset.
+    @discardableResult
+    static func syncTeam(_ on: Bool) -> Task<Void, Never>? {
+        guard showsTeam, relayURL != nil, keys.read() != nil else { return nil }
+        lastTeam = on
+        return Task { await sendTeam(on, retry: true) }
     }
 
     /// PATCH /v1/devices/me { quietHours }. Does nothing before the device is registered (no push can
