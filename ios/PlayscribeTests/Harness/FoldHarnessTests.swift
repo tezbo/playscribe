@@ -121,12 +121,15 @@ struct FoldHarnessTests {
 @MainActor
 enum HarnessRules {
     /// Render budget. The usual render settles for 1.8 s; anything past this is a layout loop or hang (#292, Tabletop).
-    static let renderBudget: Double = 20
+    /// 90 s, not 20: a shared macOS runner under load took 47 s for one Book render (#386) with no layout problem. The simulator
+    /// does not inherit the runner's environment, so there is no reliable "am I on CI" switch; one generous budget it is. A real
+    /// loop never settles and still fails the test's `.timeLimit(.minutes(2))`, which is the hang net.
+    static let renderBudget: Double = 90
 
     /// `FoldHost.render` with a wall-clock check, so a slow or looping layout fails with the pose and size in the message.
-    static func timedRender(_ pose: HarnessPose, type: UIContentSizeCategory, sourceLocation: SourceLocation = #_sourceLocation) async -> Rendered? {
+    static func timedRender(_ pose: HarnessPose, type: UIContentSizeCategory, model: AppModel = FoldHost.demoModel(), sourceLocation: SourceLocation = #_sourceLocation) async -> Rendered? {
         let start = ContinuousClock.now
-        let r = await FoldHost.render(pose, type: type)
+        let r = await FoldHost.render(pose, type: type, model: model)
         let d = ContinuousClock.now - start
         let secs = Double(d.components.seconds) + Double(d.components.attoseconds) / 1e18
         if secs > renderBudget {
