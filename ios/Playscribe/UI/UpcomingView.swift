@@ -153,22 +153,23 @@ struct UpcomingView: View {
         LazyVStack(alignment: .leading, spacing: 20) { ForEach(list) { row($0, watching: watching) } }
     }
 
-    /// AX row: cover 84 pt (3:4) beside the text; name on whole words up to 4 lines, date on its own line, status on its own row.
+    /// AX row: cover 84 pt (72 in Closed, where the page is narrowest) (3:4) beside the text; name on whole words up to 4 lines, date on its own line, status on its own row.
     private func row(_ g: CatalogGame, watching: Bool) -> some View {
         Button {
             model.browseGame(g)
         } label: {
             HStack(alignment: .top, spacing: 16) {
-                TileCover(game: g, plateName: false).aspectRatio(3 / 4, contentMode: .fit).frame(width: 84)
+                TileCover(game: g, plateName: false).aspectRatio(3 / 4, contentMode: .fit).frame(width: duo.pose == .closed ? 72 : 84)
                 VStack(alignment: .leading, spacing: 6) {
                     WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
                     Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                     if let move = moveLine(g) {
+                        // Status on its own row, 24 pt clear of the rail; the name and date keep the full column.
                         Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).fixedSize(horizontal: false, vertical: true)
+                            .padding(.trailing, 24)
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .topLeading)
-                .padding(.trailing, 24)
             }
             .contentShape(Rectangle())
         }
