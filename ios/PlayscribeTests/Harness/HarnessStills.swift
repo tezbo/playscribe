@@ -27,7 +27,11 @@ struct HarnessStillsTests {
         if let route = env["HARNESS_ROUTE"], !route.isEmpty, let url = URL(string: "playscribe://\(route)") { model.handle(url: url) }
         // Whether a QA route (one-update, many-updates, ...) took effect: it must show in the log, not only in the still.
         print("harness route: \(env["HARNESS_ROUTE"] ?? "none") qaRoute \(model.qaRoute ?? "nil") games \(model.data.collection.count) hero \(model.continueItem?.release.id ?? "none")")
-        let r = try #require(await FoldHost.render(HarnessPose.named(id), type: category, model: model))
+        var pose = HarnessPose.named(id)
+        // HARNESS_TALL=<n>: host the pose in a window n times taller so a scrolling screen (the Library's deck sits below the alerts
+        // and PS Plus cards) shows more than its first screen. Advisory only: the real pose is not this tall.
+        if let t = env["HARNESS_TALL"], let n = Double(t), n > 1, !pose.landscape { pose.container.height *= CGFloat(n) }
+        let r = try #require(await FoldHost.render(pose, type: category, model: model))
         defer { FoldHost.dispose(r) }
         try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
         let data = try #require(FoldHost.png(r))
