@@ -9,26 +9,20 @@ struct WholeWordText: View {
     var lines: Int
     var color: Color?
     @State private var lineHeight: CGFloat = 0
-    @State private var shownHeight: CGFloat = 0
-
-    init(text: String, font: Font, lines: Int, color: Color? = nil) {
-        self.text = text; self.font = font; self.lines = lines; self.color = color
-    }
 
     var body: some View {
         let words = text.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
         let variants = [text] + (words.count > 1 ? stride(from: words.count - 1, through: 1, by: -1).map { words.prefix($0).joined(separator: " ") + "\u{2026}" } : [])
-        // The choice of variant is made against a height this view sets itself (lines x line height), never against
-        // whatever a List cell or pager happens to propose, so the cut is the same in every pose. The outer frame then
-        // trims to the height actually shown, so a short text leaves no gap.
-        ViewThatFits(in: .vertical) {
+        // The variant is chosen against a height this view sets itself (lines x line height), never against what a List
+        // cell or pager proposes, so the cut is the same in every pose. The box is then as tall as the words shown, so a
+        // one-line name leaves no gap below it (#357).
+        let cap: CGFloat? = lineHeight > 0 ? (lineHeight * CGFloat(lines)).rounded(.up) + 1 : nil
+        let fit = ViewThatFits(in: .vertical) {
             ForEach(variants, id: \.self) { v in
                 Text(v).font(font).foregroundStyle(color ?? .primary).fixedSize(horizontal: false, vertical: true)
-                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { shownHeight = $0 }
             }
         }
-        .frame(height: lineHeight > 0 ? (lineHeight * CGFloat(lines)).rounded(.up) + 1 : nil, alignment: .topLeading)
-        .frame(height: lineHeight > 0 && shownHeight > 0 ? min(shownHeight, (lineHeight * CGFloat(lines)).rounded(.up) + 1) : nil, alignment: .topLeading)
+        HugHeight(cap: cap) { fit }
         .clipped()
         .background(alignment: .topLeading) {
             Text("Ag").font(font).hidden().accessibilityHidden(true)
@@ -36,5 +30,18 @@ struct WholeWordText: View {
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(text)
+    }
+}
+
+/// Offers its child at most `cap` points of height and takes the size the child answers with (a plain flexible frame would
+/// take the whole offer). Only meant for a single child.
+private struct HugHeight: Layout {
+    var cap: CGFloat?
+    private func offer(_ p: ProposedViewSize) -> ProposedViewSize { ProposedViewSize(width: p.width, height: cap ?? p.height) }
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        subviews.first?.sizeThatFits(offer(proposal)) ?? .zero
+    }
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        subviews.first?.place(at: bounds.origin, anchor: .topLeading, proposal: offer(ProposedViewSize(width: bounds.width, height: bounds.height)))
     }
 }
