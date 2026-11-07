@@ -75,10 +75,11 @@ struct ShareUpdateButton: View {
                           preview: SharePreview(model.game(release.gameID)?.name ?? "Update", image: image)) {
                     // Same disc and weight as the rail's other buttons (Quinn: it looked paler, as if disabled).
                     Image(systemName: "square.and.arrow.up")
-                        .font(PlayscribeFont.title3)
+                        // Fixed 22 pt glyph inside the 44 pt disc: it never scales past the rail icons at AX (Iris).
+                        .font(.system(size: 22, weight: .regular))
                         .foregroundStyle(Color.primary)
                         .frame(width: 44, height: 44)
-                        .background(Circle().fill(PlayscribeColor.ink800).overlay(Circle().fill(.regularMaterial)).overlay(Circle().strokeBorder(Color.primary.opacity(0.35), lineWidth: 1)))
+                        .background(Circle().fill(PlayscribeColor.ink800).overlay(Circle().fill(.regularMaterial)).overlay(Circle().strokeBorder(Color.primary.opacity(0.5), lineWidth: 1.5)))
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(RailPressStyle())
