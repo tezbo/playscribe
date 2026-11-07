@@ -725,4 +725,15 @@ struct UTCDayTests {
     func releaseDayStable(_ zone: String) {
         withZone(zone) { #expect("2026-06-25".isoDay?.shortDay == "25 Jun 2026", "\(zone)") }
     }
+
+    @Test("sameUTCDay splits at UTC midnight, even where the local day differs (Sydney)")
+    func sameUTCDayInSydney() {
+        let before = Date(timeIntervalSince1970: 1_782_431_999)   // 2026-06-25T23:59:59Z, 09:59 on 26 Jun in Sydney
+        let after = Date(timeIntervalSince1970: 1_782_432_000)    // 2026-06-26T00:00:00Z
+        withZone("Australia/Sydney") {
+            #expect(!Date.sameUTCDay(before, after))
+            #expect(Date.sameUTCDay(before, before.addingTimeInterval(-86_000)))
+            #expect(Date.sameUTCDay(after, after.addingTimeInterval(86_000)))
+        }
+    }
 }
