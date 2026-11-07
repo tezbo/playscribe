@@ -642,23 +642,41 @@ struct QARouteGuardTests {
     @Test("The store set loads five invented games in an internal build (r052-store-set-content)")
     func storeSetLoadsInternally() {
         BuildChannel.overrideIsDistribution = false
-        defer { BuildChannel.overrideIsDistribution = nil }
+        defer { BuildChannel.overrideIsDistribution = nil; NotificationService.shared.qaForcedAuthorization = nil }
         let m = model()
         m.handle(url: URL(string: "playscribe://store-set")!)
         #expect(m.data.collection.map(\.gameID) == StoreSet.gameIDs)
-        #expect(m.data.customGames.count == 5)
+        #expect(m.data.customGames.count == StoreSet.games().count + StoreSet.plusGames().count)
+        #expect(StoreSet.games().count == 5)
         #expect(m.data.simulated.count == 3)
     }
 
-    @Test("The store set's PS Plus card carries only invented titles that match no cover (r052-store-set-content)")
-    func storeSetPlusCardIsPlates() {
+    @Test("The store set's PS Plus card carries only invented titles with designed covers (r052-store-set-content)")
+    func storeSetPlusCardIsDesignedCovers() {
         BuildChannel.overrideIsDistribution = false
-        defer { BuildChannel.overrideIsDistribution = nil }
+        defer { BuildChannel.overrideIsDistribution = nil; NotificationService.shared.qaForcedAuthorization = nil }
         let m = model()
-        m.loadStoreSet()
+        m.loadStoreSet(plus: true)
+        #expect(m.data.plusCardOff != true)
         let games = PlusStore.shared.months.first?.games ?? []
         #expect(games.count == 3)
-        for g in games { #expect(PlusCard.resolve(g, tracked: { _ in nil }) == nil) }
+        for g in games {
+            // Invented titles with designed covers; none is a tracked game or a real catalogue match.
+            let game = PlusCard.resolve(g, tracked: { m.game($0) })
+            #expect(game?.coverAsset?.hasPrefix("store-plus-") == true)
+            #expect(m.entry(g.gameId ?? "") == nil)
+        }
+    }
+
+    @Test("The store set hides the PS Plus and alerts cards by default so the update hero comes first (r052-store-set-content)")
+    func storeSetHeroFirst() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil; NotificationService.shared.qaForcedAuthorization = nil }
+        let m = model()
+        m.loadStoreSet()
+        #expect(m.data.plusCardOff == true)
+        #expect(NotificationService.shared.authorization == .authorized)
+        #expect(!m.showsNotificationCard)
     }
 
     @Test("A developer or simulator build still runs QA routes")
