@@ -11,36 +11,6 @@ struct NewsItem: Codable, Hashable, Identifiable {
     var id: String { url.absoluteString }
     var isReported: Bool { verification == "reported" }
     var tagText: String { isReported ? "Reported" : "Official" }
-    /// At most 3 lines in a row: a long headline is cut at a clause (a comma, colon, dash or semicolon) when one falls
-    /// late enough, else at a word.
-    var shortTitle: String {
-        let limit = 120
-        guard title.count > limit else { return title }
-        let head = String(title.prefix(limit))
-        let clause = head.lastIndex(where: { ",;:–—".contains($0) }).flatMap { head.distance(from: head.startIndex, to: $0) >= 40 ? $0 : nil }
-        let cut = clause.map { String(head[..<$0]) } ?? head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
-        return cut.trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-–—.")) + "…"
-    }
-}
-
-extension NewsItem {
-    /// At accessibility text sizes a headline gets at most 4 lines and ends at a word, never mid-word: the budget is small
-    /// enough that SwiftUI never has to cut a word itself (N-9; Iris, AX5). The full headline opens on tap.
-    func accessibleTitle(_ limit: Int = 40) -> String {
-        guard title.count > limit else { return title }
-        let head = String(title.prefix(limit + 1))
-        let words = head.split(separator: " ", omittingEmptySubsequences: true).dropLast()
-        let cut = words.isEmpty ? String(title.prefix(limit)) : words.joined(separator: " ")
-        return cut.trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-–—.")) + "…"
-    }
-    /// A stage caption is at most 2 lines: a longer headline ends at a word with an ellipsis (the full headline opens on tap; Iris).
-    var captionTitle: String {
-        let limit = 80
-        guard title.count > limit else { return title }
-        let head = String(title.prefix(limit))
-        let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
-        return cut.trimmingCharacters(in: CharacterSet(charactersIn: " ,;:-–—.")) + "…"
-    }
 }
 
 /// The verification tag: Official for studio posts, Reported otherwise. The only provenance shown.
@@ -198,7 +168,7 @@ struct NewsChapter: View {
             ForEach(list.prefix(20)) { item in
                 Link(destination: item.url) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(typeSize.isAccessibilitySize ? item.accessibleTitle() : item.shortTitle).font(PlayscribeFont.headline).multilineTextAlignment(.leading).lineLimit(typeSize.isAccessibilitySize ? 4 : 3).fixedSize(horizontal: false, vertical: true)
+                        WholeWordText(text: item.title, font: PlayscribeFont.headline, lines: typeSize.isAccessibilitySize ? 4 : 3)
                         HStack(spacing: 8) {
                             if let d = item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
                             NewsTag(item: item)
@@ -245,10 +215,7 @@ struct NewsStrip: View {
                         Link(destination: post.item.url) {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(post.game).font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                                Text(typeSize.isAccessibilitySize ? post.item.accessibleTitle() : post.item.captionTitle)
-                                    .font(PlayscribeFont.subheadline.weight(.semibold))
-                                    .multilineTextAlignment(.leading).lineLimit(typeSize.isAccessibilitySize ? 4 : 2)
-                                    .fixedSize(horizontal: false, vertical: true)
+                                WholeWordText(text: post.item.title, font: PlayscribeFont.subheadline.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 2)
                                 HStack(spacing: 8) {
                                     if let d = post.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated))) }
                                     NewsTag(item: post.item)
@@ -357,7 +324,7 @@ struct GlobalNewsRow: View {
             HStack(alignment: .top, spacing: 12) {
                 if let game { CoverView(game: game, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(typeSize.isAccessibilitySize ? headline.item.accessibleTitle() : headline.item.shortTitle).font(PlayscribeFont.subheadline.weight(.semibold)).multilineTextAlignment(.leading).lineLimit(typeSize.isAccessibilitySize ? 4 : 3).fixedSize(horizontal: false, vertical: true)
+                    WholeWordText(text: headline.item.title, font: PlayscribeFont.subheadline.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 3)
                     HStack(spacing: 8) {
                         NewsTag(item: headline.item)
                         if let game { Text(game.name) }
@@ -393,7 +360,7 @@ struct NewsStage: View {
             ArtView(asset: model.backdrop(headline.gameID, chapter: .news, tall: false), game: game)
             LinearGradient(colors: [.clear, .black.opacity(0.5)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
-                Text(typeSize.isAccessibilitySize ? headline.item.accessibleTitle() : headline.item.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(typeSize.isAccessibilitySize ? 4 : 2).fixedSize(horizontal: false, vertical: true)
+                WholeWordText(text: headline.item.title, font: PlayscribeFont.title3.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 2)
                 HStack(spacing: 8) {
                     NewsTag(item: headline.item)
                     if let game { Text(game.name) }
@@ -435,7 +402,7 @@ struct NewsStageArt: View {
             LinearGradient(colors: [.clear, .black.opacity(0.5)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 Text(game?.name ?? "").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
-                if let newest { Text(typeSize.isAccessibilitySize ? newest.accessibleTitle() : newest.captionTitle).font(PlayscribeFont.title3.weight(.semibold)).lineLimit(typeSize.isAccessibilitySize ? 4 : 2).fixedSize(horizontal: false, vertical: true) }
+                if let newest { WholeWordText(text: newest.title, font: PlayscribeFont.title3.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 2) }
             }
             // Iris: the whole caption on one solid ink panel; it ends exactly 24 pt above the band.
             .padding(12)
