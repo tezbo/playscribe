@@ -691,7 +691,10 @@ struct PageEdge: View {
 /// Tabletop's standing half: the selected card as content only (G-4); the page edge below drives it.
 struct DeckStage: View {
     var card: DeckCard
+    /// Upcoming tab: the stage fronts the soonest unreleased game, so it carries an eyebrow and the date line, not an update.
+    var upcomingLine: String? = nil
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var stageBottom: CGFloat = 0
 
     var body: some View {
@@ -705,13 +708,23 @@ struct DeckStage: View {
             .background {
                 ZStack {
                     ArtView(asset: card.game.keyArtAsset, game: card.game, drift: true)
-                    LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.85)], startPoint: .center, endPoint: .bottom)
+                    // A fixed scrim, independent of the art and of the caption's height: clear at the top of the stage, ink 950 at
+                    // 0.8 from the caption block down (Iris, Quinn: stage legibility).
+                    // At accessibility sizes the caption is tall and sits higher in the stage, so the scrim reaches full strength sooner
+                    // and a little darker (Quinn: cream on beige at AX5).
+                    LinearGradient(stops: typeSize.isAccessibilitySize
+                                       ? [.init(color: .clear, location: 0.1),
+                                          .init(color: PlayscribeColor.ink950.opacity(0.9), location: 0.4)]
+                                       : [.init(color: .clear, location: 0.3),
+                                          .init(color: PlayscribeColor.ink950.opacity(0.8), location: 0.75)],
+                                   startPoint: .top, endPoint: .bottom)
                 }
             }
             .overlay(alignment: .bottomLeading) {
             VStack(alignment: .leading, spacing: 6) {
                 // Wraps instead of squeezing "New update" away at accessibility sizes (28c6063 Tabletop AX3).
                 FlowLayout(spacing: 8) {
+                    if upcomingLine != nil { Text("Coming soon").foregroundStyle(PlayscribeColor.accent) }
                     if card.unread { Text("New update").foregroundStyle(PlayscribeColor.accent) }
                     if let v = card.release?.versionChip { Text(v).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
@@ -721,9 +734,12 @@ struct DeckStage: View {
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary).lineLimit(4)
                     .fixedSize(horizontal: false, vertical: true)
                 // One wrapping text (name, then date), so a long name wraps on whole words instead of cutting.
+                // The date is vellum 100, not grey, so it reads over bright art (Iris, Quinn: stage legibility).
                 Group {
-                    if let dateText {
-                        Text("\(Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.textSecondary))")
+                    if let line = upcomingLine {
+                        Text(line).foregroundStyle(PlayscribeColor.vellum100)
+                    } else if let dateText {
+                        Text("\(Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.vellum100))")
                     } else {
                         Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
                     }

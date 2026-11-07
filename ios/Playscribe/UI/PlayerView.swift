@@ -275,9 +275,10 @@ struct WatchAlong: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
                 Text("WATCH ALONG").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+                    .accessibilityAddTraits(.isHeader)
                 ForEach(Array((release.keyChanges ?? []).enumerated()), id: \.offset) { _, k in
                     HStack(alignment: .firstTextBaseline, spacing: 10) {
-                        Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
+                        Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6).accessibilityHidden(true)
                         Text(k).font(PlayscribeFont.subheadline)
                     }
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
@@ -308,6 +309,8 @@ struct TabletopTransport: View {
                 VideoCaption(video: video, game: game)
                 Slider(value: Binding(get: { controller.current }, set: { controller.seek(to: $0) }), in: 0...max(1, controller.duration))
                     .accessibilityLabel("Playback position")
+                    // Spoken as time, not a percent, and the printed times below are not read a second time.
+                    .accessibilityValue("\(PlayerTime.spoken(controller.current)) of \(PlayerTime.spoken(controller.duration))")
                     .tappableFrame()
                 HStack {
                     Text(PlayerTime.format(controller.current))
@@ -316,8 +319,10 @@ struct TabletopTransport: View {
                 }
                 .font(PlayscribeFont.caption.monospacedDigit())
                 .foregroundStyle(.secondary)
+                .accessibilityHidden(true)
                 HStack(spacing: 0) {
                     transportButton(controller.captionsOn ? "captions.bubble.fill" : "captions.bubble", "Captions", action: controller.toggleCaptions)
+                        .accessibilityValue(controller.captionsOn ? "On" : "Off")
                     Spacer()
                     transportButton("gobackward.10", "Back 10 seconds") { controller.skip(-10) }
                     Spacer()
@@ -365,6 +370,15 @@ struct TabletopTransport: View {
 }
 
 enum PlayerTime {
+    /// "one minute, twenty-three seconds", for VoiceOver.
+    static func spoken(_ t: Double) -> String {
+        let f = DateComponentsFormatter()
+        f.unitsStyle = .spellOut
+        f.allowedUnits = [.minute, .second]
+        f.zeroFormattingBehavior = .dropAll
+        return f.string(from: max(0, t.rounded())) ?? ""
+    }
+
     static func format(_ t: Double) -> String {
         let s = Int(t.rounded())
         return String(format: "%d:%02d", s / 60, s % 60)

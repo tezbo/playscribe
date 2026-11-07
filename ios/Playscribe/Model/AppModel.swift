@@ -519,9 +519,18 @@ final class AppModel {
         }
         nav = n
         readerIndex[gameID] = 0
-        if pill?.gameID == gameID { pill = nil }
+        // N-7: the pill goes only when the page it points to is the one now showing.
+        if let p = pill, isViewing(p.gameID, p.releaseID) { pill = nil }
         focusReleaseID = releaseID
         focusToken += 1
+    }
+
+    /// True when the update page for this release is the one on screen: its game is open and the release is the one
+    /// the Page shows or the pushed detail screen.
+    func isViewing(_ gameID: String, _ releaseID: String) -> Bool {
+        guard nav.tab == .library, nav.gameID == gameID else { return false }
+        if nav.detailReleaseID != nil { return nav.detailReleaseID == releaseID }
+        return nav.chapter == .updates && selectedRelease(gameID)?.id == releaseID
     }
 
     /// D-2/D-3: the release the Page shows: the one picked, else the newest On PS5 release.
@@ -590,7 +599,12 @@ final class AppModel {
             settingsOpen = true
             if parts.first == "quiet" { data.quietHours = QuietHours() }
         case "tag" where parts.count == 1: if let v = Verification(rawValue: parts[0]) { tagExplainer = v }
-        case "library": nav.tab = .library; nav.gameID = nil
+        case "library":
+            nav.tab = .library; nav.gameID = nil
+            // QA: `library/upcoming` and `library/playing` pick the Library's Playing / Upcoming switch;
+            // `library/upcoming-seeded` also watches five upcoming games (3 out this week, 2 later) so the short sections pack.
+            if parts.first == "upcoming-seeded" { resetDemo(); seedUpcomingWatchlist(); libraryTab = .upcoming }
+            else if let t = parts.first.flatMap(LibraryTab.init(rawValue:)) { libraryTab = t }
         case "updates": nav.tab = .updates
         case "search": nav.tab = .search
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
@@ -758,6 +772,21 @@ final class AppModel {
         // A-9: Owned follows all updates; Wishlist and Watching follow major ones.
         // New games follow the default; a per-game level is only set from the game's bell.
         if isFirst { data.notificationCardShows = max(data.notificationCardShows, 0) }
+    }
+
+    /// QA (INTERNAL, route `library/upcoming-seeded`): five watched games dated 1, 2 and 4 days out, then 30 and 60.
+    private func seedUpcomingWatchlist() {
+        let offsets = [1, 2, 4, 30, 60]
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = .gmt
+        for (source, days) in zip(upcomingMore.prefix(5), offsets) {
+            var g = source
+            if let d = cal.date(byAdding: .day, value: days, to: .now) {
+                g.releaseDate = d.formatted(Date.ISO8601FormatStyle(timeZone: .gmt).year().month().day())
+                g.releasePrecision = .day
+            }
+            insertGame(g, status: .wishlist)
+        }
     }
 
     func setStatus(_ gameID: String, _ status: OwnershipStatus) {
@@ -1000,7 +1029,8 @@ final class AppModel {
     func releaseArrivedInForeground(gameID: String, releaseID: String) {
         tick()
         highlight = releaseID
-        if nav.gameID != gameID { showPill(gameID: gameID, releaseID: releaseID) }
+        // N-7: shown on every page except the exact update it points to, other pages of the same game included.
+        if !isViewing(gameID, releaseID) { showPill(gameID: gameID, releaseID: releaseID) }
         NotificationService.shared.updateBadge(badgeCount)
     }
 

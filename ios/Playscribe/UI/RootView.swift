@@ -400,6 +400,43 @@ struct TabletopRail: View {
     }
 }
 
+extension View {
+    /// A scrolling page ends above the pill and toasts instead of under them (N-7, B-8, 0.5.1 spec 2): one mechanism for the
+    /// Library, Updates, the game Page, Contents and release detail. Apply it to the scroll view.
+    func clearsMessages() -> some View { modifier(MessageClearance()) }
+}
+
+/// The page ends 12 pt above the pill (or toast) wherever it actually sits, and only where the pill overlaps the page sideways
+/// (Book's right page gets none while the pill is on the left). The pad is worked out from measured edges (this view's frame
+/// without the pad, the pill's frame), not from heights and offsets, so it cannot leave a dead band or run under the pill in
+/// any pose (ae0a608, Open portrait).
+private struct MessageClearance: ViewModifier {
+    @Environment(AppModel.self) private var model
+    @State private var pad: CGFloat = 0
+    /// This view's frame in global coordinates. The pad sits inside it, so its bottom edge does not move with the pad.
+    @State private var frame: CGRect = .zero
+
+    private func update() {
+        var next: CGFloat = 0
+        if let m = model.messageFrame, frame.minX < m.maxX, frame.maxX > m.minX {
+            next = max(0, frame.maxY - (m.minY - 12))
+        }
+        if abs(next - pad) > 0.5 { pad = next }
+    }
+
+    func body(content: Content) -> some View {
+        content
+            // No `.mask` soft edge: a masked scroll view is no longer the one the navigation bar tracks, and from #246 the Open
+            // portrait large "Library" title vanished (354d15c, 9914a80). The soft edge returns once a Mac still shows it safe.
+            .padding(.bottom, pad)
+            .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { frame = $0; update() }
+            .onChange(of: model.messageFrame) { _, _ in update() }
+            // The pad changes the moment the pill shows. It must not ride a running pose animation, or the old arrangement
+            // lingers faintly under the new one (Book, ad54f44 stills).
+            .transaction(value: pad) { $0.animation = nil }
+    }
+}
+
 /// The "New on PS5" pill (N-7) and toasts with Undo (B-8), above the tab bar or in the lower half.
 struct LowerMessages: View {
     @Environment(AppModel.self) private var model
