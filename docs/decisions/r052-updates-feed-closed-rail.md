@@ -8,3 +8,5 @@ Short form. Goal: in Closed portrait the Updates rows card, separators and tap f
 - Weighed in: Iris and Nadia via the card; stills pending (harness, Closed portrait std and ax5).
 
 Update (Iris, Quinn): the unread dot now hangs in the gutter between the cover and the text (12 pt clear of the first letter, centred on the title's first line), so read and unread titles share one left edge. The cover-to-text gap is 28 pt in the standard layout (8 clear of the cover, 8 dot, 12 to the text) for every row; at accessibility sizes the dot hangs in the row's leading inset.
+
+Update (Mac, 18c34a3): in Book at AX5 the hung dot landed 6 pt outside the card, because the card pads 12 and the dot hangs 20. Book cards now pad 32 on the leading side at accessibility sizes so the dot stays on the card; lists keep the row inset (20), which already holds the dot. Open AX5 uses the list branch.
