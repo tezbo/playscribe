@@ -37,4 +37,26 @@ final class StoreSetRouteTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(bullet.frame.minY, 0, "the bullet is not scrolled off the top (\(bullet.frame))")
         XCTAssertLessThanOrEqual(bullet.frame.maxY, app.frame.maxY - 1, "the bullet ends on screen (\(bullet.frame) in \(app.frame))")
     }
+
+    /// A later route in a capture run is a fresh process: the store set's invented Upcoming games must survive it (gate 3f22417).
+    func testUpcomingAfterStoreSetListsInventedGames() throws {
+        launch("store-set")
+        sleep(3)
+        app.terminate()
+        launch("library/upcoming")
+        let invented = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Pale Harbour Lanterns'")).firstMatch
+        XCTAssertTrue(invented.waitForExistence(timeout: 15), "an invented Upcoming game shows")
+        XCTAssertFalse(app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Football Manager'")).firstMatch.exists, "no real catalogue title")
+    }
+
+    /// The Hollow Meridian hotfix lists its open known issue with a Follow control, also in a fresh process.
+    func testHotfixReaderShowsKnownIssueWithFollow() throws {
+        launch("store-set")
+        sleep(3)
+        app.terminate()
+        launch("release/store-hollow-meridian/store-hollow-meridian@hotfix-1.1.2")
+        let issue = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'autosaves can fail'")).firstMatch
+        XCTAssertTrue(issue.waitForExistence(timeout: 15), "the known issue line shows")
+        XCTAssertTrue(app.buttons["Follow this issue"].waitForExistence(timeout: 5), "its Follow control shows")
+    }
 }

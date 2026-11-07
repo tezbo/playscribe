@@ -26,6 +26,7 @@ struct PhotoAddView: View {
 
     var body: some View {
         VStack(spacing: 16) {
+            Spacer(minLength: 0)   // centred in the sheet, so a tall screen does not leave its lower half empty
             Image(systemName: "photo.on.rectangle.angled").font(.system(size: 44)).foregroundStyle(PlayscribeColor.accent)
                 .accessibilityHidden(true)
             Text("Choose a photo with game titles on it.")

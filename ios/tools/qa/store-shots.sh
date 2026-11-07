@@ -14,7 +14,8 @@ shot() { xcrun simctl io $dev screenshot --display=$(panel) "$out/$1-$pose.png" 
 route store-set;                                        shot 1-library
 route store-set/end;                                    shot 1b-library-last-row
 if [[ $pose == *landscape* ]]; then route reader/store-lantern-reach/store-lantern-reach@update-1.3/320; else route release/store-lantern-reach/store-lantern-reach@update-1.3; fi; shot 2-reader
-route gamepage/store-lantern-reach;                     shot 3-book-update
+# Shot 3 is a different update from shot 2 (1.2, not the newest 1.3), so Book's right page differs and the left page lists three.
+route release/store-lantern-reach/store-lantern-reach@update-1.2; shot 3-book-update
 route store-set/since;                                  shot 6-since-you-last-opened
 route add/photo;                                             shot 5-add-from-photo
 route library/upcoming;                                 shot 7-upcoming

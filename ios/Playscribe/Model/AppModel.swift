@@ -268,6 +268,15 @@ final class AppModel {
         // A6: remember the previous open for the catch-up card, then stamp this one.
         catchUpSince = data.lastOpenedAt
         data.lastOpenedAt = .now
+        #if INTERNAL
+        // QA: the store set is saved with the library, but its Upcoming list and known issues live in memory. A later route in the
+        // same capture run (library/upcoming, release/…) starts a fresh process, so restore them from the saved store games
+        // (gate 3f22417: shot 7 showed the real catalogue and shot 8 had no known issue).
+        if BuildChannel.showsInternalTools, data.collection.contains(where: { $0.gameID.hasPrefix("store-") }) {
+            qaStoreSet = true
+            gameIssues = StoreSet.issues
+        }
+        #endif
         rebuildMerged()
     }
 
