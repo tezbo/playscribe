@@ -384,11 +384,9 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   if (dropped) deps.log?.(`ingest: dropped ${dropped} Steam-assumed PS5 rows dated before the game's PS5 launch`)
   const ps4Since = ps4SinceFromIndex()
   if (ps4Since) {
-    const early = store.dropEarlyPs5(deps.db, ps4Since)
-    if (early) deps.log?.(`ingest: dropped ${early} press-reported PS5 rows dated over 90 days before the game's PS5 release (no PS4 version)`)
     const relabelled = store.labelPreLaunchPs4(deps.db, ps4Since)
     if (relabelled) deps.log?.(`ingest: labelled ${relabelled} press-reported releases dated before the PS5 era as PS4 updates`)
-  } else deps.log?.('ingest: PS5 index not readable, skipped the PS4 relabel and early-row passes (fail closed)')
+  } else deps.log?.('ingest: PS5 index not readable, skipped the PS4 relabel pass (fail closed)')
   const repaired = store.repairAssumedLiveAt(deps.db)
   if (repaired) deps.log?.(`ingest: moved ${repaired} Steam-assumed PS5 dates back to their Steam post`)
   const promoted = store.promoteAnnounced(deps.db)

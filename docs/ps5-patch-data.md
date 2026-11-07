@@ -251,8 +251,9 @@ Each index entry may carry `k`, a list of up to 5 aliases players type: IGDB alt
 
 ## Trust audit rules (r050)
 
-Three store passes run every ingest, after the press posts are read:
+Two store passes run every ingest, after the press posts are read:
 - `dropPreLaunchPs5`: Steam-only PS5 rows dated before the game's PS5 release are dropped. A game with no PS5 date uses the PS5 launch day (12 Nov 2020), so Stardew Valley's and Monster Hunter: World's 2016 to 2020 Steam patches no longer read as PS5 updates.
-- `dropEarlyPs5`: a press-reported PS5 row more than 90 days before the game's PS5 release, for a game with no PS4 release (no `b` in the index), is dropped: it was about another platform. A day-one patch announced days ahead stays.
 - `labelPreLaunchPs4`: a press-reported PS5 row before the PS5 era, or before the game's PS5 release for a game that had a PS4 release by then, becomes a "PS4 update" with no PS5 version. A game with no PS5 date at all counts as a PS4 game.
 The PS4 release days come from the bundled index (`b`); a bare checkout without the index relabels nothing.
+
+A PS5 row is never dropped because it is dated long before the game's recorded PS5 release: that date can be a full-release or re-release date, not the first PS5 availability (early access, or a wrong IGDB date), so an early-row pass would drop real rows. A post within a week of the PS5 release is a day-one patch and is never relabelled.
