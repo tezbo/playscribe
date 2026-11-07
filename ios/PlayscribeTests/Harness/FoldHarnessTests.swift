@@ -105,6 +105,7 @@ struct FoldHarnessTests {
         let r = try #require(await HarnessRules.timedRender(p, type: size), "\(p.id): a window scene to host in")
         defer { FoldHost.dispose(r) }
         HarnessRules.reportOverflow(r, size: sizeIndex == 0 ? "AX3" : "AX5")
+        HarnessRules.reportOverlap(r, size: sizeIndex == 0 ? "AX3" : "AX5")
     }
 }
 
@@ -131,11 +132,34 @@ enum HarnessRules {
     /// real region and is skipped. Asserted since the first CI run (9bb77b3) showed no overflow in any pose at AX3 or AX5.
     static func reportOverflow(_ r: Rendered, size: String) {
         // Book's pages are split by the system's ArrangementView at the window's real fold, which offscreen starts the right page at
-        // x 475 (inside the fold) instead of 495, so a full-width page overruns by 23 pt (#360 run fa44e8e). Same limit as Tabletop.
-        guard r.pose.expected != .tabletop, r.pose.expected != .book else { return }
-        let limit = r.pose.container.width + 20
+        // x 475 (inside the fold) instead of 495, so a full-width page overruns by 23 pt (#360 run fa44e8e).
+        guard r.pose.expected != .tabletop else { return }
+        // Book: the offscreen right page starts 20 pt early (x 475, not 495) and runs 23 pt past the container, so a clear overflow
+        // has to pass that known placement gap as well. This only catches a gross overrun; the Mac gate is still the Book check.
+        let limit = r.pose.container.width + 20 + (r.pose.expected == .book ? 23 : 0)
         let over = r.frames.filter { $0.width > 1 && $0.height > 1 && $0.maxX > limit }
         require(over.isEmpty, "\(r.pose.id) \(size) G-8 overflow: tappable frames past the trailing edge (\(Int(limit)) pt): \(over.map(brief))")
+    }
+
+    /// G-8 / TT-0 sibling overlap. Two tappable frames that cross without one containing the other (a chip over a title, a button
+    /// over a button) cannot both be hit. Containment is allowed (a card holds its own chips). Printed with the pairs; asserted
+    /// only for Closed, Open and Open portrait, where the overflow rule is already calibrated against the Mac. Tabletop's rail is
+    /// placed by the system and Book's pages are shifted offscreen, so those two are reported only.
+    static func reportOverlap(_ r: Rendered, size: String) {
+        let fs = r.frames.filter { $0.width > 8 && $0.height > 8 }
+        var pairs: [String] = []
+        for i in fs.indices {
+            for j in fs.indices where j > i {
+                let a = fs[i], b = fs[j], x = a.intersection(b)
+                guard !x.isNull, x.width > 4, x.height > 4 else { continue }
+                if a.insetBy(dx: -2, dy: -2).contains(b) || b.insetBy(dx: -2, dy: -2).contains(a) { continue }
+                pairs.append("\(brief(a)) x \(brief(b))")
+            }
+        }
+        guard !pairs.isEmpty else { return }
+        let message = "\(r.pose.id) \(size) G-8 overlap: \(pairs.count) tappable pair(s) cross: \(pairs.prefix(6))"
+        let asserted = r.pose.expected != .tabletop && r.pose.expected != .book && !r.pose.inferred
+        if asserted { require(false, message) } else { print("harness error: [info, not asserted] \(message)") }
     }
 
     /// One-line failures that say "failed", so the CI log's grep shows them (and so a reader sees the numbers).
