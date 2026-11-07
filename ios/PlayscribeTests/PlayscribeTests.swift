@@ -630,6 +630,17 @@ struct QARouteGuardTests {
         #expect(m.data.simulated.count == 3)
     }
 
+    @Test("The store set's PS Plus card carries only invented titles that match no cover (r052-store-set-content)")
+    func storeSetPlusCardIsPlates() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        m.loadStoreSet()
+        let games = PlusStore.shared.months.first?.games ?? []
+        #expect(games.count == 3)
+        for g in games { #expect(PlusCard.resolve(g, tracked: { _ in nil }) == nil) }
+    }
+
     @Test("A developer or simulator build still runs QA routes")
     func internalBuildRunsRoutes() {
         BuildChannel.overrideIsDistribution = false
