@@ -201,6 +201,9 @@ struct ReleasePage: View {
     /// to its own row. One way within a release: the full-width title is shorter, so it cannot flip back.
     @ScaledMetric(relativeTo: .title3) private var fourTitleLines: CGFloat = 104
     @State private var shareOnOwnRow = false
+    /// Lifts the dot from the first line's baseline to half the cap height, so it sits on line 1 however many lines the
+    /// title wraps to (r061, Iris; same idea as FeedRow's dotLift).
+    @ScaledMetric(relativeTo: .title3) private var dotLift: CGFloat = 7
 
     // Roles (Iris, PR #32): game name title2, update name title3, in every pose. At accessibility sizes the title is capped at
     // 4 lines and ends on a whole word with "…" (WholeWordText; VoiceOver still reads all of it). `measure` is the row
@@ -226,6 +229,16 @@ struct ReleasePage: View {
         }
     }
 
+    /// The unread dot, 12 pt clear of the title, level with the title's FIRST line; then the title block.
+    @ViewBuilder private func dotAndTitle(_ r: Release, measure: Bool) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 12) {
+            if model.isUnread(r) {
+                UnreadDot().alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
+            }
+            titleBlock(r, measure: measure)
+        }
+    }
+
     var body: some View {
         let r = release
         VStack(alignment: .leading, spacing: 12) {
@@ -234,12 +247,11 @@ struct ReleasePage: View {
             // tags take the width left of the 44 pt button and wrap in whole words. Iris's condition: a title that would
             // wrap past 4 lines beside the button drops the button to its own row (the title then has the full width).
             if shareOnOwnRow {
-                HStack(spacing: 8) { if model.isUnread(r) { UnreadDot() }; titleBlock(r, measure: false) }
+                dotAndTitle(r, measure: false)
                 if r.isPS5Listed { HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) } }
             } else {
                 HStack(alignment: typeSize.isAccessibilitySize ? .top : .center, spacing: 8) {
-                    if model.isUnread(r) { UnreadDot() }
-                    titleBlock(r, measure: typeSize.isAccessibilitySize && r.isPS5Listed)
+                    dotAndTitle(r, measure: typeSize.isAccessibilitySize && r.isPS5Listed)
                     Spacer(minLength: 0)
                     if r.isPS5Listed { ShareUpdateButton(release: r) }
                 }
@@ -868,7 +880,7 @@ struct GameTitleWithStatus: View {
         // The title text stops growing at AX3: at AX5 one long word is wider than a Closed portrait column.
         if typeSize.isAccessibilitySize { return AnyView(inlineTitleRow) }
         return AnyView(HStack(alignment: .firstTextBaseline, spacing: 8) {
-            Text(name).font(PlayscribeFont.title2).lineLimit(2)
+            Text(name.gluingTrailingNumeral).font(PlayscribeFont.title2).lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true).accessibilityAddTraits(.isHeader)
                 .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             statusMenu
@@ -876,7 +888,7 @@ struct GameTitleWithStatus: View {
     }
 
     private var inlineTitleRow: some View {
-        let words = name.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
+        let words = name.gluingTrailingNumeral.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
         return WordFlow(hSpacing: 8, vSpacing: 0) {
             ForEach(Array(words.enumerated()), id: \.offset) { i, w in
                 if i == words.count - 1 {

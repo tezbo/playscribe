@@ -90,13 +90,14 @@ extension UpcomingStore.Move {
 
     private var previousLabel: String? {
         guard let previousDate, let d = previousDate.isoDay else { return nil }
-        let cal = Calendar.current
+        // A previous release date is a UTC day, printed as one (r060-utc-day-labels).
+        let cal = Date.utcCalendar
         let year = cal.component(.year, from: d)
         switch previousPrecision {
         case "year": return String(year)
         case "quarter": return "Q\((cal.component(.month, from: d) - 1) / 3 + 1) \(year)"
-        case "month": return d.formatted(.dateTime.month(.wide).year())
-        case "day": return d.formatted(.dateTime.day().month(.wide))
+        case "month": return d.formatted(Date.FormatStyle(timeZone: .gmt).month(.wide).year())
+        case "day": return d.formatted(Date.FormatStyle(timeZone: .gmt).day().month(.wide))
         default: return nil
         }
     }

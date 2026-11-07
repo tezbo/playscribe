@@ -664,6 +664,23 @@ final class AppModel {
             data.simulated.removeAll { $0.id == release.id }
             data.simulated.insert(release, at: 0)
             openRelease(gameID: gameID, releaseID: release.id)
+        // QA (INTERNAL): a PS5 update whose headline holds one word wider than the AX5 column, shown in the Updates tab
+        // (WholeWordText must cut before that word, never mid-word).
+        case "long-word" where parts.count == 1:
+            let gameID = parts[0]
+            let now = Date.now
+            let release = Release(
+                id: "qa-long-word-\(gameID)", gameID: gameID, displayName: "Patch 9.9",
+                kind: .major, kindBasis: .studio, announcedAt: now, notes: [], sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: Field(value: "9.9", verification: .official, sourceID: "simulated", checkedAt: now),
+                                            liveAt: Field(value: now, verification: .official, sourceID: "simulated", checkedAt: now),
+                                            bundles: [], verification: .official)],
+                headline: "Reworked Weapon Rebalancing, Counterbalanced Overencumberment and Quality of Life",
+                summary: "QA fixture. Not a real release.", keyChanges: [], simulated: true, arrivesAt: now)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+            nav.tab = .updates
         // QA (INTERNAL): the game page itself (Contents in Open portrait and Book, the Page in Closed), never a pushed release.
         case "gamepage" where parts.count == 1:
             openGame(parts[0], chapter: .updates)

@@ -161,6 +161,17 @@ const register = async (env, request) => {
     if (team !== undefined) await syncTeamIndex(kv, existing.id, team)
     return json(publicView(next), 200)
   }
+  // A new device also passes a per-address limit (Workers Rate Limiting binding: no KV writes, so it cannot spend the budget it
+  // protects). Known devices relaunching are never limited. Without the binding (tests, a deploy that omits it) this is skipped.
+  if (env.REGISTER_LIMIT) {
+    const ip = request.headers.get('cf-connecting-ip') ?? 'unknown'
+    const { success } = await env.REGISTER_LIMIT.limit({ key: ip })
+    if (!success) {
+      const r = bad('too many registrations from this address, try again in a minute', 429)
+      r.headers.set('retry-after', '60')
+      return r
+    }
+  }
   const dayKey = `n:${now().slice(0, 10)}`
   const todays = Number((await kv.get(dayKey)) ?? 0)
   if (todays >= MAX_NEW_PER_DAY) {
