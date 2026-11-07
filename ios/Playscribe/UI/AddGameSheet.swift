@@ -52,6 +52,7 @@ struct AddGameSheet: View {
             }
             .onAppear {
                 if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
+                if let q = model.qaAddQuery { model.qaAddQuery = nil; query = q; debounced = q }
                 if model.addSearchFocus { model.addSearchFocus = false; Task { try? await Task.sleep(for: .milliseconds(600)); searchFocused = true } }
             }
             .navigationTitle(titleHidden || duo.pose == .tabletop ? "" : sheetTitle)
