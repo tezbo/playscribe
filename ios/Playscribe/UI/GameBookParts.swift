@@ -260,7 +260,7 @@ struct SpoilerLine: View {
             layout {
                 HStack(spacing: 8) {
                     Image(systemName: shown ? "eye" : "eye.slash")
-                    Text(shown ? "Story spoilers shown" : "Story spoilers hidden").foregroundStyle(.secondary)
+                    Text(shown ? "Story spoilers shown" : "Story spoilers hidden").foregroundStyle(PlayscribeColor.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 Text(shown ? "Hide" : "Show").fontWeight(.semibold)

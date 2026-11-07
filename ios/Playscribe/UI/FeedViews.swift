@@ -74,8 +74,8 @@ struct FeedRow: View {
                 VStack(alignment: .leading, spacing: 3) {
                     // At accessibility sizes the row stacks: the title takes the full width in whole words,
                     // the tags and date each get their own line, the summary goes under.
-                    HStack(alignment: .firstTextBaseline, spacing: 10) {
-                        // Centred on the title's cap height with 10 pt of clearance, not floating at the row's top and
+                    HStack(alignment: .firstTextBaseline, spacing: 12) {
+                        // Centred on the title's x-height with 12 pt of clearance, not floating at the row's top and
                         // not flush against the first letter (Iris, Quinn).
                         if unread { UnreadDot().alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift } }
                         TitleWithTags(release: release) {
