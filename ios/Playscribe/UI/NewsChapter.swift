@@ -262,6 +262,7 @@ struct GlobalNewsView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.railWidth) private var railWidth
     @Environment(\.duo) private var duo
+    @State private var titleHeight: CGFloat = 0
     private var store: NewsStore { .shared }
 
     var body: some View {
@@ -285,8 +286,8 @@ struct GlobalNewsView: View {
                 }
             } else if duo.pose == .book, let fold = duo.division {
                 ScrollView {
-                    LazyVGrid(columns: [GridItem(.fixed(max(0, fold.minX - 32)), spacing: 0, alignment: .top),
-                                        GridItem(.fixed(fold.width + 32), spacing: 0),
+                    LazyVGrid(columns: [GridItem(.fixed(max(0, fold.minX - 40)), spacing: 0, alignment: .top),
+                                        GridItem(.fixed(fold.width + 48), spacing: 0),
                                         GridItem(.flexible(), spacing: 0, alignment: .top)],
                               alignment: .leading, spacing: 12) {
                         ForEach(Array(items.prefix(60).enumerated()), id: \.element.id) { i, h in
@@ -310,10 +311,14 @@ struct GlobalNewsView: View {
         .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
         .background(alignment: .top) {
-            if let lead, let fold = duo.division { NewsStage(headline: lead, bandTop: fold.minY).allowsHitTesting(false) }
+            if let lead, let fold = duo.division { NewsStage(headline: lead, bandTop: fold.minY, titleReserve: titleHeight).allowsHitTesting(false) }
         }
         .overlay(alignment: .topLeading) {
-            if duo.pose == .tabletop { Text("News").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false) }
+            if duo.pose == .tabletop {
+                // Iris (AX5): the stage caption starts below this title, so its height is measured and handed to the stage.
+                Text("News").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
+                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { titleHeight = $0 }
+            }
         }
         .navigationTitle("News")
         .task {
@@ -371,20 +376,34 @@ struct NewsStage: View {
     var headline: NewsStore.Headline
     /// The division band's top edge in screen space.
     var bandTop: CGFloat
+    /// Height taken by the "News" title at the top of the stage (padding included). The caption lives below it.
+    var titleReserve: CGFloat = 0
+    @State private var lineHeight: CGFloat = 0
+    @State private var metaHeight: CGFloat = 0
 
     var body: some View {
         let game = model.game(headline.gameID)
+        let stageHeight = max(0, bandTop - stageTop)
+        // Room for the caption panel: under the title, 24 pt above the band; 24 pt of panel padding and the 4 pt gap are inside it.
+        let room = stageHeight - titleReserve - 24 - 24 - 4 - metaHeight
+        let maxLines = typeSize.isAccessibilitySize ? 4 : 2
+        let lines = lineHeight > 0 && stageHeight > 0 ? max(1, min(maxLines, Int(room / lineHeight))) : maxLines
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: model.backdrop(headline.gameID, chapter: .news, tall: false), game: game)
             LinearGradient(colors: [.clear, .black.opacity(0.5)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
-                WholeWordText(text: headline.item.title, font: PlayscribeFont.title3.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 2)
+                WholeWordText(text: headline.item.title, font: PlayscribeFont.title3.weight(.semibold), lines: lines)
                 NewsMeta {
                     NewsTag(item: headline.item)
                     if let game { Text(game.name) }
                     if let d = headline.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
                 }
                 .font(PlayscribeFont.caption)
+                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { metaHeight = $0 }
+            }
+            .background(alignment: .topLeading) {
+                Text("Ag").font(PlayscribeFont.title3.weight(.semibold)).hidden().accessibilityHidden(true)
+                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { lineHeight = $0 }
             }
             // Iris: the whole caption on one solid ink panel, so contrast never depends on the art.
             .padding(12)
@@ -393,7 +412,7 @@ struct NewsStage: View {
             .padding(.horizontal, 24).padding(.bottom, 24)
             .padding(.trailing, TabletopRail.width)
         }
-        .frame(height: max(0, bandTop - stageTop))
+        .frame(height: stageHeight)
         .background(alignment: .top) {
             Color.clear.frame(height: 1)
                 .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).minY } action: { if abs($0 - stageTop) > 0.5 { stageTop = $0 } }

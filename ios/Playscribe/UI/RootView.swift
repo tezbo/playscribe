@@ -333,6 +333,14 @@ struct TabletopRail: View {
                         .accessibilityIdentifier("upcomingRail")
                 }
             }
+            // News is the last control in the scrolling group, not a fourth tab: the pinned capsule stays three tall so the
+            // controls above it keep their room (Iris, Tabletop Library rail). Each target stays 44 pt with the group's 6 pt gaps.
+            Group {
+                RailButton(action: ScreenAction(id: "news", title: "News", systemImage: "megaphone",
+                                                kind: .button { model.nav.tab = .news }, selected: model.nav.tab == .news))
+                    .accessibilityAddTraits(model.nav.tab == .news ? .isSelected : [])
+                    .accessibilityIdentifier("newsRail")
+            }
               }
             }
             .scrollBounceBehavior(.basedOnSize)
@@ -349,7 +357,6 @@ struct TabletopRail: View {
             VStack(spacing: 0) {
                 tab(.library, "Library", "books.vertical", badge: model.totalUnread)
                 tab(.updates, "Updates", "newspaper")
-                tab(.news, "News", "megaphone")
                 tab(.search, "Search", "magnifyingglass")
             }
             .padding(.vertical, 4)
