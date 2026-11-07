@@ -198,7 +198,10 @@ struct UpcomingView: View {
         // Ezra's copy: "Out today" on release day, otherwise the date line ("Out" only for dated, near releases).
         if (g.releasePrecision ?? .day) == .day, let d = g.releaseDate?.isoDay, Date.sameUTCDay(d, .now) { return "Out today" }
         let line = g.ps5DateLine ?? "Date to be announced"
-        return line == "Release date TBA" ? "Date to be announced" : line
+        if line == "Release date TBA" { return "Date to be announced" }
+        // A date is one unit: "Out" may drop to its own line, but "5 Feb 2027" never splits (Quinn, #357).
+        if line.hasPrefix("Out ") { return "Out " + line.dropFirst(4).replacingOccurrences(of: " ", with: "\u{00A0}") }
+        return line
     }
 
     private func moveLine(_ g: CatalogGame) -> String? {
