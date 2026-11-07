@@ -107,6 +107,12 @@ extension Date {
     static func sameUTCDay(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, inSameDayAs: b) }
     /// Whether `a` and `b` fall in the same UTC calendar year.
     static func sameUTCYear(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, equalTo: b, toGranularity: .year) }
+    /// Whether this release day is today or in the next six UTC days: the "coming this week" window. A day-precision release
+    /// date is a UTC day, so the window is counted in UTC days and never disagrees with the printed date (r060-utc-day-labels).
+    func isInUTCWeek(from now: Date = .now) -> Bool {
+        let start = Self.utc.startOfDay(for: now)
+        return self >= start && self < start.addingTimeInterval(7 * 86400)
+    }
 }
 
 extension String {
