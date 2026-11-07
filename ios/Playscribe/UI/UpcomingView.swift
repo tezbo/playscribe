@@ -88,7 +88,11 @@ struct UpcomingView: View {
                   alignment: .leading, spacing: 14) { ForEach(list) { tile($0, watching: watching) } }
     }
 
-    @ViewBuilder private func section(_ title: String, count: Int? = nil, games: [CatalogGame], watching: Bool) -> some View {
+    /// Open and Tabletop: a short section is only as wide as its tiles, so the next section can sit beside it
+    /// instead of leaving the rest of the row empty (Terry, 6 Nov). Longer sections still fill the row.
+    static func blockColumns(games: Int, available: Int) -> Int { max(1, min(games, available)) }
+
+    @ViewBuilder private func section(_ title: String, count: Int? = nil, games: [CatalogGame], watching: Bool, packed: Bool = false) -> some View {
         let spoken = count.map { "\(title), \($0) game\($0 == 1 ? "" : "s")" } ?? title
         if duo.pose == .book, let fold = duo.division {
             // Same page geometry as the Library's Book layout (the grids share its scroll origin).
@@ -114,7 +118,14 @@ struct UpcomingView: View {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: Self.gap, alignment: .top), count: 3),
                               alignment: .leading, spacing: 14) { ForEach(games) { tile($0, watching: watching) } }
                 } else if width > 0 {
-                    page(games, Self.fit(width: width), watching: watching)
+                    let f = Self.fit(width: width)
+                    if packed {
+                        let k = Self.blockColumns(games: games.count, available: f.count)
+                        page(games, (k, f.size), watching: watching)
+                            .frame(width: CGFloat(k) * f.size + CGFloat(k - 1) * Self.gap, alignment: .topLeading)
+                    } else {
+                        page(games, f, watching: watching)
+                    }
                 } else {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 120, maximum: 168), spacing: Self.gap, alignment: .top)],
                               alignment: .leading, spacing: 14) { ForEach(games) { tile($0, watching: watching) } }
@@ -175,7 +186,9 @@ struct UpcomingView: View {
                     Text("Watch a game that isn't out yet and Playscribe will tell you when its first update lands.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
                 }
-                .frame(maxWidth: .infinity)
+                // Book: the empty state stays on the left page, centred there, never across the spine (Quinn, #348).
+                .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.vertical, 20)
                 .accessibilityElement(children: .combine)
             } else {
@@ -184,12 +197,16 @@ struct UpcomingView: View {
                     return d >= Calendar.current.startOfDay(for: .now) && d.timeIntervalSinceNow < 7 * 86400
                 }
                 let later = watched.filter { g in !soon.contains { $0.id == g.id } }
-                if !soon.isEmpty {
-                    section("Out this week", count: soon.count, games: soon, watching: true)
-                }
-                if !later.isEmpty {
-                    let laterTitle = soon.isEmpty ? "On your watchlist" : "Coming later"
-                    section(laterTitle, count: later.count, games: later, watching: true)
+                let laterTitle = soon.isEmpty ? "On your watchlist" : "Coming later"
+                if duo.pose == .flat || duo.pose == .tabletop {
+                    // Blocks wrap: two short sections share a row, a long one takes its own (top-aligned).
+                    FlowLayout(spacing: Self.gap) {
+                        if !soon.isEmpty { section("Out this week", count: soon.count, games: soon, watching: true, packed: true) }
+                        if !later.isEmpty { section(laterTitle, count: later.count, games: later, watching: true, packed: true) }
+                    }
+                } else {
+                    if !soon.isEmpty { section("Out this week", count: soon.count, games: soon, watching: true) }
+                    if !later.isEmpty { section(laterTitle, count: later.count, games: later, watching: true) }
                 }
             }
             if more.isEmpty && watched.isEmpty && UpcomingStore.shared.loading {
