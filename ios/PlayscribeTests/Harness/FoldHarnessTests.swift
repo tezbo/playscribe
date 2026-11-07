@@ -127,9 +127,9 @@ enum HarnessRules {
     static let renderBudget: Double = 90
 
     /// `FoldHost.render` with a wall-clock check, so a slow or looping layout fails with the pose and size in the message.
-    static func timedRender(_ pose: HarnessPose, type: UIContentSizeCategory, sourceLocation: SourceLocation = #_sourceLocation) async -> Rendered? {
+    static func timedRender(_ pose: HarnessPose, type: UIContentSizeCategory, model: AppModel = FoldHost.demoModel(), sourceLocation: SourceLocation = #_sourceLocation) async -> Rendered? {
         let start = ContinuousClock.now
-        let r = await FoldHost.render(pose, type: type)
+        let r = await FoldHost.render(pose, type: type, model: model)
         let d = ContinuousClock.now - start
         let secs = Double(d.components.seconds) + Double(d.components.attoseconds) / 1e18
         if secs > renderBudget {
