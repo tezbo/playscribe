@@ -12,3 +12,4 @@ Date / owner / card: 7 Nov 2026, Claude thread for Terry, card magic-companion (
 - **Accent source:** hand-set per game for Dawnwalker and the other demo games, with a contrast floor; deriving from cover art waits until the contrast validator exists. Owner: Iris, with Nadia.
 - **Updates and News:** keep both for now; revisit merging after the A stills are in the app. Owner: Nadia.
 - **Build order:** Theo starts the tokens PR (appearance-plan step 1) once the v0.5.3 tag is out; accent PR folds in the step 3 audit; light/dark waits.
+- **Accent spec (Iris):** /mnt/project-files/companion/per-game-accent-spec.md. Decorative only; every tappable stays amber. Hand-set colour per game at 5.1:1 contrast or better, neutral grey fallback, Increase Contrast drops the accent. Build as a hand-set table plus a unit test on contrast and hue distance, folded into the tokens/accent PR plan.
