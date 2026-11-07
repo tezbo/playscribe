@@ -51,7 +51,7 @@ run() {  # run <label> <only-testing…>
   rm -rf $out/$label.xcresult   # xcodebuild refuses an existing result bundle
   xcodebuild test-without-building -xctestrun $xctestrun -destination $dest \
     "$@" -resultBundlePath $out/$label.xcresult > $out/$label.log 2>&1
-  local r=$(grep -E '\*\* TEST (SUCCEEDED|FAILED)' $out/$label.log)
+  local r=$(grep -E '\*\* TEST (EXECUTE )?(SUCCEEDED|FAILED)' $out/$label.log)
   note "$label: ${r:-NO RESULT}"
   # Every error, never a capped list (the old head -8 hid most of the e869273 failures), then the failing-test count.
   grep -E "error:" $out/$label.log | sed 's/.*error: -\[/  [/' | tee -a $sum
@@ -77,7 +77,7 @@ set_pose closed; verify_pose closed || exit 1
 if [[ ${ONCE:-1} == 1 ]]; then
 # Unit tests live in the Playscribe scheme (PlayscribeUI's xctestrun has only the UI target).
 timed xcodebuild -scheme Playscribe -destination $dest -derivedDataPath $dd test > $out/unit.log 2>&1
-unit=$(grep -E '\*\* TEST (SUCCEEDED|FAILED)' $out/unit.log); note "unit: ${unit:-NO RESULT}"; [[ $unit == *SUCCEEDED* ]] || ((fails++))
+unit=$(grep -E '\*\* TEST (EXECUTE )?(SUCCEEDED|FAILED)' $out/unit.log); note "unit: ${unit:-NO RESULT}"; [[ $unit == *SUCCEEDED* ]] || ((fails++))
 timed run once $(for s in $ONCE_SUITES; do ui $s; done) || ((fails++))
 fi
 
