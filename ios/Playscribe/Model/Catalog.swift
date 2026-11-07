@@ -45,6 +45,10 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     var releasedElsewhereOn: String?
     /// The PS5 date is early access with no full release yet.
     var earlyAccess: Bool?
+    /// Early access before a later 1.0 (docs/api.md): first playable day, 1.0 day and the 1.0 day's precision (nil = exact day).
+    var earlyAccessSince: String?
+    var fullRelease: String?
+    var fullReleasePrecision: DatePrecision?
     var igdbID: Int?
     /// Bundled artwork in the asset catalogue.
     var coverAsset: String?
@@ -85,6 +89,7 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     /// The date line for a catalogue game: its native PS5 release, else when it became playable
     /// on PS5 through its PS4 version. Dates before the PS5 launch are never shown.
     var ps5DateLine: String? {
+        if let ea = earlyAccessSince?.isoDay, ea <= .now, fullReleaseLine != nil { return "Early access since \(ea.shortDay)" }
         if earlyAccess == true { return "Early access" }
         if let line = notOnPS5Line { return line }
         if releasePrecision == .tbd || releaseDate == nil && playableSince == nil { return "Release date TBA" }
@@ -102,6 +107,14 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         if let b = playableSince?.isoDay { return Self.playsLine(since: b) }
         if let d = releaseDate?.isoDay, d < launch { return Self.playsLine(since: nil) }
         return nil
+    }
+
+    /// "Full release 11 Dec 2026", or "Full release 2026" when only the period is known. Only while the 1.0 is still ahead
+    /// (UTC day), keyed off the precision field and not the date; never "TBA".
+    var fullReleaseLine: String? {
+        guard let d = fullRelease?.isoDay, d > .now else { return nil }
+        let p = fullReleasePrecision ?? .day
+        return p == .tbd ? nil : "Full release " + Self.period(d, p)
     }
 
     /// "Plays on PS5 since Mar 2021" for a date on or after the PS5 launch (never a future one);
@@ -288,6 +301,11 @@ struct PS5Index {
         var f: String?
         /// Precision of `d`: month, quarter, year or tbd; absent means an exact day.
         var q: String?
+        /// Early access: the first playable day (same as `d`), the later 1.0 day and, when that day is only a period, its precision
+        /// (`month`, `quarter` or `year`). The index is static, so the app shows them only while `fr` is after today (docs/api.md).
+        var ea: String?
+        var fr: String?
+        var frq: String?
         var v: String?
         var p: String?
         var c: String?
@@ -366,7 +384,7 @@ struct PS5Index {
     func game(_ e: Entry) -> CatalogGame {
         CatalogGame(
             id: "igdb-\(e.i)", name: e.n, developer: e.v, publisher: e.p, platforms: [.ps5],
-            releaseDate: e.f ?? e.d, releasePrecision: e.f != nil ? .day : DatePrecision(rawValue: e.q ?? "day"), playableSince: e.b, releasedElsewhere: e.o, releasedElsewhereOn: e.ow, earlyAccess: e.e == true && e.f == nil, igdbID: e.i, coverImageID: e.c, tones: e.t, coverage: .none
+            releaseDate: e.f ?? e.d, releasePrecision: e.f != nil ? .day : DatePrecision(rawValue: e.q ?? "day"), playableSince: e.b, releasedElsewhere: e.o, releasedElsewhereOn: e.ow, earlyAccess: e.e == true && e.f == nil, earlyAccessSince: e.ea, fullRelease: e.fr, fullReleasePrecision: e.frq.flatMap(DatePrecision.init(rawValue:)), igdbID: e.i, coverImageID: e.c, tones: e.t, coverage: .none
         )
     }
 }

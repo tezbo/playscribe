@@ -331,7 +331,7 @@ struct AddRow: View {
         switch game.coverage {
         case .full: "Full PS5 update coverage"
         case .partial: "Latest official posts"
-        case .none: game.ps5DateLine ?? "Release date TBA"
+        case .none: [game.ps5DateLine ?? "Release date TBA", game.fullReleaseLine].compactMap { $0 }.joined(separator: "\n")
         }
     }
 }
