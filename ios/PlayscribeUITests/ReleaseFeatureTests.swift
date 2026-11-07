@@ -134,11 +134,11 @@ final class ReleaseFeatureTests: XCTestCase {
         let states = ["No news yet", "Loading news", "Official"]
         let failed = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH \"Couldn't load news\"")).firstMatch
         func shown() -> Bool {
-            // Tabletop: the stage is one read-only element (`tabletopStageText`) whose label is the page text.
+            // Tabletop (Iris): the stage is read only, never hidden from VoiceOver. A headline row is one combined text element
+            // ("<title>, <date>, Official"), so look for the tag in any element's label.
             if inTabletop {
-                let stage = app.descendants(matching: .any)["tabletopStageText"]
-                guard stage.waitForExistence(timeout: 5) else { return false }
-                return states.contains { stage.label.contains($0) } || stage.label.contains("Couldn't load news") || stage.label.contains("Official")
+                let row = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Official' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news' OR label BEGINSWITH \"Couldn't load news\"")).firstMatch
+                return row.waitForExistence(timeout: 5)
             }
             return states.contains { app.staticTexts[$0].waitForExistence(timeout: 3) } || failed.exists
                 || app.staticTexts.matching(NSPredicate(format: "label == 'Official'")).firstMatch.exists

@@ -475,7 +475,15 @@ final class LibraryLayoutTests: XCTestCase {
         app.launch()
         // Open portrait (48404f1): the capture was the App Switcher and no tiles were found, so bring the app back first.
         leaveSwitcher()
-        if !app.wait(for: .runningForeground, timeout: 10) { app.activate() }
+        if !app.wait(for: .runningForeground, timeout: 10) {
+            // Not in the foreground after launch (Tabletop, 96e0e39 and eab123c: SpringBoard in the tree, no crash report). Go Home,
+            // launch again once, and keep what SpringBoard showed.
+            let sb = XCTAttachment(string: XCUIApplication(bundleIdentifier: "com.apple.springboard").debugDescription)
+            sb.name = "eight-games-not-foreground-springboard.txt"; sb.lifetime = .keepAlways; add(sb)
+            XCUIDevice.shared.press(.home)
+            app.launch()
+            _ = app.wait(for: .runningForeground, timeout: 15)
+        }
         sleep(4)
         let pose = ReleaseRowTests.pose(app)
         var checked = 0
