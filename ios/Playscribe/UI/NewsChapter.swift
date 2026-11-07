@@ -13,6 +13,17 @@ struct NewsItem: Codable, Hashable, Identifiable {
     var tagText: String { isReported ? "Reported" : "Official" }
 }
 
+/// The date / tag line under a headline: one row when it fits, else stacked, so a tag never wraps mid-word ("Reporte/d") at AX sizes.
+struct NewsMeta<Content: View>: View {
+    @ViewBuilder var content: () -> Content
+    var body: some View {
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 8) { content() }
+            VStack(alignment: .leading, spacing: 2) { content() }
+        }
+    }
+}
+
 /// The verification tag: Official for studio posts, Reported otherwise. The only provenance shown.
 struct NewsTag: View {
     var item: NewsItem
@@ -136,6 +147,7 @@ struct NewsChapter: View {
     var gameID: String
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.openURL) private var openURL
     private var store: NewsStore { .shared }
 
     var body: some View {
@@ -166,10 +178,10 @@ struct NewsChapter: View {
                 }
             }
             ForEach(list.prefix(20)) { item in
-                Link(destination: item.url) {
+                Button { openURL(item.url) } label: {
                     VStack(alignment: .leading, spacing: 4) {
                         WholeWordText(text: item.title, font: PlayscribeFont.headline, lines: typeSize.isAccessibilitySize ? 4 : 3)
-                        HStack(spacing: 8) {
+                        NewsMeta {
                             if let d = item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
                             NewsTag(item: item)
                         }
@@ -178,7 +190,11 @@ struct NewsChapter: View {
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                     .contentShape(Rectangle())
                 }
-                .tappableFrame()
+                .buttonStyle(.plain)
+                .tappableFrame(when: duo.pose != .tabletop)
+                .accessibilityAddTraits(.isLink)
+                .accessibilityHint("Opens in your browser")
+                .accessibilityHidden(duo.pose == .tabletop)
             }
         }
         .task(id: gameID) {
@@ -195,6 +211,7 @@ struct NewsChapter: View {
 struct NewsStrip: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
+    @Environment(\.openURL) private var openURL
     private var store: NewsStore { .shared }
 
     private var ids: [String] { model.data.collection.map(\.gameID) }
@@ -212,11 +229,11 @@ struct NewsStrip: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("News").font(PlayscribeFont.title3).accessibilityAddTraits(.isHeader)
                     ForEach(list, id: \.item.id) { post in
-                        Link(destination: post.item.url) {
+                        Button { openURL(post.item.url) } label: {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(post.game).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                                 WholeWordText(text: post.item.title, font: PlayscribeFont.subheadline.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 2)
-                                HStack(spacing: 8) {
+                                NewsMeta {
                                     if let d = post.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated))) }
                                     NewsTag(item: post.item)
                                 }
@@ -225,18 +242,14 @@ struct NewsStrip: View {
                             .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                             .contentShape(Rectangle())
                         }
+                        .buttonStyle(.plain)
                         .tappableFrame()
                         .accessibilityElement(children: .ignore)
+                        .accessibilityAddTraits(.isLink)
                         .accessibilityLabel("\(post.game), \(post.item.title), \(post.item.tagText), opens in browser")
                     }
                 }
             }
-        }
-        .task(id: ids) {
-            #if INTERNAL
-            store.seedQA(gameIDs: ids)
-            #endif
-            for id in ids.prefix(12) { await store.load(gameID: id, igdbID: model.game(id)?.igdbID) }
         }
     }
 }
@@ -316,16 +329,17 @@ struct GlobalNewsRow: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.openURL) private var openURL
     var headline: NewsStore.Headline
 
     var body: some View {
         let game = model.game(headline.gameID)
-        Link(destination: headline.item.url) {
+        Button { openURL(headline.item.url) } label: {
             HStack(alignment: .top, spacing: 12) {
                 if let game { CoverView(game: game, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 4) {
                     WholeWordText(text: headline.item.title, font: PlayscribeFont.subheadline.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 3)
-                    HStack(spacing: 8) {
+                    NewsMeta {
                         NewsTag(item: headline.item)
                         if let game { Text(game.name) }
                         if let d = headline.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())).foregroundStyle(.secondary) }
@@ -337,7 +351,9 @@ struct GlobalNewsRow: View {
             .frame(minHeight: 44)
             .contentShape(Rectangle())
         }
+        .buttonStyle(.plain)
         .tappableFrame()
+        .accessibilityAddTraits(.isLink)
         .accessibilityLabel("\(game?.name ?? ""), \(headline.item.title), \(headline.item.tagText), opens in browser")
     }
 }
@@ -361,7 +377,7 @@ struct NewsStage: View {
             LinearGradient(colors: [.clear, .black.opacity(0.5)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 4) {
                 WholeWordText(text: headline.item.title, font: PlayscribeFont.title3.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 2)
-                HStack(spacing: 8) {
+                NewsMeta {
                     NewsTag(item: headline.item)
                     if let game { Text(game.name) }
                     if let d = headline.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }

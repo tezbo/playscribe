@@ -81,6 +81,7 @@ export const releaseFromRow = (db: DB, r: Row): Release => {
     displayName: r.display_name,
     kind: r.kind,
     kindBasis: r.kind_basis,
+    ...(r.ps4 ? { ps4: true as const } : {}),
     announcedAt: r.announced_at,
     notes,
     digest: digestOf(notes),
@@ -123,6 +124,8 @@ export interface ReleaseInput {
   announcedAt: string
   notes: NoteSection[]
   sourceId: string
+  /** A PS4 patch for a game that plays on PS5 (sticky once set). */
+  ps4?: boolean
 }
 
 const countItems = (notes: NoteSection[]) => notes.reduce((n, s) => n + s.items.length, 0)
@@ -134,9 +137,9 @@ export const upsertRelease = (db: DB, input: ReleaseInput): { id: string; create
   const t = now()
   if (!existing) {
     db.prepare(
-      `INSERT INTO releases (id, game_id, version_key, display_name, kind, kind_basis, announced_at, notes, source_ids, content_hash, created_at, updated_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-    ).run(id, input.gameId, input.versionKey, input.displayName, input.kind, input.kindBasis, input.announcedAt, JSON.stringify(input.notes), JSON.stringify([input.sourceId]), hashNotes(input.displayName, input.notes), t, t)
+      `INSERT INTO releases (id, game_id, version_key, display_name, kind, kind_basis, announced_at, notes, source_ids, content_hash, created_at, updated_at, ps4)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    ).run(id, input.gameId, input.versionKey, input.displayName, input.kind, input.kindBasis, input.announcedAt, JSON.stringify(input.notes), JSON.stringify([input.sourceId]), hashNotes(input.displayName, input.notes), t, t, input.ps4 ? 1 : 0)
     return { id, created: true, revised: false }
   }
   const sourceIds = new Set<string>(json(existing.source_ids, []))
@@ -158,6 +161,7 @@ export const upsertRelease = (db: DB, input: ReleaseInput): { id: string; create
       `UPDATE releases SET display_name = ?, kind = ?, kind_basis = ?, announced_at = ?, notes = ?, source_ids = ?, content_hash = ?,
          revision = revision + ?, updated_at = ? WHERE id = ?`,
     ).run(displayName, kind, kindBasis, announcedAt, JSON.stringify(notes), JSON.stringify([...sourceIds]), hash, revised ? 1 : 0, t, id)
+  if (input.ps4 && !existing.ps4) db.prepare('UPDATE releases SET ps4 = 1, updated_at = ? WHERE id = ?').run(t, id)
   return { id, created: false, revised }
 }
 
@@ -279,6 +283,23 @@ export const promoteAnnounced = (db: DB, at = new Date()) => {
   return n
 }
 
+/**
+ * History: a press-only announcement ("Patch 2.12 Will Rebalance...") more than 30 days old, in a game that has since had a
+ * later release live on PS5, has happened. A patch announced and then delayed with nothing after it stays announced
+ * (never claim an unconfirmed release). Safe to run every ingest.
+ */
+export const settleOldAnnouncements = (db: DB, at = new Date()) => {
+  const rows = db
+    .prepare(
+      `SELECT r.id, r.announced_at FROM releases r JOIN platform_releases p ON p.release_id = r.id AND p.platform = 'ps5'
+       WHERE p.status = 'announced' AND p.verification = 'reported' AND r.announced_at < ?
+         AND EXISTS (SELECT 1 FROM releases l JOIN platform_releases lp ON lp.release_id = l.id AND lp.platform = 'ps5' AND lp.status = 'live' WHERE l.game_id = r.game_id AND l.announced_at > r.announced_at)`,
+    )
+    .all(new Date(at.getTime() - 30 * 86400e3).toISOString()) as { id: string; announced_at: string }[]
+  for (const r of rows) upsertPlatform(db, r.id, 'ps5', { status: 'live', verification: 'reported', liveAt: field(r.announced_at, 'reported', 'pushsquare') })
+  return rows.length
+}
+
 /** A news headline for a game: title, date and link only (roadmap 17). Never the post body. */
 export const addNews = (db: DB, gameId: string, post: { url: string; title: string; publishedAt: string; sourceId: string }) =>
   db
@@ -318,7 +339,7 @@ export const dropPreLaunchPs5 = (db: DB) =>
       .prepare(
         `DELETE FROM platform_releases WHERE platform = 'ps5' AND release_id IN (
            SELECT r.id FROM releases r JOIN games g ON g.id = r.game_id
-           WHERE g.ps5_release IS NOT NULL AND (
+           WHERE g.ps5_release IS NOT NULL AND r.ps4 = 0 AND (
              (platform_releases.verification = 'assumed' AND substr(r.announced_at, 1, 10) < g.ps5_release)
              OR (json_array_length(r.source_ids) > 0 AND NOT EXISTS (SELECT 1 FROM json_each(r.source_ids) WHERE value NOT LIKE '%-steam')
                  AND substr(r.announced_at, 1, 10) < date(g.ps5_release, '-1 day'))))`,

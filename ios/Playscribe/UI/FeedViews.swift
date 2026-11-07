@@ -56,6 +56,7 @@ struct UpdatesView: View {
 
 struct FeedRow: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
 
     var body: some View {
@@ -64,17 +65,25 @@ struct FeedRow: View {
             HStack(spacing: 12) {
                 if let g = model.game(release.gameID) { CoverView(game: g, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 3) {
+                    // At accessibility sizes the game name takes the full row width and the date sits under it, so
+                    // a word never splits ("Dawn / walker") (G-8, AX5).
+                    let ax = typeSize.isAccessibilitySize
+                    let line = ax ? AnyLayout(VStackLayout(alignment: .leading, spacing: 2)) : AnyLayout(HStackLayout(spacing: 8))
                     HStack(spacing: 6) {
                         if unread { UnreadDot() }
                         Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
+                            .fixedSize(horizontal: false, vertical: true)
                         ReleaseTag(release: release)
                     }
-                    HStack(spacing: 8) {
-                        Text(model.game(release.gameID)?.name ?? "")
+                    line {
+                        Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
                         Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
                     }
                     .font(PlayscribeFont.caption)
-                    if let h = release.headline { Text(h).font(PlayscribeFont.footnote).lineLimit(2) }
+                    if let h = release.headline {
+                        if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.footnote, lines: 3) }
+                        else { Text(h).font(PlayscribeFont.footnote).lineLimit(2) }
+                    }
                 }
                 Spacer(minLength: 0)
             }
@@ -210,6 +219,13 @@ struct SearchView: View {
                             }
                         }
                         .buttonStyle(.plain)
+                        .gameQuickActions(g)
+                        // Iris: a deliberate swipe only (no full swipe), and only for games in the library.
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            if library.contains(g.id) {
+                                Button("Remove", role: .destructive) { model.removeGame(g.id) }
+                            }
+                        }
                     }
                 }
             }

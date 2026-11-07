@@ -17,7 +17,7 @@ screens=(
 for overlay in no yes; do
   suffix=""; extra=(); [[ $overlay == yes ]] && { suffix="-overlay"; extra=(-qaOverlay YES); }
   for route in $screens; do
-    xcrun simctl launch --terminate-running-process $dev $app -qaRoute "$route" $extra >/dev/null
+    xcrun simctl launch --terminate-running-process $dev $app -qaRoute "$route" ${=poseargs} $extra >/dev/null
     # keyboard and scan need longer to settle
     case $route in add/keyboard|add/scan) sleep 5 ;; *) sleep 3 ;; esac
     name=${route//\//_}

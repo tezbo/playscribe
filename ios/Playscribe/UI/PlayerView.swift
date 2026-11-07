@@ -114,7 +114,7 @@ struct PlayerView: View {
     var gameID: String
     var releaseID: String
     @State private var controller: YouTubeController?
-    @AppStorage(VideoReflection.key) private var reflectionMode = false
+    @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
 
@@ -159,7 +159,7 @@ struct PlayerView: View {
             // TT-4: the standing half shows only the video; the flat half holds the transport.
             ArrangementView {
                 TabletopTransport(controller: controller, video: video, game: gameName, release: release, onClose: close)
-                    .background(alignment: .top) { if reflectionMode && !reduceMotion && !reduceTransparency { VideoReflection(controller: controller, poster: video.posterAsset) } }
+                    .background(alignment: .top) { if VideoReflection.isShown(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) { VideoReflection(controller: controller, poster: video.posterAsset) } }
             } secondary: {
                 surface
                     .overlay { if !controller.started { PosterCover(video: video) } }
@@ -205,6 +205,12 @@ struct PlayerView: View {
 /// feature (no public API exists for one). View only: it never takes touches (tabletop rule).
 struct VideoReflection: View {
     static let key = "reflectionMode"
+    /// On unless the person turns it off (Terry, 2026-11-06). The Settings toggle reads the same value.
+    static let defaultOn = true
+    /// Reduce Motion and Reduce Transparency always win over the setting (G-9).
+    static func isShown(setting: Bool, reduceMotion: Bool, reduceTransparency: Bool) -> Bool {
+        setting && !reduceMotion && !reduceTransparency
+    }
     var controller: YouTubeController
     /// Shown until the first snapshot lands, the same still the stage shows before playback.
     var poster: String?

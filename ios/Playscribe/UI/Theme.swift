@@ -4,7 +4,7 @@ enum Brand {
     /// The product name. One constant, so a rename is one line.
     static let name = "Playscribe"
     static let tagline = "The story of every update"
-    static let trademarkNotice = "PlayStation, PS5 and the PlayStation Family Mark are trademarks of Sony Interactive Entertainment Inc. Playscribe is not affiliated with or endorsed by Sony Interactive Entertainment."
+    static let trademarkNotice = "PlayStation, PS5, PlayStation Plus and the PlayStation Family Mark, and their logos, icons and branding, are trademarks of Sony Interactive Entertainment Inc. Playscribe is not affiliated with or endorsed by Sony Interactive Entertainment."
 }
 
 extension Color {
@@ -22,6 +22,8 @@ extension Color {
     static let ink4 = PlayscribeColor.ink600
     static let ember = PlayscribeColor.vellum500
     static let ok = Color(hex: "#6fd3a0")
+    /// Wishlist (Iris, 0.5.1): a clear yellow, lighter than the amber ember so the two never read as one.
+    static let wishlist = Color(hex: "#F5C84B")
     static let simulated = Color(hex: "#c9a3ff")
     static let brand1 = PlayscribeColor.vellum300
     static let brand2 = PlayscribeColor.vellum100
@@ -56,6 +58,8 @@ struct Tag: View {
     var body: some View {
         Text(text)
             .font(PlayscribeFont.caption2.weight(.semibold))
+            // Never broken mid-word ("Reporte/d"): one line at its natural width; rows stack tags under the title at AX.
+            .lineLimit(1).fixedSize()
             .foregroundStyle(tint)
             .padding(.horizontal, 7)
             .padding(.vertical, 2)
