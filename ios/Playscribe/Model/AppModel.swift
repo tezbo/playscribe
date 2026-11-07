@@ -603,6 +603,8 @@ final class AppModel {
         // QA (INTERNAL, B-10): "quick/tip" shows the press-and-hold tip; "quick/undo" removes the first game so the
         // 6 s Undo toast shows. The long-press menu and the yellow Wishlist disc show on the demo library as is.
         case "quick" where parts.first == "tip": resetDemo(); nav.anchors["library"] = "lib-kcd2"; showPressTipIfNeeded(force: true)
+        // QA (INTERNAL): "upcoming-demo" opens Library > Upcoming with watched games, one with a long name, so the AX rows can be judged.
+        case "upcoming-demo": resetDemo(); seedUpcomingDemo()
         case "quick" where parts.first == "wishlist":
             resetDemo()
             setStatus("kcd2", .wishlist); setStatus("control-resonant", .wishlist)
@@ -752,6 +754,20 @@ final class AppModel {
         // A-9: Owned follows all updates; Wishlist and Watching follow major ones.
         // New games follow the default; a per-game level is only set from the game's bell.
         if isFirst { data.notificationCardShows = max(data.notificationCardShows, 0) }
+    }
+
+    /// QA only: watched, unreleased games (one this week, two later, one with a very long name) and the Upcoming tab selected.
+    func seedUpcomingDemo() {
+        let day = ISO8601DateFormatter(); day.formatOptions = [.withFullDate]
+        func iso(_ days: Int) -> String { day.string(from: Date().addingTimeInterval(Double(days) * 86400)) }
+        let samples: [(String, String, Int)] = [("qa-up-1", "The Long Quiet Orchard of Wending Hollow", 3), ("qa-up-2", "Ash and Ember", 40),
+                                                ("qa-up-3", "Mortal Shell: Hollow Bells", 90)]
+        for (i, s) in samples.enumerated() {
+            insertGame(CatalogGame(id: s.0, name: s.1, platforms: [.ps5], releaseDate: iso(s.2), releasePrecision: .day,
+                                   igdbID: 990000 + i, coverage: .none), status: .watching)
+        }
+        libraryTab = .upcoming
+        nav.tab = .library; nav.gameID = nil
     }
 
     func setStatus(_ gameID: String, _ status: OwnershipStatus) {
