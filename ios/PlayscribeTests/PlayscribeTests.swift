@@ -650,8 +650,8 @@ struct QARouteGuardTests {
         #expect(m.data.simulated.count == 3)
     }
 
-    @Test("The store set's PS Plus card carries only invented titles that match no cover (r052-store-set-content)")
-    func storeSetPlusCardIsPlates() {
+    @Test("The store set's PS Plus card carries only invented titles with designed covers (r052-store-set-content)")
+    func storeSetPlusCardIsDesignedCovers() {
         BuildChannel.overrideIsDistribution = false
         defer { BuildChannel.overrideIsDistribution = nil; NotificationService.shared.qaForcedAuthorization = nil }
         let m = model()
@@ -659,7 +659,12 @@ struct QARouteGuardTests {
         #expect(m.data.plusCardOff != true)
         let games = PlusStore.shared.months.first?.games ?? []
         #expect(games.count == 3)
-        for g in games { #expect(PlusCard.resolve(g, tracked: { _ in nil }) == nil) }
+        for g in games {
+            // Invented titles with designed covers; none is a tracked game or a real catalogue match.
+            let game = PlusCard.resolve(g, tracked: { m.game($0) })
+            #expect(game?.coverAsset?.hasPrefix("store-plus-") == true)
+            #expect(m.entry(g.gameId ?? "") == nil)
+        }
     }
 
     @Test("The store set hides the PS Plus and alerts cards by default so the update hero comes first (r052-store-set-content)")
