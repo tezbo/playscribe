@@ -9,8 +9,8 @@ so write it for testers. Release steps are in docs/release.md.
 - Turning alerts off now deletes your device on our server.
 - Upcoming: short sections share a row, the Upcoming cover shows the next game, and rows read as one column at big text sizes.
 - The "Also new" panel is gone, and the deck runs full width in Open portrait.
-- At big text sizes, titles, summaries, status glyphs and hero captions wrap on whole words. The spoiler row, Journal and Updates rows wrap on whole words too, and the unread dot, share button and spoiler contrast are fixed.
-- The chips on a game page show every section when they fit. The page pill clears every page, and VoiceOver covers video and the Tabletop reader.
+- At big text sizes, titles, summaries, status glyphs and hero captions wrap on whole words. The spoiler row, Journal and Updates rows wrap on whole words too, and the unread dot, share button and spoiler contrast are fixed. At the largest sizes the share button lines up with the text column's right edge.
+- The chips on a game page show every section when they fit, and on the Contents page they no longer sit on the link row. The page pill clears every page, and VoiceOver covers video and the Tabletop reader.
 - Link rows say where they go, for example "Read full notes on Steam".
 - Pre-launch patches no longer show as PS5 updates.
 
