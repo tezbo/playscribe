@@ -43,7 +43,7 @@ struct LibraryTabPicker: View {
         .frame(minHeight: 44)
         .accessibilityIdentifier("libraryTabPicker")
         // Book: exactly the left page wide, so the control never crosses the fold (AX3, 7fe84f4).
-        .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16 - UpcomingView.spineExtra) } : nil, alignment: .leading)
+        .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
         .tappableFrame()
     }
 }
@@ -64,10 +64,6 @@ struct UpcomingView: View {
     static func leftCount(of n: Int, leftColumns: Int, rightColumns: Int) -> Int {
         min(n, Int((Double(n) * Double(leftColumns) / Double(leftColumns + rightColumns)).rounded(.up)))
     }
-
-    /// Book: extra clearance each side of the hinge band, on top of the 24 pt, because the Mac stills measured the nearest
-    /// Upcoming content 20 to 21 pt from the band's edge (Quinn and Theo, 7c52330). Empirical, until the cause is found.
-    static let spineExtra: CGFloat = 5
 
     /// The Library's tile metric (Iris, #287): 120-168 pt tiles, 16 pt gaps, at least 3 columns; a short row sits left-aligned.
     static let gap = LibraryShelf.tileGap
@@ -104,9 +100,9 @@ struct UpcomingView: View {
         let spoken = count.map { "\(title), \($0) game\($0 == 1 ? "" : "s")" } ?? title
         if Self.usesRows(typeSize) {
             if duo.pose == .book, let fold = duo.division {
-                let leftWidth = max(0, fold.minX - 24 - 16 - Self.spineExtra)
-                let rightStart = fold.maxX + 24 - 16 + Self.spineExtra
-                let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24 + Self.spineExtra))
+                let leftWidth = max(0, fold.minX - 24 - 16)
+                let rightStart = fold.maxX + 24 - 16
+                let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
                 let k = (games.count + 1) / 2
                 HStack(alignment: .top, spacing: 0) {
                     VStack(alignment: .leading, spacing: 12) {
@@ -126,9 +122,9 @@ struct UpcomingView: View {
             }
         } else if duo.pose == .book, let fold = duo.division {
             // Same page geometry as the Library's Book layout (the grids share its scroll origin).
-            let leftWidth = max(0, fold.minX - 24 - 16 - Self.spineExtra)
-            let rightStart = fold.maxX + 24 - 16 + Self.spineExtra
-            let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24 + Self.spineExtra))
+            let leftWidth = max(0, fold.minX - 24 - 16)
+            let rightStart = fold.maxX + 24 - 16
+            let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
             let (left, right) = Self.bookFits(leftWidth: leftWidth, rightWidth: rightWidth)
             let k = Self.leftCount(of: games.count, leftColumns: left.count, rightColumns: right.count)
             HStack(alignment: .top, spacing: 0) {
@@ -251,7 +247,7 @@ struct UpcomingView: View {
                         .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
                 }
                 // Book: the empty state stays on the left page, centred there, never across the spine (Quinn, #348).
-                .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16 - Self.spineExtra) } : nil)
+                .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.vertical, 20)
                 .accessibilityElement(children: .combine)
