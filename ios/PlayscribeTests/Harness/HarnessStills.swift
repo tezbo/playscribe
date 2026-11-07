@@ -8,6 +8,7 @@ import UIKit
 ///   HARNESS_PNG_DIR    folder for the PNGs, named <pose>-<size>.png
 ///   HARNESS_POSES      comma list of pose ids (default: all in the catalog)
 ///   HARNESS_SIZES      comma list of std, ax3, ax5 (default: all three)
+///   HARNESS_TALL       container height multiplier, e.g. 2, for a long page in one still (default 1)
 ///   HARNESS_ROUTE      a playscribe:// host and path to open first, e.g. game/dawnwalker (default: the Library)
 @MainActor
 struct HarnessStillsTests {
@@ -24,8 +25,14 @@ struct HarnessStillsTests {
         guard wanted("HARNESS_POSES", id), wanted("HARNESS_SIZES", size) else { return }
         let category = try #require(Self.sizes.first { $0.0 == size }?.1)
         let model = FoldHost.demoModel()
-        if let route = env["HARNESS_ROUTE"], !route.isEmpty, let url = URL(string: "playscribe://\(route)") { model.handle(url: url) }
-        let r = try #require(await FoldHost.render(HarnessPose.named(id), type: category, model: model))
+        // ROUTE may chain several routes with commas, in order (e.g. `updates,pill` for the Updates tab with the New on PS5 pill).
+        for route in (env["HARNESS_ROUTE"] ?? "").split(separator: ",").map({ $0.trimmingCharacters(in: .whitespaces) }) where !route.isEmpty {
+            if let url = URL(string: "playscribe://\(route)") { model.handle(url: url) }
+        }
+        var pose = HarnessPose.named(id)
+        // HARNESS_TALL=2 renders a container N times as tall, so a long page (a release page's spoiler row at AX5) shows in one still.
+        if let t = env["HARNESS_TALL"].flatMap(Double.init), t > 1 { pose.container.height *= CGFloat(t) }
+        let r = try #require(await FoldHost.render(pose, type: category, model: model))
         defer { FoldHost.dispose(r) }
         try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
         let data = try #require(FoldHost.png(r))
