@@ -186,7 +186,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   }
 
   let naming = nameRelease(post.title, post.publishedAt)
-  const notes = extractNotes(post.body)
+  const notes = extractNotes(post.body, 'Changes', s.kind === 'steamNews' && (!game.ps5_release || post.publishedAt.slice(0, 10) < game.ps5_release))
   const kind = () =>
     classify({ title: post.title, notes, announcedAt: post.publishedAt, previousAnnouncedAt: store.previousAnnouncedAt(db, game.id, post.publishedAt), platformReleaseDate: game.ps5_release })
 

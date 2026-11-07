@@ -84,7 +84,10 @@ const platformFromRow = (r: Row, links: ReleaseLinks): PlatformRelease => ({
 
 export const releaseFromRow = (db: DB, r: Row): Release => {
   // Tagged on read, so stored notes follow the current platform rules.
-  const notes = tagNotes(json(r.notes, []))
+  const sourceIds = json<string[]>(r.source_ids, [])
+  const platformRows = db.prepare('SELECT * FROM platform_releases WHERE release_id = ? ORDER BY platform').all(r.id) as Row[]
+  // Only a Steam-only release with no PS5 row: where a PS5 row exists the Steam post is about PS5 too (Quinn, #380).
+  const notes = tagNotes(json(r.notes, []), sourceIds.length > 0 && sourceIds.every((id) => id.endsWith('-steam')) && !platformRows.some((p) => p.platform === 'ps5'))
   return {
     id: r.id,
     gameId: r.game_id,
@@ -95,9 +98,9 @@ export const releaseFromRow = (db: DB, r: Row): Release => {
     announcedAt: r.announced_at,
     notes,
     digest: digestOf(notes),
-    sourceIds: json(r.source_ids, []),
+    sourceIds,
     links: json(r.links, {}),
-    platforms: (db.prepare('SELECT * FROM platform_releases WHERE release_id = ? ORDER BY platform').all(r.id) as Row[]).map((p) => platformFromRow(p, json(r.links, {}))),
+    platforms: platformRows.map((p) => platformFromRow(p, json(r.links, {}))),
     revision: r.revision,
     updatedAt: r.updated_at,
   }
