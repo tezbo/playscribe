@@ -129,6 +129,50 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         #expect(body.contains("blue-prince") && !body.contains("dawnwalker"), "re-registered with the current list: \(body)")
     }
 
+    private func teamBodies() -> [String] {
+        StubRelay.seen.compactMap { r in r.httpBody.map { String(decoding: $0, as: UTF8.self) } }.filter { $0.contains("\"team\"") }
+    }
+
+    /// A tester who turned Team alerts on in TestFlight and then installed the App Store build: the relay record still says
+    /// team=true, so the App Store build says team=false once and forgets the stored choice.
+    @Test func anAppStoreBuildAfterTestFlightClearsTeamOnceAndForgetsTheChoice() async {
+        setUp()
+        PushRegistrar.showsTeamForTests = false
+        UserDefaults.standard.set(true, forKey: PushRegistrar.teamKey)
+        defer { UserDefaults.standard.removeObject(forKey: PushRegistrar.teamKey); PushRegistrar.showsTeamForTests = nil }
+        StubRelay.handler = { r in r.url!.path == "/v1/devices" ? (200, Data(#"{"deviceKey":"fresh"}"#.utf8)) : (200, Data()) }
+        await PushRegistrar.register(token: "abc", follows: follows)?.value
+        #expect(teamBodies() == [#"{"team":false}"#], "team=false once: \(teamBodies())")
+        #expect(UserDefaults.standard.object(forKey: PushRegistrar.teamKey) == nil, "the stored choice is forgotten")
+        StubRelay.seen = []
+        await PushRegistrar.register(token: "abc", follows: follows)?.value
+        #expect(teamBodies().isEmpty, "the next launch sends nothing about team")
+    }
+
+    @Test func aFailedClearKeepsTheChoiceSoItIsTriedAgain() async {
+        setUp()
+        PushRegistrar.showsTeamForTests = false
+        UserDefaults.standard.set(true, forKey: PushRegistrar.teamKey)
+        defer { UserDefaults.standard.removeObject(forKey: PushRegistrar.teamKey); PushRegistrar.showsTeamForTests = nil }
+        StubRelay.handler = { r in
+            if r.url!.path == "/v1/devices" { return (200, Data(#"{"deviceKey":"fresh"}"#.utf8)) }
+            let body = r.httpBody.map { String(decoding: $0, as: UTF8.self) } ?? ""
+            return body.contains("\"team\"") ? (503, Data()) : (200, Data())
+        }
+        await PushRegistrar.register(token: "abc", follows: follows)?.value
+        #expect(UserDefaults.standard.bool(forKey: PushRegistrar.teamKey), "kept for the next launch")
+    }
+
+    @Test func anAppStoreBuildThatNeverChoseSendsNothingAboutTeam() async {
+        setUp()
+        PushRegistrar.showsTeamForTests = false
+        UserDefaults.standard.removeObject(forKey: PushRegistrar.teamKey)
+        defer { PushRegistrar.showsTeamForTests = nil }
+        StubRelay.handler = { r in r.url!.path == "/v1/devices" ? (200, Data(#"{"deviceKey":"fresh"}"#.utf8)) : (200, Data()) }
+        await PushRegistrar.register(token: "abc", follows: follows)?.value
+        #expect(teamBodies().isEmpty)
+    }
+
     @Test func nothingIsSentBeforeTheDeviceIsRegistered() async {
         setUp(key: nil)
         let task = PushRegistrar.syncFollows([PushRegistrar.Follow(gameId: "x", igdbId: nil, notify: "all")])
