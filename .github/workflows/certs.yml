@@ -1,0 +1,55 @@
+name: Certificates
+
+# Lists the team's signing certificates through the App Store Connect API key (read-only), or revokes ONE by id.
+# Prints metadata only (id, type, name, expiry). Never prints key material.
+on:
+  workflow_dispatch:
+    inputs:
+      revoke_id: {description: "Certificate id to revoke (leave empty to only list)", default: "", required: false}
+
+concurrency: certs
+
+jobs:
+  certs:
+    runs-on: ubuntu-latest
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+      ASC_KEY_P8_BASE64: ${{ secrets.ASC_KEY_P8_BASE64 }}
+      REVOKE_ID: ${{ inputs.revoke_id }}
+    steps:
+      - run: pip install pyjwt cryptography requests
+      - name: List, and revoke if asked
+        shell: python
+        run: |
+          import os, time, base64, jwt, requests
+          import re
+          raw = os.environ.get("ASC_KEY_P8") or base64.b64decode(os.environ["ASC_KEY_P8_BASE64"]).decode()
+          body = re.sub(r"\\n|[^A-Za-z0-9+/=]", "", re.sub(r"-----[A-Z ]+-----", "", raw))
+          i = body.find("MIG")
+          if i >= 0:
+              n = base64.b64decode(body[i:i+4])[2] + 3
+              body = body[i:i + (n + 2) // 3 * 4]
+          p8 = "-----BEGIN PRIVATE KEY-----\n" + "\n".join(body[k:k+64] for k in range(0, len(body), 64)) + "\n-----END PRIVATE KEY-----\n"
+          tok = jwt.encode({"iss": os.environ["ASC_ISSUER_ID"], "iat": int(time.time()), "exp": int(time.time()) + 600, "aud": "appstoreconnect-v1"},
+                           p8, algorithm="ES256", headers={"kid": os.environ["ASC_KEY_ID"]})
+          h = {"Authorization": "Bearer " + tok}
+          r = requests.get("https://api.appstoreconnect.apple.com/v1/certificates?limit=200", headers=h)
+          print("list status", r.status_code)
+          r.raise_for_status()
+          for c in r.json()["data"]:
+              a = c["attributes"]
+              print(c["id"], a.get("certificateType"), "|", a.get("name"), "| expires", a.get("expirationDate"), "| display", a.get("displayName"), "| platform", a.get("platform"))
+          rid = os.environ.get("REVOKE_ID", "").strip()
+          if rid:
+              # Only a CI-created Development certificate may be revoked here, never a person's or a Distribution one.
+              hit = [c for c in r.json()["data"] if c["id"] == rid]
+              if not hit:
+                  raise SystemExit("refusing: " + rid + " is not in the certificate list")
+              a = hit[0]["attributes"]
+              if a.get("certificateType") != "DEVELOPMENT" or a.get("displayName") != "Created via API":
+                  raise SystemExit("refusing: " + rid + " is not a CI-created Development certificate")
+              d = requests.delete("https://api.appstoreconnect.apple.com/v1/certificates/" + rid, headers=h)
+              print("revoke", rid, "status", d.status_code, d.text[:300])
+              d.raise_for_status()

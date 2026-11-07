@@ -11,8 +11,10 @@ struct GameBookView: View {
     var body: some View {
         let game = model.game(gameID)
         Group {
-            if duo.pose == .closed {
-                // Closed (or any compact width, D-11): the stacked game book, Contents hidden.
+            if duo.pose == .closed || (duo.pose == .flat && !duo.isLandscape) {
+                // Closed, or the inner display flat in portrait (no fold, so nothing to split on):
+                // one page that scrolls as one, the Contents below the Page. Two panes scrolling
+                // separately, with the Page cut off mid-line, was wrong on a flat screen.
                 PageView(gameID: gameID, withContents: true)
             } else if sideBySide {
                 // Side by side: Contents left, Page right by default (D-10).
@@ -66,6 +68,20 @@ struct GameBookView: View {
             .allowsHitTesting(false)
             // Not touchable, so not audited as tappable: a frame here is never a fold crossing (TT-1).
             .auditActive(false)
+        } else if duo.pose == .flat && !duo.isLandscape {
+            // Open portrait (Iris): the Page above the sheet. A whole line, not half a line, at the sheet's edge at
+            // rest: 12 pt of bottom room and a 24 pt fade to the sheet colour.
+            PageView(gameID: gameID)
+                .contentMargins(.bottom, 12, for: .scrollContent)
+                .overlay(alignment: .bottom) {
+                    // A 24 pt fade left a half line readable at the edge (0c93f25); 44 pt, solid for the last 8 pt,
+                    // so a line cut by the sheet is faded out, never shown half drawn.
+                    LinearGradient(stops: [.init(color: .clear, location: 0), .init(color: Color.ink0, location: 0.82)],
+                                   startPoint: .top, endPoint: .bottom)
+                        .frame(height: 44)
+                        .allowsHitTesting(false)
+                        .accessibilityHidden(true)
+                }
         } else {
             PageView(gameID: gameID)
         }
@@ -81,37 +97,45 @@ extension GameBookView {
     }
 }
 
-/// R-7: chapters as a scrolling row with an edge fade; the selected chip scrolls into view.
+/// R-7: chapters in one row when they fit, wrapped onto a second row when they do not.
 struct ChapterBar: View {
     @Environment(AppModel.self) private var model
     var gameID: String
     var selected: Chapter
 
-    var body: some View {
-        ScrollViewReader { proxy in
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 8) {
-                    ForEach(model.chapters(gameID)) { c in
-                        let on = c == selected
-                        Button { model.nav.chapter = c } label: {
-                            Label(c.title, systemImage: c.symbol)
-                                .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
-                                .padding(.horizontal, 12)
-                                .frame(minHeight: 44)
-                                .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityAddTraits(on ? .isSelected : [])
-                        .tappableFrame()
-                        .id(c)
-                    }
-                }
-                .padding(.horizontal, 2)
-                .padding(.trailing, 24)
+    private func chip(_ c: Chapter, icons: Bool) -> some View {
+        let on = c == selected
+        return Button { model.nav.chapter = c } label: {
+            Group {
+                if icons { Label(c.title, systemImage: c.symbol) } else { Text(c.title) }
             }
-            .edgeFade()
-            .onAppear { proxy.scrollTo(selected, anchor: .center) }
-            .onChange(of: selected) { _, c in withAnimation { proxy.scrollTo(c, anchor: .center) } }
+            .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
+            .lineLimit(1)
+            .padding(.horizontal, 12)
+            .frame(minHeight: 44)
+            .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(on ? .isSelected : [])
+        .tappableFrame()
+        .id(c)
+    }
+
+    private func row(icons: Bool) -> some View {
+        HStack(spacing: 8) { ForEach(model.chapters(gameID)) { chip($0, icons: icons) } }
+            .padding(.horizontal, 2)
+    }
+
+    var body: some View {
+        // Every chapter is always in view (Quinn, #331): one row with icons, else one row of titles, else the
+        // chips wrap onto a second row (AX sizes, narrow columns). Nothing hides behind a scroll.
+        ViewThatFits(in: .horizontal) {
+            row(icons: true).fixedSize(horizontal: true, vertical: false)
+            row(icons: false).fixedSize(horizontal: true, vertical: false)
+            FlowLayout(spacing: 8) {
+                ForEach(model.chapters(gameID)) { chip($0, icons: false) }
+            }
+            .padding(.horizontal, 2)
         }
     }
 }

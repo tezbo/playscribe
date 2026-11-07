@@ -38,10 +38,8 @@ struct PlayscribeApp: App {
                     // QA: `simctl launch <device> co.codeconnectors.playscribe -qaRoute add` opens a
                     // screen without the system's "Open in" prompt that URL schemes trigger.
                     // `-qaOverlay YES` shows the debug overlay of tappable frames and reserved regions.
-                    if UserDefaults.standard.bool(forKey: "qaOverlay") { model.showDebugOverlay = true; FoldAuditSwitch.enabled = true }
-                    if let route = UserDefaults.standard.string(forKey: "qaRoute"), let url = URL(string: "playscribe://\(route)") {
-                        model.handle(url: url)
-                    }
+                    model.applyQALaunch(route: UserDefaults.standard.string(forKey: "qaRoute"),
+                                        overlay: UserDefaults.standard.bool(forKey: "qaOverlay"))
                     #endif
                 }
                 .task {
@@ -54,7 +52,7 @@ struct PlayscribeApp: App {
                     if p == .active {
                         model.tick()
                         // Quiet hours for server pushes: the relay needs the current window and zone (r050-quiet-hours-push).
-                        PushRegistrar.syncQuietHours(model.data.quietHours)
+                        if PushRegistrar.appCallsEnabled { PushRegistrar.syncQuietHours(model.data.quietHours) }
                         Task { await model.refreshFeed() }
                         Task { await NotificationService.shared.refreshAuthorization() }
                         NotificationService.shared.updateBadge(model.badgeCount)

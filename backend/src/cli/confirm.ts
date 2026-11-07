@@ -42,7 +42,8 @@ if (opt('dismiss')) {
   })
   const { keyId, teamId, key, topic } = config.apns
   const apns = process.env.PUSH_ENABLED === '1' && keyId && teamId && key ? new Apns({ keyId, teamId, key, topic }) : null
-  if (platform === 'ps5') console.log('push:', JSON.stringify(await pushPs5Release(db, apns, releaseId, { maxAgeHours: config.pushMaxAgeHours })))
+  if (platform === 'ps5' && process.env.PUSH_DEFER === '1') console.log('push deferred: relay devices not loaded')
+  else if (platform === 'ps5') console.log('push:', JSON.stringify(await pushPs5Release(db, apns, releaseId, { maxAgeHours: config.pushMaxAgeHours })))
   apns?.close()
   console.log(JSON.stringify(getRelease(db, releaseId)?.platforms, null, 1))
 }

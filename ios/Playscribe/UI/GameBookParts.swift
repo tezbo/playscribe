@@ -64,11 +64,22 @@ struct PageView: View {
             }
             .padding(.bottom, 24)
         }
+        .clearsMessages()
         .scrollIndicators(.hidden)
         // D-2, T-5, D-10: the reading position is model state. Closing, opening, rotating or
         // swapping sides rebuilds this view; it comes back where the reader was.
         .scrollPosition($position)
         .accessibilityIdentifier("pageScroll")
+        // A stacked Page ends at the Contents' edge: dissolve the last lines instead of cutting
+        // them mid-letter under the game title.
+        .mask {
+            if withContents || duo.pose == .closed { Rectangle() } else {
+                VStack(spacing: 0) {
+                    Rectangle()
+                    LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom).frame(height: 28)
+                }
+            }
+        }
         // J-1: Back from a pushed release lands on its row (Closed shares this scroll).
         .onChange(of: model.nav.detailReleaseID) { old, new in
             // After the restore of the saved offset, which no longer points at the row.
@@ -185,18 +196,34 @@ struct CoverHeader: View {
 struct ReleasePage: View {
     @Environment(AppModel.self) private var model
     var release: Release
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         let r = release
         VStack(alignment: .leading, spacing: 12) {
+            // Accessibility sizes: the title and tags first, then the share button on its own row at the page's trailing
+            // edge, 24 pt clear of the rail, so it never sits under the rail's buttons (R-2, Iris on #288 at AX3).
+            if typeSize.isAccessibilitySize {
+                HStack(spacing: 8) {
+                    if model.isUnread(r) { UnreadDot() }
+                    TitleWithTags(release: r) {
+                        Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
+                    }
+                }
+                if r.isPS5Listed {
+                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }.padding(.trailing, 24)
+                }
+            } else {
             HStack(spacing: 8) {
                 if model.isUnread(r) { UnreadDot() }
                 // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
-                Text(r.displayName).font(PlayscribeFont.title3)
-                    .accessibilityIdentifier("releaseTitle")
-                ReleaseTag(release: r)
+                TitleWithTags(release: r) {
+                    Text(r.displayName).font(PlayscribeFont.title3)
+                        .accessibilityIdentifier("releaseTitle")
+                }
                 Spacer(minLength: 0)
                 if r.isPS5Listed { ShareUpdateButton(release: r) }
+            }
             }
             HStack(spacing: 8) {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
@@ -271,7 +298,7 @@ struct GameLinks: View {
                     Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                 }
                 if let url = links?.patchNotes {
-                    Link(destination: url) { Label("All patch notes", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
+                    Link(destination: url) { Label(LinkHost.label("All patch notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame().accessibilityHint("Opens in browser")
                 }
             }
             .font(PlayscribeFont.subheadline)
@@ -344,7 +371,7 @@ struct GameBasicsView: View {
                 Text("Story").font(PlayscribeFont.headline)
                 LinkedTextView(text: story).font(PlayscribeFont.body).lineLimit(storyOpen ? nil : 4)
                 Button(storyOpen ? "Less" : "More") { withAnimation(.snappy) { storyOpen.toggle() } }
-                    .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minHeight: 44).tappableFrame()
+                    .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
             }
             SimilarGamesRow(game: game)
         }
@@ -441,6 +468,7 @@ struct ContentsView: View {
                 .padding(.vertical, 14)
                 .padding(.trailing, railWidth)
         }
+        .clearsMessages()
         .scrollPosition($position)
         .accessibilityIdentifier("contentsScroll")
         // J-1: Back from a pushed release (open portrait) lands on its row.
@@ -622,6 +650,7 @@ struct InlineNoteResults: View {
 struct ReleaseTimeline: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
 
     var body: some View {
@@ -649,12 +678,22 @@ struct ReleaseTimeline: View {
                 model.select(gameID, releaseID: r.id)
             }
         } label: {
-            HStack(spacing: 8) {
+            let title = TitleWithTags(release: r) {
+                Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular))
+                    .lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
+            }
+            let date = Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+            HStack(alignment: .top, spacing: 8) {
                 if model.isUnread(r) { UnreadDot() } else { Color.clear.frame(width: 8, height: 8) }
-                Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular)).lineLimit(1)
-                ReleaseTag(release: r)
-                Spacer(minLength: 4)
-                Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                if typeSize.isAccessibilitySize {
+                    // No trailing date column at AX: the date takes its own full-width line under the title and tags.
+                    VStack(alignment: .leading, spacing: 4) { title; date }
+                    Spacer(minLength: 0)
+                } else {
+                    title
+                    Spacer(minLength: 4)
+                    date
+                }
             }
             .padding(.horizontal, 10)
             .frame(minHeight: 44)
@@ -671,6 +710,7 @@ struct ReleaseTimeline: View {
 
 /// TT-2 in the Contents: the section outline with Previous and Next.
 struct TabletopOutline: View {
+    @State private var fullText = false
     @Environment(AppModel.self) private var model
     var gameID: String
     var body: some View {
@@ -691,6 +731,29 @@ struct TabletopOutline: View {
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()
+            }
+            // The stage caps long text (never mid-word); the whole of it is here, in the lower half.
+            if let sec = sections[safe: index], ReaderBody.isCapped(title: sec.title, body: sec.body) {
+                Button { fullText.toggle() } label: {
+                    HStack {
+                        Text(fullText ? "Hide full text" : "Full text").font(PlayscribeFont.subheadline.weight(.semibold))
+                        Spacer()
+                        Image(systemName: fullText ? "chevron.up" : "chevron.down")
+                    }
+                    .foregroundStyle(PlayscribeColor.accent)
+                    .padding(.horizontal, 10).frame(minHeight: 44).contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .tappableFrame()
+                .accessibilityIdentifier("readerFullText")
+                if fullText {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(sec.title).font(PlayscribeFont.headline)
+                        Text(sec.body).font(PlayscribeFont.body)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 10)
+                }
             }
             HStack(spacing: 12) {
                 pageButton("Previous", "chevron.backward", enabled: index > 0) { model.readerIndex[gameID] = index - 1 }
@@ -729,6 +792,7 @@ struct ReleaseDetailView: View {
             }
             .padding(.bottom, 24)
         }
+        .clearsMessages()
         .background(Color.ink0)
         .navigationTitle(model.release(gameID, releaseID)?.displayName ?? "")
         .toolbarTitleDisplayMode(.inline)
@@ -740,6 +804,7 @@ struct ReleaseDetailView: View {
 /// bookmark for Wishlist, an eye for Watching. Tapping the glyph opens the status choice.
 struct GameTitleWithStatus: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
     var name: String
 
@@ -753,22 +818,50 @@ struct GameTitleWithStatus: View {
     }
 
     private var titleRow: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 8) {
-            Text(name).font(PlayscribeFont.title2).lineLimit(2).accessibilityAddTraits(.isHeader)
-            if let e = model.entry(gameID) {
-                Menu { ActionMenuContent(sections: model.statusMenu(gameID)) } label: {
-                    Image(systemName: Self.symbol(e.status))
-                        .font(.system(size: 20))
-                        .foregroundStyle(e.status == .owned ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
+        // Accessibility sizes: the title wraps on whole words and the status glyph sits inline right after the last word,
+        // wrapping with it (Iris on #289: never on a line of its own, and "Deliverance" is never cut mid-word).
+        // The title text stops growing at AX3: at AX5 one long word is wider than a Closed portrait column.
+        if typeSize.isAccessibilitySize { return AnyView(inlineTitleRow) }
+        return AnyView(HStack(alignment: .firstTextBaseline, spacing: 8) {
+            Text(name).font(PlayscribeFont.title2).lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true).accessibilityAddTraits(.isHeader)
+                .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+            statusMenu
+        })
+    }
+
+    private var inlineTitleRow: some View {
+        let words = name.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
+        return WordFlow(hSpacing: 8, vSpacing: 0) {
+            ForEach(Array(words.enumerated()), id: \.offset) { i, w in
+                if i == words.count - 1 {
+                    HStack(alignment: .firstTextBaseline, spacing: 0) {
+                        Text(w).font(PlayscribeFont.title2).accessibilityHidden(true)
+                        statusMenu
+                    }
+                } else {
+                    Text(w).font(PlayscribeFont.title2).accessibilityHidden(true)
                 }
-                .padding(.vertical, -12)
-                .accessibilityLabel(e.status.label)
-                .accessibilityHint("Change status")
-                .accessibilityIdentifier("statusGlyph")
-                .tappableFrame()
             }
+        }
+        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+        .background(Color.clear.accessibilityElement().accessibilityLabel(name).accessibilityAddTraits(.isHeader))
+    }
+
+    @ViewBuilder private var statusMenu: some View {
+        if let e = model.entry(gameID) {
+            Menu { ActionMenuContent(sections: model.statusMenu(gameID)) } label: {
+                Image(systemName: Self.symbol(e.status))
+                    .font(.system(size: 20))
+                    .foregroundStyle(e.status == .owned ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .padding(.vertical, -12)
+            .accessibilityLabel(e.status.label)
+            .accessibilityHint("Change status")
+            .accessibilityIdentifier("statusGlyph")
+            .tappableFrame()
         }
     }
 
@@ -791,9 +884,9 @@ struct LinksSheet: View {
         if let game = model.game(gameID) {
             let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
             if let u = links?.official { out.append(Row(id: "official", title: "Official website", url: u)) }
-            if let u = links?.patchNotes { out.append(Row(id: "notes", title: "All patch notes", url: u)) }
+            if let u = links?.patchNotes { out.append(Row(id: "notes", title: LinkHost.label("All patch notes", u), url: u)) }
         }
-        if let r = model.readerRelease(gameID), let u = r.links?.steamNotes { out.append(Row(id: "steam", title: "Open in Steam", url: u)) }
+        if let r = model.readerRelease(gameID), let u = r.links?.steamNotes { out.append(Row(id: "steam", title: LinkHost.label("Read full notes", u), url: u)) }
         return out
     }
 
@@ -833,5 +926,31 @@ struct LinksSheet: View {
     static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool {
         let links = model.game(gameID)?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
         return links?.official != nil || links?.patchNotes != nil || model.readerRelease(gameID)?.links?.steamNotes != nil
+    }
+}
+
+
+/// Words flowing left to right and wrapping at the proposed width; a word wider than the width gets its own line.
+/// One subview per word (the caller uses ForEach), so the last one can carry an inline glyph.
+struct WordFlow: Layout {
+    var hSpacing: CGFloat = 8
+    var vSpacing: CGFloat = 0
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        place(proposal.width ?? .infinity, subviews).size
+    }
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        for (i, p) in place(bounds.width, subviews).points.enumerated() {
+            subviews[i].place(at: CGPoint(x: bounds.minX + p.x, y: bounds.minY + p.y), proposal: .unspecified)
+        }
+    }
+    private func place(_ width: CGFloat, _ subviews: Subviews) -> (points: [CGPoint], size: CGSize) {
+        var points: [CGPoint] = [], x: CGFloat = 0, y: CGFloat = 0, row: CGFloat = 0, maxX: CGFloat = 0
+        for v in subviews {
+            let s = v.sizeThatFits(.unspecified)
+            if x > 0 && x + s.width > width { x = 0; y += row + vSpacing; row = 0 }
+            points.append(CGPoint(x: x, y: y))
+            x += s.width + hSpacing; row = max(row, s.height); maxX = max(maxX, x - hSpacing)
+        }
+        return (points, CGSize(width: maxX, height: y + row))
     }
 }

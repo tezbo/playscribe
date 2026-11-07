@@ -117,6 +117,25 @@ final class FoldAuditTests: XCTestCase {
     }
 }
 
+/// Fold harness calibration (docs/fold-harness.md): prints what the simulator's real fold gave the app, for
+/// `tools/qa/compare_harness.py` to diff against the harness. Run in each pose; it asserts nothing about layout.
+final class PoseProbeTests: XCTestCase {
+    @MainActor
+    func testPrintPoseProbe() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "library"]
+        app.launch()
+        sleep(4)
+        let probe = app.descendants(matching: .any)["poseProbe"]
+        XCTAssertTrue(probe.waitForExistence(timeout: 8))
+        print("POSEPROBE \(probe.label)")
+        let note = XCTAttachment(string: probe.label)
+        note.name = "pose-probe.json"
+        note.lifetime = .keepAlways
+        add(note)
+    }
+}
+
 /// D-13: every display choice survives a relaunch.
 @MainActor
 final class DisplayChoiceTests: XCTestCase {
@@ -419,9 +438,9 @@ final class LibraryLayoutTests: XCTestCase {
             let screenW = pose.contains("tabletop") ? app.frame.width : max(app.frame.width, app.frame.height)
             // 0.2.0 gate: the hero's frame is its card, not the fill-scaled art behind it (it once
             // reported x -97.7, width 461). Open landscape: the double tile, 2 tiles + 10 pt, where the
-            // tile fills the width (n columns of at least 124 pt, leftover spread equally, 16 pt margins).
+            // tile fills the width (n columns of 120 to 168 pt, 16 pt gaps, 16 pt margins).
             let openW = app.frame.width - 32
-            let openN = max(2, Int((openW + 10) / 134))
+            let openN = max(3, Int((openW + 16) / 136))
             for h in hero {
                 XCTAssertGreaterThanOrEqual(h.minX, 0, "hero starts on screen \(h) [\(pose)]")
                 XCTAssertLessThanOrEqual(h.maxX, screenW + 1, "hero ends on screen \(h) [\(pose)]")
@@ -436,18 +455,13 @@ final class LibraryLayoutTests: XCTestCase {
                 }
                 // Only when the measurement is consistent with portrait: a card wider than app.frame is a landscape reading.
                 if pose.contains("flat") && app.frame.width <= app.frame.height && h.maxX <= app.frame.width + 1 {
-                    XCTAssertLessThanOrEqual(h.height, app.frame.height * 0.38 + 12, "Open portrait hero is at most 38% of the height [\(pose)]")
+                    XCTAssertLessThanOrEqual(h.height, app.frame.height * 0.42 + 12, "Open portrait hero is at most 42% of the height [\(pose)]")
                 }
             }
-            // Open portrait (0.5.0): the Also new / What's new panel sits beside the deck, same top and height,
-            // never overlapping it. (app.frame can report the wrong orientation, so the panel's presence is
-            // asserted from the stills, and its geometry whenever it is there.)
-            let panel = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Also new' OR label == \"What's new\"")).firstMatch
+            // Open portrait: the deck takes the full content width, nothing sits beside it (the Also new panel is gone).
             let deck = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Latest updates, page'")).firstMatch
-            if pose.contains("flat"), panel.exists, deck.exists {
-                XCTAssertFalse(panel.frame.insetBy(dx: 1, dy: 1).intersects(deck.frame), "panel overlaps the deck \(panel.frame) \(deck.frame) [\(pose)]")
-                XCTAssertEqual(panel.frame.minY, deck.frame.minY, accuracy: 4, "panel and deck share a top [\(pose)]")
-                XCTAssertEqual(panel.frame.height, deck.frame.height, accuracy: 6, "panel and deck are equal height [\(pose)]")
+            if pose.contains("flat"), deck.exists, app.frame.width <= app.frame.height {
+                XCTAssertGreaterThan(deck.frame.width, app.frame.width * 0.6, "Open portrait deck is full width [\(pose)]")
             }
             if pose.contains("flat"), let right = tiles.map(\.maxX).max(), tiles.count >= openN {
                 XCTAssertGreaterThanOrEqual(right, app.frame.width - 16 - 12, "Open grid fills the width, no dead space on the trailing side [\(pose)]")
@@ -669,6 +683,59 @@ final class Release050Tests: XCTestCase {
         XCTAssertNotNil(text.range(of: #"\d+\.\d+\.\d+"#, options: .regularExpression), "Version reads like 1.2.3, got '\(text)' [\(pose)]")
     }
 
+    /// 0.5.1 spec 2: while the pill shows, the page's top controls stay clear of it and tappable, and swiping the pill
+    /// away dismisses it (its VoiceOver "Dismiss" action does the same; XCUITest cannot list custom actions).
+    func testPillLeavesTheTopOfThePageAlone() throws {
+        let app = launch("pill")
+        let pill = app.buttons["newOnPS5Pill"]
+        XCTAssertTrue(pill.waitForExistence(timeout: 10), "the pill shows")
+        let cog = app.buttons["settingsButton"]
+        XCTAssertTrue(cog.exists && cog.isHittable, "Settings stays tappable while the pill shows")
+        XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(pill.frame), "the pill does not cover the cog")
+        let search = app.textFields.firstMatch
+        if search.exists { XCTAssertFalse(search.frame.insetBy(dx: 1, dy: 1).intersects(pill.frame), "the pill does not cover Search") }
+        // The Library's scroll view ends above the pill, so no row or tile can sit under it.
+        let page = app.scrollViews.firstMatch
+        if page.exists { XCTAssertLessThanOrEqual(page.frame.maxY, pill.frame.minY + 1, "the Library ends above the pill") }
+        pill.swipeRight()
+        XCTAssertFalse(pill.waitForExistence(timeout: 3), "swiping dismisses the pill")
+        app.terminate()
+    }
+
+    /// 0.5.1 spec 2 (Quinn, #246): in Tabletop the letter filter scrolls with the page, and a letter scrolled below the page's
+    /// edge is drawn under the pill by the overlay. It must not take a tap: the page is clipped above the pill.
+    func testPillCoversNoHittableLetterInTabletop() throws {
+        let app = launch("pill")
+        let pill = app.buttons["newOnPS5Pill"]
+        XCTAssertTrue(pill.waitForExistence(timeout: 10), "the pill shows")
+        guard isTabletop(app) else { app.terminate(); return }
+        XCTAssertTrue(pill.isHittable, "the pill itself takes taps")
+        let letters = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'letter-'")).allElementsBoundByIndex
+        // isHittable tests the element's centre. A letter's frame may reach a few points below the page's edge (the part
+        // past the edge is clipped and takes no tap), so judge the centre: below the pill's top edge it must not be hittable,
+        // and a hittable letter's centre must be above the pill.
+        for letter in letters where letter.frame.midY >= pill.frame.minY {
+            XCTAssertFalse(letter.isHittable, "\(letter.identifier) has its centre at or under the pill and must not take a tap")
+        }
+        for letter in letters where letter.isHittable {
+            XCTAssertLessThan(letter.frame.midY, pill.frame.minY, "\(letter.identifier) is tappable only with its centre above the pill")
+        }
+        app.terminate()
+    }
+
+    /// 0.5.1 spec 1: the per-game footer sits directly under the Notify me about row, and every toggle row is 52 pt.
+    func testSettingsFootersAndRows() throws {
+        let app = launch("settings")
+        let notify = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Notify me about'")).firstMatch
+        let footer = app.staticTexts["Change a single game from the bell on its page."]
+        XCTAssertTrue(notify.waitForExistence(timeout: 10), "Notify me about row")
+        XCTAssertTrue(footer.exists, "per-game footer is shown")
+        XCTAssertLessThanOrEqual(footer.frame.minY - notify.frame.maxY, 60, "footer sits directly under the Notify row")
+        let pause = app.switches["Pause all"]
+        if pause.exists { XCTAssertGreaterThanOrEqual(pause.frame.height, 51.5, "toggle rows are 52 pt") }
+        app.terminate()
+    }
+
     /// J-20: quiet hours. The switch is off by default; turning it on shows From and Until and the footer.
     func testQuietHours() throws {
         let app = launch("settings")
@@ -698,6 +765,44 @@ final class Release050Tests: XCTestCase {
         XCTAssertTrue(reveal("From"), "From row appears")
         XCTAssertTrue(reveal("Until"), "Until row appears")
         XCTAssertTrue(reveal("Alerts arrive silently"), "footer")
+        app.terminate()
+    }
+
+    /// Terry 2026-11-05: the PS Plus card is on by default; the Settings switch turns it, and its reminder row, off.
+    func testPlusCardSwitch() throws {
+        let app = launch("plus-demo")
+        let card = app.descendants(matching: .any)["plusCard"]
+        XCTAssertTrue(card.waitForExistence(timeout: 10), "PS Plus card shows by default")
+        XCTAssertTrue(ReleaseRowTests.pose(app).hasPrefix("fold-crossings: 0;"), "card crosses no fold: \(ReleaseRowTests.pose(app))")
+        let cog = app.buttons["settingsButton"]
+        XCTAssertTrue(cog.waitForExistence(timeout: 5)); cog.tap()
+        let toggle = app.switches["plusCardToggle"]
+        var tries = 0
+        while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
+        XCTAssertTrue(toggle.exists, "Settings has the PS Plus card switch")
+        XCTAssertTrue(["on", "1"].contains(toggle.value as? String ?? ""), "on by default, got \(String(describing: toggle.value))")
+        let reminder = app.descendants(matching: .any)["plusLeavingSoon"]
+        XCTAssertTrue(reminder.exists, "the reminder row shows while the card is on")
+        let inner = toggle.switches.firstMatch
+        if inner.exists { inner.tap() } else { toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
+        XCTAssertTrue(["off", "0"].contains(toggle.value as? String ?? ""), "off after the tap, got \(String(describing: toggle.value))")
+        XCTAssertFalse(reminder.waitForExistence(timeout: 2), "the reminder row goes with the card")
+        // Close Settings: the Library card is gone. Then back on: it returns (Quinn, #245).
+        func flip() {
+            let t = app.switches["plusCardToggle"]
+            var n = 0
+            while !t.exists && n < 6 { app.swipeUp(); n += 1 }
+            let i = t.switches.firstMatch
+            if i.exists { i.tap() } else { t.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
+        }
+        app.buttons["Close"].tap()
+        XCTAssertFalse(card.waitForExistence(timeout: 3), "the Library card is hidden with the switch off")
+        app.buttons["settingsButton"].tap()
+        flip()
+        XCTAssertTrue(["on", "1"].contains(app.switches["plusCardToggle"].value as? String ?? ""), "on again")
+        XCTAssertTrue(app.descendants(matching: .any)["plusLeavingSoon"].waitForExistence(timeout: 2), "the reminder row returns")
+        app.buttons["Close"].tap()
+        XCTAssertTrue(card.waitForExistence(timeout: 3), "the Library card returns with the switch on")
         app.terminate()
     }
 

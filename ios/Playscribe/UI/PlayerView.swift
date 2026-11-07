@@ -114,6 +114,9 @@ struct PlayerView: View {
     var gameID: String
     var releaseID: String
     @State private var controller: YouTubeController?
+    @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
 
     var body: some View {
         NavigationStack {
@@ -156,6 +159,7 @@ struct PlayerView: View {
             // TT-4: the standing half shows only the video; the flat half holds the transport.
             ArrangementView {
                 TabletopTransport(controller: controller, video: video, game: gameName, release: release, onClose: close)
+                    .background(alignment: .top) { if VideoReflection.isShown(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) { VideoReflection(controller: controller, poster: video.posterAsset) } }
             } secondary: {
                 surface
                     .overlay { if !controller.started { PosterCover(video: video) } }
@@ -196,6 +200,46 @@ struct PlayerView: View {
     }
 }
 
+/// Reflection mode: a faint, blurred mirror of the playing video under the controls on the flat
+/// half of the Tabletop pose. This is drawn by the app from snapshots of the player, not a system
+/// feature (no public API exists for one). View only: it never takes touches (tabletop rule).
+struct VideoReflection: View {
+    static let key = "reflectionMode"
+    /// On unless the person turns it off (Terry, 2026-11-06). The Settings toggle reads the same value.
+    static let defaultOn = true
+    /// Reduce Motion and Reduce Transparency always win over the setting (G-9).
+    static func isShown(setting: Bool, reduceMotion: Bool, reduceTransparency: Bool) -> Bool {
+        setting && !reduceMotion && !reduceTransparency
+    }
+    var controller: YouTubeController
+    /// Shown until the first snapshot lands, the same still the stage shows before playback.
+    var poster: String?
+    @State private var frame: UIImage?
+
+    var body: some View {
+        Group {
+            if let image = frame ?? poster.flatMap({ UIImage(named: $0) }) {
+                Image(uiImage: image).resizable().aspectRatio(16 / 9, contentMode: .fit)
+                    .scaleEffect(x: 1, y: -1)
+                    .blur(radius: 14)
+                    .opacity(0.35)
+                    .mask(LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom))
+            }
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+        .task(id: controller.isPlaying) {
+            guard controller.isPlaying else { return }
+            while !Task.isCancelled {
+                let cfg = WKSnapshotConfiguration()
+                cfg.snapshotWidth = 320
+                if let img = try? await controller.webView.takeSnapshot(configuration: cfg) { frame = img }
+                try? await Task.sleep(for: .milliseconds(250))
+            }
+        }
+    }
+}
+
 /// Covers YouTube's start screen on the Tabletop stage until playback begins.
 struct PosterCover: View {
     var video: ReleaseVideo
@@ -231,9 +275,10 @@ struct WatchAlong: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
                 Text("WATCH ALONG").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+                    .accessibilityAddTraits(.isHeader)
                 ForEach(Array((release.keyChanges ?? []).enumerated()), id: \.offset) { _, k in
                     HStack(alignment: .firstTextBaseline, spacing: 10) {
-                        Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
+                        Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6).accessibilityHidden(true)
                         Text(k).font(PlayscribeFont.subheadline)
                     }
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
@@ -264,6 +309,8 @@ struct TabletopTransport: View {
                 VideoCaption(video: video, game: game)
                 Slider(value: Binding(get: { controller.current }, set: { controller.seek(to: $0) }), in: 0...max(1, controller.duration))
                     .accessibilityLabel("Playback position")
+                    // Spoken as time, not a percent, and the printed times below are not read a second time.
+                    .accessibilityValue("\(PlayerTime.spoken(controller.current)) of \(PlayerTime.spoken(controller.duration))")
                     .tappableFrame()
                 HStack {
                     Text(PlayerTime.format(controller.current))
@@ -272,8 +319,10 @@ struct TabletopTransport: View {
                 }
                 .font(PlayscribeFont.caption.monospacedDigit())
                 .foregroundStyle(.secondary)
+                .accessibilityHidden(true)
                 HStack(spacing: 0) {
                     transportButton(controller.captionsOn ? "captions.bubble.fill" : "captions.bubble", "Captions", action: controller.toggleCaptions)
+                        .accessibilityValue(controller.captionsOn ? "On" : "Off")
                     Spacer()
                     transportButton("gobackward.10", "Back 10 seconds") { controller.skip(-10) }
                     Spacer()
@@ -321,6 +370,15 @@ struct TabletopTransport: View {
 }
 
 enum PlayerTime {
+    /// "one minute, twenty-three seconds", for VoiceOver.
+    static func spoken(_ t: Double) -> String {
+        let f = DateComponentsFormatter()
+        f.unitsStyle = .spellOut
+        f.allowedUnits = [.minute, .second]
+        f.zeroFormattingBehavior = .dropAll
+        return f.string(from: max(0, t.rounded())) ?? ""
+    }
+
     static func format(_ t: Double) -> String {
         let s = Int(t.rounded())
         return String(format: "%d:%02d", s / 60, s % 60)

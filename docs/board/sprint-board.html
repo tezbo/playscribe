@@ -59,6 +59,11 @@ aside h2{font-size:16px}
 .ev{padding:8px 0;border-top:1px solid var(--line);font-size:13px;display:grid;gap:2px}
 .ev b{font-weight:600}
 .when{font:500 11px var(--mono);color:var(--faint)}
+.ev a{color:inherit;text-decoration:none}.ev a:hover{text-decoration:underline}
+.ev .k{font:600 9px var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-right:6px}
+.ev.bad b,.ev.bad .k{color:var(--terry)}
+.fchips{display:flex;flex-wrap:wrap;gap:6px}.fchips .chip{padding:2px 9px;font-size:11px}
+.fstat{font-size:11px;color:var(--faint)}
 dialog{background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:12px;padding:0;width:min(560px,calc(100vw - 32px));max-height:calc(100vh - 48px)}
 dialog::backdrop{background:rgba(0,0,0,.5)}
 .dlg{padding:18px;display:grid;gap:12px}
@@ -98,7 +103,9 @@ a{color:var(--accent)}
     <div class="lanes"><div class="lanes-in" id="lanes"></div></div>
     <aside aria-labelledby="fh">
       <h2 id="fh">Live activity</h2>
-      <div class="feed" id="feed"><div class="empty">Moves, approvals and comments appear here as they happen.</div></div>
+      <div class="fchips" id="fchips" role="group" aria-label="Filter activity"></div>
+      <div class="fstat" id="fstat" role="status"></div>
+      <div class="feed" id="feed"><div class="empty">Card moves, pull requests, merges, CI, builds and write-ups appear here as they happen.</div></div>
     </aside>
   </div>
 </div>
@@ -234,11 +241,55 @@ a{color:var(--accent)}
     finally{$("nSave").disabled=false}
   };
 
-  function renderFeed(evs){
+  // Activity feed: card moves (db "activity"), a GitHub snapshot (db "feed/github", written by tools/board/github_feed.py),
+  // and a live read of the public repo (pull requests and workflow runs). Rows de-duplicate by id; live wins.
+  const GROUPS=[["all","All",null],["cards","Cards",["cards"]],["pr","PRs and merges",["pr","merge"]],["ci","CI",["ci"]],["release","Builds",["release"]],["writeup","Write-ups",["writeup","stills"]]];
+  const KLABEL={cards:"card",pr:"PR",merge:"merged",ci:"CI",release:"build",writeup:"write-up",stills:"stills",comment:"comment",push:"push"};
+  let actRows=[],snapRows=[],liveRows=[],ffilter="all",ghState="Reading GitHub…";
+  const REPO="tezbo/playscribe",KEEP=/^(main|release\/.*|rc\/.*)$/;
+  function renderFeed(){
+    const m=new Map();
+    for(const r of [...snapRows,...liveRows,...actRows])m.set(r.id,r);
+    const g=GROUPS.find(x=>x[0]===ffilter), kinds=g&&g[2];
+    const evs=[...m.values()].filter(r=>!kinds||kinds.includes(r.kind)).sort((a,b)=>b.at-a.at).slice(0,250);
+    const chips=$("fchips");chips.textContent="";
+    for(const [k,n] of GROUPS){const b=el("button","chip",n);b.type="button";b.setAttribute("aria-pressed",String(ffilter===k));b.onclick=()=>{ffilter=k;renderFeed()};chips.append(b)}
+    $("fstat").textContent=ghState;
     const f=$("feed");f.textContent="";
-    if(!evs.length){f.append(el("div","empty","Moves, approvals and comments appear here as they happen."));return}
-    for(const e of evs){const d=el("div","ev");const p=el("div");p.append(el("b",null,(e.by||"Someone")+" "),document.createTextNode(e.text||""));d.append(p,el("span","when",ago(e.at)));f.append(d)}
+    if(!evs.length){f.append(el("div","empty","Nothing here yet."));return}
+    for(const e of evs){
+      const d=el("div","ev"+(/FAILED/.test(e.text||"")?" bad":""));const p=el("div");
+      p.append(el("span","k",KLABEL[e.kind]||e.kind||""),el("b",null,(e.by||"Someone")+" "));
+      if(e.url&&/^https:\/\//.test(e.url)){const a=el("a",null,e.text||"");a.href=e.url;a.target="_blank";a.rel="noopener";p.append(a)}else p.append(document.createTextNode(e.text||""));
+      d.append(p,el("span","when",ago(e.at)));f.append(d)}
   }
+  function mergeKind(t){return /still|screenshot|capture/i.test(t)?"stills":(/^(docs|qa|research)\b|research|test plan|write-?up|report/i.test(t)?"writeup":"merge")}
+  function ghRows(pulls,runs){
+    const rows=[],add=(id,at,by,kind,text,url)=>rows.push({id,at,by,kind,text:text.slice(0,220),url});
+    for(const pr of pulls){const n=pr.number,u=pr.html_url;
+      add("pr-"+n+"-opened",Date.parse(pr.created_at),"Team","pr","PR #"+n+" opened: "+pr.title,u);
+      if(pr.merged_at)add("pr-"+n+"-merged",Date.parse(pr.merged_at),"Team",mergeKind(pr.title),"PR #"+n+" merged: "+pr.title,u);
+      else if(pr.closed_at)add("pr-"+n+"-closed",Date.parse(pr.closed_at),"Team","pr","PR #"+n+" closed: "+pr.title,u)}
+    for(const r of runs){const c=r.conclusion;if(c!=="success"&&c!=="failure")continue;
+      const special=["TestFlight","TestFlight notes","Feed","Signing check"].includes(r.name);
+      if(!special&&!KEEP.test(r.head_branch||""))continue;
+      add("run-"+r.id,Date.parse(r.updated_at),"CI",r.name==="TestFlight"&&c==="success"?"release":"ci",r.name+" "+(c==="success"?"passed":"FAILED")+" on "+r.head_branch+" ("+r.head_sha.slice(0,7)+")",r.html_url)}
+    return rows;
+  }
+  async function loadGitHub(){
+    try{const c=JSON.parse(localStorage.getItem("psb-gh")||"null");
+      if(c&&Date.now()-c.t<300000){liveRows=c.rows;ghState="GitHub live · checked "+ago(c.t);renderFeed();return}}catch(e){}
+    try{
+      const h={headers:{Accept:"application/vnd.github+json"}};
+      const [a,b]=await Promise.all([fetch("https://api.github.com/repos/"+REPO+"/pulls?state=all&sort=updated&direction=desc&per_page=100",h),fetch("https://api.github.com/repos/"+REPO+"/actions/runs?per_page=100",h)]);
+      if(!a.ok||!b.ok)throw new Error("status");
+      liveRows=ghRows(await a.json(),(await b.json()).workflow_runs||[]);
+      try{localStorage.setItem("psb-gh",JSON.stringify({t:Date.now(),rows:liveRows}))}catch(e){}
+      ghState="GitHub live · checked just now";
+    }catch(e){ghState=snapRows.length?"GitHub live read unavailable; showing the last sync ("+ago(snapAt)+")":"GitHub live read unavailable."}
+    renderFeed();
+  }
+  let snapAt=0;
 
   renderLanes();
   const timer=setTimeout(()=>{if(!db)$("livetxt").textContent="Offline. Reopen the page to reconnect."},10000);
@@ -249,8 +300,11 @@ a{color:var(--accent)}
     const fail=()=>{$("dot").classList.remove("on");$("livetxt").textContent="Lost connection. Reopen the page."};
     db.collection("cards").onSnapshot(s=>{cards=s.docs.map(x=>({id:x.id,...x.data()}));renderAll()},fail);
     db.collection("notes").onSnapshot(s=>{notes=s.docs.map(x=>({id:x.id,...x.data()}));renderAll()},fail);
-    db.collection("activity").orderBy("at","desc").limit(60).onSnapshot(s=>renderFeed(s.docs.map(x=>x.data())),fail);
+    db.collection("activity").orderBy("at","desc").limit(150).onSnapshot(s=>{actRows=s.docs.map(x=>({id:"a-"+x.id,kind:"cards",...x.data()}));renderFeed()},fail);
+    db.doc("feed/github").onSnapshot(x=>{const d=x.data&&x.data();snapRows=d&&d.rows||[];snapAt=d&&d.syncedAt||0;renderFeed()},()=>{});
+    loadGitHub();
   }).catch(()=>{clearTimeout(timer);$("livetxt").textContent="Offline. Reopen the page to reconnect."});
-  setInterval(()=>{if(db)renderLanes()},60000);
+  setInterval(()=>{if(db){renderLanes();renderFeed()}},60000);
+  setInterval(()=>{if(db)loadGitHub()},300000);
 })();
 </script>

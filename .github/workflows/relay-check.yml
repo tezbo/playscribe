@@ -1,0 +1,62 @@
+name: Relay check
+
+# Runs the push relay's tests (relay/test) on claude/* branches when relay/** changes. The iOS checks and Precheck
+# only watch ios/**, so a relay-only PR had no CI at all. Same quiet design as Precheck: GitHub emails the account that
+# triggered a run when it FAILS, and every agent push runs as Terry, so this workflow always finishes green. The verdict
+# is the name of the "verdict" job (RELAY PASS or RELAY FAIL) and a commit status named "relay-tests".
+on:
+  push:
+    branches: ['claude/**']
+    paths: ['relay/**', '.github/workflows/relay-check.yml']
+
+concurrency:
+  group: relay-check-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  statuses: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      verdict: ${{ steps.run.outputs.verdict }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run the relay tests
+        id: run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          if node --test relay/test/worker.test.mjs > relay-test.log 2>&1; then
+            verdict="RELAY PASS"; state=success; desc="Relay tests pass"
+          else
+            first=$(grep -m1 -E '^not ok' relay-test.log | cut -c1-110)
+            verdict="RELAY FAIL ${first:-see the job log}"; state=failure; desc="${first:-relay tests failed}"
+            grep -E '^not ok|error|expected|actual' relay-test.log | head -40 || true
+          fi
+          echo "$verdict"
+          echo "verdict=$verdict" >> "$GITHUB_OUTPUT"
+          curl -sS -o /dev/null -w 'status API: %{http_code}\n' -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$REPO/statuses/$SHA" \
+            -d "$(python3 -c 'import json,sys; print(json.dumps({"state": sys.argv[1], "context": "relay-tests", "description": sys.argv[2][:130]}))' "$state" "$desc")" || true
+          exit 0
+
+  verdict:
+    needs: test
+    if: always()
+    name: ${{ needs.test.outputs.verdict || 'RELAY did not run (runner problem)' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "$V"
+        env:
+          V: ${{ needs.test.outputs.verdict }}

@@ -82,6 +82,19 @@ struct NoteItem: Codable, Hashable {
         pcOnly = try c.decodeIfPresent(Bool.self, forKey: .pcOnly) ?? false
     }
 
+    /// "Be advised, the following notes contain spoilers..."
+    static func isSpoilerWarning(_ text: String) -> Bool {
+        let t = Self.plain(text)
+        return t.count < 200 && t.contains("spoiler") && (t.hasPrefix("be advised") || t.hasPrefix("spoiler warning") || t.hasPrefix("warning") || t.hasPrefix("note:") || t.hasPrefix("heads up") || t.hasPrefix("the following"))
+    }
+    /// A developer's greeting, such as "Hello!".
+    static func isGreeting(_ text: String) -> Bool {
+        ["hello", "hi", "hi all", "hey", "hello everyone", "hi everyone"].contains(plain(text))
+    }
+    private static func plain(_ text: String) -> String {
+        LinkedText.clean(text).lowercased().trimmingCharacters(in: .whitespacesAndNewlines.union(.punctuationCharacters))
+    }
+
     var text: String
     /// nil means every platform.
     var platforms: [Platform]?
@@ -97,6 +110,29 @@ struct NoteItem: Codable, Hashable {
 struct NoteSection: Codable, Hashable {
     var title: String
     var items: [NoteItem]
+
+    init(title: String, items: [NoteItem]) {
+        self.title = title
+        self.items = Self.hidingSpoilers(items)
+    }
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        title = try c.decode(String.self, forKey: .title)
+        items = Self.hidingSpoilers(try c.decode([NoteItem].self, forKey: .items))
+    }
+    private enum CodingKeys: String, CodingKey { case title, items }
+
+    /// Studios often write "Be advised, the following notes contain spoilers" and then list the
+    /// story changes. Every line after that warning is marked as a spoiler, so it hides behind the
+    /// same "Story spoilers hidden / Show" switch as any other story content (R-5).
+    static func hidingSpoilers(_ items: [NoteItem]) -> [NoteItem] {
+        guard let warn = items.firstIndex(where: { NoteItem.isSpoilerWarning($0.text) }) else { return items }
+        return items.enumerated().map { i, item in
+            var item = item
+            if i > warn && item.spoiler == nil { item.spoiler = true }
+            return item
+        }
+    }
 }
 
 struct PlatformRelease: Codable, Hashable {
@@ -186,11 +222,15 @@ struct Release: Codable, Hashable, Identifiable {
         }
     }
     var digest: Digest?
+    /// A PS4 patch for a game that plays on PS5 through backward compatibility (feed `ps4`, docs/api.md).
+    var ps4: Bool?
+    /// The label the app shows on a PS4 patch; nil otherwise. Never a version number.
+    var ps4Label: String? { ps4 == true ? "PS4 update" : nil }
 
     // JSON keys follow docs/api.md (camelCase "Id").
     enum CodingKeys: String, CodingKey {
         case id, gameID = "gameId", displayName, kind, kindBasis, announcedAt, notes, sourceIDs = "sourceIds", platforms
-        case headline, summary, keyChanges, video, videoNote, pushLine, links, simulated, arrivesAt, digest
+        case headline, summary, keyChanges, video, videoNote, pushLine, links, simulated, arrivesAt, digest, ps4
     }
 
     init(id: String, gameID: String, displayName: String, kind: ReleaseKind, kindBasis: KindBasis, announcedAt: Date,
@@ -223,6 +263,7 @@ struct Release: Codable, Hashable, Identifiable {
         simulated = try c.decodeIfPresent(Bool.self, forKey: .simulated)
         arrivesAt = try c.decodeIfPresent(Date.self, forKey: .arrivesAt)
         digest = try? c.decodeIfPresent(Digest.self, forKey: .digest)
+        ps4 = try? c.decodeIfPresent(Bool.self, forKey: .ps4)
     }
 
     /// Combines a feed record with Playscribe's curated record for the same release: the feed's

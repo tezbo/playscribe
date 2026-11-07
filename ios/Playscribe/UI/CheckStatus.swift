@@ -20,7 +20,7 @@ extension AppModel {
     }
 
     /// "3 Nov, 14:20"
-    static func checkedStamp(_ d: Date) -> String { "\(d.dayMonth), \(d.formatted(date: .omitted, time: .shortened))" }
+    static func checkedStamp(_ d: Date) -> String { "\(d.localDayMonth), \(d.formatted(date: .omitted, time: .shortened))" }
 
     /// Retry: check again and say the result aloud, since the line changes silently (a11y pass).
     func retryCheck() async {
@@ -122,7 +122,6 @@ struct CaughtUpCard: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
         .background(PlayscribeColor.ink800, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .padding(.horizontal, 16)
         .accessibilityElement(children: .combine)
     }
 }

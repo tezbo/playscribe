@@ -54,7 +54,7 @@ struct AddGameSheet: View {
                 if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
                 if model.addSearchFocus { model.addSearchFocus = false; Task { try? await Task.sleep(for: .milliseconds(600)); searchFocused = true } }
             }
-            .navigationTitle(titleHidden || duo.pose == .tabletop ? "" : custom ? "Add your own game" : matches != nil ? "Found games" : method == nil ? "Add games" : method!.title)
+            .navigationTitle(titleHidden || duo.pose == .tabletop ? "" : sheetTitle)
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillChangeFrameNotification)) { note in
                 let end = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) ?? .zero
                 keyboardHeight = end.minY >= UIScreen.main.bounds.height ? 0 : end.height
@@ -78,6 +78,7 @@ struct AddGameSheet: View {
                     }
                 }
             }
+            .safeAreaInset(edge: .top, spacing: 0) { tabletopHeader }
             // One confirm bar pinned to the bottom of the sheet (Terry, 0.2.0): no scrolling back
             // up to add. The sheet's bottom is the lower half in Tabletop and clear of the hinge.
             .safeAreaInset(edge: .bottom) {
@@ -105,6 +106,39 @@ struct AddGameSheet: View {
         .task(id: query) {
             try? await Task.sleep(for: .milliseconds(250))
             if !Task.isCancelled { debounced = query }
+        }
+    }
+
+    private var sheetTitle: String {
+        custom ? "Add your own game" : matches != nil ? "Found games" : method == nil ? "Add games" : method!.title
+    }
+
+    /// Tabletop (Quinn, Iris, ca940e5): the nav bar is hidden to keep the lower half roomy, so the
+    /// title, Back and Close live in this row: 24 pt under the fold band, Close 44 pt at the
+    /// trailing edge. Nothing here is above the fold (G-4).
+    @ViewBuilder private var tabletopHeader: some View {
+        if duo.pose == .tabletop && !custom {
+            HStack(spacing: 8) {
+                if method != nil {
+                    Button { if matches != nil { matches = nil } else { method = nil } } label: {
+                        Image(systemName: "chevron.backward").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+                    }
+                    .accessibilityLabel("Back")
+                    .accessibilityIdentifier("back")
+                    .tappableFrame()
+                }
+                if !titleHidden { Text(sheetTitle).font(PlayscribeFont.title3).lineLimit(1) }
+                Spacer(minLength: 0)
+                Button { dismiss() } label: {
+                    Image(systemName: "xmark").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+                }
+                .accessibilityLabel("Close")
+                .accessibilityIdentifier("close")
+                .tappableFrame()
+            }
+            .padding(.horizontal, 16)
+            .frame(height: 56)
+            .background(Color.ink0)
         }
     }
 
@@ -272,7 +306,7 @@ struct AddRow: View {
                 // One mark per row: the circle on the right becomes a tick (no badge on the cover).
                 CoverView(game: game, cornerRadius: 4).frame(width: 40)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
+                    Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).fixedSize(horizontal: false, vertical: true)
                     Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                 }
                 Spacer(minLength: 8)
