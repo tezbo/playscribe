@@ -23,17 +23,25 @@ final class PlayscribeUITests: XCTestCase {
             // launch in postAndFindNotification replaced it, so ask a fresh proxy for the target app's state (3758183 and
             // e9a735d: a bare assertion here failed with no message).
             let target = XCUIApplication()
+            // "Foreground" alone proves nothing: the app can be in front because the tap never reached SpringBoard's notification (a
+            // locked sim, a missed row). The proof is that the app received the tap's response (INTERNAL probe), so wait for that,
+            // and tap again, unlocking first, when it did not arrive (7631ff2: foreground, response "none", Library showing).
+            func responseDelivered(_ timeout: TimeInterval) -> Bool {
+                let probe = target.descendants(matching: .any)["qaNotificationResponse"]
+                let deadline = Date.now.addingTimeInterval(timeout)
+                repeat {
+                    if probe.exists, !probe.label.hasSuffix("none") { return true }
+                    usleep(300_000)
+                } while Date.now < deadline
+                return false
+            }
             var foreground = target.wait(for: .runningForeground, timeout: 8)
-            // A tap that lands while Notification Center is still sliding, or as the banner leaves, is swallowed by SpringBoard
-            // (10f6e004 Mac solo run: row found and tapped, app left in the background, state 3). A person would tap again, so
-            // find the row afresh and tap it once more, up to twice, before calling it a failure.
+            var delivered = foreground && responseDelivered(6)
             var retries = 0
-            while !foreground && retries < 2 {
-                // 48404f1: the sim sat on the LOCK SCREEN, where a notification tap does not open the app. Swipe up from the
-                // bottom to unlock (a no-op on the Home Screen), then find the row again, in Notification Center if need be.
+            while !delivered && retries < 2 {
+                // Unlock (a swipe up from the bottom; harmless if not locked), pull Notification Center down, find the row, tap.
                 springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.99))
                     .press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.4)))
-                if target.state == .runningForeground { foreground = true; break }
                 var again = notificationRow(timeout: 3)
                 if again == nil {
                     springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
@@ -44,6 +52,7 @@ final class PlayscribeUITests: XCTestCase {
                 row.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
                 retries += 1
                 foreground = target.wait(for: .runningForeground, timeout: 8)
+                delivered = foreground && responseDelivered(6)
             }
             if retries > 0 {
                 let note = XCTAttachment(string: "retried \(retries) time(s) before the app came to the foreground (\(cold ? "cold" : "warm"))")
