@@ -136,7 +136,7 @@ struct UpcomingView: View {
 
     private func dateLine(_ g: CatalogGame) -> String {
         // Ezra's copy: "Out today" on release day, otherwise the date line ("Out" only for dated, near releases).
-        if (g.releasePrecision ?? .day) == .day, let d = g.releaseDate?.isoDay, Calendar.current.isDateInToday(d) { return "Out today" }
+        if (g.releasePrecision ?? .day) == .day, let d = g.releaseDate?.isoDay, Date.sameUTCDay(d, .now) { return "Out today" }
         let line = g.ps5DateLine ?? "Date to be announced"
         return line == "Release date TBA" ? "Date to be announced" : line
     }

@@ -197,6 +197,9 @@ final class AppModel {
     var focusReleaseID: String?
     var focusToken = 0
     var showDebugOverlay = false
+    /// QA (route "many-updates"): pad the deck with copies of its cards (distinct ids) up to 12, so the Open
+    /// portrait "+N more updates" chip shows whatever the library holds.
+    var qaPadDeck = false
     /// QA (routes "one-update", "two-update") and tests: how many fresh unread updates the demo has; 0 is the normal demo.
     var qaUpdateCount = 0
     var qaSingleUpdate: Bool {
@@ -599,8 +602,12 @@ final class AppModel {
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
+        case "store-set": loadStoreSet()
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
+        case "many-updates": resetToManyUpdatesDemo()
+        case "three-update": resetToUpdateDemo(count: 3)
+        case "four-update": resetToUpdateDemo(count: 4)
         case "caught-up": resetToCaughtUpDemo()
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
@@ -857,6 +864,7 @@ final class AppModel {
     }
 
     func resetDemo() {
+        qaPadDeck = false
         qaUpdateCount = 0
         qaFreshCache = nil
         data = PersistedState(collection: fixtures.seedCollection)
@@ -881,8 +889,7 @@ final class AppModel {
     }
 
     /// QA and tests: the full demo library with exactly one fresh, unread On PS5 update (so the Library
-    /// hero shows), every other update read, and the "Also new" panel seeing no other updates, which
-    /// is the panel's "What's new" fallback.
+    /// hero shows) and every other update read.
     func resetToOneUpdateDemo() {
         resetDemo()
         qaUpdateCount = 1
@@ -901,21 +908,21 @@ final class AppModel {
         qaUpdateCount = 2
     }
 
-    /// The updates beside the deck in the Library (Open portrait): every update in the deck except the
-    /// front card's, newest first, so nothing repeats.
-    func alsoNewReleases(excludingRelease id: String?, limit: Int = 6) -> [Release] {
-        let all = latestDeck.compactMap(\.release)
-        // One row per game (its latest update), and never the deck's front game (Iris, 3548a21).
-        let frontGame = all.first { $0.id == id }?.gameID
-        var seen = Set<String>()
-        var out: [Release] = []
-        for r in all.sorted(by: { $0.ps5Date > $1.ps5Date }) {
-            // Updates only: a headline-only post (no version in its name) is News, not an update (Iris, 20d77ea).
-            guard r.versionChip != nil, r.gameID != frontGame, seen.insert(r.gameID).inserted else { continue }
-            out.append(r)
-            if out.count == limit { break }
-        }
-        return out
+    /// QA (route "many-updates"): every catalog game with an On PS5 update joins the library, so the deck is full
+    /// and the Open portrait "+N more updates" chip shows when more than 8 updates qualify.
+    func resetToManyUpdatesDemo() {
+        resetDemo()
+        let have = Set(data.collection.map(\.gameID))
+        let more = fixtures.games.filter { !have.contains($0.id) && !ps5Releases($0.id).filter { $0.ps5State == .onPS5 }.isEmpty }
+        addGames(more, status: .owned)
+        qaPadDeck = true
+    }
+
+    /// QA (routes "three-update", "four-update"): `count` fresh updates from different games, so the deck
+    /// has that many unread cards.
+    func resetToUpdateDemo(count: Int) {
+        resetDemo()
+        qaUpdateCount = count
     }
 
     #if INTERNAL

@@ -475,8 +475,7 @@ struct ReadTimeTests {
 
 @MainActor
 struct OneUpdateDemoTests {
-    /// The `one-update` QA route: the Library hero shows (one fresh unread update) and the "Also new"
-    /// panel has nothing else to list, so it falls back to "What's new".
+    /// The `one-update` QA route: the Library hero shows (one fresh unread update).
     @Test func oneUpdateRouteLeavesExactlyOneFreshUpdate() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "one-\(UUID().uuidString).json"))
         m.resetToOneUpdateDemo()
@@ -485,7 +484,7 @@ struct OneUpdateDemoTests {
         #expect(hero != nil, "the hero shows")
         let unread = m.data.collection.flatMap { m.releases($0.gameID) }.filter(m.isUnread)
         #expect(unread.count == 1)
-        if let hero { #expect(m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
+        #expect(hero != nil)
     }
 
     /// The `two-update` QA route: exactly two fresh unread updates, from different games.
@@ -498,21 +497,17 @@ struct OneUpdateDemoTests {
         #expect(m.latestDeck.count == 2)
     }
 
-    @Test func demoRouteListsOtherUpdatesBesideTheHero() {
-        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
-        m.resetDemo()
-        if let hero = m.continueItem { #expect(!m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
-    }
-
-    /// Also new: one row per game, never the deck front card's game (Iris, 3548a21).
-    @Test func alsoNewHasOneRowPerGameAndSkipsTheFrontGame() {
-        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
-        m.resetDemo()
-        guard let front = m.latestDeck.first?.release else { return }
-        let rows = m.alsoNewReleases(excludingRelease: front.id)
-        let games = rows.map(\.gameID)
-        #expect(Set(games).count == games.count)
-        #expect(!games.contains(front.gameID))
+    /// The `three-update` and `four-update` QA routes: that many fresh unread updates from different games,
+    /// all in the one full-width deck (the Also new panel is gone, Terry 2026-11-06).
+    @Test func threeAndFourUpdateRoutesFillTheDeck() {
+        for (n, reset) in [(3, { (m: AppModel) in m.resetToUpdateDemo(count: 3) }), (4, { (m: AppModel) in m.resetToUpdateDemo(count: 4) })] {
+            let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "n\(n)-\(UUID().uuidString).json"))
+            reset(m)
+            let unread = m.data.collection.flatMap { m.releases($0.gameID) }.filter(m.isUnread)
+            #expect(unread.count == n)
+            #expect(Set(unread.map(\.gameID)).count == n)
+            #expect(m.latestDeck.count == n)
+        }
     }
 }
 
@@ -611,6 +606,30 @@ struct QARouteGuardTests {
         #expect(m.qaRoute == nil)
     }
 
+    @Test("The store set never loads in a distribution build (r052-store-set-content)")
+    func storeSetStaysOutOfDistribution() {
+        BuildChannel.overrideIsDistribution = true
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        let before = m.data.collection
+        m.handle(url: URL(string: "playscribe://store-set")!)
+        m.applyQALaunch(route: "store-set", overlay: false)
+        m.loadStoreSet()
+        #expect(m.data.collection == before)
+        #expect(m.data.customGames.isEmpty)
+    }
+
+    @Test("The store set loads five invented games in an internal build (r052-store-set-content)")
+    func storeSetLoadsInternally() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        m.handle(url: URL(string: "playscribe://store-set")!)
+        #expect(m.data.collection.map(\.gameID) == StoreSet.gameIDs)
+        #expect(m.data.customGames.count == 5)
+        #expect(m.data.simulated.count == 3)
+    }
+
     @Test("A developer or simulator build still runs QA routes")
     func internalBuildRunsRoutes() {
         BuildChannel.overrideIsDistribution = false
@@ -695,5 +714,72 @@ struct BackCatalogueTests {
         let ported = release("g@port", patchedDaysAgo: 1_800, alertDaysAgo: 1)
         model.markPastAsRead([ported])
         #expect(model.data.read[ported.id] == nil)
+    }
+}
+
+/// Patch dates are the UTC calendar day on every device (Nadia, 7 Nov 2026). These swap the process time zone, so they run one at a time.
+@Suite("Patch dates in any time zone", .serialized)
+struct UTCDayTests {
+    nonisolated static let zones = ["UTC", "Australia/Sydney", "Pacific/Auckland", "America/Los_Angeles", "Pacific/Kiritimati"]
+
+    private func withZone(_ id: String, _ body: () -> Void) {
+        let saved = NSTimeZone.default
+        NSTimeZone.default = TimeZone(identifier: id)!
+        defer { NSTimeZone.default = saved }
+        body()
+    }
+
+    @Test("a patch posted late on 25 Jun UTC reads 25 Jun everywhere; the next UTC midnight reads 26 Jun", arguments: zones)
+    func sameDayEverywhere(_ zone: String) {
+        let late = Date(timeIntervalSince1970: 1_782_431_999)     // 2026-06-25T23:59:59Z
+        let next = Date(timeIntervalSince1970: 1_782_432_000)     // 2026-06-26T00:00:00Z
+        withZone(zone) {
+            #expect(late.shortDay == "25 Jun 2026", "\(zone)")
+            #expect(late.dayMonth == "25 Jun", "\(zone)")
+            #expect(next.shortDay == "26 Jun 2026", "\(zone)")
+        }
+    }
+
+    @Test("a plain release day (noon UTC) keeps its day in every zone", arguments: zones)
+    func releaseDayStable(_ zone: String) {
+        withZone(zone) { #expect("2026-06-25".isoDay?.shortDay == "25 Jun 2026", "\(zone)") }
+    }
+
+    @Test("sameUTCDay splits at UTC midnight, even where the local day differs (Sydney)")
+    func sameUTCDayInSydney() {
+        let before = Date(timeIntervalSince1970: 1_782_431_999)   // 2026-06-25T23:59:59Z, 09:59 on 26 Jun in Sydney
+        let after = Date(timeIntervalSince1970: 1_782_432_000)    // 2026-06-26T00:00:00Z
+        withZone("Australia/Sydney") {
+            #expect(!Date.sameUTCDay(before, after))
+            #expect(Date.sameUTCDay(before, before.addingTimeInterval(-86_000)))
+            #expect(Date.sameUTCDay(after, after.addingTimeInterval(86_000)))
+        }
+    }
+}
+
+@Suite("QAPose launch argument")
+struct QAPoseTests {
+    @Test("book and tabletop give DuoReader a synthetic fold of the right shape, closed and open give none")
+    func foldShapes() {
+        let landscape = CGSize(width: 867, height: 635)
+        let book = QAPose.regions(named: "book", size: landscape)
+        let ctxBook = DuoReader<EmptyView>.context(size: landscape, compact: false, division: book?.division, occlusions: [])
+        #expect(ctxBook.pose == .book)
+        let portrait = CGSize(width: 669, height: 835)
+        let table = QAPose.regions(named: "tabletop", size: portrait)
+        let ctxTable = DuoReader<EmptyView>.context(size: portrait, compact: false, division: table?.division, occlusions: [])
+        #expect(ctxTable.pose == .tabletop)
+        #expect(abs((table?.division?.minY ?? 0) - 835 * 0.447) < 0.5)
+        #expect(QAPose.regions(named: "open", size: portrait) == nil)
+        #expect(QAPose.regions(named: nil, size: portrait) == nil)
+    }
+
+    @Test("a distribution build ignores -qaPose")
+    func distributionIgnores() {
+        BuildChannel.overrideIsDistribution = true
+        QAPose.overrideName = "tabletop"
+        defer { BuildChannel.overrideIsDistribution = nil; QAPose.overrideName = nil }
+        #expect(QAPose.name == nil)
+        #expect(QAPose.injected(size: CGSize(width: 669, height: 835)) == nil)
     }
 }
