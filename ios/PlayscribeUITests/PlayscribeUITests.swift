@@ -33,6 +33,14 @@ final class PlayscribeUITests: XCTestCase {
                 retries += 1
                 foreground = target.wait(for: .runningForeground, timeout: 8)
             }
+            if retries > 0 {
+                let note = XCTAttachment(string: "retried \(retries) time(s) before the app came to the foreground (\(cold ? "cold" : "warm"))")
+                note.name = "n6-retried-\(retries)-" + (cold ? "cold" : "warm"); note.lifetime = .keepAlways; add(note)
+            }
+            // Quinn: one swallowed tap is SpringBoard; two in a cold launch is the app not coming up, so that is a failure.
+            if cold && foreground && retries >= 2 {
+                XCTFail("cold: the notification needed \(retries) retries to bring Playscribe to the foreground; the first taps did nothing")
+            }
             if !foreground {
                 let tree = XCTAttachment(string: springboard.debugDescription); tree.name = "n6-springboard-hierarchy-" + (cold ? "cold" : "warm"); tree.lifetime = .keepAlways; add(tree)
             }
