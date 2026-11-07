@@ -701,7 +701,7 @@ struct BackCatalogueTests {
 /// Patch dates are the UTC calendar day on every device (Nadia, 7 Nov 2026). These swap the process time zone, so they run one at a time.
 @Suite("Patch dates in any time zone", .serialized)
 struct UTCDayTests {
-    static let zones = ["UTC", "Australia/Sydney", "Pacific/Auckland", "America/Los_Angeles", "Pacific/Kiritimati"]
+    nonisolated static let zones = ["UTC", "Australia/Sydney", "Pacific/Auckland", "America/Los_Angeles", "Pacific/Kiritimati"]
 
     private func withZone(_ id: String, _ body: () -> Void) {
         let saved = NSTimeZone.default
