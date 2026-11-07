@@ -211,7 +211,7 @@ struct ReleasePage: View {
                     }
                 }
                 if r.isPS5Listed {
-                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }.padding(.trailing, 24)
+                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }.padding(.trailing, 24).padding(.vertical, 6)
                 }
             } else {
             HStack(spacing: 8) {

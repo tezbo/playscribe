@@ -78,7 +78,7 @@ struct ShareUpdateButton: View {
                         .font(PlayscribeFont.title3)
                         .foregroundStyle(Color.primary)
                         .frame(width: 44, height: 44)
-                        .background(Circle().fill(PlayscribeColor.ink800).overlay(Circle().fill(.regularMaterial)))
+                        .background(Circle().fill(PlayscribeColor.ink800).overlay(Circle().fill(.regularMaterial)).overlay(Circle().strokeBorder(Color.primary.opacity(0.35), lineWidth: 1)))
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(RailPressStyle())
