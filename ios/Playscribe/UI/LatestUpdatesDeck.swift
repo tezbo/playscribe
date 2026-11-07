@@ -626,6 +626,7 @@ struct DeckStage: View {
     /// Upcoming tab: the stage fronts the soonest unreleased game, so it carries an eyebrow and the date line, not an update.
     var upcomingLine: String? = nil
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var stageBottom: CGFloat = 0
 
     var body: some View {
@@ -641,8 +642,13 @@ struct DeckStage: View {
                     ArtView(asset: card.game.keyArtAsset, game: card.game, drift: true)
                     // A fixed scrim, independent of the art and of the caption's height: clear at the top of the stage, ink 950 at
                     // 0.8 from the caption block down (Iris, Quinn: stage legibility).
-                    LinearGradient(stops: [.init(color: .clear, location: 0.3),
-                                           .init(color: PlayscribeColor.ink950.opacity(0.8), location: 0.75)],
+                    // At accessibility sizes the caption is tall and sits higher in the stage, so the scrim reaches full strength sooner
+                    // and a little darker (Quinn: cream on beige at AX5).
+                    LinearGradient(stops: typeSize.isAccessibilitySize
+                                       ? [.init(color: .clear, location: 0.1),
+                                          .init(color: PlayscribeColor.ink950.opacity(0.9), location: 0.4)]
+                                       : [.init(color: .clear, location: 0.3),
+                                          .init(color: PlayscribeColor.ink950.opacity(0.8), location: 0.75)],
                                    startPoint: .top, endPoint: .bottom)
                 }
             }

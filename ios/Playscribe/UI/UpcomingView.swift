@@ -186,7 +186,9 @@ struct UpcomingView: View {
                     Text("Watch a game that isn't out yet and Playscribe will tell you when its first update lands.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
                 }
-                .frame(maxWidth: .infinity)
+                // Book: the empty state stays on the left page, centred there, never across the spine (Quinn, #348).
+                .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.vertical, 20)
                 .accessibilityElement(children: .combine)
             } else {
