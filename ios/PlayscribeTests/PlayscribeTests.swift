@@ -883,3 +883,21 @@ struct QAPoseTests {
         #expect(QAPose.injected(size: CGSize(width: 669, height: 835)) == nil)
     }
 }
+
+
+@Suite("Roman numeral glue")
+struct RomanNumeralGlueTests {
+    @Test("a trailing numeral is tied to the word before it (r060-nbsp-roman-numerals)")
+    func gluesTrailingNumeral() {
+        #expect("Kingdom Come: Deliverance II".gluingTrailingNumeral == "Kingdom Come: Deliverance\u{00A0}II")
+        #expect("Final Fantasy X".gluingTrailingNumeral == "Final Fantasy\u{00A0}X")
+        #expect("Hades II".gluingTrailingNumeral.split(separator: " ").count == 1, "no breaking space is left")
+    }
+
+    @Test("other titles are unchanged")
+    func leavesOthers() {
+        for t in ["Hades", "X", "II", "Control Resonant", "Wukong 2", "Civilization VII Remastered", "Tower of Mix", "Alien: Isolation"] {
+            #expect(t.gluingTrailingNumeral == t, "\(t)")
+        }
+    }
+}

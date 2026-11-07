@@ -116,6 +116,17 @@ extension Date {
 }
 
 extension String {
+    /// "Deliverance II" with a no-break space before a trailing Roman numeral, so the numeral never wraps onto a line of its own
+    /// (Open portrait showed "II ✓" alone under "Deliverance"; r060-nbsp-roman-numerals). Only a numeral up to XX after at least one
+    /// other word; every other title is returned unchanged.
+    var gluingTrailingNumeral: String {
+        guard let space = lastIndex(of: " ") else { return self }
+        let last = self[index(after: space)...]
+        let numerals: Set<Substring> = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"]
+        guard numerals.contains(last), self[..<space].contains(where: { !$0.isWhitespace }) else { return self }
+        return String(self[..<space]) + "\u{00A0}" + last
+    }
+
     /// ISO day ("2026-09-03") to a Date at noon UTC.
     var isoDay: Date? {
         var c = DateComponents()
