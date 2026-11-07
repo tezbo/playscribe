@@ -43,7 +43,7 @@ jobs:
         working-directory: backend
         run: npm run ps5-index --silent -- --early-diagnostic
       - name: Inspect
-        if: inputs.inspect && !inputs.diagnose
+        if: inputs.inspect
         working-directory: backend
         run: npm run ps5-index --silent -- --inspect "${{ inputs.inspect }}"
       - name: Rebuild
