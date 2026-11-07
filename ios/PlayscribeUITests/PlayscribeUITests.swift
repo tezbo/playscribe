@@ -453,6 +453,8 @@ final class LibraryLayoutTests: XCTestCase {
         app.terminate()
         app.launchArguments = ["-qaRoute", "library"]
         app.launch()
+        // Open portrait (48404f1): the capture was the App Switcher and no tiles were found, so bring the app back first.
+        if !app.wait(for: .runningForeground, timeout: 10) { app.activate() }
         sleep(4)
         let pose = ReleaseRowTests.pose(app)
         var checked = 0

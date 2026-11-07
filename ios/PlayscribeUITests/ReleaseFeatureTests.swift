@@ -241,7 +241,15 @@ final class ReleaseFeatureTests: XCTestCase {
         if inTabletop { throw XCTSkip("Tabletop has no keyboard: its add search is read-only with an A to Z strip (#179)") }
         let search = app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: 10))
-        search.tap()
+        // Open portrait (48404f1): "Neither element nor any descendant has keyboard focus". The route already asks for focus, and
+        // a second tap on a focused field can drop it, so wait for focus, tap only if it did not arrive, then wait again.
+        func focused() -> Bool { (search.value(forKey: "hasKeyboardFocus") as? Bool) == true }
+        let deadline = Date.now.addingTimeInterval(4)
+        while !focused() && Date.now < deadline { usleep(250_000) }
+        if !focused() { search.tap() }
+        let deadline2 = Date.now.addingTimeInterval(4)
+        while !focused() && Date.now < deadline2 { usleep(250_000) }
+        XCTAssertTrue(focused(), "the add search has keyboard focus")
         search.typeText("Hades")
         let result = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Hades'")).firstMatch
         guard result.waitForExistence(timeout: 10) else { throw XCTSkip("no catalogue match for Hades in this fixture") }
