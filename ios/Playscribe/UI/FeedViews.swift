@@ -77,13 +77,13 @@ struct FeedRow: View {
                     }
                     if typeSize.isAccessibilitySize {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(model.game(release.gameID)?.name ?? "")
+                            Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
                             Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
                         }
                         .font(PlayscribeFont.caption)
                     } else {
                         HStack(spacing: 8) {
-                            Text(model.game(release.gameID)?.name ?? "")
+                            Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
                             Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
                         }
                         .font(PlayscribeFont.caption)
