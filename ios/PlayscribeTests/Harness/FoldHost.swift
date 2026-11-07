@@ -212,6 +212,18 @@ enum FoldHost {
         let size = r.pose.windowSize
         let format = UIGraphicsImageRendererFormat()
         format.scale = 1
+        // The system's own bars float over the page offscreen, where the Duo draws them in its own place (docs/fold-harness.md), so
+        // they are hidden for the still and put back after. What is left is the app's own layout.
+        var hidden: [UIView] = []
+        func hideChrome(_ v: UIView) {
+            let name = String(describing: Swift.type(of: v))
+            if !v.isHidden, ["TabBar", "NavigationBar", "FloatingBar", "PocketView", "Toolbar"].contains(where: name.contains) {
+                v.isHidden = true; hidden.append(v); return
+            }
+            v.subviews.forEach(hideChrome)
+        }
+        hideChrome(r.controller.view)
+        defer { hidden.forEach { $0.isHidden = false } }
         let image = UIGraphicsImageRenderer(size: size, format: format).image { _ in
             r.controller.view.drawHierarchy(in: CGRect(origin: .zero, size: size), afterScreenUpdates: true)
         }
