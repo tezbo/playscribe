@@ -64,7 +64,10 @@ struct FeedRow: View {
     var body: some View {
         let unread = model.isUnread(release)
         Button { model.openGame(release.gameID, chapter: .updates, releaseID: release.id) } label: {
-            HStack(spacing: 12) {
+            // At accessibility sizes the thumbnail sits above the text so the column gets the row's full width: a game
+            // name never breaks inside a word and a date stays whole (Iris, AX5).
+            let rowLayout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 12))
+            rowLayout {
                 if let g = model.game(release.gameID) { CoverView(game: g, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 3) {
                     // At accessibility sizes the row stacks: the title takes the full width in whole words,
@@ -78,7 +81,7 @@ struct FeedRow: View {
                     if typeSize.isAccessibilitySize {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
-                            Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
+                            Text(release.ps5Date.shortDay).foregroundStyle(.secondary).fixedSize()
                         }
                         .font(PlayscribeFont.caption)
                     } else {
