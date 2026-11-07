@@ -284,6 +284,7 @@ struct LibraryShelf: View {
             ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
         let all = model.libraryRows
         ScrollView {
+          ScrollViewReader { proxy in
             VStack(alignment: .leading, spacing: 14) {
                 // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
                 if closedWide {
@@ -457,6 +458,15 @@ struct LibraryShelf: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
             .padding(.trailing, railWidth)
+            // A route that sets a library anchor (store-set/end, quick/*, a just-added game) scrolls there once the grid
+            // has laid out. `scrollPosition(id:)` alone ignored an anchor set before the first layout (gate ada480a:
+            // store-set/end stills identical to store-set); the proxy scrolls by view id, after the grid exists.
+            .task {
+                guard let id = model.nav.anchors["library"] else { return }
+                try? await Task.sleep(for: .milliseconds(700))
+                proxy.scrollTo(id, anchor: .top)
+            }
+          }
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
         // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.
