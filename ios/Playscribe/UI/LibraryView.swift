@@ -562,18 +562,26 @@ struct FilterBar: View {
                 ForEach(LibraryFilter.allCases) { f in chip(f, rows: rows) }
             }
         } else {
+            // R-7: the row fades at an edge only while more chips are off screen on that side, and it comes to
+            // rest with a whole chip at the leading edge (never cut mid-glyph).
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 8) {
                     ForEach(LibraryFilter.allCases) { f in chip(f, rows: rows) }
                 }
+                .scrollTargetLayout()
                 .padding(.trailing, 24)
             }
-            .edgeFade(40)
+            .scrollTargetBehavior(.viewAligned)
+            .fadesWhereMoreScrolls(24)
         }
     }
 }
 
 extension View {
+    /// R-7: a horizontal row fades into the background only on the sides that have more to scroll to:
+    /// trailing while chips are off screen to the right, leading once scrolled.
+    func fadesWhereMoreScrolls(_ width: CGFloat = 24) -> some View { modifier(FadesWhereMoreScrolls(width: width)) }
+
     /// R-7: a scrolling chip row fades at its edges instead of clipping hard.
     func edgeFade(_ width: CGFloat = 24) -> some View {
         mask {
@@ -1207,4 +1215,23 @@ private struct SqueezePop: ViewModifier {
 
 extension View {
     func squeezePop(id: String, isNew: Bool) -> some View { modifier(SqueezePop(id: id, isNew: isNew)) }
+}
+
+private struct FadesWhereMoreScrolls: ViewModifier {
+    var width: CGFloat
+    @State private var moreBefore = false
+    @State private var moreAfter = false
+
+    func body(content: Content) -> some View {
+        content
+            .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.x > 1 } action: { _, new in moreBefore = new }
+            .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.x + $0.containerSize.width < $0.contentSize.width - 1 } action: { _, new in moreAfter = new }
+            .mask {
+                HStack(spacing: 0) {
+                    if moreBefore { LinearGradient(colors: [.clear, .black], startPoint: .leading, endPoint: .trailing).frame(width: width) }
+                    Rectangle()
+                    if moreAfter { LinearGradient(colors: [.black, .clear], startPoint: .leading, endPoint: .trailing).frame(width: width) }
+                }
+            }
+    }
 }
