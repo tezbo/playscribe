@@ -78,21 +78,61 @@ struct FoldHarnessTests {
         if p.expected != .tabletop { HarnessRules.checkLibraryToolbar(r) }
     }
 
-    // MARK: Accessibility text sizes (7fe84f4, AX3)
+    // MARK: Accessibility text sizes (7fe84f4, AX3; all poses at AX3 and AX5 since the #292 / landscape-width review)
 
-    @Test(arguments: ["closed", "open", "openPortrait"], [0, 1])
+    /// The deck bound at AX3 and AX5 in the three poses it was asserted in before. A hung or looping layout (#292 in Tabletop) now
+    /// fails this test by name through the time limit instead of stalling the run.
+    @Test(.timeLimit(.minutes(2)), arguments: ["closed", "open", "openPortrait"], [0, 1])
     func deckStaysBoundedAtAccessibilitySizes(_ id: String, _ sizeIndex: Int) async throws {
         let p = HarnessPose.named(id)
         let size: UIContentSizeCategory = sizeIndex == 0 ? .accessibilityExtraLarge : .accessibilityExtraExtraExtraLarge
-        let r = try #require(await FoldHost.render(p, type: size))
+        let r = try #require(await HarnessRules.timedRender(p, type: size))
         defer { FoldHost.dispose(r) }
         HarnessRules.checkDeck(r, maxFraction: 0.5)
+    }
+
+    /// Every pose at AX3 and AX5: it must render within the time budget (a layout loop or hang fails here, naming pose and size),
+    /// and overflow is reported. Overflow is reported, not asserted, until a CI run shows it clean on main (then promote it).
+    @Test(.timeLimit(.minutes(2)), arguments: ["closed", "closedLandscape", "open", "openPortrait", "book", "tabletop"], [0, 1])
+    func everyPoseRendersAndStaysInsideAtAccessibilitySizes(_ id: String, _ sizeIndex: Int) async throws {
+        let p = HarnessPose.named(id)
+        let size: UIContentSizeCategory = sizeIndex == 0 ? .accessibilityExtraLarge : .accessibilityExtraExtraExtraLarge
+        let r = try #require(await HarnessRules.timedRender(p, type: size), "\(p.id): a window scene to host in")
+        defer { FoldHost.dispose(r) }
+        HarnessRules.reportOverflow(r, size: sizeIndex == 0 ? "AX3" : "AX5")
     }
 }
 
 /// The frame rules, shared by the harness tests and (later) by sim-side captures.
 @MainActor
 enum HarnessRules {
+    /// Render budget. The usual render settles for 1.8 s; anything past this is a layout loop or hang (#292, Tabletop).
+    static let renderBudget: Double = 20
+
+    /// `FoldHost.render` with a wall-clock check, so a slow or looping layout fails with the pose and size in the message.
+    static func timedRender(_ pose: HarnessPose, type: UIContentSizeCategory, sourceLocation: SourceLocation = #_sourceLocation) async -> Rendered? {
+        let start = ContinuousClock.now
+        let r = await FoldHost.render(pose, type: type)
+        let d = ContinuousClock.now - start
+        let secs = Double(d.components.seconds) + Double(d.components.attoseconds) / 1e18
+        if secs > renderBudget {
+            fail("\(pose.id) at \(type.rawValue): rendering took \(Int(secs)) s, over the \(Int(renderBudget)) s budget (layout loop or hang?)", sourceLocation: sourceLocation)
+        }
+        return r
+    }
+
+    /// One-sided: a tappable frame reaching past the container's trailing edge by more than 20 pt is clearly overflowing, even with the
+    /// harness's 84 to 88 pt narrowing (which can only hide overflow, never invent it). Tabletop's rail is laid out by the system at the
+    /// real region and is skipped. Reported only for now.
+    static func reportOverflow(_ r: Rendered, size: String) {
+        guard r.pose.expected != .tabletop else { return }
+        let limit = r.pose.container.width + 20
+        let over = r.frames.filter { $0.width > 1 && $0.height > 1 && $0.maxX > limit }
+        if !over.isEmpty {
+            print("harness error: [info, not asserted] \(r.pose.id) \(size): tappable frames past the trailing edge (\(Int(limit)) pt): \(over.map(brief))")
+        }
+    }
+
     /// One-line failures that say "failed", so the CI log's grep shows them (and so a reader sees the numbers).
     static func require(_ ok: Bool, _ message: String, sourceLocation: SourceLocation = #_sourceLocation) {
         if !ok { fail(message, sourceLocation: sourceLocation) }
