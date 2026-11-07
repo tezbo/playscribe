@@ -1125,9 +1125,9 @@ extension AppModel {
 
     /// "12 Oct" this year, "Jul 2025" before.
     static func tileDay(_ d: Date) -> String {
-        Calendar.current.isDate(d, equalTo: .now, toGranularity: .year)
+        Date.sameUTCYear(d, .now)
             ? d.dayMonth
-            : d.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB")).month(.abbreviated).year())
+            : d.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB"), timeZone: .gmt).month(.abbreviated).year())
     }
 
     /// "Elden Ring, last updated Jul 2025, owned".

@@ -697,3 +697,32 @@ struct BackCatalogueTests {
         #expect(model.data.read[ported.id] == nil)
     }
 }
+
+/// Patch dates are the UTC calendar day on every device (Nadia, 7 Nov 2026). These swap the process time zone, so they run one at a time.
+@Suite("Patch dates in any time zone", .serialized)
+struct UTCDayTests {
+    static let zones = ["UTC", "Australia/Sydney", "Pacific/Auckland", "America/Los_Angeles", "Pacific/Kiritimati"]
+
+    private func withZone(_ id: String, _ body: () -> Void) {
+        let saved = NSTimeZone.default
+        NSTimeZone.default = TimeZone(identifier: id)!
+        defer { NSTimeZone.default = saved }
+        body()
+    }
+
+    @Test("a patch posted late on 25 Jun UTC reads 25 Jun everywhere; the next UTC midnight reads 26 Jun", arguments: zones)
+    func sameDayEverywhere(_ zone: String) {
+        let late = Date(timeIntervalSince1970: 1_782_431_999)     // 2026-06-25T23:59:59Z
+        let next = Date(timeIntervalSince1970: 1_782_432_000)     // 2026-06-26T00:00:00Z
+        withZone(zone) {
+            #expect(late.shortDay == "25 Jun 2026", "\(zone)")
+            #expect(late.dayMonth == "25 Jun", "\(zone)")
+            #expect(next.shortDay == "26 Jun 2026", "\(zone)")
+        }
+    }
+
+    @Test("a plain release day (noon UTC) keeps its day in every zone", arguments: zones)
+    func releaseDayStable(_ zone: String) {
+        withZone(zone) { #expect("2026-06-25".isoDay?.shortDay == "25 Jun 2026", "\(zone)") }
+    }
+}

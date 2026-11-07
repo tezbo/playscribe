@@ -91,10 +91,18 @@ extension Date {
     /// Playscribe writes dates day-first ("19 Nov 2026") in every locale, so copy reads the same
     /// everywhere and tests don't depend on the runner's region.
     private static let dayFirst = Locale(identifier: "en_GB")
-    var shortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated).year()) }
-    var dayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated)) }
-    /// "16 Oct" this year, "16 Oct 2025" before.
-    var dayMonthOrYear: String { Calendar.current.isDate(self, equalTo: .now, toGranularity: .year) ? dayMonth : shortDay }
+    private static let utc: Calendar = { var c = Calendar(identifier: .gregorian); c.timeZone = .gmt; return c }()
+    /// Patch and release dates are facts about the patch, not the reader: the UTC calendar day, whatever the device's zone
+    /// (Nadia, 7 Nov 2026; docs/decisions/release-date-timezone.md). The same patch reads the same on every phone, shared card and runner.
+    var shortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated).year()) }
+    var dayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated)) }
+    /// "16 Oct" this year, "16 Oct 2025" before (years counted in UTC too).
+    var dayMonthOrYear: String { Self.utc.isDate(self, equalTo: .now, toGranularity: .year) ? dayMonth : shortDay }
+    /// A moment on this device ("Checked 7 Nov, 11:20"): the device's own zone, not the patch rule above.
+    var localDayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated)) }
+    var localShortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated).year()) }
+    /// Whether `a` and `b` fall in the same UTC calendar year.
+    static func sameUTCYear(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, equalTo: b, toGranularity: .year) }
 }
 
 extension String {
