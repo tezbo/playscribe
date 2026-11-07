@@ -51,11 +51,11 @@ struct LibraryView: View {
             // Add trails, Settings leads: the system collapsed a second trailing item away in Closed and
             // Open (0.5.0 Mac stills, TB-1), so the cog sits in its own region and is always drawn.
             ToolbarItem(placement: LibraryToolbar.add.placement) {
-                Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus") }
+                Button { model.addSheetOpen = true } label: { Label("Add game", systemImage: "plus").labelStyle(.iconOnly).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                     .disabled(model.addSheetOpen)
             }
             ToolbarItem(placement: LibraryToolbar.settings.placement) {
-                Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape") }
+                Button { model.settingsOpen = true } label: { Label("Settings", systemImage: "gearshape").labelStyle(.iconOnly).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                     .accessibilityIdentifier("settingsButton")
                     .disabled(model.settingsOpen)
             }
