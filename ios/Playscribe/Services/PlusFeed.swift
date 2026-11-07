@@ -79,6 +79,7 @@ final class PlusStore {
     }
 
     #if INTERNAL
+    static let storeSetNames = ["Pale Harbour Lanterns", "Tin Orchard Road", "Quiet Kite Season"]
     /// QA (INTERNAL route "plus/<variant>"): 1, 2, 3, 4 or 5 games, "plate" (3 names the index cannot match),
     /// "last" (3 games, last chance) or "off" (no month, card hidden). Never written to the cache.
     func setQA(_ variant: String, today: Date = .now) {
@@ -87,6 +88,8 @@ final class PlusStore {
         let n = Int(variant) ?? 3
         var games = names.prefix(max(1, min(5, n))).map { PlusMonth.Game(name: $0, gameId: nil) }
         if variant == "plate" { games = ["Zzzz Qa Plate Title One", "Zzzz Qa Plate Title Two", "Zzzz Qa Plate Title Three"].map { .init(name: $0, gameId: nil) } }
+        // Store frames (r052-store-set-content): invented titles the index cannot match, so tiles are plates, never real covers.
+        if variant == "store" { games = PlusStore.storeSetNames.map { .init(name: $0, gameId: nil) } }
         let until = cal.date(byAdding: .day, value: variant == "last" ? 1 : 20, to: today) ?? today
         let from = cal.date(byAdding: .day, value: -5, to: today) ?? today
         qaOverride = true
