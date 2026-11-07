@@ -5,3 +5,5 @@ Gap: a tester who switched Team alerts on in TestFlight and then installs the Ap
 Smaller alternative: do nothing (rejected: fails the quality bar). Larger: relay-side expiry of team flags (not needed, the client fix is small).
 Decision: when the build does not show the toggle and the stored choice is on, registration sends team=false once; the stored choice is removed only after the relay answers 2xx, so a failed send is tried again next launch. A build that never chose sends nothing. Tests in PushRegistrarTests.
 Weighed in: Quinn (flagged it), Iris (no UI change).
+
+Learning: clear remote state only after the server confirms (team=false once, stored choice removed after a 2xx), so a failed send retries on the next launch; relay-side expiry was not needed.
