@@ -90,12 +90,19 @@ struct AddEntryView: View {
             Section {
                 ForEach(AddMethod.available) { m in
                     Button { choose(m) } label: {
+                        // Accessibility sizes: the icon sits above the text, so the title takes the row's whole width and
+                        // wraps on whole words ("Scan with camer / a" at AX5).
+                        let ax = typeSize.isAccessibilitySize
+                        let stack = ax ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6)) : AnyLayout(HStackLayout(spacing: 14))
                         HStack(spacing: 14) {
-                            Image(systemName: m.symbol).font(.title3).frame(width: iconColumn)
-                                .foregroundStyle(PlayscribeColor.accent)
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text(m.title).font(PlayscribeFont.headline)
-                                Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                            stack {
+                                Image(systemName: m.symbol).font(.title3).frame(width: ax ? nil : iconColumn, alignment: .leading)
+                                    .foregroundStyle(PlayscribeColor.accent)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(m.title).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true)
+                                    Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                }
                             }
                             Spacer(minLength: 0)
                             Image(systemName: "chevron.forward").font(.footnote).foregroundStyle(.secondary)
