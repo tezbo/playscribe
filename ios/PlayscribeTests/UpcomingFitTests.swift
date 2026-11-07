@@ -66,3 +66,24 @@ struct UpcomingRowSwitchTests {
         #expect(UpcomingView.usesRows(.accessibility5))
     }
 }
+
+/// Short Upcoming sections share a row in Open and Tabletop instead of leaving it half empty.
+@MainActor
+struct UpcomingPackedBlockTests {
+    @Test func blockIsAsWideAsItsTilesNeverWiderThanTheRow() {
+        #expect(UpcomingView.blockColumns(games: 3, available: 6) == 3)
+        #expect(UpcomingView.blockColumns(games: 2, available: 6) == 2)
+        #expect(UpcomingView.blockColumns(games: 20, available: 6) == 6)
+        #expect(UpcomingView.blockColumns(games: 0, available: 5) == 1)
+    }
+
+    @Test func threeAndTwoShareOneRowFromFiveColumns() {
+        // Blocks of 3 and 2 tiles plus one gap equal exactly 5 columns.
+        for w in stride(from: CGFloat(700), through: 1200, by: 11) {
+            let f = UpcomingView.fit(width: w)
+            guard f.count >= 5 else { continue }
+            let a = CGFloat(3) * f.size + 2 * UpcomingView.gap, b = CGFloat(2) * f.size + UpcomingView.gap
+            #expect(a + UpcomingView.gap + b <= w)
+        }
+    }
+}
