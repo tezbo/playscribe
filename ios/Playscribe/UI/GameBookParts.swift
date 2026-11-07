@@ -815,30 +815,50 @@ struct GameTitleWithStatus: View {
     }
 
     private var titleRow: some View {
-        // Accessibility sizes: the status glyph sits under the title instead of beside it, so the title gets the whole
-        // column and "Deliverance" is never cut mid-word (Iris on #289, b5b0b1a).
-        let layout = typeSize.isAccessibilitySize
-            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 0)) : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 8))
-        return layout {
-            // Up to 4 lines, and the title text stops growing at AX3: at AX5 one long word ("Deliverance") is wider than a
-            // Closed portrait column and cut mid-word (c240de9). The reader shows the true size.
-            Text(name).font(PlayscribeFont.title2).lineLimit(typeSize.isAccessibilitySize ? 4 : 2)
+        // Accessibility sizes: the title wraps on whole words and the status glyph sits inline right after the last word,
+        // wrapping with it (Iris on #289: never on a line of its own, and "Deliverance" is never cut mid-word).
+        // The title text stops growing at AX3: at AX5 one long word is wider than a Closed portrait column.
+        if typeSize.isAccessibilitySize { return AnyView(inlineTitleRow) }
+        return AnyView(HStack(alignment: .firstTextBaseline, spacing: 8) {
+            Text(name).font(PlayscribeFont.title2).lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true).accessibilityAddTraits(.isHeader)
                 .dynamicTypeSize(...DynamicTypeSize.accessibility3)
-            if let e = model.entry(gameID) {
-                Menu { ActionMenuContent(sections: model.statusMenu(gameID)) } label: {
-                    Image(systemName: Self.symbol(e.status))
-                        .font(.system(size: 20))
-                        .foregroundStyle(e.status == .owned ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
+            statusMenu
+        })
+    }
+
+    private var inlineTitleRow: some View {
+        let words = name.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
+        return WordFlow(hSpacing: 8, vSpacing: 0) {
+            ForEach(Array(words.enumerated()), id: \.offset) { i, w in
+                if i == words.count - 1 {
+                    HStack(alignment: .firstTextBaseline, spacing: 0) {
+                        Text(w).font(PlayscribeFont.title2).accessibilityHidden(true)
+                        statusMenu
+                    }
+                } else {
+                    Text(w).font(PlayscribeFont.title2).accessibilityHidden(true)
                 }
-                .padding(.vertical, -12)
-                .accessibilityLabel(e.status.label)
-                .accessibilityHint("Change status")
-                .accessibilityIdentifier("statusGlyph")
-                .tappableFrame()
             }
+        }
+        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+        .background(Color.clear.accessibilityElement().accessibilityLabel(name).accessibilityAddTraits(.isHeader))
+    }
+
+    @ViewBuilder private var statusMenu: some View {
+        if let e = model.entry(gameID) {
+            Menu { ActionMenuContent(sections: model.statusMenu(gameID)) } label: {
+                Image(systemName: Self.symbol(e.status))
+                    .font(.system(size: 20))
+                    .foregroundStyle(e.status == .owned ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .padding(.vertical, -12)
+            .accessibilityLabel(e.status.label)
+            .accessibilityHint("Change status")
+            .accessibilityIdentifier("statusGlyph")
+            .tappableFrame()
         }
     }
 
@@ -903,5 +923,31 @@ struct LinksSheet: View {
     static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool {
         let links = model.game(gameID)?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
         return links?.official != nil || links?.patchNotes != nil || model.readerRelease(gameID)?.links?.steamNotes != nil
+    }
+}
+
+
+/// Words flowing left to right and wrapping at the proposed width; a word wider than the width gets its own line.
+/// One subview per word (the caller uses ForEach), so the last one can carry an inline glyph.
+struct WordFlow: Layout {
+    var hSpacing: CGFloat = 8
+    var vSpacing: CGFloat = 0
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        place(proposal.width ?? .infinity, subviews).size
+    }
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        for (i, p) in place(bounds.width, subviews).points.enumerated() {
+            subviews[i].place(at: CGPoint(x: bounds.minX + p.x, y: bounds.minY + p.y), proposal: .unspecified)
+        }
+    }
+    private func place(_ width: CGFloat, _ subviews: Subviews) -> (points: [CGPoint], size: CGSize) {
+        var points: [CGPoint] = [], x: CGFloat = 0, y: CGFloat = 0, row: CGFloat = 0, maxX: CGFloat = 0
+        for v in subviews {
+            let s = v.sizeThatFits(.unspecified)
+            if x > 0 && x + s.width > width { x = 0; y += row + vSpacing; row = 0 }
+            points.append(CGPoint(x: x, y: y))
+            x += s.width + hSpacing; row = max(row, s.height); maxX = max(maxX, x - hSpacing)
+        }
+        return (points, CGSize(width: maxX, height: y + row))
     }
 }
