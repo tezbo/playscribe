@@ -23,9 +23,16 @@ struct PhotoAddView: View {
     @State private var item: PhotosPickerItem?
     @State private var working = false
     @State private var failed = false
+    @Environment(AppModel.self) private var model
 
     var body: some View {
         VStack(spacing: 16) {
+            #if INTERNAL
+            if BuildChannel.showsInternalTools, model.qaStoreSet {
+                PhotoSampleResult(titles: ["Pale Harbour Lanterns", "Tin Orchard Road", "Quiet Kite Season"], add: find)
+            }
+            #endif
+            Spacer(minLength: 0)   // centred in the sheet, so a tall screen does not leave its lower half empty
             Image(systemName: "photo.on.rectangle.angled").font(.system(size: 44)).foregroundStyle(PlayscribeColor.accent)
                 .accessibilityHidden(true)
             Text("Choose a photo with game titles on it.")
@@ -62,3 +69,41 @@ struct PhotoAddView: View {
         find(lines)
     }
 }
+
+#if INTERNAL
+/// Store-set capture only: a sample photo with the titles read from it, so the From a photo shot fills the page.
+/// Invented titles; the real flow shows results in the shared list after a photo is picked.
+private struct PhotoSampleResult: View {
+    var titles: [String]
+    var add: ([String]) -> Void
+    var body: some View {
+        VStack(spacing: 12) {
+            HStack(alignment: .bottom, spacing: 6) {
+                ForEach(0..<9, id: \.self) { i in
+                    RoundedRectangle(cornerRadius: 3, style: .continuous)
+                        .fill(LinearGradient(colors: [Color.ink0.opacity(0.4), PlayscribeColor.accent.opacity(0.35 + 0.05 * Double(i % 4))], startPoint: .top, endPoint: .bottom))
+                        .frame(height: 70 + CGFloat((i * 13) % 34))
+                }
+            }
+            .padding(12)
+            .frame(maxWidth: .infinity, minHeight: 150, alignment: .bottom)
+            .background(Color.ink0.opacity(0.5), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .accessibilityHidden(true)
+            Text("Found \(titles.count) titles").font(PlayscribeFont.headline)
+            VStack(alignment: .leading, spacing: 8) {
+                ForEach(titles, id: \.self) { t in
+                    Label(t, systemImage: "checkmark.circle.fill").font(PlayscribeFont.body)
+                        .foregroundStyle(PlayscribeColor.textPrimary).symbolRenderingMode(.hierarchical)
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            Button { add(titles) } label: {
+                Text("Add \(titles.count) games").font(PlayscribeFont.headline).foregroundStyle(PlayscribeColor.onAccent)
+                    .frame(maxWidth: .infinity, minHeight: 52)
+                    .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            }
+            .tappableFrame()
+        }
+    }
+}
+#endif

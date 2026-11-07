@@ -284,6 +284,7 @@ struct LibraryShelf: View {
             ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
         let all = model.libraryRows
         ScrollView {
+          ScrollViewReader { proxy in
             VStack(alignment: .leading, spacing: 14) {
                 // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
                 if closedWide {
@@ -444,6 +445,9 @@ struct LibraryShelf: View {
                             }
                         }
                     }
+                    // The tiles are scroll targets themselves: the outer layout only sees this grid as one child, so
+                    // `nav.anchors["library"]` (store-set/end, quick/*) never reached a tile and the route stayed at the top.
+                    .scrollTargetLayout()
                     // A pose or fold change rebuilds the grid: lazily cached cells kept their old frames
                     // (0.2.0 gate: Book showed the open-pose grid across the fold).
                     .id(poseKey)
@@ -454,6 +458,20 @@ struct LibraryShelf: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
             .padding(.trailing, railWidth)
+            // A route that sets a library anchor (store-set/end, quick/*, a just-added game) scrolls there once the grid
+            // has laid out. `scrollPosition(id:)` alone ignored an anchor set before the first layout (gate ada480a:
+            // store-set/end stills identical to store-set); the proxy scrolls by view id, after the grid exists.
+            .task(id: model.qaLibraryScroll) {
+                guard let id = model.qaLibraryScroll else { return }
+                try? await Task.sleep(for: .milliseconds(700))
+                proxy.scrollTo(id, anchor: .top)
+                // The grid is lazy: its first pass scrolls by estimated row heights, and the last tile (title included) can end below
+                // the screen (Mac, 37d0e1c: 691.7 pt against 678). Scroll again once the rows have real sizes, bottom-aligned.
+                try? await Task.sleep(for: .milliseconds(500))
+                proxy.scrollTo(id, anchor: .bottom)
+                model.qaLibraryScroll = nil
+            }
+          }
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
         // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.

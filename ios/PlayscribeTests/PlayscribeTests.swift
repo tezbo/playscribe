@@ -649,7 +649,9 @@ struct QARouteGuardTests {
         #expect(m.data.collection.map(\.gameID) == StoreSet.gameIDs)
         #expect(m.data.customGames.count == StoreSet.games().count + StoreSet.plusGames().count)
         #expect(StoreSet.games().count == 5)
-        #expect(m.data.simulated.count == 3)
+        #expect(m.data.simulated.count == 3 + StoreSet.earlier.count)   // newest update per game, plus the earlier ones
+        #expect(m.gameIssues["store-hollow-meridian"]?.first?.status == "open")
+        #expect(m.qaStoreSet)
     }
 
     @Test("The store set's PS Plus card carries only invented titles with designed covers (r052-store-set-content)")

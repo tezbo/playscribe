@@ -164,6 +164,11 @@ final class AppModel {
     var addSheetOpen = false
     /// QA (route add/scan): the camera scan shows a fixed feed, since simulators have no camera.
     var simulatedScan = false
+    /// QA (INTERNAL store-set route): the Upcoming tab lists invented games instead of the catalogue's real ones.
+    var qaStoreSet = false
+    /// QA (INTERNAL): one-shot scroll requests from store-set/end and reader/<game>/<release>/<y>. A route runs before or after the first\n    /// layout, so the screen consumes the request when it appears or when it changes, then clears it.
+    var qaLibraryScroll: String?
+    var qaReaderScroll: Double?
     /// Opens the Add games sheet straight on this method (first-run welcome rows).
     var addSheetMethod: AddMethod?
     /// QA: route add/keyboard focuses the Add search field so the keyboard is up.
@@ -263,6 +268,15 @@ final class AppModel {
         // A6: remember the previous open for the catch-up card, then stamp this one.
         catchUpSince = data.lastOpenedAt
         data.lastOpenedAt = .now
+        #if INTERNAL
+        // QA: the store set is saved with the library, but its Upcoming list and known issues live in memory. A later route in the
+        // same capture run (library/upcoming, release/…) starts a fresh process, so restore them from the saved store games
+        // (gate 3f22417: shot 7 showed the real catalogue and shot 8 had no known issue).
+        if BuildChannel.showsInternalTools, data.collection.contains(where: { $0.gameID.hasPrefix("store-") }) {
+            qaStoreSet = true
+            gameIssues = StoreSet.issues
+        }
+        #endif
         rebuildMerged()
     }
 
@@ -594,6 +608,7 @@ final class AppModel {
         case "add":
             addSheetOpen = true
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
+            if parts.first == "photo" { addSheetMethod = .photo }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
         case "settings":
             settingsOpen = true
@@ -607,14 +622,23 @@ final class AppModel {
             else if let t = parts.first.flatMap(LibraryTab.init(rawValue:)) { libraryTab = t }
         case "updates": nav.tab = .updates
         case "search": nav.tab = .search
+        // QA (INTERNAL): a reader opened and scrolled `<y>` points down, so a short landscape screen shows bullets, not a bare heading.
+        // A fourth part `issues` also opens the release's collapsed "Known issues" section (the hotfix shot shows the line and its Follow control).
+        case "reader" where parts.count == 3 || parts.count == 4:
+            openRelease(gameID: parts[0], releaseID: parts[1])
+            if parts.count == 4, parts[3] == "issues" { setExpanded("cat:\(parts[1]):Known issues", true) }
+            nav.anchors["page-\(parts[0])-\(Chapter.updates.rawValue)"] = parts[2]
+            qaReaderScroll = Double(parts[2])
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
         case "store-set":
             loadStoreSet(plus: parts.first == "plus")
-            // "store-set/end": the Library scrolled as far as it goes, to check the last row clears the tab bar.
-            if parts.first == "end", let last = StoreSet.gameIDs.last { nav.anchors["library"] = "lib-\(last)" }
+            // "store-set/end" (alias "titles"): the Library scrolled to its last row (the long Orchard title), to check it clears the tab bar and shows whole titles.
+            // "store-set/since": the "Since you last opened" card, as if the previous open was a day ago (the unread Lantern Reach update).
+            if parts.first == "since" { catchUpSince = .now.addingTimeInterval(-86_400); catchUpHidden = false }
+            if parts.first == "end" || parts.first == "titles", let last = StoreSet.gameIDs.last { nav.anchors["library"] = "lib-\(last)"; qaLibraryScroll = "lib-\(last)" }
         case "one-update": resetToOneUpdateDemo(); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "two-update": resetToTwoUpdateDemo(); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "many-updates": resetToManyUpdatesDemo(); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
@@ -892,6 +916,7 @@ final class AppModel {
     }
 
     func resetDemo() {
+        qaStoreSet = false
         qaPadDeck = false
         qaUpdateCount = 0
         qaFreshCache = nil
