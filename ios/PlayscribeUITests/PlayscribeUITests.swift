@@ -41,7 +41,9 @@ final class PlayscribeUITests: XCTestCase {
         for route in ["demo", "release/dawnwalker/dawnwalker@1.1", "add", "updates"] {
             app.launchArguments = ["-qaRoute", route]
             app.launch()
-            sleep(2)
+            // Wait for the page itself, then let art and fades settle: a first run on the Dawnwalker page audited a half-drawn screen.
+            _ = app.descendants(matching: .any).matching(identifier: "foldAudit").firstMatch.waitForExistence(timeout: 10)
+            sleep(3)
             try app.performAccessibilityAudit(for: [.hitRegion, .sufficientElementDescription, .elementDetection]) { issue in
                 // Game art, poster images and the system status bar aren't the app's controls.
                 // Name every issue in the log, so a red run says which element it was (10f6e004: the audit named none).
@@ -674,6 +676,10 @@ final class Release050Tests: XCTestCase {
             XCTAssertGreaterThanOrEqual(e.frame.width, floor, "\(name) width at least \(floor) pt [\(pose)]")
             XCTAssertGreaterThanOrEqual(e.frame.minY, 0, "\(name) is on screen [\(pose)]")
         }
+        // At least 8 pt between the two, whichever way they are stacked.
+        let gapX = max(cog.frame.minX - add.frame.maxX, add.frame.minX - cog.frame.maxX)
+        let gapY = max(cog.frame.minY - add.frame.maxY, add.frame.minY - cog.frame.maxY)
+        XCTAssertGreaterThanOrEqual(max(gapX, gapY), 8, "cog and Add are at least 8 pt apart [\(pose)]")
         XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(add.frame), "cog and Add do not overlap \(cog.frame) \(add.frame) [\(pose)]")
         // Status bar: nothing of either control sits inside the status bar's frame.
         let status = app.statusBars.firstMatch
@@ -748,8 +754,18 @@ final class Release050Tests: XCTestCase {
     func testQuietHours() throws {
         let app = launch("settings")
         let toggle = app.switches["quietHours"]
+        // Settings is a lazy list: the row is not in the hierarchy until it is scrolled near. Alternate the list's own swipe with a
+        // drag that starts in the lower half (in Tabletop the upper half is a view-only stage, so a swipe there moves nothing).
         var tries = 0
-        while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
+        while !(toggle.exists && toggle.isHittable) && tries < 10 {
+            let form = app.collectionViews.firstMatch
+            if tries % 2 == 0, form.exists { form.swipeUp() } else {
+                app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.9))
+                    .press(forDuration: 0.1, thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.6)))
+            }
+            tries += 1
+        }
+        if !toggle.exists { let a = XCTAttachment(string: app.debugDescription); a.lifetime = .keepAlways; add(a) }
         XCTAssertTrue(toggle.exists, "Settings has a Quiet hours switch")
         XCTAssertTrue(["off", "0"].contains(toggle.value as? String ?? ""), "off by default, got \(String(describing: toggle.value))")
         if isTabletop(app) { XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: switch in the lower half") }
@@ -786,7 +802,7 @@ final class Release050Tests: XCTestCase {
         XCTAssertTrue(cog.waitForExistence(timeout: 5)); cog.tap()
         let toggle = app.switches["plusCardToggle"]
         var tries = 0
-        while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
+        while !toggle.exists && tries < 6 { (app.collectionViews.firstMatch.exists ? app.collectionViews.firstMatch : app).swipeUp(); tries += 1 }
         XCTAssertTrue(toggle.exists, "Settings has the PS Plus card switch")
         XCTAssertTrue(["on", "1"].contains(toggle.value as? String ?? ""), "on by default, got \(String(describing: toggle.value))")
         let reminder = app.descendants(matching: .any)["plusLeavingSoon"]
@@ -799,7 +815,7 @@ final class Release050Tests: XCTestCase {
         func flip() {
             let t = app.switches["plusCardToggle"]
             var n = 0
-            while !t.exists && n < 6 { app.swipeUp(); n += 1 }
+            while !t.exists && n < 6 { (app.collectionViews.firstMatch.exists ? app.collectionViews.firstMatch : app).swipeUp(); n += 1 }
             let i = t.switches.firstMatch
             if i.exists { i.tap() } else { t.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
         }

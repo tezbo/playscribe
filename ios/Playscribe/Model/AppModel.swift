@@ -601,6 +601,9 @@ final class AppModel {
         case "tag" where parts.count == 1: if let v = Verification(rawValue: parts[0]) { tagExplainer = v }
         case "library":
             nav.tab = .library; nav.gameID = nil
+            // QA: the `library` routes always show a library. An earlier launch (the first-run route) leaves an empty
+            // store on disk, which an XCUITest run then loaded: no Playing/Upcoming control, no tiles (gate 6511ae4).
+            if data.collection.isEmpty { resetDemo() }
             // QA: `library/upcoming` and `library/playing` pick the Library's Playing / Upcoming switch;
             // `library/upcoming-seeded` also watches five upcoming games (3 out this week, 2 later) so the short sections pack.
             if parts.first == "upcoming-seeded" { resetDemo(); seedUpcomingWatchlist(); libraryTab = .upcoming }
