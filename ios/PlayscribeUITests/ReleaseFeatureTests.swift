@@ -137,7 +137,7 @@ final class ReleaseFeatureTests: XCTestCase {
             // Tabletop (Iris): the stage is read only, never hidden from VoiceOver. A headline row is one combined text element
             // ("<title>, <date>, Official"), so look for the tag in any element's label.
             if inTabletop {
-                let row = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Official' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news' OR label BEGINSWITH \"Couldn't load news\"")).firstMatch
+                let row = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS ', Official' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news' OR label BEGINSWITH \"Couldn't load news\"")).firstMatch
                 return row.waitForExistence(timeout: 5)
             }
             return states.contains { app.staticTexts[$0].waitForExistence(timeout: 3) } || failed.exists
@@ -185,13 +185,13 @@ final class ReleaseFeatureTests: XCTestCase {
         launch("chapter/dawnwalker/news")
         guard inTabletop else { throw XCTSkip("the stage is a Tabletop surface") }
         let any = app.descendants(matching: .any)
-        let row = any.matching(NSPredicate(format: "label CONTAINS 'Official' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news'")).firstMatch
+        let row = any.matching(NSPredicate(format: "label CONTAINS ', Official' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news'")).firstMatch
         XCTAssertTrue(row.waitForExistence(timeout: 10), "News (headline row, or its empty or loading copy) is in the tree")
         XCTAssertFalse(row.label.isEmpty)
         XCTAssertNotEqual(row.elementType, .button, "a News headline is text, not a button, in Tabletop")
         XCTAssertNotEqual(row.elementType, .link, "a News headline is text, not a link, in Tabletop")
-        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label CONTAINS 'Official'")).count, 0, "no News headline is exposed as a button")
-        XCTAssertEqual(app.links.matching(NSPredicate(format: "label CONTAINS 'Official'")).count, 0, "no News headline is exposed as a link")
+        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label CONTAINS ', Official'")).count, 0, "no News headline is exposed as a button")
+        XCTAssertEqual(app.links.matching(NSPredicate(format: "label CONTAINS ', Official'")).count, 0, "no News headline is exposed as a link")
         let newsTree = XCTAttachment(string: app.debugDescription); newsTree.name = "tabletop-news-hierarchy.txt"; newsTree.lifetime = .keepAlways; add(newsTree)
 
         // The Gallery empty state (Astro Bot and Ghost of Yotei have no art or videos): "Find trailers online" is plain text.

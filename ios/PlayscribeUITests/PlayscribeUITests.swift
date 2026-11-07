@@ -604,10 +604,15 @@ final class LibraryLayoutTests: XCTestCase {
         let pose = ReleaseRowTests.pose(app)
         step("pose \(pose)")
         var checked = 0
+        var seenTiles = Set<String>()
         for _ in 0..<10 {
             // The accessibility frame of a tile runs past its cover (the cover image's own
             // bounds), so each tile is taken as its laid-out cover: origin and width, 3:4.
-            let tiles = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
+            let tileQuery = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
+            // Quinn: count each tile once by its label (the same visible tiles are scanned again after a drag); the identifier
+            // holds the cover width, so it is not unique.
+            seenTiles.formUnion(tileQuery.allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }.map(\.label))
+            let tiles = tileQuery
                 .allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }
                 .map { e -> CGRect in
                     // The cover's real width is in the identifier ("tile-100"); Closed measures its column width at layout.
@@ -660,8 +665,8 @@ final class LibraryLayoutTests: XCTestCase {
                 for b in tiles[(i + 1)...] { XCTAssertFalse(a.insetBy(dx: 1, dy: 1).intersects(b), "tiles overlap \(a) \(b) [\(pose)]") }
                 for h in hero { XCTAssertFalse(a.insetBy(dx: 1, dy: 1).intersects(h), "tile overlaps hero \(a) \(h) [\(pose)]") }
             }
-            checked += tiles.count
-            step("scan: \(tiles.count) tiles, checked \(checked)")
+            checked = seenTiles.count
+            step("scan: \(tiles.count) tiles on screen, \(checked) distinct so far")
             if pose.contains("tabletop") {
                 // Tabletop: the upper half is a view-only stage, so a swipe there scrolls nothing, and the lower half is full of
                 // controls that eat a drag (the search field and the A to Z strip, 44e96db: 10 drags from 80% of the height moved
