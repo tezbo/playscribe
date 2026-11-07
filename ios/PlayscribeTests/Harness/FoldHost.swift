@@ -11,6 +11,10 @@ struct Rendered {
     var window: UIWindow
     var controller: UIViewController
     /// What UIKit actually gave the root view: its size and safe area. A pose is only reproduced when these equal the catalog.
+    /// Whether the layout stopped changing before the time cap (the frames the app reports were identical for three passes in a
+    /// row), and how many passes that took. A feedback loop in layout (#292) shows here as `settled == false`.
+    var settled = true
+    var passes = 0
     var viewSize = CGSize.zero
     var appliedInsets = UIEdgeInsets.zero
     var inheritedInsets = UIEdgeInsets.zero
@@ -168,14 +172,28 @@ enum FoldHost {
         let t = pose.safeArea
         hc.additionalSafeAreaInsets = UIEdgeInsets(top: t.top - inherited.top, left: t.left - inherited.left,
                                                    bottom: t.bottom - inherited.bottom, right: t.right - inherited.right)
-        for _ in 0..<4 {
+        // Wait for the layout to settle, not for a fixed number of passes: at least `settle` (the splash, about 1.1 s), then until the
+        // reported frames are identical for three passes in a row, up to 8 s. Whatever the app does after that is not "settled".
+        let step = Duration.milliseconds(150)
+        let start = ContinuousClock.now
+        var passes = 0, same = 0
+        var last: [CGRect] = [], lastNamed: [String: CGRect] = [:]
+        while true {
             window.layoutIfNeeded()
-            try? await Task.sleep(for: settle / 4)
+            try? await Task.sleep(for: step)
+            passes += 1
+            same = (box.frames == last && box.named == lastNamed) ? same + 1 : 0
+            last = box.frames; lastNamed = box.named
+            let elapsed = ContinuousClock.now - start
+            if elapsed >= settle && same >= 3 { break }
+            if elapsed >= .seconds(8) { break }
         }
         let origin = CGPoint(x: hostShift.x + pose.safeArea.left, y: hostShift.y + pose.safeArea.top)
         func rel(_ r: CGRect) -> CGRect { r.offsetBy(dx: -origin.x, dy: -origin.y) }
         var r = Rendered(pose: pose, livePose: model.livePose, frames: box.frames.map(rel),
                          named: box.named.mapValues(rel), window: window, controller: hc)
+        r.settled = same >= 3
+        r.passes = passes
         r.viewSize = hc.view.bounds.size
         r.appliedInsets = hc.view.safeAreaInsets
         r.inheritedInsets = inherited
@@ -186,6 +204,18 @@ enum FoldHost {
         let rawMinX = (box.frames + Array(box.named.values)).map(\.minX).min() ?? .nan
         print("harness error: [info, diag] \(pose.id) window \(window.frame) host in window \(hc.view.convert(CGPoint.zero, to: nil)) host in screen \(hc.view.convert(CGPoint.zero, to: window.screen.coordinateSpace)) margins \(hc.view.layoutMargins) safe \(hc.view.safeAreaInsets) additional \(hc.additionalSafeAreaInsets) origin \(origin) rawMinX \(rawMinX) leftmost \(leftmost) scene \(sceneNote) screen \(screen)")
         return r
+    }
+
+    /// The rendered pose as a PNG, at 1x, the size of the window the pose needs. Hosted offscreen, so the system's own navigation
+    /// bar, Tabletop rail and hinge are not faithful (docs/fold-harness.md); this is for app-owned layout.
+    static func png(_ r: Rendered) -> Data? {
+        let size = r.pose.windowSize
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        let image = UIGraphicsImageRenderer(size: size, format: format).image { _ in
+            r.controller.view.drawHierarchy(in: CGRect(origin: .zero, size: size), afterScreenUpdates: true)
+        }
+        return image.pngData()
     }
 
     /// Tear down so the next pose starts clean.
