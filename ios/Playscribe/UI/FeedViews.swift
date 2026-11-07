@@ -93,7 +93,7 @@ struct FeedRow: View {
                     }
                     if let h = release.headline {
                         // Whole words only: a capped summary ends "…" at a word boundary (Iris, AX3).
-                        if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.footnote, lines: 3) }
+                        if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.footnote, lines: 4) }
                         else { Text(h).font(PlayscribeFont.footnote).lineLimit(2) }
                     }
                 }
