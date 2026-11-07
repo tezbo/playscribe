@@ -67,7 +67,9 @@ export const earlyAccessOf = (
   const full = on.filter((r) => r.status == null || /full release/i.test(nameOf(r.status) ?? '')).sort(byDate)[0]
   if (!ea || !full || full.date! <= ea.date!) return undefined
   const precision = precisionOf(ea, formatName)
-  const fullPrecision = precisionOf(full, formatName)
+  // A dated row is never TBD in practice; the 1.0 label type has no tbd, so one cannot reach the feed.
+  const fp = precisionOf(full, formatName)
+  const fullPrecision = fp === 'tbd' ? undefined : fp
   return { since: day(ea.date)!, ...(precision ? { precision } : {}), full: day(full.date)!, ...(fullPrecision ? { fullPrecision } : {}) }
 }
 export interface Override { d?: string; e?: boolean; b?: string; evidence: string }
