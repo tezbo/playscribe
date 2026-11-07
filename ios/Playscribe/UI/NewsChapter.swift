@@ -262,7 +262,7 @@ struct GlobalNewsView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.railWidth) private var railWidth
     @Environment(\.duo) private var duo
-    @State private var titleHeight: CGFloat = 0
+    @State private var titleBottom: CGFloat = 0
     private var store: NewsStore { .shared }
 
     var body: some View {
@@ -314,13 +314,13 @@ struct GlobalNewsView: View {
         .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
         .background(alignment: .top) {
-            if let lead, let fold = duo.division { NewsStage(headline: lead, bandTop: fold.minY, titleReserve: titleHeight).allowsHitTesting(false) }
+            if let lead, let fold = duo.division { NewsStage(headline: lead, bandTop: fold.minY, titleBottom: titleBottom).ignoresSafeArea(edges: .top).allowsHitTesting(false) }
         }
         .overlay(alignment: .topLeading) {
             if duo.pose == .tabletop {
                 // Iris (AX5): the stage caption starts below this title, so its height is measured and handed to the stage.
                 Text("News").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
-                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { titleHeight = $0 }
+                    .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { titleBottom = $0 }
             }
         }
         .navigationTitle("News")
@@ -343,10 +343,11 @@ struct GlobalNewsRow: View {
     var body: some View {
         let game = model.game(headline.gameID)
         Button { openURL(headline.item.url) } label: {
-            HStack(alignment: .top, spacing: 12) {
-                // The cover plate is 40 pt wide, so at accessibility sizes its title placeholder can only show "L…". The game name is in the
-                // line under the headline, so the plate is dropped there and the headline gets the width (Quinn, AX5).
-                if let game, !typeSize.isAccessibilitySize { CoverView(game: game, cornerRadius: 4).frame(width: 40) }
+            // At accessibility sizes the small cover sits above the headline, like the Updates rows, so the headline keeps the
+            // full width (Iris, AX5). The plate prints one initial, never the title, so it can't be cut.
+            let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(alignment: .top, spacing: 12))
+            layout {
+                if let game { CoverView(game: game, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 4) {
                     WholeWordText(text: headline.item.title, font: PlayscribeFont.subheadline.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 3)
                     NewsMeta {
@@ -379,8 +380,8 @@ struct NewsStage: View {
     var headline: NewsStore.Headline
     /// The division band's top edge in screen space.
     var bandTop: CGFloat
-    /// Height taken by the "News" title at the top of the stage (padding included). The caption lives below it.
-    var titleReserve: CGFloat = 0
+    /// The "News" title's bottom edge in screen space (padding included). The caption lives below it.
+    var titleBottom: CGFloat = 0
     @State private var lineHeight: CGFloat = 0
     @State private var metaHeight: CGFloat = 0
 
@@ -388,7 +389,7 @@ struct NewsStage: View {
         let game = model.game(headline.gameID)
         let stageHeight = max(0, bandTop - stageTop)
         // Room for the caption panel: under the title, 24 pt above the band; 24 pt of panel padding and the 4 pt gap are inside it.
-        let room = stageHeight - titleReserve - 24 - 24 - 4 - metaHeight
+        let room = stageHeight - max(0, titleBottom - stageTop) - 24 - 24 - 4 - metaHeight
         let maxLines = typeSize.isAccessibilitySize ? 4 : 2
         let lines = lineHeight > 0 && stageHeight > 0 ? max(1, min(maxLines, Int(room / lineHeight))) : maxLines
         ZStack(alignment: .bottomLeading) {
