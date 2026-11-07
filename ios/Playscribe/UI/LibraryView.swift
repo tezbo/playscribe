@@ -78,7 +78,11 @@ struct LibraryStage: View {
 
     var body: some View {
         let deck = model.latestDeck
-        if let card = deck.first(where: { $0.id == model.deckSelection }) ?? deck.first {
+        // Upcoming tab: the stage fronts the soonest unreleased game, never an update of a game you already play.
+        if model.libraryTab == .upcoming, let g = model.upcomingWatched.first ?? model.upcomingMore.first {
+            DeckStage(card: DeckCard(game: g, release: nil, unread: false, date: g.releaseDate?.isoDay),
+                      upcomingLine: g.ps5DateLine ?? "Date to be announced")
+        } else if let card = deck.first(where: { $0.id == model.deckSelection }) ?? deck.first {
             DeckStage(card: card)
         } else {
             legacyStage
