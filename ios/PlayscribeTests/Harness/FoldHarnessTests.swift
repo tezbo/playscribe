@@ -128,7 +128,7 @@ enum HarnessRules {
         guard r.pose.expected != .tabletop else { return }
         let limit = r.pose.container.width + 20
         let over = r.frames.filter { $0.width > 1 && $0.height > 1 && $0.maxX > limit }
-        require(over.isEmpty, "\(r.pose.id) \(size) G-8: tappable frames past the trailing edge (\(Int(limit)) pt): \(over.map(brief))")
+        require(over.isEmpty, "\(r.pose.id) \(size) G-8 overflow: tappable frames past the trailing edge (\(Int(limit)) pt): \(over.map(brief))")
     }
 
     /// One-line failures that say "failed", so the CI log's grep shows them (and so a reader sees the numbers).

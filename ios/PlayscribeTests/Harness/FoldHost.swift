@@ -127,7 +127,7 @@ enum FoldHost {
 
     /// `settle` covers the splash (about 1.1 s) and the first layout passes.
     static func render(_ pose: HarnessPose, type: UIContentSizeCategory = .large, model: AppModel = demoModel(),
-                       settle: Duration = .milliseconds(1800)) async -> Rendered? {
+                       settle: Duration = .milliseconds(1800), insetAdjust: UIEdgeInsets = .zero) async -> Rendered? {
         guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first else { return nil }
         // Dates are formatted in the device's time zone, so a patch near midnight UTC reads 25 Jun on a UTC runner and 26 Jun on
         // the AEDT Mac (Quinn, KCD II 1.5.6). Pin the harness to the Mac's zone so stills compare with the Mac's.
@@ -173,8 +173,9 @@ enum FoldHost {
         hc.view.layoutIfNeeded()
         let inherited = hc.view.safeAreaInsets
         let t = pose.safeArea
-        hc.additionalSafeAreaInsets = UIEdgeInsets(top: t.top - inherited.top, left: t.left - inherited.left,
-                                                   bottom: t.bottom - inherited.bottom, right: t.right - inherited.right)
+        // `insetAdjust` is for width calibration only (HarnessWidthCalibrationTests); every asserting test passes none.
+        hc.additionalSafeAreaInsets = UIEdgeInsets(top: t.top - inherited.top + insetAdjust.top, left: t.left - inherited.left + insetAdjust.left,
+                                                   bottom: t.bottom - inherited.bottom + insetAdjust.bottom, right: t.right - inherited.right + insetAdjust.right)
         // Wait for the layout to settle, not for a fixed number of passes: at least `settle` (the splash, about 1.1 s), then until the
         // reported frames are identical for three passes in a row, up to 8 s. Whatever the app does after that is not "settled".
         let step = Duration.milliseconds(150)
