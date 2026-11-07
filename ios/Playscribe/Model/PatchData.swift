@@ -222,11 +222,15 @@ struct Release: Codable, Hashable, Identifiable {
         }
     }
     var digest: Digest?
+    /// A PS4 patch for a game that plays on PS5 through backward compatibility (feed `ps4`, docs/api.md).
+    var ps4: Bool?
+    /// The label the app shows on a PS4 patch; nil otherwise. Never a version number.
+    var ps4Label: String? { ps4 == true ? "PS4 update" : nil }
 
     // JSON keys follow docs/api.md (camelCase "Id").
     enum CodingKeys: String, CodingKey {
         case id, gameID = "gameId", displayName, kind, kindBasis, announcedAt, notes, sourceIDs = "sourceIds", platforms
-        case headline, summary, keyChanges, video, videoNote, pushLine, links, simulated, arrivesAt, digest
+        case headline, summary, keyChanges, video, videoNote, pushLine, links, simulated, arrivesAt, digest, ps4
     }
 
     init(id: String, gameID: String, displayName: String, kind: ReleaseKind, kindBasis: KindBasis, announcedAt: Date,
@@ -259,6 +263,7 @@ struct Release: Codable, Hashable, Identifiable {
         simulated = try c.decodeIfPresent(Bool.self, forKey: .simulated)
         arrivesAt = try c.decodeIfPresent(Date.self, forKey: .arrivesAt)
         digest = try? c.decodeIfPresent(Digest.self, forKey: .digest)
+        ps4 = try? c.decodeIfPresent(Bool.self, forKey: .ps4)
     }
 
     /// Combines a feed record with Playscribe's curated record for the same release: the feed's

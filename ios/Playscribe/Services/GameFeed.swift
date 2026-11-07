@@ -63,7 +63,7 @@ extension AppModel {
             let fresh = history.releases.map { $0.reassigned(to: gameID) }
             // A history seen for the first time is the past, not news: anything that went live
             // more than 72 hours ago is read and never alerts (docs/api.md).
-            markPastAsRead(fresh)
+            markPastAsRead(fresh, backCatalogue: true)
             historyStamps[gameID] = stamp
             gameReleases[gameID] = fresh
             gameIssues[gameID] = history.issues
@@ -76,11 +76,14 @@ extension AppModel {
 extension AppModel {
     /// A release first seen more than 72 hours after it went live is the past: read, no alert.
     /// `force`: after a reset, everything is newly seen.
-    func markPastAsRead(_ releases: [Release], force: Bool = false) {
+    /// `backCatalogue`: a game's history seen for the first time (just added, or a cold cache). A patch that is
+    /// itself older than 72 hours is the past for this player even when the feed's alert date is recent (a
+    /// consoles-later port folds years of patches under the console launch date), so it never counts as news.
+    func markPastAsRead(_ releases: [Release], force: Bool = false, backCatalogue: Bool = false) {
         let cutoff = Date.now.addingTimeInterval(-72 * 3600)
         var known = data.knownOnPS5 ?? []
         // Recent ones stay unknown so notifyNewlyOnPS5 can alert for them.
-        for r in releases where (force || !known.contains(r.id)) && r.alertDate < cutoff {
+        for r in releases where (force || !known.contains(r.id)) && (r.alertDate < cutoff || (backCatalogue && r.ps5Date < cutoff)) {
             known.insert(r.id)
             if data.read[r.id] == nil { data.read[r.id] = .now }
         }

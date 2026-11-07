@@ -16,6 +16,8 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 | Ezra | App artist, lore and documentation lead (the Draughtsman) | Iris | Build the iPhone Duo prototype |
 | Jun | Playtester (the Reader) | Sam | Review Playscribe as a gamer |
 | Quinn | QA lead (the Proofreader) | Sam | QA user journeys |
+| Mara | Marketing and App Store lead (the Herald) | Nadia | Mara, marketing and App Store lead |
+| Gabrielle | Agent Resources: agent development and skills | Sam | Gabrielle: agent development and skills |
 
 ## Scopes
 
@@ -35,6 +37,12 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 - **Ezra** owns art (covers, ink plates, icons, splash), lore and in-app copy, and keeps docs and the CHANGELOG
   readable for testers.
 - **Jun** plays each candidate as a real PS5 player and reports what confused, delighted or was missing.
+- **Mara** owns App Store presence and web SEO: ASO (name, subtitle, keywords, description), the screenshot story
+  across Duo poses, preview video, In-App Events, Product Page Optimization, competitor positioning, launch plan, and the
+  placeholder website (`site/`, GitHub Pages, privacy and support URLs). Works with Ezra and Iris on visuals and with
+  Nadia on positioning. Brings Terry only decisions: domain purchase, publisher naming, anything that costs money.
+  Public text never names the person behind the app (publisher is CodeConnectors), never uses Terry's email, never
+  mentions QA routes, and uses no PlayStation marks without Nadia and Terry's sign-off.
 - **Quinn** owns the front-end and backend/data sign-offs against `docs/ux-acceptance.md` and the feed.
 
 ## Handoffs
@@ -42,6 +50,7 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 - Ideas go to Nadia, from anyone, at any time. Bugs go to Theo. Design questions go to Iris.
 - Agents message each other's threads directly only when their work depends on it. Anything for Terry goes through
   Sam or Nadia.
+- **New agents (Terry, 2026-11-05).** Any request for a new agent goes to Sam first. Sam takes it to Terry with a justification, and nobody is added without his approval.
 - Every PR names the acceptance IDs it touches. Sign-offs name the exact commit SHA.
 
 ## Sprint board
@@ -49,6 +58,10 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 The live board is https://claude.ai/artifact/T5NNq75hBh7Yu9SGt28BEU (source: `docs/board/sprint-board.html`).
 Agents read and write its database with the artifact data tools (`ArtifactData`, or `db_list`/`db_write` on the
 claude-artifacts connector). Terry can file ideas, move cards and comment on the page itself.
+
+**No work without a card (Terry, 2026-11-06).** All work is on the board, always. Every task, branch and PR has a card with an `owner`, the PR or branch URL in `links`, and the next step in `take`. The owner moves the card (`col`, `updatedAt`) on every state change: started, PR opened, in QA, merged. If you start something that has no card, file it first. Nadia checks the board against open PRs each grooming run.
+
+**Critical thought on every decision (Terry, 2026-11-06).** Every card that adds, changes or removes a feature carries a decision note from `docs/decisions/TEMPLATE.md` before it moves to `backlog` or `doing`: why we did it, whether we still need the goal, whether the value is worth the cost (define worth), whether another way reaches the same goal, and the willingness to scrap. Log every outcome as a learning in `docs/learnings.md` (Gabrielle). Nadia and Sam check notes at grooming.
 
 - **Cards** live in `cards`. Fields: `title`, `note`, `kind` (idea, feature, bug, release, chore), `col`, `release`
   (`0.3.0` … `1.0.0`, `1.x`, `Parked`, or empty), `owner`, `by` (your teammate name), `take` (Nadia's decision),
@@ -69,9 +82,17 @@ claude-artifacts connector). Terry can file ideas, move cards and comment on the
 
 ## Rules every agent keeps
 
+**Estimates (Terry, 2026-11-07): nothing made up, one method for everyone.** When you pick up a card, write `est_work` (hours of agent work) and `est_wait` (hours you expect to wait for stills, sign-off or Terry) and `basis` (three parts: scope in one line; comparable past cards with their `actual`; the main risks). Produce it with the same method every time: the `playscribe-estimate` skill (PERT three-point, from `agent-estimate`). If you have no basis, write `n/e` in both, never a number. At `done`, write `actual_work` and `actual_wait` (same split) and one line on any gap larger than 2x in either. Gabrielle reports coverage (cards with an estimate) and accuracy (actual against est, work and wait separately) every 3 hours.
+
+**Skills (Terry, 2026-11-06).** Use a matching skill when one fits, repo skills in `.claude/skills/` first (index in `SKILLS.md`), and say "Skill: <name>" in your reply. Propose a new skill when a gap repeats. Gabrielle (Agent Resources) assesses agents every 3 hours and keeps `SKILLS.md` and this file current.
+
 The core rules are in `CLAUDE.md`. In short: spend nothing, no game ever opens to a blank page, Steam is the
 source of truth, use only official sources and auth, check Apple facts against current docs and the SDK, keep
 messages to Terry short, and spend tokens carefully.
+
+**Never idle (Terry, 2026-11-05).** Nobody waits for orders. If you have nothing queued, go straight to the sprint board and either help groom (add one short comment, signed with your own name in `by`, on a card in `review`, or file an idea of your own) or take a `backlog` card that fits your expertise: move it to `doing` and say so on the card. If nothing fits, tell Nadia what you need and spend the time on tests, docs or polish in your own area.
+
+**Precheck first (Terry, 2026-11-06).** Every red CI run emails Terry, because all agent pushes run as him. Cloud engineers have no Xcode, so do not use pull-request CI as your compiler. Push to your `claude/*` branch first: the Precheck workflow compiles the app, the unit tests and the UI tests (about 3 minutes) and ends green whatever the result, so it sends no email. Read its verdict for your head commit (`get_check_runs`, or the job name in `list_workflow_runs` then `list_workflow_jobs`): `PRECHECK PASS` or `PRECHECK FAIL <file>:<line> <error>`. Fix and push again until it reads PASS. No PASS verdict on your head commit means not passed: a missing verdict after a runner problem is not OK. Only then open the pull request, and never push to an open PR that your last Precheck marked FAIL. A PR that goes red anyway for a test (not a compile error) is yours at once. Docs-only and workflow-only branches skip Precheck.
 
 **Tokens (Terry, 2026-11-02).** Every agent keeps its token use in mind and plans its work to cut waste without
 lowering quality. Read only what the task needs, prefer targeted searches and diffs over whole files, don't re-check

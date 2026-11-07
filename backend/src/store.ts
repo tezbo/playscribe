@@ -81,6 +81,7 @@ export const releaseFromRow = (db: DB, r: Row): Release => {
     displayName: r.display_name,
     kind: r.kind,
     kindBasis: r.kind_basis,
+    ...(r.ps4 ? { ps4: true as const } : {}),
     announcedAt: r.announced_at,
     notes,
     digest: digestOf(notes),
@@ -123,6 +124,8 @@ export interface ReleaseInput {
   announcedAt: string
   notes: NoteSection[]
   sourceId: string
+  /** A PS4 patch for a game that plays on PS5 (sticky once set). */
+  ps4?: boolean
 }
 
 const countItems = (notes: NoteSection[]) => notes.reduce((n, s) => n + s.items.length, 0)
@@ -134,9 +137,9 @@ export const upsertRelease = (db: DB, input: ReleaseInput): { id: string; create
   const t = now()
   if (!existing) {
     db.prepare(
-      `INSERT INTO releases (id, game_id, version_key, display_name, kind, kind_basis, announced_at, notes, source_ids, content_hash, created_at, updated_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-    ).run(id, input.gameId, input.versionKey, input.displayName, input.kind, input.kindBasis, input.announcedAt, JSON.stringify(input.notes), JSON.stringify([input.sourceId]), hashNotes(input.displayName, input.notes), t, t)
+      `INSERT INTO releases (id, game_id, version_key, display_name, kind, kind_basis, announced_at, notes, source_ids, content_hash, created_at, updated_at, ps4)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    ).run(id, input.gameId, input.versionKey, input.displayName, input.kind, input.kindBasis, input.announcedAt, JSON.stringify(input.notes), JSON.stringify([input.sourceId]), hashNotes(input.displayName, input.notes), t, t, input.ps4 ? 1 : 0)
     return { id, created: true, revised: false }
   }
   const sourceIds = new Set<string>(json(existing.source_ids, []))
@@ -158,6 +161,7 @@ export const upsertRelease = (db: DB, input: ReleaseInput): { id: string; create
       `UPDATE releases SET display_name = ?, kind = ?, kind_basis = ?, announced_at = ?, notes = ?, source_ids = ?, content_hash = ?,
          revision = revision + ?, updated_at = ? WHERE id = ?`,
     ).run(displayName, kind, kindBasis, announcedAt, JSON.stringify(notes), JSON.stringify([...sourceIds]), hash, revised ? 1 : 0, t, id)
+  if (input.ps4 && !existing.ps4) db.prepare('UPDATE releases SET ps4 = 1, updated_at = ? WHERE id = ?').run(t, id)
   return { id, created: false, revised }
 }
 
@@ -195,6 +199,15 @@ const mergeField = <T>(old: Field<T> | null, next: Field<T> | null | undefined, 
   return old
 }
 
+/**
+ * When a fact went live is the earliest evidence: a second post for the same release (a hotfix note, a re-post) must not
+ * push a non-official date later. Stronger evidence still wins, and a confirmation overrides.
+ */
+const mergeLiveAt = (old: Field<string> | null, next: Field<string> | null | undefined, force = false): Field<string> | null => {
+  if (old && next && !force && RANK[next.verification] === RANK[old.verification] && old.verification !== 'official' && next.value > old.value) return { ...old, checkedAt: next.checkedAt }
+  return mergeField(old, next, force)
+}
+
 export interface PlatformInput {
   status?: PlatformStatus
   version?: Field<string> | null
@@ -215,7 +228,7 @@ export const upsertPlatform = (db: DB, releaseId: string, platform: Platform, p:
   const status = p.status && (!old || p.confirm || oldV !== 'official') ? p.status : (old?.status ?? 'unknown')
   const version = mergeField(json(old?.version, null), p.version, p.confirm)
   const sizeBytes = mergeField(json(old?.size_bytes, null), p.sizeBytes, p.confirm)
-  const liveAt = mergeField(json(old?.live_at, null), p.liveAt, p.confirm)
+  const liveAt = mergeLiveAt(json(old?.live_at, null), p.liveAt, p.confirm)
   const bundles = p.bundles ?? json(old?.bundles, [])
   db.prepare(
     `INSERT INTO platform_releases (release_id, platform, status, version, size_bytes, live_at, bundles, verification, updated_at)
@@ -270,6 +283,23 @@ export const promoteAnnounced = (db: DB, at = new Date()) => {
   return n
 }
 
+/**
+ * History: a press-only announcement ("Patch 2.12 Will Rebalance...") more than 30 days old, in a game that has since had a
+ * later release live on PS5, has happened. A patch announced and then delayed with nothing after it stays announced
+ * (never claim an unconfirmed release). Safe to run every ingest.
+ */
+export const settleOldAnnouncements = (db: DB, at = new Date()) => {
+  const rows = db
+    .prepare(
+      `SELECT r.id, r.announced_at FROM releases r JOIN platform_releases p ON p.release_id = r.id AND p.platform = 'ps5'
+       WHERE p.status = 'announced' AND p.verification = 'reported' AND r.announced_at < ?
+         AND EXISTS (SELECT 1 FROM releases l JOIN platform_releases lp ON lp.release_id = l.id AND lp.platform = 'ps5' AND lp.status = 'live' WHERE l.game_id = r.game_id AND l.announced_at > r.announced_at)`,
+    )
+    .all(new Date(at.getTime() - 30 * 86400e3).toISOString()) as { id: string; announced_at: string }[]
+  for (const r of rows) upsertPlatform(db, r.id, 'ps5', { status: 'live', verification: 'reported', liveAt: field(r.announced_at, 'reported', 'pushsquare') })
+  return rows.length
+}
+
 /** A news headline for a game: title, date and link only (roadmap 17). Never the post body. */
 export const addNews = (db: DB, gameId: string, post: { url: string; title: string; publishedAt: string; sourceId: string }) =>
   db
@@ -291,15 +321,18 @@ export const newsOf = (db: DB, gameId: string, limit = 20) =>
 /**
  * Coverage audit, 2026-11-03: Steam patches dated before a game's PS5 launch were flagged live on PS5 when the
  * row was made before IGDB gave the PS5 date. Only rows taken as out on PS5 from Steam alone (`assumed`) are
- * dropped; anything an official or press source said about PS5 stays. Safe to run every ingest.
+ * dropped. A release whose only sources are Steam posts, announced more than a day before the PS5 launch (Steam re-dated old posts; BG3's 2021 patches), loses its PS5 row whatever its tag; launch-day patches stay. Anything a press source said about PS5 stays. Safe to run every ingest.
  */
 export const dropPreLaunchPs5 = (db: DB) =>
   Number(
     db
       .prepare(
-        `DELETE FROM platform_releases WHERE platform = 'ps5' AND verification = 'assumed' AND release_id IN (
+        `DELETE FROM platform_releases WHERE platform = 'ps5' AND release_id IN (
            SELECT r.id FROM releases r JOIN games g ON g.id = r.game_id
-           WHERE g.ps5_release IS NOT NULL AND substr(r.announced_at, 1, 10) < g.ps5_release)`,
+           WHERE g.ps5_release IS NOT NULL AND r.ps4 = 0 AND (
+             (platform_releases.verification = 'assumed' AND substr(r.announced_at, 1, 10) < g.ps5_release)
+             OR (json_array_length(r.source_ids) > 0 AND NOT EXISTS (SELECT 1 FROM json_each(r.source_ids) WHERE value NOT LIKE '%-steam')
+                 AND substr(r.announced_at, 1, 10) < date(g.ps5_release, '-1 day'))))`,
       )
       .run().changes,
   )
@@ -346,4 +379,28 @@ export const mergeSilentDuplicates = (db: DB) => {
     merged++
   }
   return merged
+}
+
+/**
+ * Repair for the later-post bug: a Steam-assumed PS5 row dated after the Steam release it assumes. The PC row's date is the
+ * Steam post, so the PS5 row takes it. Rows promoted from announced already carry it.
+ */
+export const repairAssumedLiveAt = (db: DB) => {
+  const rows = db
+    .prepare(
+      `SELECT p.release_id, p.live_at AS ps_live, c.live_at AS pc_live FROM platform_releases p
+       JOIN platform_releases c ON c.release_id = p.release_id AND c.platform = 'pc'
+       WHERE p.platform = 'ps5' AND p.status = 'live' AND p.verification = 'assumed'`,
+    )
+    .all() as { release_id: string; ps_live: string | null; pc_live: string | null }[]
+  let n = 0
+  for (const r of rows) {
+    const ps = json<Field<string> | null>(r.ps_live, null)
+    const pc = json<Field<string> | null>(r.pc_live, null)
+    if (!ps || !pc || ps.verification !== 'assumed' || !(ps.value > pc.value)) continue
+    db.prepare("UPDATE platform_releases SET live_at = ? WHERE release_id = ? AND platform = 'ps5'").run(JSON.stringify({ ...ps, value: pc.value }), r.release_id)
+    db.prepare('UPDATE releases SET updated_at = ? WHERE id = ?').run(now(), r.release_id)
+    n++
+  }
+  return n
 }

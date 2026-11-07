@@ -4,7 +4,7 @@ enum Brand {
     /// The product name. One constant, so a rename is one line.
     static let name = "Playscribe"
     static let tagline = "The story of every update"
-    static let trademarkNotice = "PlayStation, PS5 and the PlayStation Family Mark are trademarks of Sony Interactive Entertainment Inc. Playscribe is not affiliated with or endorsed by Sony Interactive Entertainment."
+    static let trademarkNotice = "PlayStation, PS5, PlayStation Plus and the PlayStation Family Mark, and their logos, icons and branding, are trademarks of Sony Interactive Entertainment Inc. Playscribe is not affiliated with or endorsed by Sony Interactive Entertainment."
 }
 
 extension Color {
@@ -22,6 +22,8 @@ extension Color {
     static let ink4 = PlayscribeColor.ink600
     static let ember = PlayscribeColor.vellum500
     static let ok = Color(hex: "#6fd3a0")
+    /// Wishlist (Iris, 0.5.1): a clear yellow, lighter than the amber ember so the two never read as one.
+    static let wishlist = Color(hex: "#F5C84B")
     static let simulated = Color(hex: "#c9a3ff")
     static let brand1 = PlayscribeColor.vellum300
     static let brand2 = PlayscribeColor.vellum100
@@ -56,6 +58,8 @@ struct Tag: View {
     var body: some View {
         Text(text)
             .font(PlayscribeFont.caption2.weight(.semibold))
+            // Never broken mid-word ("Reporte/d"): one line at its natural width; rows stack tags under the title at AX.
+            .lineLimit(1).fixedSize()
             .foregroundStyle(tint)
             .padding(.horizontal, 7)
             .padding(.vertical, 2)
@@ -87,10 +91,22 @@ extension Date {
     /// Playscribe writes dates day-first ("19 Nov 2026") in every locale, so copy reads the same
     /// everywhere and tests don't depend on the runner's region.
     private static let dayFirst = Locale(identifier: "en_GB")
-    var shortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated).year()) }
-    var dayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated)) }
-    /// "16 Oct" this year, "16 Oct 2025" before.
-    var dayMonthOrYear: String { Calendar.current.isDate(self, equalTo: .now, toGranularity: .year) ? dayMonth : shortDay }
+    private static let utc: Calendar = { var c = Calendar(identifier: .gregorian); c.timeZone = .gmt; return c }()
+    /// Patch and release dates are facts about the patch, not the reader: the UTC calendar day, whatever the device's zone
+    /// (Nadia, 7 Nov 2026; docs/decisions/release-date-timezone.md). The same patch reads the same on every phone, shared card and runner.
+    var shortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated).year()) }
+    var dayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated)) }
+    /// "16 Oct" this year, "16 Oct 2025" before (years counted in UTC too).
+    var dayMonthOrYear: String { Self.utc.isDate(self, equalTo: .now, toGranularity: .year) ? dayMonth : shortDay }
+    /// A moment on this device ("Checked 7 Nov, 11:20"): the device's own zone, not the patch rule above.
+    var localDayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated)) }
+    var localShortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated).year()) }
+    /// The UTC calendar, for anything counted in days against a printed patch date ("Out today", "3 days ago"), so a label never disagrees with it.
+    static var utcCalendar: Calendar { utc }
+    /// Whether `a` and `b` fall on the same UTC calendar day.
+    static func sameUTCDay(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, inSameDayAs: b) }
+    /// Whether `a` and `b` fall in the same UTC calendar year.
+    static func sameUTCYear(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, equalTo: b, toGranularity: .year) }
 }
 
 extension String {

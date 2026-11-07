@@ -39,6 +39,10 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     var releasePrecision: DatePrecision?
     /// Earlier PS4 release date for games playable on PS5 before their PS5 release.
     var playableSince: String?
+    /// First release on any platform (ISO day) and its platform name, for a game that is out
+    /// elsewhere but has no PS5 or PS4 version. Never a TBA (Terry: a released game is not TBA).
+    var releasedElsewhere: String?
+    var releasedElsewhereOn: String?
     /// The PS5 date is early access with no full release yet.
     var earlyAccess: Bool?
     var igdbID: Int?
@@ -82,6 +86,7 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     /// on PS5 through its PS4 version. Dates before the PS5 launch are never shown.
     var ps5DateLine: String? {
         if earlyAccess == true { return "Early access" }
+        if let line = notOnPS5Line { return line }
         if releasePrecision == .tbd || releaseDate == nil && playableSince == nil { return "Release date TBA" }
         // GR-5: a future date never says "Released", and says only as much as is known.
         if let d = releaseDate?.isoDay, d > .now { return Self.outLine(d, precision: releasePrecision ?? .day) }
@@ -94,19 +99,40 @@ struct CatalogGame: Codable, Hashable, Identifiable {
             if let b = playableSince?.isoDay, b < d { return "PS5 version since \(d.shortDay)" }
             return "Released \(d.shortDay)"
         }
-        if let b = playableSince?.isoDay {
-            return b >= launch ? "Playable on PS5 since \(b.formatted(.dateTime.month(.abbreviated).year()))" : "Plays on PS5 (PS4 version)"
-        }
-        if let d = releaseDate?.isoDay, d < launch { return "Plays on PS5 (PS4 version)" }
+        if let b = playableSince?.isoDay { return Self.playsLine(since: b) }
+        if let d = releaseDate?.isoDay, d < launch { return Self.playsLine(since: nil) }
         return nil
     }
+
+    /// "Plays on PS5 since Mar 2021" for a date on or after the PS5 launch (never a future one);
+    /// otherwise "Plays on PS5 as the PS4 version". A pre-launch PS4 date is never shown.
+    static func playsLine(since b: Date?) -> String {
+        guard let b, b >= ps5Launch, b <= .now else { return "Plays on PS5 as the PS4 version" }
+        return "Plays on PS5 since " + b.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB")).month(.abbreviated).year())
+    }
+
+    /// Out elsewhere, not on PS5 or PS4: "Not on PS5 · PC, 2012". Nil when the game has a PS5 or PS4
+    /// release, or no release anywhere (that one is genuinely TBA).
+    var notOnPS5Line: String? {
+        guard releaseDate?.isoDay == nil, playableSince?.isoDay == nil,
+              let o = releasedElsewhere?.isoDay, o <= .now else { return nil }
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = .gmt
+        let year = cal.component(.year, from: o)
+        // "PC (Microsoft Windows)" reads "PC": drop the parenthetical.
+        let platform = releasedElsewhereOn.map { String($0.split(separator: "(").first ?? "").trimmingCharacters(in: .whitespaces) }.flatMap { $0.isEmpty ? nil : $0 }
+        return "Not on PS5 · " + [platform, String(year)].compactMap { $0 }.joined(separator: ", ")
+    }
+
+    /// A PS4-only game that plays on PS5: no PS5 release date, but not "TBA".
+    var playsOnPS5AsPS4: Bool { releasePrecision != .tbd && releaseDate?.isoDay == nil && playableSince?.isoDay != nil }
 
     /// "Out 19 Nov" this year, "Out 19 Nov 2027" for a later year; "Coming Nov 2026",
     /// "Coming Q2 2027" or "Coming 2027" when only the month, quarter or year is known (GR-5).
     static func outLine(_ d: Date, precision: DatePrecision = .day) -> String {
         switch precision {
         case .day:
-            let sameYear = Calendar.current.component(.year, from: d) == Calendar.current.component(.year, from: .now)
+            let sameYear = Date.sameUTCYear(d, .now)
             return "Out " + (sameYear ? d.dayMonth : d.shortDay)
         case .tbd: return "Release date TBA"
         default: return "Coming " + period(d, precision)
@@ -131,6 +157,9 @@ struct CatalogGame: Codable, Hashable, Identifiable {
 
     /// GR-1: when the game is (or will be) out on PS5, for games with no notes yet.
     var ps5AvailabilityLine: String {
+        if let line = notOnPS5Line { return line }
+        // A PS4-only game that plays on PS5 has no PS5 date, and is not "TBA" (Terry: PS4 games on PS5 count).
+        if playsOnPS5AsPS4, let b = playableSince?.isoDay { return Self.playsLine(since: b) }
         guard releasePrecision != .tbd, let d = releaseDate?.isoDay else { return "Release date TBA" }
         if d > .now { return Self.outLine(d, precision: releasePrecision ?? .day) }
         if let p = releasePrecision, p != .day, d >= Self.ps5Launch { return "Out on PS5 since " + Self.period(d, p) }
@@ -140,6 +169,8 @@ struct CatalogGame: Codable, Hashable, Identifiable {
 
     /// The tile form of the availability line (D-12): month and year, never a day.
     var ps5ShortLine: String {
+        if notOnPS5Line != nil { return "Not on PS5" }
+        if playsOnPS5AsPS4 { return "Plays on PS5" }
         guard releasePrecision != .tbd, let d = releaseDate?.isoDay else { return "Date TBA" }
         if d > .now { return Self.outLine(d, precision: releasePrecision ?? .day) }
         let since = max(d, Self.ps5Launch)
@@ -247,6 +278,10 @@ struct PS5Index {
         var d: String?
         /// The earlier PS4 release, when the game was playable on PS5 before its native release.
         var b: String?
+        /// First release on any platform, and that platform's name, when the game is out
+        /// elsewhere with no PS5 or PS4 version.
+        var o: String?
+        var ow: String?
         /// `d` is early access, beta or alpha with no full release yet.
         var e: Bool?
         /// The full release date, when `d` was early access.
@@ -261,11 +296,14 @@ struct PS5Index {
         var s: String?
         /// Official landscape key art (IGDB image id), for a square crop.
         var a: String?
+        /// Search aliases players type ("GTA V", "FF7", "COD"), matched like the name but only when the name did not match.
+        var k: [String]?
     }
     private struct File: Decodable { var count: Int; var games: [Entry] }
 
     let entries: [Entry]
     private let folded: [String]
+    private let foldedAliases: [[String]]
 
     static let shared = PS5Index()
 
@@ -273,6 +311,7 @@ struct PS5Index {
         let file: File = Fixtures.decode("ps5-index")
         entries = file.games
         folded = file.games.map { Self.fold($0.n) }
+        foldedAliases = file.games.map { ($0.k ?? []).map { Self.fold($0) } }
     }
 
     var count: Int { entries.count }
@@ -295,7 +334,15 @@ struct PS5Index {
         guard q.count >= 2 else { return [] }
         var scored: [(Int, Int)] = []
         for (k, name) in folded.enumerated() {
-            let score = name == q ? 0 : name.hasPrefix(q) ? 1 : name.contains(" " + q) ? 2 : name.contains(q) ? 3 : -1
+            var score = name == q ? 0 : name.hasPrefix(q) ? 1 : name.contains(" " + q) ? 2 : name.contains(q) ? 3 : -1
+            // Aliases ("GTA", "AC") only count when the name itself did not match. An alias equal to the query or starting
+            // with it ranks like a name prefix, so "ac" finds Assassin's Creed above substring hits; word-prefix aliases rank last.
+            if score < 0 {
+                for a in foldedAliases[k] {
+                    let s = a == q || a.hasPrefix(q) ? 1 : a.contains(" " + q) ? 4 : -1
+                    if s >= 0 { score = score < 0 ? s : min(score, s) }
+                }
+            }
             if score >= 0 { scored.append((score, k)) }
         }
         scored.sort { $0.0 != $1.0 ? $0.0 < $1.0 : $0.1 < $1.1 }
@@ -319,7 +366,7 @@ struct PS5Index {
     func game(_ e: Entry) -> CatalogGame {
         CatalogGame(
             id: "igdb-\(e.i)", name: e.n, developer: e.v, publisher: e.p, platforms: [.ps5],
-            releaseDate: e.f ?? e.d, releasePrecision: e.f != nil ? .day : DatePrecision(rawValue: e.q ?? "day"), playableSince: e.b, earlyAccess: e.e == true && e.f == nil, igdbID: e.i, coverImageID: e.c, tones: e.t, coverage: .none
+            releaseDate: e.f ?? e.d, releasePrecision: e.f != nil ? .day : DatePrecision(rawValue: e.q ?? "day"), playableSince: e.b, releasedElsewhere: e.o, releasedElsewhereOn: e.ow, earlyAccess: e.e == true && e.f == nil, igdbID: e.i, coverImageID: e.c, tones: e.t, coverage: .none
         )
     }
 }

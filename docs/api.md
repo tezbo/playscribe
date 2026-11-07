@@ -74,7 +74,7 @@ Sent once per release, when its PS5 row becomes live, to followers whose `notify
 ```json
 {
   "aps": {
-    "alert": { "title": "The Blood of Dawnwalker", "body": "Update 1.1 is out on PS5 (version 01.004.000). See what changed." },
+    "alert": { "title": "The Blood of Dawnwalker: 4 new, 9 fixed", "body": "Update 1.1: Added photo mode" },
     "sound": "default", "thread-id": "dawnwalker", "interruption-level": "active", "relevance-score": 1
   },
   "gameId": "dawnwalker", "releaseId": "dawnwalker@1.1", "kind": "major", "verification": "official"
@@ -108,6 +108,7 @@ The local server has the same operations under `/v1/admin`, with `Authorization:
 ## 0.5.0 additions: notes lines and checked date
 
 - `NoteItem.category: new|fixed|balance|other` is the kind of change a notes line is, derived from its Steam section title ("New Features", "Bug Fixes", "Balance Changes"…); `other` when the title says nothing. Missing in older data: treat as `other`. Fixes win when a title says both.
+- `Release.ps4: true` (optional, absent otherwise) marks a PS4 patch for a game that plays on PS5 through backward compatibility. Label it "PS4 update"; the release still has a PS5 row (live, reported) with no version. Older apps ignore the key.
 - `NoteItem.pcOnly: boolean` marks a notes line that is only about PC. The app may fold these lines into a group; it never turns a release into "PC only".
 - `Field.checkedAt` is the time of the latest fetch that read the fact. PS5 `version` is never a PC number.
 
@@ -146,6 +147,10 @@ Each `upcoming/<n>.json` entry also carries, when IGDB has them: `summary` (cut 
 
 `move`, `{ kind: delayed|earlier|dated, previousDate?, previousPrecision, movedAt }`, is present for 14 days after a real change in the date, found by comparing with the previous run: a later day, or an exact day that became vague or tbd, is `delayed`; an earlier exact day is `earlier`; a vague or tbd date that became an exact day is `dated`. A vague date that only narrows ("Q4" to "November") is not a move. Show it as "Delayed from March" or "Now dated"; the app has no need to store anything.
 
+### Push alert payload: digest counts (r050-richer-alerts)
+
+Alert copy (Iris): counts in the title, body `Update <version>: <headline>`, where `<version>` is the release's display name ("Update 1.1"), the same label the app's local alert uses, never a PC version, and `<headline>` is the digest's first `topNew` line: text before any colon, at most 60 characters, cut at a word boundary with an ellipsis only when cut. Title is `<Game>: 3 new, 12 fixed, 2 balance, 1 PS5-only` (zero counts left out), or just the game name when there is nothing to count. The headline is the digest's first `topNew` line. When it is missing (poor headings), the body is the counts line (`3 new, 12 fixed.`), or `A new update is out` when there is nothing to count. The payload also carries `digest: {new, fixed, balance, ps5}` beside `gameId`, `releaseId`, `kind`, `verification`. The 72-hour guard and once-only claim are unchanged.
+
 ### Quiet hours on the relay (r050-quiet-hours-push)
 
 `POST /v1/devices` and `PATCH /v1/devices/me` accept `quietHours: { from, until, timeZone } | null` (whole minutes after local midnight, `from` may be after `until` to cross midnight, IANA zone; `from == until` or an unknown zone is a 400; `null` clears; an absent field leaves it as is). Stored as three columns on the device: a window and a zone, no identity, and the zone (not an offset) so daylight saving is right. When a push is sent, a device whose local time is inside `[from, until)` gets `interruption-level: passive` and no `sound`; the copy, `thread-id`, 72-hour guard and once-only claim are unchanged. A device with no window behaves as before.
@@ -160,4 +165,4 @@ Hand-curated, never fetched: playstation.com's terms bar automated access, so a 
     "games": [ { "name": "Some Game" }, { "name": "Another", "gameId": "kcd2" } ] } ] }
 ```
 
-`months` is newest first. `from` and `until` are the first and last day the lineup can be claimed (dates, inclusive). `gameId` is set only when the game is one the app tracks, so the card can link to its page. The app shows the card for the month whose window contains today (or the newest month inside its last 3 days as "Last chance") and hides it when `months` is empty or none matches. Decoders must ignore unknown keys.
+`months` is newest first. `from` and `until` are the first and last day the lineup can be claimed (dates, inclusive). `gameId` is set only when the game is one the app tracks, so the card can link to its page. `coverId` (optional) is an IGDB image id for a title the app's bundled PS5 index has no cover for; the card shows it as the game's cover, and shows the name plate when there is none. **A cover must match the exact product, or the field is empty and the app draws the name plate** (Iris): never a nearby game's art, so a bundle like "Tomb Raider 4-6 Remastered", which IGDB lists only as three separate games, has no `coverId` until official bundle art exists. A title in the index always uses the index's cover. The export fills `coverId` itself for any lineup game without one (typed or auto-read months), by exact title match against IGDB's PS5 games (roman numerals count as digits, so "Resident Evil 4" matches an IGDB entry named "Resident Evil IV"); the answer is remembered, and a title IGDB cannot match keeps the name plate. The app shows the card for the month whose window contains today (or the newest month inside its last 3 days as "Last chance") and hides it when `months` is empty or none matches. Decoders must ignore unknown keys.

@@ -73,26 +73,71 @@ struct FoldHarnessTests {
         } else {
             HarnessRules.require(r.aboveTheFold.isEmpty, "\(p.id) G-4: tappable frames above the Tabletop fold: \(r.aboveTheFold.map(HarnessRules.brief))")
         }
+        // Widths: Closed is calibrated (deck 346 pt in the 382 pt container with 16 pt margins; before #360's fix 262 pt). One-sided, with
+        // margin: fail only when the deck is clearly narrower than the container allows. Other poses are not yet calibrated.
+        if p.id == "closed", let deck = r.named["latestDeck"] {
+            HarnessRules.require(deck.width >= 330, "closed: deck is \(Int(deck.width)) pt wide in a \(Int(p.container.width)) pt container (expected about 346; the trailing inset is counted twice if it is 262)")
+        }
         HarnessRules.checkDeck(r, maxFraction: p.id == "tabletop" ? nil : 0.5)
         if p.id == "closed" || p.id == "open" { HarnessRules.checkDeck(r, maxFraction: 0.38) }
         if p.expected != .tabletop { HarnessRules.checkLibraryToolbar(r) }
     }
 
-    // MARK: Accessibility text sizes (7fe84f4, AX3)
+    // MARK: Accessibility text sizes (7fe84f4, AX3; all poses at AX3 and AX5 since the #292 / landscape-width review)
 
-    @Test(arguments: ["closed", "open", "openPortrait"], [0, 1])
+    /// The deck bound at AX3 and AX5 in the three poses it was asserted in before. A hung or looping layout (#292 in Tabletop) now
+    /// fails this test by name through the time limit instead of stalling the run.
+    @Test(.timeLimit(.minutes(2)), arguments: ["closed", "open", "openPortrait"], [0, 1])
     func deckStaysBoundedAtAccessibilitySizes(_ id: String, _ sizeIndex: Int) async throws {
         let p = HarnessPose.named(id)
         let size: UIContentSizeCategory = sizeIndex == 0 ? .accessibilityExtraLarge : .accessibilityExtraExtraExtraLarge
-        let r = try #require(await FoldHost.render(p, type: size))
+        let r = try #require(await HarnessRules.timedRender(p, type: size))
         defer { FoldHost.dispose(r) }
         HarnessRules.checkDeck(r, maxFraction: 0.5)
+    }
+
+    /// Every pose at AX3 and AX5: it must render within the time budget (a layout loop or hang fails here, naming pose and size),
+    /// and no tappable frame may overflow the trailing edge (G-8).
+    @Test(.timeLimit(.minutes(2)), arguments: ["closed", "closedLandscape", "open", "openPortrait", "book", "tabletop"], [0, 1])
+    func everyPoseRendersAndStaysInsideAtAccessibilitySizes(_ id: String, _ sizeIndex: Int) async throws {
+        let p = HarnessPose.named(id)
+        let size: UIContentSizeCategory = sizeIndex == 0 ? .accessibilityExtraLarge : .accessibilityExtraExtraExtraLarge
+        let r = try #require(await HarnessRules.timedRender(p, type: size), "\(p.id): a window scene to host in")
+        defer { FoldHost.dispose(r) }
+        HarnessRules.reportOverflow(r, size: sizeIndex == 0 ? "AX3" : "AX5")
     }
 }
 
 /// The frame rules, shared by the harness tests and (later) by sim-side captures.
 @MainActor
 enum HarnessRules {
+    /// Render budget. The usual render settles for 1.8 s; anything past this is a layout loop or hang (#292, Tabletop).
+    static let renderBudget: Double = 20
+
+    /// `FoldHost.render` with a wall-clock check, so a slow or looping layout fails with the pose and size in the message.
+    static func timedRender(_ pose: HarnessPose, type: UIContentSizeCategory, sourceLocation: SourceLocation = #_sourceLocation) async -> Rendered? {
+        let start = ContinuousClock.now
+        let r = await FoldHost.render(pose, type: type)
+        let d = ContinuousClock.now - start
+        let secs = Double(d.components.seconds) + Double(d.components.attoseconds) / 1e18
+        if secs > renderBudget {
+            fail("\(pose.id) at \(type.rawValue): rendering took \(Int(secs)) s, over the \(Int(renderBudget)) s budget (layout loop or hang?)", sourceLocation: sourceLocation)
+        }
+        return r
+    }
+
+    /// One-sided: a tappable frame reaching past the container's trailing edge by more than 20 pt is clearly overflowing, even with the
+    /// harness's 84 to 88 pt narrowing (which can only hide overflow, never invent it). Tabletop's rail is laid out by the system at the
+    /// real region and is skipped. Asserted since the first CI run (9bb77b3) showed no overflow in any pose at AX3 or AX5.
+    static func reportOverflow(_ r: Rendered, size: String) {
+        // Book's pages are split by the system's ArrangementView at the window's real fold, which offscreen starts the right page at
+        // x 475 (inside the fold) instead of 495, so a full-width page overruns by 23 pt (#360 run fa44e8e). Same limit as Tabletop.
+        guard r.pose.expected != .tabletop, r.pose.expected != .book else { return }
+        let limit = r.pose.container.width + 20
+        let over = r.frames.filter { $0.width > 1 && $0.height > 1 && $0.maxX > limit }
+        require(over.isEmpty, "\(r.pose.id) \(size) G-8 overflow: tappable frames past the trailing edge (\(Int(limit)) pt): \(over.map(brief))")
+    }
+
     /// One-line failures that say "failed", so the CI log's grep shows them (and so a reader sees the numbers).
     static func require(_ ok: Bool, _ message: String, sourceLocation: SourceLocation = #_sourceLocation) {
         if !ok { fail(message, sourceLocation: sourceLocation) }

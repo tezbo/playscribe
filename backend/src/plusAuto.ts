@@ -5,6 +5,7 @@
 import type { DB } from './db.ts'
 import { getText, type FetchFn } from './http.ts'
 import { plusProblems, type PlusMonth } from './plus.ts'
+import type { Igdb } from './ingest/igdb.ts'
 
 const LIST_URL = 'https://www.pushsquare.com/tags/ps-plus'
 const SITE = 'https://www.pushsquare.com/'
@@ -79,4 +80,51 @@ export const fetchPlus = async (db: DB, fetchFn: FetchFn, log: (m: string) => vo
     log(`plus: ${(e as Error).message}`)
   }
   return added
+}
+
+const ROMAN: Record<string, string> = { i: '1', ii: '2', iii: '3', iv: '4', v: '5', vi: '6', vii: '7', viii: '8', ix: '9', x: '10' }
+/** A title for comparing: lower case, no punctuation, roman numerals as digits ("IV-VI" and "4-6" match). */
+export const plusTitleKey = (name: string) =>
+  name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+    .split(' ')
+    .map((t) => ROMAN[t] ?? t)
+    .join(' ')
+
+const COVER_RETRY_MS = 7 * 86400e3
+
+/**
+ * Looks up the IGDB cover of every lineup title that has none (coverId in plus.json wins), by name, PS5 games only, and
+ * remembers the answer in plus_covers. Exact title match only, so a wrong cover never shows; no match leaves the name plate.
+ */
+export const resolvePlusCovers = async (db: DB, igdb: Pick<Igdb, 'query'> | null, log: (m: string) => void = () => {}, manual: PlusMonth[] = []): Promise<number> => {
+  if (!igdb) return 0
+  const names = new Set<string>()
+  for (const m of [...storedPlusMonths(db), ...manual]) for (const g of m.games) if (!g.coverId) names.add(g.name)
+  let found = 0
+  let ps5: { id: number } | undefined
+  for (const name of names) {
+    const row = db.prepare('SELECT cover_id, checked_at FROM plus_covers WHERE name = ?').get(name) as { cover_id: string | null; checked_at: string } | undefined
+    if (row && (row.cover_id || Date.now() - Date.parse(row.checked_at) < COVER_RETRY_MS)) continue
+    try {
+      ps5 ??= (await igdb.query<{ id: number }>('platforms', 'fields id; where slug = "ps5"; limit 1;'))[0]
+      const safe = name.replace(/["\\]/g, ' ').slice(0, 80)
+      const rows = await igdb.query<{ name: string; cover?: { image_id: string } }>('games', `fields name,cover.image_id; search "${safe}"; where platforms = (${ps5!.id}) & cover != null; limit 10;`)
+      const hit = rows.find((r) => plusTitleKey(r.name) === plusTitleKey(name))?.cover?.image_id
+      db.prepare('INSERT OR REPLACE INTO plus_covers (name, cover_id, checked_at) VALUES (?, ?, ?)').run(name, hit ?? null, new Date().toISOString())
+      if (hit) found++
+      else log(`plus: no IGDB cover found for "${name}"`)
+    } catch (e) {
+      log(`plus: cover lookup for "${name}" failed: ${(e as Error).message}`)
+    }
+  }
+  return found
+}
+
+/** Adds the resolved cover to lineup games that have none. */
+export const withPlusCovers = (db: DB, months: PlusMonth[]): PlusMonth[] => {
+  const covers = new Map((db.prepare('SELECT name, cover_id FROM plus_covers WHERE cover_id IS NOT NULL').all() as { name: string; cover_id: string }[]).map((r) => [r.name, r.cover_id]))
+  return months.map((m) => ({ ...m, games: m.games.map((g) => (g.coverId || !covers.has(g.name) ? g : { ...g, coverId: covers.get(g.name)! })) }))
 }
