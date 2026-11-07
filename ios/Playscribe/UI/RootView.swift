@@ -173,6 +173,9 @@ struct RootView: View {
                 Text("qa-response: \(NotificationService.shared.qaLastResponse ?? "none")")
                     .font(.system(size: 1)).opacity(0.01).accessibilityIdentifier("qaNotificationResponse")
                     .allowsHitTesting(false)
+                Text("qa-schedule: \(NotificationService.shared.qaScheduleLog)")
+                    .font(.system(size: 1)).opacity(0.01).accessibilityIdentifier("qaScheduleLog")
+                    .allowsHitTesting(false)
                 #endif
             }
         }

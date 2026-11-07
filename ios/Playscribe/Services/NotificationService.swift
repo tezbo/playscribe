@@ -29,6 +29,9 @@ final class NotificationService: NSObject {
     /// QA (INTERNAL): what the last notification tap delivered ("game/release"), so a test can tell "the response never arrived"
     /// from "it arrived and navigation did not follow" (96e0e39, eab123c: the tap brought the app up on the Library).
     var qaLastResponse: String?
+    /// QA (INTERNAL): what schedule() decided for the last release and what the system reported ("added", "delivered=1"), so a
+    /// run that finds Notification Center empty can say whether the notification was never scheduled or vanished (2537997).
+    var qaScheduleLog = "none"
     /// The APNs device token, hex encoded, once registered. The backend thread owns delivery.
     private(set) var deviceToken: String?
 
@@ -165,7 +168,10 @@ final class NotificationService: NSObject {
     /// Builds the notification for a release that reached On PS5 (N-4) and schedules it locally.
     /// Remote pushes from the backend carry the same fields.
     func schedule(release: Release, game: CatalogGame?, level: NotifyLevel, pauseAll: Bool, delay: TimeInterval, model: AppModel) {
-        guard let game, release.ps5State == .onPS5, !pauseAll else { return }
+        guard let game, release.ps5State == .onPS5, !pauseAll else {
+            qaScheduleLog = "\(release.id): not scheduled (game \(game == nil ? "nil" : "ok"), state \(release.ps5State), pauseAll \(pauseAll))"
+            return
+        }
         guard level == .all || (level == .major && release.kind.countsAsMajor) else { return }
         if model.data.knownReported?.contains(release.id) == true, model.data.notified[release.id] != nil {
             // N-11: the quiet Reported alert was this release's one push. Replace it in place,
@@ -188,7 +194,19 @@ final class NotificationService: NSObject {
         }
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: max(1, delay), repeats: false)
         let request = UNNotificationRequest(identifier: release.id, content: content, trigger: trigger)
-        center.add(request)
+        qaScheduleLog = "\(release.id): adding, due in \(Int(max(1, delay))) s"
+        center.add(request) { error in
+            Task { @MainActor in self.qaScheduleLog = "\(release.id): added" + (error.map { ", error \($0.localizedDescription)" } ?? "") }
+        }
+        let releaseID = release.id
+        DispatchQueue.main.asyncAfter(deadline: .now() + max(1, delay) + 2) { [center] in
+            center.getDeliveredNotifications { list in
+                let ids = list.map(\.request.identifier)
+                Task { @MainActor in
+                    self.qaScheduleLog += "; delivered after due: \(ids.contains(releaseID) ? "yes" : "no") (\(ids.count) in list)"
+                }
+            }
+        }
 
         // Make the release visible once it is due, whether or not the notification is shown.
         Task { [weak model] in
