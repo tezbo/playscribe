@@ -9,6 +9,8 @@ struct UpdatesView: View {
     var body: some View {
         let ids = model.data.collection.map(\.gameID)
         let items = ids.flatMap { model.ps5Releases($0) }.sorted { $0.ps5Date > $1.ps5Date }
+        let badgeExtra = duo.occlusions.filter { $0.minY < 190 && $0.maxY > 40 }
+            .map { max(0, duo.size.width - $0.minX) }.max() ?? 0
         Group {
             if ids.isEmpty {
                 ContentUnavailableView {
@@ -40,7 +42,9 @@ struct UpdatesView: View {
                     ForEach(items) { r in FeedRow(release: r) }
 
                 }
-                .contentMargins(.trailing, railWidth, for: .scrollContent)
+                // The inset is on the list itself: row backgrounds, separators and tap frames all stop at the
+                // rail and the time/Wi-Fi badge; scroll-content margins left them running underneath.
+                .padding(.trailing, railWidth + (duo.pose == .tabletop ? 0 : badgeExtra))
                 .clearsMessages()
             }
         }
