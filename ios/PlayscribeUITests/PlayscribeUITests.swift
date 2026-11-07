@@ -722,6 +722,18 @@ final class Release050Tests: XCTestCase {
         }
         // Iris: 8 pt between the two toolbar buttons, whatever the floor.
         XCTAssertFalse(cog.frame.insetBy(dx: -7.5, dy: -7.5).intersects(add.frame), "cog and Add keep 8 pt apart \(cog.frame) \(add.frame) [\(pose)]")
+        // Iris, Book: nothing within 24 pt of the hinge band. The band is in the pose probe's `division` ([x, y, w, h]).
+        if pose.contains("pose: book"), let probe = Optional(app.descendants(matching: .any)["poseProbe"]), probe.exists,
+           let data = probe.label.data(using: .utf8), let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+           let band = (json["division"] as? [Double]), band.count == 4 {
+            let lo = band[0], hi = band[0] + band[2]
+            for (name, e) in [("Settings", cog), ("Add", add)] {
+                let clearLeft = e.frame.maxX <= lo - 24 + 0.5, clearRight = e.frame.minX >= hi + 24 - 0.5
+                XCTAssertTrue(clearLeft || clearRight, "\(name) keeps 24 pt from the hinge band \(lo)-\(hi): frame \(e.frame) [\(pose)]")
+            }
+            let note = XCTAttachment(string: "Book toolbar: Settings \(cog.frame), Add \(add.frame), hinge band \(lo)-\(hi)")
+            note.name = "book-toolbar-measurements.txt"; note.lifetime = .keepAlways; self.add(note)
+        }
         XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(add.frame), "cog and Add do not overlap \(cog.frame) \(add.frame) [\(pose)]")
         // Status bar: nothing of either control sits inside the status bar's frame.
         let status = app.statusBars.firstMatch
