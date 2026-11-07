@@ -180,4 +180,25 @@ test('a bare PlayStation or PSN line on a Steam-only release tags pc, not ps5', 
   assert.deepEqual(platformsFor('Fixed a crash on PS5 and PSN login', undefined, true), ['ps5'])
   assert.deepEqual(platformsFor(psn), ['ps5', 'pc'])
   assert.deepEqual(platformsFor('Fixed PlayStation trophies not unlocking'), ['ps5'])
+  // PS5 fixes written in Steam posts keep ps5: "PC and PlayStation" pairs and other consoles named on the line.
+  assert.deepEqual(platformsFor('Fixed a crash on PC and PlayStation', undefined, true), ['ps5', 'pc'])
+  assert.deepEqual(platformsFor('Xbox and PlayStation: fixed a stutter in the market', undefined, true), ['ps5', 'xboxSeries'])
+  assert.deepEqual(platformsFor('Fixed a crash on consoles and PlayStation', undefined, true), ['ps5'])
+})
+
+test('on read, a Steam-only release keeps ps5 tags once it has a PS5 row, and weakens them while it has none', async () => {
+  const { openDb } = await import('../src/db.ts')
+  const store = await import('../src/store.ts')
+  const db = openDb(':memory:')
+  store.upsertGame(db, { id: 'g', name: 'G' })
+  const note = (text: string) => [{ title: 'Changes', items: [{ text, ps5ProOnly: false, pcOnly: false, category: 'fixed' as const }] }]
+  const add = (key: string, text: string) =>
+    store.upsertRelease(db, { gameId: 'g', versionKey: key, displayName: key, kind: 'patch', kindBasis: 'title', announcedAt: '2026-01-01T00:00:00Z', notes: note(text), sourceId: 'g-steam' }).id
+  const psn = add('1', 'Fixed a persistent PSN account link error message.')
+  const both = add('2', 'Fixed a crash on PC and PlayStation')
+  const tags = (id: string) => store.getRelease(db, id)!.notes[0]!.items[0]!.platforms
+  assert.deepEqual(tags(psn), ['pc'])
+  assert.deepEqual(tags(both), ['ps5', 'pc'])
+  store.upsertPlatform(db, psn, 'ps5', { status: 'live', verification: 'official', liveAt: store.field('2026-01-01T00:00:00Z', 'official', 'g-steam') })
+  assert.deepEqual(tags(psn), ['ps5'])
 })

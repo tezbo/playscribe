@@ -45,6 +45,8 @@ const NAMES = { pc: any([...TERMS.pcNames, ...TERMS.pc]), ps5: any(TERMS.ps5), x
 // "PlayStation" not followed by a generation, and "PSN": the weak PS5 terms.
 const BARE_PLAYSTATION = /\bPlayStation\b(?!\s*®?\s*[45]\b)|\bPSN\b/gi
 
+const PC_PLAYSTATION_PAIR = /\bPC\s*(?:and|&|\/|,|or|\+)\s*PlayStation|\bPlayStation\s*(?:and|&|\/|,|or|\+)\s*PC\b/i
+
 /**
  * Which platforms an item is about, or undefined for every platform. A section heading ("PC",
  * "PS5 fixes") decides for its items; otherwise the item's own words do. PC-only words (FrameGen,
@@ -55,7 +57,9 @@ export const platformsFor = (text: string, section?: Platform[], steamOnly = fal
   const p: Platform[] = []
   // On a Steam-only release a line that says only "PlayStation" or "PSN" (SDK, trophies, friends, account link) is about
   // the PC build, not PS5 content: it tags PC (Quinn, r052-steam-playstation-tag).
-  const weakOnly = steamOnly && NAMES.ps5.test(text) && !NAMES.ps5.test(text.replace(BARE_PLAYSTATION, ''))
+  // Not when the line also names another console, or pairs PC with PlayStation ("PC and PlayStation"): Steam posts for games that
+  // are on PS5 write their fixes that way, and those stay PS5 content.
+  const weakOnly = steamOnly && NAMES.ps5.test(text) && !NAMES.ps5.test(text.replace(BARE_PLAYSTATION, '')) && !NAMES.xboxSeries.test(text) && !NAMES.consoles.test(text) && !/\bSwitch\b/i.test(text) && !PC_PLAYSTATION_PAIR.test(text)
   const ps5 = weakOnly ? false : NAMES.ps5.test(text)
   const xbox = NAMES.xboxSeries.test(text)
   if (ps5) p.push('ps5')
