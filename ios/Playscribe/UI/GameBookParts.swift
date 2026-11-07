@@ -201,8 +201,9 @@ struct ReleasePage: View {
     var body: some View {
         let r = release
         VStack(alignment: .leading, spacing: 12) {
-            // Accessibility sizes: the title and tags first, then the share button on its own row at the page's trailing
-            // edge, 24 pt clear of the rail, so it never sits under the rail's buttons (R-2, Iris on #288 at AX3).
+            // Accessibility sizes: the title and tags first, then the share button on its own row, its right edge on the
+            // text column's trailing line (the one the headline and body wrap to), so it is clear of the rail and the
+            // hinge band without extra padding; the VStack's 12 pt is the gap above and below (R-2, r060, Iris).
             if typeSize.isAccessibilitySize {
                 HStack(spacing: 8) {
                     if model.isUnread(r) { UnreadDot() }
@@ -211,7 +212,7 @@ struct ReleasePage: View {
                     }
                 }
                 if r.isPS5Listed {
-                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }.padding(.trailing, 24).padding(.top, 12)
+                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
                 }
             } else {
             HStack(spacing: 8) {
