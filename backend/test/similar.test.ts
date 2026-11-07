@@ -12,3 +12,21 @@ test('roadmap 18: similar games are capped at 8, unique, named, and never the ga
   assert.equal(similarOf(undefined), undefined)
   assert.equal(similarOf([{ id: 5 }]), undefined)
 })
+
+test('r051 similar-why: a reason only where studio or genre data supports it', () => {
+  const self = { genres: [{ name: 'Indie' }, { name: 'Role-playing (RPG)' }], involved_companies: [{ developer: true, company: { name: 'Larian' } }, { developer: false, company: { name: 'Pub' } }] }
+  const out = similarOf(
+    [
+      { id: 2, name: 'Same dev', involved_companies: [{ developer: true, company: { name: 'LARIAN' } }], genres: [{ name: 'Strategy' }] },
+      { id: 3, name: 'Same genre', genres: [{ name: 'Role-playing (RPG)' }] },
+      { id: 4, name: 'Only broad', genres: [{ name: 'Indie' }] },
+      { id: 5, name: 'Publisher only', involved_companies: [{ developer: false, company: { name: 'Larian' } }] },
+      { id: 6, name: 'No data' },
+    ],
+    1,
+    self,
+  )!
+  assert.deepEqual(out.map((g) => g.why), ['Same studio', 'Same genre: Role-playing (RPG)', undefined, undefined, undefined])
+  assert.ok(!('why' in out[4]!))
+  assert.ok(similarOf([{ id: 2, name: 'x', genres: [{ name: 'RPG' }] }], 1)!.every((g) => !g.why), 'no self data, no reason')
+})
