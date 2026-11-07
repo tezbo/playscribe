@@ -358,7 +358,10 @@ extension Release {
         // Terry, 26 Oct: Steam is the source of truth. A release live on Steam counts as released
         // on PS5 unless we can confirm otherwise.
         let liveElsewhere = platforms.contains { $0.platform != .ps5 && $0.status == .live }
-        guard let p = ps5 else { return liveElsewhere ? .onPS5 : .pending }
+        // docs/ps5-patch-data.md: a Steam post that predates the PS5 release creates no PS5 row, and a release with
+        // no PS5 row at all (a PC port, a post before the PS5 launch) is not a PS5 update: no On PS5, no unread, no
+        // alert. It stays in the game's history. From the PS5 launch on the backend writes the row (Steam stays the source).
+        guard let p = ps5 else { return .pending }
         // Released (docs/ps5-patch-data.md): live and official, assumed, pending, or reported on
         // a release Steam or the studio has.
         if p.verification == .pending && p.status != .live { return .pending }

@@ -174,4 +174,33 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
             UserDefaults.standard.removeObject(forKey: "deviceKey")
         }
     }
+
+    @Test func forgetDeviceSendsDeleteAndDropsTheKeyOn204() async {
+        setUp()
+        StubRelay.handler = { _ in (204, Data()) }
+        await PushRegistrar.forgetDevice()?.value
+        let deletes = StubRelay.seen.filter { $0.httpMethod == "DELETE" }
+        #expect(deletes.count == 1 && deletes.first?.url?.path == "/v1/devices/me", "one DELETE /v1/devices/me: \(paths())")
+        #expect(deletes.first?.value(forHTTPHeaderField: "Authorization") == "Bearer key-1")
+        #expect(PushRegistrar.keys.read() == nil, "a 204 means done, so the stored key is dropped")
+        #expect(PushRegistrar.forgetDevice() == nil, "with no key there is nothing to send")
+    }
+
+    @Test func forgetDeviceKeepsTheKeyAndRetriesAfterAnOfflineFailure() async {
+        setUp()
+        StubRelay.handler = { _ in (503, Data()) }
+        await PushRegistrar.forgetDevice()?.value
+        #expect(PushRegistrar.keys.read() == "key-1", "a failed delete keeps the key so it can try again")
+        StubRelay.handler = { _ in (204, Data()) }
+        await PushRegistrar.forgetDevice()?.value
+        #expect(StubRelay.seen.filter { $0.httpMethod == "DELETE" }.count == 2, "the next call sends it again")
+        #expect(PushRegistrar.keys.read() == nil)
+    }
+
+    @Test func forgetDeviceTreats401AsDone() async {
+        setUp(key: "stale")
+        StubRelay.handler = { _ in (401, Data()) }
+        await PushRegistrar.forgetDevice()?.value
+        #expect(PushRegistrar.keys.read() == nil, "the relay no longer knows the key, so it is dropped")
+    }
 }

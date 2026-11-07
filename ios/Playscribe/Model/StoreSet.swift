@@ -14,7 +14,7 @@ enum StoreSet {
     static let entries: [Entry] = [
         Entry(id: "store-lantern-reach", name: "Lantern Reach", slug: "lantern-reach", status: .owned, releaseDate: "2026-02-10",
               update: ("Update 1.3", "Night expeditions, a steadier frame rate and a rebuilt map",
-                       "Night expeditions open the far shore, the map is rebuilt for quicker reading and the frame rate holds steady in busy harbours.",
+                       "After dark you can sail to the far shore. The new map reads faster at a glance, and crowded harbours no longer stutter.",
                        ["night expeditions to the far shore", "a rebuilt, quicker map", "steadier frame rate in busy harbours"], unread: true)),
         Entry(id: "store-hollow-meridian", name: "Hollow Meridian", slug: "hollow-meridian", status: .watching, releaseDate: "2026-05-21",
               update: ("Hotfix 1.1.2", "Fixes for saves and a camera that drifted",
@@ -24,7 +24,7 @@ enum StoreSet {
         Entry(id: "store-ember-tides", name: "Ember Tides", slug: "ember-tides", status: .wishlist, releaseDate: "2027-03-12", update: nil),
         Entry(id: "store-long-quiet-orchard", name: "The Long Quiet Orchard of Wending Hollow", slug: "long-quiet-orchard", status: .owned, releaseDate: "2025-10-30",
               update: ("Update 2.0", "A second season of quiet seasons, new trails and calmer menus",
-                       "Seasons turn in the orchard, three new trails open and the menus are calmer and easier to read.",
+                       "Autumn gives way to winter between the old trees, three trails open above the wall, and the menus finally read at a glance.",
                        ["seasons that turn in the orchard", "three new trails", "calmer, easier-to-read menus"], unread: false)),
     ]
 
@@ -34,6 +34,13 @@ enum StoreSet {
         entries.map { e in
             CatalogGame(id: e.id, name: e.name, developer: nil, publisher: nil, platforms: [.ps5], releaseDate: e.releaseDate,
                         releasePrecision: .day, coverAsset: "store-\(e.slug)-cover", heroAsset: "store-\(e.slug)-hero", coverage: .full)
+        }
+    }
+
+    /// The PS Plus lineup (store-set/plus): designed covers for invented titles, never tracked, so tiles are not tappable.
+    static func plusGames() -> [CatalogGame] {
+        PlusStore.storeSetLineup.map { g in
+            CatalogGame(id: g.id, name: g.name, platforms: [.ps5], coverAsset: "\(g.id)-cover", coverage: .none, custom: true)
         }
     }
 
@@ -58,16 +65,20 @@ enum StoreSet {
 
 extension AppModel {
     /// QA (INTERNAL, route "store-set"): replaces the library with the store set. Only the lantern-reach update is unread.
-    func loadStoreSet() {
+    /// `plus: true` (route `store-set/plus`) keeps the PS Plus card, with invented plates; by default it is off so the update hero is the first thing in the frame.
+    func loadStoreSet(plus: Bool = false) {
         guard BuildChannel.showsInternalTools else { return }
         qaUpdateCount = 0
         var state = PersistedState(collection: StoreSet.entries.map { CollectionEntry(gameID: $0.id, status: $0.status, addedAt: .now.addingTimeInterval(-30 * 86400)) })
-        state.customGames = StoreSet.games()
+        state.customGames = StoreSet.games() + StoreSet.plusGames()
         let releases = StoreSet.releases()
         state.simulated = releases
         for r in releases where !(StoreSet.entries.first { $0.id == r.gameID }?.update?.unread ?? false) { state.read[r.id] = .now }
         data = state
         PlusStore.shared.setQA("store")   // the PS Plus card shows invented plates, never real covers
+        data.plusCardOff = plus ? nil : true
+        // Alerts are treated as decided, so the invitation card never sits above the story.
+        NotificationService.shared.qaForcedAuthorization = .authorized
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
     }
