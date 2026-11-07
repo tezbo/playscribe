@@ -72,18 +72,22 @@ struct FeedRow: View {
         Button { model.openGame(release.gameID, chapter: .updates, releaseID: release.id) } label: {
             // At accessibility sizes the thumbnail sits above the text so the column gets the row's full width: a game
             // name never breaks inside a word and a date stays whole (Iris, AX5).
-            let rowLayout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 12))
+            let rowLayout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 28))
             rowLayout {
                 if let g = model.game(release.gameID) { CoverView(game: g, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 3) {
                     // At accessibility sizes the row stacks: the title takes the full width in whole words,
                     // the tags and date each get their own line, the summary goes under.
-                    HStack(alignment: .firstTextBaseline, spacing: 12) {
-                        // Centred on the title's x-height with 12 pt of clearance, not floating at the row's top and
-                        // not flush against the first letter (Iris, Quinn).
-                        if unread { UnreadDot().alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift } }
-                        TitleWithTags(release: release) {
-                            Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
+                    // The dot hangs in the gutter left of the text (12 pt clear of the first letter, centred on the title's first
+                    // line), so read and unread rows share one title edge (Iris, Quinn).
+                    TitleWithTags(release: release) {
+                        Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
+                    }
+                    .overlay(alignment: Alignment(horizontal: .leading, vertical: .firstTextBaseline)) {
+                        if unread {
+                            UnreadDot()
+                                .alignmentGuide(.leading) { $0[.trailing] + 12 }
+                                .alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
                         }
                     }
                     if typeSize.isAccessibilitySize {
