@@ -444,6 +444,9 @@ struct LibraryShelf: View {
                             }
                         }
                     }
+                    // The tiles are scroll targets themselves: the outer layout only sees this grid as one child, so
+                    // `nav.anchors["library"]` (store-set/end, quick/*) never reached a tile and the route stayed at the top.
+                    .scrollTargetLayout()
                     // A pose or fold change rebuilds the grid: lazily cached cells kept their old frames
                     // (0.2.0 gate: Book showed the open-pose grid across the fold).
                     .id(poseKey)
