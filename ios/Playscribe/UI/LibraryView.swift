@@ -854,6 +854,8 @@ struct TileCover: View {
             }
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
+            // Art is decorative to VoiceOver: any title drawn in it is also the card's own label (never information only in the art).
+            .accessibilityHidden(true)
     }
 }
 
