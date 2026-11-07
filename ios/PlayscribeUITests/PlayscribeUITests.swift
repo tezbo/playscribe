@@ -694,6 +694,8 @@ final class Release050Tests: XCTestCase {
             XCTAssertGreaterThanOrEqual(e.frame.width, floor, "\(name) width at least \(floor) pt [\(pose)]")
             XCTAssertGreaterThanOrEqual(e.frame.minY, 0, "\(name) is on screen [\(pose)]")
         }
+        // Iris: 8 pt between the two toolbar buttons, whatever the floor.
+        XCTAssertFalse(cog.frame.insetBy(dx: -7.5, dy: -7.5).intersects(add.frame), "cog and Add keep 8 pt apart \(cog.frame) \(add.frame) [\(pose)]")
         XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(add.frame), "cog and Add do not overlap \(cog.frame) \(add.frame) [\(pose)]")
         // Status bar: nothing of either control sits inside the status bar's frame.
         let status = app.statusBars.firstMatch
