@@ -166,6 +166,9 @@ final class AppModel {
     var simulatedScan = false
     /// QA (INTERNAL store-set route): the Upcoming tab lists invented games instead of the catalogue's real ones.
     var qaStoreSet = false
+    /// QA (INTERNAL): one-shot scroll requests from store-set/end and reader/<game>/<release>/<y>. A route runs before or after the first\n    /// layout, so the screen consumes the request when it appears or when it changes, then clears it.
+    var qaLibraryScroll: String?
+    var qaReaderScroll: Double?
     /// Opens the Add games sheet straight on this method (first-run welcome rows).
     var addSheetMethod: AddMethod?
     /// QA: route add/keyboard focuses the Add search field so the keyboard is up.
@@ -614,6 +617,7 @@ final class AppModel {
         case "reader" where parts.count == 3:
             openRelease(gameID: parts[0], releaseID: parts[1])
             nav.anchors["page-\(parts[0])-\(Chapter.updates.rawValue)"] = parts[2]
+            qaReaderScroll = Double(parts[2])
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
@@ -623,7 +627,7 @@ final class AppModel {
             // "store-set/end" (alias "titles"): the Library scrolled to its last row (the long Orchard title), to check it clears the tab bar and shows whole titles.
             // "store-set/since": the "Since you last opened" card, as if the previous open was a day ago (the unread Lantern Reach update).
             if parts.first == "since" { catchUpSince = .now.addingTimeInterval(-86_400); catchUpHidden = false }
-            if parts.first == "end" || parts.first == "titles", let last = StoreSet.gameIDs.last { nav.anchors["library"] = "lib-\(last)" }
+            if parts.first == "end" || parts.first == "titles", let last = StoreSet.gameIDs.last { nav.anchors["library"] = "lib-\(last)"; qaLibraryScroll = "lib-\(last)" }
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
         case "many-updates": resetToManyUpdatesDemo()

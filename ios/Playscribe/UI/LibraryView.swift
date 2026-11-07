@@ -461,10 +461,11 @@ struct LibraryShelf: View {
             // A route that sets a library anchor (store-set/end, quick/*, a just-added game) scrolls there once the grid
             // has laid out. `scrollPosition(id:)` alone ignored an anchor set before the first layout (gate ada480a:
             // store-set/end stills identical to store-set); the proxy scrolls by view id, after the grid exists.
-            .task {
-                guard let id = model.nav.anchors["library"] else { return }
+            .task(id: model.qaLibraryScroll) {
+                guard let id = model.qaLibraryScroll else { return }
                 try? await Task.sleep(for: .milliseconds(700))
                 proxy.scrollTo(id, anchor: .top)
+                model.qaLibraryScroll = nil
             }
           }
         }

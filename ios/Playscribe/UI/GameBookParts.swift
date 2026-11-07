@@ -96,6 +96,13 @@ struct PageView: View {
             if phase == .idle { model.nav.anchors[anchorKey] = String(Int(liveOffset)) }
         }
         .onAppear(perform: restore)
+        // QA (INTERNAL reader route): scroll to the requested offset once, whenever the request arrives.
+        .task(id: model.qaReaderScroll) {
+            guard let y = model.qaReaderScroll, y > 0 else { return }
+            try? await Task.sleep(for: .milliseconds(900))
+            position.scrollTo(y: y)
+            model.qaReaderScroll = nil
+        }
         .onChange(of: duo.pose) { restore() }
         // Closed, the list shares this scroll; jumping to the top would lose the tapped row (J-1).
         .onChange(of: model.nav.selected?[gameID]) { if !withContents { position.scrollTo(edge: .top) } }
