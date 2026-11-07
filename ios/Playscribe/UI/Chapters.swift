@@ -122,7 +122,7 @@ struct GalleryEmpty: View {
                 if let url = links?.official {
                     if duo.pose == .tabletop {
                         // View only: read as plain text, no link or button trait and no action (Iris, 7 Nov); the Official website link is on Tabletop's Links panel.
-                        Text("Official website").frame(minHeight: 44).foregroundStyle(.secondary)   // not amber, no arrow: it must not look tappable
+                        Text("Official website").frame(minHeight: 44).foregroundStyle(Color.secondary)   // grey, not amber, no arrow: it must not look tappable. Color.secondary, not .secondary: the hierarchical style would derive from the accent set on the FlowLayout below and come out dimmed amber (f452dd8)
                     } else {
                         Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                     }
@@ -130,7 +130,7 @@ struct GalleryEmpty: View {
                 if let url = search {
                     if duo.pose == .tabletop {
                         // View only: read as plain text, no link or button trait and no action (Iris, 7 Nov); the trailer search has no Tabletop control (pre-existing, carded).
-                        Text("Find trailers online").frame(minHeight: 44).foregroundStyle(.secondary)   // not amber, no arrow: it must not look tappable
+                        Text("Find trailers online").frame(minHeight: 44).foregroundStyle(Color.secondary)   // grey, not amber, no arrow: it must not look tappable. Color.secondary, not .secondary: the hierarchical style would derive from the accent set on the FlowLayout below and come out dimmed amber (f452dd8)
                     } else {
                         Link(destination: url) { Label("Find trailers online", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                     }
