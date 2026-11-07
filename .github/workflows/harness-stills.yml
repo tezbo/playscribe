@@ -6,6 +6,7 @@ name: Harness stills
 #   APP_SHA=<sha>      take ios/Playscribe from this commit (e.g. a PR head) and the harness from this branch
 #   POSES=book,tabletop  SIZES=std,ax3,ax5  ROUTE=game/dawnwalker
 #   TALL=2             host portrait poses in a window N times taller (see more of a scrolling screen; advisory)
+#   VIEW=settings      host that screen's view directly (system sheets are not in the capture); TALL scales its height
 #   SPLIT=1            lay out Book/Tabletop pages by the injected division (SplitArrangement stand-in, triage only)
 # Always finishes green, like Precheck, so a failed render sends no email; the job name carries the verdict.
 on:
@@ -51,6 +52,7 @@ jobs:
           echo "route=${ROUTE:-${{ inputs.route }}}" >> "$GITHUB_OUTPUT"
           echo "split=${SPLIT:-}" >> "$GITHUB_OUTPUT"
           echo "tall=${TALL:-}" >> "$GITHUB_OUTPUT"
+          echo "view=${VIEW:-}" >> "$GITHUB_OUTPUT"
       - name: Take the app sources from the requested commit
         if: steps.req.outputs.app_sha != ''
         run: git checkout "${{ steps.req.outputs.app_sha }}" -- ios/Playscribe && git rev-parse --short "${{ steps.req.outputs.app_sha }}"
@@ -76,6 +78,7 @@ jobs:
           TEST_RUNNER_HARNESS_ROUTE: ${{ steps.req.outputs.route }}
           TEST_RUNNER_HARNESS_SPLIT: ${{ steps.req.outputs.split }}
           TEST_RUNNER_HARNESS_TALL: ${{ steps.req.outputs.tall }}
+          TEST_RUNNER_HARNESS_VIEW: ${{ steps.req.outputs.view }}
         run: |
           mkdir -p stills
           xcodebuild test -project ios/Playscribe.xcodeproj -scheme Playscribe \
