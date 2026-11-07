@@ -1,6 +1,7 @@
 import Foundation
 import Observation
 import SwiftUI
+import UserNotifications
 
 enum AppTab: String, Codable, Hashable { case library, updates, search }
 
@@ -643,6 +644,9 @@ final class AppModel {
         case "simulate" where parts.count == 2:
             Task {
                 if NotificationService.shared.authorization == .notDetermined { await NotificationService.shared.requestAuthorization() }
+                // QA: earlier runs leave their notifications in Notification Center and on the lock screen; the test taps
+                // "the Dawnwalker row", so sweep them first and there is exactly one (e411c788: taps landed on a stale pile).
+                UNUserNotificationCenter.current().removeAllDeliveredNotifications()
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
         case "links" where parts.count == 1: openGame(parts[0]); linksSheetOpen = true

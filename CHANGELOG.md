@@ -15,6 +15,7 @@ so write it for testers. Release steps are in docs/release.md.
 - On a game page the section chips show every section when they fit, and no longer crowd the links. The page counter stays clear of the content, and VoiceOver covers video and the Tabletop reader.
 - Link rows say where they go, for example "Read full notes on Steam".
 - Pre-launch patches no longer show as PS5 updates.
+- Tapping a PS5 update notification no longer crashes the app, and it opens that update's page.
 
 Check on the Duo:
 

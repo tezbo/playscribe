@@ -97,23 +97,27 @@ struct NewsChapter: View {
                 }
             }
             ForEach(list.prefix(20)) { item in
-                Button { openURL(item.url) } label: {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(item.title).font(PlayscribeFont.headline).multilineTextAlignment(.leading)
-                        HStack(spacing: 8) {
-                            if let d = item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
-                            Tag(text: "Official")
-                        }
-                        .font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                let row = VStack(alignment: .leading, spacing: 4) {
+                    Text(item.title).font(PlayscribeFont.headline).multilineTextAlignment(.leading)
+                    HStack(spacing: 8) {
+                        if let d = item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
+                        Tag(text: "Official")
                     }
-                    .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-                    .contentShape(Rectangle())
+                    .font(PlayscribeFont.caption).foregroundStyle(.secondary)
                 }
-                .buttonStyle(.plain)
-                .tappableFrame(when: duo.pose != .tabletop)
-                .accessibilityAddTraits(.isLink)
-                .accessibilityHint("Opens in your browser")
-                .accessibilityHidden(duo.pose == .tabletop)
+                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                .contentShape(Rectangle())
+                if duo.pose == .tabletop {
+                    // View only means no touch, never hidden from VoiceOver (Iris, 7 Nov): the headline is read as text, in order,
+                    // and is not a link here (no Button, no link trait, no hint), so there is no action to activate.
+                    row.accessibilityElement(children: .combine)
+                } else {
+                    Button { openURL(item.url) } label: { row }
+                        .buttonStyle(.plain)
+                        .tappableFrame()
+                        .accessibilityAddTraits(.isLink)
+                        .accessibilityHint("Opens in your browser")
+                }
             }
         }
         .task(id: gameID) { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) }

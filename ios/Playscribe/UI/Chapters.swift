@@ -120,10 +120,20 @@ struct GalleryEmpty: View {
             Text("You can find trailers and screenshots elsewhere.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             FlowLayout(spacing: 24) {
                 if let url = links?.official {
-                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame(when: duo.pose != .tabletop).accessibilityHidden(duo.pose == .tabletop)
+                    if duo.pose == .tabletop {
+                        // View only: read as plain text, no link or button trait and no action (Iris, 7 Nov); the Official website link is on Tabletop's Links panel.
+                        Text("Official website").frame(minHeight: 44).foregroundStyle(.secondary)   // not amber, no arrow: it must not look tappable
+                    } else {
+                        Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
+                    }
                 }
                 if let url = search {
-                    Link(destination: url) { Label("Find trailers online", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame(when: duo.pose != .tabletop).accessibilityHidden(duo.pose == .tabletop)
+                    if duo.pose == .tabletop {
+                        // View only: read as plain text, no link or button trait and no action (Iris, 7 Nov); the trailer search has no Tabletop control (pre-existing, carded).
+                        Text("Find trailers online").frame(minHeight: 44).foregroundStyle(.secondary)   // not amber, no arrow: it must not look tappable
+                    } else {
+                        Link(destination: url) { Label("Find trailers online", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
+                    }
                 }
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.accent)

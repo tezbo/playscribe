@@ -17,20 +17,91 @@ final class PlayscribeUITests: XCTestCase {
         for cold in [true, false] {
             app.launch()
             if cold { app.terminate() } else { XCUIDevice.shared.press(.home) }
-            let note = try postAndFindNotification()
+            var note = try postAndFindNotification(cold: cold)
+            // A lock-screen tap does not launch the app on this sim (17b7a0b: locked after the terminate, app state 1, two
+            // retries). The sim has no passcode, so unlock first (a swipe up from the bottom, harmless if already unlocked),
+            // then use the row in Notification Center, so the first tap is the one that counts.
+            step("\(cold ? "cold" : "warm"): notification posted; row found: \(note.frame)")
+            unlockIfLocked()
+            if notificationRow(timeout: 2) == nil {
+                springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
+                    .press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.6)))
+                step("pulled Notification Center down; \(lockState())")
+            }
+            if let row = notificationRow(timeout: 6) { note = row }
+            step("tapping row \(note.frame) hittable=\(note.isHittable); \(lockState())")
             note.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
             // The tap starts (or resumes) the app in a process this test's `app` proxy never launched, and the `simulate`
             // launch in postAndFindNotification replaced it, so ask a fresh proxy for the target app's state (3758183 and
             // e9a735d: a bare assertion here failed with no message).
+            step("tapped; app state \(XCUIApplication().state.rawValue)")
+            // A tap on a Notification Center row can slide out its actions instead of opening the app (14516a5): tap "Open".
+            let openAction = springboard.buttons["Open"]
+            if XCUIApplication().state != .runningForeground, openAction.waitForExistence(timeout: 2) {
+                step("tapping the revealed Open action \(openAction.frame)")
+                openAction.tap()
+            }
             let target = XCUIApplication()
-            let foreground = target.wait(for: .runningForeground, timeout: 15)
+            // "Foreground" alone proves nothing: the app can be in front because the tap never reached SpringBoard's notification (a
+            // locked sim, a missed row). The proof is that the app received the tap's response (INTERNAL probe), so wait for that,
+            // and tap again, unlocking first, when it did not arrive (7631ff2: foreground, response "none", Library showing).
+            func responseDelivered(_ timeout: TimeInterval) -> Bool {
+                let probe = target.descendants(matching: .any)["qaNotificationResponse"]
+                let deadline = Date.now.addingTimeInterval(timeout)
+                repeat {
+                    if probe.exists, !probe.label.hasSuffix("none") { return true }
+                    usleep(300_000)
+                } while Date.now < deadline
+                return false
+            }
+            var foreground = target.wait(for: .runningForeground, timeout: 8)
+            var delivered = foreground && responseDelivered(6)
+            var retries = 0
+            while !delivered && retries < 2 {
+                // Unlock (a swipe up from the bottom; harmless if not locked), pull Notification Center down, find the row, tap.
+                step("retry \(retries + 1): app state \(target.state.rawValue)")
+                unlockIfLocked()
+                var again = notificationRow(timeout: 3)
+                if again == nil {
+                    springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
+                        .press(forDuration: 0.1, thenDragTo: springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.6)))
+                    again = notificationRow(timeout: 5)
+                }
+                guard let row = again else { break }
+                row.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+                retries += 1
+                foreground = target.wait(for: .runningForeground, timeout: 8)
+                delivered = foreground && responseDelivered(6)
+            }
+            if retries > 0 {
+                let note = XCTAttachment(string: "retried \(retries) time(s) before the app came to the foreground (\(cold ? "cold" : "warm"))")
+                note.name = "n6-retried-\(retries)-" + (cold ? "cold" : "warm"); note.lifetime = .keepAlways; add(note)
+            }
+            // Quinn: one swallowed tap is SpringBoard; two in a cold launch is the app not coming up, so that is a failure.
+            if cold && foreground && retries >= 2 {
+                XCTFail("cold: the notification needed \(retries) retries to bring Playscribe to the foreground; the first taps did nothing")
+            }
+            if !foreground {
+                let tree = XCTAttachment(string: springboard.debugDescription); tree.name = "n6-springboard-hierarchy-" + (cold ? "cold" : "warm"); tree.lifetime = .keepAlways; add(tree)
+            }
             if !foreground {
                 let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
                 shot.name = "n6-not-foreground-" + (cold ? "cold" : "warm"); shot.lifetime = .keepAlways; add(shot)
             }
             XCTAssertTrue(foreground, "\(cold ? "cold" : "warm"): tapping the notification brings Playscribe to the foreground (app state \(target.state.rawValue); 4 is running foreground)")
-            let release = target.buttons.matching(NSPredicate(format: "label CONTAINS 'Update 1.1'")).firstMatch
-            XCTAssertTrue(release.waitForExistence(timeout: 10), "\(cold ? "cold" : "warm"): the Update 1.1 release opens after the tap")
+            // The notification is for the simulated release ("Update N.0 (simulated)", the number counts earlier simulations), so the
+            // page that opens is that release's; "Update 1.1" is the real release and never what this notification carries (96e0e39).
+            let release = target.descendants(matching: .any)["releaseTitle"]
+            // Quinn: the title must be the simulated release's; an OR here would pass on opening the wrong release.
+            let opened = release.waitForExistence(timeout: 10) && release.label.localizedCaseInsensitiveContains("simulated")
+            if !opened {
+                // Did the tap's response reach the app at all? "none" = it never arrived (the tap went elsewhere); a value =
+                // it arrived and navigation did not follow, which is an app bug.
+                let resp = target.descendants(matching: .any)["qaNotificationResponse"]
+                let r = XCTAttachment(string: resp.exists ? resp.label : "no qaNotificationResponse element"); r.name = "n6-response-" + (cold ? "cold" : "warm"); r.lifetime = .keepAlways; add(r)
+                let tree = XCTAttachment(string: target.debugDescription); tree.name = "n6-after-tap-hierarchy-" + (cold ? "cold" : "warm"); tree.lifetime = .keepAlways; add(tree)
+            }
+            XCTAssertTrue(opened, "\(cold ? "cold" : "warm"): the simulated release opens after the tap (its page, not the Library); response seen by the app: \(target.descendants(matching: .any)["qaNotificationResponse"].exists ? target.descendants(matching: .any)["qaNotificationResponse"].label : "no probe")")
             let a = XCTAttachment(screenshot: target.screenshot()); a.name = cold ? "notification-tap-cold" : "notification-tap-warm"
             a.lifetime = .keepAlways; add(a)
         }
@@ -59,11 +130,36 @@ final class PlayscribeUITests: XCTestCase {
 
     /// Schedules a local notification through the app's internal route, then finds its banner. The 0.5.0 copy is
     /// "Update 1.1: <headline>" under the game name (no "is live on PS5"), so the banner is found by the game name.
-    private func postAndFindNotification() throws -> XCUIElement {
+    private func postAndFindNotification(cold: Bool) throws -> XCUIElement {
         let simulate = XCUIApplication()
         simulate.launchArguments = ["-qaRoute", "simulate/dawnwalker/major"]
+        step("before simulate launch; \(lockState())")
         simulate.launch()
-        XCUIDevice.shared.press(.home)
+        step("simulate launched; app state \(simulate.state.rawValue)")
+        if cold {
+            // Cold: no Home press (it sends this sim to the lock screen, where taps land on a pile of old notifications and do
+            // not launch the app, e411c788). Let the app schedule the 3 s notification, then end it; the system delivers it to
+            // a dead app, which is the cold case, with the sim still on the home screen.
+            sleep(1)
+            // Unlock now, before the notification is delivered, so it arrives as a top banner on an unlocked home screen (14516a5:
+            // unlocking after delivery loses the banner, and the Notification Center row only slides out an "Open" action).
+            unlockIfLocked()
+            sleep(1)
+            simulate.terminate()
+            step("terminated; \(lockState())")
+        } else {
+            // Home presses did not background the app on the Duo sim (6089c7e: still on the Library, no banner). A bottom-edge swipe
+            // does (by hand, 190,676 to 190,400 in Closed): flick, then check the app state, up to 3 times, Home as the last resort.
+            let screen = springboard.frame.isEmpty ? CGRect(x: 0, y: 0, width: 466, height: 678) : springboard.frame
+            let origin = springboard.coordinate(withNormalizedOffset: .zero)
+            for _ in 0..<3 where simulate.state == .runningForeground {
+                origin.withOffset(CGVector(dx: screen.midX, dy: screen.maxY - 2))
+                    .press(forDuration: 0.05, thenDragTo: origin.withOffset(CGVector(dx: screen.midX, dy: screen.maxY * 0.59)), withVelocity: .fast, thenHoldForDuration: 0)
+                sleep(1)
+            }
+            if simulate.state == .runningForeground { XCUIDevice.shared.press(.home); sleep(1) }
+            step("backgrounded: app state \(simulate.state.rawValue) (4 is foreground); \(lockState())")
+        }
         // The banner is up for only a few seconds, and pressing Home returns slowly: look briefly, then use Notification Center.
         if let banner = notificationRow(timeout: 4) { return banner }
         let start = springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.001))
@@ -71,6 +167,45 @@ final class PlayscribeUITests: XCTestCase {
         let listed = notificationRow(timeout: 10)
         XCTAssertNotNil(listed, "the Dawnwalker notification is in the banner or Notification Center")
         return listed ?? springboard.otherElements["Notification"]
+    }
+
+    // MARK: N-6 instrumentation (eec2f1f: five fixes without logs). Every step appends a line and a screenshot.
+    private var n6Log: [String] = []
+    private func step(_ text: String) {
+        let line = String(format: "%02d %@", n6Log.count + 1, text)
+        n6Log.append(line)
+        let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        shot.name = String(format: "n6-step-%02d", n6Log.count); shot.lifetime = .keepAlways; add(shot)
+        let note = XCTAttachment(string: n6Log.joined(separator: "\n")); note.name = "n6-log"; note.lifetime = .keepAlways; add(note)
+    }
+
+    /// Lock-screen state as the tree reports it. `isHittable` is not trusted (a list covers the date view while locked, so it can be
+    /// false on a locked screen, which is how eec2f1f decided the sim was unlocked without swiping).
+    private func lockState() -> String {
+        let date = springboard.descendants(matching: .any)["lockscreen-date-view"]
+        let cover = springboard.windows["SBCoverSheetWindow"]
+        return "dateView exists=\(date.exists) frame=\(date.exists ? "\(date.frame)" : "-") hittable=\(date.exists ? "\(date.isHittable)" : "-") coverSheet exists=\(cover.exists) frame=\(cover.exists ? "\(cover.frame)" : "-")"
+    }
+
+    /// Fast upward flick from just above SpringBoard's bottom edge (the sim has no passcode). A slow press-and-drag does not
+    /// unlock. Always flicks at least once; logs state before and after each flick.
+    private func unlockIfLocked() {
+        var screen = springboard.frame
+        if screen.isEmpty {
+            screen = springboard.windows.allElementsBoundByIndex.map(\.frame).max { $0.width * $0.height < $1.width * $1.height } ?? .zero
+        }
+        let origin = springboard.coordinate(withNormalizedOffset: .zero)
+        step("before unlock: screen \(screen); \(lockState())")
+        // Not locked: do nothing (a flick up on the home screen is a different gesture).
+        if !springboard.descendants(matching: .any)["lockscreen-date-view"].exists { return }
+        for i in 1...3 {
+            let from = CGVector(dx: screen.midX, dy: screen.maxY - 2), to = CGVector(dx: screen.midX, dy: screen.maxY * 0.3)
+            origin.withOffset(from).press(forDuration: 0.05, thenDragTo: origin.withOffset(to), withVelocity: .fast, thenHoldForDuration: 0)
+            sleep(1)
+            step("flick \(i) from \(from) to \(to); \(lockState())")
+            let date = springboard.descendants(matching: .any)["lockscreen-date-view"]
+            if !date.exists || date.frame.minY < -50 { return }
+        }
     }
 
     /// The notification's own row: the smallest hittable element whose label names the game. A first match on any element
@@ -372,12 +507,18 @@ final class ReviewFixUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments = ["-qaRoute", "settings"]
         app.launch()
-        let version = app.descendants(matching: .any).matching(NSPredicate(format: "label MATCHES '.*[0-9]+\\\\.[0-9]+\\\\.[0-9]+.*' OR value MATCHES '.*[0-9]+\\\\.[0-9]+\\\\.[0-9]+.*'")).firstMatch
-        let form = app.collectionViews.firstMatch
+        // The identified row, not "any element whose text looks like a version": at 96e0e39 a game card behind the sheet read
+        // "01.001.000" (a simulated release's date), matched at once, and the loop never scrolled to the real row.
+        let version = app.descendants(matching: .any)["appVersion"]
         var tries = 0
-        while !version.exists && tries < 8 { (form.exists ? form : app).swipeUp(); tries += 1 }
-        XCTAssertTrue(version.exists, "Settings shows a semantic version")
-        XCTAssertTrue(app.descendants(matching: .any)["appVersion"].exists, "the version row is identified")
+        while !version.exists && tries < 8 { Release050Tests.scrollForm(app); tries += 1 }
+        if !version.exists {
+            let tree = XCTAttachment(string: app.debugDescription); tree.name = "settings-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "settings-window"; shot.lifetime = .keepAlways; add(shot)
+        }
+        XCTAssertTrue(version.exists, "the version row is identified")
+        let text = [version.value as? String, version.label].compactMap { $0 }.joined(separator: " ")
+        XCTAssertNotNil(text.range(of: #"\d+\.\d+\.\d+"#, options: .regularExpression), "Settings shows a semantic version, got '\(text)'")
     }
 
     /// Scrolling Dawnwalker's Update 1.1 page: hitch ratio recorded for each run.
@@ -406,23 +547,72 @@ final class ReviewFixUITests: XCTestCase {
 final class LibraryLayoutTests: XCTestCase {
     func checkNoOverlap(games: Int) throws {
         let app = XCUIApplication()
+        // Instrumented (f356586: EightGames in Tabletop ended on SpringBoard with 0 tiles and no crash): every step logs the app
+        // state, whether SpringBoard shows the lock screen or the App Switcher, and a screenshot of the PANEL (the largest of
+        // XCUIScreen.screens; XCUIScreen.main is the outer display on the Duo and came back black).
+        var log: [String] = []
+        func panelPNG() -> Data {
+            let shots = XCUIScreen.screens.map { $0.screenshot() }
+            return (shots.max(by: { $0.image.size.width * $0.image.size.height < $1.image.size.width * $1.image.size.height }) ?? XCUIScreen.main.screenshot()).pngRepresentation
+        }
+        func step(_ text: String) {
+            let sb = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+            let line = String(format: "%02d app state %d (4 = foreground); lock=%@ switcher=%@; %@", log.count + 1, app.state.rawValue,
+                              sb.descendants(matching: .any)["lockscreen-date-view"].exists ? "yes" : "no",
+                              sb.otherElements["AppSwitcherContentView"].exists ? "yes" : "no", text)
+            log.append(line)
+            let shots = XCUIScreen.screens.map { $0.screenshot() }
+            if let panel = shots.max(by: { $0.image.size.width * $0.image.size.height < $1.image.size.width * $1.image.size.height }) {
+                let a = XCTAttachment(screenshot: panel); a.name = String(format: "eight-step-%02d", log.count); a.lifetime = .keepAlways; add(a)
+            }
+            let n = XCTAttachment(string: "screens: \(XCUIScreen.screens.count)\n" + log.joined(separator: "\n")); n.name = "eight-log"; n.lifetime = .keepAlways; add(n)
+        }
+        // The App Switcher was on screen in Open portrait and Tabletop (96e0e39): leave it, then bring the app up.
+        func leaveSwitcher() {
+            if XCUIApplication(bundleIdentifier: "com.apple.springboard").otherElements["AppSwitcherContentView"].exists {
+                XCUIDevice.shared.press(.home)
+            }
+        }
+        leaveSwitcher()
+        step("start")
         app.launchArguments = ["-qaRoute", "demo"]
         app.launch()
         sleep(2)
+        step("demo launched")
         app.open(URL(string: "playscribe://fill-library/\(games)")!)
         let open = XCUIApplication(bundleIdentifier: "com.apple.springboard").buttons["Open"]
         if open.waitForExistence(timeout: 2) { open.tap() }
         sleep(2)
+        step("fill-library opened")
         app.terminate()
         app.launchArguments = ["-qaRoute", "library"]
         app.launch()
+        step("library launched")
+        // Open portrait (48404f1): the capture was the App Switcher and no tiles were found, so bring the app back first.
+        leaveSwitcher()
+        if !app.wait(for: .runningForeground, timeout: 10) {
+            // Not in the foreground after launch (Tabletop, 96e0e39 and eab123c: SpringBoard in the tree, no crash report). Go Home,
+            // launch again once, and keep what SpringBoard showed.
+            let sb = XCTAttachment(string: XCUIApplication(bundleIdentifier: "com.apple.springboard").debugDescription)
+            sb.name = "eight-games-not-foreground-springboard.txt"; sb.lifetime = .keepAlways; add(sb)
+            XCUIDevice.shared.press(.home)
+            app.launch()
+            _ = app.wait(for: .runningForeground, timeout: 15)
+        }
         sleep(4)
+        step("before pose probe")
         let pose = ReleaseRowTests.pose(app)
+        step("pose \(pose)")
         var checked = 0
+        var seenTiles = Set<String>()
         for _ in 0..<10 {
             // The accessibility frame of a tile runs past its cover (the cover image's own
             // bounds), so each tile is taken as its laid-out cover: origin and width, 3:4.
-            let tiles = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
+            let tileQuery = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
+            // Quinn: count each tile once by its label (the same visible tiles are scanned again after a drag); the identifier
+            // holds the cover width, so it is not unique.
+            seenTiles.formUnion(tileQuery.allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }.map(\.label))
+            let tiles = tileQuery
                 .allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }
                 .map { e -> CGRect in
                     // The cover's real width is in the identifier ("tile-100"); Closed measures its column width at layout.
@@ -475,11 +665,33 @@ final class LibraryLayoutTests: XCTestCase {
                 for b in tiles[(i + 1)...] { XCTAssertFalse(a.insetBy(dx: 1, dy: 1).intersects(b), "tiles overlap \(a) \(b) [\(pose)]") }
                 for h in hero { XCTAssertFalse(a.insetBy(dx: 1, dy: 1).intersects(h), "tile overlaps hero \(a) \(h) [\(pose)]") }
             }
-            checked += tiles.count
-            app.swipeUp(velocity: .fast)
+            checked = seenTiles.count
+            step("scan: \(tiles.count) tiles on screen, \(checked) distinct so far")
+            if pose.contains("tabletop") {
+                // Tabletop: the upper half is a view-only stage, so a swipe there scrolls nothing, and the lower half is full of
+                // controls that eat a drag (the search field and the A to Z strip, 44e96db: 10 drags from 80% of the height moved
+                // nothing). The page scrolls from the bare band near the bottom (by hand: y 900 of a 951 pt window, over the page
+                // dots), so start there and drag up inside the lower half. Slow drags and Home-gesture flicks were both wrong.
+                if checked >= games { break }
+                let before = panelPNG()
+                let from = app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.946))
+                let to = app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.62))
+                from.press(forDuration: 0.05, thenDragTo: to)
+                sleep(1)
+                step("dragged in the lower half")
+                // A drag that moves nothing must fail loudly, not loop ten times and report "0 tiles" (44e96db).
+                if checked == 0 {
+                    let after = panelPNG()
+                    XCTAssertNotEqual(after, before, "the Tabletop drag scrolled nothing, so no tiles could appear [\(pose)]")
+                    if after == before { break }
+                }
+            } else {
+                app.swipeUp(velocity: .fast)
+            }
         }
         XCTAssertGreaterThan(checked, 0, "found tiles [\(pose)]")
         let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "library-\(games) [\(pose)]"; shot.lifetime = .keepAlways; add(shot)
+        step("end: library-\(games) [\(pose)]")
     }
 
     func testEightGames() throws { try checkNoOverlap(games: 8) }
@@ -539,7 +751,7 @@ final class CaptureTests: XCTestCase {
 final class LatestUpdatesDeckTests: XCTestCase {
     func testCardAndLeafTaps() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", "library"]
+        app.launchArguments = ["-qaRoute", "demo"]   // seeded: `library` shows the empty first-run Library after an earlier first-run test, and it has no deck
         app.launch()
         sleep(4)
         if ReleaseRowTests.pose(app).contains("pose: tabletop") { app.terminate(); throw XCTSkip("Tabletop's upper half is view only") }
@@ -655,6 +867,18 @@ final class Release050Tests: XCTestCase {
 
     private func isTabletop(_ app: XCUIApplication) -> Bool { ReleaseRowTests.pose(app).contains("pose: tabletop") }
 
+    /// Swipe the Settings form itself. In Tabletop Settings is a half-height panel, and a swipe at the app's centre lands on the
+    /// view-only stage above it, so the form never scrolled (48404f1: the PS Plus and Quiet hours switches were never reached).
+    static func scrollForm(_ app: XCUIApplication) {
+        let form = app.collectionViews.firstMatch
+        guard form.exists else { app.swipeUp(); return }
+        // A short, slow drag (about a third of the panel): a fling moved Tabletop's half-height panel past whole rows, so the
+        // PS Plus switch was never on screen at a check (96e0e39).
+        form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.8))
+            .press(forDuration: 0.1, thenDragTo: form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.45)),
+                   withVelocity: .slow, thenHoldForDuration: 0.2)
+    }
+
     /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and
     /// of the status bar, in every pose; the cog opens Settings, which shows a semantic version.
     /// Fast on its own: -only-testing:PlayscribeUITests/Release050Tests/testLibraryToolbarCogAndAdd
@@ -665,14 +889,28 @@ final class Release050Tests: XCTestCase {
         let add = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add game' OR label == 'Add game' OR label == 'Add'")).firstMatch
         XCTAssertTrue(cog.waitForExistence(timeout: 10), "Settings cog exists [\(pose)]")
         XCTAssertTrue(add.exists, "Add exists [\(pose)]")
-        // Exemption (Iris): only the system-drawn Closed toolbar buttons may be 36 pt (the app draws 38). Our own
-        // controls, which is every other pose's rail, stay at 44 pt.
-        let floor: CGFloat = pose.contains("pose: closed") ? 35.5 : 43.5
+        // Exemption (Iris): only the system-drawn navigation-bar buttons (Closed, Open, Book: the app draws 38) may be 36 pt.
+        // Our own controls, which is Tabletop's rail, stay at 44 pt. (Book hit the 44 branch at 48404f1: its bar is system-drawn too.)
+        let floor: CGFloat = pose.contains("pose: tabletop") ? 43.5 : 35.5
         for (name, e) in [("Settings", cog), ("Add", add)] {
             XCTAssertTrue(e.isHittable, "\(name) is hittable [\(pose)]")
             XCTAssertGreaterThanOrEqual(e.frame.height, floor, "\(name) height at least \(floor) pt [\(pose)]")
             XCTAssertGreaterThanOrEqual(e.frame.width, floor, "\(name) width at least \(floor) pt [\(pose)]")
             XCTAssertGreaterThanOrEqual(e.frame.minY, 0, "\(name) is on screen [\(pose)]")
+        }
+        // Iris: 8 pt between the two toolbar buttons, whatever the floor.
+        XCTAssertFalse(cog.frame.insetBy(dx: -7.5, dy: -7.5).intersects(add.frame), "cog and Add keep 8 pt apart \(cog.frame) \(add.frame) [\(pose)]")
+        // Iris, Book: nothing within 24 pt of the hinge band. The band is in the pose probe's `division` ([x, y, w, h]).
+        if pose.contains("pose: book"), let probe = Optional(app.descendants(matching: .any)["poseProbe"]), probe.exists,
+           let data = probe.label.data(using: .utf8), let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+           let band = (json["division"] as? [Double]), band.count == 4 {
+            let lo = band[0], hi = band[0] + band[2]
+            for (name, e) in [("Settings", cog), ("Add", add)] {
+                let clearLeft = e.frame.maxX <= lo - 24 + 0.5, clearRight = e.frame.minX >= hi + 24 - 0.5
+                XCTAssertTrue(clearLeft || clearRight, "\(name) keeps 24 pt from the hinge band \(lo)-\(hi): frame \(e.frame) [\(pose)]")
+            }
+            let note = XCTAttachment(string: "Book toolbar: Settings \(cog.frame), Add \(add.frame), hinge band \(lo)-\(hi)")
+            note.name = "book-toolbar-measurements.txt"; note.lifetime = .keepAlways; self.add(note)
         }
         XCTAssertFalse(cog.frame.insetBy(dx: 1, dy: 1).intersects(add.frame), "cog and Add do not overlap \(cog.frame) \(add.frame) [\(pose)]")
         // Status bar: nothing of either control sits inside the status bar's frame.
@@ -749,11 +987,15 @@ final class Release050Tests: XCTestCase {
         let app = launch("settings")
         let toggle = app.switches["quietHours"]
         var tries = 0
-        while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
+        while !toggle.exists && tries < 6 { Self.scrollForm(app); tries += 1 }
         XCTAssertTrue(toggle.exists, "Settings has a Quiet hours switch")
         XCTAssertTrue(["off", "0"].contains(toggle.value as? String ?? ""), "off by default, got \(String(describing: toggle.value))")
         if isTabletop(app) { XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: switch in the lower half") }
         XCTAssertGreaterThanOrEqual(toggle.frame.height, 44 - 1)
+        // Bring the row clear of the panel's bottom edge before tapping: at 96e0e39 it sat at the edge, the tap missed and the
+        // From and Until rows never appeared.
+        var lift = 0
+        while let form = Optional(app.collectionViews.firstMatch), form.exists, toggle.frame.maxY > form.frame.maxY - 60, lift < 4 { Self.scrollForm(app); lift += 1 }
         // The identified element is the whole row; the switch is nested at its trailing edge, and a centre tap misses it.
         let inner = toggle.switches.firstMatch
         if inner.exists { inner.tap() } else { toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
@@ -765,8 +1007,7 @@ final class Release050Tests: XCTestCase {
         func reveal(_ prefix: String) -> Bool {
             var n = 0
             while !any(prefix).waitForExistence(timeout: 1) && n < 6 {
-                let form = app.collectionViews.firstMatch
-                (form.exists ? form : app).swipeUp(); n += 1
+                Self.scrollForm(app); n += 1
             }
             return any(prefix).exists
         }
@@ -786,7 +1027,7 @@ final class Release050Tests: XCTestCase {
         XCTAssertTrue(cog.waitForExistence(timeout: 5)); cog.tap()
         let toggle = app.switches["plusCardToggle"]
         var tries = 0
-        while !toggle.exists && tries < 6 { app.swipeUp(); tries += 1 }
+        while !toggle.exists && tries < 6 { Self.scrollForm(app); tries += 1 }
         XCTAssertTrue(toggle.exists, "Settings has the PS Plus card switch")
         XCTAssertTrue(["on", "1"].contains(toggle.value as? String ?? ""), "on by default, got \(String(describing: toggle.value))")
         let reminder = app.descendants(matching: .any)["plusLeavingSoon"]
@@ -799,7 +1040,7 @@ final class Release050Tests: XCTestCase {
         func flip() {
             let t = app.switches["plusCardToggle"]
             var n = 0
-            while !t.exists && n < 6 { app.swipeUp(); n += 1 }
+            while !t.exists && n < 6 { Self.scrollForm(app); n += 1 }
             let i = t.switches.firstMatch
             if i.exists { i.tap() } else { t.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
         }
