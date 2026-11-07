@@ -41,17 +41,18 @@ jobs:
           [ -n "$udid" ] || { echo "::error::No iOS 27.1 iPhone simulator"; exit 1; }
           echo "Using ${udid#* }"
           echo "udid=${udid%% *}" >> "$GITHUB_OUTPUT"
+          echo "UDID=${udid%% *}" >> "$GITHUB_ENV"
       - name: Build for testing
         run: |
           xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
-            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 \
+            -destination "id=$UDID" -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 \
             || { grep -E 'error:' build.log | head -20; exit 1; }
       - name: Feature UI tests (Closed)
         id: uitests
         continue-on-error: true
         run: |
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
-            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd \
+            -destination "id=$UDID" -derivedDataPath build/dd \
             -only-testing:PlayscribeUITests/ReleaseFeatureTests \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
           grep -E 'error:|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
@@ -64,10 +65,10 @@ jobs:
           [ -d build/UITests.xcresult ] && xcrun xcresulttool export attachments --path build/UITests.xcresult --output-path build/attachments || true
       - name: Screenshots of every new surface (Closed)
         if: always()
-        run: ios/tools/qa/ci-shots.sh "${{ steps.sim.outputs.udid }}" build/shots "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
+        run: ios/tools/qa/ci-shots.sh "$UDID" build/shots "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
       - name: Closed portrait and landscape, standard and AX5 (risk 2 step A)
         if: always()
-        run: ios/tools/qa/ci-closed-ax3.sh "${{ steps.sim.outputs.udid }}" build/shots-ax3 "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
+        run: ios/tools/qa/ci-closed-ax3.sh "$UDID" build/shots-ax3 "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
       - name: Real Closed landscape probe (XCUIDevice orientation; informational)
         if: always()
         id: landscape
@@ -75,7 +76,7 @@ jobs:
         run: |
           rm -rf build/Landscape.xcresult
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
-            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd \
+            -destination "id=$UDID" -derivedDataPath build/dd \
             -only-testing:PlayscribeUITests/ClosedLandscapeShotTests \
             -only-testing:PlayscribeUITests/ClosedPortraitAX3ShotTests \
             -resultBundlePath build/Landscape.xcresult CODE_SIGNING_ALLOWED=NO > landscape.log 2>&1 || status=$?
@@ -93,7 +94,7 @@ jobs:
           rm -rf build/Harness.xcresult
           mkdir -p build/shots-ax3/harness
           TEST_RUNNER_HARNESS_SHOT_DIR="$PWD/build/shots-ax3/harness" xcodebuild test -project ios/Playscribe.xcodeproj -scheme Playscribe \
-            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build/dd-unit \
+            -destination "id=$UDID" -derivedDataPath build/dd-unit \
             -only-testing:PlayscribeTests/HarnessLandscapeShotTests \
             -resultBundlePath build/Harness.xcresult CODE_SIGNING_ALLOWED=NO > harness.log 2>&1 || status=$?
           grep -E 'error:|Test Case .* (passed|failed)|Executed|\*\* TEST' harness.log | tail -20 | tee -a "$GITHUB_STEP_SUMMARY"
