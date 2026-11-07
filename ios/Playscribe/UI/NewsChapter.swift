@@ -300,12 +300,15 @@ struct GlobalNewsView: View {
                     .padding(.horizontal, 16)
                 }
                 .frame(width: duo.size.width)
+                .clearsMessages()
             } else {
                 List { ForEach(items.prefix(60)) { GlobalNewsRow(headline: $0) } }
                     // Closed: the badge and clock sit top right and the tab capsule floats on the right edge, so the card
                     // starts lower and keeps clear of the rail.
                     .contentMargins(.top, duo.pose == .closed ? 24 : 0, for: .scrollContent)
                     .contentMargins(.trailing, duo.pose == .closed ? 72 : railWidth, for: .scrollContent)
+                    // The last row ends above the tab bar and the pill, as Updates does (Quinn, Open portrait).
+                    .clearsMessages()
             }
         }
         .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
