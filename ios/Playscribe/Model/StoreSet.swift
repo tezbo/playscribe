@@ -4,7 +4,7 @@ import Foundation
 /// App Store screenshot content (r052-store-set-content): five invented games with plate-only covers and neutral hero art,
 /// in mixed states, so the Mac can capture store frames without real game names or marks. Internal builds only: the route
 /// that loads it (`-qaRoute store-set`, or playscribe://store-set) sits behind the same `showsInternalTools` guard as every
-/// other QA route (#231), and this file is not compiled when INTERNAL is off.
+/// other QA route (#231). Release also defines INTERNAL, so this file is compiled into every build, TestFlight included; the guard, not the compile flag, keeps the set out of distribution.
 enum StoreSet {
     struct Entry {
         var id: String; var name: String; var slug: String; var status: OwnershipStatus
