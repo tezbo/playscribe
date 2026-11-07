@@ -11,3 +11,5 @@ Date 2026-11-07 / owner: QA-poses thread (Theo builds) / card: harness Book spli
    - C. App-owned split view used in production: exact in the harness, but replaces the system's arrangement behaviour. Large, risks the Duo-native feel.
 5. **Decision.** B, as a 1 h spike with a kill rule: if the harness Book still doesn't match the Mac within ~2 points on row/line counts for KCD II AX5, stop and keep A. Do not do C.
 6. **Learning.** A headless stand-in is only trustworthy for what it was calibrated against; record the Mac pair that justifies it.
+
+Weighed by Nadia, 7 Nov: B approved with conditions: the Mac still signs off Book (the stand-in is triage only), record the Mac and harness pair that justifies it, and C stays rejected. Board card: r052-harness-book-split.
