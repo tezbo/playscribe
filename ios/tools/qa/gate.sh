@@ -31,6 +31,13 @@ ui() { echo "-only-testing:PlayscribeUITests/$1"; }
 POSE_SUITES=(FoldAuditTests LibraryLayoutTests LatestUpdatesDeckTests Release050Tests ReleaseFeatureTests
   PlayscribeUITests/testAccessibilityAudit PlayscribeUITests/testTabletopSheetsKeepControlsInTheLowerHalf
   PlayscribeUITests/testScanFitsThePanel)
+# TIER=pr trims the pose suites to what changes with the pose, measured on the Mac at 6511ae4 (Closed 936 s, Tabletop 824 s with the full list).
+# LibraryLayoutTests (Closed 259 s) and the pose-independent ReleaseFeatureTests (news, share, camera, widget, first run) run in TIER=full.
+[[ $TIER == pr ]] && POSE_SUITES=(FoldAuditTests LatestUpdatesDeckTests Release050Tests
+  ReleaseFeatureTests/testNewSurfacesKeepFrameRules ReleaseFeatureTests/testUpcomingTabAndWatchlist
+  ReleaseFeatureTests/testPinnedAddBar ReleaseFeatureTests/testNewScreensPassAccessibilityAudit
+  PlayscribeUITests/testAccessibilityAudit PlayscribeUITests/testTabletopSheetsKeepControlsInTheLowerHalf
+  PlayscribeUITests/testScanFitsThePanel)
 # Only meaningful when two pages are side by side.
 TWO_PAGE_SUITES=(SwapSidesTests)
 # Pose-independent: logic, data, navigation. Once, in Closed. (JourneyTests is not here: it needs the device

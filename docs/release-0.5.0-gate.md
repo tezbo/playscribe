@@ -42,4 +42,4 @@ Backend and data, front end (tap evidence for every row), and UX and UI, each na
 Terry's go (docs/release.md).
 
 ## Gate tiers (CI speed-up)
-- `TIER=pr tools/qa/gate.sh <out>`: Closed and Tabletop only, no stills, for PRs. `TIER=full` (default): all five poses with stills, for sign-off.
+- `TIER=pr tools/qa/gate.sh <out>`: Closed and Tabletop only, no stills, for PRs. `TIER=full` (default): all five poses with stills, for sign-off. TIER=pr also trims the pose suites (no LibraryLayoutTests, only the pose-sensitive ReleaseFeatureTests): ~16 min estimated from the 6511ae4 durations, to be confirmed on the Mac.
