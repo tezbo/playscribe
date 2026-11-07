@@ -203,8 +203,12 @@ struct ReleaseBody: View {
             }
             if let summary = ps5Page ? r.ps5Summary : r.summary {
                 VStack(alignment: .leading, spacing: 4) {
-                    LinkedTextView(text: summary)
-                        .lineLimit(summaryOpen ? nil : 3)
+                    if summaryOpen {
+                        LinkedTextView(text: summary)
+                    } else {
+                        // Collapsed: three lines ending on a whole word, never a cut one ("co…"); More shows it all, with links.
+                        WholeWordText(text: LinkedText.clean(summary), font: PlayscribeFont.body, lines: 3)
+                    }
                     // GR-3: a truncated summary always says how to read the rest.
                     if summary.count > 120 {
                         Button(summaryOpen ? "Less" : "More") { withAnimation(.snappy) { summaryOpen.toggle() } }
@@ -275,7 +279,11 @@ struct ReleaseBody: View {
                     NoteSectionView(release: r, section: section)
                 }
             }
-            HStack(spacing: 10) {
+            // Accessibility sizes: the Bookmark and Mark as read buttons stack, each the full width, so a label wraps on
+            // whole words ("Bookmar / k" at AX5, c240de9).
+            let actions = typeSize.isAccessibilitySize
+                ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10)) : AnyLayout(HStackLayout(spacing: 10))
+            actions {
                 let marked = model.isBookmarked(kind: .release, id: r.id)
                 Button { model.toggleBookmark(kind: .release, id: r.id, gameID: r.gameID) } label: {
                     Label(marked ? "Bookmarked" : "Bookmark", systemImage: marked ? "bookmark.fill" : "bookmark")
@@ -374,7 +382,7 @@ struct Facts: View {
             }
             row("Video", VideoFact(release: r))
             if let checked = p?.liveAt?.checkedAt, Date.now.timeIntervalSince(checked) > 86_400 {
-                row("Checked", Text(checked.shortDay).font(PlayscribeFont.footnote).foregroundStyle(.secondary))
+                row("Checked", Text(checked.localShortDay).font(PlayscribeFont.footnote).foregroundStyle(.secondary))
             }
         }
         .font(PlayscribeFont.subheadline)
@@ -550,13 +558,15 @@ struct SourceLinks: View {
     var body: some View {
         HStack(spacing: 16) {
             if let url = release.links?.ps5Page {
-                Link(destination: url) { Label("PS5 update page", systemImage: "arrow.up.right.square") }
+                Link(destination: url) { Label(LinkHost.label("PS5 update page", url), systemImage: "arrow.up.right.square") }
                     .frame(minHeight: 44).tappableFrame()
+                    .accessibilityHint("Opens in browser")
             }
             if let url = release.links?.steamNotes {
-                Link(destination: url) { Label("Open in Steam", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
+                Link(destination: url) { Label(LinkHost.label("Read full notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
                     .padding(.trailing, 8)
                     .tappableFrame()
+                    .accessibilityHint("Opens in browser")
             }
         }
         .font(PlayscribeFont.subheadline)
@@ -606,5 +616,38 @@ enum ChangeKind: String, CaseIterable {
             let count = sections.reduce(0) { total, sec in total + sec.items.filter { item in !(ps5Only && item.isPCOnly) && !LinkedText.clean(item.text).isEmpty }.count }
             return (kind, sections, count)
         }
+    }
+}
+
+/// Where an external link goes, as a brand name, so a tap never surprises: "Read full notes on Steam",
+/// "All patch notes on Remedy". A host we don't know is "on the developer's site", never an address or a
+/// raw domain word (V-3).
+enum LinkHost {
+    private static let brands = [
+        "steampowered": "Steam", "steamcommunity": "Steam", "playstation": "PlayStation",
+        "ea": "EA", "xbox": "Xbox", "nintendo": "Nintendo", "gog": "GOG", "epicgames": "Epic Games",
+        "ubisoft": "Ubisoft", "remedygames": "Remedy", "deepsilver": "Deep Silver", "gamesci": "Game Science",
+        "dawnwalkergame": "Rebel Wolves", "bandainamcoent": "Bandai Namco", "bandainamco": "Bandai Namco",
+        "capcom": "Capcom", "square-enix": "Square Enix", "square-enix-games": "Square Enix", "sega": "Sega",
+        "bethesda": "Bethesda", "cdprojektred": "CD PROJEKT RED", "rockstargames": "Rockstar Games",
+        "activision": "Activision", "2k": "2K", "warhorsestudios": "Warhorse Studios", "konami": "Konami",
+        "pushsquare": "Push Square", "playstationlifestyle": "PlayStation LifeStyle"
+    ]
+    static let unknown = "the developer's site"
+
+    /// The brand for a known host; nil for one we don't know or a URL with no host.
+    static func name(_ url: URL) -> String? {
+        guard let host = url.host()?.lowercased(), !host.isEmpty else { return nil }
+        var parts = host.split(separator: ".").map(String.init)
+        // The label before the public suffix: "co.uk" and "com.au" take two parts.
+        if parts.count >= 3, ["co", "com", "org", "net", "gov"].contains(parts[parts.count - 2]) { parts.removeLast(2) }
+        else if parts.count >= 2 { parts.removeLast() }
+        guard let label = parts.last else { return nil }
+        return brands[label]
+    }
+
+    static func label(_ base: String, _ url: URL) -> String {
+        guard url.host()?.isEmpty == false else { return base }
+        return "\(base) on \(name(url) ?? unknown)"
     }
 }

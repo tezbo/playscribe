@@ -60,6 +60,23 @@ struct FeedContractTests {
         #expect(partial.new == 2 && partial.fixed == 0 && partial.topNew == nil)
     }
 
+    @Test("An external link says where it goes, from its host")
+    func linkHost() {
+        let steam = URL(string: "https://store.steampowered.com/news/app/3751260/view/1")!
+        let community = URL(string: "https://steamcommunity.com/games/1/announcements/detail/2")!
+        let studio = URL(string: "https://www.ubisoft.com/en-us/game/assassins-creed/news")!
+        #expect(LinkHost.label("Read full notes", steam) == "Read full notes on Steam")
+        #expect(LinkHost.label("Read full notes", community) == "Read full notes on Steam")
+        #expect(LinkHost.label("All patch notes", studio) == "All patch notes on Ubisoft")
+        #expect(LinkHost.label("PS5 update page", URL(string: "https://www.playstation.com/en-gb/games/x")!) == "PS5 update page on PlayStation")
+        // Known studio hosts map to brands; an unknown host never shows as a raw domain word.
+        #expect(LinkHost.label("All patch notes", URL(string: "https://www.remedygames.com/news")!) == "All patch notes on Remedy")
+        #expect(LinkHost.label("All patch notes", URL(string: "https://deepsilver.com/x")!) == "All patch notes on Deep Silver")
+        #expect(LinkHost.label("All patch notes", URL(string: "https://www.gamesci.cn/x")!) == "All patch notes on Game Science")
+        #expect(LinkHost.label("All patch notes", URL(string: "https://www.example.co.uk/a")!) == "All patch notes on the developer's site")
+        #expect(LinkHost.label("Read", URL(string: "mailto:x")!) == "Read")
+    }
+
     @Test("R-2: a PS4 patch decodes with ps4 and is labelled 'PS4 update', never with a version")
     func ps4Release() throws {
         func release(_ extra: String) -> String {

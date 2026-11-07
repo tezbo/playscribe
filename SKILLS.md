@@ -59,6 +59,7 @@ Claude Code loads these on its own in any session that checks out the repo, and 
 | `status-protocol` | A message is just "s", or a step is finished (`Next:` line). |
 | `review-merge-handoff` | Requesting or giving a sign-off, or merging. |
 | `playscribe-estimate` | Picking up, sizing or closing a card: `est_work`, `est_wait`, `basis`, then actuals (PERT, never invented). |
+| `decision-review` | About to add, change, remove or reverse anything: goal, still needed, worth, alternatives, decide, log the learning (`docs/decisions/TEMPLATE.md`). |
 | `workaround-first` | About to say "can't", "only", "missing" or "needs Terry": check repo, other thread, build it, then report the route. |
 | `playscribe-code-review` | Reviewing a diff with the repo rules first. |
 

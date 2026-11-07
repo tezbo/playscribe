@@ -298,7 +298,7 @@ struct GameLinks: View {
                     Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                 }
                 if let url = links?.patchNotes {
-                    Link(destination: url) { Label("All patch notes", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
+                    Link(destination: url) { Label(LinkHost.label("All patch notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame().accessibilityHint("Opens in browser")
                 }
             }
             .font(PlayscribeFont.subheadline)
@@ -804,6 +804,7 @@ struct ReleaseDetailView: View {
 /// bookmark for Wishlist, an eye for Watching. Tapping the glyph opens the status choice.
 struct GameTitleWithStatus: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
     var name: String
 
@@ -817,22 +818,50 @@ struct GameTitleWithStatus: View {
     }
 
     private var titleRow: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 8) {
-            Text(name).font(PlayscribeFont.title2).lineLimit(2).accessibilityAddTraits(.isHeader)
-            if let e = model.entry(gameID) {
-                Menu { ActionMenuContent(sections: model.statusMenu(gameID)) } label: {
-                    Image(systemName: Self.symbol(e.status))
-                        .font(.system(size: 20))
-                        .foregroundStyle(e.status == .owned ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
+        // Accessibility sizes: the title wraps on whole words and the status glyph sits inline right after the last word,
+        // wrapping with it (Iris on #289: never on a line of its own, and "Deliverance" is never cut mid-word).
+        // The title text stops growing at AX3: at AX5 one long word is wider than a Closed portrait column.
+        if typeSize.isAccessibilitySize { return AnyView(inlineTitleRow) }
+        return AnyView(HStack(alignment: .firstTextBaseline, spacing: 8) {
+            Text(name).font(PlayscribeFont.title2).lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true).accessibilityAddTraits(.isHeader)
+                .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+            statusMenu
+        })
+    }
+
+    private var inlineTitleRow: some View {
+        let words = name.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
+        return WordFlow(hSpacing: 8, vSpacing: 0) {
+            ForEach(Array(words.enumerated()), id: \.offset) { i, w in
+                if i == words.count - 1 {
+                    HStack(alignment: .firstTextBaseline, spacing: 0) {
+                        Text(w).font(PlayscribeFont.title2).accessibilityHidden(true)
+                        statusMenu
+                    }
+                } else {
+                    Text(w).font(PlayscribeFont.title2).accessibilityHidden(true)
                 }
-                .padding(.vertical, -12)
-                .accessibilityLabel(e.status.label)
-                .accessibilityHint("Change status")
-                .accessibilityIdentifier("statusGlyph")
-                .tappableFrame()
             }
+        }
+        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+        .background(Color.clear.accessibilityElement().accessibilityLabel(name).accessibilityAddTraits(.isHeader))
+    }
+
+    @ViewBuilder private var statusMenu: some View {
+        if let e = model.entry(gameID) {
+            Menu { ActionMenuContent(sections: model.statusMenu(gameID)) } label: {
+                Image(systemName: Self.symbol(e.status))
+                    .font(.system(size: 20))
+                    .foregroundStyle(e.status == .owned ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .padding(.vertical, -12)
+            .accessibilityLabel(e.status.label)
+            .accessibilityHint("Change status")
+            .accessibilityIdentifier("statusGlyph")
+            .tappableFrame()
         }
     }
 
@@ -855,9 +884,9 @@ struct LinksSheet: View {
         if let game = model.game(gameID) {
             let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
             if let u = links?.official { out.append(Row(id: "official", title: "Official website", url: u)) }
-            if let u = links?.patchNotes { out.append(Row(id: "notes", title: "All patch notes", url: u)) }
+            if let u = links?.patchNotes { out.append(Row(id: "notes", title: LinkHost.label("All patch notes", u), url: u)) }
         }
-        if let r = model.readerRelease(gameID), let u = r.links?.steamNotes { out.append(Row(id: "steam", title: "Open in Steam", url: u)) }
+        if let r = model.readerRelease(gameID), let u = r.links?.steamNotes { out.append(Row(id: "steam", title: LinkHost.label("Read full notes", u), url: u)) }
         return out
     }
 
@@ -897,5 +926,31 @@ struct LinksSheet: View {
     static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool {
         let links = model.game(gameID)?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
         return links?.official != nil || links?.patchNotes != nil || model.readerRelease(gameID)?.links?.steamNotes != nil
+    }
+}
+
+
+/// Words flowing left to right and wrapping at the proposed width; a word wider than the width gets its own line.
+/// One subview per word (the caller uses ForEach), so the last one can carry an inline glyph.
+struct WordFlow: Layout {
+    var hSpacing: CGFloat = 8
+    var vSpacing: CGFloat = 0
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        place(proposal.width ?? .infinity, subviews).size
+    }
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        for (i, p) in place(bounds.width, subviews).points.enumerated() {
+            subviews[i].place(at: CGPoint(x: bounds.minX + p.x, y: bounds.minY + p.y), proposal: .unspecified)
+        }
+    }
+    private func place(_ width: CGFloat, _ subviews: Subviews) -> (points: [CGPoint], size: CGSize) {
+        var points: [CGPoint] = [], x: CGFloat = 0, y: CGFloat = 0, row: CGFloat = 0, maxX: CGFloat = 0
+        for v in subviews {
+            let s = v.sizeThatFits(.unspecified)
+            if x > 0 && x + s.width > width { x = 0; y += row + vSpacing; row = 0 }
+            points.append(CGPoint(x: x, y: y))
+            x += s.width + hSpacing; row = max(row, s.height); maxX = max(maxX, x - hSpacing)
+        }
+        return (points, CGSize(width: maxX, height: y + row))
     }
 }

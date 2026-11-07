@@ -603,6 +603,7 @@ final class AppModel {
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
+        case "store-set": loadStoreSet()
         case "one-update": resetToOneUpdateDemo()
         case "two-update": resetToTwoUpdateDemo()
         case "caught-up": resetToCaughtUpDemo()
@@ -629,6 +630,11 @@ final class AppModel {
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
         case "links" where parts.count == 1: openGame(parts[0]); linksSheetOpen = true
+        // QA (INTERNAL): the game page itself (Contents in Open portrait and Book, the Page in Closed), never a pushed release.
+        case "gamepage" where parts.count == 1:
+            openGame(parts[0], chapter: .updates)
+            nav.detailReleaseID = nil
+            linksSheetOpen = false
         case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; addSearchFocus = false
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.

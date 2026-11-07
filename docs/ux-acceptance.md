@@ -23,6 +23,7 @@ Apple sources (read 2026-10-24): Designing for iPhone Duo, Preparing your app fo
 - **G-2** Leaving a game book is **Back** (chevron, accessibility label "Library") in every pose. **Close (X)** is used only for modal content: the Add game sheet, the video player and Settings.
 - **G-3** Toolbar items have both a title and an SF Symbol. Back sits at the top of the vertical axis, then the pinned action, then the groups. Overflow uses the system menu.
 - **G-4** Tabletop: **no tappable element has its frame above the top of the fold region.** This includes alerts the app draws, banners, pills, sheet headers and video posters. The stage view is `.allowsHitTesting(false)`. System alerts and the permission prompt are exempt because the system places them.
+  - Design note (2026-11-07): the hero caption (chips, headline, byline) is capped at AX3 by design, as the Tabletop rail is at 44 pt. At AX4 and AX5 it stays at the AX3 size, the headline wraps on whole words (at most four lines, ending in "…" at a word boundary), and chips wrap or stack before any is dropped. The Closed landscape wide card shows "New update" only; its version and date are in the VoiceOver label.
 - **G-5** No tappable element intersects an active `.division` reserved region in any pose (`proxy.reservedRegions(kind: .division)`).
 - **G-6** All content clears the outer camera's `.occlusion` region. Sheets use system presentation so this is automatic.
 - **G-7** Hit targets are at least 44 × 44 pt. No text is smaller than 11 pt at default size. Contrast meets WCAG AA in dark mode, which is the default appearance.
@@ -107,7 +108,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 - **R-4** Notes are grouped by section. Items flagged `ps5ProOnly` carry a "PS5 Pro" tag. PC-only items inside a console release are hidden behind "Show PC-only changes (n)".
 - **R-5** Spoiler items are blurred with the label "Spoiler · tap to show". A per-game toggle (eye symbol) reveals all of them.
 - **R-6** A release becomes **read** when its expanded body has been at least 50% on screen for 1 s, or via "Mark all read". The app icon badge and the Library tab badge update at once.
-- **R-7** Chapters (Updates, World, Companion, Gallery, My book; empty chapters are hidden). On compact width they show as a horizontally scrolling row with an edge fade, and the selected chip is scrolled into view. All chapters are reachable in every pose.
+- **R-7** Chapters (Updates, World, Companion, Gallery, My book; empty chapters are hidden). Every chapter is always in view (#331): one row with icons when it fits, else one row of titles, else the chips wrap onto a second row (accessibility sizes, narrow columns). Nothing hides behind a scroll. All chapters are reachable in every pose.
 - **R-8** Game actions live in the toolbar only (no duplicate pills): Notifications (bell), Spoilers (eye), Status (tag), Mark all read (checkmark, shown only when unread exists), Bookmark the release (per release, inline).
 - **R-9** Book: the left page holds key art and the contents of releases (tap to jump); the right page holds the reading pane.
 - **R-10** Tabletop: the upper stage shows the release's key art and display name. The lower half holds chapters, release jump chips and reading. No release header straddles the fold.
@@ -128,7 +129,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 
 - **V-1** Moving from Reported to On PS5 updates the item in place, removes the tag, makes it unread and pushes once, if notifications allow. Moving from On PS5 to anything else never happens in the UI; corrections edit facts silently.
 - **V-2** A PC version number never appears as a PS5 version anywhere.
-- **V-3** No source names, URLs or credits appear in the UI. Tags are the only provenance signal.
+- **V-3** No source names, URLs or credits appear in the UI. Tags are the only provenance signal. One exception (Terry, 2026-11-05): a link row names the destination it opens by brand, from the link host ("Read full notes on Steam", "PS5 update page on PlayStation", "All patch notes on Ubisoft"), never an address; a host not in the brand map reads "on the developer's site". The external-link glyph stays; the label wraps and never truncates, at AX sizes too; VoiceOver reads the whole label plus "opens in browser".
 - **V-4 Unconfirmed is always labelled and visibly separate** (Terry, 2026-10-26: "make sure it's tagged/visually separate, i.e. 'Unconfirmed' or similar"). Every Reported or Silent release is shown to users as **Unconfirmed**. The internal state keeps its name. The treatment never borrows the confirmed look (ember, unread dot, "Update" badge).
   - **Chip:** "Unconfirmed", in tertiary text (#A39BAE) inside a 1 pt *dashed* outline, with no fill and no ember. Confirmed releases never have a dashed outline. VoiceOver reads "Unconfirmed on PS5, from press reports" (G-10 updated).
   - **Alert (N-11):** the title starts "Unconfirmed:", for example "Unconfirmed: Kingdom Come: Deliverance II Patch 1.6 on PS5". The body is "From press reports. We'll tell you when it's official."
