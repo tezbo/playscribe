@@ -728,7 +728,10 @@ final class LibraryLayoutTests: XCTestCase {
                 // Closed portrait and Closed landscape both put tiles on the first screen. Open landscape is not part of this rule.
                 let portrait = app.frame.width <= app.frame.height
                 if pose.contains("tabletop") || pose.contains("closed") || (portrait && pose.contains("flat")) {
-                    let onScreen = tiles.filter { $0.minY >= 0 && $0.maxY <= app.frame.maxY + 1 }
+                    // Closed landscape (466 pt window): at least half a tile row (Iris); every other pose a whole tile.
+                    let onScreen = tiles.filter { pose.contains("closed") && app.frame.width > app.frame.height
+                        ? $0.minY >= 0 && ($0.minY + $0.height / 2) <= app.frame.maxY + 1
+                        : $0.minY >= 0 && $0.maxY <= app.frame.maxY + 1 }
                     XCTAssertFalse(onScreen.isEmpty, "a game tile is on the first screen without scrolling, 8 games [\(pose)]")
                 }
             }

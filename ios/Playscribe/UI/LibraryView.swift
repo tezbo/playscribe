@@ -402,7 +402,7 @@ struct LibraryShelf: View {
                                                      (duo.size.height * (typeSize.isAccessibilitySize ? 0.46 : 0.42)).rounded()),
                                       moreCount: model.latestDeckOverflow)
                         .id(poseKey)
-                } else if duo.pose != .tabletop && !heroOnRightPage {
+                } else if duo.pose != .tabletop && !heroOnRightPage && !closedWide {
                     let deck = model.latestDeck
                     if !deck.isEmpty {
                         LatestUpdatesDeck(cards: deck)
@@ -452,10 +452,19 @@ struct LibraryShelf: View {
                     .id(poseKey)
                 }
                 // Open and Closed portrait (Iris, v0.5.3): News, the PS Plus cards and search come after the tiles.
-                if portraitTilesFirst {
+                if portraitTilesFirst && closedWide {
+                    // Closed landscape (Iris, v0.5.3): switch and search, chips, tiles, then the deck, the PS Plus card and News.
+                    if !model.latestDeck.isEmpty {
+                        LatestUpdatesDeck(cards: model.latestDeck).frame(maxWidth: .infinity, alignment: .leading)
+                    } else if !model.data.collection.isEmpty {
+                        CaughtUpCard().frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    topCards(all)
+                    NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
+                } else if portraitTilesFirst {
                     NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                     topCards(all)
-                    if !all.isEmpty && !closedWide { searchField(binding: $model.data.nav.query) }
+                    if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 }
                 // Tabletop lower half (Iris, v0.5.3): switch, filter chips, tiles, then the alerts card, PS Plus, search and
                 // A to Z, the page edge and News. Order only; nothing else moves in any pose.
