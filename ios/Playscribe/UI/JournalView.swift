@@ -27,7 +27,7 @@ struct JournalView: View {
                 // GR-1: never an empty game. When it's out, and that we're watching for notes.
                 VStack(alignment: .leading, spacing: 6) {
                     Text(game.ps5AvailabilityLine).font(PlayscribeFont.headline)
-                    NoUpdatesLine()
+                    NoUpdatesLine(gameID: gameID)
                 }
                 .padding(.vertical, 8)
             }

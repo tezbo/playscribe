@@ -70,18 +70,25 @@ struct RetryButton: View {
     }
 }
 
-/// A game with no notes never claims "No updates yet" when the check itself failed.
+/// A game with no notes never claims "No updates yet" when the check itself failed, nor when the feed does not follow the game
+/// at all (it is outside the tracked set): then it says so, and shows no Checked line, since nothing was checked for it.
 struct NoUpdatesLine: View {
     @Environment(AppModel.self) private var model
+    var gameID: String
     var body: some View {
-        VStack(alignment: .leading, spacing: 2) {
-            switch model.checkState {
-            case .checked: Text("No updates yet.")
-            case .failed, .notChecked: Text("Couldn't check yet.")
+        if model.feedTracksGame(gameID) {
+            VStack(alignment: .leading, spacing: 2) {
+                switch model.checkState {
+                case .checked: Text("No updates yet.")
+                case .failed, .notChecked: Text("Couldn't check yet.")
+                }
+                CheckedLine()
             }
-            CheckedLine()
+            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+        } else {
+            Text("We don't track this game's updates yet.")
+                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
         }
-        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
     }
 }
 

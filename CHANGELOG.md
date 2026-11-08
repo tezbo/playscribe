@@ -5,6 +5,7 @@ so write it for testers. Release steps are in docs/release.md.
 
 ## 0.5.3
 
+- A game we don't track yet now says so, instead of "No updates yet".
 - Settings has a new Team alerts switch (development and TestFlight builds only). Turn it on to help us test alerts.
 - Turning alerts off now removes your device from our alert list.
 - Upcoming fits more on screen: short sections share a row, the cover shows the next game, and at big text sizes everything stacks in one column.

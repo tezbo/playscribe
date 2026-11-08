@@ -300,6 +300,8 @@ final class AppModel {
     /// Full per-game histories (games/<id>.json), keyed by the app's game id.
     var gameReleases: [String: [Release]] = [:] { didSet { rebuildMerged() } }
     @ObservationIgnored var historyStamps: [String: String] = [:]
+    /// The games the feed's index.json lists (the tracked set); nil until an index has been seen, from the cache or the network.
+    var feedIndexGames: [FeedClient.Index.Game]?
     /// Known issues per game from games/<id>.json.
     var gameIssues: [String: [KnownIssue]] = [:]
 
