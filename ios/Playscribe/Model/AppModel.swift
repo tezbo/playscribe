@@ -162,7 +162,13 @@ final class AppModel {
     var searchReturnTab: AppTab = .library
     func leaveSearch() { if nav.tab == .search { nav.tab = searchReturnTab == .search ? .library : searchReturnTab } }
     var pill: (gameID: String, releaseID: String)?
-    var addSheetOpen = false
+    var addSheetOpen = false {
+        didSet { if addSheetOpen && !oldValue { addIsSystemSheet = livePose != .tabletop && !liveRightPage } }
+    }
+    /// How the Add UI was presented when it opened: the system sheet, or the right-page panel. Kept while it is open, because at
+    /// launch the pose resolves closed, then Open landscape, then Open portrait, and following the raw pose dismissed and
+    /// re-presented the sheet mid-focus, which killed the search field's keyboard (a98e710 Mac log, testPinnedAddBar).
+    var addIsSystemSheet = false
     /// QA (route add/scan): the camera scan shows a fixed feed, since simulators have no camera.
     var simulatedScan = false
     /// Opens the Add games sheet straight on this method (first-run welcome rows).

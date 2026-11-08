@@ -62,7 +62,7 @@ struct RightPagePanel: View {
     private var panelWidth: CGFloat { duo.size.width - 16 - leadingEdge }
 
     var body: some View {
-        if model.addSheetOpen {
+        if model.addSheetOpen && !model.addIsSystemSheet {
             ZStack(alignment: .trailing) {
                 Color.black.opacity(0.4).ignoresSafeArea()
                 AddGameSheet()
@@ -191,7 +191,7 @@ struct RootView: View {
         .onChange(of: NotificationService.shared.launchedFromNotification) { _, fromNotification in
             if fromNotification { splashVisible = false }
         }
-        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && !model.liveRightPage }, set: { if !$0 && model.livePose != .tabletop && !model.liveRightPage { model.addSheetOpen = false } })) {
+        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
             // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
             AddGameSheet().presentationDetents([.large])
         }
