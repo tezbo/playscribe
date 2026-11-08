@@ -360,6 +360,32 @@ final class ReleaseFeatureTests: XCTestCase {
         XCTAssertTrue(waitFocus(false), "a tap outside the field dismisses the keyboard")
     }
 
+    /// A-1, v0.5.3 (Quinn, 9d41ce0 hand check): a tap on the field's row padding right after the keyboard was put away must bring it
+    /// back, every time. Ten rounds of title tap, then padding tap; the focus state is read from UIKit each time.
+    func testAddSearchPaddingTapAfterDismissAlwaysFocuses() throws {
+        launch("add/keyboard")
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard") }
+        let search = app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10))
+        func focused() -> Bool { (search.value(forKey: "hasKeyboardFocus") as? Bool) == true }
+        func wait(_ want: Bool, _ secs: Double = 3) -> Bool {
+            let end = Date.now.addingTimeInterval(secs)
+            while focused() != want && Date.now < end { usleep(100_000) }
+            return focused() == want
+        }
+        if !wait(true, 5) { search.tap() }
+        XCTAssertTrue(wait(true, 5), "the add search starts focused")
+        var misses: [Int] = []
+        for round in 1...10 {
+            app.navigationBars.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+            if !wait(false) { misses.append(round); continue }   // the title tap itself did not dismiss
+            // Padding: just outside the field's leading edge, inside the row.
+            search.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0.5)).withOffset(CGVector(dx: -8, dy: 0)).tap()
+            if !wait(true) { misses.append(round) }
+        }
+        XCTAssertTrue(misses.isEmpty, "title tap then padding tap failed in rounds \(misses)")
+    }
+
     // MARK: - Accessibility (G-7, G-10)
 
     /// The new screens pass the system audit for hit regions and element descriptions.
