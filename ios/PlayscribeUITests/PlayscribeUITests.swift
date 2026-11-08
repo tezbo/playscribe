@@ -229,7 +229,11 @@ final class PlayscribeUITests: XCTestCase {
             }
             step("schedule: \(lastScheduleLog)")
             if !accepted(lastScheduleLog) {
-                XCTFail("the system refused the notification request on every try (app says: \(lastScheduleLog)); permission reads granted but usernoted rejects the app as a source: a simulator registration fault if main fails the same way on this simulator")
+                // Quinn's terms (#422): a refusal before this simulator ever accepted an add is the simulator's; after one, it is the app's.
+                let kind = lastScheduleLog.contains("earlier success on this sim: yes")
+                    ? "APP FAILURE: the system refused the request after this simulator had already accepted one"
+                    : "SIMULATOR REFUSED: the system refused every try before this simulator accepted its first add (not counted; warm it with one full N-6 run and rerun)"
+                XCTFail("\(kind). App says: \(lastScheduleLog). Record auth N, the refusal and the simulator's boot time.")
                 return nil
             }
         }

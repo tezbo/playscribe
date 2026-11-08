@@ -173,7 +173,12 @@ final class NotificationService: NSObject {
         let id = request.identifier
         center.add(request) { error in
             let ns = error as NSError?
-            let text = ns.map { ", error \($0.localizedDescription) [\($0.domain) \($0.code)]" } ?? ""
+            // Quinn's terms for #422: a refusal before this simulator ever accepted an add is "simulator refused"; one after a
+            // success is an app failure. The flag lives in the app's own defaults, so an erase or reinstall clears it.
+            let key = "qaNotifAddOK"
+            let hadSuccess = UserDefaults.standard.bool(forKey: key)
+            if ns == nil { UserDefaults.standard.set(true, forKey: key) }
+            let text = ns.map { ", error \($0.localizedDescription) [\($0.domain) \($0.code)] (earlier success on this sim: \(hadSuccess ? "yes" : "no"))" } ?? ""
             Task { @MainActor in
                 self.qaScheduleLog += "; added" + text + " (try \(attempt))"
                 guard !text.isEmpty else { return }
