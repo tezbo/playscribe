@@ -682,7 +682,7 @@ final class LibraryLayoutTests: XCTestCase {
         var checked = 0
         var seenTiles = Set<String>()
         var tileScanIndex = 0
-        for _ in 0..<10 {
+        for _ in 0..<16 {
             // The accessibility frame of a tile runs past its cover (the cover image's own
             // bounds), so each tile is taken as its laid-out cover: origin and width, 3:4.
             let tileQuery = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
@@ -780,10 +780,14 @@ final class LibraryLayoutTests: XCTestCase {
             } else {
                 let before = pageState()
                 step("before swipe: \(before.summary)")
-                app.swipeUp(velocity: .fast)
+                // 255ad39: a fast swipe moved about 731 pt in a 466 pt window (Closed landscape), skipping rows (25 of 28 tiles seen).
+                // Step by a controlled drag of half the window height instead, so every row passes through the screen.
+                let stepFrom = app.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.80))
+                let stepTo = app.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.30))
+                stepFrom.press(forDuration: 0.1, thenDragTo: stepTo, withVelocity: .slow, thenHoldForDuration: 0.3)
                 sleep(1)
                 var now = pageState()
-                step("after swipe: \(now.summary); moved \(now != before)")
+                step("after half-window drag: \(now.summary); moved \(now != before)")
                 // 1fda372, cb3d799, 0d4d55f: a swipe that starts over the deck or a tile can move nothing. Fall back to the scroll
                 // view's own swipe, then drags from several columns, and fail loudly with the tree only when every attempt left the
                 // page as it was.
