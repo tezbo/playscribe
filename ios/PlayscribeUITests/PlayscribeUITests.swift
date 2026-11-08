@@ -162,14 +162,30 @@ final class PlayscribeUITests: XCTestCase {
         step("simulate launched; app state \(simulate.state.rawValue)")
         // First launch on a fresh sim asks for notification permission (run 1 and 2 on 370e685 failed on it). The route asks for
         // authorization, so the prompt is SpringBoard's: accept it before the notification can be scheduled.
-        for label in ["Allow", "Allow Notifications"] {
-            let allow = springboard.alerts.buttons[label]
-            if allow.waitForExistence(timeout: 4) { step("accepting the notification permission prompt"); allow.tap(); sleep(1); break }
+        // c4d2fae on a fresh sim, twice: no prompt was handled in the 4 s window and no notification ever arrived. So do not guess:
+        // the app reports its authorization status in the schedule log ("auth 2" = authorized); keep accepting the prompt until it
+        // says so, for up to 30 s, and stop with a clear message when it says denied.
+        let scheduled = simulate.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Simulated'")).firstMatch
+        let scheduleProbe = simulate.descendants(matching: .any)["qaScheduleLog"]
+        func authStatus() -> Int? {
+            guard scheduleProbe.exists, let r = scheduleProbe.label.range(of: "auth ") else { return nil }
+            return Int(scheduleProbe.label[r.upperBound...].prefix(1))
         }
+        let authDeadline = Date.now.addingTimeInterval(30)
+        while Date.now < authDeadline {
+            for label in ["Allow", "Allow Notifications"] {
+                let allow = springboard.alerts.buttons[label]
+                if allow.exists { step("accepting the notification permission prompt"); allow.tap(); sleep(1); break }
+            }
+            if let status = authStatus(), status != 0 { break }
+            usleep(500_000)
+        }
+        lastScheduleLog = scheduleProbe.exists ? scheduleProbe.label : "no qaScheduleLog element"
+        step("authorization: \(lastScheduleLog)")
+        if authStatus() == 1 { XCTFail("notifications are denied for Playscribe on this simulator (app says: \(lastScheduleLog)); reset the simulator or grant them, then rerun"); return nil }
         // The notification is scheduled by the route a moment after launch (and after the permission prompt), and an app put in the
         // background before that never schedules it (c4bced1: warm failed twice with Notification Center empty). The toast
         // "Simulated major arrives in 3 s" is shown right after the schedule call, so wait for it.
-        let scheduled = simulate.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Simulated'")).firstMatch
         if !scheduled.waitForExistence(timeout: 10) { sleep(2) }
         step("schedule confirmed (toast \(scheduled.exists ? "seen" : "not seen"))")
         if cold {
@@ -210,9 +226,14 @@ final class PlayscribeUITests: XCTestCase {
         }
         // No row. Ask the app what it scheduled and whether the system listed the notification as delivered when it was due
         // (2537997: Notification Center empty and icon badge 1; caf66ec: "delivered after due: yes (1 in list)", so the system had it).
-        let probeApp = XCUIApplication(); probeApp.activate()
-        let probe = probeApp.descendants(matching: .any)["qaScheduleLog"]
-        let text = probe.waitForExistence(timeout: 8) ? probe.label : "no qaScheduleLog element"
+        // Cold: the app was terminated, so activating it would start a new process whose log reads "none" (c4d2fae); use the log read
+        // before the terminate. Warm: the process is alive and its log has the system's delivered-after-due line.
+        var text = lastScheduleLog
+        if !cold {
+            let probeApp = XCUIApplication(); probeApp.activate()
+            let probe = probeApp.descendants(matching: .any)["qaScheduleLog"]
+            text = probe.waitForExistence(timeout: 8) ? probe.label : "no qaScheduleLog element"
+        }
         let sched = XCTAttachment(string: text); sched.name = "n6-schedule-log-" + (cold ? "cold" : "warm"); sched.lifetime = .keepAlways; add(sched)
         let delivered = text.contains("delivered after due: yes")
         if cold {
@@ -230,6 +251,7 @@ final class PlayscribeUITests: XCTestCase {
 
     // MARK: N-6 instrumentation (eec2f1f: five fixes without logs). Every step appends a line and a screenshot.
     private var n6Log: [String] = []
+    private var lastScheduleLog = "none"
     private func step(_ text: String) {
         let line = String(format: "%02d %@", n6Log.count + 1, text)
         n6Log.append(line)
