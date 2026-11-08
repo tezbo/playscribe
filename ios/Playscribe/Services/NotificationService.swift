@@ -165,6 +165,25 @@ final class NotificationService: NSObject {
         Task { try? await center.setBadgeCount(count) }
     }
 
+    #if INTERNAL
+    private var qaRequests: [String: UNNotificationRequest] = [:]
+    /// Adds, logs, and retries a refused add (the request is kept here because it is not Sendable and cannot ride the completion).
+    private func qaAdd(_ request: UNNotificationRequest, attempt: Int) {
+        qaRequests[request.identifier] = request
+        let id = request.identifier
+        center.add(request) { error in
+            let text = error.map { ", error \($0.localizedDescription)" } ?? ""
+            Task { @MainActor in
+                self.qaScheduleLog += "; added" + text + " (try \(attempt))"
+                if !text.isEmpty, attempt < 3, let r = self.qaRequests[id] {
+                    try? await Task.sleep(for: .seconds(2))
+                    self.qaAdd(r, attempt: attempt + 1)
+                }
+            }
+        }
+    }
+    #endif
+
     /// Builds the notification for a release that reached On PS5 (N-4) and schedules it locally.
     /// Remote pushes from the backend carry the same fields.
     func schedule(release: Release, game: CatalogGame?, level: NotifyLevel, pauseAll: Bool, delay: TimeInterval, model: AppModel) {
@@ -198,9 +217,9 @@ final class NotificationService: NSObject {
         let request = UNNotificationRequest(identifier: release.id, content: content, trigger: trigger)
         #if INTERNAL
         qaScheduleLog = "\(release.id): adding, due in \(Int(max(1, delay))) s"
-        center.add(request) { error in
-            Task { @MainActor in self.qaScheduleLog += "; added" + (error.map { ", error \($0.localizedDescription)" } ?? "") }
-        }
+        // "Source is not authorized" was seen at auth 2 right after a grant (5000f21): the daemon can lag the status. Retry the add
+        // up to 3 times, 2 s apart, and log every attempt, so the run shows whether a retry cures it.
+        qaAdd(request, attempt: 1)
         // 0 not determined, 1 denied, 2 authorized, 3 provisional, 4 ephemeral. A denied or never-answered permission is why a fresh
         // simulator can show no notification at all (r053-deflake-notification-tap), so the UI test reads it.
         center.getNotificationSettings { s in

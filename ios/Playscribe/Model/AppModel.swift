@@ -646,9 +646,21 @@ final class AppModel {
                 // Never wait on the permission prompt for good: f526773, a fresh sim, locked screen: no prompt was presented, the
                 // request never returned and nothing was scheduled in 40 s ("qa-schedule: none"). Ask, give the prompt 8 s, then
                 // schedule anyway: a pending request is delivered once permission is granted, and the test reports the status.
+                // 5000f21 on the Mac: the add ran before permission landed ("auth 0") or failed with "Source is not authorized"
+                // even at "auth 2". So read the real status first (the property starts at .notDetermined, not at the truth), ask
+                // once, and schedule only when it reads authorized, waiting up to 120 s for a late prompt (r053-deflake-notification-tap).
+                await NotificationService.shared.refreshAuthorization()
                 if NotificationService.shared.authorization == .notDetermined {
                     Task { _ = await NotificationService.shared.requestAuthorization() }
-                    for _ in 0..<16 where NotificationService.shared.authorization == .notDetermined { try? await Task.sleep(for: .milliseconds(500)) }
+                }
+                var waited = 0
+                while NotificationService.shared.authorization == .notDetermined, waited < 240 {
+                    try? await Task.sleep(for: .milliseconds(500)); waited += 1
+                }
+                let ok = NotificationService.shared.authorization == .authorized || NotificationService.shared.authorization == .provisional
+                guard ok else {
+                    NotificationService.shared.qaScheduleLog = "not scheduled: notification permission is \(NotificationService.shared.authorization.rawValue) after \(waited / 2) s"
+                    return
                 }
                 // QA: earlier runs leave their notifications in Notification Center and on the lock screen; the test taps
                 // "the Dawnwalker row", so sweep them first and there is exactly one (e411c788: taps landed on a stale pile).
