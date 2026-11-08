@@ -52,3 +52,11 @@ extension View {
         scrollDismissesKeyboard(.interactively).background(KeyboardDismissAnchor())
     }
 }
+
+enum KeyboardState {
+    /// True when a text field or text view really is first responder in some window (not just SwiftUI's FocusState).
+    static var fieldIsFirstResponder: Bool {
+        func find(_ v: UIView) -> Bool { ((v is UITextField || v is UITextView) && v.isFirstResponder) || v.subviews.contains(where: find) }
+        return UIApplication.shared.connectedScenes.compactMap { ($0 as? UIWindowScene)?.windows }.flatMap { $0 }.contains(where: find)
+    }
+}

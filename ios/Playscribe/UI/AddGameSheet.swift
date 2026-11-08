@@ -88,7 +88,11 @@ struct AddGameSheet: View {
                     Task {
                         for _ in 0..<10 {
                             try? await Task.sleep(for: .milliseconds(500))
-                            if searchFocused { break }
+                            // SwiftUI can say "focused" while the field never became first responder (sheet still settling, hand check
+                            // 1de7e9e: cold launch, no caret until a tap). Trust UIKit: if the keyboard isn't really up, toggle and ask again.
+                            if searchFocused && KeyboardState.fieldIsFirstResponder { break }
+                            searchFocused = false
+                            try? await Task.sleep(for: .milliseconds(60))
                             searchFocused = true
                         }
                     }
@@ -254,11 +258,9 @@ struct AddGameSheet: View {
                         .submitLabel(.search)
                         .focused($searchFocused)
                         .frame(minHeight: 44)
-                        // The whole 44 pt row asks for focus, not only the glyphs: a tap in the row's padding did nothing.
-                        .contentShape(Rectangle())
-                        // Simultaneous, not onTapGesture: an onTapGesture on the field takes the touch from the UITextField, so a tap in
-                        // the typed text kept focus but never placed the caret (5d5e79f Mac: "x" landed at the end).
-                        .simultaneousGesture(TapGesture().onEnded { searchFocused = true })
+                        // No tap gesture of ours on the field (onTapGesture in #423, simultaneousGesture in 39da7ab: the Mac saw the caret
+                        // stay at the end and typed text lost after a tap). The UITextField is the full 44 pt row, so its own touch
+                        // handling takes focus and places the caret.
                 }
                 // Offline state 7: rows keep their placeholder covers; say why.
                 if case .failed(offline: true) = model.checkState {
