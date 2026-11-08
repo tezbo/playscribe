@@ -127,10 +127,22 @@ enum FoldHost {
         return m
     }
 
+    /// The scene every pose is hosted in. `connectedScenes` is a Set, so `.first` is any scene: on the two-screen Duo simulator it can
+    /// be the inner or the outer display's, with a different screen size, safe area and trait environment, and which one it is can
+    /// change with what ran earlier in the same process (the full unit run failed G-8 at AX3/AX5 where the same test alone
+    /// passed, 7161347). Pick the same one every time: the largest screen, then the lowest session identifier.
+    static func hostScene() -> UIWindowScene? {
+        let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+        return scenes.min { a, b in
+            let areaA = a.screen.bounds.width * a.screen.bounds.height, areaB = b.screen.bounds.width * b.screen.bounds.height
+            return areaA != areaB ? areaA > areaB : a.session.persistentIdentifier < b.session.persistentIdentifier
+        }
+    }
+
     /// `settle` covers the splash (about 1.1 s) and the first layout passes.
     static func render(_ pose: HarnessPose, type: UIContentSizeCategory = .large, model: AppModel = demoModel(),
                        settle: Duration = .milliseconds(1800), insetAdjust: UIEdgeInsets = .zero) async -> Rendered? {
-        guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first else { return nil }
+        guard let scene = hostScene() else { return nil }
         // Dates are formatted in the device's time zone, so a patch near midnight UTC reads 25 Jun on a UTC runner and 26 Jun on
         // the AEDT Mac (Quinn, KCD II 1.5.6). Pin the harness to the Mac's zone so stills compare with the Mac's.
         NSTimeZone.default = TimeZone(identifier: "Australia/Sydney") ?? .current
@@ -210,7 +222,7 @@ enum FoldHost {
         let leftmost = all.min { $0.1.minX < $1.1.minX }.map { "\($0.0) \($0.1)" } ?? "none"
         let sceneNote = screen.width > screen.height ? "landscape \(scene.interfaceOrientation.rawValue)" : "portrait \(scene.interfaceOrientation.rawValue)"
         let rawMinX = (box.frames + Array(box.named.values)).map(\.minX).min() ?? .nan
-        print("harness error: [info, diag] \(pose.id) window \(window.frame) host in window \(hc.view.convert(CGPoint.zero, to: nil)) host in screen \(hc.view.convert(CGPoint.zero, to: window.screen.coordinateSpace)) margins \(hc.view.layoutMargins) safe \(hc.view.safeAreaInsets) additional \(hc.additionalSafeAreaInsets) origin \(origin) rawMinX \(rawMinX) leftmost \(leftmost) scene \(sceneNote) screen \(screen)")
+        print("harness error: [info, diag] \(pose.id) window \(window.frame) host in window \(hc.view.convert(CGPoint.zero, to: nil)) host in screen \(hc.view.convert(CGPoint.zero, to: window.screen.coordinateSpace)) margins \(hc.view.layoutMargins) safe \(hc.view.safeAreaInsets) additional \(hc.additionalSafeAreaInsets) origin \(origin) rawMinX \(rawMinX) leftmost \(leftmost) scene \(sceneNote) screen \(screen) scenes \(UIApplication.shared.connectedScenes.count) hosted in \(scene.session.persistentIdentifier.prefix(8))")
         return r
     }
 
