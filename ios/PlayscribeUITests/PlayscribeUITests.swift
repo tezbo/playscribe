@@ -590,6 +590,12 @@ final class ReviewFixUITests: XCTestCase {
     }
 }
 
+/// True when the app runs with accessibility text sizes (AX3 and above are exempt from the first-screen tile rule).
+@MainActor
+func UIApplication_isLargeText(_ app: XCUIApplication) -> Bool {
+    app.launchArguments.contains("-UIPreferredContentSizeCategoryName") && app.launchArguments.contains { $0.contains("Accessibility") }
+}
+
 /// J-5: Library tiles never overlap each other or the Continue hero, with 8 and 28 games.
 @MainActor
 final class LibraryLayoutTests: XCTestCase {
@@ -602,6 +608,21 @@ final class LibraryLayoutTests: XCTestCase {
         func panelPNG() -> Data {
             let shots = XCUIScreen.screens.map { $0.screenshot() }
             return (shots.max(by: { $0.image.size.width * $0.image.size.height < $1.image.size.width * $1.image.size.height }) ?? XCUIScreen.main.screenshot()).pngRepresentation
+        }
+        // 911734e: all six drags "did not move" yet the page ended at 94%. The panel screenshot (the largest of XCUIScreen.screens)
+        // is the inner display, which is not the one that shows the app in Closed, so it never changed. Judge movement from the app
+        // itself: the scroll bar value, the first tile's id and frame and the tile labels on screen (each scan also attaches the app's own screenshot).
+        struct PageState: Equatable {
+            var bar: String; var firstTile: String; var tiles: Set<String>
+            var summary: String { "bar \(bar); first \(firstTile); \(tiles.count) tiles" }
+        }
+        func pageState() -> PageState {
+            let q = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-' OR label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS ', expected ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update' OR label CONTAINS ', not on PS5' OR label CONTAINS 'plays on PS5 as the PS4'"))
+            let els = q.allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }
+            let first = els.min { ($0.frame.minY, $0.frame.minX) < ($1.frame.minY, $1.frame.minX) }
+            let bar = app.scrollBars.firstMatch.exists ? "\(app.scrollBars.firstMatch.value ?? "nil")" : "none"
+            return PageState(bar: bar, firstTile: first.map { "\($0.identifier) \($0.frame)" } ?? "none",
+                             tiles: Set(els.map(\.label)))
         }
         func step(_ text: String) {
             let sb = XCUIApplication(bundleIdentifier: "com.apple.springboard")
@@ -651,12 +672,20 @@ final class LibraryLayoutTests: XCTestCase {
         step("before pose probe")
         let pose = ReleaseRowTests.pose(app)
         step("pose \(pose)")
+        // 0d4d55f (28 games, Closed landscape): the Library opened scrolled to the end (a restored scroll position from the
+        // previous run), so every scan saw only the last 7 tiles and no swipe up could move it. Go to the top first.
+        if !pose.contains("tabletop") {
+            for _ in 0..<12 { app.swipeDown(velocity: .fast) }
+            sleep(1)
+            step("scrolled to the top")
+        }
         var checked = 0
         var seenTiles = Set<String>()
-        for _ in 0..<10 {
+        var tileScanIndex = 0
+        for _ in 0..<16 {
             // The accessibility frame of a tile runs past its cover (the cover image's own
             // bounds), so each tile is taken as its laid-out cover: origin and width, 3:4.
-            let tileQuery = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
+            let tileQuery = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-' OR label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS ', expected ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update' OR label CONTAINS ', not on PS5' OR label CONTAINS 'plays on PS5 as the PS4'"))
             // Quinn: count each tile once by its label (the same visible tiles are scanned again after a drag); the identifier
             // holds the cover width, so it is not unique.
             seenTiles.formUnion(tileQuery.allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }.map(\.label))
@@ -714,6 +743,21 @@ final class LibraryLayoutTests: XCTestCase {
                 for h in hero { XCTAssertFalse(a.insetBy(dx: 1, dy: 1).intersects(h), "tile overlaps hero \(a) \(h) [\(pose)]") }
             }
             checked = seenTiles.count
+            // Iris, v0.5.3 tag blocker: with 8 games a first screen shows a tile without scrolling in Open portrait, Closed
+            // portrait and Tabletop (standard text; AX3 and above are exempt, so this stays off when the text is large).
+            if games == 8, tileScanIndex == 0, !UIApplication_isLargeText(app) {
+                // simctl launch turns Closed to landscape on the Mac (678x466), so Closed is gated in whichever orientation it measures:
+                // Closed portrait and Closed landscape both put tiles on the first screen. Open landscape is not part of this rule.
+                let portrait = app.frame.width <= app.frame.height
+                if pose.contains("tabletop") || pose.contains("closed") || (portrait && pose.contains("flat")) {
+                    // Closed landscape (466 pt window): at least half a tile row (Iris); every other pose a whole tile.
+                    let onScreen = tiles.filter { pose.contains("closed") && app.frame.width > app.frame.height
+                        ? $0.minY >= 0 && ($0.minY + $0.height / 2) <= app.frame.maxY + 1
+                        : $0.minY >= 0 && $0.maxY <= app.frame.maxY + 1 }
+                    XCTAssertFalse(onScreen.isEmpty, "a game tile is on the first screen without scrolling, 8 games [\(pose)]")
+                }
+            }
+            tileScanIndex += 1
             step("scan: \(tiles.count) tiles on screen, \(checked) distinct so far")
             if pose.contains("tabletop") {
                 // Tabletop: the upper half is a view-only stage, so a swipe there scrolls nothing, and the lower half is full of
@@ -734,7 +778,40 @@ final class LibraryLayoutTests: XCTestCase {
                     if after == before { break }
                 }
             } else {
-                app.swipeUp(velocity: .fast)
+                let before = pageState()
+                step("before swipe: \(before.summary)")
+                // 255ad39: a fast swipe moved about 731 pt in a 466 pt window (Closed landscape), skipping rows (25 of 28 tiles seen).
+                // Step by a controlled drag of two thirds of the window height instead (a row is never skipped, and it stays under the window), so every row passes through the screen.
+                let stepFrom = app.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.86))
+                let stepTo = app.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.20))
+                stepFrom.press(forDuration: 0.1, thenDragTo: stepTo, withVelocity: .slow, thenHoldForDuration: 0.3)
+                sleep(1)
+                var now = pageState()
+                step("after half-window drag: \(now.summary); moved \(now != before)")
+                // 1fda372, cb3d799, 0d4d55f: a swipe that starts over the deck or a tile can move nothing. Fall back to the scroll
+                // view's own swipe, then drags from several columns, and fail loudly with the tree only when every attempt left the
+                // page as it was.
+                if checked < games, now == before {
+                    var moved = false
+                    app.scrollViews.element(boundBy: 0).swipeUp()
+                    sleep(1)
+                    now = pageState(); moved = now != before
+                    step("scroll view swipe: \(now.summary); moved \(moved)")
+                    for x in [0.93, 0.5, 0.2, 0.07, 0.7, 0.35] where !moved {
+                        let from = app.coordinate(withNormalizedOffset: CGVector(dx: x, dy: 0.86))
+                        let to = app.coordinate(withNormalizedOffset: CGVector(dx: x, dy: 0.25))
+                        from.press(forDuration: 0.1, thenDragTo: to, withVelocity: .slow, thenHoldForDuration: 0.2)
+                        sleep(1)
+                        now = pageState(); moved = now != before
+                        step("drag from x \(x): \(now.summary); moved \(moved)")
+                    }
+                    if !moved {
+                        let tree = XCTAttachment(string: app.debugDescription); tree.name = "library-did-not-scroll-tree.txt"; tree.lifetime = .keepAlways; add(tree)
+                        XCTFail("neither the swipe nor any drag scrolled the Library [\(pose)]")
+                        break
+                    }
+                }
+                let appShot = XCTAttachment(screenshot: app.screenshot()); appShot.name = String(format: "eight-app-scan-%02d", tileScanIndex); appShot.lifetime = .keepAlways; add(appShot)
             }
         }
         XCTAssertGreaterThan(checked, 0, "found tiles [\(pose)]")
