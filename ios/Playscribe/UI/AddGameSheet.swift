@@ -86,14 +86,22 @@ struct AddGameSheet: View {
                     // The field appears only after the method switch above, and in Open portrait the sheet is still settling at 600 ms
                     // (7161347 gate: the one request was lost, the field never took focus). Ask again until it holds, up to 5 s.
                     Task {
-                        for _ in 0..<10 {
+                        let started = Date()
+                        var cycled = false
+                        for _ in 0..<12 {
                             try? await Task.sleep(for: .milliseconds(500))
                             // SwiftUI can say "focused" while the field never became first responder (sheet still settling, hand check
                             // 1de7e9e: cold launch, no caret until a tap). Trust UIKit: if the keyboard isn't really up, toggle and ask again.
-                            if searchFocused && KeyboardState.fieldIsFirstResponder { break }
+                            let up = searchFocused && KeyboardState.fieldIsFirstResponder
+                            if up && cycled { break }
+                            // 301aecd probe: on a cold launch the field IS first responder (typing works) but draws no caret and ignores taps
+                            // (sel stays put after an in-frame tap). It took focus while the sheet was still moving. Once the sheet has
+                            // settled, resign and take focus once more so the field's text interaction starts clean.
+                            if up && Date().timeIntervalSince(started) < 1.0 { continue }
                             searchFocused = false
-                            try? await Task.sleep(for: .milliseconds(60))
+                            try? await Task.sleep(for: .milliseconds(100))
                             searchFocused = true
+                            if up { cycled = true }
                         }
                     }
                 }
