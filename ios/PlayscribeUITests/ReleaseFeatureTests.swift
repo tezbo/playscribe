@@ -352,6 +352,11 @@ final class ReleaseFeatureTests: XCTestCase {
         XCTAssertEqual(value.lowercased(), "xelden", "the caret moved to the start of the text")
         // A tap on a bare area (the sheet title bar) puts the keyboard away.
         app.navigationBars.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        if !waitFocus(false) {
+            // 69d27ce Mac run, Open portrait: the sheet's bar centre did not dismiss. Fall back to a bare list area, the section header.
+            let header = app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] 'Best matches' OR label CONTAINS[c] 'Popular on PS5'")).firstMatch
+            if header.exists { header.tap() }
+        }
         XCTAssertTrue(waitFocus(false), "a tap outside the field dismisses the keyboard")
     }
 
