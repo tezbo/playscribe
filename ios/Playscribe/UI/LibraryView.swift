@@ -234,6 +234,8 @@ struct LibraryShelf: View {
 
     /// Closed landscape (container wider than tall): the compact first screen.
     private var closedWide: Bool { duo.pose == .closed && duo.isLandscape }
+    /// Open landscape (container wider than tall, one flat screen).
+    private var openWide: Bool { duo.pose == .flat && duo.isLandscape }
 
     /// Book with any recent update: the hero carousel takes the right page's top; the left page keeps the controls, chips and grid.
     private var heroOnRightPage: Bool {
@@ -242,10 +244,10 @@ struct LibraryShelf: View {
             && (!model.latestDeck.isEmpty || !model.data.collection.isEmpty)
     }
 
-    /// Open portrait and Closed (either orientation; Closed landscape keeps search in its header row): the deck and its dots head the page, then the filter chips and the tiles; News, the PS Plus
+    /// Open (either orientation) and Closed (either orientation; Closed landscape keeps search in its header row, Open landscape keeps it above the chips): the deck and its dots head the page, then the filter chips and the tiles; News, the PS Plus
     /// cards and search follow the tiles, so a first screen with 8 games shows games (Iris, v0.5.3).
     private var portraitTilesFirst: Bool {
-        ((duo.pose == .flat && !duo.isLandscape) || duo.pose == .closed) && model.libraryTab != .upcoming
+        (duo.pose == .flat || duo.pose == .closed) && model.libraryTab != .upcoming
     }
 
     /// Catch-up, PS Plus and notification cards. In Book they are one page wide and never cross the fold (G-4).
@@ -317,7 +319,7 @@ struct LibraryShelf: View {
                 // Book: these cards stay on the left page; with a hero they sit in the left column below.
                 if !heroOnRightPage && duo.pose != .book && duo.pose != .tabletop && !portraitTilesFirst { topCards(all) }
                 // Tabletop: the search button and A to Z strip come after the tiles (see below), so a first view shows games.
-                if duo.pose != .tabletop, !portraitTilesFirst, !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                if duo.pose != .tabletop, !portraitTilesFirst || openWide, !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 if !heroOnRightPage && duo.pose == .book { topCards(all) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
@@ -402,7 +404,7 @@ struct LibraryShelf: View {
                                                      (duo.size.height * (typeSize.isAccessibilitySize ? 0.46 : 0.42)).rounded()),
                                       moreCount: model.latestDeckOverflow)
                         .id(poseKey)
-                } else if duo.pose != .tabletop && !heroOnRightPage && !closedWide {
+                } else if duo.pose != .tabletop && !heroOnRightPage && !closedWide && !openWide {
                     let deck = model.latestDeck
                     if !deck.isEmpty {
                         LatestUpdatesDeck(cards: deck)
@@ -452,8 +454,8 @@ struct LibraryShelf: View {
                     .id(poseKey)
                 }
                 // Open and Closed portrait (Iris, v0.5.3): News, the PS Plus cards and search come after the tiles.
-                if portraitTilesFirst && closedWide {
-                    // Closed landscape (Iris, v0.5.3): switch and search, chips, tiles, then the deck, the PS Plus card and News.
+                if portraitTilesFirst && (closedWide || openWide) {
+                    // Closed and Open landscape (Iris, v0.5.3): switch and search, chips, tiles, then the deck, the PS Plus card and News.
                     if !model.latestDeck.isEmpty {
                         LatestUpdatesDeck(cards: model.latestDeck).frame(maxWidth: .infinity, alignment: .leading)
                     } else if !model.data.collection.isEmpty {

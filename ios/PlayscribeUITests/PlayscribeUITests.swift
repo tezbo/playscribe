@@ -679,6 +679,9 @@ final class LibraryLayoutTests: XCTestCase {
             sleep(1)
             step("scrolled to the top")
         }
+        // The app's own orientation, from the fold audit label. app.frame reports portrait dimensions in the landscape poses
+        // (e869273), so it must not decide portrait or landscape.
+        let appLandscape = pose.contains("landscape: yes")
         var checked = 0
         var seenTiles = Set<String>()
         var tileScanIndex = 0
@@ -726,13 +729,13 @@ final class LibraryLayoutTests: XCTestCase {
                                              "hero card never fills the screen \(h) [\(pose)]")
                 }
                 // Only when the measurement is consistent with portrait: a card wider than app.frame is a landscape reading.
-                if pose.contains("flat") && app.frame.width <= app.frame.height && h.maxX <= app.frame.width + 1 {
+                if pose.contains("flat") && !appLandscape && h.maxX <= app.frame.width + 1 {
                     XCTAssertLessThanOrEqual(h.height, app.frame.height * 0.42 + 12, "Open portrait hero is at most 42% of the height [\(pose)]")
                 }
             }
             // Open portrait: the deck takes the full content width, nothing sits beside it (the Also new panel is gone).
             let deck = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Latest updates, page'")).firstMatch
-            if pose.contains("flat"), deck.exists, app.frame.width <= app.frame.height {
+            if pose.contains("flat"), deck.exists, !appLandscape {
                 XCTAssertGreaterThan(deck.frame.width, app.frame.width * 0.6, "Open portrait deck is full width [\(pose)]")
             }
             if pose.contains("flat"), let right = tiles.map(\.maxX).max(), tiles.count >= openN {
@@ -748,13 +751,11 @@ final class LibraryLayoutTests: XCTestCase {
             if games == 8, tileScanIndex == 0, !UIApplication_isLargeText(app) {
                 // simctl launch turns Closed to landscape on the Mac (678x466), so Closed is gated in whichever orientation it measures:
                 // Closed portrait and Closed landscape both put tiles on the first screen. Open landscape is not part of this rule.
-                // 7161347 (Mac gate, Open): app.frame reports portrait dimensions in the landscape poses (e869273), so "portrait" read
-                // from the frame took Open landscape for Open portrait. Use the app's own orientation, which the fold audit label carries.
-                let appLandscape = pose.contains("landscape: yes")
-                if pose.contains("tabletop") || pose.contains("closed") || (pose.contains("flat") && !appLandscape) {
-                    // Closed landscape (466 pt window): at least half a tile row (Iris); every other pose a whole tile.
-                    let onScreen = tiles.filter { pose.contains("closed") && app.frame.width > app.frame.height
-                        ? $0.minY >= 0 && ($0.minY + $0.height / 2) <= app.frame.maxY + 1
+                // Iris, v0.5.3: Open (both orientations), Closed (both) and Tabletop show a tile without scrolling. The landscape
+                // poses have a short window, so there half a tile row is enough; elsewhere a whole tile.
+                if pose.contains("tabletop") || pose.contains("closed") || pose.contains("flat") {
+                    let onScreen = tiles.filter { appLandscape
+                        ? $0.minY >= 0 && ($0.minY + $0.height / 2) <= min(app.frame.width, app.frame.height) + 1   // the shorter side is the height
                         : $0.minY >= 0 && $0.maxY <= app.frame.maxY + 1 }
                     XCTAssertFalse(onScreen.isEmpty, "a game tile is on the first screen without scrolling, 8 games [\(pose)]")
                 }
