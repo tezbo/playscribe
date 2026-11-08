@@ -120,6 +120,26 @@ struct FeedContractTests {
         #expect(shard.games["2"]?.datePrecision == "year")
         #expect(shard.games["3"]?.date == nil)
     }
+
+    /// GR-1: a game the feed does not follow never says "No updates yet"; with no index seen yet it is treated as followed.
+    @Test("feedTracksGame: unknown until an index is seen, then by feed id or IGDB id")
+    func feedTracksGame() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "tracked-\(UUID().uuidString).json"))
+        m.feedIndexGames = nil
+        #expect(m.feedTracksGame("anything"))
+        let idx = try decoder.decode(FeedClient.Index.self, from: Data(#"{ "updatedAt": "2026-11-08T00:00:00.000Z", "games": [ { "id": "ninja-gaiden-4", "igdbId": 329130 } ] }"#.utf8))
+        m.feedIndexGames = idx.games
+        #expect(m.feedTracksGame("ninja-gaiden-4"))
+        #expect(!m.feedTracksGame("not-in-the-feed"))
+        // The IGDB branch: a catalogue game with a different local id, matched through its IGDB id.
+        m.data.customGames.append(CatalogGame(id: "local-ng4", name: "Ninja Gaiden 4", platforms: [.ps5], igdbID: 329130, coverage: .none))
+        #expect(m.feedTracksGame("local-ng4"))
+        m.data.customGames.append(CatalogGame(id: "local-other", name: "Other", platforms: [.ps5], igdbID: 1, coverage: .none))
+        #expect(!m.feedTracksGame("local-other"))
+        // A history the feed has served wins over a stale index that does not list the game yet.
+        m.gameReleases["local-other"] = []
+        #expect(m.feedTracksGame("local-other"))
+    }
 }
 
 @MainActor
@@ -166,25 +186,5 @@ struct ForYouTests {
         #expect(model.forYouLines(for: r).isEmpty)
         model.data.followedIssues = ["i1"]
         #expect(model.forYouLines(for: r) == ["Fixes an issue you follow: Crash on load"])
-    }
-
-    /// GR-1: a game the feed does not follow never says "No updates yet"; with no index seen yet it is treated as followed.
-    @Test("feedTracksGame: unknown until an index is seen, then by feed id or IGDB id")
-    func feedTracksGame() throws {
-        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "tracked-\(UUID().uuidString).json"))
-        m.feedIndexGames = nil
-        #expect(m.feedTracksGame("anything"))
-        let idx = try decoder.decode(FeedClient.Index.self, from: Data(#"{ "updatedAt": "2026-11-08T00:00:00.000Z", "games": [ { "id": "ninja-gaiden-4", "igdbId": 329130 } ] }"#.utf8))
-        m.feedIndexGames = idx.games
-        #expect(m.feedTracksGame("ninja-gaiden-4"))
-        #expect(!m.feedTracksGame("not-in-the-feed"))
-        // The IGDB branch: a catalogue game with a different local id, matched through its IGDB id.
-        m.data.customGames.append(CatalogGame(id: "local-ng4", name: "Ninja Gaiden 4", platforms: [.ps5], igdbID: 329130, coverage: .none))
-        #expect(m.feedTracksGame("local-ng4"))
-        m.data.customGames.append(CatalogGame(id: "local-other", name: "Other", platforms: [.ps5], igdbID: 1, coverage: .none))
-        #expect(!m.feedTracksGame("local-other"))
-        // A history the feed has served wins over a stale index that does not list the game yet.
-        m.gameReleases["local-other"] = []
-        #expect(m.feedTracksGame("local-other"))
     }
 }
