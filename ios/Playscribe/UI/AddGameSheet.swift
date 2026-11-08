@@ -1,5 +1,19 @@
 import SwiftUI
 
+/// The Add UI's state, carried across a form switch while Add stays open (AppModel.addDraft).
+struct AddDraft {
+    var status: OwnershipStatus
+    var query: String
+    var picked: [String: CatalogGame]
+    var pickOrder: [String]
+    var method: AddMethod?
+    var matches: [AddMatch]?
+    var custom: Bool
+    var customName: String
+    var customPlatform: Platform
+    var letter: String?
+}
+
 /// Add a game (A-1 to A-9). Manual add only: PlayStation account import is a later milestone and
 /// nothing here asks for credentials.
 struct AddGameSheet: View {
@@ -28,6 +42,9 @@ struct AddGameSheet: View {
     /// keyboard leaves under 200 pt, hide the title and keep Done and search only).
     @State private var keyboardHeight: CGFloat = 0
     @FocusState private var searchFocused: Bool
+    private var draftKey: String {
+        "\(status)|\(query)|\(pickOrder)|\(String(describing: method))|\(matches?.count ?? -1)|\(custom)|\(customName)|\(customPlatform)|\(letter ?? "")"
+    }
     private var titleHidden: Bool {
         guard duo.pose == .tabletop, keyboardHeight > 0 else { return false }
         let lowerHalf = duo.size.height - (duo.division?.maxY ?? duo.size.height / 2)
@@ -50,7 +67,19 @@ struct AddGameSheet: View {
                     }
                 } else { AddEntryView { method = $0 } }
             }
+            // Kept as it changes (not on disappear): the new form can appear before the old one is gone.
+            .onChange(of: draftKey) { _, _ in
+                guard model.addSheetOpen else { return }
+                model.addDraft = AddDraft(status: status, query: query, picked: picked, pickOrder: pickOrder, method: method,
+                                          matches: matches, custom: custom, customName: customName, customPlatform: customPlatform, letter: letter)
+            }
             .onAppear {
+                if let d = model.addDraft {
+                    status = d.status; query = d.query; debounced = d.query; picked = d.picked; pickOrder = d.pickOrder
+                    method = d.method; matches = d.matches; custom = d.custom; customName = d.customName
+                    customPlatform = d.customPlatform; letter = d.letter
+                    model.addDraft = nil
+                }
                 if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
                 if model.addSearchFocus {
                     model.addSearchFocus = false
