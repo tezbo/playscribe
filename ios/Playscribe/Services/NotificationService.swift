@@ -182,6 +182,17 @@ final class NotificationService: NSObject {
                     let line = "settings auth \(s.authorizationStatus.rawValue) alert \(s.alertSetting.rawValue) center \(s.notificationCenterSetting.rawValue) lock \(s.lockScreenSetting.rawValue) sound \(s.soundSetting.rawValue) badge \(s.badgeSetting.rawValue)"
                     Task { @MainActor in self.qaScheduleLog += "; " + line }
                 }
+                if attempt == 1 {
+                    // Decisive probe: the same add with a bare request (title only, no thread, category or interruption level). If
+                    // this is accepted the refusal is about our content; if it is refused too, usernoted does not accept the app.
+                    let bare = UNMutableNotificationContent()
+                    bare.title = "qa probe"
+                    self.center.add(UNNotificationRequest(identifier: "qa-probe", content: bare,
+                                                          trigger: UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false))) { e in
+                        let r = (e as NSError?).map { "refused [\($0.domain) \($0.code)]" } ?? "accepted"
+                        Task { @MainActor in self.qaScheduleLog += "; bare probe \(r)" }
+                    }
+                }
                 if attempt < 5, let r = self.qaRequests[id] {
                     try? await Task.sleep(for: .seconds(3))
                     self.qaAdd(r, attempt: attempt + 1)
