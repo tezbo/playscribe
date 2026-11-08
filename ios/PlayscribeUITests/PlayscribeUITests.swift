@@ -171,17 +171,39 @@ final class PlayscribeUITests: XCTestCase {
             guard scheduleProbe.exists, let r = scheduleProbe.label.range(of: "auth ") else { return nil }
             return Int(scheduleProbe.label[r.upperBound...].prefix(1))
         }
+        // 4c39193 run 1 (Mac): the alert (Allow / Don't Allow) was on screen at the end, the loop ran its full 30 s and never tapped it.
+        // `springboard.alerts.buttons[...]` is not the only place the system can host it, so look in every place: SpringBoard alerts,
+        // any SpringBoard button with an allow label, and an alert inside the app's own process. Tap the first one found.
+        let allowLabels = ["Allow", "Allow Notifications", "OK"]
+        let allowPredicate = NSPredicate(format: "label IN %@", allowLabels)
+        func permissionAllowButton() -> XCUIElement? {
+            let candidates = [
+                springboard.alerts.buttons.matching(allowPredicate).firstMatch,
+                springboard.buttons.matching(allowPredicate).firstMatch,
+                simulate.alerts.buttons.matching(allowPredicate).firstMatch,
+            ]
+            return candidates.first { $0.exists }
+        }
+        var acceptedPrompt = false
         let authDeadline = Date.now.addingTimeInterval(30)
         while Date.now < authDeadline {
-            for label in ["Allow", "Allow Notifications"] {
-                let allow = springboard.alerts.buttons[label]
-                if allow.exists { step("accepting the notification permission prompt"); allow.tap(); sleep(1); break }
+            if let allow = permissionAllowButton() {
+                step("accepting the notification permission prompt (\(allow.label), \(allow.frame))")
+                allow.tap(); acceptedPrompt = true; sleep(1)
             }
             if let status = authStatus(), status != 0 { break }
             usleep(500_000)
         }
         lastScheduleLog = scheduleProbe.exists ? scheduleProbe.label : "no qaScheduleLog element"
-        step("authorization: \(lastScheduleLog)")
+        step("authorization: \(lastScheduleLog); prompt accepted: \(acceptedPrompt)")
+        if authStatus() == nil || authStatus() == 0 {
+            // Still no answer after 30 s: do not go on to wait three minutes for a notification that cannot arrive.
+            let tree = XCTAttachment(string: springboard.debugDescription); tree.name = "n6-springboard-hierarchy-no-auth"; tree.lifetime = .keepAlways; add(tree)
+            let shot = XCTAttachment(screenshot: XCUIScreen.screens.max { $0.screenshot().image.size.width < $1.screenshot().image.size.width }?.screenshot() ?? XCUIScreen.main.screenshot())
+            shot.name = "n6-no-auth-screen"; shot.lifetime = .keepAlways; add(shot)
+            XCTFail("the notification permission was not answered within 30 s (app says: \(lastScheduleLog); prompt tapped: \(acceptedPrompt)); see n6-springboard-hierarchy-no-auth and n6-no-auth-screen")
+            return nil
+        }
         if authStatus() == 1 { XCTFail("notifications are denied for Playscribe on this simulator (app says: \(lastScheduleLog)); reset the simulator or grant them, then rerun"); return nil }
         // Quinn, #422 4c39193, fresh erased sim: the log read "adding, due in 3 s" and never "added", with no "auth" segment either.
         // Both come from completion handlers of the notification daemon, so neither firing means usernoted did not answer (an
