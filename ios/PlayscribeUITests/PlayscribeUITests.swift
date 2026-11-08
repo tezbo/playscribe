@@ -761,13 +761,24 @@ final class LibraryLayoutTests: XCTestCase {
                 // 1fda372: a swipe that starts over the deck moved nothing. Fall back to a drag from the bare band right of the
                 // page dots, and fail loudly with the tree if neither moves the page.
                 if checked < games, panelPNG() == before {
-                    let from = app.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.86))
-                    let to = app.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.25))
-                    from.press(forDuration: 0.05, thenDragTo: to)
+                    // cb3d799 (28 games, Closed landscape, window 678x466): the swipe and the 93% drag both moved nothing, though a
+                    // swipe by hand scrolls. Try the scroll view's own swipe, then drags from several columns (a tile or a strip under
+                    // the start point eats a drag), and fail loudly with the tree only when every attempt left the page as it was.
+                    var moved = false
+                    app.scrollViews.element(boundBy: 0).swipeUp()
                     sleep(1)
-                    if panelPNG() == before {
+                    moved = panelPNG() != before
+                    for x in [0.93, 0.5, 0.2, 0.07, 0.7, 0.35] where !moved {
+                        let from = app.coordinate(withNormalizedOffset: CGVector(dx: x, dy: 0.86))
+                        let to = app.coordinate(withNormalizedOffset: CGVector(dx: x, dy: 0.25))
+                        from.press(forDuration: 0.1, thenDragTo: to, withVelocity: .slow, thenHoldForDuration: 0.2)
+                        sleep(1)
+                        moved = panelPNG() != before
+                        step("drag from x \(x) \(moved ? "moved" : "did not move")")
+                    }
+                    if !moved {
                         let tree = XCTAttachment(string: app.debugDescription); tree.name = "library-did-not-scroll-tree.txt"; tree.lifetime = .keepAlways; add(tree)
-                        XCTFail("neither the swipe nor the drag scrolled the Library [\(pose)]")
+                        XCTFail("neither the swipe nor any drag scrolled the Library [\(pose)]")
                         break
                     }
                 }
