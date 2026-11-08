@@ -748,8 +748,10 @@ final class LibraryLayoutTests: XCTestCase {
             if games == 8, tileScanIndex == 0, !UIApplication_isLargeText(app) {
                 // simctl launch turns Closed to landscape on the Mac (678x466), so Closed is gated in whichever orientation it measures:
                 // Closed portrait and Closed landscape both put tiles on the first screen. Open landscape is not part of this rule.
-                let portrait = app.frame.width <= app.frame.height
-                if pose.contains("tabletop") || pose.contains("closed") || (portrait && pose.contains("flat")) {
+                // 7161347 (Mac gate, Open): app.frame reports portrait dimensions in the landscape poses (e869273), so "portrait" read
+                // from the frame took Open landscape for Open portrait. Use the app's own orientation, which the fold audit label carries.
+                let appLandscape = pose.contains("landscape: yes")
+                if pose.contains("tabletop") || pose.contains("closed") || (pose.contains("flat") && !appLandscape) {
                     // Closed landscape (466 pt window): at least half a tile row (Iris); every other pose a whole tile.
                     let onScreen = tiles.filter { pose.contains("closed") && app.frame.width > app.frame.height
                         ? $0.minY >= 0 && ($0.minY + $0.height / 2) <= app.frame.maxY + 1

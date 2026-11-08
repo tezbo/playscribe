@@ -267,7 +267,7 @@ struct FoldAudit: View {
             } ?? []
             let detail = crossing.prefix(3).map { "\(Int($0.minX)),\(Int($0.minY)) \(Int($0.width))x\(Int($0.height))" }.joined(separator: " | ")
             let fold = duo.division.map { "fold \(Int($0.minX))-\(Int($0.maxX))" } ?? ""
-            let label = "fold-crossings: \(crossing.count); pose: \(duo.pose.rawValue); \(fold) \(detail)"
+            let label = "fold-crossings: \(crossing.count); pose: \(duo.pose.rawValue); landscape: \(duo.isLandscape ? "yes" : "no"); \(fold) \(detail)"
             Text(label)
                 .font(.system(size: 1))
                 .opacity(0.01)
