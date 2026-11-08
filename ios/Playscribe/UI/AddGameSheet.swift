@@ -367,6 +367,7 @@ struct AddRow: View {
             .frame(minHeight: 64)
             .contentShape(Rectangle())
         }
+        .keepsKeyboardOnTap()
         .buttonStyle(.plain)
         .disabled(added)
         .accessibilityElement(children: .ignore)
