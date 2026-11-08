@@ -112,6 +112,11 @@ struct FoldHarnessTests {
         let size: UIContentSizeCategory = sizeIndex == 0 ? .accessibilityExtraLarge : .accessibilityExtraExtraExtraLarge
         let r = try #require(await HarnessRules.timedRender(p, type: size), "\(p.id): a window scene to host in")
         defer { FoldHost.dispose(r) }
+        // 7161347 (Mac gate): all 8 cases failed G-8 with frames at x 100 and the container width minus 32, which is what an
+        // unreproduced pose looks like. Say so first, with the pose, the size it needs and the size UIKit gave the root view, so
+        // an environment problem is not read as an app overflow. The overflow rule below still runs (limit unchanged).
+        HarnessRules.require(r.geometryProblem == nil,
+                             "\(p.id) \(sizeIndex == 0 ? "AX3" : "AX5"): the harness did not reproduce the pose geometry (expected window \(p.windowSize), safe area \(p.safeArea)): \(r.geometryProblem ?? "")")
         HarnessRules.reportOverflow(r, size: sizeIndex == 0 ? "AX3" : "AX5")
         HarnessRules.reportOverlap(r, size: sizeIndex == 0 ? "AX3" : "AX5")
     }
