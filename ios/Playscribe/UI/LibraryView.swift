@@ -490,7 +490,12 @@ struct LibraryShelf: View {
         // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap anywhere but the field.
         .scrollDismissesKeyboard(.interactively)
         .simultaneousGesture(TapGesture().onEnded {
-            if Date().timeIntervalSince(searchTappedAt) > 0.3 { searchFocused = false }
+            // Decided after the other tap handlers have run, whichever order they fire in: a tap on the field (its text
+            // included) or on a result row stamps `searchTappedAt` and keeps the keyboard up.
+            Task { @MainActor in
+                try? await Task.sleep(for: .milliseconds(120))
+                if Date().timeIntervalSince(searchTappedAt) > 0.3 { searchFocused = false }
+            }
         })
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
         // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.
