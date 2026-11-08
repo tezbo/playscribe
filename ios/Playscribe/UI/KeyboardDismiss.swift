@@ -31,11 +31,22 @@ private final class KeyboardDismissView: UIView, UIGestureRecognizerDelegate {
         window?.addGestureRecognizer(tap)
     }
 
+    /// The text input that was first responder when the touch began. A tap that itself gives a field focus (the padding of the search
+    /// row, right after the keyboard was put away) must not be undone by this recognizer: it resigns only the responder that was
+    /// already there when the touch began, one run-loop turn after the tap ends (9d41ce0 Mac hand check: a padding tap just after a
+    /// title tap showed nothing once).
+    private weak var responderAtTouch: UIView?
+
     @objc private func tapped() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        let before = responderAtTouch
+        DispatchQueue.main.async {
+            guard let before, before.isFirstResponder else { return }
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
 
     func gestureRecognizer(_ g: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        responderAtTouch = KeyboardState.firstResponderInput
         var v = touch.view
         while let x = v {
             // Fields keep the caret and the keyboard.
@@ -73,6 +84,19 @@ extension View {
 }
 
 enum KeyboardState {
+    /// The text field or text view that is first responder now, if any.
+    static var firstResponderInput: UIView? {
+        func find(_ v: UIView) -> UIView? {
+            if (v is UITextField || v is UITextView) && v.isFirstResponder { return v }
+            for s in v.subviews { if let f = find(s) { return f } }
+            return nil
+        }
+        for scene in UIApplication.shared.connectedScenes {
+            for w in (scene as? UIWindowScene)?.windows ?? [] { if let f = find(w) { return f } }
+        }
+        return nil
+    }
+
     /// True when a text field or text view really is first responder in some window (not just SwiftUI's FocusState).
     static var fieldIsFirstResponder: Bool {
         func find(_ v: UIView) -> Bool { ((v is UITextField || v is UITextView) && v.isFirstResponder) || v.subviews.contains(where: find) }
