@@ -10,7 +10,7 @@ extension FoldHost {
     static func renderView<V: View>(_ content: V, pose: HarnessPose, type: UIContentSizeCategory = .large,
                                     model: AppModel = demoModel(), heightScale: CGFloat = 1,
                                     settle: Duration = .milliseconds(1500)) async -> Rendered? {
-        guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first else { return nil }
+        guard let scene = hostScene() else { return nil }
         NSTimeZone.default = TimeZone(identifier: "Australia/Sydney") ?? .current
         var tall = pose
         if heightScale > 1 { tall.container.height *= heightScale }
