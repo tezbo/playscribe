@@ -37,16 +37,12 @@ private final class KeyboardDismissView: UIView, UIGestureRecognizerDelegate {
 
     func gestureRecognizer(_ g: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         var v = touch.view
-        var chain: [String] = []
-        defer {
-            if ProcessInfo.processInfo.arguments.contains("-addFocusProbe") { NSLog("ADDCARET dismiss-recognizer touch chain: %@", chain.joined(separator: " < ")) }
-        }
         while let x = v {
-            chain.append(String(describing: type(of: x)))
             // Fields keep the caret and the keyboard.
             if x is UITextField || x is UITextView { return false }
             // Controls do their own job, except the navigation bar's title: in Open portrait it is a UIControl and a tap on the
-            // sheet title must still put the keyboard away (6a0a4b4 Mac hand check a).
+            // sheet title must still put the keyboard away (6a0a4b4 Mac hand check a). Matched by class name, verified only on the Mac's
+            // iPhone Duo simulator (iOS 27.1 target, 934ff71 gate); a non-name test is a 0.5.4 card.
             if x is UIControl, !String(describing: type(of: x)).contains("Title") { return false }
             // Only rows that mark themselves keep the keyboard (a pick in Add); section headers are cells too in a SwiftUI List
             // and a tap on one must dismiss (6a0a4b4 hand check b).
