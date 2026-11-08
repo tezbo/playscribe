@@ -204,7 +204,8 @@ final class NotificationService: NSObject {
         // 0 not determined, 1 denied, 2 authorized, 3 provisional, 4 ephemeral. A denied or never-answered permission is why a fresh
         // simulator can show no notification at all (r053-deflake-notification-tap), so the UI test reads it.
         center.getNotificationSettings { s in
-            Task { @MainActor in self.qaScheduleLog += "; auth \(s.authorizationStatus.rawValue)" }
+            let status = s.authorizationStatus.rawValue   // the settings object is not Sendable; send only the Int
+            Task { @MainActor in self.qaScheduleLog += "; auth \(status)" }
         }
         let releaseID = release.id
         DispatchQueue.main.asyncAfter(deadline: .now() + max(1, delay) + 2) { [center] in
