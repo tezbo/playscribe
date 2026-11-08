@@ -308,7 +308,12 @@ struct DeckCardView: View {
     }
 
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
-    private var label: String {
+    private var label: String { Self.accessibilityText(for: card) }
+
+    /// What VoiceOver reads for the card. It never depends on the Dynamic Type size: at AX3 and above the visible summary line is
+    /// dropped (hero caption cap, Iris), and the spoken label must still carry it (r054, Iris 8 Nov).
+    static func accessibilityText(for card: DeckCard) -> String {
+        let dateText = card.date.map(AppModel.tileDay) ?? ""
         if let r = card.release {
             let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
             return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
