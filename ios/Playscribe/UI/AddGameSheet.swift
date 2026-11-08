@@ -256,7 +256,9 @@ struct AddGameSheet: View {
                         .frame(minHeight: 44)
                         // The whole 44 pt row asks for focus, not only the glyphs: a tap in the row's padding did nothing.
                         .contentShape(Rectangle())
-                        .onTapGesture { searchFocused = true }
+                        // Simultaneous, not onTapGesture: an onTapGesture on the field takes the touch from the UITextField, so a tap in
+                        // the typed text kept focus but never placed the caret (5d5e79f Mac: "x" landed at the end).
+                        .simultaneousGesture(TapGesture().onEnded { searchFocused = true })
                 }
                 // Offline state 7: rows keep their placeholder covers; say why.
                 if case .failed(offline: true) = model.checkState {
