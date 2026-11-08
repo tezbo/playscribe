@@ -22,6 +22,7 @@ struct SettingsView: View {
     @State private var simGame: String = ""
     @State private var simKind: AppModel.SimKind = .major
     @State private var simDelay: Double = 10
+    @State private var confirmClear = false
 
     /// Quiet hours (0.5.0): off by default; the pickers sit inline in Tabletop, never a popover into the upper half.
     @ViewBuilder private var quietHoursRows: some View {
@@ -161,6 +162,19 @@ struct SettingsView: View {
                     Text("Trailers and update videos start as soon as they open. Reflection mode adds a soft mirror of the video under the controls when the Duo stands folded like a laptop. Both are off when Reduce Motion is on.")
                 }
 
+                // B-12: clear the whole library. Destructive, so it asks first; Undo follows.
+                if !model.data.collection.isEmpty {
+                    Section {
+                        Button("Remove all games from this library…", role: .destructive) { confirmClear = true }
+                            .frame(minHeight: 52)
+                            .accessibilityIdentifier("clearLibrary")
+                    } header: {
+                        Text("Danger zone")
+                    } footer: {
+                        Text("Removes all \(model.data.collection.count) games, with their bookmarks and notes. You can undo it right after.")
+                    }
+                }
+
                 #if INTERNAL
                 if BuildChannel.showsTeamAlerts {
                 Section {
@@ -226,6 +240,15 @@ struct SettingsView: View {
             }
             // 24 pt between a footer and the next section's title (Iris, 0.5.1 spec 1).
             .listSectionSpacing(24)
+            .confirmationDialog("Remove all games from this library?", isPresented: $confirmClear, titleVisibility: .visible) {
+                Button("Remove all \(model.data.collection.count) games", role: .destructive) {
+                    model.clearLibrary()
+                    dismiss()
+                }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("Every game, bookmark and note leaves your library.")
+            }
             .navigationTitle("Settings")
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
