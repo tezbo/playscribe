@@ -655,7 +655,15 @@ final class LibraryLayoutTests: XCTestCase {
         }
         sleep(4)
         step("before pose probe")
-        let pose = ReleaseRowTests.pose(app)
+        var pose = ReleaseRowTests.pose(app)
+        // The Mac found that a simctl launch turns Closed to landscape (rot270, 678x466), so a "Closed portrait" run measured Closed
+        // landscape. Pin portrait for Closed and re-read the pose; Closed landscape keeps its own gates elsewhere.
+        if pose.contains("closed"), XCUIDevice.shared.orientation != .portrait || app.frame.width > app.frame.height {
+            XCUIDevice.shared.orientation = .portrait
+            sleep(2)
+            pose = ReleaseRowTests.pose(app)
+            step("pinned portrait, pose \(pose), window \(app.frame)")
+        }
         step("pose \(pose)")
         var checked = 0
         var seenTiles = Set<String>()
