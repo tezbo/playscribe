@@ -434,6 +434,7 @@ final class AppModel {
         var unread: Int
         var latest: Release?
         var id: String { game.id }
+        var updatedKey: UpdatedKey { UpdatedKey(latest: latest?.ps5Date, addedAt: addedAt, name: game.name) }
     }
 
     var libraryRows: [LibraryRow] {
@@ -441,6 +442,27 @@ final class AppModel {
         return data.collection.compactMap { c in
             guard let g = all[c.gameID] else { return nil }
             return LibraryRow(game: g, status: c.status, addedAt: c.addedAt, unread: unreadCount(c.gameID), latest: latestOnPS5(c.gameID))
+        }
+    }
+
+    /// What "Recently updated on PS5" sorts on (r053-sort-recent-updated).
+    struct UpdatedKey: Equatable {
+        var latest: Date?   // the newest On PS5 update's date; nil when the game has none
+        var addedAt: Date
+        var name: String
+    }
+
+    /// Games with an On PS5 update come first, newest update first; games with none follow, newest added first, then by name.
+    /// The sort used to fall back to the date the game was ADDED for a game with no update, so a game added today outranked a game
+    /// updated last week and the top of the Library read "TBA", "Plays on PS5" or an unreleased date (Terry, 8 Nov).
+    static func updatedFirst(_ a: UpdatedKey, _ b: UpdatedKey) -> Bool {
+        switch (a.latest, b.latest) {
+        case let (x?, y?) where x != y: return x > y
+        case (_?, nil): return true
+        case (nil, _?): return false
+        default:
+            if a.latest == nil, a.addedAt != b.addedAt { return a.addedAt > b.addedAt }
+            return a.name.localizedCaseInsensitiveCompare(b.name) == .orderedAscending
         }
     }
 
@@ -453,7 +475,7 @@ final class AppModel {
         case .name:
             return rows.sorted { $0.game.name.localizedCaseInsensitiveCompare($1.game.name) == .orderedAscending }
         case .updated:
-            return rows.sorted { ($0.latest?.ps5Date ?? $0.addedAt) > ($1.latest?.ps5Date ?? $1.addedAt) }
+            return rows.sorted { Self.updatedFirst($0.updatedKey, $1.updatedKey) }
         }
     }
 
