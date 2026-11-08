@@ -43,14 +43,25 @@ final class PlayscribeUITests: XCTestCase {
             // A tap on a Notification Center row can slide out its actions instead of opening the app (14516a5): tap "Open".
             // The slide-out is slow on a loaded Mac (898d946 at load 5.6: no Open button within 2 s, so the cold run never tapped it
             // and failed after 1242 s, where the same code passed on 2537997), so wait for it up to 10 s.
+            // The reveal races the launch: a first tap that does bring the app up also hides the row and its actions, so "Open" can
+            // exist when it is found and be gone when `.tap()` resolves it again ("No matches for 'Open' in
+            // swipe-action-button-identifier", 7161347, fresh sim, 132 s; the second run passed). So: stop as soon as the app is in
+            // front, take the button's frame from one snapshot (which throws instead of failing when it is gone), and tap that point on SpringBoard.
             func tapOpenIfRevealed() {
                 let openAction = springboard.buttons["Open"]
-                if XCUIApplication().state != .runningForeground, openAction.waitForExistence(timeout: 10) {
-                    step("tapping the revealed Open action \(openAction.frame)")
-                    openAction.tap()
-                } else {
-                    step("no Open action to tap (app state \(XCUIApplication().state.rawValue))")
+                let deadline = Date.now.addingTimeInterval(10)
+                while Date.now < deadline {
+                    if XCUIApplication().state == .runningForeground { step("app already in front; no Open action needed"); return }
+                    // `snapshot()` throws when the button is gone; `frame` and `isHittable` would record a failure instead.
+                    if let snap = try? openAction.snapshot(), snap.isEnabled, !snap.frame.isEmpty {
+                        step("tapping the revealed Open action \(snap.frame)")
+                        springboard.coordinate(withNormalizedOffset: .zero)
+                            .withOffset(CGVector(dx: snap.frame.midX, dy: snap.frame.midY)).tap()
+                        return
+                    }
+                    usleep(300_000)
                 }
+                step("no Open action to tap (app state \(XCUIApplication().state.rawValue))")
             }
             tapOpenIfRevealed()
             let target = XCUIApplication()
