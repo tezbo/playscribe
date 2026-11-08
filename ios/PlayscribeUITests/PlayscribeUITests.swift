@@ -185,7 +185,10 @@ final class PlayscribeUITests: XCTestCase {
             return candidates.first { $0.exists }
         }
         var acceptedPrompt = false
-        let authDeadline = Date.now.addingTimeInterval(30)
+        // bd0f08c, fresh erased sim: at 30 s there was NO alert in SpringBoard's tree or on screen, the app was in front, and its log read
+        // "adding" with no "added" and no "auth". The next run on the same sim found the prompt already pending. So on a fresh sim the
+        // daemon answers late, and the alert appears after the 30 s window. Wait up to 120 s (granted sims leave the loop at once).
+        let authDeadline = Date.now.addingTimeInterval(120)
         while Date.now < authDeadline {
             if let allow = permissionAllowButton() {
                 step("accepting the notification permission prompt (\(allow.label), \(allow.frame))")
@@ -201,7 +204,7 @@ final class PlayscribeUITests: XCTestCase {
             let tree = XCTAttachment(string: springboard.debugDescription); tree.name = "n6-springboard-hierarchy-no-auth"; tree.lifetime = .keepAlways; add(tree)
             let shot = XCTAttachment(screenshot: XCUIScreen.screens.max { $0.screenshot().image.size.width < $1.screenshot().image.size.width }?.screenshot() ?? XCUIScreen.main.screenshot())
             shot.name = "n6-no-auth-screen"; shot.lifetime = .keepAlways; add(shot)
-            XCTFail("the notification permission was not answered within 30 s (app says: \(lastScheduleLog); prompt tapped: \(acceptedPrompt)); see n6-springboard-hierarchy-no-auth and n6-no-auth-screen")
+            XCTFail("the notification permission was not answered within 120 s (app says: \(lastScheduleLog); prompt tapped: \(acceptedPrompt)); see n6-springboard-hierarchy-no-auth and n6-no-auth-screen")
             return nil
         }
         if authStatus() == 1 { XCTFail("notifications are denied for Playscribe on this simulator (app says: \(lastScheduleLog)); reset the simulator or grant them, then rerun"); return nil }
