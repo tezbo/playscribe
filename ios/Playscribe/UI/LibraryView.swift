@@ -242,6 +242,12 @@ struct LibraryShelf: View {
             && (!model.latestDeck.isEmpty || !model.data.collection.isEmpty)
     }
 
+    /// Open and Closed portrait: the deck and its dots head the page, then the filter chips and the tiles; News, the PS Plus
+    /// cards and search follow the tiles, so a first screen with 8 games shows games (Iris, v0.5.3).
+    private var portraitTilesFirst: Bool {
+        !duo.isLandscape && (duo.pose == .flat || duo.pose == .closed) && model.libraryTab != .upcoming
+    }
+
     /// Catch-up, PS Plus and notification cards. In Book they are one page wide and never cross the fold (G-4).
     @ViewBuilder
     private func topCards(_ all: [AppModel.LibraryRow]) -> some View {
@@ -309,9 +315,9 @@ struct LibraryShelf: View {
                     }
                 }
                 // Book: these cards stay on the left page; with a hero they sit in the left column below.
-                if !heroOnRightPage && duo.pose != .book && duo.pose != .tabletop { topCards(all) }
+                if !heroOnRightPage && duo.pose != .book && duo.pose != .tabletop && !portraitTilesFirst { topCards(all) }
                 // Tabletop: the search button and A to Z strip come after the tiles (see below), so a first view shows games.
-                if duo.pose != .tabletop, !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                if duo.pose != .tabletop, !portraitTilesFirst, !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 if !heroOnRightPage && duo.pose == .book { topCards(all) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
@@ -406,7 +412,7 @@ struct LibraryShelf: View {
                             .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
                     }
                 }
-                if !heroOnRightPage && duo.pose != .tabletop { NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading) }
+                if !heroOnRightPage && duo.pose != .tabletop && !portraitTilesFirst { NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading) }
                 if !heroOnRightPage && duo.pose != .tabletop && all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
                     // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
@@ -444,6 +450,12 @@ struct LibraryShelf: View {
                     // A pose or fold change rebuilds the grid: lazily cached cells kept their old frames
                     // (0.2.0 gate: Book showed the open-pose grid across the fold).
                     .id(poseKey)
+                }
+                // Open and Closed portrait (Iris, v0.5.3): News, the PS Plus cards and search come after the tiles.
+                if portraitTilesFirst {
+                    NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
+                    topCards(all)
+                    if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 }
                 // Tabletop lower half (Iris, v0.5.3): switch, filter chips, tiles, then the alerts card, PS Plus, search and
                 // A to Z, the page edge and News. Order only; nothing else moves in any pose.

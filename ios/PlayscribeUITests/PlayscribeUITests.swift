@@ -590,6 +590,12 @@ final class ReviewFixUITests: XCTestCase {
     }
 }
 
+/// True when the app runs with accessibility text sizes (AX3 and above are exempt from the first-screen tile rule).
+@MainActor
+func UIApplication_isLargeText(_ app: XCUIApplication) -> Bool {
+    app.launchArguments.contains("-UIPreferredContentSizeCategoryName") && app.launchArguments.contains { $0.contains("Accessibility") }
+}
+
 /// J-5: Library tiles never overlap each other or the Continue hero, with 8 and 28 games.
 @MainActor
 final class LibraryLayoutTests: XCTestCase {
@@ -653,6 +659,7 @@ final class LibraryLayoutTests: XCTestCase {
         step("pose \(pose)")
         var checked = 0
         var seenTiles = Set<String>()
+        var tileScanIndex = 0
         for _ in 0..<10 {
             // The accessibility frame of a tile runs past its cover (the cover image's own
             // bounds), so each tile is taken as its laid-out cover: origin and width, 3:4.
@@ -714,6 +721,16 @@ final class LibraryLayoutTests: XCTestCase {
                 for h in hero { XCTAssertFalse(a.insetBy(dx: 1, dy: 1).intersects(h), "tile overlaps hero \(a) \(h) [\(pose)]") }
             }
             checked = seenTiles.count
+            // Iris, v0.5.3 tag blocker: with 8 games a first screen shows a tile without scrolling in Open portrait, Closed
+            // portrait and Tabletop (standard text; AX3 and above are exempt, so this stays off when the text is large).
+            if games == 8, tileScanIndex == 0, !UIApplication_isLargeText(app) {
+                let portrait = app.frame.width <= app.frame.height
+                if pose.contains("tabletop") || (portrait && (pose.contains("flat") || pose.contains("closed"))) {
+                    let onScreen = tiles.filter { $0.minY >= 0 && $0.maxY <= app.frame.maxY + 1 }
+                    XCTAssertFalse(onScreen.isEmpty, "a game tile is on the first screen without scrolling, 8 games [\(pose)]")
+                }
+            }
+            tileScanIndex += 1
             step("scan: \(tiles.count) tiles on screen, \(checked) distinct so far")
             if pose.contains("tabletop") {
                 // Tabletop: the upper half is a view-only stage, so a swipe there scrolls nothing, and the lower half is full of
@@ -734,7 +751,21 @@ final class LibraryLayoutTests: XCTestCase {
                     if after == before { break }
                 }
             } else {
+                let before = panelPNG()
                 app.swipeUp(velocity: .fast)
+                // 1fda372: a swipe that starts over the deck moved nothing. Fall back to a drag from the bare band right of the
+                // page dots, and fail loudly with the tree if neither moves the page.
+                if checked < games, panelPNG() == before {
+                    let from = app.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.86))
+                    let to = app.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.25))
+                    from.press(forDuration: 0.05, thenDragTo: to)
+                    sleep(1)
+                    if panelPNG() == before {
+                        let tree = XCTAttachment(string: app.debugDescription); tree.name = "library-did-not-scroll-tree.txt"; tree.lifetime = .keepAlways; add(tree)
+                        XCTFail("neither the swipe nor the drag scrolled the Library [\(pose)]")
+                        break
+                    }
+                }
             }
         }
         XCTAssertGreaterThan(checked, 0, "found tiles [\(pose)]")
