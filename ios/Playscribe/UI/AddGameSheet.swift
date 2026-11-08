@@ -42,6 +42,7 @@ struct AddGameSheet: View {
     /// keyboard leaves under 200 pt, hide the title and keep Done and search only).
     @State private var keyboardHeight: CGFloat = 0
     @FocusState private var searchFocused: Bool
+    @State private var searchTappedAt = Date.distantPast
     private var draftKey: String {
         "\(status)|\(query)|\(pickOrder)|\(String(describing: method))|\(matches?.count ?? -1)|\(custom)|\(customName)|\(customPlatform)|\(letter ?? "")"
     }
@@ -256,7 +257,7 @@ struct AddGameSheet: View {
                         .frame(minHeight: 44)
                         // The whole 44 pt row asks for focus, not only the glyphs: a tap in the row's padding did nothing.
                         .contentShape(Rectangle())
-                        .onTapGesture { searchFocused = true }
+                        .onTapGesture { searchTappedAt = Date(); searchFocused = true }
                 }
                 // Offline state 7: rows keep their placeholder covers; say why.
                 if case .failed(offline: true) = model.checkState {
@@ -281,6 +282,11 @@ struct AddGameSheet: View {
                 Text("PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password.")
             }
         }
+        // Terry, 8 Nov: the keyboard could not be put away. Scrolling dismisses it, and so does a tap anywhere but the field.
+        .scrollDismissesKeyboard(.interactively)
+        .simultaneousGesture(TapGesture().onEnded {
+            if Date().timeIntervalSince(searchTappedAt) > 0.3 { searchFocused = false }
+        })
     }
 
     private var customForm: some View {

@@ -264,6 +264,9 @@ struct LibraryShelf: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
+    @FocusState private var searchFocused: Bool
+    @State private var searchTappedAt = Date.distantPast
+
     /// The library search field; one page wide in Book, and reported to the fold audit.
     private func searchField(binding: Binding<String>) -> some View {
                     // The same field as the notes search; the system rounded border read as a
@@ -273,7 +276,9 @@ struct LibraryShelf: View {
                         TextField("Search your library", text: binding)
                             .submitLabel(.search)
                             .autocorrectionDisabled()
+                            .focused($searchFocused)
                     }
+                    .simultaneousGesture(TapGesture().onEnded { searchTappedAt = Date() })
                     .padding(.horizontal, 12)
                     .padding(.vertical, typeSize.isAccessibilitySize ? 12 : 0)
                     .frame(minHeight: 44)
@@ -482,6 +487,11 @@ struct LibraryShelf: View {
             .padding(.vertical, 12)
             .padding(.trailing, railWidth)
         }
+        // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap anywhere but the field.
+        .scrollDismissesKeyboard(.interactively)
+        .simultaneousGesture(TapGesture().onEnded {
+            if Date().timeIntervalSince(searchTappedAt) > 0.3 { searchFocused = false }
+        })
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
         // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.
         // No soft-edge mask: it made the Open portrait large "Library" title vanish (354d15c, 9914a80), see MessageClearance.
