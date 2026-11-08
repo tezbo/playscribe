@@ -434,7 +434,7 @@ final class AppModel {
         var unread: Int
         var latest: Release?
         var id: String { game.id }
-        var updatedKey: UpdatedKey { UpdatedKey(latest: latest?.ps5Date, addedAt: addedAt, name: game.name) }
+        var updatedKey: UpdatedKey { UpdatedKey(latest: latest?.ps5Date, releaseDate: game.releaseDate?.isoDay, name: game.name) }
     }
 
     var libraryRows: [LibraryRow] {
@@ -447,23 +447,31 @@ final class AppModel {
 
     /// What "Recently updated on PS5" sorts on (r053-sort-recent-updated).
     struct UpdatedKey: Equatable {
-        var latest: Date?   // the newest On PS5 update's date; nil when the game has none
-        var addedAt: Date
+        var latest: Date?      // the newest On PS5 update's date; nil when the game has none
+        var releaseDate: Date? // the game's own release date, the one its tile pill shows when there is no update
         var name: String
     }
 
-    /// Games with an On PS5 update come first, newest update first; games with none follow, newest added first, then by name.
-    /// The sort used to fall back to the date the game was ADDED for a game with no update, so a game added today outranked a game
-    /// updated last week and the top of the Library read "TBA", "Plays on PS5" or an unreleased date (Terry, 8 Nov).
-    static func updatedFirst(_ a: UpdatedKey, _ b: UpdatedKey) -> Bool {
-        switch (a.latest, b.latest) {
-        case let (x?, y?) where x != y: return x > y
-        case (_?, nil): return true
-        case (nil, _?): return false
+    /// Three groups, in this order: games with an On PS5 update (newest update first); games with none that are already out
+    /// (newest release first); games not out yet or with no date (soonest first, undated last). Then by name.
+    /// The sort used to fall back to the date the game was ADDED, so it ordered by when the Library was filled in: Terry's 47
+    /// games, none with an update, came out as Oct 2025, Mar 2025, Aug 2025, May 2025, Mar 2025, 31 Dec, 10 Nov ... (8 Nov).
+    static func updatedFirst(_ a: UpdatedKey, _ b: UpdatedKey, now: Date = .now) -> Bool {
+        func group(_ k: UpdatedKey) -> Int { k.latest != nil ? 0 : (k.releaseDate.map { $0 <= now } ?? false) ? 1 : 2 }
+        let (ga, gb) = (group(a), group(b))
+        if ga != gb { return ga < gb }
+        switch ga {
+        case 0: if let x = a.latest, let y = b.latest, x != y { return x > y }
+        case 1: if let x = a.releaseDate, let y = b.releaseDate, x != y { return x > y }
         default:
-            if a.latest == nil, a.addedAt != b.addedAt { return a.addedAt > b.addedAt }
-            return a.name.localizedCaseInsensitiveCompare(b.name) == .orderedAscending
+            switch (a.releaseDate, b.releaseDate) {
+            case let (x?, y?) where x != y: return x < y
+            case (_?, nil): return true
+            case (nil, _?): return false
+            default: break
+            }
         }
+        return a.name.localizedCaseInsensitiveCompare(b.name) == .orderedAscending
     }
 
     func shownRows() -> [LibraryRow] {
