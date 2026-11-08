@@ -931,6 +931,12 @@ struct RecentlyUpdatedSortTests {
         #expect(list == ["Out", "10 Nov", "31 Dec", "TBA"])
     }
 
+    @Test("a game with an update but no release date still sorts by its update, ahead of every game without one")
+    func updateWithoutReleaseDate() {
+        let list = order([key("Out, no update", released: -1), key("Dateless, patched long ago", updated: -90), key("Dateless, patched today", updated: 0), key("TBA")])
+        #expect(list == ["Dateless, patched today", "Dateless, patched long ago", "Out, no update", "TBA"])
+    }
+
     @Test("equal dates fall back to name")
     func tieByName() {
         #expect(order([key("b", updated: -2), key("A", updated: -2)]) == ["A", "b"])
