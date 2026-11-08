@@ -30,6 +30,8 @@ struct AddGameSheet: View {
     @FocusState private var searchFocused: Bool
     /// TEMPORARY (v0.5.3 testPinnedAddBar diagnosis, remove with the fix): one ADDFOCUS line per event.
     @State private var focusProbe = ""
+    @State private var focusGainedAt = Date.distantPast
+    @State private var reasserts = 0
     private func probe(_ event: String) {
         let fr = AddFocusProbe.firstResponder()
         let line = "ADDFOCUS \(event) focused=\(searchFocused) firstResponder=\(fr) placement=\(AddFocusProbe.placementName(duo.pose)) pose=\(duo.pose) landscape=\(duo.isLandscape)"
@@ -74,6 +76,14 @@ struct AddGameSheet: View {
                     }
                 }
             }
+            .onAppear { probe("sheet-onAppear") }
+            .onDisappear { probe("sheet-onDisappear") }
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidShowNotification)) { _ in probe("kb-didShow") }
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidHideNotification)) { _ in probe("kb-didHide") }
+            .onReceive(NotificationCenter.default.publisher(for: UITextField.textDidEndEditingNotification)) { _ in probe("textfield-endEditing") }
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in probe("app-willResignActive") }
+            .onReceive(NotificationCenter.default.publisher(for: UIWindow.didBecomeKeyNotification)) { _ in probe("window-didBecomeKey") }
+            .onReceive(NotificationCenter.default.publisher(for: UIWindow.didResignKeyNotification)) { _ in probe("window-didResignKey") }
             .navigationTitle(titleHidden || duo.pose == .tabletop ? "" : sheetTitle)
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillChangeFrameNotification)) { note in
                 let end = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) ?? .zero
@@ -249,7 +259,19 @@ struct AddGameSheet: View {
                                 for ms in [100, 600] { try? await Task.sleep(for: .milliseconds(ms)); probe("tap-after\(ms)ms") }
                             }
                         }
-                        .onChange(of: searchFocused) { _, now in probe("focus-changed-\(now)") }
+                        .onChange(of: searchFocused) { _, now in
+                            probe("focus-changed-\(now)")
+                            if now { focusGainedAt = Date(); return }
+                            // Open portrait (4e6e38c Mac log): focus is resigned ~1.2 s after it is gained, by something other than the user.
+                            // If nothing else holds the keyboard and the loss is that early, ask again (at most 3 times a sheet).
+                            guard Date().timeIntervalSince(focusGainedAt) < 3, reasserts < 3, AddFocusProbe.firstResponder() == "none" else { return }
+                            reasserts += 1
+                            Task { @MainActor in
+                                try? await Task.sleep(for: .milliseconds(200))
+                                probe("reassert\(reasserts)")
+                                searchFocused = true
+                            }
+                        }
                 }
                 // Offline state 7: rows keep their placeholder covers; say why.
                 if case .failed(offline: true) = model.checkState {
