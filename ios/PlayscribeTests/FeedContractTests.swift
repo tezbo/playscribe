@@ -178,5 +178,13 @@ struct ForYouTests {
         m.feedIndexGames = idx.games
         #expect(m.feedTracksGame("ninja-gaiden-4"))
         #expect(!m.feedTracksGame("not-in-the-feed"))
+        // The IGDB branch: a catalogue game with a different local id, matched through its IGDB id.
+        m.data.customGames.append(CatalogGame(id: "local-ng4", name: "Ninja Gaiden 4", platforms: [.ps5], igdbID: 329130, coverage: .none))
+        #expect(m.feedTracksGame("local-ng4"))
+        m.data.customGames.append(CatalogGame(id: "local-other", name: "Other", platforms: [.ps5], igdbID: 1, coverage: .none))
+        #expect(!m.feedTracksGame("local-other"))
+        // A history the feed has served wins over a stale index that does not list the game yet.
+        m.gameReleases["local-other"] = []
+        #expect(m.feedTracksGame("local-other"))
     }
 }

@@ -84,6 +84,9 @@ extension AppModel {
     /// history to wait for, so its page must not say "No updates yet". Until an index has been seen the answer is yes, so the
     /// app never claims a game is untracked on a guess.
     func feedTracksGame(_ gameID: String) -> Bool {
+        // Any history the feed has served for this game settles it, whatever a cached index says: a game the feed added today
+        // can be missing from an index cached yesterday.
+        if gameReleases[gameID] != nil { return true }
         guard let games = feedIndexGames else { return true }
         let igdb = game(gameID)?.igdbID
         return games.contains { $0.id == gameID || (igdb != nil && $0.igdbId == igdb) }
