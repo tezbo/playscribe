@@ -28,6 +28,14 @@ struct AddGameSheet: View {
     /// keyboard leaves under 200 pt, hide the title and keep Done and search only).
     @State private var keyboardHeight: CGFloat = 0
     @FocusState private var searchFocused: Bool
+    /// TEMPORARY (v0.5.3 testPinnedAddBar diagnosis, remove with the fix): one ADDFOCUS line per event.
+    @State private var focusProbe = ""
+    private func probe(_ event: String) {
+        let fr = AddFocusProbe.firstResponder()
+        let line = "ADDFOCUS \(event) focused=\(searchFocused) firstResponder=\(fr) placement=\(AddFocusProbe.placementName(duo.pose)) pose=\(duo.pose) landscape=\(duo.isLandscape)"
+        NSLog("%@", line)
+        focusProbe = line
+    }
     private var titleHidden: Bool {
         guard duo.pose == .tabletop, keyboardHeight > 0 else { return false }
         let lowerHalf = duo.size.height - (duo.division?.maxY ?? duo.size.height / 2)
@@ -57,8 +65,9 @@ struct AddGameSheet: View {
                     // The field appears only after the method switch above, and in Open portrait the sheet is still settling at 600 ms
                     // (7161347 gate: the one request was lost, the field never took focus). Ask again until it holds, up to 5 s.
                     Task {
-                        for _ in 0..<10 {
+                        for i in 0..<10 {
                             try? await Task.sleep(for: .milliseconds(500))
+                            probe("route-try\(i)")
                             if searchFocused { break }
                             searchFocused = true
                         }
@@ -113,7 +122,13 @@ struct AddGameSheet: View {
         }
         // Trailing placement on the inner display keeps the sheet's bar vertical and in the
         // lower-trailing region when folded; the outer display uses the system default.
-        .presentationPlacement(duo.pose == .closed ? .automatic : .trailing)
+        .presentationPlacement(AddFocusProbe.automatic(duo.pose) ? .automatic : .trailing)
+        .overlay(alignment: .bottomLeading) {
+            if AddFocusProbe.enabled {
+                Text(focusProbe).font(.system(size: 9, design: .monospaced)).padding(2).background(.yellow).foregroundStyle(.black)
+                    .accessibilityIdentifier("addFocusProbe").allowsHitTesting(false)
+            }
+        }
         .task(id: query) {
             try? await Task.sleep(for: .milliseconds(250))
             if !Task.isCancelled { debounced = query }
@@ -227,7 +242,14 @@ struct AddGameSheet: View {
                         .frame(minHeight: 44)
                         // The whole 44 pt row asks for focus, not only the glyphs: a tap in the row's padding did nothing.
                         .contentShape(Rectangle())
-                        .onTapGesture { searchFocused = true }
+                        .onTapGesture {
+                            probe("tap-before")
+                            searchFocused = true
+                            Task { @MainActor in
+                                for ms in [100, 600] { try? await Task.sleep(for: .milliseconds(ms)); probe("tap-after\(ms)ms") }
+                            }
+                        }
+                        .onChange(of: searchFocused) { _, now in probe("focus-changed-\(now)") }
                 }
                 // Offline state 7: rows keep their placeholder covers; say why.
                 if case .failed(offline: true) = model.checkState {
@@ -558,5 +580,22 @@ struct OnboardingRightPage: View {
             .padding(.top, 16).padding(.bottom, 24)
         }
         .scrollIndicators(.hidden)
+    }
+}
+
+
+/// TEMPORARY diagnosis aid (v0.5.3, testPinnedAddBar in Open portrait). Launch with `-addFocusProbe` to see and log
+/// where the add search loses focus, and add `-addPlacementAutomatic` to take `.presentationPlacement(.trailing)` out.
+enum AddFocusProbe {
+    static var enabled: Bool { ProcessInfo.processInfo.arguments.contains("-addFocusProbe") }
+    static func automatic(_ pose: Pose) -> Bool {
+        pose == .closed || ProcessInfo.processInfo.arguments.contains("-addPlacementAutomatic")
+    }
+    static func placementName(_ pose: Pose) -> String { automatic(pose) ? "automatic" : "trailing" }
+    static func firstResponder() -> String {
+        let windows = UIApplication.shared.connectedScenes.compactMap { ($0 as? UIWindowScene)?.windows }.flatMap { $0 }
+        func find(_ v: UIView) -> UIView? { v.isFirstResponder ? v : v.subviews.lazy.compactMap(find).first }
+        for w in windows { if let r = find(w) { return "\(type(of: r))" } }
+        return "none"
     }
 }
