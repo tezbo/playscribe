@@ -183,6 +183,18 @@ final class PlayscribeUITests: XCTestCase {
         lastScheduleLog = scheduleProbe.exists ? scheduleProbe.label : "no qaScheduleLog element"
         step("authorization: \(lastScheduleLog)")
         if authStatus() == 1 { XCTFail("notifications are denied for Playscribe on this simulator (app says: \(lastScheduleLog)); reset the simulator or grant them, then rerun"); return nil }
+        // Quinn, #422 4c39193, fresh erased sim: the log read "adding, due in 3 s" and never "added", with no "auth" segment either.
+        // Both come from completion handlers of the notification daemon, so neither firing means usernoted did not answer (an
+        // environment fault, not "no row found"). Say so in its own failure instead of letting it surface three minutes later.
+        if lastScheduleLog.contains("adding") {
+            let daemonDeadline = Date.now.addingTimeInterval(10)
+            while Date.now < daemonDeadline, !(scheduleProbe.exists && scheduleProbe.label.contains("; added")) { usleep(500_000) }
+            lastScheduleLog = scheduleProbe.exists ? scheduleProbe.label : lastScheduleLog
+            if !lastScheduleLog.contains("; added") {
+                XCTFail("the notification daemon did not complete add() within 10 s (app says: \(lastScheduleLog)); this is the simulator's usernoted not answering, not a missing row. Reboot or erase the simulator and rerun")
+                return nil
+            }
+        }
         // The notification is scheduled by the route a moment after launch (and after the permission prompt), and an app put in the
         // background before that never schedules it (c4bced1: warm failed twice with Notification Center empty). The toast
         // "Simulated major arrives in 3 s" is shown right after the schedule call, so wait for it.
