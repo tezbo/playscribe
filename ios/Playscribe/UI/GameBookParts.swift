@@ -298,7 +298,7 @@ struct NoNotesPage: View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
                 Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
-                NoUpdatesLine()
+                NoUpdatesLine(gameID: game.id)
             }
             GameBasicsView(game: game)
         }

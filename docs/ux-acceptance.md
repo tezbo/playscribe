@@ -248,6 +248,7 @@ Source: the gamer review of 2026-10-25, ranked. Apple basis, fetched 2026-10-25:
   - If no PS5 release is known at all, show the PS5 launch date ("Out on PS5 since 4 Feb 2025", or "Out 19 Nov" for a future game) plus the watching line.
   - Library rows (B-2) show the latest known PS5 version and date with "No notes", not "No PS5 notes yet".
   - Acceptance: no game in the demo set renders an empty Updates chapter.
+  - A game outside the feed's tracked set (not listed in `index.json`) says "We don't track this game's updates yet." with no Checked line. A tracked game with no notes keeps "No updates yet." and the Checked line. Until an index has been seen, the app treats every game as tracked.
 - **GR-2 PS5 pages show PS5 content only.** On a console page, these use only items that apply to PS5:
   - the headline, the summary, the key changes, push text (N-4), and Help / known issues.
   - PC-only items, such as PC hardware, upscalers and frame generation, mouse and keyboard, Steam or Steam Deck features, and GPU vendor crashes, appear only behind R-4's "Show PC-only changes (n)".

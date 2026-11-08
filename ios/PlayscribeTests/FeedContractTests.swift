@@ -167,4 +167,16 @@ struct ForYouTests {
         model.data.followedIssues = ["i1"]
         #expect(model.forYouLines(for: r) == ["Fixes an issue you follow: Crash on load"])
     }
+
+    /// GR-1: a game the feed does not follow never says "No updates yet"; with no index seen yet it is treated as followed.
+    @Test("feedTracksGame: unknown until an index is seen, then by feed id or IGDB id")
+    func feedTracksGame() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "tracked-\(UUID().uuidString).json"))
+        m.feedIndexGames = nil
+        #expect(m.feedTracksGame("anything"))
+        let idx = try decoder.decode(FeedClient.Index.self, from: Data(#"{ "updatedAt": "2026-11-08T00:00:00.000Z", "games": [ { "id": "ninja-gaiden-4", "igdbId": 329130 } ] }"#.utf8))
+        m.feedIndexGames = idx.games
+        #expect(m.feedTracksGame("ninja-gaiden-4"))
+        #expect(!m.feedTracksGame("not-in-the-feed"))
+    }
 }
