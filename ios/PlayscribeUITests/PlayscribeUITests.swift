@@ -749,12 +749,11 @@ final class LibraryLayoutTests: XCTestCase {
             // Iris, v0.5.3 tag blocker: with 8 games a first screen shows a tile without scrolling in Open portrait, Closed
             // portrait and Tabletop (standard text; AX3 and above are exempt, so this stays off when the text is large).
             if games == 8, tileScanIndex == 0, !UIApplication_isLargeText(app) {
-                // simctl launch turns Closed to landscape on the Mac (678x466), so Closed is gated in whichever orientation it measures:
-                // Closed portrait and Closed landscape both put tiles on the first screen. Open landscape is not part of this rule.
+                // simctl launch turns Closed to landscape on the Mac (678x466), so Closed is gated in whichever orientation it measures.
                 // Iris, v0.5.3: Open (both orientations), Closed (both) and Tabletop show a tile without scrolling. The landscape
                 // poses have a short window, so there half a tile row is enough; elsewhere a whole tile.
                 if pose.contains("tabletop") || pose.contains("closed") || pose.contains("flat") {
-                    let onScreen = tiles.filter { appLandscape
+                    let onScreen = tiles.filter { appLandscape && !pose.contains("tabletop")
                         ? $0.minY >= 0 && ($0.minY + $0.height / 2) <= min(app.frame.width, app.frame.height) + 1   // the shorter side is the height
                         : $0.minY >= 0 && $0.maxY <= app.frame.maxY + 1 }
                     XCTAssertFalse(onScreen.isEmpty, "a game tile is on the first screen without scrolling, 8 games [\(pose)]")
