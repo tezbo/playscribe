@@ -643,7 +643,13 @@ final class AppModel {
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
             Task {
-                if NotificationService.shared.authorization == .notDetermined { await NotificationService.shared.requestAuthorization() }
+                // Never wait on the permission prompt for good: f526773, a fresh sim, locked screen: no prompt was presented, the
+                // request never returned and nothing was scheduled in 40 s ("qa-schedule: none"). Ask, give the prompt 8 s, then
+                // schedule anyway: a pending request is delivered once permission is granted, and the test reports the status.
+                if NotificationService.shared.authorization == .notDetermined {
+                    Task { _ = await NotificationService.shared.requestAuthorization() }
+                    for _ in 0..<16 where NotificationService.shared.authorization == .notDetermined { try? await Task.sleep(for: .milliseconds(500)) }
+                }
                 // QA: earlier runs leave their notifications in Notification Center and on the lock screen; the test taps
                 // "the Dawnwalker row", so sweep them first and there is exactly one (e411c788: taps landed on a stale pile).
                 UNUserNotificationCenter.current().removeAllDeliveredNotifications()
