@@ -542,7 +542,10 @@ struct ContentsBody: View {
                         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
                 }
                 ChapterBar(gameID: gameID, selected: chapter)
-                NotesSearchField(gameID: gameID)
+                // Tabletop, a game with no notes: search, the A to Z strip and Previous/Next have nothing to act on (Quinn, #426),
+                // so they are not drawn; the list below says why there is nothing (NoUpdatesLine).
+                let tabletopNoNotes = duo.pose == .tabletop && model.ps5Releases(gameID).isEmpty && model.pcOnlyReleases(gameID).isEmpty
+                if !tabletopNoNotes { NotesSearchField(gameID: gameID) }
                 if model.noteQuery.count >= 2 || (duo.pose == .tabletop && model.noteLetter != nil) {
                     InlineNoteResults(gameID: gameID)
                 } else if chapter == .updates {
@@ -555,7 +558,7 @@ struct ContentsBody: View {
                         }
                         .tappableFrame()
                     }
-                    if duo.pose == .tabletop {
+                    if duo.pose == .tabletop, !tabletopNoNotes {
                         TabletopOutline(gameID: gameID)
                     }
                     ReleaseTimeline(gameID: gameID)
@@ -699,6 +702,9 @@ struct ReleaseTimeline: View {
             Text("ALL UPDATES").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
             if ps5.isEmpty, let g = model.game(gameID) {
                 Text(g.ps5AvailabilityLine).font(PlayscribeFont.subheadline)
+                // Tabletop's lower half: the Page is the view-only stage above, so this list is where a reader looks for why there
+                // is nothing (untracked: "We don't track this game's updates yet."; tracked: "No updates yet." and Checked).
+                if pc.isEmpty, duo.pose == .tabletop { NoUpdatesLine(gameID: gameID).padding(.top, 2) }
             }
             ForEach(ps5) { row($0, selected: $0.id == selected) }
             ForEach(pc) { row($0, selected: $0.id == selected) }
