@@ -340,7 +340,9 @@ final class ReleaseFeatureTests: XCTestCase {
         XCTAssertTrue(waitFocus(true), "the add search has keyboard focus")
         search.typeText("elden")
         // Tap in the middle of the typed text, then type again: focus must hold and the caret must have moved there.
-        search.coordinate(withNormalizedOffset: CGVector(dx: 0.05, dy: 0.5)).tap()
+        // 20 pt in from the field's leading edge, not a fraction of its width: in Open portrait the field is about 1,000 pt wide, so a
+        // 5 % tap lands 50 pt in, past the end of "elden" (about 45 pt), and the caret correctly stays at the end (39da7ab Mac run).
+        search.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(dx: 20, dy: 22)).tap()
         usleep(600_000)
         XCTAssertTrue(focused(), "a tap inside the typed text keeps the keyboard")
         XCTAssertTrue(app.keyboards.firstMatch.exists, "the keyboard is still up after a tap in the text")
