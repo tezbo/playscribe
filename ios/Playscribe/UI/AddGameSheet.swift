@@ -85,18 +85,16 @@ struct AddGameSheet: View {
                     model.addSearchFocus = false
                     // The field appears only after the method switch above, and in Open portrait the sheet is still settling at 600 ms
                     // (7161347 gate: the one request was lost, the field never took focus). Ask again until it holds, up to 5 s.
-                    if ABFlags.noLoop {
-                        searchFocused = true   // A/B: one plain request, no retry loop
-                    } else {
                     Task {
                         for _ in 0..<10 {
                             try? await Task.sleep(for: .milliseconds(500))
+                            // SwiftUI can say "focused" while the field never became first responder (sheet still settling, hand check
+                            // 1de7e9e: cold launch, no caret until a tap). Trust UIKit: if the keyboard isn't really up, toggle and ask again.
                             if searchFocused && KeyboardState.fieldIsFirstResponder { break }
                             searchFocused = false
                             try? await Task.sleep(for: .milliseconds(60))
                             searchFocused = true
                         }
-                    }
                     }
                 }
             }
@@ -255,15 +253,14 @@ struct AddGameSheet: View {
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                 } else {
                     statusPicker
-                    if ABFlags.plainField {
-                        TextField("Search PS5 games", text: $query).focused($searchFocused)   // A/B: minimal field
-                    } else {
                     TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
                         .autocorrectionDisabled()
                         .submitLabel(.search)
                         .focused($searchFocused)
                         .frame(minHeight: 44)
-                    }
+                        // No tap gesture of ours on the field (onTapGesture in #423, simultaneousGesture in 39da7ab: the Mac saw the caret
+                        // stay at the end and typed text lost after a tap). The UITextField is the full 44 pt row, so its own touch
+                        // handling takes focus and places the caret.
                 }
                 // Offline state 7: rows keep their placeholder covers; say why.
                 if case .failed(offline: true) = model.checkState {
@@ -289,7 +286,7 @@ struct AddGameSheet: View {
             }
         }
         // Terry, 8 Nov: the keyboard could not be put away. Scrolling dismisses it, and so does a tap outside the field and rows.
-        .modifier(ABDismiss())
+        .dismissesKeyboardOnOutsideTap()
     }
 
     private var customForm: some View {
@@ -596,19 +593,5 @@ struct OnboardingRightPage: View {
             .padding(.top, 16).padding(.bottom, 24)
         }
         .scrollIndicators(.hidden)
-    }
-}
-
-/// TEMPORARY A/B flags (v0.5.3 caret hunt): isolate the retry loop, the dismiss recognizer and the field's modifiers. Remove with the probe.
-enum ABFlags {
-    static let args = ProcessInfo.processInfo.arguments
-    static var noLoop: Bool { args.contains("-abNoLoop") }
-    static var plainField: Bool { args.contains("-abPlainField") }
-    static var noDismiss: Bool { args.contains("-abNoDismiss") }
-}
-
-private struct ABDismiss: ViewModifier {
-    func body(content: Content) -> some View {
-        if ABFlags.noDismiss { content } else { content.dismissesKeyboardOnOutsideTap() }
     }
 }

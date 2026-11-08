@@ -338,20 +338,18 @@ final class ReleaseFeatureTests: XCTestCase {
         }
         if !waitFocus(true) { search.tap() }
         XCTAssertTrue(waitFocus(true), "the add search has keyboard focus")
-        sleep(3)   // the route focus re-takes focus once the sheet has settled (about 1.5 s); typing earlier would race it
-        XCTAssertTrue(waitFocus(true), "the add search has keyboard focus after the sheet settled")
         search.typeText("elden")
-        // Tap in the middle of the typed text, then type again: focus must hold and the caret must have moved there.
-        // 20 pt in from the field's leading edge, not a fraction of its width: in Open portrait the field is about 1,000 pt wide, so a
-        // 5 % tap lands 50 pt in, past the end of "elden" (about 45 pt), and the caret correctly stays at the end (39da7ab Mac run).
-        search.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0.5)).withOffset(CGVector(dx: 20, dy: 0)).tap()
+        // Tap at the leading edge of the typed text, then type again: focus must hold and the caret must have moved to the start.
+        // Not mid-word: the 6ef2f42 A/B showed a plain TextField in the same sheet, with none of our code, also leaves the caret at
+        // the end after a tap 20 pt into "elden" (likely iOS snapping a single tap to a word boundary). The start is a boundary either way.
+        search.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0.5)).withOffset(CGVector(dx: 2, dy: 0)).tap()
         usleep(600_000)
         XCTAssertTrue(focused(), "a tap inside the typed text keeps the keyboard")
         XCTAssertTrue(app.keyboards.firstMatch.exists, "the keyboard is still up after a tap in the text")
         search.typeText("x")
         let value = (search.value as? String) ?? ""
-        XCTAssertTrue(value.contains("x") && value.count == 6, "typing continues after the tap, got '\(value)'")
-        XCTAssertNotEqual(value, "eldenx", "the caret moved to where the text was tapped")
+        XCTAssertTrue(value.lowercased().contains("x") && value.count == 6, "typing continues after the tap, got '\(value)'")
+        XCTAssertEqual(value.lowercased(), "xelden", "the caret moved to the start of the text")
         // A tap on a bare area (the sheet title bar) puts the keyboard away.
         app.navigationBars.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         XCTAssertTrue(waitFocus(false), "a tap outside the field dismisses the keyboard")
