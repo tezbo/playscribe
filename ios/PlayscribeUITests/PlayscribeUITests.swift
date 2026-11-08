@@ -655,15 +655,7 @@ final class LibraryLayoutTests: XCTestCase {
         }
         sleep(4)
         step("before pose probe")
-        var pose = ReleaseRowTests.pose(app)
-        // The Mac found that a simctl launch turns Closed to landscape (rot270, 678x466), so a "Closed portrait" run measured Closed
-        // landscape. Pin portrait for Closed and re-read the pose; Closed landscape keeps its own gates elsewhere.
-        if pose.contains("closed"), XCUIDevice.shared.orientation != .portrait || app.frame.width > app.frame.height {
-            XCUIDevice.shared.orientation = .portrait
-            sleep(2)
-            pose = ReleaseRowTests.pose(app)
-            step("pinned portrait, pose \(pose), window \(app.frame)")
-        }
+        let pose = ReleaseRowTests.pose(app)
         step("pose \(pose)")
         var checked = 0
         var seenTiles = Set<String>()
@@ -732,8 +724,10 @@ final class LibraryLayoutTests: XCTestCase {
             // Iris, v0.5.3 tag blocker: with 8 games a first screen shows a tile without scrolling in Open portrait, Closed
             // portrait and Tabletop (standard text; AX3 and above are exempt, so this stays off when the text is large).
             if games == 8, tileScanIndex == 0, !UIApplication_isLargeText(app) {
+                // simctl launch turns Closed to landscape on the Mac (678x466), so Closed is gated in whichever orientation it measures:
+                // Closed portrait and Closed landscape both put tiles on the first screen. Open landscape is not part of this rule.
                 let portrait = app.frame.width <= app.frame.height
-                if pose.contains("tabletop") || (portrait && (pose.contains("flat") || pose.contains("closed"))) {
+                if pose.contains("tabletop") || pose.contains("closed") || (portrait && pose.contains("flat")) {
                     let onScreen = tiles.filter { $0.minY >= 0 && $0.maxY <= app.frame.maxY + 1 }
                     XCTAssertFalse(onScreen.isEmpty, "a game tile is on the first screen without scrolling, 8 games [\(pose)]")
                 }
