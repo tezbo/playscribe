@@ -323,6 +323,36 @@ final class ReleaseFeatureTests: XCTestCase {
         assertFrames("add-bar")
     }
 
+    /// A-1, v0.5.3 (Terry, 8 Nov; cc04658 Mac hand check 1): a tap inside the typed text keeps the keyboard and moves the caret; typing
+    /// goes on; a tap on a bare area puts the keyboard away.
+    func testAddSearchKeepsFocusOnTextTapAndDismissesOnOutsideTap() throws {
+        launch("add/keyboard")
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard") }
+        let search = app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10))
+        func focused() -> Bool { (search.value(forKey: "hasKeyboardFocus") as? Bool) == true }
+        func waitFocus(_ want: Bool) -> Bool {
+            let end = Date.now.addingTimeInterval(4)
+            while focused() != want && Date.now < end { usleep(200_000) }
+            return focused() == want
+        }
+        if !waitFocus(true) { search.tap() }
+        XCTAssertTrue(waitFocus(true), "the add search has keyboard focus")
+        search.typeText("elden")
+        // Tap in the middle of the typed text, then type again: focus must hold and the caret must have moved there.
+        search.coordinate(withNormalizedOffset: CGVector(dx: 0.05, dy: 0.5)).tap()
+        usleep(600_000)
+        XCTAssertTrue(focused(), "a tap inside the typed text keeps the keyboard")
+        XCTAssertTrue(app.keyboards.firstMatch.exists, "the keyboard is still up after a tap in the text")
+        search.typeText("x")
+        let value = (search.value as? String) ?? ""
+        XCTAssertTrue(value.contains("x") && value.count == 6, "typing continues after the tap, got '\(value)'")
+        XCTAssertNotEqual(value, "eldenx", "the caret moved to where the text was tapped")
+        // A tap on a bare area (the sheet title bar) puts the keyboard away.
+        app.navigationBars.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        XCTAssertTrue(waitFocus(false), "a tap outside the field dismisses the keyboard")
+    }
+
     // MARK: - Accessibility (G-7, G-10)
 
     /// The new screens pass the system audit for hit regions and element descriptions.
