@@ -696,6 +696,7 @@ final class AppModel {
             if let n = Int(parts[0]) {
                 let missing = PS5Index.shared.popular(limit: 60).filter { g in !data.collection.contains { $0.gameID == g.id } }
                 for g in missing.prefix(max(0, n - data.collection.count)) { insertGame(g, status: .owned) }
+                nav.anchors["library"] = nil   // QA: a persisted scroll position from an earlier run must not open the Library at the bottom
             }
         case "side" where parts.count == 1: UserDefaults.standard.set(parts[0] == "left", forKey: ReadingSide.key)
         case "add-game" where parts.count == 1:

@@ -657,6 +657,13 @@ final class LibraryLayoutTests: XCTestCase {
         step("before pose probe")
         let pose = ReleaseRowTests.pose(app)
         step("pose \(pose)")
+        // 0d4d55f (28 games, Closed landscape): the Library opened scrolled to the end (a restored scroll position from the
+        // previous run), so every scan saw only the last 7 tiles and no swipe up could move it. Go to the top first.
+        if !pose.contains("tabletop") {
+            for _ in 0..<12 { app.swipeDown(velocity: .fast) }
+            sleep(1)
+            step("scrolled to the top")
+        }
         var checked = 0
         var seenTiles = Set<String>()
         var tileScanIndex = 0
