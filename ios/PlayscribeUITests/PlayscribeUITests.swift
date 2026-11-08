@@ -609,6 +609,21 @@ final class LibraryLayoutTests: XCTestCase {
             let shots = XCUIScreen.screens.map { $0.screenshot() }
             return (shots.max(by: { $0.image.size.width * $0.image.size.height < $1.image.size.width * $1.image.size.height }) ?? XCUIScreen.main.screenshot()).pngRepresentation
         }
+        // 911734e: all six drags "did not move" yet the page ended at 94%. The panel screenshot (the largest of XCUIScreen.screens)
+        // is the inner display, which is not the one that shows the app in Closed, so it never changed. Judge movement from the app
+        // itself: the scroll bar value, the first tile's id and frame and the tile labels on screen (each scan also attaches the app's own screenshot).
+        struct PageState: Equatable {
+            var bar: String; var firstTile: String; var tiles: Set<String>
+            var summary: String { "bar \(bar); first \(firstTile); \(tiles.count) tiles" }
+        }
+        func pageState() -> PageState {
+            let q = app.buttons.matching(NSPredicate(format: "label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update'"))
+            let els = q.allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }
+            let first = els.min { ($0.frame.minY, $0.frame.minX) < ($1.frame.minY, $1.frame.minX) }
+            let bar = app.scrollBars.firstMatch.exists ? "\(app.scrollBars.firstMatch.value ?? "nil")" : "none"
+            return PageState(bar: bar, firstTile: first.map { "\($0.identifier) \($0.frame)" } ?? "none",
+                             tiles: Set(els.map(\.label)))
+        }
         func step(_ text: String) {
             let sb = XCUIApplication(bundleIdentifier: "com.apple.springboard")
             let line = String(format: "%02d app state %d (4 = foreground); lock=%@ switcher=%@; %@", log.count + 1, app.state.rawValue,
@@ -763,25 +778,28 @@ final class LibraryLayoutTests: XCTestCase {
                     if after == before { break }
                 }
             } else {
-                let before = panelPNG()
+                let before = pageState()
+                step("before swipe: \(before.summary)")
                 app.swipeUp(velocity: .fast)
-                // 1fda372: a swipe that starts over the deck moved nothing. Fall back to a drag from the bare band right of the
-                // page dots, and fail loudly with the tree if neither moves the page.
-                if checked < games, panelPNG() == before {
-                    // cb3d799 (28 games, Closed landscape, window 678x466): the swipe and the 93% drag both moved nothing, though a
-                    // swipe by hand scrolls. Try the scroll view's own swipe, then drags from several columns (a tile or a strip under
-                    // the start point eats a drag), and fail loudly with the tree only when every attempt left the page as it was.
+                sleep(1)
+                var now = pageState()
+                step("after swipe: \(now.summary); moved \(now != before)")
+                // 1fda372, cb3d799, 0d4d55f: a swipe that starts over the deck or a tile can move nothing. Fall back to the scroll
+                // view's own swipe, then drags from several columns, and fail loudly with the tree only when every attempt left the
+                // page as it was.
+                if checked < games, now == before {
                     var moved = false
                     app.scrollViews.element(boundBy: 0).swipeUp()
                     sleep(1)
-                    moved = panelPNG() != before
+                    now = pageState(); moved = now != before
+                    step("scroll view swipe: \(now.summary); moved \(moved)")
                     for x in [0.93, 0.5, 0.2, 0.07, 0.7, 0.35] where !moved {
                         let from = app.coordinate(withNormalizedOffset: CGVector(dx: x, dy: 0.86))
                         let to = app.coordinate(withNormalizedOffset: CGVector(dx: x, dy: 0.25))
                         from.press(forDuration: 0.1, thenDragTo: to, withVelocity: .slow, thenHoldForDuration: 0.2)
                         sleep(1)
-                        moved = panelPNG() != before
-                        step("drag from x \(x) \(moved ? "moved" : "did not move")")
+                        now = pageState(); moved = now != before
+                        step("drag from x \(x): \(now.summary); moved \(moved)")
                     }
                     if !moved {
                         let tree = XCTAttachment(string: app.debugDescription); tree.name = "library-did-not-scroll-tree.txt"; tree.lifetime = .keepAlways; add(tree)
@@ -789,6 +807,7 @@ final class LibraryLayoutTests: XCTestCase {
                         break
                     }
                 }
+                let appShot = XCTAttachment(screenshot: app.screenshot()); appShot.name = String(format: "eight-app-scan-%02d", tileScanIndex); appShot.lifetime = .keepAlways; add(appShot)
             }
         }
         XCTAssertGreaterThan(checked, 0, "found tiles [\(pose)]")
