@@ -172,11 +172,18 @@ final class NotificationService: NSObject {
         qaRequests[request.identifier] = request
         let id = request.identifier
         center.add(request) { error in
-            let text = error.map { ", error \($0.localizedDescription)" } ?? ""
+            let ns = error as NSError?
+            let text = ns.map { ", error \($0.localizedDescription) [\($0.domain) \($0.code)]" } ?? ""
             Task { @MainActor in
                 self.qaScheduleLog += "; added" + text + " (try \(attempt))"
-                if !text.isEmpty, attempt < 3, let r = self.qaRequests[id] {
-                    try? await Task.sleep(for: .seconds(2))
+                guard !text.isEmpty else { return }
+                // 0473bc2 (Mac, both sims): "Source is not authorized" at auth 2. Say what the system thinks the app may do right now.
+                self.center.getNotificationSettings { s in
+                    let line = "settings auth \(s.authorizationStatus.rawValue) alert \(s.alertSetting.rawValue) center \(s.notificationCenterSetting.rawValue) lock \(s.lockScreenSetting.rawValue) sound \(s.soundSetting.rawValue) badge \(s.badgeSetting.rawValue)"
+                    Task { @MainActor in self.qaScheduleLog += "; " + line }
+                }
+                if attempt < 5, let r = self.qaRequests[id] {
+                    try? await Task.sleep(for: .seconds(3))
                     self.qaAdd(r, attempt: attempt + 1)
                 }
             }

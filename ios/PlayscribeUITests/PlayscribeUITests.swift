@@ -219,6 +219,19 @@ final class PlayscribeUITests: XCTestCase {
                 XCTFail("the notification daemon did not complete add() within 10 s (app says: \(lastScheduleLog)); this is the simulator's usernoted not answering, not a missing row. Reboot or erase the simulator and rerun")
                 return nil
             }
+            // 0473bc2: the first add was refused ("Source is not authorized") at auth 2. The app retries up to 5 times, 3 s apart; read
+            // the whole story instead of the first line, and fail here, in plain words, if the system never accepts the request.
+            func accepted(_ l: String) -> Bool { l.components(separatedBy: "; added").dropFirst().contains { !$0.hasPrefix(", error") } }
+            let retryDeadline = Date.now.addingTimeInterval(25)
+            while Date.now < retryDeadline, !accepted(lastScheduleLog), !lastScheduleLog.contains("(try 5)") {
+                usleep(500_000)
+                lastScheduleLog = scheduleProbe.exists ? scheduleProbe.label : lastScheduleLog
+            }
+            step("schedule: \(lastScheduleLog)")
+            if !accepted(lastScheduleLog) {
+                XCTFail("the system refused the notification request on every try (app says: \(lastScheduleLog)); permission reads granted but usernoted rejects the app as a source: a simulator registration fault if main fails the same way on this simulator")
+                return nil
+            }
         }
         // The notification is scheduled by the route a moment after launch (and after the permission prompt), and an app put in the
         // background before that never schedules it (c4bced1: warm failed twice with Notification Center empty). The toast
