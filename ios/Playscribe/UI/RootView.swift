@@ -62,7 +62,7 @@ struct RightPagePanel: View {
     private var panelWidth: CGFloat { duo.size.width - 16 - leadingEdge }
 
     var body: some View {
-        if model.addSheetOpen {
+        if model.addSheetOpen && !model.addIsSystemSheet {
             ZStack(alignment: .trailing) {
                 Color.black.opacity(0.4).ignoresSafeArea()
                 AddGameSheet()
@@ -132,6 +132,7 @@ struct RootView: View {
     }
     @AppStorage("didShowSplash") private var didShowSplash = false
     @State private var splashVisible = false
+    @State private var unlatchTask: Task<Void, Never>?
     @State private var frames: [CGRect] = []
     @State private var named: [String: CGRect] = [:]
 
@@ -163,6 +164,19 @@ struct RootView: View {
                 }
             }
             .animation(poseAnimation, value: duo.pose)
+            // The sheet keeps its form while the launch pose settles, but a real change still switches it: folding into Book
+            // at once, Open landscape once it has held for 10 s (the launch settling showed it for about 5 s).
+            .onChange(of: duo.pose == .book) { _, book in
+                if book && model.addSheetOpen { model.addIsSystemSheet = false }
+            }
+            .onChange(of: duo.pose == .flat && duo.isLandscape, initial: true) { _, wide in
+                unlatchTask?.cancel()
+                guard wide else { return }
+                unlatchTask = Task { @MainActor in
+                    try? await Task.sleep(for: .seconds(10))
+                    if !Task.isCancelled && model.addSheetOpen { model.addIsSystemSheet = false }
+                }
+            }
             .environment(\.qaSolid, BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaReduceTransparency"))
             .onPreferenceChange(TappableFrameKey.self) { frames = $0 }
             .onPreferenceChange(NamedFrameKey.self) { named = $0 }
@@ -191,7 +205,7 @@ struct RootView: View {
         .onChange(of: NotificationService.shared.launchedFromNotification) { _, fromNotification in
             if fromNotification { splashVisible = false }
         }
-        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && !model.liveRightPage }, set: { if !$0 && model.livePose != .tabletop && !model.liveRightPage { model.addSheetOpen = false } })) {
+        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
             // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
             AddGameSheet().presentationDetents([.large])
         }

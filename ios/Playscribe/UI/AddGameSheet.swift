@@ -52,7 +52,18 @@ struct AddGameSheet: View {
             }
             .onAppear {
                 if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
-                if model.addSearchFocus { model.addSearchFocus = false; Task { try? await Task.sleep(for: .milliseconds(600)); searchFocused = true } }
+                if model.addSearchFocus {
+                    model.addSearchFocus = false
+                    // The field appears only after the method switch above, and in Open portrait the sheet is still settling at 600 ms
+                    // (7161347 gate: the one request was lost, the field never took focus). Ask again until it holds, up to 5 s.
+                    Task {
+                        for _ in 0..<10 {
+                            try? await Task.sleep(for: .milliseconds(500))
+                            if searchFocused { break }
+                            searchFocused = true
+                        }
+                    }
+                }
             }
             .navigationTitle(titleHidden || duo.pose == .tabletop ? "" : sheetTitle)
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillChangeFrameNotification)) { note in
@@ -214,6 +225,9 @@ struct AddGameSheet: View {
                         .submitLabel(.search)
                         .focused($searchFocused)
                         .frame(minHeight: 44)
+                        // The whole 44 pt row asks for focus, not only the glyphs: a tap in the row's padding did nothing.
+                        .contentShape(Rectangle())
+                        .onTapGesture { searchFocused = true }
                 }
                 // Offline state 7: rows keep their placeholder covers; say why.
                 if case .failed(offline: true) = model.checkState {
