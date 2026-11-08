@@ -901,3 +901,13 @@ struct RomanNumeralGlueTests {
         }
     }
 }
+
+@Suite("Unbreakable version (r052-version-row-ax3)")
+struct UnbreakableVersionTests {
+    @Test("a word joiner follows each dot, so no line can break inside the version")
+    func joinsAfterDots() {
+        #expect("01.001.000".unbreakableVersion == "01.\u{2060}001.\u{2060}000")
+        #expect("1.7.2".unbreakableVersion.replacingOccurrences(of: "\u{2060}", with: "") == "1.7.2", "the text is otherwise unchanged")
+        #expect("7".unbreakableVersion == "7")
+    }
+}

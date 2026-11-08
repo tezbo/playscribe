@@ -116,6 +116,12 @@ extension Date {
 }
 
 extension String {
+    /// A version number as one token: a word joiner after each dot, so a line never breaks inside "01.001.000" (Closed portrait
+    /// AX5 broke after a dot and clipped the row; r052-version-row-ax3). The text reads the same; VoiceOver is unaffected.
+    var unbreakableVersion: String {
+        replacingOccurrences(of: ".", with: ".\u{2060}")
+    }
+
     /// "Deliverance II" with a no-break space before a trailing Roman numeral, so the numeral never wraps onto a line of its own
     /// (Open portrait showed "II ✓" alone under "Deliverance"; r060-nbsp-roman-numerals). Only a numeral up to XX after at least one
     /// other word; every other title is returned unchanged.

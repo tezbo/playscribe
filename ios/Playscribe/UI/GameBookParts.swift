@@ -238,9 +238,17 @@ struct ReleasePage: View {
                 if r.isPS5Listed { ShareUpdateButton(release: r) }
             }
             }
-            HStack(spacing: 8) {
+            // Accessibility sizes: the date over the version, the version one unbreakable token on its own line (it shrinks
+            // before it would break or clip; r052-version-row-ax3). Standard sizes keep the one row.
+            let dateAndVersion = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4)) : AnyLayout(HStackLayout(spacing: 8))
+            dateAndVersion {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
-                if let v = r.ps5Version { Text(v).monospacedDigit() }
+                if let v = r.ps5Version {
+                    Text(v.unbreakableVersion).monospacedDigit()
+                        .lineLimit(1).minimumScaleFactor(0.6)
+                        .accessibilityLabel(v)
+                        .accessibilityIdentifier("ps5Version")
+                }
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             SourceLinks(release: r)
