@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import os
 import SwiftUI
 import UserNotifications
 
@@ -855,9 +856,22 @@ final class AppModel {
     func addGames(_ list: [CatalogGame], status: OwnershipStatus) {
         let new = list.filter { entry($0.id) == nil }
         guard !new.isEmpty else { return }
+        #if INTERNAL
+        // r053-tap-opens-tick-adds: the Mac saw ~1.5 s between a tick tap and the screen changing. Time each stage so a run says where.
+        let clock0 = ContinuousClock.now
+        var laps: [String] = []
+        func lap(_ name: String) { laps.append("\(name) \((ContinuousClock.now - clock0).formatted(.units(allowed: [.milliseconds], width: .narrow)))") }
+        defer { Logger(subsystem: "co.codeconnectors.playscribe", category: "add").info("addGames \(laps.joined(separator: "; "), privacy: .public)") }
+        #endif
         for g in new { insertGame(g, status: status == .owned && g.isUpcoming ? .wishlist : status) }
+        #if INTERNAL
+        lap("insert")
+        #endif
         // Adding a game never floods the badge: whatever it already has before today's news is the past.
         markPastAsRead(new.flatMap { releases($0.id) }, backCatalogue: true)
+        #if INTERNAL
+        lap("markPastAsRead")
+        #endif
         let ids = new.map(\.id)
         nav.filter = .all
         highlight = new.count == 1 ? ids[0] : nil
@@ -866,8 +880,17 @@ final class AppModel {
         nav.anchors["library"] = "lib-\(ids[0])"
         let text = new.count == 1 ? "Added \(new[0].name)" : "Added \(new.count) games"
         show(Toast(text: text, undo: { [weak self] in ids.forEach { self?.removeGame($0, toast: false) } }))
+        #if INTERNAL
+        lap("toast")
+        #endif
         if data.soundsOff != true { PopSound.play(count: new.count, quiet: data.quietHours) }
+        #if INTERNAL
+        lap("sound")
+        #endif
         NotificationService.shared.updateBadge(badgeCount)
+        #if INTERNAL
+        lap("badge")
+        #endif
     }
 
     private func insertGame(_ game: CatalogGame, status: OwnershipStatus) {
