@@ -120,7 +120,12 @@ struct LatestUpdatesDeck: View {
         return min(max(base, captionH), max(base, axCap - edgeHeight))
     }
 
-    private var edgeHeight: CGFloat { cards.count > 1 ? Self.pageEdgeHeight : 0 }
+    /// Whether the dots row (page edge, and/or the "+N more updates" chip) is on screen under the deck.
+    private var hasEdgeRow: Bool { cards.count > 1 || (compact && moreCount > 0) }
+    private var edgeHeight: CGFloat { hasEdgeRow ? Self.pageEdgeHeight : 0 }
+
+    /// Compact: the card's art height. The card keeps `maxHeight` less the page edge whether or not that row shows.
+    private var compactArt: CGFloat { grownArt(max(96, maxHeight - Self.pageEdgeHeight)) }
 
     /// J-5: the deck is at most half the container's height (the harness allows 12 pt more; 4 pt here for rounding).
     private var axCap: CGFloat { (duo.size.height * 0.5).rounded(.down) + 4 }
@@ -144,12 +149,13 @@ struct LatestUpdatesDeck: View {
             // Explicit geometry: every card is exactly the column wide, so a swipe snaps card to card, and the
             // art is capped so the deck never grows past maxHeight (the 727 pt card, 20d77ea).
             GeometryReader { g in
-                let art = grownArt(max(96, maxHeight - Self.pageEdgeHeight))
-                deck(cardWidth: g.size.width, artHeight: art)
+                deck(cardWidth: g.size.width, artHeight: compactArt)
                     .background(alignment: .topLeading) { ruler(width: g.size.width) }
             }
             // The wrapped chip at accessibility sizes sits on its own row under the dots: the deck grows by that row.
-            .frame(height: maxHeight > 0 ? grown(maxHeight) + (typeSize.isAccessibilitySize && moreCount > 0 ? Self.chipRowAX : 0) : nil)
+            // The page-edge row is reserved only when it shows (several cards, or the "+N more" chip): a lone update has
+            // no dots, so the deck ends at the card and nothing is left empty under it (0.5.3, Iris: dead space under the hero).
+            .frame(height: maxHeight > 0 ? compactArt + edgeHeight + (typeSize.isAccessibilitySize && moreCount > 0 ? Self.chipRowAX : 0) : nil)
         } else if typeSize.isAccessibilitySize && !(duo.pose == .closed && duo.isLandscape) {
             // Accessibility sizes: one card per screen at an explicit height. The unsized pager let the card fill the
             // screen (7fe84f4, AX3).
