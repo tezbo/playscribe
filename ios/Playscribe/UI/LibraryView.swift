@@ -961,17 +961,19 @@ struct DatePill: View {
         }
         let ink = state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary
         let gap: CGFloat = narrow ? 3 : 4
-        // A rule by column width, not by the date's length: up to 120 pt of tile (3-column Closed is exactly 110, Tabletop 84) the mark always sits above the
+        // A rule by column width, not by the date's length: up to 160 pt of tile (3-column Closed 110, Tabletop 84, Open portrait 148), so a row never mixes stacked and inline pills (Iris: per row, here per width) the mark always sits above the
         // date, so the pills line up whatever the date ("22 Oct" and "8 Oct" alike; Iris, #436).
-        let stacked = (maxWidth ?? 200) <= 104
+        let stacked = (maxWidth ?? 200) <= 144
         // Never an ellipsis and never under the 11 pt text floor (Iris, #436): no scale-down. A date is one token on one line; if the
         // mark and the date do not fit side by side, the mark goes first and the date sits below it (as at AX5). The two status
         // phrases may wrap ("Plays on / PS5").
         Group {
-            if isDate && stacked {
+            if stacked {
+                // Every tile in a grid has one width, so the whole row (and the whole Library) stacks together, status phrases too.
                 VStack(alignment: .leading, spacing: 1) {
                     HStack(spacing: gap) { mark; dot }
-                    Text(state.text).lineLimit(1).fixedSize()
+                    if isDate { Text(state.text).lineLimit(1).fixedSize() }
+                    else { Text(state.text).lineLimit(2).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true) }
                 }
             } else if isDate {
                 ViewThatFits(in: .horizontal) {
