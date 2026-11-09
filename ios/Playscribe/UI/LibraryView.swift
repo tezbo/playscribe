@@ -483,9 +483,11 @@ struct LibraryShelf: View {
                     topCards(all)
                     NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                 } else if portraitTilesFirst {
-                    // While the person types in the field, News and the alerts / PS Plus cards step aside, so the matching
-                    // tiles sit right above the field and the keyboard (Quinn, 9d7cd15 stills). They return on blur.
-                    if !searchFocused {
+                    // While the field is focused or has text, News and the alerts / PS Plus cards step aside (not in the tree, so
+                    // hidden from VoiceOver too, and no animation to reduce): deck, chips, tiles, then the field, so the matching
+                    // tiles sit right above it and the keyboard. They return only when the field is empty AND unfocused, so
+                    // dismissing the keyboard with text in it keeps the matches on screen (Quinn and Iris, 9d7cd15 stills).
+                    if !(searchFocused || !model.data.nav.query.trimmingCharacters(in: .whitespaces).isEmpty) {
                         NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                         topCards(all)
                     }
