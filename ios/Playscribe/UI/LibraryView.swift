@@ -279,7 +279,7 @@ struct LibraryShelf: View {
                         // The standard clear control, shown only with text: the way back to News and the cards, which stay
                         // hidden while the field has text. A button of its own, so the row's tap target is untouched.
                         if !binding.wrappedValue.isEmpty {
-                            Button { LibProbe.log("x action begin query='\(binding.wrappedValue)' focused=\(searchFocused)"); KeyboardState.keepKeyboardOnThisTap(); binding.wrappedValue = ""; LibProbe.log("x action end focused=\(searchFocused)") } label: {
+                            Button { KeyboardState.keepKeyboardOnThisTap(); binding.wrappedValue = "" } label: {
                                 Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
                                     .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
                             }
@@ -300,17 +300,10 @@ struct LibraryShelf: View {
                     .tappableFrame()
                     .padding(.top, 4)
                     .id("library-search")
-                    .onAppear { LibProbe.log("search row onAppear") }
-                    .onDisappear { LibProbe.log("search row onDisappear") }
-                    .onChange(of: binding.wrappedValue) { _, q in LibProbe.log("query -> '\(q)' focused=\(searchFocused)") }
-                    .onReceive(NotificationCenter.default.publisher(for: UITextField.textDidEndEditingNotification)) { _ in LibProbe.log("UITextField didEndEditing") }
-                    .onReceive(NotificationCenter.default.publisher(for: UITextField.textDidBeginEditingNotification)) { _ in LibProbe.log("UITextField didBeginEditing") }
-                    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in LibProbe.log("keyboardWillHide") }
                     // The keyboard covers a field that sits low on the page (Open portrait: below the cards, half hidden at the
                     // keyboard's top edge, Mac 018b515). Bring it into view once the keyboard is up: to the top where results follow it,
                     // to the bottom edge where it is the last block (tiles-first portrait).
                     .onChange(of: searchFocused) { _, f in
-                        LibProbe.log("searchFocused -> \(f) query='\(model.data.nav.query)' fieldIsFR=\(KeyboardState.fieldIsFirstResponder)")
                         // On blur the position id is dropped, so the flip of the anchor back to .top cannot re-align the page
                         // to the field and jump it to the top as the keyboard goes.
                         if !f, model.nav.anchors["library"] == "library-search" { model.nav.anchors["library"] = nil }
