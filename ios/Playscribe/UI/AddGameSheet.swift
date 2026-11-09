@@ -380,7 +380,7 @@ struct OnboardingView: View {
     /// Room for the toast at the foot of the page while one shows, so the footer caption scrolls clear of it (Iris, #431: the
     /// Added toast sat over "PlayStation account import is planned..."). Not tappable, and zero when no toast shows.
     private var toastRoom: some View {
-        Color.clear.frame(height: model.toast == nil ? 0 : (model.messageFrame?.height ?? 52) + 8).allowsHitTesting(false)
+        Color.clear.frame(height: model.toast == nil ? 0 : model.messageInset).allowsHitTesting(false)
             .animation(.snappy, value: model.toast == nil)
     }
 

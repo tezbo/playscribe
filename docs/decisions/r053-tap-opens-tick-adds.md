@@ -36,7 +36,7 @@ Under VoiceOver the add toast is announced as "Added Roblox, Undo" (it was "Adde
 
 ## Update 8: toast room on the first-run page
 
-The Added toast floated over the first-run footer caption (on main too). OnboardingView now has a bottom safe-area inset of the toast's measured height plus 8 pt (52 pt if not yet measured) while a toast shows (zero otherwise), in the scrolling pages (closed, open, Book left page, Tabletop lower half), so the caption scrolls clear. Nothing new is tappable.
+The Added toast floated over the first-run footer caption (on main too). OnboardingView now has a bottom safe-area inset of the toast stack's reach from the bottom edge plus 8 pt (model.messageInset) while a toast shows (zero otherwise), in the scrolling pages (closed, open, Book left page, Tabletop lower half), so the caption scrolls clear. Nothing new is tappable.
 
 ## Update 9: word and disc share the bottom edge (Quinn)
 
@@ -45,3 +45,4 @@ On a cover narrower than 125 pt (the first-run strip, AX5) the Added/Wishlist wo
 ## Update 10: the page scrolls to its foot when a toast shows
 
 d8dbafa (Closed, frame 55): the inset alone left the caption under the toast, because a page that fits does not move when its viewport shrinks. The first-run page now also scrolls to its bottom edge, animated, 80 ms after a toast appears.
+Correction in the same head: the inset is `model.messageInset` (bottom edge to the toast's top, plus 8 pt), not the toast's own height, because the toast floats above the bottom padding and the first measure left 100 pt short.
