@@ -12,7 +12,7 @@ struct DeckAndWidgetTests {
         return m
     }
 
-    /// J-1: at most 8 cards, at most 2 per game, unread cards first, no card twice.
+    /// J-1: at most 5 cards (AppModel.deckLimit), at most 2 per game, unread cards first, no card twice.
     @Test func deckIsCappedSpreadAndUnreadFirst() {
         let deck = demoModel().latestDeck
         #expect(deck.count <= 8)
