@@ -3,7 +3,6 @@ import SwiftUI
 enum Brand {
     /// The product name. One constant, so a rename is one line.
     static let name = "Playscribe"
-    static let tagline = "The story of every update"
     static let trademarkNotice = "PlayStation, PS5, PlayStation Plus and the PlayStation Family Mark, and their logos, icons and branding, are trademarks of Sony Interactive Entertainment Inc. Playscribe is not affiliated with or endorsed by Sony Interactive Entertainment."
 }
 

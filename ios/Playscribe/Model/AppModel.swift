@@ -647,7 +647,14 @@ final class AppModel {
     }
 
     func handle(url: URL) {
-        // playscribe://release/<gameID>/<releaseID>
+        // playscribe://release/<gameID>/<releaseID>, or the shared universal link
+        // https://playscribe.codeconnectors.co/r/<gameID>/<releaseID>
+        if url.scheme == "https", url.host() == ShareText.host {
+            let p = url.pathComponents.filter { $0 != "/" }
+            if p.count == 3, p[0] == "r" { openRelease(gameID: p[1], releaseID: p[2]) }
+            else if p.count == 2, p[0] == "g" { openGame(p[1]) }
+            return
+        }
         guard url.scheme == "playscribe" else { return }
         let parts = url.pathComponents.filter { $0 != "/" }
         if url.host() == "release", parts.count == 2 {
