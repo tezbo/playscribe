@@ -293,6 +293,9 @@ struct LibraryShelf: View {
                     // keyboard's top edge, Mac 018b515). Bring it into view once the keyboard is up: to the top where results follow it,
                     // to the bottom edge where it is the last block (tiles-first portrait).
                     .onChange(of: searchFocused) { _, f in
+                        // On blur the position id is dropped, so the flip of the anchor back to .top cannot re-align the page
+                        // to the field and jump it to the top as the keyboard goes.
+                        if !f, model.nav.anchors["library"] == "library-search" { model.nav.anchors["library"] = nil }
                         guard f, duo.pose != .tabletop else { return }
                         Task { @MainActor in
                             try? await Task.sleep(for: .milliseconds(350))
