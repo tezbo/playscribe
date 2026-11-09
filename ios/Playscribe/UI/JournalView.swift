@@ -137,7 +137,9 @@ struct ReleaseEntry: View {
 struct ReleaseTag: View {
     var release: Release
     var body: some View {
-        HStack(spacing: 6) {
+        // Wraps onto a second row when the tags don't fit one: "PS4 update" and "Reported" ran under the rail at Closed AX5
+        // (9d8c3e2, Witcher). Each tag stays one unbroken word group.
+        FlowLayout(spacing: 6) {
             // Every PS4 patch says so, whatever its state; the patch name stays the title (R-2).
             if let l = release.ps4Label { Tag(text: l, tint: .secondary) }
             state
