@@ -32,7 +32,14 @@ jobs:
             echo "::warning::APPLE_TEAM_ID is not set: universal links are off until it is."
             rm "$f"
           fi
-      - uses: actions/upload-pages-artifact@v3
-        with: { path: site }
+      # upload-pages-artifact skips dot folders, which would drop /.well-known, so pack the artifact by hand.
+      - name: Pack the site (keeps .well-known)
+        run: tar --dereference --hard-dereference --directory site -cf "$RUNNER_TEMP/artifact.tar" .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
       - id: d
         uses: actions/deploy-pages@v4
