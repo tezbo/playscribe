@@ -265,6 +265,7 @@ struct LibraryShelf: View {
     }
 
     @FocusState private var searchFocused: Bool
+    @State private var searchWasFocused = false
 
     /// Closed portrait, field focused or holding text: the deck steps aside like News and the cards, so the matches get the room and
     /// the card is not squeezed by the keyboard's safe area (its title clipped under the badge, Mac 0027a78 Closed). Open portrait keeps
@@ -311,10 +312,32 @@ struct LibraryShelf: View {
                     // The keyboard covers a field that sits low on the page (Open portrait: below the cards, half hidden at the
                     // keyboard's top edge, Mac 018b515). Bring it into view once the keyboard is up: to the top where results follow it,
                     // to the bottom edge where it is the last block (tiles-first portrait).
+                    // One task per (focus, text), and it runs only while the field is focused: a new key cancels the previous run. Once
+                    // the layout for this text is in, the field is aligned to the bottom again (the result count moves it). nil first, so the
+                    // same id scrolls again.
+                    .task(id: "\(searchFocused)|\(binding.wrappedValue)") {
+                        guard searchFocused, duo.pose != .tabletop else { return }
+                        try? await Task.sleep(for: .milliseconds(60))
+                        if Task.isCancelled { return }
+                        model.nav.anchors["library"] = nil
+                        try? await Task.sleep(for: .milliseconds(30))
+                        if Task.isCancelled { return }
+                        model.nav.anchors["library"] = "library-search"
+                    }
                     .onChange(of: searchFocused) { _, f in
                         // On blur the position id is dropped, so the flip of the anchor back to .top cannot re-align the page
                         // to the field and jump it to the top as the keyboard goes.
                         if !f, model.nav.anchors["library"] == "library-search" { model.nav.anchors["library"] = nil }
+                        if f { searchWasFocused = true }
+                        // Blur with no text: the deck returns, so the page goes to its top, never left at the old bottom position.
+                        // (With text the matches stay where they are.) Once per blur; a later focus makes it stale, so it checks.
+                        if !f, searchWasFocused, portraitTilesFirst, binding.wrappedValue.trimmingCharacters(in: .whitespaces).isEmpty {
+                            searchWasFocused = false
+                            Task { @MainActor in
+                                try? await Task.sleep(for: .milliseconds(60))
+                                if !searchFocused { model.nav.anchors["library"] = "library-top" }
+                            }
+                        }
                         guard f, duo.pose != .tabletop else { return }
                         Task { @MainActor in
                             try? await Task.sleep(for: .milliseconds(350))
@@ -342,6 +365,7 @@ struct LibraryShelf: View {
                     LibraryTabPicker()
                         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .id("library-top")
                 }
                 if model.libraryTab == .upcoming {
                     UpcomingView()
@@ -530,10 +554,6 @@ struct LibraryShelf: View {
         }
         // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap outside the field.
         .dismissesKeyboardOnOutsideTap()
-        // While the field is focused in tiles-first portrait, the scroll view keeps the bottom edge (the field, the last block) in
-        // place as the keyboard comes up and the result count changes with the text: no timers, no position resets per key, and it
-        // follows only size changes, so a person's own scroll is not pulled back.
-        .defaultScrollAnchor(searchFocused && portraitTilesFirst ? .bottom : nil, for: .sizeChanges)
         // Focused search: the field must always show above the keyboard. Where it is the last block (tiles-first portrait) it is
         // aligned to the bottom of the visible area, with as many tiles above it as fit; elsewhere it sits above the results, top.
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }),
