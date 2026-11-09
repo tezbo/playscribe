@@ -36,4 +36,4 @@ Under VoiceOver the add toast is announced as "Added Roblox, Undo" (it was "Adde
 
 ## Update 8: toast room on the first-run page
 
-The Added toast floated over the first-run footer caption (on main too). OnboardingView now has a bottom safe-area inset of 68 pt while a toast shows (zero otherwise), in the scrolling pages (closed, open, Book left page, Tabletop lower half), so the caption scrolls clear. Nothing new is tappable.
+The Added toast floated over the first-run footer caption (on main too). OnboardingView now has a bottom safe-area inset of the toast's measured height plus 8 pt (52 pt if not yet measured) while a toast shows (zero otherwise), in the scrolling pages (closed, open, Book left page, Tabletop lower half), so the caption scrolls clear. Nothing new is tappable.
