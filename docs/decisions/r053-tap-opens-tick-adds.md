@@ -33,3 +33,7 @@ Iris (legibility): at the top right the "+" hid the last letter of long titles (
 ## Update 7: toast announcement
 
 Under VoiceOver the add toast is announced as "Added Roblox, Undo" (it was "Added Roblox. Undo available."). The toast stays until dismissed under VoiceOver, otherwise 8 s; the Undo button's frame is `.hitTarget()` (minimum 44 x 44) inside a 44 pt minimum capsule.
+
+## Update 8: toast room on the first-run page
+
+The Added toast floated over the first-run footer caption (on main too). OnboardingView now has a bottom safe-area inset of 68 pt while a toast shows (zero otherwise), in the scrolling pages (closed, open, Book left page, Tabletop lower half), so the caption scrolls clear. Nothing new is tappable.

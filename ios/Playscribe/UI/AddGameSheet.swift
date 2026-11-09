@@ -356,6 +356,7 @@ struct AddRow: View {
 /// one ember button and six popular PS5 games to tap. Tabletop: art and headline on the standing
 /// half (display only), the button and covers on the flat half.
 struct OnboardingView: View {
+    @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @Environment(\.railWidth) private var railWidth
 
@@ -363,6 +364,13 @@ struct OnboardingView: View {
     private var pageWidth: CGFloat? {
         guard duo.pose == .book, let fold = duo.division else { return nil }
         return max(0, fold.minX - 24 - 32)
+    }
+
+    /// Room for the toast at the foot of the page while one shows, so the footer caption scrolls clear of it (Iris, #431: the
+    /// Added toast sat over "PlayStation account import is planned..."). Not tappable, and zero when no toast shows.
+    private var toastRoom: some View {
+        Color.clear.frame(height: model.toast == nil ? 0 : 68).allowsHitTesting(false)
+            .animation(.snappy, value: model.toast == nil)
     }
 
     var body: some View {
@@ -373,6 +381,7 @@ struct OnboardingView: View {
                 // The trailing rail sits over the lower half: keep the actions clear of it (0.2.0 gate).
                 ScrollView { OnboardingActions().padding(16) }
                     .contentMargins(.trailing, railWidth, for: .scrollContent)
+                    .safeAreaInset(edge: .bottom, spacing: 0) { toastRoom }
             }
             .arrangementViewStyle(.split)
         } else {
@@ -384,6 +393,7 @@ struct OnboardingView: View {
                     }
                     .padding(.bottom, 24)
                 }
+                .safeAreaInset(edge: .bottom, spacing: 0) { toastRoom }
                 // Book: one page wide, so nothing crosses the fold (0.2.0 gate, first-run Library).
                 .frame(width: pageWidth.map { $0 + 32 })
                 if let fold = duo.division, duo.pose == .book {
