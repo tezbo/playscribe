@@ -795,7 +795,7 @@ struct GameMenuButton: View {
 
 /// Inner display tile: a fixed-size cover, name, a status dot and the unread count.
 /// Library tile (brand library-tiles, approved by Terry 26 Oct): a 3:4 cover with no text under
-/// it. Bottom right, a glass status circle with a ring; top left, a date pill that carries the update state.
+/// it. Top left, a date pill that carries the status mark and the update state; nothing else sits on the art.
 /// Long-press opens the game's actions.
 struct GameTile: View {
     @Environment(AppModel.self) private var model
@@ -826,15 +826,9 @@ struct GameTile: View {
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             VStack(alignment: .leading, spacing: 4) {
                 tileFrame(TileCover(game: row.game))
-                    // The status circle sits bottom-trailing with a dark ring, and the date pill top-leading: art lettering is mostly
-                    // at the top and bottom-leading, and the old top-trailing check read "Bal( Gate" while the bottom-leading pill
-                    // covered "BLOOD OF" (Iris, 0a9fa7e). Both stop growing at the largest standard size (AX hides the pill).
-                    .overlay(alignment: .bottomTrailing) {
-                        StatusCircle(status: row.status)
-                            .overlay(Circle().strokeBorder(Color.black.opacity(0.7), lineWidth: 1.5).padding(-1.5))
-                            .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
-                            .padding(8)
-                    }
+                    // The status mark is the date pill's first glyph (check, bookmark, eye), top-leading: nothing sits over the art
+                    // anywhere else, so no cover lettering is covered (Iris, 0a9fa7e: "Bal( Gate", "BLOOD OF", "WALKER"). The pill stops
+                    // growing at the largest standard size; at AX the date and the mark sit under the cover.
                     .overlay(alignment: .topLeading) { DatePill(row: row).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(6) }
                     .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
@@ -842,7 +836,7 @@ struct GameTile: View {
                 // the cover instead, wrapping to two lines (GR-1, D-12; Iris, 0.5.0 a11y).
                 if typeSize.isAccessibilitySize {
                     let state = model.tileDate(row)
-                    Text(state.text)
+                    Text("\(Image(systemName: StatusCircle.symbol(row.status))) \(state.text)")
                         .font(PlayscribeFont.caption.weight(.semibold))
                         .foregroundStyle(state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
                         .lineLimit(2)
@@ -932,6 +926,11 @@ struct DatePill: View {
         // and on the game page (Iris, 0.5.0 a11y).
         if !typeSize.isAccessibilitySize {
         HStack(spacing: 4) {
+            // The tile's status mark (in your library, wishlist, watching): inert, part of the tile's own label.
+            Image(systemName: StatusCircle.symbol(row.status))
+                .font(.system(size: 10, weight: .bold))
+                .foregroundStyle(row.status == .wishlist ? Color.wishlist : (state.kind == .unread ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary))
+                .accessibilityHidden(true)
             switch state.kind {
             case .unread: SparkShape().fill(PlayscribeColor.onAccent).frame(width: 9, height: 9)
             case .recent: Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
