@@ -46,3 +46,38 @@ On a cover narrower than 125 pt (the first-run strip, AX5) the Added/Wishlist wo
 
 d8dbafa (Closed, frame 55): the inset alone left the caption under the toast, because a page that fits does not move when its viewport shrinks. The first-run page now also scrolls to its bottom edge, animated, 80 ms after a toast appears.
 Correction in the same head: the inset is `model.messageInset` (bottom edge to the toast's top, plus 8 pt), not the toast's own height, because the toast floats above the bottom padding and the first measure left 100 pt short.
+
+## Update 11: no toast scroll in Book (Iris, 6a31718)
+
+In Book the first-run page's scroll to the foot slid the hero under the navigation bar, which drew a lighter slab (hard right and bottom edges) behind "Library". In Book the toast covers nothing (it sits under "Skip for now"; the caption is on the right page), so the toast room and the scroll are off there. Closed, Open and Tabletop keep them.
+Also in Book (Iris's spec: no tinted edge over the hero): the left page's scroll view hides its top edge effect (`scrollEdgeEffectHidden`), because the slab is that scroll view's own edge effect, clipped to the page's width, so a hand scroll would show the same seam. The scroll-to-foot stays off in Book as well.
+
+## Update 12: first-run headline at AX (Quinn, 6a31718)
+
+At AX5 the first-run hero headline cut mid-word ("Follow a game to g...") and clipped at the top, in a fixed 220 pt stage. At accessibility sizes the headline is now `WholeWordText` with a four-line cap (any ellipsis at a word boundary), and the stage is 120 pt taller so four lines fit. Standard sizes are unchanged.
+
+## Update 13: VoiceOver labels after the tick (Iris)
+
+The cover keeps one label ("<game>") and hint ("Opens the game") before and after the tick, and a tap on an added cover opens the game (only an add in flight ignores it). The tick reads "Add <game>" and, once added, "<game>, in your library" as static text rather than a button.
+
+## Update 14: toast room is back in Book (517d94f)
+
+Update 11 turned the toast room and scroll off in Book on the guess that the toast covers nothing there. The Mac's 517d94f still showed it covering "From a photo" on the left page. They are on again in every pose. The slab is handled by hiding the left page's top scroll-edge effect (Update 11), not by not scrolling.
+
+## Update 15: no sparkle behind the AX headline (Iris)
+
+The sparkle belongs to the default header art, so it cannot move; at AX5 it touched the "y" of "every" on line 3. At accessibility sizes the first-run stage draws the art's own two colours as a plain gradient, with no art, so nothing decorative shares a line with the headline.
+
+## Update 16: game page back button label; cover-tap log (Mac back check, 380e71b)
+
+1. The system back button on a game page had an empty accessibility label in Closed (first rail button), so VoiceOver read nothing and tests could not find it. A system back button's label cannot be set, so the game page hides it and shows its own leading toolbar button, "Library" (the previous screen's title, HIG), identifier `gameBack`, calling `closeGame()`. Cost: the edge-swipe back gesture of the system button is not available on the game page; the rail and toolbar buttons are.
+2. A single tap on an added cover during the 1.2 s hold did not open the game page. Cause not established from the code. INTERNAL logs (category "add") now print "cover tap: ... inLibrary phase hold opens" and "first-run hold ended (library swap)", so the Mac can compare the two timestamps.
+Update to 16 (Iris): the edge-swipe back is kept. `keepsSwipeBack()` (UI/SwipeBack.swift) gives the navigation controller's interactive pop gesture a delegate that lets it begin whenever the stack is deeper than one screen, and restores the previous delegate when the game page goes. The button has a 44 x 44 frame and reads "Library, back". If the Mac's real swipe fails in any pose, the fallback is the system back button with a real title on the previous screen.
+
+## Update 17: back button 44 x 44; QA hold (Mac 20a31e1)
+
+- The game page's back button measured 38 x 38 (Closed), 38 x 39 (Book) and 40 x 41 (Open): the toolbar's system glass sized it. Iris: it is a custom button, so 44 x 44 in every pose (the 36 pt floor is for system-drawn toolbar buttons only). The toolbar item now hides its system background and draws its own 44 x 44 disc with the chevron centred, so the glyph does not shift when the frame grows.
+- The edge swipe: open question until the Mac compares it with main (a synthetic drag may be a harness limit). No code change yet; if main pops and this head does not, the helper is fixed.
+- INTERNAL: `-qaFirstRunHold <seconds>` stretches the first-run hold, and the add logs "tick: ... add begins", so a tap during the hold can be driven by hand and timed against "cover tap: ..." lines.
+
+Update to 17 (Mac, Tabletop): the Tabletop rail has its own game-page back (RailButton), which read a bare "Library" (same as the Library tab) and had no identifier. It is now "Library, back" with id `gameBack`, as in Closed, Open and Book.
