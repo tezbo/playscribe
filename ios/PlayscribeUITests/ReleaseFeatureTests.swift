@@ -376,14 +376,38 @@ final class ReleaseFeatureTests: XCTestCase {
         if !wait(true, 5) { search.tap() }
         XCTAssertTrue(wait(true, 5), "the add search starts focused")
         var misses: [Int] = []
-        for round in 1...10 {
-            app.navigationBars.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
-            if !wait(false) { misses.append(round); continue }   // the title tap itself did not dismiss
-            // Padding: just outside the field's leading edge, inside the row.
-            search.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0.5)).withOffset(CGVector(dx: -8, dy: 0)).tap()
-            if !wait(true) { misses.append(round) }
+        var log: [String] = []
+        func shot(_ name: String) {
+            let a = XCTAttachment(screenshot: app.screenshot()); a.name = name; a.lifetime = .keepAlways; add(a)
         }
-        XCTAssertTrue(misses.isEmpty, "title tap then padding tap failed in rounds \(misses)")
+        func state(_ tag: String) -> String {
+            "\(tag): focus=\(focused()) keyboard=\(app.keyboards.firstMatch.exists) fieldFrame=\(search.frame)"
+        }
+        for round in 1...10 {
+            let before = state("r\(round) start")
+            let bar = app.navigationBars.firstMatch
+            let titlePoint = bar.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+            titlePoint.tap()
+            let titleDismissed = wait(false)
+            let afterTitle = state("r\(round) after title tap (bar \(bar.frame), dismissed=\(titleDismissed))")
+            if !titleDismissed { shot("r\(round)-title-did-not-dismiss"); log += [before, afterTitle]; misses.append(round); continue }
+            // Padding: just outside the field's leading edge, inside the row.
+            let f = search.frame
+            let paddingX = f.minX - 8, paddingY = f.midY
+            search.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0.5)).withOffset(CGVector(dx: -8, dy: 0)).tap()
+            let refocused = wait(true)
+            let afterPadding = state("r\(round) after padding tap at (\(paddingX), \(paddingY)), refocused=\(refocused)")
+            log += [before, afterTitle, afterPadding]
+            if !refocused {
+                shot("r\(round)-padding-did-not-focus")
+                misses.append(round)
+                // Recover so each round is measured on its own: a tap inside the field.
+                search.tap(); _ = wait(true)
+            }
+        }
+        print("PADDINGTAP LOG\n" + log.joined(separator: "\n"))
+        let logAttachment = XCTAttachment(string: log.joined(separator: "\n")); logAttachment.name = "padding-tap-log"; logAttachment.lifetime = .keepAlways; add(logAttachment)
+        XCTAssertTrue(misses.isEmpty, "title tap then padding tap failed in rounds \(misses); see the padding-tap-log attachment")
     }
 
     // MARK: - Accessibility (G-7, G-10)
