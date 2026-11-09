@@ -941,10 +941,12 @@ struct DatePill: View {
         let state = model.tileDate(row)
         // By the model's kind, not by the text ("Plays on PS5" has a digit): only these two are words that may wrap.
         let isDate = state.kind != .playsOnPS5 && state.kind != .notOnPS5
+        // Tabletop's 84 pt tiles (68 pt of pill): tighter padding so "Feb 2027" shows whole instead of "Feb 20…" (Mac, b8a7e35).
+        let narrow = (maxWidth ?? 200) < 100
         // Accessibility sizes: the pill would cover the art, so it is hidden; the date stays in the label
         // and on the game page (Iris, 0.5.0 a11y).
         if !typeSize.isAccessibilitySize {
-        HStack(spacing: 4) {
+        HStack(spacing: narrow ? 3 : 4) {
             // The tile's status mark (in your library, wishlist, watching): inert, part of the tile's own label.
             Image(systemName: StatusCircle.symbol(row.status))
                 .font(.system(size: 10, weight: .bold))
@@ -962,12 +964,12 @@ struct DatePill: View {
                 // taller, not wider (Iris, #436).
                 // A date is one token: it scales down before it would wrap ("25 / Jun"); only the two status phrases wrap.
                 .lineLimit(isDate ? 1 : (maxWidth != nil || typeSize.isAccessibilitySize ? 2 : 1))
-                .minimumScaleFactor(isDate ? 0.7 : 1)
+                .minimumScaleFactor(isDate ? 0.55 : 1)
                 .multilineTextAlignment(.leading)
                 .fixedSize(horizontal: !typeSize.isAccessibilitySize && maxWidth == nil, vertical: true)
                 .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
         }
-        .padding(.horizontal, 8).padding(.vertical, 3)
+        .padding(.horizontal, narrow ? 5 : 8).padding(.vertical, 3)
         // No frame(maxWidth:): a flexible frame grows to its maximum and made the pill a bar. The overlay already proposes the tile's
         // width less its insets, so the pill hugs its content and only wraps when that proposal is smaller than the words.
         .fixedSize(horizontal: false, vertical: true)
