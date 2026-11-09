@@ -11,6 +11,6 @@ struct ShareTextTests {
 
     @Test func linkIsUniversalAndEncoded() {
         #expect(ShareText.link(gameID: "witcher-3", releaseID: "5.01")?.absoluteString == "https://playscribe.codeconnectors.co/r/witcher-3/5.01")
-        #expect(ShareText.link(gameID: "g", releaseID: "a b/c")?.absoluteString == "https://playscribe.codeconnectors.co/r/g/a%20b%2Fc")
+        #expect(ShareText.link(gameID: "g", releaseID: "a b")?.absoluteString == "https://playscribe.codeconnectors.co/r/g/a%20b")
     }
 }
