@@ -484,15 +484,20 @@ struct LibraryShelf: View {
                                                      (duo.size.height * (typeSize.isAccessibilitySize ? 0.46 : 0.42)).rounded()),
                                       moreCount: model.latestDeckOverflow)
                         .id(poseKey)
-                } else if duo.pose != .tabletop && !heroOnRightPage && !closedWide && !closedSearchCollapse {
+                } else if duo.pose != .tabletop && !heroOnRightPage && !closedWide {
+                    // Closed, field focused or holding text: the deck stays MOUNTED but takes no room, no taps and no VoiceOver. Removing it
+                    // changed the tree under the focused field and dropped the keyboard after the third key (Mac dd82a22, 3 of 3).
                     let deck = model.latestDeck
-                    if !deck.isEmpty {
-                        LatestUpdatesDeck(cards: deck)
-                            .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
-                    } else if !model.data.collection.isEmpty {
-                        CaughtUpCard()
-                            .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                    Group {
+                        if !deck.isEmpty {
+                            LatestUpdatesDeck(cards: deck)
+                                .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                        } else if !model.data.collection.isEmpty {
+                            CaughtUpCard()
+                                .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                        }
                     }
+                    .stepsAside(closedSearchCollapse)
                 }
                 if !heroOnRightPage && duo.pose != .tabletop && !portraitTilesFirst { NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading) }
                 if !heroOnRightPage && duo.pose != .tabletop && all.count >= 2 && layout == .tiles {
@@ -548,10 +553,12 @@ struct LibraryShelf: View {
                     // hidden from VoiceOver too, and no animation to reduce): deck, chips, tiles, then the field, so the matching
                     // tiles sit right above it and the keyboard. They return only when the field is empty AND unfocused, so
                     // dismissing the keyboard with text in it keeps the matches on screen (Quinn and Iris, 9d7cd15 stills).
-                    if !(searchFocused || !model.data.nav.query.trimmingCharacters(in: .whitespaces).isEmpty) {
+                    // Mounted but taking no room (not removed): the tree under the focused field must not change while typing.
+                    VStack(alignment: .leading, spacing: 14) {
                         NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                         topCards(all)
                     }
+                    .stepsAside(searchFocused || !model.data.nav.query.trimmingCharacters(in: .whitespaces).isEmpty)
                     if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 }
                 // Tabletop lower half (Iris, v0.5.3): switch, filter chips, tiles, then the alerts card, PS Plus, search and
@@ -1330,4 +1337,18 @@ private struct SqueezePop: ViewModifier {
 
 extension View {
     func squeezePop(id: String, isNew: Bool) -> some View { modifier(SqueezePop(id: id, isNew: isNew)) }
+}
+
+
+extension View {
+    /// Out of the layout but still in the tree: zero height, no taps, hidden from VoiceOver, and the stack spacing it would add is
+    /// taken back. Used where removing a view would change the tree under the focused search field and drop the keyboard.
+    func stepsAside(_ aside: Bool) -> some View {
+        self.frame(height: aside ? 0 : nil, alignment: .top)
+            .clipped()
+            .opacity(aside ? 0 : 1)
+            .allowsHitTesting(!aside)
+            .accessibilityHidden(aside)
+            .padding(.bottom, aside ? -14 : 0)
+    }
 }
