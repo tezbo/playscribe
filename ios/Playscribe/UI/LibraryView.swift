@@ -206,6 +206,9 @@ struct LibraryShelf: View {
     }
 
     /// Changes with the pose and the fold, so layouts that cache by position are rebuilt.
+    /// The chip row heads the results. In the tiles-first portrait layout the search field sits BELOW the results, so focusing it
+    /// scrolls here (chips, tiles, then the field under them), not to the field, which would push the results off the top.
+    private var resultsID: String { "results-\(poseKey)" }
     private var poseKey: String {
         "\(duo.pose.rawValue)-\(Int(duo.division?.minX ?? -1))-\(Int(duo.division?.minY ?? -1))-\(Int(duo.size.width))"
     }
@@ -290,12 +293,15 @@ struct LibraryShelf: View {
                     .padding(.top, 4)
                     .id("library-search")
                     // The keyboard covers a field that sits low on the page (Open portrait: below the cards, half hidden at the
-                    // keyboard's top edge, Mac 018b515). Bring it to the top once the keyboard is up, so the results show below it.
+                    // keyboard's top edge, Mac 018b515). Bring it into view once the keyboard is up: to the top where results follow it,
+                    // to the chip row where the results are above it (tiles-first portrait).
                     .onChange(of: searchFocused) { _, f in
                         guard f, duo.pose != .tabletop else { return }
                         Task { @MainActor in
                             try? await Task.sleep(for: .milliseconds(350))
-                            if searchFocused { model.nav.anchors["library"] = "library-search" }
+                            guard searchFocused else { return }
+                            let resultsFirst = portraitTilesFirst && model.libraryRows.count >= 2 && layout == .tiles
+                            model.nav.anchors["library"] = resultsFirst ? resultsID : "library-search"
                         }
                     }
     }
@@ -441,7 +447,7 @@ struct LibraryShelf: View {
                             FilterBar().frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
-                    .id(poseKey)
+                    .id(resultsID)
                 }
                 // Tabletop: the filter chips sit directly above the tiles, one row; tiles first wins if they would push it off (Iris, v0.5.3).
                 if duo.pose == .tabletop && all.count >= 2 && layout == .tiles { FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey) }
