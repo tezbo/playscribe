@@ -42,7 +42,6 @@ struct AddGameSheet: View {
     /// keyboard leaves under 200 pt, hide the title and keep Done and search only).
     @State private var keyboardHeight: CGFloat = 0
     @FocusState private var searchFocused: Bool
-    @State private var probeID = String(UUID().uuidString.prefix(4)) // PROBE
     private var draftKey: String {
         "\(status)|\(query)|\(pickOrder)|\(String(describing: method))|\(matches?.count ?? -1)|\(custom)|\(customName)|\(customPlatform)|\(letter ?? "")"
     }
@@ -75,7 +74,6 @@ struct AddGameSheet: View {
                                           matches: matches, custom: custom, customName: customName, customPlatform: customPlatform, letter: letter)
             }
             .onAppear {
-                AddProbe.log("sheet-onAppear id=\(probeID) hasDraft=\(model.addDraft != nil) wanted=\(model.addKeyboardWanted) route=\(model.addSearchFocus) method=\(String(describing: model.addSheetMethod)) pose=\(model.livePose)")
                 if let d = model.addDraft {
                     status = d.status; query = d.query; debounced = d.query; picked = d.picked; pickOrder = d.pickOrder
                     method = d.method; matches = d.matches; custom = d.custom; customName = d.customName
@@ -95,7 +93,6 @@ struct AddGameSheet: View {
                             try? await Task.sleep(for: .milliseconds(500))
                             // SwiftUI can say "focused" while the field never became first responder (sheet still settling, hand check
                             // 1de7e9e: cold launch, no caret until a tap). Trust UIKit: if the keyboard isn't really up, toggle and ask again.
-                            AddProbe.log("retry-tick id=\(probeID) focused=\(searchFocused) fr=\(KeyboardState.fieldIsFirstResponder) open=\(model.addSheetOpen)")
                             if searchFocused && KeyboardState.fieldIsFirstResponder { break }
                             searchFocused = false
                             try? await Task.sleep(for: .milliseconds(60))
@@ -109,10 +106,8 @@ struct AddGameSheet: View {
                 let end = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) ?? .zero
                 keyboardHeight = end.minY >= UIScreen.main.bounds.height ? 0 : end.height
             }
-            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in AddProbe.log("keyboardWillHide id=\(probeID)"); keyboardHeight = 0 }
-            .onDisappear { AddProbe.log("sheet-onDisappear id=\(probeID) open=\(model.addSheetOpen) pose=\(model.livePose)") }
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in keyboardHeight = 0 }
             .onChange(of: searchFocused) { _, f in
-                AddProbe.log("focus id=\(probeID) ->\(f) open=\(model.addSheetOpen) pose=\(model.livePose)")
                 // Wanted is set when the field takes focus. It is NOT cleared when focus is lost: a sheet that is rebuilt or
                 // re-presented loses focus on the way out, sometimes well before onDisappear (the launch re-presentation at
                 // about 6 s, ccf69f3 timeline: focus false while the sheet is still sliding away), and that must not count as the person putting the keyboard away. Only what the person does clears it.
