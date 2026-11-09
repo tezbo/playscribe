@@ -833,6 +833,7 @@ struct GameTile: View {
                     .overlay(alignment: .topLeading) {
                         if !typeSize.isAccessibilitySize {
                             DatePill(row: row, maxWidth: max(0, (size ?? measuredWidth) - 16)).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(8)
+                                .accessibilityHidden(true)   // the tile's own label already says the date and the status (no second, unlabelled element)
                         }
                     }
                     .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
