@@ -971,6 +971,22 @@ struct SearchTextColdLaunchTests {
         #expect(reopened.shownRows().count == all)
     }
 
+    @Test("a saved Library anchor that is not a game tile (the search field) is dropped on a cold launch; a tile anchor is kept")
+    func nonTileAnchorDropped() {
+        let u = url()
+        let m = AppModel(storeURL: u)
+        m.data.collection = Fixtures.shared.seedCollection
+        m.nav.anchors["library"] = "library-search"
+        m.nav.anchors["other"] = "keep"
+        m.saveNow()
+        let reopened = AppModel(storeURL: u)
+        #expect(reopened.nav.anchors["library"] == nil)
+        #expect(reopened.nav.anchors["other"] == "keep")
+        reopened.nav.anchors["library"] = "lib-kcd2"
+        reopened.saveNow()
+        #expect(AppModel(storeURL: u).nav.anchors["library"] == "lib-kcd2")
+    }
+
     @Test("a fold or unfold keeps the typed text: the model is not rebuilt, so the search is untouched")
     func foldKeepsTypedText() {
         let m = AppModel(storeURL: url())

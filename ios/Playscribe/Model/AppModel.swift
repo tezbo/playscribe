@@ -260,6 +260,9 @@ final class AppModel {
             // The text a person typed last time is not restored; the selected game, scroll position and live filters are. A fold or
             // unfold keeps the model alive, so the text typed in this launch survives it.
             data.nav.query = ""
+            // Quinn (#430): a Library scroll anchor that is not a game tile ("lib-<id>") would scroll an unfiltered relaunch to the
+            // search field (the app killed while it was focused). Keep tile anchors only.
+            if let a = data.nav.anchors["library"], !a.hasPrefix("lib-") { data.nav.anchors["library"] = nil }
         } else {
             // A real first launch starts empty, on onboarding: demo games never appear in a
             // player's library. QA launches (-qaRoute, other than first-run) still seed the demo set;
