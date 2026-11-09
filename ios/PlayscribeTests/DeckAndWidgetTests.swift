@@ -15,7 +15,7 @@ struct DeckAndWidgetTests {
     /// J-1: at most 5 cards (AppModel.deckLimit), at most 2 per game, unread cards first, no card twice.
     @Test func deckIsCappedSpreadAndUnreadFirst() {
         let deck = demoModel().latestDeck
-        #expect(deck.count <= 8)
+        #expect(deck.count <= AppModel.deckLimit)
         var perGame: [String: Int] = [:]
         var ids = Set<String>()
         for card in deck {
