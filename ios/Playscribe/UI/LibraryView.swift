@@ -266,6 +266,7 @@ struct LibraryShelf: View {
 
     @FocusState private var searchFocused: Bool
     @State private var searchWasFocused = false
+    @State private var scrollInteracting = false
 
     /// Closed portrait, field focused or holding text: the deck steps aside like News and the cards, so the matches get the room and
     /// the card is not squeezed by the keyboard's safe area (its title clipped under the badge, Mac 0027a78 Closed). Open portrait keeps
@@ -326,7 +327,8 @@ struct LibraryShelf: View {
                     // the layout for this text is in, the field is aligned to the bottom again (the result count moves it). nil first, so the
                     // same id scrolls again.
                     .task(id: "\(searchFocused)|\(binding.wrappedValue)") {
-                        guard searchFocused, duo.pose != .tabletop else { return }
+                        // Tiles-first portrait only: the other poses were signed with the single scroll on focus below.
+                        guard searchFocused, portraitTilesFirst, duo.pose != .tabletop else { return }
                         try? await Task.sleep(for: .milliseconds(60))
                         if Task.isCancelled { return }
                         model.nav.anchors["library"] = nil
@@ -346,7 +348,8 @@ struct LibraryShelf: View {
                             searchWasFocused = false
                             Task { @MainActor in
                                 try? await Task.sleep(for: .milliseconds(60))
-                                if !searchFocused { model.nav.anchors["library"] = "library-top" }
+                                // A drag-down dismissal may still have the finger on the page: no scroll then.
+                                if !searchFocused, !scrollInteracting { model.nav.anchors["library"] = "library-top" }
                             }
                         }
                         guard f, duo.pose != .tabletop else { return }
@@ -565,6 +568,7 @@ struct LibraryShelf: View {
         }
         // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap outside the field.
         .dismissesKeyboardOnOutsideTap()
+        .onScrollPhaseChange { _, phase in scrollInteracting = (phase == .interacting) }
         // Focused search: the field must always show above the keyboard. Where it is the last block (tiles-first portrait) it is
         // aligned to the bottom of the visible area, with as many tiles above it as fit; elsewhere it sits above the results, top.
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }),
