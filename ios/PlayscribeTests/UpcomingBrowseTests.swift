@@ -64,4 +64,25 @@ struct UpcomingBrowseTests {
         #expect(m.entry(g.id)?.status == .watching)
         #expect(m.browsedGames[g.id] == nil)
     }
+
+    // r053-tap-opens-tick-adds (Iris): the first-run "Popular on PS5" covers. A tap opens the game; the tick adds it, once.
+    @Test func tappingAFirstRunCoverOpensTheGameAndLeavesTheLibraryUnchanged() {
+        let m = model()
+        let g = feedGame
+        let before = m.data.collection.count
+        m.browseGame(g)                          // what PopularCover's cover button calls
+        #expect(m.nav.gameID == g.id)
+        #expect(m.data.collection.count == before)
+        #expect(m.entry(g.id) == nil)
+    }
+
+    @Test func tickingACoverAddsTheGameExactlyOnceAndAnUpcomingOneAsWishlist() {
+        let m = model()
+        let g = feedGame
+        let before = m.data.collection.count
+        m.addGame(g, status: .owned)             // what PopularCover's tick calls
+        m.addGame(g, status: .owned)             // a second tick (or a double tap) is a no-op
+        #expect(m.data.collection.count == before + 1)
+        #expect(m.entry(g.id)?.status == .wishlist)
+    }
 }

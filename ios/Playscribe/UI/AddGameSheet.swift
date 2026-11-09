@@ -514,12 +514,7 @@ struct OnboardingActions: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(PS5Index.shared.popular(limit: fit)) { g in
-                        Button { model.addGame(g, status: .owned) } label: {
-                            TileCover(game: g).frame(width: size, height: (size * 4 / 3).rounded())
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel("Add \(g.name)")
-                        .tappableFrame()
+                        PopularCover(game: g, width: size, height: (size * 4 / 3).rounded())
                     }
                 }
             }
@@ -532,7 +527,7 @@ struct OnboardingActions: View {
 }
 
 /// Book first-run, right page: Popular on PS5 as a 3-column grid of 3:4 tiles (10 pt gap), scrolling,
-/// with the account-import line at the foot. Tapping a cover adds it, as the strip does elsewhere.
+/// with the account-import line at the foot. Tapping a cover opens the game; the tick at its top right adds it (r053-tap-opens-tick-adds).
 struct OnboardingRightPage: View {
     @Environment(AppModel.self) private var model
     var width: CGFloat
@@ -544,12 +539,7 @@ struct OnboardingRightPage: View {
                 Text("Popular on PS5").font(PlayscribeFont.title3)
                 LazyVGrid(columns: Array(repeating: GridItem(.fixed(tile), spacing: 10, alignment: .top), count: 3), alignment: .leading, spacing: 10) {
                     ForEach(PS5Index.shared.popular(limit: 18)) { g in
-                        Button { model.addGame(g, status: .owned) } label: {
-                            TileCover(game: g).frame(width: tile, height: (tile * 4 / 3).rounded())
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel("Add \(g.name)")
-                        .tappableFrame()
+                        PopularCover(game: g, width: tile, height: (tile * 4 / 3).rounded())
                     }
                 }
                 Text("PlayStation account import is planned for a later version.")
@@ -558,5 +548,44 @@ struct OnboardingRightPage: View {
             .padding(.top, 16).padding(.bottom, 24)
         }
         .scrollIndicators(.hidden)
+    }
+}
+
+
+/// A cover in the first-run "Popular on PS5" strip and the Book right-page grid (r053-tap-opens-tick-adds, Iris): a tap on the cover
+/// opens the game and never adds it; adding is the deliberate tick at the top right (44 pt hit target, on the cover's outer corner, so
+/// it is never near the hinge). An upcoming game ticked in goes in as Wishlist (addGames). Opening is silent; the pop plays on the add.
+struct PopularCover: View {
+    @Environment(AppModel.self) private var model
+    var game: CatalogGame
+    var width: CGFloat
+    var height: CGFloat
+
+    var body: some View {
+        let added = model.entry(game.id) != nil
+        ZStack(alignment: .topTrailing) {
+            Button { model.browseGame(game) } label: {
+                TileCover(game: game).frame(width: width, height: height)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel(game.name)
+            .accessibilityHint("Opens the game")
+            .tappableFrame()
+
+            Button { if !added { model.addGame(game, status: .owned) } } label: {
+                Image(systemName: added ? "checkmark.circle.fill" : "plus.circle.fill")
+                    .font(.title3)
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(PlayscribeColor.onAccent, PlayscribeColor.accent)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .disabled(added)
+            .accessibilityLabel(added ? "\(game.name), in your library" : "Add \(game.name)")
+            .accessibilityIdentifier("popularAdd")
+            .tappableFrame()
+        }
+        .frame(width: width, height: height)
     }
 }
