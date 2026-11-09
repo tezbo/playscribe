@@ -93,9 +93,9 @@ extension AppModel {
         return games.contains { $0.id == gameID || (igdb != nil && $0.igdbId == igdb) }
     }
 
-    /// The name to put on a share: the catalogue's, else the feed index's (a game the app does not know, such as one the
+    /// The name to show for a game: the catalogue's, else the feed index's (a game the app does not know, such as one the
     /// feed onboarded, still has a name there), else empty. Never a blank title with only the update name ("Patch 5.01").
-    func shareGameName(_ gameID: String) -> String {
+    func gameDisplayName(_ gameID: String) -> String {
         if let name = game(gameID)?.name, !name.isEmpty { return name }
         return feedIndexGames?.first { $0.id == gameID }?.name ?? ""
     }

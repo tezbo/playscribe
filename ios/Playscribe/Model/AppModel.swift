@@ -788,6 +788,12 @@ final class AppModel {
             openRelease(gameID: gameID, releaseID: release.id)
         // QA (INTERNAL): a PS5 update whose headline holds one word wider than the AX5 column, shown in the Updates tab
         // (WholeWordText must cut before that word, never mid-word).
+        // QA (INTERNAL): "share-card/<game>/<release>" opens that update and writes its rendered share card, at full size, to
+        // Documents/share-cards/<game>-<release>.png (Iris: judge the card, not the share-sheet thumbnail). Pull it with
+        // `xcrun simctl get_app_container booted co.codeconnectors.playscribe data`, then Documents/share-cards/.
+        case "share-card" where parts.count == 2:
+            openGame(parts[0], releaseID: parts[1])
+            if let r = releases(parts[0]).first(where: { $0.id == parts[1] }) ?? selectedRelease(parts[0]) { writeQAShareCard(r) }
         case "long-word" where parts.count == 1:
             let gameID = parts[0]
             let now = Date.now
@@ -1142,6 +1148,14 @@ final class AppModel {
     }
 
     #if INTERNAL
+    /// QA (INTERNAL): the share card exactly as the share sheet gets it, written to disk at 1080 x 1350.
+    @MainActor private func writeQAShareCard(_ r: Release) {
+        guard let png = shareCardImage(for: r)?.pngData() else { return }
+        let dir = URL.documentsDirectory.appending(path: "share-cards")
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        try? png.write(to: dir.appending(path: "\(r.gameID)-\(r.id.replacingOccurrences(of: "/", with: "_")).png"))
+    }
+
     /// The `-qaRoute` / `-qaOverlay` launch arguments. Ignored in a distribution build (one with a
     /// TestFlight or App Store receipt), exactly like the playscribe:// QA routes.
     func applyQALaunch(route: String?, overlay: Bool) {
