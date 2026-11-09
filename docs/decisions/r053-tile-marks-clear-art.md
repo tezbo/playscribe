@@ -6,3 +6,5 @@ On main (0a9fa7e, 21e75c4) the Library tile's marks covered cover lettering: the
 
 **Learning.** Art lettering can be anywhere, so a second mark on the art moves the problem. One pill, one corner.
 
+
+Iris's spec for the pill: one pill, top-leading, 8 pt in; a dark ground of 72% (the unread pill stays solid ember); text 11 pt (caption2) or larger, capped at the largest standard size; at AX the date sits under the cover with the mark as its first glyph; VoiceOver reads the tile as one element ("<game>, in your library, <date>" is the existing tile label). If stills show the pill covering more than one letter of the Roblox or MINECRAFT logo, it moves under the cover at every size.

@@ -829,7 +829,7 @@ struct GameTile: View {
                     // The status mark is the date pill's first glyph (check, bookmark, eye), top-leading: nothing sits over the art
                     // anywhere else, so no cover lettering is covered (Iris, 0a9fa7e: "Bal( Gate", "BLOOD OF", "WALKER"). The pill stops
                     // growing at the largest standard size; at AX the date and the mark sit under the cover.
-                    .overlay(alignment: .topLeading) { DatePill(row: row).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(6) }
+                    .overlay(alignment: .topLeading) { DatePill(row: row).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(8) }
                     .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 // Accessibility sizes: the pill would cover the art, so the date or status sits under
@@ -946,7 +946,7 @@ struct DatePill: View {
         .padding(.horizontal, 7).padding(.vertical, 3)
         .background {
             if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
-            else { Capsule().fill(.clear).adaptiveGlass(in: Capsule()) }
+            else { Capsule().fill(Color.black.opacity(0.72)) }   // a dark ground, 70% or more, over any art (Iris)
         }
         }
     }
