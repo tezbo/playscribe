@@ -59,3 +59,7 @@ At AX5 the first-run hero headline cut mid-word ("Follow a game to g...") and cl
 ## Update 13: VoiceOver labels after the tick (Iris)
 
 The cover keeps one label ("<game>") and hint ("Opens the game") before and after the tick, and a tap on an added cover opens the game (only an add in flight ignores it). The tick reads "Add <game>" and, once added, "<game>, in your library" as static text rather than a button.
+
+## Update 14: toast room is back in Book (517d94f)
+
+Update 11 turned the toast room and scroll off in Book on the guess that the toast covers nothing there. The Mac's 517d94f still showed it covering "From a photo" on the left page. They are on again in every pose. The slab is handled by hiding the left page's top scroll-edge effect (Update 11), not by not scrolling.

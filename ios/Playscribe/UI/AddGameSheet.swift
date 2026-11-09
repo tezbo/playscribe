@@ -371,9 +371,7 @@ struct OnboardingView: View {
     /// caption where the toast lands (d8dbafa, Closed).
     @State private var scroll = ScrollPosition()
     private func toastShown(_ now: Bool) {
-        // Book: the toast sits under "Skip for now" on the left page and covers nothing (the caption is on the right page), and a
-        // scroll there slides the hero under the nav bar, which draws a lighter slab behind the title (Iris, 6a31718).
-        guard now, duo.pose != .book else { return }
+        guard now else { return }
         Task { @MainActor in
             try? await Task.sleep(for: .milliseconds(80))   // after the inset has laid out
             withAnimation(.snappy) { scroll.scrollTo(edge: .bottom) }
@@ -383,7 +381,7 @@ struct OnboardingView: View {
     /// Room for the toast at the foot of the page while one shows, so the footer caption scrolls clear of it (Iris, #431: the
     /// Added toast sat over "PlayStation account import is planned..."). Not tappable, and zero when no toast shows.
     private var toastRoom: some View {
-        Color.clear.frame(height: model.toast == nil || duo.pose == .book ? 0 : model.messageInset).allowsHitTesting(false)
+        Color.clear.frame(height: model.toast == nil ? 0 : model.messageInset).allowsHitTesting(false)
             .animation(.snappy, value: model.toast == nil)
     }
 
