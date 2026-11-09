@@ -116,6 +116,8 @@ struct AddGameSheet: View {
             .onReceive(NotificationCenter.default.publisher(for: .keyboardPutAwayByTap)) { _ in model.addKeyboardWanted = false }
             .onScrollPhaseChange { _, phase in if phase == .interacting { model.addKeyboardWanted = false } }
             .onSubmit(of: .text) { model.addKeyboardWanted = false }
+            // Leaving Type it for Say it, a photo or the camera is the person moving on; the keyboard is not wanted back.
+            .onChange(of: method) { _, m in if m != .typeIt { model.addKeyboardWanted = false } }
             .toolbarTitleDisplayMode(.inline)
             // Tabletop (0.2.0 gate): the empty nav bar cost about 100 pt of the lower half, so the
             // bar is hidden and Close sits in the search row instead; three rows then fit.
