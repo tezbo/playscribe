@@ -483,15 +483,22 @@ struct DeckByline: View {
     /// Accessibility sizes, when the card is capped: the name on one line.
     var tight = false
     @Environment(\.dynamicTypeSize) private var typeSize
-    @Environment(AppModel.self) private var model
+    /// Optional so a preview or test host without the model does not crash; an absent model reads as tracked.
+    @Environment(AppModel.self) private var model: AppModel?
 
     var body: some View {
         if card.release == nil {
             // The headline is the game name already; say why there is no update instead of repeating it.
-            Text(DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id)))
-                .foregroundStyle(PlayscribeColor.textSecondary)
-                .lineLimit(typeSize.isAccessibilitySize ? (tight ? 2 : 3) : 2).fixedSize(horizontal: false, vertical: true)
-                .font(PlayscribeFont.subheadline)
+            let line = DeckCard.noReleaseLine(tracked: model?.feedTracksGame(card.game.id) ?? true)
+            if typeSize.isAccessibilitySize {
+                // Whole-word cut, trailing punctuation trimmed before the ellipsis (never mid-word).
+                WholeWordText(text: line, font: PlayscribeFont.subheadline, lines: tight ? 2 : 3, color: PlayscribeColor.textSecondary)
+            } else {
+                Text(line)
+                    .foregroundStyle(PlayscribeColor.textSecondary)
+                    .lineLimit(2).fixedSize(horizontal: false, vertical: true)
+                    .font(PlayscribeFont.subheadline)
+            }
         } else if typeSize.isAccessibilitySize {
             // One text, name then date, so the date shares the name's last line: a line less than name and date
             // stacked, which is what the headline needs under the J-5 cap.
@@ -756,7 +763,17 @@ struct DeckStage: View {
                         // The stage headline is the game name already: the line says why there is no update (the date stays).
                         let line = DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id))
                         if let dateText {
-                            Text("\(Text(line).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.vellum100))")
+                            // "Released 14 Apr" matches the Closed chip (same UTC day), after the line and a thin separator.
+                            // Standard size: one line. Accessibility sizes: the date wraps to its own line and is never dropped.
+                            if typeSize.isAccessibilitySize {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    WholeWordText(text: line, font: PlayscribeFont.subheadline, lines: 3, color: PlayscribeColor.textPrimary)
+                                    Text("Released " + dateText).foregroundStyle(PlayscribeColor.vellum100)
+                                }
+                            } else {
+                                Text("\(Text(line).foregroundStyle(PlayscribeColor.textPrimary))  \u{00B7}  \(Text("Released " + dateText).foregroundStyle(PlayscribeColor.vellum100))")
+                                    .lineLimit(1).minimumScaleFactor(0.85)
+                            }
                         } else {
                             Text(line).foregroundStyle(PlayscribeColor.textPrimary)
                         }
