@@ -63,6 +63,10 @@ struct PageView: View {
                 }
             }
             .padding(.bottom, 24)
+            // The column is exactly the scroll view's width. Without this, one child wider than the screen at AX5 made the
+            // whole stack wider and the scroll view centred it, shifting every title left under the screen edge ("atch 5.01",
+            // "pex Legends", Closed AX5, 34e4033): an overflowing child now overflows on its own, to the right.
+            .containerRelativeFrame(.horizontal, alignment: .leading)
         }
         .clearsMessages()
         .scrollIndicators(.hidden)
