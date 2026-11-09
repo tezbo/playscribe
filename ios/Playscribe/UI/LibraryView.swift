@@ -328,6 +328,8 @@ struct LibraryShelf: View {
                     // same id scrolls again.
                     .task(id: "\(searchFocused)|\(binding.wrappedValue)") {
                         // Tiles-first portrait only: the other poses were signed with the single scroll on focus below.
+                        NSLog("LIBFOCUS task start focused=\(searchFocused) q='\(binding.wrappedValue)' collapse=\(closedSearchCollapse)")
+                        defer { NSLog("LIBFOCUS task end cancelled=\(Task.isCancelled) q='\(binding.wrappedValue)'") }
                         guard searchFocused, portraitTilesFirst, duo.pose != .tabletop else { return }
                         try? await Task.sleep(for: .milliseconds(60))
                         if Task.isCancelled { return }
@@ -337,7 +339,9 @@ struct LibraryShelf: View {
                         // writes the id, and the next run starts again. Blur writes its own state, so it is not overridden here.
                         if searchFocused { model.nav.anchors["library"] = "library-search" }
                     }
+                    .onChange(of: binding.wrappedValue) { _, q in NSLog("LIBFOCUS query='\(q)' focused=\(searchFocused) collapse=\(closedSearchCollapse)") }
                     .onChange(of: searchFocused) { _, f in
+                        NSLog("LIBFOCUS focus=\(f) q='\(binding.wrappedValue)' collapse=\(closedSearchCollapse) anchor=\(model.nav.anchors["library"] ?? "nil")")
                         // On blur the position id is dropped, so the flip of the anchor back to .top cannot re-align the page
                         // to the field and jump it to the top as the keyboard goes.
                         if !f, model.nav.anchors["library"] == "library-search" { model.nav.anchors["library"] = nil }
