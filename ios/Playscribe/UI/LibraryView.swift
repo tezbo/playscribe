@@ -276,10 +276,11 @@ struct LibraryShelf: View {
                             .submitLabel(.search)
                             .autocorrectionDisabled()
                             .focused($searchFocused)
+                            .background { if LibProbe.nativeClear { NativeClearButton() } }
                         // The standard clear control, shown only with text: the way back to News and the cards, which stay
                         // hidden while the field has text. A button of its own, so the row's tap target is untouched.
-                        if !binding.wrappedValue.isEmpty {
-                            Button { LibProbe.log("x action begin query='\(binding.wrappedValue)' focused=\(searchFocused)"); KeyboardState.keepKeyboardOnThisTap(); binding.wrappedValue = ""; LibProbe.log("x action end focused=\(searchFocused)") } label: {
+                        if !binding.wrappedValue.isEmpty && !LibProbe.nativeClear {
+                            Button { LibProbe.log("x action begin query='\(binding.wrappedValue)' focused=\(searchFocused)"); LibProbe.state("x") { binding.wrappedValue }; KeyboardState.keepKeyboardOnThisTap(); binding.wrappedValue = ""; LibProbe.log("x action end focused=\(searchFocused)") } label: {
                                 Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
                                     .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
                             }
