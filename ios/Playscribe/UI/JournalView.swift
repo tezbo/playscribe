@@ -561,21 +561,31 @@ struct SpoilerText: View {
 struct SourceLinks: View {
     var release: Release
     var body: some View {
-        HStack(spacing: 16) {
-            if let url = release.links?.ps5Page {
-                Link(destination: url) { Label(LinkHost.label("PS5 update page", url), systemImage: "arrow.up.right.square") }
-                    .frame(minHeight: 44).tappableFrame()
-                    .accessibilityHint("Opens in browser")
-            }
-            if let url = release.links?.steamNotes {
-                Link(destination: url) { Label(LinkHost.label("Read full notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
-                    .padding(.trailing, 8)
-                    .tappableFrame()
-                    .accessibilityHint("Opens in browser")
-            }
+        // Side by side only when both fit on one line. A plain HStack grew wider than the column at accessibility sizes
+        // when a release carries both links ("PS5 update page on PlayStation" + "Read full notes on Steam"), and the parent
+        // centred the overflow: the whole page shifted left, clipping its titles and putting the share button behind the
+        // rail (Witcher 5.01, Closed AX5, 870f75d; the same on main). Otherwise they stack, each on the column's width.
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 16) { links }
+            VStack(alignment: .leading, spacing: 0) { links }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .font(PlayscribeFont.subheadline)
         .foregroundStyle(PlayscribeColor.accent)
+    }
+
+    @ViewBuilder private var links: some View {
+        if let url = release.links?.ps5Page {
+            Link(destination: url) { Label(LinkHost.label("PS5 update page", url), systemImage: "arrow.up.right.square").multilineTextAlignment(.leading) }
+                .frame(minHeight: 44).tappableFrame()
+                .accessibilityHint("Opens in browser")
+        }
+        if let url = release.links?.steamNotes {
+            Link(destination: url) { Label(LinkHost.label("Read full notes", url), systemImage: "arrow.up.right.square").multilineTextAlignment(.leading).frame(minHeight: 44).contentShape(Rectangle()) }
+                .padding(.trailing, 8)
+                .tappableFrame()
+                .accessibilityHint("Opens in browser")
+        }
     }
 }
 
