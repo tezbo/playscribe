@@ -45,6 +45,8 @@ private final class KeyboardDismissView: UIView, UIGestureRecognizerDelegate {
     @objc private func tapped() {
         let before = responderAtTouch
         DispatchQueue.main.async {
+            // A control that works on the text itself (the search field's clear button) asked for the keyboard to stay.
+            if KeyboardState.consumeKeepRequest() { return }
             guard let before, before.isFirstResponder else { return }
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             NotificationCenter.default.post(name: .keyboardPutAwayByTap, object: nil)
@@ -90,6 +92,15 @@ extension View {
 }
 
 enum KeyboardState {
+    private static var keepUntil = Date.distantPast
+    /// Called from the action of a control whose tap must leave the keyboard up (the Library search clear button, which is a SwiftUI
+    /// button, not a UIControl, so the window recognizer cannot tell it from an outside tap). Honoured for this tap only.
+    static func keepKeyboardOnThisTap() { keepUntil = Date().addingTimeInterval(0.5) }
+    static func consumeKeepRequest() -> Bool {
+        defer { keepUntil = .distantPast }
+        return Date() < keepUntil
+    }
+
     /// The text field or text view that is first responder now, if any.
     static var firstResponderInput: UIView? {
         func find(_ v: UIView) -> UIView? {
