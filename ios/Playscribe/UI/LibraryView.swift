@@ -266,6 +266,13 @@ struct LibraryShelf: View {
 
     @FocusState private var searchFocused: Bool
 
+    /// Closed portrait, field focused or holding text: the deck steps aside like News and the cards, so the matches get the room and
+    /// the card is not squeezed by the keyboard's safe area (its title clipped under the badge, Mac 0027a78 Closed). Open portrait keeps
+    /// its hero (Quinn and Iris). It returns when the field is empty and unfocused.
+    private var closedSearchCollapse: Bool {
+        duo.pose == .closed && (searchFocused || !model.data.nav.query.trimmingCharacters(in: .whitespaces).isEmpty)
+    }
+
     /// The library search field; one page wide in Book, and reported to the fold audit.
     private func searchField(binding: Binding<String>) -> some View {
                     // The same field as the notes search; the system rounded border read as a
@@ -435,7 +442,7 @@ struct LibraryShelf: View {
                                                      (duo.size.height * (typeSize.isAccessibilitySize ? 0.46 : 0.42)).rounded()),
                                       moreCount: model.latestDeckOverflow)
                         .id(poseKey)
-                } else if duo.pose != .tabletop && !heroOnRightPage && !closedWide {
+                } else if duo.pose != .tabletop && !heroOnRightPage && !closedWide && !closedSearchCollapse {
                     let deck = model.latestDeck
                     if !deck.isEmpty {
                         LatestUpdatesDeck(cards: deck)
