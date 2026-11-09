@@ -952,7 +952,7 @@ struct DatePill: View {
                 .fixedSize(horizontal: !typeSize.isAccessibilitySize && maxWidth == nil, vertical: true)
                 .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
         }
-        .padding(.horizontal, 7).padding(.vertical, 3)
+        .padding(.horizontal, 8).padding(.vertical, 3)
         // No frame(maxWidth:): a flexible frame grows to its maximum and made the pill a bar. The overlay already proposes the tile's
         // width less its insets, so the pill hugs its content and only wraps when that proposal is smaller than the words.
         .fixedSize(horizontal: false, vertical: true)
