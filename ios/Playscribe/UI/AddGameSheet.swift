@@ -458,7 +458,13 @@ struct OnboardingStage: View {
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            ArtView(asset: nil, game: nil)
+            if typeSize.isAccessibilitySize {
+                // The default header's sparkle is part of the art and lands on a headline line at AX (Iris, 517d94f), so accessibility
+                // sizes get the art's own colours without it.
+                LinearGradient(colors: [Color(hex: "#1b1d24"), Color(hex: "#0b0d12")], startPoint: .top, endPoint: .bottom)
+            } else {
+                ArtView(asset: nil, game: nil)
+            }
             LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .center, endPoint: .bottom)
             let headline = welcomeDone ? "Follow a game to get its PS5 patch notes in one place." : "Add your games to see every update"
             Group {

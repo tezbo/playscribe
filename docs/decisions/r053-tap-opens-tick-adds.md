@@ -63,3 +63,7 @@ The cover keeps one label ("<game>") and hint ("Opens the game") before and afte
 ## Update 14: toast room is back in Book (517d94f)
 
 Update 11 turned the toast room and scroll off in Book on the guess that the toast covers nothing there. The Mac's 517d94f still showed it covering "From a photo" on the left page. They are on again in every pose. The slab is handled by hiding the left page's top scroll-edge effect (Update 11), not by not scrolling.
+
+## Update 15: no sparkle behind the AX headline (Iris)
+
+The sparkle belongs to the default header art, so it cannot move; at AX5 it touched the "y" of "every" on line 3. At accessibility sizes the first-run stage draws the art's own two colours as a plain gradient, with no art, so nothing decorative shares a line with the headline.
