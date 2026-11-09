@@ -876,8 +876,12 @@ struct TileCaption: View {
                 default: EmptyView()
                 }
             }
-            .frame(height: slot, alignment: .leading)
+            // Accessibility sizes: the slot is the tallest glyph (the filled bookmark is about 1.4 x the nominal size, the check and the eye
+            // less), the mark sits on its bottom edge, and the date is 5 pt below: the same gap for every glyph, one baseline per row.
+            // Standard sizes are unchanged (a slot of the glyph plus 5 pt, the mark centred).
+            .frame(height: typeSize.isAccessibilitySize ? glyph * 1.4 : slot, alignment: typeSize.isAccessibilitySize ? .bottomLeading : .leading)
             Text(state.text)
+                .padding(.top, typeSize.isAccessibilitySize ? 4 : 0)
                 // Never scaled and never truncated: a date that does not fit one line wraps (the column is 84 pt or more, the
                 // caption is capped at AX3, so "22 Oct" fits one line at every size in practice).
                 .lineLimit(2)
