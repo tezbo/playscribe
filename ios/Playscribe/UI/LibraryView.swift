@@ -960,11 +960,19 @@ struct DatePill: View {
         }
         let ink = state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary
         let gap: CGFloat = narrow ? 3 : 4
+        // A rule by column width, not by the date's length: under 110 pt of tile (3-column Closed, Tabletop) the mark always sits above the
+        // date, so the pills line up whatever the date ("22 Oct" and "8 Oct" alike; Iris, #436).
+        let stacked = (maxWidth ?? 200) < 94
         // Never an ellipsis and never under the 11 pt text floor (Iris, #436): no scale-down. A date is one token on one line; if the
         // mark and the date do not fit side by side, the mark goes first and the date sits below it (as at AX5). The two status
         // phrases may wrap ("Plays on / PS5").
         Group {
-            if isDate {
+            if isDate && stacked {
+                VStack(alignment: .leading, spacing: 1) {
+                    HStack(spacing: gap) { mark; dot }
+                    Text(state.text).lineLimit(1).fixedSize()
+                }
+            } else if isDate {
                 ViewThatFits(in: .horizontal) {
                     HStack(spacing: gap) { mark; dot; Text(state.text).lineLimit(1).fixedSize() }
                     VStack(alignment: .leading, spacing: 1) {
