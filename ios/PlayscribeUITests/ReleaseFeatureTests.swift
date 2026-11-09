@@ -376,7 +376,10 @@ final class ReleaseFeatureTests: XCTestCase {
         if !wait(true, 5) { search.tap() }
         XCTAssertTrue(wait(true, 5), "the add search starts focused")
         // VoiceOver: the row is one "Search" field, not a field plus a second tappable element.
-        XCTAssertEqual(app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).count, 1, "one search field")
+        // Only the Add sheet's own field: the Library's "Search your library" field sits behind the sheet in the same window and is
+        // in the element tree too (36d340c Mac run counted 2 on bbcbbe2 as well, so it is not a duplicate in the Add row).
+        let addFields = app.textFields.matching(NSPredicate(format: "placeholderValue CONTAINS 'PS5 games'"))
+        XCTAssertEqual(addFields.count, 1, "one Add search field; Search fields in the tree: \(app.textFields.allElementsBoundByIndex.map { $0.placeholderValue ?? "?" })")
         XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Search'")).count, 0, "no second Search element")
         var misses: [Int] = []
         var log: [String] = []
