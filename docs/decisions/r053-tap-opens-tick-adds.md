@@ -46,3 +46,7 @@ On a cover narrower than 125 pt (the first-run strip, AX5) the Added/Wishlist wo
 
 d8dbafa (Closed, frame 55): the inset alone left the caption under the toast, because a page that fits does not move when its viewport shrinks. The first-run page now also scrolls to its bottom edge, animated, 80 ms after a toast appears.
 Correction in the same head: the inset is `model.messageInset` (bottom edge to the toast's top, plus 8 pt), not the toast's own height, because the toast floats above the bottom padding and the first measure left 100 pt short.
+
+## Update 11: no toast scroll in Book (Iris, 6a31718)
+
+In Book the first-run page's scroll to the foot slid the hero under the navigation bar, which drew a lighter slab (hard right and bottom edges) behind "Library". In Book the toast covers nothing (it sits under "Skip for now"; the caption is on the right page), so the toast room and the scroll are off there. Closed, Open and Tabletop keep them.
