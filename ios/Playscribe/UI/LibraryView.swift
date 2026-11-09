@@ -924,17 +924,15 @@ struct DatePill: View {
     var maxWidth: CGFloat?
     var body: some View {
         let state = model.tileDate(row)
-        // Long states ("Plays on PS5", "Not on PS5") drop the glyph on a narrow tile so the words fit; the tile's label still says it.
-        let showsMark = maxWidth.map { $0 >= 100 || state.text.count <= 8 } ?? true
         // Accessibility sizes: the pill would cover the art, so it is hidden; the date stays in the label
         // and on the game page (Iris, 0.5.0 a11y).
         if !typeSize.isAccessibilitySize {
         HStack(spacing: 4) {
             // The tile's status mark (in your library, wishlist, watching): inert, part of the tile's own label.
-            if showsMark { Image(systemName: StatusCircle.symbol(row.status))
+            Image(systemName: StatusCircle.symbol(row.status))
                 .font(.system(size: 10, weight: .bold))
                 .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)   // the shape says the state (check, filled bookmark, eye), not a colour
-                .accessibilityHidden(true) }
+                .accessibilityHidden(true)
             switch state.kind {
             case .unread: SparkShape().fill(PlayscribeColor.onAccent).frame(width: 9, height: 9)
             case .recent: Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
@@ -943,14 +941,16 @@ struct DatePill: View {
             Text(state.text)
                 .font(PlayscribeFont.caption2.weight(.semibold))
                 // Accessibility sizes: wrap to two lines inside the tile instead of running off it.
-                .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
-                .minimumScaleFactor(maxWidth == nil ? 1 : 0.75)
+                // Never an ellipsis: on a narrow tile the words wrap to a second line ("Plays on / PS5") and the pill grows
+                // taller, not wider (Iris, #436).
+                .lineLimit(maxWidth != nil || typeSize.isAccessibilitySize ? 2 : 1)
+                .multilineTextAlignment(.leading)
                 .fixedSize(horizontal: !typeSize.isAccessibilitySize && maxWidth == nil, vertical: true)
                 .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
         }
         .padding(.horizontal, 7).padding(.vertical, 3)
         .frame(maxWidth: maxWidth, alignment: .leading)
-        .fixedSize(horizontal: maxWidth == nil, vertical: false)
+        .fixedSize(horizontal: maxWidth == nil, vertical: true)
         .background {
             if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
             else { Capsule().fill(Color.black.opacity(0.72)) }   // a dark ground, 70% or more, over any art (Iris)
