@@ -5,7 +5,7 @@ import Foundation
 /// never appeared. `index.json` maps catalogue ids to feed ids and says when a game last changed.
 extension FeedClient {
     struct Index: Decodable {
-        struct Game: Decodable { var id: String; var igdbId: Int?; var updatedAt: Date? }
+        struct Game: Decodable { var id: String; var igdbId: Int?; var name: String?; var updatedAt: Date? }
         var updatedAt: Date
         var games: [Game]
     }
@@ -91,6 +91,13 @@ extension AppModel {
         guard let games = feedIndexGames else { return true }
         let igdb = game(gameID)?.igdbID
         return games.contains { $0.id == gameID || (igdb != nil && $0.igdbId == igdb) }
+    }
+
+    /// The name to put on a share: the catalogue's, else the feed index's (a game the app does not know, such as one the
+    /// feed onboarded, still has a name there), else empty. Never a blank title with only the update name ("Patch 5.01").
+    func shareGameName(_ gameID: String) -> String {
+        if let name = game(gameID)?.name, !name.isEmpty { return name }
+        return feedIndexGames?.first { $0.id == gameID }?.name ?? ""
     }
 }
 

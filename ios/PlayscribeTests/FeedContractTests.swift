@@ -121,6 +121,18 @@ struct FeedContractTests {
         #expect(shard.games["3"]?.date == nil)
     }
 
+    /// UX share: a game the app does not know still shares under its name, taken from the feed index.
+    @Test("shareGameName: catalogue name, else the feed index name, else empty")
+    func shareGameName() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "share-name-\(UUID().uuidString).json"))
+        m.feedIndexGames = nil
+        #expect(m.shareGameName("witcher-3") == "")
+        let idx = try decoder.decode(FeedClient.Index.self, from: Data(#"{ "updatedAt": "2026-11-08T00:00:00.000Z", "games": [ { "id": "witcher-3", "igdbId": 1942, "name": "The Witcher 3: Wild Hunt" } ] }"#.utf8))
+        m.feedIndexGames = idx.games
+        #expect(m.shareGameName("witcher-3") == "The Witcher 3: Wild Hunt")
+        #expect(m.shareGameName("not-in-the-feed") == "")
+    }
+
     /// GR-1: a game the feed does not follow never says "No updates yet"; with no index seen yet it is treated as followed.
     @Test("feedTracksGame: unknown until an index is seen, then by feed id or IGDB id")
     func feedTracksGame() throws {

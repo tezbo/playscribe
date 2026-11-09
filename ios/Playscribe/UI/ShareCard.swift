@@ -57,7 +57,7 @@ extension AppModel {
         let game = game(r.gameID)
         let own = game?.keyArtAsset.flatMap { UIImage(named: $0) }
         guard let art = own ?? UIImage(named: "default-header-tall") else { return nil }
-        let card = ShareCard(gameName: game?.name ?? "", updateName: r.displayName, version: r.ps5Version,
+        let card = ShareCard(gameName: shareGameName(r.gameID), updateName: r.displayName, version: r.ps5Version,
                              changes: shareChanges(r), art: art, hasArt: own != nil)
         let renderer = ImageRenderer(content: card)
         renderer.scale = 1
@@ -67,7 +67,7 @@ extension AppModel {
     /// Message beside the card: one title line, the top change, then a link that opens this update in
     /// Playscribe (universal link, with a web fallback page). No blank gaps, no doubled full stops.
     func shareText(_ r: Release) -> String {
-        let name = game(r.gameID)?.name ?? ""
+        let name = shareGameName(r.gameID)
         var lines = ["\(name) \(r.ps5Version ?? r.displayName)".trimmingCharacters(in: .whitespaces)]
         if let first = shareChanges(r).first { lines.append(first.hasSuffix(".") || first.hasSuffix("!") || first.hasSuffix("?") ? first : first + ".") }
         if let url = ShareText.link(gameID: r.gameID, releaseID: r.id) { lines.append(url.absoluteString) }
@@ -85,7 +85,7 @@ struct ShareUpdateButton: View {
         Group {
             if let image {
                 ShareLink(item: image, message: Text(model.shareText(release)),
-                          preview: SharePreview(model.game(release.gameID)?.name ?? "Update", image: image)) {
+                          preview: SharePreview(model.shareGameName(release.gameID).nonEmpty ?? "Update", image: image)) {
                     // Same disc and weight as the rail's other buttons (Quinn: it looked paler, as if disabled).
                     Image(systemName: "square.and.arrow.up")
                         // Fixed 22 pt glyph inside the 44 pt disc: it never scales past the rail icons at AX (Iris).
@@ -116,6 +116,8 @@ struct ShareUpdateButton: View {
 }
 
 /// Share wording helpers (kept pure so they are unit-testable).
+extension String { fileprivate var nonEmpty: String? { isEmpty ? nil : self } }
+
 enum ShareText {
     static let host = "playscribe.codeconnectors.co"
 
