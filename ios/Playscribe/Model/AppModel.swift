@@ -256,6 +256,10 @@ final class AppModel {
         if let raw = try? Data(contentsOf: storeURL),
            let decoded = try? JSONCoding.decoder.decode(PersistedState.self, from: raw) {
             data = decoded
+            // r053-search-text-persists-relaunch (Nadia, Iris): a cold launch starts with an empty search and the full Library.
+            // The text a person typed last time is not restored; the selected game, scroll position and live filters are. A fold or
+            // unfold keeps the model alive, so the text typed in this launch survives it.
+            data.nav.query = ""
         } else {
             // A real first launch starts empty, on onboarding: demo games never appear in a
             // player's library. QA launches (-qaRoute, other than first-run) still seed the demo set;

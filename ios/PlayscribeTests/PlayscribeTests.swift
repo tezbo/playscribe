@@ -943,3 +943,41 @@ struct RecentlyUpdatedSortTests {
         #expect(order([key("b"), key("A")]) == ["A", "b"])
     }
 }
+
+@MainActor
+struct SearchTextColdLaunchTests {
+    private func url() -> URL { URL.temporaryDirectory.appending(path: "search-\(UUID().uuidString).json") }
+
+    @Test("a cold launch has an empty search and every game; selected game, filter and scroll anchors are still restored")
+    func coldLaunchClearsSearchOnly() throws {
+        let u = url()
+        let m = AppModel(storeURL: u)
+        m.data.collection = Fixtures.shared.seedCollection
+        let all = m.shownRows().count
+        try #require(all > 1)
+        m.nav.query = "dawn"
+        #expect(m.shownRows().count < all)   // the typed text is filtering, so the test can tell the difference
+        m.nav.gameID = "dawnwalker"
+        m.nav.filter = .wishlist
+        m.nav.anchors["library"] = "lib-kcd2"
+        m.saveNow()
+
+        let reopened = AppModel(storeURL: u)
+        #expect(reopened.nav.query == "")
+        #expect(reopened.nav.gameID == "dawnwalker")
+        #expect(reopened.nav.filter == .wishlist)
+        #expect(reopened.nav.anchors["library"] == "lib-kcd2")
+        reopened.nav.filter = .all
+        #expect(reopened.shownRows().count == all)
+    }
+
+    @Test("a fold or unfold keeps the typed text: the model is not rebuilt, so the search is untouched")
+    func foldKeepsTypedText() {
+        let m = AppModel(storeURL: url())
+        m.data.collection = Fixtures.shared.seedCollection
+        m.nav.query = "dawn"
+        m.saveNow()
+        m.tick()          // what a pose change drives
+        #expect(m.nav.query == "dawn")
+    }
+}
