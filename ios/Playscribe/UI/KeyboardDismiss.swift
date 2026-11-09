@@ -44,9 +44,13 @@ private final class KeyboardDismissView: UIView, UIGestureRecognizerDelegate {
 
     @objc private func tapped() {
         let before = responderAtTouch
+        LibProbe.log("recognizer tapped() before=\(before != nil) isFR=\(before?.isFirstResponder ?? false) keepPending=\(KeyboardState.keepPendingForProbe)")
         DispatchQueue.main.async {
             // A control that works on the text itself (the search field's clear button) asked for the keyboard to stay.
-            if KeyboardState.consumeKeepRequest() { return }
+            let kept = KeyboardState.consumeKeepRequest()
+            LibProbe.log("recognizer deferred: keepRequest=\(kept) before=\(before != nil) isFR=\(before?.isFirstResponder ?? false)")
+            if kept { return }
+            LibProbe.log("recognizer RESIGN")
             guard let before, before.isFirstResponder else { return }
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             NotificationCenter.default.post(name: .keyboardPutAwayByTap, object: nil)
@@ -95,7 +99,8 @@ enum KeyboardState {
     nonisolated(unsafe) private static var keepUntil = Date.distantPast
     /// Called from the action of a control whose tap must leave the keyboard up (the Library search clear button, which is a SwiftUI
     /// button, not a UIControl, so the window recognizer cannot tell it from an outside tap). Honoured for this tap only.
-    static func keepKeyboardOnThisTap() { keepUntil = Date().addingTimeInterval(0.5) }
+    static func keepKeyboardOnThisTap() { LibProbe.log("x action: keep requested"); keepUntil = Date().addingTimeInterval(0.5) }
+    static var keepPendingForProbe: Bool { Date() < keepUntil }
     static func consumeKeepRequest() -> Bool {
         defer { keepUntil = .distantPast }
         return Date() < keepUntil
