@@ -33,8 +33,17 @@ struct DuoContext: Equatable {
     var occlusions: [CGRect] = []
     /// The container's safe-area insets, as the system reports them (fold harness calibration).
     var safeArea = EdgeInsets()
-    var isLandscape: Bool { size.width > size.height }
+    /// The container's size with the keyboard's safe area ignored. Zero until measured.
+    var stableSize: CGSize = .zero
+    /// Landscape of the container, not of what the keyboard leaves of it: on the near-square inner display the keyboard takes
+    /// enough height to turn portrait into "landscape", which moved the Add sheet between forms and dropped its keyboard
+    /// (probe log bc6bd42: wide flipped about 1.2 s after each presentation change).
+    var isLandscape: Bool {
+        let s = stableSize == .zero ? size : stableSize
+        return s.width > s.height
+    }
     var isFolded: Bool { division != nil }
+    func withStableSize(_ s: CGSize) -> DuoContext { var c = self; c.stableSize = s; return c }
 
     /// Tabletop: how far content whose bottom edge is at `bottom` (screen coordinates) must be
     /// lifted so it ends `gap` pt above the division band. Zero in every other pose.
@@ -109,12 +118,19 @@ struct DuoReader<Content: View>: View {
     @Environment(\.horizontalSizeClass) private var hSize
     @Environment(\.injectedRegions) private var injected
     @ViewBuilder var content: (DuoContext) -> Content
+    @State private var stableSize: CGSize = .zero
 
     var body: some View {
         GeometryReader { proxy in
-            let ctx = Self.context(proxy: proxy, compact: hSize == .compact, injected: injected)
+            let ctx = Self.context(proxy: proxy, compact: hSize == .compact, injected: injected).withStableSize(stableSize)
             content(ctx)
                 .environment(\.duo, ctx)
+        }
+        .background {
+            GeometryReader { p in
+                Color.clear.onChange(of: p.size, initial: true) { _, new in stableSize = new }
+            }
+            .ignoresSafeArea(.keyboard)
         }
     }
 
