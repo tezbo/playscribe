@@ -41,3 +41,7 @@ The Added toast floated over the first-run footer caption (on main too). Onboard
 ## Update 9: word and disc share the bottom edge (Quinn)
 
 On a cover narrower than 125 pt (the first-run strip, AX5) the Added/Wishlist word would touch the disc, so the check alone shows there; VoiceOver still reads "<game>, in your library". The disc's 3 pt shift is now on the glyph inside the frame, not on the button, so the 44 pt hit frame stays inside the cover and the fold audit sees no frame past a page edge. The "press to check" log fires on the state change, not on the word.
+
+## Update 10: the page scrolls to its foot when a toast shows
+
+d8dbafa (Closed, frame 55): the inset alone left the caption under the toast, because a page that fits does not move when its viewport shrinks. The first-run page now also scrolls to its bottom edge, animated, 80 ms after a toast appears.

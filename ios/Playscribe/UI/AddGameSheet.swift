@@ -366,6 +366,17 @@ struct OnboardingView: View {
         return max(0, fold.minX - 24 - 32)
     }
 
+    /// The page scrolls to its foot when a toast shows: the inset alone only shrinks the viewport, so a page that fits would leave the
+    /// caption where the toast lands (d8dbafa, Closed).
+    @State private var scroll = ScrollPosition()
+    private func toastShown(_ now: Bool) {
+        guard now else { return }
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(80))   // after the inset has laid out
+            withAnimation(.snappy) { scroll.scrollTo(edge: .bottom) }
+        }
+    }
+
     /// Room for the toast at the foot of the page while one shows, so the footer caption scrolls clear of it (Iris, #431: the
     /// Added toast sat over "PlayStation account import is planned..."). Not tappable, and zero when no toast shows.
     private var toastRoom: some View {
@@ -380,8 +391,10 @@ struct OnboardingView: View {
             } secondary: {
                 // The trailing rail sits over the lower half: keep the actions clear of it (0.2.0 gate).
                 ScrollView { OnboardingActions().padding(16) }
+                    .scrollPosition($scroll)
                     .contentMargins(.trailing, railWidth, for: .scrollContent)
                     .safeAreaInset(edge: .bottom, spacing: 0) { toastRoom }
+                    .onChange(of: model.toast != nil) { _, now in toastShown(now) }
             }
             .arrangementViewStyle(.split)
         } else {
@@ -393,7 +406,9 @@ struct OnboardingView: View {
                     }
                     .padding(.bottom, 24)
                 }
+                .scrollPosition($scroll)
                 .safeAreaInset(edge: .bottom, spacing: 0) { toastRoom }
+                .onChange(of: model.toast != nil) { _, now in toastShown(now) }
                 // Book: one page wide, so nothing crosses the fold (0.2.0 gate, first-run Library).
                 .frame(width: pageWidth.map { $0 + 32 })
                 if let fold = duo.division, duo.pose == .book {
