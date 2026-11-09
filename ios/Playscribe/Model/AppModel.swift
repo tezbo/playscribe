@@ -206,8 +206,17 @@ final class AppModel {
         guard data.collection.isEmpty else { return }
         firstRunHold = true
         Task { [weak self] in
-            try? await Task.sleep(for: .milliseconds(1200))
+            var hold = 1200.0   // ms
+            #if INTERNAL
+            // QA: `-qaFirstRunHold <seconds>` stretches the hold so a tap during it can be driven and timed by hand (Quinn).
+            let qa = UserDefaults.standard.double(forKey: "qaFirstRunHold")
+            if qa > 0 { hold = qa * 1000 }
+            #endif
+            try? await Task.sleep(for: .milliseconds(hold))
             self?.firstRunHold = false
+            #if INTERNAL
+            Logger(subsystem: "co.codeconnectors.playscribe", category: "add").info("first-run hold ended (library swap)")
+            #endif
         }
     }
     /// Order games were just added in, for the pop stagger.
