@@ -78,4 +78,17 @@ struct WholeWordTextTests {
         }
         #expect(variants.first == title, "the whole text is never trimmed")
     }
+
+    /// SwiftUI calls PickVariant (a Layout) from its async renderer thread, off the main actor. The helpers are nonisolated and
+    /// pure; this calls them from a detached task, where a main-actor-inferred helper trapped (36d340c-crash-WholeWordText.ips).
+    @Test func helpersRunOffTheMainActor() async {
+        let title = "E3 2018 Open Beta Trailer for the Crew Two"
+        let (all, fit, words) = await Task.detached {
+            let widths: [Int: CGFloat] = Dictionary(uniqueKeysWithValues: WholeWordText.words(of: title).indices.map { ($0, CGFloat(30)) })
+            return (WholeWordText.variants(of: title), WholeWordText.fittingVariants(of: title, wordWidths: widths, available: 100), WholeWordText.words(of: title))
+        }.value
+        #expect(all.first == title)
+        #expect(fit == all)
+        #expect(words.count == 9)
+    }
 }

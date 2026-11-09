@@ -3,6 +3,10 @@ import SwiftUI
 /// Text that, when it does not fit in `lines` lines, ends on a whole word followed by "…" (never a cut word, which
 /// SwiftUI's own tail truncation can produce). Tries the whole text, then one word fewer each time. The line height is
 /// measured from the same font at the current text size, so it holds at every Dynamic Type size.
+///
+/// The helpers below are `nonisolated` on purpose: `PickVariant` (a Layout) calls them from SwiftUI's async renderer thread, and a
+/// type that conforms to View makes its statics main-actor by inference, so the first call off the main thread trapped in
+/// `swift_task_isCurrentExecutor` (36d340c-crash-WholeWordText.ips, `com.apple.SwiftUI.AsyncRenderer`). They are pure string work.
 struct WholeWordText: View {
     var text: String
     var font: Font
@@ -10,12 +14,12 @@ struct WholeWordText: View {
     var color: Color?
     @State private var lineHeight: CGFloat = 0
 
-    static func words(of text: String) -> [String] { text.split(separator: " ", omittingEmptySubsequences: true).map(String.init) }
+    nonisolated static func words(of text: String) -> [String] { text.split(separator: " ", omittingEmptySubsequences: true).map(String.init) }
 
     /// The variants whose every kept word fits `available` points on one line. A word wider than the column is wrapped by
     /// character, which leaves a fragment (or a lone comma) at the start of a line, so a variant that keeps one is dropped
     /// and the cut lands before that word. Always keeps at least the shortest variant. Unknown widths keep everything.
-    static func fittingVariants(of text: String, wordWidths: [Int: CGFloat], available: CGFloat) -> [String] {
+    nonisolated static func fittingVariants(of text: String, wordWidths: [Int: CGFloat], available: CGFloat) -> [String] {
         let all = variants(of: text)
         let n = words(of: text).count
         guard available > 0, n > 1, wordWidths.count == n else { return all }
@@ -29,14 +33,14 @@ struct WholeWordText: View {
     }
 
     /// `kept` without trailing , ; : . so the ellipsis follows the word ("Rebalancing…", never "Rebalancing,…").
-    static func trimmed(_ kept: String) -> String {
+    nonisolated static func trimmed(_ kept: String) -> String {
         var t = Substring(kept)
         while let last = t.last, ",;:.".contains(last), t.count > 1 { t = t.dropLast() }
         return String(t)
     }
 
     /// The whole text first, then one word fewer each time with "…" after the last whole word. Never a cut word.
-    static func variants(of text: String) -> [String] {
+    nonisolated static func variants(of text: String) -> [String] {
         let words = text.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
         return [text] + (words.count > 1 ? stride(from: words.count - 1, through: 1, by: -1).map { trimmed(words.prefix($0).joined(separator: " ")) + "\u{2026}" } : [])
     }
