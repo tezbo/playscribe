@@ -285,6 +285,16 @@ struct LibraryShelf: View {
                     .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                     .tappableFrame()
                     .padding(.top, 4)
+                    .id("library-search")
+                    // The keyboard covers a field that sits low on the page (Open portrait: below the cards, half hidden at the
+                    // keyboard's top edge, Mac 018b515). Bring it to the top once the keyboard is up, so the results show below it.
+                    .onChange(of: searchFocused) { _, f in
+                        guard f, duo.pose != .tabletop else { return }
+                        Task { @MainActor in
+                            try? await Task.sleep(for: .milliseconds(350))
+                            if searchFocused { model.nav.anchors["library"] = "library-search" }
+                        }
+                    }
     }
 
     var body: some View {
