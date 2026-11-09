@@ -795,7 +795,7 @@ struct GameMenuButton: View {
 
 /// Inner display tile: a fixed-size cover, name, a status dot and the unread count.
 /// Library tile (brand library-tiles, approved by Terry 26 Oct): a 3:4 cover with no text under
-/// it. Top right, a glass status circle; bottom left, a date pill that carries the update state.
+/// it. Under the cover: the status mark above the date or status, nothing on the art (Iris, #436: art lettering can be anywhere).
 /// Long-press opens the game's actions.
 struct GameTile: View {
     @Environment(AppModel.self) private var model
@@ -826,22 +826,15 @@ struct GameTile: View {
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             VStack(alignment: .leading, spacing: 4) {
                 tileFrame(TileCover(game: row.game))
-                    .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
-                    .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
                     .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                // Accessibility sizes: the pill would cover the art, so the date or status sits under
-                // the cover instead, wrapping to two lines (GR-1, D-12; Iris, 0.5.0 a11y).
-                if typeSize.isAccessibilitySize {
-                    let state = model.tileDate(row)
-                    Text(state.text)
-                        .font(PlayscribeFont.caption.weight(.semibold))
-                        .foregroundStyle(state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .accessibilityHidden(true)
-                }
+                // Nothing sits on the art: art lettering can be anywhere (a pill hid the MINECRAFT logo, Quinn 38a4d59). The status
+                // mark sits above the date or status phrase, in a slot of one fixed height so the dates in a row share a baseline
+                // whatever the glyph (check, bookmark, eye). Amber only for an unread update, else the grey of the other dates;
+                // the spark and the dot are the non-colour cues. Wraps, never truncates; 11 pt or larger (Iris, #436).
+                TileCaption(row: row, width: size)
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility3)   // capped outside, so the scaled metrics inside are capped too
+                    .accessibilityHidden(true)   // the tile's own label already says the date and the status
             }
         }
         .buttonStyle(.plain)
@@ -855,6 +848,53 @@ struct GameTile: View {
         .accessibilityValue(FoldAuditSwitch.enabled ? "probe id=\(Int((size ?? measuredWidth).rounded())) cover=\(Int(measuredWidth.rounded())) outer=\(Int(outerWidth.rounded()))" : "")
         .onGeometryChange(for: CGFloat.self) { FoldAuditSwitch.enabled ? $0.size.width : 0 } action: { outerWidth = $0 }
         .gameQuickActions(row.game)
+    }
+}
+
+/// Under a Library tile's cover: the status mark (check, bookmark, eye) in a fixed-height slot, then the date or status phrase.
+struct TileCaption: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
+    var row: AppModel.LibraryRow
+    /// The tile's width when it has a fixed one (nil: fills its column).
+    var width: CGFloat?
+    /// The mark scales with the text (the size is capped at AX3 by the caller, so this is too), and its slot is the glyph plus 5 pt: one
+    /// height for every glyph, so every caption's text starts at the same height, and the date sits right under the mark at any size
+    /// (Iris, 52f1425: a slot sized to the AX text line left the mark detached by 55 pt). At the default size the slot is 16 pt, as before.
+    @ScaledMetric(relativeTo: .caption2) private var glyph: CGFloat = 11
+    private var slot: CGFloat { glyph + 5 }
+
+    var body: some View {
+        let state = model.tileDate(row)
+        let ink = state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary
+        VStack(alignment: .leading, spacing: 1) {
+            HStack(spacing: 4) {
+                Image(systemName: StatusCircle.symbol(row.status)).font(.system(size: glyph, weight: .bold))
+                switch state.kind {
+                // The spark and the dot are the non-colour cues, so at AX they scale with the mark (the spark to about the bookmark's
+                // height), on the same centre line; at standard sizes they stay 9 and 6 pt.
+                case .unread: SparkShape().fill(ink).frame(width: typeSize.isAccessibilitySize ? glyph * 1.2 : 9, height: typeSize.isAccessibilitySize ? glyph * 1.2 : 9)
+                case .recent: Circle().fill(PlayscribeColor.accent).frame(width: typeSize.isAccessibilitySize ? glyph * 0.6 : 6, height: typeSize.isAccessibilitySize ? glyph * 0.6 : 6)
+                default: EmptyView()
+                }
+            }
+            // Accessibility sizes: one fixed-height slot for every glyph (the tallest, the filled bookmark at about 1.4 x the nominal
+            // size), each glyph and the spark CENTRED in it, so the centres share a line across a row and the gap above (cover to
+            // slot, the tile's 4 pt) and below (slot to date, 5 pt) is the same for every glyph. Standard sizes are unchanged
+            // (a slot of the glyph plus 5 pt, the mark centred).
+            .frame(height: typeSize.isAccessibilitySize ? glyph * 1.4 : slot, alignment: .leading)
+            Text(state.text)
+                .padding(.top, typeSize.isAccessibilitySize ? 4 : 0)
+                // Never scaled and never truncated: a date that does not fit one line wraps (the column is 84 pt or more, the
+                // caption is capped at AX3, so "22 Oct" fits one line at every size in practice).
+                .lineLimit(2)
+                .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .font((typeSize.isAccessibilitySize ? PlayscribeFont.caption : PlayscribeFont.caption2).weight(.semibold))
+        .foregroundStyle(ink)
+        .frame(maxWidth: width ?? .infinity, alignment: .leading)
+        .padding(.horizontal, 2)
     }
 }
 
@@ -909,39 +949,6 @@ struct StatusCircle: View {
     }
     static func symbol(_ s: OwnershipStatus) -> String {
         switch s { case .owned: "checkmark"; case .wishlist: "bookmark.fill"; case .watching: "eye.fill" }
-    }
-}
-
-/// The date pill: solid ember with the spark for an unread update; glass with an ember dot for an
-/// update in the last 7 days; plain glass for older; "Out <date>" when there are no updates.
-struct DatePill: View {
-    @Environment(AppModel.self) private var model
-    @Environment(\.dynamicTypeSize) private var typeSize
-    var row: AppModel.LibraryRow
-    var body: some View {
-        let state = model.tileDate(row)
-        // Accessibility sizes: the pill would cover the art, so it is hidden; the date stays in the label
-        // and on the game page (Iris, 0.5.0 a11y).
-        if !typeSize.isAccessibilitySize {
-        HStack(spacing: 4) {
-            switch state.kind {
-            case .unread: SparkShape().fill(PlayscribeColor.onAccent).frame(width: 9, height: 9)
-            case .recent: Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
-            default: EmptyView()
-            }
-            Text(state.text)
-                .font(PlayscribeFont.caption2.weight(.semibold))
-                // Accessibility sizes: wrap to two lines inside the tile instead of running off it.
-                .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
-                .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
-                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
-        }
-        .padding(.horizontal, 7).padding(.vertical, 3)
-        .background {
-            if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
-            else { Capsule().fill(.clear).adaptiveGlass(in: Capsule()) }
-        }
-        }
     }
 }
 
