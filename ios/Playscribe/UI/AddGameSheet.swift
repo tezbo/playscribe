@@ -561,19 +561,40 @@ struct PopularCover: View {
     var width: CGFloat
     var height: CGFloat
 
+    /// Optimistic state (Iris, #431): the tick answers on the press, before the add runs.
+    private enum Phase { case idle, adding }
+    @State private var phase: Phase = .idle
+
     var body: some View {
-        let added = model.entry(game.id) != nil
+        let inLibrary = model.entry(game.id) != nil
+        let marked = inLibrary || phase == .adding            // the check and the quiet word show at once
+        let word = game.isUpcoming ? "Wishlist" : "Added"
         ZStack(alignment: .topTrailing) {
+            // While an add is in flight (and once added) the cover cannot open the game: a second tap must not fall through.
             Button { model.browseGame(game) } label: {
                 TileCover(game: game).frame(width: width, height: height)
+                    .overlay(alignment: .bottom) {
+                        if marked {
+                            Text(word)
+                                .font(PlayscribeFont.caption.weight(.semibold))
+                                .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+                                .lineLimit(1).minimumScaleFactor(0.7)
+                                .foregroundStyle(PlayscribeColor.onAccent)
+                                .padding(.horizontal, 8).padding(.vertical, 3)
+                                .background(PlayscribeColor.accent, in: Capsule())
+                                .padding(.bottom, 6)
+                                .accessibilityHidden(true)
+                        }
+                    }
             }
             .buttonStyle(.plain)
-            .accessibilityLabel(game.name)
-            .accessibilityHint("Opens the game")
+            .disabled(marked)
+            .accessibilityLabel(marked ? "\(game.name), \(word.lowercased())" : game.name)
+            .accessibilityHint(marked ? "" : "Opens the game")
             .tappableFrame()
 
-            Button { if !added { model.addGame(game, status: .owned) } } label: {
-                Image(systemName: added ? "checkmark.circle.fill" : "plus.circle.fill")
+            Button(action: tick) {
+                Image(systemName: marked ? "checkmark.circle.fill" : "plus.circle.fill")
                     // A fixed-size glyph in a fixed 44 pt plate: Dynamic Type must not grow it past the plate (Quinn, #431).
                     .font(.system(size: 22, weight: .semibold))
                     .symbolRenderingMode(.palette)
@@ -581,12 +602,37 @@ struct PopularCover: View {
                     .frame(width: min(44, width), height: min(44, height))
                     .contentShape(Rectangle())
             }
-            .buttonStyle(.plain)
-            .disabled(added)
-            .accessibilityLabel(added ? "\(game.name), in your library" : "Add \(game.name)")
+            .buttonStyle(TickPressStyle())
+            .disabled(marked)
+            .accessibilityLabel(marked ? "\(game.name), in your library" : "Add \(game.name)")
             .accessibilityIdentifier("popularAdd")
             .tappableFrame()
         }
         .frame(width: width, height: height)
+    }
+
+    private func tick() {
+        guard phase == .idle, model.entry(game.id) == nil else { return }
+        phase = .adding                                    // renders before anything below runs
+        model.holdFirstRun()                               // the strip stays under the finger for a moment
+        Task { @MainActor in
+            // One run-loop turn so the pressed state, check and word are on screen before the add's synchronous work.
+            try? await Task.sleep(for: .milliseconds(30))
+            model.addGame(game, status: .owned)           // an upcoming game goes in as Wishlist; the pop plays here only
+            if model.entry(game.id) == nil {               // rolled back: say so, restore the tick
+                phase = .idle
+                model.show(Toast(text: "Couldn't add \(game.name)"))
+            }
+        }
+    }
+}
+
+/// The tick's pressed state: it dims and shrinks on the press, so the tap is answered before the add runs.
+private struct TickPressStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.86 : 1)
+            .opacity(configuration.isPressed ? 0.7 : 1)
+            .animation(.easeOut(duration: 0.08), value: configuration.isPressed)
     }
 }

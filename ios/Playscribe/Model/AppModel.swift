@@ -199,6 +199,17 @@ final class AppModel {
     var libraryTab: LibraryTab = .playing
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
+    /// First-run: keeps the Popular strip on screen for a moment after the first tick, so the covers do not vanish under the
+    /// finger (Iris, #431). Only the tick sets it; adding from the Add sheet goes straight to the Library.
+    var firstRunHold = false
+    func holdFirstRun() {
+        guard data.collection.isEmpty else { return }
+        firstRunHold = true
+        Task { [weak self] in
+            try? await Task.sleep(for: .milliseconds(1200))
+            self?.firstRunHold = false
+        }
+    }
     /// Order games were just added in, for the pop stagger.
     var addedOrder: [String] = []
     /// Set when a deep link asks the journal to bring a release to the top.
