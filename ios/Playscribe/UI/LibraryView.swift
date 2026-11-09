@@ -287,7 +287,17 @@ struct LibraryShelf: View {
                         // The standard clear control, shown only with text: the way back to News and the cards, which stay
                         // hidden while the field has text. A button of its own, so the row's tap target is untouched.
                         if !binding.wrappedValue.isEmpty {
-                            Button { binding.wrappedValue = "" } label: {
+                            Button {
+                                binding.wrappedValue = ""
+                                // Cleared with the keyboard away: the deck and News return above, so the page goes to its top, once.
+                                // Focused, the field stays pinned and nothing scrolls to the top.
+                                if !searchFocused, portraitTilesFirst {
+                                    Task { @MainActor in
+                                        try? await Task.sleep(for: .milliseconds(60))
+                                        if !searchFocused { model.nav.anchors["library"] = "library-top" }
+                                    }
+                                }
+                            } label: {
                                 Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
                                     .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
                                     .keepsKeyboardInFrame("library-search-clear")
@@ -321,8 +331,9 @@ struct LibraryShelf: View {
                         if Task.isCancelled { return }
                         model.nav.anchors["library"] = nil
                         try? await Task.sleep(for: .milliseconds(30))
-                        if Task.isCancelled { return }
-                        model.nav.anchors["library"] = "library-search"
+                        // Never leave the position nil while the field is focused: a cancel after the nil write (the next key) still
+                        // writes the id, and the next run starts again. Blur writes its own state, so it is not overridden here.
+                        if searchFocused { model.nav.anchors["library"] = "library-search" }
                     }
                     .onChange(of: searchFocused) { _, f in
                         // On blur the position id is dropped, so the flip of the anchor back to .top cannot re-align the page
