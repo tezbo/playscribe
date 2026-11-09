@@ -16,3 +16,5 @@ Quinn's findings on the pill: it must fit the narrowest tile (a Closed 3-column 
 Iris's ruling on the narrow tile: the glyph never drops and the text never ends in an ellipsis. The pill takes the tile's width less its insets as its maximum; the text wraps to two whole-word lines ("Plays on / PS5") and the pill grows taller, not wider. The copy is unchanged (wording goes through Ezra). The earlier minimum-scale and glyph-drop rule is removed.
 
 Quinn: a date never wraps mid-date ("25 / Jun"). A pill whose model kind is not the two status phrases (plays on PS5, not on PS5) is a date: one line, scaled down to 70% before it would wrap. Only the words ("Plays on PS5", "Not on PS5") wrap to two lines.
+
+Iris (5c2729a, Closed std): the pill stretched nearly the tile's width and read as a dark bar. Cause: `frame(maxWidth:)` is a flexible frame, which grows to its maximum. Removed: the tile's overlay already proposes its width less the 8 pt insets, so the pill hugs the glyph and the date and only wraps when the words are wider than that proposal. The wrapped PS5 pills hug the same way.
