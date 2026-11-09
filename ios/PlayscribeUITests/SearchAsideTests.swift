@@ -27,7 +27,7 @@ final class SearchAsideTests: XCTestCase {
         let clear = app.buttons["Clear search"]
         XCTAssertTrue(clear.waitForExistence(timeout: 3))
         clear.tap()
-        app.keyboards.buttons["Return"].tap()
+        app.keyboards.buttons["Search"].tap()  // the return key reads "Search" (Mac 6a2d5f1)
         XCTAssertTrue(deck.firstMatch.waitForExistence(timeout: 5), "the deck returns when the field is empty and unfocused")
     }
 }

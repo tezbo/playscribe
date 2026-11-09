@@ -46,7 +46,6 @@ private final class KeyboardDismissView: UIView, UIGestureRecognizerDelegate {
         let before = responderAtTouch
         DispatchQueue.main.async {
             guard let before, before.isFirstResponder else { return }
-            NSLog("LIBFOCUS resign-by-tap")
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             NotificationCenter.default.post(name: .keyboardPutAwayByTap, object: nil)
         }
