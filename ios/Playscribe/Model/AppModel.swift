@@ -1002,7 +1002,7 @@ final class AppModel {
         let token = t.token
         if UIAccessibility.isVoiceOverRunning {
             // Under VoiceOver the toast stays until dismissed, and is announced with its action.
-            AccessibilityNotification.Announcement(t.undo == nil ? t.text : "\(t.text). Undo available.").post()
+            AccessibilityNotification.Announcement(t.undo == nil ? t.text : "\(t.text), \(t.actionLabel)").post()
             if t.undo != nil { return }
         }
         Task { [weak self] in

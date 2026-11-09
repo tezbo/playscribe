@@ -29,3 +29,7 @@ Learning: `.disabled` is also a dim; to stop a tap without changing how a contro
 ## Update 6: tick moves to the bottom-trailing corner
 
 Iris (legibility): at the top right the "+" hid the last letter of long titles ("MINECR+"). The tick now sits bottom-trailing, the disc inset 8 pt with a dark ring, the 44 pt hit frame unchanged. The "Added"/"Wishlist" word moves to bottom-leading. Open: the tick stays on the page's outer edge, well over 24 pt from the hinge.
+
+## Update 7: toast announcement
+
+Under VoiceOver the add toast is announced as "Added Roblox, Undo" (it was "Added Roblox. Undo available."). The toast stays until dismissed under VoiceOver, otherwise 8 s; the Undo button's frame is `.hitTarget()` (minimum 44 x 44) inside a 44 pt minimum capsule.
