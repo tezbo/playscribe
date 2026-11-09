@@ -279,9 +279,9 @@ struct AddGameSheet: View {
                         .focused($searchFocused)
                         .frame(minHeight: 44)
                         .padding(.horizontal, 20)
-                        // 14.5 pt a side restores the row height the List's default insets gave (main: card 133 pt; with 4 pt it was 112,
-                        // Mac 2198fa7), with the whole row still the tap target.
-                        .padding(.vertical, 14.5)
+                        // 15 pt a side restores the row height the List's default insets gave (main: card 133 pt; with 4 pt it was 112,
+                        // Mac 2198fa7; 14.5 was 1 pt short, Mac 9cebaa9), with the whole row still the tap target.
+                        .padding(.vertical, 15)
                         .frame(maxWidth: .infinity)
                         .background {
                             Color.clear
