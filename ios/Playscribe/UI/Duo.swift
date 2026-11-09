@@ -39,7 +39,10 @@ struct DuoContext: Equatable {
     /// enough height to turn portrait into "landscape", which moved the Add sheet between forms and dropped its keyboard
     /// (probe log bc6bd42: wide flipped about 1.2 s after each presentation change).
     var isLandscape: Bool {
-        let s = stableSize == .zero ? size : stableSize
+        // stableSize is measured a frame later than size. It is used only when it is the same container with the keyboard's
+        // height added back (same width, at least as tall); after a rotation or resize it is stale, so the live size wins.
+        let useStable = stableSize != .zero && stableSize.width == size.width && stableSize.height >= size.height
+        let s = useStable ? stableSize : size
         return s.width > s.height
     }
     var isFolded: Bool { division != nil }
