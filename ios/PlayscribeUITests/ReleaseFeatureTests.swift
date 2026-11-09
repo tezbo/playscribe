@@ -375,6 +375,9 @@ final class ReleaseFeatureTests: XCTestCase {
         }
         if !wait(true, 5) { search.tap() }
         XCTAssertTrue(wait(true, 5), "the add search starts focused")
+        // VoiceOver: the row is one "Search" field, not a field plus a second tappable element.
+        XCTAssertEqual(app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).count, 1, "one search field")
+        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Search'")).count, 0, "no second Search element")
         var misses: [Int] = []
         var log: [String] = []
         func shot(_ name: String) {
@@ -393,12 +396,20 @@ final class ReleaseFeatureTests: XCTestCase {
             if !titleDismissed { shot("r\(round)-title-did-not-dismiss"); log += [before, afterTitle]; misses.append(round); continue }
             // Padding: just outside the field's leading edge, inside the row.
             let f = search.frame
-            // Odd rounds tap the leading padding, even rounds the trailing padding (kept inside the window).
+            // Rounds cycle through the four sides of the row padding: leading, trailing, above and below the field (the row has
+            // 4 pt of vertical padding; the horizontal strips are kept inside the window).
             let windowMaxX = app.windows.firstMatch.frame.maxX
-            let paddingX = round % 2 == 1 ? f.minX - 8 : min(f.maxX + 8, windowMaxX - 2), paddingY = f.midY
+            let side = ["leading", "trailing", "above", "below"][(round - 1) % 4]
+            let paddingX: CGFloat, paddingY: CGFloat
+            switch side {
+            case "leading": (paddingX, paddingY) = (f.minX - 8, f.midY)
+            case "trailing": (paddingX, paddingY) = (min(f.maxX + 8, windowMaxX - 2), f.midY)
+            case "above": (paddingX, paddingY) = (f.midX, f.minY - 2)
+            default: (paddingX, paddingY) = (f.midX, f.maxY + 2)
+            }
             app.windows.firstMatch.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(dx: paddingX, dy: paddingY)).tap()
             let refocused = wait(true)
-            let afterPadding = state("r\(round) after padding tap at (\(paddingX), \(paddingY)), insideFieldFrame=\(f.contains(CGPoint(x: paddingX, y: paddingY))), refocused=\(refocused)")
+            let afterPadding = state("r\(round) after \(side) padding tap at (\(paddingX), \(paddingY)), insideFieldFrame=\(f.contains(CGPoint(x: paddingX, y: paddingY))), refocused=\(refocused)")
             log += [before, afterTitle, afterPadding]
             if !refocused {
                 shot("r\(round)-padding-did-not-focus")
