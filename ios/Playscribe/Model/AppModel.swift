@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import os
 import SwiftUI
 import UserNotifications
 
@@ -208,6 +209,17 @@ final class AppModel {
     var libraryTab: LibraryTab = .playing
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
+    /// First-run: keeps the Popular strip on screen for a moment after the first tick, so the covers do not vanish under the
+    /// finger (Iris, #431). Only the tick sets it; adding from the Add sheet goes straight to the Library.
+    var firstRunHold = false
+    func holdFirstRun() {
+        guard data.collection.isEmpty else { return }
+        firstRunHold = true
+        Task { [weak self] in
+            try? await Task.sleep(for: .milliseconds(1200))
+            self?.firstRunHold = false
+        }
+    }
     /// Order games were just added in, for the pop stagger.
     var addedOrder: [String] = []
     /// Set when a deep link asks the journal to bring a release to the top.
@@ -266,6 +278,13 @@ final class AppModel {
         if let raw = try? Data(contentsOf: storeURL),
            let decoded = try? JSONCoding.decoder.decode(PersistedState.self, from: raw) {
             data = decoded
+            // r053-search-text-persists-relaunch (Nadia, Iris): a cold launch starts with an empty search and the full Library.
+            // The text a person typed last time is not restored; the selected game, scroll position and live filters are. A fold or
+            // unfold keeps the model alive, so the text typed in this launch survives it.
+            data.nav.query = ""
+            // Quinn (#430): a Library scroll anchor that is not a game tile ("lib-<id>") would scroll an unfiltered relaunch to the
+            // search field (the app killed while it was focused). Keep tile anchors only.
+            if let a = data.nav.anchors["library"], !a.hasPrefix("lib-") { data.nav.anchors["library"] = nil }
         } else {
             // A real first launch starts empty, on onboarding: demo games never appear in a
             // player's library. QA launches (-qaRoute, other than first-run) still seed the demo set;
@@ -858,9 +877,22 @@ final class AppModel {
     func addGames(_ list: [CatalogGame], status: OwnershipStatus) {
         let new = list.filter { entry($0.id) == nil }
         guard !new.isEmpty else { return }
+        #if INTERNAL
+        // r053-tap-opens-tick-adds: the Mac saw ~1.5 s between a tick tap and the screen changing. Time each stage so a run says where.
+        let clock0 = ContinuousClock.now
+        var laps: [String] = []
+        func lap(_ name: String) { laps.append("\(name) \((ContinuousClock.now - clock0).formatted(.units(allowed: [.milliseconds], width: .narrow)))") }
+        defer { Logger(subsystem: "co.codeconnectors.playscribe", category: "add").info("addGames \(laps.joined(separator: "; "), privacy: .public)") }
+        #endif
         for g in new { insertGame(g, status: status == .owned && g.isUpcoming ? .wishlist : status) }
+        #if INTERNAL
+        lap("insert")
+        #endif
         // Adding a game never floods the badge: whatever it already has before today's news is the past.
         markPastAsRead(new.flatMap { releases($0.id) }, backCatalogue: true)
+        #if INTERNAL
+        lap("markPastAsRead")
+        #endif
         let ids = new.map(\.id)
         nav.filter = .all
         highlight = new.count == 1 ? ids[0] : nil
@@ -869,8 +901,25 @@ final class AppModel {
         nav.anchors["library"] = "lib-\(ids[0])"
         let text = new.count == 1 ? "Added \(new[0].name)" : "Added \(new.count) games"
         show(Toast(text: text, undo: { [weak self] in ids.forEach { self?.removeGame($0, toast: false) } }))
-        if data.soundsOff != true { PopSound.play(count: new.count, quiet: data.quietHours) }
+        #if INTERNAL
+        lap("toast")
+        #endif
+        // The pop costs 140 to 270 ms on the main actor (audio session and player; Mac lap logs, #431), so it plays one beat after
+        // the screen has shown the add: the toast, the check and the view swap come first, the pop follows once, on the add only.
+        if data.soundsOff != true {
+            let count = new.count, quiet = data.quietHours
+            Task { @MainActor in
+                try? await Task.sleep(for: .milliseconds(60))
+                PopSound.play(count: count, quiet: quiet)
+            }
+        }
+        #if INTERNAL
+        lap("sound scheduled")
+        #endif
         NotificationService.shared.updateBadge(badgeCount)
+        #if INTERNAL
+        lap("badge")
+        #endif
     }
 
     private func insertGame(_ game: CatalogGame, status: OwnershipStatus) {
@@ -963,7 +1012,7 @@ final class AppModel {
         let token = t.token
         if UIAccessibility.isVoiceOverRunning {
             // Under VoiceOver the toast stays until dismissed, and is announced with its action.
-            AccessibilityNotification.Announcement(t.undo == nil ? t.text : "\(t.text). Undo available.").post()
+            AccessibilityNotification.Announcement(t.undo == nil ? t.text : "\(t.text), \(t.actionLabel)").post()
             if t.undo != nil { return }
         }
         Task { [weak self] in

@@ -64,4 +64,37 @@ struct UpcomingBrowseTests {
         #expect(m.entry(g.id)?.status == .watching)
         #expect(m.browsedGames[g.id] == nil)
     }
+
+    // r053-tap-opens-tick-adds (Iris): the first-run "Popular on PS5" covers. A tap opens the game; the tick adds it, once.
+    @Test func tappingAFirstRunCoverOpensTheGameAndLeavesTheLibraryUnchanged() {
+        let m = model()
+        let g = feedGame
+        let before = m.data.collection.count
+        m.browseGame(g)                          // what PopularCover's cover button calls
+        #expect(m.nav.gameID == g.id)
+        #expect(m.data.collection.count == before)
+        #expect(m.entry(g.id) == nil)
+    }
+
+    @Test func tickingACoverAddsTheGameExactlyOnceAndAnUpcomingOneAsWishlist() {
+        let m = model()
+        let g = feedGame
+        let before = m.data.collection.count
+        m.addGame(g, status: .owned)             // what PopularCover's tick calls
+        m.addGame(g, status: .owned)             // a second tick (or a double tap) is a no-op
+        #expect(m.data.collection.count == before + 1)
+        #expect(m.entry(g.id)?.status == .wishlist)
+    }
+
+    // Iris (#431): the strip stays under the finger for a moment after the first tick, and only the tick holds it.
+    @Test func theFirstRunStripIsHeldAfterATickOnlyWhileTheLibraryIsEmpty() {
+        let m = model()
+        m.holdFirstRun()
+        #expect(m.firstRunHold)                 // empty Library: the strip is kept up
+        let n = model()
+        n.addGame(feedGame, status: .owned)     // the Add sheet path: straight to the Library, no hold
+        #expect(!n.firstRunHold)
+        n.holdFirstRun()
+        #expect(!n.firstRunHold)                // a library with a game never goes back to the strip
+    }
 }

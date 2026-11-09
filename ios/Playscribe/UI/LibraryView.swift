@@ -24,7 +24,7 @@ struct LibraryView: View {
 
     var body: some View {
         Group {
-            if model.data.collection.isEmpty {
+            if model.data.collection.isEmpty || model.firstRunHold {
                 OnboardingView()
             } else if duo.pose == .tabletop {
                 // D-5: the standing half shows the Continue art, display only; the grid is below.
