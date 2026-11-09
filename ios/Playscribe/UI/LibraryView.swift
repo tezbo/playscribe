@@ -206,9 +206,6 @@ struct LibraryShelf: View {
     }
 
     /// Changes with the pose and the fold, so layouts that cache by position are rebuilt.
-    /// The chip row heads the results. In the tiles-first portrait layout the search field sits BELOW the results, so focusing it
-    /// scrolls here (chips, tiles, then the field under them), not to the field, which would push the results off the top.
-    private var resultsID: String { "results-\(poseKey)" }
     private var poseKey: String {
         "\(duo.pose.rawValue)-\(Int(duo.division?.minX ?? -1))-\(Int(duo.division?.minY ?? -1))-\(Int(duo.size.width))"
     }
@@ -294,14 +291,13 @@ struct LibraryShelf: View {
                     .id("library-search")
                     // The keyboard covers a field that sits low on the page (Open portrait: below the cards, half hidden at the
                     // keyboard's top edge, Mac 018b515). Bring it into view once the keyboard is up: to the top where results follow it,
-                    // to the chip row where the results are above it (tiles-first portrait).
+                    // to the bottom edge where it is the last block (tiles-first portrait).
                     .onChange(of: searchFocused) { _, f in
                         guard f, duo.pose != .tabletop else { return }
                         Task { @MainActor in
                             try? await Task.sleep(for: .milliseconds(350))
                             guard searchFocused else { return }
-                            let resultsFirst = portraitTilesFirst && model.libraryRows.count >= 2 && layout == .tiles
-                            model.nav.anchors["library"] = resultsFirst ? resultsID : "library-search"
+                            model.nav.anchors["library"] = "library-search"
                         }
                     }
     }
@@ -447,7 +443,7 @@ struct LibraryShelf: View {
                             FilterBar().frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
-                    .id(resultsID)
+                    .id(poseKey)
                 }
                 // Tabletop: the filter chips sit directly above the tiles, one row; tiles first wins if they would push it off (Iris, v0.5.3).
                 if duo.pose == .tabletop && all.count >= 2 && layout == .tiles { FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey) }
@@ -506,7 +502,10 @@ struct LibraryShelf: View {
         }
         // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap outside the field.
         .dismissesKeyboardOnOutsideTap()
-        .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
+        // Focused search: the field must always show above the keyboard. Where it is the last block (tiles-first portrait) it is
+        // aligned to the bottom of the visible area, with as many tiles above it as fit; elsewhere it sits above the results, top.
+        .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }),
+                        anchor: searchFocused && portraitTilesFirst ? .bottom : .top)
         // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.
         // No soft-edge mask: it made the Open portrait large "Library" title vanish (354d15c, 9914a80), see MessageClearance.
         .clearsMessages()
