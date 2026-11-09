@@ -697,6 +697,9 @@ struct PopularCover: View {
 
     private func tick() {
         guard phase == .idle, model.entry(game.id) == nil else { return }
+        #if INTERNAL
+        Logger(subsystem: "co.codeconnectors.playscribe", category: "add").info("tick: \(game.name, privacy: .public) add begins")
+        #endif
         phase = .adding                                    // renders before anything below runs
         model.holdFirstRun()                               // the strip stays under the finger for a moment
         Task { @MainActor in

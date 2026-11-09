@@ -44,14 +44,21 @@ struct GameBookView: View {
         .navigationBarBackButtonHidden(true)
         .keepsSwipeBack()
         .toolbar {
+            // A custom 44 x 44 button (Iris: the 36 pt floor is for system-drawn toolbar buttons only), so no system glass around it:
+            // the glass would size it to about 38. The chevron stays centred, whatever the frame.
             ToolbarItem(placement: .topBarLeading) {
                 Button { model.closeGame() } label: {
-                    Label("Library", systemImage: "chevron.backward").labelStyle(.iconOnly)
-                        .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+                    Image(systemName: "chevron.backward")
+                        .font(.system(size: 17, weight: .semibold))
+                        .foregroundStyle(Color.primary)
+                        .frame(width: 44, height: 44)
+                        .background(Circle().fill(.regularMaterial))
+                        .contentShape(Rectangle())
                 }
-                    .accessibilityLabel("Library, back")
-                    .accessibilityIdentifier("gameBack")
+                .accessibilityLabel("Library, back")
+                .accessibilityIdentifier("gameBack")
             }
+            .sharedBackgroundVisibility(.hidden)
             ActionToolbar(actions: model.gameActions(gameID))
             // D-10: only when Contents and Page are side by side; absent, not disabled, otherwise.
             if sideBySide {
