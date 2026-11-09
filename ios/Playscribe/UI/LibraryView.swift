@@ -924,6 +924,7 @@ struct DatePill: View {
     var maxWidth: CGFloat?
     var body: some View {
         let state = model.tileDate(row)
+        let isDate = state.text.contains(where: \.isNumber)
         // Accessibility sizes: the pill would cover the art, so it is hidden; the date stays in the label
         // and on the game page (Iris, 0.5.0 a11y).
         if !typeSize.isAccessibilitySize {
@@ -943,7 +944,9 @@ struct DatePill: View {
                 // Accessibility sizes: wrap to two lines inside the tile instead of running off it.
                 // Never an ellipsis: on a narrow tile the words wrap to a second line ("Plays on / PS5") and the pill grows
                 // taller, not wider (Iris, #436).
-                .lineLimit(maxWidth != nil || typeSize.isAccessibilitySize ? 2 : 1)
+                // A date is one token: it scales down before it would wrap ("25 / Jun"); only words (no digits) wrap.
+                .lineLimit(isDate ? 1 : (maxWidth != nil || typeSize.isAccessibilitySize ? 2 : 1))
+                .minimumScaleFactor(isDate ? 0.7 : 1)
                 .multilineTextAlignment(.leading)
                 .fixedSize(horizontal: !typeSize.isAccessibilitySize && maxWidth == nil, vertical: true)
                 .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
