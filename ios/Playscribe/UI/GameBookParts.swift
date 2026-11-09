@@ -54,8 +54,10 @@ struct PageView: View {
                     case .mybook: MyBookChapter(gameID: gameID)
                     }
                 }
-                // Reading measure: 55 to 75 characters.
-                .frame(maxWidth: 620, alignment: .leading)
+                // Reading measure: 55 to 75 characters. The width is stated (the scroll view's, less the 20 pt margins, at most 620),
+                // not left to the content: a child that asked for more than the column made this block wider than the screen, the
+                // scroll view centred it and the margin vanished (Witcher 5.01, Closed AX5, 7b7db3d). Now it overflows on its own.
+                .containerRelativeFrame(.horizontal, alignment: .leading) { width, _ in min(620, max(0, width - 40)) }
                 .padding(.horizontal, 20)
                 if withContents {
                     Divider().overlay(PlayscribeColor.ink700).padding(.top, 8)
