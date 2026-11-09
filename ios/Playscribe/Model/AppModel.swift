@@ -306,6 +306,8 @@ final class AppModel {
     /// Full per-game histories (games/<id>.json), keyed by the app's game id.
     var gameReleases: [String: [Release]] = [:] { didSet { rebuildMerged() } }
     @ObservationIgnored var historyStamps: [String: String] = [:]
+    /// The games the feed's index.json lists (the tracked set); nil until an index has been seen, from the cache or the network.
+    var feedIndexGames: [FeedClient.Index.Game]?
     /// Known issues per game from games/<id>.json.
     var gameIssues: [String: [KnownIssue]] = [:]
 
@@ -440,6 +442,7 @@ final class AppModel {
         var unread: Int
         var latest: Release?
         var id: String { game.id }
+        var updatedKey: UpdatedKey { UpdatedKey(latest: latest?.ps5Date, releaseDate: game.releaseDate?.isoDay, name: game.name) }
     }
 
     var libraryRows: [LibraryRow] {
@@ -448,6 +451,35 @@ final class AppModel {
             guard let g = all[c.gameID] else { return nil }
             return LibraryRow(game: g, status: c.status, addedAt: c.addedAt, unread: unreadCount(c.gameID), latest: latestOnPS5(c.gameID))
         }
+    }
+
+    /// What "Recently updated on PS5" sorts on (r053-sort-recent-updated).
+    struct UpdatedKey: Equatable {
+        var latest: Date?      // the newest On PS5 update's date; nil when the game has none
+        var releaseDate: Date? // the game's own release date, the one its tile pill shows when there is no update
+        var name: String
+    }
+
+    /// Three groups, in this order: games with an On PS5 update (newest update first); games with none that are already out
+    /// (newest release first); games not out yet or with no date (soonest first, undated last). Then by name.
+    /// The sort used to fall back to the date the game was ADDED, so it ordered by when the Library was filled in: Terry's 47
+    /// games, none with an update, came out as Oct 2025, Mar 2025, Aug 2025, May 2025, Mar 2025, 31 Dec, 10 Nov ... (8 Nov).
+    static func updatedFirst(_ a: UpdatedKey, _ b: UpdatedKey, now: Date = .now) -> Bool {
+        func group(_ k: UpdatedKey) -> Int { k.latest != nil ? 0 : (k.releaseDate.map { $0 <= now } ?? false) ? 1 : 2 }
+        let (ga, gb) = (group(a), group(b))
+        if ga != gb { return ga < gb }
+        switch ga {
+        case 0: if let x = a.latest, let y = b.latest, x != y { return x > y }
+        case 1: if let x = a.releaseDate, let y = b.releaseDate, x != y { return x > y }
+        default:
+            switch (a.releaseDate, b.releaseDate) {
+            case let (x?, y?) where x != y: return x < y
+            case (_?, nil): return true
+            case (nil, _?): return false
+            default: break
+            }
+        }
+        return a.name.localizedCaseInsensitiveCompare(b.name) == .orderedAscending
     }
 
     func shownRows() -> [LibraryRow] {
@@ -459,7 +491,7 @@ final class AppModel {
         case .name:
             return rows.sorted { $0.game.name.localizedCaseInsensitiveCompare($1.game.name) == .orderedAscending }
         case .updated:
-            return rows.sorted { ($0.latest?.ps5Date ?? $0.addedAt) > ($1.latest?.ps5Date ?? $1.addedAt) }
+            return rows.sorted { Self.updatedFirst($0.updatedKey, $1.updatedKey) }
         }
     }
 
@@ -655,7 +687,25 @@ final class AppModel {
         case "overlay": showDebugOverlay.toggle(); FoldAuditSwitch.enabled = true
         case "simulate" where parts.count == 2:
             Task {
-                if NotificationService.shared.authorization == .notDetermined { await NotificationService.shared.requestAuthorization() }
+                // Never wait on the permission prompt for good: f526773, a fresh sim, locked screen: no prompt was presented, the
+                // request never returned and nothing was scheduled in 40 s ("qa-schedule: none"). Ask, give the prompt 8 s, then
+                // schedule anyway: a pending request is delivered once permission is granted, and the test reports the status.
+                // 5000f21 on the Mac: the add ran before permission landed ("auth 0") or failed with "Source is not authorized"
+                // even at "auth 2". So read the real status first (the property starts at .notDetermined, not at the truth), ask
+                // once, and schedule only when it reads authorized, waiting up to 120 s for a late prompt (r053-deflake-notification-tap).
+                await NotificationService.shared.refreshAuthorization()
+                if NotificationService.shared.authorization == .notDetermined {
+                    Task { _ = await NotificationService.shared.requestAuthorization() }
+                }
+                var waited = 0
+                while NotificationService.shared.authorization == .notDetermined, waited < 240 {
+                    try? await Task.sleep(for: .milliseconds(500)); waited += 1
+                }
+                let ok = NotificationService.shared.authorization == .authorized || NotificationService.shared.authorization == .provisional
+                guard ok else {
+                    NotificationService.shared.qaScheduleLog = "not scheduled: notification permission is \(NotificationService.shared.authorization.rawValue) after \(waited / 2) s"
+                    return
+                }
                 // QA: earlier runs leave their notifications in Notification Center and on the lock screen; the test taps
                 // "the Dawnwalker row", so sweep them first and there is exactly one (e411c788: taps landed on a stale pile).
                 UNUserNotificationCenter.current().removeAllDeliveredNotifications()

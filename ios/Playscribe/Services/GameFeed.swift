@@ -31,11 +31,15 @@ extension FeedClient {
     }
 
     static func historyCacheURL(_ gameID: String) -> URL { URL.applicationSupportDirectory.appending(path: "feed-game-\(gameID).json") }
+    static var indexCacheURL: URL { URL.applicationSupportDirectory.appending(path: "feed-index.json") }
 }
 
 extension AppModel {
     /// The cached histories, at launch.
     func loadCachedHistories() {
+        if let raw = try? Data(contentsOf: FeedClient.indexCacheURL), let idx = try? JSONCoding.decoder.decode(FeedClient.Index.self, from: raw) {
+            feedIndexGames = idx.games
+        }
         var out: [String: [Release]] = [:]
         for c in data.collection {
             if let raw = try? Data(contentsOf: FeedClient.historyCacheURL(c.gameID)),
@@ -51,7 +55,9 @@ extension AppModel {
     /// Fetches the full history of these library games (all of them when nil), skipping any whose
     /// index entry hasn't changed since the last fetch.
     func refreshHistories(_ gameIDs: [String]? = nil) async {
-        guard let (index, _) = try? await FeedClient.fetch("index.json", as: FeedClient.Index.self) else { return }
+        guard let (index, rawIndex) = try? await FeedClient.fetch("index.json", as: FeedClient.Index.self) else { return }
+        try? rawIndex.write(to: FeedClient.indexCacheURL, options: .atomic)
+        feedIndexGames = index.games
         let ids = gameIDs ?? data.collection.map(\.gameID)
         for gameID in ids {
             let igdb = game(gameID)?.igdbID
@@ -70,6 +76,20 @@ extension AppModel {
         }
         alertAddressedIssues()
         notifyNewlyOnPS5()
+    }
+}
+
+extension AppModel {
+    /// Whether the feed follows this game's patch notes at all (it is in index.json). A game outside the tracked set has no
+    /// history to wait for, so its page must not say "No updates yet". Until an index has been seen the answer is yes, so the
+    /// app never claims a game is untracked on a guess.
+    func feedTracksGame(_ gameID: String) -> Bool {
+        // Any history the feed has served for this game settles it, whatever a cached index says: a game the feed added today
+        // can be missing from an index cached yesterday.
+        if gameReleases[gameID] != nil { return true }
+        guard let games = feedIndexGames else { return true }
+        let igdb = game(gameID)?.igdbID
+        return games.contains { $0.id == gameID || (igdb != nil && $0.igdbId == igdb) }
     }
 }
 

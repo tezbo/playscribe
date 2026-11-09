@@ -43,14 +43,25 @@ final class PlayscribeUITests: XCTestCase {
             // A tap on a Notification Center row can slide out its actions instead of opening the app (14516a5): tap "Open".
             // The slide-out is slow on a loaded Mac (898d946 at load 5.6: no Open button within 2 s, so the cold run never tapped it
             // and failed after 1242 s, where the same code passed on 2537997), so wait for it up to 10 s.
+            // The reveal races the launch: a first tap that does bring the app up also hides the row and its actions, so "Open" can
+            // exist when it is found and be gone when `.tap()` resolves it again ("No matches for 'Open' in
+            // swipe-action-button-identifier", 7161347, fresh sim, 132 s; the second run passed). So: stop as soon as the app is in
+            // front, take the button's frame from one snapshot (which throws instead of failing when it is gone), and tap that point on SpringBoard.
             func tapOpenIfRevealed() {
                 let openAction = springboard.buttons["Open"]
-                if XCUIApplication().state != .runningForeground, openAction.waitForExistence(timeout: 10) {
-                    step("tapping the revealed Open action \(openAction.frame)")
-                    openAction.tap()
-                } else {
-                    step("no Open action to tap (app state \(XCUIApplication().state.rawValue))")
+                let deadline = Date.now.addingTimeInterval(10)
+                while Date.now < deadline {
+                    if XCUIApplication().state == .runningForeground { step("app already in front; no Open action needed"); return }
+                    // `snapshot()` throws when the button is gone; `frame` and `isHittable` would record a failure instead.
+                    if let snap = try? openAction.snapshot(), snap.isEnabled, !snap.frame.isEmpty {
+                        step("tapping the revealed Open action \(snap.frame)")
+                        springboard.coordinate(withNormalizedOffset: .zero)
+                            .withOffset(CGVector(dx: snap.frame.midX, dy: snap.frame.midY)).tap()
+                        return
+                    }
+                    usleep(300_000)
                 }
+                step("no Open action to tap (app state \(XCUIApplication().state.rawValue))")
             }
             tapOpenIfRevealed()
             let target = XCUIApplication()
@@ -151,14 +162,84 @@ final class PlayscribeUITests: XCTestCase {
         step("simulate launched; app state \(simulate.state.rawValue)")
         // First launch on a fresh sim asks for notification permission (run 1 and 2 on 370e685 failed on it). The route asks for
         // authorization, so the prompt is SpringBoard's: accept it before the notification can be scheduled.
-        for label in ["Allow", "Allow Notifications"] {
-            let allow = springboard.alerts.buttons[label]
-            if allow.waitForExistence(timeout: 4) { step("accepting the notification permission prompt"); allow.tap(); sleep(1); break }
+        // c4d2fae on a fresh sim, twice: no prompt was handled in the 4 s window and no notification ever arrived. So do not guess:
+        // the app reports its authorization status in the schedule log ("auth 2" = authorized); keep accepting the prompt until it
+        // says so, for up to 30 s, and stop with a clear message when it says denied.
+        let scheduled = simulate.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Simulated'")).firstMatch
+        let scheduleProbe = simulate.descendants(matching: .any)["qaScheduleLog"]
+        func authStatus() -> Int? {
+            guard scheduleProbe.exists, let r = scheduleProbe.label.range(of: "auth ") else { return nil }
+            return Int(scheduleProbe.label[r.upperBound...].prefix(1))
+        }
+        // 4c39193 run 1 (Mac): the alert (Allow / Don't Allow) was on screen at the end, the loop ran its full 30 s and never tapped it.
+        // `springboard.alerts.buttons[...]` is not the only place the system can host it, so look in every place: SpringBoard alerts,
+        // any SpringBoard button with an allow label, and an alert inside the app's own process. Tap the first one found.
+        let allowLabels = ["Allow", "Allow Notifications", "OK"]
+        let allowPredicate = NSPredicate(format: "label IN %@", allowLabels)
+        func permissionAllowButton() -> XCUIElement? {
+            let candidates = [
+                springboard.alerts.buttons.matching(allowPredicate).firstMatch,
+                springboard.buttons.matching(allowPredicate).firstMatch,
+                simulate.alerts.buttons.matching(allowPredicate).firstMatch,
+            ]
+            return candidates.first { $0.exists }
+        }
+        var acceptedPrompt = false
+        // bd0f08c, fresh erased sim: at 30 s there was NO alert in SpringBoard's tree or on screen, the app was in front, and its log read
+        // "adding" with no "added" and no "auth". The next run on the same sim found the prompt already pending. So on a fresh sim the
+        // daemon answers late, and the alert appears after the 30 s window. Wait up to 120 s (granted sims leave the loop at once).
+        let authDeadline = Date.now.addingTimeInterval(120)
+        while Date.now < authDeadline {
+            if let allow = permissionAllowButton() {
+                step("accepting the notification permission prompt (\(allow.label), \(allow.frame))")
+                allow.tap(); acceptedPrompt = true; sleep(1)
+            }
+            if let status = authStatus(), status != 0 { break }
+            usleep(500_000)
+        }
+        lastScheduleLog = scheduleProbe.exists ? scheduleProbe.label : "no qaScheduleLog element"
+        step("authorization: \(lastScheduleLog); prompt accepted: \(acceptedPrompt)")
+        if authStatus() == nil || authStatus() == 0 {
+            // Still no answer after 30 s: do not go on to wait three minutes for a notification that cannot arrive.
+            let tree = XCTAttachment(string: springboard.debugDescription); tree.name = "n6-springboard-hierarchy-no-auth"; tree.lifetime = .keepAlways; add(tree)
+            let shot = XCTAttachment(screenshot: XCUIScreen.screens.max { $0.screenshot().image.size.width < $1.screenshot().image.size.width }?.screenshot() ?? XCUIScreen.main.screenshot())
+            shot.name = "n6-no-auth-screen"; shot.lifetime = .keepAlways; add(shot)
+            XCTFail("the notification permission was not answered within 120 s (app says: \(lastScheduleLog); prompt tapped: \(acceptedPrompt)); see n6-springboard-hierarchy-no-auth and n6-no-auth-screen")
+            return nil
+        }
+        if authStatus() == 1 { XCTFail("notifications are denied for Playscribe on this simulator (app says: \(lastScheduleLog)); reset the simulator or grant them, then rerun"); return nil }
+        // Quinn, #422 4c39193, fresh erased sim: the log read "adding, due in 3 s" and never "added", with no "auth" segment either.
+        // Both come from completion handlers of the notification daemon, so neither firing means usernoted did not answer (an
+        // environment fault, not "no row found"). Say so in its own failure instead of letting it surface three minutes later.
+        if lastScheduleLog.contains("adding") {
+            let daemonDeadline = Date.now.addingTimeInterval(10)
+            while Date.now < daemonDeadline, !(scheduleProbe.exists && scheduleProbe.label.contains("; added")) { usleep(500_000) }
+            lastScheduleLog = scheduleProbe.exists ? scheduleProbe.label : lastScheduleLog
+            if !lastScheduleLog.contains("; added") {
+                XCTFail("the notification daemon did not complete add() within 10 s (app says: \(lastScheduleLog)); this is the simulator's usernoted not answering, not a missing row. Reboot or erase the simulator and rerun")
+                return nil
+            }
+            // 0473bc2: the first add was refused ("Source is not authorized") at auth 2. The app retries up to 5 times, 3 s apart; read
+            // the whole story instead of the first line, and fail here, in plain words, if the system never accepts the request.
+            func accepted(_ l: String) -> Bool { l.components(separatedBy: "; added").dropFirst().contains { !$0.hasPrefix(", error") } }
+            let retryDeadline = Date.now.addingTimeInterval(25)
+            while Date.now < retryDeadline, !accepted(lastScheduleLog), !lastScheduleLog.contains("(try 5)") {
+                usleep(500_000)
+                lastScheduleLog = scheduleProbe.exists ? scheduleProbe.label : lastScheduleLog
+            }
+            step("schedule: \(lastScheduleLog)")
+            if !accepted(lastScheduleLog) {
+                // Quinn's terms (#422): a refusal before this simulator ever accepted an add is the simulator's; after one, it is the app's.
+                let kind = lastScheduleLog.contains("earlier success on this sim: yes")
+                    ? "APP FAILURE: the system refused the request after this simulator had already accepted one"
+                    : "SIMULATOR REFUSED: the system refused every try before this simulator accepted its first add (not counted; warm it with one full N-6 run and rerun)"
+                XCTFail("\(kind). App says: \(lastScheduleLog). Record auth N, the refusal and the simulator's boot time.")
+                return nil
+            }
         }
         // The notification is scheduled by the route a moment after launch (and after the permission prompt), and an app put in the
         // background before that never schedules it (c4bced1: warm failed twice with Notification Center empty). The toast
         // "Simulated major arrives in 3 s" is shown right after the schedule call, so wait for it.
-        let scheduled = simulate.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Simulated'")).firstMatch
         if !scheduled.waitForExistence(timeout: 10) { sleep(2) }
         step("schedule confirmed (toast \(scheduled.exists ? "seen" : "not seen"))")
         if cold {
@@ -199,9 +280,14 @@ final class PlayscribeUITests: XCTestCase {
         }
         // No row. Ask the app what it scheduled and whether the system listed the notification as delivered when it was due
         // (2537997: Notification Center empty and icon badge 1; caf66ec: "delivered after due: yes (1 in list)", so the system had it).
-        let probeApp = XCUIApplication(); probeApp.activate()
-        let probe = probeApp.descendants(matching: .any)["qaScheduleLog"]
-        let text = probe.waitForExistence(timeout: 8) ? probe.label : "no qaScheduleLog element"
+        // Cold: the app was terminated, so activating it would start a new process whose log reads "none" (c4d2fae); use the log read
+        // before the terminate. Warm: the process is alive and its log has the system's delivered-after-due line.
+        var text = lastScheduleLog
+        if !cold {
+            let probeApp = XCUIApplication(); probeApp.activate()
+            let probe = probeApp.descendants(matching: .any)["qaScheduleLog"]
+            text = probe.waitForExistence(timeout: 8) ? probe.label : "no qaScheduleLog element"
+        }
         let sched = XCTAttachment(string: text); sched.name = "n6-schedule-log-" + (cold ? "cold" : "warm"); sched.lifetime = .keepAlways; add(sched)
         let delivered = text.contains("delivered after due: yes")
         if cold {
@@ -219,6 +305,7 @@ final class PlayscribeUITests: XCTestCase {
 
     // MARK: N-6 instrumentation (eec2f1f: five fixes without logs). Every step appends a line and a screenshot.
     private var n6Log: [String] = []
+    private var lastScheduleLog = "none"
     private func step(_ text: String) {
         let line = String(format: "%02d %@", n6Log.count + 1, text)
         n6Log.append(line)

@@ -298,7 +298,7 @@ struct NoNotesPage: View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
                 Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
-                NoUpdatesLine()
+                NoUpdatesLine(gameID: game.id)
             }
             GameBasicsView(game: game)
         }
@@ -347,6 +347,7 @@ struct GameLinks: View {
 
 struct GameBasicsView: View {
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
     var game: CatalogGame
     @State private var storyOpen = false
@@ -376,7 +377,8 @@ struct GameBasicsView: View {
                                 .frame(width: 112, height: 63)
                                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                                 .overlay { Image(systemName: "play.fill").foregroundStyle(.white) }
-                            Text(v.name).font(PlayscribeFont.subheadline).lineLimit(2).multilineTextAlignment(.leading)
+                            // Whole words only (G-8): a plain lineLimit cut "E3 2018 Open Be…" mid-word (The Crew 2, Closed AX5).
+                            WholeWordText(text: v.name, font: PlayscribeFont.subheadline, lines: typeSize.isAccessibilitySize ? 4 : 2)
                             Spacer(minLength: 0)
                         }
                         .frame(minHeight: 44)
@@ -542,7 +544,10 @@ struct ContentsBody: View {
                         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
                 }
                 ChapterBar(gameID: gameID, selected: chapter)
-                NotesSearchField(gameID: gameID)
+                // Tabletop, a game with no notes: search, the A to Z strip and Previous/Next have nothing to act on (Quinn, #426),
+                // so they are not drawn; the list below says why there is nothing (NoUpdatesLine).
+                let tabletopNoNotes = duo.pose == .tabletop && model.ps5Releases(gameID).isEmpty && model.pcOnlyReleases(gameID).isEmpty
+                if !tabletopNoNotes { NotesSearchField(gameID: gameID) }
                 if model.noteQuery.count >= 2 || (duo.pose == .tabletop && model.noteLetter != nil) {
                     InlineNoteResults(gameID: gameID)
                 } else if chapter == .updates {
@@ -555,7 +560,7 @@ struct ContentsBody: View {
                         }
                         .tappableFrame()
                     }
-                    if duo.pose == .tabletop {
+                    if duo.pose == .tabletop, !tabletopNoNotes {
                         TabletopOutline(gameID: gameID)
                     }
                     ReleaseTimeline(gameID: gameID)
@@ -699,6 +704,9 @@ struct ReleaseTimeline: View {
             Text("ALL UPDATES").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
             if ps5.isEmpty, let g = model.game(gameID) {
                 Text(g.ps5AvailabilityLine).font(PlayscribeFont.subheadline)
+                // Tabletop's lower half: the Page is the view-only stage above, so this list is where a reader looks for why there
+                // is nothing (untracked: "We don't track this game's updates yet."; tracked: "No updates yet." and Checked).
+                if pc.isEmpty, duo.pose == .tabletop { NoUpdatesLine(gameID: gameID).padding(.top, 2) }
             }
             ForEach(ps5) { row($0, selected: $0.id == selected) }
             ForEach(pc) { row($0, selected: $0.id == selected) }

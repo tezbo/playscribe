@@ -901,3 +901,45 @@ struct RomanNumeralGlueTests {
         }
     }
 }
+
+@Suite("Library sort: recently updated (r053-sort-recent-updated)")
+struct RecentlyUpdatedSortTests {
+    private let now = Date(timeIntervalSince1970: 1_800_000_000)
+    private func day(_ d: Double) -> Date { now.addingTimeInterval(d * 86400) }   // negative: days ago
+    private func key(_ name: String, updated: Double? = nil, released: Double? = nil) -> AppModel.UpdatedKey {
+        AppModel.UpdatedKey(latest: updated.map(day), releaseDate: released.map(day), name: name)
+    }
+    private func order(_ keys: [AppModel.UpdatedKey]) -> [String] {
+        keys.sorted { AppModel.updatedFirst($0, $1, now: now) }.map(\.name)
+    }
+
+    @Test("games with an update come first, newest first; a newer release never outranks an update")
+    func updatesFirst() {
+        #expect(order([key("Out, no update", released: -1), key("Patched last week", updated: -7, released: -400), key("Patched today", updated: 0, released: -30)])
+                == ["Patched today", "Patched last week", "Out, no update"])
+    }
+
+    @Test("games with no update that are out follow, newest release first (Terry's 47 games)")
+    func releasedGroupByReleaseDate() {
+        let list = order([key("Mar 2025", released: -600), key("Oct 2025", released: -20), key("Aug 2025", released: -100), key("May 2025", released: -300)])
+        #expect(list == ["Oct 2025", "Aug 2025", "May 2025", "Mar 2025"])
+    }
+
+    @Test("games not out yet come after, soonest first, undated last")
+    func upcomingAfterReleased() {
+        let list = order([key("TBA"), key("31 Dec", released: 53), key("10 Nov", released: 2), key("Out", released: -5)])
+        #expect(list == ["Out", "10 Nov", "31 Dec", "TBA"])
+    }
+
+    @Test("a game with an update but no release date still sorts by its update, ahead of every game without one")
+    func updateWithoutReleaseDate() {
+        let list = order([key("Out, no update", released: -1), key("Dateless, patched long ago", updated: -90), key("Dateless, patched today", updated: 0), key("TBA")])
+        #expect(list == ["Dateless, patched today", "Dateless, patched long ago", "Out, no update", "TBA"])
+    }
+
+    @Test("equal dates fall back to name")
+    func tieByName() {
+        #expect(order([key("b", updated: -2), key("A", updated: -2)]) == ["A", "b"])
+        #expect(order([key("b"), key("A")]) == ["A", "b"])
+    }
+}
