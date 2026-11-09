@@ -8,3 +8,5 @@ On main (0a9fa7e, 21e75c4) the Library tile's marks covered cover lettering: the
 
 
 Iris's spec for the pill: one pill, top-leading, 8 pt in; a dark ground of 72% (the unread pill stays solid ember); text 11 pt (caption2) or larger, capped at the largest standard size; at AX the date sits under the cover with the mark as its first glyph; VoiceOver reads the tile as one element ("<game>, in your library, <date>" is the existing tile label). If stills show the pill covering more than one letter of the Roblox or MINECRAFT logo, it moves under the cover at every size.
+
+Iris, final: no disc and no new yellow. The Wishlist mark is the filled bookmark in the pill's text colour; the shape tells the states apart (check, filled bookmark, eye).

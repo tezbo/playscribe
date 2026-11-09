@@ -929,7 +929,7 @@ struct DatePill: View {
             // The tile's status mark (in your library, wishlist, watching): inert, part of the tile's own label.
             Image(systemName: StatusCircle.symbol(row.status))
                 .font(.system(size: 10, weight: .bold))
-                .foregroundStyle(row.status == .wishlist ? Color.wishlist : (state.kind == .unread ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary))
+                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)   // the shape says the state (check, filled bookmark, eye), not a colour
                 .accessibilityHidden(true)
             switch state.kind {
             case .unread: SparkShape().fill(PlayscribeColor.onAccent).frame(width: 9, height: 9)
