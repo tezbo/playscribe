@@ -894,9 +894,17 @@ final class AppModel {
         #if INTERNAL
         lap("toast")
         #endif
-        if data.soundsOff != true { PopSound.play(count: new.count, quiet: data.quietHours) }
+        // The pop costs 140 to 270 ms on the main actor (audio session and player; Mac lap logs, #431), so it plays one beat after
+        // the screen has shown the add: the toast, the check and the view swap come first, the pop follows once, on the add only.
+        if data.soundsOff != true {
+            let count = new.count, quiet = data.quietHours
+            Task { @MainActor in
+                try? await Task.sleep(for: .milliseconds(60))
+                PopSound.play(count: count, quiet: quiet)
+            }
+        }
         #if INTERNAL
-        lap("sound")
+        lap("sound scheduled")
         #endif
         NotificationService.shared.updateBadge(badgeCount)
         #if INTERNAL
