@@ -37,3 +37,7 @@ Under VoiceOver the add toast is announced as "Added Roblox, Undo" (it was "Adde
 ## Update 8: toast room on the first-run page
 
 The Added toast floated over the first-run footer caption (on main too). OnboardingView now has a bottom safe-area inset of the toast's measured height plus 8 pt (52 pt if not yet measured) while a toast shows (zero otherwise), in the scrolling pages (closed, open, Book left page, Tabletop lower half), so the caption scrolls clear. Nothing new is tappable.
+
+## Update 9: word and disc share the bottom edge (Quinn)
+
+On a cover narrower than 125 pt (the first-run strip, AX5) the Added/Wishlist word would touch the disc, so the check alone shows there; VoiceOver still reads "<game>, in your library". The disc's 3 pt shift is now on the glyph inside the frame, not on the button, so the 44 pt hit frame stays inside the cover and the fold audit sees no frame past a page edge. The "press to check" log fires on the state change, not on the word.

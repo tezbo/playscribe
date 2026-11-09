@@ -582,14 +582,16 @@ struct PopularCover: View {
         let inLibrary = model.entry(game.id) != nil
         let marked = inLibrary || phase == .adding || pressing   // the check and the quiet word show on the press itself
         let word = game.isUpcoming ? "Wishlist" : "Added"
+        // The word shares the bottom edge with the disc: on a narrow cover (the ~95 pt strip, AX5) the check alone says it, and
+        // VoiceOver still reads the label (Quinn, #431).
+        let showsWord = width >= 125
         ZStack(alignment: .bottomTrailing) {
             // While an add is in flight (and once added) the cover cannot open the game: a second tap must not fall through.
             Button { if !marked { model.browseGame(game) } } label: {
                 TileCover(game: game).frame(width: width, height: height)
                     .overlay(alignment: .bottomLeading) {
-                        if marked {
+                        if marked && showsWord {
                             Text(word)
-                                .onAppear { logPressToCheck() }
                                 .font(PlayscribeFont.caption.weight(.semibold))
                                 .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
                                 .lineLimit(1).minimumScaleFactor(0.7)
@@ -617,19 +619,19 @@ struct PopularCover: View {
                     .foregroundStyle(PlayscribeColor.onAccent, PlayscribeColor.accent)
                     // Iris: a 1.5 pt dark ring keeps the disc legible over any cover art.
                     .background(Circle().fill(Color.black.opacity(0.8)).frame(width: 25, height: 25))
+                    // The disc sits 8 pt from the corner; only the glyph moves, so the 44 pt hit frame stays inside the cover.
+                    .offset(x: width >= 44 ? 3 : 0, y: height >= 44 ? 3 : 0)
                     .frame(width: min(44, width), height: min(44, height))
                     .contentShape(Rectangle())
             }
             .buttonStyle(TickPressStyle(pressing: $pressing))
-            // Bottom-trailing, the 22 pt disc inset 8 pt from the corner (the 44 pt hit frame reaches 3 pt past the cover edge, on the
-            // outer side, so it stays far from the Book hinge); it no longer covers the title lettering at the top (Iris).
-            .offset(x: 3, y: 3)
             // Not `.disabled` either (it dims the plate); the action ignores a tap once the game is in or being added.
             .accessibilityLabel(marked ? "\(game.name), in your library" : "Add \(game.name)")
             .accessibilityIdentifier("popularAdd")
             .tappableFrame()
         }
         .frame(width: width, height: height)
+        .onChange(of: marked) { _, now in if now { logPressToCheck() } }
         #if INTERNAL
         .onChange(of: pressing) { _, now in if now { pressStamp = CACurrentMediaTime() } }
         #endif
