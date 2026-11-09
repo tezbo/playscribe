@@ -42,11 +42,14 @@ struct GameBookView: View {
         // The system back button reached VoiceOver and tests with an empty label in Closed (Mac back check, 380e71b), and its label
         // cannot be set. This one says where it goes (HIG: the previous screen's title).
         .navigationBarBackButtonHidden(true)
+        .keepsSwipeBack()
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Button { model.closeGame() } label: { Label("Library", systemImage: "chevron.backward") }
-                    .labelStyle(.iconOnly)
-                    .accessibilityLabel("Library")
+                Button { model.closeGame() } label: {
+                    Label("Library", systemImage: "chevron.backward").labelStyle(.iconOnly)
+                        .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+                }
+                    .accessibilityLabel("Library, back")
                     .accessibilityIdentifier("gameBack")
             }
             ActionToolbar(actions: model.gameActions(gameID))
