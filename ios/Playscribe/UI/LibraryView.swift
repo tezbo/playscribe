@@ -829,20 +829,32 @@ struct GameTile: View {
                     // The status mark is the date pill's first glyph (check, bookmark, eye), top-leading: nothing sits over the art
                     // anywhere else, so no cover lettering is covered (Iris, 0a9fa7e: "Bal( Gate", "BLOOD OF", "WALKER"). The pill stops
                     // growing at the largest standard size; at AX the date and the mark sit under the cover.
-                    .overlay(alignment: .topLeading) { DatePill(row: row, maxWidth: max(0, (size ?? measuredWidth) - 16)).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(8) }
+                    // The size is read here, outside the clamp: inside it DatePill sees xxxLarge and would never hide at AX.
+                    .overlay(alignment: .topLeading) {
+                        if !typeSize.isAccessibilitySize {
+                            DatePill(row: row, maxWidth: max(0, (size ?? measuredWidth) - 16)).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(8)
+                        }
+                    }
                     .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 // Accessibility sizes: the pill would cover the art, so the date or status sits under
                 // the cover instead, wrapping to two lines (GR-1, D-12; Iris, 0.5.0 a11y).
                 if typeSize.isAccessibilitySize {
                     let state = model.tileDate(row)
-                    Text("\(Image(systemName: StatusCircle.symbol(row.status))) \(state.text)")
-                        .font(PlayscribeFont.caption.weight(.semibold))
-                        .foregroundStyle(state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .accessibilityHidden(true)
+                    // The glyph and the date share a line; a date never breaks ("22 / Oct"). If they do not fit, the glyph
+                    // goes above the date, so any wrap is between the glyph and the date.
+                    let isDate = state.kind != .playsOnPS5 && state.kind != .notOnPS5
+                    let glyph = Image(systemName: StatusCircle.symbol(row.status))
+                    let color = state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: 4) { glyph; Text(state.text).lineLimit(isDate ? 1 : 2) }
+                        VStack(alignment: .leading, spacing: 2) { glyph; Text(state.text).lineLimit(isDate ? 1 : 2).minimumScaleFactor(isDate ? 0.7 : 1) }
+                    }
+                    .font(PlayscribeFont.caption.weight(.semibold))
+                    .foregroundStyle(color)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .accessibilityHidden(true)
                 }
             }
         }
