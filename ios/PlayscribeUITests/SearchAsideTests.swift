@@ -21,6 +21,12 @@ final class SearchAsideTests: XCTestCase {
         XCTAssertTrue(app.keyboards.firstMatch.waitForExistence(timeout: 5), "the keyboard is up")
         // Let the layout settle, then: nothing from the deck in the accessibility tree, and the keyboard is still up.
         sleep(1)
+        if deck.count != 0 {
+            let dump = XCTAttachment(string: app.debugDescription)
+            dump.name = "deck-leak-tree.txt"
+            dump.lifetime = .keepAlways
+            add(dump)
+        }
         XCTAssertEqual(deck.count, 0, "the deck is hidden from VoiceOver while searching")
         XCTAssertTrue(app.keyboards.firstMatch.exists, "typing did not drop the keyboard")
 

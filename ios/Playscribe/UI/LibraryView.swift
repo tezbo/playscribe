@@ -1342,7 +1342,10 @@ extension View {
     /// Out of the layout but still in the tree: zero height, no taps, hidden from VoiceOver, and the stack spacing it would add is
     /// taken back. Used where removing a view would change the tree under the focused search field and drop the keyboard.
     func stepsAside(_ aside: Bool) -> some View {
-        self.frame(height: aside ? 0 : nil, alignment: .top)
+        // Aside, the children are dropped from the accessibility tree outright and the wrapper is hidden too: hiding alone left two deck
+        // cards in the tree (Mac 7561ac3, SearchAsideTests). Shown, .contain only groups the children and exposes nothing new.
+        self.accessibilityElement(children: aside ? .ignore : .contain)
+            .frame(height: aside ? 0 : nil, alignment: .top)
             .clipped()
             .opacity(aside ? 0 : 1)
             .allowsHitTesting(!aside)
