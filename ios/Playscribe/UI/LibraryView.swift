@@ -833,6 +833,7 @@ struct GameTile: View {
                 // whatever the glyph (check, bookmark, eye). Amber only for an unread update, else the grey of the other dates;
                 // the spark and the dot are the non-colour cues. Wraps, never truncates; 11 pt or larger (Iris, #436).
                 TileCaption(row: row, width: size)
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility3)   // capped outside, so the scaled metrics inside are capped too
                     .accessibilityHidden(true)   // the tile's own label already says the date and the status
             }
         }
@@ -857,15 +858,18 @@ struct TileCaption: View {
     var row: AppModel.LibraryRow
     /// The tile's width when it has a fixed one (nil: fills its column).
     var width: CGFloat?
-    /// The mark's slot, so every caption's text starts at the same height.
-    @ScaledMetric(relativeTo: .caption2) private var slot: CGFloat = 16
+    /// The mark scales with the text (the size is capped at AX3 by the caller, so this is too), and its slot is the glyph plus 5 pt: one
+    /// height for every glyph, so every caption's text starts at the same height, and the date sits right under the mark at any size
+    /// (Iris, 52f1425: a slot sized to the AX text line left the mark detached by 55 pt). At the default size the slot is 16 pt, as before.
+    @ScaledMetric(relativeTo: .caption2) private var glyph: CGFloat = 11
+    private var slot: CGFloat { glyph + 5 }
 
     var body: some View {
         let state = model.tileDate(row)
         let ink = state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary
         VStack(alignment: .leading, spacing: 1) {
             HStack(spacing: 4) {
-                Image(systemName: StatusCircle.symbol(row.status)).font(.system(size: 11, weight: .bold))
+                Image(systemName: StatusCircle.symbol(row.status)).font(.system(size: glyph, weight: .bold))
                 switch state.kind {
                 case .unread: SparkShape().fill(ink).frame(width: 9, height: 9)
                 case .recent: Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
@@ -881,7 +885,6 @@ struct TileCaption: View {
                 .fixedSize(horizontal: false, vertical: true)
         }
         .font((typeSize.isAccessibilitySize ? PlayscribeFont.caption : PlayscribeFont.caption2).weight(.semibold))
-        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
         .foregroundStyle(ink)
         .frame(maxWidth: width ?? .infinity, alignment: .leading)
         .padding(.horizontal, 2)
