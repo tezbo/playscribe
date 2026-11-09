@@ -564,10 +564,12 @@ struct PopularCover: View {
     /// Optimistic state (Iris, #431): the tick answers on the press, before the add runs.
     private enum Phase { case idle, adding }
     @State private var phase: Phase = .idle
+    /// True while a finger is down on the tick (a button's action only fires on release; Iris wants the check on the press).
+    @State private var pressing = false
 
     var body: some View {
         let inLibrary = model.entry(game.id) != nil
-        let marked = inLibrary || phase == .adding            // the check and the quiet word show at once
+        let marked = inLibrary || phase == .adding || pressing   // the check and the quiet word show on the press itself
         let word = game.isUpcoming ? "Wishlist" : "Added"
         ZStack(alignment: .topTrailing) {
             // While an add is in flight (and once added) the cover cannot open the game: a second tap must not fall through.
@@ -602,8 +604,8 @@ struct PopularCover: View {
                     .frame(width: min(44, width), height: min(44, height))
                     .contentShape(Rectangle())
             }
-            .buttonStyle(TickPressStyle())
-            .disabled(marked)
+            .buttonStyle(TickPressStyle(pressing: $pressing))
+            .disabled(inLibrary || phase == .adding)           // never on `pressing`: disabling mid-press would cancel the tap
             .accessibilityLabel(marked ? "\(game.name), in your library" : "Add \(game.name)")
             .accessibilityIdentifier("popularAdd")
             .tappableFrame()
@@ -627,12 +629,15 @@ struct PopularCover: View {
     }
 }
 
-/// The tick's pressed state: it dims and shrinks on the press, so the tap is answered before the add runs.
+/// The tick's pressed state: it dims and shrinks on the press, and reports the press so the cover shows the check and "Added" on the
+/// same frame (a cancelled press, the finger sliding off, clears it again).
 private struct TickPressStyle: ButtonStyle {
+    @Binding var pressing: Bool
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? 0.86 : 1)
             .opacity(configuration.isPressed ? 0.7 : 1)
             .animation(.easeOut(duration: 0.08), value: configuration.isPressed)
+            .onChange(of: configuration.isPressed) { _, now in pressing = now }
     }
 }
