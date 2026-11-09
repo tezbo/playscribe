@@ -615,7 +615,7 @@ struct PopularCover: View {
         let showsWord = width >= 125
         ZStack(alignment: .bottomTrailing) {
             // While an add is in flight (and once added) the cover cannot open the game: a second tap must not fall through.
-            Button { if !marked { model.browseGame(game) } } label: {
+            Button { if inLibrary || phase == .idle { model.browseGame(game) } } label: {
                 TileCover(game: game).frame(width: width, height: height)
                     .overlay(alignment: .bottomLeading) {
                         if marked && showsWord {
@@ -634,9 +634,10 @@ struct PopularCover: View {
             .buttonStyle(.plain)
             // Not `.disabled`: a disabled plain button dims to about 35 percent (Quinn's brightness check, 1ea80f2). A tap on a marked
             // cover simply does nothing.
-            .accessibilityLabel(marked ? "\(game.name), \(word.lowercased())" : game.name)
-            .accessibilityHint(marked ? "" : "Opens the game")
-            .accessibilityRemoveTraits(marked ? .isButton : [])
+            // The cover keeps one label and hint before and after the tick (it opens the game either way); the tick says "in your
+            // library" (Iris).
+            .accessibilityLabel(game.name)
+            .accessibilityHint("Opens the game")
             .tappableFrame()
 
             Button(action: tick) {
@@ -655,6 +656,9 @@ struct PopularCover: View {
             .buttonStyle(TickPressStyle(pressing: $pressing))
             // Not `.disabled` either (it dims the plate); the action ignores a tap once the game is in or being added.
             .accessibilityLabel(marked ? "\(game.name), in your library" : "Add \(game.name)")
+            // Inert once added: spoken as text, not as a button.
+            .accessibilityRemoveTraits(marked ? .isButton : [])
+            .accessibilityAddTraits(marked ? .isStaticText : [])
             .accessibilityIdentifier("popularAdd")
             .tappableFrame()
         }

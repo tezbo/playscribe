@@ -55,3 +55,7 @@ Also in Book (Iris's spec: no tinted edge over the hero): the left page's scroll
 ## Update 12: first-run headline at AX (Quinn, 6a31718)
 
 At AX5 the first-run hero headline cut mid-word ("Follow a game to g...") and clipped at the top, in a fixed 220 pt stage. At accessibility sizes the headline is now `WholeWordText` with a four-line cap (any ellipsis at a word boundary), and the stage is 120 pt taller so four lines fit. Standard sizes are unchanged.
+
+## Update 13: VoiceOver labels after the tick (Iris)
+
+The cover keeps one label ("<game>") and hint ("Opens the game") before and after the tick, and a tap on an added cover opens the game (only an add in flight ignores it). The tick reads "Add <game>" and, once added, "<game>, in your library" as static text rather than a button.
