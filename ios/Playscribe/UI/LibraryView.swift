@@ -826,16 +826,6 @@ struct GameTile: View {
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             VStack(alignment: .leading, spacing: 4) {
                 tileFrame(TileCover(game: row.game))
-                    // The status mark is the date pill's first glyph (check, bookmark, eye), top-leading: nothing sits over the art
-                    // anywhere else, so no cover lettering is covered (Iris, 0a9fa7e: "Bal( Gate", "BLOOD OF", "WALKER"). The pill stops
-                    // growing at the largest standard size; at AX the date and the mark sit under the cover.
-                    // The size is read here, outside the clamp: inside it DatePill sees xxxLarge and would never hide at AX.
-                    .overlay(alignment: .topLeading) {
-                        if !typeSize.isAccessibilitySize {
-                            DatePill(row: row, maxWidth: max(0, (size ?? measuredWidth) - 16)).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(8)
-                                .accessibilityHidden(true)   // the tile's own label already says the date and the status (no second, unlabelled element)
-                        }
-                    }
                     .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 // Accessibility sizes: the pill would cover the art, so the date or status sits under
@@ -863,6 +853,17 @@ struct GameTile: View {
             }
         }
         .buttonStyle(.plain)
+        // The pill sits on the Button, not in its label: a view inside the label made a second, unlabelled tile-sized button for
+        // VoiceOver and the tests (Mac, 08ba8af). The status mark is the pill's first glyph (check, bookmark, eye), top-leading, so
+        // nothing else sits over the art (Iris, 0a9fa7e). The size is read here, outside the clamp, so the pill hides at AX; the
+        // tile's own label already says the date and the status.
+        .overlay(alignment: .topLeading) {
+            if !typeSize.isAccessibilitySize {
+                DatePill(row: row, maxWidth: max(0, (size ?? measuredWidth) - 16)).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(8)
+                    .allowsHitTesting(false)
+                    .accessibilityHidden(true)
+            }
+        }
         .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
         .accessibilityElement(children: .ignore)
         // The accessibility frame runs 8 pt wider than the cover; the id carries the cover's real
