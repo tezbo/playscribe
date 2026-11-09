@@ -569,7 +569,8 @@ struct FilterBar: View {
                 .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
                 // Never cut mid-glyph: one unbroken line in the scrolling row, two at accessibility sizes.
                 .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
-                .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
+                .minimumScaleFactor(maxWidth == nil ? 1 : 0.75)
+                .fixedSize(horizontal: !typeSize.isAccessibilitySize && maxWidth == nil, vertical: true)
                 .padding(.horizontal, 10)
                 .padding(.vertical, typeSize.isAccessibilitySize ? 6 : 0)
                 .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil, minHeight: 44)
@@ -829,7 +830,7 @@ struct GameTile: View {
                     // The status mark is the date pill's first glyph (check, bookmark, eye), top-leading: nothing sits over the art
                     // anywhere else, so no cover lettering is covered (Iris, 0a9fa7e: "Bal( Gate", "BLOOD OF", "WALKER"). The pill stops
                     // growing at the largest standard size; at AX the date and the mark sit under the cover.
-                    .overlay(alignment: .topLeading) { DatePill(row: row).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(8) }
+                    .overlay(alignment: .topLeading) { DatePill(row: row, maxWidth: max(0, (size ?? measuredWidth) - 16)).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(8) }
                     .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 // Accessibility sizes: the pill would cover the art, so the date or status sits under
@@ -920,17 +921,21 @@ struct DatePill: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dynamicTypeSize) private var typeSize
     var row: AppModel.LibraryRow
+    /// The tile's width less its 8 pt insets (nil: unconstrained). A Closed 3-column tile is about 95 pt: the pill must fit it.
+    var maxWidth: CGFloat?
     var body: some View {
         let state = model.tileDate(row)
+        // Long states ("Plays on PS5", "Not on PS5") drop the glyph on a narrow tile so the words fit; the tile's label still says it.
+        let showsMark = maxWidth.map { $0 >= 100 || state.text.count <= 8 } ?? true
         // Accessibility sizes: the pill would cover the art, so it is hidden; the date stays in the label
         // and on the game page (Iris, 0.5.0 a11y).
         if !typeSize.isAccessibilitySize {
         HStack(spacing: 4) {
             // The tile's status mark (in your library, wishlist, watching): inert, part of the tile's own label.
-            Image(systemName: StatusCircle.symbol(row.status))
+            if showsMark { Image(systemName: StatusCircle.symbol(row.status))
                 .font(.system(size: 10, weight: .bold))
                 .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)   // the shape says the state (check, filled bookmark, eye), not a colour
-                .accessibilityHidden(true)
+                .accessibilityHidden(true) }
             switch state.kind {
             case .unread: SparkShape().fill(PlayscribeColor.onAccent).frame(width: 9, height: 9)
             case .recent: Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
@@ -944,6 +949,8 @@ struct DatePill: View {
                 .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
         }
         .padding(.horizontal, 7).padding(.vertical, 3)
+        .frame(maxWidth: maxWidth, alignment: .leading)
+        .fixedSize(horizontal: maxWidth == nil, vertical: false)
         .background {
             if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
             else { Capsule().fill(Color.black.opacity(0.72)) }   // a dark ground, 70% or more, over any art (Iris)
