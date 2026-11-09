@@ -358,6 +358,7 @@ struct AddRow: View {
 struct OnboardingView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.railWidth) private var railWidth
 
     /// Content width of the left page in Book (clear of the fold), nil in other poses.
@@ -403,7 +404,7 @@ struct OnboardingView: View {
             HStack(alignment: .top, spacing: 0) {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {
-                        OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
+                        OnboardingStage().frame(height: (duo.pose == .closed ? 220 : 280) + (typeSize.isAccessibilitySize ? 120 : 0))   // four AX headline lines fit
                         OnboardingActions(pageWidth: pageWidth, bookLeft: pageWidth != nil).padding(.horizontal, 16)
                     }
                     .padding(.bottom, 24)
@@ -445,6 +446,7 @@ struct OnboardingStage: View {
     @Environment(AppModel.self) private var model
     private var welcomeDone: Bool { model.data.welcomeDone ?? false }
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     /// The stage's bottom edge in screen space, before any clearance is applied.
     @State private var bottom: CGFloat = 0
 
@@ -460,10 +462,16 @@ struct OnboardingStage: View {
         ZStack(alignment: .bottomLeading) {
             ArtView(asset: nil, game: nil)
             LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .center, endPoint: .bottom)
-            Text(welcomeDone ? "Follow a game to get its PS5 patch notes in one place." : "Add your games to see every update")
-                .font(PlayscribeFont.title)
-                .foregroundStyle(PlayscribeColor.textPrimary)
-                .padding(20)
+            let headline = welcomeDone ? "Follow a game to get its PS5 patch notes in one place." : "Add your games to see every update"
+            Group {
+                // AX: at most four lines, and any ellipsis lands at a word boundary, never mid-word ("Follow a game to g...", Quinn, 6a31718).
+                if typeSize.isAccessibilitySize {
+                    WholeWordText(text: headline, font: PlayscribeFont.title, lines: 4, color: PlayscribeColor.textPrimary)
+                } else {
+                    Text(headline).font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
+                }
+            }
+            .padding(20)
         }
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
         .accessibilityElement(children: .combine)
