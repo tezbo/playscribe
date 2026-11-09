@@ -92,7 +92,7 @@ extension View {
 }
 
 enum KeyboardState {
-    private static var keepUntil = Date.distantPast
+    nonisolated(unsafe) private static var keepUntil = Date.distantPast
     /// Called from the action of a control whose tap must leave the keyboard up (the Library search clear button, which is a SwiftUI
     /// button, not a UIControl, so the window recognizer cannot tell it from an outside tap). Honoured for this tap only.
     static func keepKeyboardOnThisTap() { keepUntil = Date().addingTimeInterval(0.5) }
