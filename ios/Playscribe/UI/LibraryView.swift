@@ -862,8 +862,6 @@ struct TileCaption: View {
 
     var body: some View {
         let state = model.tileDate(row)
-        // By the model's kind, not by the text ("Plays on PS5" has a digit): only these two are words that may wrap.
-        let isDate = state.kind != .playsOnPS5 && state.kind != .notOnPS5
         let ink = state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary
         VStack(alignment: .leading, spacing: 1) {
             HStack(spacing: 4) {
@@ -876,10 +874,10 @@ struct TileCaption: View {
             }
             .frame(height: slot, alignment: .leading)
             Text(state.text)
-                .lineLimit(isDate ? 1 : 2)
+                // Never scaled and never truncated: a date that does not fit one line wraps (the column is 84 pt or more, the
+                // caption is capped at AX3, so "22 Oct" fits one line at every size in practice).
+                .lineLimit(2)
                 .multilineTextAlignment(.leading)
-                // A date is one token: at accessibility sizes it may scale down (still well over 11 pt) before it would wrap.
-                .minimumScaleFactor(isDate && typeSize.isAccessibilitySize ? 0.7 : 1)
                 .fixedSize(horizontal: false, vertical: true)
         }
         .font((typeSize.isAccessibilitySize ? PlayscribeFont.caption : PlayscribeFont.caption2).weight(.semibold))
