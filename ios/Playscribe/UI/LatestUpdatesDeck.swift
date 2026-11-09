@@ -11,6 +11,12 @@ struct DeckCard: Identifiable, Hashable {
 
     static func == (a: DeckCard, b: DeckCard) -> Bool { a.id == b.id }
     func hash(into h: inout Hasher) { h.combine(id) }
+
+    /// The line under a hero headline for a card with no release: the headline is already the game name, so the line
+    /// never repeats it (r053-hero-duplicate-title-no-notes). A game the feed does not follow says so, as the Page does.
+    static func noReleaseLine(tracked: Bool) -> String {
+        tracked ? "No patch notes yet" : "We don't track this game's updates yet"
+    }
 }
 
 extension AppModel {
@@ -313,7 +319,7 @@ struct DeckCardView: View {
             let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
             return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
         }
-        return "\(card.game.name), released \(dateText)"
+        return "\(card.game.name), released \(dateText), \(DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id)).lowercased())"
     }
 }
 
@@ -477,9 +483,16 @@ struct DeckByline: View {
     /// Accessibility sizes, when the card is capped: the name on one line.
     var tight = false
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(AppModel.self) private var model
 
     var body: some View {
-        if typeSize.isAccessibilitySize {
+        if card.release == nil {
+            // The headline is the game name already; say why there is no update instead of repeating it.
+            Text(DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id)))
+                .foregroundStyle(PlayscribeColor.textSecondary)
+                .lineLimit(typeSize.isAccessibilitySize ? (tight ? 2 : 3) : 2).fixedSize(horizontal: false, vertical: true)
+                .font(PlayscribeFont.subheadline)
+        } else if typeSize.isAccessibilitySize {
             // One text, name then date, so the date shares the name's last line: a line less than name and date
             // stacked, which is what the headline needs under the J-5 cap.
             Group {
@@ -693,6 +706,7 @@ struct DeckStage: View {
     var card: DeckCard
     /// Upcoming tab: the stage fronts the soonest unreleased game, so it carries an eyebrow and the date line, not an update.
     var upcomingLine: String? = nil
+    @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @Environment(\.dynamicTypeSize) private var typeSize
     @State private var stageBottom: CGFloat = 0
@@ -738,6 +752,14 @@ struct DeckStage: View {
                 Group {
                     if let line = upcomingLine {
                         Text(line).foregroundStyle(PlayscribeColor.vellum100)
+                    } else if card.release == nil {
+                        // The stage headline is the game name already: the line says why there is no update (the date stays).
+                        let line = DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id))
+                        if let dateText {
+                            Text("\(Text(line).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.vellum100))")
+                        } else {
+                            Text(line).foregroundStyle(PlayscribeColor.textPrimary)
+                        }
                     } else if let dateText {
                         Text("\(Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.vellum100))")
                     } else {
