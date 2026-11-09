@@ -871,15 +871,18 @@ struct TileCaption: View {
             HStack(spacing: 4) {
                 Image(systemName: StatusCircle.symbol(row.status)).font(.system(size: glyph, weight: .bold))
                 switch state.kind {
-                case .unread: SparkShape().fill(ink).frame(width: 9, height: 9)
-                case .recent: Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
+                // The spark and the dot are the non-colour cues, so at AX they scale with the mark (the spark to about the bookmark's
+                // height), on the same centre line; at standard sizes they stay 9 and 6 pt.
+                case .unread: SparkShape().fill(ink).frame(width: typeSize.isAccessibilitySize ? glyph * 1.2 : 9, height: typeSize.isAccessibilitySize ? glyph * 1.2 : 9)
+                case .recent: Circle().fill(PlayscribeColor.accent).frame(width: typeSize.isAccessibilitySize ? glyph * 0.6 : 6, height: typeSize.isAccessibilitySize ? glyph * 0.6 : 6)
                 default: EmptyView()
                 }
             }
-            // Accessibility sizes: the slot is the tallest glyph (the filled bookmark is about 1.4 x the nominal size, the check and the eye
-            // less), the mark sits on its bottom edge, and the date is 5 pt below: the same gap for every glyph, one baseline per row.
-            // Standard sizes are unchanged (a slot of the glyph plus 5 pt, the mark centred).
-            .frame(height: typeSize.isAccessibilitySize ? glyph * 1.4 : slot, alignment: typeSize.isAccessibilitySize ? .bottomLeading : .leading)
+            // Accessibility sizes: one fixed-height slot for every glyph (the tallest, the filled bookmark at about 1.4 x the nominal
+            // size), each glyph and the spark CENTRED in it, so the centres share a line across a row and the gap above (cover to
+            // slot, the tile's 4 pt) and below (slot to date, 5 pt) is the same for every glyph. Standard sizes are unchanged
+            // (a slot of the glyph plus 5 pt, the mark centred).
+            .frame(height: typeSize.isAccessibilitySize ? glyph * 1.4 : slot, alignment: .leading)
             Text(state.text)
                 .padding(.top, typeSize.isAccessibilitySize ? 4 : 0)
                 // Never scaled and never truncated: a date that does not fit one line wraps (the column is 84 pt or more, the
