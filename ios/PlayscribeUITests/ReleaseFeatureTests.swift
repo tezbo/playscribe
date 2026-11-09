@@ -433,6 +433,34 @@ final class ReleaseFeatureTests: XCTestCase {
         XCTAssertTrue(misses.isEmpty, "title tap then padding tap failed in rounds \(misses); see the padding-tap-log attachment")
     }
 
+    /// A-1, v0.5.3 (Mac, 8c59c39 hand run): on a cold launch of add/keyboard the keyboard is up in the first frame and about 5 s later
+    /// it is down with no caret. Sample focus and keyboard every 500 ms for 10 s and fail if focus is lost after it was gained, with the
+    /// whole timeline attached, so the moment of the drop can be matched to the launch pose settling.
+    func testAddSearchHoldsFocusThroughLaunchSettling() throws {
+        launch("add/keyboard")
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard") }
+        let search = app.textFields.matching(NSPredicate(format: "placeholderValue CONTAINS 'PS5 games'")).firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10))
+        let start = Date()
+        var timeline: [String] = []
+        var gainedAt: Double?
+        var lostAt: Double?
+        while Date().timeIntervalSince(start) < 10 {
+            let t = Date().timeIntervalSince(start)
+            let f = (search.value(forKey: "hasKeyboardFocus") as? Bool) == true
+            let k = app.keyboards.firstMatch.exists
+            timeline.append(String(format: "%.1fs focus=%@ keyboard=%@ field=%@", t, "\(f)", "\(k)", "\(search.frame)"))
+            if f && gainedAt == nil { gainedAt = t }
+            if !f && gainedAt != nil && lostAt == nil { lostAt = t }
+            usleep(500_000)
+        }
+        let a = XCTAttachment(string: timeline.joined(separator: "\n")); a.name = "launch-focus-timeline"; a.lifetime = .keepAlways; add(a)
+        print("LAUNCHFOCUS TIMELINE\n" + timeline.joined(separator: "\n"))
+        XCTAssertNotNil(gainedAt, "the search took focus at launch")
+        XCTAssertNil(lostAt, "focus was lost at \(lostAt ?? 0) s after the launch route gained it; see the launch-focus-timeline attachment")
+        XCTAssertTrue((search.value(forKey: "hasKeyboardFocus") as? Bool) == true && app.keyboards.firstMatch.exists, "still focused with the keyboard up after 10 s")
+    }
+
     // MARK: - Accessibility (G-7, G-10)
 
     /// The new screens pass the system audit for hit regions and element descriptions.
