@@ -11,6 +11,12 @@ struct DeckCard: Identifiable, Hashable {
 
     static func == (a: DeckCard, b: DeckCard) -> Bool { a.id == b.id }
     func hash(into h: inout Hasher) { h.combine(id) }
+
+    /// The line under a hero headline for a card with no release: the headline is already the game name, so the line
+    /// never repeats it (r053-hero-duplicate-title-no-notes). A game the feed does not follow says so, as the Page does.
+    static func noReleaseLine(tracked: Bool) -> String {
+        tracked ? "No patch notes yet" : "We don't track this game's updates yet"
+    }
 }
 
 extension AppModel {
@@ -26,7 +32,7 @@ extension AppModel {
         var cards: [DeckCard] = []
         for c in data.collection {
             guard let g = game(c.gameID) else { continue }
-            for r in ps5Releases(c.gameID) where r.ps5State == .onPS5 {
+            for r in ps5Releases(c.gameID) where r.ps5State == .onPS5 && !qaNoReleases {
                 let unread = isUnread(r)
                 if unread || r.ps5Date > cutoff { cards.append(DeckCard(game: g, release: r, unread: unread, date: r.ps5Date)) }
             }
@@ -114,7 +120,12 @@ struct LatestUpdatesDeck: View {
         return min(max(base, captionH), max(base, axCap - edgeHeight))
     }
 
-    private var edgeHeight: CGFloat { cards.count > 1 ? Self.pageEdgeHeight : 0 }
+    /// Whether the dots row (page edge, and/or the "+N more updates" chip) is on screen under the deck.
+    private var hasEdgeRow: Bool { cards.count > 1 || (compact && moreCount > 0) }
+    private var edgeHeight: CGFloat { hasEdgeRow ? Self.pageEdgeHeight : 0 }
+
+    /// Compact: the card's art height. The card keeps `maxHeight` less the page edge whether or not that row shows.
+    private var compactArt: CGFloat { grownArt(max(96, maxHeight - Self.pageEdgeHeight)) }
 
     /// J-5: the deck is at most half the container's height (the harness allows 12 pt more; 4 pt here for rounding).
     private var axCap: CGFloat { (duo.size.height * 0.5).rounded(.down) + 4 }
@@ -138,12 +149,13 @@ struct LatestUpdatesDeck: View {
             // Explicit geometry: every card is exactly the column wide, so a swipe snaps card to card, and the
             // art is capped so the deck never grows past maxHeight (the 727 pt card, 20d77ea).
             GeometryReader { g in
-                let art = grownArt(max(96, maxHeight - Self.pageEdgeHeight))
-                deck(cardWidth: g.size.width, artHeight: art)
+                deck(cardWidth: g.size.width, artHeight: compactArt)
                     .background(alignment: .topLeading) { ruler(width: g.size.width) }
             }
             // The wrapped chip at accessibility sizes sits on its own row under the dots: the deck grows by that row.
-            .frame(height: maxHeight > 0 ? grown(maxHeight) + (typeSize.isAccessibilitySize && moreCount > 0 ? Self.chipRowAX : 0) : nil)
+            // The page-edge row is reserved only when it shows (several cards, or the "+N more" chip): a lone update has
+            // no dots, so the deck ends at the card and nothing is left empty under it (0.5.3, Iris: dead space under the hero).
+            .frame(height: maxHeight > 0 ? compactArt + edgeHeight + (typeSize.isAccessibilitySize && moreCount > 0 ? Self.chipRowAX : 0) : nil)
         } else if typeSize.isAccessibilitySize && !(duo.pose == .closed && duo.isLandscape) {
             // Accessibility sizes: one card per screen at an explicit height. The unsized pager let the card fill the
             // screen (7fe84f4, AX3).
@@ -313,7 +325,7 @@ struct DeckCardView: View {
             let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
             return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
         }
-        return "\(card.game.name), released \(dateText)"
+        return "\(card.game.name), released \(dateText), \(DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id)).lowercased())"
     }
 }
 
@@ -477,9 +489,23 @@ struct DeckByline: View {
     /// Accessibility sizes, when the card is capped: the name on one line.
     var tight = false
     @Environment(\.dynamicTypeSize) private var typeSize
+    /// Optional so a preview or test host without the model does not crash; an absent model reads as tracked.
+    @Environment(AppModel.self) private var model: AppModel?
 
     var body: some View {
-        if typeSize.isAccessibilitySize {
+        if card.release == nil {
+            // The headline is the game name already; say why there is no update instead of repeating it.
+            let line = DeckCard.noReleaseLine(tracked: model?.feedTracksGame(card.game.id) ?? true)
+            if typeSize.isAccessibilitySize {
+                // Whole-word cut, trailing punctuation trimmed before the ellipsis (never mid-word).
+                WholeWordText(text: line, font: PlayscribeFont.subheadline, lines: tight ? 2 : 3, color: PlayscribeColor.textPrimary.opacity(0.9))
+            } else {
+                Text(line)
+                    .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)).shadow(color: .black.opacity(0.5), radius: 2)
+                    .lineLimit(2).fixedSize(horizontal: false, vertical: true)
+                    .font(PlayscribeFont.subheadline)
+            }
+        } else if typeSize.isAccessibilitySize {
             // One text, name then date, so the date shares the name's last line: a line less than name and date
             // stacked, which is what the headline needs under the J-5 cap.
             Group {
@@ -693,6 +719,7 @@ struct DeckStage: View {
     var card: DeckCard
     /// Upcoming tab: the stage fronts the soonest unreleased game, so it carries an eyebrow and the date line, not an update.
     var upcomingLine: String? = nil
+    @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @Environment(\.dynamicTypeSize) private var typeSize
     @State private var stageBottom: CGFloat = 0
@@ -738,6 +765,24 @@ struct DeckStage: View {
                 Group {
                     if let line = upcomingLine {
                         Text(line).foregroundStyle(PlayscribeColor.vellum100)
+                    } else if card.release == nil {
+                        // The stage headline is the game name already: the line says why there is no update (the date stays).
+                        let line = DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id))
+                        if let dateText {
+                            // "Released 14 Apr" matches the Closed chip (same UTC day), after the line and a thin separator.
+                            // Standard size: one line. Accessibility sizes: the date wraps to its own line and is never dropped.
+                            if typeSize.isAccessibilitySize {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    WholeWordText(text: line, font: PlayscribeFont.subheadline, lines: 3, color: PlayscribeColor.textPrimary)
+                                    Text("Released " + dateText).foregroundStyle(PlayscribeColor.vellum100)
+                                }
+                            } else {
+                                Text("\(Text(line).foregroundStyle(PlayscribeColor.textPrimary))  \u{00B7}  \(Text("Released " + dateText).foregroundStyle(PlayscribeColor.vellum100))")
+                                    .lineLimit(1).minimumScaleFactor(0.85)
+                            }
+                        } else {
+                            Text(line).foregroundStyle(PlayscribeColor.textPrimary)
+                        }
                     } else if let dateText {
                         Text("\(Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.vellum100))")
                     } else {
