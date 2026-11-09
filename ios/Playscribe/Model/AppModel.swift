@@ -700,6 +700,9 @@ final class AppModel {
                                    playableSince: "2021-03-12", igdbID: 990101, coverage: .none), status: .owned)
             insertGame(CatalogGame(id: "qa-notps5", name: "PC Only Tactics", platforms: [], releasePrecision: .day,
                                    releasedElsewhere: "2012-06-14", releasedElsewhereOn: "PC (Microsoft Windows)", igdbID: 990102, coverage: .none), status: .watching)
+            // A TBA tile: no release date anywhere (Quinn, #436).
+            insertGame(CatalogGame(id: "qa-tba", name: "To Be Announced Tales", platforms: [.ps5], releasePrecision: .tbd,
+                                   igdbID: 990103, coverage: .none), status: .watching)
             if let u = libraryRows.first(where: { $0.unread > 0 }) { setStatus(u.id, .wishlist) }
             // And a read Wishlist tile (Iris: the bookmark colour on a read pill).
             if let r = libraryRows.first(where: { $0.unread == 0 && $0.latest != nil && $0.status != .wishlist }) { setStatus(r.id, .wishlist) }

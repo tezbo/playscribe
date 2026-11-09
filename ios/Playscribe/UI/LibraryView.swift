@@ -834,14 +834,14 @@ struct GameTile: View {
                 // the cover instead, wrapping to two lines (GR-1, D-12; Iris, 0.5.0 a11y).
                 if typeSize.isAccessibilitySize {
                     let state = model.tileDate(row)
-                    // The glyph and the date share a line; a date never breaks ("22 / Oct"). If they do not fit, the glyph
-                    // goes above the date, so any wrap is between the glyph and the date.
+                    // The glyph always sits above the date, in a slot of one fixed height, so the dates in a row share a baseline
+                    // whatever the glyph (check, bookmark, eye) and a date never breaks ("22 / Oct"; Quinn, 52f1425).
                     let isDate = state.kind != .playsOnPS5 && state.kind != .notOnPS5
                     let glyph = Image(systemName: StatusCircle.symbol(row.status))
                     let color = state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary
-                    ViewThatFits(in: .horizontal) {
-                        HStack(spacing: 4) { glyph; Text(state.text).lineLimit(isDate ? 1 : 2) }
-                        VStack(alignment: .leading, spacing: 2) { glyph; Text(state.text).lineLimit(isDate ? 1 : 2).minimumScaleFactor(isDate ? 0.7 : 1) }
+                    VStack(alignment: .leading, spacing: 2) {
+                        glyph.frame(height: 22, alignment: .leading)
+                        Text(state.text).lineLimit(isDate ? 1 : 2).minimumScaleFactor(isDate ? 0.7 : 1)
                     }
                     .font(PlayscribeFont.caption.weight(.semibold))
                     // Capped at AX3 (about 2x body shouted, Iris #436); amber only for an unread update, else the grey of the other dates.
@@ -855,8 +855,8 @@ struct GameTile: View {
             }
         }
         .buttonStyle(.plain)
-        // The pill sits on the Button, not in its label: a view inside the label made a second, unlabelled tile-sized button for
-        // VoiceOver and the tests (Mac, 08ba8af). The status mark is the pill's first glyph (check, bookmark, eye), top-leading, so
+        // The pill sits on the Button, not in its label, so it never changes the Button's own label node (the inner Button that
+        // SwiftUI nests inside the tile exists on main too; the tile's outer element carries the label). The status mark is the pill's first glyph (check, bookmark, eye), top-leading, so
         // nothing else sits over the art (Iris, 0a9fa7e). The size is read here, outside the clamp, so the pill hides at AX; the
         // tile's own label already says the date and the status.
         .overlay(alignment: .topLeading) {
