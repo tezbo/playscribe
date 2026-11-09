@@ -164,6 +164,8 @@ final class AppModel {
     var pill: (gameID: String, releaseID: String)?
     var addSheetOpen = false {
         didSet {
+            if !addSheetOpen && oldValue { AddProbe.log("addSheetOpen closed from: " + Thread.callStackSymbols.dropFirst().prefix(6).joined(separator: " | ")) }
+            AddProbe.log("addSheetOpen \(oldValue)->\(addSheetOpen) pose=\(livePose) rightPage=\(liveRightPage) hadDraft=\(addDraft != nil) wanted=\(addKeyboardWanted)")
             if addSheetOpen && !oldValue { addIsSystemSheet = livePose != .tabletop && !liveRightPage }
             if addSheetOpen != oldValue { addDraft = nil; addKeyboardWanted = false }
         }
@@ -178,7 +180,9 @@ final class AppModel {
     /// How the Add UI was presented when it opened: the system sheet, or the right-page panel. Kept while it is open, because at
     /// launch the pose resolves closed, then Open landscape, then Open portrait, and following the raw pose dismissed and
     /// re-presented the sheet mid-focus, which killed the search field's keyboard (a98e710 Mac log, testPinnedAddBar).
-    var addIsSystemSheet = false
+    var addIsSystemSheet = false {
+        didSet { AddProbe.log("addIsSystemSheet \(oldValue)->\(addIsSystemSheet)") }
+    }
     /// QA (route add/scan): the camera scan shows a fixed feed, since simulators have no camera.
     var simulatedScan = false
     /// Opens the Add games sheet straight on this method (first-run welcome rows).
