@@ -253,14 +253,22 @@ struct AddGameSheet: View {
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                 } else {
                     statusPicker
+                    // The whole row takes focus, not just the UITextField's own frame: a tap in the row padding did nothing once the
+                    // field lost its tap gesture (86f771c Mac log: taps at x=20 and x=36 outside the field frame never focused it).
+                    // The gesture is on the container, not the field, so a tap on the field itself still goes to UIKit and the caret
+                    // behaves as before. The row insets are moved inside the container so no dead strip is left.
                     TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
                         .autocorrectionDisabled()
                         .submitLabel(.search)
                         .focused($searchFocused)
                         .frame(minHeight: 44)
-                        // No tap gesture of ours on the field (onTapGesture in #423, simultaneousGesture in 39da7ab: the Mac saw the caret
-                        // stay at the end and typed text lost after a tap). The UITextField is the full 44 pt row, so its own touch
-                        // handling takes focus and places the caret.
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 4)
+                        .frame(maxWidth: .infinity)
+                        .contentShape(Rectangle())
+                        .onTapGesture { searchFocused = true }
+                        .keepsKeyboardOnTap()   // a tap in this row's padding while typing must not dismiss the keyboard it just asked for
+                        .listRowInsets(EdgeInsets())
                 }
                 // Offline state 7: rows keep their placeholder covers; say why.
                 if case .failed(offline: true) = model.checkState {

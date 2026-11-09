@@ -393,8 +393,10 @@ final class ReleaseFeatureTests: XCTestCase {
             if !titleDismissed { shot("r\(round)-title-did-not-dismiss"); log += [before, afterTitle]; misses.append(round); continue }
             // Padding: just outside the field's leading edge, inside the row.
             let f = search.frame
-            let paddingX = f.minX - 8, paddingY = f.midY
-            search.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0.5)).withOffset(CGVector(dx: -8, dy: 0)).tap()
+            // Odd rounds tap the leading padding, even rounds the trailing padding (kept inside the window).
+            let windowMaxX = app.windows.firstMatch.frame.maxX
+            let paddingX = round % 2 == 1 ? f.minX - 8 : min(f.maxX + 8, windowMaxX - 2), paddingY = f.midY
+            app.windows.firstMatch.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(dx: paddingX, dy: paddingY)).tap()
             let refocused = wait(true)
             let afterPadding = state("r\(round) after padding tap at (\(paddingX), \(paddingY)), insideFieldFrame=\(f.contains(CGPoint(x: paddingX, y: paddingY))), refocused=\(refocused)")
             log += [before, afterTitle, afterPadding]
