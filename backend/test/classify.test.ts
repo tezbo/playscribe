@@ -202,3 +202,10 @@ test('on read, a Steam-only release keeps ps5 tags once it has a PS5 row, and we
   store.upsertPlatform(db, psn, 'ps5', { status: 'live', verification: 'official', liveAt: store.field('2026-01-01T00:00:00Z', 'official', 'g-steam') })
   assert.deepEqual(tags(psn), ['ps5'])
 })
+
+test('stored notes with stray "[/*]" items (older parser) are cleaned when read', () => {
+  const item = (text: string) => ({ text, ps5ProOnly: false, pcOnly: false, category: 'other' as const })
+  const out = tagNotes([{ title: 'Changes', items: [item('Fixed a crash.'), item('[/*]'), item('Improved stability.[/*]'), item('')] }])
+  assert.deepEqual(out[0]!.items.map((i) => i.text), ['Fixed a crash.', 'Improved stability.'])
+  assert.deepEqual(tagNotes([{ title: 'Changes', items: [item('[/*]')] }]), [])
+})
