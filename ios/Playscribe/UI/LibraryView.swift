@@ -999,8 +999,11 @@ struct DatePill: View {
         // width less its insets, so the pill hugs its content and only wraps when that proposal is smaller than the words.
         .fixedSize(horizontal: false, vertical: true)
         .background {
-            if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
-            else { Capsule().fill(Color.black.opacity(0.72)) }   // a dark ground, 70% or more, over any art (Iris)
+            // A stacked pill can be taller than it is wide ("Plays / on PS5" on an 84 pt tile): a capsule would then be a circle and the
+            // words would spill out of it, so a stacked pill is a rounded rectangle (Mac, 08ba8af Tabletop).
+            let shape = RoundedRectangle(cornerRadius: stacked ? 10 : 100, style: .continuous)
+            if state.kind == .unread { shape.fill(Color(red: 1, green: 0.69, blue: 0.31)) }
+            else { shape.fill(Color.black.opacity(0.72)) }   // a dark ground, 70% or more, over any art (Iris)
         }
         }
     }
