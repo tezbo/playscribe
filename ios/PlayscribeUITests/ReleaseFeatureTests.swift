@@ -386,6 +386,10 @@ final class ReleaseFeatureTests: XCTestCase {
         XCTAssertEqual(overlapping.count, 0, "no second Search element over the field: \(overlapping.map(\.label))")
         var misses: [Int] = []
         var log: [String] = []
+        // Row geometry for the 60.7 pt question (Quinn): the field, its list cell, and the controls around it.
+        let cell = app.cells.containing(.textField, identifier: nil).firstMatch
+        log.append("geometry: field=\(search.frame) cell=\(cell.exists ? "\(cell.frame)" : "none") segmented=\(app.segmentedControls.firstMatch.exists ? "\(app.segmentedControls.firstMatch.frame)" : "none") window=\(app.windows.firstMatch.frame)")
+        let geo = XCTAttachment(screenshot: app.screenshot()); geo.name = "add-search-row-geometry"; geo.lifetime = .keepAlways; add(geo)
         func shot(_ name: String) {
             let a = XCTAttachment(screenshot: app.screenshot()); a.name = name; a.lifetime = .keepAlways; add(a)
         }
