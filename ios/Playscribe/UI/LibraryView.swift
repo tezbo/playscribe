@@ -280,6 +280,9 @@ struct LibraryShelf: View {
                     .padding(.horizontal, 12)
                     .padding(.vertical, typeSize.isAccessibilitySize ? 12 : 0)
                     .frame(minHeight: 44)
+                    // A tap in the padding or on the magnifier focuses the field (as Add's row does): a gesture on a clear layer
+                    // behind the field, never on the field itself, which would change how the caret is placed.
+                    .background { Color.clear.contentShape(Rectangle()).onTapGesture { searchFocused = true }.accessibilityHidden(true) }
                     .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     // Book: one page wide (like the chip row), and reported to the fold audit.
                     .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
