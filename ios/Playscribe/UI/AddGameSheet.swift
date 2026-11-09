@@ -1,3 +1,4 @@
+import os
 import SwiftUI
 
 /// Add a game (A-1 to A-9). Manual add only: PlayStation account import is a later milestone and
@@ -573,11 +574,12 @@ struct PopularCover: View {
         let word = game.isUpcoming ? "Wishlist" : "Added"
         ZStack(alignment: .topTrailing) {
             // While an add is in flight (and once added) the cover cannot open the game: a second tap must not fall through.
-            Button { model.browseGame(game) } label: {
+            Button { if !marked { model.browseGame(game) } } label: {
                 TileCover(game: game).frame(width: width, height: height)
                     .overlay(alignment: .bottom) {
                         if marked {
                             Text(word)
+                                .onAppear { logPressToCheck() }
                                 .font(PlayscribeFont.caption.weight(.semibold))
                                 .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
                                 .lineLimit(1).minimumScaleFactor(0.7)
@@ -590,9 +592,11 @@ struct PopularCover: View {
                     }
             }
             .buttonStyle(.plain)
-            .disabled(marked)
+            // Not `.disabled`: a disabled plain button dims to about 35 percent (Quinn's brightness check, 1ea80f2). A tap on a marked
+            // cover simply does nothing.
             .accessibilityLabel(marked ? "\(game.name), \(word.lowercased())" : game.name)
             .accessibilityHint(marked ? "" : "Opens the game")
+            .accessibilityRemoveTraits(marked ? .isButton : [])
             .tappableFrame()
 
             Button(action: tick) {
@@ -605,12 +609,29 @@ struct PopularCover: View {
                     .contentShape(Rectangle())
             }
             .buttonStyle(TickPressStyle(pressing: $pressing))
-            .disabled(inLibrary || phase == .adding)           // never on `pressing`: disabling mid-press would cancel the tap
+            // Not `.disabled` either (it dims the plate); the action ignores a tap once the game is in or being added.
             .accessibilityLabel(marked ? "\(game.name), in your library" : "Add \(game.name)")
             .accessibilityIdentifier("popularAdd")
             .tappableFrame()
         }
         .frame(width: width, height: height)
+        #if INTERNAL
+        .onChange(of: pressing) { _, now in if now { pressStamp = CACurrentMediaTime() } }
+        #endif
+    }
+
+    #if INTERNAL
+    @State private var pressStamp: CFTimeInterval = 0
+    #endif
+    /// INTERNAL: the Mac cannot shoot a held press inside 100 ms (Quinn's check), so the app timestamps the press and the frame the
+    /// "Added" word is built, and logs the gap (state to view; not the display's own latency).
+    private func logPressToCheck() {
+        #if INTERNAL
+        guard pressStamp > 0 else { return }
+        let ms = Int((CACurrentMediaTime() - pressStamp) * 1000)
+        pressStamp = 0
+        Logger(subsystem: "co.codeconnectors.playscribe", category: "add").info("press to check: \(ms) ms (\(game.name, privacy: .public))")
+        #endif
     }
 
     private func tick() {
