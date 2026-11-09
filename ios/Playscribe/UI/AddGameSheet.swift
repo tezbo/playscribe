@@ -42,6 +42,7 @@ struct AddGameSheet: View {
     /// keyboard leaves under 200 pt, hide the title and keep Done and search only).
     @State private var keyboardHeight: CGFloat = 0
     @FocusState private var searchFocused: Bool
+    @State private var disappeared = false
     private var draftKey: String {
         "\(status)|\(query)|\(pickOrder)|\(String(describing: method))|\(matches?.count ?? -1)|\(custom)|\(customName)|\(customPlatform)|\(letter ?? "")"
     }
@@ -74,14 +75,18 @@ struct AddGameSheet: View {
                                           matches: matches, custom: custom, customName: customName, customPlatform: customPlatform, letter: letter)
             }
             .onAppear {
+                disappeared = false
                 FocusProbe.log("sheet onAppear (new AddGameSheet instance)")
                 if let d = model.addDraft {
                     status = d.status; query = d.query; debounced = d.query; picked = d.picked; pickOrder = d.pickOrder
                     method = d.method; matches = d.matches; custom = d.custom; customName = d.customName
                     customPlatform = d.customPlatform; letter = d.letter
-                    model.addDraft = nil
+                    // Not consumed: a fold can build two or three sheets in a row (Mac log, 2be7e23: onAppear at 12.88 s and again at
+                    // 14.02 s), and the one that stays must still find the draft. It is dropped when Add opens or closes.
                 }
                 if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
+                // A rebuilt sheet (form switch, pose settling) gives the keyboard back if the person had it up.
+                if model.addKeyboardWanted && method == .typeIt { model.addSearchFocus = true }
                 if model.addSearchFocus {
                     model.addSearchFocus = false
                     // The field appears only after the method switch above, and in Open portrait the sheet is still settling at 600 ms
@@ -110,8 +115,13 @@ struct AddGameSheet: View {
                 keyboardHeight = 0
                 FocusProbe.log("keyboardWillHide")
             }
-            .onDisappear { FocusProbe.log("sheet onDisappear") }
-            .onChange(of: searchFocused) { _, f in FocusProbe.log("searchFocused -> \(f)") }
+            .onDisappear { disappeared = true; FocusProbe.log("sheet onDisappear") }
+            .onChange(of: searchFocused) { _, f in
+                FocusProbe.log("searchFocused -> \(f)")
+                guard model.addSheetOpen else { return }
+                // A field that resigns because this sheet is going away is not the person putting the keyboard away.
+                if f { model.addKeyboardWanted = true } else if !disappeared { model.addKeyboardWanted = false }
+            }
             .toolbarTitleDisplayMode(.inline)
             // Tabletop (0.2.0 gate): the empty nav bar cost about 100 pt of the lower half, so the
             // bar is hidden and Close sits in the search row instead; three rows then fit.

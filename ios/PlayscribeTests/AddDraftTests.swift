@@ -37,4 +37,28 @@ struct AddDraftTests {
         m.addSheetOpen = true   // a form switch re-renders; the flag does not change
         #expect(m.addDraft?.query == "elden")
     }
+
+    /// A-10, v0.5.3 (Mac, 2be7e23 fold log): a fold builds several sheets in a row, so every one must find the draft and the
+    /// keyboard flag; nothing but Add opening or closing may drop them.
+    @Test func testDraftAndKeyboardFlagSurviveRepeatedReads() {
+        let m = model()
+        m.addSheetOpen = true
+        m.addDraft = draft("elden")
+        m.addKeyboardWanted = true
+        for _ in 0..<3 {   // three rebuilt sheets reading the model in turn
+            #expect(m.addDraft?.query == "elden")
+            #expect(m.addKeyboardWanted)
+        }
+    }
+
+    @Test func testKeyboardFlagIsDroppedWhenAddClosesOrOpens() {
+        let m = model()
+        m.addSheetOpen = true
+        m.addKeyboardWanted = true
+        m.addSheetOpen = false
+        #expect(!m.addKeyboardWanted)
+        m.addKeyboardWanted = true   // stale from an earlier session
+        m.addSheetOpen = true
+        #expect(!m.addKeyboardWanted)
+    }
 }
