@@ -237,6 +237,10 @@ final class AppModel {
     /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
     /// confirm a `-qaRoute` took effect.
     var qaRoute: String?
+    /// QA (route `no-notes/<game>`): the deck ignores every release, so a game with a release date shows as a no-release hero.
+    var qaNoReleases = false
+    /// QA (route `no-notes/<game>/untracked`): the feed is treated as not tracking any game, for the untracked line.
+    var qaUntracked = false
     /// QA (INTERNAL, `-qaRoute long-text`): a long overview body, to show the Tabletop stage cap and the Full text row.
     var qaLongText = false
     /// QA: the newest On PS5 update of the first `qaUpdateCount` different games are the only unread ones. Chosen
@@ -688,6 +692,14 @@ final class AppModel {
         case "three-update": resetToUpdateDemo(count: 3); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "four-update": resetToUpdateDemo(count: 4); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "caught-up": resetToCaughtUpDemo()
+        // QA (INTERNAL): "no-notes/<game>": only that game in the Library with its update history hidden from the deck, so the
+        // hero is the no-release card ("No patch notes yet", or the untracked line). The game needs a past release date.
+        case "no-notes" where parts.count == 1 || parts.count == 2:
+            resetDemo()
+            data = PersistedState(collection: [])
+            if let g = fixtures.games.first(where: { $0.id == parts[0] }) { addGames([g], status: .owned) }
+            qaNoReleases = true
+            qaUntracked = parts.count == 2 && parts[1] == "untracked"
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
         // QA (INTERNAL, B-10): "quick/tip" shows the press-and-hold tip; "quick/undo" removes the first game so the
