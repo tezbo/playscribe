@@ -396,7 +396,7 @@ final class ReleaseFeatureTests: XCTestCase {
             let paddingX = f.minX - 8, paddingY = f.midY
             search.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0.5)).withOffset(CGVector(dx: -8, dy: 0)).tap()
             let refocused = wait(true)
-            let afterPadding = state("r\(round) after padding tap at (\(paddingX), \(paddingY)), refocused=\(refocused)")
+            let afterPadding = state("r\(round) after padding tap at (\(paddingX), \(paddingY)), insideFieldFrame=\(f.contains(CGPoint(x: paddingX, y: paddingY))), refocused=\(refocused)")
             log += [before, afterTitle, afterPadding]
             if !refocused {
                 shot("r\(round)-padding-did-not-focus")
