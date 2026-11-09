@@ -6,6 +6,11 @@ import UIKit
 /// This is a UIKit recognizer on the window, not a SwiftUI tap gesture: a tap on the typed text is taken by the UITextField
 /// itself and never reaches SwiftUI, so a SwiftUI handler could not tell "tap inside the field" from "tap outside" and
 /// dropped focus on both (cc04658 Mac hand check 1). The recognizer does not cancel or delay any touch.
+extension Notification.Name {
+    /// Posted when a tap outside the fields put the keyboard away: the person's own action, not a sheet being rebuilt.
+    static let keyboardPutAwayByTap = Notification.Name("playscribe.keyboardPutAwayByTap")
+}
+
 final class KeepsKeyboardMarkerView: UIView {}
 
 private struct KeepsKeyboardMarker: UIViewRepresentable {
@@ -42,6 +47,7 @@ private final class KeyboardDismissView: UIView, UIGestureRecognizerDelegate {
         DispatchQueue.main.async {
             guard let before, before.isFirstResponder else { return }
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            NotificationCenter.default.post(name: .keyboardPutAwayByTap, object: nil)
         }
     }
 

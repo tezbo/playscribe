@@ -42,7 +42,6 @@ struct AddGameSheet: View {
     /// keyboard leaves under 200 pt, hide the title and keep Done and search only).
     @State private var keyboardHeight: CGFloat = 0
     @FocusState private var searchFocused: Bool
-    @State private var disappeared = false
     private var draftKey: String {
         "\(status)|\(query)|\(pickOrder)|\(String(describing: method))|\(matches?.count ?? -1)|\(custom)|\(customName)|\(customPlatform)|\(letter ?? "")"
     }
@@ -75,7 +74,6 @@ struct AddGameSheet: View {
                                           matches: matches, custom: custom, customName: customName, customPlatform: customPlatform, letter: letter)
             }
             .onAppear {
-                disappeared = false
                 if let d = model.addDraft {
                     status = d.status; query = d.query; debounced = d.query; picked = d.picked; pickOrder = d.pickOrder
                     method = d.method; matches = d.matches; custom = d.custom; customName = d.customName
@@ -109,18 +107,15 @@ struct AddGameSheet: View {
                 keyboardHeight = end.minY >= UIScreen.main.bounds.height ? 0 : end.height
             }
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in keyboardHeight = 0 }
-            .onDisappear { disappeared = true }
             .onChange(of: searchFocused) { _, f in
-                guard model.addSheetOpen else { return }
-                if f { model.addKeyboardWanted = true; return }
-                // A field that resigns because this sheet is going away is not the person putting the keyboard away. SwiftUI may
-                // report the focus loss just before or just after onDisappear (the 2be7e23 fold log had it after, 40 ms), so wait
-                // a moment and only then decide.
-                Task {
-                    try? await Task.sleep(for: .milliseconds(400))
-                    if !disappeared && !searchFocused { model.addKeyboardWanted = false }
-                }
+                // Wanted is set when the field takes focus. It is NOT cleared when focus is lost: a sheet that is rebuilt or
+                // re-presented loses focus on the way out, sometimes well before onDisappear (the launch re-presentation at
+                // about 6 s, ccf69f3 timeline: focus false while the sheet is still sliding away), and that must not count as the person putting the keyboard away. Only what the person does clears it.
+                if f && model.addSheetOpen { model.addKeyboardWanted = true }
             }
+            .onReceive(NotificationCenter.default.publisher(for: .keyboardPutAwayByTap)) { _ in model.addKeyboardWanted = false }
+            .onScrollPhaseChange { _, phase in if phase == .interacting { model.addKeyboardWanted = false } }
+            .onSubmit(of: .text) { model.addKeyboardWanted = false }
             .toolbarTitleDisplayMode(.inline)
             // Tabletop (0.2.0 gate): the empty nav bar cost about 100 pt of the lower half, so the
             // bar is hidden and Close sits in the search row instead; three rows then fit.
