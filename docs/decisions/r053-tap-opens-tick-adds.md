@@ -79,3 +79,5 @@ Update to 16 (Iris): the edge-swipe back is kept. `keepsSwipeBack()` (UI/SwipeBa
 - The game page's back button measured 38 x 38 (Closed), 38 x 39 (Book) and 40 x 41 (Open): the toolbar's system glass sized it. Iris: it is a custom button, so 44 x 44 in every pose (the 36 pt floor is for system-drawn toolbar buttons only). The toolbar item now hides its system background and draws its own 44 x 44 disc with the chevron centred, so the glyph does not shift when the frame grows.
 - The edge swipe: open question until the Mac compares it with main (a synthetic drag may be a harness limit). No code change yet; if main pops and this head does not, the helper is fixed.
 - INTERNAL: `-qaFirstRunHold <seconds>` stretches the first-run hold, and the add logs "tick: ... add begins", so a tap during the hold can be driven by hand and timed against "cover tap: ..." lines.
+
+Update to 17 (Mac, Tabletop): the Tabletop rail has its own game-page back (RailButton), which read a bare "Library" (same as the Library tab) and had no identifier. It is now "Library, back" with id `gameBack`, as in Closed, Open and Book.
