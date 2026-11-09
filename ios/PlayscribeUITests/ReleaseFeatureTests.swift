@@ -380,7 +380,10 @@ final class ReleaseFeatureTests: XCTestCase {
         // in the element tree too (36d340c Mac run counted 2 on bbcbbe2 as well, so it is not a duplicate in the Add row).
         let addFields = app.textFields.matching(NSPredicate(format: "placeholderValue CONTAINS 'PS5 games'"))
         XCTAssertEqual(addFields.count, 1, "one Add search field; Search fields in the tree: \(app.textFields.allElementsBoundByIndex.map { $0.placeholderValue ?? "?" })")
-        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Search'")).count, 0, "no second Search element")
+        // Scoped to the field's own row: the tab bar's Search tab (b880cc8 Mac run) is also a "Search" button, elsewhere on screen.
+        let overlapping = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Search'")).allElementsBoundByIndex
+            .filter { $0.frame.intersects(search.frame) }
+        XCTAssertEqual(overlapping.count, 0, "no second Search element over the field: \(overlapping.map(\.label))")
         var misses: [Int] = []
         var log: [String] = []
         func shot(_ name: String) {
