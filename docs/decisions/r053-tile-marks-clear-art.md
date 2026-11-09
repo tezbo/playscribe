@@ -20,3 +20,12 @@ Quinn: a date never wraps mid-date ("25 / Jun"). A pill whose model kind is not 
 Iris (5c2729a, Closed std): the pill stretched nearly the tile's width and read as a dark bar. Cause: `frame(maxWidth:)` is a flexible frame, which grows to its maximum. Removed: the tile's overlay already proposes its width less the 8 pt insets, so the pill hugs the glyph and the date and only wraps when the words are wider than that proposal. The wrapped PS5 pills hug the same way.
 
 Padding inside the pill is 8 pt on the sides (Iris), as the inset; it was 7.
+
+## Update (38a4d59, Quinn and Iris): the mark and date go under the cover, at every size
+
+A date pill on the art hid the first five letters of the MINECRAFT logo (Closed std). Art lettering can be anywhere, so no
+corner is safe: the status mark and the date now sit under the cover at every size (`TileCaption`), the mark in a fixed-height
+slot above the date so dates in a row share a baseline. Amber is unread only (grey otherwise); the spark and the dot are the
+non-colour cues. Text is 11 pt or larger, wraps, never truncates. The on-art pill, the placeholder room and the AX-only caption are gone.
+Tabletop: all six tiles in one row, fully above the fold and 44 pt clear of the hinge; if the taller tile does not fit, the tile
+width shrinks, not the placement (Iris). First-run covers (#431) keep their "+" tick and are out of scope.

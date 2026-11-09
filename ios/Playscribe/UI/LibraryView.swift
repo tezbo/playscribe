@@ -795,7 +795,7 @@ struct GameMenuButton: View {
 
 /// Inner display tile: a fixed-size cover, name, a status dot and the unread count.
 /// Library tile (brand library-tiles, approved by Terry 26 Oct): a 3:4 cover with no text under
-/// it. Top left, a date pill that carries the status mark and the update state; nothing else sits on the art.
+/// it. Under the cover: the status mark above the date or status, nothing on the art (Iris, #436: art lettering can be anywhere).
 /// Long-press opens the game's actions.
 struct GameTile: View {
     @Environment(AppModel.self) private var model
@@ -805,18 +805,6 @@ struct GameTile: View {
     var size: CGFloat?
     /// Closed fills its column, so the cover's width is only known once laid out.
     @State private var measuredWidth: CGFloat = 0
-    /// One 11 pt line of the pill's text, scaled with Dynamic Type (the pill stops growing at xxxLarge, so is capped there below).
-    @ScaledMetric(relativeTo: .caption2) private var pillLine: CGFloat = 14
-    /// The room a placeholder plate keeps clear at the top for the date pill: a fixed amount for the tile's width, not the measured
-    /// pill, so every placeholder letter in a grid sits at the same height whatever its pill's line count (Iris, #436). Stacked
-    /// (tile 160 pt or less): the mark row and two text lines, the most any pill needs; wider tiles: one line.
-    private var pillRoom: CGFloat {
-        if typeSize.isAccessibilitySize { return 0 }
-        let line = min(pillLine, 14 * 1.45)   // xxxLarge is about 1.45 x the default
-        let stacked = (size ?? measuredWidth) - 16 <= 144
-        let pill = (stacked ? 12 + 1 + 2 * line : line) + 6   // 3 pt of padding above and below
-        return 8 + pill + 8                                   // 8 pt inset above, 8 pt of air below
-    }
     /// QA probe only (fold audit on): the tile's outer width, to compare with the published id.
     @State private var outerWidth: CGFloat = 0
 
@@ -837,45 +825,18 @@ struct GameTile: View {
             // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             VStack(alignment: .leading, spacing: 4) {
-                tileFrame(TileCover(game: row.game, topInset: pillRoom))
+                tileFrame(TileCover(game: row.game))
                     .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                // Accessibility sizes: the pill would cover the art, so the date or status sits under
-                // the cover instead, wrapping to two lines (GR-1, D-12; Iris, 0.5.0 a11y).
-                if typeSize.isAccessibilitySize {
-                    let state = model.tileDate(row)
-                    // The glyph always sits above the date, in a slot of one fixed height, so the dates in a row share a baseline
-                    // whatever the glyph (check, bookmark, eye) and a date never breaks ("22 / Oct"; Quinn, 52f1425).
-                    let isDate = state.kind != .playsOnPS5 && state.kind != .notOnPS5
-                    let glyph = Image(systemName: StatusCircle.symbol(row.status))
-                    let color = state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary
-                    VStack(alignment: .leading, spacing: 2) {
-                        glyph.frame(height: 22, alignment: .leading)
-                        Text(state.text).lineLimit(isDate ? 1 : 2).minimumScaleFactor(isDate ? 0.7 : 1)
-                    }
-                    .font(PlayscribeFont.caption.weight(.semibold))
-                    // Capped at AX3 (about 2x body shouted, Iris #436); amber only for an unread update, else the grey of the other dates.
-                    .dynamicTypeSize(...DynamicTypeSize.accessibility3)
-                    .foregroundStyle(color)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 2)
-                    .accessibilityHidden(true)
-                }
+                // Nothing sits on the art: art lettering can be anywhere (a pill hid the MINECRAFT logo, Quinn 38a4d59). The status
+                // mark sits above the date or status phrase, in a slot of one fixed height so the dates in a row share a baseline
+                // whatever the glyph (check, bookmark, eye). Amber only for an unread update, else the grey of the other dates;
+                // the spark and the dot are the non-colour cues. Wraps, never truncates; 11 pt or larger (Iris, #436).
+                TileCaption(row: row, width: size)
+                    .accessibilityHidden(true)   // the tile's own label already says the date and the status
             }
         }
         .buttonStyle(.plain)
-        // The pill sits on the Button, not in its label, so it never changes the Button's own label node (the inner Button that
-        // SwiftUI nests inside the tile exists on main too; the tile's outer element carries the label). The status mark is the pill's first glyph (check, bookmark, eye), top-leading, so
-        // nothing else sits over the art (Iris, 0a9fa7e). The size is read here, outside the clamp, so the pill hides at AX; the
-        // tile's own label already says the date and the status.
-        .overlay(alignment: .topLeading) {
-            if !typeSize.isAccessibilitySize {
-                DatePill(row: row, maxWidth: max(0, (size ?? measuredWidth) - 16)).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(8)
-                    .allowsHitTesting(false)
-                    .accessibilityHidden(true)
-            }
-        }
         .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
         .accessibilityElement(children: .ignore)
         // The accessibility frame runs 8 pt wider than the cover; the id carries the cover's real
@@ -889,17 +850,55 @@ struct GameTile: View {
     }
 }
 
+/// Under a Library tile's cover: the status mark (check, bookmark, eye) in a fixed-height slot, then the date or status phrase.
+struct TileCaption: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
+    var row: AppModel.LibraryRow
+    /// The tile's width when it has a fixed one (nil: fills its column).
+    var width: CGFloat?
+    /// The mark's slot, so every caption's text starts at the same height.
+    @ScaledMetric(relativeTo: .caption2) private var slot: CGFloat = 16
+
+    var body: some View {
+        let state = model.tileDate(row)
+        // By the model's kind, not by the text ("Plays on PS5" has a digit): only these two are words that may wrap.
+        let isDate = state.kind != .playsOnPS5 && state.kind != .notOnPS5
+        let ink = state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary
+        VStack(alignment: .leading, spacing: 1) {
+            HStack(spacing: 4) {
+                Image(systemName: StatusCircle.symbol(row.status)).font(.system(size: 11, weight: .bold))
+                switch state.kind {
+                case .unread: SparkShape().fill(ink).frame(width: 9, height: 9)
+                case .recent: Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
+                default: EmptyView()
+                }
+            }
+            .frame(height: slot, alignment: .leading)
+            Text(state.text)
+                .lineLimit(isDate ? 1 : 2)
+                .multilineTextAlignment(.leading)
+                // A date is one token: at accessibility sizes it may scale down (still well over 11 pt) before it would wrap.
+                .minimumScaleFactor(isDate && typeSize.isAccessibilitySize ? 0.7 : 1)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .font((typeSize.isAccessibilitySize ? PlayscribeFont.caption : PlayscribeFont.caption2).weight(.semibold))
+        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+        .foregroundStyle(ink)
+        .frame(maxWidth: width ?? .infinity, alignment: .leading)
+        .padding(.horizontal, 2)
+    }
+}
+
 /// The cover: portrait art; else landscape art cropped with the name set in Literata at the top;
 /// else the ink plate with the name. 10 pt corners and a faint inner edge.
 struct TileCover: View {
     var game: CatalogGame
-    /// Height kept clear at the top of a placeholder plate for the date pill (0: none).
-    var topInset: CGFloat = 0
     var body: some View {
         Color.ink1
             .overlay {
                 if game.coverAsset != nil || game.coverURL != nil {
-                    CoverView(game: game, cornerRadius: 0, topInset: topInset)
+                    CoverView(game: game, cornerRadius: 0)
                 } else if let art = game.keyArtAsset {
                     Image(art).resizable().scaledToFill()
                         .overlay(alignment: .top) {
@@ -909,7 +908,7 @@ struct TileCover: View {
                                 .background(LinearGradient(colors: [.black.opacity(0.7), .clear], startPoint: .top, endPoint: .bottom))
                         }
                 } else {
-                    CoverView(game: game, cornerRadius: 0, topInset: topInset)
+                    CoverView(game: game, cornerRadius: 0)
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
@@ -942,84 +941,6 @@ struct StatusCircle: View {
     }
     static func symbol(_ s: OwnershipStatus) -> String {
         switch s { case .owned: "checkmark"; case .wishlist: "bookmark.fill"; case .watching: "eye.fill" }
-    }
-}
-
-/// The date pill: solid ember with the spark for an unread update; glass with an ember dot for an
-/// update in the last 7 days; plain glass for older; "Out <date>" when there are no updates.
-struct DatePill: View {
-    @Environment(AppModel.self) private var model
-    @Environment(\.dynamicTypeSize) private var typeSize
-    var row: AppModel.LibraryRow
-    /// The tile's width less its 8 pt insets (nil: unconstrained). A Closed 3-column tile is about 95 pt: the pill must fit it.
-    var maxWidth: CGFloat?
-    var body: some View {
-        let state = model.tileDate(row)
-        // By the model's kind, not by the text ("Plays on PS5" has a digit): only these two are words that may wrap.
-        let isDate = state.kind != .playsOnPS5 && state.kind != .notOnPS5
-        // Tabletop's 84 pt tiles (68 pt of pill): tighter padding so "Feb 2027" shows whole instead of "Feb 20…" (Mac, b8a7e35).
-        let narrow = (maxWidth ?? 200) < 100
-        // Accessibility sizes: the pill would cover the art, so it is hidden; the date stays in the label
-        // and on the game page (Iris, 0.5.0 a11y).
-        if !typeSize.isAccessibilitySize {
-        // The tile's status mark (in your library, wishlist, watching): inert, part of the tile's own label.
-        let mark = Image(systemName: StatusCircle.symbol(row.status))
-            .font(.system(size: 10, weight: .bold))
-            .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)   // the shape says the state (check, filled bookmark, eye), not a colour
-            .accessibilityHidden(true)
-        let dot = Group {
-            switch state.kind {
-            case .unread: SparkShape().fill(PlayscribeColor.onAccent).frame(width: 9, height: 9)
-            case .recent: Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
-            default: EmptyView()
-            }
-        }
-        let ink = state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary
-        let gap: CGFloat = narrow ? 3 : 4
-        // A rule by column width, not by the date's length: up to 160 pt of tile (3-column Closed 110, Tabletop 84, Open portrait 148), so a row never mixes stacked and inline pills (Iris: per row, here per width) the mark always sits above the
-        // date, so the pills line up whatever the date ("22 Oct" and "8 Oct" alike; Iris, #436).
-        let stacked = (maxWidth ?? 200) <= 144
-        // Never an ellipsis and never under the 11 pt text floor (Iris, #436): no scale-down. A date is one token on one line; if the
-        // mark and the date do not fit side by side, the mark goes first and the date sits below it (as at AX5). The two status
-        // phrases may wrap ("Plays on / PS5").
-        Group {
-            if stacked {
-                // Every tile in a grid has one width, so the whole row (and the whole Library) stacks together, status phrases too.
-                VStack(alignment: .leading, spacing: 1) {
-                    HStack(spacing: gap) { mark; dot }
-                    if isDate { Text(state.text).lineLimit(1).fixedSize() }
-                    else { Text(state.text).lineLimit(2).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true) }
-                }
-            } else if isDate {
-                ViewThatFits(in: .horizontal) {
-                    HStack(spacing: gap) { mark; dot; Text(state.text).lineLimit(1).fixedSize() }
-                    VStack(alignment: .leading, spacing: 1) {
-                        HStack(spacing: gap) { mark; dot }
-                        Text(state.text).lineLimit(1).fixedSize()
-                    }
-                }
-            } else {
-                HStack(spacing: gap) {
-                    mark; dot
-                    Text(state.text).lineLimit(maxWidth != nil ? 2 : 1).multilineTextAlignment(.leading)
-                        .fixedSize(horizontal: maxWidth == nil, vertical: true)
-                }
-            }
-        }
-        .font(PlayscribeFont.caption2.weight(.semibold))
-        .foregroundStyle(ink)
-        .padding(.horizontal, narrow ? 5 : 8).padding(.vertical, 3)
-        // No frame(maxWidth:): a flexible frame grows to its maximum and made the pill a bar. The overlay already proposes the tile's
-        // width less its insets, so the pill hugs its content and only wraps when that proposal is smaller than the words.
-        .fixedSize(horizontal: false, vertical: true)
-        .background {
-            // A stacked pill can be taller than it is wide ("Plays / on PS5" on an 84 pt tile): a capsule would then be a circle and the
-            // words would spill out of it, so a stacked pill is a rounded rectangle (Mac, 08ba8af Tabletop).
-            let shape = RoundedRectangle(cornerRadius: stacked ? 10 : 100, style: .continuous)
-            if state.kind == .unread { shape.fill(Color(red: 1, green: 0.69, blue: 0.31)) }
-            else { shape.fill(Color.black.opacity(0.72)) }   // a dark ground, 70% or more, over any art (Iris)
-        }
-        }
     }
 }
 
