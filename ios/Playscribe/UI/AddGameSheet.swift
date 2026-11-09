@@ -574,10 +574,11 @@ struct PopularCover: View {
 
             Button { if !added { model.addGame(game, status: .owned) } } label: {
                 Image(systemName: added ? "checkmark.circle.fill" : "plus.circle.fill")
-                    .font(.title3)
+                    // A fixed-size glyph in a fixed 44 pt plate: Dynamic Type must not grow it past the plate (Quinn, #431).
+                    .font(.system(size: 22, weight: .semibold))
                     .symbolRenderingMode(.palette)
                     .foregroundStyle(PlayscribeColor.onAccent, PlayscribeColor.accent)
-                    .frame(width: 44, height: 44)
+                    .frame(width: min(44, width), height: min(44, height))
                     .contentShape(Rectangle())
             }
             .buttonStyle(.plain)

@@ -8,5 +8,5 @@ Change: those covers are now `PopularCover`: the cover opens the game (`browseGa
 
 Tests: UpcomingBrowseTests (a tap opens the game and leaves the Library unchanged; a tick adds exactly once, an upcoming game as Wishlist). Stills: first-run in Closed portrait and Open, and the Book right page, for Iris.
 
-Not claimed: no relaunch on a device yet; the nested tappable frame (tick over the cover) is for the fold audit and the stills to confirm.
+Back from an opened game returns to first-run with nothing added (browse never writes to the collection; the unit test covers the model, the Mac hand-checks the screen). Not claimed: no relaunch on a device yet.
 Learning: a one-tap add on a browsing surface is a trap; make the adding a separate, visible control and keep the tap for looking.
