@@ -1,0 +1,39 @@
+// Auto-onboarding (0.5.4, docs: design/auto-onboarding-0.5.4.md): derive a Steam news source for every PS5
+// index game whose IGDB entry links a Steam store page. The hand registry always wins; nothing here is "official".
+import type { RegistryGame, SourceDef } from '../registry.ts'
+
+export interface IndexGame { i: number; n: string; d?: string | null; p?: string | null; v?: string | null }
+export interface InfoEntry { links?: { official?: string; patchNotes?: string } }
+
+export const steamAppIdFromUrl = (url: string | undefined) => url?.match(/store\.steampowered\.com\/(?:news\/)?app\/(\d+)/)?.[1]
+
+/** Sony first-party games are separate PC ports on Steam: a Steam patch says nothing about PS5. */
+export const looksLikeSonyPort = (g: IndexGame) => /\b(sony|playstation)\b/i.test(`${g.p ?? ''} ${g.v ?? ''}`)
+
+export const slugOf = (g: IndexGame) => `${g.n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}-${g.i}`
+
+export interface AutoGame extends RegistryGame { id: string; steamAppId: number }
+
+export interface AutoResult {
+  games: AutoGame[]
+  skipped: { handRegistered: number; notReleased: number; noSteam: number; duplicateApp: number }
+}
+
+/** Pure: index + info shards + the hand registry's igdb ids -> the auto entries. `today` is an ISO date. */
+export const buildAutoRegistry = (index: IndexGame[], info: Map<number, InfoEntry>, handIgdbIds: Set<number>, handAppIds: Set<number>, today: string): AutoResult => {
+  const skipped = { handRegistered: 0, notReleased: 0, noSteam: 0, duplicateApp: 0 }
+  const seen = new Set<number>()
+  const games: AutoGame[] = []
+  for (const g of index) {
+    if (handIgdbIds.has(g.i)) { skipped.handRegistered++; continue }
+    if (!g.d || g.d > today) { skipped.notReleased++; continue }
+    const app = steamAppIdFromUrl(info.get(g.i)?.links?.patchNotes)
+    if (!app) { skipped.noSteam++; continue }
+    const appId = Number(app)
+    if (handAppIds.has(appId) || seen.has(appId)) { skipped.duplicateApp++; continue }
+    seen.add(appId)
+    const source: SourceDef = { id: `auto-${appId}-steam`, kind: 'steamNews', url: `https://store.steampowered.com/feeds/news/app/${appId}/`, platforms: ['pc'], trust: 'official', fetch: 'auto', ps5Signal: 'explicit' }
+    games.push({ id: slugOf(g), steamAppId: appId, name: g.n, igdbId: g.i, ps5TitleIds: [], ...(looksLikeSonyPort(g) ? { steamIsPcPort: true } : {}), sources: [source] })
+  }
+  return { games, skipped }
+}
