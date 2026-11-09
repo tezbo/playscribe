@@ -851,9 +851,12 @@ struct GameTile: View {
                         VStack(alignment: .leading, spacing: 2) { glyph; Text(state.text).lineLimit(isDate ? 1 : 2).minimumScaleFactor(isDate ? 0.7 : 1) }
                     }
                     .font(PlayscribeFont.caption.weight(.semibold))
+                    // Capped at AX3 (about 2x body shouted, Iris #436); amber only for an unread update, else the grey of the other dates.
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility3)
                     .foregroundStyle(color)
                     .fixedSize(horizontal: false, vertical: true)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 2)
                     .accessibilityHidden(true)
                 }
             }

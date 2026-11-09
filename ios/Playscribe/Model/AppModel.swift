@@ -688,6 +688,16 @@ final class AppModel {
         case "three-update": resetToUpdateDemo(count: 3); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "four-update": resetToUpdateDemo(count: 4); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "caught-up": resetToCaughtUpDemo()
+        // QA (INTERNAL, #436): "tile-states" is the one-update demo plus a "Plays on PS5" tile, a "Not on PS5" tile, and the
+        // unread game turned into a Wishlist tile, so every tile pill kind shows in the Library.
+        case "tile-states":
+            resetToOneUpdateDemo()
+            insertGame(CatalogGame(id: "qa-plays", name: "Plays As PS4 Quest", platforms: [.ps5], releasePrecision: .day,
+                                   playableSince: "2021-03-12", igdbID: 990101, coverage: .none), status: .owned)
+            insertGame(CatalogGame(id: "qa-notps5", name: "PC Only Tactics", platforms: [], releasePrecision: .day,
+                                   releasedElsewhere: "2012-06-14", releasedElsewhereOn: "PC (Microsoft Windows)", igdbID: 990102, coverage: .none), status: .watching)
+            if let u = libraryRows.first(where: { $0.unread > 0 }) { setStatus(u.id, .wishlist) }
+            nav.tab = .library; nav.gameID = nil
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
         // QA (INTERNAL, B-10): "quick/tip" shows the press-and-hold tip; "quick/undo" removes the first game so the
