@@ -532,7 +532,9 @@ struct LibraryShelf: View {
                     }
                     // A pose or fold change rebuilds the grid: lazily cached cells kept their old frames
                     // (0.2.0 gate: Book showed the open-pose grid across the fold).
-                    .id(poseKey)
+                    // The search text is part of the identity: a fast "control" in Closed left the grid blank (1 tile, nothing drawn, and
+                    // deleting a letter did not bring it back, Mac 677e7eb run 3 of 10): a stuck lazy grid, rebuilt on every query change.
+                    .id("\(poseKey)|\(model.data.nav.query)")
                 }
                 // Open and Closed portrait (Iris, v0.5.3): News, the PS Plus cards and search come after the tiles.
                 if portraitTilesFirst && closedWide {

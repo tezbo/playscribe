@@ -34,3 +34,38 @@ final class SearchAsideTests: XCTestCase {
         XCTAssertTrue(deck.firstMatch.waitForExistence(timeout: 5), "the deck returns when the field is empty and unfocused")
     }
 }
+
+/// v0.5.3 (#424): a fast "control" in Closed once left the tile list blank and stuck (Mac 677e7eb, run 3 of 10). Types it ten times
+/// and, when no tile shows, attaches the accessibility tree so the cause (no tile in the tree, or a tile with no frame) is readable.
+final class SearchBlankListTests: XCTestCase {
+    @MainActor
+    func testFastControlNeverLeavesTheListBlank() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "demo"]
+        app.launch()
+        let pose = ReleaseRowTests.pose(app)
+        try XCTSkipUnless(pose.contains("pose: closed"), "run in Closed (pose: \(pose))")
+        let field = app.textFields["Search your library"].exists ? app.textFields["Search your library"] : app.textFields.firstMatch
+        XCTAssertTrue(field.waitForExistence(timeout: 10))
+        let tiles = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-'"))
+        for run in 1...10 {
+            field.tap()
+            field.typeText("control")
+            sleep(2)
+            if !tiles.firstMatch.exists {
+                let dump = XCTAttachment(string: app.debugDescription)
+                dump.name = "blank-list-run\(run)-tree.txt"
+                dump.lifetime = .keepAlways
+                add(dump)
+                print("BLANKLIST run \(run)\n\(app.debugDescription)")
+                XCTFail("run \(run): no tile after typing 'control' (tree attached)")
+                return
+            }
+            XCTAssertEqual(tiles.count, 1, "run \(run): one match for 'control'")
+            let clear = app.buttons["Clear search"]
+            if clear.waitForExistence(timeout: 3) { clear.tap() }
+            app.keyboards.buttons.matching(NSPredicate(format: "label IN {'Search','search','Return','return'}")).firstMatch.tap()
+            sleep(1)
+        }
+    }
+}
