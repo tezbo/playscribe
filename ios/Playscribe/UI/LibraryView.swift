@@ -795,7 +795,7 @@ struct GameMenuButton: View {
 
 /// Inner display tile: a fixed-size cover, name, a status dot and the unread count.
 /// Library tile (brand library-tiles, approved by Terry 26 Oct): a 3:4 cover with no text under
-/// it. Top right, a glass status circle; bottom left, a date pill that carries the update state.
+/// it. Bottom right, a glass status circle with a ring; top left, a date pill that carries the update state.
 /// Long-press opens the game's actions.
 struct GameTile: View {
     @Environment(AppModel.self) private var model
@@ -826,8 +826,16 @@ struct GameTile: View {
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             VStack(alignment: .leading, spacing: 4) {
                 tileFrame(TileCover(game: row.game))
-                    .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
-                    .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
+                    // The status circle sits bottom-trailing with a dark ring, and the date pill top-leading: art lettering is mostly
+                    // at the top and bottom-leading, and the old top-trailing check read "Bal( Gate" while the bottom-leading pill
+                    // covered "BLOOD OF" (Iris, 0a9fa7e). Both stop growing at the largest standard size (AX hides the pill).
+                    .overlay(alignment: .bottomTrailing) {
+                        StatusCircle(status: row.status)
+                            .overlay(Circle().strokeBorder(Color.black.opacity(0.7), lineWidth: 1.5).padding(-1.5))
+                            .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+                            .padding(8)
+                    }
+                    .overlay(alignment: .topLeading) { DatePill(row: row).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(6) }
                     .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 // Accessibility sizes: the pill would cover the art, so the date or status sits under
