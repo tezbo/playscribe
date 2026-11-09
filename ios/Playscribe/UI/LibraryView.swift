@@ -805,6 +805,8 @@ struct GameTile: View {
     var size: CGFloat?
     /// Closed fills its column, so the cover's width is only known once laid out.
     @State private var measuredWidth: CGFloat = 0
+    /// The date pill's height with its 8 pt insets, so top inset + pill + 8 pt gap (0 until it is laid out; the pill is absent at AX): a placeholder plate keeps that room clear at the top.
+    @State private var pillHeight: CGFloat = 0
     /// QA probe only (fold audit on): the tile's outer width, to compare with the published id.
     @State private var outerWidth: CGFloat = 0
 
@@ -825,7 +827,7 @@ struct GameTile: View {
             // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             VStack(alignment: .leading, spacing: 4) {
-                tileFrame(TileCover(game: row.game))
+                tileFrame(TileCover(game: row.game, topInset: typeSize.isAccessibilitySize || pillHeight == 0 ? 0 : pillHeight))
                     .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 // Accessibility sizes: the pill would cover the art, so the date or status sits under
@@ -862,6 +864,7 @@ struct GameTile: View {
                 DatePill(row: row, maxWidth: max(0, (size ?? measuredWidth) - 16)).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(8)
                     .allowsHitTesting(false)
                     .accessibilityHidden(true)
+                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { pillHeight = $0 }
             }
         }
         .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
@@ -881,11 +884,13 @@ struct GameTile: View {
 /// else the ink plate with the name. 10 pt corners and a faint inner edge.
 struct TileCover: View {
     var game: CatalogGame
+    /// Height kept clear at the top of a placeholder plate for the date pill (0: none).
+    var topInset: CGFloat = 0
     var body: some View {
         Color.ink1
             .overlay {
                 if game.coverAsset != nil || game.coverURL != nil {
-                    CoverView(game: game, cornerRadius: 0)
+                    CoverView(game: game, cornerRadius: 0, topInset: topInset)
                 } else if let art = game.keyArtAsset {
                     Image(art).resizable().scaledToFill()
                         .overlay(alignment: .top) {
@@ -895,7 +900,7 @@ struct TileCover: View {
                                 .background(LinearGradient(colors: [.black.opacity(0.7), .clear], startPoint: .top, endPoint: .bottom))
                         }
                 } else {
-                    CoverView(game: game, cornerRadius: 0)
+                    CoverView(game: game, cornerRadius: 0, topInset: topInset)
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))

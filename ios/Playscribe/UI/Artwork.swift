@@ -5,6 +5,9 @@ import SwiftUI
 struct CoverView: View {
     var game: CatalogGame
     var cornerRadius: CGFloat = 8
+    /// Room kept clear at the top for something drawn over the cover (the Library tile's date pill): the placeholder letter is
+    /// centred in the space below it and sized to that space, so it never touches the pill at any pill height (Iris, #436).
+    var topInset: CGFloat = 0
 
     var body: some View {
         ZStack {
@@ -33,12 +36,14 @@ struct CoverView: View {
                 // tinted plate). The title is always printed beside or below the cover, never inside the plate, so it can't
                 // be cut mid-word (Iris, R-7).
                 GeometryReader { geo in
-                  if geo.size.height >= 32 {
+                  let room = max(0, geo.size.height - topInset)
+                  if room >= 32 {
                     Text(String(game.name.first(where: \.isLetter) ?? game.name.first ?? "?").uppercased())
                         // fixedSize: a sized custom font also scales with Dynamic Type, which overflowed the plate at AX5.
-                        .font(.custom("Literata24pt-SemiBold", fixedSize: min(geo.size.height * 0.4, geo.size.width * 0.6)))
+                        .font(.custom("Literata24pt-SemiBold", fixedSize: min(room * 0.4, geo.size.width * 0.6)))
                         .foregroundStyle(.white.opacity(0.85))
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .padding(.top, topInset)
                         .accessibilityHidden(true)
                   }
                 }
