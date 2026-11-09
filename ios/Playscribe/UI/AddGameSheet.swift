@@ -554,7 +554,7 @@ struct OnboardingRightPage: View {
 
 
 /// A cover in the first-run "Popular on PS5" strip and the Book right-page grid (r053-tap-opens-tick-adds, Iris): a tap on the cover
-/// opens the game and never adds it; adding is the deliberate tick at the top right (44 pt hit target, on the cover's outer corner, so
+/// opens the game and never adds it; adding is the deliberate tick at the bottom right (44 pt hit target, on the cover's outer corner, so
 /// it is never near the hinge). An upcoming game ticked in goes in as Wishlist (addGames). Opening is silent; the pop plays on the add.
 struct PopularCover: View {
     @Environment(AppModel.self) private var model
@@ -572,11 +572,11 @@ struct PopularCover: View {
         let inLibrary = model.entry(game.id) != nil
         let marked = inLibrary || phase == .adding || pressing   // the check and the quiet word show on the press itself
         let word = game.isUpcoming ? "Wishlist" : "Added"
-        ZStack(alignment: .topTrailing) {
+        ZStack(alignment: .bottomTrailing) {
             // While an add is in flight (and once added) the cover cannot open the game: a second tap must not fall through.
             Button { if !marked { model.browseGame(game) } } label: {
                 TileCover(game: game).frame(width: width, height: height)
-                    .overlay(alignment: .bottom) {
+                    .overlay(alignment: .bottomLeading) {
                         if marked {
                             Text(word)
                                 .onAppear { logPressToCheck() }
@@ -586,7 +586,7 @@ struct PopularCover: View {
                                 .foregroundStyle(PlayscribeColor.onAccent)
                                 .padding(.horizontal, 8).padding(.vertical, 3)
                                 .background(PlayscribeColor.accent, in: Capsule())
-                                .padding(.bottom, 6)
+                                .padding(.leading, 6).padding(.bottom, 6)
                                 .accessibilityHidden(true)
                         }
                     }
@@ -605,10 +605,15 @@ struct PopularCover: View {
                     .font(.system(size: 22, weight: .semibold))
                     .symbolRenderingMode(.palette)
                     .foregroundStyle(PlayscribeColor.onAccent, PlayscribeColor.accent)
+                    // Iris: a 1.5 pt dark ring keeps the disc legible over any cover art.
+                    .background(Circle().fill(Color.black.opacity(0.8)).frame(width: 25, height: 25))
                     .frame(width: min(44, width), height: min(44, height))
                     .contentShape(Rectangle())
             }
             .buttonStyle(TickPressStyle(pressing: $pressing))
+            // Bottom-trailing, the 22 pt disc inset 8 pt from the corner (the 44 pt hit frame reaches 3 pt past the cover edge, on the
+            // outer side, so it stays far from the Book hinge); it no longer covers the title lettering at the top (Iris).
+            .offset(x: 3, y: 3)
             // Not `.disabled` either (it dims the plate); the action ignores a tap once the game is in or being added.
             .accessibilityLabel(marked ? "\(game.name), in your library" : "Add \(game.name)")
             .accessibilityIdentifier("popularAdd")
