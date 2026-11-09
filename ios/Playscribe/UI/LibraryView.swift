@@ -483,8 +483,12 @@ struct LibraryShelf: View {
                     topCards(all)
                     NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                 } else if portraitTilesFirst {
-                    NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
-                    topCards(all)
+                    // While the person types in the field, News and the alerts / PS Plus cards step aside, so the matching
+                    // tiles sit right above the field and the keyboard (Quinn, 9d7cd15 stills). They return on blur.
+                    if !searchFocused {
+                        NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
+                        topCards(all)
+                    }
                     if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 }
                 // Tabletop lower half (Iris, v0.5.3): switch, filter chips, tiles, then the alerts card, PS Plus, search and
