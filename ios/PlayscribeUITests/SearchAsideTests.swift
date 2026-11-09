@@ -27,7 +27,10 @@ final class SearchAsideTests: XCTestCase {
         let clear = app.buttons["Clear search"]
         XCTAssertTrue(clear.waitForExistence(timeout: 3))
         clear.tap()
-        app.keyboards.buttons["Search"].tap()  // the return key reads "Search" (Mac 6a2d5f1)
+        // The return key reads "Search" on the Duo simulator (Mac 6a2d5f1); accept the other labels so the test also runs elsewhere.
+        let keys = app.keyboards.buttons
+        let returnKey = ["Search", "search", "Return", "return"].map { keys[$0] }.first { $0.exists } ?? keys["Search"]
+        returnKey.tap()
         XCTAssertTrue(deck.firstMatch.waitForExistence(timeout: 5), "the deck returns when the field is empty and unfocused")
     }
 }
