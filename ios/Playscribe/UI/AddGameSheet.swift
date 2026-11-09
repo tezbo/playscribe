@@ -409,6 +409,9 @@ struct OnboardingView: View {
                     .padding(.bottom, 24)
                 }
                 .scrollPosition($scroll)
+                // Book: the left page is its own scroll view, so its top edge effect is a lighter slab with a hard right edge over the
+                // hero (Iris, 6a31718). No effect there: nothing tinted can have an edge (the seam would also show on a hand scroll).
+                .scrollEdgeEffectHidden(duo.pose == .book, for: .top)
                 .safeAreaInset(edge: .bottom, spacing: 0) { toastRoom }
                 .onChange(of: model.toast != nil) { _, now in toastShown(now) }
                 // Book: one page wide, so nothing crosses the fold (0.2.0 gate, first-run Library).

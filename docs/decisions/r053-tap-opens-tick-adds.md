@@ -50,3 +50,4 @@ Correction in the same head: the inset is `model.messageInset` (bottom edge to t
 ## Update 11: no toast scroll in Book (Iris, 6a31718)
 
 In Book the first-run page's scroll to the foot slid the hero under the navigation bar, which drew a lighter slab (hard right and bottom edges) behind "Library". In Book the toast covers nothing (it sits under "Skip for now"; the caption is on the right page), so the toast room and the scroll are off there. Closed, Open and Tabletop keep them.
+Also in Book (Iris's spec: no tinted edge over the hero): the left page's scroll view hides its top edge effect (`scrollEdgeEffectHidden`), because the slab is that scroll view's own edge effect, clipped to the page's width, so a hand scroll would show the same seam. The scroll-to-foot stays off in Book as well.
