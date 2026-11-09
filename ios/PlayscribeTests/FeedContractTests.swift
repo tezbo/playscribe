@@ -45,6 +45,20 @@ struct FeedContractTests {
         #expect(undated.date == nil)
     }
 
+    @Test("News tab: newest first, no game takes the page, the same story once per game, Reported vs Official")
+    @MainActor func newsMerge() throws {
+        func item(_ title: String, _ day: Int, _ v: String? = nil) -> NewsItem {
+            NewsItem(title: title, date: Date(timeIntervalSince1970: Double(day) * 86400), url: URL(string: "https://example.com/\(title.hashValue)-\(day)")!, verification: v)
+        }
+        let ac = (1...8).map { item("Assassin's Creed story \($0)", 100 + $0) }
+        let other = [item("Control Resonant patch", 50, "reported"), item("Control  resonant PATCH!", 49, "reported")]
+        let merged = NewsView.merge([("ac", ac), ("control", other)])
+        #expect(merged.filter { $0.game == "ac" }.count == NewsView.perGameCap)
+        #expect(merged.filter { $0.game == "control" }.count == 1, "a repeated headline is listed once")
+        #expect(merged.first?.game == "ac" && merged.last?.game == "control")
+        #expect(merged.last?.item.tagText == "Reported" && merged.first?.item.tagText == "Official")
+    }
+
     @Test("Similar games decode with an optional cover id")
     func similar() throws {
         let json = #"[{ "igdbId": 1020, "name": "Grand Theft Auto V", "coverId": "co2lbd" }, { "igdbId": 7, "name": "No cover" }]"#
