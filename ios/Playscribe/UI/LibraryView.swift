@@ -805,8 +805,18 @@ struct GameTile: View {
     var size: CGFloat?
     /// Closed fills its column, so the cover's width is only known once laid out.
     @State private var measuredWidth: CGFloat = 0
-    /// The date pill's height with its 8 pt insets, so top inset + pill + 8 pt gap (0 until it is laid out; the pill is absent at AX): a placeholder plate keeps that room clear at the top.
-    @State private var pillHeight: CGFloat = 0
+    /// One 11 pt line of the pill's text, scaled with Dynamic Type (the pill stops growing at xxxLarge, so is capped there below).
+    @ScaledMetric(relativeTo: .caption2) private var pillLine: CGFloat = 14
+    /// The room a placeholder plate keeps clear at the top for the date pill: a fixed amount for the tile's width, not the measured
+    /// pill, so every placeholder letter in a grid sits at the same height whatever its pill's line count (Iris, #436). Stacked
+    /// (tile 160 pt or less): the mark row and two text lines, the most any pill needs; wider tiles: one line.
+    private var pillRoom: CGFloat {
+        if typeSize.isAccessibilitySize { return 0 }
+        let line = min(pillLine, 14 * 1.45)   // xxxLarge is about 1.45 x the default
+        let stacked = (size ?? measuredWidth) - 16 <= 144
+        let pill = (stacked ? 12 + 1 + 2 * line : line) + 6   // 3 pt of padding above and below
+        return 8 + pill + 8                                   // 8 pt inset above, 8 pt of air below
+    }
     /// QA probe only (fold audit on): the tile's outer width, to compare with the published id.
     @State private var outerWidth: CGFloat = 0
 
@@ -827,7 +837,7 @@ struct GameTile: View {
             // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             VStack(alignment: .leading, spacing: 4) {
-                tileFrame(TileCover(game: row.game, topInset: typeSize.isAccessibilitySize || pillHeight == 0 ? 0 : pillHeight))
+                tileFrame(TileCover(game: row.game, topInset: pillRoom))
                     .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 // Accessibility sizes: the pill would cover the art, so the date or status sits under
@@ -864,7 +874,6 @@ struct GameTile: View {
                 DatePill(row: row, maxWidth: max(0, (size ?? measuredWidth) - 16)).dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(8)
                     .allowsHitTesting(false)
                     .accessibilityHidden(true)
-                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { pillHeight = $0 }
             }
         }
         .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
