@@ -946,29 +946,42 @@ struct DatePill: View {
         // Accessibility sizes: the pill would cover the art, so it is hidden; the date stays in the label
         // and on the game page (Iris, 0.5.0 a11y).
         if !typeSize.isAccessibilitySize {
-        HStack(spacing: narrow ? 3 : 4) {
-            // The tile's status mark (in your library, wishlist, watching): inert, part of the tile's own label.
-            Image(systemName: StatusCircle.symbol(row.status))
-                .font(.system(size: 10, weight: .bold))
-                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)   // the shape says the state (check, filled bookmark, eye), not a colour
-                .accessibilityHidden(true)
+        // The tile's status mark (in your library, wishlist, watching): inert, part of the tile's own label.
+        let mark = Image(systemName: StatusCircle.symbol(row.status))
+            .font(.system(size: 10, weight: .bold))
+            .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)   // the shape says the state (check, filled bookmark, eye), not a colour
+            .accessibilityHidden(true)
+        let dot = Group {
             switch state.kind {
             case .unread: SparkShape().fill(PlayscribeColor.onAccent).frame(width: 9, height: 9)
             case .recent: Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
             default: EmptyView()
             }
-            Text(state.text)
-                .font(PlayscribeFont.caption2.weight(.semibold))
-                // Accessibility sizes: wrap to two lines inside the tile instead of running off it.
-                // Never an ellipsis: on a narrow tile the words wrap to a second line ("Plays on / PS5") and the pill grows
-                // taller, not wider (Iris, #436).
-                // A date is one token: it scales down before it would wrap ("25 / Jun"); only the two status phrases wrap.
-                .lineLimit(isDate ? 1 : (maxWidth != nil || typeSize.isAccessibilitySize ? 2 : 1))
-                .minimumScaleFactor(isDate ? 0.55 : 1)
-                .multilineTextAlignment(.leading)
-                .fixedSize(horizontal: !typeSize.isAccessibilitySize && maxWidth == nil, vertical: true)
-                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
         }
+        let ink = state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary
+        let gap: CGFloat = narrow ? 3 : 4
+        // Never an ellipsis and never under the 11 pt text floor (Iris, #436): no scale-down. A date is one token on one line; if the
+        // mark and the date do not fit side by side, the mark goes first and the date sits below it (as at AX5). The two status
+        // phrases may wrap ("Plays on / PS5").
+        Group {
+            if isDate {
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: gap) { mark; dot; Text(state.text).lineLimit(1).fixedSize() }
+                    VStack(alignment: .leading, spacing: 1) {
+                        HStack(spacing: gap) { mark; dot }
+                        Text(state.text).lineLimit(1).fixedSize()
+                    }
+                }
+            } else {
+                HStack(spacing: gap) {
+                    mark; dot
+                    Text(state.text).lineLimit(maxWidth != nil ? 2 : 1).multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: maxWidth == nil, vertical: true)
+                }
+            }
+        }
+        .font(PlayscribeFont.caption2.weight(.semibold))
+        .foregroundStyle(ink)
         .padding(.horizontal, narrow ? 5 : 8).padding(.vertical, 3)
         // No frame(maxWidth:): a flexible frame grows to its maximum and made the pill a bar. The overlay already proposes the tile's
         // width less its insets, so the pill hugs its content and only wraps when that proposal is smaller than the words.
