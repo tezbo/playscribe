@@ -569,8 +569,7 @@ struct FilterBar: View {
                 .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
                 // Never cut mid-glyph: one unbroken line in the scrolling row, two at accessibility sizes.
                 .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
-                .minimumScaleFactor(maxWidth == nil ? 1 : 0.75)
-                .fixedSize(horizontal: !typeSize.isAccessibilitySize && maxWidth == nil, vertical: true)
+                .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
                 .padding(.horizontal, 10)
                 .padding(.vertical, typeSize.isAccessibilitySize ? 6 : 0)
                 .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil, minHeight: 44)
@@ -945,7 +944,8 @@ struct DatePill: View {
                 .font(PlayscribeFont.caption2.weight(.semibold))
                 // Accessibility sizes: wrap to two lines inside the tile instead of running off it.
                 .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
-                .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
+                .minimumScaleFactor(maxWidth == nil ? 1 : 0.75)
+                .fixedSize(horizontal: !typeSize.isAccessibilitySize && maxWidth == nil, vertical: true)
                 .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
         }
         .padding(.horizontal, 7).padding(.vertical, 3)
