@@ -208,6 +208,9 @@ final class AppModel {
         Task { [weak self] in
             try? await Task.sleep(for: .milliseconds(1200))
             self?.firstRunHold = false
+            #if INTERNAL
+            Logger(subsystem: "co.codeconnectors.playscribe", category: "add").info("first-run hold ended (library swap)")
+            #endif
         }
     }
     /// Order games were just added in, for the pop stagger.

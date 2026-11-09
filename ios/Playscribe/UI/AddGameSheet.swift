@@ -619,7 +619,7 @@ struct PopularCover: View {
         let showsWord = width >= 125
         ZStack(alignment: .bottomTrailing) {
             // While an add is in flight (and once added) the cover cannot open the game: a second tap must not fall through.
-            Button { if inLibrary || phase == .idle { model.browseGame(game) } } label: {
+            Button { coverTapped(inLibrary: inLibrary) } label: {
                 TileCover(game: game).frame(width: width, height: height)
                     .overlay(alignment: .bottomLeading) {
                         if marked && showsWord {
@@ -685,6 +685,14 @@ struct PopularCover: View {
         pressStamp = 0
         Logger(subsystem: "co.codeconnectors.playscribe", category: "add").info("press to check: \(ms) ms (\(game.name, privacy: .public))")
         #endif
+    }
+
+    private func coverTapped(inLibrary: Bool) {
+        #if INTERNAL
+        Logger(subsystem: "co.codeconnectors.playscribe", category: "add")
+            .info("cover tap: \(game.name, privacy: .public) inLibrary=\(inLibrary) phase=\(phase == .adding ? "adding" : "idle") hold=\(model.firstRunHold) opens=\(inLibrary || phase == .idle)")
+        #endif
+        if inLibrary || phase == .idle { model.browseGame(game) }
     }
 
     private func tick() {

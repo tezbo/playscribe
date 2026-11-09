@@ -39,7 +39,16 @@ struct GameBookView: View {
         .navigationTitle(game?.name ?? "")
         .toolbar(removing: .title)
         .toolbarTitleDisplayMode(.inline)
+        // The system back button reached VoiceOver and tests with an empty label in Closed (Mac back check, 380e71b), and its label
+        // cannot be set. This one says where it goes (HIG: the previous screen's title).
+        .navigationBarBackButtonHidden(true)
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button { model.closeGame() } label: { Label("Library", systemImage: "chevron.backward") }
+                    .labelStyle(.iconOnly)
+                    .accessibilityLabel("Library")
+                    .accessibilityIdentifier("gameBack")
+            }
             ActionToolbar(actions: model.gameActions(gameID))
             // D-10: only when Contents and Page are side by side; absent, not disabled, otherwise.
             if sideBySide {

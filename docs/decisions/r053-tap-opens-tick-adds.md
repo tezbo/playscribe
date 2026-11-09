@@ -67,3 +67,8 @@ Update 11 turned the toast room and scroll off in Book on the guess that the toa
 ## Update 15: no sparkle behind the AX headline (Iris)
 
 The sparkle belongs to the default header art, so it cannot move; at AX5 it touched the "y" of "every" on line 3. At accessibility sizes the first-run stage draws the art's own two colours as a plain gradient, with no art, so nothing decorative shares a line with the headline.
+
+## Update 16: game page back button label; cover-tap log (Mac back check, 380e71b)
+
+1. The system back button on a game page had an empty accessibility label in Closed (first rail button), so VoiceOver read nothing and tests could not find it. A system back button's label cannot be set, so the game page hides it and shows its own leading toolbar button, "Library" (the previous screen's title, HIG), identifier `gameBack`, calling `closeGame()`. Cost: the edge-swipe back gesture of the system button is not available on the game page; the rail and toolbar buttons are.
+2. A single tap on an added cover during the 1.2 s hold did not open the game page. Cause not established from the code. INTERNAL logs (category "add") now print "cover tap: ... inLibrary phase hold opens" and "first-run hold ended (library swap)", so the Mac can compare the two timestamps.
