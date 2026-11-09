@@ -18,6 +18,13 @@ so write it for testers. Release steps are in docs/release.md.
 - Pre-launch patches no longer show as PS5 updates.
 - Tapping a PS5 update notification no longer crashes the app, and it opens that update's page.
 
+Known issues in this build:
+
+- Search: what you type can occasionally be lost, or the list can go blank while you type. Fixed in the next version.
+- Notifications: tapping a notification when the app is already open has not been checked yet. Tapping one when the app is closed has.
+- Book mode: on the left page the tiles show after News instead of first.
+- VoiceOver on the Library tiles has not been checked on a real device yet.
+
 Check on the Duo:
 
 - Settings, then Team alerts: turn it on. Take a screenshot, tap Share Beta Feedback and send it with the comment "alert test". A team alert should arrive within a minute. If nothing arrives, tell us; that is a useful result too.
