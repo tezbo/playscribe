@@ -275,10 +275,10 @@ struct ReleaseBody: View {
             if r.isSilent && r.notes.isEmpty {
                 Text("No official notes").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
-            // A-reader: changes grouped New, Fixed, Balance, each heading with its count.
+            // A-reader: changes grouped New, Fixed, Balance; the heading has no count, the sub-sections keep theirs (Terry, 0.5.4).
             let groups = ChangeKind.grouped(r.notes, ps5Only: ps5Page)
             ForEach(groups, id: \.kind) { g in
-                Text("\(g.kind.rawValue) \(g.count)").font(PlayscribeFont.title3).padding(.top, 6)
+                Text(g.kind.rawValue).font(PlayscribeFont.title3).padding(.top, 6)
                     .accessibilityAddTraits(.isHeader)
                 ForEach(Array(g.sections.enumerated()), id: \.offset) { _, section in
                     NoteSectionView(release: r, section: section)
