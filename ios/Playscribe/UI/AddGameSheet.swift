@@ -421,6 +421,7 @@ struct AddRow: View {
 struct OnboardingView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.railWidth) private var railWidth
 
     /// Content width of the left page in Book (clear of the fold), nil in other poses.
@@ -464,12 +465,15 @@ struct OnboardingView: View {
             HStack(alignment: .top, spacing: 0) {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {
-                        OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
+                        OnboardingStage().frame(height: (duo.pose == .closed ? 220 : 280) + (typeSize.isAccessibilitySize ? 120 : 0))   // four AX headline lines fit
                         OnboardingActions(pageWidth: pageWidth, bookLeft: pageWidth != nil).padding(.horizontal, 16)
                     }
                     .padding(.bottom, 24)
                 }
                 .scrollPosition($scroll)
+                // Book: the left page is its own scroll view, so its top edge effect is a lighter slab with a hard right edge over the
+                // hero (Iris, 6a31718). No effect there: nothing tinted can have an edge (the seam would also show on a hand scroll).
+                .scrollEdgeEffectHidden(duo.pose == .book, for: .top)
                 .safeAreaInset(edge: .bottom, spacing: 0) { toastRoom }
                 .onChange(of: model.toast != nil) { _, now in toastShown(now) }
                 // Book: one page wide, so nothing crosses the fold (0.2.0 gate, first-run Library).
@@ -503,6 +507,7 @@ struct OnboardingStage: View {
     @Environment(AppModel.self) private var model
     private var welcomeDone: Bool { model.data.welcomeDone ?? false }
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     /// The stage's bottom edge in screen space, before any clearance is applied.
     @State private var bottom: CGFloat = 0
 
@@ -516,12 +521,24 @@ struct OnboardingStage: View {
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            ArtView(asset: nil, game: nil)
+            if typeSize.isAccessibilitySize {
+                // The default header's sparkle is part of the art and lands on a headline line at AX (Iris, 517d94f), so accessibility
+                // sizes get the art's own colours without it.
+                LinearGradient(colors: [Color(hex: "#1b1d24"), Color(hex: "#0b0d12")], startPoint: .top, endPoint: .bottom)
+            } else {
+                ArtView(asset: nil, game: nil)
+            }
             LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .center, endPoint: .bottom)
-            Text(welcomeDone ? "Follow a game to get its PS5 patch notes in one place." : "Add your games to see every update")
-                .font(PlayscribeFont.title)
-                .foregroundStyle(PlayscribeColor.textPrimary)
-                .padding(20)
+            let headline = welcomeDone ? "Follow a game to get its PS5 patch notes in one place." : "Add your games to see every update"
+            Group {
+                // AX: at most four lines, and any ellipsis lands at a word boundary, never mid-word ("Follow a game to g...", Quinn, 6a31718).
+                if typeSize.isAccessibilitySize {
+                    WholeWordText(text: headline, font: PlayscribeFont.title, lines: 4, color: PlayscribeColor.textPrimary)
+                } else {
+                    Text(headline).font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
+                }
+            }
+            .padding(20)
         }
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
         .accessibilityElement(children: .combine)
@@ -665,7 +682,7 @@ struct PopularCover: View {
         let showsWord = width >= 125
         ZStack(alignment: .bottomTrailing) {
             // While an add is in flight (and once added) the cover cannot open the game: a second tap must not fall through.
-            Button { if !marked { model.browseGame(game) } } label: {
+            Button { coverTapped(inLibrary: inLibrary) } label: {
                 TileCover(game: game).frame(width: width, height: height)
                     .overlay(alignment: .bottomLeading) {
                         if marked && showsWord {
@@ -684,9 +701,10 @@ struct PopularCover: View {
             .buttonStyle(.plain)
             // Not `.disabled`: a disabled plain button dims to about 35 percent (Quinn's brightness check, 1ea80f2). A tap on a marked
             // cover simply does nothing.
-            .accessibilityLabel(marked ? "\(game.name), \(word.lowercased())" : game.name)
-            .accessibilityHint(marked ? "" : "Opens the game")
-            .accessibilityRemoveTraits(marked ? .isButton : [])
+            // The cover keeps one label and hint before and after the tick (it opens the game either way); the tick says "in your
+            // library" (Iris).
+            .accessibilityLabel(game.name)
+            .accessibilityHint("Opens the game")
             .tappableFrame()
 
             Button(action: tick) {
@@ -705,6 +723,9 @@ struct PopularCover: View {
             .buttonStyle(TickPressStyle(pressing: $pressing))
             // Not `.disabled` either (it dims the plate); the action ignores a tap once the game is in or being added.
             .accessibilityLabel(marked ? "\(game.name), in your library" : "Add \(game.name)")
+            // Inert once added: spoken as text, not as a button.
+            .accessibilityRemoveTraits(marked ? .isButton : [])
+            .accessibilityAddTraits(marked ? .isStaticText : [])
             .accessibilityIdentifier("popularAdd")
             .tappableFrame()
         }
@@ -729,8 +750,19 @@ struct PopularCover: View {
         #endif
     }
 
+    private func coverTapped(inLibrary: Bool) {
+        #if INTERNAL
+        Logger(subsystem: "co.codeconnectors.playscribe", category: "add")
+            .info("cover tap: \(game.name, privacy: .public) inLibrary=\(inLibrary) phase=\(phase == .adding ? "adding" : "idle") hold=\(model.firstRunHold) opens=\(inLibrary || phase == .idle)")
+        #endif
+        if inLibrary || phase == .idle { model.browseGame(game) }
+    }
+
     private func tick() {
         guard phase == .idle, model.entry(game.id) == nil else { return }
+        #if INTERNAL
+        Logger(subsystem: "co.codeconnectors.playscribe", category: "add").info("tick: \(game.name, privacy: .public) add begins")
+        #endif
         phase = .adding                                    // renders before anything below runs
         model.holdFirstRun()                               // the strip stays under the finger for a moment
         Task { @MainActor in

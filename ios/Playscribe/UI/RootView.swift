@@ -312,8 +312,10 @@ struct TabletopRail: View {
             ScrollView {
               VStack(spacing: 6) {
             if let id = model.nav.gameID, model.nav.tab == .library {
-                RailButton(action: ScreenAction(id: "back", title: "Library", systemImage: "chevron.backward",
+                // The same name and id as the other poses' back button ("Library, back", gameBack); a bare "Library" read as the tab.
+                RailButton(action: ScreenAction(id: "back", title: "Library, back", systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
+                    .accessibilityIdentifier("gameBack")
                 // Only five buttons fit the lower half (297a799): Check for updates and Links go in a More menu.
                 ForEach(model.gameActions(id).filter { $0.id != "refresh" }) { RailButton(action: $0) }
                 // Share the open update as a card (lower rail, 44 pt target; TT-0).
