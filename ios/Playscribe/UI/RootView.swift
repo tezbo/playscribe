@@ -167,23 +167,13 @@ struct RootView: View {
             // The sheet keeps its form while the launch pose settles, but a real change still switches it: folding into Book
             // at once, Open landscape once it has held for 10 s (the launch settling showed it for about 5 s).
             .onChange(of: duo.pose == .book) { _, book in
-                AddProbe.log("book-handler book=\(book) open=\(model.addSheetOpen)")
                 if book && model.addSheetOpen { model.addIsSystemSheet = false }
-            }
-            .onChange(of: duo.size, initial: true) { _, sz in
-                AddProbe.log("duo.size \(Int(sz.width))x\(Int(sz.height)) pose=\(duo.pose) wide=\(duo.pose == .flat && duo.isLandscape) sys=\(model.addIsSystemSheet) open=\(model.addSheetOpen) rightPage=\(model.liveRightPage) wanted=\(model.addKeyboardWanted)")
-            }
-            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillChangeFrameNotification)) { note in
-                let f = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) ?? .zero
-                AddProbe.log("keyboardFrame h=\(Int(f.height)) y=\(Int(f.minY)) duo.size=\(Int(duo.size.width))x\(Int(duo.size.height))")
             }
             .onChange(of: duo.pose == .flat && duo.isLandscape, initial: true) { _, wide in
                 unlatchTask?.cancel()
-                AddProbe.log("wide-handler wide=\(wide) size=\(Int(duo.size.width))x\(Int(duo.size.height)) pose=\(duo.pose) open=\(model.addSheetOpen) sys=\(model.addIsSystemSheet)")
                 guard wide else { return }
                 unlatchTask = Task { @MainActor in
                     try? await Task.sleep(for: .seconds(10))
-                    AddProbe.log("unlatch-timer cancelled=\(Task.isCancelled) open=\(model.addSheetOpen)")
                     // Not while the person has the keyboard up: moving the form rebuilds the sheet and drops the field's focus
                     // (probe log bc6bd42: the yield at 25.35 s was the focus loss; wanted was true). Wait until they put it away.
                     while !Task.isCancelled && model.addSheetOpen && model.addKeyboardWanted {
@@ -220,10 +210,7 @@ struct RootView: View {
         .onChange(of: NotificationService.shared.launchedFromNotification) { _, fromNotification in
             if fromNotification { splashVisible = false }
         }
-        .onChange(of: model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage)) { _, v in
-            AddProbe.log("sheet-presented=\(v) pose=\(model.livePose) rightPage=\(model.liveRightPage) sys=\(model.addIsSystemSheet) open=\(model.addSheetOpen)")
-        }
-        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { AddProbe.log("sheet-set(\($0)) pose=\(model.livePose) rightPage=\(model.liveRightPage) sys=\(model.addIsSystemSheet) open=\(model.addSheetOpen)"); if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
+        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
             // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
             AddGameSheet().presentationDetents([.large])
         }
