@@ -45,8 +45,6 @@ private final class KeyboardDismissView: UIView, UIGestureRecognizerDelegate {
     @objc private func tapped() {
         let before = responderAtTouch
         DispatchQueue.main.async {
-            // A control that works on the text itself (the search field's clear button) asked for the keyboard to stay.
-            if KeyboardState.consumeKeepRequest() { return }
             guard let before, before.isFirstResponder else { return }
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             NotificationCenter.default.post(name: .keyboardPutAwayByTap, object: nil)
@@ -55,6 +53,9 @@ private final class KeyboardDismissView: UIView, UIGestureRecognizerDelegate {
 
     func gestureRecognizer(_ g: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         responderAtTouch = KeyboardState.firstResponderInput
+        // A control that works on the text itself (the search field's clear button) keeps the keyboard: decided here, at touch
+        // start, from its registered window frame.
+        if KeyboardState.keepRegionContains(touch.location(in: nil)) { return false }
         var v = touch.view
         while let x = v {
             // Fields keep the caret and the keyboard.
@@ -85,6 +86,10 @@ extension View {
     /// Marks a list row whose tap must leave the keyboard up (a pick in Add).
     func keepsKeyboardOnTap() -> some View { background(KeepsKeyboardMarker()) }
 
+    /// Marks this control's own frame (window coordinates, kept current through layout, rotation and fold) as a tap that leaves the
+    /// keyboard up, for SwiftUI buttons the window recognizer cannot tell apart. The frame is dropped when the control goes away.
+    func keepsKeyboardInFrame(_ id: String) -> some View { modifier(KeepsKeyboardFrame(id: id)) }
+
     /// Scrolling dismisses the keyboard, and so does a tap outside fields, controls and list rows.
     func dismissesKeyboardOnOutsideTap() -> some View {
         scrollDismissesKeyboard(.interactively).background(KeyboardDismissAnchor())
@@ -92,14 +97,12 @@ extension View {
 }
 
 enum KeyboardState {
-    nonisolated(unsafe) private static var keepUntil = Date.distantPast
-    /// Called from the action of a control whose tap must leave the keyboard up (the Library search clear button, which is a SwiftUI
-    /// button, not a UIControl, so the window recognizer cannot tell it from an outside tap). Honoured for this tap only.
-    static func keepKeyboardOnThisTap() { keepUntil = Date().addingTimeInterval(0.5) }
-    static func consumeKeepRequest() -> Bool {
-        defer { keepUntil = .distantPast }
-        return Date() < keepUntil
-    }
+    /// Window-coordinate frames of controls whose tap must leave the keyboard up (the Library search clear button, a SwiftUI button
+    /// and not a UIControl, so the window recognizer cannot tell it from an outside tap). Decided at touch START, so no timing.
+    nonisolated(unsafe) private static var keepRegions: [String: CGRect] = [:]
+    static func setKeepRegion(_ id: String, _ frame: CGRect) { keepRegions[id] = frame }
+    static func removeKeepRegion(_ id: String) { keepRegions[id] = nil }
+    static func keepRegionContains(_ p: CGPoint) -> Bool { keepRegions.values.contains { $0.contains(p) } }
 
     /// The text field or text view that is first responder now, if any.
     static var firstResponderInput: UIView? {
@@ -118,5 +121,20 @@ enum KeyboardState {
     static var fieldIsFirstResponder: Bool {
         func find(_ v: UIView) -> Bool { ((v is UITextField || v is UITextView) && v.isFirstResponder) || v.subviews.contains(where: find) }
         return UIApplication.shared.connectedScenes.compactMap { ($0 as? UIWindowScene)?.windows }.flatMap { $0 }.contains(where: find)
+    }
+}
+
+private struct KeepsKeyboardFrame: ViewModifier {
+    let id: String
+    func body(content: Content) -> some View {
+        content
+            .background {
+                GeometryReader { g in
+                    Color.clear
+                        .onAppear { KeyboardState.setKeepRegion(id, g.frame(in: .global)) }
+                        .onChange(of: g.frame(in: .global)) { _, f in KeyboardState.setKeepRegion(id, f) }
+                        .onDisappear { KeyboardState.removeKeepRegion(id) }
+                }
+            }
     }
 }
