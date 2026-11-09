@@ -32,7 +32,7 @@ extension AppModel {
         var cards: [DeckCard] = []
         for c in data.collection {
             guard let g = game(c.gameID) else { continue }
-            for r in ps5Releases(c.gameID) where r.ps5State == .onPS5 {
+            for r in ps5Releases(c.gameID) where r.ps5State == .onPS5 && !qaNoReleases {
                 let unread = isUnread(r)
                 if unread || r.ps5Date > cutoff { cards.append(DeckCard(game: g, release: r, unread: unread, date: r.ps5Date)) }
             }
@@ -492,10 +492,10 @@ struct DeckByline: View {
             let line = DeckCard.noReleaseLine(tracked: model?.feedTracksGame(card.game.id) ?? true)
             if typeSize.isAccessibilitySize {
                 // Whole-word cut, trailing punctuation trimmed before the ellipsis (never mid-word).
-                WholeWordText(text: line, font: PlayscribeFont.subheadline, lines: tight ? 2 : 3, color: PlayscribeColor.textSecondary)
+                WholeWordText(text: line, font: PlayscribeFont.subheadline, lines: tight ? 2 : 3, color: PlayscribeColor.textPrimary.opacity(0.9))
             } else {
                 Text(line)
-                    .foregroundStyle(PlayscribeColor.textSecondary)
+                    .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)).shadow(color: .black.opacity(0.5), radius: 2)
                     .lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     .font(PlayscribeFont.subheadline)
             }
