@@ -38,6 +38,7 @@ private final class KeyboardDismissView: UIView, UIGestureRecognizerDelegate {
     private weak var responderAtTouch: UIView?
 
     @objc private func tapped() {
+        FocusProbe.log("dismiss recognizer tapped (responder at touch start: \(responderAtTouch == nil ? "none" : "a field"))")
         let before = responderAtTouch
         DispatchQueue.main.async {
             guard let before, before.isFirstResponder else { return }

@@ -74,6 +74,7 @@ struct AddGameSheet: View {
                                           matches: matches, custom: custom, customName: customName, customPlatform: customPlatform, letter: letter)
             }
             .onAppear {
+                FocusProbe.log("sheet onAppear (new AddGameSheet instance)")
                 if let d = model.addDraft {
                     status = d.status; query = d.query; debounced = d.query; picked = d.picked; pickOrder = d.pickOrder
                     method = d.method; matches = d.matches; custom = d.custom; customName = d.customName
@@ -86,11 +87,13 @@ struct AddGameSheet: View {
                     // The field appears only after the method switch above, and in Open portrait the sheet is still settling at 600 ms
                     // (7161347 gate: the one request was lost, the field never took focus). Ask again until it holds, up to 5 s.
                     Task {
-                        for _ in 0..<10 {
+                        for tick in 1...10 {
                             try? await Task.sleep(for: .milliseconds(500))
                             // SwiftUI can say "focused" while the field never became first responder (sheet still settling, hand check
                             // 1de7e9e: cold launch, no caret until a tap). Trust UIKit: if the keyboard isn't really up, toggle and ask again.
-                            if searchFocused && KeyboardState.fieldIsFirstResponder { break }
+                            FocusProbe.log("retry tick \(tick): searchFocused=\(searchFocused) uikitFirstResponder=\(KeyboardState.fieldIsFirstResponder)")
+                            if searchFocused && KeyboardState.fieldIsFirstResponder { FocusProbe.log("retry loop satisfied, stops"); break }
+                            FocusProbe.log("retry tick \(tick): toggling focus off then on")
                             searchFocused = false
                             try? await Task.sleep(for: .milliseconds(60))
                             searchFocused = true
@@ -103,7 +106,12 @@ struct AddGameSheet: View {
                 let end = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) ?? .zero
                 keyboardHeight = end.minY >= UIScreen.main.bounds.height ? 0 : end.height
             }
-            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in keyboardHeight = 0 }
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+                keyboardHeight = 0
+                FocusProbe.log("keyboardWillHide")
+            }
+            .onDisappear { FocusProbe.log("sheet onDisappear") }
+            .onChange(of: searchFocused) { _, f in FocusProbe.log("searchFocused -> \(f)") }
             .toolbarTitleDisplayMode(.inline)
             // Tabletop (0.2.0 gate): the empty nav bar cost about 100 pt of the lower half, so the
             // bar is hidden and Close sits in the search row instead; three rows then fit.
@@ -607,5 +615,15 @@ struct OnboardingRightPage: View {
             .padding(.top, 16).padding(.bottom, 24)
         }
         .scrollIndicators(.hidden)
+    }
+}
+
+/// TEMPORARY (v0.5.3 cold-launch keyboard drop): one NSLog per focus event under `-addFocusProbe`, with seconds since the first event.
+enum FocusProbe {
+    static let on = ProcessInfo.processInfo.arguments.contains("-addFocusProbe")
+    private static let t0 = Date()
+    static func log(_ message: @autoclosure () -> String) {
+        guard on else { return }
+        NSLog("ADDFOCUS %.2fs %@ (firstResponder=%@)", Date().timeIntervalSince(t0), message(), KeyboardState.fieldIsFirstResponder ? "yes" : "no")
     }
 }
