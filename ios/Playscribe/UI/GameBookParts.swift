@@ -21,14 +21,6 @@ struct PageView: View {
     /// Closed: one stacked book, the Contents below the Page.
     var withContents = false
 
-    /// The scroll view's viewport beside the rail: its frame less its safe-area insets (the rail is a trailing inset, 84 pt in
-    /// Closed, so 466 - 84 = 382). That is what it proposes to its content and centres over-wide content on. An earlier probe
-    /// (a Color inside the content) measured the frame rail included (466; frame dump on b8fbaad, content 466 wide at x=-42),
-    /// and capping that at `duo.size.width` only held in Closed, where the window is one page: in Book and Open the page is
-    /// narrower than the window, so the column grew by the rail's width and the share button slid under it (Mac, e4833ee).
-    @State private var viewportWidth: CGFloat = 0
-    private var columnWidth: CGFloat? { viewportWidth > 0 ? viewportWidth : nil }
-
     var body: some View {
         let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
         ScrollView {
@@ -71,14 +63,15 @@ struct PageView: View {
                 }
             }
             .padding(.bottom, 24)
-            // The column is pinned to the viewport width. A vertical scroll view centres content that is wider than its
-            // viewport, so one child that could not shrink (the PS4 update + Reported tag row at AX5, 514 pt in a 382 pt viewport)
-            // pushed the whole page 66 pt left under the screen edge: "atch 5.01", a clipped "9 Oct", the share button behind the
-            // rail (Closed AX5, frame dump on 805ceb3). Pinned, a child that still overflows sticks out on the right instead,
-            // and the margin stays (R-2).
-            .frame(width: columnWidth, alignment: .leading)
+            // The column is exactly what the scroll view proposes (its viewport beside the rail: 382 pt in Closed, 372 in Book) as
+            // long as every child can shrink to it. A vertical scroll view centres content wider than its viewport, so one child
+            // that could not (the PS4 update + Reported tag row at AX5, 514 pt) pushed the whole page 66 pt left under the screen
+            // edge: "atch 5.01", a clipped "9 Oct", the share button behind the rail (Closed AX5, frame dump on 805ceb3). The tags
+            // wrap (ReleaseTag) and the two links stack (SourceLinks) now, and a frame dump at e4833ee shows nothing wider than
+            // the viewport. Do not pin the column to a measured width instead: a Color probe inside the content measured the
+            // frame rail included (466; b8fbaad), and the scroll view's own geometry minus its insets came out 20 to 80 pt short
+            // (57227e2); each one moved the page in some pose (R-2).
         }
-        .onGeometryChange(for: CGFloat.self) { $0.size.width - $0.safeAreaInsets.leading - $0.safeAreaInsets.trailing } action: { viewportWidth = $0 }
         .clearsMessages()
         .scrollIndicators(.hidden)
         // D-2, T-5, D-10: the reading position is model state. Closing, opening, rotating or
