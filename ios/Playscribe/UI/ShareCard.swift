@@ -19,15 +19,20 @@ struct ShareCard: View {
         return "\(updateName) \(version)"
     }
 
+    /// The placeholder's own colour around its baked-in mark (sampled from default-header-tall), so the veil is invisible.
+    private let groundTone = Color(red: 57 / 255, green: 47 / 255, blue: 41 / 255)
+
     var body: some View {
         ZStack(alignment: hasArt ? .bottomLeading : .leading) {
             Color.black
-            if hasArt {
-                Image(uiImage: art).resizable().scaledToFill()
-                    .frame(width: 1080, height: 1350).clipped()
-            } else {
-                // No key art: a plain ground with an ember glow, and the sparkle drawn in the empty band above the
-                // title block, never under the body text (Iris, 9dcb197: the placeholder image's mark ran behind "Vesemir would").
+            Image(uiImage: art).resizable().scaledToFill()
+                .frame(width: 1080, height: 1350).clipped()
+            if !hasArt {
+                // No key art: the placeholder keeps its glow and book silhouette as the ground, but its own mark (baked in
+                // at 60% down, under the centred body text; Iris, 9dcb197) is veiled with a soft patch of the ground tone,
+                // and the sparkle is drawn again in the empty band above the title block.
+                RadialGradient(colors: [groundTone, groundTone, .clear], center: .center, startRadius: 0, endRadius: 110)
+                    .frame(width: 220, height: 220).position(x: 540, y: 869)
                 RadialGradient(colors: [PlayscribeColor.ember300.opacity(0.28), .clear],
                                center: .center, startRadius: 0, endRadius: 900)
                 Text("\u{2726}").font(.system(size: 72)).foregroundStyle(PlayscribeColor.ember300.opacity(0.9))
