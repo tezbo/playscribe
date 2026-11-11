@@ -30,6 +30,12 @@ struct PageView: View {
                 if withContents, let g = model.game(gameID) {
                     VStack(alignment: .leading, spacing: 6) {
                         GameTitleWithStatus(gameID: gameID, name: g.name)
+                        // Closed has no Contents header, so a browsed game (Upcoming, PS Plus) gets its add control here.
+                        if model.entry(gameID) == nil {
+                            Button("Add to library") { model.addGame(g, status: .watching) }
+                                .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
+                                .accessibilityIdentifier("addToLibrary")
+                        }
                     }
                     .padding(.horizontal, 20)
                 }
@@ -59,7 +65,7 @@ struct PageView: View {
                 .padding(.horizontal, 20)
                 if withContents {
                     Divider().overlay(PlayscribeColor.ink700).padding(.top, 8)
-                    ContentsBody(gameID: gameID).padding(.horizontal, 16)
+                    ContentsBody(gameID: gameID, addControl: false).padding(.horizontal, 16)
                 }
             }
             .padding(.bottom, 24)
@@ -526,6 +532,8 @@ struct ContentsBody: View {
     @Environment(\.duo) private var duo
     @AppStorage(ReadingSide.key) private var pageOnLeft = false
     var gameID: String
+    /// False in the stacked book, where the Page header already carries it (the Contents sit far below the update).
+    var addControl = true
 
     var body: some View {
         let game = model.game(gameID)
@@ -539,7 +547,7 @@ struct ContentsBody: View {
                 } }
                 // Once per page (Terry): closed, the links sit with the game's basics instead.
                 if duo.pose != .closed && duo.pose != .tabletop, let game { GameLinks(game: game) }
-                if model.entry(gameID) == nil, let game {
+                if addControl, model.entry(gameID) == nil, let game {
                     Button("Add to library") { model.addGame(game, status: .watching) }
                         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
                 }

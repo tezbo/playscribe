@@ -3,7 +3,7 @@ import SwiftUI
 /// PS Plus monthly games (0.5.0, r050-plus-card): this month's lineup in the Library as up to three
 /// cover tiles styled like the library's (3:4, 10 pt corners, name in the art, no text under), with
 /// "Last chance" in its last three days. Carries the PlayStation Plus badge; the trademark notice sits
-/// under the version in Settings. A game you track opens its page. Hidden when no month holds today.
+/// under the version in Settings. Every title opens its game page (updates and patches), tracked or not; one the catalogue lacks stays a plain plate. Hidden when no month holds today.
 struct PlusCard: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dynamicTypeSize) private var typeSize
@@ -80,8 +80,8 @@ struct PlusCard: View {
                 // Games past the covers (rule): the ones you track get their own tappable row; the rest are one
                 // "Plus A, B and C" line. Never a bare "and X" (Quinn).
                 let extra = Array(month.games.dropFirst(limit))
-                ForEach(Array(extra.filter { g in g.gameId.map { model.entry($0) != nil } ?? false }.enumerated()), id: \.offset) { _, g in nameRow(g) }
-                if let line = Self.plusLine(extra.filter { g in !(g.gameId.map { model.entry($0) != nil } ?? false) }.map(\.name)) {
+                ForEach(Array(extra.filter { opensPage($0) }.enumerated()), id: \.offset) { _, g in nameRow(g) }
+                if let line = Self.plusLine(extra.filter { !opensPage($0) }.map(\.name)) {
                     Text(line).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -170,9 +170,13 @@ struct PlusCard: View {
         }
     }
 
+    /// Every lineup title that resolves to a catalogue game opens that game's page, tracked or not (an untracked one opens
+    /// as a browsed game, never added to the library); a title the catalogue lacks stays plain text.
+    private func opensPage(_ g: PlusMonth.Game) -> Bool { Self.resolve(g) { model.game($0) } != nil }
+
     @ViewBuilder private func nameRow(_ g: PlusMonth.Game, lead: String = "") -> some View {
-        if let id = g.gameId, model.entry(id) != nil {
-            Button { model.openGame(id) } label: {
+        if let game = Self.resolve(g, tracked: { model.game($0) }) {
+            Button { model.browseGame(game) } label: {
                 HStack(spacing: 8) {
                     Text(lead + g.name).fixedSize(horizontal: false, vertical: true)
                     Spacer(minLength: 8)
@@ -193,8 +197,8 @@ struct PlusCard: View {
     @ViewBuilder private func cover(_ g: PlusMonth.Game, plate: Bool = false) -> some View {
         let game = Self.resolve(g) { model.game($0) }
         let art = PlusCover(name: g.name, game: game, wide: plate)
-        if let id = g.gameId, model.entry(id) != nil {
-            Button { model.openGame(id) } label: { art }
+        if let game {
+            Button { model.browseGame(game) } label: { art }
                 .buttonStyle(.plain)
                 .tappableFrame()
                 .accessibilityLabel(g.name)
