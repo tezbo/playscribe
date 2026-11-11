@@ -34,7 +34,8 @@ await seedGames(deps)
 const autoSlice = Number(process.env.AUTO_SLICE ?? 0) || 0
 if (autoSlice > 0 && exportDir && !args.includes('--hot') && !args.includes('--backfill')) {
   const auto = deriveAutoRegistry(`${exportDir}/v1/info`)
-  console.log(`auto-onboarding: ${auto.games.length} derived games (${seedAutoGames(db, auto.games)} rows written), skipped ${JSON.stringify(auto.skipped)}`)
+  const seeded = seedAutoGames(db, auto.games)
+  console.log(`auto-onboarding: ${auto.games.length} derived games (${seeded.written} rows written, ${seeded.retired} retired), skipped ${JSON.stringify(auto.skipped)}`)
 }
 const until = args.includes('--backfill') ? new Date(args[args.indexOf('--backfill') + 1]!).toISOString() : undefined
 const summary = await runIngest(deps, { force: args.includes('--force') || !!until, until, hot: args.includes('--hot'), autoSlice, autoBudgetMs: Number(process.env.AUTO_BUDGET_MS ?? 9 * 60_000) })

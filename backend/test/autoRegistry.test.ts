@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { buildAutoRegistry, steamAppIdFromUrl } from '../src/ingest/autoRegistry.ts'
+import { buildAutoRegistry, nameKey, steamAppIdFromUrl } from '../src/ingest/autoRegistry.ts'
 
 const info = new Map([
   [1, { links: { patchNotes: 'https://store.steampowered.com/news/app/111' } }],
@@ -27,6 +27,12 @@ test('auto registry: hand wins, unreleased and Steam-less skipped, duplicates dr
   assert.equal(r.games[0]!.steamIsPcPort, undefined)
   assert.ok(r.games[0]!.sources[0]!.id.endsWith('-steam'))
   assert.equal(r.games[0]!.sources[0]!.url, 'https://store.steampowered.com/feeds/news/app/111/')
+})
+
+test('a hand game with no IGDB id and no Steam source is matched by name, so it gets no auto twin', () => {
+  const r = buildAutoRegistry([{ i: 9, n: 'ASTRO BOT™', d: '2024-09-06' }, { i: 1, n: 'Alpha', d: '2025-01-01' }], new Map([[9, { links: { patchNotes: 'https://store.steampowered.com/news/app/999' } }], [1, { links: { patchNotes: 'https://store.steampowered.com/news/app/111' } }]]), new Set(), new Set(), '2026-11-11', new Set([nameKey('Astro Bot')]))
+  assert.deepEqual(r.games.map((g) => g.id), ['alpha-1'])
+  assert.equal(r.skipped.handRegistered, 1)
 })
 
 test('steamAppIdFromUrl reads store and news urls', () => {
@@ -62,7 +68,7 @@ test('auto games: polled in a slice, published only once they have a release, ne
   // A hand game's id is never taken over by an auto entry.
   assert.equal(store.upsertAutoGame(db, { id: 'dawnwalker', name: 'Impostor', steamAppId: 1 }), false)
   assert.equal(store.getGameRow(db, 'dawnwalker')!.name, 'The Blood of Dawnwalker')
-  assert.equal(seedAutoGames(db, [auto('alpha-1', 111), auto('quiet-2', 222), auto('port-3', 333, { steamIsPcPort: true })]), 3)
+  assert.deepEqual(seedAutoGames(db, [auto('alpha-1', 111), auto('quiet-2', 222), auto('port-3', 333, { steamIsPcPort: true })]), { written: 3, retired: 0 })
 
   // Slice of 2, never-polled first (by id), so alpha and port are polled; quiet waits for the next run.
   const s1 = await runIngest(deps, { autoSlice: 2 })
@@ -87,6 +93,17 @@ test('auto games: polled in a slice, published only once they have a release, ne
   const files = readdirSync(join(out, 'v1', 'games'))
   assert.ok(files.includes('alpha-1.json') && !files.includes('quiet-2.json'))
   assert.ok(!readdirSync(join(out, 'v1', 'news')).includes('alpha-1.json'))
+
+  // A game that leaves the derived set (joined the hand registry, lost its Steam link) is retired: not polled, not exported,
+  // history kept; listed again, it comes back.
+  assert.deepEqual(seedAutoGames(db, [auto('quiet-2', 222), auto('port-3', 333, { steamIsPcPort: true })]), { written: 2, retired: 1 })
+  assert.equal(store.getGameRow(db, 'alpha-1')!.auto, 2)
+  assert.equal(store.nextAutoSlice(db, 10, new Set()).some((g) => g.id === 'alpha-1'), false)
+  exportStatic(db, out)
+  assert.ok(!readdirSync(join(out, 'v1', 'games')).includes('alpha-1.json'))
+  assert.ok(store.getRelease(db, 'alpha-1@1.2'))
+  assert.deepEqual(seedAutoGames(db, [auto('alpha-1', 111)]), { written: 1, retired: 2 })
+  assert.equal(store.getGameRow(db, 'alpha-1')!.auto, 1)
 
   // Hot runs and backfills never touch the slice; a zero budget stops it before the first game.
   assert.equal((await runIngest(deps, { autoSlice: 5, hot: true })).auto, undefined)

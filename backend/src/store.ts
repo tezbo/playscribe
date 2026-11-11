@@ -73,10 +73,19 @@ export const upsertGame = (db: DB, g: GameInput) => {
 /** Auto-onboarding: writes a derived game row. Never touches a hand-registered row (auto = 0) or one that already exists under another id. */
 export const upsertAutoGame = (db: DB, g: GameInput & { steamIsPcPort?: boolean }) => {
   const existing = getGameRow(db, g.id)
-  if (existing && !existing.auto) return false
+  if (existing && !existing.auto) return false  // hand-registered; an auto row (1) or a retired one (2) is taken over
   upsertGame(db, g)
   db.prepare('UPDATE games SET auto = 1, steam_is_pc_port = ? WHERE id = ?').run(g.steamIsPcPort ? 1 : 0, g.id)
   return true
+}
+
+/** Auto rows no longer in the derived set (the game joined the hand registry, or lost its Steam link) are retired (auto = 2):
+ * not polled, not exported, history kept. A later derivation that lists the id again reactivates it. Returns the count retired. */
+export const retireAutoGames = (db: DB, keep: Set<string>) => {
+  const rows = db.prepare('SELECT id FROM games WHERE auto = 1').all() as { id: string }[]
+  let n = 0
+  for (const { id } of rows) if (!keep.has(id)) { db.prepare('UPDATE games SET auto = 2 WHERE id = ?').run(id); n++ }
+  return n
 }
 
 /** The next auto games to poll: never polled first, then the longest ago. Hand and followed games are polled every run anyway. */

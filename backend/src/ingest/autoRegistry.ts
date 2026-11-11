@@ -13,6 +13,9 @@ export const steamAppIdFromUrl = (url: string | undefined) => url?.match(/store\
 /** Sony first-party games are separate PC ports on Steam: a Steam patch says nothing about PS5. */
 export const looksLikeSonyPort = (g: IndexGame) => /\b(sony|playstation)\b/i.test(`${g.p ?? ''} ${g.v ?? ''}`)
 
+/** Loose name key: case, punctuation and spacing folded, so "Astro Bot" and "ASTRO BOT™" are one game. */
+export const nameKey = (n: string) => n.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\b(the|a|an)\b/g, '').replace(/[^a-z0-9]+/g, '')
+
 export const slugOf = (g: IndexGame) => `${g.n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}-${g.i}`
 
 export interface AutoGame extends RegistryGame { id: string; steamAppId: number; coverImageId?: string | null; artworkImageId?: string | null; ps5Release?: string | null }
@@ -23,12 +26,13 @@ export interface AutoResult {
 }
 
 /** Pure: index + info shards + the hand registry's igdb ids -> the auto entries. `today` is an ISO date. */
-export const buildAutoRegistry = (index: IndexGame[], info: Map<number, InfoEntry>, handIgdbIds: Set<number>, handAppIds: Set<number>, today: string): AutoResult => {
+export const buildAutoRegistry = (index: IndexGame[], info: Map<number, InfoEntry>, handIgdbIds: Set<number>, handAppIds: Set<number>, today: string, handNames: Set<string> = new Set()): AutoResult => {
   const skipped = { handRegistered: 0, notReleased: 0, noSteam: 0, duplicateApp: 0 }
   const seen = new Set<number>()
   const games: AutoGame[] = []
   for (const g of index) {
-    if (handIgdbIds.has(g.i)) { skipped.handRegistered++; continue }
+    // A hand game with no IGDB id and no Steam source (a link-only console exclusive) can only be matched by name.
+    if (handIgdbIds.has(g.i) || handNames.has(nameKey(g.n))) { skipped.handRegistered++; continue }
     if (!g.d || g.d > today) { skipped.notReleased++; continue }
     const app = steamAppIdFromUrl(info.get(g.i)?.links?.patchNotes)
     if (!app) { skipped.noSteam++; continue }
@@ -53,7 +57,8 @@ export const deriveAutoRegistry = (infoDir: string, indexUrl: URL = INDEX_URL, t
   const hand = Object.values(registry.games)
   const handIgdb = new Set(hand.map((g) => g.igdbId).filter((x): x is number => !!x))
   const handApps = new Set(hand.flatMap((g) => g.sources.map(steamAppIdOf)).filter((x): x is number => !!x))
-  return buildAutoRegistry(index, info, handIgdb, handApps, today)
+  const handNames = new Set(hand.flatMap((g) => [g.name, ...(g.aliases ?? [])]).map(nameKey))
+  return buildAutoRegistry(index, info, handIgdb, handApps, today, handNames)
 }
 
 /** Writes the auto entries as game rows (auto = 1), from the index's own cover, key art and PS5 date: no IGDB call. */
@@ -62,5 +67,6 @@ export const seedAutoGames = (db: DB, games: AutoGame[]) => {
   for (const g of games) {
     if (store.upsertAutoGame(db, { id: g.id, name: g.name, igdbId: g.igdbId, steamAppId: g.steamAppId, coverImageId: g.coverImageId, artworkImageId: g.artworkImageId, ps5Release: g.ps5Release, ps5ReleasePrecision: g.ps5Release ? 'day' : null, steamIsPcPort: g.steamIsPcPort })) written++
   }
-  return written
+  const retired = store.retireAutoGames(db, new Set(games.map((g) => g.id)))
+  return { written, retired }
 }

@@ -28,11 +28,12 @@ export const exportStatic = (db: DB, outDir: string) => {
   const index = []
   let newest = ''
   const autoIds = new Set((db.prepare('SELECT id FROM games WHERE auto = 1').all() as { id: string }[]).map((r) => r.id))
+  const retired = new Set((db.prepare('SELECT id FROM games WHERE auto = 2').all() as { id: string }[]).map((r) => r.id))
   for (const g of games) {
     const releases = listReleases(db, [g.id], { limit: 1000 })
     // Auto-onboarded games (0.5.4) are published once they have a release; until then the feed branch and the app's
     // index stay as small as the hand registry. Their news headlines are not kept (pipeline).
-    if (autoIds.has(g.id) && releases.length === 0) continue
+    if (retired.has(g.id) || (autoIds.has(g.id) && releases.length === 0)) continue
     const updatedAt = releases.reduce((m, r) => (r.updatedAt > m ? r.updatedAt : m), '')
     if (updatedAt > newest) newest = updatedAt
     index.push({ ...g, latestReleaseId: releases[0]?.id ?? null, releaseCount: releases.length, updatedAt: updatedAt || null })
@@ -61,5 +62,6 @@ export const exportStatic = (db: DB, outDir: string) => {
   const manual = loadPlus(undefined, new Set(games.map((g) => g.id)))
   const months = new Map([...storedPlusMonths(db), ...manual.months].map((m) => [m.month, m]))
   write(join(root, 'plus.json'), { version: 1, months: withPlusCovers(db, [...months.values()]).sort((a, b) => (a.month < b.month ? 1 : -1)) })
-  return { games: games.length - [...autoIds].filter((id) => !readdirSync(join(root, 'games')).includes(`${id}.json`)).length, files: readdirSync(join(root, 'games')).length * 2 + 3 }
+  const published = readdirSync(join(root, 'games'))
+  return { games: published.length, files: published.length * 2 + 3 }
 }
