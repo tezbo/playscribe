@@ -97,4 +97,29 @@ struct UpcomingBrowseTests {
         n.holdFirstRun()
         #expect(!n.firstRunHold)                // a library with a game never goes back to the strip
     }
+
+    /// Quinn, #442: `gamepage/alan-wake-2` (a feed id with no CatalogGame) opened a blank Closed page with no Add control.
+    /// Quinn, #445: it opens as the PS5 index game under its own id, so an add never files a second copy under the feed id.
+    @Test func openingAFeedOnlyIdOpensTheIndexGameWithoutAddingIt() {
+        let m = model()
+        #expect(m.game("alan-wake-2") == nil)
+        let before = m.data.collection.count
+        m.openGame("alan-wake-2")
+        #expect(m.nav.gameID == "igdb-185246")
+        #expect(m.game("igdb-185246")?.igdbID == 185246)
+        #expect(m.entry("igdb-185246") == nil)
+        #expect(m.data.collection.count == before)
+        m.openGame("zzzz-no-such-game-9999")
+        #expect(m.nav.gameID == "zzzz-no-such-game-9999")
+        #expect(m.game("zzzz-no-such-game-9999") == nil)
+    }
+
+    @Test func aFeedOnlyIdOpensTheLibraryCopyOfTheSameGame() {
+        let m = model()
+        let mine = CatalogGame(id: "my-alan-wake", name: "Alan Wake 2", platforms: [.ps5], igdbID: 185246, coverage: .none)
+        m.addGame(mine, status: .owned)
+        m.openGame("alan-wake-2")
+        #expect(m.nav.gameID == "my-alan-wake")
+        #expect(m.data.collection.filter { m.game($0.gameID)?.igdbID == 185246 }.count == 1)
+    }
 }
