@@ -25,8 +25,9 @@ enum KeepCurrentCopy {
 
     // The Settings row.
     static let settingsTitle = "Help keep my games up to date"
-    static let settingsCaption = "Sends the games you follow, and a random code, to our server so it checks them every hour. Nothing else leaves your phone for this. Off: nothing is sent, and updates for your games can take up to about 14 hours."
-    static let settingsHint = "Turn off to delete your record"
+    // Trimmed by Iris (11 Nov) to 45 words so it fits five lines at the largest size; both facts kept.
+    static let settingsCaption = "Sends the games you follow, and a random code, to our server so it checks them every hour. Nothing else is sent. Off: nothing is sent and updates can take up to 14 hours. With alerts on, those games stay on our server for alerts."
+    static let settingsHint = "Turn off to stop hourly checks. Your record is deleted unless alerts are on"
     static let settingsOnVoiceOver = "Sends the games you follow to our server."
     static let whatIsSent = "What is sent"
     /// The store line and the Settings footer when on.
