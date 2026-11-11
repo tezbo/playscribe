@@ -69,6 +69,14 @@ struct PageView: View {
                 }
             }
             .padding(.bottom, 24)
+            // The column is exactly what the scroll view proposes (its viewport beside the rail: 382 pt in Closed, 372 in Book) as
+            // long as every child can shrink to it. A vertical scroll view centres content wider than its viewport, so one child
+            // that could not (the PS4 update + Reported tag row at AX5, 514 pt) pushed the whole page 66 pt left under the screen
+            // edge: "atch 5.01", a clipped "9 Oct", the share button behind the rail (Closed AX5, frame dump on 805ceb3). The tags
+            // wrap (ReleaseTag) and the two links stack (SourceLinks) now, and a frame dump at e4833ee shows nothing wider than
+            // the viewport. Do not pin the column to a measured width instead: a Color probe inside the content measured the
+            // frame rail included (466; b8fbaad), and the scroll view's own geometry minus its insets came out 20 to 80 pt short
+            // (57227e2); each one moved the page in some pose (R-2).
         }
         .clearsMessages()
         .scrollIndicators(.hidden)

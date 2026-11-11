@@ -70,6 +70,32 @@ export const upsertGame = (db: DB, g: GameInput) => {
   ).run(g.id, g.igdbId ?? null, g.name, g.coverImageId ?? null, g.artworkImageId ?? null, g.squareCoverImageId ?? null, g.steamAppId ?? null, g.ps5Release ?? null, g.ps5ReleasePrecision ?? null, g.firstRelease ?? null, JSON.stringify(g.ps5TitleIds ?? []), g.eaSince ?? null, g.fullRelease ?? null, g.fullReleasePrecision ?? null, g.igdbRev ?? 0, now())
 }
 
+/** Auto-onboarding: writes a derived game row. Never touches a hand-registered row (auto = 0) or one that already exists under another id. */
+export const upsertAutoGame = (db: DB, g: GameInput & { steamIsPcPort?: boolean }) => {
+  const existing = getGameRow(db, g.id)
+  if (existing && !existing.auto) return false  // hand-registered; an auto row (1) or a retired one (2) is taken over
+  upsertGame(db, g)
+  db.prepare('UPDATE games SET auto = 1, steam_is_pc_port = ? WHERE id = ?').run(g.steamIsPcPort ? 1 : 0, g.id)
+  return true
+}
+
+/** Auto rows no longer in the derived set (the game joined the hand registry, or lost its Steam link) are retired (auto = 2):
+ * not polled, not exported, history kept. A later derivation that lists the id again reactivates it. Returns the count retired. */
+export const retireAutoGames = (db: DB, keep: Set<string>) => {
+  const rows = db.prepare('SELECT id FROM games WHERE auto = 1').all() as { id: string }[]
+  let n = 0
+  for (const { id } of rows) if (!keep.has(id)) { db.prepare('UPDATE games SET auto = 2 WHERE id = ?').run(id); n++ }
+  return n
+}
+
+/** The next auto games to poll: never polled first, then the longest ago. Hand and followed games are polled every run anyway. */
+export const nextAutoSlice = (db: DB, limit: number, exclude: Set<string>) =>
+  (db.prepare('SELECT * FROM games WHERE auto = 1 AND steam_app_id IS NOT NULL ORDER BY auto_polled_at IS NOT NULL, auto_polled_at, id').all() as Row[])
+    .filter((g) => !exclude.has(g.id))
+    .slice(0, limit)
+
+export const markAutoPolled = (db: DB, id: string) => db.prepare('UPDATE games SET auto_polled_at = ? WHERE id = ?').run(now(), id)
+
 export const getGameRow = (db: DB, id: string) => db.prepare('SELECT * FROM games WHERE id = ?').get(id) as Row | undefined
 export const getGameByIgdb = (db: DB, igdbId: number) => db.prepare('SELECT * FROM games WHERE igdb_id = ?').get(igdbId) as Row | undefined
 

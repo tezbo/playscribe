@@ -100,11 +100,19 @@ jobs:
         run: |
           echo "PUSH_DEFER=1" >> "$GITHUB_ENV"
           echo "::warning::Push skipped this run: the relay devices did not load. Releases stay unclaimed and are pushed on the next run that loads."
+      # Auto-onboarding (0.5.4): what the derived registry would follow, from the published info shards. Prints only.
+      - name: Auto-onboarding dry run
+        if: (github.event_name == 'schedule' && github.event.schedule != '47 * * * *') || inputs.action == 'poll'
+        working-directory: backend
+        run: npx tsx scripts/auto-registry.ts --info "$GITHUB_WORKSPACE/out/v1/info" --sample 20
       - name: Poll
         if: github.event_name == 'schedule' || inputs.action == 'poll'
         working-directory: backend
         env:
           HOT_RUN: ${{ github.event.schedule == '47 * * * *' && '--hot' || '' }}
+          # Auto-onboarding: games polled per full run from the derived registry. Unset or 0 = off (dry run only).
+          # Set the AUTO_SLICE repository variable (600 = a full cycle in about 9 runs) to turn it on.
+          AUTO_SLICE: ${{ vars.AUTO_SLICE }}
         run: npm run ingest --silent -- $HOT_RUN --export "$GITHUB_WORKSPACE/out"
       - name: Backfill
         if: inputs.action == 'backfill'
