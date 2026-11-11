@@ -10,6 +10,9 @@ import UIKit
 ///   HARNESS_SIZES      comma list of std, ax3, ax5 (default: all three)
 ///   HARNESS_ROUTE      a playscribe:// host and path to open first, e.g. game/dawnwalker (default: the Library)
 ///   HARNESS_SCREENS    comma list of named screens for a whole matrix in one job (see `screens`); overrides ROUTE and VIEW
+///   HARNESS_SPLIT=1    lay Book and Tabletop pages out by the injected division (stand-in, triage only); without it the Book PNG's
+///                      left page is clipped at x 0 and reads as a false alarm (Quinn, matrix 7fb7d89)
+/// Beside every PNG: one index.txt line (pose, live pose, safe area, fold, occlusions, split, settled) and <file>-frames.txt.
 @MainActor
 struct HarnessStillsTests {
     static let sizes: [(String, UIContentSizeCategory)] = [("std", .large), ("ax3", .accessibilityExtraLarge), ("ax5", .accessibilityExtraExtraExtraLarge)]
@@ -39,7 +42,10 @@ struct HarnessStillsTests {
         if let list = env["HARNESS_SCREENS"], !list.isEmpty {
             for name in list.split(separator: ",").map({ $0.trimmingCharacters(in: .whitespaces) }) where !name.isEmpty {
                 guard let screen = Self.screens[name] else {
-                    print("harness error: unknown HARNESS_SCREENS entry \(name); known: \(Self.screens.keys.sorted())")
+                    // A typo must show in the artifact itself, not only in the log (Quinn, #457 review).
+                    let line = "missing: \(name) is not a known screen (known: \(Self.screens.keys.sorted().joined(separator: ","))); pose \(id) size \(size)"
+                    print("harness error: \(line)")
+                    Self.append(line, toIndexIn: dir)
                     continue
                 }
                 try await still(id, size, category, route: screen.route, view: screen.view, tall: tall, dir: dir, file: "\(name)-\(id)-\(size)")
@@ -58,35 +64,59 @@ struct HarnessStillsTests {
         print("harness route: \(route ?? "none") qaRoute \(model.qaRoute ?? "nil") games \(model.data.collection.count) hero \(model.continueItem?.release.id ?? "none")")
         // A view (settings): host that screen's view directly (the app presents it as a system sheet in Closed, which the capture of
         // the hosting view does not include). HARNESS_TALL scales the height so its scroll content shows.
-        var r: Rendered?
+        let rendered: Rendered
         if let which = view, !which.isEmpty {
             switch which {
-            case "settings": r = await FoldHost.renderView(SettingsView(), pose: HarnessPose.named(id), type: category, model: model, heightScale: CGFloat(tall))
-            default: r = nil
+            case "settings":
+                rendered = try #require(await FoldHost.renderView(SettingsView(), pose: HarnessPose.named(id), type: category, model: model, heightScale: CGFloat(tall)),
+                                        "settings did not render")
+            default: throw HarnessStillError.unknownView(which)
             }
-            _ = try #require(r, "unknown or unrenderable HARNESS_VIEW \(which)")
         } else {
             var pose = HarnessPose.named(id)
             // HARNESS_TALL=<n>: host the pose in a window n times taller so a scrolling screen (the Library's deck sits below the
             // alerts and PS Plus cards) shows more than its first screen. Advisory only: the real pose is not this tall.
             if tall > 1, !pose.landscape { pose.container.height *= CGFloat(tall) }
-            r = await FoldHost.render(pose, type: category, model: model)
-            _ = try #require(r)
+            rendered = try #require(await FoldHost.render(pose, type: category, model: model), "\(id) did not render")
         }
-        let rendered = try #require(r)
         defer { FoldHost.dispose(rendered) }
         try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
         let data = try #require(FoldHost.png(rendered))
         try data.write(to: URL(fileURLWithPath: dir).appending(path: "\(file).png"))
-        let line = "\(file).png \(Int(rendered.pose.windowSize.width))x\(Int(rendered.pose.windowSize.height)) settled \(rendered.settled) after \(rendered.passes) passes route \(route ?? "-") view \(view ?? "-")"
+        // One index line per still. The PNG is the pose's window (container plus safe area) at 1 px per pt. The pose label, the fold
+        // (division) and the occlusions are the catalog's, in container points, so a Book or Tabletop PNG can be read against its
+        // band without the Mac (Iris, #457 review); "live" is the pose the app itself derived from the injected regions.
+        let p = rendered.pose
+        let split = ProcessInfo.processInfo.environment["HARNESS_SPLIT"] == "1"
+        let line = "\(file).png \(Int(p.windowSize.width))x\(Int(p.windowSize.height)) pose \(p.id) expected \(p.expected) live \(rendered.livePose)"
+            + " safe \(Int(p.safeArea.top)),\(Int(p.safeArea.left)),\(Int(p.safeArea.bottom)),\(Int(p.safeArea.right))"
+            + " fold \(p.division.map(Self.rect) ?? "none") occlusions \(p.occlusions.isEmpty ? "none" : p.occlusions.map(Self.rect).joined(separator: ";"))"
+            + " split \(split ? 1 : 0) settled \(rendered.settled) after \(rendered.passes) passes route \(route ?? "-") view \(view ?? "-")"
         print("harness still: \(line)")
+        Self.append(line, toIndexIn: dir)
+        // A frame dump beside the PNG, like the Mac's tile dumps: every tappable frame the app reports (named ones by their
+        // accessibility identifier), in container points, so hinge keep-out and the Tabletop above-fold rule (TB-1, TT-0) can be read
+        // from the artifact. The container's origin sits at safe-area left,top in the PNG.
+        var dump = ["# \(file): tappable frames in container points (x,y wxh); add safe left \(Int(p.safeArea.left)) top \(Int(p.safeArea.top)) for PNG px",
+                    "# fold \(p.division.map(Self.rect) ?? "none"); frames the harness does not capture (Updates rows, system sheets) are absent, see docs/fold-harness.md"]
+        dump += rendered.named.sorted { $0.key < $1.key }.map { "\($0.key) \(Self.rect($0.value))" }
+        dump += rendered.frames.sorted { ($0.minY, $0.minX) < ($1.minY, $1.minX) }.map { "frame \(Self.rect($0))" }
+        try (dump.joined(separator: "\n") + "\n").write(to: URL(fileURLWithPath: dir).appending(path: "\(file)-frames.txt"), atomically: true, encoding: .utf8)
+    }
+
+    enum HarnessStillError: Error { case unknownView(String) }
+
+    static func rect(_ r: CGRect) -> String { "\(Int(r.minX.rounded())),\(Int(r.minY.rounded())) \(Int(r.width.rounded()))x\(Int(r.height.rounded()))" }
+
+    /// Appends one line to `<dir>/index.txt`, creating the file and folder when missing.
+    static func append(_ line: String, toIndexIn dir: String) {
+        try? FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
         let index = dir + "/index.txt"
         if !FileManager.default.fileExists(atPath: index) { FileManager.default.createFile(atPath: index, contents: nil) }
-        if let handle = FileHandle(forWritingAtPath: index) {
-            handle.seekToEndOfFile()
-            handle.write(Data((line + "\n").utf8))
-            try? handle.close()
-        }
+        guard let handle = FileHandle(forWritingAtPath: index) else { return }
+        handle.seekToEndOfFile()
+        handle.write(Data((line + "\n").utf8))
+        try? handle.close()
     }
 
     /// #292 hypothesis, reported and not asserted: the AX5 Tabletop layout never settles because the deck stage measures itself and
