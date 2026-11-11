@@ -83,9 +83,11 @@ export const pressStatusOf = (title: string, body: string): PlatformStatus => {
   return ps5StatusOf(body.slice(0, 600) || title)
 }
 
-/** Registry games are always tracked; any other game is tracked while a device follows it. */
+/** Registry games are always tracked (hourly). Any other game joins the hourly tier while a device that opted in to "Help keep
+ *  my games up to date" (devices.hourly, the relay's flag) follows it; a push-only device's follows address alerts, nothing more. */
 export const trackedGames = (db: DB) =>
-  db.prepare(`SELECT * FROM games WHERE id IN (${Object.keys(registry.games).map(() => '?').join(',') || "''"}) OR id IN (SELECT game_id FROM follows)`).all(...Object.keys(registry.games)) as Record<string, any>[]
+  db.prepare(`SELECT * FROM games WHERE id IN (${Object.keys(registry.games).map(() => '?').join(',') || "''"})
+    OR id IN (SELECT f.game_id FROM follows f JOIN devices d ON d.id = f.device_id WHERE d.hourly = 1)`).all(...Object.keys(registry.games)) as Record<string, any>[]
 
 export const sourcesFor = (game: Record<string, any>): SourceDef[] => {
   const reg = registry.games[game.id]

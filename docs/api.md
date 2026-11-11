@@ -67,6 +67,28 @@ These only matter once APNs is on. For now the app keeps follows on the device.
 
 Errors are `{ error: "<message>" }` with 400, 401 (bad or missing device key), 404 or 503.
 
+### Follow list without alerts (0.5.4, "Help keep my games up to date")
+
+The opt-in in Settings sends the follow list so the Feed job polls those games hourly instead of on the slow rotation. It
+works without notification permission and sends **ids only**; the full list of what leaves the phone is the design note
+"What leaves the phone" (project files, design/auto-onboarding-0.5.4.md), and the app copy is written from it.
+
+1. `POST /v1/follows` with `{ "follows": [{ "gameId": "dawnwalker" }, { "igdbId": 329130 }] }` and nothing else. Any other
+   top-level field, a `notify` level, or an item that is not exactly `{ gameId }` or `{ igdbId }` is a 400, so a build that adds
+   a field cannot get through. Response `201`: `{ deviceKey, follows }`. The record holds the ids, the key (hashed), a flag and
+   two times; no token, locale, environment or quiet hours. It counts against the same new-device limits as `POST /v1/devices`.
+2. `PUT /v1/devices/me/follows` (Bearer `deviceKey`) replaces the ids, same shape and the same 400s. The app sends it when the
+   list changes, and otherwise at most once a week as the "still here": the relay rewrites an unchanged list only when the
+   record is seven days old, which renews its expiry, so an unchanged weekly call costs the free plan two writes a week.
+3. **Expiry.** A record with no token is deleted by the store 90 days after its last write. A push device's record (one with a
+   token) is kept as before; clearing its token (`PATCH { apnsToken: null }`) puts it on the same 90-day clock.
+4. `DELETE /v1/devices/me` deletes it at once (the Settings switch off, alerts off for good, reset). Same answers as above.
+5. A device that also has alerts keeps one record: `PATCH /v1/devices/me { hourly: true | false }` sets the flag on it, and its
+   follows (which carry the alert level) join or leave the hourly tier. `POST /v1/follows` is for devices without a registration.
+
+The Feed job reads the flag from `GET /admin/devices` (`hourly`, `token: null` for opt-in records), tracks a non-registry game
+only while a device with `hourly: true` follows it (`trackedGames`), and scrubs every record before publishing as before.
+
 ## Push (parked)
 
 Sent once per release, when its PS5 row becomes live, to followers whose `notify` allows it. Releases more than 72 hours old by then do not push. Every live row gets the same push; `verification` says what told us (`official`, `reported`, `pending` or `assumed`):

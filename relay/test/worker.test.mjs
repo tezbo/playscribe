@@ -1,14 +1,16 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import worker, { MAX_NEW_PER_DAY } from '../worker.js'
+import worker, { FOLLOWS_TTL_SECONDS, MAX_NEW_PER_DAY } from '../worker.js'
 
 // A KV that counts writes, because the free plan allows 1,000 a day and a relaunch must not spend any.
 const fakeKv = () => {
   const m = new Map()
   const kv = {
     writes: 0,
+    raw: m,
+    ttl: new Map(), // key -> expirationTtl of its last write, so a test can see which records expire
     get: async (k) => m.get(k) ?? null,
-    put: async (k, v) => { kv.writes++; m.set(k, v) },
+    put: async (k, v, opts) => { kv.writes++; m.set(k, v); kv.ttl.set(k, opts?.expirationTtl ?? null) },
     delete: async (k) => { kv.writes++; m.delete(k) },
     list: async ({ prefix = '', limit = 1000, cursor } = {}) => {
       const all = [...m.keys()].filter((k) => k.startsWith(prefix)).sort()
@@ -235,4 +237,96 @@ test('delete me: needs a key, leaves other devices alone, and a re-registration 
   assert.notEqual(await env.KV.get(`d:${b.deviceId}`), null)
   const again = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a') })).json()
   assert.notEqual(again.deviceId, a.deviceId)
+})
+
+// ---- 0.5.4 follow-list opt-in: a record without a token, ids only (docs/api.md "Follow list without alerts") ----
+
+test('follows opt-in: POST /v1/follows stores ids and a key, no token, and the record expires in 90 days', async () => {
+  const { env } = setup()
+  const r = await call(env, 'POST', '/v1/follows', { follows: [{ gameId: 'dawnwalker' }, { igdbId: 329130 }] })
+  assert.equal(r.status, 201)
+  const b = await r.json()
+  assert.deepEqual(Object.keys(b).sort(), ['deviceKey', 'follows'])
+  assert.deepEqual(b.follows, [{ gameId: 'dawnwalker' }, { igdbId: 329130 }])
+  const page = await (await call(env, 'GET', '/admin/devices', undefined, ADMIN)).json()
+  assert.equal(page.devices.length, 1)
+  const d = page.devices[0]
+  assert.equal(d.token, null)
+  assert.equal(d.hourly, true)
+  assert.deepEqual(d.follows, [{ gameId: 'dawnwalker' }, { igdbId: 329130 }])
+  // The stored record holds nothing but the id, key, follows, flag and two times.
+  const stored = JSON.parse(env.KV.raw.get(`d:${d.id}`))
+  assert.deepEqual(Object.keys(stored).sort(), ['created', 'follows', 'hourly', 'id', 'key', 'token', 'updated'])
+  assert.equal(stored.token, null)
+  assert.equal(env.KV.ttl.get(`d:${d.id}`), FOLLOWS_TTL_SECONDS)
+  const keyEntry = [...env.KV.raw.keys()].find((k) => k.startsWith('k:'))
+  assert.equal(env.KV.ttl.get(keyEntry), FOLLOWS_TTL_SECONDS)
+  // It counts as a new device for the day.
+  assert.equal(Number(env.KV.raw.get(`n:${new Date().toISOString().slice(0, 10)}`)), 1)
+  // A push registration, by contrast, never expires.
+  await call(env, 'POST', '/v1/devices', { apnsToken: token('a') })
+  const pushKey = [...env.KV.raw.keys()].find((k) => k.startsWith('d:') && k !== `d:${d.id}`)
+  assert.equal(env.KV.ttl.get(pushKey), null)
+})
+
+test('follows opt-in: anything beyond the ids is refused', async () => {
+  const { env } = setup()
+  const post = (body) => call(env, 'POST', '/v1/follows', body)
+  assert.equal((await post({ follows: [{ gameId: 'dawnwalker' }], locale: 'en-AU' })).status, 400)
+  assert.equal((await post({ follows: [{ gameId: 'dawnwalker' }], apnsToken: token('a') })).status, 400)
+  assert.equal((await post({ follows: [{ gameId: 'dawnwalker', notify: 'all' }] })).status, 400)
+  assert.equal((await post({ follows: [{ gameId: 'dawnwalker', igdbId: 1 }] })).status, 400)
+  assert.equal((await post({ follows: [{ name: 'The Witcher 3' }] })).status, 400)
+  assert.equal((await post({ follows: [{ igdbId: -1 }] })).status, 400)
+  assert.equal((await post({ follows: 'dawnwalker' })).status, 400)
+  assert.equal((await post({})).status, 400)
+  const { error } = await (await post({ follows: [], team: true, locale: 'en' })).json()
+  assert.equal(error, 'only follows may be sent here, not locale, team')
+  assert.equal([...env.KV.raw.keys()].filter((k) => k.startsWith('d:')).length, 0)
+})
+
+test('follows opt-in: PUT replaces the ids, refuses a notify level, and the weekly "still here" renews the expiry', async () => {
+  const { env } = setup()
+  const { deviceKey } = await (await call(env, 'POST', '/v1/follows', { follows: [{ gameId: 'dawnwalker' }] })).json()
+  const id = [...env.KV.raw.keys()].find((k) => k.startsWith('d:')).slice(2)
+  const writes = env.KV.writes
+  // Unchanged, within the week: no write at all.
+  assert.equal((await call(env, 'PUT', '/v1/devices/me/follows', { follows: [{ gameId: 'dawnwalker' }] }, deviceKey)).status, 200)
+  assert.equal(env.KV.writes, writes)
+  // A level or an extra field is a 400 on this kind of record.
+  assert.equal((await call(env, 'PUT', '/v1/devices/me/follows', { follows: [{ gameId: 'dawnwalker', notify: 'major' }] }, deviceKey)).status, 400)
+  assert.equal((await call(env, 'PUT', '/v1/devices/me/follows', { follows: [{ gameId: 'dawnwalker' }], locale: 'en' }, deviceKey)).status, 400)
+  // Changed: one record write plus the key entry, both with the expiry.
+  const r = await call(env, 'PUT', '/v1/devices/me/follows', { follows: [{ gameId: 'dawnwalker' }, { igdbId: 7 }] }, deviceKey)
+  assert.deepEqual(await r.json(), { follows: [{ gameId: 'dawnwalker' }, { igdbId: 7 }], unknown: [] })
+  assert.equal(env.KV.writes, writes + 2)
+  assert.equal(env.KV.ttl.get(`d:${id}`), FOLLOWS_TTL_SECONDS)
+  // Unchanged, but the record is eight days old: written again (the "still here"), so the expiry moves on.
+  const rec = JSON.parse(env.KV.raw.get(`d:${id}`))
+  env.KV.raw.set(`d:${id}`, JSON.stringify({ ...rec, updated: new Date(Date.now() - 8 * 86400 * 1000).toISOString() }))
+  const before = env.KV.writes
+  await call(env, 'PUT', '/v1/devices/me/follows', { follows: [{ gameId: 'dawnwalker' }, { igdbId: 7 }] }, deviceKey)
+  assert.equal(env.KV.writes, before + 2)
+  assert.ok(Date.now() - Date.parse(JSON.parse(env.KV.raw.get(`d:${id}`)).updated) < 60_000)
+  // Switched off: the record and key go, and the key no longer works.
+  assert.equal((await call(env, 'DELETE', '/v1/devices/me', undefined, deviceKey)).status, 204)
+  assert.equal([...env.KV.raw.keys()].filter((k) => k.startsWith('d:') || k.startsWith('k:')).length, 0)
+  assert.equal((await call(env, 'PUT', '/v1/devices/me/follows', { follows: [] }, deviceKey)).status, 401)
+})
+
+test('follows opt-in on a push device: PATCH hourly sets the flag; a cleared token makes the record expire', async () => {
+  const { env } = setup()
+  const { deviceKey } = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), follows: [{ gameId: 'dawnwalker', notify: 'major' }] })).json()
+  let page = await (await call(env, 'GET', '/admin/devices', undefined, ADMIN)).json()
+  assert.equal(page.devices[0].hourly, false)
+  assert.equal((await call(env, 'PATCH', '/v1/devices/me', { hourly: true }, deviceKey)).status, 200)
+  page = await (await call(env, 'GET', '/admin/devices', undefined, ADMIN)).json()
+  assert.equal(page.devices[0].hourly, true)
+  assert.equal(page.devices[0].token, token('a'))
+  assert.equal(env.KV.ttl.get(`d:${page.devices[0].id}`), null)
+  // Alerts stopped (token cleared): the record is now token-less and expires like an opt-in record.
+  await call(env, 'PATCH', '/v1/devices/me', { apnsToken: null }, deviceKey)
+  page = await (await call(env, 'GET', '/admin/devices', undefined, ADMIN)).json()
+  assert.equal(page.devices[0].token, null)
+  assert.equal(env.KV.ttl.get(`d:${page.devices[0].id}`), FOLLOWS_TTL_SECONDS)
 })

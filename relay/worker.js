@@ -10,9 +10,14 @@
 //   PATCH /v1/devices/me                token, environment, locale, quietHours
 //   GET|PUT /v1/devices/me/follows      the followed games
 //   DELETE /v1/devices/me               forget this device: record, token, key and team entry are removed (204; idempotent)
+//   POST /v1/follows                    0.5.4 "Help keep my games up to date": a record WITHOUT a token, follow ids only,
+//                                       hourly polling; returns { deviceKey, follows }. The body may hold nothing but follows.
 //   GET /admin/devices?cursor=          Feed job only (Bearer ADMIN_TOKEN), 40 devices a page
 //
 // KV keys: d:<id> device record, t:<apnsToken> -> id, k:<sha256 deviceKey> -> id, n:<UTC date> new devices that day.
+// A record with no APNs token (the follow-list opt-in, or a push device whose token was cleared) expires 90 days after
+// its last write; the app's weekly "still here" is the same PUT of its list, which is rewritten once a week even when
+// unchanged. A record with a token is kept until the device deletes it, as before.
 // Free-plan limits this is sized for: 1,000 KV writes a day (a relaunch with nothing changed writes nothing),
 // 50 KV operations per request (hence the 40 device page).
 
@@ -22,6 +27,10 @@ const PAGE = 40
 const MAX_BODY = 64 * 1024
 const MAX_FOLLOWS = 500
 const MAX_TEAM = 20
+/** A record without a token lives this long after its last write (docs/api.md "Follow list without alerts"). */
+export const FOLLOWS_TTL_SECONDS = 90 * 86400
+/** The "still here" cadence: an unchanged follow list is written again once this much time has passed. */
+const STILL_HERE_MS = 7 * 86400 * 1000
 // A new device costs 4 KV writes (record, token, key, and the day counter); relaunches cost none. 150 new devices a day
 // is about 600 of the free plan's 1,000 writes, leaving the rest for changes by existing devices, so a flood of fake
 // registrations cannot starve real users. Existing devices are never refused.
@@ -65,6 +74,23 @@ export const parseFollows = (v) => {
   return { follows: out }
 }
 
+/** The follow-list opt-in sends ids and nothing else: each item is exactly { gameId } or { igdbId }. Anything more is a 400,
+ *  so a build that adds a field cannot slip it past the relay (the app has the same test on its side). */
+export const parseIdFollows = (v) => {
+  if (!Array.isArray(v)) return { error: 'follows must be an array' }
+  if (v.length > MAX_FOLLOWS) return { error: `follows holds at most ${MAX_FOLLOWS} games` }
+  const out = []
+  for (const f of v) {
+    if (!f || typeof f !== 'object' || Array.isArray(f)) return { error: 'each follow must be an object' }
+    const keys = Object.keys(f)
+    if (keys.length !== 1) return { error: 'each follow is exactly { gameId } or { igdbId }' }
+    if (keys[0] === 'gameId' && typeof f.gameId === 'string' && /^[a-z0-9][a-z0-9._-]{0,99}$/i.test(f.gameId)) out.push({ gameId: f.gameId })
+    else if (keys[0] === 'igdbId' && Number.isInteger(f.igdbId) && f.igdbId > 0) out.push({ igdbId: f.igdbId })
+    else return { error: 'each follow is exactly { gameId } or { igdbId }' }
+  }
+  return { follows: out }
+}
+
 const readJson = async (request) => {
   const text = await request.text()
   if (text.length > MAX_BODY) return { tooBig: true }
@@ -79,6 +105,12 @@ const readJson = async (request) => {
 
 const validToken = (t) => typeof t === 'string' && /^[0-9a-f]{64,200}$/i.test(t)
 const putJson = (kv, key, value) => kv.put(key, JSON.stringify(value))
+/** Writes a device record; one with no token also gets its expiry, and its key entry is renewed with it. */
+const putDevice = async (kv, d) => {
+  if (d.token) return putJson(kv, `d:${d.id}`, d)
+  await kv.put(`d:${d.id}`, JSON.stringify(d), { expirationTtl: FOLLOWS_TTL_SECONDS })
+  await kv.put(`k:${await sha(d.key)}`, d.id, { expirationTtl: FOLLOWS_TTL_SECONDS })
+}
 const getJson = async (kv, key) => {
   const raw = await kv.get(key)
   return raw ? JSON.parse(raw) : null
@@ -125,6 +157,48 @@ const claimToken = async (kv, token, id) => {
   if (holder !== id) await kv.put(`t:${token}`, id)
 }
 
+/** The two limits every new record passes. A new device also passes a per-address limit (Workers Rate Limiting binding: no KV
+ *  writes, so it cannot spend the budget it protects). Known devices relaunching are never limited. Without the binding (tests,
+ *  a deploy that omits it) that part is skipped. Then the day counter: at most MAX_NEW_PER_DAY new records a day. */
+const newDeviceLimit = async (env, request) => {
+  if (env.REGISTER_LIMIT) {
+    const ip = request.headers.get('cf-connecting-ip') ?? 'unknown'
+    const { success } = await env.REGISTER_LIMIT.limit({ key: ip })
+    if (!success) {
+      const r = bad('too many registrations from this address, try again in a minute', 429)
+      r.headers.set('retry-after', '60')
+      return r
+    }
+  }
+  const dayKey = `n:${now().slice(0, 10)}`
+  const todays = Number((await env.KV.get(dayKey)) ?? 0)
+  if (todays >= MAX_NEW_PER_DAY) {
+    const r = bad('too many new devices today, try again tomorrow', 429)
+    r.headers.set('retry-after', '3600')
+    return r
+  }
+  await env.KV.put(dayKey, String(todays + 1), { expirationTtl: 172800 }) // gone after two days, so old counters never pile up
+  return null
+}
+
+/** POST /v1/follows: the follow-list opt-in. Stores the ids and a fresh key, nothing else; the body may hold nothing but
+ *  `follows`. The record has no token, so it expires 90 days after its last write (see putDevice). */
+const registerFollows = async (env, request) => {
+  const parsed = await readJson(request)
+  if (parsed.tooBig) return bad('body too large', 413)
+  const extra = Object.keys(parsed.body).filter((k) => k !== 'follows')
+  if (extra.length) return bad(`only follows may be sent here, not ${extra.sort().join(', ')}`)
+  const f = parseIdFollows(parsed.body.follows)
+  if ('error' in f) return bad(f.error)
+  const limited = await newDeviceLimit(env, request)
+  if (limited) return limited
+  const id = crypto.randomUUID()
+  const key = b64url(crypto.getRandomValues(new Uint8Array(32)))
+  const rec = { id, key, token: null, follows: f.follows, hourly: true, created: now(), updated: now() }
+  await putDevice(env.KV, rec)
+  return json({ deviceKey: key, follows: rec.follows }, 201)
+}
+
 const register = async (env, request) => {
   const kv = env.KV
   const parsed = await readJson(request)
@@ -161,25 +235,8 @@ const register = async (env, request) => {
     if (team !== undefined) await syncTeamIndex(kv, existing.id, team)
     return json(publicView(next), 200)
   }
-  // A new device also passes a per-address limit (Workers Rate Limiting binding: no KV writes, so it cannot spend the budget it
-  // protects). Known devices relaunching are never limited. Without the binding (tests, a deploy that omits it) this is skipped.
-  if (env.REGISTER_LIMIT) {
-    const ip = request.headers.get('cf-connecting-ip') ?? 'unknown'
-    const { success } = await env.REGISTER_LIMIT.limit({ key: ip })
-    if (!success) {
-      const r = bad('too many registrations from this address, try again in a minute', 429)
-      r.headers.set('retry-after', '60')
-      return r
-    }
-  }
-  const dayKey = `n:${now().slice(0, 10)}`
-  const todays = Number((await kv.get(dayKey)) ?? 0)
-  if (todays >= MAX_NEW_PER_DAY) {
-    const r = bad('too many new devices today, try again tomorrow', 429)
-    r.headers.set('retry-after', '3600')
-    return r
-  }
-  await kv.put(dayKey, String(todays + 1), { expirationTtl: 172800 }) // gone after two days, so old counters never pile up
+  const limited = await newDeviceLimit(env, request)
+  if (limited) return limited
   const id = crypto.randomUUID()
   const key = b64url(crypto.getRandomValues(new Uint8Array(32)))
   const rec = { id, key, token, environment, locale, follows: follows ?? [], quiet: quiet ?? null, team: team ?? false, created: now(), updated: now() }
@@ -206,6 +263,8 @@ const patchMe = async (env, request) => {
   if (typeof body.locale === 'string') next.locale = body.locale.slice(0, 35)
   if (quiet !== undefined) next.quiet = quiet
   if (typeof body.team === 'boolean') next.team = body.team
+  // The follow-list opt-in on a device that also has alerts: its follows join the hourly tier while this is true.
+  if (typeof body.hourly === 'boolean') next.hourly = body.hourly
   if (body.apnsToken !== undefined) {
     const token = body.apnsToken ? body.apnsToken.toLowerCase() : null
     if (token !== d.token) {
@@ -214,7 +273,7 @@ const patchMe = async (env, request) => {
       next.token = token
     }
   }
-  if (JSON.stringify(next) !== JSON.stringify(d)) await putJson(kv, `d:${d.id}`, { ...next, updated: now() })
+  if (JSON.stringify(next) !== JSON.stringify(d)) await putDevice(kv, { ...next, updated: now() })
   if (typeof body.team === 'boolean') await syncTeamIndex(kv, d.id, body.team)
   return json({ deviceId: d.id })
 }
@@ -241,9 +300,18 @@ const putFollows = async (env, request) => {
   if (!d) return bad('unknown device key', 401)
   const parsed = await readJson(request)
   if (parsed.tooBig) return bad('body too large', 413)
-  const f = parseFollows(parsed.body.follows)
+  // A record without a token holds ids only, and is rewritten once a week even when unchanged (the "still here"), which
+  // renews its expiry. A push device's list is written only when it changes.
+  const idsOnly = !d.token
+  if (idsOnly) {
+    const extra = Object.keys(parsed.body).filter((k) => k !== 'follows')
+    if (extra.length) return bad(`only follows may be sent here, not ${extra.sort().join(', ')}`)
+  }
+  const f = idsOnly ? parseIdFollows(parsed.body.follows) : parseFollows(parsed.body.follows)
   if ('error' in f) return bad(f.error)
-  if (JSON.stringify(f.follows) !== JSON.stringify(d.follows)) await putJson(env.KV, `d:${d.id}`, { ...d, follows: f.follows, updated: now() })
+  const changed = JSON.stringify(f.follows) !== JSON.stringify(d.follows)
+  const stale = idsOnly && Date.now() - Date.parse(d.updated) >= STILL_HERE_MS
+  if (changed || stale) await putDevice(env.KV, { ...d, follows: f.follows, updated: now() })
   return json({ follows: f.follows, unknown: [] })
 }
 
@@ -254,7 +322,7 @@ const adminDevices = async (env, request) => {
   const devices = []
   for (const k of page.keys) {
     const d = await getJson(env.KV, k.name)
-    if (d?.token) devices.push({ id: d.id, token: d.token, environment: d.environment, locale: d.locale, quiet: d.quiet, team: d.team === true, follows: d.follows, updated: d.updated })
+    if (d) devices.push({ id: d.id, token: d.token ?? null, environment: d.environment ?? null, locale: d.locale ?? null, quiet: d.quiet ?? null, team: d.team === true, hourly: d.hourly === true, follows: d.follows, updated: d.updated })
   }
   return json({ devices, cursor: page.list_complete ? null : page.cursor })
 }
@@ -334,6 +402,7 @@ export default {
       if (pathname === '/v1/devices' && m === 'POST') return await register(env, request)
       if (pathname === '/v1/devices/me' && m === 'PATCH') return await patchMe(env, request)
       if (pathname === '/v1/devices/me' && m === 'DELETE') return await deleteMe(env, request)
+      if (pathname === '/v1/follows' && m === 'POST') return await registerFollows(env, request)
       if (pathname === '/v1/devices/me/follows' && m === 'PUT') return await putFollows(env, request)
       if (pathname === '/v1/devices/me/follows' && m === 'GET') {
         const d = await deviceFor(env.KV, request)
