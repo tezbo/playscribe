@@ -350,6 +350,18 @@ export const addNews = (db: DB, gameId: string, post: { url: string; title: stri
 const newsVerification = (sourceId: string): 'official' | 'reported' =>
   (newsSources.sources as Record<string, { verification?: string }>)[sourceId]?.verification === 'reported' ? 'reported' : 'official'
 
+/**
+ * Prune pass (r054-news-promo-merch-filter): news rows already stored whose headline the promo rule now hides. Steam posts are
+ * markSeen, so without this the rows from before the rule stayed in the feed. Returns the removed rows for the log.
+ */
+export const pruneNews = (db: DB, hide: (title: string) => boolean) => {
+  const rows = db.prepare('SELECT game_id, url, title FROM news').all() as { game_id: string; url: string; title: string }[]
+  const gone = rows.filter((r) => hide(r.title))
+  const del = db.prepare('DELETE FROM news WHERE game_id = ? AND url = ?')
+  for (const r of gone) del.run(r.game_id, r.url)
+  return gone.map((r) => ({ gameId: r.game_id, title: r.title }))
+}
+
 export const newsOf = (db: DB, gameId: string, limit = 20) =>
   (db.prepare('SELECT title, published_at, url, source_id FROM news WHERE game_id = ? ORDER BY published_at DESC, url LIMIT ?').all(gameId, limit) as { title: string; published_at: string; url: string; source_id: string }[]).map((n) => ({
     gameId,

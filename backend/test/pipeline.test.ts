@@ -568,6 +568,22 @@ test('sale and merch headlines are hidden from news and logged; announcements st
   assert.ok(hidden.some((l) => l.includes('20% Off')) && hidden.some((l) => l.includes('Merch')))
 })
 
+// Quinn (#461): Steam posts are markSeen, so the 446 rows stored before the rule would stay in the feed. The prune pass at
+// ingest deletes stored headlines the rule now hides and logs each one; a kept headline is untouched.
+test('ingest prunes stored sale and merch headlines and logs them', async () => {
+  const db = openDb(':memory:')
+  const log: string[] = []
+  const deps = { db, fetchFn: fakeFetch({}), igdb: null, log: (m: string) => log.push(m) }
+  await seedGames(deps)
+  store.addNews(db, 'dawnwalker', { url: 'https://store.steampowered.com/news/app/1/view/1', title: 'Get 20% Off The Blood of Dawnwalker', publishedAt: recent(3), sourceId: 'dawnwalker-steam' })
+  store.addNews(db, 'dawnwalker', { url: 'https://store.steampowered.com/news/app/1/view/2', title: 'Dawnwalker Vinyl Is Coming Soon!', publishedAt: recent(2), sourceId: 'dawnwalker-steam' })
+  store.addNews(db, 'dawnwalker', { url: 'https://store.steampowered.com/news/app/1/view/3', title: 'One Million Copies Sold!', publishedAt: recent(1), sourceId: 'dawnwalker-steam' })
+  await runIngest(deps, { force: true })
+  assert.deepEqual(newsOf(db, 'dawnwalker').map((n) => n.title), ['One Million Copies Sold!'])
+  assert.equal(log.filter((l) => l.startsWith('news hidden (promo, pruned) dawnwalker:')).length, 2)
+  assert.ok(log.some((l) => l === 'ingest: pruned 2 stored sale or merch headlines from news'))
+})
+
 // Terry 2026-11-06: PS4 games play on PS5, so a PS4 patch for a game with no native PS5 version counts, labelled ps4.
 test('a PS4 patch post for a backward-compatible game is a labelled PS4 update; a native PS5 game ignores PS4 posts after its launch', async () => {
   const title = 'Dawnwalker PS4 Patch 1.9 Out Now'

@@ -213,9 +213,15 @@ test('stored notes with stray "[/*]" items (older parser) are cleaned when read'
 // r054-news-promo-merch-filter: headline judgement, titles only.
 test('isPromoTitle hides sale and merch headlines and keeps announcements and change headlines', () => {
   for (const t of ['Get 20% Off CONTROL Resonant', 'Merch you might have Missed', 'Alexander, Warrior Jar Artisan Keycap has arrived!',
-                   'STARSCOURGE RADAHN JOINS THE ELDEN RING FIGUARTS MINI SERIES', '30% Off Coming Soon', 'Black Friday deals are live', 'Free weekend starts now'])
+                   'STARSCOURGE RADAHN JOINS THE ELDEN RING FIGUARTS MINI SERIES', '30% Off Coming Soon', 'Black Friday deals are live',
+                   'Pre-order a Lamb Plushie and Soundtrack Vinyl', 'Soundtrack Now on Sale', 'Steam Autumn Sale is Live!'])
     assert.equal(isPromoTitle(t), true, t)
+  // Kept: announcements, change words, and the keep-list (update, patch, hotfix, out now, launch, release, servers, roadmap).
+  // Free weekends and milestone thank-yous stay shown until Nadia rules (docs/decisions/r054-news-promo-merch-filter.md).
   for (const t of ['One Million Copies Sold!', 'CONTROL Resonant Receives Two Golden Joystick Award Nominations! Vote Now!', 'Developer roadmap for 2027',
-                   'Photo mode arrives next week', 'Update 1.2 fixes the 30% off store price bug', 'ELDEN RING - Community Quests'])
+                   'Photo mode arrives next week', 'Update 1.2 fixes the 30% off store price bug', 'ELDEN RING - Community Quests',
+                   "New update for Dragon's Dogma 2 and on sale now!", "'They Came From Salem' DLC - Out Now!", 'Hunt Gets SA Servers, Starts Free Weekend',
+                   'Launching on Feb 27, 2026! Pre-order now!', 'Dead by Daylight hits a record peak player count; free weekend',
+                   'THANK YOU FOR 4M UNITS SOLD!', 'Thank You for 6 Years of Love!', 'Titanfall 2 Free Weekend'])
     assert.equal(isPromoTitle(t), false, t)
 })
