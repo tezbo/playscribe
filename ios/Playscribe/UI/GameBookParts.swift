@@ -21,9 +21,17 @@ struct PageView: View {
     /// Closed: one stacked book, the Contents below the Page.
     var withContents = false
 
+    /// The width the scroll view offers its content (the viewport inside the safe area: 382 pt in Closed portrait at AX5, where
+    /// the window is 466). Measured by a probe that always takes what is offered, never by the column itself.
+    @State private var columnWidth: CGFloat = 0
+
     var body: some View {
         let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
         ScrollView {
+          ZStack(alignment: .topLeading) {
+            Color.clear.frame(maxWidth: .infinity).frame(height: 0)
+                .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { columnWidth = $0 }
+                .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 16) {
                 PageArtBand(gameID: gameID)
                 StaleHint()
@@ -63,6 +71,13 @@ struct PageView: View {
                 }
             }
             .padding(.bottom, 24)
+            // The column is pinned to the offered width. A vertical scroll view centres content that is wider than its
+            // viewport, so one child that could not shrink (the PS4 update + Reported tag row at AX5, 514 pt in a 382 pt viewport)
+            // pushed the whole page 66 pt left under the screen edge: "atch 5.01", a clipped "9 Oct", the share button behind the
+            // rail (Closed AX5, frame dump on 805ceb3). Pinned, a child that still overflows sticks out on the right instead,
+            // and the margin stays (R-2).
+            .frame(width: columnWidth > 0 ? columnWidth : nil, alignment: .leading)
+          }
         }
         .clearsMessages()
         .scrollIndicators(.hidden)
