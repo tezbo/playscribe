@@ -137,9 +137,19 @@ const GAME_ECONOMY = /\b(?:vendors?|merchants?|shops?|stores?|traders?|stalls?|p
 // - Nadia's test (11 Nov, Iris agreed): does the post give the player something to know or do about their game? Free weekends
 //   do, so they are kept even beside a sale ("Free weekend + sales up to 60% off!"); milestone thank-yous, soundtracks and every
 //   sale ("Franchise Sale", "Anniversary Sale") do not. See docs/decisions/r054-news-promo-merch-filter.md.
-const KEEP_TITLE = /\b(?:updates?|updated|patch(?:es|ed)?|hotfix(?:es)?|out now|launch(?:es|ed|ing)?|releas(?:e|es|ed)|servers?|roadmap|free weekend)\b/i
-const MERCH_TITLE = /\b(?:merch(?:andise)?|figures?|figurines?|statues?|keycaps?|replicas?|figuarts|plush(?:ies|ie)?|vinyl|t-?shirts?|hoodies?|apparel|collectibles?|art ?book|soundtrack|sales?|(?:official )?store (?:is )?(?:now )?(?:open|live)|(?:now )?available (?:at|on|from) (?:the )?(?:store|shop)|\d+\s?% off|coming soon to the store|black friday|cyber monday|bundle (?:now )?available)\b/i
-export const isPromoTitle = (title: string) => !KEEP_TITLE.test(title) && !CHANGE_WORD.test(title) && (PROMO_LINE.test(title) || MERCH_TITLE.test(title))
+// Quinn's leftovers on #461 (dry run at 01359d7, 560 of 8,036 rows): a bare "sales" is business news ("Square Enix sales boost")
+// and stays; a thank-you anywhere in the title hides it ("2 Million Wishlists – Thank You!"); a soundtrack is judged before the
+// keep-list ("Soundtrack - Out Now!", "Soundtrack Release"); "play for free" is a free weekend by another name.
+const KEEP_TITLE = /\b(?:updates?|updated|patch(?:es|ed)?|hotfix(?:es)?|out now|launch(?:es|ed|ing)?|releas(?:e|es|ed)|servers?|roadmap|free (?:play )?weekend|play (?:for )?free)\b/i
+const SOUNDTRACK_TITLE = /\b(?:soundtracks?|ost|vinyl)\b/i
+const THANKS_TITLE = /\bthank(?:s| you)\b/i
+const MERCH_TITLE = /\b(?:merch(?:andise)?|figures?|figurines?|statues?|keycaps?|replicas?|figuarts|plush(?:ies|ie)?|t-?shirts?|hoodies?|apparel|collectibles?|art ?book|sale|(?:anniversary|franchise|holiday|weekend|steam|publisher|seasonal|autumn|summer|winter|spring|fall|midweek|big|launch) sales|(?:official )?store (?:is )?(?:now )?(?:open|live)|(?:now )?available (?:at|on|from) (?:the )?(?:store|shop)|\d+\s?% off|coming soon to the store|black friday|cyber monday|bundle (?:now )?available)\b/i
+export const isPromoTitle = (title: string) => {
+  if (CHANGE_WORD.test(title)) return false
+  if (SOUNDTRACK_TITLE.test(title)) return true
+  if (KEEP_TITLE.test(title)) return false
+  return PROMO_LINE.test(title) || MERCH_TITLE.test(title) || THANKS_TITLE.test(title)
+}
 
 export const isPromoLine = (text: string) => /^\s*https?:\/\/\S+\s*$/i.test(text) || (PROMO_LINE.test(text) && !CHANGE_WORD.test(text) && !GAME_ECONOMY.test(text))
 
