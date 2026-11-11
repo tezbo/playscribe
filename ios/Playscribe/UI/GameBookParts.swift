@@ -21,6 +21,14 @@ struct PageView: View {
     /// Closed: one stacked book, the Contents below the Page.
     var withContents = false
 
+    /// Closed, Updates chapter: the Contents (chapter bar, search, Mark read, All updates) between the release and About.
+    private var closedContents: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Divider().overlay(PlayscribeColor.ink700)
+            ContentsBody(gameID: gameID, addControl: false)
+        }
+    }
+
     var body: some View {
         let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
         ScrollView {
@@ -49,6 +57,9 @@ struct PageView: View {
                         if let r = model.selectedRelease(gameID) {
                             VStack(alignment: .leading, spacing: 16) {
                                 ReleasePage(release: r)
+                                // Closed: All updates (the Contents) sits above About (Terry, 0.5.4), so the reader reaches
+                                // the game's other updates before its blurb; You might also like stays last.
+                                if withContents { closedContents }
                                 if let g = model.game(gameID) {
                                     Divider().overlay(PlayscribeColor.ink700)
                                     GameBasicsView(game: g)
@@ -56,7 +67,7 @@ struct PageView: View {
                             }
                             .pageTurn(key: r.id)
                         } else if let g = model.game(gameID) {
-                            NoNotesPage(game: g)
+                            NoNotesPage(game: g) { if withContents { closedContents } }
                         }
                     case .news: NewsChapter(gameID: gameID)
                     case .world, .companion: EntriesChapter(gameID: gameID, chapter: chapter)
@@ -67,7 +78,8 @@ struct PageView: View {
                 // Reading measure: 55 to 75 characters.
                 .frame(maxWidth: 620, alignment: .leading)
                 .padding(.horizontal, 20)
-                if withContents {
+                // The other chapters keep the Contents below the page (the Updates chapter draws it above About).
+                if withContents && chapter != .updates {
                     Divider().overlay(PlayscribeColor.ink700).padding(.top, 8)
                     ContentsBody(gameID: gameID, addControl: false).padding(.horizontal, 16)
                 }
@@ -321,9 +333,15 @@ struct SpoilerLine: View {
 }
 
 /// GR-1: never an empty game.
-struct NoNotesPage: View {
+struct NoNotesPage<Contents: View>: View {
     @Environment(AppModel.self) private var model
     var game: CatalogGame
+    /// Closed: the Contents, drawn above About as on a page with notes.
+    @ViewBuilder var contents: () -> Contents
+    init(game: CatalogGame, @ViewBuilder contents: @escaping () -> Contents = { EmptyView() }) {
+        self.game = game
+        self.contents = contents
+    }
     var body: some View {
         // Terry: a game never opens blank. With no updates, it leads with its release.
         VStack(alignment: .leading, spacing: 16) {
@@ -331,6 +349,7 @@ struct NoNotesPage: View {
                 Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
                 NoUpdatesLine(gameID: game.id)
             }
+            contents()
             GameBasicsView(game: game)
         }
     }
@@ -480,7 +499,7 @@ struct SimilarGamesRow: View {
                             }
                             .buttonStyle(.plain)
                             .accessibilityLabel(g.name)
-                            .accessibilityHint("Choose how to add it")
+                            .accessibilityHint("View it, or choose how to add it")
                             .tappableFrame()
                         }
                     }
@@ -489,6 +508,8 @@ struct SimilarGamesRow: View {
             }
             .confirmationDialog(choosing?.name ?? "", isPresented: Binding(get: { choosing != nil }, set: { if !$0 { choosing = nil } }), titleVisibility: .visible) {
                 if let g = choosing {
+                    // A plain look first (Terry, 0.5.4): opens the game page without filing it anywhere.
+                    Button("View game") { model.browseGame(g) }
                     Button("Add to library") { model.addGame(g, status: .owned); model.openGame(g.id) }
                     Button("Add to watchlist") { model.addGame(g, status: .wishlist); model.openGame(g.id) }
                 }
