@@ -128,7 +128,7 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         setUp(key: nil)
         var lost = false
         StubRelay.handler = { r in
-            if r.httpMethod == "POST", r.url!.path == "/v1/follows" { return (201, Data(#"{"deviceKey":"k-\(lost ? 2 : 1)","follows":[]}"#.utf8)) }
+            if r.httpMethod == "POST", r.url!.path == "/v1/follows" { return (201, Data(#"{"deviceKey":"k-\#(lost ? 2 : 1)","follows":[]}"#.utf8)) }
             if r.httpMethod == "PUT" { return (lost && r.value(forHTTPHeaderField: "Authorization") == "Bearer k-1" ? 401 : 200, Data()) }
             return (200, Data())
         }
