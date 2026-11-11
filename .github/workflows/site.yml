@@ -23,7 +23,8 @@ jobs:
       # APPLE_TEAM_ID secret (not the repo). Without it, publish no file rather than a broken one.
       - name: Fill in the Apple Team ID
         env:
-          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          # The Team ID already lives in the APNS_TEAM_ID secret (push relay); APPLE_TEAM_ID is the optional override the TestFlight lane uses.
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID || secrets.APNS_TEAM_ID }}
         run: |
           f=site/.well-known/apple-app-site-association
           if [ -n "$APPLE_TEAM_ID" ]; then
