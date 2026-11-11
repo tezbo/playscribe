@@ -14,6 +14,12 @@
 //                                       hourly polling; returns { deviceKey, follows }. The body may hold nothing but follows.
 //   GET /admin/devices?cursor=          Feed job only (Bearer ADMIN_TOKEN), 40 devices a page
 //
+// Cron (scheduled handler): GitHub's own schedule for the Feed workflow fires late or not at all for hours at a time
+// (11 Nov 2026: one full poll in 4.5 hours, no hot runs), so this Worker's cron triggers, at :22 and :52, start the Feed
+// workflow by workflow_dispatch when GitHub has not started a run in the last 10 minutes. Needs FEED_DISPATCH_TOKEN
+// (fine-grained GitHub token, this repository only, Actions read and write); without it the handler does nothing.
+// Decision: docs/decisions/feed-cron-worker.md.
+//
 // KV keys: d:<id> device record, t:<apnsToken> -> id, k:<sha256 deviceKey> -> id, n:<UTC date> new devices that day.
 // A record with no APNs token (the follow-list opt-in, or a push device whose token was cleared) expires 90 days after
 // its last write; the app's weekly "still here" is the same PUT of its list, which is rewritten once a week even when
@@ -399,7 +405,47 @@ const ascWebhook = async (env, request) => {
   return json({ ok: true, ...result })
 }
 
+/** The Feed workflow's repository and file; the dispatch and the "already running" check both name them. */
+const FEED_REPO = 'tezbo/playscribe'
+const FEED_WORKFLOW = 'feed.yml'
+/** A Feed run created this recently means GitHub's own schedule fired, so the cron does not start a second one. */
+const FEED_RECENT_MS = 10 * 60_000
+/** The Worker's hot cron; anything else is a full poll. deploy.sh registers both. */
+export const FEED_HOT_CRON = '52 * * * *'
+export const FEED_FULL_CRON = '22 * * * *'
+
+/**
+ * Starts the Feed workflow for a cron tick, unless a run began in the last 10 minutes. `hot` follows the cron that fired.
+ * Returns what it did, for tests and the Worker log; never throws, because a cron handler has no one to answer.
+ */
+export async function dispatchFeed(env, cron, now = Date.now(), fetchImpl = fetch) {
+  const token = env.FEED_DISPATCH_TOKEN
+  if (!token) return { dispatched: false, reason: 'no FEED_DISPATCH_TOKEN' }
+  const hot = cron === FEED_HOT_CRON
+  const headers = { authorization: `Bearer ${token}`, accept: 'application/vnd.github+json', 'user-agent': 'playscribe-relay', 'x-github-api-version': '2022-11-28' }
+  const base = `https://api.github.com/repos/${FEED_REPO}/actions/workflows/${FEED_WORKFLOW}`
+  try {
+    const recent = await fetchImpl(`${base}/runs?per_page=1`, { headers })
+    if (recent.ok) {
+      const { workflow_runs: runs = [] } = await recent.json()
+      const last = runs[0]?.created_at ? Date.parse(runs[0].created_at) : 0
+      if (now - last < FEED_RECENT_MS) return { dispatched: false, reason: 'a run started in the last 10 minutes', hot }
+    }
+    const r = await fetchImpl(`${base}/dispatches`, {
+      method: 'POST', headers: { ...headers, 'content-type': 'application/json' },
+      body: JSON.stringify({ ref: 'main', inputs: { action: 'poll', hot: hot ? 'true' : 'false' } }),
+    })
+    return r.status === 204 ? { dispatched: true, hot } : { dispatched: false, reason: `GitHub answered ${r.status}`, hot }
+  } catch (e) {
+    return { dispatched: false, reason: 'GitHub unreachable', hot }
+  }
+}
+
 export default {
+  async scheduled(controller, env, ctx) {
+    const result = await dispatchFeed(env, controller.cron)
+    console.log(`feed cron ${controller.cron}: ${JSON.stringify(result)}`)
+  },
   async fetch(request, env) {
     const { pathname } = new URL(request.url)
     const m = request.method

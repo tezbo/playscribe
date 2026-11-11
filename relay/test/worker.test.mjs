@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import worker, { FOLLOWS_TTL_SECONDS, MAX_NEW_PER_DAY } from '../worker.js'
+import worker, { FOLLOWS_TTL_SECONDS, MAX_NEW_PER_DAY, dispatchFeed, FEED_HOT_CRON, FEED_FULL_CRON } from '../worker.js'
 
 // A KV that counts writes, because the free plan allows 1,000 a day and a relaunch must not spend any.
 const fakeKv = () => {
@@ -352,4 +352,53 @@ test('follows opt-in: PATCH on a record without a token takes hourly only, until
   assert.deepEqual([page.devices[0].token, page.devices[0].environment, page.devices[0].locale, page.devices[0].hourly], [token('b'), 'sandbox', 'en-AU', true])
   assert.equal(env.KV.ttl.get(`d:${page.devices[0].id}`), null)
   assert.equal((await patch({ team: true })).status, 200)
+})
+
+// Feed cron (docs/decisions/feed-cron-worker.md): the Worker starts the Feed workflow when GitHub's schedule did not.
+const github = (lastRunAgoMs, dispatchStatus = 204) => {
+  const calls = []
+  const fetchImpl = async (url, init = {}) => {
+    calls.push({ url, init })
+    if (url.endsWith('/runs?per_page=1')) {
+      const runs = lastRunAgoMs === null ? [] : [{ created_at: new Date(1_800_000_000_000 - lastRunAgoMs).toISOString() }]
+      return new Response(JSON.stringify({ workflow_runs: runs }), { status: 200 })
+    }
+    return new Response(null, { status: dispatchStatus })
+  }
+  return { calls, fetchImpl }
+}
+const NOW = 1_800_000_000_000
+
+test('feed cron: a full tick dispatches a poll with hot false, to main, with the token', async () => {
+  const gh = github(null)
+  const r = await dispatchFeed({ FEED_DISPATCH_TOKEN: 'ghp' }, FEED_FULL_CRON, NOW, gh.fetchImpl)
+  assert.deepEqual(r, { dispatched: true, hot: false })
+  const post = gh.calls.find((c) => c.init.method === 'POST')
+  assert.equal(post.url, 'https://api.github.com/repos/tezbo/playscribe/actions/workflows/feed.yml/dispatches')
+  assert.equal(post.init.headers.authorization, 'Bearer ghp')
+  assert.deepEqual(JSON.parse(post.init.body), { ref: 'main', inputs: { action: 'poll', hot: 'false' } })
+})
+
+test('feed cron: the hot tick sends hot true', async () => {
+  const gh = github(60 * 60_000)
+  const r = await dispatchFeed({ FEED_DISPATCH_TOKEN: 'ghp' }, FEED_HOT_CRON, NOW, gh.fetchImpl)
+  assert.deepEqual(r, { dispatched: true, hot: true })
+  assert.deepEqual(JSON.parse(gh.calls.at(-1).init.body).inputs, { action: 'poll', hot: 'true' })
+})
+
+test('feed cron: a run GitHub started in the last 10 minutes is not doubled', async () => {
+  const gh = github(5 * 60_000)
+  const r = await dispatchFeed({ FEED_DISPATCH_TOKEN: 'ghp' }, FEED_FULL_CRON, NOW, gh.fetchImpl)
+  assert.equal(r.dispatched, false)
+  assert.equal(gh.calls.length, 1, 'only the runs check was made')
+})
+
+test('feed cron: without the token nothing is called; a refused dispatch is reported, not thrown', async () => {
+  const gh = github(null)
+  assert.deepEqual(await dispatchFeed({}, FEED_FULL_CRON, NOW, gh.fetchImpl), { dispatched: false, reason: 'no FEED_DISPATCH_TOKEN' })
+  assert.equal(gh.calls.length, 0)
+  const refused = github(null, 403)
+  assert.deepEqual(await dispatchFeed({ FEED_DISPATCH_TOKEN: 'ghp' }, FEED_FULL_CRON, NOW, refused.fetchImpl), { dispatched: false, reason: 'GitHub answered 403', hot: false })
+  const down = await dispatchFeed({ FEED_DISPATCH_TOKEN: 'ghp' }, FEED_FULL_CRON, NOW, async () => { throw new Error('dns') })
+  assert.equal(down.reason, 'GitHub unreachable')
 })
