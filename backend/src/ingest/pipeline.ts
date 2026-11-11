@@ -9,7 +9,7 @@ import newsSources from '../sources/news-sources.json' with { type: 'json' }
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import { IGDB_REV, type Igdb } from './igdb.ts'
-import { extractNotes, mentionsPs4, mentionsPs5, ps5PageOf } from './notes.ts'
+import { extractNotes, mentionsPs4, mentionsPs5, ps5PageOf, isPromoTitle } from './notes.ts'
 
 // The poll job from docs/ps5-patch-data.md. Rules that matter:
 //  - An official source that names PS5 decides its PS5 row. When the post says outright that
@@ -301,6 +301,15 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   return releaseId
 }
 
+/** A sale or merch headline is not news: hidden and logged for Quinn (r054-news-promo-merch-filter). */
+const addNewsUnlessPromo = (deps: IngestDeps, gameId: string, post: Post) => {
+  if (isPromoTitle(post.title)) {
+    deps.log?.(`news hidden (promo) ${gameId}: ${post.title}`)
+    return
+  }
+  store.addNews(deps.db, gameId, post)
+}
+
 export interface IngestOpts {
   force?: boolean
   /** Backfill: read each source's history back to this date (Steam's last 100 posts, press list pages). */
@@ -332,7 +341,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       if (store.isSeen(deps.db, s.id, post.postId) && !(opts.until && s.trust === 'official')) continue
         if (post.news) {
           tx(deps.db, () => {
-            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources) store.addNews(deps.db, game.id, post)
+            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources) addNewsUnlessPromo(deps, game.id, post)
             store.markSeen(deps.db, s.id, post.postId, null)
           })
           continue
@@ -380,7 +389,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       const newsOnly = (newsSources.sources as Record<string, { newsOnly?: boolean }>)[s.id]?.newsOnly === true
       if (s.id in newsSources.sources && (!looksLikePatch(post.title) || newsOnly)) {
         tx(deps.db, () => {
-          for (const g of games.filter((g) => matchesPost(g, post))) store.addNews(deps.db, g.id, post)
+          for (const g of games.filter((g) => matchesPost(g, post))) addNewsUnlessPromo(deps, g.id, post)
           store.markSeen(deps.db, s.id, post.postId, null)
         })
         continue

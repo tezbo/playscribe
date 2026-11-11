@@ -128,6 +128,13 @@ const PROMO_LINE = new RegExp(
 // the correct price", "Prices are 50% off in the arena"). A line that names the in-game economy is kept, so the rule errs
 // towards leaving a promo line in rather than hiding a real note (Quinn, #332).
 const GAME_ECONOMY = /\b(?:vendors?|merchants?|shops?|stores?|traders?|stalls?|prices?|gold|coins?|shards?|cost|costs|currency|purchas(?:e|ed|es|able)|bundles?|coupons?|costumes?|outfits?|skins?|no longer|correct(?:ly)?|now (?:have|find|stack|show|display|appear|cost|sell))\b/i
+// A news headline that is a sale or merch call is not news (Nadia, r054-news-promo-merch-filter; Quinn on #443: "Get 20% Off",
+// "Merch you might have missed", keycaps and figures showed as Official news). Same promo patterns as the note lines, plus
+// merchandise words; a change word keeps the headline. Only headlines are judged here, never a patch note (those never
+// reach the news table), and the hidden titles are logged for Quinn.
+const MERCH_TITLE = /\b(?:merch(?:andise)?|figures?|figurines?|statues?|keycaps?|replicas?|figuarts|plush(?:ies|ie)?|vinyl|t-?shirts?|hoodies?|apparel|collectibles?|art ?book|soundtrack (?:now )?(?:available|out)|(?:official )?store (?:is )?(?:now )?(?:open|live)|(?:now )?available (?:at|on|from) (?:the )?(?:store|shop)|\d+\s?% off|coming soon to the store|black friday|cyber monday|summer sale|winter sale|spring sale|autumn sale|fall sale|free weekend|free to play this weekend|bundle (?:now )?available)\b/i
+export const isPromoTitle = (title: string) => !CHANGE_WORD.test(title) && (PROMO_LINE.test(title) || MERCH_TITLE.test(title))
+
 export const isPromoLine = (text: string) => /^\s*https?:\/\/\S+\s*$/i.test(text) || (PROMO_LINE.test(text) && !CHANGE_WORD.test(text) && !GAME_ECONOMY.test(text))
 
 export const extractNotes = (body: string, fallbackTitle = 'Changes', steamOnly = false): NoteSection[] => {

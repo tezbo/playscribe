@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf, studioKindOf } from '../src/ingest/classify.ts'
 import type { NoteSection } from '../src/types.ts'
-import { extractNotes, isPromoLine, platformsFor, ps5PageOf, tagNotes } from '../src/ingest/notes.ts'
+import { extractNotes, isPromoLine, isPromoTitle, platformsFor, ps5PageOf, tagNotes } from '../src/ingest/notes.ts'
 
 test('only a post that says the update is out on PS5 counts as official PS5 evidence', () => {
   assert.ok(ps5LiveStated('Patch 1.04 is now live on PC, PS5 and Xbox Series X|S.'))
@@ -208,4 +208,14 @@ test('stored notes with stray "[/*]" items (older parser) are cleaned when read'
   const out = tagNotes([{ title: 'Changes', items: [item('Fixed a crash.'), item('[/*]'), item('Improved stability.[/*]'), item('')] }])
   assert.deepEqual(out[0]!.items.map((i) => i.text), ['Fixed a crash.', 'Improved stability.'])
   assert.deepEqual(tagNotes([{ title: 'Changes', items: [item('[/*]')] }]), [])
+})
+
+// r054-news-promo-merch-filter: headline judgement, titles only.
+test('isPromoTitle hides sale and merch headlines and keeps announcements and change headlines', () => {
+  for (const t of ['Get 20% Off CONTROL Resonant', 'Merch you might have Missed', 'Alexander, Warrior Jar Artisan Keycap has arrived!',
+                   'STARSCOURGE RADAHN JOINS THE ELDEN RING FIGUARTS MINI SERIES', '30% Off Coming Soon', 'Black Friday deals are live', 'Free weekend starts now'])
+    assert.equal(isPromoTitle(t), true, t)
+  for (const t of ['One Million Copies Sold!', 'CONTROL Resonant Receives Two Golden Joystick Award Nominations! Vote Now!', 'Developer roadmap for 2027',
+                   'Photo mode arrives next week', 'Update 1.2 fixes the 30% off store price bug', 'ELDEN RING - Community Quests'])
+    assert.equal(isPromoTitle(t), false, t)
 })
