@@ -77,7 +77,6 @@ struct SplashView: View {
     private var name: some View {
         VStack(spacing: 6) {
             Text(Brand.name).font(PlayscribeFont.wordmark)
-            Text(Brand.tagline).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             UpdateBar(progress: progress).padding(.top, 10)
         }
     }

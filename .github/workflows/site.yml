@@ -19,7 +19,27 @@ jobs:
       url: ${{ steps.d.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/upload-pages-artifact@v3
-        with: { path: site }
+      # The universal-link association file carries the Apple Team ID, which lives in the
+      # APPLE_TEAM_ID secret (not the repo). Without it, publish no file rather than a broken one.
+      - name: Fill in the Apple Team ID
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          f=site/.well-known/apple-app-site-association
+          if [ -n "$APPLE_TEAM_ID" ]; then
+            sed -i "s/TEAMID\./${APPLE_TEAM_ID}./" "$f"
+          else
+            echo "::warning::APPLE_TEAM_ID is not set: universal links are off until it is."
+            rm "$f"
+          fi
+      # upload-pages-artifact skips dot folders, which would drop /.well-known, so pack the artifact by hand.
+      - name: Pack the site (keeps .well-known)
+        run: tar --dereference --hard-dereference --directory site -cf "$RUNNER_TEMP/artifact.tar" .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
       - id: d
         uses: actions/deploy-pages@v4

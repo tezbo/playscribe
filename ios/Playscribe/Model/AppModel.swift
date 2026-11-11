@@ -647,7 +647,14 @@ final class AppModel {
     }
 
     func handle(url: URL) {
-        // playscribe://release/<gameID>/<releaseID>
+        // playscribe://release/<gameID>/<releaseID>, or the shared universal link
+        // https://playscribe.codeconnectors.co/r/<gameID>/<releaseID>
+        if url.scheme == "https", url.host() == ShareText.host {
+            let p = url.pathComponents.filter { $0 != "/" }
+            if p.count == 3, p[0] == "r" { openRelease(gameID: p[1], releaseID: p[2]) }
+            else if p.count == 2, p[0] == "g" { openGame(p[1]) }
+            return
+        }
         guard url.scheme == "playscribe" else { return }
         let parts = url.pathComponents.filter { $0 != "/" }
         if url.host() == "release", parts.count == 2 {
@@ -781,6 +788,17 @@ final class AppModel {
             openRelease(gameID: gameID, releaseID: release.id)
         // QA (INTERNAL): a PS5 update whose headline holds one word wider than the AX5 column, shown in the Updates tab
         // (WholeWordText must cut before that word, never mid-word).
+        // QA (INTERNAL): "share-card/<game>/<release>" opens that update and writes its rendered share card, at full size, to
+        // Documents/share-cards/<game>-<release>.png (Iris: judge the card, not the share-sheet thumbnail). Pull it with
+        // `xcrun simctl get_app_container booted co.codeconnectors.playscribe data`, then Documents/share-cards/.
+        case "share-card" where parts.count == 2:
+            openGame(parts[0], releaseID: parts[1])
+            // An untracked game's history is not loaded on a cold launch (Mac, 9dcb197: Witcher wrote nothing first time):
+            // fetch it, then write, exactly as a cold notification tap resolves its release.
+            Task {
+                if releases(parts[0]).isEmpty { await refreshHistories([parts[0]]) }
+                if let r = releases(parts[0]).first(where: { $0.id == parts[1] }) ?? selectedRelease(parts[0]) { writeQAShareCard(r) }
+            }
         case "long-word" where parts.count == 1:
             let gameID = parts[0]
             let now = Date.now
@@ -1135,6 +1153,14 @@ final class AppModel {
     }
 
     #if INTERNAL
+    /// QA (INTERNAL): the share card exactly as the share sheet gets it, written to disk at 1080 x 1350.
+    @MainActor private func writeQAShareCard(_ r: Release) {
+        guard let png = shareCardImage(for: r)?.pngData() else { return }
+        let dir = URL.documentsDirectory.appending(path: "share-cards")
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        try? png.write(to: dir.appending(path: "\(r.gameID)-\(r.id.replacingOccurrences(of: "/", with: "_")).png"))
+    }
+
     /// The `-qaRoute` / `-qaOverlay` launch arguments. Ignored in a distribution build (one with a
     /// TestFlight or App Store receipt), exactly like the playscribe:// QA routes.
     func applyQALaunch(route: String?, overlay: Bool) {
