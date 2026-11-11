@@ -330,3 +330,26 @@ test('follows opt-in on a push device: PATCH hourly sets the flag; a cleared tok
   assert.equal(page.devices[0].token, null)
   assert.equal(env.KV.ttl.get(`d:${page.devices[0].id}`), FOLLOWS_TTL_SECONDS)
 })
+
+test('follows opt-in: PATCH on a record without a token takes hourly only, until the PATCH that adds a token', async () => {
+  const { env } = setup()
+  const { deviceKey } = await (await call(env, 'POST', '/v1/follows', { follows: [{ gameId: 'dawnwalker' }] })).json()
+  const patch = (body) => call(env, 'PATCH', '/v1/devices/me', body, deviceKey)
+  for (const body of [{ locale: 'en-AU' }, { quietHours: { from: 60, until: 120, timeZone: 'Australia/Sydney' } }, { team: true }, { environment: 'sandbox' }, { hourly: false, locale: 'en' }]) {
+    assert.equal((await patch(body)).status, 400, JSON.stringify(body))
+  }
+  assert.equal((await patch({ locale: 'en', team: true })).status, 400)
+  assert.equal((await (await patch({ locale: 'en', team: true })).json()).error, 'a record without alerts takes only hourly, not locale, team')
+  let page = await (await call(env, 'GET', '/admin/devices', undefined, ADMIN)).json()
+  assert.deepEqual([page.devices[0].locale, page.devices[0].quiet, page.devices[0].team], [null, null, false])
+  // The flag itself can be turned off and on.
+  assert.equal((await patch({ hourly: false })).status, 200)
+  page = await (await call(env, 'GET', '/admin/devices', undefined, ADMIN)).json()
+  assert.equal(page.devices[0].hourly, false)
+  // Alerts allowed later: the same PATCH that brings the token may bring the alert fields, and the record becomes a push device.
+  assert.equal((await patch({ apnsToken: token('b'), environment: 'sandbox', locale: 'en-AU', hourly: true })).status, 200)
+  page = await (await call(env, 'GET', '/admin/devices', undefined, ADMIN)).json()
+  assert.deepEqual([page.devices[0].token, page.devices[0].environment, page.devices[0].locale, page.devices[0].hourly], [token('b'), 'sandbox', 'en-AU', true])
+  assert.equal(env.KV.ttl.get(`d:${page.devices[0].id}`), null)
+  assert.equal((await patch({ team: true })).status, 200)
+})

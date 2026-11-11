@@ -254,6 +254,12 @@ const patchMe = async (env, request) => {
   const parsed = await readJson(request)
   if (parsed.tooBig) return bad('body too large', 413)
   const body = parsed.body
+  // A record without a token holds ids and the hourly flag only. It takes the alert fields (environment, locale, quiet hours,
+  // team) only in the PATCH that gives it a token, so an opt-in record can never quietly grow a field the promise excludes.
+  if (!d.token && !body.apnsToken) {
+    const extra = Object.keys(body).filter((k) => k !== 'hourly')
+    if (extra.length) return bad(`a record without alerts takes only hourly, not ${extra.sort().join(', ')}`)
+  }
   if (body.environment !== undefined && body.environment !== 'sandbox' && body.environment !== 'production') return bad('environment must be sandbox or production')
   if (body.apnsToken && !validToken(body.apnsToken)) return bad('apnsToken must be hex')
   const quiet = body.quietHours === undefined ? undefined : parseQuietHours(body.quietHours)
