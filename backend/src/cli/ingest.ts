@@ -17,6 +17,7 @@ import { feedProblems } from '../quality.ts'
 import { appendFileSync } from 'node:fs'
 import { Igdb } from '../ingest/igdb.ts'
 import { runIngest, seedGames } from '../ingest/pipeline.ts'
+import { deriveAutoRegistry, seedAutoGames } from '../ingest/autoRegistry.ts'
 import { fetchPlus, resolvePlusCovers } from '../plusAuto.ts'
 import { loadPlus } from '../plus.ts'
 import { Apns } from '../push/apns.ts'
@@ -28,8 +29,15 @@ const db = openDb(config.databasePath)
 const igdb = config.twitch.clientId && config.twitch.clientSecret ? new Igdb(config.twitch.clientId, config.twitch.clientSecret) : null
 const deps = { db, fetchFn: fetch, igdb, log: console.log }
 await seedGames(deps)
+// Auto-onboarding (0.5.4): AUTO_SLICE games a run from the derived registry (0 or unset = off; the dry run in feed.yml still prints
+// what it would add). Only a full poll seeds and polls them; the hot run and a backfill never do.
+const autoSlice = Number(process.env.AUTO_SLICE ?? 0) || 0
+if (autoSlice > 0 && exportDir && !args.includes('--hot') && !args.includes('--backfill')) {
+  const auto = deriveAutoRegistry(`${exportDir}/v1/info`)
+  console.log(`auto-onboarding: ${auto.games.length} derived games (${seedAutoGames(db, auto.games)} rows written), skipped ${JSON.stringify(auto.skipped)}`)
+}
 const until = args.includes('--backfill') ? new Date(args[args.indexOf('--backfill') + 1]!).toISOString() : undefined
-const summary = await runIngest(deps, { force: args.includes('--force') || !!until, until, hot: args.includes('--hot') })
+const summary = await runIngest(deps, { force: args.includes('--force') || !!until, until, hot: args.includes('--hot'), autoSlice, autoBudgetMs: Number(process.env.AUTO_BUDGET_MS ?? 9 * 60_000) })
 console.log(JSON.stringify(summary, null, 2))
 if (!args.includes('--hot')) {
   await fetchPlus(db, fetch, console.log)

@@ -38,6 +38,9 @@ export interface IngestSummary {
   created: string[]
   revised: string[]
   review: number
+  /** Auto-onboarding: auto games polled this run, and whether the time budget cut the slice short. */
+  auto?: number
+  autoStopped?: boolean
 }
 
 const MIN_POLL_MS = 55 * 60_000
@@ -268,7 +271,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     store.upsertPlatform(db, releaseId, 'pc', { status: 'live', verification: 'official', liveAt: store.field(post.publishedAt, 'official', s.id) })
     store.addLinks(db, releaseId, links())
     if (ps5LiveStated(text)) officialPs5(releaseId)
-    else if (!registry.games[game.id]?.steamIsPcPort && !(game.ps5_release && post.publishedAt.slice(0, 10) < game.ps5_release)) {
+    else if (!registry.games[game.id]?.steamIsPcPort && !game.steam_is_pc_port && !(game.ps5_release && post.publishedAt.slice(0, 10) < game.ps5_release)) {
       // Taken as out on PS5 too, unless the post says otherwise. Never the PC version or size: those are PC facts.
       const status = ps5StatusOf(text)
       store.upsertPlatform(db, releaseId, 'ps5', { status, verification: 'assumed', liveAt: status === 'live' ? store.field(post.publishedAt, 'assumed', s.id) : null })
@@ -302,6 +305,10 @@ export interface IngestOpts {
   until?: string
   /** Poll only the hot set (hot.ts), at the shorter hot interval, and skip the shared press sources. */
   hot?: boolean
+  /** Auto-onboarding: how many auto games (store.nextAutoSlice) to poll after the tracked ones, 0 for none. */
+  autoSlice?: number
+  /** Auto-onboarding: stop the slice once the whole run has taken this long (the job has a 20 min limit). */
+  autoBudgetMs?: number
 }
 
 export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promise<IngestSummary> => {
@@ -328,6 +335,28 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
           })
           continue
         }
+        tx(deps.db, () => store.markSeen(deps.db, s.id, post.postId, handlePost(deps, game, s, post, summary)))
+      }
+    }
+  }
+
+  // Auto-onboarding (0.5.4): a rotating slice of the derived games, Steam only, oldest poll first. One request each, so
+  // the slice is the run's cost ceiling; a game that gets a patch joins the 14-day hot set and is then polled hourly.
+  if (!opts.hot && !opts.until && (opts.autoSlice ?? 0) > 0) {
+    const started = Date.now()
+    const tracked = new Set(games.map((g) => g.id))
+    for (const game of store.nextAutoSlice(deps.db, opts.autoSlice!, tracked)) {
+      if (opts.autoBudgetMs && Date.now() - started > opts.autoBudgetMs) { summary.autoStopped = true; break }
+      const [s] = sourcesFor(game)
+      if (!s) continue
+      summary.auto = (summary.auto ?? 0) + 1
+      store.markAutoPolled(deps.db, game.id)
+      if (!due(deps.db, s, false)) { summary.skipped.push(s.id); continue }
+      const posts = await poll(deps, s, summary, {})
+      for (const post of (posts ?? []).sort((a, b) => a.publishedAt.localeCompare(b.publishedAt))) {
+        if (store.isSeen(deps.db, s.id, post.postId)) continue
+        // News headlines are kept for hand-registered games only: thousands of news files would swell the feed branch.
+        if (post.news) { tx(deps.db, () => store.markSeen(deps.db, s.id, post.postId, null)); continue }
         tx(deps.db, () => store.markSeen(deps.db, s.id, post.postId, handlePost(deps, game, s, post, summary)))
       }
     }
