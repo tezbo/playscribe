@@ -133,7 +133,7 @@ final class PlayscribeUITests: XCTestCase {
 
     /// G-7 and G-10: the system accessibility audit on the main screens.
     func testAccessibilityAudit() throws {
-        for route in ["demo", "release/dawnwalker/dawnwalker@1.1", "add", "updates"] {
+        for route in ["demo", "release/dawnwalker/dawnwalker@1.1", "add", "updates", "news"] {
             app.launchArguments = ["-qaRoute", route]
             app.launch()
             sleep(2)

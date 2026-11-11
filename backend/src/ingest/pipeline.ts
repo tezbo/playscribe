@@ -376,8 +376,9 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       // Shared feeds cover every game: a post counts only if it names the game and reads like a patch;
       // a press list counts only posts about PS5.
       // A news-listed shared feed's non-patch posts that name a tracked game are news headlines (title, date, link); the
-      // Push Square news feed is news only, its patch articles come through the press index.
-      if (s.id in newsSources.sources && (!looksLikePatch(post.title) || s.id === 'pushsquare-news')) {
+      // press outlets' news feeds (newsOnly in news-sources.json) are news only; Push Square's patch articles come through the press index.
+      const newsOnly = (newsSources.sources as Record<string, { newsOnly?: boolean }>)[s.id]?.newsOnly === true
+      if (s.id in newsSources.sources && (!looksLikePatch(post.title) || newsOnly)) {
         tx(deps.db, () => {
           for (const g of games.filter((g) => matchesPost(g, post))) store.addNews(deps.db, g.id, post)
           store.markSeen(deps.db, s.id, post.postId, null)
