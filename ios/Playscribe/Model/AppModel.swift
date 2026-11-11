@@ -793,7 +793,12 @@ final class AppModel {
         // `xcrun simctl get_app_container booted co.codeconnectors.playscribe data`, then Documents/share-cards/.
         case "share-card" where parts.count == 2:
             openGame(parts[0], releaseID: parts[1])
-            if let r = releases(parts[0]).first(where: { $0.id == parts[1] }) ?? selectedRelease(parts[0]) { writeQAShareCard(r) }
+            // An untracked game's history is not loaded on a cold launch (Mac, 9dcb197: Witcher wrote nothing first time):
+            // fetch it, then write, exactly as a cold notification tap resolves its release.
+            Task {
+                if releases(parts[0]).isEmpty { await refreshHistories([parts[0]]) }
+                if let r = releases(parts[0]).first(where: { $0.id == parts[1] }) ?? selectedRelease(parts[0]) { writeQAShareCard(r) }
+            }
         case "long-word" where parts.count == 1:
             let gameID = parts[0]
             let now = Date.now
