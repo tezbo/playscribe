@@ -216,7 +216,9 @@ test('isPromoTitle hides sale and merch headlines and keeps announcements and ch
                    'STARSCOURGE RADAHN JOINS THE ELDEN RING FIGUARTS MINI SERIES', '30% Off Coming Soon', 'Black Friday deals are live',
                    'Pre-order a Lamb Plushie and Soundtrack Vinyl', 'Soundtrack Now on Sale', 'Steam Autumn Sale is Live!',
                    // Nadia (11 Nov): nothing to know or do about the game. Milestone thank-yous and every sale are hidden.
-                   'THANK YOU FOR 4M UNITS SOLD!', 'Thank You for 6 Years of Love!', 'Franchise Sale', 'Assassin\u2019s Creed Anniversary Sale'])
+                   'THANK YOU FOR 4M UNITS SOLD!', 'Thank You for 6 Years of Love!', 'Franchise Sale', 'Assassin\u2019s Creed Anniversary Sale',
+                   // Quinn's leftovers (01359d7): a thank-you anywhere; a soundtrack even with a keep word.
+                   '2 Million Wishlists \u2013 Thank You!', 'Soundtrack - Out Now!', 'Soundtrack Release', 'ELDEN RING: SHADOW OF THE ERDTREE \u2013 Official Vinyl Soundtrack'])
     assert.equal(isPromoTitle(t), true, t)
   // Kept: announcements, change words, and the keep-list (update, patch, hotfix, out now, launch, release, servers, roadmap,
   // free weekend). A free weekend shows even beside a sale (Nadia, Quinn).
@@ -224,6 +226,9 @@ test('isPromoTitle hides sale and merch headlines and keeps announcements and ch
                    'Photo mode arrives next week', 'Update 1.2 fixes the 30% off store price bug', 'ELDEN RING - Community Quests',
                    "New update for Dragon's Dogma 2 and on sale now!", "'They Came From Salem' DLC - Out Now!", 'Hunt Gets SA Servers, Starts Free Weekend',
                    'Launching on Feb 27, 2026! Pre-order now!', 'Dead by Daylight hits a record peak player count; free weekend',
-                   'Titanfall 2 Free Weekend', 'Free weekend + sales up to 60% off!', 'Anniversary update brings free content'])
+                   'Titanfall 2 Free Weekend', 'Free weekend + sales up to 60% off!', 'Anniversary update brings free content',
+                   // A bare "sales" is business news, not a sale (Quinn); play-for-free weeks are free weekends.
+                   'Final Fantasy 7 Rebirth and other JRPGs help Square Enix to sales boost amid multi-platform pivot',
+                   'Borderlands 4 Free Play Weekend and anniversary sales happening now!', 'This week Play for free & Sales'])
     assert.equal(isPromoTitle(t), false, t)
 })

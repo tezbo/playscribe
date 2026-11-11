@@ -18,6 +18,7 @@ Date 2026-11-11 / owner: News thread (Fable, iOS and backend) / card r054-news-p
    content). Soundtracks and vinyl: HIDE as merch. Every sale ("Franchise Sale", "Anniversary Sale"): HIDE. The job log carries
    "news hidden (promo) N new, M pruned" so a jump shows. Iris's conditions, both met: the rule never changes the tag of a post
    that stays (it only skips or deletes rows), and a game whose posts are all hidden shows the normal "No news yet" state (the
-   app treats an empty loaded list as empty). Quinn signs the backend.
+   app treats an empty loaded list as empty). Quinn signs the backend. Follow-up from Quinn's dry run (560 rows at 01359d7): a
+   bare "sales" is business news and stays; a thank-you anywhere in the title hides; a soundtrack hides before the keep-list.
 6. **Learning.** A filter written for one surface (note lines) hid different things when pointed at another (headlines); dry-run
    the live data and read the list before shipping a text rule.
