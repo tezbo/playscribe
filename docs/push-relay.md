@@ -46,6 +46,19 @@ costs two writes a week. `GET /admin/devices` lists these records with `token: n
 `devices.hourly = 1`), and `trackedGames` polls a non-registry game hourly only while an `hourly` device follows it. A push-only
 device's follows address alerts and do not widen the hourly tier. Budget: about 0.3 KV writes a device a day, against 1,000.
 
+## Feed cron (GitHub's schedule as the fallback)
+
+GitHub runs scheduled workflows from a shared queue and, when it is busy, fires them hours late or not at all: on 11 Nov 2026 the
+Feed workflow had one full poll between 18:31 and 23:04 UTC and no :47 hot run. Hourly currency is the app's value, so the Worker
+holds the clock too. Two cron triggers (`22 * * * *` full, `52 * * * *` hot; `FEED_FULL_CRON`, `FEED_HOT_CRON` in worker.js,
+registered by deploy.sh) call `dispatchFeed`: it reads the workflow's latest run and, when none was created in the last 10 minutes,
+POSTs a `workflow_dispatch` (`action: poll`, `hot: true` on the :52 tick) to `feed.yml` on main. Five minutes after GitHub's own
+:17 and :47 so a run GitHub did start is seen and not doubled; `concurrency: feed` serialises any race. The token is
+`FEED_DISPATCH_TOKEN`: a fine-grained GitHub token for this repository only, permission Actions read and write, stored as a
+repository secret and bound to the Worker by deploy.sh (relay-deploy.yml passes it). Without it the handler logs
+"no FEED_DISPATCH_TOKEN" and does nothing, so the old schedule keeps working. Blast radius of the token: starting, cancelling or
+re-running this repository's workflows; no code or secrets access. Decision: docs/decisions/feed-cron-worker.md.
+
 ## Forgetting a device
 `DELETE /v1/devices/me` (device key as Bearer) deletes `d:`, `k:`, `t:` (only if it still points at this device) and `tm:`. It is idempotent: an unknown key is `204`, no key is `401`. It spends up to 4 KV deletes, which count against the 1,000 writes a day.
 

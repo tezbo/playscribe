@@ -30,4 +30,6 @@ jobs:
           APNS_KEY: ${{ secrets.APNS_KEY_P8 }}
           APNS_KEY_ID: ${{ secrets.APNS_KEY_ID }}
           APNS_TEAM_ID: ${{ secrets.APNS_TEAM_ID }}
+          # Fine-grained GitHub token (this repository, Actions read and write) so the Worker's cron can start the Feed workflow.
+          FEED_DISPATCH_TOKEN: ${{ secrets.FEED_DISPATCH_TOKEN }}
         run: relay/deploy.sh
