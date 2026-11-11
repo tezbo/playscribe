@@ -256,7 +256,7 @@ struct LibraryShelf: View {
             if model.showsNotificationCard, let first = all.first {
                 NotificationInviteCard(gameName: first.game.name)
             }
-            // N-9: asked once, in context, after the alerts card when both are due.
+            // N-9: one ask per screen. Shows only once the alerts card has been answered, on a later Library appearance (Iris).
             if model.showsKeepCurrentCard { KeepCurrentCard() }
             CatchUpCard()
             PlusCard()
@@ -1106,6 +1106,7 @@ struct NotificationInviteCard: View {
                 snooze()
                 if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
             } else {
+                model.alertsAnsweredThisSession = true
                 Task { if !(await NotificationService.shared.requestAuthorization()) { snooze() } }
             }
         } label: {

@@ -16,7 +16,7 @@ enum KeepCurrentCopy {
     static let neverHeading = "What is never sent"
     static let neverBody = "Your name or email, your location, what you read or search, your Owned or Wishlist marks, photos, contacts or feedback you write."
     static let keptHeading = "How long it is kept"
-    static let keptBody = "Up to 90 days after your last \"still here\" note. It is deleted straight away when you turn this off or reset the app."
+    static let keptBody = "Up to 90 days after your last \"still here\" note. It is deleted straight away when you turn this off or reset the app, unless you also have alerts on. Then the games you follow stay on our server for your alerts until you turn alerts off too."
     static let turnOn = "Turn on"
     static let notNow = "Not now"
     static let cardVoiceOver = "Help keep your games up to date? \(Brand.name) can send the games you follow, and a random code, to our server. Details follow."
@@ -31,7 +31,7 @@ enum KeepCurrentCopy {
     static let settingsOnVoiceOver = "Sends the games you follow to our server."
     static let whatIsSent = "What is sent"
     /// The store line and the Settings footer when on.
-    static let shortLine = "Only the games you follow and a random code. Not linked to you. Kept up to 90 days."
+    static let shortLine = "Only the games you follow and a random code. Not linked to you. Kept up to 90 days. Deleted when you turn this and alerts off."
 
     /// "Last sent: today" or "Last sent: 3 days ago"; nil before anything was sent (the record is made at the first follow).
     static func lastSent(_ date: Date?, now: Date = .now) -> String? {

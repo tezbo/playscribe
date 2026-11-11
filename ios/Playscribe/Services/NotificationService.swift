@@ -16,6 +16,15 @@ enum NotificationAsk {
     }
 }
 
+/// N-9, one ask per screen (Iris, 11 Nov 2026): the "Help keep your games up to date?" card waits until the alerts card (N-1) has
+/// been answered, and shows on a later Library appearance, never in the session that answered it. When both are due and alerts
+/// were answered earlier, the follow-list card shows alone.
+enum KeepCurrentAsk {
+    static func shows(hasGames: Bool, on: Bool, dismissed: Bool, alertsCardShows: Bool, alertsAnswered: Bool, answeredThisSession: Bool) -> Bool {
+        hasGames && !on && !dismissed && !alertsCardShows && alertsAnswered && !answeredThisSession
+    }
+}
+
 /// Local and remote notifications: asking in context (N-1, N-2), content and interruption
 /// levels (N-3, N-4), foreground handling (N-7), deep links (N-6) and the badge (N-8).
 @Observable

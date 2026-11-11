@@ -833,6 +833,10 @@ final class AppModel {
             // Settings shows the row on with its "Last sent" line, and the model's next save sends the real request.
             resetDemo()
             data.keepCurrentCardDismissed = nil
+            // The alerts card was answered Not now on an earlier day, so the follow-list card shows alone (one ask per screen).
+            data.notificationAsks = 1
+            data.notificationSnoozedUntil = Calendar.current.date(byAdding: .day, value: NotificationAsk.snoozeDays, to: .now)
+            alertsAnsweredThisSession = false
             if parts.first == "on" { data.keepCurrent = true }
         case "ask-notifications": Task { await NotificationService.shared.requestAuthorization() }
         default: break
@@ -1072,9 +1076,18 @@ final class AppModel {
                               asks: data.notificationAsks ?? 0, snoozedUntil: data.notificationSnoozedUntil)
     }
 
-    /// The one-time "Help keep your games up to date?" card (N-9): once a game is in the Library, until it is answered or the
-    /// switch is on.
-    var showsKeepCurrentCard: Bool { !data.collection.isEmpty && data.keepCurrent != true && data.keepCurrentCardDismissed != true }
+    /// The one-time "Help keep your games up to date?" card (N-9): once a game is in the Library and the alerts card (N-1) has been
+    /// answered, on a later Library appearance than the answer, until it is answered itself or the switch is on. One ask per screen.
+    var showsKeepCurrentCard: Bool {
+        KeepCurrentAsk.shows(hasGames: !data.collection.isEmpty, on: data.keepCurrent == true, dismissed: data.keepCurrentCardDismissed == true,
+                             alertsCardShows: showsNotificationCard, alertsAnswered: alertsAnswered, answeredThisSession: alertsAnsweredThisSession)
+    }
+
+    /// The alerts card has had an answer: Not now at least once, or the system prompt decided (authorized, denied or provisional).
+    private var alertsAnswered: Bool { (data.notificationAsks ?? 0) > 0 || NotificationService.shared.authorization != .notDetermined }
+
+    /// Set when the alerts card is answered in this launch (Turn on or Not now), so the follow-list card waits for the next one.
+    var alertsAnsweredThisSession = false
 
     /// The switch (Settings) and the card's Turn on. The relay call is made only by the app's own model (never a scratch store).
     func setKeepCurrent(_ on: Bool) {
@@ -1094,6 +1107,7 @@ final class AppModel {
 
     /// "Not now", a swipe, or a declined system prompt: ask again in a week (N-1).
     func snoozeNotificationCard() {
+        alertsAnsweredThisSession = true
         data.notificationAsks = (data.notificationAsks ?? 0) + 1
         data.notificationSnoozedUntil = Calendar.current.date(byAdding: .day, value: NotificationAsk.snoozeDays, to: .now)
     }
