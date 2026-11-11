@@ -134,13 +134,12 @@ const GAME_ECONOMY = /\b(?:vendors?|merchants?|shops?|stores?|traders?|stalls?|p
 // titles are logged for Quinn. Two guards keep the filter cautious (Quinn's dry run on 8,036 rows, 11 Nov):
 // - KEEP_TITLE: a headline that says update, patch, hotfix, out now, launch, release, servers or roadmap is news whatever else
 //   it says ("New update for Dragon's Dogma 2 and on sale now!", "Launching on Feb 27! Pre-order now!").
-// - Free weekends and milestone thank-yous are shown until Nadia rules on them (docs/decisions/r054-news-promo-merch-filter.md);
-//   soundtrack and vinyl releases are merch and hidden.
-const KEEP_TITLE = /\b(?:updates?|updated|patch(?:es|ed)?|hotfix(?:es)?|out now|launch(?:es|ed|ing)?|releas(?:e|es|ed)|servers?|roadmap)\b/i
-const THANKS_TITLE = /^\W*(?:a big |a huge |many |so much )?thank(?:s| you)\b/i
-const MERCH_TITLE = /\b(?:merch(?:andise)?|figures?|figurines?|statues?|keycaps?|replicas?|figuarts|plush(?:ies|ie)?|vinyl|t-?shirts?|hoodies?|apparel|collectibles?|art ?book|soundtrack|(?:official )?store (?:is )?(?:now )?(?:open|live)|(?:now )?available (?:at|on|from) (?:the )?(?:store|shop)|\d+\s?% off|coming soon to the store|black friday|cyber monday|summer sale|winter sale|spring sale|autumn sale|fall sale|bundle (?:now )?available)\b/i
-export const isPromoTitle = (title: string) =>
-  !KEEP_TITLE.test(title) && !CHANGE_WORD.test(title) && !THANKS_TITLE.test(title) && (PROMO_LINE.test(title) || MERCH_TITLE.test(title))
+// - Nadia's test (11 Nov, Iris agreed): does the post give the player something to know or do about their game? Free weekends
+//   do, so they are kept even beside a sale ("Free weekend + sales up to 60% off!"); milestone thank-yous, soundtracks and every
+//   sale ("Franchise Sale", "Anniversary Sale") do not. See docs/decisions/r054-news-promo-merch-filter.md.
+const KEEP_TITLE = /\b(?:updates?|updated|patch(?:es|ed)?|hotfix(?:es)?|out now|launch(?:es|ed|ing)?|releas(?:e|es|ed)|servers?|roadmap|free weekend)\b/i
+const MERCH_TITLE = /\b(?:merch(?:andise)?|figures?|figurines?|statues?|keycaps?|replicas?|figuarts|plush(?:ies|ie)?|vinyl|t-?shirts?|hoodies?|apparel|collectibles?|art ?book|soundtrack|sales?|(?:official )?store (?:is )?(?:now )?(?:open|live)|(?:now )?available (?:at|on|from) (?:the )?(?:store|shop)|\d+\s?% off|coming soon to the store|black friday|cyber monday|bundle (?:now )?available)\b/i
+export const isPromoTitle = (title: string) => !KEEP_TITLE.test(title) && !CHANGE_WORD.test(title) && (PROMO_LINE.test(title) || MERCH_TITLE.test(title))
 
 export const isPromoLine = (text: string) => /^\s*https?:\/\/\S+\s*$/i.test(text) || (PROMO_LINE.test(text) && !CHANGE_WORD.test(text) && !GAME_ECONOMY.test(text))
 

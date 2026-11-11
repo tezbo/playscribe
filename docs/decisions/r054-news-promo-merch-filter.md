@@ -12,7 +12,12 @@ Date 2026-11-11 / owner: News thread (Fable, iOS and backend) / card r054-news-p
    the live feed: 8,036 rows, 446 hidden (5.5%), 1 of them press.
 4. **Alternatives.** (a) Show everything, let the per-game cap cope: zero code, but the cap then fills with sales. (b) A
    "Promo" chip instead of hiding: honest, but adds a chip type and still spends the three slots. (c) Hide, as here.
-5. **Decision.** Hide sale and merch headlines (c). Open for Nadia, cautious default until she answers: free weekends (13 rows)
-   and milestone thank-yous are SHOWN; soundtrack and vinyl releases are HIDDEN as merch. Quinn signs the backend.
+5. **Decision.** Hide sale and merch headlines (c). Nadia's test (11 Nov, Iris agreed): does the post give the player something
+   to know or do about their game? Free weekends: SHOW, always (keep-list; "Free weekend + sales up to 60% off!" stays), Official
+   tag only, never an update. Milestone thank-yous: HIDE (the keep-list rescues an anniversary post with a patch or free
+   content). Soundtracks and vinyl: HIDE as merch. Every sale ("Franchise Sale", "Anniversary Sale"): HIDE. The job log carries
+   "news hidden (promo) N new, M pruned" so a jump shows. Iris's conditions, both met: the rule never changes the tag of a post
+   that stays (it only skips or deletes rows), and a game whose posts are all hidden shows the normal "No news yet" state (the
+   app treats an empty loaded list as empty). Quinn signs the backend.
 6. **Learning.** A filter written for one surface (note lines) hid different things when pointed at another (headlines); dry-run
    the live data and read the list before shipping a text rule.

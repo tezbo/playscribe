@@ -566,6 +566,7 @@ test('sale and merch headlines are hidden from news and logged; announcements st
   const hidden = log.filter((l) => l.startsWith('news hidden (promo) dawnwalker:'))
   assert.equal(hidden.length, 2)
   assert.ok(hidden.some((l) => l.includes('20% Off')) && hidden.some((l) => l.includes('Merch')))
+  assert.ok(log.some((l) => l === 'ingest: news hidden (promo) 2 new, 0 pruned'), 'the job log carries the hidden count')
 })
 
 // Quinn (#461): Steam posts are markSeen, so the 446 rows stored before the rule would stay in the feed. The prune pass at
@@ -581,7 +582,7 @@ test('ingest prunes stored sale and merch headlines and logs them', async () => 
   await runIngest(deps, { force: true })
   assert.deepEqual(newsOf(db, 'dawnwalker').map((n) => n.title), ['One Million Copies Sold!'])
   assert.equal(log.filter((l) => l.startsWith('news hidden (promo, pruned) dawnwalker:')).length, 2)
-  assert.ok(log.some((l) => l === 'ingest: pruned 2 stored sale or merch headlines from news'))
+  assert.ok(log.some((l) => l === 'ingest: news hidden (promo) 0 new, 2 pruned'))
 })
 
 // Terry 2026-11-06: PS4 games play on PS5, so a PS4 patch for a game with no native PS5 version counts, labelled ps4.
