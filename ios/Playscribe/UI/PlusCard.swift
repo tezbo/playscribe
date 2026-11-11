@@ -10,8 +10,12 @@ struct PlusCard: View {
     @Environment(\.duo) private var duo
 
     static let maxCovers = 3
-    /// Accessibility sizes show two so a plate name stays readable; "+N more" counts the rest.
+    /// Book's compact row shows two at accessibility sizes so a plate name stays readable; "+N" counts the rest.
+    /// Every other pose shows all three at accessibility sizes too, wrapped two to a row (Iris, #442: a lone
+    /// "Stray" text row under two covers read as a stray).
     static func coverLimit(accessibility: Bool) -> Int { accessibility ? 2 : maxCovers }
+    /// Covers to a row at accessibility sizes in the wide card; the third wraps under.
+    static let accessibilityCoversPerRow = 2
     /// No wider than a Library tile, whatever the pose (Iris, #242).
     static let maxCoverWidth: CGFloat = 140
 
@@ -57,7 +61,7 @@ struct PlusCard: View {
     var body: some View {
         if let (month, lastChance) = PlusLogic.visibleMonth(PlusStore.shared.months, cardOff: model.data.plusCardOff) {
             let claimBy = PlusLogic.claimByText(month)
-            let limit = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
+            let limit = Self.maxCovers
             let shown = Array(month.games.prefix(limit))
             if duo.pose == .book {
                 compact(month.games, lastChance: lastChance, claimBy: claimBy)
@@ -138,7 +142,15 @@ struct PlusCard: View {
     private func stacked(_ shown: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             header(lastChance: lastChance, claimBy: claimBy)
-            coverRow(shown, fixedWidth: nil)
+            if typeSize.isAccessibilitySize {
+                // Two covers to a row and the third under them, each row sized by its own count and capped at a
+                // Library tile, so the lone cover is no wider than the pair above it.
+                ForEach(Array(stride(from: 0, to: shown.count, by: Self.accessibilityCoversPerRow)), id: \.self) { i in
+                    coverRow(Array(shown[i..<min(i + Self.accessibilityCoversPerRow, shown.count)]), fixedWidth: nil)
+                }
+            } else {
+                coverRow(shown, fixedWidth: nil)
+            }
         }
     }
 

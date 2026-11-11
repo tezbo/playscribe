@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs'
-import { hotGameIds, HOT_POLL_MS } from '../hot.ts'
+import { hotGameIds, launchingGameIds, HOT_POLL_MS } from '../hot.ts'
 import { now, tx, type DB } from '../db.ts'
 import { Blocked, allowedByRobots, type FetchFn } from '../http.ts'
 import { registry, type SourceDef } from '../registry.ts'
@@ -83,9 +83,15 @@ export const pressStatusOf = (title: string, body: string): PlatformStatus => {
   return ps5StatusOf(body.slice(0, 600) || title)
 }
 
-/** Registry games are always tracked; any other game is tracked while a device follows it. */
-export const trackedGames = (db: DB) =>
-  db.prepare(`SELECT * FROM games WHERE id IN (${Object.keys(registry.games).map(() => '?').join(',') || "''"}) OR id IN (SELECT game_id FROM follows)`).all(...Object.keys(registry.games)) as Record<string, any>[]
+/** Registry games are always tracked (hourly). Any other game joins the hourly tier while a device that opted in to "Help keep
+ *  my games up to date" (devices.hourly, the relay's flag) follows it; a push-only device's follows address alerts, nothing more.
+ *  A derived game in its launch window (hot.ts) is tracked too, so its day-one patch does not wait for the auto slice. */
+export const trackedGames = (db: DB, at = new Date()) => {
+  const launching = launchingGameIds(db, at)
+  return db.prepare(`SELECT * FROM games WHERE id IN (${Object.keys(registry.games).map(() => '?').join(',') || "''"})
+    OR id IN (SELECT f.game_id FROM follows f JOIN devices d ON d.id = f.device_id WHERE d.hourly = 1)
+    OR id IN (${launching.map(() => '?').join(',') || "''"})`).all(...Object.keys(registry.games), ...launching) as Record<string, any>[]
+}
 
 export const sourcesFor = (game: Record<string, any>): SourceDef[] => {
   const reg = registry.games[game.id]
@@ -374,8 +380,9 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       // Shared feeds cover every game: a post counts only if it names the game and reads like a patch;
       // a press list counts only posts about PS5.
       // A news-listed shared feed's non-patch posts that name a tracked game are news headlines (title, date, link); the
-      // Push Square news feed is news only, its patch articles come through the press index.
-      if (s.id in newsSources.sources && (!looksLikePatch(post.title) || s.id === 'pushsquare-news')) {
+      // press outlets' news feeds (newsOnly in news-sources.json) are news only; Push Square's patch articles come through the press index.
+      const newsOnly = (newsSources.sources as Record<string, { newsOnly?: boolean }>)[s.id]?.newsOnly === true
+      if (s.id in newsSources.sources && (!looksLikePatch(post.title) || newsOnly)) {
         tx(deps.db, () => {
           for (const g of games.filter((g) => matchesPost(g, post))) store.addNews(deps.db, g.id, post)
           store.markSeen(deps.db, s.id, post.postId, null)

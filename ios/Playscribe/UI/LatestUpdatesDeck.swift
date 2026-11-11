@@ -20,12 +20,13 @@ struct DeckCard: Identifiable, Hashable {
 }
 
 extension AppModel {
-    /// Up to 8 cards: unread On PS5 updates first, then the rest from the last 90 days, newest first.
+    /// Up to 5 cards (one dot each): unread On PS5 updates first, then the rest from the last 90 days, newest first.
     /// With nothing in 90 days, the newest release dates of the library's games.
-    var latestDeck: [DeckCard] { Array(latestDeckAll.prefix(8)) }
+    static let deckLimit = 5
+    var latestDeck: [DeckCard] { Array(latestDeckAll.prefix(Self.deckLimit)) }
 
-    /// Updates beyond the deck's 8 cards: the Open portrait "+N more updates" chip opens the Updates list.
-    var latestDeckOverflow: Int { max(0, latestDeckAll.count - 8) }
+    /// Updates beyond the deck's 5 cards: the Open portrait "+N more updates" chip opens the Updates list.
+    var latestDeckOverflow: Int { max(0, latestDeckAll.count - Self.deckLimit) }
 
     private var latestDeckAll: [DeckCard] {
         let cutoff = Date.now.addingTimeInterval(-90 * 86400)

@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
-import { seedGames } from '../src/ingest/pipeline.ts'
+import { seedGames, trackedGames } from '../src/ingest/pipeline.ts'
 import { deviceRows, scrubDevices, syncDevices, type RelayDevice } from '../src/push/relay.ts'
 import { fakeFetch } from './helpers.ts'
 
@@ -16,7 +16,7 @@ test('relay: devices load with their follows and quiet hours; unknown games are 
   const db = openDb(':memory:')
   await seedGames({ db, fetchFn: fakeFetch({}), igdb: null })
   const r = syncDevices(db, [dev('d1', 'a', { quiet: { from: 1320, until: 420, timeZone: 'Australia/Sydney' }, follows: [{ gameId: 'dawnwalker', notify: 'major' }, { gameId: 'no-such-game', notify: 'all' }] })])
-  assert.deepEqual(r, { devices: 1, follows: 1, unknownFollows: 1 })
+  assert.deepEqual(r, { devices: 1, hourly: 0, follows: 1, unknownFollows: 1 })
   const row = db.prepare('SELECT quiet_from, quiet_until, quiet_tz, environment FROM devices WHERE id = ?').get('d1') as any
   assert.deepEqual([row.quiet_from, row.quiet_until, row.quiet_tz, row.environment], [1320, 420, 'Australia/Sydney', 'production'])
   assert.equal((db.prepare('SELECT notify FROM follows WHERE device_id = ?').get('d1') as any).notify, 'major')
@@ -43,4 +43,27 @@ test('relay scrub: no device row and no token byte is left in the database file'
   assert.equal(deviceRows(db), 0)
   db.close()
   assert.ok(!readFileSync(path).includes(token), 'the token must not survive in the file')
+})
+
+test('relay: a follow-list opt-in record (no token, ids only) loads, puts its games in the hourly tier, and leaves no token behind', async () => {
+  const db = openDb(':memory:')
+  await seedGames({ db, fetchFn: fakeFetch({}), igdb: null })
+  // A game outside the registry that a device could follow (an auto-onboarded one, say).
+  db.prepare("INSERT INTO games (id, name, igdb_id, steam_app_id, auto, created_at) VALUES ('ninja-gaiden-4-1', 'Ninja Gaiden 4', 338121, 2560190, 1, '2026-11-11T00:00:00.000Z')").run()
+  const optIn: RelayDevice = { id: 'o1', token: null, environment: null, locale: null, quiet: null, hourly: true, follows: [{ igdbId: 338121 }], updated: '2026-11-11T00:00:00.000Z' }
+  const pushOnly = dev('p1', 'a', { follows: [{ gameId: 'dawnwalker', notify: 'all' }, { igdbId: 338121, notify: 'major' }] })
+  const r = syncDevices(db, [optIn, pushOnly])
+  assert.deepEqual(r, { devices: 2, hourly: 1, follows: 3, unknownFollows: 0 })
+  const row = db.prepare('SELECT apns_token, environment, hourly FROM devices WHERE id = ?').get('o1') as any
+  assert.deepEqual([row.apns_token, row.environment, row.hourly], [null, 'production', 1])
+  assert.equal((db.prepare('SELECT notify FROM follows WHERE device_id = ?').get('o1') as any).notify, 'all')
+  assert.ok(trackedGames(db).some((g) => g.id === 'ninja-gaiden-4-1'), 'the opted-in follow is polled hourly')
+  // Without the opt-in the same follow addresses alerts only: the game is not tracked.
+  syncDevices(db, [pushOnly])
+  assert.ok(!trackedGames(db).some((g) => g.id === 'ninja-gaiden-4-1'), 'a push-only follow does not add a game to the hourly tier')
+  // Two token-less records are two devices (dedupe is per token).
+  syncDevices(db, [optIn, { ...optIn, id: 'o2' }])
+  assert.equal(deviceRows(db), 2)
+  scrubDevices(db)
+  assert.equal(deviceRows(db), 0)
 })

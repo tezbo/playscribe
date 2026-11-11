@@ -152,7 +152,7 @@ struct TabletopReaderStage: View {
                 VStack(alignment: .leading, spacing: 14) {
                     // Eyebrow: the game and the date; the release itself is the title below.
                     HStack(spacing: 8) {
-                        Text(model.game(gameID)?.name ?? "")
+                        Text(model.gameDisplayName(gameID))
                         if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary) }
                     }
                     .font(PlayscribeFont.subheadline.weight(.semibold))

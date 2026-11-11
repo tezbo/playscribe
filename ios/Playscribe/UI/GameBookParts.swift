@@ -27,14 +27,18 @@ struct PageView: View {
             VStack(alignment: .leading, spacing: 16) {
                 PageArtBand(gameID: gameID)
                 StaleHint()
-                if withContents, let g = model.game(gameID) {
+                if withContents, !model.gameDisplayName(gameID).isEmpty {
                     VStack(alignment: .leading, spacing: 6) {
-                        GameTitleWithStatus(gameID: gameID, name: g.name)
+                        GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
                         // Closed has no Contents header, so a browsed game (Upcoming, PS Plus) gets its add control here.
-                        if model.entry(gameID) == nil {
+                        if let g = model.game(gameID), model.entry(gameID) == nil {
                             Button("Add to library") { model.addGame(g, status: .watching) }
                                 .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
                                 .accessibilityIdentifier("addToLibrary")
+                                // 20 pt clear of the title above and the page below (Iris, #442). The 44 pt hit frame leaves
+                                // 4 pt round the 36 pt pill, so the stack gaps (6 above, 16 below) plus the text's own leading
+                                // read as 15 and 25 on the Closed still; 5 each way evens them (0e10f45 still: 3/-14 overshot).
+                                .padding(.top, 5).padding(.bottom, -5)
                         }
                     }
                     .padding(.horizontal, 20)
@@ -240,9 +244,22 @@ struct ReleasePage: View {
             // text column's trailing line (the one the headline and body wrap to), so it is clear of the rail and the
             // hinge band without extra padding; the VStack's 12 pt is the gap above and below (R-2, r060, Iris).
             if typeSize.isAccessibilitySize {
-                dotAndTitle(r)
                 if r.isPS5Listed {
-                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
+                    // A title that fits one line leaves room for the button beside it, level with that first line (Iris, #441);
+                    // a longer one keeps the button on its own row below, so the title never loses width.
+                    ViewThatFits(in: .horizontal) {
+                        HStack(alignment: .top, spacing: 8) {
+                            dotAndTitle(r)
+                            Spacer(minLength: 0)
+                            ShareUpdateButton(release: r)
+                        }
+                        VStack(alignment: .leading, spacing: 12) {
+                            dotAndTitle(r)
+                            HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
+                        }
+                    }
+                } else {
+                    dotAndTitle(r)
                 }
             } else {
             HStack(spacing: 8) {
@@ -549,7 +566,7 @@ struct ContentsBody: View {
             VStack(alignment: .leading, spacing: 14) {
                 if duo.pose != .closed { HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 4) {
-                        GameTitleWithStatus(gameID: gameID, name: game?.name ?? "")
+                        GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
                     }
                     Spacer(minLength: 8)
                 } }
