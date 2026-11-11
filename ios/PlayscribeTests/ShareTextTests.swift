@@ -13,7 +13,7 @@ struct ShareTextTests {
     @Test func updateLineNeverRepeatsTheVersion() {
         let art = UIImage()
         #expect(ShareCard(gameName: "G", updateName: "Patch 9.9", version: "9.9", changes: [], art: art).updateLine == "Patch 9.9")
-        #expect(ShareCard(gameName: "G", updateName: "Hotfix", version: "1.0.4", changes: [], art: art).updateLine == "Hotfix 1.0.4")
+        #expect(ShareCard(gameName: "G", updateName: "Hotfix", version: "1.0.4", changes: [], art: art).updateLine == "Hotfix\u{00A0}1.0.4")
     }
 
     @Test func linkIsUniversalAndEncoded() {

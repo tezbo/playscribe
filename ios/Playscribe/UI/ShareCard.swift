@@ -16,7 +16,8 @@ struct ShareCard: View {
     /// "Patch 9.9", not "Patch 9.9 9.9": the version is appended only when the update's name does not already carry it.
     var updateLine: String {
         guard let version, !updateName.contains(version) else { return updateName }
-        return "\(updateName) \(version)"
+        // Non-breaking space: the version never sits alone on a line (Iris, #441 follow-up).
+        return "\(updateName)\u{00A0}\(version)"
     }
 
     /// The placeholder's own colour around its baked-in mark (sampled from default-header-tall), so the veil is invisible.
