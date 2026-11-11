@@ -13,20 +13,31 @@ struct ShareCard: View {
     /// title block instead of an empty top half.
     var hasArt = true
 
+    /// "Patch 9.9", not "Patch 9.9 9.9": the version is appended only when the update's name does not already carry it.
+    var updateLine: String {
+        guard let version, !updateName.contains(version) else { return updateName }
+        return "\(updateName) \(version)"
+    }
+
     var body: some View {
         ZStack(alignment: hasArt ? .bottomLeading : .leading) {
             Color.black
-            Image(uiImage: art).resizable().scaledToFill()
-                .frame(width: 1080, height: 1350).clipped()
-            if !hasArt {
+            if hasArt {
+                Image(uiImage: art).resizable().scaledToFill()
+                    .frame(width: 1080, height: 1350).clipped()
+            } else {
+                // No key art: a plain ground with an ember glow, and the sparkle drawn in the empty band above the
+                // title block, never under the body text (Iris, 9dcb197: the placeholder image's mark ran behind "Vesemir would").
                 RadialGradient(colors: [PlayscribeColor.ember300.opacity(0.28), .clear],
                                center: .center, startRadius: 0, endRadius: 900)
+                Text("\u{2726}").font(.system(size: 72)).foregroundStyle(PlayscribeColor.ember300.opacity(0.9))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top).padding(.top, 160)
             }
             LinearGradient(colors: [.black.opacity(0.1), .black.opacity(0.55), .black.opacity(0.92)],
                            startPoint: .top, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 20) {
                 Text(gameName).font(.custom("Literata24pt-SemiBold", size: 76)).lineLimit(3)
-                Text([updateName, version].compactMap { $0 }.joined(separator: " ")).font(.custom("Literata24pt-SemiBold", size: 44))
+                Text(updateLine).font(.custom("Literata24pt-SemiBold", size: 44))
                     .foregroundStyle(PlayscribeColor.ember300)
                 VStack(alignment: .leading, spacing: 14) {
                     ForEach(changes.prefix(3), id: \.self) { Text($0).font(.system(size: 36)).lineLimit(2) }

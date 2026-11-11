@@ -1,5 +1,6 @@
 import Testing
 import Foundation
+import UIKit
 @testable import Playscribe
 
 /// Share text: no stray markup, no blank gaps, no doubled full stops; the link opens the update.
@@ -7,6 +8,12 @@ struct ShareTextTests {
     @Test func lineStripsMarkupAndDoubledStops() {
         #expect(ShareText.line("Improved ladder interaction animations..") == "Improved ladder interaction animations.")
         #expect(ShareText.line("[*]Fixed  a crash\n\n[/*]") == "Fixed a crash")
+    }
+
+    @Test func updateLineNeverRepeatsTheVersion() {
+        let art = UIImage()
+        #expect(ShareCard(gameName: "G", updateName: "Patch 9.9", version: "9.9", changes: [], art: art).updateLine == "Patch 9.9")
+        #expect(ShareCard(gameName: "G", updateName: "Hotfix", version: "1.0.4", changes: [], art: art).updateLine == "Hotfix 1.0.4")
     }
 
     @Test func linkIsUniversalAndEncoded() {
