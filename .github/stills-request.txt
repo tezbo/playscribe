@@ -1,4 +1,4 @@
-POSES=openPortrait,closed
-SIZES=std
-ROUTE=fill-library/8
-# tiles first in Open and Closed portrait
+POSES=closed,book
+SIZES=std,ax5
+SCREENS=library,game,updates,settings,upcoming
+# first full matrix run for #457 (r052-harness-png-matrix): every screen x pose x size, with index.txt
