@@ -21,16 +21,21 @@ struct PageView: View {
     /// Closed: one stacked book, the Contents below the Page.
     var withContents = false
 
-    /// The width the scroll view offers its content (the viewport inside the safe area: 382 pt in Closed portrait at AX5, where
-    /// the window is 466). Measured by a probe that always takes what is offered, never by the column itself.
-    @State private var columnWidth: CGFloat = 0
+    /// What the scroll view offers its content. In Closed it offers the whole window (466 pt), rail included, yet centres any
+    /// content wider than the safe viewport beside the rail (382 pt), so the column is capped at the pose container's width
+    /// (`duo.size`, the root container without the safe area) as well: frame dump on b8fbaad, content 466 wide at x=-42.
+    @State private var offeredWidth: CGFloat = 0
+    private var columnWidth: CGFloat? {
+        guard offeredWidth > 0 else { return nil }
+        return duo.size.width > 0 ? min(offeredWidth, duo.size.width) : offeredWidth
+    }
 
     var body: some View {
         let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
         ScrollView {
           ZStack(alignment: .topLeading) {
             Color.clear.frame(maxWidth: .infinity).frame(height: 0)
-                .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { columnWidth = $0 }
+                .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { offeredWidth = $0 }
                 .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 16) {
                 PageArtBand(gameID: gameID)
@@ -76,7 +81,7 @@ struct PageView: View {
             // pushed the whole page 66 pt left under the screen edge: "atch 5.01", a clipped "9 Oct", the share button behind the
             // rail (Closed AX5, frame dump on 805ceb3). Pinned, a child that still overflows sticks out on the right instead,
             // and the margin stays (R-2).
-            .frame(width: columnWidth > 0 ? columnWidth : nil, alignment: .leading)
+            .frame(width: columnWidth, alignment: .leading)
           }
         }
         .clearsMessages()
