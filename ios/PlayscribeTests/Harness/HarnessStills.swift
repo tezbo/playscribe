@@ -88,7 +88,6 @@ struct HarnessStillsTests {
             try? handle.close()
         }
     }
-    }
 
     /// #292 hypothesis, reported and not asserted: the AX5 Tabletop layout never settles because the deck stage measures itself and
     /// feeds that into its own padding. If so, `settled` is false here. Becomes an assertion once #292's fix is on main.
