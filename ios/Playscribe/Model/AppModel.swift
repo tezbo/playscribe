@@ -387,6 +387,21 @@ final class AppModel {
     /// Games opened from Upcoming without being filed anywhere. Memory only: never in the library or the saved data.
     var browsedGames: [String: CatalogGame] = [:]
 
+    /// The catalogue game behind an id the app has no CatalogGame for, keeping that id so its feed releases still match:
+    /// the feed index's IGDB id first, else an exact title match on the id's words in the PS5 index (never a near miss).
+    func resolveUnknownGame(_ gameID: String) -> CatalogGame? {
+        var hit: CatalogGame?
+        if let igdb = feedIndexGames?.first(where: { $0.id == gameID })?.igdbId, let e = PS5Index.shared.entry(igdb: igdb) {
+            hit = PS5Index.shared.game(e)
+        } else {
+            let name = gameID.replacingOccurrences(of: "-", with: " ")
+            hit = PlusCard.resolve(PlusMonth.Game(name: name, gameId: nil), tracked: { _ in nil })
+        }
+        guard var g = hit else { return nil }
+        g.id = gameID
+        return g
+    }
+
     /// Opens a game page without adding it to the library (opening is not a watchlist action).
     func browseGame(_ game: CatalogGame) {
         if entry(game.id) == nil { browsedGames[game.id] = game }
@@ -572,6 +587,10 @@ final class AppModel {
     // MARK: - Navigation
 
     func openGame(_ gameID: String, chapter: Chapter? = nil, releaseID: String? = nil) {
+        // A game the catalogue does not hold yet (a feed id from a route, an alert or a search hit) is resolved
+        // from the feed index or the PS5 index and browsed, never added, so its page has a title, basics and the
+        // Add to library control instead of opening blank (Quinn, #442: gamepage/alan-wake-2 in Closed).
+        if game(gameID) == nil, let g = resolveUnknownGame(gameID) { browsedGames[gameID] = g }
         var n = nav
         let sameGame = n.gameID == gameID
         n.tab = .library

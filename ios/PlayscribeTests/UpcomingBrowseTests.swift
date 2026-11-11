@@ -97,4 +97,19 @@ struct UpcomingBrowseTests {
         n.holdFirstRun()
         #expect(!n.firstRunHold)                // a library with a game never goes back to the strip
     }
+
+    /// Quinn, #442: `gamepage/alan-wake-2` (a feed id with no CatalogGame) opened a blank Closed page with no Add control.
+    @Test func openingAFeedOnlyIdResolvesTheGameWithoutAddingIt() {
+        let m = model()
+        #expect(m.game("alan-wake-2") == nil)
+        let before = m.data.collection.count
+        m.openGame("alan-wake-2")
+        #expect(m.nav.gameID == "alan-wake-2")
+        #expect(m.game("alan-wake-2")?.igdbID == 185246)
+        #expect(m.game("alan-wake-2")?.id == "alan-wake-2")
+        #expect(m.entry("alan-wake-2") == nil)
+        #expect(m.data.collection.count == before)
+        m.openGame("zzzz-no-such-game-9999")
+        #expect(m.game("zzzz-no-such-game-9999") == nil)
+    }
 }
