@@ -85,6 +85,10 @@ works without notification permission and sends **ids only**; the full list of w
 4. `DELETE /v1/devices/me` deletes it at once (the Settings switch off, alerts off for good, reset). Same answers as above.
 5. A device that also has alerts keeps one record: `PATCH /v1/devices/me { hourly: true | false }` sets the flag on it, and its
    follows (which carry the alert level) join or leave the hourly tier. `POST /v1/follows` is for devices without a registration.
+   On a record without a token, `PATCH` takes `hourly` and nothing else (400 otherwise); the alert fields (`environment`,
+   `locale`, `quietHours`, `team`) are accepted only in the `PATCH` that also brings `apnsToken`, which turns the record into a
+   push device (same key, token added, no expiry). The app never calls `POST /v1/follows` with an empty list: the switch waits
+   for the first follow, since every new record spends one of the day's device slots.
 
 The Feed job reads the flag from `GET /admin/devices` (`hourly`, `token: null` for opt-in records), tracks a non-registry game
 only while a device with `hourly: true` follows it (`trackedGames`), and scrubs every record before publishing as before.
