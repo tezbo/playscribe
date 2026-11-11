@@ -56,12 +56,18 @@ struct WholeWordText: View {
         // every word measured on one line. An earlier version read the hugged width of its own text back through state,
         // which was narrower than the column, so a word that no longer fitted could still be kept and a comma was left
         // alone at the start of a line (r061).
+        // Every child sits in a frame with no lower bound, so PickVariant can collapse the ones it does not show to 0 x 0 at the
+        // box's own corner (the frame clips them) instead of parking them 100,000 pt to the left. The accessibility frame of
+        // the element below is the union of its children, so parked children made the title 100,250 pt wide from x = -99,980
+        // (frames_main.txt line 180, releaseTitle); collapsed in place, the element is the shown words.
         PickVariant(text: text, variantCount: all.count, cap: cap) {
             ForEach(Array(all.enumerated()), id: \.offset) { _, v in
                 Text(v).font(font).foregroundStyle(color ?? .primary).fixedSize(horizontal: false, vertical: true)
+                    .frame(minWidth: 0, minHeight: 0, alignment: .topLeading).clipped()
             }
             ForEach(Array(words.enumerated()), id: \.offset) { _, w in
                 Text(w).font(font).fixedSize()
+                    .frame(minWidth: 0, minHeight: 0, alignment: .topLeading).clipped()
             }
         }
         .clipped()
@@ -75,8 +81,9 @@ struct WholeWordText: View {
 }
 
 /// Shows exactly one of its first `variantCount` children: the first whose words each fit the offered width on one line
-/// and whose height fits `cap`. The remaining children are the words of `text`, only measured (placed off to the side and
-/// clipped by the parent). Falls back to the shortest variant, never blank. Takes the height of the child it shows.
+/// and whose height fits `cap`. The remaining children are the words of `text`, only measured. Every child it does not show
+/// is placed at the origin with a zero proposal, which its frame honours (0 x 0, clipped), so nothing sits outside the box.
+/// Falls back to the shortest variant, never blank. Takes the height of the child it shows.
 private struct PickVariant: Layout {
     var text: String
     var variantCount: Int
@@ -110,8 +117,8 @@ private struct PickVariant: Layout {
         guard !subviews.isEmpty else { return }
         let chosen = choose(subviews, width: bounds.width)
         for (i, s) in subviews.enumerated() {
-            let at = i == chosen ? bounds.origin : CGPoint(x: bounds.minX - 100_000, y: bounds.minY)
-            s.place(at: at, anchor: .topLeading, proposal: ProposedViewSize(width: bounds.width, height: nil))
+            let proposal = i == chosen ? ProposedViewSize(width: bounds.width, height: nil) : .zero
+            s.place(at: bounds.origin, anchor: .topLeading, proposal: proposal)
         }
     }
 }

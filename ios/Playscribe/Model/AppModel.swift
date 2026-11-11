@@ -387,6 +387,25 @@ final class AppModel {
     /// Games opened from Upcoming without being filed anywhere. Memory only: never in the library or the saved data.
     var browsedGames: [String: CatalogGame] = [:]
 
+    /// The id the app keeps a game under when it is opened by an id the catalogue lacks (a feed id from a route, an alert or
+    /// a search hit): the library or catalogue game with the same IGDB id if there is one (never a second copy, Quinn #445),
+    /// else the PS5 index game, browsed under its own "igdb-N" id so a later add files it the way the Add sheet does and its
+    /// feed history re-keys to it by IGDB id (`refreshHistories`). The IGDB id comes from the feed index, else an exact title
+    /// match on the id's words in the PS5 index (never a near miss). nil: nothing known, the id stands.
+    func canonicalGameID(_ gameID: String) -> String? {
+        var igdb = feedIndexGames?.first(where: { $0.id == gameID })?.igdbId
+        if igdb == nil {
+            let name = gameID.replacingOccurrences(of: "-", with: " ")
+            igdb = PlusCard.resolve(PlusMonth.Game(name: name, gameId: nil), tracked: { _ in nil })?.igdbID
+        }
+        guard let igdb else { return nil }
+        if let known = games.values.first(where: { $0.igdbID == igdb }) { return known.id }
+        guard let e = PS5Index.shared.entry(igdb: igdb) else { return nil }
+        let g = PS5Index.shared.game(e)
+        browsedGames[g.id] = g
+        return g.id
+    }
+
     /// Opens a game page without adding it to the library (opening is not a watchlist action).
     func browseGame(_ game: CatalogGame) {
         if entry(game.id) == nil { browsedGames[game.id] = game }
@@ -572,6 +591,10 @@ final class AppModel {
     // MARK: - Navigation
 
     func openGame(_ gameID: String, chapter: Chapter? = nil, releaseID: String? = nil) {
+        // A game the catalogue does not hold yet (a feed id from a route, an alert or a search hit) opens as the game the
+        // app already keeps for it, or the PS5 index game browsed (never added), so its page has a title, basics and the
+        // Add to library control instead of opening blank (Quinn, #442: gamepage/alan-wake-2 in Closed).
+        let gameID = game(gameID) == nil ? (canonicalGameID(gameID) ?? gameID) : gameID
         var n = nav
         let sameGame = n.gameID == gameID
         n.tab = .library

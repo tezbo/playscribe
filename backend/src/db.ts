@@ -161,6 +161,7 @@ export const openDb = (path: string): DB => {
   if (!has('devices', 'quiet_from')) db.exec('ALTER TABLE devices ADD COLUMN quiet_from INTEGER')
   if (!has('devices', 'quiet_until')) db.exec('ALTER TABLE devices ADD COLUMN quiet_until INTEGER')
   if (!has('devices', 'quiet_tz')) db.exec('ALTER TABLE devices ADD COLUMN quiet_tz TEXT')
+  if (!has('devices', 'hourly')) db.exec('ALTER TABLE devices ADD COLUMN hourly INTEGER NOT NULL DEFAULT 0')
   // Auto-onboarding (0.5.4): games the feed follows from IGDB's Steam link, not the hand registry; polled in rotating slices.
   if (!has('games', 'auto')) db.exec('ALTER TABLE games ADD COLUMN auto INTEGER NOT NULL DEFAULT 0')
   if (!has('games', 'auto_polled_at')) db.exec('ALTER TABLE games ADD COLUMN auto_polled_at TEXT')

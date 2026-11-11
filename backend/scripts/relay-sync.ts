@@ -28,5 +28,5 @@ for (let page = 0; page < 200; page++) {
 const db = openDb(config.databasePath)
 const counts = syncDevices(db, devices)
 db.close()
-writeFileSync(tokenFile, devices.map((d) => d.token.toLowerCase()).join('\n') + '\n', { mode: 0o600 })
-console.log(`relay-sync: ${counts.devices} devices, ${counts.follows} follows, ${counts.unknownFollows} follows for games we do not track`)
+writeFileSync(tokenFile, devices.flatMap((d) => (d.token ? [d.token.toLowerCase()] : [])).join('\n') + '\n', { mode: 0o600 })
+console.log(`relay-sync: ${counts.devices} devices (${counts.hourly} opted in to hourly), ${counts.follows} follows, ${counts.unknownFollows} follows for games we do not track`)

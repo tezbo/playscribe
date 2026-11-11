@@ -117,8 +117,10 @@ struct PlusCoverTests {
         #expect(PlusCard.coverLimit(accessibility: false) == 3)
     }
 
-    @Test func accessibilitySizesShowTwoCovers() {
+    @Test func accessibilitySizesShowTwoCoversInBookAndWrapThreeElsewhere() {
         #expect(PlusCard.coverLimit(accessibility: true) == 2)
+        #expect(PlusCard.accessibilityCoversPerRow == 2)
+        #expect(PlusCard.maxCovers == 3)
     }
 }
 

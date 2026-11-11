@@ -208,6 +208,10 @@ The hand registry follows about 100 games; the PS5 index has 9,419. Every full p
 
 Tiers: hand-registered and device-followed games are polled every run as before, and any game with a patch in the last 14 days is in the hourly hot set. Everything else is polled in a rotating slice of `AUTO_SLICE` games per full poll (never-polled first, then the longest ago), cut short at `AUTO_BUDGET_MS` (9 min) so the job stays inside its 20 min limit. With 600 a run, about 5,300 games cycle in 9 runs. Unset or 0 (the default until the first spot check is signed) runs only the dry run. The same Steam rules apply (`assumed` on PS5 unless a port, predating the PS5 release, or the post says otherwise); nothing from an auto entry is ever `official`. An auto game is published (`index.json`, `games/<id>.json`) only once it has a release, so the feed branch stays small; its news headlines are not kept.
 
+**Opt-in follow list (step 3).** A game outside the registry is polled hourly, not on the rotation, while a device that turned
+on "Help keep my games up to date" follows it: the relay holds ids only (docs/api.md "Follow list without alerts"), the Feed
+job reads the `hourly` flag, and the data rules above are unchanged (an auto game is still published only with a release).
+
 ## Link-only games and feed health (0.5.0)
 
 Minecraft, Rocket League, Valorant, Fortnite, Astro Bot, Gran Turismo 7, Ghost of Yotei, Wolverine, Alan Wake 2 and Genshin Impact have no readable official patch feed, so they stay link-only: registry `links` give the official site and patch-notes page. Six PS5 games with no history yet pin the official site only; their patch-notes link stays Steam news. See docs/api.md for the run checks.
