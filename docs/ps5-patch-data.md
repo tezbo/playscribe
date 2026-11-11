@@ -175,6 +175,7 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 ## 0.5.0 hot-set schedule (roadmap 11)
 
 - Follows live on devices, so the server does not know which games are followed. The **hot set** is the games with a patch in the last 14 days plus `backend/src/sources/hot-pinned.json`, capped at 12 (`src/hot.ts`).
+- Launch window (0.6.0, r060-dayone-patch-watch): a game whose exact PS5 day is from 2 days before to 7 days after today is in the hot set too, after the pinned list and ahead of recent patches, so its day-one patch is caught at the hot cadence. A derived (auto) game in its launch window is tracked for that week instead of waiting for the auto slice. A month, quarter, year or tbd date is not a launch; a game with nothing to poll is not either. The app-side alert is the release-day event in `upcoming/events.json` plus the normal N-3 push once the day-one patch is On PS5 (`dayOne` counts as major).
 - A second Actions schedule at :47 runs `npm run ingest -- --hot`: it polls only the hot games' sources (25 minute minimum interval, instead of 55) and skips the shared press sources. The hourly :17 run does everything as before and also uses the 25 minute interval for hot games. Hot games are therefore checked about every 30 minutes; the rest hourly.
 - Budget: each hot run takes about 1 to 2 minutes (cached install, up to 12 games), so roughly 1,000 to 1,500 extra Actions minutes a month. The repository is public, so this is free. GitHub may delay scheduled runs, so these are targets, not guarantees.
 

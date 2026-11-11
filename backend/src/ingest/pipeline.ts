@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs'
-import { hotGameIds, HOT_POLL_MS } from '../hot.ts'
+import { hotGameIds, launchingGameIds, HOT_POLL_MS } from '../hot.ts'
 import { now, tx, type DB } from '../db.ts'
 import { Blocked, allowedByRobots, type FetchFn } from '../http.ts'
 import { registry, type SourceDef } from '../registry.ts'
@@ -84,10 +84,14 @@ export const pressStatusOf = (title: string, body: string): PlatformStatus => {
 }
 
 /** Registry games are always tracked (hourly). Any other game joins the hourly tier while a device that opted in to "Help keep
- *  my games up to date" (devices.hourly, the relay's flag) follows it; a push-only device's follows address alerts, nothing more. */
-export const trackedGames = (db: DB) =>
-  db.prepare(`SELECT * FROM games WHERE id IN (${Object.keys(registry.games).map(() => '?').join(',') || "''"})
-    OR id IN (SELECT f.game_id FROM follows f JOIN devices d ON d.id = f.device_id WHERE d.hourly = 1)`).all(...Object.keys(registry.games)) as Record<string, any>[]
+ *  my games up to date" (devices.hourly, the relay's flag) follows it; a push-only device's follows address alerts, nothing more.
+ *  A derived game in its launch window (hot.ts) is tracked too, so its day-one patch does not wait for the auto slice. */
+export const trackedGames = (db: DB, at = new Date()) => {
+  const launching = launchingGameIds(db, at)
+  return db.prepare(`SELECT * FROM games WHERE id IN (${Object.keys(registry.games).map(() => '?').join(',') || "''"})
+    OR id IN (SELECT f.game_id FROM follows f JOIN devices d ON d.id = f.device_id WHERE d.hourly = 1)
+    OR id IN (${launching.map(() => '?').join(',') || "''"})`).all(...Object.keys(registry.games), ...launching) as Record<string, any>[]
+}
 
 export const sourcesFor = (game: Record<string, any>): SourceDef[] => {
   const reg = registry.games[game.id]
