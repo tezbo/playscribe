@@ -35,6 +35,9 @@ struct PageView: View {
                             Button("Add to library") { model.addGame(g, status: .watching) }
                                 .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
                                 .accessibilityIdentifier("addToLibrary")
+                                // 20 pt clear of the title above and the page below (Iris, #442: the 44 pt hit frame
+                                // and the stack gaps left 17 above and 34 under the pill).
+                                .padding(.top, 3).padding(.bottom, -14)
                         }
                     }
                     .padding(.horizontal, 20)
