@@ -114,6 +114,11 @@ struct PersistedState: Codable {
     var plusLeavingSoonOff: Bool?
     var notificationCardShows = 0
     var notificationCardDismissed = false
+    /// "Help keep my games up to date" (0.5.4): true while the switch is on, nil otherwise. Off by default; the one-time card
+    /// or the Settings switch turns it on. The relay record exists only while this is true.
+    var keepCurrent: Bool?
+    /// True once the one-time card was answered (Turn on, Not now or a swipe): it never shows again; Settings is the way back.
+    var keepCurrentCardDismissed: Bool?
     /// N-1 re-ask: how many times "Not now" was chosen, and until when the card rests. Optional so older saved state decodes.
     var notificationAsks: Int?
     var notificationSnoozedUntil: Date?
@@ -365,7 +370,10 @@ final class AppModel {
             guard !Task.isCancelled else { return }
             self?.saveNow()
             // Only the app's own model speaks for this device; a model on a scratch store (tests, previews) never does.
-            if let self, self.storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.syncFollows(self.follows) }
+            if let self, self.storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled {
+                // With the keep-current switch on, the first follow also makes the relay record (ids only).
+                if self.data.keepCurrent == true { PushRegistrar.syncKeepCurrent(true, follows: self.follows) } else { PushRegistrar.syncFollows(self.follows) }
+            }
         }
     }
 
@@ -820,6 +828,12 @@ final class AppModel {
             // QA: the Library with the alerts card showing, undecided or denied (N-1).
             resetDemo()
             NotificationService.shared.qaForcedAuthorization = url.host() == "alerts" ? .notDetermined : .denied
+        case "keep-current":
+            // QA: the Library with the "Help keep your games up to date?" card (N-9); `keep-current/on` has the switch on, so
+            // Settings shows the row on with its "Last sent" line, and the model's next save sends the real request.
+            resetDemo()
+            data.keepCurrentCardDismissed = nil
+            if parts.first == "on" { data.keepCurrent = true }
         case "ask-notifications": Task { await NotificationService.shared.requestAuthorization() }
         default: break
         }
@@ -1058,6 +1072,26 @@ final class AppModel {
                               asks: data.notificationAsks ?? 0, snoozedUntil: data.notificationSnoozedUntil)
     }
 
+    /// The one-time "Help keep your games up to date?" card (N-9): once a game is in the Library, until it is answered or the
+    /// switch is on.
+    var showsKeepCurrentCard: Bool { !data.collection.isEmpty && data.keepCurrent != true && data.keepCurrentCardDismissed != true }
+
+    /// The switch (Settings) and the card's Turn on. The relay call is made only by the app's own model (never a scratch store).
+    func setKeepCurrent(_ on: Bool) {
+        data.keepCurrent = on ? true : nil
+        if on { data.keepCurrentCardDismissed = true }
+        if storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.syncKeepCurrent(on, follows: follows) }
+    }
+
+    /// "Not now" or a swipe on the card: it never shows again; Settings is the way back.
+    func dismissKeepCurrentCard() { data.keepCurrentCardDismissed = true }
+
+    /// On becoming active: the weekly "still here" for a record without alerts, so the relay can renew its 90-day expiry.
+    func keepCurrentStillHere() {
+        guard data.keepCurrent == true, storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled else { return }
+        PushRegistrar.syncKeepCurrent(true, follows: follows)
+    }
+
     /// "Not now", a swipe, or a declined system prompt: ask again in a week (N-1).
     func snoozeNotificationCard() {
         data.notificationAsks = (data.notificationAsks ?? 0) + 1
@@ -1065,6 +1099,8 @@ final class AppModel {
     }
 
     func resetToFirstRun() {
+        // The follow-list record is deleted with the reset (its promise: gone at once when you reset the app).
+        if data.keepCurrent == true { setKeepCurrent(false) }
         data = PersistedState(collection: [])
         UserDefaults.standard.set(false, forKey: "didOnboard")
         toast = nil

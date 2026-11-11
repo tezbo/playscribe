@@ -53,6 +53,101 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
     }
 
     private func paths() -> [String] { StubRelay.seen.map { "\($0.httpMethod ?? "") \($0.url!.path)" } }
+    private func json(_ r: URLRequest) -> [String: Any] { (try? JSONSerialization.jsonObject(with: r.httpBody ?? Data())) as? [String: Any] ?? [:] }
+
+    // MARK: "Help keep my games up to date" (0.5.4, N-9): ids and the relay's key, nothing else.
+
+    /// The promise, pinned: the body is `{ follows: [...] }` and each item is exactly one of gameId or igdbId. A new field here
+    /// fails this test (and the relay refuses it), so what leaves the phone cannot grow unnoticed.
+    @Test func keepCurrentBodyHoldsTheFollowIdsAndNothingElse() throws {
+        let follows = [
+            PushRegistrar.Follow(gameId: "dawnwalker", igdbId: 329130, notify: "major"),
+            PushRegistrar.Follow(gameId: nil, igdbId: 119171, notify: "off"),   // a game added by hand: IGDB number only
+            PushRegistrar.Follow(gameId: nil, igdbId: nil, notify: "all"),       // nothing to send for this one
+        ]
+        let data = try #require(PushRegistrar.keepCurrentBody(follows))
+        let top = try #require(try JSONSerialization.jsonObject(with: data) as? [String: Any])
+        #expect(Array(top.keys) == ["follows"], "the body holds the follows and nothing else: \(top.keys)")
+        let items = try #require(top["follows"] as? [[String: Any]])
+        #expect(items.count == 2)
+        for item in items {
+            #expect(item.count == 1, "an item is one id: \(item)")
+            #expect(Set(item.keys).isSubset(of: ["gameId", "igdbId"]), "only an id, never a level: \(item)")
+        }
+        #expect(items[0]["gameId"] as? String == "dawnwalker")
+        #expect(items[1]["igdbId"] as? Int == 119171)
+        #expect(String(decoding: data, as: UTF8.self) == #"{"follows":[{"gameId":"dawnwalker"},{"igdbId":119171}]}"#)
+    }
+
+    @Test func turnOnRegistersIdsOnlyWithoutAKeyThenUpdatesAndDeletesWithIt() async throws {
+        setUp(key: nil)
+        StubRelay.handler = { r in
+            if r.httpMethod == "POST", r.url!.path == "/v1/follows" { return (201, Data(#"{"deviceKey":"k-follows","follows":[]}"#.utf8)) }
+            return (r.httpMethod == "DELETE" ? 204 : 200, Data())
+        }
+        // Nothing before the first follow: an empty list never makes a record (Quinn).
+        #expect(PushRegistrar.syncKeepCurrent(true, follows: []) == nil)
+        #expect(StubRelay.seen.isEmpty)
+        await PushRegistrar.syncKeepCurrent(true, follows: follows)?.value
+        let post = try #require(StubRelay.seen.first)
+        #expect(paths() == ["POST /v1/follows"])
+        #expect(post.value(forHTTPHeaderField: "Authorization") == nil, "no key exists yet, so none is sent")
+        #expect(Array(json(post).keys) == ["follows"])
+        #expect(PushRegistrar.keys.read() == "k-follows")
+        #expect(PushRegistrar.keepCurrentLastSent != nil)
+        // The next save with the same list sends nothing; a changed list is a PUT of ids only, with the key.
+        await PushRegistrar.syncKeepCurrent(true, follows: follows)?.value
+        #expect(paths().count == 1, "an unchanged list within the week sends nothing: \(paths())")
+        let more = follows + [PushRegistrar.Follow(gameId: nil, igdbId: 7, notify: "all")]
+        await PushRegistrar.syncKeepCurrent(true, follows: more)?.value
+        let put = try #require(StubRelay.seen.last)
+        #expect(paths().last == "PUT /v1/devices/me/follows")
+        #expect(put.value(forHTTPHeaderField: "Authorization") == "Bearer k-follows")
+        #expect(String(decoding: put.httpBody ?? Data(), as: UTF8.self) == #"{"follows":[{"gameId":"dawnwalker"},{"igdbId":7}]}"#)
+        // Off: the record is deleted and the key forgotten.
+        await PushRegistrar.syncKeepCurrent(false, follows: more)?.value
+        #expect(paths().last == "DELETE /v1/devices/me")
+        #expect(PushRegistrar.keys.read() == nil)
+        #expect(PushRegistrar.keepCurrentLastSent == nil)
+    }
+
+    @Test func onAPushDeviceTheSwitchOnlySetsTheHourlyFlag() async throws {
+        setUp()   // key-1 from a push registration (no "follows" record kind)
+        StubRelay.handler = { _ in (200, Data()) }
+        await PushRegistrar.syncKeepCurrent(true, follows: follows)?.value
+        #expect(paths() == ["PATCH /v1/devices/me"])
+        #expect(json(StubRelay.seen[0]) as? [String: Bool] == ["hourly": true])
+        await PushRegistrar.syncKeepCurrent(true, follows: follows)?.value
+        #expect(paths().count == 1, "the flag is sent once")
+        await PushRegistrar.syncKeepCurrent(false, follows: follows)?.value
+        #expect(json(StubRelay.seen.last!) as? [String: Bool] == ["hourly": false])
+        #expect(PushRegistrar.keys.read() == "key-1", "a push device keeps its record")
+    }
+
+    @Test func aLostFollowsRecordIsMadeAgainOnA401() async throws {
+        setUp(key: nil)
+        var lost = false
+        StubRelay.handler = { r in
+            if r.httpMethod == "POST", r.url!.path == "/v1/follows" { return (201, Data(#"{"deviceKey":"k-\(lost ? 2 : 1)","follows":[]}"#.utf8)) }
+            if r.httpMethod == "PUT" { return (lost && r.value(forHTTPHeaderField: "Authorization") == "Bearer k-1" ? 401 : 200, Data()) }
+            return (200, Data())
+        }
+        await PushRegistrar.syncKeepCurrent(true, follows: follows)?.value
+        lost = true   // the relay forgot the record (expired)
+        let more = follows + [PushRegistrar.Follow(gameId: "witcher-3", igdbId: nil, notify: "all")]
+        await PushRegistrar.syncKeepCurrent(true, follows: more)?.value
+        #expect(paths() == ["POST /v1/follows", "PUT /v1/devices/me/follows", "POST /v1/follows", "PUT /v1/devices/me/follows"], "\(paths())")
+        #expect(PushRegistrar.keys.read() == "k-2")
+        #expect(StubRelay.seen.last?.value(forHTTPHeaderField: "Authorization") == "Bearer k-2")
+    }
+
+    @Test func lastSentLineCountsDays() {
+        let now = Date(timeIntervalSince1970: 1_762_900_000)
+        #expect(KeepCurrentCopy.lastSent(nil, now: now) == nil)
+        #expect(KeepCurrentCopy.lastSent(now.addingTimeInterval(-3600), now: now) == "Last sent: today")
+        #expect(KeepCurrentCopy.lastSent(now.addingTimeInterval(-86_400), now: now) == "Last sent: yesterday")
+        #expect(KeepCurrentCopy.lastSent(now.addingTimeInterval(-3 * 86_400), now: now) == "Last sent: 3 days ago")
+    }
 
     @Test func unchangedListSendsNothingTheSecondTime() async {
         setUp()

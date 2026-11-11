@@ -256,6 +256,8 @@ struct LibraryShelf: View {
             if model.showsNotificationCard, let first = all.first {
                 NotificationInviteCard(gameName: first.game.name)
             }
+            // N-9: asked once, in context, after the alerts card when both are due.
+            if model.showsKeepCurrentCard { KeepCurrentCard() }
             CatchUpCard()
             PlusCard()
         }

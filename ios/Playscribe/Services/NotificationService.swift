@@ -59,8 +59,9 @@ final class NotificationService: NSObject {
         if authorization == .authorized || authorization == .provisional {
             UIApplication.shared.registerForRemoteNotifications()
         } else if authorization == .denied, PushRegistrar.appCallsEnabled {
-            // Alerts are off: the relay forgets this device (r052-device-delete). Retried here until it answers.
-            PushRegistrar.forgetDevice()
+            // Alerts are off: the relay forgets this device (r052-device-delete). Retried here until it answers. While "Help keep
+            // my games up to date" is on, only the token goes and the follow list stays (0.5.4).
+            PushRegistrar.forgetDevice(keepFollows: model?.data.keepCurrent == true)
         }
     }
 
@@ -158,7 +159,7 @@ final class NotificationService: NSObject {
 
     func didRegister(token: Data) {
         deviceToken = token.map { String(format: "%02x", $0) }.joined()
-        if let model, PushRegistrar.appCallsEnabled { PushRegistrar.register(token: deviceToken!, follows: model.follows, quietHours: model.data.quietHours) }
+        if let model, PushRegistrar.appCallsEnabled { PushRegistrar.register(token: deviceToken!, follows: model.follows, quietHours: model.data.quietHours, hourly: model.data.keepCurrent == true) }
     }
 
     func updateBadge(_ count: Int) {
@@ -416,6 +417,115 @@ enum PushRegistrar {
     private struct Body: Encodable { var apnsToken: String; var environment: String; var follows: [Follow] }
     private struct Reply: Decodable { var deviceKey: String }
 
+    // MARK: "Help keep my games up to date" (0.5.4): the follow list without alerts.
+    // What leaves the phone for this is the ids below and the relay's random key, nothing else (design note "What leaves the
+    // phone"; docs/api.md "Follow list without alerts"). `keepCurrentBody` is the one place that shapes the request, and
+    // PushRegistrarTests pins its keys, so a field cannot be added without the test failing; the relay refuses one too.
+
+    /// One followed game as an id only: our game id, or the IGDB number for a game added by hand. Never both, never a level.
+    struct IdFollow: Encodable, Equatable {
+        var gameId: String?
+        var igdbId: Int?
+        enum CodingKeys: String, CodingKey { case gameId, igdbId }
+        func encode(to encoder: Encoder) throws {
+            var c = encoder.container(keyedBy: CodingKeys.self)
+            if let gameId { try c.encode(gameId, forKey: .gameId) } else if let igdbId { try c.encode(igdbId, forKey: .igdbId) }
+        }
+    }
+    private struct IdFollowsBody: Encodable { var follows: [IdFollow] }
+    private struct HourlyBody: Encodable { var hourly: Bool }
+
+    static func idFollows(_ follows: [Follow]) -> [IdFollow] {
+        follows.compactMap { f in
+            if let g = f.gameId { return IdFollow(gameId: g) }
+            if let i = f.igdbId { return IdFollow(igdbId: i) }
+            return nil
+        }
+    }
+
+    /// The body of `POST /v1/follows` and of the list update on a record without alerts: `{ follows: [{ gameId } | { igdbId }] }`.
+    static func keepCurrentBody(_ follows: [Follow]) -> Data? { try? stableEncoder.encode(IdFollowsBody(follows: idFollows(follows))) }
+
+    /// UserDefaults: "follows" while the stored key names a record made by `POST /v1/follows` (no alerts). Such a record takes
+    /// ids only, and a 401 on it registers again through that route. Absent or anything else: a push registration.
+    static let recordKindKey = "keepCurrentRecord"
+    /// UserDefaults: when the list (or the "still here") last reached the relay for this purpose. Settings shows it.
+    static let lastSentKey = "keepCurrentLastSent"
+    private static var recordIsFollowsOnly: Bool {
+        get { UserDefaults.standard.string(forKey: recordKindKey) == "follows" }
+        set { if newValue { UserDefaults.standard.set("follows", forKey: recordKindKey) } else { UserDefaults.standard.removeObject(forKey: recordKindKey) } }
+    }
+    static var keepCurrentLastSent: Date? { UserDefaults.standard.object(forKey: lastSentKey) as? Date }
+    private static func markSent() { UserDefaults.standard.set(Date(), forKey: lastSentKey) }
+    /// The "still here": an unchanged list is sent again once a week, so the relay can renew the record's 90-day expiry.
+    static let stillHereDays = 7
+    /// The last list handed to `syncKeepCurrent`, so a 401 on a record without alerts can register it again.
+    nonisolated(unsafe) private static var keepCurrentFollows: [Follow]?
+    /// The last `hourly` value sent, so a save that changes nothing sends nothing.
+    nonisolated(unsafe) private static var lastHourly: Bool?
+
+    /// The Settings switch, and every save while it is on. On: a device with no record yet registers through `POST /v1/follows`
+    /// once it has a follow (an empty list is never sent: a new record spends one of the relay's daily slots); a record
+    /// without alerts gets the list as ids; a push device gets `hourly: true`. Off: the alerts-free record is deleted, a push
+    /// device's flag is cleared. Nothing while PlayscribeRelayURL is unset.
+    @discardableResult
+    static func syncKeepCurrent(_ on: Bool, follows: [Follow]) -> Task<Void, Never>? {
+        guard relayURL != nil else { return nil }
+        keepCurrentFollows = follows
+        if on {
+            if keys.read() == nil {
+                guard !follows.isEmpty, let body = keepCurrentBody(follows) else { return nil }
+                return Task { _ = await registerFollowsOnly(body) }
+            }
+            if recordIsFollowsOnly { return syncFollows(follows, stillHere: stillHereDue) }
+            guard lastHourly != true else { return nil }
+            return Task { await sendHourly(true, retry: true) }
+        }
+        keepCurrentFollows = nil
+        guard keys.read() != nil else { return nil }
+        if recordIsFollowsOnly { return forgetDevice() }
+        guard lastHourly != false else { return nil }
+        return Task { await sendHourly(false, retry: true) }
+    }
+
+    private static var stillHereDue: Bool {
+        guard let last = keepCurrentLastSent else { return true }
+        return Date().timeIntervalSince(last) >= Double(stillHereDays) * 86_400
+    }
+
+    /// POST /v1/follows: ids only, no key yet. True when the relay answered 2xx with a key, which is then stored.
+    private static func registerFollowsOnly(_ body: Data) async -> Bool {
+        guard let url = relayURL?.appending(path: "v1/follows") else { return false }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = body
+        guard let (data, response) = try? await session.data(for: request),
+              let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode),
+              let reply = try? JSONDecoder().decode(Reply.self, from: data) else { return false }
+        keys.write(reply.deviceKey)
+        recordIsFollowsOnly = true
+        registration = nil
+        lastFollows = String(decoding: body, as: UTF8.self)
+        markSent()
+        return true
+    }
+
+    @discardableResult
+    private static func sendHourly(_ on: Bool, retry: Bool) async -> Bool {
+        guard let url = relayURL?.appending(path: "v1/devices/me") else { return false }
+        let sent = await authed(retry: retry) { key in
+            var request = URLRequest(url: url)
+            request.httpMethod = "PATCH"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+            request.httpBody = try? JSONEncoder().encode(HourlyBody(hourly: on))
+            return request
+        }
+        if sent { lastHourly = on; if on { markSent() } }
+        return sent
+    }
+
     static var baseURL: URL? {
         guard let s = Bundle.main.object(forInfoDictionaryKey: "PlayscribeAPIBaseURL") as? String, !s.isEmpty else { return nil }
         return URL(string: s)
@@ -440,7 +550,8 @@ enum PushRegistrar {
     }
 
     /// Forgets what the client remembers between calls (tests start each case clean).
-    static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil; lastTeam = nil
+    static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil; lastTeam = nil; lastHourly = nil; keepCurrentFollows = nil
+        UserDefaults.standard.removeObject(forKey: recordKindKey); UserDefaults.standard.removeObject(forKey: lastSentKey)
         #if DEBUG
         showsTeamForTests = nil
         #endif
@@ -463,7 +574,7 @@ enum PushRegistrar {
     #endif
 
     @discardableResult
-    static func register(token: String, follows: [Follow], quietHours: QuietHours? = nil) -> Task<Void, Never>? {
+    static func register(token: String, follows: [Follow], quietHours: QuietHours? = nil, hourly: Bool = false) -> Task<Void, Never>? {
         guard relayURL != nil else { return nil }
         lastQuiet = quietWindow(quietHours)
         if showsTeam {
@@ -474,11 +585,47 @@ enum PushRegistrar {
             lastTeam = UserDefaults.standard.bool(forKey: teamKey) ? false : nil
         }
         return Task {
+            // A record made without alerts (the keep-current switch) takes the token in place: same key, no second record.
+            if recordIsFollowsOnly, keys.read() != nil, await addToken(token, follows: follows) {
+                await sendQuiet(lastQuiet, retry: true)
+                if let team = lastTeam { await sendTeam(team, retry: true) }
+                return
+            }
             if await registerNow(token: token, follows: follows) {
                 await sendQuiet(lastQuiet, retry: true)
                 if let team = lastTeam { await sendTeam(team, retry: true) }
+                if hourly { await sendHourly(true, retry: true) }
             }
         }
+    }
+
+    private struct TokenBody: Encodable { var apnsToken: String; var environment: String }
+
+    /// PATCH /v1/devices/me { apnsToken, environment } on a record that had no alerts: it becomes this device's push record and
+    /// then takes the list with its levels. False (so the caller registers afresh) when the relay no longer knows the key.
+    private static func addToken(_ token: String, follows: [Follow]) async -> Bool {
+        guard let url = relayURL?.appending(path: "v1/devices/me"), let key = keys.read() else { return false }
+        #if DEBUG
+        let environment = "sandbox"
+        #else
+        let environment = "production"
+        #endif
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+        request.httpBody = try? JSONEncoder().encode(TokenBody(apnsToken: token, environment: environment))
+        guard let (_, response) = try? await session.data(for: request), let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode) else {
+            keys.write(nil)
+            recordIsFollowsOnly = false
+            return false
+        }
+        recordIsFollowsOnly = false
+        registration = Registration(token: token, follows: follows)
+        lastHourly = true
+        lastFollows = nil
+        await syncFollows(follows)?.value
+        return true
     }
 
     /// POST /v1/devices. True when the relay answered 2xx with a key, which is then stored.
@@ -514,6 +661,12 @@ enum PushRegistrar {
             if let team = lastTeam { await sendTeam(team, retry: false) }
             return await authed(retry: false, make)
         }
+        // A record without alerts the relay no longer knows (expired after 90 days, say): make it again, ids only.
+        if http.statusCode == 401, retry, recordIsFollowsOnly, let follows = keepCurrentFollows, !follows.isEmpty, let body = keepCurrentBody(follows) {
+            keys.write(nil)
+            guard await registerFollowsOnly(body) else { return false }
+            return await authed(retry: false, make)
+        }
         return false
     }
 
@@ -522,8 +675,22 @@ enum PushRegistrar {
     /// way the stored key and what the client remembers are dropped. Offline or any other answer keeps the key, so the next
     /// time alerts are found off it tries again; it never blocks the toggle. Returns the task for tests.
     @discardableResult
-    static func forgetDevice() -> Task<Void, Never>? {
+    static func forgetDevice(keepFollows: Bool = false) -> Task<Void, Never>? {
         guard let url = relayURL?.appending(path: "v1/devices/me"), let key = keys.read() else { return nil }
+        // Alerts off while "Help keep my games up to date" is on: the token goes, the record stays (ids only from here, and it
+        // now expires like any record without alerts). Nothing to do when the record never had a token.
+        if keepFollows {
+            guard !recordIsFollowsOnly else { return nil }
+            return Task {
+                var request = URLRequest(url: url)
+                request.httpMethod = "PATCH"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+                request.httpBody = Data("{\"apnsToken\":null}".utf8)
+                guard let (_, response) = try? await session.data(for: request), let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode) else { return }
+                if keys.read() == key { recordIsFollowsOnly = true; registration = nil; lastFollows = nil; lastQuiet = nil }
+            }
+        }
         return Task {
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
@@ -531,7 +698,11 @@ enum PushRegistrar {
             guard let (_, response) = try? await session.data(for: request), let http = response as? HTTPURLResponse else { return }
             if (200..<300).contains(http.statusCode) || http.statusCode == 401 {
                 // Only if the key is still the one just deleted (a new registration may have stored another meanwhile).
-                if keys.read() == key { keys.write(nil); registration = nil; lastFollows = nil; lastQuiet = nil }
+                if keys.read() == key {
+                    keys.write(nil); registration = nil; lastFollows = nil; lastQuiet = nil; lastHourly = nil
+                    recordIsFollowsOnly = false
+                    UserDefaults.standard.removeObject(forKey: lastSentKey)
+                }
             }
         }
     }
@@ -550,14 +721,18 @@ enum PushRegistrar {
     /// PUT /v1/devices/me/follows: the followed games and their notify level, when they change. Nothing before the device is
     /// registered or while PlayscribeRelayURL is unset. A failed send forgets the list, so the next change sends it again.
     @discardableResult
-    static func syncFollows(_ follows: [Follow]) -> Task<Void, Never>? {
-        guard let url = relayURL?.appending(path: "v1/devices/me/follows"), keys.read() != nil,
-              let body = try? Self.stableEncoder.encode(FollowsBody(follows: follows)) else { return nil }
+    static func syncFollows(_ follows: [Follow], stillHere: Bool = false) -> Task<Void, Never>? {
+        guard let url = relayURL?.appending(path: "v1/devices/me/follows"), keys.read() != nil else { return nil }
+        // A record without alerts takes ids only (the relay refuses a level); a push device's list carries its levels.
+        let idsOnly = recordIsFollowsOnly
+        guard let body = idsOnly ? keepCurrentBody(follows) : try? Self.stableEncoder.encode(FollowsBody(follows: follows)) else { return nil }
         let signature = String(decoding: body, as: UTF8.self)
-        guard signature != lastFollows else { return nil }
+        // The weekly "still here" sends an unchanged list again, on a record without alerts only.
+        guard signature != lastFollows || (stillHere && idsOnly) else { return nil }
         lastFollows = signature
         // A later 401 registers again with this list, not the one from launch.
         registration?.follows = follows
+        if idsOnly { keepCurrentFollows = follows }
         return Task {
             let ok = await authed(retry: true) { key in
                 var request = URLRequest(url: url)
@@ -567,7 +742,7 @@ enum PushRegistrar {
                 request.httpBody = body
                 return request
             }
-            if !ok { lastFollows = nil }
+            if !ok { lastFollows = nil } else if idsOnly { markSent() }
         }
     }
 
