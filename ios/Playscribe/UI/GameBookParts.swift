@@ -27,9 +27,19 @@ struct PageView: View {
             VStack(alignment: .leading, spacing: 16) {
                 PageArtBand(gameID: gameID)
                 StaleHint()
-                if withContents, let g = model.game(gameID) {
+                if withContents, !model.gameDisplayName(gameID).isEmpty {
                     VStack(alignment: .leading, spacing: 6) {
-                        GameTitleWithStatus(gameID: gameID, name: g.name)
+                        GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
+                        // Closed has no Contents header, so a browsed game (Upcoming, PS Plus) gets its add control here.
+                        if let g = model.game(gameID), model.entry(gameID) == nil {
+                            Button("Add to library") { model.addGame(g, status: .watching) }
+                                .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
+                                .accessibilityIdentifier("addToLibrary")
+                                // 20 pt clear of the title above and the page below (Iris, #442). The 44 pt hit frame leaves
+                                // 4 pt round the 36 pt pill, so the stack gaps (6 above, 16 below) plus the text's own leading
+                                // read as 15 and 25 on the Closed still; 5 each way evens them (0e10f45 still: 3/-14 overshot).
+                                .padding(.top, 5).padding(.bottom, -5)
+                        }
                     }
                     .padding(.horizontal, 20)
                 }
@@ -59,10 +69,18 @@ struct PageView: View {
                 .padding(.horizontal, 20)
                 if withContents {
                     Divider().overlay(PlayscribeColor.ink700).padding(.top, 8)
-                    ContentsBody(gameID: gameID).padding(.horizontal, 16)
+                    ContentsBody(gameID: gameID, addControl: false).padding(.horizontal, 16)
                 }
             }
             .padding(.bottom, 24)
+            // The column is exactly what the scroll view proposes (its viewport beside the rail: 382 pt in Closed, 372 in Book) as
+            // long as every child can shrink to it. A vertical scroll view centres content wider than its viewport, so one child
+            // that could not (the PS4 update + Reported tag row at AX5, 514 pt) pushed the whole page 66 pt left under the screen
+            // edge: "atch 5.01", a clipped "9 Oct", the share button behind the rail (Closed AX5, frame dump on 805ceb3). The tags
+            // wrap (ReleaseTag) and the two links stack (SourceLinks) now, and a frame dump at e4833ee shows nothing wider than
+            // the viewport. Do not pin the column to a measured width instead: a Color probe inside the content measured the
+            // frame rail included (466; b8fbaad), and the scroll view's own geometry minus its insets came out 20 to 80 pt short
+            // (57227e2); each one moved the page in some pose (R-2).
         }
         .clearsMessages()
         .scrollIndicators(.hidden)
@@ -197,6 +215,27 @@ struct ReleasePage: View {
     @Environment(AppModel.self) private var model
     var release: Release
     @Environment(\.dynamicTypeSize) private var typeSize
+    /// Lifts the dot from the first line's baseline to half the cap height (centred on line 1; Iris) (same idea as FeedRow's dotLift).
+    @ScaledMetric(relativeTo: .title3) private var dotLift: CGFloat = 7
+
+    /// The unread dot and the title block, the dot level with the title's FIRST line however many lines it wraps to.
+    @ViewBuilder private func dotAndTitle(_ r: Release) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 12) {   // 12 pt clear of the text (Iris)
+            if model.isUnread(r) {
+                UnreadDot().alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
+            }
+            TitleWithTags(release: r) {
+                // At accessibility sizes a plain Text wraps a word wider than the column by character and can leave a comma
+                // alone at the start of a line (r061, "Rebalancing" / ", Quality of"); WholeWordText cuts on a whole word.
+                if typeSize.isAccessibilitySize {
+                    WholeWordText(text: r.displayName, font: PlayscribeFont.title3, lines: 4, color: nil)
+                        .accessibilityIdentifier("releaseTitle")
+                } else {
+                    Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
+                }
+            }
+        }
+    }
 
     var body: some View {
         let r = release
@@ -205,23 +244,27 @@ struct ReleasePage: View {
             // text column's trailing line (the one the headline and body wrap to), so it is clear of the rail and the
             // hinge band without extra padding; the VStack's 12 pt is the gap above and below (R-2, r060, Iris).
             if typeSize.isAccessibilitySize {
-                HStack(spacing: 8) {
-                    if model.isUnread(r) { UnreadDot() }
-                    TitleWithTags(release: r) {
-                        Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
-                    }
-                }
                 if r.isPS5Listed {
-                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
+                    // A title that fits one line leaves room for the button beside it, level with that first line (Iris, #441);
+                    // a longer one keeps the button on its own row below, so the title never loses width.
+                    ViewThatFits(in: .horizontal) {
+                        HStack(alignment: .top, spacing: 8) {
+                            dotAndTitle(r)
+                            Spacer(minLength: 0)
+                            ShareUpdateButton(release: r)
+                        }
+                        VStack(alignment: .leading, spacing: 12) {
+                            dotAndTitle(r)
+                            HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
+                        }
+                    }
+                } else {
+                    dotAndTitle(r)
                 }
             } else {
             HStack(spacing: 8) {
-                if model.isUnread(r) { UnreadDot() }
                 // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
-                TitleWithTags(release: r) {
-                    Text(r.displayName).font(PlayscribeFont.title3)
-                        .accessibilityIdentifier("releaseTitle")
-                }
+                dotAndTitle(r)
                 Spacer(minLength: 0)
                 if r.isPS5Listed { ShareUpdateButton(release: r) }
             }
@@ -286,7 +329,7 @@ struct NoNotesPage: View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
                 Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
-                NoUpdatesLine()
+                NoUpdatesLine(gameID: game.id)
             }
             GameBasicsView(game: game)
         }
@@ -335,6 +378,7 @@ struct GameLinks: View {
 
 struct GameBasicsView: View {
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
     var game: CatalogGame
     @State private var storyOpen = false
@@ -364,7 +408,8 @@ struct GameBasicsView: View {
                                 .frame(width: 112, height: 63)
                                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                                 .overlay { Image(systemName: "play.fill").foregroundStyle(.white) }
-                            Text(v.name).font(PlayscribeFont.subheadline).lineLimit(2).multilineTextAlignment(.leading)
+                            // Whole words only (G-8): a plain lineLimit cut "E3 2018 Open Be…" mid-word (The Crew 2, Closed AX5).
+                            WholeWordText(text: v.name, font: PlayscribeFont.subheadline, lines: typeSize.isAccessibilitySize ? 4 : 2)
                             Spacer(minLength: 0)
                         }
                         .frame(minHeight: 44)
@@ -512,6 +557,8 @@ struct ContentsBody: View {
     @Environment(\.duo) private var duo
     @AppStorage(ReadingSide.key) private var pageOnLeft = false
     var gameID: String
+    /// False in the stacked book, where the Page header already carries it (the Contents sit far below the update).
+    var addControl = true
 
     var body: some View {
         let game = model.game(gameID)
@@ -519,18 +566,21 @@ struct ContentsBody: View {
             VStack(alignment: .leading, spacing: 14) {
                 if duo.pose != .closed { HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 4) {
-                        GameTitleWithStatus(gameID: gameID, name: game?.name ?? "")
+                        GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
                     }
                     Spacer(minLength: 8)
                 } }
                 // Once per page (Terry): closed, the links sit with the game's basics instead.
                 if duo.pose != .closed && duo.pose != .tabletop, let game { GameLinks(game: game) }
-                if model.entry(gameID) == nil, let game {
+                if addControl, model.entry(gameID) == nil, let game {
                     Button("Add to library") { model.addGame(game, status: .watching) }
                         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
                 }
                 ChapterBar(gameID: gameID, selected: chapter)
-                NotesSearchField(gameID: gameID)
+                // Tabletop, a game with no notes: search, the A to Z strip and Previous/Next have nothing to act on (Quinn, #426),
+                // so they are not drawn; the list below says why there is nothing (NoUpdatesLine).
+                let tabletopNoNotes = duo.pose == .tabletop && model.ps5Releases(gameID).isEmpty && model.pcOnlyReleases(gameID).isEmpty
+                if !tabletopNoNotes { NotesSearchField(gameID: gameID) }
                 if model.noteQuery.count >= 2 || (duo.pose == .tabletop && model.noteLetter != nil) {
                     InlineNoteResults(gameID: gameID)
                 } else if chapter == .updates {
@@ -543,7 +593,7 @@ struct ContentsBody: View {
                         }
                         .tappableFrame()
                     }
-                    if duo.pose == .tabletop {
+                    if duo.pose == .tabletop, !tabletopNoNotes {
                         TabletopOutline(gameID: gameID)
                     }
                     ReleaseTimeline(gameID: gameID)
@@ -687,6 +737,9 @@ struct ReleaseTimeline: View {
             Text("ALL UPDATES").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
             if ps5.isEmpty, let g = model.game(gameID) {
                 Text(g.ps5AvailabilityLine).font(PlayscribeFont.subheadline)
+                // Tabletop's lower half: the Page is the view-only stage above, so this list is where a reader looks for why there
+                // is nothing (untracked: "We don't track this game's updates yet."; tracked: "No updates yet." and Checked).
+                if pc.isEmpty, duo.pose == .tabletop { NoUpdatesLine(gameID: gameID).padding(.top, 2) }
             }
             ForEach(ps5) { row($0, selected: $0.id == selected) }
             ForEach(pc) { row($0, selected: $0.id == selected) }

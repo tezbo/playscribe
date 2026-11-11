@@ -39,7 +39,26 @@ struct GameBookView: View {
         .navigationTitle(game?.name ?? "")
         .toolbar(removing: .title)
         .toolbarTitleDisplayMode(.inline)
+        // The system back button reached VoiceOver and tests with an empty label in Closed (Mac back check, 380e71b), and its label
+        // cannot be set. This one says where it goes (HIG: the previous screen's title).
+        .navigationBarBackButtonHidden(true)
+        .keepsSwipeBack()
         .toolbar {
+            // A custom 44 x 44 button (Iris: the 36 pt floor is for system-drawn toolbar buttons only), so no system glass around it:
+            // the glass would size it to about 38. The chevron stays centred, whatever the frame.
+            ToolbarItem(placement: .topBarLeading) {
+                Button { model.closeGame() } label: {
+                    Image(systemName: "chevron.backward")
+                        .font(.system(size: 17, weight: .semibold))
+                        .foregroundStyle(Color.primary)
+                        .frame(width: 44, height: 44)
+                        .background(Circle().fill(.regularMaterial))
+                        .contentShape(Rectangle())
+                }
+                .accessibilityLabel("Library, back")
+                .accessibilityIdentifier("gameBack")
+            }
+            .sharedBackgroundVisibility(.hidden)
             ActionToolbar(actions: model.gameActions(gameID))
             // D-10: only when Contents and Page are side by side; absent, not disabled, otherwise.
             if sideBySide {

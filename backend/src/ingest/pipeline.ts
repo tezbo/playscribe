@@ -38,6 +38,9 @@ export interface IngestSummary {
   created: string[]
   revised: string[]
   review: number
+  /** Auto-onboarding: auto games polled this run, and whether the time budget cut the slice short. */
+  auto?: number
+  autoStopped?: boolean
 }
 
 const MIN_POLL_MS = 55 * 60_000
@@ -80,9 +83,11 @@ export const pressStatusOf = (title: string, body: string): PlatformStatus => {
   return ps5StatusOf(body.slice(0, 600) || title)
 }
 
-/** Registry games are always tracked; any other game is tracked while a device follows it. */
+/** Registry games are always tracked (hourly). Any other game joins the hourly tier while a device that opted in to "Help keep
+ *  my games up to date" (devices.hourly, the relay's flag) follows it; a push-only device's follows address alerts, nothing more. */
 export const trackedGames = (db: DB) =>
-  db.prepare(`SELECT * FROM games WHERE id IN (${Object.keys(registry.games).map(() => '?').join(',') || "''"}) OR id IN (SELECT game_id FROM follows)`).all(...Object.keys(registry.games)) as Record<string, any>[]
+  db.prepare(`SELECT * FROM games WHERE id IN (${Object.keys(registry.games).map(() => '?').join(',') || "''"})
+    OR id IN (SELECT f.game_id FROM follows f JOIN devices d ON d.id = f.device_id WHERE d.hourly = 1)`).all(...Object.keys(registry.games)) as Record<string, any>[]
 
 export const sourcesFor = (game: Record<string, any>): SourceDef[] => {
   const reg = registry.games[game.id]
@@ -268,7 +273,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     store.upsertPlatform(db, releaseId, 'pc', { status: 'live', verification: 'official', liveAt: store.field(post.publishedAt, 'official', s.id) })
     store.addLinks(db, releaseId, links())
     if (ps5LiveStated(text)) officialPs5(releaseId)
-    else if (!registry.games[game.id]?.steamIsPcPort && !(game.ps5_release && post.publishedAt.slice(0, 10) < game.ps5_release)) {
+    else if (!registry.games[game.id]?.steamIsPcPort && !game.steam_is_pc_port && !(game.ps5_release && post.publishedAt.slice(0, 10) < game.ps5_release)) {
       // Taken as out on PS5 too, unless the post says otherwise. Never the PC version or size: those are PC facts.
       const status = ps5StatusOf(text)
       store.upsertPlatform(db, releaseId, 'ps5', { status, verification: 'assumed', liveAt: status === 'live' ? store.field(post.publishedAt, 'assumed', s.id) : null })
@@ -302,6 +307,10 @@ export interface IngestOpts {
   until?: string
   /** Poll only the hot set (hot.ts), at the shorter hot interval, and skip the shared press sources. */
   hot?: boolean
+  /** Auto-onboarding: how many auto games (store.nextAutoSlice) to poll after the tracked ones, 0 for none. */
+  autoSlice?: number
+  /** Auto-onboarding: stop the slice once the whole run has taken this long (the job has a 20 min limit). */
+  autoBudgetMs?: number
 }
 
 export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promise<IngestSummary> => {
@@ -333,6 +342,28 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
     }
   }
 
+  // Auto-onboarding (0.5.4): a rotating slice of the derived games, Steam only, oldest poll first. One request each, so
+  // the slice is the run's cost ceiling; a game that gets a patch joins the 14-day hot set and is then polled hourly.
+  if (!opts.hot && !opts.until && (opts.autoSlice ?? 0) > 0) {
+    const started = Date.now()
+    const tracked = new Set(games.map((g) => g.id))
+    for (const game of store.nextAutoSlice(deps.db, opts.autoSlice!, tracked)) {
+      if (opts.autoBudgetMs && Date.now() - started > opts.autoBudgetMs) { summary.autoStopped = true; break }
+      const [s] = sourcesFor(game)
+      if (!s) continue
+      summary.auto = (summary.auto ?? 0) + 1
+      store.markAutoPolled(deps.db, game.id)
+      if (!due(deps.db, s, false)) { summary.skipped.push(s.id); continue }
+      const posts = await poll(deps, s, summary, {})
+      for (const post of (posts ?? []).sort((a, b) => a.publishedAt.localeCompare(b.publishedAt))) {
+        if (store.isSeen(deps.db, s.id, post.postId)) continue
+        // News headlines are kept for hand-registered games only: thousands of news files would swell the feed branch.
+        if (post.news) { tx(deps.db, () => store.markSeen(deps.db, s.id, post.postId, null)); continue }
+        tx(deps.db, () => store.markSeen(deps.db, s.id, post.postId, handlePost(deps, game, s, post, summary)))
+      }
+    }
+  }
+
   for (const s of opts.hot ? [] : registry.shared) {
     if (!due(deps.db, s, !!opts.force)) {
       summary.skipped.push(s.id)
@@ -345,8 +376,9 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       // Shared feeds cover every game: a post counts only if it names the game and reads like a patch;
       // a press list counts only posts about PS5.
       // A news-listed shared feed's non-patch posts that name a tracked game are news headlines (title, date, link); the
-      // Push Square news feed is news only, its patch articles come through the press index.
-      if (s.id in newsSources.sources && (!looksLikePatch(post.title) || s.id === 'pushsquare-news')) {
+      // press outlets' news feeds (newsOnly in news-sources.json) are news only; Push Square's patch articles come through the press index.
+      const newsOnly = (newsSources.sources as Record<string, { newsOnly?: boolean }>)[s.id]?.newsOnly === true
+      if (s.id in newsSources.sources && (!looksLikePatch(post.title) || newsOnly)) {
         tx(deps.db, () => {
           for (const g of games.filter((g) => matchesPost(g, post))) store.addNews(deps.db, g.id, post)
           store.markSeen(deps.db, s.id, post.postId, null)

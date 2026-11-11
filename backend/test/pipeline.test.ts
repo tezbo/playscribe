@@ -512,6 +512,39 @@ test('news: Push Square headlines that name a tracked game are Reported news (ti
   assert.ok(!db.prepare("SELECT 1 FROM releases WHERE game_id = 'dawnwalker' AND source_ids LIKE '%pushsquare-news%'").get(), 'the news feed never makes a release')
 })
 
+// Terry 2026-11-09: News is not just Steam and Push Square; PC Gamer, IGN, Polygon, GameSpot and GamesRadar+ feed it too,
+// headline only, marked Reported, and never a release.
+test('press outlet news feeds add Reported headlines for a tracked game and never make a release', async () => {
+  const db = openDb(':memory:')
+  const outlets = {
+    'https://www.pcgamer.com/rss/': 'pcgamer',
+    'https://feeds.feedburner.com/ign/games-all': 'ign',
+    'https://www.polygon.com/feed/': 'polygon',
+    'https://www.gamespot.com/feeds/news/': 'gamespot',
+    'https://www.gamesradar.com/feeds.xml': 'gamesradar',
+  }
+  const fetchFn = fakeFetch(
+    Object.fromEntries(
+      Object.entries(outlets).map(([url, id]) => [
+        url,
+        rss([
+          { title: `The Blood of Dawnwalker patch notes and photo mode (${id})`, link: `https://${id}.example/dawnwalker`, date: recent(2), body: '<p>Article text that must never be stored.</p>' },
+          { title: `Unrelated game news (${id})`, link: `https://${id}.example/other`, date: recent(1), body: '<p>y</p>' },
+        ]),
+      ]),
+    ),
+  )
+  const deps = { db, fetchFn, igdb: null }
+  await seedGames(deps)
+  await runIngest(deps, { force: true })
+  const items = newsOf(db, 'dawnwalker').filter((n) => n.url.endsWith('.example/dawnwalker'))
+  assert.equal(items.length, 5)
+  assert.ok(items.every((n) => n.verification === 'reported'))
+  assert.ok(!JSON.stringify(items).includes('Article text'))
+  assert.equal(db.prepare("SELECT COUNT(*) AS n FROM news WHERE url LIKE '%/other'").get()!.n, 0)
+  assert.ok(!db.prepare("SELECT 1 FROM releases WHERE game_id = 'dawnwalker' AND source_ids LIKE '%-news%'").get(), 'a news feed never makes a release')
+})
+
 // Terry 2026-11-06: PS4 games play on PS5, so a PS4 patch for a game with no native PS5 version counts, labelled ps4.
 test('a PS4 patch post for a backward-compatible game is a labelled PS4 update; a native PS5 game ignores PS4 posts after its launch', async () => {
   const title = 'Dawnwalker PS4 Patch 1.9 Out Now'

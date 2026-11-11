@@ -45,6 +45,20 @@ struct FeedContractTests {
         #expect(undated.date == nil)
     }
 
+    @Test("News tab: newest first, no game takes the page, the same story once per game, Reported vs Official")
+    @MainActor func newsMerge() throws {
+        func item(_ title: String, _ day: Int, _ v: String? = nil) -> NewsItem {
+            NewsItem(title: title, date: Date(timeIntervalSince1970: Double(day) * 86400), url: URL(string: "https://example.com/\(title.hashValue)-\(day)")!, verification: v)
+        }
+        let ac = (1...8).map { item("Assassin's Creed story \($0)", 100 + $0) }
+        let other = [item("Control Resonant patch", 50, "reported"), item("Control  resonant PATCH!", 49, "reported")]
+        let merged = NewsView.merge([("ac", ac), ("control", other)])
+        #expect(merged.filter { $0.game == "ac" }.count == NewsView.perGameCap)
+        #expect(merged.filter { $0.game == "control" }.count == 1, "a repeated headline is listed once")
+        #expect(merged.first?.game == "ac" && merged.last?.game == "control")
+        #expect(merged.last?.item.tagText == "Reported" && merged.first?.item.tagText == "Official")
+    }
+
     @Test("Similar games decode with an optional cover id")
     func similar() throws {
         let json = #"[{ "igdbId": 1020, "name": "Grand Theft Auto V", "coverId": "co2lbd" }, { "igdbId": 7, "name": "No cover" }]"#
@@ -119,6 +133,38 @@ struct FeedContractTests {
         #expect(shard.games.count == 3)
         #expect(shard.games["2"]?.datePrecision == "year")
         #expect(shard.games["3"]?.date == nil)
+    }
+
+    /// UX share: a game the app does not know still shares under its name, taken from the feed index.
+    @Test("gameDisplayName: catalogue name, else the feed index name, else empty")
+    func gameDisplayName() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "share-name-\(UUID().uuidString).json"))
+        m.feedIndexGames = nil
+        #expect(m.gameDisplayName("witcher-3") == "")
+        let idx = try decoder.decode(FeedClient.Index.self, from: Data(#"{ "updatedAt": "2026-11-08T00:00:00.000Z", "games": [ { "id": "witcher-3", "igdbId": 1942, "name": "The Witcher 3: Wild Hunt" } ] }"#.utf8))
+        m.feedIndexGames = idx.games
+        #expect(m.gameDisplayName("witcher-3") == "The Witcher 3: Wild Hunt")
+        #expect(m.gameDisplayName("not-in-the-feed") == "")
+    }
+
+    /// GR-1: a game the feed does not follow never says "No updates yet"; with no index seen yet it is treated as followed.
+    @Test("feedTracksGame: unknown until an index is seen, then by feed id or IGDB id")
+    func feedTracksGame() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "tracked-\(UUID().uuidString).json"))
+        m.feedIndexGames = nil
+        #expect(m.feedTracksGame("anything"))
+        let idx = try decoder.decode(FeedClient.Index.self, from: Data(#"{ "updatedAt": "2026-11-08T00:00:00.000Z", "games": [ { "id": "ninja-gaiden-4", "igdbId": 329130 } ] }"#.utf8))
+        m.feedIndexGames = idx.games
+        #expect(m.feedTracksGame("ninja-gaiden-4"))
+        #expect(!m.feedTracksGame("not-in-the-feed"))
+        // The IGDB branch: a catalogue game with a different local id, matched through its IGDB id.
+        m.data.customGames.append(CatalogGame(id: "local-ng4", name: "Ninja Gaiden 4", platforms: [.ps5], igdbID: 329130, coverage: .none))
+        #expect(m.feedTracksGame("local-ng4"))
+        m.data.customGames.append(CatalogGame(id: "local-other", name: "Other", platforms: [.ps5], igdbID: 1, coverage: .none))
+        #expect(!m.feedTracksGame("local-other"))
+        // A history the feed has served wins over a stale index that does not list the game yet.
+        m.gameReleases["local-other"] = []
+        #expect(m.feedTracksGame("local-other"))
     }
 }
 

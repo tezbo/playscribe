@@ -66,7 +66,7 @@ test('relay end to end: register, load into the run, scrub, and no token left in
 
     const sync = await run(process.execPath, [...node, 'scripts/relay-sync.ts', tokenFile], opts('test-admin'))
     console.log(sync.stdout.trim())
-    assert.match(sync.stdout, /1 devices, 1 follows, 0 follows for games we do not track/)
+    assert.match(sync.stdout, /1 devices \(0 opted in to hourly\), 1 follows, 0 follows for games we do not track/)
     const loaded = openDb(dbPath)
     assert.equal((loaded.prepare('SELECT quiet_tz FROM devices').get() as { quiet_tz: string }).quiet_tz, 'Australia/Sydney')
     loaded.close()

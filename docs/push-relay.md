@@ -37,6 +37,15 @@ phone ──POST /v1/devices──▶ relay (KV)          Feed job (GitHub Actio
 - The relay stores follows as sent (`gameId` or `igdbId`); the Feed job resolves them and counts follows for games it does
   not track. A dead token (410) is only dropped for the run, since the relay's copy is the source; a push to it fails again, harmlessly.
 
+## Follow list without alerts (0.5.4)
+`POST /v1/follows` (docs/api.md "Follow list without alerts") stores a record with no token: ids and a key only, `hourly: true`.
+The Worker refuses any other field, so the app's promise ("ids and a random code, nothing else") is enforced on both ends. Such a
+record is written with a 90-day `expirationTtl` (record and key entry) that every write renews; an unchanged `PUT` of the list
+is written again only once the record is seven days old (the weekly "still here"), so idle devices cost nothing and a live one
+costs two writes a week. `GET /admin/devices` lists these records with `token: null`; relay-sync loads them (no token to scrub,
+`devices.hourly = 1`), and `trackedGames` polls a non-registry game hourly only while an `hourly` device follows it. A push-only
+device's follows address alerts and do not widen the hourly tier. Budget: about 0.3 KV writes a device a day, against 1,000.
+
 ## Forgetting a device
 `DELETE /v1/devices/me` (device key as Bearer) deletes `d:`, `k:`, `t:` (only if it still points at this device) and `tm:`. It is idempotent: an unknown key is `204`, no key is `401`. It spends up to 4 KV deletes, which count against the 1,000 writes a day.
 
