@@ -181,8 +181,14 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes', steamOnly 
  * names out of the notes (Terry's rule): a line that names one (a quoted review in a studio's post, say) is dropped,
  * a heading that names one becomes "Changes", and a section left empty goes.
  */
+const STRAY_MARKUP = /\[\/(?:\*|[a-z0-9]+)\]|\[\*\]/gi
+/** Stray BBCode left in stored text by an older parser ("[/*]" items): strip it, and drop what it leaves empty. */
+const stripStray = (items: NoteItem[]): NoteItem[] =>
+  items.map((i) => ({ ...i, text: i.text.replace(STRAY_MARKUP, '').replace(/\s+/g, ' ').trim() })).filter((i) => i.text.length > 0)
+
 export const tagNotes = (sections: NoteSection[], steamOnly = false): NoteSection[] =>
-  sections.map((s) => {
+  sections.map((s0) => {
+    const s = { ...s0, items: stripStray(s0.items) }
     const section = sectionPlatforms(s.title)
     return {
       ...s,
