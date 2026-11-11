@@ -21,7 +21,7 @@ struct PageView: View {
     /// Closed: one stacked book, the Contents below the Page.
     var withContents = false
 
-    /// Closed, Updates chapter: the Contents (chapter bar, search, Mark read, All updates) between the release and About.
+    /// Closed and Open portrait, Updates chapter: the Contents (bar, search, Mark read, All updates) between the release and About.
     private var closedContents: some View {
         VStack(alignment: .leading, spacing: 16) {
             Divider().overlay(PlayscribeColor.ink700)
@@ -57,7 +57,7 @@ struct PageView: View {
                         if let r = model.selectedRelease(gameID) {
                             VStack(alignment: .leading, spacing: 16) {
                                 ReleasePage(release: r)
-                                // Closed: All updates (the Contents) sits above About (Terry, 0.5.4), so the reader reaches
+                                // Closed and Open portrait (one column): All updates (the Contents) sits above About (Terry, 0.5.4), so the reader reaches
                                 // the game's other updates before its blurb; You might also like stays last.
                                 if withContents { closedContents }
                                 if let g = model.game(gameID) {
