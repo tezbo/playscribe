@@ -7,6 +7,7 @@ name: Harness stills
 #   POSES=book,tabletop  SIZES=std,ax3,ax5  ROUTE=game/dawnwalker
 #   TALL=2             host portrait poses in a window N times taller (see more of a scrolling screen; advisory)
 #   SCREENS=library,game,updates,settings,upcoming   a whole matrix in one job: every screen x POSES x SIZES, files <screen>-<pose>-<size>.png
+#                      and <screen>-<pose>-<size>-frames.txt (tappable frames); Book/Tabletop cells need SPLIT=1 to be readable
 #                      plus index.txt (overrides ROUTE and VIEW; TALL still applies to settings)
 #   VIEW=settings      host that screen's view directly (system sheets are not in the capture); TALL scales its height
 #   SPLIT=1            lay out Book/Tabletop pages by the injected division (SplitArrangement stand-in, triage only)

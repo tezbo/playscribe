@@ -1,4 +1,5 @@
-POSES=closed,book
+POSES=closed,openPortrait,book,tabletop
 SIZES=std,ax5
 SCREENS=library,game,updates,settings,upcoming
-# first full matrix run for #457 (r052-harness-png-matrix): every screen x pose x size, with index.txt
+SPLIT=1
+# r054-harness-matrix-followup: second matrix with SPLIT=1, Open portrait and Tabletop cells, index pose line and frame dumps
