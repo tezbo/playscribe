@@ -708,6 +708,9 @@ final class AppModel {
             else if let t = parts.first.flatMap(LibraryTab.init(rawValue:)) { libraryTab = t }
         case "updates": nav.tab = .updates
         case "news": nav.tab = .news   // QA: the News tab
+        // QA: the News tab with no headlines (empty copy), or with fixed stories including a Reported one (Quinn, Iris 11 Nov).
+        case "news-empty": nav.tab = .news; nav.gameID = nil; NewsStore.shared.setQA(.empty, ids: data.collection.map(\.gameID))
+        case "news-demo": nav.tab = .news; nav.gameID = nil; NewsStore.shared.setQA(.demo, ids: data.collection.map(\.gameID))
         case "search": nav.tab = .search
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
