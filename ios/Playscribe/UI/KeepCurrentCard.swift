@@ -226,10 +226,11 @@ struct KeepCurrentDetailsView: View {
 struct KeepCurrentDetailsContent: View {
     /// Mac at d956c87 and 2f230a2 (AX5, every pose): a line cut at the scroll edge showed as glyph halves under the title,
     /// and a fade only dimmed them. Once scrolled, an opaque band one full text line tall (with its leading) sits under the
-    /// hairline, so any line the edge cuts is wholly covered; only whole lines pass through the short fade below it. Both
-    /// scale with the body text, so this holds at every size.
+    /// hairline, so any line the edge cuts is wholly covered. Below it the fade runs from opaque to clear over one line height
+    /// (5aa8de9: a short fade left a line crossing the band's edge looking cut), so a line passing under shows as a soft fade,
+    /// never a hard edge. Both scale with the body text, so this holds at every size.
     @ScaledMetric(relativeTo: .body) private var edgeBand: CGFloat = 28
-    @ScaledMetric(relativeTo: .body) private var edgeFade: CGFloat = 10
+    @ScaledMetric(relativeTo: .body) private var edgeFade: CGFloat = 24
     @State private var scrolled = false
 
     var body: some View {
@@ -251,7 +252,8 @@ struct KeepCurrentDetailsContent: View {
                     // The hairline is drawn on solid ink, so no glyph shows through it.
                     Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5).background(Color.ink0)
                     Color.ink0.frame(height: edgeBand)
-                    LinearGradient(colors: [Color.ink0, Color.ink0.opacity(0)], startPoint: .top, endPoint: .bottom)
+                    LinearGradient(stops: [.init(color: Color.ink0, location: 0), .init(color: Color.ink0.opacity(0.85), location: 0.35),
+                                           .init(color: Color.ink0.opacity(0), location: 1)], startPoint: .top, endPoint: .bottom)
                         .frame(height: edgeFade)
                 }
                 .allowsHitTesting(false)
