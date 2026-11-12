@@ -123,7 +123,7 @@ struct CaughtUpCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text("You're all caught up").font(PlayscribeFont.headline)
-            Text(lastUpdate.map { "Last update \($0.formatted(.dateTime.day().month(.abbreviated)))" } ?? "Nothing new in 90 days")
+            Text(lastUpdate.map { "Last update \($0.dayMonth)" } ?? "Nothing new in 90 days")
                 .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
