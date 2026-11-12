@@ -1092,13 +1092,13 @@ final class Release050Tests: XCTestCase {
     }
 
     /// Tabletop Settings (Mac on #455 at f55062a: a row near the bottom "could not be reached"): the form's last line is
-    /// reached by dragging inside the lower-half panel, at the standard size and at AX5, and it sits in the lower half.
-    /// `-qaPose tabletop` injects the fold, so this also runs on a Closed simulator; on the Mac in a real Tabletop the
-    /// device's own fold gives the same pose. Nothing here taps a control, so no relay call is made.
-    /// It drags until the form stops moving, then checks the last line is hittable and its bottom is inside the panel: a
-    /// form that stops short of its end is the bug, running out of drags is not (Mac 0a6f226: 16 short drags in a 350 pt
-    /// panel only reached Testing). Dragging to the end matters at AX5, where the footer alone is about 717 pt tall
-    /// (Mac a0e0134): its top was reached while its bottom was still 500 pt below the screen.
+    /// reached by dragging inside the lower-half panel, at the standard size and at AX5, until its bottom edge is inside
+    /// the panel. `-qaPose tabletop` injects the fold, so this also runs on a Closed simulator; on the Mac in a real
+    /// Tabletop the device's own fold gives the same pose. Nothing here taps a control, so no relay call is made.
+    /// The end is judged on the last line itself: once it exists, a drag that moves it under 1 pt means the form is at its
+    /// end. Ending with the line's bottom still below the panel is the bug; running out of drags is not. (Mac runs:
+    /// 0a6f226, 16 short drags only reached Testing; a0e0134, the AX5 footer is 717 pt tall, so its top shows long before
+    /// its bottom; 55dc9ff, a stillness check on the first cell never settled.)
     func testTabletopSettingsLastLineIsReachable() throws {
         for ax5 in [false, true] {
             let app = XCUIApplication()
@@ -1111,35 +1111,32 @@ final class Release050Tests: XCTestCase {
             XCTAssertTrue(pose.contains("pose: tabletop"), "runs in Tabletop [\(size), \(pose)]")
             let form = app.collectionViews.firstMatch
             XCTAssertTrue(form.waitForExistence(timeout: 5), "the Settings form is on screen [\(size)]")
+            let panel = form.frame
             let last = app.staticTexts["settingsLastLine"]
-            var drags = 0, still = 0
+            var drags = 0, atEnd = false
+            var previous: CGRect?
+            func done() -> Bool { last.exists && last.isHittable && last.frame.maxY <= panel.maxY + 1 }
             // Long, slow drags inside the form (never at the screen centre, which is the view-only stage, 48404f1).
-            while still < 3 && drags < 160 {
-                let before = form.cells.firstMatch.exists ? form.cells.firstMatch.frame : .zero
-                let firstLabel = form.cells.firstMatch.exists ? form.cells.firstMatch.debugDescription.prefix(200) : ""
+            while !done() && !atEnd && drags < 40 {
                 form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.9))
-                    .press(forDuration: 0.1, thenDragTo: form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.1)),
-                           withVelocity: .slow, thenHoldForDuration: 0.3)
+                    .press(forDuration: 0.05, thenDragTo: form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.1)),
+                           withVelocity: .slow, thenHoldForDuration: 0.2)
                 drags += 1
-                let after = form.cells.firstMatch.exists ? form.cells.firstMatch.frame : .zero
-                let afterLabel = form.cells.firstMatch.exists ? form.cells.firstMatch.debugDescription.prefix(200) : ""
-                // The first visible cell neither moved nor changed: the form is at its end.
-                still = (before == after && firstLabel == afterLabel) ? still + 1 : 0
+                if last.exists {
+                    let now = last.frame
+                    if let p = previous, abs(p.minY - now.minY) < 1 { atEnd = true }
+                    previous = now
+                }
             }
-            if !(last.exists && last.isHittable) {
+            let reached = done()
+            if !reached {
                 let tree = XCTAttachment(string: app.debugDescription); tree.name = "tabletop-settings-\(size)-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
                 let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "tabletop-settings-\(size)"; shot.lifetime = .keepAlways; add(shot)
             }
-            XCTAssertTrue(last.exists && last.isHittable,
-                          still >= 3 ? "the form stopped moving before its last line, after \(drags) drags [\(size), \(pose)]"
-                                     : "ran out of drags (\(drags)) before the end of the form [\(size), \(pose)]")
-            XCTAssertGreaterThanOrEqual(still, 3, "the form reached its end within \(drags) drags [\(size)]")
-            if last.exists {
-                // At the end of the form the whole last line is inside the panel (G-4: the lower half in Tabletop), bottom
-                // edge included, so nothing at the end is hidden below the screen.
-                XCTAssertLessThanOrEqual(last.frame.maxY, form.frame.maxY + 1, "the last line's bottom is inside the panel at the end \(last.frame) vs \(form.frame) [\(size)]")
-                XCTAssertLessThanOrEqual(last.frame.maxY, app.frame.maxY + 1, "the last line's bottom is on screen \(last.frame) [\(size)]")
-            }
+            // G-4: the whole last line, bottom edge included, ends up inside the lower-half panel.
+            XCTAssertTrue(reached, atEnd
+                ? "the form stopped with its last line's bottom below the panel: \(last.frame) vs panel \(panel), \(drags) drags [\(size), \(pose)]"
+                : "ran out of drags (\(drags)) before the last line's bottom was inside the panel [\(size), \(pose)]")
             app.terminate()
         }
     }
