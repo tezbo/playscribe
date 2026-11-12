@@ -862,6 +862,26 @@ struct TabletopOutline: View {
         let sections = model.readerRelease(gameID).map(model.readerSections) ?? []
         let index = min(model.readerIndex[gameID] ?? 0, max(0, sections.count - 1))
         VStack(spacing: 2) {
+            // R-11 (bug-tabletop-trailer-tile-missing, Iris): About is not on the Tabletop stage, so the game's trailer had no
+            // control at all. The stage shows its poster, view only; this is the control, in the lower half, and it plays in
+            // the lower-half player like the update video. First row of the panel, so it is on screen without scrolling.
+            if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first {
+                Button { model.trailer = (v.youtubeId, v.name) } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "play.fill").accessibilityHidden(true)
+                        Text("Play trailer").font(PlayscribeFont.subheadline.weight(.semibold))
+                            .fixedSize(horizontal: false, vertical: true)
+                        Spacer(minLength: 0)
+                    }
+                    .foregroundStyle(PlayscribeColor.accent)
+                    .padding(.horizontal, 10).frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Play trailer")
+                .accessibilityIdentifier("playTrailer")
+                .tappableFrame()
+                .padding(.bottom, 4)
+            }
             ForEach(Array(sections.enumerated()), id: \.element.id) { i, s in
                 Button { model.readerIndex[gameID] = i } label: {
                     HStack {
@@ -905,26 +925,6 @@ struct TabletopOutline: View {
                 pageButton("Next", "chevron.forward", enabled: index < sections.count - 1) { model.readerIndex[gameID] = index + 1 }
             }
             .padding(.top, 6)
-            // R-11 (bug-tabletop-trailer-tile-missing, Iris): About is not on the Tabletop stage, so the game's trailer had no
-            // control at all. The stage shows its poster, view only; this is the control, in the lower half, and it plays in
-            // the lower-half player like the update video.
-            if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first {
-                Button { model.trailer = (v.youtubeId, v.name) } label: {
-                    HStack(spacing: 8) {
-                        Image(systemName: "play.fill").accessibilityHidden(true)
-                        Text("Play trailer").font(PlayscribeFont.subheadline.weight(.semibold))
-                            .fixedSize(horizontal: false, vertical: true)
-                        Spacer(minLength: 0)
-                    }
-                    .foregroundStyle(PlayscribeColor.accent)
-                    .padding(.horizontal, 10).frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel("Play trailer")
-                .accessibilityIdentifier("playTrailer")
-                .tappableFrame()
-                .padding(.top, 4)
-            }
         }
         // The trailer list comes from the game's basics, which About loads when it appears. About is not on the Tabletop stage,
         // so the outline loads them itself, or "Play trailer" and the stage tile never show (Mac, #486 at a2eeb67).
