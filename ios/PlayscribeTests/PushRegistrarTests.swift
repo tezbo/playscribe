@@ -239,20 +239,30 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
 
     /// A relay that remembers one record, so a test can see whether launch reuses it or makes a second one.
     private final class OneRecordRelay: @unchecked Sendable {
+        /// key-1's token; nil = cleared by a dead push. Records made here (key-2, key-3...) hold their token from the start.
         var token: String?
         var newRecords = 0
+        private var made: [String: String] = [:]   // key -> token
         func handle(_ r: URLRequest) -> (Int, Data) {
             let body = (try? JSONSerialization.jsonObject(with: r.httpBody ?? Data())) as? [String: Any] ?? [:]
+            let auth = r.value(forHTTPHeaderField: "Authorization") ?? ""
             switch (r.httpMethod ?? "", r.url!.path) {
             case ("PATCH", "/v1/devices/me"):
-                guard r.value(forHTTPHeaderField: "Authorization") == "Bearer key-1" else { return (401, Data()) }
-                if let t = body["apnsToken"] as? String { token = t }
+                if auth == "Bearer key-1" {
+                    if let t = body["apnsToken"] as? String { token = t }
+                } else if !made.keys.contains(where: { "Bearer \($0)" == auth }) {
+                    return (401, Data())
+                }
                 return (200, Data(#"{"deviceId":"d1"}"#.utf8))
             case ("POST", "/v1/devices"):
                 // As relay/worker.js register: a known token is the same record; an unknown one is a new record.
-                if body["apnsToken"] as? String == token { return (200, Data(#"{"deviceKey":"key-1"}"#.utf8)) }
+                let t = body["apnsToken"] as? String
+                if t != nil, t == token { return (200, Data(#"{"deviceKey":"key-1"}"#.utf8)) }
+                if let hit = made.first(where: { $0.value == t }) { return (200, Data(#"{"deviceKey":"\#(hit.key)"}"#.utf8)) }
                 newRecords += 1
-                return (201, Data(#"{"deviceKey":"key-\#(newRecords + 1)"}"#.utf8))
+                let key = "key-\(newRecords + 1)"
+                made[key] = t ?? ""
+                return (201, Data(#"{"deviceKey":"\#(key)"}"#.utf8))
             default:
                 return (200, Data())
             }
