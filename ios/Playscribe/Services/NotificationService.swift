@@ -710,7 +710,7 @@ enum PushRegistrar {
     /// A fresh install (no saved state) that finds a key: the Keychain outlives an uninstall, UserDefaults and the app's state
     /// do not, so the key names a record this install knows nothing about, not even whether it has alerts (Quinn's #455
     /// stale-key capture: quietHours sent to a record without alerts, then no list updates). The key moves to the stale slot
-    /// and the relay is asked to delete its record, so a reinstall starts clean and "deleted when you reset the app" stays true.
+    /// and the relay is asked to delete its record, so a reinstall starts clean and "deleted when you delete the app and install it again" stays true.
     /// Call before any other relay call of the launch.
     @discardableResult
     static func dropStaleKey() -> Task<Void, Never>? {

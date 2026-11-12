@@ -19,7 +19,8 @@ enum KeepCurrentCopy {
     static let connectionHeading = "What every connection carries"
     static let connectionBody = "Like any app that connects to a server, the request also carries your IP address, the app and iOS version, and your language setting. We do not store them."
     static let keptHeading = "How long it is kept"
-    static let keptBody = "Up to 90 days after your last \"still here\" note. It is deleted straight away when you turn this off or reset the app, unless you also have alerts on. Then the games you follow stay on our server for your alerts until you turn alerts off too."
+    // Ezra v2 (12 Nov): no "reset the app", which only internal builds have.
+    static let keptBody = "Up to 90 days after your last \"still here\" note. It is deleted straight away when you turn this off, or when you delete the app and install it again. If you delete the app for good, it expires on its own within 90 days. If you also have alerts on, the games you follow stay on our server for your alerts until you turn alerts off too."
     static let turnOn = "Turn on"
     static let notNow = "Not now"
     static let cardVoiceOver = "Help keep your games up to date? \(Brand.name) can send the games you follow, and a random code, to our server. Details follow."
