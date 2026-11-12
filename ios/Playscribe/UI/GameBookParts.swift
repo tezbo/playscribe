@@ -422,14 +422,17 @@ struct GameBasicsView: View {
                 let unique = videos.reduce(into: [GameBasics.Video]()) { out, v in if !out.contains(where: { $0.name == v.name }) { out.append(v) } }
                 ForEach(unique.prefix(3), id: \.youtubeId) { v in
                     Button { model.trailer = (v.youtubeId, v.name) } label: {
-                        HStack(spacing: 12) {
+                        // At accessibility sizes the thumbnail sits above the title, so the title has the whole column and a word
+                        // like "Cinematic" is not cut by letter beside a 112 pt picture (Iris, r054 Closed AX5).
+                        let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 12))
+                        layout {
                             AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(v.youtubeId)/mqdefault.jpg")) { $0.resizable().scaledToFill() } placeholder: { Color.ink1 }
                                 .frame(width: 112, height: 63)
                                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                                 .overlay { Image(systemName: "play.fill").foregroundStyle(.white) }
                             // Whole words only (G-8): a plain lineLimit cut "E3 2018 Open Be…" mid-word (The Crew 2, Closed AX5).
                             WholeWordText(text: v.name, font: PlayscribeFont.subheadline, lines: typeSize.isAccessibilitySize ? 4 : 2)
-                            Spacer(minLength: 0)
+                            if !typeSize.isAccessibilitySize { Spacer(minLength: 0) }
                         }
                         .frame(minHeight: 44)
                         .contentShape(Rectangle())
@@ -459,7 +462,9 @@ struct GameBasicsView: View {
             }
             if let story = info?.storyline {
                 Text("Story").font(PlayscribeFont.headline)
-                LinkedTextView(text: story).font(PlayscribeFont.body).lineLimit(storyOpen ? nil : 4)
+                // Collapsed: four lines ending on a whole word (G-8), never "conflicts swe…". Open: the full text with its links.
+                if storyOpen { LinkedTextView(text: story).font(PlayscribeFont.body) }
+                else { WholeWordText(text: LinkedText.clean(story), font: PlayscribeFont.body, lines: 4, color: nil) }
                 Button(storyOpen ? "Less" : "More") { withAnimation(.snappy) { storyOpen.toggle() } }
                     .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
             }
