@@ -508,6 +508,23 @@ export const mergeSilentDuplicates = (db: DB) => {
 }
 
 /**
+ * Backfill repair: a post re-read under newer naming rules (10.2.2a, not 10.2) lands on a new release; the release the same
+ * post made earlier, if that post was its only source and it was announced at the same moment, was a mislabelled copy and goes.
+ */
+export const dropSupersededRelease = (db: DB, oldId: string, newId: string, sourceId: string) => {
+  const o = db.prepare('SELECT * FROM releases WHERE id = ?').get(oldId) as Row | undefined
+  const n = db.prepare('SELECT * FROM releases WHERE id = ?').get(newId) as Row | undefined
+  if (!o || !n || o.game_id !== n.game_id || o.announced_at !== n.announced_at) return false
+  const sources = json<string[]>(o.source_ids, [])
+  if (sources.length !== 1 || sources[0] !== sourceId) return false
+  db.prepare('UPDATE review_items SET release_id = ? WHERE release_id = ?').run(newId, oldId)
+  db.prepare('UPDATE seen_posts SET release_id = ? WHERE release_id = ?').run(newId, oldId)
+  db.prepare('DELETE FROM platform_releases WHERE release_id = ?').run(oldId)
+  db.prepare('DELETE FROM releases WHERE id = ?').run(oldId)
+  return true
+}
+
+/**
  * Repair for the later-post bug: a Steam-assumed PS5 row dated after the Steam release it assumes. The PC row's date is the
  * Steam post, so the PS5 row takes it. Rows promoted from announced already carry it.
  */

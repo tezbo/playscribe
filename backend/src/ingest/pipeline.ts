@@ -392,7 +392,12 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
           })
           continue
         }
-        tx(deps.db, () => store.markSeen(deps.db, s.id, post.postId, handlePost(deps, game, s, post, summary)))
+        tx(deps.db, () => {
+          const before = deps.repairClaims ? (deps.db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id : null
+          const releaseId = handlePost(deps, game, s, post, summary)
+          store.markSeen(deps.db, s.id, post.postId, releaseId)
+          if (before && releaseId && before !== releaseId && store.dropSupersededRelease(deps.db, before, releaseId, s.id)) deps.log?.(`backfill: dropped ${before}, superseded by ${releaseId}`)
+        })
       }
     }
   }

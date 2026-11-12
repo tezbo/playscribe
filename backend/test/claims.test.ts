@@ -149,3 +149,16 @@ test('backfill repairs rows the old rules made from the same post, and leaves ot
   assert.deepEqual([fixed.status, fixed.verification], ['announced', 'official'])
   assert.equal(ps5Of(db, 'dawnwalker@10.3.0'), undefined)
 })
+
+test('backfill drops the mislabelled release the same post made before (10.2 -> 10.2.2a)', async () => {
+  const { db, deps } = await setup([{ gid: '1', title: '10.2.2a Backend Bugfix Patch', date: ago(10), contents: 'Fixed a backend bug. Live on PC.', tags: ['patchnotes'] }])
+  const pc = store.getRelease(db, 'dawnwalker@10.2.2a')!
+  // The old rules stored it as 10.2 and remembered that on the post: a copy of the release under the old key.
+  const row = db.prepare("SELECT * FROM releases WHERE id = 'dawnwalker@10.2.2a'").get() as Record<string, any>
+  db.prepare('INSERT INTO releases (' + Object.keys(row).join(',') + ') VALUES (' + Object.keys(row).map(() => '?').join(',') + ')').run(...Object.values({ ...row, id: 'dawnwalker@10.2', version_key: '10.2', display_name: 'Patch 10.2' }))
+  db.prepare("UPDATE seen_posts SET release_id = 'dawnwalker@10.2'").run()
+  assert.ok(pc)
+  await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  assert.ok(!store.getRelease(db, 'dawnwalker@10.2'))
+  assert.equal(store.getRelease(db, 'dawnwalker@10.2.2a')?.displayName, 'Patch 10.2.2a')
+})
