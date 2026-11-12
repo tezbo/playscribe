@@ -1141,6 +1141,45 @@ final class Release050Tests: XCTestCase {
         }
     }
 
+    /// R-11, bug-tabletop-trailer-tile-missing (Mac at c54003b: no "Play" control anywhere in Tabletop's game page): the lower half
+    /// carries "Play trailer", hittable and wholly below the fold, at std and AX5; tapping it opens the trailer in the lower-half
+    /// panel; nothing tappable on the stage names the trailer. Needs the game's basics (network) for its trailer list.
+    func testTabletopGamePageTrailerIsPlayable() throws {
+        for ax5 in [false, true] {
+            let app = XCUIApplication()
+            app.launchArguments = ["-qaRoute", "gamepage/dawnwalker", "-qaPose", "tabletop"]
+                + (ax5 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] : [])
+            app.launch()
+            sleep(4)
+            let size = ax5 ? "AX5" : "std"
+            let pose = ReleaseRowTests.pose(app)
+            XCTAssertTrue(pose.contains("pose: tabletop"), "runs in Tabletop [\(size), \(pose)]")
+            let window = app.windows.firstMatch.frame
+            let play = app.buttons["playTrailer"]
+            var drags = 0
+            // Drag in the lower half only (the stage is view only), right of centre and clear of the rail.
+            while !(play.exists && play.isHittable) && drags < 25 {
+                app.coordinate(withNormalizedOffset: CGVector(dx: 0.4, dy: 0.92))
+                    .press(forDuration: 0.05, thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.4, dy: 0.62)),
+                           withVelocity: .slow, thenHoldForDuration: 0.2)
+                drags += 1
+            }
+            if !(play.exists && play.isHittable) {
+                let tree = XCTAttachment(string: app.debugDescription); tree.name = "tabletop-trailer-\(size)-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "tabletop-trailer-\(size)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            XCTAssertTrue(play.exists && play.isHittable, "Play trailer is in the lower half after \(drags) drags [\(size), \(pose)]")
+            XCTAssertGreaterThanOrEqual(play.frame.minY, window.midY, "Play trailer sits below the fold [\(size)]: \(play.frame)")
+            XCTAssertGreaterThanOrEqual(play.frame.height, 44, "Play trailer is 44 pt or taller [\(size)]")
+            // The stage tile, when it fits, is one static element, never a button.
+            XCTAssertFalse(app.buttons["stageTrailerTile"].exists, "the stage tile takes no touches [\(size)]")
+            play.tap()
+            sleep(2)
+            XCTAssertTrue(app.buttons["Close"].waitForExistence(timeout: 5), "the trailer opens in the lower-half panel [\(size)]")
+            app.terminate()
+        }
+    }
+
     /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and
     /// of the status bar, in every pose; the cog opens Settings, which shows a semantic version.
     /// Fast on its own: -only-testing:PlayscribeUITests/Release050Tests/testLibraryToolbarCogAndAdd
