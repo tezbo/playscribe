@@ -42,6 +42,17 @@ struct DuoContext: Equatable {
         guard pose == .tabletop, let d = division, bottom > 0 else { return 0 }
         return max(0, bottom - (d.minY - gap))
     }
+
+    /// Book: how far a page's text and controls stay clear of the division band (the 24 pt keep-out used everywhere else).
+    static let hingeGap: CGFloat = 24
+
+    /// The inset for the edge of a page that faces the hinge in Book: the page's own inset, or the keep-out if that is more.
+    /// The two panes meet the band exactly (the left one ends where it starts, the right one starts where it ends), so the
+    /// band's width is not part of the inset. Every other pose, and the edges that face the screen, keep `base`.
+    func hingeInset(_ base: CGFloat, facingHinge: Bool) -> CGFloat {
+        guard pose == .book, division != nil, facingHinge else { return base }
+        return max(base, Self.hingeGap)
+    }
 }
 
 private struct DuoKey: EnvironmentKey {

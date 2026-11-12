@@ -15,6 +15,7 @@ enum ReadingSide {
 struct PageView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @AppStorage(ReadingSide.key) private var pageOnLeft = false
     @State private var position = ScrollPosition(idType: String.self)
     @State private var liveOffset: CGFloat = 0
     var gameID: String
@@ -49,7 +50,8 @@ struct PageView: View {
                                 .padding(.top, 5).padding(.bottom, -5)
                         }
                     }
-                    .padding(.horizontal, 20)
+                    .padding(.leading, duo.hingeInset(20, facingHinge: !pageOnLeft))
+                    .padding(.trailing, duo.hingeInset(20, facingHinge: pageOnLeft))
                 }
                 Group {
                     switch chapter {
@@ -77,7 +79,8 @@ struct PageView: View {
                 }
                 // Reading measure: 55 to 75 characters.
                 .frame(maxWidth: 620, alignment: .leading)
-                .padding(.horizontal, 20)
+                .padding(.leading, duo.hingeInset(20, facingHinge: !pageOnLeft))
+                .padding(.trailing, duo.hingeInset(20, facingHinge: pageOnLeft))
                 // The other chapters keep the Contents below the page (the Updates chapter draws it above About).
                 if withContents && chapter != .updates {
                     Divider().overlay(PlayscribeColor.ink700).padding(.top, 8)
@@ -549,14 +552,18 @@ struct TrailerView: View {
 /// the release timeline, and in Tabletop the section outline with Previous and Next.
 struct ContentsView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     @Environment(\.railWidth) private var railWidth
+    @AppStorage(ReadingSide.key) private var pageOnLeft = false
     @State private var position = ScrollPosition(idType: String.self)
     var gameID: String
 
     var body: some View {
         ScrollView {
             ContentsBody(gameID: gameID)
-                .padding(.horizontal, 16)
+                // Book: the edge that faces the hinge keeps 24 pt clear of the division band (r054-book-gamepage-hinge-inset).
+                .padding(.leading, duo.hingeInset(16, facingHinge: pageOnLeft))
+                .padding(.trailing, duo.hingeInset(16, facingHinge: !pageOnLeft))
                 .padding(.vertical, 14)
                 .padding(.trailing, railWidth)
         }
