@@ -698,7 +698,7 @@ final class AppModel {
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
         case "cover":   // 0.7 front cover preview (duo-closed-cover): a full deck, or cover/one for a lone update
             if parts.first == "one" { resetToOneUpdateDemo() } else { resetToManyUpdatesDemo() }
-            FrontCoverPreview.requestOpen = true
+            FrontCoverPreview.shared.open = true
             settingsOpen = true
         case "settings":
             settingsOpen = true

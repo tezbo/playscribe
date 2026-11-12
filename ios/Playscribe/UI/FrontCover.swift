@@ -48,11 +48,28 @@ enum CoverMotion: String, CaseIterable, Identifiable {
 
 /// The internal preview gate. Off by default everywhere, and never on in a distribution build, so the 0.5.x
 /// Library and its QA stills are unchanged until 0.7 wires the cover in.
-enum FrontCoverPreview {
+@Observable
+final class FrontCoverPreview {
+    static let shared = FrontCoverPreview()
     static var available: Bool { BuildChannel.showsInternalTools }
-    /// Set by `-qaRoute cover`; the Settings section opens the preview once and clears it. Never persisted, so a
-    /// killed run cannot leave the preview popping up over a later QA shot of Settings.
-    static var requestOpen = false
+    /// Set by `-qaRoute cover` and by the Settings button; read by the modifier on the Settings form itself, so it opens
+    /// even while the cover row is far down the lazy form and never laid out (Mac, #467). Never persisted, so a killed
+    /// run cannot leave the preview popping up over a later QA shot of Settings.
+    var open = false
+}
+
+extension View {
+    /// Presents the front cover preview when `FrontCoverPreview.shared.open` is set. Applied once, on the Settings form.
+    func frontCoverPreview() -> some View { modifier(FrontCoverPreviewPresenter()) }
+}
+
+private struct FrontCoverPreviewPresenter: ViewModifier {
+    func body(content: Content) -> some View {
+        let preview = FrontCoverPreview.shared
+        content.fullScreenCover(isPresented: Binding(get: { FrontCoverPreview.available && preview.open }, set: { preview.open = $0 })) {
+            FrontCoverPreviewScreen()
+        }
+    }
 }
 
 /// One page of the cover: the card's key art full bleed, the shade, the plate (eyebrow, game name, chips) and the
@@ -301,7 +318,6 @@ struct FrontCoverPreviewScreen: View {
 /// Settings: the cover's motion mode with the CM-1 footnote. Internal builds only until 0.7 (see the top of this file).
 struct CoverMotionSection: View {
     @AppStorage(CoverMotion.key) private var stored: CoverMotion = CoverMotion.defaultMode
-    @State private var previewOpen = false
 
     var body: some View {
         if FrontCoverPreview.available {
@@ -311,7 +327,7 @@ struct CoverMotionSection: View {
                 }
                 .frame(minHeight: 52)
                 .accessibilityIdentifier("coverMotion")
-                Button("Show the front cover") { previewOpen = true }
+                Button("Show the front cover") { FrontCoverPreview.shared.open = true }
                     .frame(minHeight: 44)
                     .accessibilityIdentifier("showFrontCover")
             } header: {
@@ -319,12 +335,6 @@ struct CoverMotionSection: View {
             } footer: {
                 // Placeholder wording; Ezra writes the shipping line.
                 Text("When the Duo is closed, the Library opens on a cover of your latest updates. Reduce Motion keeps the cover still. With Autoplay videos off, a trailer loop shows key-art motion instead.")
-            }
-            .fullScreenCover(isPresented: $previewOpen) { FrontCoverPreviewScreen() }
-            .onAppear {
-                guard FrontCoverPreview.requestOpen else { return }
-                FrontCoverPreview.requestOpen = false
-                previewOpen = true
             }
         }
     }

@@ -241,6 +241,8 @@ struct SettingsView: View {
                 }
             }
             .onAppear { if simGame.isEmpty { simGame = model.libraryRows.first?.id ?? "" } }
+            // 0.7 front cover preview (internal): opened by -qaRoute cover or the button in the cover section.
+            .frontCoverPreview()
         }
         .presentationPlacement(duo.pose == .closed ? .automatic : .trailing)
     }
