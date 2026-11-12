@@ -273,11 +273,11 @@ struct LibraryShelf: View {
     @ViewBuilder private var keepCurrentAsk: some View {
         if model.showsKeepCurrentCard && (duo.pose == .book || duo.pose == .tabletop) {
             let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
-            // Tabletop at accessibility sizes (Iris and Quinn, #455): the card's text scrolls in 40% of the lower half with
-            // edges capped at 15% of it, and the buttons pin below, so both stay in the lower half. The card ignores these
-            // below accessibility sizes.
+            // Tabletop at accessibility sizes (Iris and Quinn, #455): the card takes the lower half left under the
+            // Playing/Upcoming switch (44 pt plus its spacing and the panel's margins, 32 pt), its text scrolls in what the
+            // pinned buttons leave, so both stay in the lower half. The card ignores this below accessibility sizes.
             let lowerHalf: CGFloat? = duo.pose == .tabletop ? duo.division.map { max(0, duo.size.height - $0.maxY) } : nil
-            KeepCurrentCard(pinnedTextHeight: lowerHalf.map { $0 * 0.4 }, edgeCapHeight: lowerHalf.map { $0 * 0.15 })
+            KeepCurrentCard(pinnedHeight: lowerHalf.map { max(0, $0 - 44 - 32) })
                 .frame(width: pageWidth, alignment: .leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }

@@ -62,9 +62,10 @@ struct KeepCurrentCard: View {
     /// Tabletop at accessibility sizes (Iris and Quinn, #455): the text scrolls inside this height with faded edges, and
     /// Turn on and Not now pin below it, so both stay in the lower half. Nil everywhere else (Closed AX5 sits in the page
     /// scroll, which is fine).
-    var pinnedTextHeight: CGFloat? = nil
-    /// The Tabletop edge cap: 15% of the lower-half panel.
-    var edgeCapHeight: CGFloat? = nil
+    /// The height the whole card may take (Tabletop: the lower half left under the Playing/Upcoming switch). The text box
+    /// takes all of it that the pinned buttons and the card's padding leave (Iris at e9bd204: 40% left one readable line).
+    var pinnedHeight: CGFloat? = nil
+    @State private var buttonsHeight: CGFloat = 0
     @Environment(AppModel.self) private var model
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -76,14 +77,16 @@ struct KeepCurrentCard: View {
     var body: some View {
         let ax = typeSize.isAccessibilitySize
         VStack(alignment: .leading, spacing: 8) {
-            if ax, let pinnedTextHeight {
-                // Unscrolled when it fits; otherwise the text scrolls with faded edges and the buttons stay put below it.
+            if ax, let pinnedHeight {
+                // Unscrolled when it fits; otherwise the headline and text scroll with faded edges (each at most one line,
+                // or 15% of the box) and the buttons stay put below. Text box = card height - padding - gap - buttons.
                 ViewThatFits(in: .vertical) {
                     textBlock(ax: ax)
-                    FadedEdgeScroll(edgeCapHeight: edgeCapHeight, edgeColor: Color.ink2) { textBlock(ax: ax) }
+                    FadedEdgeScroll(edgeCapFraction: 0.15, capAtOneLine: true, edgeColor: Color.ink2) { textBlock(ax: ax) }
                 }
-                .frame(maxHeight: pinnedTextHeight, alignment: .top)
+                .frame(maxHeight: max(120, pinnedHeight - 28 - 8 - buttonsHeight), alignment: .top)
                 VStack(alignment: .leading, spacing: 12) { buttons }.padding(.top, 2)
+                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { buttonsHeight = $0 }
             } else {
                 textBlock(ax: ax)
                 if ax {
@@ -278,6 +281,8 @@ struct FadedEdgeScroll<Content: View>: View {
     var edgeCapFraction: CGFloat? = nil
     /// An absolute cap in points (the Tabletop card: 15% of the lower-half panel, not of the card's own scroll).
     var edgeCapHeight: CGFloat? = nil
+    /// Also cap each edge at one text line (Iris, Tabletop AX5 card at e9bd204: three full lines must read clear mid-scroll).
+    var capAtOneLine = false
     /// The colour behind the scroll, which the edges fade into (the card sits on ink2, the sheet on ink0).
     var edgeColor: Color = Color.ink0
     @ViewBuilder var content: Content
@@ -290,9 +295,10 @@ struct FadedEdgeScroll<Content: View>: View {
 
     /// The band and fade heights after the cap, kept in proportion.
     private var cap: CGFloat? {
-        if let edgeCapHeight { return edgeCapHeight }
-        guard let f = edgeCapFraction, visibleHeight > 0 else { return nil }
-        return visibleHeight * f
+        var c: CGFloat? = edgeCapHeight
+        if c == nil, let f = edgeCapFraction, visibleHeight > 0 { c = visibleHeight * f }
+        if capAtOneLine { c = min(c ?? edgeBand, edgeBand) }
+        return c
     }
     private var topHeights: (band: CGFloat, fade: CGFloat) {
         guard let cap else { return (edgeBand, edgeFade) }
