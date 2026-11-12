@@ -237,8 +237,9 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
 
     // MARK: bug-relay-optin-cleared-token (0.5.5): a record whose dead token the relay cleared takes this launch's token back.
 
-    /// A relay that remembers one record, so a test can see whether launch reuses it or makes a second one.
-    private final class OneRecordRelay: @unchecked Sendable {
+    /// A relay that remembers one record, so a test can see whether launch reuses it or makes a second one. Nonisolated like
+    /// StubRelay: this target defaults to the main actor, and a main-actor closure run on a URLProtocol thread traps.
+    nonisolated private final class OneRecordRelay: @unchecked Sendable {
         /// key-1's token; nil = cleared by a dead push. Records made here (key-2, key-3...) hold their token from the start.
         var token: String?
         var newRecords = 0
