@@ -12,18 +12,29 @@ struct FrontCoverTests {
         return m
     }
 
-    /// CM-1: Reduce Motion, or Autoplay videos off, forces Still whatever the setting says.
-    @Test func reduceMotionOrAutoplayOffForcesStill() {
+    /// CM-1: only Reduce Motion forces Still, whatever the setting says.
+    @Test func reduceMotionForcesStill() {
         for mode in CoverMotion.allCases {
             #expect(mode.resolved(reduceMotion: true, autoplay: true) == .still)
-            #expect(mode.resolved(reduceMotion: false, autoplay: false) == .still)
+            #expect(mode.resolved(reduceMotion: true, autoplay: false) == .still)
         }
     }
 
-    /// A mode that is not built yet shows Still, and the Settings row lists only built modes.
-    @Test func unbuiltModesFallBackToStill() {
-        for mode in CoverMotion.allCases where !mode.isBuilt {
-            #expect(mode.resolved(reduceMotion: false, autoplay: true) == .still)
+    /// CM-1: Autoplay videos off stops only the Trailer loop, which falls back to Key-art motion (not video).
+    @Test func autoplayOffStopsOnlyTheTrailer() {
+        #expect(CoverMotion.trailer.fallback == .keyArt)
+        #expect(CoverMotion.keyArt.fallback == .still)
+        for mode in CoverMotion.allCases {
+            let expected = mode == .trailer ? CoverMotion.keyArt.resolved(reduceMotion: false, autoplay: true)
+                                            : mode.resolved(reduceMotion: false, autoplay: true)
+            #expect(mode.resolved(reduceMotion: false, autoplay: false) == expected)
+        }
+    }
+
+    /// A mode that is not built yet falls back down the chain, ending at Still; the default is Key-art motion.
+    @Test func unbuiltModesFallBack() {
+        for mode in CoverMotion.allCases {
+            #expect(mode.resolved(reduceMotion: false, autoplay: true).isBuilt)
         }
         #expect(CoverMotion.still.isBuilt)
         #expect(CoverMotion.defaultMode == .keyArt)

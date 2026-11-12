@@ -26,10 +26,23 @@ enum CoverMotion: String, CaseIterable, Identifiable {
     /// Built so far. The Settings row lists only these, and a stored mode that is not built yet shows Still.
     var isBuilt: Bool { self == .still }
 
-    /// What the cover actually does. CM-1: Reduce Motion on, or Autoplay videos off, forces Still whatever the setting.
+    /// The next mode down: a Trailer loop that cannot play shows Key-art motion, and Key-art motion falls back to Still.
+    var fallback: CoverMotion {
+        switch self {
+        case .trailer: .keyArt
+        case .keyArt, .still: .still
+        }
+    }
+
+    /// What the cover actually does. CM-1 (Terry via Sam, 12 Nov): only Reduce Motion forces Still. Autoplay videos off
+    /// stops the Trailer loop alone, which falls back to Key-art motion (that motion is not video). A mode not built yet
+    /// falls back the same way.
     func resolved(reduceMotion: Bool, autoplay: Bool) -> CoverMotion {
-        if reduceMotion || !autoplay || !isBuilt { return .still }
-        return self
+        if reduceMotion { return .still }
+        var mode = self
+        if mode == .trailer && !autoplay { mode = .keyArt }
+        while !mode.isBuilt { mode = mode.fallback }
+        return mode
     }
 }
 
@@ -302,7 +315,7 @@ struct CoverMotionSection: View {
                 Text("Front cover (internal preview)")
             } footer: {
                 // Placeholder wording; Ezra writes the shipping line.
-                Text("When the Duo is closed, the Library opens on a cover of your latest updates. Reduce Motion, or Autoplay videos off, keeps the cover still.")
+                Text("When the Duo is closed, the Library opens on a cover of your latest updates. Reduce Motion keeps the cover still. With Autoplay videos off, a trailer loop shows key-art motion instead.")
             }
             .fullScreenCover(isPresented: $previewOpen) { FrontCoverPreviewScreen() }
             .onAppear {
