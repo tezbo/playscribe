@@ -10,7 +10,7 @@ enum KeepCurrentCopy {
     static let sentHeading = "What is sent"
     static let sentItems = [
         "The games you follow.",
-        "A random code that our server makes for your device. It is not linked to your name, email, Apple ID or phone number, and it only lets you update or delete your own record.",
+        "A random code that our server makes for your device. It is not linked to your name, email or Apple ID, and it only lets you update or delete your own record.",
         "Once a week, a short check-in, so we can remove records from devices that stopped using the app.",
     ]
     static let neverHeading = "What is never sent"
