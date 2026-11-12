@@ -429,7 +429,6 @@ test('block list: a blocked device id is refused everywhere but DELETE, and the 
   const reg = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('b'), follows: [{ gameId: 'dawnwalker' }] })).json()
   const other = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('c') })).json()
   env.BLOCKLIST = `${reg.deviceId.toUpperCase()}, some-other-id`
-  delete env.__blocklist
   assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: token('b') })).status, 403) // relaunch of the blocked device
   assert.equal((await call(env, 'PATCH', '/v1/devices/me', { locale: 'en-AU' }, reg.deviceKey)).status, 403)
   assert.equal((await call(env, 'PUT', '/v1/devices/me/follows', { follows: [] }, reg.deviceKey)).status, 403)

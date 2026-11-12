@@ -163,7 +163,9 @@ export const parseBlocklist = (v) => {
   }
   return { ids, ips }
 }
-const blocklistOf = (env) => env.__blocklist ?? (env.__blocklist = parseBlocklist(env.BLOCKLIST))
+// Parsed once per Worker instance; cached at module level keyed on the secret's text, so env is never written to.
+let blocklistCache
+const blocklistOf = (env) => (blocklistCache?.src === env.BLOCKLIST ? blocklistCache : (blocklistCache = { src: env.BLOCKLIST, list: parseBlocklist(env.BLOCKLIST) })).list
 const blockedAddress = (env, request) => blocklistOf(env).ips.has((request.headers.get('cf-connecting-ip') ?? '').toLowerCase())
 const blockedId = (env, id) => !!id && blocklistOf(env).ids.has(String(id).toLowerCase())
 const BLOCKED = () => bad('blocked', 403)
