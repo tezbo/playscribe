@@ -169,8 +169,10 @@ extension View {
     @ViewBuilder func overMirror(_ on: Bool) -> some View {
         if on, !VideoReflection.raw {
             background {
-                RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Color.black.opacity(0.96))
-                    .padding(-14).blur(radius: 5).allowsHitTesting(false)
+                RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Color.black.opacity(0.88))
+                    // A dense core under the glyphs and a long feathered edge: the margin is twice the blur, so the text sits in
+                    // the full-strength core and the fall-off happens outside it (Iris, 12 Nov: no hard box, no outline).
+                    .padding(-30).blur(radius: 15).allowsHitTesting(false)
             }
         } else { self }
     }
