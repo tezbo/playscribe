@@ -68,6 +68,21 @@ struct FrontCoverTests {
         FrontCoverPreview.shared.open = false
     }
 
+    /// `cover/<game>` (Iris, focal-point check): that game's page leads the cover, unread; an unknown game keeps the default.
+    @Test func coverRouteCanLeadWithAGame() {
+        for id in ["kcd2", "wukong"] {
+            let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "cover-\(UUID().uuidString).json"))
+            m.handle(url: URL(string: "playscribe://cover/\(id)")!)
+            m.notifyNewlyOnPS5()
+            #expect(m.latestDeck.first?.game.id == id)
+            #expect(m.latestDeck.first?.unread == true)
+        }
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "cover-\(UUID().uuidString).json"))
+        m.handle(url: URL(string: "playscribe://cover/no-such-game")!)
+        #expect(m.latestDeck.first?.unread == true)
+        FrontCoverPreview.shared.open = false
+    }
+
     /// The chips: the PS5 version and "On PS5" first, then the day, then the change count; never a PC version.
     @Test func chipsLeadWithThePS5Version() {
         let deck = demoModel().latestDeck
