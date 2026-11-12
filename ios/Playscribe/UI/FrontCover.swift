@@ -85,6 +85,8 @@ struct FrontCoverPage: View {
     /// sits under the rail, Iris condition 5).
     var leadingInset: CGFloat = 0
     var railInset: CGFloat = 0
+    /// The cover's own safe area: the page is drawn under it, the plate is kept inside it.
+    var safeArea: EdgeInsets = EdgeInsets()
 
     var body: some View {
         Button {
@@ -96,12 +98,12 @@ struct FrontCoverPage: View {
                 if !solid { fade }
                 VStack(alignment: .leading, spacing: 18) {
                     FrontCoverPlate(card: card)
-                    Wordmark().foregroundStyle(PlayscribeColor.textPrimary)
+                    CoverLockup()
                 }
-                .padding(.leading, 20 + leadingInset)
-                .padding(.trailing, typeSize.isAccessibilitySize ? 20 + railInset : 20)
+                .padding(.leading, 20 + leadingInset + safeArea.leading)
+                .padding(.trailing, (typeSize.isAccessibilitySize ? 20 + railInset : 20) + safeArea.trailing)
                 .padding(.top, solid ? 20 : 0)
-                .padding(.bottom, 28)
+                .padding(.bottom, 28 + safeArea.bottom)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 // Increase Contrast / Reduce Transparency: a solid scrim behind the plate, not a fade (as the deck cards).
                 .background { if solid { PlayscribeColor.ink950.opacity(0.92) } }
@@ -143,19 +145,27 @@ struct FrontCoverPage: View {
     }
 }
 
-/// The cover's caption: eyebrow, game name (at most 4 lines, cut only at a word), and the chips, which wrap before any
-/// is dropped. Capped at AX3 like the other hero captions.
+/// The cover's caption: eyebrow, game name (never cut), and the chips, which wrap before any is dropped. Capped at AX3
+/// like the other hero captions.
 struct FrontCoverPlate: View {
     var card: DeckCard
     @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(card.unread ? "NEW UPDATE" : "CONTINUE")
-                .font(PlayscribeFont.caption.weight(.semibold))
-                .tracking(12 * 0.12)
-                .foregroundStyle(PlayscribeColor.accent)
-            WholeWordText(text: card.game.name, font: PlayscribeFont.title, lines: 4, color: PlayscribeColor.textPrimary)
+            // Iris (#467): NEW UPDATE until the person opens that update; read pages show no eyebrow. CONTINUE (partly
+            // read, a resume point) waits for a resume-point model; the app only records read or unread today.
+            if card.unread {
+                Text("NEW UPDATE")
+                    .font(PlayscribeFont.caption.weight(.semibold))
+                    .tracking(12 * 0.12)
+                    .foregroundStyle(PlayscribeColor.accent)
+            }
+            // Iris (#467): the game name is never cut on a cover. It takes the lines it needs (four at most for real names
+            // at the AX3 cap) and pushes the plate up; the art gives way, never the name.
+            Text(card.game.name)
+                .font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
             FlowLayout(spacing: 6) {
                 ForEach(Self.chips(card), id: \.text) { chip($0.text, live: $0.live) }
             }
@@ -190,6 +200,20 @@ struct FrontCoverPlate: View {
     }
 }
 
+/// The Playscribe lockup on the cover (placeholder until Terry picks a wordmark): the book glyph scales with the word, so
+/// at accessibility sizes it is not a tiny mark beside a large name (Iris, #467). Capped at AX3 like the plate.
+struct CoverLockup: View {
+    @ScaledMetric(relativeTo: .subheadline) private var glyph: CGFloat = 22
+    var body: some View {
+        HStack(spacing: 6) {
+            BrandMark(size: glyph)
+            Text(Brand.name).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.textPrimary)
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(Brand.name)
+    }
+}
+
 /// The cover's pages (every deck card, newest first, at most 5) with the leaves on the leading edge. The leaves ARE
 /// the deck's dots: they drive the same selection, so there is no second pager (Iris condition 4). The rail is the
 /// caller's overlay (Iris condition 2: every Library control, 44 pt, on a scrim); `railWidth` keeps the plate clear of it.
@@ -202,18 +226,23 @@ struct FrontCover: View {
 
     var body: some View {
         let shown = Array(cards.prefix(AppModel.deckLimit))
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(spacing: 0) {
-                ForEach(shown) { card in
-                    FrontCoverPage(card: card, leadingInset: shown.count > 1 ? 28 : 0, railInset: railWidth)
-                        .containerRelativeFrame([.horizontal, .vertical])
-                        .id(card.id)
+        // Each page is exactly the cover's full size, safe areas included: the Closed status bar runs down the trailing
+        // edge, and a safe-area-relative page left an 84 pt column there with the next page peeking (Mac 8c9f2fc).
+        GeometryReader { g in
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: 0) {
+                    ForEach(shown) { card in
+                        FrontCoverPage(card: card, leadingInset: shown.count > 1 ? 28 : 0, railInset: railWidth,
+                                       safeArea: g.safeAreaInsets)
+                            .frame(width: g.size.width, height: g.size.height)
+                            .id(card.id)
+                    }
                 }
+                .scrollTargetLayout()
             }
-            .scrollTargetLayout()
+            .scrollTargetBehavior(.paging)
+            .scrollPosition(id: $current)
         }
-        .scrollTargetBehavior(.paging)
-        .scrollPosition(id: $current)
         .onAppear { if current == nil { current = model.deckSelection.flatMap { id in shown.first { $0.id == id }?.id } ?? shown.first?.id } }
         .onChange(of: current) { _, new in model.deckSelection = new }
         .overlay(alignment: .leading) {
@@ -279,8 +308,8 @@ struct CoverRailButton: View {
     }
 }
 
-/// Internal preview of the cover in the Closed pose (until 0.7 wires it into the Library): full bleed, the Library's
-/// rounded top edge peeking 40 pt at the bottom (Iris condition 1), a Close button on the rail.
+/// Internal preview of the cover in the Closed pose (until 0.7 wires it into the Library): full bleed on every edge, a
+/// Close button on the rail. The 40 pt Library peek (Iris condition 1) comes with the Library wrap, not this preview.
 struct FrontCoverPreviewScreen: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dismiss) private var dismiss
@@ -294,19 +323,12 @@ struct FrontCoverPreviewScreen: View {
             } else {
                 ZStack(alignment: .topTrailing) {
                     FrontCover(cards: model.latestDeck, railWidth: 44 + 12)
-                        .ignoresSafeArea(edges: .top)
+                        .ignoresSafeArea()
                     // A sibling inside the safe area, so the rail clears the status bar and the outer camera (G-6).
                     CoverRailButton(title: "Close preview", symbol: "xmark") { dismiss() }
                         .padding(.trailing, 12).padding(.top, 8)
                 }
             }
-            Text("Library")
-                .font(PlayscribeFont.headline).foregroundStyle(PlayscribeColor.textPrimary)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 16)
-                .frame(height: 40)
-                .background(UnevenRoundedRectangle(topLeadingRadius: 16, topTrailingRadius: 16).fill(Color.ink0))
-                .accessibilityHidden(true)
         }
         .background(Color.ink0)
         // Iris (#467): white text on the shade in both modes, so the status bar is light content over the cover whatever
