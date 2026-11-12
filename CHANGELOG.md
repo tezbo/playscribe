@@ -3,7 +3,7 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
-## 0.5.4 (candidate, not released)
+## 0.5.4
 
 - News has its own tab, with gaming headlines from five sites. Sale and merchandise headlines are left out.
 - PS Plus titles now open their game page, and the PS Plus card wraps at big text sizes.
@@ -16,7 +16,10 @@ so write it for testers. Release steps are in docs/release.md.
 
 Known issues in this build:
 
-- QA_TO_CONFIRM
+- Search: the game list can occasionally go blank while you type fast. Clear the search to bring it back.
+- Tabletop: "Find trailers online" on a game with no videos can't be tapped in Tabletop. It works in the other poses.
+- Adding a game can mark its older updates as unread.
+- Notifications: tapping a notification when the app is already open has not been checked yet.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
 
