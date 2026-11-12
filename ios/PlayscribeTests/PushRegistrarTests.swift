@@ -235,6 +235,71 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         #expect(StubRelay.seen.last?.value(forHTTPHeaderField: "Authorization") == "Bearer k-2")
     }
 
+    // MARK: bug-relay-optin-cleared-token (0.5.5): a record whose dead token the relay cleared takes this launch's token back.
+
+    /// A relay that remembers one record, so a test can see whether launch reuses it or makes a second one.
+    private final class OneRecordRelay: @unchecked Sendable {
+        var token: String?
+        var newRecords = 0
+        func handle(_ r: URLRequest) -> (Int, Data) {
+            let body = (try? JSONSerialization.jsonObject(with: r.httpBody ?? Data())) as? [String: Any] ?? [:]
+            switch (r.httpMethod ?? "", r.url!.path) {
+            case ("PATCH", "/v1/devices/me"):
+                guard r.value(forHTTPHeaderField: "Authorization") == "Bearer key-1" else { return (401, Data()) }
+                if let t = body["apnsToken"] as? String { token = t }
+                return (200, Data(#"{"deviceId":"d1"}"#.utf8))
+            case ("POST", "/v1/devices"):
+                // As relay/worker.js register: a known token is the same record; an unknown one is a new record.
+                if body["apnsToken"] as? String == token { return (200, Data(#"{"deviceKey":"key-1"}"#.utf8)) }
+                newRecords += 1
+                return (201, Data(#"{"deviceKey":"key-\#(newRecords + 1)"}"#.utf8))
+            default:
+                return (200, Data())
+            }
+        }
+    }
+
+    @Test func aClearedRecordTakesTheTokenBackAndNoSecondRecordIsMade() async {
+        setUp()   // key-1 names a push record whose token the relay cleared (dead push; the follow list kept it as ids only)
+        let relay = OneRecordRelay()
+        StubRelay.handler = { relay.handle($0) }
+        await PushRegistrar.register(token: "abc", follows: follows, hourly: true)?.value
+        #expect(relay.token == "abc", "the token is back on the same record: \(paths())")
+        #expect(relay.newRecords == 0, "no second record: \(paths())")
+        #expect(PushRegistrar.keys.read() == "key-1")
+        #expect(Array(paths().prefix(2)) == ["PATCH /v1/devices/me", "POST /v1/devices"], "\(paths())")
+    }
+
+    @Test func theTokenPatchSendsTheTokenAndEnvironmentAndNothingElse() async throws {
+        setUp()
+        let relay = OneRecordRelay()
+        StubRelay.handler = { relay.handle($0) }
+        await PushRegistrar.register(token: "abc", follows: follows, quietHours: QuietHours(from: 22 * 60, until: 8 * 60), hourly: true)?.value
+        let first = try #require(StubRelay.seen.first)
+        #expect(first.httpMethod == "PATCH" && first.url!.path == "/v1/devices/me")
+        #expect(first.value(forHTTPHeaderField: "Authorization") == "Bearer key-1")
+        #expect(Set(json(first).keys) == ["apnsToken", "environment"], "token and environment only: \(json(first))")
+        #expect(json(first)["apnsToken"] as? String == "abc")
+    }
+
+    @Test func aRecordTheRelayNoLongerKnowsRegistersAfreshWithoutLooping() async {
+        setUp(key: "gone")
+        let relay = OneRecordRelay()
+        StubRelay.handler = { relay.handle($0) }
+        await PushRegistrar.register(token: "abc", follows: follows)?.value
+        #expect(Array(paths().prefix(2)) == ["PATCH /v1/devices/me", "POST /v1/devices"], "\(paths())")
+        #expect(paths().filter { $0 == "POST /v1/devices" }.count == 1, "one registration: \(paths())")
+        #expect(PushRegistrar.keys.read() == "key-2", "the new record's key is kept")
+    }
+
+    @Test func aFirstLaunchWithoutAKeySendsNoTokenPatch() async {
+        setUp(key: nil)
+        let relay = OneRecordRelay()
+        StubRelay.handler = { relay.handle($0) }
+        await PushRegistrar.register(token: "abc", follows: follows)?.value
+        #expect(paths().first == "POST /v1/devices", "\(paths())")
+    }
+
     @Test func lastSentLineCountsDays() {
         let now = Date(timeIntervalSince1970: 1_762_900_000)
         #expect(KeepCurrentCopy.lastSent(nil, now: now) == nil)

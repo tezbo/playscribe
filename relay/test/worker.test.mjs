@@ -494,3 +494,25 @@ test('dead tokens: admin only, and the body is checked', async () => {
   assert.equal((await dead(env, [{ id: 'x', tokenSha: 'abc' }])).status, 400)
   assert.equal((await dead(env, [{ id: 'x', tokenSha: sha }])).status, 200)
 })
+
+test('bug-relay-optin-cleared-token: after a dead push, the app\'s launch puts its token back on the same record; no second record', async () => {
+  const { env } = setup()
+  const b = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), environment: 'production', follows: [{ gameId: 'dawnwalker', notify: 'major' }] })).json()
+  await call(env, 'PATCH', '/v1/devices/me', { hourly: true }, b.deviceKey)
+  await dead(env, [{ id: b.deviceId, tokenSha: await shaHex(token('a')) }])
+  // Launch: the token PATCH first (token and environment only), then the usual registration.
+  assert.equal((await call(env, 'PATCH', '/v1/devices/me', { apnsToken: token('a'), environment: 'production' }, b.deviceKey)).status, 200)
+  const again = await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), environment: 'production', follows: [{ gameId: 'dawnwalker', notify: 'major' }] })
+  assert.equal(again.status, 200, 'the same record, not a new one')
+  assert.equal((await again.json()).deviceId, b.deviceId)
+  assert.deepEqual([...env.KV.raw.keys()].filter((k) => k.startsWith('d:')), [`d:${b.deviceId}`])
+  const rec = JSON.parse(env.KV.raw.get(`d:${b.deviceId}`))
+  assert.equal(rec.hourly, true)
+  assert.deepEqual(rec.follows, [{ gameId: 'dawnwalker', notify: 'major' }], 'alert levels come back with the registration')
+  assert.equal(env.KV.ttl.get(`d:${b.deviceId}`), null, 'a record with a token no longer expires')
+  assert.equal(env.KV.ttl.get(`k:${await shaHex(b.deviceKey)}`), null, 'nor does its key entry, or the app would get a 401 in 90 days')
+  // The next launch, nothing changed: the token PATCH writes nothing.
+  const writes = env.KV.writes
+  await call(env, 'PATCH', '/v1/devices/me', { apnsToken: token('a'), environment: 'production' }, b.deviceKey)
+  assert.equal(env.KV.writes, writes)
+})
