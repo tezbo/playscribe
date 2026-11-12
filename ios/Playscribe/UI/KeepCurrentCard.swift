@@ -20,7 +20,7 @@ enum KeepCurrentCopy {
     static let connectionBody = "Like any app that connects to a server, the request also carries your IP address, the app and iOS version, and your language setting. We do not store them."
     static let keptHeading = "How long it is kept"
     // Ezra v2 (12 Nov): no "reset the app", which only internal builds have. v3 (12 Nov): no "still here" (Terry did not follow it).
-    static let keptBody = "Until you turn this off. If you stop using the app, it is removed after 90 days. Deleting the app and installing it again also removes it. If you also have alerts on, the games you follow stay on our server for your alerts until you turn alerts off too."
+    static let keptBody = "Until you turn this off. If you stop using the app, it is removed within 90 days. Deleting the app and installing it again also removes it. If you also have alerts on, the games you follow stay on our server for your alerts until you turn alerts off too."
     static let turnOn = "Turn on"
     static let notNow = "Not now"
     static let cardVoiceOver = "Help keep your games up to date? \(Brand.name) can send the games you follow, and a random code, to our server. Details follow."
@@ -37,7 +37,7 @@ enum KeepCurrentCopy {
     static let settingsOnVoiceOver = "Sends the games you follow to our server."
     static let whatIsSent = "What is sent"
     /// The store line and the Settings footer when on.
-    static let shortLine = "Only the games you follow and a random code. Not linked to you. Kept up to 90 days. Deleted when you turn this and alerts off."
+    static let shortLine = "Only the games you follow and a random code. Not linked to you. Removed within 90 days if you stop using the app, or when you turn this and alerts off."
 
     /// "Last sent: today" or "Last sent: 3 days ago"; nil before anything was sent (the record is made at the first follow).
     static func lastSent(_ date: Date?, now: Date = .now) -> String? {
