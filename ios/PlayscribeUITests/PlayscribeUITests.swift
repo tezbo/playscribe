@@ -1091,6 +1091,37 @@ final class Release050Tests: XCTestCase {
                    withVelocity: .slow, thenHoldForDuration: 0.2)
     }
 
+    /// Iris (#455 at f55062a): every Settings row is reachable by scrolling in every pose, at AX5 too. The Mac could not reach
+    /// "Help keep my games up to date" in Tabletop's Settings panel. Scroll the form to the switch, check it sits in the lower
+    /// half there, and tap it. `-qaNoRelay`: the app makes no relay call, so the tap leaves no record on the relay.
+    func testSettingsKeepCurrentSwitchIsReachableAndTappable() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "keep-current/settings", "-qaNoRelay"]
+        app.launch()
+        sleep(3)
+        let pose = ReleaseRowTests.pose(app)
+        let toggle = app.switches["keepCurrent"]
+        var tries = 0
+        while !(toggle.exists && toggle.isHittable) && tries < 16 { Self.scrollForm(app); tries += 1 }
+        if !(toggle.exists && toggle.isHittable) {
+            let tree = XCTAttachment(string: app.debugDescription); tree.name = "settings-keepcurrent-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "settings-keepcurrent"; shot.lifetime = .keepAlways; add(shot)
+        }
+        XCTAssertTrue(toggle.exists && toggle.isHittable, "the switch is reached by scrolling after \(tries) drags [\(pose)]")
+        if pose.contains("pose: tabletop") {
+            XCTAssertGreaterThanOrEqual(toggle.frame.minY, app.frame.midY - 1, "Tabletop: the switch sits in the lower half \(toggle.frame) [\(pose)]")
+        }
+        let before = toggle.value as? String
+        toggle.switches.firstMatch.exists ? toggle.switches.firstMatch.tap() : toggle.tap()
+        sleep(1)
+        XCTAssertNotEqual(toggle.value as? String, before, "the tap changed the switch [\(pose)]")
+        // The "What is sent" row below it is reachable too.
+        let details = app.buttons["keepCurrentWhatIsSent"]
+        tries = 0
+        while !(details.exists && details.isHittable) && tries < 6 { Self.scrollForm(app); tries += 1 }
+        XCTAssertTrue(details.exists && details.isHittable, "What is sent is reachable [\(pose)]")
+    }
+
     /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and
     /// of the status bar, in every pose; the cog opens Settings, which shows a semantic version.
     /// Fast on its own: -only-testing:PlayscribeUITests/Release050Tests/testLibraryToolbarCogAndAdd

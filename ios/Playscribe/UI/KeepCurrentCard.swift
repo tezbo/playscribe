@@ -47,6 +47,11 @@ enum KeepCurrentCopy {
 
 /// N-9: the one-time ask, in context, once a game is in the Library. Turn on sends the list from the next save; Not now or a
 /// swipe sends nothing, ever, until the switch is turned on in Settings. Same frame and stacking rules as the alerts card (N-1).
+///
+/// Compact in every pose (Iris, #455 at f55062a): the four lists inline took about 60% of a Closed screen (BOOK BALANCE: no
+/// module over 25% of a page) and cut off the buttons in Book and Tabletop. Title, the short line, "What is sent", then the two
+/// buttons. "What is sent" opens the full wording (the same lists, unchanged) in a sheet before the person decides, so the
+/// explicit disclosure is one tap from the choice, in the app.
 struct KeepCurrentCard: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dynamicTypeSize) private var typeSize
@@ -57,40 +62,62 @@ struct KeepCurrentCard: View {
     }
 
     var body: some View {
-        HStack(alignment: .top, spacing: 12) {
-            Image(systemName: "arrow.triangle.2.circlepath").font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.accent)
-                .accessibilityHidden(true)
-            VStack(alignment: .leading, spacing: 8) {
+        let ax = typeSize.isAccessibilitySize
+        VStack(alignment: .leading, spacing: 8) {
+            // Accessibility sizes drop the icon, so the text and buttons use the card's full width (Iris: no icon gutter).
+            HStack(alignment: .firstTextBaseline, spacing: 10) {
+                if !ax {
+                    Image(systemName: "arrow.triangle.2.circlepath").font(PlayscribeFont.headline).foregroundStyle(PlayscribeColor.accent)
+                        .accessibilityHidden(true)
+                }
                 Text(KeepCurrentCopy.cardTitle).font(PlayscribeFont.headline)
                     .fixedSize(horizontal: false, vertical: true)
                     .accessibilityLabel(KeepCurrentCopy.cardVoiceOver)
                     .accessibilityAddTraits(.isHeader)
-                Text(KeepCurrentCopy.cardIntro)
-                    .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
-                    .fixedSize(horizontal: false, vertical: true)
-                // The three short sections stay in the card at every size: the Library scrolls, nothing is dropped from view or
-                // from VoiceOver, and no sheet is needed (Tabletop keeps the lower half as the only stage for controls).
-                KeepCurrentList(compact: true)
-                // Accessibility sizes stack the buttons full width (N-1 rule).
-                if typeSize.isAccessibilitySize {
-                    VStack(alignment: .leading, spacing: 12) { buttons }.padding(.top, 6)
-                } else {
-                    ViewThatFits(in: .horizontal) {
-                        HStack(spacing: 12) { buttons }
-                        VStack(alignment: .leading, spacing: 8) { buttons }
-                    }
+            }
+            Text(KeepCurrentCopy.shortLine)
+                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                .fixedSize(horizontal: false, vertical: true)
+            if ax {
+                // Accessibility sizes stack everything full width (N-1 rule): the link first, then the two buttons.
+                whatIsSent
+                VStack(alignment: .leading, spacing: 12) { buttons }.padding(.top, 2)
+            } else {
+                // One row where it fits (Tabletop, Open, Book's page), so the card stays about 150 pt tall.
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 12) { buttons; Spacer(minLength: 8); whatIsSent }
+                    VStack(alignment: .leading, spacing: 6) { whatIsSent; HStack(spacing: 12) { buttons } }
+                    VStack(alignment: .leading, spacing: 8) { whatIsSent; buttons }
                 }
             }
-            Spacer(minLength: 0)
         }
-        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(14)
         .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .gesture(DragGesture(minimumDistance: 30).onEnded { v in
             if abs(v.translation.width) > 60 { answer(false) }
         })
         .accessibilityAction(named: KeepCurrentCopy.notNow) { answer(false) }
+        .accessibilityAction(named: KeepCurrentCopy.whatIsSent) { model.keepCurrentDetailsOpen = true }
         .accessibilityIdentifier("keepCurrentCard")
         .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
+    }
+
+    private var whatIsSent: some View {
+        Button { model.keepCurrentDetailsOpen = true } label: {
+            HStack(spacing: 4) {
+                Text(KeepCurrentCopy.whatIsSent)
+                Image(systemName: "chevron.right").font(PlayscribeFont.footnote.weight(.semibold)).accessibilityHidden(true)
+            }
+            .font(PlayscribeFont.subheadline.weight(.semibold))
+            .foregroundStyle(PlayscribeColor.accent)
+            .frame(minHeight: 44)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityHint("Shows what is sent, what is never sent and how long it is kept")
+        .accessibilityIdentifier("keepCurrentWhatIsSentCard")
+        .tappableFrame()
     }
 
     @ViewBuilder private var buttons: some View {
@@ -114,7 +141,32 @@ struct KeepCurrentCard: View {
     }
 }
 
-/// The "What is sent", "What is never sent" and "How long it is kept" sections: compact in the card, full on the details page.
+/// The card's "What is sent": the full wording in a sheet (a system sheet, or Tabletop's lower-half panel), with Done.
+struct KeepCurrentDetailsSheet: View {
+    @Environment(\.panelClose) private var panelClose
+    @Environment(\.dismiss) private var systemDismiss
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            HStack {
+                Text(KeepCurrentCopy.whatIsSent).font(PlayscribeFont.title3).accessibilityAddTraits(.isHeader)
+                Spacer()
+                Button { if let panelClose { panelClose() } else { systemDismiss() } } label: {
+                    Text("Done").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+                }
+                .accessibilityHint("Closes this and goes back to the choice").accessibilityIdentifier("close").tappableFrame()
+            }
+            .frame(minHeight: 52)
+            .padding(.horizontal, 20)
+            KeepCurrentDetailsContent()
+        }
+        .padding(.top, 8)
+        .background(Color.ink0)
+        .accessibilityIdentifier("keepCurrentDetails")
+    }
+}
+
+/// The "What is sent", "What is never sent" and "How long it is kept" sections, in full in the card's sheet and Settings.
 struct KeepCurrentList: View {
     var compact = false
 
@@ -145,8 +197,18 @@ struct KeepCurrentList: View {
     }
 }
 
-/// "What is sent" from Settings and the card: the same list as the card, in full, plus the short line.
+/// "What is sent" from Settings: the same wording as the card's sheet.
 struct KeepCurrentDetailsView: View {
+    var body: some View {
+        KeepCurrentDetailsContent()
+            .background(Color.ink0)
+            .navigationTitle(KeepCurrentCopy.whatIsSent)
+            .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+/// The full wording: what it does, what is sent, what is never sent, how long it is kept, and the short line.
+struct KeepCurrentDetailsContent: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
@@ -159,8 +221,5 @@ struct KeepCurrentDetailsView: View {
             .frame(maxWidth: 620, alignment: .leading)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .background(Color.ink0)
-        .navigationTitle(KeepCurrentCopy.whatIsSent)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }

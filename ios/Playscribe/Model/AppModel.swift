@@ -201,6 +201,8 @@ final class AppModel {
     var linksSheetOpen = false
     /// The verification tag whose explainer is open (0.5.0).
     var tagExplainer: Verification?
+    /// N-9: the follow-list card's "What is sent" sheet, the full wording, one tap from the choice (Iris, #455).
+    var keepCurrentDetailsOpen = false
     var libraryTab: LibraryTab = .playing
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
@@ -303,6 +305,9 @@ final class AppModel {
             } else {
                 data = PersistedState(collection: [])
             }
+            // No saved state, so a fresh install: a relay key still in the Keychain belongs to an earlier install. Its record
+            // is deleted before this launch makes any relay call (PushRegistrar.dropStaleKey; Quinn's #455 stale-key capture).
+            if storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.dropStaleKey() }
         }
         // A6: remember the previous open for the catch-up card, then stamp this one.
         catchUpSince = data.lastOpenedAt
@@ -372,7 +377,7 @@ final class AppModel {
             // Only the app's own model speaks for this device; a model on a scratch store (tests, previews) never does.
             if let self, self.storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled {
                 // With the keep-current switch on, the first follow also makes the relay record (ids only).
-                if self.data.keepCurrent == true { PushRegistrar.syncKeepCurrent(true, follows: self.follows) } else { PushRegistrar.syncFollows(self.follows) }
+                if self.data.keepCurrent == true { PushRegistrar.syncKeepCurrent(true, follows: self.follows) } else { PushRegistrar.syncFollows(self.follows, pushOnly: true) }
             }
         }
     }
@@ -851,7 +856,7 @@ final class AppModel {
             openGame(parts[0], chapter: .updates)
             nav.detailReleaseID = nil
             linksSheetOpen = false
-        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; addSearchFocus = false
+        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; keepCurrentDetailsOpen = false; addSearchFocus = false
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
             if let n = Int(parts[0]) {
@@ -879,7 +884,10 @@ final class AppModel {
             data.notificationAsks = 1
             data.notificationSnoozedUntil = Calendar.current.date(byAdding: .day, value: NotificationAsk.snoozeDays, to: .now)
             alertsAnsweredThisSession = false
+            // `keep-current/sent`: the card's "What is sent" sheet open; `keep-current/settings`: Settings open, switch off.
             if parts.first == "on" { data.keepCurrent = true }
+            if parts.first == "sent" { keepCurrentDetailsOpen = true }
+            if parts.first == "settings" { settingsOpen = true }
         case "ask-notifications": Task { await NotificationService.shared.requestAuthorization() }
         default: break
         }

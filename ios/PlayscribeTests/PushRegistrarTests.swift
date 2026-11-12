@@ -46,6 +46,7 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         PushRegistrar.session = URLSession(configuration: config)
         PushRegistrar.relayOverride = URL(string: "https://relay.test")
         PushRegistrar.keys = .memory(key)
+        PushRegistrar.staleKeys = .memory()
         StubRelay.seen = []
         StubRelay.handler = nil
         PushRegistrar.appCallsEnabled = false
@@ -109,6 +110,87 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         #expect(paths().last == "DELETE /v1/devices/me")
         #expect(PushRegistrar.keys.read() == nil)
         #expect(PushRegistrar.keepCurrentLastSent == nil)
+    }
+
+    /// Quinn's #455 capture: the switch and the save after it each sent POST /v1/follows, 2 s apart, and the first record was
+    /// orphaned (it could never be deleted by turning the switch off). While the first POST is out, a second call waits for it.
+    @Test func theFirstPostIsSingleFlightAndALaterListGoesAsAnUpdate() async throws {
+        setUp(key: nil)
+        StubRelay.handler = { r in
+            if r.httpMethod == "POST", r.url!.path == "/v1/follows" { return (201, Data(#"{"deviceKey":"k-once","follows":[]}"#.utf8)) }
+            return (200, Data())
+        }
+        let more = follows + [PushRegistrar.Follow(gameId: "kcd2", igdbId: nil, notify: "all")]
+        // Both calls start before either request is answered, as the switch and the debounced save do.
+        let first = PushRegistrar.syncKeepCurrent(true, follows: follows)
+        let second = PushRegistrar.syncKeepCurrent(true, follows: follows)
+        let third = PushRegistrar.syncKeepCurrent(true, follows: more)
+        await first?.value; await second?.value; await third?.value
+        #expect(paths().filter { $0 == "POST /v1/follows" }.count == 1, "one record, never two: \(paths())")
+        #expect(paths() == ["POST /v1/follows", "PUT /v1/devices/me/follows"], "the newer list follows as an update: \(paths())")
+        #expect(String(decoding: StubRelay.seen.last?.httpBody ?? Data(), as: UTF8.self) == #"{"follows":[{"gameId":"dawnwalker"},{"gameId":"kcd2"}]}"#)
+        #expect(PushRegistrar.keys.read() == "k-once")
+        // Off deletes the one record there is.
+        await PushRegistrar.syncKeepCurrent(false, follows: more)?.value
+        #expect(paths().last == "DELETE /v1/devices/me")
+        #expect(PushRegistrar.keys.read() == nil)
+    }
+
+    /// On, then off before the first POST is answered: the record that POST makes is deleted, never left behind.
+    @Test func offWhileTheFirstPostIsOutDeletesTheRecordItMakes() async throws {
+        setUp(key: nil)
+        StubRelay.handler = { r in
+            if r.httpMethod == "POST" { return (201, Data(#"{"deviceKey":"k-brief","follows":[]}"#.utf8)) }
+            return (r.httpMethod == "DELETE" ? 204 : 200, Data())
+        }
+        let on = PushRegistrar.syncKeepCurrent(true, follows: follows)
+        let off = PushRegistrar.syncKeepCurrent(false, follows: follows)
+        await on?.value; await off?.value
+        #expect(paths() == ["POST /v1/follows", "DELETE /v1/devices/me"], "\(paths())")
+        #expect(StubRelay.seen.last?.value(forHTTPHeaderField: "Authorization") == "Bearer k-brief")
+        #expect(PushRegistrar.keys.read() == nil)
+    }
+
+    /// A record without alerts takes ids and `hourly` only; the relay answers 400 to quietHours (Quinn's #455 capture), and
+    /// there is no push to quiet. Neither quiet hours nor the team flag is sent for it.
+    @Test func aRecordWithoutAlertsIsNeverSentQuietHoursOrTeam() async throws {
+        setUp(key: nil)
+        StubRelay.handler = { r in
+            if r.httpMethod == "POST" { return (201, Data(#"{"deviceKey":"k-f","follows":[]}"#.utf8)) }
+            return (200, Data())
+        }
+        await PushRegistrar.syncKeepCurrent(true, follows: follows)?.value
+        #expect(PushRegistrar.syncQuietHours(nil) == nil)
+        #expect(PushRegistrar.syncQuietHours(QuietHours(from: 22 * 60, until: 7 * 60)) == nil)
+        #if DEBUG
+        PushRegistrar.showsTeamForTests = true
+        #expect(PushRegistrar.syncTeam(true) == nil)
+        #endif
+        #expect(paths() == ["POST /v1/follows"], "\(paths())")
+    }
+
+    /// The Keychain outlives an uninstall; UserDefaults and the app's state do not. A fresh install that finds a key deletes
+    /// that record and starts clean (Quinn's #455 stale-key capture: quietHours 400, then no list updates).
+    @Test func aFreshInstallDeletesTheRecordAnEarlierInstallLeft() async throws {
+        setUp(key: "k-old")
+        var online = false
+        StubRelay.handler = { r in (r.httpMethod == "DELETE" ? (online ? 204 : 503) : 200, Data()) }
+        await PushRegistrar.dropStaleKey()?.value
+        #expect(paths() == ["DELETE /v1/devices/me"])
+        #expect(StubRelay.seen[0].value(forHTTPHeaderField: "Authorization") == "Bearer k-old")
+        #expect(PushRegistrar.keys.read() == nil, "this install starts with no key")
+        #expect(PushRegistrar.staleKeys.read() == "k-old", "kept until the relay confirms the delete")
+        // Nothing this install sends uses the old key.
+        #expect(PushRegistrar.syncQuietHours(nil) == nil)
+        #expect(PushRegistrar.syncFollows(follows) == nil)
+        // The next activation tries again and, once the relay answers, forgets it.
+        online = true
+        await PushRegistrar.deleteStaleRecord()?.value
+        #expect(paths() == ["DELETE /v1/devices/me", "DELETE /v1/devices/me"])
+        #expect(PushRegistrar.staleKeys.read() == nil)
+        #expect(PushRegistrar.deleteStaleRecord() == nil)
+        // No key at all on a fresh install: nothing is sent.
+        #expect(PushRegistrar.dropStaleKey() == nil)
     }
 
     @Test func onAPushDeviceTheSwitchOnlySetsTheHourlyFlag() async throws {

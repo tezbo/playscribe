@@ -380,14 +380,17 @@ nonisolated struct DeviceKeyStore {
 
     private static let service = "co.codeconnectors.playscribe.push"
     private static let account = "deviceKey"
-    private static var base: [String: Any] {
+    /// A key an earlier install of the app left in the Keychain, held only until the relay has deleted its record.
+    private static let staleAccount = "staleDeviceKey"
+    private static func base(_ account: String) -> [String: Any] {
         [kSecClass as String: kSecClassGenericPassword, kSecAttrService as String: service, kSecAttrAccount as String: account]
     }
 
-    nonisolated(unsafe) static let keychain = DeviceKeyStore(read: readKeychain, store: writeKeychain)
+    nonisolated(unsafe) static let keychain = DeviceKeyStore(read: { readKeychain(account) }, store: { writeKeychain($0, account) })
+    nonisolated(unsafe) static let staleKeychain = DeviceKeyStore(read: { readKeychain(staleAccount, migrate: false) }, store: { writeKeychain($0, staleAccount) })
 
-    private static func readKeychain() -> String? {
-        var q = base
+    private static func readKeychain(_ account: String, migrate: Bool = true) -> String? {
+        var q = base(account)
         q[kSecReturnData as String] = true
         q[kSecMatchLimit as String] = kSecMatchLimitOne
         var out: CFTypeRef?
@@ -395,16 +398,16 @@ nonisolated struct DeviceKeyStore {
             return k
         }
         // Migrate a key an earlier build kept in UserDefaults.
-        guard let old = UserDefaults.standard.string(forKey: account) else { return nil }
+        guard migrate, let old = UserDefaults.standard.string(forKey: account) else { return nil }
         // Only forget the old copy once the Keychain has the key; if it refuses, the key stays where it was.
-        if writeKeychain(old) { UserDefaults.standard.removeObject(forKey: account) }
+        if writeKeychain(old, account) { UserDefaults.standard.removeObject(forKey: account) }
         return old
     }
 
-    private static func writeKeychain(_ value: String?) -> Bool {
-        SecItemDelete(base as CFDictionary)
+    private static func writeKeychain(_ value: String?, _ account: String) -> Bool {
+        SecItemDelete(base(account) as CFDictionary)
         guard let value else { return true }
-        var a = base
+        var a = base(account)
         a[kSecValueData as String] = Data(value.utf8)
         a[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
         return SecItemAdd(a as CFDictionary, nil) == errSecSuccess
@@ -472,6 +475,8 @@ enum PushRegistrar {
     nonisolated(unsafe) private static var keepCurrentFollows: [Follow]?
     /// The last `hourly` value sent, so a save that changes nothing sends nothing.
     nonisolated(unsafe) private static var lastHourly: Bool?
+    /// The first `POST /v1/follows` while it is out, so a second call in that window never makes a second record.
+    nonisolated(unsafe) private static var pendingFollowsOnly: Task<Bool, Never>?
 
     /// The Settings switch, and every save while it is on. On: a device with no record yet registers through `POST /v1/follows`
     /// once it has a follow (an empty list is never sent: a new record spends one of the relay's daily slots); a record
@@ -483,14 +488,33 @@ enum PushRegistrar {
         keepCurrentFollows = follows
         if on {
             if keys.read() == nil {
+                // Single flight (Quinn, #455 capture: two POSTs 2 s apart, the first record orphaned): while the first POST is
+                // out, a second call never makes another record. It waits, then sends the latest list as an update if it changed.
+                if let pending = pendingFollowsOnly {
+                    return Task {
+                        // Still on (an off in the meantime clears the list) and the POST made a record: send the latest list.
+                        guard await pending.value, let latest = keepCurrentFollows else { return }
+                        await syncKeepCurrent(true, follows: latest)?.value
+                    }
+                }
                 guard !follows.isEmpty, let body = keepCurrentBody(follows) else { return nil }
-                return Task { _ = await registerFollowsOnly(body) }
+                // Cleared before the result is handed on, so a call that waited on it sees the key, not the pending POST.
+                let first = Task { () -> Bool in let ok = await registerFollowsOnly(body); pendingFollowsOnly = nil; return ok }
+                pendingFollowsOnly = first
+                return Task { _ = await first.value }
             }
             if recordIsFollowsOnly { return syncFollows(follows, stillHere: stillHereDue) }
             guard lastHourly != true else { return nil }
             return Task { await sendHourly(true, retry: true) }
         }
         keepCurrentFollows = nil
+        // Off while the first POST is out: wait for its key, then delete that record, so none is left behind.
+        if let pending = pendingFollowsOnly {
+            return Task {
+                guard await pending.value else { return }
+                await syncKeepCurrent(false, follows: follows)?.value
+            }
+        }
         guard keys.read() != nil else { return nil }
         if recordIsFollowsOnly { return forgetDevice() }
         guard lastHourly != false else { return nil }
@@ -543,12 +567,15 @@ enum PushRegistrar {
     /// Whether the app's own relay calls (follows on save, quiet hours on activation and in Settings, device registration)
     /// run. They stand down in a test host, and tests also switch them off explicitly, so a test that stubs the session sees
     /// only its own requests whatever the app does in the background.
+    /// `-qaNoRelay` (UI tests): the app makes no relay call at all, so a test that taps a switch leaves no record behind.
     nonisolated(unsafe) static var appCallsEnabled = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil
+        && !ProcessInfo.processInfo.arguments.contains("-qaNoRelay")
 
     /// Tests point these at a stub; the app uses the plist, the shared session and the Keychain.
     nonisolated(unsafe) static var relayOverride: URL?
     nonisolated(unsafe) static var session: URLSession = .shared
     nonisolated(unsafe) static var keys: DeviceKeyStore = .keychain
+    nonisolated(unsafe) static var staleKeys: DeviceKeyStore = .staleKeychain
 
     /// The push relay: device tokens, follows and the quiet window go here, not to the static feed (`baseURL`), which has no
     /// device routes. Builds without PlayscribeRelayURL cannot receive server push.
@@ -560,6 +587,7 @@ enum PushRegistrar {
 
     /// Forgets what the client remembers between calls (tests start each case clean).
     static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil; lastTeam = nil; lastHourly = nil; keepCurrentFollows = nil
+        pendingFollowsOnly = nil
         UserDefaults.standard.removeObject(forKey: recordKindKey); UserDefaults.standard.removeObject(forKey: lastSentKey)
         #if DEBUG
         showsTeamForTests = nil
@@ -679,6 +707,35 @@ enum PushRegistrar {
         return false
     }
 
+    /// A fresh install (no saved state) that finds a key: the Keychain outlives an uninstall, UserDefaults and the app's state
+    /// do not, so the key names a record this install knows nothing about, not even whether it has alerts (Quinn's #455
+    /// stale-key capture: quietHours sent to a record without alerts, then no list updates). The key moves to the stale slot
+    /// and the relay is asked to delete its record, so a reinstall starts clean and "deleted when you reset the app" stays true.
+    /// Call before any other relay call of the launch.
+    @discardableResult
+    static func dropStaleKey() -> Task<Void, Never>? {
+        guard let key = keys.read() else { return nil }
+        if staleKeys.write(key) { keys.write(nil) } else { return nil }
+        registration = nil; lastFollows = nil; lastQuiet = nil; lastHourly = nil; keepCurrentFollows = nil
+        recordIsFollowsOnly = false
+        UserDefaults.standard.removeObject(forKey: lastSentKey)
+        return deleteStaleRecord()
+    }
+
+    /// DELETE /v1/devices/me with the key an earlier install left. A 2xx (or a 401: already gone) drops it; offline or any
+    /// other answer keeps it for the next activation. It never touches this install's own key.
+    @discardableResult
+    static func deleteStaleRecord() -> Task<Void, Never>? {
+        guard let url = relayURL?.appending(path: "v1/devices/me"), let key = staleKeys.read() else { return nil }
+        return Task {
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+            guard let (_, response) = try? await session.data(for: request), let http = response as? HTTPURLResponse else { return }
+            if (200..<300).contains(http.statusCode) || http.statusCode == 401, staleKeys.read() == key { staleKeys.write(nil) }
+        }
+    }
+
     /// DELETE /v1/devices/me: asks the relay to forget this device (r052-device-delete), used when alerts go off. A 2xx means
     /// done (the relay also answers 204 when the key is already gone) and a 401 means it no longer knows the key, so either
     /// way the stored key and what the client remembers are dropped. Offline or any other answer keeps the key, so the next
@@ -730,10 +787,13 @@ enum PushRegistrar {
     /// PUT /v1/devices/me/follows: the followed games and their notify level, when they change. Nothing before the device is
     /// registered or while PlayscribeRelayURL is unset. A failed send forgets the list, so the next change sends it again.
     @discardableResult
-    static func syncFollows(_ follows: [Follow], stillHere: Bool = false) -> Task<Void, Never>? {
+    /// `pushOnly`: the save with the keep-current switch off, which speaks only for a push device; a record without alerts
+    /// then is being deleted (or is the switch's to update), so nothing is sent for it.
+    static func syncFollows(_ follows: [Follow], stillHere: Bool = false, pushOnly: Bool = false) -> Task<Void, Never>? {
         guard let url = relayURL?.appending(path: "v1/devices/me/follows"), keys.read() != nil else { return nil }
         // A record without alerts takes ids only (the relay refuses a level); a push device's list carries its levels.
         let idsOnly = recordIsFollowsOnly
+        if pushOnly && idsOnly { return nil }
         guard let body = idsOnly ? keepCurrentBody(follows) : try? Self.stableEncoder.encode(FollowsBody(follows: follows)) else { return nil }
         let signature = String(decoding: body, as: UTF8.self)
         // The weekly "still here" sends an unchanged list again, on a record without alerts only.
@@ -808,16 +868,18 @@ enum PushRegistrar {
     /// PlayscribeRelayURL is unset.
     @discardableResult
     static func syncTeam(_ on: Bool) -> Task<Void, Never>? {
-        guard showsTeam, relayURL != nil, keys.read() != nil else { return nil }
+        // A record without alerts takes `hourly` and ids only; the relay answers 400 to anything else.
+        guard showsTeam, relayURL != nil, keys.read() != nil, !recordIsFollowsOnly else { return nil }
         lastTeam = on
         return Task { await sendTeam(on, retry: true) }
     }
 
     /// PATCH /v1/devices/me { quietHours }. Does nothing before the device is registered (no push can
-    /// reach it then, so there is nothing to quiet) or while PlayscribeRelayURL is unset.
+    /// reach it then, so there is nothing to quiet), on a record without alerts (the same reason; the relay answers 400:
+    /// Quinn's #455 capture), or while PlayscribeRelayURL is unset.
     @discardableResult
     static func syncQuietHours(_ q: QuietHours?) -> Task<Void, Never>? {
-        guard relayURL != nil, keys.read() != nil else { return nil }
+        guard relayURL != nil, keys.read() != nil, !recordIsFollowsOnly else { return nil }
         lastQuiet = quietWindow(q)
         let window = lastQuiet
         return Task { await sendQuiet(window, retry: true) }
