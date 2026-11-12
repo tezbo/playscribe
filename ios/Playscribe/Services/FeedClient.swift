@@ -98,8 +98,7 @@ extension AppModel {
                 known.insert(r.id)
                 // Like the server: nothing that went live more than 72 hours ago alerts.
                 // It's the past, so it's read too: adding a game doesn't flood it with unread updates.
-                // A patch that is itself older than that is the past too, even under a recent alert date (a port's folded history).
-                guard r.alertDate > .now.addingTimeInterval(-72 * 3600), r.ps5Date > .now.addingTimeInterval(-72 * 3600) else {
+                guard r.isAlertWorthy() else {
                     if data.read[r.id] == nil { data.read[r.id] = .now }
                     continue
                 }

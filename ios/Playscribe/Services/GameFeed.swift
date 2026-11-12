@@ -131,6 +131,13 @@ extension AppModel {
 }
 
 extension Release {
+    /// N-3: news only when both the alert date and the patch itself are inside the last 72 hours. A patch older than that is
+    /// the past even under a recent alert date (a port's folded history).
+    func isAlertWorthy(now: Date = .now) -> Bool {
+        let cutoff = now.addingTimeInterval(-72 * 3600)
+        return alertDate > cutoff && ps5Date > cutoff
+    }
+
     /// Feed releases carry the feed's game id; a game added from the catalogue has its own.
     func reassigned(to gameID: String) -> Release { var r = self; r.gameID = gameID; return r }
 }

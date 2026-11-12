@@ -809,6 +809,24 @@ struct BackCatalogueTests {
         #expect(model.data.read[c.id] == nil)
     }
 
+    @Test("An alert needs the patch itself inside 72 h, not just the alert date")
+    func alertGuardChecksPatchDate() {
+        #expect(release("g@today", patchedDaysAgo: 1, alertDaysAgo: 1).isAlertWorthy())
+        #expect(!release("g@port", patchedDaysAgo: 1_800, alertDaysAgo: 1).isAlertWorthy(), "folded history is the past")
+        #expect(!release("g@stale", patchedDaysAgo: 5, alertDaysAgo: 5).isAlertWorthy())
+    }
+
+    @Test("Each game keeps its own latest update unread when several are added together")
+    func perGameGrouping() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
+        func rel(_ id: String, _ game: String, _ days: Double) -> Release {
+            var r = release(id, patchedDaysAgo: days, alertDaysAgo: days); r.gameID = game; return r
+        }
+        let all = [rel("a@1", "a", 2), rel("a@2", "a", 0.5), rel("b@1", "b", 1.5), rel("b@2", "b", 0.2), rel("b@3", "b", 1)]
+        model.markPastAsRead(all, backCatalogue: true)
+        #expect(all.filter { model.data.read[$0.id] == nil }.map(\.id).sorted() == ["a@2", "b@2"])
+    }
+
     @Test("Without the back-catalogue rule the alert date still decides (an update for a followed game)")
     func followedGameUnchanged() {
         let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
