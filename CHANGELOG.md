@@ -3,6 +3,27 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
+## 0.5.4
+
+- News has its own tab, with gaming headlines from five sites. Sale and merchandise headlines are left out.
+- PS Plus titles now open their game page, and the PS Plus card wraps at big text sizes.
+- On a game page, All updates now sits above About, and "You might also like" leads with View game.
+- The update deck at the top of the Library shows up to five updates.
+- Sharing an update makes a cleaner card, and its link opens the game.
+- Book mode: pages keep clear of the hinge.
+- At the largest text sizes, more screens wrap on whole words: category and trailer rows, the Story, and the Tabletop stage. The A to Z letters grow with the text.
+- Fixes: stray formatting marks no longer show in some patch notes, and announcements of an upcoming patch no longer show as PS5 updates.
+
+Known issues in this build:
+
+- Search: if you type quickly in the Library search, the list of games can go blank. Clear the search to bring it back.
+- Tabletop: for a game with no videos, "Find trailers online" can't be tapped.
+- Adding a game can show all of its past updates as unread.
+- Tapping a notification while the app is already open has not been checked in this build.
+- Some dates on News and in Library "Last update" can show a day earlier or later than the post date, depending on your time zone.
+
+Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
+
 ## 0.5.3
 
 - A game we don't track yet now says so, instead of "No updates yet".
