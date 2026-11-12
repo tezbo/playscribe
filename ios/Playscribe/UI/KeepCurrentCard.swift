@@ -171,7 +171,8 @@ struct KeepCurrentDetailsSheet: View {
             .padding(.bottom, 4)
             .background(Color.ink0)
             .zIndex(1)
-            KeepCurrentDetailsContent()
+            // Tabletop shows this sheet in the lower-half panel, the only place that sets panelClose.
+            KeepCurrentDetailsContent(edgeCapFraction: panelClose == nil ? nil : 0.15)
                 .clipped()
         }
         .padding(.top, 8)
@@ -224,17 +225,30 @@ struct KeepCurrentDetailsView: View {
 
 /// The full wording: what it does, what is sent, what is never sent, how long it is kept, and the short line.
 struct KeepCurrentDetailsContent: View {
-    /// Mac at d956c87 and 2f230a2 (AX5, every pose): a line cut at the scroll edge showed as glyph halves under the title,
-    /// and a fade only dimmed them. Once scrolled, an opaque band one full text line tall (with its leading) sits under the
-    /// hairline, so any line the edge cuts is wholly covered. Below it the fade runs from opaque to clear over one line height
-    /// (5aa8de9: a short fade left a line crossing the band's edge looking cut), so a line passing under shows as a soft fade,
-    /// never a hard edge. Both scale with the body text, so this holds at every size.
+    /// Tabletop's lower-half panel (Iris, 9852d0a): each edge treatment is capped at 15% of the visible height, so at least
+    /// four lines read clear at AX5. Nil elsewhere.
+    var edgeCapFraction: CGFloat? = nil
+
+    /// Top edge (Mac at d956c87, 2f230a2, 5aa8de9): once scrolled, an opaque band one full text line tall sits under a hairline
+    /// drawn on solid ink, so a line the edge cuts is wholly covered; below it a fade runs from opaque to clear over one line.
+    /// Bottom edge (Iris, 9852d0a): only the fade over one line while more text is below, and the content ends with bottom
+    /// padding of the same height, so at the end of the scroll the last line rests fully clear of it. All scale with the text.
     @ScaledMetric(relativeTo: .body) private var edgeBand: CGFloat = 28
     @ScaledMetric(relativeTo: .body) private var edgeFade: CGFloat = 24
     @State private var scrolled = false
-    /// Mac at bc19eca (Closed std, mid-scroll): the last visible line was cut hard at the sheet's bottom. While more text
-    /// is below, the bottom edge mirrors the top: a fade over one line, then a solid band one line tall.
     @State private var moreBelow = false
+    @State private var visibleHeight: CGFloat = 0
+
+    /// The band and fade heights after the Tabletop cap, kept in proportion.
+    private var topHeights: (band: CGFloat, fade: CGFloat) {
+        guard let f = edgeCapFraction, visibleHeight > 0 else { return (edgeBand, edgeFade) }
+        let k = min(1, visibleHeight * f / (edgeBand + edgeFade))
+        return (edgeBand * k, edgeFade * k)
+    }
+    private var bottomFade: CGFloat {
+        guard let f = edgeCapFraction, visibleHeight > 0 else { return edgeFade }
+        return min(edgeFade, visibleHeight * f)
+    }
 
     var body: some View {
         ScrollView {
@@ -245,22 +259,18 @@ struct KeepCurrentDetailsContent: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
             .padding(20)
+            .padding(.bottom, bottomFade)
             .frame(maxWidth: 620, alignment: .leading)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.y + $0.contentInsets.top > 1 } action: { _, now in scrolled = now }
-        .onScrollGeometryChange(for: Bool.self) { g in
-            g.contentOffset.y + g.containerSize.height - g.contentInsets.bottom < g.contentSize.height - 1
-        } action: { _, now in moreBelow = now }
+        // Judged on the visible rect, so a bottom safe-area inset can't keep it on at the end; 2 pt of slack for rounding.
+        .onScrollGeometryChange(for: Bool.self) { $0.visibleRect.maxY < $0.contentSize.height - 2 } action: { _, now in moreBelow = now }
+        .onScrollGeometryChange(for: CGFloat.self) { $0.visibleRect.height } action: { _, h in visibleHeight = h }
         .overlay(alignment: .bottom) {
             if moreBelow {
-                // The top edge mirrored (Iris): a fade over one line, then a solid band a full line tall at the edge.
-                VStack(spacing: 0) {
-                    LinearGradient(stops: [.init(color: Color.ink0.opacity(0), location: 0), .init(color: Color.ink0.opacity(0.85), location: 0.65),
-                                           .init(color: Color.ink0, location: 1)], startPoint: .top, endPoint: .bottom)
-                        .frame(height: edgeFade)
-                    Color.ink0.frame(height: edgeBand)
-                }
+                LinearGradient(colors: [Color.ink0.opacity(0), Color.ink0], startPoint: .top, endPoint: .bottom)
+                    .frame(height: bottomFade)
                     .allowsHitTesting(false)
                     .accessibilityHidden(true)
             }
@@ -268,12 +278,11 @@ struct KeepCurrentDetailsContent: View {
         .overlay(alignment: .top) {
             if scrolled {
                 VStack(spacing: 0) {
-                    // The hairline is drawn on solid ink, so no glyph shows through it.
                     Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5).background(Color.ink0)
-                    Color.ink0.frame(height: edgeBand)
+                    Color.ink0.frame(height: topHeights.band)
                     LinearGradient(stops: [.init(color: Color.ink0, location: 0), .init(color: Color.ink0.opacity(0.85), location: 0.35),
                                            .init(color: Color.ink0.opacity(0), location: 1)], startPoint: .top, endPoint: .bottom)
-                        .frame(height: edgeFade)
+                        .frame(height: topHeights.fade)
                 }
                 .allowsHitTesting(false)
                 .accessibilityHidden(true)
