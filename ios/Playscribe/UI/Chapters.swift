@@ -104,6 +104,12 @@ struct GalleryChapter: View {
 
 /// A game with no pictures or videos (Terry, 0.2.0 build 5, Fortnite): say so, and point to media elsewhere.
 struct GalleryEmpty: View {
+    /// "Find trailers online": a video search for the game's PS5 trailer. Also Tabletop's Links panel row.
+    static func trailerSearchURL(_ name: String) -> URL? {
+        "https://www.youtube.com/results?search_query=\(name) PS5 trailer"
+            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed).flatMap(URL.init(string:))
+    }
+
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     var gameID: String
@@ -111,10 +117,7 @@ struct GalleryEmpty: View {
     var body: some View {
         let game = model.game(gameID)
         let links = game?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
-        let search = game.flatMap { g in
-            "https://www.youtube.com/results?search_query=\(g.name) PS5 trailer"
-                .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed).flatMap(URL.init(string:))
-        }
+        let search = game.flatMap { Self.trailerSearchURL($0.name) }
         VStack(alignment: .leading, spacing: 8) {
             Text("No pictures or videos here yet").font(PlayscribeFont.headline)
             Text("You can find trailers and screenshots elsewhere.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
@@ -129,7 +132,7 @@ struct GalleryEmpty: View {
                 }
                 if let url = search {
                     if duo.pose == .tabletop {
-                        // View only: read as plain text, no link or button trait and no action (Iris, 7 Nov); the trailer search has no Tabletop control (pre-existing, carded).
+                        // View only: read as plain text, no link or button trait and no action (Iris, 7 Nov); the trailer search is on Tabletop's Links panel too.
                         Text("Find trailers online").frame(minHeight: 44).foregroundStyle(Color.secondary)   // grey, not amber, no arrow: it must not look tappable. Color.secondary, not .secondary: the hierarchical style would derive from the accent set on the FlowLayout below and come out dimmed amber (f452dd8)
                     } else {
                         Link(destination: url) { Label("Find trailers online", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
