@@ -112,7 +112,6 @@ struct GalleryEmpty: View {
 
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
-    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
 
     var body: some View {
@@ -120,17 +119,13 @@ struct GalleryEmpty: View {
         let links = game?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
         let search = game.flatMap { Self.trailerSearchURL($0.name) }
         VStack(alignment: .leading, spacing: 8) {
-            // Tabletop at accessibility sizes: the stage has room under its header art for about three AX5 lines and cannot
-            // scroll, so the headline (two lines at AX5) gives way to the line that says where the control is (Mac, 0a7830d).
-            if !(duo.pose == .tabletop && typeSize.isAccessibilitySize) {
-                Text("No pictures or videos here yet").font(PlayscribeFont.headline)
-            }
             if duo.pose == .tabletop {
-                // The stage is view-only and cannot scroll, so no grey stand-in rows that look like buttons and push the line off
-                // the stage at AX5 (Mac, #493). The controls are on the Links panel; the rail shows an ellipsis, not the word
-                // "More", so the line names what the person sees (Iris, 12 Nov).
-                Text("Find trailers online in Links, in the menu below.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                // The stage is view-only and cannot scroll: one sentence, no headline and no grey stand-in rows that look like
+                // buttons, so it fits in three lines at AX5 (Mac, 0a7830d). The controls are on the Links panel; the rail shows an
+                // ellipsis, not the word "More", so the line names what the person sees (Iris, 12 Nov).
+                Text("No trailers yet. Find them in Links, in the menu below.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             } else {
+                Text("No pictures or videos here yet").font(PlayscribeFont.headline)
                 Text("You can find trailers and screenshots elsewhere.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                 FlowLayout(spacing: 24) {
                     if let url = links?.official {
