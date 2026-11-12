@@ -19,7 +19,7 @@ import json
 import os
 import sys
 
-from PIL import Image, ImageChops, ImageDraw
+from PIL import Image, ImageChops, ImageDraw, ImageFont
 
 CHANNEL_TOLERANCE = 2      # out of 255
 TILE = 48                  # px (the stills are 1 px per pt)
@@ -78,16 +78,21 @@ def panel(before, after, mask, hot, out_path):
     for box in hot:
         draw.rectangle((box[0], box[1], box[2] - 1, box[3] - 1), outline=(255, 60, 60), width=2)
     images = [before.convert("RGB"), after.convert("RGB"), diff]
-    gap, label_h = 12, 22
+    gap, label_h = 12, 26
     landscape = after.width > after.height
     w = max(i.width for i in images)
     h = max(i.height for i in images)
     size = (w, (h + label_h) * 3 + gap * 2) if landscape else (w * 3 + gap * 2, h + label_h)
     sheet = Image.new("RGB", size, (24, 24, 28))
     d = ImageDraw.Draw(sheet)
+    # Labels at 14 px, white (Iris, #485): the default 10 px grey was hard to read beside AX5 stills.
+    try:
+        font = ImageFont.load_default(size=14)
+    except TypeError:  # Pillow before 10.1 has no sized default font
+        font = ImageFont.load_default()
     for i, (img, name) in enumerate(zip(images, ["before (main)", "after (this PR)", "diff (magenta = changed)"])):
         x, y = (0, i * (h + label_h + gap)) if landscape else (i * (w + gap), 0)
-        d.text((x + 4, y + 4), name, fill=(230, 230, 230))
+        d.text((x + 6, y + 5), name, fill=(255, 255, 255), font=font)
         sheet.paste(img, (x, y + label_h))
     sheet.save(out_path, optimize=True)
 
@@ -166,6 +171,9 @@ def main():
                 lines.append(f"| `{r['name']}` | {r['status']} | | | |")
             else:
                 lines.append(f"| `{r['name']}` | changed | {r['fraction'] * 100:.3f}% | {r['tiles']} | {len(r['frames'])} lines |")
+        # Iris (#485): say what a 0 in Frames means, so a pixel-only change isn't read as nothing.
+        lines += ["", "_Frames counts tappable-frame lines that moved. 0 lines means only pixels changed: an offset, a colour or "
+                      "text that kept its frames._"]
         for r in rows:
             if r["status"] in ("same", "gone"):
                 continue
