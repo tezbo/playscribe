@@ -314,6 +314,9 @@ const patchMe = async (env, request) => {
     }
   }
   if (JSON.stringify(next) !== JSON.stringify(d)) await putDevice(kv, { ...next, updated: now() })
+  // A record without a token had a key entry with the 90-day expiry. Once it holds a token it is kept until deleted, so its
+  // key entry is written again without one; otherwise the app would get 401 after 90 days and make a second record.
+  if (!d.token && next.token) await kv.put(`k:${await sha(d.key)}`, d.id)
   if (typeof body.team === 'boolean') await syncTeamIndex(kv, d.id, body.team)
   return json({ deviceId: d.id })
 }

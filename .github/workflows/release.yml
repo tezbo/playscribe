@@ -9,7 +9,8 @@ name: Release to TestFlight
 #   - version is X.Y.Z, sha is a full 40-character SHA, approval is at least 10 characters;
 #   - the SHA is on main (main is that commit or a descendant of it);
 #   - the SHA is green: every push-triggered workflow run on it finished success/skipped/neutral (none failed,
-#     was cancelled or is still running), and at least one iOS (ios.yml) run on it succeeded. An earlier
+#     was cancelled or is still running), and an iOS (ios.yml) run succeeded on it or on a recent main commit with
+#     an identical ios/ tree (a docs-only commit gets no iOS run of its own). An earlier
 #     TestFlight build of the same tag is left out, so a failed upload can be re-run;
 #   - CHANGELOG.md at that SHA has a `## X.Y.Z` section with no "candidate" in its heading;
 #   - tag vX.Y.Z does not exist, or already points at exactly this SHA (re-running a failed build).
@@ -82,7 +83,17 @@ jobs:
           bad=$(printf '%s\n' "$runs" | awk -F'\t' '$1=="push" && $2!=".github/workflows/testflight.yml" && !($3=="completed" && ($4=="success" || $4=="skipped" || $4=="neutral"))')
           [ -z "$bad" ] || refuse "not green, these push runs did not pass: $(printf '%s' "$bad" | cut -f2,3,4 | tr '\t\n' ' ;')"
           ios=$(printf '%s\n' "$runs" | awk -F'\t' '$2==".github/workflows/ios.yml" && $3=="completed" && $4=="success"' | wc -l)
-          [ "$ios" -ge 1 ] || refuse "no successful iOS run on $SHA. If it is main's tip, run ios.yml on main first, then retry"
+          if [ "$ios" -lt 1 ]; then
+            # A docs-only commit gets no iOS run. Accept it when its ios/ tree is identical to a main commit whose
+            # iOS run succeeded (same app code, already tested).
+            ios_tree() { gh api "repos/$REPO/git/trees/$(gh api "repos/$REPO/commits/$1" --jq .commit.tree.sha)" --jq '.tree[] | select(.path == "ios") | .sha'; }
+            want=$(ios_tree "$SHA")
+            [ -n "$want" ] || refuse "$SHA has no ios/ directory"
+            for c in $(gh api "repos/$REPO/actions/workflows/ios.yml/runs?branch=main&status=success&per_page=15" --jq '.workflow_runs[].head_sha' | awk '!seen[$0]++'); do
+              if [ "$(ios_tree "$c")" = "$want" ]; then echo "No iOS run on $SHA, but its ios/ tree matches $c, whose iOS run passed."; ios=1; break; fi
+            done
+          fi
+          [ "$ios" -ge 1 ] || refuse "no successful iOS run on $SHA or on a main commit with the same ios/ tree. If it is main's tip, run ios.yml on main first, then retry"
 
           # The release notes at that SHA.
           gh api "repos/$REPO/contents/CHANGELOG.md?ref=$SHA" --jq .content | base64 -d > CHANGELOG.md

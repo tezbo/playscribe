@@ -115,11 +115,29 @@ extension AppModel {
             known.insert(r.id)
             if data.read[r.id] == nil { data.read[r.id] = .now }
         }
+        // A game seen for the first time shows at most its latest update as unread: a few patches inside the 72 hours are
+        // still its back catalogue, not news (Terry, 12 Nov). The older ones are read and never alert.
+        if backCatalogue {
+            let recent = releases.filter { $0.ps5State == .onPS5 && data.read[$0.id] == nil && !known.contains($0.id) }
+            for (_, group) in Dictionary(grouping: recent, by: \.gameID) {
+                for r in group.sorted(by: { $0.ps5Date > $1.ps5Date }).dropFirst() {
+                    known.insert(r.id)
+                    data.read[r.id] = .now
+                }
+            }
+        }
         data.knownOnPS5 = known
     }
 }
 
 extension Release {
+    /// N-3: news only when both the alert date and the patch itself are inside the last 72 hours. A patch older than that is
+    /// the past even under a recent alert date (a port's folded history).
+    func isAlertWorthy(now: Date = .now) -> Bool {
+        let cutoff = now.addingTimeInterval(-72 * 3600)
+        return alertDate > cutoff && ps5Date > cutoff
+    }
+
     /// Feed releases carry the feed's game id; a game added from the catalogue has its own.
     func reassigned(to gameID: String) -> Release { var r = self; r.gameID = gameID; return r }
 }
