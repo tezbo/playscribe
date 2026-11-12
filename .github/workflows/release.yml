@@ -13,7 +13,9 @@ name: Release to TestFlight
 #     TestFlight build of the same tag is left out, so a failed upload can be re-run;
 #   - CHANGELOG.md at that SHA has a `## X.Y.Z` section with no "candidate" in its heading;
 #   - tag vX.Y.Z does not exist, or already points at exactly this SHA (re-running a failed build).
-# The tag is made with the workflow token, which fires no push event, so this workflow calls testflight.yml itself.
+# Then the tag job waits for Terry's Approve (environment "testflight", required reviewer tezbo), tags with the
+# workflow token (which fires no push event, so this workflow calls testflight.yml itself), and after a successful
+# upload creates the GitHub release with the CHANGELOG section as notes.
 on:
   workflow_dispatch:
     inputs:
@@ -38,13 +40,14 @@ permissions:
 concurrency: release
 
 jobs:
-  tag:
+  check:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
       tag: ${{ steps.guards.outputs.tag }}
+      existing: ${{ steps.guards.outputs.existing }}
     steps:
-      - name: Check every guard, then tag
+      - name: Check every guard
         id: guards
         env:
           GH_TOKEN: ${{ github.token }}
@@ -97,16 +100,57 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           if [ "$DRY_RUN" = "true" ]; then echo "Dry run: every guard passed, nothing tagged or built." | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; fi
 
-          if [ -z "$existing" ]; then
-            gh api -X POST "repos/$REPO/git/refs" -f ref="refs/tags/$tag" -f sha="$SHA" > /dev/null
-            echo "Tagged $tag at $SHA. Approval: $APPROVAL"
-          fi
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "existing=$existing" >> "$GITHUB_OUTPUT"
+
+  # Waits here for Terry's Approve when the "testflight" environment has him as a required reviewer
+  # (Settings > Environments). Nothing is tagged or built before that tap.
+  tag:
+    needs: check
+    if: needs.check.outputs.tag != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: testflight
+    outputs:
+      tag: ${{ needs.check.outputs.tag }}
+    steps:
+      - name: Tag the commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          TAG: ${{ needs.check.outputs.tag }}
+          SHA: ${{ inputs.sha }}
+          EXISTING: ${{ needs.check.outputs.existing }}
+          APPROVAL: ${{ inputs.approval }}
+        run: |
+          set -euo pipefail
+          if [ -n "$EXISTING" ]; then echo "$TAG already at $SHA"; exit 0; fi
+          gh api -X POST "repos/$REPO/git/refs" -f ref="refs/tags/$TAG" -f sha="$SHA" > /dev/null
+          echo "Tagged $TAG at $SHA. Approval: $APPROVAL" | tee -a "$GITHUB_STEP_SUMMARY"
 
   testflight:
     needs: tag
-    if: needs.tag.outputs.tag != ''
     uses: ./.github/workflows/testflight.yml
     with:
       tag: ${{ needs.tag.outputs.tag }}
     secrets: inherit
+
+  # The GitHub release for the tag, with the CHANGELOG section as its notes (kept if one already exists).
+  github-release:
+    needs: [tag, testflight]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          TAG: ${{ needs.tag.outputs.tag }}
+          SHA: ${{ inputs.sha }}
+        run: |
+          set -euo pipefail
+          if gh release view "$TAG" --repo "$REPO" > /dev/null 2>&1; then echo "Release $TAG already exists"; exit 0; fi
+          gh api "repos/$REPO/contents/CHANGELOG.md?ref=$SHA" --jq .content | base64 -d > CHANGELOG.md
+          version="${TAG#v}"
+          awk -v h="## $version" 'index($0, h) == 1 && (length($0) == length(h) || substr($0, length(h) + 1, 1) == " ") {on=1; next} on && /^## / {exit} on {print}' CHANGELOG.md > notes.md
+          gh release create "$TAG" --repo "$REPO" --verify-tag --title "$TAG" --notes-file notes.md
