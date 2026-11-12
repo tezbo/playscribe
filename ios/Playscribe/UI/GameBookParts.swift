@@ -15,11 +15,20 @@ enum ReadingSide {
 struct PageView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @AppStorage(ReadingSide.key) private var pageOnLeft = false
     @State private var position = ScrollPosition(idType: String.self)
     @State private var liveOffset: CGFloat = 0
     var gameID: String
     /// Closed: one stacked book, the Contents below the Page.
     var withContents = false
+
+    /// Closed and Open portrait, Updates chapter: the Contents (bar, search, Mark read, All updates) between the release and About.
+    private var closedContents: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Divider().overlay(PlayscribeColor.ink700)
+            ContentsBody(gameID: gameID, addControl: false)
+        }
+    }
 
     var body: some View {
         let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
@@ -41,7 +50,8 @@ struct PageView: View {
                                 .padding(.top, 5).padding(.bottom, -5)
                         }
                     }
-                    .padding(.horizontal, 20)
+                    .padding(.leading, duo.hingeInset(20, facingHinge: !pageOnLeft))
+                    .padding(.trailing, duo.hingeInset(20, facingHinge: pageOnLeft))
                 }
                 Group {
                     switch chapter {
@@ -49,6 +59,9 @@ struct PageView: View {
                         if let r = model.selectedRelease(gameID) {
                             VStack(alignment: .leading, spacing: 16) {
                                 ReleasePage(release: r)
+                                // Closed and Open portrait (one column): All updates (the Contents) sits above About (Terry, 0.5.4), so the reader reaches
+                                // the game's other updates before its blurb; You might also like stays last.
+                                if withContents { closedContents }
                                 if let g = model.game(gameID) {
                                     Divider().overlay(PlayscribeColor.ink700)
                                     GameBasicsView(game: g)
@@ -56,7 +69,7 @@ struct PageView: View {
                             }
                             .pageTurn(key: r.id)
                         } else if let g = model.game(gameID) {
-                            NoNotesPage(game: g)
+                            NoNotesPage(game: g) { if withContents { closedContents } }
                         }
                     case .news: NewsChapter(gameID: gameID)
                     case .world, .companion: EntriesChapter(gameID: gameID, chapter: chapter)
@@ -66,8 +79,10 @@ struct PageView: View {
                 }
                 // Reading measure: 55 to 75 characters.
                 .frame(maxWidth: 620, alignment: .leading)
-                .padding(.horizontal, 20)
-                if withContents {
+                .padding(.leading, duo.hingeInset(20, facingHinge: !pageOnLeft))
+                .padding(.trailing, duo.hingeInset(20, facingHinge: pageOnLeft))
+                // The other chapters keep the Contents below the page (the Updates chapter draws it above About).
+                if withContents && chapter != .updates {
                     Divider().overlay(PlayscribeColor.ink700).padding(.top, 8)
                     ContentsBody(gameID: gameID, addControl: false).padding(.horizontal, 16)
                 }
@@ -321,9 +336,15 @@ struct SpoilerLine: View {
 }
 
 /// GR-1: never an empty game.
-struct NoNotesPage: View {
+struct NoNotesPage<Contents: View>: View {
     @Environment(AppModel.self) private var model
     var game: CatalogGame
+    /// Closed: the Contents, drawn above About as on a page with notes.
+    @ViewBuilder var contents: () -> Contents
+    init(game: CatalogGame, @ViewBuilder contents: @escaping () -> Contents = { EmptyView() }) {
+        self.game = game
+        self.contents = contents
+    }
     var body: some View {
         // Terry: a game never opens blank. With no updates, it leads with its release.
         VStack(alignment: .leading, spacing: 16) {
@@ -331,6 +352,7 @@ struct NoNotesPage: View {
                 Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
                 NoUpdatesLine(gameID: game.id)
             }
+            contents()
             GameBasicsView(game: game)
         }
     }
@@ -403,14 +425,17 @@ struct GameBasicsView: View {
                 let unique = videos.reduce(into: [GameBasics.Video]()) { out, v in if !out.contains(where: { $0.name == v.name }) { out.append(v) } }
                 ForEach(unique.prefix(3), id: \.youtubeId) { v in
                     Button { model.trailer = (v.youtubeId, v.name) } label: {
-                        HStack(spacing: 12) {
+                        // At accessibility sizes the thumbnail sits above the title, so the title has the whole column and a word
+                        // like "Cinematic" is not cut by letter beside a 112 pt picture (Iris, r054 Closed AX5).
+                        let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 12))
+                        layout {
                             AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(v.youtubeId)/mqdefault.jpg")) { $0.resizable().scaledToFill() } placeholder: { Color.ink1 }
                                 .frame(width: 112, height: 63)
                                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                                 .overlay { Image(systemName: "play.fill").foregroundStyle(.white) }
                             // Whole words only (G-8): a plain lineLimit cut "E3 2018 Open Be…" mid-word (The Crew 2, Closed AX5).
                             WholeWordText(text: v.name, font: PlayscribeFont.subheadline, lines: typeSize.isAccessibilitySize ? 4 : 2)
-                            Spacer(minLength: 0)
+                            if !typeSize.isAccessibilitySize { Spacer(minLength: 0) }
                         }
                         .frame(minHeight: 44)
                         .contentShape(Rectangle())
@@ -440,7 +465,9 @@ struct GameBasicsView: View {
             }
             if let story = info?.storyline {
                 Text("Story").font(PlayscribeFont.headline)
-                LinkedTextView(text: story).font(PlayscribeFont.body).lineLimit(storyOpen ? nil : 4)
+                // Collapsed: four lines ending on a whole word (G-8), never "conflicts swe…". Open: the full text with its links.
+                if storyOpen { LinkedTextView(text: story).font(PlayscribeFont.body) }
+                else { WholeWordText(text: LinkedText.clean(story), font: PlayscribeFont.body, lines: 4, color: nil) }
                 Button(storyOpen ? "Less" : "More") { withAnimation(.snappy) { storyOpen.toggle() } }
                     .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
             }
@@ -480,7 +507,7 @@ struct SimilarGamesRow: View {
                             }
                             .buttonStyle(.plain)
                             .accessibilityLabel(g.name)
-                            .accessibilityHint("Choose how to add it")
+                            .accessibilityHint("View it, or choose how to add it")
                             .tappableFrame()
                         }
                     }
@@ -489,6 +516,8 @@ struct SimilarGamesRow: View {
             }
             .confirmationDialog(choosing?.name ?? "", isPresented: Binding(get: { choosing != nil }, set: { if !$0 { choosing = nil } }), titleVisibility: .visible) {
                 if let g = choosing {
+                    // A plain look first (Terry, 0.5.4): opens the game page without filing it anywhere.
+                    Button("View game") { model.browseGame(g) }
                     Button("Add to library") { model.addGame(g, status: .owned); model.openGame(g.id) }
                     Button("Add to watchlist") { model.addGame(g, status: .wishlist); model.openGame(g.id) }
                 }
@@ -528,14 +557,18 @@ struct TrailerView: View {
 /// the release timeline, and in Tabletop the section outline with Previous and Next.
 struct ContentsView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     @Environment(\.railWidth) private var railWidth
+    @AppStorage(ReadingSide.key) private var pageOnLeft = false
     @State private var position = ScrollPosition(idType: String.self)
     var gameID: String
 
     var body: some View {
         ScrollView {
             ContentsBody(gameID: gameID)
-                .padding(.horizontal, 16)
+                // Book: the edge that faces the hinge keeps 24 pt clear of the division band (r054-book-gamepage-hinge-inset).
+                .padding(.leading, duo.hingeInset(16, facingHinge: pageOnLeft))
+                .padding(.trailing, duo.hingeInset(16, facingHinge: !pageOnLeft))
                 .padding(.vertical, 14)
                 .padding(.trailing, railWidth)
         }
@@ -632,14 +665,20 @@ struct SwapSidesButton: View {
 struct NotesSearchField: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
+    /// At accessibility sizes the placeholder is the short "Search notes" (Iris, r054 Tabletop AX5): "Search this game's n…" was cut
+    /// mid-word. Standard sizes keep the scoped wording.
+    private var prompt: String {
+        if typeSize.isAccessibilitySize { return "Search notes" }
+        return model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes"
+    }
     var body: some View {
         @Bindable var model = model
         if duo.pose == .tabletop {
             // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
             VStack(alignment: .leading, spacing: 8) {
-                TabletopSearch(letter: $model.noteLetter,
-                               prompt: model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes")
+                TabletopSearch(letter: $model.noteLetter, prompt: prompt)
                 if model.noteLetter != nil {
                     Picker("Search in", selection: $model.noteScope) {
                         ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
@@ -651,7 +690,7 @@ struct NotesSearchField: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                TextField(model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes", text: $model.noteQuery)
+                TextField(prompt, text: $model.noteQuery)
                     .autocorrectionDisabled()
                     .submitLabel(.search)
                     .onSubmit { model.rememberSearch(model.noteQuery) }

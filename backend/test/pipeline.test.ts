@@ -475,7 +475,7 @@ test('headline: text before a colon, 60 characters at a word boundary, ellipsis 
   assert.equal(headlineOf(': nothing before'), null)
 })
 
-test('data audit: a later post for the same release never moves a Steam-assumed PS5 date later; repair fixes stored rows', async () => {
+test('data audit: a later post for the same release never moves a Steam-assumed PS5 date later', async () => {
   const { db } = await setup()
   const ps5 = () => store.getPlatformRow(db, 'dawnwalker@1.1.1', 'ps5')!
   const live = () => JSON.parse(ps5().live_at as string).value as string
@@ -483,12 +483,6 @@ test('data audit: a later post for the same release never moves a Steam-assumed 
   // A second Steam-assumed write with a later date keeps the first.
   store.upsertPlatform(db, 'dawnwalker@1.1.1', 'ps5', { status: 'live', verification: 'assumed', liveAt: store.field(new Date(Date.parse(first) + 3 * 86400e3).toISOString(), 'assumed', 'dawnwalker-steam') })
   assert.equal(live(), first)
-  // Stored rows already moved later are repaired to the PC row's Steam date.
-  const pc = JSON.parse(store.getPlatformRow(db, 'dawnwalker@1.1.1', 'pc')!.live_at as string).value as string
-  db.prepare("UPDATE platform_releases SET live_at = ? WHERE release_id = 'dawnwalker@1.1.1' AND platform = 'ps5'").run(JSON.stringify({ ...JSON.parse(ps5().live_at as string), value: new Date(Date.parse(pc) + 86400e3).toISOString() }))
-  assert.ok(store.repairAssumedLiveAt(db) >= 1)
-  assert.equal(live(), pc)
-  assert.equal(store.repairAssumedLiveAt(db), 0)
 })
 
 test('news: Push Square headlines that name a tracked game are Reported news (title, date, link); its patch and unrelated items are not', async () => {
@@ -543,6 +537,46 @@ test('press outlet news feeds add Reported headlines for a tracked game and neve
   assert.ok(!JSON.stringify(items).includes('Article text'))
   assert.equal(db.prepare("SELECT COUNT(*) AS n FROM news WHERE url LIKE '%/other'").get()!.n, 0)
   assert.ok(!db.prepare("SELECT 1 FROM releases WHERE game_id = 'dawnwalker' AND source_ids LIKE '%-news%'").get(), 'a news feed never makes a release')
+})
+
+// Nadia 2026-11-11 (r054-news-promo-merch-filter): sale and merch headlines are not news. Hidden titles are logged for Quinn;
+// a patch is never judged here (it never reaches the news table), and a headline with a change word is kept.
+test('sale and merch headlines are hidden from news and logged; announcements stay', async () => {
+  const db = openDb(':memory:')
+  const log: string[] = []
+  const fetchFn = fakeFetch({
+    'https://www.pushsquare.com/feeds/latest': rss([
+      { title: 'Get 20% Off The Blood of Dawnwalker This Week', link: 'https://www.pushsquare.com/news/2026/11/dawnwalker-sale', date: recent(4), body: '<p>x</p>' },
+      { title: 'The Blood of Dawnwalker Merch You Might Have Missed', link: 'https://www.pushsquare.com/news/2026/11/dawnwalker-merch', date: recent(3), body: '<p>x</p>' },
+      { title: 'The Blood of Dawnwalker gets a free photo mode next week', link: 'https://www.pushsquare.com/news/2026/11/dawnwalker-photo-mode', date: recent(2), body: '<p>x</p>' },
+      { title: 'The Blood of Dawnwalker fixes the 30% off store price bug', link: 'https://www.pushsquare.com/news/2026/11/dawnwalker-price-fix', date: recent(1), body: '<p>x</p>' },
+    ]),
+  })
+  const deps = { db, fetchFn, igdb: null, log: (m: string) => log.push(m) }
+  await seedGames(deps)
+  await runIngest(deps, { force: true })
+  const titles = newsOf(db, 'dawnwalker').filter((n) => n.url.includes('pushsquare')).map((n) => n.title)
+  assert.deepEqual(titles.sort(), ['The Blood of Dawnwalker fixes the 30% off store price bug', 'The Blood of Dawnwalker gets a free photo mode next week'])
+  const hidden = log.filter((l) => l.startsWith('news hidden (promo) dawnwalker:'))
+  assert.equal(hidden.length, 2)
+  assert.ok(hidden.some((l) => l.includes('20% Off')) && hidden.some((l) => l.includes('Merch')))
+  assert.ok(log.some((l) => l === 'ingest: news hidden (promo) 2 new, 0 pruned'), 'the job log carries the hidden count')
+})
+
+// Quinn (#461): Steam posts are markSeen, so the 446 rows stored before the rule would stay in the feed. The prune pass at
+// ingest deletes stored headlines the rule now hides and logs each one; a kept headline is untouched.
+test('ingest prunes stored sale and merch headlines and logs them', async () => {
+  const db = openDb(':memory:')
+  const log: string[] = []
+  const deps = { db, fetchFn: fakeFetch({}), igdb: null, log: (m: string) => log.push(m) }
+  await seedGames(deps)
+  store.addNews(db, 'dawnwalker', { url: 'https://store.steampowered.com/news/app/1/view/1', title: 'Get 20% Off The Blood of Dawnwalker', publishedAt: recent(3), sourceId: 'dawnwalker-steam' })
+  store.addNews(db, 'dawnwalker', { url: 'https://store.steampowered.com/news/app/1/view/2', title: 'Dawnwalker Vinyl Is Coming Soon!', publishedAt: recent(2), sourceId: 'dawnwalker-steam' })
+  store.addNews(db, 'dawnwalker', { url: 'https://store.steampowered.com/news/app/1/view/3', title: 'One Million Copies Sold!', publishedAt: recent(1), sourceId: 'dawnwalker-steam' })
+  await runIngest(deps, { force: true })
+  assert.deepEqual(newsOf(db, 'dawnwalker').map((n) => n.title), ['One Million Copies Sold!'])
+  assert.equal(log.filter((l) => l.startsWith('news hidden (promo, pruned) dawnwalker:')).length, 2)
+  assert.ok(log.some((l) => l === 'ingest: news hidden (promo) 0 new, 2 pruned'))
 })
 
 // Terry 2026-11-06: PS4 games play on PS5, so a PS4 patch for a game with no native PS5 version counts, labelled ps4.

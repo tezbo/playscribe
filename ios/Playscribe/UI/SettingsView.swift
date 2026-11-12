@@ -243,6 +243,8 @@ struct SettingsView: View {
                     }
                 } footer: {
                     Text("Artwork and trailers belong to their publishers. \(Brand.trademarkNotice)")
+                        // The form's last line: the UI tests scroll to it to prove every row above is reachable.
+                        .accessibilityIdentifier("settingsLastLine")
                 }
             }
             // 24 pt between a footer and the next section's title (Iris, 0.5.1 spec 1).

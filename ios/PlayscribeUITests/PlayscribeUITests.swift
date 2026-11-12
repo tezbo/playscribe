@@ -1091,6 +1091,56 @@ final class Release050Tests: XCTestCase {
                    withVelocity: .slow, thenHoldForDuration: 0.2)
     }
 
+    /// Tabletop Settings (Mac on #455 at f55062a: a row near the bottom "could not be reached"): the form's last line is
+    /// reached by dragging inside the lower-half panel, at the standard size and at AX5, until its bottom edge is inside
+    /// the panel. `-qaPose tabletop` injects the fold, so this also runs on a Closed simulator; on the Mac in a real
+    /// Tabletop the device's own fold gives the same pose. Nothing here taps a control, so no relay call is made.
+    /// The end is judged on the last line itself: once it exists, a drag that moves it under 1 pt means the form is at its
+    /// end. Ending with the line's bottom still below the panel is the bug; running out of drags is not. (Mac runs:
+    /// 0a6f226, 16 short drags only reached Testing; a0e0134, the AX5 footer is 717 pt tall, so its top shows long before
+    /// its bottom; 55dc9ff, a stillness check on the first cell never settled.)
+    func testTabletopSettingsLastLineIsReachable() throws {
+        for ax5 in [false, true] {
+            let app = XCUIApplication()
+            app.launchArguments = ["-qaRoute", "settings", "-qaPose", "tabletop"]
+                + (ax5 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] : [])
+            app.launch()
+            sleep(3)
+            let size = ax5 ? "AX5" : "std"
+            let pose = ReleaseRowTests.pose(app)
+            XCTAssertTrue(pose.contains("pose: tabletop"), "runs in Tabletop [\(size), \(pose)]")
+            let form = app.collectionViews.firstMatch
+            XCTAssertTrue(form.waitForExistence(timeout: 5), "the Settings form is on screen [\(size)]")
+            let panel = form.frame
+            let last = app.staticTexts["settingsLastLine"]
+            var drags = 0, atEnd = false
+            var previous: CGRect?
+            func done() -> Bool { last.exists && last.isHittable && last.frame.maxY <= panel.maxY + 1 }
+            // Long, slow drags inside the form (never at the screen centre, which is the view-only stage, 48404f1).
+            while !done() && !atEnd && drags < 40 {
+                form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.9))
+                    .press(forDuration: 0.05, thenDragTo: form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.1)),
+                           withVelocity: .slow, thenHoldForDuration: 0.2)
+                drags += 1
+                if last.exists {
+                    let now = last.frame
+                    if let p = previous, abs(p.minY - now.minY) < 1 { atEnd = true }
+                    previous = now
+                }
+            }
+            let reached = done()
+            if !reached {
+                let tree = XCTAttachment(string: app.debugDescription); tree.name = "tabletop-settings-\(size)-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "tabletop-settings-\(size)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            // G-4: the whole last line, bottom edge included, ends up inside the lower-half panel.
+            XCTAssertTrue(reached, atEnd
+                ? "the form stopped with its last line's bottom below the panel: \(last.frame) vs panel \(panel), \(drags) drags [\(size), \(pose)]"
+                : "ran out of drags (\(drags)) before the last line's bottom was inside the panel [\(size), \(pose)]")
+            app.terminate()
+        }
+    }
+
     /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and
     /// of the status bar, in every pose; the cog opens Settings, which shows a semantic version.
     /// Fast on its own: -only-testing:PlayscribeUITests/Release050Tests/testLibraryToolbarCogAndAdd

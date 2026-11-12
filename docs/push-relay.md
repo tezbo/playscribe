@@ -34,6 +34,8 @@ phone ──POST /v1/devices──▶ relay (KV)          Feed job (GitHub Actio
   device) pass 100,000 a day. `POST /v1/devices` is unauthenticated, so someone could burn the daily writes; the Worker therefore
   accepts at most 150 new devices a day (the count resets at 00:00 UTC, which is 11:00 AEDT; 429 with Retry-After after that; relaunches of known devices are never refused).
   A new device must also pass a per-address limit of 5 a minute (the `REGISTER_LIMIT` Workers Rate Limiting binding, keyed on `cf-connecting-ip`, set up by `relay/deploy.sh`; 429 with Retry-After 60). It spends no KV writes, and known devices relaunching are never limited. Without the binding the check is skipped.
+
+  **Block list (r070-relay-block-list).** The repository secret `RELAY_BLOCKLIST` holds device ids and addresses to refuse, separated by whitespace or commas; `relay/deploy.sh` binds it to the Worker as the `BLOCKLIST` secret, so the list is never in a repo file or on the feed branch. A blocked address gets 403 `{ "error": "blocked" }` on every `/v1` route; a blocked device id gets 403 on everything except `DELETE /v1/devices/me` (so the device can still be forgotten) and is left out of `GET /admin/devices`, so the Feed job sends it nothing. To block or unblock: edit the secret in the repository settings, then run the Relay deploy workflow by hand. An empty or missing secret blocks nobody. An address match is exact (no CIDR ranges; IPv6 is compared lower-cased as Cloudflare sends it), so a range needs one line per address. Paste an IPv6 address exactly as `cf-connecting-ip` spells it (compressed, lower case); a single IPv6 address is a weak block because phones rotate inside their /64, so for an IPv6 abuser list the device id instead. An id block on its own is weak: ids are relay-made, so a device that reinstalls or clears its token registers again under a new id; the address block is the real stop, and the id block is for cutting off one known record's pushes. The list is read once per Worker instance, so a change takes effect after the deploy run.
 - The relay stores follows as sent (`gameId` or `igdbId`); the Feed job resolves them and counts follows for games it does
   not track. A dead token (410) is only dropped for the run, since the relay's copy is the source; a push to it fails again, harmlessly.
 
@@ -45,6 +47,19 @@ is written again only once the record is seven days old (the weekly "still here"
 costs two writes a week. `GET /admin/devices` lists these records with `token: null`; relay-sync loads them (no token to scrub,
 `devices.hourly = 1`), and `trackedGames` polls a non-registry game hourly only while an `hourly` device follows it. A push-only
 device's follows address alerts and do not widen the hourly tier. Budget: about 0.3 KV writes a device a day, against 1,000.
+
+## Feed cron (GitHub's schedule as the fallback)
+
+GitHub runs scheduled workflows from a shared queue and, when it is busy, fires them hours late or not at all: on 11 Nov 2026 the
+Feed workflow had one full poll between 18:31 and 23:04 UTC and no :47 hot run. Hourly currency is the app's value, so the Worker
+holds the clock too. Two cron triggers (`22 * * * *` full, `52 * * * *` hot; `FEED_FULL_CRON`, `FEED_HOT_CRON` in worker.js,
+registered by deploy.sh) call `dispatchFeed`: it reads the workflow's latest run and, when none was created in the last 10 minutes,
+POSTs a `workflow_dispatch` (`action: poll`, `hot: true` on the :52 tick) to `feed.yml` on main. Five minutes after GitHub's own
+:17 and :47 so a run GitHub did start is seen and not doubled; `concurrency: feed` serialises any race. The token is
+`FEED_DISPATCH_TOKEN`: a fine-grained GitHub token for this repository only, permission Actions read and write, stored as a
+repository secret and bound to the Worker by deploy.sh (relay-deploy.yml passes it). Without it the handler logs
+"no FEED_DISPATCH_TOKEN" and does nothing, so the old schedule keeps working. Blast radius of the token: starting, cancelling or
+re-running this repository's workflows; no code or secrets access. Decision: docs/decisions/feed-cron-worker.md.
 
 ## Forgetting a device
 `DELETE /v1/devices/me` (device key as Bearer) deletes `d:`, `k:`, `t:` (only if it still points at this device) and `tm:`. It is idempotent: an unknown key is `204`, no key is `401`. It spends up to 4 KV deletes, which count against the 1,000 writes a day.

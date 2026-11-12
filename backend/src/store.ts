@@ -300,14 +300,15 @@ export const isSeen = (db: DB, sourceId: string, postId: string) => !!db.prepare
 /**
  * Steam rule (Terry, 2026-10-27): a Steam patch counts as released on PS5. When its post said consoles get it
  * "next week", the PS5 row starts as announced; a week after the Steam release it is taken as live, dated
- * from Steam, so no update stays PC only. It earns its one alert when it goes live (alert_from), however old the Steam post is.
+ * from Steam, so no update stays PC only. It earns its one alert when it goes live (alert_from), but only while the Steam post is
+ * under 30 days old: for an older one the alert counts from the Steam date and stays silent (alerts.ts alertFromOf).
  */
-export const promoteAnnounced = (db: DB, at = new Date()) => {
+export const promoteAnnounced = (db: DB, at = new Date(), quiet = false) => {
   const rows = db
     .prepare(
       `SELECT p.release_id, c.live_at AS pc_live FROM platform_releases p
        JOIN platform_releases c ON c.release_id = p.release_id AND c.platform = 'pc' AND c.status = 'live'
-       WHERE p.platform = 'ps5' AND p.status = 'announced' AND p.verification = 'assumed'`,
+       WHERE p.platform = 'ps5' AND p.status = 'announced' AND p.verification = 'assumed' AND (p.live_at IS NULL OR p.live_at = 'null')`,
     )
     .all() as { release_id: string; pc_live: string | null }[]
   let n = 0
@@ -318,10 +319,54 @@ export const promoteAnnounced = (db: DB, at = new Date()) => {
     if (!(age >= 7 * 86400e3)) continue
     upsertPlatform(db, r.release_id, 'ps5', { status: 'live', verification: 'assumed', liveAt: field(pc.value, 'assumed', pc.sourceId) })
     // Roadmap 11: the update goes live on PS5 now, so its one alert (and the 72 h guard) counts from now, not from Steam's date.
-    db.prepare("UPDATE platform_releases SET alert_from = ? WHERE release_id = ? AND platform = 'ps5'").run(at.toISOString(), r.release_id)
+    // `quiet` (a backfill reading old posts): the alert counts from the Steam date, so the 72 h guard keeps it silent.
+    db.prepare("UPDATE platform_releases SET alert_from = ? WHERE release_id = ? AND platform = 'ps5'").run(quiet ? pc.value : at.toISOString(), r.release_id)
     n++
   }
   return n
+}
+
+/**
+ * A post that stated a later time for the update (r050-feed-ps5-claim-fixes) left the PS5 row announced with that time as
+ * live_at. Once the time has passed the row is live, and it earns its one alert from now. Official rows stay official:
+ * this is the time the studio gave, not a person's confirmation, so it is a direct update.
+ */
+export const promoteStated = (db: DB, at = new Date(), quiet = false) => {
+  const rows = db.prepare("SELECT release_id, live_at FROM platform_releases WHERE platform = 'ps5' AND status = 'announced' AND live_at IS NOT NULL").all() as { release_id: string; live_at: string }[]
+  let n = 0
+  for (const r of rows) {
+    const f = json<Field<string> | null>(r.live_at, null)
+    if (!f?.value || !(Date.parse(f.value) <= at.getTime())) continue
+    // Its one alert counts from the moment it went live; a time long past (a backfill reading old posts) is not news, so the
+    // alert guard sees that old time and stays quiet.
+    const alertFrom = quiet || at.getTime() - Date.parse(f.value) > 6 * 3600e3 ? f.value : at.toISOString()
+    db.prepare("UPDATE platform_releases SET status = 'live', alert_from = ?, updated_at = ? WHERE release_id = ? AND platform = 'ps5'").run(alertFrom, at.toISOString(), r.release_id)
+    db.prepare('UPDATE releases SET updated_at = ? WHERE id = ?').run(at.toISOString(), r.release_id)
+    n++
+  }
+  return n
+}
+
+/** The PS5 row this very post (source and post date) created under the old rules, if it is still untouched by anyone else. */
+const ownPs5Row = (db: DB, releaseId: string, sourceId: string, publishedAt: string) => {
+  const row = getPlatformRow(db, releaseId, 'ps5')
+  const f = json<Field<string> | null>(row?.live_at, null)
+  return row && f && f.sourceId === sourceId && f.value === publishedAt ? row : null
+}
+
+/** Backfill repair: the post's old claim ("live at the post time") is replaced by what it really says. */
+export const repairOwnLiveAt = (db: DB, releaseId: string, sourceId: string, publishedAt: string, liveAt: Field<string> | null, status: PlatformStatus) => {
+  if (status === 'live' && liveAt?.value === publishedAt) return
+  if (!ownPs5Row(db, releaseId, sourceId, publishedAt)) return
+  db.prepare("UPDATE platform_releases SET status = ?, live_at = ?, alert_from = NULL, updated_at = ? WHERE release_id = ? AND platform = 'ps5'").run(status, JSON.stringify(liveAt), now(), releaseId)
+  db.prepare('UPDATE releases SET updated_at = ? WHERE id = ?').run(now(), releaseId)
+}
+
+/** Backfill repair: a PS5 row that a test build or a PC-only post made is removed. */
+export const dropOwnPs5Row = (db: DB, releaseId: string, sourceId: string, publishedAt: string) => {
+  if (!ownPs5Row(db, releaseId, sourceId, publishedAt)) return
+  db.prepare("DELETE FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").run(releaseId)
+  db.prepare('UPDATE releases SET updated_at = ? WHERE id = ?').run(now(), releaseId)
 }
 
 /**
@@ -349,6 +394,18 @@ export const addNews = (db: DB, gameId: string, post: { url: string; title: stri
 
 const newsVerification = (sourceId: string): 'official' | 'reported' =>
   (newsSources.sources as Record<string, { verification?: string }>)[sourceId]?.verification === 'reported' ? 'reported' : 'official'
+
+/**
+ * Prune pass (r054-news-promo-merch-filter): news rows already stored whose headline the promo rule now hides. Steam posts are
+ * markSeen, so without this the rows from before the rule stayed in the feed. Returns the removed rows for the log.
+ */
+export const pruneNews = (db: DB, hide: (title: string) => boolean) => {
+  const rows = db.prepare('SELECT game_id, url, title FROM news').all() as { game_id: string; url: string; title: string }[]
+  const gone = rows.filter((r) => hide(r.title))
+  const del = db.prepare('DELETE FROM news WHERE game_id = ? AND url = ?')
+  for (const r of gone) del.run(r.game_id, r.url)
+  return gone.map((r) => ({ gameId: r.game_id, title: r.title }))
+}
 
 export const newsOf = (db: DB, gameId: string, limit = 20) =>
   (db.prepare('SELECT title, published_at, url, source_id FROM news WHERE game_id = ? ORDER BY published_at DESC, url LIMIT ?').all(gameId, limit) as { title: string; published_at: string; url: string; source_id: string }[]).map((n) => ({
@@ -456,25 +513,37 @@ export const mergeSilentDuplicates = (db: DB) => {
 }
 
 /**
- * Repair for the later-post bug: a Steam-assumed PS5 row dated after the Steam release it assumes. The PC row's date is the
- * Steam post, so the PS5 row takes it. Rows promoted from announced already carry it.
+ * Backfill repair: a post re-read under newer naming rules (10.2.2a, not 10.2) lands on a new release; the release the same
+ * post made earlier, if that post was its only source and it was announced at the same moment, was a mislabelled copy and goes.
  */
-export const repairAssumedLiveAt = (db: DB) => {
-  const rows = db
-    .prepare(
-      `SELECT p.release_id, p.live_at AS ps_live, c.live_at AS pc_live FROM platform_releases p
-       JOIN platform_releases c ON c.release_id = p.release_id AND c.platform = 'pc'
-       WHERE p.platform = 'ps5' AND p.status = 'live' AND p.verification = 'assumed'`,
-    )
-    .all() as { release_id: string; ps_live: string | null; pc_live: string | null }[]
-  let n = 0
-  for (const r of rows) {
-    const ps = json<Field<string> | null>(r.ps_live, null)
-    const pc = json<Field<string> | null>(r.pc_live, null)
-    if (!ps || !pc || ps.verification !== 'assumed' || !(ps.value > pc.value)) continue
-    db.prepare("UPDATE platform_releases SET live_at = ? WHERE release_id = ? AND platform = 'ps5'").run(JSON.stringify({ ...ps, value: pc.value }), r.release_id)
-    db.prepare('UPDATE releases SET updated_at = ? WHERE id = ?').run(now(), r.release_id)
-    n++
+export const dropSupersededRelease = (db: DB, oldId: string, newId: string, sourceId: string) => {
+  const o = db.prepare('SELECT * FROM releases WHERE id = ?').get(oldId) as Row | undefined
+  const n = db.prepare('SELECT * FROM releases WHERE id = ?').get(newId) as Row | undefined
+  if (!o || !n || o.game_id !== n.game_id || o.announced_at !== n.announced_at) return false
+  const sources = json<string[]>(o.source_ids, [])
+  if (sources.length !== 1 || sources[0] !== sourceId) return false
+  db.prepare('UPDATE review_items SET release_id = ? WHERE release_id = ?').run(newId, oldId)
+  db.prepare('UPDATE seen_posts SET release_id = ? WHERE release_id = ?').run(newId, oldId)
+  db.prepare('DELETE FROM platform_releases WHERE release_id = ?').run(oldId)
+  db.prepare('DELETE FROM releases WHERE id = ?').run(oldId)
+  return true
+}
+
+/**
+ * Backfill repair: a release that an announcement headline ("Title Update coming this week!") made is removed when this post
+ * is its only source and its day; a release other posts also feed only loses the PS5 row this post made.
+ */
+export const dropAnnouncementRelease = (db: DB, releaseId: string, sourceId: string, publishedAt: string) => {
+  const r = db.prepare('SELECT * FROM releases WHERE id = ?').get(releaseId) as Row | undefined
+  if (!r) return false
+  const sources = json<string[]>(r.source_ids, [])
+  if (sources.length !== 1 || sources[0] !== sourceId || r.announced_at !== publishedAt) {
+    dropOwnPs5Row(db, releaseId, sourceId, publishedAt)
+    return false
   }
-  return n
+  db.prepare('UPDATE review_items SET release_id = NULL WHERE release_id = ?').run(releaseId)
+  db.prepare('UPDATE seen_posts SET release_id = NULL WHERE release_id = ?').run(releaseId)
+  db.prepare('DELETE FROM platform_releases WHERE release_id = ?').run(releaseId)
+  db.prepare('DELETE FROM releases WHERE id = ?').run(releaseId)
+  return true
 }
