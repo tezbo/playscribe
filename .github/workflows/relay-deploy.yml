@@ -32,4 +32,6 @@ jobs:
           APNS_TEAM_ID: ${{ secrets.APNS_TEAM_ID }}
           # Fine-grained GitHub token (this repository, Actions read and write) so the Worker's cron can start the Feed workflow.
           FEED_DISPATCH_TOKEN: ${{ secrets.FEED_DISPATCH_TOKEN }}
+          # Device ids and addresses the relay refuses (docs/push-relay.md "Block list"); edit the secret and rerun this workflow.
+          RELAY_BLOCKLIST: ${{ secrets.RELAY_BLOCKLIST }}
         run: relay/deploy.sh
