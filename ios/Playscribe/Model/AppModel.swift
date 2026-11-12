@@ -696,6 +696,10 @@ final class AppModel {
             addSheetOpen = true
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
+        case "cover":   // 0.7 front cover preview (duo-closed-cover): a full deck, or cover/one for a lone update
+            if parts.first == "one" { resetToOneUpdateDemo() } else { resetToManyUpdatesDemo() }
+            FrontCoverPreview.requestOpen = true
+            settingsOpen = true
         case "settings":
             settingsOpen = true
             if parts.first == "quiet" { data.quietHours = QuietHours() }

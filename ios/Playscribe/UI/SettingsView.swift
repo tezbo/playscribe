@@ -161,6 +161,9 @@ struct SettingsView: View {
                     Text("Trailers and update videos start as soon as they open. Reflection mode adds a soft mirror of the video under the controls when the Duo stands folded like a laptop. Both are off when Reduce Motion is on.")
                 }
 
+                // 0.7 front cover (duo-closed-cover): internal preview only until the Library wraps it.
+                CoverMotionSection()
+
                 #if INTERNAL
                 if BuildChannel.showsTeamAlerts {
                 Section {
