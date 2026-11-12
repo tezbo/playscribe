@@ -149,6 +149,25 @@ const isAdmin = async (env, request) => {
 
 const publicView = (d) => ({ deviceId: d.id, deviceKey: d.key, follows: d.follows, unknown: [] })
 
+// r070-relay-block-list: BLOCKLIST is a Worker secret (never a repo file or the feed branch) holding device ids and
+// addresses, separated by whitespace or commas. A blocked address gets 403 on every /v1 route; a blocked device id gets
+// 403 on everything but DELETE /v1/devices/me, so it can still be forgotten, and the Feed job never sees it.
+export const parseBlocklist = (v) => {
+  const ids = new Set()
+  const ips = new Set()
+  for (const raw of String(v ?? '').split(/[\s,]+/)) {
+    const e = raw.trim().toLowerCase()
+    if (!e) continue
+    if (/^[0-9a-f:.]+$/.test(e) && /[.:]/.test(e)) ips.add(e)
+    else ids.add(e)
+  }
+  return { ids, ips }
+}
+const blocklistOf = (env) => env.__blocklist ?? (env.__blocklist = parseBlocklist(env.BLOCKLIST))
+const blockedAddress = (env, request) => blocklistOf(env).ips.has((request.headers.get('cf-connecting-ip') ?? '').toLowerCase())
+const blockedId = (env, id) => !!id && blocklistOf(env).ids.has(String(id).toLowerCase())
+const BLOCKED = () => bad('blocked', 403)
+
 /** A token moves to the newest registration: whoever held it before loses it. */
 const claimToken = async (kv, token, id) => {
   const holder = await kv.get(`t:${token}`)
@@ -227,6 +246,7 @@ const register = async (env, request) => {
 
   const existingId = await kv.get(`t:${token}`)
   const existing = existingId ? await getJson(kv, `d:${existingId}`) : null
+  if (existing && blockedId(env, existing.id)) return BLOCKED()
   if (existing) {
     // Same device registering again (every launch does): write only what changed.
     const next = {
@@ -257,6 +277,7 @@ const patchMe = async (env, request) => {
   const kv = env.KV
   const d = await deviceFor(kv, request)
   if (!d) return bad('unknown device key', 401)
+  if (blockedId(env, d.id)) return BLOCKED()
   const parsed = await readJson(request)
   if (parsed.tooBig) return bad('body too large', 413)
   const body = parsed.body
@@ -310,6 +331,7 @@ const deleteMe = async (env, request) => {
 const putFollows = async (env, request) => {
   const d = await deviceFor(env.KV, request)
   if (!d) return bad('unknown device key', 401)
+  if (blockedId(env, d.id)) return BLOCKED()
   const parsed = await readJson(request)
   if (parsed.tooBig) return bad('body too large', 413)
   // A record without a token holds ids only, and is rewritten once a week even when unchanged (the "still here"), which
@@ -334,6 +356,7 @@ const adminDevices = async (env, request) => {
   const devices = []
   for (const k of page.keys) {
     const d = await getJson(env.KV, k.name)
+    if (d && blockedId(env, d.id)) continue
     if (d) devices.push({ id: d.id, token: d.token ?? null, environment: d.environment ?? null, locale: d.locale ?? null, quiet: d.quiet ?? null, team: d.team === true, hourly: d.hourly === true, follows: d.follows, updated: d.updated })
   }
   return json({ devices, cursor: page.list_complete ? null : page.cursor })
@@ -451,6 +474,7 @@ export default {
     const m = request.method
     try {
       if (pathname === '/' || pathname === '/health') return json({ ok: true })
+      if (pathname.startsWith('/v1/') && blockedAddress(env, request)) return BLOCKED()
       if (pathname === '/v1/devices' && m === 'POST') return await register(env, request)
       if (pathname === '/v1/devices/me' && m === 'PATCH') return await patchMe(env, request)
       if (pathname === '/v1/devices/me' && m === 'DELETE') return await deleteMe(env, request)
@@ -458,7 +482,8 @@ export default {
       if (pathname === '/v1/devices/me/follows' && m === 'PUT') return await putFollows(env, request)
       if (pathname === '/v1/devices/me/follows' && m === 'GET') {
         const d = await deviceFor(env.KV, request)
-        return d ? json({ follows: d.follows }) : bad('unknown device key', 401)
+        if (!d) return bad('unknown device key', 401)
+        return blockedId(env, d.id) ? BLOCKED() : json({ follows: d.follows })
       }
       if (pathname === '/v1/webhooks/asc' && m === 'POST') return await ascWebhook(env, request)
       if (pathname === '/admin/devices' && m === 'GET') return await adminDevices(env, request)

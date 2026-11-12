@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import worker, { FOLLOWS_TTL_SECONDS, MAX_NEW_PER_DAY, dispatchFeed, FEED_HOT_CRON, FEED_FULL_CRON } from '../worker.js'
+import worker, { FOLLOWS_TTL_SECONDS, MAX_NEW_PER_DAY, dispatchFeed, FEED_HOT_CRON, FEED_FULL_CRON, parseBlocklist } from '../worker.js'
 
 // A KV that counts writes, because the free plan allows 1,000 a day and a relaunch must not spend any.
 const fakeKv = () => {
@@ -401,4 +401,42 @@ test('feed cron: without the token nothing is called; a refused dispatch is repo
   assert.deepEqual(await dispatchFeed({ FEED_DISPATCH_TOKEN: 'ghp' }, FEED_FULL_CRON, NOW, refused.fetchImpl), { dispatched: false, reason: 'GitHub answered 403', hot: false })
   const down = await dispatchFeed({ FEED_DISPATCH_TOKEN: 'ghp' }, FEED_FULL_CRON, NOW, async () => { throw new Error('dns') })
   assert.equal(down.reason, 'GitHub unreachable')
+})
+
+test('block list: parses ids and addresses from whitespace or commas; nothing is blocked without the secret', () => {
+  const b = parseBlocklist('  dev_ABC, 1.2.3.4\n2001:db8::1 ,, other-id ')
+  assert.deepEqual([...b.ids], ['dev_abc', 'other-id'])
+  assert.deepEqual([...b.ips], ['1.2.3.4', '2001:db8::1'])
+  assert.deepEqual(parseBlocklist(undefined), { ids: new Set(), ips: new Set() })
+})
+
+test('block list: a blocked address gets 403 on every /v1 route and writes nothing; other addresses are untouched', async () => {
+  const { env } = setup()
+  env.BLOCKLIST = '9.9.9.9'
+  const from = (ip, path, body) => worker.fetch(new Request(`https://relay.test${path}`, { method: 'POST', headers: { 'content-type': 'application/json', 'cf-connecting-ip': ip }, body: JSON.stringify(body) }), env)
+  const r = await from('9.9.9.9', '/v1/devices', { apnsToken: token('a') })
+  assert.equal(r.status, 403)
+  assert.deepEqual(await r.json(), { error: 'blocked' })
+  assert.equal((await from('9.9.9.9', '/v1/follows', { follows: [{ gameId: 'dawnwalker' }] })).status, 403)
+  assert.equal(env.KV.writes, 0)
+  assert.equal((await from('1.1.1.1', '/v1/devices', { apnsToken: token('a') })).status, 201)
+  const health = await worker.fetch(new Request('https://relay.test/health', { headers: { 'cf-connecting-ip': '9.9.9.9' } }), env)
+  assert.equal(health.status, 200)
+})
+
+test('block list: a blocked device id is refused everywhere but DELETE, and the Feed job never sees it', async () => {
+  const { env } = setup()
+  const reg = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('b'), follows: [{ gameId: 'dawnwalker' }] })).json()
+  const other = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('c') })).json()
+  env.BLOCKLIST = `${reg.deviceId.toUpperCase()}, some-other-id`
+  delete env.__blocklist
+  assert.equal((await call(env, 'POST', '/v1/devices', { apnsToken: token('b') })).status, 403) // relaunch of the blocked device
+  assert.equal((await call(env, 'PATCH', '/v1/devices/me', { locale: 'en-AU' }, reg.deviceKey)).status, 403)
+  assert.equal((await call(env, 'PUT', '/v1/devices/me/follows', { follows: [] }, reg.deviceKey)).status, 403)
+  assert.equal((await call(env, 'GET', '/v1/devices/me/follows', undefined, reg.deviceKey)).status, 403)
+  assert.equal((await call(env, 'GET', '/v1/devices/me/follows', undefined, other.deviceKey)).status, 200)
+  const admin = await (await worker.fetch(new Request('https://relay.test/admin/devices', { headers: { authorization: `Bearer ${ADMIN}` } }), env)).json()
+  assert.deepEqual(admin.devices.map((d) => d.id), [other.deviceId])
+  assert.equal((await call(env, 'DELETE', '/v1/devices/me', undefined, reg.deviceKey)).status, 204)
+  assert.equal(await env.KV.get(`d:${reg.deviceId}`), null)
 })

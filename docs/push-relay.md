@@ -34,6 +34,8 @@ phone ──POST /v1/devices──▶ relay (KV)          Feed job (GitHub Actio
   device) pass 100,000 a day. `POST /v1/devices` is unauthenticated, so someone could burn the daily writes; the Worker therefore
   accepts at most 150 new devices a day (the count resets at 00:00 UTC, which is 11:00 AEDT; 429 with Retry-After after that; relaunches of known devices are never refused).
   A new device must also pass a per-address limit of 5 a minute (the `REGISTER_LIMIT` Workers Rate Limiting binding, keyed on `cf-connecting-ip`, set up by `relay/deploy.sh`; 429 with Retry-After 60). It spends no KV writes, and known devices relaunching are never limited. Without the binding the check is skipped.
+
+  **Block list (r070-relay-block-list).** The repository secret `RELAY_BLOCKLIST` holds device ids and addresses to refuse, separated by whitespace or commas; `relay/deploy.sh` binds it to the Worker as the `BLOCKLIST` secret, so the list is never in a repo file or on the feed branch. A blocked address gets 403 `{ "error": "blocked" }` on every `/v1` route; a blocked device id gets 403 on everything except `DELETE /v1/devices/me` (so the device can still be forgotten) and is left out of `GET /admin/devices`, so the Feed job sends it nothing. To block or unblock: edit the secret in the repository settings, then run the Relay deploy workflow by hand. An empty or missing secret blocks nobody.
 - The relay stores follows as sent (`gameId` or `igdbId`); the Feed job resolves them and counts follows for games it does
   not track. A dead token (410) is only dropped for the run, since the relay's copy is the source; a push to it fails again, harmlessly.
 
