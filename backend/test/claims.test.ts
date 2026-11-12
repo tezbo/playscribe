@@ -5,6 +5,7 @@ import { isAnnouncementTitle, isTestBuildPost, pcScopedPost, statedLiveTime } fr
 import { nameRelease } from '../src/ingest/classify.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import * as store from '../src/store.ts'
+import { seedAutoGames } from '../src/ingest/autoRegistry.ts'
 import { fakeFetch, steamNews } from './helpers.ts'
 
 // r050-feed-ps5-claim-fixes: wording taken from the posts Quinn's spot-check found wrong.
@@ -126,6 +127,10 @@ test('ingest: test builds and PC-scoped posts make no PS5 row; a stated later ti
   const live = ps5Of(db, 'dawnwalker@1.3')!
   assert.deepEqual([live.status, live.verification], ['live', 'official'])
   assert.ok(live.alert)
+  // A stated time long past (a backfill reading an old post) goes live without a fresh alert window.
+  db.prepare("UPDATE platform_releases SET status = 'announced', pushed_at = NULL, alert_from = NULL WHERE release_id = 'dawnwalker@1.3' AND platform = 'ps5'").run()
+  assert.equal(store.promoteStated(db, day(30)), 1)
+  assert.equal(ps5Of(db, 'dawnwalker@1.3')!.alert?.from, held.liveAt?.value) // the old time, so the 72 h guard keeps it quiet
 })
 
 test('backfill repairs rows the old rules made from the same post, and leaves other sources alone', async () => {
@@ -148,4 +153,41 @@ test('backfill repairs rows the old rules made from the same post, and leaves ot
   const fixed = ps5Of(db, 'dawnwalker@1.3')!
   assert.deepEqual([fixed.status, fixed.verification], ['announced', 'official'])
   assert.equal(ps5Of(db, 'dawnwalker@10.3.0'), undefined)
+})
+
+test('backfill drops the mislabelled release the same post made before (10.2 -> 10.2.2a)', async () => {
+  const { db, deps } = await setup([{ gid: '1', title: '10.2.2a Backend Bugfix Patch', date: ago(10), contents: 'Fixed a backend bug. Live on PC.', tags: ['patchnotes'] }])
+  const pc = store.getRelease(db, 'dawnwalker@10.2.2a')!
+  // The old rules stored it as 10.2 and remembered that on the post: a copy of the release under the old key.
+  const row = db.prepare("SELECT * FROM releases WHERE id = 'dawnwalker@10.2.2a'").get() as Record<string, any>
+  db.prepare('INSERT INTO releases (' + Object.keys(row).join(',') + ') VALUES (' + Object.keys(row).map(() => '?').join(',') + ')').run(...Object.values({ ...row, id: 'dawnwalker@10.2', version_key: '10.2', display_name: 'Patch 10.2' }))
+  db.prepare("UPDATE seen_posts SET release_id = 'dawnwalker@10.2'").run()
+  assert.ok(pc)
+  await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  assert.ok(!store.getRelease(db, 'dawnwalker@10.2'))
+  assert.equal(store.getRelease(db, 'dawnwalker@10.2.2a')?.displayName, 'Patch 10.2.2a')
+})
+
+test('backfill also repairs derived (auto-onboarded) games, which the slice never re-reads', async () => {
+  const db = openDb(':memory:')
+  const when = day(2)
+  const fetchFn = fakeFetch({
+    'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=111': steamNews([
+      { gid: 'a1', title: 'Patch 1.3', date: ago(20), contents: `At 02:00 UTC+0 on ${monthDay(when)}, the updates for Xbox Series X|S and PlayStation 5 will be available.`, tags: ['patchnotes'] },
+      { gid: 'a2', title: 'Developer diary', date: ago(19), contents: 'No patch here.' },
+    ]),
+  })
+  const deps = { db, fetchFn, igdb: null }
+  await seedGames(deps)
+  seedAutoGames(db, [{ id: 'alpha-1', steamAppId: 111, name: 'alpha-1', igdbId: 1, ps5TitleIds: [], ps5Release: '2024-01-01', sources: [{ id: 'auto-111-steam', kind: 'steamNews', url: 'https://store.steampowered.com/feeds/news/app/111/', platforms: ['pc'], trust: 'official', fetch: 'auto', ps5Signal: 'explicit' }] }])
+  await runIngest(deps, { autoSlice: 1 })
+  const at = store.getRelease(db, 'alpha-1@1.3')!.platforms.find((p) => p.platform === 'pc')!.liveAt!
+  // The old rules: live on PS5 at the post's own time.
+  db.prepare("DELETE FROM platform_releases WHERE release_id = 'alpha-1@1.3' AND platform = 'ps5'").run()
+  store.upsertPlatform(db, 'alpha-1@1.3', 'ps5', { status: 'live', verification: 'official', liveAt: store.field(at.value, 'official', at.sourceId) })
+  assert.equal(ps5Of(db, 'alpha-1@1.3')!.status, 'live')
+  const s = await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  assert.deepEqual([ps5Of(db, 'alpha-1@1.3')!.status, ps5Of(db, 'alpha-1@1.3')!.verification], ['announced', 'official'])
+  assert.ok(s.polled.includes('steam-111'))
+  assert.equal(store.newsOf(db, 'alpha-1').length, 0)
 })

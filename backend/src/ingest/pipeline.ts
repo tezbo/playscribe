@@ -100,6 +100,15 @@ export const trackedGames = (db: DB, at = new Date()) => {
     OR id IN (${launching.map(() => '?').join(',') || "''"})`).all(...Object.keys(registry.games), ...launching) as Record<string, any>[]
 }
 
+/**
+ * Backfill only: derived (auto-onboarded) games that already have a PS5 row. Their stored rows came from the slice's single
+ * newest-posts read, so a rule change reaches them only if the backfill reads their history too (r050-feed-ps5-claim-fixes:
+ * 2,166 of the 2,259 games with a PS5 row are derived).
+ */
+export const autoRepairGames = (db: DB, tracked: Set<string>) =>
+  (db.prepare(`SELECT * FROM games WHERE auto > 0 AND auto <> 2 AND steam_app_id IS NOT NULL
+    AND id IN (SELECT r.game_id FROM releases r JOIN platform_releases p ON p.release_id = r.id AND p.platform = 'ps5') ORDER BY id`).all() as Record<string, any>[]).filter((g) => !tracked.has(g.id))
+
 export const sourcesFor = (game: Record<string, any>): SourceDef[] => {
   const reg = registry.games[game.id]
   if (reg) return reg.sources
@@ -371,9 +380,14 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   if (opts.until) deps = { ...deps, repairClaims: true }
   const summary: IngestSummary = { polled: [], skipped: [], errors: [], created: [], revised: [], review: 0 }
   const hot = hotGameIds(deps.db)
-  const games = trackedGames(deps.db).filter((g) => !opts.hot || hot.has(g.id))
+  const tracked = trackedGames(deps.db).filter((g) => !opts.hot || hot.has(g.id))
+  const repairOnly = new Set<string>()
+  if (opts.until && !opts.hot) for (const g of autoRepairGames(deps.db, new Set(tracked.map((t) => t.id)))) (tracked.push(g), repairOnly.add(g.id))
+  const games = tracked
 
   for (const game of games) {
+    // One Steam request each for the derived games a backfill repairs: spaced out, so the whole pass stays polite.
+    if (repairOnly.has(game.id)) await new Promise((r) => setTimeout(r, 250))
     for (const s of sourcesFor(game)) {
       if (!due(deps.db, s, !!opts.force, hot.has(game.id) ? HOT_POLL_MS : MIN_POLL_MS)) {
         summary.skipped.push(s.id)
@@ -387,12 +401,17 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       if (store.isSeen(deps.db, s.id, post.postId) && !(opts.until && s.trust === 'official')) continue
         if (post.news) {
           tx(deps.db, () => {
-            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources) addNewsUnlessPromo(deps, summary, game.id, post)
+            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources && !repairOnly.has(game.id)) addNewsUnlessPromo(deps, summary, game.id, post)
             store.markSeen(deps.db, s.id, post.postId, null)
           })
           continue
         }
-        tx(deps.db, () => store.markSeen(deps.db, s.id, post.postId, handlePost(deps, game, s, post, summary)))
+        tx(deps.db, () => {
+          const before = deps.repairClaims ? (deps.db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id : null
+          const releaseId = handlePost(deps, game, s, post, summary)
+          store.markSeen(deps.db, s.id, post.postId, releaseId)
+          if (before && releaseId && before !== releaseId && store.dropSupersededRelease(deps.db, before, releaseId, s.id)) deps.log?.(`backfill: dropped ${before}, superseded by ${releaseId}`)
+        })
       }
     }
   }
@@ -480,10 +499,11 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   deps.log?.(`ingest: news hidden (promo) ${summary.newsHidden ?? 0} new, ${pruned.length} pruned`)
   const repaired = store.repairAssumedLiveAt(deps.db)
   if (repaired) deps.log?.(`ingest: moved ${repaired} Steam-assumed PS5 dates back to their Steam post`)
-  const promoted = store.promoteAnnounced(deps.db) + store.promoteStated(deps.db)
+  const promoted = store.promoteAnnounced(deps.db, new Date(), !!opts.until) + store.promoteStated(deps.db, new Date(), !!opts.until)
   const settled = store.settleOldAnnouncements(deps.db)
   if (settled) deps.log?.(`ingest: ${settled} press announcements older than 30 days, with a later PS5 release live, now read as live`)
   deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)
+  if (opts.until) deps.log?.(`ingest: backfill read ${repairOnly.size} derived games; ${summary.created.length} releases created, ${summary.revised.length} revised`)
   if (summary.held) deps.log?.(`ingest: PS5 claims withheld this run: ${summary.held.stated} held to a stated time, ${summary.held.testBuild} test builds, ${summary.held.pcScoped} PC-scoped, ${summary.held.announcement} announcements`)
   deps.log?.(`ingest: polled ${summary.polled.length}, new ${summary.created.length}, revised ${summary.revised.length}, review +${summary.review}, errors ${summary.errors.length}`)
   return summary

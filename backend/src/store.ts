@@ -302,7 +302,7 @@ export const isSeen = (db: DB, sourceId: string, postId: string) => !!db.prepare
  * "next week", the PS5 row starts as announced; a week after the Steam release it is taken as live, dated
  * from Steam, so no update stays PC only. It earns its one alert when it goes live (alert_from), however old the Steam post is.
  */
-export const promoteAnnounced = (db: DB, at = new Date()) => {
+export const promoteAnnounced = (db: DB, at = new Date(), quiet = false) => {
   const rows = db
     .prepare(
       `SELECT p.release_id, c.live_at AS pc_live FROM platform_releases p
@@ -318,7 +318,8 @@ export const promoteAnnounced = (db: DB, at = new Date()) => {
     if (!(age >= 7 * 86400e3)) continue
     upsertPlatform(db, r.release_id, 'ps5', { status: 'live', verification: 'assumed', liveAt: field(pc.value, 'assumed', pc.sourceId) })
     // Roadmap 11: the update goes live on PS5 now, so its one alert (and the 72 h guard) counts from now, not from Steam's date.
-    db.prepare("UPDATE platform_releases SET alert_from = ? WHERE release_id = ? AND platform = 'ps5'").run(at.toISOString(), r.release_id)
+    // `quiet` (a backfill reading old posts): the alert counts from the Steam date, so the 72 h guard keeps it silent.
+    db.prepare("UPDATE platform_releases SET alert_from = ? WHERE release_id = ? AND platform = 'ps5'").run(quiet ? pc.value : at.toISOString(), r.release_id)
     n++
   }
   return n
@@ -329,13 +330,16 @@ export const promoteAnnounced = (db: DB, at = new Date()) => {
  * live_at. Once the time has passed the row is live, and it earns its one alert from now. Official rows stay official:
  * this is the time the studio gave, not a person's confirmation, so it is a direct update.
  */
-export const promoteStated = (db: DB, at = new Date()) => {
+export const promoteStated = (db: DB, at = new Date(), quiet = false) => {
   const rows = db.prepare("SELECT release_id, live_at FROM platform_releases WHERE platform = 'ps5' AND status = 'announced' AND live_at IS NOT NULL").all() as { release_id: string; live_at: string }[]
   let n = 0
   for (const r of rows) {
     const f = json<Field<string> | null>(r.live_at, null)
     if (!f?.value || !(Date.parse(f.value) <= at.getTime())) continue
-    db.prepare("UPDATE platform_releases SET status = 'live', alert_from = ?, updated_at = ? WHERE release_id = ? AND platform = 'ps5'").run(at.toISOString(), at.toISOString(), r.release_id)
+    // Its one alert counts from the moment it went live; a time long past (a backfill reading old posts) is not news, so the
+    // alert guard sees that old time and stays quiet.
+    const alertFrom = quiet || at.getTime() - Date.parse(f.value) > 6 * 3600e3 ? f.value : at.toISOString()
+    db.prepare("UPDATE platform_releases SET status = 'live', alert_from = ?, updated_at = ? WHERE release_id = ? AND platform = 'ps5'").run(alertFrom, at.toISOString(), r.release_id)
     db.prepare('UPDATE releases SET updated_at = ? WHERE id = ?').run(at.toISOString(), r.release_id)
     n++
   }
@@ -505,6 +509,23 @@ export const mergeSilentDuplicates = (db: DB) => {
     merged++
   }
   return merged
+}
+
+/**
+ * Backfill repair: a post re-read under newer naming rules (10.2.2a, not 10.2) lands on a new release; the release the same
+ * post made earlier, if that post was its only source and it was announced at the same moment, was a mislabelled copy and goes.
+ */
+export const dropSupersededRelease = (db: DB, oldId: string, newId: string, sourceId: string) => {
+  const o = db.prepare('SELECT * FROM releases WHERE id = ?').get(oldId) as Row | undefined
+  const n = db.prepare('SELECT * FROM releases WHERE id = ?').get(newId) as Row | undefined
+  if (!o || !n || o.game_id !== n.game_id || o.announced_at !== n.announced_at) return false
+  const sources = json<string[]>(o.source_ids, [])
+  if (sources.length !== 1 || sources[0] !== sourceId) return false
+  db.prepare('UPDATE review_items SET release_id = ? WHERE release_id = ?').run(newId, oldId)
+  db.prepare('UPDATE seen_posts SET release_id = ? WHERE release_id = ?').run(newId, oldId)
+  db.prepare('DELETE FROM platform_releases WHERE release_id = ?').run(oldId)
+  db.prepare('DELETE FROM releases WHERE id = ?').run(oldId)
+  return true
 }
 
 /**
