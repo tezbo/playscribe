@@ -15,8 +15,8 @@ struct VideoReflection: View {
     /// On unless the person turns it off (Terry, 2026-11-06). The Settings toggle reads the same value.
     static let defaultOn = true
 
-    /// Peak strength 40% at the video's bottom edge, fading out over 120 pt (the visibility bar, Iris and Quinn, 12 Nov).
-    static let opacity = 0.4
+    /// Peak strength 60% at the video's bottom edge (40% measured 19% of a bright edge in the first 40 pt band once the caption plate took its share; bar 25%), fading out over 120 pt (the visibility bar, Iris and Quinn, 12 Nov).
+    static let opacity = 0.6
     static let height: CGFloat = 120
 
     enum Mode: Equatable { case off, still, live }
@@ -122,7 +122,7 @@ struct VideoReflection: View {
             .scaleEffect(x: 1, y: -1)
             .blur(radius: Self.raw ? 0 : 6)
             .opacity(Self.raw ? 1 : Self.opacity)
-            .mask(Self.raw ? LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom) : LinearGradient(stops: [.init(color: .black, location: 0), .init(color: .black, location: 0.25), .init(color: .clear, location: 1)], startPoint: .top, endPoint: .bottom))
+            .mask(Self.raw ? LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom) : LinearGradient(stops: [.init(color: .black, location: 0), .init(color: .black, location: 0.35), .init(color: .clear, location: 1)], startPoint: .top, endPoint: .bottom))
             .allowsHitTesting(false)
             .accessibilityHidden(true)
             .task(id: youtubeID) {
@@ -170,7 +170,7 @@ extension View {
         if on, !VideoReflection.raw {
             background {
                 RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Color.black.opacity(0.92))
-                    .padding(-8).blur(radius: 6).allowsHitTesting(false)
+                    .padding(-10).blur(radius: 6).allowsHitTesting(false)
             }
         } else { self }
     }

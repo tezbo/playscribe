@@ -169,7 +169,7 @@ struct PlayerView: View {
                     }
             } secondary: {
                 surface
-                    .overlay { if !controller.started { PosterCover(video: video) } }
+                    .overlay { if !controller.started, !VideoReflection.fixture { PosterCover(video: video) } }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(.black)
                     .allowsHitTesting(false)
@@ -237,7 +237,9 @@ struct VideoCaption: View {
         VStack(alignment: .leading, spacing: 3) {
             Text(video.label).font(PlayscribeFont.headline).foregroundStyle(.white)
             Text([game, video.duration].compactMap { $0 }.joined(separator: ", "))
-                .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                .font(PlayscribeFont.subheadline)
+                // Over the mirror the grey is lifted so it keeps 4.5:1 on any frame (Mac, 12 Nov: 4.1 and 3.2 with .secondary).
+                .foregroundStyle(overMirror ? AnyShapeStyle(Color.white.opacity(0.8)) : AnyShapeStyle(.secondary))
         }
         .overMirror(overMirror)
         .frame(maxWidth: .infinity, alignment: .leading)
