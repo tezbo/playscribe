@@ -18,13 +18,16 @@ never tappable except as the Continue target). The cover is the same view in Clo
 | **Still** | Nothing | Key art | n/a |
 
 Rules that apply to every mode:
-- **CM-1** Reduce Motion on, or Autoplay videos off, forces Still whatever the setting says (G-9). The Settings row shows a footnote saying so.
+- **CM-1** Only Reduce Motion forces Still, whatever the setting says (G-9). Autoplay videos off stops only the Trailer loop, which falls back to Key-art motion. The Settings row footnote says so. Built in #467.
 - **CM-2** First frame is the cover. The key art shows at once; the loop fades in over 1.2 s once it can play, so a slow load or a screenshot still looks like the cover (Apple Music Album Motion rule).
 - **CM-3** Motion pauses when the app leaves the foreground, when the cover scrolls off screen, and after 90 s with no touch; it resumes on touch. Loops never play on cellular unless "Autoplay videos" is on.
 - **CM-4** Depth (key-art mode): the art, the plate and the leaves move at different rates. Closed: CoreMotion tilt, capped at 10 pt for the art and 6 pt for the plate. Book and Tabletop: the hinge angle (`onHingeChange`) drives the same offsets, which only the Duo can do. Never used for layout (DuoReader does that).
 - **CM-5** The caption keeps the AX rules (headline max 4 lines, chips wrap before dropping, capped at AX3 in Tabletop). Contrast over the darkest frame of the loop meets AA; the shade gradient is part of the cover, not the art.
 - **CM-6** No source names or credits on the cover (CLAUDE.md). The loop is the game's own trailer, treated like its art.
 - **CM-7** VoiceOver: the cover is one element, "<Game> cover, update 1.1 on PS5, 22 October"; motion mode is not announced.
+
+## Per-game crop focus
+Optional feed field `coverFocusX`, 0 to 1, default 0.5 (centre): the horizontal point of the art that stays in view when the art is cropped to the cover's portrait shape. Applies to the key art in every mode and to the first frame of the loop.
 
 ## Loop cut rule (backend)
 Source: the game's Steam store trailer (`appdetails.movies[0]`, HLS 720p; Steam is the source of truth and already feeds the catalogue).
