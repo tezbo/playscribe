@@ -224,6 +224,12 @@ struct KeepCurrentDetailsView: View {
 
 /// The full wording: what it does, what is sent, what is never sent, how long it is kept, and the short line.
 struct KeepCurrentDetailsContent: View {
+    /// Mac at d956c87 (Book and Tabletop AX5): a line cut at the scroll edge showed as stray glyph halves under the sheet's
+    /// title. Once scrolled, the top edge is opaque for about half a line and fades over the rest, so a cut line is hidden or
+    /// faded, never sliced; a hairline marks the edge. Scales with the body text, so it covers a line at every size.
+    @ScaledMetric(relativeTo: .body) private var edgeFade: CGFloat = 30
+    @State private var scrolled = false
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
@@ -235,6 +241,20 @@ struct KeepCurrentDetailsContent: View {
             .padding(20)
             .frame(maxWidth: 620, alignment: .leading)
             .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.y + $0.contentInsets.top > 1 } action: { _, now in scrolled = now }
+        .overlay(alignment: .top) {
+            if scrolled {
+                VStack(spacing: 0) {
+                    Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5)
+                    LinearGradient(stops: [.init(color: Color.ink0, location: 0), .init(color: Color.ink0, location: 0.5),
+                                           .init(color: Color.ink0.opacity(0), location: 1)],
+                                   startPoint: .top, endPoint: .bottom)
+                        .frame(height: edgeFade)
+                }
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
+            }
         }
     }
 }
