@@ -12,8 +12,9 @@ Workflow: `.github/workflows/screen-diffs.yml`. Compare step: `ios/tools/qa/scre
 2. Two `render` jobs run side by side on the free `xcode-27` runner. **Before** is main's latest commit (the merge ref's
    first parent) and **after** is the PR merged into main. Both use the PR's fold harness, so only the app code differs. If
    the PR's tests don't build against main, main falls back to its own tests, and the comment says so.
-3. Both render the matrix with `HARNESS_STABLE=1`. That means no network (remote art falls back to bundled art or the title
-   plate), animations off (drifting key art and fades jump to their end state), and a 0.6 s pause after layout settles.
+3. Both render the matrix with `HARNESS_STABLE=1`. The workflow blocks the app's art and feed hosts in the runner's
+   `/etc/hosts` (remote art falls back to bundled art or the title plate) and turns Reduce Motion on in the simulator. The
+   harness drops animations (drifting key art and fades jump to their end state), and a 0.6 s pause after layout settles.
    - Matrix: library, game, updates, settings and upcoming screens.
    - Poses and sizes: every pose at std and AX5, plus AX3 in Closed and Tabletop only. That is 70 stills a side.
 4. `compare` diffs the two sets. It pushes the changed images to the `screen-diffs` branch, then writes the PR comment.

@@ -87,6 +87,21 @@ jobs:
           print(phones[0]['udid'] if phones else '')
           ")
           echo "udid=$udid" >> "$GITHUB_OUTPUT"
+      - name: "Steady shots: no art or feed network, Reduce Motion on"
+        run: |
+          # Remote art loads on one run and not the other, and drifting key art is caught mid-move: both make false alarms
+          # (first #485 run). Block the app's hosts so remote art falls back to bundled art or the title plate on both sides,
+          # and turn Reduce Motion on in the simulator so ArtView never drifts.
+          for h in images.igdb.com www.youtube.com www.youtube-nocookie.com i.ytimg.com playscribe.app playscribe.codeconnectors.co; do
+            echo "0.0.0.0 $h" | sudo tee -a /etc/hosts >/dev/null
+          done
+          sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder 2>/dev/null || true
+          udid=${{ steps.sim.outputs.udid }}
+          xcrun simctl boot "$udid" 2>/dev/null || true
+          xcrun simctl bootstatus "$udid" -b >/dev/null 2>&1 || true
+          xcrun simctl spawn "$udid" defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
+          echo "ReduceMotionEnabled=$(xcrun simctl spawn "$udid" defaults read com.apple.Accessibility ReduceMotionEnabled 2>&1)"
+          curl -sS -m 5 -o /dev/null -w 'igdb from runner: %{http_code}\n' https://images.igdb.com/ || echo "igdb from runner: blocked"
       - name: Render the matrix
         env:
           TEST_RUNNER_HARNESS_PNG_DIR: ${{ github.workspace }}/stills

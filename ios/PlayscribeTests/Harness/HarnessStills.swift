@@ -11,7 +11,7 @@ import UIKit
 ///   HARNESS_ROUTE      a playscribe:// host and path to open first, e.g. game/dawnwalker (default: the Library)
 ///   HARNESS_SCREENS    comma list of named screens for a whole matrix in one job (see `screens`); overrides ROUTE and VIEW
 ///   HARNESS_AX3_POSES  comma list: AX3 only in these poses (std and AX5 stay in every pose)
-///   HARNESS_STABLE=1   same pixels for the same code: no network, animations off, a pause before each shot (HarnessStable.swift)
+///   HARNESS_STABLE=1   same pixels for the same code: animations off, a pause before each shot (HarnessStable.swift)
 ///   HARNESS_SPLIT=1    lay Book and Tabletop pages out by the injected division (stand-in, triage only); without it the Book PNG's
 ///                      left page is clipped at x 0 and reads as a false alarm (Quinn, matrix 7fb7d89)
 /// Beside every PNG: one index.txt line (pose, live pose, safe area, fold, occlusions, split, settled) and <file>-frames.txt.
@@ -41,7 +41,6 @@ struct HarnessStillsTests {
         guard wanted("HARNESS_POSES", id), wanted("HARNESS_SIZES", size) else { return }
         // HARNESS_AX3_POSES: AX3 only in these poses (screen diffs: Closed and Tabletop, Iris's pass bar); AX5 and std stay in all.
         if size == "ax3", env["HARNESS_AX3_POSES"].map({ !$0.isEmpty }) == true, !wanted("HARNESS_AX3_POSES", id) { return }
-        HarnessStable.prepare()
         let category = try #require(Self.sizes.first { $0.0 == size }?.1)
         let tall = Double(env["HARNESS_TALL"] ?? "") ?? 1
         if let list = env["HARNESS_SCREENS"], !list.isEmpty {
