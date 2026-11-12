@@ -169,8 +169,8 @@ extension View {
     @ViewBuilder func overMirror(_ on: Bool) -> some View {
         if on, !VideoReflection.raw {
             background {
-                RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Color.black.opacity(0.92))
-                    .padding(-10).blur(radius: 6).allowsHitTesting(false)
+                RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Color.black.opacity(0.96))
+                    .padding(-14).blur(radius: 5).allowsHitTesting(false)
             }
         } else { self }
     }

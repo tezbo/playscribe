@@ -284,11 +284,17 @@ struct TabletopTransport: View {
     var game: String
     var release: Release
     var onClose: () -> Void
+    @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
 
     var body: some View {
+        // The mirror sits behind this whole column, so the text on it gets the plate and the lifted grey (R-11; Mac 12 Nov:
+        // the Tabletop subtitle measured 3.3:1 median, 2.3:1 worst).
+        let over = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off
         HStack(alignment: .top, spacing: 0) {
             VStack(alignment: .leading, spacing: 10) {
-                VideoCaption(video: video, game: game)
+                VideoCaption(video: video, game: game, overMirror: over)
                 Slider(value: Binding(get: { controller.current }, set: { controller.seek(to: $0) }), in: 0...max(1, controller.duration))
                     .accessibilityLabel("Playback position")
                     // Spoken as time, not a percent, and the printed times below are not read a second time.
@@ -300,7 +306,8 @@ struct TabletopTransport: View {
                     Text("-" + PlayerTime.format(max(0, controller.duration - controller.current)))
                 }
                 .font(PlayscribeFont.caption.monospacedDigit())
-                .foregroundStyle(.secondary)
+                .foregroundStyle(over ? AnyShapeStyle(Color.white.opacity(0.8)) : AnyShapeStyle(.secondary))
+                .overMirror(over)
                 .accessibilityHidden(true)
                 HStack(spacing: 0) {
                     transportButton(controller.captionsOn ? "captions.bubble.fill" : "captions.bubble", "Captions", action: controller.toggleCaptions)
