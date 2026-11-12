@@ -303,9 +303,6 @@ export const isSeen = (db: DB, sourceId: string, postId: string) => !!db.prepare
  * from Steam, so no update stays PC only. It earns its one alert when it goes live (alert_from), but only while the Steam post is
  * under 30 days old: for an older one the alert counts from the Steam date and stays silent (alerts.ts alertFromOf).
  */
-/** A console-later Steam patch counts as live on PS5 this long after its Steam post (Terry, 2026-10-27). */
-export const PS5_LIVE_AFTER_MS = 7 * 86400e3
-
 export const promoteAnnounced = (db: DB, at = new Date(), quiet = false) => {
   const rows = db
     .prepare(
@@ -319,14 +316,11 @@ export const promoteAnnounced = (db: DB, at = new Date(), quiet = false) => {
     const pc = json<Field<string> | null>(r.pc_live, null)
     if (!pc?.value) continue
     const age = at.getTime() - Date.parse(pc.value)
-    if (!(age >= PS5_LIVE_AFTER_MS)) continue
+    if (!(age >= 7 * 86400e3)) continue
     upsertPlatform(db, r.release_id, 'ps5', { status: 'live', verification: 'assumed', liveAt: field(pc.value, 'assumed', pc.sourceId) })
-    // Roadmap 11: its one alert (and the 72 h guard) counts from the moment it went live on PS5, a week after Steam, not from
-    // Steam's date. Never from `at`: a run that reads the post long after that week (the first poll of an auto-onboarded game,
-    // feed-stale-announced-rows) would otherwise publish a years-old patch as news. An hourly run promotes within the hour.
+    // Roadmap 11: the update goes live on PS5 now, so its one alert (and the 72 h guard) counts from now, not from Steam's date.
     // `quiet` (a backfill reading old posts): the alert counts from the Steam date, so the 72 h guard keeps it silent.
-    const wentLive = new Date(Date.parse(pc.value) + PS5_LIVE_AFTER_MS).toISOString()
-    db.prepare("UPDATE platform_releases SET alert_from = ? WHERE release_id = ? AND platform = 'ps5'").run(quiet ? pc.value : wentLive, r.release_id)
+    db.prepare("UPDATE platform_releases SET alert_from = ? WHERE release_id = ? AND platform = 'ps5'").run(quiet ? pc.value : at.toISOString(), r.release_id)
     n++
   }
   return n
