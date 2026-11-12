@@ -59,6 +59,12 @@ enum KeepCurrentCopy {
 /// buttons. "What is sent" opens the full wording (the same lists, unchanged) in a sheet before the person decides, so the
 /// explicit disclosure is one tap from the choice, in the app.
 struct KeepCurrentCard: View {
+    /// Tabletop at accessibility sizes (Iris and Quinn, #455): the text scrolls inside this height with faded edges, and
+    /// Turn on and Not now pin below it, so both stay in the lower half. Nil everywhere else (Closed AX5 sits in the page
+    /// scroll, which is fine).
+    var pinnedTextHeight: CGFloat? = nil
+    /// The Tabletop edge cap: 15% of the lower-half panel.
+    var edgeCapHeight: CGFloat? = nil
     @Environment(AppModel.self) private var model
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -69,6 +75,44 @@ struct KeepCurrentCard: View {
 
     var body: some View {
         let ax = typeSize.isAccessibilitySize
+        VStack(alignment: .leading, spacing: 8) {
+            if ax, let pinnedTextHeight {
+                // Unscrolled when it fits; otherwise the text scrolls with faded edges and the buttons stay put below it.
+                ViewThatFits(in: .vertical) {
+                    textBlock(ax: ax)
+                    FadedEdgeScroll(edgeCapHeight: edgeCapHeight, edgeColor: Color.ink2) { textBlock(ax: ax) }
+                }
+                .frame(maxHeight: pinnedTextHeight, alignment: .top)
+                VStack(alignment: .leading, spacing: 12) { buttons }.padding(.top, 2)
+            } else {
+                textBlock(ax: ax)
+                if ax {
+                    // Accessibility sizes stack everything full width (N-1 rule): the link first, then the two buttons.
+                    VStack(alignment: .leading, spacing: 12) { buttons }.padding(.top, 2)
+                } else {
+                    // One row where it fits (Tabletop, Open, Book's page), so the card stays about 150 pt tall.
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: 12) { buttons; Spacer(minLength: 8); whatIsSent }
+                        VStack(alignment: .leading, spacing: 6) { whatIsSent; HStack(spacing: 12) { buttons } }
+                        VStack(alignment: .leading, spacing: 8) { whatIsSent; buttons }
+                    }
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(14)
+        .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .gesture(DragGesture(minimumDistance: 30).onEnded { v in
+            if abs(v.translation.width) > 60 { answer(false) }
+        })
+        .accessibilityAction(named: KeepCurrentCopy.notNow) { answer(false) }
+        .accessibilityAction(named: KeepCurrentCopy.whatIsSent) { model.keepCurrentDetailsOpen = true }
+        .accessibilityIdentifier("keepCurrentCard")
+        .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
+    }
+
+    /// The title, the short line and, at accessibility sizes, the "What is sent" link (above the buttons there).
+    private func textBlock(ax: Bool) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             // Accessibility sizes drop the icon, so the text and buttons use the card's full width (Iris: no icon gutter).
             HStack(alignment: .firstTextBaseline, spacing: 10) {
@@ -84,29 +128,9 @@ struct KeepCurrentCard: View {
             Text(KeepCurrentCopy.shortLine)
                 .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
-            if ax {
-                // Accessibility sizes stack everything full width (N-1 rule): the link first, then the two buttons.
-                whatIsSent
-                VStack(alignment: .leading, spacing: 12) { buttons }.padding(.top, 2)
-            } else {
-                // One row where it fits (Tabletop, Open, Book's page), so the card stays about 150 pt tall.
-                ViewThatFits(in: .horizontal) {
-                    HStack(spacing: 12) { buttons; Spacer(minLength: 8); whatIsSent }
-                    VStack(alignment: .leading, spacing: 6) { whatIsSent; HStack(spacing: 12) { buttons } }
-                    VStack(alignment: .leading, spacing: 8) { whatIsSent; buttons }
-                }
-            }
+            if ax { whatIsSent }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(14)
-        .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .gesture(DragGesture(minimumDistance: 30).onEnded { v in
-            if abs(v.translation.width) > 60 { answer(false) }
-        })
-        .accessibilityAction(named: KeepCurrentCopy.notNow) { answer(false) }
-        .accessibilityAction(named: KeepCurrentCopy.whatIsSent) { model.keepCurrentDetailsOpen = true }
-        .accessibilityIdentifier("keepCurrentCard")
-        .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
     }
 
     private var whatIsSent: some View {
@@ -229,29 +253,8 @@ struct KeepCurrentDetailsContent: View {
     /// four lines read clear at AX5. Nil elsewhere.
     var edgeCapFraction: CGFloat? = nil
 
-    /// Top edge (Mac at d956c87, 2f230a2, 5aa8de9): once scrolled, an opaque band one full text line tall sits under a hairline
-    /// drawn on solid ink, so a line the edge cuts is wholly covered; below it a fade runs from opaque to clear over one line.
-    /// Bottom edge (Iris, 9852d0a): only the fade over one line while more text is below, and the content ends with bottom
-    /// padding of the same height, so at the end of the scroll the last line rests fully clear of it. All scale with the text.
-    @ScaledMetric(relativeTo: .body) private var edgeBand: CGFloat = 28
-    @ScaledMetric(relativeTo: .body) private var edgeFade: CGFloat = 24
-    @State private var scrolled = false
-    @State private var moreBelow = false
-    @State private var visibleHeight: CGFloat = 0
-
-    /// The band and fade heights after the Tabletop cap, kept in proportion.
-    private var topHeights: (band: CGFloat, fade: CGFloat) {
-        guard let f = edgeCapFraction, visibleHeight > 0 else { return (edgeBand, edgeFade) }
-        let k = min(1, visibleHeight * f / (edgeBand + edgeFade))
-        return (edgeBand * k, edgeFade * k)
-    }
-    private var bottomFade: CGFloat {
-        guard let f = edgeCapFraction, visibleHeight > 0 else { return edgeFade }
-        return min(edgeFade, visibleHeight * f)
-    }
-
     var body: some View {
-        ScrollView {
+        FadedEdgeScroll(edgeCapFraction: edgeCapFraction) {
             VStack(alignment: .leading, spacing: 16) {
                 Text(KeepCurrentCopy.cardIntro).font(PlayscribeFont.body).fixedSize(horizontal: false, vertical: true)
                 KeepCurrentList()
@@ -259,9 +262,48 @@ struct KeepCurrentDetailsContent: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
             .padding(20)
-            .padding(.bottom, bottomFade)
             .frame(maxWidth: 620, alignment: .leading)
             .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+}
+
+/// A vertical scroll whose edges never show a cut line (N-9 sheet and Tabletop card; Mac at d956c87, 2f230a2, 5aa8de9,
+/// 9852d0a; Iris). Top, once scrolled: a hairline drawn on solid ink, an opaque band one full text line tall, so a line the
+/// edge cuts is wholly covered, then a fade from opaque to clear over one line. Bottom, while more is below: only the fade
+/// over one line, and the content ends with bottom padding of the same height, so at the end of the scroll the last line
+/// rests fully clear of it. All scale with the body text. `edgeCapFraction` caps each edge at that share of the visible
+/// height (Tabletop: 15%, so at least four lines read clear at AX5).
+struct FadedEdgeScroll<Content: View>: View {
+    var edgeCapFraction: CGFloat? = nil
+    /// An absolute cap in points (the Tabletop card: 15% of the lower-half panel, not of the card's own scroll).
+    var edgeCapHeight: CGFloat? = nil
+    /// The colour behind the scroll, which the edges fade into (the card sits on ink2, the sheet on ink0).
+    var edgeColor: Color = Color.ink0
+    @ViewBuilder var content: Content
+
+    @ScaledMetric(relativeTo: .body) private var edgeBand: CGFloat = 28
+    @ScaledMetric(relativeTo: .body) private var edgeFade: CGFloat = 24
+    @State private var scrolled = false
+    @State private var moreBelow = false
+    @State private var visibleHeight: CGFloat = 0
+
+    /// The band and fade heights after the cap, kept in proportion.
+    private var cap: CGFloat? {
+        if let edgeCapHeight { return edgeCapHeight }
+        guard let f = edgeCapFraction, visibleHeight > 0 else { return nil }
+        return visibleHeight * f
+    }
+    private var topHeights: (band: CGFloat, fade: CGFloat) {
+        guard let cap else { return (edgeBand, edgeFade) }
+        let k = min(1, cap / (edgeBand + edgeFade))
+        return (edgeBand * k, edgeFade * k)
+    }
+    private var bottomFade: CGFloat { cap.map { min(edgeFade, $0) } ?? edgeFade }
+
+    var body: some View {
+        ScrollView {
+            content.padding(.bottom, bottomFade)
         }
         .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.y + $0.contentInsets.top > 1 } action: { _, now in scrolled = now }
         // Judged on the visible rect, so a bottom safe-area inset can't keep it on at the end; 2 pt of slack for rounding.
@@ -269,7 +311,7 @@ struct KeepCurrentDetailsContent: View {
         .onScrollGeometryChange(for: CGFloat.self) { $0.visibleRect.height } action: { _, h in visibleHeight = h }
         .overlay(alignment: .bottom) {
             if moreBelow {
-                LinearGradient(colors: [Color.ink0.opacity(0), Color.ink0], startPoint: .top, endPoint: .bottom)
+                LinearGradient(colors: [edgeColor.opacity(0), edgeColor], startPoint: .top, endPoint: .bottom)
                     .frame(height: bottomFade)
                     .allowsHitTesting(false)
                     .accessibilityHidden(true)
@@ -278,10 +320,10 @@ struct KeepCurrentDetailsContent: View {
         .overlay(alignment: .top) {
             if scrolled {
                 VStack(spacing: 0) {
-                    Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5).background(Color.ink0)
-                    Color.ink0.frame(height: topHeights.band)
-                    LinearGradient(stops: [.init(color: Color.ink0, location: 0), .init(color: Color.ink0.opacity(0.85), location: 0.35),
-                                           .init(color: Color.ink0.opacity(0), location: 1)], startPoint: .top, endPoint: .bottom)
+                    Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5).background(edgeColor)
+                    edgeColor.frame(height: topHeights.band)
+                    LinearGradient(stops: [.init(color: edgeColor, location: 0), .init(color: edgeColor.opacity(0.85), location: 0.35),
+                                           .init(color: edgeColor.opacity(0), location: 1)], startPoint: .top, endPoint: .bottom)
                         .frame(height: topHeights.fade)
                 }
                 .allowsHitTesting(false)
