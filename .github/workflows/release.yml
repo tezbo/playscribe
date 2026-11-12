@@ -32,6 +32,10 @@ on:
         description: 'true runs every guard and stops before tagging; set false for the real release'
         type: boolean
         default: true
+      notes_only:
+        description: 'true only creates the GitHub release for a tag that already exists at sha (no tag, no build)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -56,6 +60,7 @@ jobs:
           SHA: ${{ inputs.sha }}
           APPROVAL: ${{ inputs.approval }}
           DRY_RUN: ${{ inputs.dry_run }}
+          NOTES_ONLY: ${{ inputs.notes_only }}
         run: |
           set -euo pipefail
           refuse() { echo "::error::refused: $*"; echo "Refused: $*" >> "$GITHUB_STEP_SUMMARY"; exit 1; }
@@ -94,6 +99,8 @@ jobs:
             echo "$tag already points at $SHA; rebuilding it."
           fi
 
+          if [ "$NOTES_ONLY" = "true" ] && [ -z "$existing" ]; then refuse "notes_only needs $tag to exist already"; fi
+
           {
             echo "### $tag at \`$SHA\`"
             echo "Every guard passed. Approval: $APPROVAL"
@@ -107,7 +114,7 @@ jobs:
   # (Settings > Environments). Nothing is tagged or built before that tap.
   tag:
     needs: check
-    if: needs.check.outputs.tag != ''
+    if: needs.check.outputs.tag != '' && !inputs.notes_only
     runs-on: ubuntu-latest
     timeout-minutes: 5
     environment: testflight
@@ -137,7 +144,8 @@ jobs:
 
   # The GitHub release for the tag, with the CHANGELOG section as its notes (kept if one already exists).
   github-release:
-    needs: [tag, testflight]
+    needs: [check, tag, testflight]
+    if: ${{ !cancelled() && needs.check.outputs.tag != '' && (inputs.notes_only || needs.testflight.result == 'success') }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -145,7 +153,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
-          TAG: ${{ needs.tag.outputs.tag }}
+          TAG: ${{ needs.check.outputs.tag }}
           SHA: ${{ inputs.sha }}
         run: |
           set -euo pipefail

@@ -30,7 +30,8 @@ Nothing ships to TestFlight by itself. Merging to main never uploads a build; on
    exists without "candidate", and the tag is new or already at that SHA. It then creates the tag and calls
    `testflight.yml` itself (a tag made by the workflow token fires no push event). Before tagging it waits for an
    Approve on the `testflight` environment (Terry as required reviewer, one tap on his phone); after a successful
-   upload it creates the GitHub release with the CHANGELOG section as notes. Terry's go is still required for
+   upload it creates the GitHub release with the CHANGELOG section as notes. `notes_only: true` creates just the
+   GitHub release for a tag that already exists at that SHA (no tag, no build), e.g. to backfill v0.5.3. Terry's go is still required for
    every release; the workflow only removes the manual tag push. A person can still push a `v*` tag by hand.
 
 **Checking a TestFlight build.** A TestFlight or App Store build carries a receipt, so the `playscribe://` QA routes
