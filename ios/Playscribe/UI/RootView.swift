@@ -305,11 +305,11 @@ struct TabletopRail: View {
     @State private var moreBelow = false
 
     var body: some View {
-        VStack(spacing: 6) {
+        VStack(spacing: 8) {
             // The screen's controls scroll when they outgrow the lower half (a centred overflow pushed the first
             // button above the fold, 468 vs 474.5: G-4); the tabs stay pinned below.
             ScrollView {
-              VStack(spacing: 6) {
+              VStack(spacing: 8) {
             if let id = model.nav.gameID, model.nav.tab == .library {
                 // The same name and id as the other poses' back button ("Library, back", gameBack); a bare "Library" read as the tab.
                 RailButton(action: ScreenAction(id: "back", title: "Library, back", systemImage: "chevron.backward",
@@ -355,6 +355,14 @@ struct TabletopRail: View {
                         .accessibilityIdentifier("upcomingRail")
                 }
             }
+            // News is the last control in the scrolling group, not a fourth tab: the pinned capsule stays three tall so the
+            // controls above it keep their room (Iris, Tabletop Library rail). Each target is 44 pt with 8 pt gaps.
+            Group {
+                RailButton(action: ScreenAction(id: "news", title: "News", systemImage: "megaphone",
+                                                kind: .button { model.nav.tab = .news }, selected: model.nav.tab == .news))
+                    .accessibilityAddTraits(model.nav.tab == .news ? .isSelected : [])
+                    .accessibilityIdentifier("newsRail")
+            }
               }
             }
             .scrollBounceBehavior(.basedOnSize)
@@ -371,7 +379,6 @@ struct TabletopRail: View {
             VStack(spacing: 0) {
                 tab(.library, "Library", "books.vertical", badge: model.totalUnread)
                 tab(.updates, "Updates", "newspaper")
-                tab(.news, "News", "megaphone")
                 tab(.search, "Search", "magnifyingglass")
             }
             .padding(.vertical, 4)

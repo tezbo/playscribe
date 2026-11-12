@@ -37,7 +37,29 @@ final class NewsStore {
 
     private static func cacheURL(_ id: String) -> URL { URL.cachesDirectory.appending(path: "news-\(id).json") }
 
+    #if INTERNAL
+    /// QA: `-qaNews` seeds sample headlines for every library game, so the News tab and chapters can be shot in every pose
+    /// without a feed. Long and short titles, Official and Reported, so wrapping and tags show.
+    static let qaSeeded = ProcessInfo.processInfo.arguments.contains("-qaNews")
+    func seedQA(gameIDs: [String]) {
+        guard Self.qaSeeded, !gameIDs.isEmpty else { return }
+        let long = "A headline long enough to wrap onto a second and a third line beside the cover, so the row shows how it behaves in every pose"
+        for (g, id) in gameIDs.enumerated() {
+            items[id] = (0..<3).map { i in
+                let n = g * 3 + i
+                return NewsItem(title: n.isMultiple(of: 2) ? "Sample studio post \(n): \(long)" : "Sample headline \(n)",
+                                date: .now.addingTimeInterval(-Double(n) * 86_400), url: URL(string: "https://example.com/\(n)")!,
+                                verification: n.isMultiple(of: 3) ? "reported" : "official")
+            }
+            loaded.insert(id)
+        }
+    }
+    #endif
+
     func load(gameID: String, igdbID: Int?) async {
+        #if INTERNAL
+        if Self.qaSeeded { return }
+        #endif
         failed.remove(gameID)
         if items[gameID] == nil, let raw = try? Data(contentsOf: Self.cacheURL(gameID)),
            let f = try? JSONCoding.decoder.decode(File.self, from: raw) { items[gameID] = f.items }
@@ -161,9 +183,15 @@ struct NewsView: View {
     }
 
     private var stillLoading: Bool { ids.contains { !store.loaded.contains($0) } }
+    /// The "News" title's bottom edge in screen space (Tabletop): the stage caption starts below it (Iris, AX5).
+    @State private var titleBottom: CGFloat = 0
 
     var body: some View {
-        let list = posts
+        let all = posts
+        // Tabletop: the newest story is the stage on the standing half (art and headline, view only); the list on the flat half
+        // starts from the second, so no story is shown twice.
+        let lead: (game: String, item: NewsItem)? = duo.pose == .tabletop && all.count > 1 ? all.first : nil
+        let list = lead == nil ? all : Array(all.dropFirst())
         let badgeExtra = duo.occlusions.filter { $0.minY < 190 && $0.maxY > 40 }
             .map { max(0, duo.size.width - $0.minX) }.max() ?? 0
         Group {
@@ -196,8 +224,10 @@ struct NewsView: View {
             } else if duo.pose == .book, let fold = duo.division {
                 // TT-0: in the book pose the rows are cards on either page, never across the fold.
                 ScrollView {
-                    LazyVGrid(columns: [GridItem(.fixed(max(0, fold.minX - 32)), spacing: 0, alignment: .top),
-                                        GridItem(.fixed(fold.width + 32), spacing: 0),
+                    // Each card's inner edge is 24 pt from the hinge band (Iris, Book): 16 pt page padding plus 24, and the band column
+                    // takes 24 on either side.
+                    LazyVGrid(columns: [GridItem(.fixed(max(0, fold.minX - 40)), spacing: 0, alignment: .top),
+                                        GridItem(.fixed(fold.width + 48), spacing: 0),
                                         GridItem(.flexible(), spacing: 0, alignment: .top)],
                               alignment: .leading, spacing: 12) {
                         ForEach(Array(list.enumerated()), id: \.element.item.id) { i, post in
@@ -223,13 +253,25 @@ struct NewsView: View {
         // Tabletop: the list lives on the flat half; the standing half only titles it (G-4, TT-0).
         .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
+        .background(alignment: .top) {
+            if let lead, let fold = duo.division {
+                NewsStage(gameID: lead.game, item: lead.item, bandTop: fold.minY, titleBottom: titleBottom)
+                    .ignoresSafeArea(edges: .top).allowsHitTesting(false)
+            }
+        }
         .overlay(alignment: .topLeading) {
             if duo.pose == .tabletop {
                 Text("News").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
+                    .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { titleBottom = $0 }
             }
         }
         .navigationTitle("News")
-        .task(id: ids) { await load() }
+        .task(id: ids) {
+            #if INTERNAL
+            store.seedQA(gameIDs: ids)
+            #endif
+            await load()
+        }
     }
 
     private func load(force: Bool = false) async {
@@ -279,5 +321,104 @@ struct NewsRow: View {
     @ViewBuilder private var meta: some View {
         if let d = item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
         Tag(text: item.tagText)
+    }
+}
+
+/// Tabletop's standing half of the News tab: the newest story's game art with its headline as the caption, view only (G-4, J-13).
+/// The art and scrim are the Library hero's (DeckStage), so the crop and the logo read the same (Iris). The caption sits below
+/// the "News" title and ends 24 pt above the band; the headline takes the lines that fit between them, whole words then "…".
+struct NewsStage: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(AppModel.self) private var model
+    var gameID: String
+    var item: NewsItem
+    /// The division band's top edge in screen space.
+    var bandTop: CGFloat
+    /// The "News" title's bottom edge in screen space (padding included).
+    var titleBottom: CGFloat = 0
+    /// The stage's top edge in screen space: the stage is `bandTop` minus this tall, so its bottom edge is exactly on the band.
+    @State private var stageTop: CGFloat = 0
+    @State private var lineHeight: CGFloat = 0
+    @State private var metaHeight: CGFloat = 0
+
+    var body: some View {
+        let game = model.game(gameID)
+        let stageHeight = max(0, bandTop - stageTop)
+        // Room for the headline: under the title, 24 pt above the band, inside the panel's 24 pt of padding, above the meta row.
+        let room = stageHeight - max(0, titleBottom - stageTop) - 24 - 24 - 4 - metaHeight
+        let maxLines = typeSize.isAccessibilitySize ? 4 : 2
+        let lines = lineHeight > 0 && stageHeight > 0 ? max(1, min(maxLines, Int(room / lineHeight))) : maxLines
+        ZStack(alignment: .bottomLeading) {
+            ArtView(asset: game?.keyArtAsset, game: game)
+            LinearGradient(stops: typeSize.isAccessibilitySize
+                               ? [.init(color: .clear, location: 0.1), .init(color: PlayscribeColor.ink950.opacity(0.9), location: 0.4)]
+                               : [.init(color: .clear, location: 0.3), .init(color: PlayscribeColor.ink950.opacity(0.8), location: 0.75)],
+                           startPoint: .top, endPoint: .bottom)
+            VStack(alignment: .leading, spacing: 4) {
+                WholeWordText(text: item.title, font: PlayscribeFont.title3.weight(.semibold), lines: lines)
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 8) { meta(game) }
+                    VStack(alignment: .leading, spacing: 4) { meta(game) }
+                }
+                .font(PlayscribeFont.caption)
+                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { metaHeight = $0 }
+            }
+            .background(alignment: .topLeading) {
+                Text("Ag").font(PlayscribeFont.title3.weight(.semibold)).hidden().accessibilityHidden(true)
+                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { lineHeight = $0 }
+            }
+            // Iris: the whole caption on one solid ink panel, so contrast never depends on the art.
+            .padding(12)
+            .background(RoundedRectangle(cornerRadius: 12, style: .continuous).fill(PlayscribeColor.ink700.opacity(0.7)))
+            .padding(.horizontal, 24).padding(.bottom, 24)
+            .padding(.trailing, TabletopRail.width)
+        }
+        .frame(height: stageHeight)
+        .background(alignment: .top) {
+            Color.clear.frame(height: 1)
+                .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).minY } action: { if abs($0 - stageTop) > 0.5 { stageTop = $0 } }
+        }
+        .clipped()
+        // View only, and read by VoiceOver as one caption (the same story is not in the list below).
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(game?.name ?? ""), \(item.title), \(item.tagText)")
+    }
+
+    @ViewBuilder private func meta(_ game: CatalogGame?) -> some View {
+        Tag(text: item.tagText)
+        if let game { Text(game.name) }
+        if let d = item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
+    }
+}
+
+/// Tabletop's standing half for a game's News chapter: the game's art to the fold, with its newest headline as the caption.
+/// View only (G-4); the headlines themselves are in the lower half (ContentsBody).
+struct NewsStageArt: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
+    @State private var stageBottom: CGFloat = 0
+    var gameID: String
+
+    var body: some View {
+        let game = model.game(gameID)
+        let newest = (NewsStore.shared.items[gameID] ?? []).max { ($0.date ?? .distantPast) < ($1.date ?? .distantPast) }
+        ZStack(alignment: .bottomLeading) {
+            ArtView(asset: model.backdrop(gameID, chapter: .news, tall: false), game: game).ignoresSafeArea()
+            LinearGradient(colors: [.clear, .black.opacity(0.5)], startPoint: .center, endPoint: .bottom)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(game?.name ?? "").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                if let newest { WholeWordText(text: newest.title, font: PlayscribeFont.title3.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 2) }
+            }
+            // Iris: the whole caption on one solid ink panel; it ends 24 pt above the band.
+            .padding(12)
+            .background(RoundedRectangle(cornerRadius: 12, style: .continuous).fill(PlayscribeColor.ink700.opacity(0.7)))
+            .padding(.horizontal, 24).padding(.bottom, max(24, duo.clearance(forBottom: stageBottom)))
+            .padding(.trailing, TabletopRail.width)
+        }
+        // The stage's own frame (as the Reader stage does), not the art, which ignores the safe area.
+        .background(Color.clear.onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { if abs($0 - stageBottom) > 0.5 { stageBottom = $0 } })
+        .clipped()
+        .accessibilityHidden(true)
     }
 }
