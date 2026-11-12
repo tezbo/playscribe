@@ -62,7 +62,7 @@ struct KeepCurrentCard: View {
     /// Tabletop at accessibility sizes (Iris and Quinn, #455): the text scrolls inside this height with faded edges, and
     /// Turn on and Not now pin below it, so both stay in the lower half. Nil everywhere else (Closed AX5 sits in the page
     /// scroll, which is fine).
-    /// Tabletop at AX3 and above (Iris, #455 at 0877dfc): compact, with no inner scroll. Only the headline (whole words, up to
+    /// Tabletop at AX5 (Iris, #455 at 0877dfc and a8859d3; AX3 keeps the full card): compact, with no inner scroll. Only the headline (whole words, up to
     /// four lines), "What is sent" and the two buttons, full width; the short line lives in the sheet.
     var compactTabletop = false
     @Environment(AppModel.self) private var model
@@ -76,7 +76,7 @@ struct KeepCurrentCard: View {
     var body: some View {
         let ax = typeSize.isAccessibilitySize
         VStack(alignment: .leading, spacing: 8) {
-            if compactTabletop && typeSize >= .accessibility3 {
+            if compactTabletop && typeSize >= .accessibility5 {
                 WholeWordText(text: KeepCurrentCopy.cardTitle, font: PlayscribeFont.headline, lines: 4, color: nil)
                     .accessibilityLabel(KeepCurrentCopy.cardVoiceOver)
                     .accessibilityAddTraits(.isHeader)

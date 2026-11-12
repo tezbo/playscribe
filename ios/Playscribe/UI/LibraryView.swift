@@ -314,9 +314,9 @@ struct LibraryShelf: View {
                         if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.data.nav.query) }
                     }
                 } else if !heroOnRightPage {
-                    // Tabletop at AX3+ (Iris, #455 at 0877dfc): the compact card keeps the lower half to itself, first; the
-                    // switch and the chips follow by normal page scroll. Below AX3 it sits under the switch as signed.
-                    let cardFirst = duo.pose == .tabletop && typeSize >= .accessibility3
+                    // Tabletop at AX5 (Iris, #455 at 0877dfc and a8859d3): the compact card keeps the lower half to itself, first; the
+                    // switch and the chips follow by normal page scroll. Below AX5 it sits under the switch as signed.
+                    let cardFirst = duo.pose == .tabletop && typeSize >= .accessibility5
                     if cardFirst && model.libraryTab == .playing { keepCurrentAsk }
                     LibraryTabPicker()
                         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
