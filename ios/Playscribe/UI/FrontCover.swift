@@ -94,7 +94,9 @@ struct FrontCoverPage: View {
             else { model.openGame(card.game.id, chapter: .updates) }
         } label: {
             ZStack(alignment: .bottomLeading) {
-                ArtView(asset: card.game.keyArtAsset, game: card.game, focusX: card.game.coverFocusX)
+                // Iris (#467): at accessibility sizes the plate covers the lower half, so the focal point goes to the top half.
+                ArtView(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
+                        focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5)
                 if !solid { fade }
                 VStack(alignment: .leading, spacing: 18) {
                     FrontCoverPlate(card: card)

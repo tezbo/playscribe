@@ -83,6 +83,36 @@ struct FrontCoverTests {
         FrontCoverPreview.shared.open = false
     }
 
+    /// Iris (#467): the focal point never pushes the art off an edge; it lands where asked when there is room.
+    @Test func focalCropClampsToTheFrame() {
+        let art = CGSize(width: 1600, height: 517), cover = CGSize(width: 466, height: 678)
+        let covers: (CGRect) -> Bool = { r in r.minX <= 0.001 && r.minY <= 0.001 && r.maxX >= cover.width - 0.001 && r.maxY >= cover.height - 0.001 }
+        for x in stride(from: -0.5, through: 1.5, by: 0.1) {
+            for y in stride(from: -0.5, through: 1.5, by: 0.25) {
+                for scale in [nil, 0.5, 1, 1.4] as [Double?] {
+                    for ty in [0.25, 0.5] {
+                        #expect(covers(FocalCrop.place(image: art, in: cover, focus: CoverFocus(x: x, y: y, scale: scale), targetY: ty)))
+                    }
+                }
+            }
+        }
+        // Room to move: the focal point lands on the cover's centre line.
+        let mid = FocalCrop.place(image: art, in: cover, focus: CoverFocus(x: 0.5, y: 0.5))
+        #expect(abs(mid.minX + 0.5 * mid.width - cover.width / 2) < 0.5)
+        // A zoom lets the point move up into the top half (AX sizes).
+        let zoomed = FocalCrop.place(image: art, in: cover, focus: CoverFocus(x: 0.5, y: 0.5, scale: 1.6), targetY: 0.25)
+        #expect(zoomed.minY + 0.5 * zoomed.height < cover.height / 2)
+        // A scale under 1 never letterboxes.
+        let small = FocalCrop.place(image: art, in: cover, focus: CoverFocus(x: 0.5, y: 0.5, scale: 0.5))
+        #expect(small.height >= cover.height - 0.001)
+    }
+
+    /// Iris (#467): Wukong's cover keeps the figure, not the left of the mural, in view.
+    @Test func wukongCarriesItsFocalPoint() {
+        let g = Fixtures.shared.games.first { $0.id == "wukong" }
+        #expect(g?.coverFocus?.x ?? 0.5 > 0.6)
+    }
+
     /// The chips: the PS5 version and "On PS5" first, then the day, then the change count; never a PC version.
     @Test func chipsLeadWithThePS5Version() {
         let deck = demoModel().latestDeck

@@ -56,9 +56,9 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     var coverage: Coverage
     /// Backdrop artwork per chapter: [wide, tall].
     var chapterArt: [String: [String]]?
-    /// The Closed front cover's horizontal focal point on the key art, 0 (left) to 1 (right); nil centres it. A 16:9
-    /// image on the tall cover loses about two thirds of its width, so an off-centre subject needs this (Iris, #467).
-    var coverFocusX: Double?
+    /// The Closed front cover's focal point on the key art (Iris, #467): x and y from 0 to 1, and an optional zoom (1 or
+    /// more); nil centres it. A wide image on the tall cover loses most of its width, so an off-centre subject needs this.
+    var coverFocus: CoverFocus?
     /// Added by the person: no catalogue record behind it.
     var custom: Bool?
 
