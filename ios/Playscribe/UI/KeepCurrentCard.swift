@@ -224,10 +224,12 @@ struct KeepCurrentDetailsView: View {
 
 /// The full wording: what it does, what is sent, what is never sent, how long it is kept, and the short line.
 struct KeepCurrentDetailsContent: View {
-    /// Mac at d956c87 (Book and Tabletop AX5): a line cut at the scroll edge showed as stray glyph halves under the sheet's
-    /// title. Once scrolled, the top edge is opaque for about half a line and fades over the rest, so a cut line is hidden or
-    /// faded, never sliced; a hairline marks the edge. Scales with the body text, so it covers a line at every size.
-    @ScaledMetric(relativeTo: .body) private var edgeFade: CGFloat = 30
+    /// Mac at d956c87 and 2f230a2 (AX5, every pose): a line cut at the scroll edge showed as glyph halves under the title,
+    /// and a fade only dimmed them. Once scrolled, an opaque band one full text line tall (with its leading) sits under the
+    /// hairline, so any line the edge cuts is wholly covered; only whole lines pass through the short fade below it. Both
+    /// scale with the body text, so this holds at every size.
+    @ScaledMetric(relativeTo: .body) private var edgeBand: CGFloat = 28
+    @ScaledMetric(relativeTo: .body) private var edgeFade: CGFloat = 10
     @State private var scrolled = false
 
     var body: some View {
@@ -246,10 +248,10 @@ struct KeepCurrentDetailsContent: View {
         .overlay(alignment: .top) {
             if scrolled {
                 VStack(spacing: 0) {
-                    Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5)
-                    LinearGradient(stops: [.init(color: Color.ink0, location: 0), .init(color: Color.ink0, location: 0.5),
-                                           .init(color: Color.ink0.opacity(0), location: 1)],
-                                   startPoint: .top, endPoint: .bottom)
+                    // The hairline is drawn on solid ink, so no glyph shows through it.
+                    Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5).background(Color.ink0)
+                    Color.ink0.frame(height: edgeBand)
+                    LinearGradient(colors: [Color.ink0, Color.ink0.opacity(0)], startPoint: .top, endPoint: .bottom)
                         .frame(height: edgeFade)
                 }
                 .allowsHitTesting(false)
