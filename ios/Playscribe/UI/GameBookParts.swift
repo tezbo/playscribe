@@ -907,6 +907,11 @@ struct TabletopOutline: View {
                 .padding(.top, 4)
             }
         }
+        // The trailer list comes from the game's basics, which About loads when it appears. About is not on the Tabletop stage,
+        // so the outline loads them itself, or "Play trailer" and the stage tile never show (Mac, #486 at a2eeb67).
+        .task(id: model.game(gameID)?.igdbID) {
+            if let id = model.game(gameID)?.igdbID { await GameInfoStore.shared.load(igdbID: id) }
+        }
     }
 
     private func pageButton(_ title: String, _ symbol: String, enabled: Bool, action: @escaping () -> Void) -> some View {
