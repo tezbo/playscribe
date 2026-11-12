@@ -112,3 +112,16 @@ struct VideoReflection: View {
             }
     }
 }
+
+extension View {
+    /// Text that sits over the mirror (R-11, Max and Iris, 12 Nov): a soft-edged black plate at 92% behind it, so grey text keeps
+    /// 4.5:1 on any frame, bright ones included. The plate adds no layout room and takes no touches.
+    @ViewBuilder func overMirror(_ on: Bool) -> some View {
+        if on {
+            background {
+                RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Color.black.opacity(0.92))
+                    .padding(-8).blur(radius: 6).allowsHitTesting(false)
+            }
+        } else { self }
+    }
+}

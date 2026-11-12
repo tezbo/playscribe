@@ -543,7 +543,9 @@ struct TrailerView: View {
                 Color.black.aspectRatio(16 / 9, contentMode: .fit)
                     .overlay { if let controller { WebSurface(webView: controller.webView) } }
                 VStack(alignment: .leading, spacing: 0) {
-                    Text(name).font(PlayscribeFont.headline).padding(.horizontal, 16).padding(.top, 12)
+                    Text(name).font(PlayscribeFont.headline)
+                        .overMirror(VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off)
+                        .padding(.horizontal, 16).padding(.top, 12)
                     Spacer(minLength: 0)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

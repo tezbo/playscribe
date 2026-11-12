@@ -154,6 +154,7 @@ struct PlayerView: View {
         // A web view has no intrinsic size, so a 16:9 box carries the size and the view fills it.
         let surface = Color.black.aspectRatio(16 / 9, contentMode: .fit).overlay { WebSurface(webView: controller.webView) }
         let gameName = model.game(gameID)?.name ?? ""
+        let overMirror = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off
         switch duo.pose {
         case .tabletop:
             // TT-4: the standing half shows only the video; the flat half holds the transport.
@@ -177,7 +178,7 @@ struct PlayerView: View {
                 HStack(alignment: .top, spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
                         surface
-                        VideoCaption(video: video, game: gameName)
+                        VideoCaption(video: video, game: gameName).overMirror(overMirror)
                             .padding(.horizontal, 16).padding(.top, 12)
                             .background(alignment: .top) { mirror(controller, video) }
                         Spacer(minLength: 0)
@@ -192,7 +193,7 @@ struct PlayerView: View {
             // VB-3: full display, the player's own controls.
             VStack(spacing: 0) {
                 surface.frame(maxWidth: .infinity)
-                VideoCaption(video: video, game: gameName).padding(.horizontal, 16).padding(.top, 12)
+                VideoCaption(video: video, game: gameName).overMirror(overMirror).padding(.horizontal, 16).padding(.top, 12)
                     .background(alignment: .top) { mirror(controller, video) }
             }
             .frame(maxHeight: .infinity, alignment: duo.pose == .closed ? .top : .center)
