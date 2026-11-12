@@ -43,8 +43,10 @@ struct DuoContext: Equatable {
         return max(0, bottom - (d.minY - gap))
     }
 
-    /// Book: how far a page's text and controls stay clear of the division band (the 24 pt keep-out used everywhere else).
-    static let hingeGap: CGFloat = 24
+    /// Book: how far a page's text and controls stay clear of the division band: the 24 pt keep-out used everywhere else, plus 1 pt
+    /// because the band starts at a half point (455.5 on the Duo) and a pane's frame is reported rounded up (456), so 24 from the
+    /// pane edge read as 432 against a limit of 431 (Mac frame dump on 12f0b47).
+    static let hingeGap: CGFloat = 25
 
     /// The inset for the edge of a page that faces the hinge in Book: the page's own inset, or the keep-out if that is more.
     /// The two panes meet the band exactly (the left one ends where it starts, the right one starts where it ends), so the

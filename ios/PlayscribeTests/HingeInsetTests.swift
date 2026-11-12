@@ -12,12 +12,12 @@ struct HingeInsetTests {
         return DuoReader<EmptyView>.context(size: size, compact: false, division: fold, occlusions: [])
     }
 
-    @Test("Book: the edge facing the hinge keeps 24 pt, the edge facing the screen keeps its own inset")
+    @Test("Book: the edge facing the hinge keeps 25 pt (24 plus 1 for the half-point band), the edge facing the screen keeps its own inset")
     func bookFacingHinge() {
         let book = ctx("book")
         #expect(book.pose == .book)
-        #expect(book.hingeInset(16, facingHinge: true) == 24)
-        #expect(book.hingeInset(20, facingHinge: true) == 24)
+        #expect(book.hingeInset(16, facingHinge: true) == 25)
+        #expect(book.hingeInset(20, facingHinge: true) == 25)
         #expect(book.hingeInset(16, facingHinge: false) == 16)
         // A page that already insets more than 24 pt keeps it.
         #expect(book.hingeInset(32, facingHinge: true) == 32)
