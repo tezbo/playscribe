@@ -46,6 +46,8 @@ export interface IngestSummary {
   autoStopped?: boolean
   /** News headlines hidden by the promo rule this run (new posts), so a jump shows in the job log (Nadia, r054). */
   newsHidden?: number
+  /** PS5 claims withheld this run by the r050 rules, so their real cost shows in the job log: held to a stated time, test build, PC-scoped. */
+  held?: { stated: number; testBuild: number; pcScoped: number }
 }
 
 const MIN_POLL_MS = 55 * 60_000
@@ -256,6 +258,11 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   // A post that gives a later time ("at 02:00 UTC on November 10 the updates ... will be available") is official too,
   // but the row is announced, dated to that time, until it passes (store.promoteStated).
   const stated = statedLiveTime(text, post.publishedAt)
+  const held = (k: 'stated' | 'testBuild' | 'pcScoped') => {
+    const h = (summary.held ??= { stated: 0, testBuild: 0, pcScoped: 0 })
+    h[k]++
+    deps.log?.(`ps5 claim withheld (${k}) ${game.id}: ${post.title}`)
+  }
   const officialPs5 = (releaseId: string, ps5Only = true) => {
     db.prepare('UPDATE releases SET ps4 = 0 WHERE id = ? AND ps4 = 1').run(releaseId)
     const version = consoleVersionOf(text, { ps5Only })
@@ -267,6 +274,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
       sizeBytes: size ? store.field(size, 'official', s.id) : null,
       liveAt: store.field(stated ?? post.publishedAt, 'official', s.id),
     }
+    if (stated) held('stated')
     if (deps.repairClaims) store.repairOwnLiveAt(db, releaseId, s.id, post.publishedAt, input.liveAt, input.status)
     store.upsertPlatform(db, releaseId, 'ps5', input)
     if (stated) return
@@ -280,7 +288,10 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   if (!pcOnly && !namesPs5) return null // an official multi-platform post that doesn't name PS5 says nothing about PS5
   // A PTB, public test, test build, beta or preview is not a release: no PS5 claim from it at all.
   const testBuild = isTestBuildPost(post.title)
-  if (!pcOnly && testBuild) return null
+  if (!pcOnly && testBuild) {
+    held('testBuild')
+    return null
+  }
 
   const k = kind()
   // A studio or Steam post spelling a version another way ("1.4.0" for "1.4") joins the release already stored.
@@ -292,6 +303,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     store.addLinks(db, releaseId, links())
     // A test build, or a post listing other platforms' builds without PlayStation, says nothing about PS5.
     if (testBuild || (pcScopedPost(text) && !ps5LiveStated(text))) {
+      held(testBuild ? 'testBuild' : 'pcScoped')
       if (deps.repairClaims) store.dropOwnPs5Row(db, releaseId, s.id, post.publishedAt)
       return releaseId
     }
@@ -301,6 +313,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
       // A later time stated in the post holds the row as announced until then.
       const status = stated ? 'announced' : ps5StatusOf(text)
       const liveAt = stated ? store.field(stated, 'assumed', s.id) : status === 'live' ? store.field(post.publishedAt, 'assumed', s.id) : null
+      if (stated) held('stated')
       if (deps.repairClaims) store.repairOwnLiveAt(db, releaseId, s.id, post.publishedAt, liveAt, status)
       store.upsertPlatform(db, releaseId, 'ps5', { status, verification: 'assumed', liveAt })
       if (mentionsPs5(text)) review(releaseId, 'steamMentionsPs5')
@@ -466,6 +479,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   const settled = store.settleOldAnnouncements(deps.db)
   if (settled) deps.log?.(`ingest: ${settled} press announcements older than 30 days, with a later PS5 release live, now read as live`)
   deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)
+  if (summary.held) deps.log?.(`ingest: PS5 claims withheld this run: ${summary.held.stated} held to a stated time, ${summary.held.testBuild} test builds, ${summary.held.pcScoped} PC-scoped`)
   deps.log?.(`ingest: polled ${summary.polled.length}, new ${summary.created.length}, revised ${summary.revised.length}, review +${summary.review}, errors ${summary.errors.length}`)
   return summary
 }

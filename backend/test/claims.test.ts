@@ -91,14 +91,14 @@ const setup = async (items: Parameters<typeof steamNews>[0]) => {
   const db = openDb(':memory:')
   const deps = { db, fetchFn: fakeFetch({ 'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews(items) }), igdb: null }
   await seedGames(deps)
-  await runIngest(deps)
-  return { db, deps }
+  const summary = await runIngest(deps)
+  return { db, deps, summary }
 }
 const ps5Of = (db: ReturnType<typeof openDb>, id: string) => store.getRelease(db, id)?.platforms.find((p) => p.platform === 'ps5')
 
 test('ingest: test builds and PC-scoped posts make no PS5 row; a stated later time holds the row announced until then', async () => {
   const when = day(2)
-  const { db } = await setup([
+  const { db, summary } = await setup([
     { gid: '1', title: '10.3.0 | Terrifier PTB Patch Notes', date: ago(30), contents: 'Public test build. Fixed a crash.', tags: ['patchnotes'] },
     { gid: '2', title: 'Hotfix 1.0.6', date: ago(25), contents: 'Windows: v1.0.6.2132\nMac: v1.0.6.776\n- Fixed a crash', tags: ['patchnotes'] },
     { gid: '3', title: 'Patch 1.3', date: ago(20), contents: `At 02:00 UTC+0 on ${monthDay(when)}, the updates for Xbox Series X|S and PlayStation 5 will be available.`, tags: ['patchnotes'] },
@@ -111,6 +111,7 @@ test('ingest: test builds and PC-scoped posts make no PS5 row; a stated later ti
   assert.deepEqual([held.status, held.verification, held.liveAt?.value], ['announced', 'official', `${when.toISOString().slice(0, 10)}T02:00:00.000Z`])
   assert.equal(held.alert, undefined)
   assert.ok(store.getRelease(db, 'dawnwalker@10.2.2a'))
+  assert.deepEqual(summary.held, { stated: 1, testBuild: 1, pcScoped: 1 })
   // Nothing happens early; once the time has passed the row is live and earns its one alert from now.
   assert.equal(store.promoteStated(db, day(1)), 0)
   assert.equal(store.promoteStated(db, day(3)), 1)
