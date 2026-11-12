@@ -31,9 +31,9 @@ struct HingeInsetTests {
     }
 
     @Test("Left page ends 24 pt clear of the band, right page starts 24 pt past it")
-    func clearOfBand() {
+    func clearOfBand() throws {
         let book = ctx("book")
-        let band = try! #require(book.division)
+        let band = try #require(book.division)
         // The panes meet the band exactly; the page's own padding sits inside them.
         #expect(band.minX - book.hingeInset(16, facingHinge: true) <= band.minX - 24)
         #expect(band.maxX + book.hingeInset(20, facingHinge: true) >= band.maxX + 24)
