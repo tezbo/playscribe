@@ -447,7 +447,9 @@ final class AppModel {
     }
 
     func ps5Releases(_ gameID: String) -> [Release] {
-        releases(gameID).filter(\.isPS5Listed).sorted { Self.newer($0, $1, by: \.ps5Date) }
+        // QA (INTERNAL): "no-notes/<game>" hides the whole update history, so the hero, the tile and the game page agree.
+        if qaNoReleases { return [] }
+        return releases(gameID).filter(\.isPS5Listed).sorted { Self.newer($0, $1, by: \.ps5Date) }
     }
 
     func pcOnlyReleases(_ gameID: String) -> [Release] {
