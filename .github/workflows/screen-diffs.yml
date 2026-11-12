@@ -109,6 +109,8 @@ jobs:
           TEST_RUNNER_HARNESS_SCREENS: ${{ env.SCREENS }}
           TEST_RUNNER_HARNESS_SPLIT: '1'
           TEST_RUNNER_HARNESS_STABLE: '1'
+          # Same-day games (Coming to PS5) came out in a different order on each side in run 7: Swift seeds hashing per process.
+          TEST_RUNNER_SWIFT_DETERMINISTIC_HASHING: '1'
         run: |
           udid=${{ steps.sim.outputs.udid }}
           render() {

@@ -66,6 +66,7 @@ struct HarnessStillsTests {
         let clock = ContinuousClock(), t0 = clock.now
         let model = FoldHost.demoModel()
         if let route, !route.isEmpty, let url = URL(string: "playscribe://\(route)") { model.handle(url: url) }
+        HarnessStable.settleReadState(model, route: route)
         // Whether a QA route (one-update, many-updates, ...) took effect: it must show in the log, not only in the still.
         print("harness route: \(route ?? "none") qaRoute \(model.qaRoute ?? "nil") games \(model.data.collection.count) hero \(model.continueItem?.release.id ?? "none")")
         // A view (settings): host that screen's view directly (the app presents it as a system sheet in Closed, which the capture of
@@ -87,12 +88,8 @@ struct HarnessStillsTests {
         }
         defer { FoldHost.dispose(rendered) }
         if HarnessStable.on {
-            try? await Task.sleep(for: HarnessStable.wait(route: route))
+            try? await Task.sleep(for: HarnessStable.pause)
             rendered.window.layoutIfNeeded()
-            if (route ?? "").hasPrefix("game") {
-                try? await Task.sleep(for: HarnessStable.pause)
-                rendered.window.layoutIfNeeded()
-            }
         }
         try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
         let t1 = clock.now

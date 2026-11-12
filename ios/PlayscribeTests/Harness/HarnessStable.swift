@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+@testable import Playscribe
 
 /// HARNESS_STABLE=1: stills that are the same pixels every time the same code is rendered, so `screen-diffs.yml` can compare a
 /// PR's stills with main's and list only the screens that changed (Quinn's pass bar, qa-screen-diffs-on-prs):
@@ -15,11 +16,13 @@ enum HarnessStable {
     static var on: Bool { ProcessInfo.processInfo.environment["HARNESS_STABLE"] == "1" }
     /// Wait after the layout settled, before the PNG (fades in the app are 0.2 s).
     static let pause: Duration = .milliseconds(600)
-    /// A game page marks its open update read once the body has been half on screen for 1 s (R-6, JournalView). Whether that
-    /// timer had fired by the shot was a race (#485 run 5: game-book read on one side, unread with "Mark 1 read" on the other),
-    /// so game routes wait past it, and again for the re-layout the read state causes.
-    static func wait(route: String?) -> Duration {
-        (route ?? "").hasPrefix("game") ? .milliseconds(1600) : pause
+    /// A game page marks its open update read once the body has been half on screen for 1 s (R-6, JournalView), and whether
+    /// that had happened by the shot was a race (#485 runs 5 and 7: one side read with the full history, the other unread with
+    /// "Mark 1 read"; a longer wait did not settle it). So a game route starts with that game's updates already read.
+    @MainActor static func settleReadState(_ model: AppModel, route: String?) {
+        guard on, let route, route.hasPrefix("game/") else { return }
+        let gameID = String(route.dropFirst("game/".count).split(separator: "/").first ?? "")
+        for r in model.releases(gameID) where model.isUnread(r) { model.markRead(r.id) }
     }
 }
 
