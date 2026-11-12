@@ -64,6 +64,7 @@ Claude Code loads these on its own in any session that checks out the repo, and 
 | `playscribe-code-review` | Reviewing a diff with the repo rules first. |
 | `swiftui-pro` | Writing or reviewing SwiftUI (modern API, data flow, layout as the window resizes incl. iPhone Duo, Dynamic Type/VoiceOver). Vendored, MIT, Paul Hudson; Playscribe rules win. |
 | `swiftui-accessibility-auditor` | Auditing a SwiftUI view for VoiceOver, Dynamic Type, focus, touch targets; P0/P1/P2 findings. Vendored, MIT, rgmez; does not replace the AX5 stills gate. |
+| `release-manager` | Tagging a release, creating a GitHub release, rolling one back, or any git/gh command that changes tags, releases or remote refs. Held by the release manager (Ollie) alone. |
 | `swift-testing-pro` | Writing or reviewing `import Testing` unit and logic tests (UI tests stay XCTest). Vendored, MIT, Paul Hudson. |
 
 **General skills.** Teammates also see the shared design, engineering, marketing and product-management skills (for example `engineering:code-review`, `design:accessibility-review`, `marketing:brand-review`, `product-management:write-spec`). Say "Skill: <name>" in the reply when you use one.
