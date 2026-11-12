@@ -120,6 +120,22 @@ struct FrontCoverTests {
         #expect(FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.4).map(\.location) == [0, 0.18, 0.45, 0.85, 1])
     }
 
+    /// Iris (#467): the cover is Closed-only. Any other pose closes it at once, the route's Settings with it, and the deck
+    /// position stays.
+    @Test func coverIsClosedOnly() {
+        #expect(FrontCoverPreview.shows(pose: .closed))
+        for pose in [Pose.flat, .book, .tabletop] { #expect(!FrontCoverPreview.shows(pose: pose)) }
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "cover-\(UUID().uuidString).json"))
+        m.handle(url: URL(string: "playscribe://cover")!)
+        #expect(FrontCoverPreview.shared.open && m.settingsOpen)
+        m.deckSelection = m.latestDeck.dropFirst().first?.id
+        let kept = m.deckSelection
+        FrontCoverPreview.shared.closeForPose(m)
+        #expect(!FrontCoverPreview.shared.open)
+        #expect(!m.settingsOpen)
+        #expect(m.deckSelection == kept)
+    }
+
     /// Iris (#467): Wukong's cover keeps the figure, not the left of the mural, in view.
     @Test func wukongCarriesItsFocalPoint() {
         let g = Fixtures.shared.games.first { $0.id == "wukong" }

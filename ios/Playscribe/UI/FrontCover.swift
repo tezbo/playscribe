@@ -56,6 +56,25 @@ final class FrontCoverPreview {
     /// even while the cover row is far down the lazy form and never laid out (Mac, #467). Never persisted, so a killed
     /// run cannot leave the preview popping up over a later QA shot of Settings.
     var open = false
+    /// Set by `-qaRoute cover`, which opens Settings only to host the preview: when the pose gate closes the cover, Settings
+    /// closes too, so the person lands on the Library.
+    var openedByRoute = false
+
+    /// Iris (#467): the cover is the closed device's front. Open, Book and Tabletop go straight to the Library (in Tabletop a
+    /// close control would sit above the fold). The pose comes from the container (DuoReader), never from device checks.
+    static func shows(pose: Pose) -> Bool { pose == .closed }
+
+    /// The pose left Closed while the cover was up: close it at once, no animation (Reduce Motion safe). The deck position
+    /// lives in the model (`deckSelection`), so it is kept.
+    @MainActor func closeForPose(_ model: AppModel) {
+        var t = Transaction()
+        t.disablesAnimations = true
+        withTransaction(t) {
+            open = false
+            if openedByRoute { model.settingsOpen = false }
+            openedByRoute = false
+        }
+    }
 }
 
 extension View {
@@ -336,6 +355,17 @@ struct FrontCoverPreviewScreen: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
+        DuoReader { duo in
+            if FrontCoverPreview.shows(pose: duo.pose) {
+                content
+            } else {
+                Color.ink0.ignoresSafeArea()
+                    .onAppear { FrontCoverPreview.shared.closeForPose(model) }
+            }
+        }
+    }
+
+    @ViewBuilder private var content: some View {
         VStack(spacing: 0) {
             if model.latestDeck.isEmpty {
                 Text("No updates in the deck. Try -qaRoute cover with a demo library.")
@@ -360,6 +390,7 @@ struct FrontCoverPreviewScreen: View {
 
 /// Settings: the cover's motion mode with the CM-1 footnote. Internal builds only until 0.7 (see the top of this file).
 struct CoverMotionSection: View {
+    @Environment(\.duo) private var duo
     @AppStorage(CoverMotion.key) private var stored: CoverMotion = CoverMotion.defaultMode
 
     var body: some View {
@@ -370,9 +401,12 @@ struct CoverMotionSection: View {
                 }
                 .frame(minHeight: 52)
                 .accessibilityIdentifier("coverMotion")
-                Button("Show the front cover") { FrontCoverPreview.shared.open = true }
-                    .frame(minHeight: 44)
-                    .accessibilityIdentifier("showFrontCover")
+                // Closed only (Iris, #467): the cover is the closed device's front.
+                if FrontCoverPreview.shows(pose: duo.pose) {
+                    Button("Show the front cover") { FrontCoverPreview.shared.open = true }
+                        .frame(minHeight: 44)
+                        .accessibilityIdentifier("showFrontCover")
+                }
             } header: {
                 Text("Front cover (internal preview)")
             } footer: {

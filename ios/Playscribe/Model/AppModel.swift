@@ -704,6 +704,7 @@ final class AppModel {
             // cover/<game> (Iris, focal-point check): that game's newest update leads the deck, unread.
             if parts.first == "one" { resetToOneUpdateDemo() } else { resetToCoverDemo(leading: parts.first) }
             FrontCoverPreview.shared.open = true
+            FrontCoverPreview.shared.openedByRoute = true
             settingsOpen = true
         case "settings":
             settingsOpen = true
