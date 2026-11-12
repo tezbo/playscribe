@@ -20,7 +20,10 @@ Workflow: `.github/workflows/screen-diffs.yml`. Compare step: `ios/tools/qa/scre
    - Matrix: library, game, updates, settings and upcoming screens.
    - Poses and sizes: every pose at std and AX5, plus AX3 in Closed and Tabletop only. That is 70 stills a side.
 4. `compare` diffs the two sets. It pushes the changed images to the `screen-diffs` branch, then writes the PR comment.
-   - The branch holds one orphan commit and is written only by this workflow.
+   - Only this workflow writes the branch. Each run adds a commit (never a force push), and the comment links its images by
+     that commit's SHA, so links in older comments and run pages keep working. Keep the branch: it is never merged, so the
+     merged-only branch delete (#490) leaves it alone.
+   - When one side writes no stills (it did not build), the comment says so instead of listing every screen as gone.
    - The comment names the main SHA it compared against.
 
 Main is rendered fresh in every run rather than kept as stored reference images. The app shows dates relative to today, so
@@ -42,6 +45,8 @@ that. The references still change only one way: by merging to main.
   - sheets and sheet bottoms, and navigation bar collapse
   - the status bar and video
   - scroll-edge fades, Reduce Motion states, and switching between light and dark
+  - a game page's unread state ("Mark N read", the unread dot): stable mode opens game pages already read
+  - anything that depends on remote art or the live feed: those hosts are blocked, so a regression there shows unchanged
 - Harness images are only ever compared with harness images. Open portrait and Book have a known 44 pt leading shift
   against the Mac.
 

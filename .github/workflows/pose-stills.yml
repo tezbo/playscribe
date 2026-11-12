@@ -5,8 +5,9 @@ name: Pose stills (CI simulator)
 # -UIPreferredContentSizeCategoryName), with the PNGs exported from the .xcresult into the pose-stills-<pose> artifact.
 # Advisory: a pilot to compare against the Mac on the same SHA. The Mac stays the sign-off.
 # Open, Book and Tabletop need the inner panel: tools/qa/ci-pose.sh tries Device Hub's Open control and logs `panel=` either way.
-# Runs by hand (workflow_dispatch, once this file is on main) or on a push to claude/** that changes
+# Runs by hand (workflow_dispatch, once this file is on main) or on a push to claude/** that adds or changes
 # .github/pose-stills-request.txt (KEY=VALUE lines: APP_SHA, POSES, ROUTES, SIZES, WAIT). Always finishes green.
+# Pilot result (#485, 12 Nov): CI cannot select the inner panel (Device Hub does not start on the runner); Closed portrait works.
 on:
   workflow_dispatch:
     inputs:
@@ -45,7 +46,11 @@ jobs:
       - uses: actions/checkout@v4
       - id: p
         run: |
-          if [ "${{ github.event_name }}" = push ] && [ -f .github/pose-stills-request.txt ]; then set -a; . ./.github/pose-stills-request.txt; set +a; fi
+          if [ "${{ github.event_name }}" = push ]; then
+            # A push that removes the request file shoots nothing (the pilot's request was dropped before #485 merged).
+            [ -f .github/pose-stills-request.txt ] || { echo "poses=[]" >> "$GITHUB_OUTPUT"; exit 0; }
+            set -a; . ./.github/pose-stills-request.txt; set +a
+          fi
           poses=${POSES:-${{ inputs.poses }}}; poses=${poses:-closed,closedLandscape,book,tabletop,open}
           echo "poses=$(python3 -c 'import json,sys; print(json.dumps([p.strip() for p in sys.argv[1].split(",") if p.strip()]))' "$poses")" >> "$GITHUB_OUTPUT"
           echo "routes=${ROUTES:-${{ inputs.routes }}}" >> "$GITHUB_OUTPUT"
@@ -55,6 +60,7 @@ jobs:
 
   shoot:
     needs: plan
+    if: needs.plan.outputs.poses != '[]'
     strategy:
       fail-fast: false
       matrix:

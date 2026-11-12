@@ -7,7 +7,8 @@ name: Screen diffs
 #    same runner image minutes apart and names the main SHA it used. References change only by merging to main.
 #  - Advisory, like Precheck: every job finishes green (no failed-run email); the verdict is the last job's name.
 #  - Unchanged does not mean signed. Release gates stay Mac stills of the exact SHA.
-#  - Images for the comment are pushed to the screen-diffs branch (one orphan commit, pr-<n>/<sha>/), which the workflow owns.
+#  - Images for the comment are committed to the screen-diffs branch (pr-<n>/<sha>/), which the workflow owns. The comment
+#    links them by that commit's SHA, so a link keeps working after later runs (Iris: branch-name links went 404).
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
@@ -199,7 +200,8 @@ jobs:
         run: |
           pip install -q pillow
           short() { echo "${1:0:7}"; }
-          prefix="https://raw.githubusercontent.com/${{ github.repository }}/screen-diffs/pr-$PR/$(short $HEAD_SHA)"
+          # The images' commit isn't known yet: the publish step swaps @@IMAGES@@ for its SHA-pinned URL.
+          prefix="@@IMAGES@@"
           notes=()
           for side in before after; do
             for g in all; do
@@ -218,17 +220,20 @@ jobs:
           set -e
           echo "$out"
           if [ $rc -eq 0 ]; then echo "verdict=$out" >> "$GITHUB_OUTPUT"; else echo "verdict=SCREENS compare failed (see log)" >> "$GITHUB_OUTPUT"; fi
-          cat diffs/comment.md >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
       - name: Publish the images to the screen-diffs branch
+        id: publish
         if: hashFiles('diffs/*.png') != ''
         continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          rm -rf ../site && mkdir ../site
-          if git fetch --depth 1 origin screen-diffs 2>/dev/null; then git --work-tree=../site checkout FETCH_HEAD -- . 2>/dev/null || true; fi
+          rm -rf ../site
+          # Add a commit on top (never force): earlier comments link earlier commits by SHA, so those must stay reachable.
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git clone -q --depth 1 --branch screen-diffs "$remote" ../site 2>/dev/null || { mkdir ../site && git -C ../site init -q -b screen-diffs; }
           cd ../site
-          # Keep the other PRs' folders for 21 days after their last run; this PR keeps only its latest SHA.
+          # Keep the other PRs' folders for 21 days after their last run; this PR keeps only its latest SHA (older ones stay in
+          # history, which is what the older comments link).
           for d in pr-*/; do
             [ -d "$d" ] || continue
             [ -f "$d/when.txt" ] && [ $(( $(date +%s) - $(cat "$d/when.txt") )) -gt 1814400 ] && rm -rf "$d"
@@ -237,13 +242,18 @@ jobs:
           cp "$GITHUB_WORKSPACE"/diffs/*.png "pr-$PR/${HEAD_SHA:0:7}/"
           date +%s > "pr-$PR/when.txt"
           printf 'Images for the Screen diffs PR comments. Written only by .github/workflows/screen-diffs.yml; safe to delete.\n' > README.md
-          git init -q -b screen-diffs . && git add -A
+          git add -A
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "Screen diffs for #$PR at ${HEAD_SHA:0:7}"
-          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" screen-diffs
+          git push -q "$remote" HEAD:screen-diffs
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Post or update the PR comment
         if: hashFiles('diffs/comment.md') != ''
         continue-on-error: true
         run: |
+          ref=${{ steps.publish.outputs.sha }}; ref=${ref:-screen-diffs}
+          sed -i "s#@@IMAGES@@#https://raw.githubusercontent.com/${{ github.repository }}/$ref/pr-$PR/${HEAD_SHA:0:7}#g" diffs/comment.md
+          # The run page keeps this comment as it was for this SHA, after later runs edit the PR comment.
+          cat diffs/comment.md >> "$GITHUB_STEP_SUMMARY"
           id=$(gh api "repos/${{ github.repository }}/issues/$PR/comments" --paginate \
             --jq '.[] | select(.user.login == "github-actions[bot]") | select(.body | startswith("<!-- screen-diffs -->")) | .id' | head -1)
           if [ -n "$id" ]; then gh api -X PATCH "repos/${{ github.repository }}/issues/comments/$id" -F body=@diffs/comment.md >/dev/null
