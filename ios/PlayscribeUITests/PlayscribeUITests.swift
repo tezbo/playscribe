@@ -1157,22 +1157,11 @@ final class Release050Tests: XCTestCase {
             let play = app.buttons["playTrailer"]
             // The basics arrive after launch on a fresh install: wait for the row before scrolling (Mac, #486 at 89fcce0).
             XCTAssertTrue(play.waitForExistence(timeout: 30), "Play trailer appears once the basics load [\(size), \(pose)]")
-            var drags = 0
-            // Drag in the lower half only (the stage is view only), right of centre and clear of the rail. A fast flick moves
-            // the panel; the slow drag at 0.4/0.92 to 0.62 did not.
-            while !(play.exists && play.isHittable) && drags < 25 {
-                app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.95))
-                    .press(forDuration: 0.05, thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.55)),
-                           withVelocity: .fast, thenHoldForDuration: 0)
-                drags += 1
-            }
-            if !(play.exists && play.isHittable) {
-                let tree = XCTAttachment(string: app.debugDescription); tree.name = "tabletop-trailer-\(size)-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
-                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "tabletop-trailer-\(size)"; shot.lifetime = .keepAlways; add(shot)
-            }
-            XCTAssertTrue(play.exists && play.isHittable, "Play trailer is in the lower half after \(drags) drags [\(size), \(pose)]")
-            XCTAssertGreaterThanOrEqual(play.frame.minY, window.midY, "Play trailer sits below the fold [\(size)]: \(play.frame)")
-            XCTAssertGreaterThanOrEqual(play.frame.height, 44, "Play trailer is 44 pt or taller [\(size)]")
+            // Read the frame before tapping: the row sits below the fold until the tap scrolls it into view. Flicks and drags
+            // did not move the lower panel on the Mac (e47cd11), so the tap is what scrolls it.
+            let frame = play.frame
+            XCTAssertGreaterThanOrEqual(frame.minY, window.midY, "Play trailer sits below the fold [\(size)]: \(frame)")
+            XCTAssertGreaterThanOrEqual(frame.height, 44, "Play trailer is 44 pt or taller [\(size)]")
             // The stage tile, when it fits, is one static element, never a button.
             XCTAssertFalse(app.buttons["stageTrailerTile"].exists, "the stage tile takes no touches [\(size)]")
             play.tap()
