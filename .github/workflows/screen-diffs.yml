@@ -95,11 +95,15 @@ jobs:
           # Remote art loads on one run and not the other, and drifting key art is caught mid-move: both make false alarms
           # (first #485 run). Block the app's hosts so remote art falls back to bundled art or the title plate on both sides,
           # and turn Reduce Motion on in the simulator so ArtView never drifts.
-          for h in images.igdb.com www.youtube.com www.youtube-nocookie.com i.ytimg.com playscribe.app playscribe.codeconnectors.co; do
+          # The feed (PlayscribeAPIBaseURL) is on raw.githubusercontent.com: run 9 had the KCD II page with its Steam link on
+          # one side only, because the per-game feed loaded on one side and not the other. Block it and the relay too.
+          for h in images.igdb.com www.youtube.com www.youtube-nocookie.com i.ytimg.com playscribe.app playscribe.codeconnectors.co \
+                   raw.githubusercontent.com playscribe-relay.playscribe.workers.dev; do
             echo "0.0.0.0 $h" | sudo tee -a /etc/hosts >/dev/null
           done
           sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder 2>/dev/null || true
           curl -sS -m 5 -o /dev/null -w 'igdb from runner: %{http_code}\n' https://images.igdb.com/ || echo "igdb from runner: blocked"
+          curl -sS -m 5 -o /dev/null -w 'feed from runner: %{http_code}\n' https://raw.githubusercontent.com/tezbo/playscribe/feed/v1/latest.json || echo "feed from runner: blocked"
       - name: Render the matrix
         env:
           TEST_RUNNER_HARNESS_PNG_DIR: ${{ github.workspace }}/stills
