@@ -1150,18 +1150,20 @@ final class Release050Tests: XCTestCase {
             app.launchArguments = ["-qaRoute", "gamepage/dawnwalker", "-qaPose", "tabletop"]
                 + (ax5 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] : [])
             app.launch()
-            sleep(4)
             let size = ax5 ? "AX5" : "std"
             let pose = ReleaseRowTests.pose(app)
             XCTAssertTrue(pose.contains("pose: tabletop"), "runs in Tabletop [\(size), \(pose)]")
             let window = app.windows.firstMatch.frame
             let play = app.buttons["playTrailer"]
+            // The basics arrive after launch on a fresh install: wait for the row before scrolling (Mac, #486 at 89fcce0).
+            XCTAssertTrue(play.waitForExistence(timeout: 30), "Play trailer appears once the basics load [\(size), \(pose)]")
             var drags = 0
-            // Drag in the lower half only (the stage is view only), right of centre and clear of the rail.
+            // Drag in the lower half only (the stage is view only), right of centre and clear of the rail. A fast flick moves
+            // the panel; the slow drag at 0.4/0.92 to 0.62 did not.
             while !(play.exists && play.isHittable) && drags < 25 {
-                app.coordinate(withNormalizedOffset: CGVector(dx: 0.4, dy: 0.92))
-                    .press(forDuration: 0.05, thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.4, dy: 0.62)),
-                           withVelocity: .slow, thenHoldForDuration: 0.2)
+                app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.95))
+                    .press(forDuration: 0.05, thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.55)),
+                           withVelocity: .fast, thenHoldForDuration: 0)
                 drags += 1
             }
             if !(play.exists && play.isHittable) {
