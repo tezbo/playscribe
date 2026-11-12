@@ -132,6 +132,15 @@ struct TabletopReaderStage: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     /// The stage's bottom edge in screen space; the text ends 24 pt above the division.
     @State private var stageBottom: CGFloat = 0
+    @State private var stageWidth: CGFloat = 0
+
+    /// The room right of the text panel (16 pt margin, up to 560 pt, 24 pt gap, 16 pt margin): the tile is 240 pt at most and
+    /// is left out below 140 pt, so it never sits under the text.
+    private var trailerTileWidth: CGFloat {
+        let room = stageWidth - 16 - 560 - 24 - 16
+        // Accessibility sizes: the label is larger, so the poster gets smaller rather than the tile being cut by the stage.
+        return room >= 140 ? min(typeSize.isAccessibilitySize ? 160 : 240, room) : 0
+    }
     var gameID: String
 
     var body: some View {
@@ -205,7 +214,19 @@ struct TabletopReaderStage: View {
             } }
             // Clip the block, not the ZStack: the art above draws under the status bar on purpose.
             .clipped()
+            // R-11 (bug-tabletop-trailer-tile-missing, Iris): the game's trailer poster, whole and uncropped, with a play glyph for
+            // orientation only. The stage takes no touches; "Play trailer" in the lower half is the control. Drawn only where it
+            // fits beside the text panel, on the same bottom line, 24 pt or more above the fold; at large text it scales down.
+            if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first, trailerTileWidth > 0 {
+                Color.clear.overlay(alignment: .bottomTrailing) {
+                    StageTrailerTile(youtubeID: v.youtubeId, width: trailerTileWidth)
+                        .padding(.trailing, 16)
+                        .padding(.bottom, duo.clearance(forBottom: stageBottom))
+                }
+                .clipped()
+            }
         }
+        .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { w in if abs(w - stageWidth) > 0.5 { stageWidth = w } }
         .animation(.easeInOut(duration: 0.2), value: index)
         // Its parts stay separate elements, so the release title is findable (J-4).
         .accessibilityElement(children: .contain)
@@ -288,4 +309,34 @@ struct TabletopReaderControls: View {
 
 extension Array {
     subscript(safe i: Int) -> Element? { indices.contains(i) ? self[i] : nil }
+}
+
+/// The Tabletop stage's trailer tile: the poster at 16:9, uncropped, a play glyph for orientation, and "Trailer" under it on
+/// the stage's ink panel. View only. VoiceOver reads one element, "Trailer"; the action is "Play trailer" in the lower half.
+struct StageTrailerTile: View {
+    var youtubeID: String
+    var width: CGFloat
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(youtubeID)/mqdefault.jpg")) { $0.resizable().aspectRatio(16 / 9, contentMode: .fit) } placeholder: { Color.ink1 }
+                .frame(width: width, height: width * 9 / 16)
+                .background(Color.ink1)
+                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .overlay {
+                    Image(systemName: "play.fill").font(.title2).foregroundStyle(.white)
+                        .padding(12).background(PlayscribeColor.ink950.opacity(0.6), in: Circle())
+                }
+            Text("Trailer").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(width: width, alignment: .leading)
+        .padding(8)
+        .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .allowsHitTesting(false)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Trailer")
+        .accessibilityAddTraits(.isStaticText)
+        .accessibilityIdentifier("stageTrailerTile")
+    }
 }

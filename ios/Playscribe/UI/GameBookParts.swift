@@ -399,6 +399,16 @@ struct GameLinks: View {
 }
 
 struct GameBasicsView: View {
+    /// The game's trailers as About lists them: up to three, one per title (the feed can carry two cuts named "Launch
+    /// Trailer"). Also Tabletop's stage tile and "Play trailer" (bug-tabletop-trailer-tile-missing).
+    @MainActor static func trailers(_ game: CatalogGame) -> [GameBasics.Video] {
+        let info = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }
+        let fallback = game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }
+        let videos = info?.videos ?? fallback?.trailerId.map { [GameBasics.Video(youtubeId: $0, name: "Trailer")] } ?? []
+        let unique = videos.reduce(into: [GameBasics.Video]()) { out, v in if !out.contains(where: { $0.name == v.name }) { out.append(v) } }
+        return Array(unique.prefix(3))
+    }
+
     @Environment(\.duo) private var duo
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
@@ -412,7 +422,7 @@ struct GameBasicsView: View {
         let fallback = game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }
         let genres = info?.genres ?? fallback?.genres ?? []
         let summary = info?.summary ?? fallback?.summary
-        let videos = info?.videos ?? fallback?.trailerId.map { [GameBasics.Video(youtubeId: $0, name: "Trailer")] } ?? []
+        let videos = Self.trailers(game)
         VStack(alignment: .leading, spacing: 14) {
             if let move = fallback?.move?.line {
                 Text(move).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
@@ -421,9 +431,7 @@ struct GameBasicsView: View {
                 Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
             if !videos.isEmpty {
-                // One video per title: the feed can carry two cuts named "Launch Trailer".
-                let unique = videos.reduce(into: [GameBasics.Video]()) { out, v in if !out.contains(where: { $0.name == v.name }) { out.append(v) } }
-                ForEach(unique.prefix(3), id: \.youtubeId) { v in
+                ForEach(videos, id: \.youtubeId) { v in
                     Button { model.trailer = (v.youtubeId, v.name) } label: {
                         // At accessibility sizes the thumbnail sits above the title, so the title has the whole column and a word
                         // like "Cinematic" is not cut by letter beside a 112 pt picture (Iris, r054 Closed AX5).
@@ -878,6 +886,31 @@ struct TabletopOutline: View {
                 pageButton("Next", "chevron.forward", enabled: index < sections.count - 1) { model.readerIndex[gameID] = index + 1 }
             }
             .padding(.top, 6)
+            // R-11 (bug-tabletop-trailer-tile-missing, Iris): About is not on the Tabletop stage, so the game's trailer had no
+            // control at all. The stage shows its poster, view only; this is the control, in the lower half, and it plays in
+            // the lower-half player like the update video.
+            if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first {
+                Button { model.trailer = (v.youtubeId, v.name) } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "play.fill").accessibilityHidden(true)
+                        Text("Play trailer").font(PlayscribeFont.subheadline.weight(.semibold))
+                            .fixedSize(horizontal: false, vertical: true)
+                        Spacer(minLength: 0)
+                    }
+                    .foregroundStyle(PlayscribeColor.accent)
+                    .padding(.horizontal, 10).frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Play trailer")
+                .accessibilityIdentifier("playTrailer")
+                .tappableFrame()
+                .padding(.top, 4)
+            }
+        }
+        // The trailer list comes from the game's basics, which About loads when it appears. About is not on the Tabletop stage,
+        // so the outline loads them itself, or "Play trailer" and the stage tile never show (Mac, #486 at a2eeb67).
+        .task(id: model.game(gameID)?.igdbID) {
+            if let id = model.game(gameID)?.igdbID { await GameInfoStore.shared.load(igdbID: id) }
         }
     }
 
