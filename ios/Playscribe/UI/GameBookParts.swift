@@ -573,6 +573,9 @@ struct ContentsView: View {
                 .padding(.vertical, 14)
                 .padding(.trailing, railWidth)
         }
+        // Tabletop only, as the Library shelf (#487): scrolled, the lower half's top edge cut a Contents row through its glyphs at
+        // AX5 (Iris, 21efef8 still: "Better targeting, look-on…"). The panel is ink1, so the edge is too.
+        .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink1))
         .clearsMessages()
         .scrollPosition($position)
         .accessibilityIdentifier("contentsScroll")
