@@ -91,4 +91,21 @@ struct WholeWordTextTests {
         #expect(fit == all)
         #expect(words.count == 9)
     }
+
+    /// Iris, r054: a 20-letter compound wider than the column scales down by just enough, never below 70%, and is never given
+    /// an ellipsis inside the word.
+    @Test func overWideSingleWordScalesDownThenStops() {
+        let word = "Unbelievablygiganticword"   // 24 letters, one unbreakable token
+        #expect(WholeWordText.words(of: word) == [word])
+        #expect(WholeWordText.variants(of: word) == [word], "a single word has one variant, never a cut one")
+        // 330 pt of word in a 298 pt column: scale by the ratio, not more.
+        let s = WholeWordText.fitScale(widest: 330, available: 298)
+        #expect(abs(s - 298.0 / 330.0) < 0.0001)
+        // Far too wide: stop at the floor and let the layout overflow.
+        #expect(WholeWordText.fitScale(widest: 600, available: 298) == WholeWordText.overWideFloor)
+        // Fits, or unmeasured: untouched.
+        #expect(WholeWordText.fitScale(widest: 200, available: 298) == 1)
+        #expect(WholeWordText.fitScale(widest: 0, available: 298) == 1)
+        #expect(WholeWordText.fitScale(widest: 330, available: 0) == 1)
+    }
 }
