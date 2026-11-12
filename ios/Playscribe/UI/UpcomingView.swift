@@ -28,7 +28,7 @@ extension AppModel {
         data.collection.compactMap { c -> CatalogGame? in
             guard c.status == .wishlist || c.status == .watching, let g = game(c.gameID), g.isUpcoming || g.releasePrecision == .tbd else { return nil }
             return g
-        }.sorted(by: CatalogGame.upcomingOrder)
+        }.sorted { CatalogGame.upcomingOrder($0, $1) }
     }
 
     var upcomingMore: [CatalogGame] {
@@ -40,7 +40,7 @@ extension AppModel {
     @MainActor private static let catalogueUpcoming: [CatalogGame] = {
         let index = PS5Index.shared
         return index.entries.map { index.game($0) }.filter(\.isUpcoming)
-            .sorted(by: CatalogGame.upcomingOrder)
+            .sorted { CatalogGame.upcomingOrder($0, $1) }
             .prefix(60).map { $0 }
     }()
 }

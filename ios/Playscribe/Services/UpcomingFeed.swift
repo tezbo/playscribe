@@ -67,7 +67,7 @@ final class UpcomingStore {
             g.releasePrecision = precision
             return g
         }
-        games = mapped.sorted(by: CatalogGame.upcomingOrder).prefix(120).map { $0 }
+        games = mapped.sorted { CatalogGame.upcomingOrder($0, $1) }.prefix(120).map { $0 }
         NotificationService.shared.notifyDateMoves()
     }
 }

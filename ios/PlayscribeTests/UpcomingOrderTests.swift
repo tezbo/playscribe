@@ -4,6 +4,7 @@ import Testing
 
 /// Upcoming games that share a release date keep one order from launch to launch (bug-upcoming-same-date-order, caught by the
 /// screen diffs on #485): by date, then by name, then by id, whatever order they arrive in.
+@MainActor
 struct UpcomingOrderTests {
     private func game(_ id: String, _ name: String, _ date: String?) -> CatalogGame {
         CatalogGame(id: id, name: name, platforms: [.ps5], releaseDate: date, releasePrecision: date == nil ? .tbd : .day, coverage: .none)
@@ -19,7 +20,7 @@ struct UpcomingOrderTests {
         for seed in 0..<50 {
             var rng = SeededRandom(seed: UInt64(seed))
             let shuffled = games.shuffled(using: &rng)
-            #expect(shuffled.sorted(by: CatalogGame.upcomingOrder).map(\.id) == expected)
+            #expect(shuffled.sorted { CatalogGame.upcomingOrder($0, $1) }.map(\.id) == expected)
         }
     }
 
