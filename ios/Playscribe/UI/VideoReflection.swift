@@ -122,7 +122,7 @@ struct VideoReflection: View {
             .scaleEffect(x: 1, y: -1)
             .blur(radius: Self.raw ? 0 : 6)
             .opacity(Self.raw ? 1 : Self.opacity)
-            .mask(Self.raw ? LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom) : LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom))
+            .mask(Self.raw ? LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom) : LinearGradient(stops: [.init(color: .black, location: 0), .init(color: .black, location: 0.25), .init(color: .clear, location: 1)], startPoint: .top, endPoint: .bottom))
             .allowsHitTesting(false)
             .accessibilityHidden(true)
             .task(id: youtubeID) {
@@ -137,7 +137,7 @@ struct VideoReflection: View {
                 try? await Task.sleep(for: .seconds(2))
                 while !Task.isCancelled {
                     let frame = Self.fixtureFrame(n)
-                    NSLog("mirror-probe fixture=1 live=%.3f still=%@ size=%dx%d", Self.meanBrightness(frame),
+                    NSLog("mirror-probe fixture=1 raw=%d live=%.3f still=%@ size=%dx%d", Self.raw ? 1 : 0, Self.meanBrightness(frame),
                           still.map { String(format: "%.3f", Self.meanBrightness($0)) } ?? "none", Int(frame.size.width), Int(frame.size.height))
                     if !Self.isBlank(frame) { live = frame }
                     n += 1

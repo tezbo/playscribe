@@ -153,6 +153,9 @@ struct PlayerView: View {
     private func layout(duo: DuoContext, release: Release, video: ReleaseVideo, controller: YouTubeController) -> some View {
         // A web view has no intrinsic size, so a 16:9 box carries the size and the view fills it.
         let surface = Color.black.aspectRatio(16 / 9, contentMode: .fit).overlay { WebSurface(webView: controller.webView) }
+            // QA (-qaMirrorFixture): the video area shows the same generated frame the mirror is fed, so the band is measured
+            // against a bright edge like for like.
+            .overlay { if VideoReflection.fixture { Image(uiImage: VideoReflection.fixtureFrame(0)).resizable() } }
         let gameName = model.game(gameID)?.name ?? ""
         let overMirror = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off
         switch duo.pose {
@@ -178,7 +181,7 @@ struct PlayerView: View {
                 HStack(alignment: .top, spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
                         surface
-                        VideoCaption(video: video, game: gameName).overMirror(overMirror)
+                        VideoCaption(video: video, game: gameName, overMirror: overMirror)
                             .padding(.horizontal, 16).padding(.top, 12)
                             .background(alignment: .top) { mirror(controller, video) }
                         Spacer(minLength: 0)
@@ -193,7 +196,7 @@ struct PlayerView: View {
             // VB-3: full display, the player's own controls.
             VStack(spacing: 0) {
                 surface.frame(maxWidth: .infinity)
-                VideoCaption(video: video, game: gameName).overMirror(overMirror).padding(.horizontal, 16).padding(.top, 12)
+                VideoCaption(video: video, game: gameName, overMirror: overMirror).padding(.horizontal, 16).padding(.top, 12)
                     .background(alignment: .top) { mirror(controller, video) }
             }
             .frame(maxHeight: .infinity, alignment: duo.pose == .closed ? .top : .center)
@@ -227,12 +230,16 @@ struct PosterCover: View {
 struct VideoCaption: View {
     var video: ReleaseVideo
     var game: String
+    /// True when the mirror sits behind the caption: the plate hugs the text, not the whole row, so the mirror shows beside
+    /// and below it (the full-width plate darkened the band to 10 to 12 of 255, 12 Nov).
+    var overMirror = false
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
             Text(video.label).font(PlayscribeFont.headline).foregroundStyle(.white)
             Text([game, video.duration].compactMap { $0 }.joined(separator: ", "))
                 .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
         }
+        .overMirror(overMirror)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
