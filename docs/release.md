@@ -19,8 +19,17 @@ Nothing ships to TestFlight by itself. Merging to main never uploads a build; on
    signed-off commit: simulator captures in each pose and a clickable walkthrough. The designer helps put it
    together. Go is asked for only at this review.
 5. **Go.** Only after Terry says go: make sure the heading no longer says "(candidate, not released)" (it is dropped when the notes are final), then tag that commit
-   `vX.Y.Z` and push the tag. `.github/workflows/testflight.yml` builds it, sets the version from the tag and
+   `vX.Y.Z`. `.github/workflows/testflight.yml` builds it, sets the version from the tag and
    the next build number, and uses the section as "What to Test".
+
+   **How to tag (any agent, no Mac).** Agents' git pushes cannot create tags (the proxy returns 403), so run the
+   **Release to TestFlight** workflow (`release.yml`, workflow_dispatch on `main`) with `version` (`0.5.4`), `sha`
+   (the full signed-off main SHA), `approval` (the id or a quote of Terry's go message) and `dry_run`. Run it once
+   with `dry_run: true`, then with `false`. It refuses unless the SHA is on main, every push-triggered run on it
+   passed, an iOS run on it succeeded (if main's tip has none, run `ios.yml` on main first), the CHANGELOG section
+   exists without "candidate", and the tag is new or already at that SHA. It then creates the tag and calls
+   `testflight.yml` itself (a tag made by the workflow token fires no push event). Terry's go is still required
+   for every release; the workflow only removes the manual tag push. A person can still push a `v*` tag by hand.
 
 **Checking a TestFlight build.** A TestFlight or App Store build carries a receipt, so the `playscribe://` QA routes
 (including `playscribe://first-run`) do nothing there by design (#231). To see first run on such a build, delete the
