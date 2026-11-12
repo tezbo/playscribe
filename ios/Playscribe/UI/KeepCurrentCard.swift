@@ -232,6 +232,9 @@ struct KeepCurrentDetailsContent: View {
     @ScaledMetric(relativeTo: .body) private var edgeBand: CGFloat = 28
     @ScaledMetric(relativeTo: .body) private var edgeFade: CGFloat = 24
     @State private var scrolled = false
+    /// Mac at bc19eca (Closed std, mid-scroll): the last visible line was cut hard at the sheet's bottom. While more text
+    /// is below, the bottom edge mirrors the top: a fade over one line, then a solid band one line tall.
+    @State private var moreBelow = false
 
     var body: some View {
         ScrollView {
@@ -246,6 +249,22 @@ struct KeepCurrentDetailsContent: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.y + $0.contentInsets.top > 1 } action: { _, now in scrolled = now }
+        .onScrollGeometryChange(for: Bool.self) { g in
+            g.contentOffset.y + g.containerSize.height - g.contentInsets.bottom < g.contentSize.height - 1
+        } action: { _, now in moreBelow = now }
+        .overlay(alignment: .bottom) {
+            if moreBelow {
+                // The top edge mirrored (Iris): a fade over one line, then a solid band a full line tall at the edge.
+                VStack(spacing: 0) {
+                    LinearGradient(stops: [.init(color: Color.ink0.opacity(0), location: 0), .init(color: Color.ink0.opacity(0.85), location: 0.65),
+                                           .init(color: Color.ink0, location: 1)], startPoint: .top, endPoint: .bottom)
+                        .frame(height: edgeFade)
+                    Color.ink0.frame(height: edgeBand)
+                }
+                    .allowsHitTesting(false)
+                    .accessibilityHidden(true)
+            }
+        }
         .overlay(alignment: .top) {
             if scrolled {
                 VStack(spacing: 0) {
