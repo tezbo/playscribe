@@ -15,6 +15,9 @@ struct VideoReflection: View {
     /// On unless the person turns it off (Terry, 2026-11-06). The Settings toggle reads the same value.
     static let defaultOn = true
 
+    /// Peak strength of the mirror. 0.35 measured 20 to 30 of 255 on the Tabletop still, too faint to see (Quinn, 12 Nov).
+    static let opacity = 0.7
+
     enum Mode: Equatable { case off, still, live }
 
     /// Reduce Transparency turns the mirror off. Reduce Motion keeps it on the still (G-9: nothing moves; Iris, 12 Nov).
@@ -81,9 +84,11 @@ struct VideoReflection: View {
             .clipped()
             .animation(.easeInOut(duration: 0.2), value: shown)
             .scaleEffect(x: 1, y: -1)
-            .blur(radius: 14)
-            .opacity(0.35)
-            .mask(LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom))
+            .blur(radius: 10)
+            .saturation(1.2)
+            .opacity(Self.opacity)
+            .mask(LinearGradient(stops: [.init(color: .black, location: 0), .init(color: .black, location: 0.3), .init(color: .clear, location: 1)],
+                                 startPoint: .top, endPoint: .bottom))
             .allowsHitTesting(false)
             .accessibilityHidden(true)
             .task(id: youtubeID) {
