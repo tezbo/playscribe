@@ -3,6 +3,23 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
+## 0.5.4 (candidate, not released)
+
+- News has its own tab, with gaming headlines from five sites. Sale and merchandise headlines are left out.
+- PS Plus titles now open their game page, and the PS Plus card wraps at big text sizes.
+- On a game page, All updates now sits above About, and "You might also like" leads with View game.
+- The update deck at the top of the Library shows up to five updates.
+- Sharing an update makes a cleaner card, and its link opens the game.
+- Book mode: pages keep clear of the hinge.
+- At the largest text sizes, more screens wrap on whole words: category and trailer rows, the Story, and the Tabletop stage. The A to Z letters grow with the text.
+- Fixes: stray formatting marks no longer show in some patch notes, and announcements of an upcoming patch no longer show as PS5 updates.
+
+Known issues in this build:
+
+- QA_TO_CONFIRM
+
+Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
+
 ## 0.5.3
 
 - A game we don't track yet now says so, instead of "No updates yet".
