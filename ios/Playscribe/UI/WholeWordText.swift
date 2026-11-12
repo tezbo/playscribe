@@ -32,6 +32,15 @@ struct WholeWordText: View {
         return out
     }
 
+    /// The smallest the text may be drawn at to keep one over-wide word on a line (Iris, r054, G-8): scale down first, as little as
+    /// fits the column, never below `floor`. Below the floor the word is left to the layout, which overflows the line before it
+    /// would cut the word and put an ellipsis inside it. 1 when the word already fits or the widths are unknown.
+    nonisolated static let overWideFloor: CGFloat = 0.7
+    nonisolated static func fitScale(widest: CGFloat, available: CGFloat, floor: CGFloat = overWideFloor) -> CGFloat {
+        guard widest > 0, available > 0, widest > available else { return 1 }
+        return max(floor, available / widest)
+    }
+
     /// `kept` without trailing , ; : . so the ellipsis follows the word ("Rebalancing…", never "Rebalancing,…").
     nonisolated static func trimmed(_ kept: String) -> String {
         var t = Substring(kept)
@@ -63,6 +72,8 @@ struct WholeWordText: View {
         PickVariant(text: text, variantCount: all.count, cap: cap) {
             ForEach(Array(all.enumerated()), id: \.offset) { _, v in
                 Text(v).font(font).foregroundStyle(color ?? .primary).fixedSize(horizontal: false, vertical: true)
+                    // One word wider than the column shrinks (to 70%) before the layout would break it by letter.
+                    .minimumScaleFactor(Self.overWideFloor)
                     .frame(minWidth: 0, minHeight: 0, alignment: .topLeading).clipped()
             }
             ForEach(Array(words.enumerated()), id: \.offset) { _, w in
