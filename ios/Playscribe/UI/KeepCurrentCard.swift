@@ -77,8 +77,10 @@ struct KeepCurrentCard: View {
         let ax = typeSize.isAccessibilitySize
         VStack(alignment: .leading, spacing: 8) {
             if compactTabletop && typeSize >= .accessibility5 {
+                // The short line isn't drawn here, so VoiceOver still reads it, after the card's own label (Quinn, a8859d3).
                 WholeWordText(text: KeepCurrentCopy.cardTitle, font: PlayscribeFont.headline, lines: 4, color: nil)
-                    .accessibilityLabel(KeepCurrentCopy.cardVoiceOver)
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel("\(KeepCurrentCopy.cardVoiceOver) \(KeepCurrentCopy.shortLine)")
                     .accessibilityAddTraits(.isHeader)
                 whatIsSent
                 VStack(alignment: .leading, spacing: 12) { buttons }.padding(.top, 2)
