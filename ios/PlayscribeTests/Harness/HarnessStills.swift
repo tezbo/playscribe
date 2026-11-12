@@ -87,8 +87,12 @@ struct HarnessStillsTests {
         }
         defer { FoldHost.dispose(rendered) }
         if HarnessStable.on {
-            try? await Task.sleep(for: HarnessStable.pause)
+            try? await Task.sleep(for: HarnessStable.wait(route: route))
             rendered.window.layoutIfNeeded()
+            if (route ?? "").hasPrefix("game") {
+                try? await Task.sleep(for: HarnessStable.pause)
+                rendered.window.layoutIfNeeded()
+            }
         }
         try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
         let t1 = clock.now

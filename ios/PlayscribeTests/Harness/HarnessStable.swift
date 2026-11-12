@@ -15,6 +15,12 @@ enum HarnessStable {
     static var on: Bool { ProcessInfo.processInfo.environment["HARNESS_STABLE"] == "1" }
     /// Wait after the layout settled, before the PNG (fades in the app are 0.2 s).
     static let pause: Duration = .milliseconds(600)
+    /// A game page marks its open update read once the body has been half on screen for 1 s (R-6, JournalView). Whether that
+    /// timer had fired by the shot was a race (#485 run 5: game-book read on one side, unread with "Mark 1 read" on the other),
+    /// so game routes wait past it, and again for the re-layout the read state causes.
+    static func wait(route: String?) -> Duration {
+        (route ?? "").hasPrefix("game") ? .milliseconds(1600) : pause
+    }
 }
 
 /// No animations in stable mode; nothing otherwise.
