@@ -141,13 +141,22 @@ private struct ReadToggleActions: ViewModifier {
     func body(content: Content) -> some View {
         if release.ps5State == .onPS5 {
             let unread = model.isUnread(release)
-            let button = Button { model.markRead(release.id, unread) } label: {
+            let toggle = { model.markRead(release.id, unread) }
+            let menuItem = Button(action: toggle) {
                 Label(unread ? "Mark as read" : "Mark as unread", systemImage: unread ? "envelope.open" : "envelope.badge")
             }
+            // The swipe says one word with its icon ("Unread" / "Read"), so it wraps whole at AX5.
+            let swipeItem = Button(action: toggle) {
+                Label(unread ? "Read" : "Unread", systemImage: unread ? "envelope.open" : "envelope.badge")
+            }
+            .tint(PlayscribeColor.accent)
+            let base = content
+                .contextMenu { menuItem }
+                .accessibilityAction(named: unread ? "Mark as read" : "Mark as unread", toggle)
             if swipe {
-                content.contextMenu { button }.swipeActions(edge: .leading, allowsFullSwipe: false) { button.tint(PlayscribeColor.accent) }
+                base.swipeActions(edge: .leading, allowsFullSwipe: false) { swipeItem }
             } else {
-                content.contextMenu { button }
+                base
             }
         } else {
             content

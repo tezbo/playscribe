@@ -1011,5 +1011,7 @@ struct OpenMarksReadTests {
         #expect(!m.isUnread(r), "opened on purpose, so read (R-6a)")
         m.markRead(r.id, false)
         #expect(m.isUnread(r), "Mark as unread (R-6a)")
+        // The cover's NEW UPDATE eyebrow and the deck's "New update" chip read isUnread, so they come back with it.
+        #expect(m.unreadCount(r.gameID) >= 1)
     }
 }
