@@ -27,6 +27,10 @@ struct VideoReflection: View {
     /// video tiles already load from).
     static func thumbnailURL(_ youtubeID: String) -> URL? { URL(string: "https://i.ytimg.com/vi/\(youtubeID)/hqdefault.jpg") }
 
+    /// QA (INTERNAL, `-qaBlankFrame YES`): every live snapshot comes back all black, as WebKit often gives for a playing
+    /// video, so the fallback to the still can be shot. Ignored in a distribution build.
+    static var forceBlankFrame: Bool { BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaBlankFrame") }
+
     /// Which picture the mirror shows: a live frame only when it has a picture in it, never a black one.
     static func pick(live: UIImage?, still: UIImage?) -> UIImage? {
         if let live, !isBlank(live) { return live }
@@ -92,7 +96,10 @@ struct VideoReflection: View {
                 while !Task.isCancelled {
                     let cfg = WKSnapshotConfiguration()
                     cfg.snapshotWidth = 320
-                    if let img = try? await controller.webView.takeSnapshot(configuration: cfg), !Self.isBlank(img) { live = img }
+                    if let img = try? await controller.webView.takeSnapshot(configuration: cfg) {
+                        let frame = Self.forceBlankFrame ? UIGraphicsImageRenderer(size: img.size).image { c in UIColor.black.setFill(); c.fill(CGRect(origin: .zero, size: img.size)) } : img
+                        if !Self.isBlank(frame) { live = frame }
+                    }
                     try? await Task.sleep(for: .milliseconds(250))
                 }
             }
