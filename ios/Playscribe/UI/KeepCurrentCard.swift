@@ -15,6 +15,9 @@ enum KeepCurrentCopy {
     ]
     static let neverHeading = "What is never sent"
     static let neverBody = "Your name or email, your location, what you read or search, your Owned or Wishlist marks, photos, contacts or feedback you write."
+    // Ezra v2 (12 Nov, design/follow-list-copy-v2-before-after.md), from Quinn's capture: every request also carries these.
+    static let connectionHeading = "What every connection carries"
+    static let connectionBody = "Like any app that connects to a server, the request also carries your IP address, the app and iOS version, and your language setting. We do not store them."
     static let keptHeading = "How long it is kept"
     static let keptBody = "Up to 90 days after your last \"still here\" note. It is deleted straight away when you turn this off or reset the app, unless you also have alerts on. Then the games you follow stay on our server for your alerts until you turn alerts off too."
     static let turnOn = "Turn on"
@@ -26,7 +29,9 @@ enum KeepCurrentCopy {
     // The Settings row.
     static let settingsTitle = "Help keep my games up to date"
     // Trimmed by Iris (11 Nov) to 45 words so it fits five lines at the largest size; both facts kept.
-    static let settingsCaption = "Sends the games you follow, and a random code, to our server so it checks them every hour. Nothing else is sent. If not enabled, nothing is sent and updates can take up to 14 hours."
+    // Ezra v2 (12 Nov): "Nothing else is sent" became "Only these are stored" (every request carries IP, app and iOS version
+    // and language); same word count. Terry approved the earlier wording; Ezra brings v2 to Terry before the tag.
+    static let settingsCaption = "Sends the games you follow, and a random code, to our server so it checks them every hour. Only these are stored. If not enabled, nothing is sent and updates can take up to 14 hours."
     static let settingsHint = "Turn off to stop hourly checks. Your record is deleted unless alerts are on"
     static let settingsOnVoiceOver = "Sends the games you follow to our server."
     static let whatIsSent = "What is sent"
@@ -181,6 +186,7 @@ struct KeepCurrentList: View {
                 }
             }
             section(KeepCurrentCopy.neverHeading) { Text(KeepCurrentCopy.neverBody).fixedSize(horizontal: false, vertical: true) }
+            section(KeepCurrentCopy.connectionHeading) { Text(KeepCurrentCopy.connectionBody).fixedSize(horizontal: false, vertical: true) }
             section(KeepCurrentCopy.keptHeading) { Text(KeepCurrentCopy.keptBody).fixedSize(horizontal: false, vertical: true) }
         }
         .font(compact ? PlayscribeFont.footnote : PlayscribeFont.body)
