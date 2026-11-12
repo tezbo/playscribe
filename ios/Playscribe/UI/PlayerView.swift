@@ -175,10 +175,11 @@ struct PlayerView: View {
             // VB-2: the video and its details on the left page; Watch along on the right.
             if let fold = duo.division {
                 HStack(alignment: .top, spacing: 0) {
-                    VStack(alignment: .leading, spacing: 12) {
+                    VStack(alignment: .leading, spacing: 0) {
                         surface
                         VideoCaption(video: video, game: gameName)
-                            .padding(.horizontal, 16)
+                            .padding(.horizontal, 16).padding(.top, 12)
+                            .background(alignment: .top) { mirror(controller, video) }
                         Spacer(minLength: 0)
                     }
                     .frame(width: fold.minX)
@@ -189,12 +190,20 @@ struct PlayerView: View {
             }
         case .closed, .flat:
             // VB-3: full display, the player's own controls.
-            VStack(spacing: 12) {
+            VStack(spacing: 0) {
                 surface.frame(maxWidth: .infinity)
-                VideoCaption(video: video, game: gameName).padding(.horizontal, 16)
+                VideoCaption(video: video, game: gameName).padding(.horizontal, 16).padding(.top, 12)
+                    .background(alignment: .top) { mirror(controller, video) }
             }
             .frame(maxHeight: .infinity, alignment: duo.pose == .closed ? .top : .center)
         }
+    }
+
+    /// The mirror under the video, same view in every pose (R-11).
+    @ViewBuilder
+    private func mirror(_ controller: YouTubeController, _ video: ReleaseVideo) -> some View {
+        let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
+        if mode != .off { VideoReflection(controller: controller, mode: mode, posterAsset: video.posterAsset, youtubeID: video.youtubeID) }
     }
 
     private func close() {

@@ -15,8 +15,9 @@ struct VideoReflection: View {
     /// On unless the person turns it off (Terry, 2026-11-06). The Settings toggle reads the same value.
     static let defaultOn = true
 
-    /// Peak strength of the mirror. 0.35 measured 20 to 30 of 255 on the Tabletop still, too faint to see (Quinn, 12 Nov).
-    static let opacity = 0.7
+    /// Peak strength 40% at the video's bottom edge, fading out over 120 pt (the visibility bar, Iris and Quinn, 12 Nov).
+    static let opacity = 0.4
+    static let height: CGFloat = 120
 
     enum Mode: Equatable { case off, still, live }
 
@@ -72,11 +73,14 @@ struct VideoReflection: View {
     private var shown: UIImage? { mode == .live ? Self.pick(live: live, still: still) : still }
 
     var body: some View {
+        // Flush under the video's bottom edge and 120 pt tall: the picture's last rows, mirrored, so the video seems to
+        // stand on a glossy surface (Iris and Quinn, 12 Nov: required in Tabletop, Closed and Book).
         Color.clear
-            .aspectRatio(16 / 9, contentMode: .fit)
-            .overlay {
+            .frame(maxWidth: .infinity)
+            .frame(height: Self.height)
+            .overlay(alignment: .bottom) {
                 if let image = shown {
-                    Image(uiImage: image).resizable().aspectRatio(16 / 9, contentMode: .fill)
+                    Image(uiImage: image).resizable().aspectRatio(16 / 9, contentMode: .fit)
                         .id(image)
                         .transition(.opacity)
                 }
@@ -84,11 +88,9 @@ struct VideoReflection: View {
             .clipped()
             .animation(.easeInOut(duration: 0.2), value: shown)
             .scaleEffect(x: 1, y: -1)
-            .blur(radius: 10)
-            .saturation(1.2)
+            .blur(radius: 6)
             .opacity(Self.opacity)
-            .mask(LinearGradient(stops: [.init(color: .black, location: 0), .init(color: .black, location: 0.3), .init(color: .clear, location: 1)],
-                                 startPoint: .top, endPoint: .bottom))
+            .mask(LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom))
             .allowsHitTesting(false)
             .accessibilityHidden(true)
             .task(id: youtubeID) {

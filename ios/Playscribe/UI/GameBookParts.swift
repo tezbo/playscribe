@@ -539,19 +539,19 @@ struct TrailerView: View {
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 0) {
                 Color.black.aspectRatio(16 / 9, contentMode: .fit)
                     .overlay { if let controller { WebSurface(webView: controller.webView) } }
                 VStack(alignment: .leading, spacing: 0) {
-                    Text(name).font(PlayscribeFont.headline).padding(.horizontal, 16)
+                    Text(name).font(PlayscribeFont.headline).padding(.horizontal, 16).padding(.top, 12)
                     Spacer(minLength: 0)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                // R-11: in Tabletop the trailer gets the same mirror as an update video, under the title. It takes no
+                // R-11: the trailer gets the same mirror as an update video in every pose, flush under the video. It takes no
                 // layout room and no touches (Terry, 12 Nov: trailers never had one).
                 .background(alignment: .top) {
                     let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
-                    if duo.pose == .tabletop, mode != .off, let controller {
+                    if mode != .off, let controller {
                         VideoReflection(controller: controller, mode: mode, posterAsset: nil, youtubeID: videoID)
                     }
                 }
