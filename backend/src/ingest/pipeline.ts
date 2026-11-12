@@ -48,6 +48,8 @@ export interface IngestSummary {
   newsHidden?: number
   /** PS5 claims withheld this run by the r050 rules, so their real cost shows in the job log: held to a stated time, test build, PC-scoped. */
   held?: { stated: number; testBuild: number; pcScoped: number; announcement: number }
+  /** Backfill repairs this run (feed-log-lines-to-step): releases dropped, and announcement releases kept because other posts feed them. */
+  backfill?: { dropped: number; kept: number }
 }
 
 const MIN_POLL_MS = 55 * 60_000
@@ -303,7 +305,12 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     if (deps.repairClaims) {
       const old = (db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id
       const dropped = old ? store.dropAnnouncementRelease(db, old, s.id, post.publishedAt) : null
-      if (old) deps.log?.(dropped ? `backfill: dropped ${old}, an announcement` : `backfill: kept ${old} (other posts feed it), removed only its announcement PS5 row`)
+      if (old) {
+        deps.log?.(dropped ? `backfill: dropped ${old}, an announcement` : `backfill: kept ${old} (other posts feed it), removed only its announcement PS5 row`)
+        const b = (summary.backfill ??= { dropped: 0, kept: 0 })
+        if (dropped) b.dropped++
+        else b.kept++
+      }
     }
     return null
   }
@@ -415,7 +422,10 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
           const before = deps.repairClaims ? (deps.db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id : null
           const releaseId = handlePost(deps, game, s, post, summary)
           store.markSeen(deps.db, s.id, post.postId, releaseId)
-          if (before && releaseId && before !== releaseId && store.dropSupersededRelease(deps.db, before, releaseId, s.id)) deps.log?.(`backfill: dropped ${before}, superseded by ${releaseId}`)
+          if (before && releaseId && before !== releaseId && store.dropSupersededRelease(deps.db, before, releaseId, s.id)) {
+            deps.log?.(`backfill: dropped ${before}, superseded by ${releaseId}`)
+            ;(summary.backfill ??= { dropped: 0, kept: 0 }).dropped++
+          }
         })
       }
     }
@@ -505,11 +515,26 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   const promoted = store.promoteAnnounced(deps.db, new Date(), !!opts.until) + store.promoteStated(deps.db, new Date(), !!opts.until)
   const settled = store.settleOldAnnouncements(deps.db)
   if (settled) deps.log?.(`ingest: ${settled} press announcements older than 30 days, with a later PS5 release live, now read as live`)
-  deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)
-  if (opts.until) deps.log?.(`ingest: backfill read ${repairOnly.size} derived games; ${summary.created.length} releases created, ${summary.revised.length} revised`)
-  if (summary.held) deps.log?.(`ingest: PS5 claims withheld this run: ${summary.held.stated} held to a stated time, ${summary.held.testBuild} test builds, ${summary.held.pcScoped} PC-scoped, ${summary.held.announcement} announcements`)
+  for (const line of countLines(summary, { heldRows: store.heldPs5Rows(deps.db), derivedRead: (summary.auto ?? 0) + repairOnly.size, promoted })) deps.log?.(line)
   deps.log?.(`ingest: polled ${summary.polled.length}, new ${summary.created.length}, revised ${summary.revised.length}, review +${summary.review}, errors ${summary.errors.length}`)
   return summary
+}
+
+/**
+ * The count lines every run prints to the job log, zeros included (feed-log-lines-to-step), so Quinn can check dropped
+ * against kept and the r050 holds (#466) show: claims withheld by kind, PS5 rows held announced until a stated time,
+ * backfill releases dropped and kept, derived (auto-onboarded) games read, and console-later promotions.
+ */
+export const countLines = (summary: IngestSummary, n: { heldRows: number; derivedRead: number; promoted: number }) => {
+  const h = summary.held ?? { stated: 0, testBuild: 0, pcScoped: 0, announcement: 0 }
+  const b = summary.backfill ?? { dropped: 0, kept: 0 }
+  return [
+    `ingest: claims withheld: ${h.stated} held to a stated time, ${h.testBuild} test builds, ${h.pcScoped} PC-scoped, ${h.announcement} announcements`,
+    `ingest: held rows: ${n.heldRows} PS5 rows announced until a stated time`,
+    `ingest: backfill: dropped ${b.dropped}, kept ${b.kept}`,
+    `ingest: derived games read: ${n.derivedRead}`,
+    `ingest: promoted ${n.promoted} console-later Steam updates to live`,
+  ]
 }
 
 // One ingest at a time per process, whether the scheduler or an admin call started it.
