@@ -10,11 +10,11 @@ enum KeepCurrentCopy {
     static let sentHeading = "What is sent"
     static let sentItems = [
         "The games you follow.",
-        "A random code that our server makes for your device. It is not linked to your name, email or Apple ID, and it only lets you update or delete your own record.",
+        "A random code that our server makes for your device. It is not linked to you, and it only lets you update or delete your own record.",
         "Once a week, a short check-in, so we can remove records from devices that stopped using the app.",
     ]
     static let neverHeading = "What is never sent"
-    static let neverBody = "Your name or email, your location, what you read or search, your Owned or Wishlist marks, photos, contacts or feedback you write."
+    static let neverBody = "Your location, what you read or search, your Owned or Wishlist marks, photos, contacts or feedback you write."
     // Ezra v2 (12 Nov, design/follow-list-copy-v2-before-after.md), from Quinn's capture: every request also carries these.
     static let connectionHeading = "What every connection carries"
     static let connectionBody = "Like any app that connects to a server, the request also carries your IP address, the app and iOS version, and your language setting. We do not store them."
