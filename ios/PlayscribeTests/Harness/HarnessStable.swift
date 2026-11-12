@@ -22,8 +22,9 @@ enum HarnessStable {
     }
 }
 
-/// Fails every http(s) request at once, as if offline.
-final class HarnessNoNetwork: URLProtocol {
+/// Fails every http(s) request at once, as if offline. nonisolated: URLSession calls it off the main actor (the test target
+/// defaults to MainActor).
+nonisolated final class HarnessNoNetwork: URLProtocol, @unchecked Sendable {
     override class func canInit(with request: URLRequest) -> Bool { ["http", "https"].contains(request.url?.scheme ?? "") }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     override func startLoading() { client?.urlProtocol(self, didFailWithError: URLError(.notConnectedToInternet)) }
