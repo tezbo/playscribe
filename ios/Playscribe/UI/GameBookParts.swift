@@ -1,4 +1,5 @@
 import SwiftUI
+import OSLog
 
 /// Contract v2 §11: a game is the Page (the release being read) and the Contents (the game's
 /// chapters, search, releases and actions). The game book is one ArrangementView(.split), so the
@@ -599,6 +600,9 @@ struct ContentsView: View {
                 .padding(.vertical, 14)
                 .padding(.trailing, railWidth)
         }
+        // Tabletop only, as the Library shelf (#487): scrolled, the lower half's top edge cut a Contents row through its glyphs at
+        // AX5 (Iris, 21efef8 still: "Better targeting, look-on…"). The panel is ink1, so the edge is too.
+        .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink1))
         .clearsMessages()
         .scrollPosition($position)
         .accessibilityIdentifier("contentsScroll")
@@ -1048,14 +1052,21 @@ struct LinksSheet: View {
     @Environment(\.panelClose) private var panelClose
     var gameID: String
 
-    private struct Row: Identifiable { var id: String; var title: String; var url: URL }
+    struct Row: Identifiable { var id: String; var title: String; var url: URL }
 
-    private var rows: [Row] {
+    private var rows: [Row] { Self.rows(model, gameID) }
+
+    static func rows(_ model: AppModel, _ gameID: String) -> [Row] {
         var out: [Row] = []
         if let game = model.game(gameID) {
             let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
             if let u = links?.official { out.append(Row(id: "official", title: "Official website", url: u)) }
             if let u = links?.patchNotes { out.append(Row(id: "notes", title: LinkHost.label("All patch notes", u), url: u)) }
+            // The empty Gallery's "Find trailers online" is view-only text in Tabletop (nothing tappable on the stage), so its
+            // control lives here, in the lower half, as "Official website" does (0.5.5, r054-tabletop-find-trailers).
+            if model.gallery(gameID).isEmpty, let u = GalleryEmpty.trailerSearchURL(game.name) {
+                out.append(Row(id: "trailers", title: "Find trailers online", url: u))
+            }
         }
         if let r = model.readerRelease(gameID), let u = r.links?.steamNotes { out.append(Row(id: "steam", title: LinkHost.label("Read full notes", u), url: u)) }
         return out
@@ -1092,12 +1103,14 @@ struct LinksSheet: View {
             Spacer(minLength: 0)
         }
         .background(Color.ink1)
+        // One log line per opened row, so a QA run can confirm the tap reached the system (#493: the simulator showed black).
+        .environment(\.openURL, OpenURLAction { url in
+            Logger(subsystem: "co.codeconnectors.playscribe", category: "links").info("links open: \(url.host() ?? "?", privacy: .public)")
+            return .systemAction
+        })
     }
 
-    static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool {
-        let links = model.game(gameID)?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
-        return links?.official != nil || links?.patchNotes != nil || model.readerRelease(gameID)?.links?.steamNotes != nil
-    }
+    static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool { !rows(model, gameID).isEmpty }
 }
 
 
