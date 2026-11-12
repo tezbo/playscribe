@@ -300,7 +300,8 @@ export const isSeen = (db: DB, sourceId: string, postId: string) => !!db.prepare
 /**
  * Steam rule (Terry, 2026-10-27): a Steam patch counts as released on PS5. When its post said consoles get it
  * "next week", the PS5 row starts as announced; a week after the Steam release it is taken as live, dated
- * from Steam, so no update stays PC only. It earns its one alert when it goes live (alert_from), however old the Steam post is.
+ * from Steam, so no update stays PC only. It earns its one alert when it goes live (alert_from), but only while the Steam post is
+ * under 30 days old: for an older one the alert counts from the Steam date and stays silent (alerts.ts alertFromOf).
  */
 export const promoteAnnounced = (db: DB, at = new Date(), quiet = false) => {
   const rows = db
