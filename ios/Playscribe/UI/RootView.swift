@@ -62,7 +62,7 @@ struct RightPagePanel: View {
     private var panelWidth: CGFloat { duo.size.width - 16 - leadingEdge }
 
     var body: some View {
-        if model.addSheetOpen {
+        if model.addSheetOpen && !model.addIsSystemSheet {
             ZStack(alignment: .trailing) {
                 Color.black.opacity(0.4).ignoresSafeArea()
                 AddGameSheet()
@@ -132,6 +132,7 @@ struct RootView: View {
     }
     @AppStorage("didShowSplash") private var didShowSplash = false
     @State private var splashVisible = false
+    @State private var unlatchTask: Task<Void, Never>?
     @State private var frames: [CGRect] = []
     @State private var named: [String: CGRect] = [:]
 
@@ -163,6 +164,19 @@ struct RootView: View {
                 }
             }
             .animation(poseAnimation, value: duo.pose)
+            // The sheet keeps its form while the launch pose settles, but a real change still switches it: folding into Book
+            // at once, Open landscape once it has held for 10 s (the launch settling showed it for about 5 s).
+            .onChange(of: duo.pose == .book) { _, book in
+                if book && model.addSheetOpen { model.addIsSystemSheet = false }
+            }
+            .onChange(of: duo.pose == .flat && duo.isLandscape, initial: true) { _, wide in
+                unlatchTask?.cancel()
+                guard wide else { return }
+                unlatchTask = Task { @MainActor in
+                    try? await Task.sleep(for: .seconds(10))
+                    if !Task.isCancelled && model.addSheetOpen { model.addIsSystemSheet = false }
+                }
+            }
             .environment(\.qaSolid, BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaReduceTransparency"))
             .onPreferenceChange(TappableFrameKey.self) { frames = $0 }
             .onPreferenceChange(NamedFrameKey.self) { named = $0 }
@@ -170,6 +184,12 @@ struct RootView: View {
                 if model.showDebugOverlay { DebugOverlay(frames: frames, duo: duo) }
                 #if INTERNAL
                 FoldAudit(frames: frames, duo: duo, named: named)
+                Text("qa-response: \(NotificationService.shared.qaLastResponse ?? "none")")
+                    .font(.system(size: 1)).opacity(0.01).accessibilityIdentifier("qaNotificationResponse")
+                    .allowsHitTesting(false)
+                Text("qa-schedule: \(NotificationService.shared.qaScheduleLog)")
+                    .font(.system(size: 1)).opacity(0.01).accessibilityIdentifier("qaScheduleLog")
+                    .allowsHitTesting(false)
                 #endif
             }
         }
@@ -185,7 +205,7 @@ struct RootView: View {
         .onChange(of: NotificationService.shared.launchedFromNotification) { _, fromNotification in
             if fromNotification { splashVisible = false }
         }
-        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && !model.liveRightPage }, set: { if !$0 && model.livePose != .tabletop && !model.liveRightPage { model.addSheetOpen = false } })) {
+        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
             // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
             AddGameSheet().presentationDetents([.large])
         }
@@ -221,7 +241,7 @@ struct TabRoot: View {
             }
 
             Tab("News", systemImage: "megaphone", value: AppTab.news) {
-                NavigationStack { GlobalNewsView().tabletopChrome(duo) }.auditActive(model.nav.tab == .news)
+                NavigationStack { NewsView().tabletopChrome(duo) }.auditActive(model.nav.tab == .news)
             }
 
             Tab(value: AppTab.search, role: .search) {
@@ -291,8 +311,10 @@ struct TabletopRail: View {
             ScrollView {
               VStack(spacing: 8) {
             if let id = model.nav.gameID, model.nav.tab == .library {
-                RailButton(action: ScreenAction(id: "back", title: "Library", systemImage: "chevron.backward",
+                // The same name and id as the other poses' back button ("Library, back", gameBack); a bare "Library" read as the tab.
+                RailButton(action: ScreenAction(id: "back", title: "Library, back", systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
+                    .accessibilityIdentifier("gameBack")
                 // Only five buttons fit the lower half (297a799): Check for updates and Links go in a More menu.
                 ForEach(model.gameActions(id).filter { $0.id != "refresh" }) { RailButton(action: $0) }
                 // Share the open update as a card (lower rail, 44 pt target; TT-0).
@@ -334,7 +356,7 @@ struct TabletopRail: View {
                 }
             }
             // News is the last control in the scrolling group, not a fourth tab: the pinned capsule stays three tall so the
-            // controls above it keep their room (Iris, Tabletop Library rail). Each target stays 44 pt with 8 pt gaps.
+            // controls above it keep their room (Iris, Tabletop Library rail). Each target is 44 pt with 8 pt gaps.
             Group {
                 RailButton(action: ScreenAction(id: "news", title: "News", systemImage: "megaphone",
                                                 kind: .button { model.nav.tab = .news }, selected: model.nav.tab == .news))

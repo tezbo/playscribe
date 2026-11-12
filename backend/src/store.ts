@@ -70,6 +70,32 @@ export const upsertGame = (db: DB, g: GameInput) => {
   ).run(g.id, g.igdbId ?? null, g.name, g.coverImageId ?? null, g.artworkImageId ?? null, g.squareCoverImageId ?? null, g.steamAppId ?? null, g.ps5Release ?? null, g.ps5ReleasePrecision ?? null, g.firstRelease ?? null, JSON.stringify(g.ps5TitleIds ?? []), g.eaSince ?? null, g.fullRelease ?? null, g.fullReleasePrecision ?? null, g.igdbRev ?? 0, now())
 }
 
+/** Auto-onboarding: writes a derived game row. Never touches a hand-registered row (auto = 0) or one that already exists under another id. */
+export const upsertAutoGame = (db: DB, g: GameInput & { steamIsPcPort?: boolean }) => {
+  const existing = getGameRow(db, g.id)
+  if (existing && !existing.auto) return false  // hand-registered; an auto row (1) or a retired one (2) is taken over
+  upsertGame(db, g)
+  db.prepare('UPDATE games SET auto = 1, steam_is_pc_port = ? WHERE id = ?').run(g.steamIsPcPort ? 1 : 0, g.id)
+  return true
+}
+
+/** Auto rows no longer in the derived set (the game joined the hand registry, or lost its Steam link) are retired (auto = 2):
+ * not polled, not exported, history kept. A later derivation that lists the id again reactivates it. Returns the count retired. */
+export const retireAutoGames = (db: DB, keep: Set<string>) => {
+  const rows = db.prepare('SELECT id FROM games WHERE auto = 1').all() as { id: string }[]
+  let n = 0
+  for (const { id } of rows) if (!keep.has(id)) { db.prepare('UPDATE games SET auto = 2 WHERE id = ?').run(id); n++ }
+  return n
+}
+
+/** The next auto games to poll: never polled first, then the longest ago. Hand and followed games are polled every run anyway. */
+export const nextAutoSlice = (db: DB, limit: number, exclude: Set<string>) =>
+  (db.prepare('SELECT * FROM games WHERE auto = 1 AND steam_app_id IS NOT NULL ORDER BY auto_polled_at IS NOT NULL, auto_polled_at, id').all() as Row[])
+    .filter((g) => !exclude.has(g.id))
+    .slice(0, limit)
+
+export const markAutoPolled = (db: DB, id: string) => db.prepare('UPDATE games SET auto_polled_at = ? WHERE id = ?').run(now(), id)
+
 export const getGameRow = (db: DB, id: string) => db.prepare('SELECT * FROM games WHERE id = ?').get(id) as Row | undefined
 export const getGameByIgdb = (db: DB, igdbId: number) => db.prepare('SELECT * FROM games WHERE igdb_id = ?').get(igdbId) as Row | undefined
 
@@ -324,19 +350,21 @@ export const addNews = (db: DB, gameId: string, post: { url: string; title: stri
 const newsVerification = (sourceId: string): 'official' | 'reported' =>
   (newsSources.sources as Record<string, { verification?: string }>)[sourceId]?.verification === 'reported' ? 'reported' : 'official'
 
+/**
+ * Prune pass (r054-news-promo-merch-filter): news rows already stored whose headline the promo rule now hides. Steam posts are
+ * markSeen, so without this the rows from before the rule stayed in the feed. Returns the removed rows for the log.
+ */
+export const pruneNews = (db: DB, hide: (title: string) => boolean) => {
+  const rows = db.prepare('SELECT game_id, url, title FROM news').all() as { game_id: string; url: string; title: string }[]
+  const gone = rows.filter((r) => hide(r.title))
+  const del = db.prepare('DELETE FROM news WHERE game_id = ? AND url = ?')
+  for (const r of gone) del.run(r.game_id, r.url)
+  return gone.map((r) => ({ gameId: r.game_id, title: r.title }))
+}
+
 export const newsOf = (db: DB, gameId: string, limit = 20) =>
   (db.prepare('SELECT title, published_at, url, source_id FROM news WHERE game_id = ? ORDER BY published_at DESC, url LIMIT ?').all(gameId, limit) as { title: string; published_at: string; url: string; source_id: string }[]).map((n) => ({
     gameId,
-    title: n.title,
-    date: n.published_at,
-    url: n.url,
-    verification: newsVerification(n.source_id),
-  }))
-
-/** The newest headlines across every game, for the global News tab (v1/news.json). Same fields as a game's file. */
-export const allNews = (db: DB, limit = 200) =>
-  (db.prepare('SELECT game_id, title, published_at, url, source_id FROM news ORDER BY published_at DESC, url LIMIT ?').all(limit) as { game_id: string; title: string; published_at: string; url: string; source_id: string }[]).map((n) => ({
-    gameId: n.game_id,
     title: n.title,
     date: n.published_at,
     url: n.url,

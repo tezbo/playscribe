@@ -901,3 +901,99 @@ struct RomanNumeralGlueTests {
         }
     }
 }
+
+@Suite("Library sort: recently updated (r053-sort-recent-updated)")
+struct RecentlyUpdatedSortTests {
+    private let now = Date(timeIntervalSince1970: 1_800_000_000)
+    private func day(_ d: Double) -> Date { now.addingTimeInterval(d * 86400) }   // negative: days ago
+    private func key(_ name: String, updated: Double? = nil, released: Double? = nil) -> AppModel.UpdatedKey {
+        AppModel.UpdatedKey(latest: updated.map(day), releaseDate: released.map(day), name: name)
+    }
+    private func order(_ keys: [AppModel.UpdatedKey]) -> [String] {
+        keys.sorted { AppModel.updatedFirst($0, $1, now: now) }.map(\.name)
+    }
+
+    @Test("games with an update come first, newest first; a newer release never outranks an update")
+    func updatesFirst() {
+        #expect(order([key("Out, no update", released: -1), key("Patched last week", updated: -7, released: -400), key("Patched today", updated: 0, released: -30)])
+                == ["Patched today", "Patched last week", "Out, no update"])
+    }
+
+    @Test("games with no update that are out follow, newest release first (Terry's 47 games)")
+    func releasedGroupByReleaseDate() {
+        let list = order([key("Mar 2025", released: -600), key("Oct 2025", released: -20), key("Aug 2025", released: -100), key("May 2025", released: -300)])
+        #expect(list == ["Oct 2025", "Aug 2025", "May 2025", "Mar 2025"])
+    }
+
+    @Test("games not out yet come after, soonest first, undated last")
+    func upcomingAfterReleased() {
+        let list = order([key("TBA"), key("31 Dec", released: 53), key("10 Nov", released: 2), key("Out", released: -5)])
+        #expect(list == ["Out", "10 Nov", "31 Dec", "TBA"])
+    }
+
+    @Test("a game with an update but no release date still sorts by its update, ahead of every game without one")
+    func updateWithoutReleaseDate() {
+        let list = order([key("Out, no update", released: -1), key("Dateless, patched long ago", updated: -90), key("Dateless, patched today", updated: 0), key("TBA")])
+        #expect(list == ["Dateless, patched today", "Dateless, patched long ago", "Out, no update", "TBA"])
+    }
+
+    @Test("equal dates fall back to name")
+    func tieByName() {
+        #expect(order([key("b", updated: -2), key("A", updated: -2)]) == ["A", "b"])
+        #expect(order([key("b"), key("A")]) == ["A", "b"])
+    }
+}
+
+@MainActor
+struct SearchTextColdLaunchTests {
+    private func url() -> URL { URL.temporaryDirectory.appending(path: "search-\(UUID().uuidString).json") }
+
+    @Test("a cold launch has an empty search and every game; selected game, filter and scroll anchors are still restored")
+    func coldLaunchClearsSearchOnly() throws {
+        let u = url()
+        let m = AppModel(storeURL: u)
+        m.data.collection = Fixtures.shared.seedCollection
+        let all = m.shownRows().count
+        try #require(all > 1)
+        m.nav.query = "dawn"
+        #expect(m.shownRows().count < all)   // the typed text is filtering, so the test can tell the difference
+        m.nav.gameID = "dawnwalker"
+        m.nav.filter = .wishlist
+        m.nav.anchors["library"] = "lib-kcd2"
+        m.saveNow()
+
+        let reopened = AppModel(storeURL: u)
+        #expect(reopened.nav.query == "")
+        #expect(reopened.nav.gameID == "dawnwalker")
+        #expect(reopened.nav.filter == .wishlist)
+        #expect(reopened.nav.anchors["library"] == "lib-kcd2")
+        reopened.nav.filter = .all
+        #expect(reopened.shownRows().count == all)
+    }
+
+    @Test("a saved Library anchor that is not a game tile (the search field) is dropped on a cold launch; a tile anchor is kept")
+    func nonTileAnchorDropped() {
+        let u = url()
+        let m = AppModel(storeURL: u)
+        m.data.collection = Fixtures.shared.seedCollection
+        m.nav.anchors["library"] = "library-search"
+        m.nav.anchors["other"] = "keep"
+        m.saveNow()
+        let reopened = AppModel(storeURL: u)
+        #expect(reopened.nav.anchors["library"] == nil)
+        #expect(reopened.nav.anchors["other"] == "keep")
+        reopened.nav.anchors["library"] = "lib-kcd2"
+        reopened.saveNow()
+        #expect(AppModel(storeURL: u).nav.anchors["library"] == "lib-kcd2")
+    }
+
+    @Test("a fold or unfold keeps the typed text: the model is not rebuilt, so the search is untouched")
+    func foldKeepsTypedText() {
+        let m = AppModel(storeURL: url())
+        m.data.collection = Fixtures.shared.seedCollection
+        m.nav.query = "dawn"
+        m.saveNow()
+        m.tick()          // what a pose change drives
+        #expect(m.nav.query == "dawn")
+    }
+}

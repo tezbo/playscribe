@@ -27,7 +27,7 @@ struct JournalView: View {
                 // GR-1: never an empty game. When it's out, and that we're watching for notes.
                 VStack(alignment: .leading, spacing: 6) {
                     Text(game.ps5AvailabilityLine).font(PlayscribeFont.headline)
-                    NoUpdatesLine()
+                    NoUpdatesLine(gameID: gameID)
                 }
                 .padding(.vertical, 8)
             }
@@ -137,7 +137,9 @@ struct ReleaseEntry: View {
 struct ReleaseTag: View {
     var release: Release
     var body: some View {
-        HStack(spacing: 6) {
+        // Wraps onto a second row when the tags don't fit one: "PS4 update" and "Reported" ran under the rail at Closed AX5
+        // (9d8c3e2, Witcher). Each tag stays one unbroken word group.
+        FlowLayout(spacing: 6) {
             // Every PS4 patch says so, whatever its state; the patch name stays the title (R-2).
             if let l = release.ps4Label { Tag(text: l, tint: .secondary) }
             state
@@ -275,10 +277,10 @@ struct ReleaseBody: View {
             if r.isSilent && r.notes.isEmpty {
                 Text("No official notes").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
-            // A-reader: changes grouped New, Fixed, Balance, each heading with its count.
+            // A-reader: changes grouped New, Fixed, Balance; the heading has no count, the sub-sections keep theirs (Terry, 0.5.4).
             let groups = ChangeKind.grouped(r.notes, ps5Only: ps5Page)
             ForEach(groups, id: \.kind) { g in
-                Text("\(g.kind.rawValue) \(g.count)").font(PlayscribeFont.title3).padding(.top, 6)
+                Text(g.kind.rawValue).font(PlayscribeFont.title3).padding(.top, 6)
                     .accessibilityAddTraits(.isHeader)
                 ForEach(Array(g.sections.enumerated()), id: \.offset) { _, section in
                     NoteSectionView(release: r, section: section)
@@ -561,21 +563,31 @@ struct SpoilerText: View {
 struct SourceLinks: View {
     var release: Release
     var body: some View {
-        HStack(spacing: 16) {
-            if let url = release.links?.ps5Page {
-                Link(destination: url) { Label(LinkHost.label("PS5 update page", url), systemImage: "arrow.up.right.square") }
-                    .frame(minHeight: 44).tappableFrame()
-                    .accessibilityHint("Opens in browser")
-            }
-            if let url = release.links?.steamNotes {
-                Link(destination: url) { Label(LinkHost.label("Read full notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
-                    .padding(.trailing, 8)
-                    .tappableFrame()
-                    .accessibilityHint("Opens in browser")
-            }
+        // Side by side only when both fit on one line. A plain HStack grew wider than the column at accessibility sizes
+        // when a release carries both links ("PS5 update page on PlayStation" + "Read full notes on Steam"), and the parent
+        // centred the overflow: the whole page shifted left, clipping its titles and putting the share button behind the
+        // rail (Witcher 5.01, Closed AX5, 870f75d; the same on main). Otherwise they stack, each on the column's width.
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 16) { links }
+            VStack(alignment: .leading, spacing: 0) { links }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .font(PlayscribeFont.subheadline)
         .foregroundStyle(PlayscribeColor.accent)
+    }
+
+    @ViewBuilder private var links: some View {
+        if let url = release.links?.ps5Page {
+            Link(destination: url) { Label(LinkHost.label("PS5 update page", url), systemImage: "arrow.up.right.square").multilineTextAlignment(.leading) }
+                .frame(minHeight: 44).tappableFrame()
+                .accessibilityHint("Opens in browser")
+        }
+        if let url = release.links?.steamNotes {
+            Link(destination: url) { Label(LinkHost.label("Read full notes", url), systemImage: "arrow.up.right.square").multilineTextAlignment(.leading).frame(minHeight: 44).contentShape(Rectangle()) }
+                .padding(.trailing, 8)
+                .tappableFrame()
+                .accessibilityHint("Opens in browser")
+        }
     }
 }
 

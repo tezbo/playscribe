@@ -12,10 +12,10 @@ struct DeckAndWidgetTests {
         return m
     }
 
-    /// J-1: at most 8 cards, at most 2 per game, unread cards first, no card twice.
+    /// J-1: at most 5 cards (AppModel.deckLimit), at most 2 per game, unread cards first, no card twice.
     @Test func deckIsCappedSpreadAndUnreadFirst() {
         let deck = demoModel().latestDeck
-        #expect(deck.count <= 8)
+        #expect(deck.count <= AppModel.deckLimit)
         var perGame: [String: Int] = [:]
         var ids = Set<String>()
         for card in deck {
@@ -30,12 +30,12 @@ struct DeckAndWidgetTests {
         }
     }
 
-    /// The "+N more updates" chip counts exactly the updates the 8-card deck leaves out, never negative (Iris, 2026-11-06).
+    /// The "+N more updates" chip counts exactly the updates the 5-card deck leaves out, never negative (Iris, 2026-11-06; Terry, 0.5.4: 5 cards, 5 dots).
     @Test func deckOverflowIsWhatTheDeckLeavesOut() {
         let m = demoModel()
-        #expect(m.latestDeck.count <= 8)
+        #expect(m.latestDeck.count <= AppModel.deckLimit)
         #expect(m.latestDeckOverflow >= 0)
-        if m.latestDeckOverflow == 0 { #expect(m.latestDeck.count <= 8) }
+        if m.latestDeckOverflow == 0 { #expect(m.latestDeck.count <= AppModel.deckLimit) }
     }
 
     /// The card's summary line never ends mid-word (Iris, 2026-11-06).

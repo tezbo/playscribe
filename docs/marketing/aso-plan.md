@@ -38,7 +38,7 @@ Support shows an email only for now; confirm Apple's support URL requirement bef
 ## Metadata draft (for Nadia's sign-off)
 
 - Name: `Playscribe: PS5 Patch Notes` (27)
-- Subtitle: `The story of every update` (25)
+- Subtitle: TBD (the old tagline was dropped 9 Nov; needs a new line, max 30)
 - Keywords (no repeats of name/subtitle words, no competitor names, no other brands):
   `changelog,hotfix,gaming,tracker,game news,wishlist,library,release dates,foldable,duo,alerts,widget`
 - Promotional text (170 max, 152 used): `Every update for the games you play, told in plain words. Built for the fold: two pages in Book, a reader in Tabletop, and quiet alerts when it matters.`

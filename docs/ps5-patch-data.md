@@ -175,6 +175,7 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 ## 0.5.0 hot-set schedule (roadmap 11)
 
 - Follows live on devices, so the server does not know which games are followed. The **hot set** is the games with a patch in the last 14 days plus `backend/src/sources/hot-pinned.json`, capped at 12 (`src/hot.ts`).
+- Launch window (0.6.0, r060-dayone-patch-watch): a game whose exact PS5 day is from 2 days before to 7 days after today is in the hot set too, after the pinned list and ahead of recent patches, so its day-one patch is caught at the hot cadence. A derived (auto) game in its launch window is tracked for that week instead of waiting for the auto slice. A month, quarter, year or tbd date is not a launch; a game with nothing to poll is not either. The app-side alert is the release-day event in `upcoming/events.json` plus the normal N-3 push once the day-one patch is On PS5 (`dayOne` counts as major).
 - A second Actions schedule at :47 runs `npm run ingest -- --hot`: it polls only the hot games' sources (25 minute minimum interval, instead of 55) and skips the shared press sources. The hourly :17 run does everything as before and also uses the 25 minute interval for hot games. Hot games are therefore checked about every 30 minutes; the rest hourly.
 - Budget: each hot run takes about 1 to 2 minutes (cached install, up to 12 games), so roughly 1,000 to 1,500 extra Actions minutes a month. The repository is public, so this is free. GitHub may delay scheduled runs, so these are targets, not guarantees.
 
@@ -201,6 +202,16 @@ The PlayStation Blog's robots.txt allows `/feed/` (Crawl-delay 5), but playstati
 - The PlayStation Blog is not used for news headlines, and (below) not polled for patches either.
 - It is no longer polled at all: `playstation-blog` in `src/sources/registry.json` is `fetch: manual` (Theo's call, 2026-11-03). Re-enable only with written permission from Sony. Nothing else depends on it: PS5 versions and live times come from studio posts, Steam posts and other allowed sources, and a release's `links.ps5Page` comes from the Steam post or from a studio page, or is added by hand. Data already stored from it stays; it is not refreshed.
 - The same terms are why Sony's patch servers and PSN APIs are out (see the top of this file).
+
+## Auto-onboarding (0.5.4, Theo)
+
+The hand registry follows about 100 games; the PS5 index has 9,419. Every full poll derives a second, generated registry from the index and the published info shards (`v1/info`): each released game whose IGDB entry links a Steam store page gets one `steamNews` source (`auto-<appid>-steam`), the index's own cover, key art and PS5 date (no IGDB call), and `steamIsPcPort` when the publisher or developer is Sony or PlayStation. Hand entries always win: a game in `registry.json` (by IGDB id or Steam app id) is never auto-added, and an auto row never overwrites a hand row. Games not out yet, games with no Steam page (console exclusives, which stay link-only) and a second index entry for the same Steam app are skipped; the Feed log prints the counts and a fixed 20-game spot check every run (`scripts/auto-registry.ts`).
+
+Tiers: hand-registered and device-followed games are polled every run as before, and any game with a patch in the last 14 days is in the hourly hot set. Everything else is polled in a rotating slice of `AUTO_SLICE` games per full poll (never-polled first, then the longest ago), cut short at `AUTO_BUDGET_MS` (9 min) so the job stays inside its 20 min limit. With 600 a run, about 5,300 games cycle in 9 runs. Unset or 0 (the default until the first spot check is signed) runs only the dry run. The same Steam rules apply (`assumed` on PS5 unless a port, predating the PS5 release, or the post says otherwise); nothing from an auto entry is ever `official`. An auto game is published (`index.json`, `games/<id>.json`) only once it has a release, so the feed branch stays small; its news headlines are not kept.
+
+**Opt-in follow list (step 3).** A game outside the registry is polled hourly, not on the rotation, while a device that turned
+on "Help keep my games up to date" follows it: the relay holds ids only (docs/api.md "Follow list without alerts"), the Feed
+job reads the `hourly` flag, and the data rules above are unchanged (an auto game is still published only with a release).
 
 ## Link-only games and feed health (0.5.0)
 

@@ -26,6 +26,12 @@ final class NotificationService: NSObject {
     @ObservationIgnored weak var model: AppModel?
     /// Set when the app is launched by tapping a notification, so the splash is skipped (L-3).
     var launchedFromNotification = false
+    /// QA (INTERNAL): what the last notification tap delivered ("game/release"), so a test can tell "the response never arrived"
+    /// from "it arrived and navigation did not follow" (96e0e39, eab123c: the tap brought the app up on the Library).
+    var qaLastResponse: String?
+    /// QA (INTERNAL): what schedule() decided for the last release and what the system reported ("added", "delivered=1"), so a
+    /// run that finds Notification Center empty can say whether the notification was never scheduled or vanished (2537997).
+    var qaScheduleLog = "none"
     /// The APNs device token, hex encoded, once registered. The backend thread owns delivery.
     private(set) var deviceToken: String?
 
@@ -159,10 +165,46 @@ final class NotificationService: NSObject {
         Task { try? await center.setBadgeCount(count) }
     }
 
+    #if INTERNAL
+    private var qaRequests: [String: UNNotificationRequest] = [:]
+    /// Adds, logs, and retries a refused add (the request is kept here because it is not Sendable and cannot ride the completion).
+    private func qaAdd(_ request: UNNotificationRequest, attempt: Int) {
+        qaRequests[request.identifier] = request
+        let id = request.identifier
+        center.add(request) { error in
+            let ns = error as NSError?
+            // Quinn's terms for #422: a refusal before this simulator ever accepted an add is "simulator refused"; one after a
+            // success is an app failure. The flag lives in the app's own defaults, so an erase or reinstall clears it.
+            let key = "qaNotifAddOK"
+            let hadSuccess = UserDefaults.standard.bool(forKey: key)
+            if ns == nil { UserDefaults.standard.set(true, forKey: key) }
+            let text = ns.map { ", error \($0.localizedDescription) [\($0.domain) \($0.code)] (earlier success on this sim: \(hadSuccess ? "yes" : "no"))" } ?? ""
+            Task { @MainActor in
+                self.qaScheduleLog += "; added" + text + " (try \(attempt))"
+                guard !text.isEmpty else { return }
+                // 0473bc2 (Mac, both sims): "Source is not authorized" at auth 2. Say what the system thinks the app may do right now.
+                self.center.getNotificationSettings { s in
+                    let line = "settings auth \(s.authorizationStatus.rawValue) alert \(s.alertSetting.rawValue) center \(s.notificationCenterSetting.rawValue) lock \(s.lockScreenSetting.rawValue) sound \(s.soundSetting.rawValue) badge \(s.badgeSetting.rawValue)"
+                    Task { @MainActor in self.qaScheduleLog += "; " + line }
+                }
+                if attempt < 5, let r = self.qaRequests[id] {
+                    try? await Task.sleep(for: .seconds(3))
+                    self.qaAdd(r, attempt: attempt + 1)
+                }
+            }
+        }
+    }
+    #endif
+
     /// Builds the notification for a release that reached On PS5 (N-4) and schedules it locally.
     /// Remote pushes from the backend carry the same fields.
     func schedule(release: Release, game: CatalogGame?, level: NotifyLevel, pauseAll: Bool, delay: TimeInterval, model: AppModel) {
-        guard let game, release.ps5State == .onPS5, !pauseAll else { return }
+        guard let game, release.ps5State == .onPS5, !pauseAll else {
+            #if INTERNAL
+            qaScheduleLog = "\(release.id): not scheduled (game \(game == nil ? "nil" : "ok"), state \(release.ps5State), pauseAll \(pauseAll))"
+            #endif
+            return
+        }
         guard level == .all || (level == .major && release.kind.countsAsMajor) else { return }
         if model.data.knownReported?.contains(release.id) == true, model.data.notified[release.id] != nil {
             // N-11: the quiet Reported alert was this release's one push. Replace it in place,
@@ -185,7 +227,29 @@ final class NotificationService: NSObject {
         }
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: max(1, delay), repeats: false)
         let request = UNNotificationRequest(identifier: release.id, content: content, trigger: trigger)
+        #if INTERNAL
+        qaScheduleLog = "\(release.id): adding, due in \(Int(max(1, delay))) s"
+        // "Source is not authorized" was seen at auth 2 right after a grant (5000f21): the daemon can lag the status. Retry the add
+        // up to 3 times, 2 s apart, and log every attempt, so the run shows whether a retry cures it.
+        qaAdd(request, attempt: 1)
+        // 0 not determined, 1 denied, 2 authorized, 3 provisional, 4 ephemeral. A denied or never-answered permission is why a fresh
+        // simulator can show no notification at all (r053-deflake-notification-tap), so the UI test reads it.
+        center.getNotificationSettings { s in
+            let status = s.authorizationStatus.rawValue   // the settings object is not Sendable; send only the Int
+            Task { @MainActor in self.qaScheduleLog += "; auth \(status)" }
+        }
+        let releaseID = release.id
+        DispatchQueue.main.asyncAfter(deadline: .now() + max(1, delay) + 2) { [center] in
+            center.getDeliveredNotifications { list in
+                let ids = list.map(\.request.identifier)
+                Task { @MainActor in
+                    self.qaScheduleLog += "; delivered after due: \(ids.contains(releaseID) ? "yes" : "no") (\(ids.count) in list)"
+                }
+            }
+        }
+        #else
         center.add(request)
+        #endif
 
         // Make the release visible once it is due, whether or not the notification is shown.
         Task { [weak model] in
@@ -259,23 +323,38 @@ final class NotificationService: NSObject {
 
 extension NotificationService: UNUserNotificationCenterDelegate {
     /// N-7: no banner in the foreground; the list and badge only, and the app shows its own pill.
-    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+    ///
+    /// The completion-handler form, with the handler called on the main actor. The `async` form let Swift's concurrency runtime call the
+    /// handler from a cooperative thread, and UIKit then aborted ("Call must be made on main thread", in
+    /// `_updateSnapshotAndStateRestorationWithAction`): tapping a release notification crashed the app (2e8f3d2 Mac crash report).
+    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification,
+                                            withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let info = notification.request.content.userInfo
         let gameID = info["gameId"] as? String
         let releaseID = info["releaseId"] as? String
-        await MainActor.run {
+        nonisolated(unsafe) let done = completionHandler
+        Task { @MainActor in
             if let gameID, let releaseID { self.model?.releaseArrivedInForeground(gameID: gameID, releaseID: releaseID) }
+            done([.badge, .list])
         }
-        return [.badge, .list]
     }
 
-    /// N-6: tapping opens that release in whatever pose the device is in.
-    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+    /// N-6: tapping opens that release in whatever pose the device is in. The handler is called on the main actor (see above).
+    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse,
+                                            withCompletionHandler completionHandler: @escaping () -> Void) {
         let info = response.notification.request.content.userInfo
-        guard let gameID = info["gameId"] as? String, let releaseID = info["releaseId"] as? String else { return }
-        await MainActor.run {
-            self.launchedFromNotification = true
-            self.model?.openRelease(gameID: gameID, releaseID: releaseID)
+        let gameID = info["gameId"] as? String
+        let releaseID = info["releaseId"] as? String
+        nonisolated(unsafe) let done = completionHandler
+        Task { @MainActor in
+            if let gameID, let releaseID {
+                self.launchedFromNotification = true
+                #if INTERNAL
+                self.qaLastResponse = "\(gameID)/\(releaseID); model \(self.model == nil ? "nil" : "set")"
+                #endif
+                self.model?.openRelease(gameID: gameID, releaseID: releaseID)
+            }
+            done()
         }
     }
 }

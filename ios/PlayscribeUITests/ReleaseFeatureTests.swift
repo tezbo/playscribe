@@ -44,7 +44,8 @@ final class ReleaseFeatureTests: XCTestCase {
     }
 
     private func attach(_ name: String) {
-        let a = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        // The app window, not XCUIScreen.main: in Book the main screen is the outer display and the capture came back black (48404f1).
+        let a = XCTAttachment(screenshot: app.screenshot())
         a.name = name
         a.lifetime = .keepAlways
         add(a)
@@ -130,16 +131,79 @@ final class ReleaseFeatureTests: XCTestCase {
     /// News strip and News chapter: never a blank page; one of the three states is always shown.
     func testNewsChapterIsNeverBlank() throws {
         launch("chapter/dawnwalker/news")
-        let states = ["No news yet", "Loading news", "Official"]
+        let states = ["No news yet", "Loading news", "Official", "Reported"]
         let failed = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH \"Couldn't load news\"")).firstMatch
-        let seen = states.contains { app.staticTexts[$0].waitForExistence(timeout: 10) } || failed.exists
-            || app.staticTexts.matching(NSPredicate(format: "label == 'Official'")).firstMatch.exists
-        XCTAssertTrue(seen, "News shows a list, the empty copy or the retry")
+        func shown() -> Bool {
+            // Tabletop (Iris): the stage is read only, never hidden from VoiceOver. A headline row is one combined text element
+            // ("<title>, <date>, Official"), so look for the tag in any element's label.
+            if inTabletop {
+                let row = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS ', Official' OR label CONTAINS ', Reported' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news' OR label BEGINSWITH \"Couldn't load news\"")).firstMatch
+                return row.waitForExistence(timeout: 5)
+            }
+            return states.contains { app.staticTexts[$0].waitForExistence(timeout: 3) } || failed.exists
+                || app.staticTexts.matching(NSPredicate(format: "label == 'Official'")).firstMatch.exists
+        }
+        var seen = shown()
+        // Tabletop (48404f1): the chapter chips and search row fill the half-height page and the News body sits below them, in
+        // a lazy list that draws nothing until scrolled. Scroll the page itself, then look again.
+        var scrolls = 0
+        while !seen && scrolls < 4 {
+            // Not on Tabletop's stage: view only means no touch, and the News body must be in the tree without any scrolling there.
+            let page = app.descendants(matching: .any)["pageScroll"]
+            if !inTabletop { (page.exists ? page : app).swipeUp() }
+            scrolls += 1
+            seen = shown()
+        }
+        if !seen {
+            let tree = XCTAttachment(string: app.debugDescription); tree.name = "news-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+        }
+        // Iris, 15:20: view only means no touch, never hidden from VoiceOver. In Tabletop the upper stage must still expose the News body.
+        XCTAssertTrue(seen, "News shows a list, the empty copy or the retry (Tabletop: readable by VoiceOver in the upper stage)")
         assertFrames("news")
         attach("news")
     }
 
     // MARK: - Reading
+
+    /// Iris (15:20): the Tabletop upper stage is view only, never hidden from VoiceOver. The Updates chapter shows the release's
+    /// title and body in the stage; both must be in the accessibility tree there, and neither may be an action.
+    func testTabletopStageIsReadable() throws {
+        launch("release/dawnwalker/dawnwalker@1.1")
+        guard inTabletop else { throw XCTSkip("the stage is a Tabletop surface") }
+        let title = app.descendants(matching: .any)["releaseTitle"]
+        let body = app.descendants(matching: .any)["readerBody"]
+        XCTAssertTrue(title.waitForExistence(timeout: 10), "the stage's release title is in the tree (VoiceOver can read it)")
+        XCTAssertTrue(body.waitForExistence(timeout: 5), "the stage's body is in the tree (VoiceOver can read it)")
+        XCTAssertFalse(title.label.isEmpty, "the title has a label")
+        XCTAssertFalse(body.label.isEmpty, "the body has text")
+        let tree = XCTAttachment(string: app.debugDescription); tree.name = "tabletop-stage-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+    }
+
+    /// Iris (7 Nov, signing #393): in Tabletop the News headlines and the Gallery empty-state links are text in the stage's
+    /// accessibility tree, and none of them is an action: no button, no link trait.
+    func testTabletopNewsAndLinksAreReadableText() throws {
+        launch("chapter/dawnwalker/news")
+        guard inTabletop else { throw XCTSkip("the stage is a Tabletop surface") }
+        let any = app.descendants(matching: .any)
+        let row = any.matching(NSPredicate(format: "label CONTAINS ', Official' OR label CONTAINS ', Reported' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news'")).firstMatch
+        XCTAssertTrue(row.waitForExistence(timeout: 10), "News (headline row, or its empty or loading copy) is in the tree")
+        XCTAssertFalse(row.label.isEmpty)
+        XCTAssertNotEqual(row.elementType, .button, "a News headline is text, not a button, in Tabletop")
+        XCTAssertNotEqual(row.elementType, .link, "a News headline is text, not a link, in Tabletop")
+        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label CONTAINS ', Official'")).count, 0, "no News headline is exposed as a button")
+        XCTAssertEqual(app.links.matching(NSPredicate(format: "label CONTAINS ', Official'")).count, 0, "no News headline is exposed as a link")
+        let newsTree = XCTAttachment(string: app.debugDescription); newsTree.name = "tabletop-news-hierarchy.txt"; newsTree.lifetime = .keepAlways; add(newsTree)
+
+        // The Gallery empty state (Astro Bot and Ghost of Yotei have no art or videos): "Find trailers online" is plain text.
+        app.terminate()
+        launch("chapter/astro-bot/gallery")
+        let trailers = app.descendants(matching: .any).matching(NSPredicate(format: "label == 'Find trailers online'")).firstMatch
+        XCTAssertTrue(trailers.waitForExistence(timeout: 10), "the Gallery empty state's trailer text is in the tree")
+        XCTAssertEqual(trailers.elementType, .staticText, "it is text in Tabletop, not a link or button")
+        XCTAssertEqual(app.links.matching(NSPredicate(format: "label CONTAINS 'Find trailers online' OR label CONTAINS 'Official website'")).count, 0, "no Gallery link has a link trait in Tabletop")
+        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label CONTAINS 'Find trailers online' OR label CONTAINS 'Official website'")).count, 0, "no Gallery link is a button in Tabletop")
+        let galleryTree = XCTAttachment(string: app.debugDescription); galleryTree.name = "tabletop-gallery-hierarchy.txt"; galleryTree.lifetime = .keepAlways; add(galleryTree)
+    }
 
     /// Known issues: following toggles and says so.
     func testFollowKnownIssue() throws {
@@ -184,7 +248,11 @@ final class ReleaseFeatureTests: XCTestCase {
         attach("welcome")
         let skip = app.buttons["Skip for now"]
         var swipes = 0
-        while !skip.isHittable && swipes < 4 { app.swipeUp(); swipes += 1 }
+        // Swipe the welcome's own scroll view when there is one: in Book a swipe on the app's centre can land on the other page.
+        while !skip.isHittable && swipes < 8 { (app.scrollViews.firstMatch.exists ? app.scrollViews.firstMatch : app).swipeUp(); swipes += 1 }
+        if !skip.isHittable {
+            let tree = XCTAttachment(string: app.debugDescription); tree.name = "first-run-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+        }
         XCTAssertTrue(skip.isHittable, "Skip for now is reachable (scrolling if the welcome is taller than the screen)")
         skip.tap()
         XCTAssertTrue(app.buttons["Add your first game"].waitForExistence(timeout: 5), "the empty Library, not a blank page")
@@ -236,7 +304,15 @@ final class ReleaseFeatureTests: XCTestCase {
         if inTabletop { throw XCTSkip("Tabletop has no keyboard: its add search is read-only with an A to Z strip (#179)") }
         let search = app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: 10))
-        search.tap()
+        // Open portrait (48404f1): "Neither element nor any descendant has keyboard focus". The route already asks for focus, and
+        // a second tap on a focused field can drop it, so wait for focus, tap only if it did not arrive, then wait again.
+        func focused() -> Bool { (search.value(forKey: "hasKeyboardFocus") as? Bool) == true }
+        let deadline = Date.now.addingTimeInterval(4)
+        while !focused() && Date.now < deadline { usleep(250_000) }
+        if !focused() { search.tap() }
+        let deadline2 = Date.now.addingTimeInterval(4)
+        while !focused() && Date.now < deadline2 { usleep(250_000) }
+        XCTAssertTrue(focused(), "the add search has keyboard focus")
         search.typeText("Hades")
         let result = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Hades'")).firstMatch
         guard result.waitForExistence(timeout: 10) else { throw XCTSkip("no catalogue match for Hades in this fixture") }
@@ -265,7 +341,7 @@ final class ReleaseFeatureTests: XCTestCase {
     /// Every 0.5.0 surface keeps the frame rules in the current pose: no frame crosses a division,
     /// and in Tabletop nothing tappable sits above the fold. Upcoming is reached from the rail.
     func testNewSurfacesKeepFrameRules() throws {
-        let routes = ["demo", "chapter/dawnwalker/news", "updates", "release/dawnwalker/dawnwalker@1.1",
+        let routes = ["demo", "chapter/dawnwalker/news", "updates", "news", "release/dawnwalker/dawnwalker@1.1",
                       "add", "settings", "first-run"]
         for route in routes {
             app.launchArguments = ["-qaRoute", route]

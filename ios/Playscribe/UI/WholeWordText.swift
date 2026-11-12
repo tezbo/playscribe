@@ -3,6 +3,10 @@ import SwiftUI
 /// Text that, when it does not fit in `lines` lines, ends on a whole word followed by "…" (never a cut word, which
 /// SwiftUI's own tail truncation can produce). Tries the whole text, then one word fewer each time. The line height is
 /// measured from the same font at the current text size, so it holds at every Dynamic Type size.
+///
+/// The helpers below are `nonisolated` on purpose: `PickVariant` (a Layout) calls them from SwiftUI's async renderer thread, and a
+/// type that conforms to View makes its statics main-actor by inference, so the first call off the main thread trapped in
+/// `swift_task_isCurrentExecutor` (36d340c-crash-WholeWordText.ips, `com.apple.SwiftUI.AsyncRenderer`). They are pure string work.
 struct WholeWordText: View {
     var text: String
     var font: Font
@@ -10,12 +14,12 @@ struct WholeWordText: View {
     var color: Color?
     @State private var lineHeight: CGFloat = 0
 
-    static func words(of text: String) -> [String] { text.split(separator: " ", omittingEmptySubsequences: true).map(String.init) }
+    nonisolated static func words(of text: String) -> [String] { text.split(separator: " ", omittingEmptySubsequences: true).map(String.init) }
 
     /// The variants whose every kept word fits `available` points on one line. A word wider than the column is wrapped by
     /// character, which leaves a fragment (or a lone comma) at the start of a line, so a variant that keeps one is dropped
     /// and the cut lands before that word. Always keeps at least the shortest variant. Unknown widths keep everything.
-    static func fittingVariants(of text: String, wordWidths: [Int: CGFloat], available: CGFloat) -> [String] {
+    nonisolated static func fittingVariants(of text: String, wordWidths: [Int: CGFloat], available: CGFloat) -> [String] {
         let all = variants(of: text)
         let n = words(of: text).count
         guard available > 0, n > 1, wordWidths.count == n else { return all }
@@ -29,14 +33,14 @@ struct WholeWordText: View {
     }
 
     /// `kept` without trailing , ; : . so the ellipsis follows the word ("Rebalancing…", never "Rebalancing,…").
-    static func trimmed(_ kept: String) -> String {
+    nonisolated static func trimmed(_ kept: String) -> String {
         var t = Substring(kept)
         while let last = t.last, ",;:.".contains(last), t.count > 1 { t = t.dropLast() }
         return String(t)
     }
 
     /// The whole text first, then one word fewer each time with "…" after the last whole word. Never a cut word.
-    static func variants(of text: String) -> [String] {
+    nonisolated static func variants(of text: String) -> [String] {
         let words = text.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
         return [text] + (words.count > 1 ? stride(from: words.count - 1, through: 1, by: -1).map { trimmed(words.prefix($0).joined(separator: " ")) + "\u{2026}" } : [])
     }
@@ -52,12 +56,18 @@ struct WholeWordText: View {
         // every word measured on one line. An earlier version read the hugged width of its own text back through state,
         // which was narrower than the column, so a word that no longer fitted could still be kept and a comma was left
         // alone at the start of a line (r061).
+        // Every child sits in a frame with no lower bound, so PickVariant can collapse the ones it does not show to 0 x 0 at the
+        // box's own corner (the frame clips them) instead of parking them 100,000 pt to the left. The accessibility frame of
+        // the element below is the union of its children, so parked children made the title 100,250 pt wide from x = -99,980
+        // (frames_main.txt line 180, releaseTitle); collapsed in place, the element is the shown words.
         PickVariant(text: text, variantCount: all.count, cap: cap) {
             ForEach(Array(all.enumerated()), id: \.offset) { _, v in
                 Text(v).font(font).foregroundStyle(color ?? .primary).fixedSize(horizontal: false, vertical: true)
+                    .frame(minWidth: 0, minHeight: 0, alignment: .topLeading).clipped()
             }
             ForEach(Array(words.enumerated()), id: \.offset) { _, w in
                 Text(w).font(font).fixedSize()
+                    .frame(minWidth: 0, minHeight: 0, alignment: .topLeading).clipped()
             }
         }
         .clipped()
@@ -71,8 +81,9 @@ struct WholeWordText: View {
 }
 
 /// Shows exactly one of its first `variantCount` children: the first whose words each fit the offered width on one line
-/// and whose height fits `cap`. The remaining children are the words of `text`, only measured (placed off to the side and
-/// clipped by the parent). Falls back to the shortest variant, never blank. Takes the height of the child it shows.
+/// and whose height fits `cap`. The remaining children are the words of `text`, only measured. Every child it does not show
+/// is placed at the origin with a zero proposal, which its frame honours (0 x 0, clipped), so nothing sits outside the box.
+/// Falls back to the shortest variant, never blank. Takes the height of the child it shows.
 private struct PickVariant: Layout {
     var text: String
     var variantCount: Int
@@ -106,8 +117,8 @@ private struct PickVariant: Layout {
         guard !subviews.isEmpty else { return }
         let chosen = choose(subviews, width: bounds.width)
         for (i, s) in subviews.enumerated() {
-            let at = i == chosen ? bounds.origin : CGPoint(x: bounds.minX - 100_000, y: bounds.minY)
-            s.place(at: at, anchor: .topLeading, proposal: ProposedViewSize(width: bounds.width, height: nil))
+            let proposal = i == chosen ? ProposedViewSize(width: bounds.width, height: nil) : .zero
+            s.place(at: bounds.origin, anchor: .topLeading, proposal: proposal)
         }
     }
 }

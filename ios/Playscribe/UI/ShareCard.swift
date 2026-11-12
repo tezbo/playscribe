@@ -9,24 +9,46 @@ struct ShareCard: View {
     var version: String?
     var changes: [String]
     var art: UIImage
+    /// False when the game has no key art of its own: the card gets a designed ground and a centred
+    /// title block instead of an empty top half.
+    var hasArt = true
+
+    /// "Patch 9.9", not "Patch 9.9 9.9": the version is appended only when the update's name does not already carry it.
+    var updateLine: String {
+        guard let version, !updateName.contains(version) else { return updateName }
+        // Non-breaking space: the version never sits alone on a line (Iris, #441 follow-up).
+        return "\(updateName)\u{00A0}\(version)"
+    }
+
+    /// The placeholder's own colour around its baked-in mark (sampled from default-header-tall), so the veil is invisible.
+    private let groundTone = Color(red: 57 / 255, green: 47 / 255, blue: 41 / 255)
 
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
+        ZStack(alignment: hasArt ? .bottomLeading : .leading) {
             Color.black
             Image(uiImage: art).resizable().scaledToFill()
                 .frame(width: 1080, height: 1350).clipped()
+            if !hasArt {
+                // No key art: the placeholder keeps its glow and book silhouette as the ground, but its own mark (baked in
+                // at 60% down, under the centred body text; Iris, 9dcb197) is veiled with a soft patch of the ground tone,
+                // and the sparkle is drawn again in the empty band above the title block.
+                RadialGradient(colors: [groundTone, groundTone, .clear], center: .center, startRadius: 0, endRadius: 110)
+                    .frame(width: 220, height: 220).position(x: 540, y: 869)
+                RadialGradient(colors: [PlayscribeColor.ember300.opacity(0.28), .clear],
+                               center: .center, startRadius: 0, endRadius: 900)
+                Text("\u{2726}").font(.system(size: 72)).foregroundStyle(PlayscribeColor.ember300.opacity(0.9))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top).padding(.top, 160)
+            }
             LinearGradient(colors: [.black.opacity(0.1), .black.opacity(0.55), .black.opacity(0.92)],
                            startPoint: .top, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 20) {
                 Text(gameName).font(.custom("Literata24pt-SemiBold", size: 76)).lineLimit(3)
-                Text([updateName, version].compactMap { $0 }.joined(separator: " ")).font(.custom("Literata24pt-SemiBold", size: 44))
+                Text(updateLine).font(.custom("Literata24pt-SemiBold", size: 44))
                     .foregroundStyle(PlayscribeColor.ember300)
                 VStack(alignment: .leading, spacing: 14) {
                     ForEach(changes.prefix(3), id: \.self) { Text($0).font(.system(size: 36)).lineLimit(2) }
                 }
                 .padding(.top, 8)
-                Text("The story of every update").font(.custom("Literata24pt-SemiBold", size: 30))
-                    .foregroundStyle(PlayscribeColor.textSecondary).padding(.top, 16)
             }
             .foregroundStyle(PlayscribeColor.textPrimary)
             .padding(72)
@@ -38,27 +60,35 @@ struct ShareCard: View {
 extension AppModel {
     /// Up to three lines: the release's key changes, else the first lines of its PS5 notes.
     func shareChanges(_ r: Release) -> [String] {
-        if let top = r.digest?.topNew, !top.isEmpty { return Array(top.prefix(3)) }
-        if let k = r.keyChanges, !k.isEmpty { return Array(k.prefix(3).map { LinkedText.clean($0) }) }
-        return Array(r.notes.flatMap(\.items).filter { !$0.isPCOnly }.map { LinkedText.clean($0.text) }
-            .filter { !$0.isEmpty && $0.count <= 120 }.prefix(3))
+        let raw: [String]
+        if let top = r.digest?.topNew, !top.isEmpty { raw = top }
+        else if let k = r.keyChanges, !k.isEmpty { raw = k }
+        else {
+            raw = r.notes.flatMap(\.items).filter { !$0.isPCOnly }.map(\.text)
+                .filter { ShareText.line($0).count <= 120 }
+        }
+        return Array(raw.map(ShareText.line).filter { !$0.isEmpty }.prefix(3))
     }
 
     @MainActor func shareCardImage(for r: Release) -> UIImage? {
         let game = game(r.gameID)
-        let art = game?.keyArtAsset.flatMap { UIImage(named: $0) } ?? UIImage(named: "default-header-tall")
-        guard let art else { return nil }
-        let card = ShareCard(gameName: game?.name ?? "", updateName: r.displayName, version: r.ps5Version,
-                             changes: shareChanges(r), art: art)
+        let own = game?.keyArtAsset.flatMap { UIImage(named: $0) }
+        guard let art = own ?? UIImage(named: "default-header-tall") else { return nil }
+        let card = ShareCard(gameName: gameDisplayName(r.gameID), updateName: r.displayName, version: r.ps5Version,
+                             changes: shareChanges(r), art: art, hasArt: own != nil)
         let renderer = ImageRenderer(content: card)
         renderer.scale = 1
         return renderer.uiImage
     }
 
+    /// Message beside the card: one title line, the top change, then a link that opens this update in
+    /// Playscribe (universal link, with a web fallback page). No blank gaps, no doubled full stops.
     func shareText(_ r: Release) -> String {
-        let name = game(r.gameID)?.name ?? ""
-        let first = shareChanges(r).first.map { ": \($0)." } ?? "."
-        return "\(name) \(r.ps5Version ?? r.displayName)\(first)"
+        let name = gameDisplayName(r.gameID)
+        var lines = ["\(name) \(r.ps5Version ?? r.displayName)".trimmingCharacters(in: .whitespaces)]
+        if let first = shareChanges(r).first { lines.append(first.hasSuffix(".") || first.hasSuffix("!") || first.hasSuffix("?") ? first : first + ".") }
+        if let url = ShareText.link(gameID: r.gameID, releaseID: r.id) { lines.append(url.absoluteString) }
+        return lines.joined(separator: "\n")
     }
 }
 
@@ -72,7 +102,7 @@ struct ShareUpdateButton: View {
         Group {
             if let image {
                 ShareLink(item: image, message: Text(model.shareText(release)),
-                          preview: SharePreview(model.game(release.gameID)?.name ?? "Update", image: image)) {
+                          preview: SharePreview(model.gameDisplayName(release.gameID).nonEmpty ?? "Update", image: image)) {
                     // Same disc and weight as the rail's other buttons (Quinn: it looked paler, as if disabled).
                     Image(systemName: "square.and.arrow.up")
                         // Fixed 22 pt glyph inside the 44 pt disc: it never scales past the rail icons at AX (Iris).
@@ -99,5 +129,29 @@ struct ShareUpdateButton: View {
     private func render() {
         failed = false
         if let ui = model.shareCardImage(for: release) { image = Image(uiImage: ui) } else { failed = true }
+    }
+}
+
+/// Share wording helpers (kept pure so they are unit-testable).
+extension String { fileprivate var nonEmpty: String? { isEmpty ? nil : self } }
+
+enum ShareText {
+    static let host = "playscribe.codeconnectors.co"
+
+    /// One tidy line: markup stripped, whitespace and newlines collapsed, no doubled full stops.
+    static func line(_ raw: String) -> String {
+        var s = LinkedText.clean(raw)
+        s = s.replacingOccurrences(of: #"\[/?[A-Za-z*][^\]]*\]"#, with: "", options: .regularExpression)
+        s = s.replacingOccurrences(of: #"\s+"#, with: " ", options: .regularExpression)
+        s = s.replacingOccurrences(of: #"([.!?])\.+"#, with: "$1", options: .regularExpression)
+        s = s.replacingOccurrences(of: #"\.{2,}"#, with: ".", options: .regularExpression)
+        return s.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    static func link(gameID: String, releaseID: String) -> URL? {
+        var c = URLComponents()
+        c.scheme = "https"; c.host = host
+        c.percentEncodedPath = "/r/" + [gameID, releaseID].map { $0.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed.subtracting(CharacterSet(charactersIn: "/"))) ?? $0 }.joined(separator: "/")
+        return c.url
     }
 }

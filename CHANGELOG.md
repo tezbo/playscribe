@@ -5,6 +5,7 @@ so write it for testers. Release steps are in docs/release.md.
 
 ## 0.5.3
 
+- A game we don't track yet now says so, instead of "No updates yet".
 - Settings has a new Team alerts switch (development and TestFlight builds only). Turn it on to help us test alerts.
 - Turning alerts off now removes your device from our alert list.
 - Upcoming fits more on screen: short sections share a row, the cover shows the next game, and at big text sizes everything stacks in one column.
@@ -15,6 +16,14 @@ so write it for testers. Release steps are in docs/release.md.
 - On a game page the section chips show every section when they fit, and no longer crowd the links. The page counter stays clear of the content, and VoiceOver covers video and the Tabletop reader.
 - Link rows say where they go, for example "Read full notes on Steam".
 - Pre-launch patches no longer show as PS5 updates.
+- Tapping a PS5 update notification no longer crashes the app, and it opens that update's page.
+
+Known issues in this build:
+
+- Search: what you type can occasionally be lost, or the list can go blank while you type. Fixed in the next version.
+- Notifications: tapping a notification when the app is already open has not been checked yet. Tapping one when the app is closed has.
+- Book mode: on the left page the tiles show after News instead of first.
+- VoiceOver on the Library tiles has not been checked on a real device yet.
 
 Check on the Duo:
 

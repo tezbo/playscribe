@@ -6,7 +6,7 @@ import { runIngest, seedGames, ps4SinceFromIndex } from '../src/ingest/pipeline.
 import { alertCopy, headlineOf, pushPs5Release, pushNewPs5 } from '../src/push/notify.ts'
 import type { Apns } from '../src/push/apns.ts'
 import * as store from '../src/store.ts'
-import { allNews, getRelease, newsOf, promoteAnnounced } from '../src/store.ts'
+import { getRelease, newsOf, promoteAnnounced } from '../src/store.ts'
 import { clearRobotsCache } from '../src/http.ts'
 import { hotGameIds } from '../src/hot.ts'
 import { fakeFetch, pressArticle, pressIndexPage, rss, steamNews } from './helpers.ts'
@@ -257,10 +257,6 @@ test('roadmap 17: official non-patch posts become news headlines (title, date, u
   assert.deepEqual(Object.keys(art).sort(), ['game_id', 'published_at', 'source_id', 'title', 'url'])
   assert.ok(!rows.some((r) => /Hotfix|Update 1\.1$/.test(r.title)))
   assert.ok(newsOf(db, 'dawnwalker').every((n) => Object.keys(n).sort().join() === 'date,gameId,title,url,verification' && n.gameId === 'dawnwalker'))
-  // The global feed is the same rows across games, newest first, with the same fields.
-  const all = allNews(db)
-  assert.ok(all.length >= newsOf(db, 'dawnwalker').length)
-  assert.ok(all.every((n, i) => Object.keys(n).sort().join() === 'date,gameId,title,url,verification' && (i === 0 || all[i - 1]!.date >= n.date)))
 })
 
 test('coverage audit: a Steam-assumed PS5 row dated before the PS5 launch is dropped; official rows stay', async () => {
@@ -514,6 +510,79 @@ test('news: Push Square headlines that name a tracked game are Reported news (ti
   assert.ok(!JSON.stringify(items).includes('Long article text'))
   assert.equal(db.prepare("SELECT COUNT(*) AS n FROM news WHERE url LIKE '%other%'").get()!.n, 0)
   assert.ok(!db.prepare("SELECT 1 FROM releases WHERE game_id = 'dawnwalker' AND source_ids LIKE '%pushsquare-news%'").get(), 'the news feed never makes a release')
+})
+
+// Terry 2026-11-09: News is not just Steam and Push Square; PC Gamer, IGN, Polygon, GameSpot and GamesRadar+ feed it too,
+// headline only, marked Reported, and never a release.
+test('press outlet news feeds add Reported headlines for a tracked game and never make a release', async () => {
+  const db = openDb(':memory:')
+  const outlets = {
+    'https://www.pcgamer.com/rss/': 'pcgamer',
+    'https://feeds.feedburner.com/ign/games-all': 'ign',
+    'https://www.polygon.com/feed/': 'polygon',
+    'https://www.gamespot.com/feeds/news/': 'gamespot',
+    'https://www.gamesradar.com/feeds.xml': 'gamesradar',
+  }
+  const fetchFn = fakeFetch(
+    Object.fromEntries(
+      Object.entries(outlets).map(([url, id]) => [
+        url,
+        rss([
+          { title: `The Blood of Dawnwalker patch notes and photo mode (${id})`, link: `https://${id}.example/dawnwalker`, date: recent(2), body: '<p>Article text that must never be stored.</p>' },
+          { title: `Unrelated game news (${id})`, link: `https://${id}.example/other`, date: recent(1), body: '<p>y</p>' },
+        ]),
+      ]),
+    ),
+  )
+  const deps = { db, fetchFn, igdb: null }
+  await seedGames(deps)
+  await runIngest(deps, { force: true })
+  const items = newsOf(db, 'dawnwalker').filter((n) => n.url.endsWith('.example/dawnwalker'))
+  assert.equal(items.length, 5)
+  assert.ok(items.every((n) => n.verification === 'reported'))
+  assert.ok(!JSON.stringify(items).includes('Article text'))
+  assert.equal(db.prepare("SELECT COUNT(*) AS n FROM news WHERE url LIKE '%/other'").get()!.n, 0)
+  assert.ok(!db.prepare("SELECT 1 FROM releases WHERE game_id = 'dawnwalker' AND source_ids LIKE '%-news%'").get(), 'a news feed never makes a release')
+})
+
+// Nadia 2026-11-11 (r054-news-promo-merch-filter): sale and merch headlines are not news. Hidden titles are logged for Quinn;
+// a patch is never judged here (it never reaches the news table), and a headline with a change word is kept.
+test('sale and merch headlines are hidden from news and logged; announcements stay', async () => {
+  const db = openDb(':memory:')
+  const log: string[] = []
+  const fetchFn = fakeFetch({
+    'https://www.pushsquare.com/feeds/latest': rss([
+      { title: 'Get 20% Off The Blood of Dawnwalker This Week', link: 'https://www.pushsquare.com/news/2026/11/dawnwalker-sale', date: recent(4), body: '<p>x</p>' },
+      { title: 'The Blood of Dawnwalker Merch You Might Have Missed', link: 'https://www.pushsquare.com/news/2026/11/dawnwalker-merch', date: recent(3), body: '<p>x</p>' },
+      { title: 'The Blood of Dawnwalker gets a free photo mode next week', link: 'https://www.pushsquare.com/news/2026/11/dawnwalker-photo-mode', date: recent(2), body: '<p>x</p>' },
+      { title: 'The Blood of Dawnwalker fixes the 30% off store price bug', link: 'https://www.pushsquare.com/news/2026/11/dawnwalker-price-fix', date: recent(1), body: '<p>x</p>' },
+    ]),
+  })
+  const deps = { db, fetchFn, igdb: null, log: (m: string) => log.push(m) }
+  await seedGames(deps)
+  await runIngest(deps, { force: true })
+  const titles = newsOf(db, 'dawnwalker').filter((n) => n.url.includes('pushsquare')).map((n) => n.title)
+  assert.deepEqual(titles.sort(), ['The Blood of Dawnwalker fixes the 30% off store price bug', 'The Blood of Dawnwalker gets a free photo mode next week'])
+  const hidden = log.filter((l) => l.startsWith('news hidden (promo) dawnwalker:'))
+  assert.equal(hidden.length, 2)
+  assert.ok(hidden.some((l) => l.includes('20% Off')) && hidden.some((l) => l.includes('Merch')))
+  assert.ok(log.some((l) => l === 'ingest: news hidden (promo) 2 new, 0 pruned'), 'the job log carries the hidden count')
+})
+
+// Quinn (#461): Steam posts are markSeen, so the 446 rows stored before the rule would stay in the feed. The prune pass at
+// ingest deletes stored headlines the rule now hides and logs each one; a kept headline is untouched.
+test('ingest prunes stored sale and merch headlines and logs them', async () => {
+  const db = openDb(':memory:')
+  const log: string[] = []
+  const deps = { db, fetchFn: fakeFetch({}), igdb: null, log: (m: string) => log.push(m) }
+  await seedGames(deps)
+  store.addNews(db, 'dawnwalker', { url: 'https://store.steampowered.com/news/app/1/view/1', title: 'Get 20% Off The Blood of Dawnwalker', publishedAt: recent(3), sourceId: 'dawnwalker-steam' })
+  store.addNews(db, 'dawnwalker', { url: 'https://store.steampowered.com/news/app/1/view/2', title: 'Dawnwalker Vinyl Is Coming Soon!', publishedAt: recent(2), sourceId: 'dawnwalker-steam' })
+  store.addNews(db, 'dawnwalker', { url: 'https://store.steampowered.com/news/app/1/view/3', title: 'One Million Copies Sold!', publishedAt: recent(1), sourceId: 'dawnwalker-steam' })
+  await runIngest(deps, { force: true })
+  assert.deepEqual(newsOf(db, 'dawnwalker').map((n) => n.title), ['One Million Copies Sold!'])
+  assert.equal(log.filter((l) => l.startsWith('news hidden (promo, pruned) dawnwalker:')).length, 2)
+  assert.ok(log.some((l) => l === 'ingest: news hidden (promo) 0 new, 2 pruned'))
 })
 
 // Terry 2026-11-06: PS4 games play on PS5, so a PS4 patch for a game with no native PS5 version counts, labelled ps4.
