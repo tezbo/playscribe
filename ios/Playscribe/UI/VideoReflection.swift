@@ -69,6 +69,23 @@ struct VideoReflection: View {
     /// picture is. With it, each snapshot logs `mirror-probe` lines (mean brightness of the live frame and the still).
     static var raw: Bool { BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaMirrorRaw") }
 
+    /// QA (INTERNAL, `-qaMirrorFixture YES`): the mirror is fed a generated bright "playing" frame every 250 ms (colour bars
+    /// that shift hue, mean brightness about 0.6), as if the video were playing and every snapshot had a picture in it. The
+    /// simulator's YouTube embed often never starts, so this measures the live path (crossfade, band, fade, plate) without it.
+    static var fixture: Bool { BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaMirrorFixture") }
+
+    /// The fixture frame for tick `n`: eight vertical pastel bars (saturation 0.55, brightness 0.95), hues rotated by `n`.
+    static func fixtureFrame(_ n: Int, size: CGSize = CGSize(width: 320, height: 180)) -> UIImage {
+        UIGraphicsImageRenderer(size: size).image { c in
+            let bars = 8
+            for i in 0..<bars {
+                let hue = (CGFloat((i + n) % bars) / CGFloat(bars))
+                UIColor(hue: hue, saturation: 0.55, brightness: 0.95, alpha: 1).setFill()
+                c.fill(CGRect(x: size.width * CGFloat(i) / CGFloat(bars), y: 0, width: size.width / CGFloat(bars) + 1, height: size.height))
+            }
+        }
+    }
+
     var controller: YouTubeController
     var mode: Mode
     var posterAsset: String?
@@ -113,8 +130,22 @@ struct VideoReflection: View {
                       let loaded = try? await URLSession.shared.data(from: url) else { return }
                 thumbnail = UIImage(data: loaded.0)
             }
-            .task(id: mode == .live && controller.isPlaying) {
-                guard mode == .live, controller.isPlaying else { return }
+            .task(id: mode == .live && Self.fixture) {
+                guard mode == .live, Self.fixture else { return }
+                var n = 0
+                // Let the still show first, so the stills can show the crossfade from it.
+                try? await Task.sleep(for: .seconds(2))
+                while !Task.isCancelled {
+                    let frame = Self.fixtureFrame(n)
+                    NSLog("mirror-probe fixture=1 live=%.3f still=%@ size=%dx%d", Self.meanBrightness(frame),
+                          still.map { String(format: "%.3f", Self.meanBrightness($0)) } ?? "none", Int(frame.size.width), Int(frame.size.height))
+                    if !Self.isBlank(frame) { live = frame }
+                    n += 1
+                    try? await Task.sleep(for: .milliseconds(250))
+                }
+            }
+            .task(id: mode == .live && controller.isPlaying && !Self.fixture) {
+                guard mode == .live, controller.isPlaying, !Self.fixture else { return }
                 while !Task.isCancelled {
                     let cfg = WKSnapshotConfiguration()
                     cfg.snapshotWidth = 320
