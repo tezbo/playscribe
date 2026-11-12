@@ -1173,6 +1173,9 @@ final class AppModel {
     }
 
     func resetDemo() {
+        // Like a reset to first run: an alerts-free follow-list record is deleted, never left on the relay with the switch
+        // shown off (Mac at eb42735: `-qaRoute keep-current/settings` turned the switch off and sent no DELETE).
+        if data.keepCurrent == true { setKeepCurrent(false) }
         qaPadDeck = false
         qaUpdateCount = 0
         qaFreshCache = nil

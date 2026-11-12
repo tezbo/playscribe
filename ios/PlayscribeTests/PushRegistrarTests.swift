@@ -193,6 +193,18 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         #expect(PushRegistrar.dropStaleKey() == nil)
     }
 
+    /// The launch's delete and the first activation's retry land together: one DELETE, not two (Mac capture at eb42735).
+    @Test func theStaleRecordIsDeletedOnceWhenLaunchAndActivationOverlap() async throws {
+        setUp(key: "k-old")
+        StubRelay.handler = { r in (r.httpMethod == "DELETE" ? 204 : 200, Data()) }
+        let launch = PushRegistrar.dropStaleKey()
+        let activation = PushRegistrar.deleteStaleRecord()
+        await launch?.value; await activation?.value
+        #expect(paths() == ["DELETE /v1/devices/me"], "\(paths())")
+        #expect(PushRegistrar.staleKeys.read() == nil)
+        #expect(PushRegistrar.deleteStaleRecord() == nil)
+    }
+
     @Test func onAPushDeviceTheSwitchOnlySetsTheHourlyFlag() async throws {
         setUp()   // key-1 from a push registration (no "follows" record kind)
         StubRelay.handler = { _ in (200, Data()) }

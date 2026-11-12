@@ -587,7 +587,7 @@ enum PushRegistrar {
 
     /// Forgets what the client remembers between calls (tests start each case clean).
     static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil; lastTeam = nil; lastHourly = nil; keepCurrentFollows = nil
-        pendingFollowsOnly = nil
+        pendingFollowsOnly = nil; pendingStaleDelete = nil
         UserDefaults.standard.removeObject(forKey: recordKindKey); UserDefaults.standard.removeObject(forKey: lastSentKey)
         #if DEBUG
         showsTeamForTests = nil
@@ -724,17 +724,26 @@ enum PushRegistrar {
 
     /// DELETE /v1/devices/me with the key an earlier install left. A 2xx (or a 401: already gone) drops it; offline or any
     /// other answer keeps it for the next activation. It never touches this install's own key.
+    /// Single flight (Mac capture at eb42735: the launch's delete and the first activation's retry went 43 ms apart, both
+    /// 204): while one DELETE is out, a second call waits for it instead of sending another.
     @discardableResult
     static func deleteStaleRecord() -> Task<Void, Never>? {
+        if let pending = pendingStaleDelete { return Task { await pending.value } }
         guard let url = relayURL?.appending(path: "v1/devices/me"), let key = staleKeys.read() else { return nil }
-        return Task {
+        let task = Task {
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
             request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
-            guard let (_, response) = try? await session.data(for: request), let http = response as? HTTPURLResponse else { return }
-            if (200..<300).contains(http.statusCode) || http.statusCode == 401, staleKeys.read() == key { staleKeys.write(nil) }
+            if let (_, response) = try? await session.data(for: request), let http = response as? HTTPURLResponse,
+               (200..<300).contains(http.statusCode) || http.statusCode == 401, staleKeys.read() == key {
+                staleKeys.write(nil)
+            }
+            pendingStaleDelete = nil
         }
+        pendingStaleDelete = task
+        return task
     }
+    nonisolated(unsafe) private static var pendingStaleDelete: Task<Void, Never>?
 
     /// DELETE /v1/devices/me: asks the relay to forget this device (r052-device-delete), used when alerts go off. A 2xx means
     /// done (the relay also answers 204 when the key is already gone) and a 401 means it no longer knows the key, so either
