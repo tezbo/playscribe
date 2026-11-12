@@ -193,7 +193,7 @@ test('backfill also repairs derived (auto-onboarded) games, which the slice neve
 })
 
 test('backfill removes the release an announcement headline made before, and a stated live row survives later runs', async () => {
-  const date = ago(100)
+  const date = new Date(Math.floor((Date.now() - 100 * 3600e3) / 1000) * 1000).toISOString()
   const { db, deps } = await setup([
     { gid: '1', title: 'Title Update coming this week!', date, contents: 'Fixes and new content, now on PC and PS5.', tags: ['patchnotes'] },
     { gid: '2', title: 'Patch 1.3', date: ago(20), contents: `At 02:00 UTC+0 on ${monthDay(day(2))}, the updates for Xbox Series X|S and PlayStation 5 will be available.`, tags: ['patchnotes'] },

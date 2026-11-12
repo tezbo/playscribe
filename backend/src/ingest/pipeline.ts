@@ -302,7 +302,8 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     held('announcement')
     if (deps.repairClaims) {
       const old = (db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id
-      if (old) deps.log?.(store.dropAnnouncementRelease(db, old, s.id, post.publishedAt) ? `backfill: dropped ${old}, an announcement` : `backfill: kept ${old} (other posts feed it), removed only its announcement PS5 row`)
+      const dropped = old ? store.dropAnnouncementRelease(db, old, s.id, post.publishedAt) : null
+      if (old) deps.log?.(dropped ? `backfill: dropped ${old}, an announcement` : `backfill: kept ${old} (other posts feed it), removed only its announcement PS5 row`)
     }
     return null
   }
