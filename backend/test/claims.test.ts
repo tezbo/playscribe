@@ -36,6 +36,28 @@ test('a stated later time is read; past, vague and non-release dates are not', (
   assert.equal(statedLiveTime('Fixed a crash.', pub), null)
 })
 
+test('the time that counts is the one in the sentence naming PlayStation (Delta Force); a maintenance notice titled as an update lands when the maintenance ends (Crystal of Atlan)', () => {
+  const delta = `Major Update: Season Aurora Is Coming!
+Dear Operators,
+
+We plan to launch a non-stop update for PC, mobile, and console versions on November 10, opening the new season "Aurora"!
+The expected update cadence for the PC version is as follows:
+At 00:30 UTC+0 on November 10, Operations and Warfare ranked matches will be off-season and temporarily closed.
+At 02:00 UTC+0 on November 10, the PC update will be available.
+
+The expected update cadence for the console version is as follows:
+At 00:30 UTC+0 on November 10, Operations and Warfare ranked matches will be off-season and temporarily closed.
+At 01:59 UTC+0 on November 10, the Operations entrance and matchmaking mode will be closed.
+At 02:00 UTC+0 on November 10, the updates for Xbox Series X|S and PlayStation 5 will be available.`
+  assert.equal(statedLiveTime(delta, '2026-11-07T12:00:03.000Z'), '2026-11-10T02:00:00.000Z')
+  const crystal = `November 12 Version Update Notice
+Dear Adventurer,
+To provide adventurers with a better experience, the Guild will be issuing a temporary restraining order on all adventurer activities in Atlan starting on November 12, 2026 at 06:00 (UTC+0). This order is expected to remain in effect for approximately 4 hours (maintenance may end earlier or be extended depending on actual conditions).`
+  assert.equal(statedLiveTime(crystal, '2026-11-11T07:29:28.000Z'), '2026-11-12T10:00:00.000Z')
+  // Without an update title the same maintenance wording is not a release time.
+  assert.equal(statedLiveTime(crystal.replace('Version Update Notice', 'Server Notice'), '2026-11-11T07:29:28.000Z'), null)
+})
+
 test('a letter after the version stays in its name (10.2.2a)', () => {
   const n = nameRelease('10.2.2a Backend Bugfix Patch', '2026-11-02T10:00:00.000Z')
   assert.deepEqual([n.displayName, n.versionKey], ['Patch 10.2.2a', '10.2.2a'])
