@@ -133,6 +133,8 @@ struct TabletopReaderStage: View {
     /// The stage's bottom edge in screen space; the text ends 24 pt above the division.
     @State private var stageBottom: CGFloat = 0
     @State private var stageWidth: CGFloat = 0
+    @State private var stageHeight: CGFloat = 0
+    @State private var panelHeight: CGFloat = 0
 
     /// The room right of the text panel (16 pt margin, up to 560 pt, 24 pt gap, 16 pt margin): the tile is 240 pt at most and
     /// is left out below 140 pt, so it never sits under the text.
@@ -140,6 +142,15 @@ struct TabletopReaderStage: View {
         let room = stageWidth - 16 - 560 - 24 - 16
         // Accessibility sizes: the label is larger, so the poster gets smaller rather than the tile being cut by the stage.
         return room >= 140 ? min(typeSize.isAccessibilitySize ? 160 : 240, room) : 0
+    }
+    /// No side room (the Duo stage is about 700 pt wide): the tile stacks above the text panel, 120 pt wide, only while it fits
+    /// under the status bar band with the panel's current height. At accessibility sizes the stage has no room; "Play trailer"
+    /// in the lower half is always there.
+    private var stackedTileWidth: CGFloat { 120 }
+    private func stackedTileFits(clearance: CGFloat) -> Bool {
+        let tileHeight = stackedTileWidth * 9 / 16 + 6 + 22 + 16
+        return !typeSize.isAccessibilitySize && trailerTileWidth == 0 && panelHeight > 0
+            && clearance + panelHeight + 8 + tileHeight <= stageHeight - 56
     }
     var gameID: String
 
@@ -209,6 +220,7 @@ struct TabletopReaderStage: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in if abs(h - panelHeight) > 0.5 { panelHeight = h } }
                 .id(section.id)
                 .transition(.opacity)
             } }
@@ -224,9 +236,18 @@ struct TabletopReaderStage: View {
                         .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 }
                 .clipped()
+            } else if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first, stackedTileFits(clearance: duo.clearance(forBottom: stageBottom)) {
+                // R-11: no side room, so the poster sits on the panel's leading edge, 8 pt above it. View only.
+                Color.clear.overlay(alignment: .bottomLeading) {
+                    StageTrailerTile(youtubeID: v.youtubeId, width: stackedTileWidth)
+                        .padding(.leading, 16)
+                        .padding(.bottom, duo.clearance(forBottom: stageBottom) + panelHeight + 8)
+                }
+                .clipped()
             }
         }
         .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { w in if abs(w - stageWidth) > 0.5 { stageWidth = w } }
+        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in if abs(h - stageHeight) > 0.5 { stageHeight = h } }
         .animation(.easeInOut(duration: 0.2), value: index)
         // Its parts stay separate elements, so the release title is findable (J-4).
         .accessibilityElement(children: .contain)
