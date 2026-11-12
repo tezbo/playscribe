@@ -243,7 +243,13 @@ nonisolated final class StubRelay: URLProtocol, @unchecked Sendable {
         var token: String?
         var newRecords = 0
         private var made: [String: String] = [:]   // key -> token
+        private let lock = NSLock()
+        /// URLProtocol calls this on its own threads; one request at a time, so the state is never touched twice at once.
         func handle(_ r: URLRequest) -> (Int, Data) {
+            lock.lock(); defer { lock.unlock() }
+            return serve(r)
+        }
+        private func serve(_ r: URLRequest) -> (Int, Data) {
             let body = (try? JSONSerialization.jsonObject(with: r.httpBody ?? Data())) as? [String: Any] ?? [:]
             let auth = r.value(forHTTPHeaderField: "Authorization") ?? ""
             switch (r.httpMethod ?? "", r.url!.path) {
