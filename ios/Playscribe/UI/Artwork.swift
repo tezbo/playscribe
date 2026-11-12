@@ -51,6 +51,10 @@ struct ArtView: View {
     var asset: String?
     var game: CatalogGame?
     var drift = false
+    /// The front cover's per-game focal point; nil keeps the centre crop.
+    var focus: CoverFocus? = nil
+    /// Where in the frame the focal point is placed, 0 to 1 from the top (the cover puts it in the top half at large text).
+    var focusTargetY: Double = 0.5
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var phase = false
 
@@ -94,8 +98,19 @@ struct ArtView: View {
         Color.clear
             .frame(width: size.width, height: size.height)
             .overlay {
-                image.scaledToFill()
+                if let focus {
+                    // The focal point goes to (centre, focusTargetY), clamped so the image always covers the frame.
+                    let natural = asset.flatMap { UIImage(named: $0)?.size } ?? CGSize(width: 1920, height: 1080)
+                    let r = FocalCrop.place(image: natural, in: size, focus: focus, targetY: focusTargetY)
+                    Color.clear.overlay(alignment: .topLeading) {
+                        image.frame(width: r.width, height: r.height).offset(x: r.minX, y: r.minY)
+                    }
+                    .frame(width: size.width, height: size.height)
                     .scaleEffect(drift && !reduceMotion ? (phase ? 1.06 : 1.0) : 1.0)
+                } else {
+                    image.scaledToFill()
+                        .scaleEffect(drift && !reduceMotion ? (phase ? 1.06 : 1.0) : 1.0)
+                }
             }
             .clipped()
     }
@@ -192,5 +207,28 @@ struct Wordmark: View {
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Brand.name)
+    }
+}
+
+/// A per-game focal point on cover art (Iris, #467): `x`, `y` from 0 (left, top) to 1, and `scale`, a zoom of 1 or more
+/// beyond the fill (absent = 1).
+struct CoverFocus: Codable, Hashable {
+    var x: Double
+    var y: Double
+    var scale: Double?
+}
+
+enum FocalCrop {
+    /// Where the image is drawn (in the frame's coordinates) so that it fills the frame, zoomed by `focus.scale`, with the focal
+    /// point as near as it can get to the frame's horizontal centre and `targetY` down. Clamped: the image always covers the
+    /// whole frame, so the focal point never pushes an edge into view.
+    static func place(image: CGSize, in frame: CGSize, focus: CoverFocus, targetY: Double = 0.5) -> CGRect {
+        guard image.width > 0, image.height > 0, frame.width > 0, frame.height > 0 else { return CGRect(origin: .zero, size: frame) }
+        let fill = max(frame.width / image.width, frame.height / image.height) * max(1, focus.scale ?? 1)
+        let w = image.width * fill, h = image.height * fill
+        let fx = min(max(focus.x, 0), 1), fy = min(max(focus.y, 0), 1), ty = min(max(targetY, 0), 1)
+        let x = min(0, max(frame.width - w, frame.width / 2 - fx * w))
+        let y = min(0, max(frame.height - h, frame.height * ty - fy * h))
+        return CGRect(x: x, y: y, width: w, height: h)
     }
 }

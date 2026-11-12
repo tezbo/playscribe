@@ -237,8 +237,12 @@ final class AppModel {
     var qaPadDeck = false
     /// QA (routes "one-update", "two-update") and tests: how many fresh unread updates the demo has; 0 is the normal demo.
     var qaUpdateCount = 0
+    /// QA (route "cover"): keep every card in the deck, read ones too, instead of only the `qaUpdateCount` fresh ones.
+    var qaKeepReadCards = false
+    /// QA (route `cover/<game>`): the fresh update is this game's newest, so its page leads the cover.
+    var qaFreshGame: String?
     var qaSingleUpdate: Bool {
-        get { qaUpdateCount > 0 }
+        get { qaUpdateCount > 0 && !qaKeepReadCards }
         set { qaUpdateCount = newValue ? 1 : 0 }
     }
     /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
@@ -257,7 +261,7 @@ final class AppModel {
     private func qaFreshIDs() -> Set<String> {
         if let ids = qaFreshCache { return ids }
         var newestPerGame: [Release] = []
-        for entry in data.collection {
+        for entry in data.collection where qaFreshGame == nil || entry.gameID == qaFreshGame {
             let best = releases(entry.gameID).filter { $0.ps5State == .onPS5 }.max { $0.ps5Date < $1.ps5Date }
             if let best { newestPerGame.append(best) }
         }
@@ -711,6 +715,12 @@ final class AppModel {
             addSheetOpen = true
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
+        case "cover":   // 0.7 front cover preview (duo-closed-cover): a full deck, or cover/one for a lone update
+            // cover/<game> (Iris, focal-point check): that game's newest update leads the deck, unread.
+            if parts.first == "one" { resetToOneUpdateDemo() } else { resetToCoverDemo(leading: parts.first) }
+            FrontCoverPreview.shared.open = true
+            FrontCoverPreview.shared.openedByRoute = true
+            settingsOpen = true
         case "settings":
             settingsOpen = true
             if parts.first == "quiet" { data.quietHours = QuietHours() }
@@ -1179,8 +1189,10 @@ final class AppModel {
         // shown off (Mac at eb42735: `-qaRoute keep-current/settings` turned the switch off and sent no DELETE).
         if data.keepCurrent == true { setKeepCurrent(false) }
         qaPadDeck = false
+        qaKeepReadCards = false
         qaUpdateCount = 0
         qaFreshCache = nil
+        qaFreshGame = nil
         data = PersistedState(collection: fixtures.seedCollection)
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
@@ -1230,6 +1242,17 @@ final class AppModel {
         let more = fixtures.games.filter { !have.contains($0.id) && !ps5Releases($0.id).filter { $0.ps5State == .onPS5 }.isEmpty }
         addGames(more, status: .owned)
         qaPadDeck = true
+    }
+
+    /// QA (route "cover", #467): the full deck with the newest update fresh and unread, leading, and the rest read, so the
+    /// cover shows NEW UPDATE pages and pages without it. The fresh one is pinned (`qaUpdateCount`): with the plain
+    /// many-updates demo, the first feed refresh after a reset marks every update older than 72 hours read, so the
+    /// eyebrow came and went with network timing (Mac, Closed landscape AX5, 8597112).
+    func resetToCoverDemo(leading gameID: String? = nil) {
+        resetToManyUpdatesDemo()
+        qaUpdateCount = 1
+        qaKeepReadCards = true
+        if let gameID, data.collection.contains(where: { $0.gameID == gameID }) { qaFreshGame = gameID }
     }
 
     /// QA (routes "three-update", "four-update"): `count` fresh updates from different games, so the deck
