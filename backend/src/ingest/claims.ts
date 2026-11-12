@@ -37,6 +37,8 @@ const TIME = /(\d{1,2}):(\d{2})\s*(?:\(?\s*(?:UTC|GMT)\s*([+-]\d{1,2})?(?::?(\d{
 // and about nothing else (an event, a DLC, a store item, a test, a stream). Failing toward "live" is deliberate: a live
 // patch held back for days costs more than an alert 90 minutes early (Quinn's scan of 2,664 real posts, 12 Nov).
 const FUTURE = /\b(will|tomorrow|starting|starts?|scheduled|coming|expected|arrives?|arriving|rolling out|launch(?:es|ing)?|releas(?:e|es|ing)|go(?:es|ing)? live)\b/i
+const NEXT_RELEASE = /\bnext\s+(?:weekly\s+|major\s+|minor\s+)?(?:patch|update|hotfix|release|version|season)\b/i
+const RELEASE_WORDS = /\b(releas\w*|live|available|update|patch|season)\b/i
 const OWN = /\b(updates?|patch(?:es)?|hotfix(?:es)?|version|season)\b/i
 const NOT_A_RELEASE = /\b(ends?|ending|until|through|expires?|deadline|sale|events?|dlc|store|warbond|tests?|testing|ama|streams?|livestream|showcase|giveaway|pre-?orders?|wish-?lists?|before|by|bundle|skin|pass|trailer|reveal|beta|playtest)\b/i
 // Maintenance is the release when the post is titled as an update: the update lands when the maintenance ends.
@@ -74,6 +76,11 @@ export const statedLiveTime = (raw: string, publishedAt: string): string | null 
     const sentence = text.slice(from, at + m[0].length + (end < 0 ? 160 : Math.min(end + 1, 240)))
     const head = sentence
     const maintenance = titleReleasey && MAINTENANCE.test(sentence)
+    // "The next patch will be on January 3" is a different release from the one this post is about.
+    if (NEXT_RELEASE.test(sentence)) continue
+    const ownDay = !(TIME.test(sentence) && /utc|gmt/i.test(sentence)) && new Date(Date.UTC(yearText ? Number(yearText) : new Date(published).getUTCFullYear(), mi, day)).toISOString().slice(0, 10) === publishedAt.slice(0, 10)
+    // A sentence that puts the release on the post's own day says the post is the release: nothing else in it is a hold.
+    if (ownDay && RELEASE_WORDS.test(sentence) && !NOT_A_RELEASE.test(sentence)) return null
     if (!FUTURE.test(sentence) || !(OWN.test(sentence) || maintenance) || NOT_A_RELEASE.test(head)) continue
     // The sentence that names PlayStation or consoles gives the time that matters for this feed.
     const namesPs5 = /\b(ps5|playstation|consoles?)\b/i.test(sentence)

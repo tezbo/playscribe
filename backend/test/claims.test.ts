@@ -73,6 +73,11 @@ test('live patches that mention another date are not held (Quinn scan of 2,664 r
   assert.equal(statedLiveTime('Patch notes\nThe 3.0 update will arrive on November 30.', pub), null, 'beyond 14 days')
 })
 
+test('a post that is itself the release, or talks about the next one, is not held (Rematch S3.0, Slay the Spire)', () => {
+  assert.equal(statedLiveTime('S3.0 Patch Notes - 1.203.000\nS3.0 Release Date: March 25th\n1v1 will be back during season 3! April 3rd', '2026-03-25T09:00:00.000Z'), null)
+  assert.equal(statedLiveTime('Weekly Patch 53\nThe next patch will be on January 3, 2019.', '2018-12-21T18:00:00.000Z'), null)
+})
+
 test('a letter after the version stays in its name (10.2.2a)', () => {
   const n = nameRelease('10.2.2a Backend Bugfix Patch', '2026-11-02T10:00:00.000Z')
   assert.deepEqual([n.displayName, n.versionKey], ['Patch 10.2.2a', '10.2.2a'])
