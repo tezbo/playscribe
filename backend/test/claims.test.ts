@@ -29,8 +29,8 @@ test('a stated later time is read; past, vague and non-release dates are not', (
   const pub = '2026-11-08T10:00:00.000Z'
   assert.equal(statedLiveTime('At 02:00 UTC+0 on November 10, the updates for Xbox Series X|S and PlayStation 5 will be available.', pub), '2026-11-10T02:00:00.000Z')
   assert.equal(statedLiveTime('Update 1.2 is starting on November 12, 2026 at 06:00 (UTC+0) and rolling out to all platforms.', pub), '2026-11-12T06:00:00.000Z')
-  assert.equal(statedLiveTime('The free update arrives on November 23, 2026 on all platforms.', pub), '2026-11-23T23:59:00.000Z')
-  assert.equal(statedLiveTime('Update live at 14:00 UTC-5 on November 10', pub), '2026-11-10T19:00:00.000Z')
+  assert.equal(statedLiveTime('The free update arrives on November 20, 2026 on all platforms.', pub), '2026-11-20T23:59:00.000Z')
+  assert.equal(statedLiveTime('The update will be live at 14:00 UTC-5 on November 10.', pub), '2026-11-10T19:00:00.000Z')
   assert.equal(statedLiveTime('The update released on November 1 fixed a lot.', pub), null)
   assert.equal(statedLiveTime('The sale ends on November 12. Patch notes below.', pub), null)
   assert.equal(statedLiveTime('Fixed a crash.', pub), null)
@@ -56,6 +56,21 @@ To provide adventurers with a better experience, the Guild will be issuing a tem
   assert.equal(statedLiveTime(crystal, '2026-11-11T07:29:28.000Z'), '2026-11-12T10:00:00.000Z')
   // Without an update title the same maintenance wording is not a release time.
   assert.equal(statedLiveTime(crystal.replace('Version Update Notice', 'Server Notice'), '2026-11-11T07:29:28.000Z'), null)
+})
+
+test('live patches that mention another date are not held (Quinn scan of 2,664 real posts, 12 Nov)', () => {
+  const pub = '2026-11-05T10:00:00.000Z'
+  // wording modelled on the false firings: CoH3 3.0.0 (a DLC date), DbD 10.0.3 and 10.0.1 (an event start, a survivor),
+  // Helldivers 6.0.1 (a store item), Apex (a matchmaking test tomorrow)
+  for (const t of [
+    '3.0.0 Update Patch Notes\nThe new DLC will be released on November 25, 2026.',
+    '10.0.3 Bugfix Patch\nThe Summer Screams event will start on November 12 with new rewards.',
+    '10.0.1 Patch Notes\nA new survivor will be available on November 7.',
+    '6.0.1 Patch Notes\nThe warbond store item will return on November 10.',
+    'Latest Update 10/6/2026\nA matchmaking test will begin tomorrow, November 6.',
+    'November 5 Update\nWe will roll out the update on November 5 with no downtime.',
+  ]) assert.equal(statedLiveTime(t, pub), null, t)
+  assert.equal(statedLiveTime('Patch notes\nThe 3.0 update will arrive on November 30.', pub), null, 'beyond 14 days')
 })
 
 test('a letter after the version stays in its name (10.2.2a)', () => {
