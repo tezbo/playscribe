@@ -50,10 +50,32 @@ export const syncDevices = (db: DB, devices: RelayDevice[]) => {
 /** Removes every device and follow, then rewrites the file so no deleted page keeps a token. */
 export const scrubDevices = (db: DB) => {
   db.exec('PRAGMA secure_delete = ON')
-  db.exec('DELETE FROM follows; DELETE FROM devices')
+  db.exec('DELETE FROM follows; DELETE FROM devices; DELETE FROM dead_tokens')
   db.exec('PRAGMA wal_checkpoint(TRUNCATE)')
   db.exec('VACUUM')
 }
 
-/** The number of device rows left: the publish step refuses to go on when it is not zero. */
-export const deviceRows = (db: DB) => Number((db.prepare('SELECT COUNT(*) AS n FROM devices').get() as { n: number }).n)
+/** The number of device and dead-token rows left: the publish step refuses to go on when it is not zero. */
+export const deviceRows = (db: DB) => Number((db.prepare('SELECT (SELECT COUNT(*) FROM devices) + (SELECT COUNT(*) FROM dead_tokens) AS n').get() as { n: number }).n)
+
+export interface DeadReport { id: string; tokenSha: string }
+/** The dead tokens noted this run, as the relay's POST /admin/devices/dead takes them. */
+export const deadTokens = (db: DB): DeadReport[] =>
+  (db.prepare('SELECT device_id AS id, token_sha AS tokenSha FROM dead_tokens ORDER BY device_id').all() as unknown as DeadReport[]).map((r) => ({ id: r.id, tokenSha: r.tokenSha }))
+
+/** Sends the dead tokens in batches of 6 (the relay's limit). Returns the relay's counts plus the batches it refused. */
+export const reportDead = async (reports: DeadReport[], base: string, admin: string, fetchFn: typeof fetch = fetch) => {
+  const total = { removed: 0, cleared: 0, skipped: 0, failedBatches: 0 }
+  for (let i = 0; i < reports.length; i += 6) {
+    const res = await fetchFn(`${base}/admin/devices/dead`, { method: 'POST', headers: { authorization: `Bearer ${admin}`, 'content-type': 'application/json' }, body: JSON.stringify({ devices: reports.slice(i, i + 6) }) })
+    if (!res.ok) {
+      total.failedBatches++
+      continue
+    }
+    const b = (await res.json()) as { removed: number; cleared: number; skipped: number }
+    total.removed += b.removed
+    total.cleared += b.cleared
+    total.skipped += b.skipped
+  }
+  return total
+}
