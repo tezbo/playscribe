@@ -1,6 +1,6 @@
 name: Screen diffs
 
-# On every pull request: render the fold-harness screen matrix for main and for the PR (four parallel jobs on the free xcode-27
+# On every pull request: render the fold-harness screen matrix for main and for the PR (two parallel jobs on the free xcode-27
 # runner), compare them, and keep one PR comment that lists only the screens that changed, with before, after and diff images.
 # Pass bar (Quinn and Iris, card qa-screen-diffs-on-prs) is in ios/tools/qa/screen_diff.py; docs/screen-diffs.md has the rest.
 #  - "Before" is always main's latest commit (the merge ref's first parent), rendered in this run, so the comparison is on the
@@ -24,7 +24,7 @@ env:
   HOMEBREW_NO_AUTO_UPDATE: 1
   HOMEBREW_NO_INSTALL_CLEANUP: 1
   HOMEBREW_NO_ANALYTICS: 1
-  # The matrix: every pose (split over two jobs a side, see render) at std and AX5, AX3 in Closed and Tabletop only (Iris), five screens.
+  # The matrix: every pose at std and AX5, AX3 in Closed and Tabletop only (Iris), five screens.
   SIZES: std,ax3,ax5
   AX3_POSES: closed,tabletop
   SCREENS: library,game,updates,settings,upcoming
@@ -59,11 +59,10 @@ jobs:
       fail-fast: false
       matrix:
         side: [before, after]
-        # Two pose groups per side, so four jobs run at once: the first #485 run took 12 min on one job a side (Quinn's bar: 10).
-        group: [a, b]
-        include:
-          - { group: a, poses: 'closed,closedLandscape,open' }
-          - { group: b, poses: 'openPortrait,book,tabletop' }
+        # One job a side. Run 3 tried two pose groups a side (four jobs): the free pool gave three macOS runners at once, so the
+        # fourth job waited 13 min and the run took longer, not shorter.
+        group: [all]
+        poses: ['closed,closedLandscape,open,openPortrait,book,tabletop']
     runs-on: xcode-27
     timeout-minutes: 30
     steps:
@@ -197,10 +196,10 @@ jobs:
           prefix="https://raw.githubusercontent.com/${{ github.repository }}/screen-diffs/pr-$PR/$(short $HEAD_SHA)"
           notes=()
           for side in before after; do
-            for g in a b; do
+            for g in all; do
               f=shots/$side/meta-$g.txt
-              [ -f $f ] || { notes+=(--note "The $side render, pose group $g, did not finish; see the run log."); continue; }
-              n=$(grep '^note=' $f | cut -d= -f2-); [ -n "$n" ] && notes+=(--note "$n (pose group $g)")
+              [ -f $f ] || { notes+=(--note "The $side render did not finish; see the run log."); continue; }
+              n=$(grep '^note=' $f | cut -d= -f2-); [ -n "$n" ] && notes+=(--note "$n")
             done
           done
           images=$(cat shots/*/meta-*.txt 2>/dev/null | grep '^image=' | cut -d= -f2- | sort -u | paste -sd ';' -)
