@@ -103,3 +103,33 @@ test('a console-later patch announced before its week is up still earns its aler
   assert.ok(at.getTime() - Date.parse(alertFrom) < ALERT_MAX_AGE_HOURS * 3600e3, `alert_from ${alertFrom}`)
   assert.ok(Date.parse(alertFrom) >= Date.parse(date) + PS5_LIVE_AFTER)
 })
+
+test('a console-later patch that reaches PS5 on day 2 alerts in the day-2 run, not on day 7', async () => {
+  const db = openDb(':memory:')
+  const day0 = new Date(Date.now() - 2 * DAY).toISOString()
+  const day2 = new Date(Date.now() - 3600e3).toISOString()
+  const day0Post = { gid: 'd0', title: 'Patch 3.0', date: day0, contents: 'Patch 3.0 is live on PC. Console versions will follow after certification.[list][*]Fixed a crash[/list]', tags: ['patchnotes'] }
+  const day2Post = { gid: 'd2', title: 'Patch 3.0 is now live on PS5', date: day2, contents: 'Patch 3.0 is now live on PlayStation 5 and Xbox Series X|S.', tags: ['patchnotes'] }
+  const url = 'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=900003'
+  let posts = [day0Post]
+  const deps = { db, fetchFn: ((u: string, i?: RequestInit) => fakeFetch({ [url]: steamNews(posts) })(u, i)) as typeof fetch, igdb: null }
+  await seedGames(deps)
+  seedAutoGames(db, [auto('day-two-900003', 900003)])
+  await runIngest(deps, { autoSlice: 1 })
+  const ps5 = () => store.getRelease(db, 'day-two-900003@3.0')!.platforms.find((p) => p.platform === 'ps5')!
+  assert.equal(ps5().status, 'announced')
+  // Day 2: the studio says it is out on PS5. That run takes it live and opens the alert window now, five days before the week is up.
+  posts = [day0Post, day2Post]
+  // Two days pass: the game's Steam feed is due again.
+  db.prepare('UPDATE source_state SET last_fetched_at = ?').run(day0)
+  await runIngest(deps, { autoSlice: 1, force: true })
+  assert.equal(ps5().status, 'live')
+  const from = ps5().alert?.from
+  assert.ok(from && Date.now() - Date.parse(from) < ALERT_MAX_AGE_HOURS * 3600e3, `alert window opens at ${from}`)
+  const t = new Date().toISOString()
+  db.prepare("INSERT INTO devices (id, key_hash, apns_token, environment, created_at, updated_at) VALUES ('e', 'he', ?, 'production', ?, ?)").run('e'.repeat(64), t, t)
+  db.prepare("INSERT INTO follows (device_id, game_id, notify) VALUES ('e', 'day-two-900003', 'all')").run()
+  const sent: unknown[] = []
+  const apns = { send: async (_t: string, _e: string, p: object) => (sent.push(p), { status: 200 }) } as unknown as Apns
+  assert.equal((await pushPs5Release(db, apns, 'day-two-900003@3.0', { maxAgeHours: ALERT_MAX_AGE_HOURS })).sent, 1)
+})
