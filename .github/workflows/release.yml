@@ -5,6 +5,7 @@ name: Release to TestFlight
 # Terry's go. Publishing to TestFlight still needs Terry's plain yes for that version, quoted in `approval`.
 #
 # Guards, all before anything is created:
+#   - the workflow itself runs from main;
 #   - version is X.Y.Z, sha is a full 40-character SHA, approval is at least 10 characters;
 #   - the SHA is on main (main is that commit or a descendant of it);
 #   - the SHA is green: every push-triggered workflow run on it finished success/skipped/neutral (none failed,
@@ -56,6 +57,7 @@ jobs:
           set -euo pipefail
           refuse() { echo "::error::refused: $*"; echo "Refused: $*" >> "$GITHUB_STEP_SUMMARY"; exit 1; }
 
+          [ "$GITHUB_REF" = "refs/heads/main" ] || refuse "run this workflow from main, not $GITHUB_REF"
           [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || refuse "version must look like 0.5.4"
           [[ "$SHA" =~ ^[0-9a-f]{40}$ ]] || refuse "sha must be 40 lowercase hex characters"
           [ "${#APPROVAL}" -ge 10 ] || refuse "approval reference must be at least 10 characters"
