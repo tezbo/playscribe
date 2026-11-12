@@ -1095,8 +1095,10 @@ final class Release050Tests: XCTestCase {
     /// reached by dragging inside the lower-half panel, at the standard size and at AX5, and it sits in the lower half.
     /// `-qaPose tabletop` injects the fold, so this also runs on a Closed simulator; on the Mac in a real Tabletop the
     /// device's own fold gives the same pose. Nothing here taps a control, so no relay call is made.
-    /// It drags until the line is hittable or the form stops moving: a form that stops short of its last line is the bug,
-    /// running out of drags is not (Mac 0a6f226: 16 short drags in a 350 pt panel only reached the Testing section).
+    /// It drags until the form stops moving, then checks the last line is hittable and its bottom is inside the panel: a
+    /// form that stops short of its end is the bug, running out of drags is not (Mac 0a6f226: 16 short drags in a 350 pt
+    /// panel only reached Testing). Dragging to the end matters at AX5, where the footer alone is about 717 pt tall
+    /// (Mac a0e0134): its top was reached while its bottom was still 500 pt below the screen.
     func testTabletopSettingsLastLineIsReachable() throws {
         for ax5 in [false, true] {
             let app = XCUIApplication()
@@ -1112,7 +1114,7 @@ final class Release050Tests: XCTestCase {
             let last = app.staticTexts["settingsLastLine"]
             var drags = 0, still = 0
             // Long, slow drags inside the form (never at the screen centre, which is the view-only stage, 48404f1).
-            while !(last.exists && last.isHittable) && still < 3 && drags < 120 {
+            while still < 3 && drags < 160 {
                 let before = form.cells.firstMatch.exists ? form.cells.firstMatch.frame : .zero
                 let firstLabel = form.cells.firstMatch.exists ? form.cells.firstMatch.debugDescription.prefix(200) : ""
                 form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.9))
@@ -1130,11 +1132,13 @@ final class Release050Tests: XCTestCase {
             }
             XCTAssertTrue(last.exists && last.isHittable,
                           still >= 3 ? "the form stopped moving before its last line, after \(drags) drags [\(size), \(pose)]"
-                                     : "ran out of drags (\(drags)) before the last line [\(size), \(pose)]")
+                                     : "ran out of drags (\(drags)) before the end of the form [\(size), \(pose)]")
+            XCTAssertGreaterThanOrEqual(still, 3, "the form reached its end within \(drags) drags [\(size)]")
             if last.exists {
-                // G-4: in Tabletop the panel, and so the line, is in the lower half, and on screen.
-                XCTAssertGreaterThanOrEqual(last.frame.minY, form.frame.minY - 1, "the last line is inside the panel \(last.frame) vs \(form.frame) [\(size)]")
-                XCTAssertLessThanOrEqual(last.frame.maxY, app.frame.maxY + 1, "the last line is on screen \(last.frame) [\(size)]")
+                // At the end of the form the whole last line is inside the panel (G-4: the lower half in Tabletop), bottom
+                // edge included, so nothing at the end is hidden below the screen.
+                XCTAssertLessThanOrEqual(last.frame.maxY, form.frame.maxY + 1, "the last line's bottom is inside the panel at the end \(last.frame) vs \(form.frame) [\(size)]")
+                XCTAssertLessThanOrEqual(last.frame.maxY, app.frame.maxY + 1, "the last line's bottom is on screen \(last.frame) [\(size)]")
             }
             app.terminate()
         }
