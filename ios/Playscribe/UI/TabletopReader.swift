@@ -149,18 +149,22 @@ struct TabletopReaderStage: View {
                 .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { new in
                     if abs(new - stageBottom) > 0.5 { stageBottom = new }
                 }
-            if let section = sections[safe: index] {
+            // The text block sits in an overlay on a view that takes exactly the stage's proposed size, so however tall the block is
+            // it cannot grow the stage, and the art layer measured above cannot move with it. A sibling in the ZStack could: a block
+            // taller than the upper half (AX5, whole-word text that ignores the proposed height) grew the ZStack, which moved the
+            // art's bottom edge, which changed the clearance padding, which grew the block again, with the stage body (and its
+            // note parsing) re-run each time (hang at 2dbcd13, Mac sample). The block grows upward and is clipped by the stage.
+            Color.clear.overlay(alignment: .bottomLeading) { if let section = sections[safe: index] {
                 VStack(alignment: .leading, spacing: 14) {
                     // Eyebrow: the game and the date; the release itself is the title below.
-                    // At accessibility sizes the date drops under the name, which is cut on a whole word (never "The Blood of Daw…").
-                    let eyebrow = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 2)) : AnyLayout(HStackLayout(spacing: 8))
-                    eyebrow {
+                    // At accessibility sizes the name is one line cut on a whole word ("The Blood of…"), never "The Blood of Daw…", and the date keeps its place.
+                    HStack(spacing: 8) {
                         if typeSize.isAccessibilitySize {
-                            WholeWordText(text: model.gameDisplayName(gameID), font: PlayscribeFont.subheadline.weight(.semibold), lines: 2, color: PlayscribeColor.accent)
+                            WholeWordText(text: model.gameDisplayName(gameID), font: PlayscribeFont.subheadline.weight(.semibold), lines: 1, color: PlayscribeColor.accent)
                         } else {
                             Text(model.gameDisplayName(gameID))
                         }
-                        if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary) }
+                        if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary).fixedSize() }
                     }
                     .font(PlayscribeFont.subheadline.weight(.semibold))
                     .foregroundStyle(PlayscribeColor.accent)
@@ -173,11 +177,11 @@ struct TabletopReaderStage: View {
                         .accessibilityAddTraits(.isStaticText)
                         .accessibilityIdentifier("releaseTitle")
                     // Whole words only (G-8): the stage plate ends on a word and "…", never a cut word.
-                    WholeWordText(text: ReaderBody.title(section.title), font: PlayscribeFont.title, lines: 4, color: nil)
+                    WholeWordText(text: ReaderBody.title(section.title), font: PlayscribeFont.title, lines: typeSize.isAccessibilitySize ? 2 : 4, color: nil)
                         // The stage caps the title; VoiceOver reads all of it, as a heading.
                         .accessibilityLabel(section.title)
                         .accessibilityAddTraits(.isHeader)
-                    WholeWordText(text: ReaderBody.stage(section.body), font: PlayscribeFont.body, lines: 4,
+                    WholeWordText(text: ReaderBody.stage(section.body), font: PlayscribeFont.body, lines: typeSize.isAccessibilitySize ? 1 : 4,
                                   color: PlayscribeColor.textPrimary.opacity(0.92))
                         .accessibilityLabel(section.body)
                         .accessibilityIdentifier("readerBody")
@@ -193,7 +197,9 @@ struct TabletopReaderStage: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
                 .id(section.id)
                 .transition(.opacity)
-            }
+            } }
+            // Clip the block, not the ZStack: the art above draws under the status bar on purpose.
+            .clipped()
         }
         .animation(.easeInOut(duration: 0.2), value: index)
         // Its parts stay separate elements, so the release title is findable (J-4).
