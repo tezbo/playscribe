@@ -100,6 +100,15 @@ export const trackedGames = (db: DB, at = new Date()) => {
     OR id IN (${launching.map(() => '?').join(',') || "''"})`).all(...Object.keys(registry.games), ...launching) as Record<string, any>[]
 }
 
+/**
+ * Backfill only: derived (auto-onboarded) games that already have a PS5 row. Their stored rows came from the slice's single
+ * newest-posts read, so a rule change reaches them only if the backfill reads their history too (r050-feed-ps5-claim-fixes:
+ * 2,166 of the 2,259 games with a PS5 row are derived).
+ */
+export const autoRepairGames = (db: DB, tracked: Set<string>) =>
+  (db.prepare(`SELECT * FROM games WHERE auto > 0 AND auto <> 2 AND steam_app_id IS NOT NULL
+    AND id IN (SELECT r.game_id FROM releases r JOIN platform_releases p ON p.release_id = r.id AND p.platform = 'ps5') ORDER BY id`).all() as Record<string, any>[]).filter((g) => !tracked.has(g.id))
+
 export const sourcesFor = (game: Record<string, any>): SourceDef[] => {
   const reg = registry.games[game.id]
   if (reg) return reg.sources
@@ -371,9 +380,14 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   if (opts.until) deps = { ...deps, repairClaims: true }
   const summary: IngestSummary = { polled: [], skipped: [], errors: [], created: [], revised: [], review: 0 }
   const hot = hotGameIds(deps.db)
-  const games = trackedGames(deps.db).filter((g) => !opts.hot || hot.has(g.id))
+  const tracked = trackedGames(deps.db).filter((g) => !opts.hot || hot.has(g.id))
+  const repairOnly = new Set<string>()
+  if (opts.until && !opts.hot) for (const g of autoRepairGames(deps.db, new Set(tracked.map((t) => t.id)))) (tracked.push(g), repairOnly.add(g.id))
+  const games = tracked
 
   for (const game of games) {
+    // One Steam request each for the derived games a backfill repairs: spaced out, so the whole pass stays polite.
+    if (repairOnly.has(game.id)) await new Promise((r) => setTimeout(r, 250))
     for (const s of sourcesFor(game)) {
       if (!due(deps.db, s, !!opts.force, hot.has(game.id) ? HOT_POLL_MS : MIN_POLL_MS)) {
         summary.skipped.push(s.id)
@@ -387,7 +401,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       if (store.isSeen(deps.db, s.id, post.postId) && !(opts.until && s.trust === 'official')) continue
         if (post.news) {
           tx(deps.db, () => {
-            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources) addNewsUnlessPromo(deps, summary, game.id, post)
+            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources && !repairOnly.has(game.id)) addNewsUnlessPromo(deps, summary, game.id, post)
             store.markSeen(deps.db, s.id, post.postId, null)
           })
           continue
