@@ -256,12 +256,27 @@ struct LibraryShelf: View {
             if model.showsNotificationCard, let first = all.first {
                 NotificationInviteCard(gameName: first.game.name)
             }
+            // N-9: one ask per screen. Shows only once the alerts card has been answered, on a later Library appearance (Iris).
+            // Book and Tabletop place it higher up (keepCurrentAsk); Closed and Open keep it here.
+            if model.showsKeepCurrentCard && duo.pose != .book && duo.pose != .tabletop { KeepCurrentCard() }
             CatchUpCard()
             PlusCard()
         }
         // Never wider than the column it sits in (Iris: the card ran past the left page's search field in Book).
         .frame(maxWidth: pageWidth, alignment: .leading)
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    /// N-9 in Book and Tabletop (Iris, #455 at f55062a). Book: at the top of the left page above the search field, one page
+    /// wide, so its right edge stays 24 pt clear of the hinge band. Tabletop: directly under the Playing/Upcoming switch, in
+    /// the lower half, with the first tile row still in view below it.
+    @ViewBuilder private var keepCurrentAsk: some View {
+        if model.showsKeepCurrentCard && (duo.pose == .book || duo.pose == .tabletop) {
+            let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
+            KeepCurrentCard(compactTabletop: duo.pose == .tabletop)
+                .frame(width: pageWidth, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
 
     /// The library search field; one page wide in Book, and reported to the fold audit.
@@ -299,9 +314,14 @@ struct LibraryShelf: View {
                         if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.data.nav.query) }
                     }
                 } else if !heroOnRightPage {
+                    // Tabletop at AX5 (Iris, #455 at 0877dfc and a8859d3): the compact card keeps the lower half to itself, first; the
+                    // switch and the chips follow by normal page scroll. Below AX5 it sits under the switch as signed.
+                    let cardFirst = duo.pose == .tabletop && typeSize >= .accessibility5
+                    if cardFirst && model.libraryTab == .playing { keepCurrentAsk }
                     LibraryTabPicker()
                         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                    if !cardFirst && model.libraryTab == .playing { keepCurrentAsk }
                 }
                 if model.libraryTab == .upcoming {
                     UpcomingView()
@@ -361,6 +381,8 @@ struct LibraryShelf: View {
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
                             LibraryTabPicker()
+                            // N-9 above the search field (Iris, #455); the other cards stay below it.
+                            keepCurrentAsk
                             // Controls first, the offer second (Iris, Book compact card).
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                             topCards(all)
@@ -478,6 +500,9 @@ struct LibraryShelf: View {
             .padding(.trailing, railWidth)
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
+        // Tabletop only (Quinn, a8859d3): scrolled, the lower half's top edge cut a headline through its glyphs. The same edge as
+        // the "What is sent" sheet. Not in other poses: a soft-edge mask there hid the Open portrait title (see below).
+        .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink0))
         // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.
         // No soft-edge mask: it made the Open portrait large "Library" title vanish (354d15c, 9914a80), see MessageClearance.
         .clearsMessages()
@@ -1094,6 +1119,7 @@ struct NotificationInviteCard: View {
                 snooze()
                 if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
             } else {
+                model.alertsAnsweredThisSession = true
                 Task { if !(await NotificationService.shared.requestAuthorization()) { snooze() } }
             }
         } label: {
@@ -1233,4 +1259,45 @@ private struct SqueezePop: ViewModifier {
 
 extension View {
     func squeezePop(id: String, isNew: Bool) -> some View { modifier(SqueezePop(id: id, isNew: isNew)) }
+}
+
+/// A scroll view's top edge once it is scrolled: a hairline, an opaque band one text line tall, then a fade over one line, so a
+/// line the edge cuts is wholly covered and the next reads through the fade. Each part capped at 15% of the visible height, so
+/// at least four lines read clear at AX5. Same treatment as the "What is sent" sheet (N-9).
+struct ScrolledTopEdge: ViewModifier {
+    var active: Bool
+    var ink: Color
+    @ScaledMetric(relativeTo: .body) private var edgeBand: CGFloat = 28
+    @ScaledMetric(relativeTo: .body) private var edgeFade: CGFloat = 24
+    @State private var scrolled = false
+    @State private var visibleHeight: CGFloat = 0
+
+    private var heights: (band: CGFloat, fade: CGFloat) {
+        guard visibleHeight > 0 else { return (edgeBand, edgeFade) }
+        let k = min(1, visibleHeight * 0.15 / (edgeBand + edgeFade))
+        return (edgeBand * k, edgeFade * k)
+    }
+
+    func body(content: Content) -> some View {
+        if active {
+            content
+                .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.y + $0.contentInsets.top > 1 } action: { _, now in scrolled = now }
+                .onScrollGeometryChange(for: CGFloat.self) { $0.visibleRect.height } action: { _, h in visibleHeight = h }
+                .overlay(alignment: .top) {
+                    if scrolled {
+                        VStack(spacing: 0) {
+                            Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5).background(ink)
+                            ink.frame(height: heights.band)
+                            LinearGradient(stops: [.init(color: ink, location: 0), .init(color: ink.opacity(0.85), location: 0.35),
+                                                   .init(color: ink.opacity(0), location: 1)], startPoint: .top, endPoint: .bottom)
+                                .frame(height: heights.fade)
+                        }
+                        .allowsHitTesting(false)
+                        .accessibilityHidden(true)
+                    }
+                }
+        } else {
+            content
+        }
+    }
 }

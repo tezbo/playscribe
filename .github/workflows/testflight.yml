@@ -1,14 +1,21 @@
 name: TestFlight
 
 # Only a release tag like v0.2.0 ships to TestFlight, after Terry's go (see docs/release.md).
+# Two ways in: a v* tag pushed by a person, or release.yml, which creates the tag with the workflow token
+# (a token-made tag fires no push event) and then calls this workflow with that tag.
 on:
   push:
     tags: ['v*.*.*']
-
-concurrency: testflight
+  workflow_call:
+    inputs:
+      tag:
+        description: 'Release tag to build, e.g. v0.5.4'
+        type: string
+        required: true
 
 jobs:
   beta:
+    concurrency: testflight
     # Xcode 27.1 is only on GitHub's xcode-27 image (see ios.yml).
     runs-on: xcode-27
     timeout-minutes: 45
@@ -23,6 +30,8 @@ jobs:
       IOS_SCHEME: ${{ vars.IOS_SCHEME }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag || github.ref }}
       - name: Generate the project (XcodeGen)
         if: hashFiles('ios/project.yml') != ''
         run: command -v xcodegen >/dev/null || brew install xcodegen; (cd ios && xcodegen generate)
@@ -58,6 +67,8 @@ jobs:
       - name: Build and upload
         if: steps.ready.outputs.ok
         working-directory: ios
+        env:
+          TAG: ${{ inputs.tag || github.ref_name }}
         run: |
-          version="${GITHUB_REF_NAME#v}"
+          version="${TAG#v}"
           bundle exec fastlane beta marketing_version:"$version"

@@ -454,6 +454,7 @@ struct VideoFact: View {
 
 struct NoteSectionView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
     var section: NoteSection
     @State private var showPC = false
@@ -470,15 +471,33 @@ struct NoteSectionView: View {
         let hidden = ps5Items.filter { $0.spoiler == true }.count
         VStack(alignment: .leading, spacing: 8) {
             Button { model.setExpanded(key, !open) } label: {
-                HStack {
-                    Text(LinkedText.clean(section.title)).font(PlayscribeFont.subheadline.weight(.semibold))
-                    Text("\(ps5Items.count)\(hidden > 0 && !model.spoilersShown(release.gameID) ? ", \(hidden) hidden for spoilers" : "")")
-                        .font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                    Spacer()
-                    Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
+                let title = LinkedText.clean(section.title)
+                let count = "\(ps5Items.count)\(hidden > 0 && !model.spoilersShown(release.gameID) ? ", \(hidden) hidden for spoilers" : "")"
+                let chevron = Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
+                if typeSize.isAccessibilitySize {
+                    // Stacked (Iris, r054 Closed AX5): the name on its own full-width lines in whole words, the count and the
+                    // chevron under it. Side by side the name got a few letters of width and broke as "Gene/ral", "Quest/s".
+                    VStack(alignment: .leading, spacing: 4) {
+                        WholeWordText(text: title, font: PlayscribeFont.subheadline.weight(.semibold), lines: 3, color: nil)
+                        HStack(alignment: .firstTextBaseline, spacing: 8) {
+                            Text(count).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                            Spacer(minLength: 0)
+                            chevron
+                        }
+                    }
+                    .padding(.vertical, 6)
+                    .frame(maxWidth: .infinity, minHeight: 44, alignment: .topLeading)
+                    .contentShape(Rectangle())
+                } else {
+                    HStack {
+                        Text(title).font(PlayscribeFont.subheadline.weight(.semibold))
+                        Text(count).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                        Spacer()
+                        chevron
+                    }
+                    .frame(minHeight: 44)
+                    .contentShape(Rectangle())
                 }
-                .frame(minHeight: 44)
-                .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
             .tappableFrame()

@@ -114,6 +114,11 @@ struct PersistedState: Codable {
     var plusLeavingSoonOff: Bool?
     var notificationCardShows = 0
     var notificationCardDismissed = false
+    /// "Help keep my games up to date" (0.5.4): true while the switch is on, nil otherwise. Off by default; the one-time card
+    /// or the Settings switch turns it on. The relay record exists only while this is true.
+    var keepCurrent: Bool?
+    /// True once the one-time card was answered (Turn on, Not now or a swipe): it never shows again; Settings is the way back.
+    var keepCurrentCardDismissed: Bool?
     /// N-1 re-ask: how many times "Not now" was chosen, and until when the card rests. Optional so older saved state decodes.
     var notificationAsks: Int?
     var notificationSnoozedUntil: Date?
@@ -196,6 +201,8 @@ final class AppModel {
     var linksSheetOpen = false
     /// The verification tag whose explainer is open (0.5.0).
     var tagExplainer: Verification?
+    /// N-9: the follow-list card's "What is sent" sheet, the full wording, one tap from the choice (Iris, #455).
+    var keepCurrentDetailsOpen = false
     var libraryTab: LibraryTab = .playing
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
@@ -302,6 +309,9 @@ final class AppModel {
             } else {
                 data = PersistedState(collection: [])
             }
+            // No saved state, so a fresh install: a relay key still in the Keychain belongs to an earlier install. Its record
+            // is deleted before this launch makes any relay call (PushRegistrar.dropStaleKey; Quinn's #455 stale-key capture).
+            if storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.dropStaleKey() }
         }
         // A6: remember the previous open for the catch-up card, then stamp this one.
         catchUpSince = data.lastOpenedAt
@@ -369,7 +379,10 @@ final class AppModel {
             guard !Task.isCancelled else { return }
             self?.saveNow()
             // Only the app's own model speaks for this device; a model on a scratch store (tests, previews) never does.
-            if let self, self.storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.syncFollows(self.follows) }
+            if let self, self.storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled {
+                // With the keep-current switch on, the first follow also makes the relay record (ids only).
+                if self.data.keepCurrent == true { PushRegistrar.syncKeepCurrent(true, follows: self.follows) } else { PushRegistrar.syncFollows(self.follows, pushOnly: true) }
+            }
         }
     }
 
@@ -451,7 +464,9 @@ final class AppModel {
     }
 
     func ps5Releases(_ gameID: String) -> [Release] {
-        releases(gameID).filter(\.isPS5Listed).sorted { Self.newer($0, $1, by: \.ps5Date) }
+        // QA (INTERNAL): "no-notes/<game>" hides the whole update history, so the hero, the tile and the game page agree.
+        if qaNoReleases { return [] }
+        return releases(gameID).filter(\.isPS5Listed).sorted { Self.newer($0, $1, by: \.ps5Date) }
     }
 
     func pcOnlyReleases(_ gameID: String) -> [Release] {
@@ -853,7 +868,7 @@ final class AppModel {
             openGame(parts[0], chapter: .updates)
             nav.detailReleaseID = nil
             linksSheetOpen = false
-        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; addSearchFocus = false
+        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; keepCurrentDetailsOpen = false; addSearchFocus = false
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
             if let n = Int(parts[0]) {
@@ -872,6 +887,19 @@ final class AppModel {
             // QA: the Library with the alerts card showing, undecided or denied (N-1).
             resetDemo()
             NotificationService.shared.qaForcedAuthorization = url.host() == "alerts" ? .notDetermined : .denied
+        case "keep-current":
+            // QA: the Library with the "Help keep your games up to date?" card (N-9); `keep-current/on` has the switch on, so
+            // Settings shows the row on with its "Last sent" line, and the model's next save sends the real request.
+            resetDemo()
+            data.keepCurrentCardDismissed = nil
+            // The alerts card was answered Not now on an earlier day, so the follow-list card shows alone (one ask per screen).
+            data.notificationAsks = 1
+            data.notificationSnoozedUntil = Calendar.current.date(byAdding: .day, value: NotificationAsk.snoozeDays, to: .now)
+            alertsAnsweredThisSession = false
+            // `keep-current/sent`: the card's "What is sent" sheet open; `keep-current/settings`: Settings open, switch off.
+            if parts.first == "on" { data.keepCurrent = true }
+            if parts.first == "sent" { keepCurrentDetailsOpen = true }
+            if parts.first == "settings" { settingsOpen = true }
         case "ask-notifications": Task { await NotificationService.shared.requestAuthorization() }
         default: break
         }
@@ -1110,13 +1138,45 @@ final class AppModel {
                               asks: data.notificationAsks ?? 0, snoozedUntil: data.notificationSnoozedUntil)
     }
 
+    /// The one-time "Help keep your games up to date?" card (N-9): once a game is in the Library and the alerts card (N-1) has been
+    /// answered, on a later Library appearance than the answer, until it is answered itself or the switch is on. One ask per screen.
+    var showsKeepCurrentCard: Bool {
+        KeepCurrentAsk.shows(hasGames: !data.collection.isEmpty, on: data.keepCurrent == true, dismissed: data.keepCurrentCardDismissed == true,
+                             alertsCardShows: showsNotificationCard, alertsAnswered: alertsAnswered, answeredThisSession: alertsAnsweredThisSession)
+    }
+
+    /// The alerts card has had an answer: Not now at least once, or the system prompt decided (authorized, denied or provisional).
+    private var alertsAnswered: Bool { (data.notificationAsks ?? 0) > 0 || NotificationService.shared.authorization != .notDetermined }
+
+    /// Set when the alerts card is answered in this launch (Turn on or Not now), so the follow-list card waits for the next one.
+    var alertsAnsweredThisSession = false
+
+    /// The switch (Settings) and the card's Turn on. The relay call is made only by the app's own model (never a scratch store).
+    func setKeepCurrent(_ on: Bool) {
+        data.keepCurrent = on ? true : nil
+        if on { data.keepCurrentCardDismissed = true }
+        if storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.syncKeepCurrent(on, follows: follows) }
+    }
+
+    /// "Not now" or a swipe on the card: it never shows again; Settings is the way back.
+    func dismissKeepCurrentCard() { data.keepCurrentCardDismissed = true }
+
+    /// On becoming active: the weekly "still here" for a record without alerts, so the relay can renew its 90-day expiry.
+    func keepCurrentStillHere() {
+        guard data.keepCurrent == true, storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled else { return }
+        PushRegistrar.syncKeepCurrent(true, follows: follows)
+    }
+
     /// "Not now", a swipe, or a declined system prompt: ask again in a week (N-1).
     func snoozeNotificationCard() {
+        alertsAnsweredThisSession = true
         data.notificationAsks = (data.notificationAsks ?? 0) + 1
         data.notificationSnoozedUntil = Calendar.current.date(byAdding: .day, value: NotificationAsk.snoozeDays, to: .now)
     }
 
     func resetToFirstRun() {
+        // The follow-list record is deleted with the reset (its promise: gone at once when you reset the app).
+        if data.keepCurrent == true { setKeepCurrent(false) }
         data = PersistedState(collection: [])
         UserDefaults.standard.set(false, forKey: "didOnboard")
         toast = nil
@@ -1125,6 +1185,9 @@ final class AppModel {
     }
 
     func resetDemo() {
+        // Like a reset to first run: an alerts-free follow-list record is deleted, never left on the relay with the switch
+        // shown off (Mac at eb42735: `-qaRoute keep-current/settings` turned the switch off and sent no DELETE).
+        if data.keepCurrent == true { setKeepCurrent(false) }
         qaPadDeck = false
         qaKeepReadCards = false
         qaUpdateCount = 0

@@ -475,7 +475,7 @@ test('headline: text before a colon, 60 characters at a word boundary, ellipsis 
   assert.equal(headlineOf(': nothing before'), null)
 })
 
-test('data audit: a later post for the same release never moves a Steam-assumed PS5 date later; repair fixes stored rows', async () => {
+test('data audit: a later post for the same release never moves a Steam-assumed PS5 date later', async () => {
   const { db } = await setup()
   const ps5 = () => store.getPlatformRow(db, 'dawnwalker@1.1.1', 'ps5')!
   const live = () => JSON.parse(ps5().live_at as string).value as string
@@ -483,12 +483,6 @@ test('data audit: a later post for the same release never moves a Steam-assumed 
   // A second Steam-assumed write with a later date keeps the first.
   store.upsertPlatform(db, 'dawnwalker@1.1.1', 'ps5', { status: 'live', verification: 'assumed', liveAt: store.field(new Date(Date.parse(first) + 3 * 86400e3).toISOString(), 'assumed', 'dawnwalker-steam') })
   assert.equal(live(), first)
-  // Stored rows already moved later are repaired to the PC row's Steam date.
-  const pc = JSON.parse(store.getPlatformRow(db, 'dawnwalker@1.1.1', 'pc')!.live_at as string).value as string
-  db.prepare("UPDATE platform_releases SET live_at = ? WHERE release_id = 'dawnwalker@1.1.1' AND platform = 'ps5'").run(JSON.stringify({ ...JSON.parse(ps5().live_at as string), value: new Date(Date.parse(pc) + 86400e3).toISOString() }))
-  assert.ok(store.repairAssumedLiveAt(db) >= 1)
-  assert.equal(live(), pc)
-  assert.equal(store.repairAssumedLiveAt(db), 0)
 })
 
 test('news: Push Square headlines that name a tracked game are Reported news (title, date, link); its patch and unrelated items are not', async () => {

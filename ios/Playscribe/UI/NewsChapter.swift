@@ -104,7 +104,7 @@ struct NewsChapter: View {
                 let row = VStack(alignment: .leading, spacing: 4) {
                     Text(item.title).font(PlayscribeFont.headline).multilineTextAlignment(.leading)
                     HStack(spacing: 8) {
-                        if let d = item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
+                        if let d = item.date { Text(d.shortDay) }
                         Tag(text: item.tagText)
                     }
                     .font(PlayscribeFont.caption).foregroundStyle(.secondary)
@@ -277,7 +277,7 @@ struct NewsRow: View {
     }
 
     @ViewBuilder private var meta: some View {
-        if let d = item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
+        if let d = item.date { Text(d.shortDay) }
         Tag(text: item.tagText)
     }
 }

@@ -69,6 +69,8 @@ struct TabletopSearchHint: View {
 
 struct TabletopLetterStrip: View {
     @Binding var letter: String?
+    /// The chip grows with the text size, so a letter at AX5 sits inside its own circle instead of running into the next one.
+    @ScaledMetric(relativeTo: .headline) private var chip: CGFloat = 44
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -78,7 +80,7 @@ struct TabletopLetterStrip: View {
                     Button { letter = on ? nil : l } label: {
                         Text(l).font(PlayscribeFont.headline)
                             .foregroundStyle(on ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)
-                            .frame(width: 44, height: 44)
+                            .frame(width: chip, height: chip)
                             .background(Circle().fill(on ? PlayscribeColor.accent : PlayscribeColor.ink700))
                             .contentShape(Rectangle())
                     }
