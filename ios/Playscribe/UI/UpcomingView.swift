@@ -8,13 +8,27 @@ enum LibraryTab: String, CaseIterable, Identifiable {
     var label: String { self == .playing ? "Playing" : "Upcoming" }
 }
 
+extension CatalogGame {
+    /// Upcoming order: soonest first, then by name, then by id, so games that share a date keep one order from launch to
+    /// launch whatever order the library, the index or the feed shards hand them over in (bug-upcoming-same-date-order).
+    static func upcomingOrder(_ a: CatalogGame, _ b: CatalogGame) -> Bool {
+        let da = a.releaseDate?.isoDay ?? .distantFuture, db = b.releaseDate?.isoDay ?? .distantFuture
+        if da != db { return da < db }
+        switch a.name.localizedStandardCompare(b.name) {
+        case .orderedAscending: return true
+        case .orderedDescending: return false
+        case .orderedSame: return a.id < b.id
+        }
+    }
+}
+
 extension AppModel {
     /// Watched games first (soonest first), then the catalogue's unreleased PS5 games.
     var upcomingWatched: [CatalogGame] {
         data.collection.compactMap { c -> CatalogGame? in
             guard c.status == .wishlist || c.status == .watching, let g = game(c.gameID), g.isUpcoming || g.releasePrecision == .tbd else { return nil }
             return g
-        }.sorted { ($0.releaseDate?.isoDay ?? .distantFuture) < ($1.releaseDate?.isoDay ?? .distantFuture) }
+        }.sorted(by: CatalogGame.upcomingOrder)
     }
 
     var upcomingMore: [CatalogGame] {
@@ -26,7 +40,7 @@ extension AppModel {
     @MainActor private static let catalogueUpcoming: [CatalogGame] = {
         let index = PS5Index.shared
         return index.entries.map { index.game($0) }.filter(\.isUpcoming)
-            .sorted { ($0.releaseDate?.isoDay ?? .distantFuture) < ($1.releaseDate?.isoDay ?? .distantFuture) }
+            .sorted(by: CatalogGame.upcomingOrder)
             .prefix(60).map { $0 }
     }()
 }
