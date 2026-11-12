@@ -499,10 +499,11 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   deps.log?.(`ingest: news hidden (promo) ${summary.newsHidden ?? 0} new, ${pruned.length} pruned`)
   const repaired = store.repairAssumedLiveAt(deps.db)
   if (repaired) deps.log?.(`ingest: moved ${repaired} Steam-assumed PS5 dates back to their Steam post`)
-  const promoted = store.promoteAnnounced(deps.db) + store.promoteStated(deps.db)
+  const promoted = store.promoteAnnounced(deps.db, new Date(), !!opts.until) + store.promoteStated(deps.db, new Date(), !!opts.until)
   const settled = store.settleOldAnnouncements(deps.db)
   if (settled) deps.log?.(`ingest: ${settled} press announcements older than 30 days, with a later PS5 release live, now read as live`)
   deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)
+  if (opts.until) deps.log?.(`ingest: backfill read ${repairOnly.size} derived games; ${summary.created.length} releases created, ${summary.revised.length} revised`)
   if (summary.held) deps.log?.(`ingest: PS5 claims withheld this run: ${summary.held.stated} held to a stated time, ${summary.held.testBuild} test builds, ${summary.held.pcScoped} PC-scoped, ${summary.held.announcement} announcements`)
   deps.log?.(`ingest: polled ${summary.polled.length}, new ${summary.created.length}, revised ${summary.revised.length}, review +${summary.review}, errors ${summary.errors.length}`)
   return summary

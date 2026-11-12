@@ -127,6 +127,10 @@ test('ingest: test builds and PC-scoped posts make no PS5 row; a stated later ti
   const live = ps5Of(db, 'dawnwalker@1.3')!
   assert.deepEqual([live.status, live.verification], ['live', 'official'])
   assert.ok(live.alert)
+  // A stated time long past (a backfill reading an old post) goes live without a fresh alert window.
+  db.prepare("UPDATE platform_releases SET status = 'announced', pushed_at = NULL, alert_from = NULL WHERE release_id = 'dawnwalker@1.3' AND platform = 'ps5'").run()
+  assert.equal(store.promoteStated(db, day(30)), 1)
+  assert.equal(ps5Of(db, 'dawnwalker@1.3')!.alert?.from, held.liveAt?.value) // the old time, so the 72 h guard keeps it quiet
 })
 
 test('backfill repairs rows the old rules made from the same post, and leaves other sources alone', async () => {
