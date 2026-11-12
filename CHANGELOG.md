@@ -16,10 +16,10 @@ so write it for testers. Release steps are in docs/release.md.
 
 Known issues in this build:
 
-- Search: the game list can occasionally go blank while you type fast.
-- Tabletop: "Find trailers online" on a game with no videos can't be tapped in Tabletop. It works in the other poses.
-- Adding a game can mark its older updates as unread.
-- Notifications: tapping a notification when the app is already open has not been checked yet.
+- Search: if you type quickly in the Library search, the list of games can go blank. Clear the search to bring it back.
+- Tabletop: for a game with no videos, "Find trailers online" can't be tapped.
+- Adding a game can show all of its past updates as unread.
+- Tapping a notification while the app is already open has not been checked in this build.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
 
