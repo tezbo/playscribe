@@ -21,27 +21,44 @@ struct GameBookView: View {
                 // Layout direction doesn't move ArrangementView's regions, so the swap places the
                 // pieces explicitly. Their state lives in the model (selection, search, scroll
                 // anchors), so it carries across.
-                ArrangementView {
+                SplitArrangement {
                     if pageOnLeft { page } else { ContentsView(gameID: gameID) }
                 } secondary: {
                     if pageOnLeft { ContentsView(gameID: gameID) } else { page }
                 }
-                .arrangementViewStyle(.split)
             } else {
                 // Stacked: the Page on top (the standing half in Tabletop), the Contents below.
-                ArrangementView {
+                SplitArrangement {
                     page
                 } secondary: {
                     ContentsView(gameID: gameID)
                 }
-                .arrangementViewStyle(.split)
             }
         }
         .background(Color.ink0)
         .navigationTitle(game?.name ?? "")
         .toolbar(removing: .title)
         .toolbarTitleDisplayMode(.inline)
+        // The system back button reached VoiceOver and tests with an empty label in Closed (Mac back check, 380e71b), and its label
+        // cannot be set. This one says where it goes (HIG: the previous screen's title).
+        .navigationBarBackButtonHidden(true)
+        .keepsSwipeBack()
         .toolbar {
+            // A custom 44 x 44 button (Iris: the 36 pt floor is for system-drawn toolbar buttons only), so no system glass around it:
+            // the glass would size it to about 38. The chevron stays centred, whatever the frame.
+            ToolbarItem(placement: .topBarLeading) {
+                Button { model.closeGame() } label: {
+                    Image(systemName: "chevron.backward")
+                        .font(.system(size: 17, weight: .semibold))
+                        .foregroundStyle(Color.primary)
+                        .frame(width: 44, height: 44)
+                        .background(Circle().fill(.regularMaterial))
+                        .contentShape(Rectangle())
+                }
+                .accessibilityLabel("Library, back")
+                .accessibilityIdentifier("gameBack")
+            }
+            .sharedBackgroundVisibility(.hidden)
             ActionToolbar(actions: model.gameActions(gameID))
             // D-10: only when Contents and Page are side by side; absent, not disabled, otherwise.
             if sideBySide {
@@ -97,38 +114,45 @@ extension GameBookView {
     }
 }
 
-/// R-7: chapters as a scrolling row with an edge fade; the selected chip scrolls into view.
+/// R-7: chapters in one row when they fit, wrapped onto a second row when they do not.
 struct ChapterBar: View {
     @Environment(AppModel.self) private var model
     var gameID: String
     var selected: Chapter
 
-    var body: some View {
-        ScrollViewReader { proxy in
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 8) {
-                    ForEach(model.chapters(gameID)) { c in
-                        let on = c == selected
-                        Button { model.nav.chapter = c } label: {
-                            Label(c.title, systemImage: c.symbol)
-                                .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
-                                .padding(.horizontal, 12)
-                                .frame(minHeight: 44)
-                                .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityAddTraits(on ? .isSelected : [])
-                        .tappableFrame()
-                        .id(c)
-                    }
-                }
-                .padding(.horizontal, 2)
-                .padding(.trailing, 44)
+    private func chip(_ c: Chapter, icons: Bool) -> some View {
+        let on = c == selected
+        return Button { model.nav.chapter = c } label: {
+            Group {
+                if icons { Label(c.title, systemImage: c.symbol) } else { Text(c.title) }
             }
-            // A wider fade so a half-seen last chip reads as "more this way", not as a bug.
-            .edgeFade(44)
-            .onAppear { proxy.scrollTo(selected, anchor: .center) }
-            .onChange(of: selected) { _, c in withAnimation { proxy.scrollTo(c, anchor: .center) } }
+            .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
+            .lineLimit(1)
+            .padding(.horizontal, 12)
+            .frame(minHeight: 44)
+            .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(on ? .isSelected : [])
+        .tappableFrame()
+        .id(c)
+    }
+
+    private func row(icons: Bool) -> some View {
+        HStack(spacing: 8) { ForEach(model.chapters(gameID)) { chip($0, icons: icons) } }
+            .padding(.horizontal, 2)
+    }
+
+    var body: some View {
+        // Every chapter is always in view (Quinn, #331): one row with icons, else one row of titles, else the
+        // chips wrap onto a second row (AX sizes, narrow columns). Nothing hides behind a scroll.
+        ViewThatFits(in: .horizontal) {
+            row(icons: true).fixedSize(horizontal: true, vertical: false)
+            row(icons: false).fixedSize(horizontal: true, vertical: false)
+            FlowLayout(spacing: 8) {
+                ForEach(model.chapters(gameID)) { chip($0, icons: false) }
+            }
+            .padding(.horizontal, 2)
         }
     }
 }

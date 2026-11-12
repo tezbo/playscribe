@@ -14,20 +14,27 @@
 //      centre-crop to the square tile; absent when IGDB has none, and the app uses `c`.
 //   s  the studio's square cover (IGDB "Square cover" artwork), shown as the tile as it is. Rare.
 //   e  true when `d` is early access and there is no full release yet.
+//   frq    how exact fr is when it is not a day (month, quarter, year); a year placeholder is the last day of the year.
+//   ea fr  only for IGDB status "Early Access" (not Advanced Access, Beta or Alpha) before a later full release: `d` is then the first
+//      playable day, and while the 1.0 is still ahead `ea` is that same day and `fr` the 1.0 day ("Early access since"/"Full release").
+//      Both go once the 1.0 day arrives (the next index build); `d` stays the first playable day.
 //   b  the PS4 release, only when it came before `d` (or there is no `d`): PS4 games play on PS5,
 //      so this is when PS5 owners could first play it (Roblox: PS4 Oct 2023, native PS5 Apr 2026).
 //   o  ow  the game's first release anywhere (ISO day) and the platform it came out on ("PC (Microsoft Windows)"). Only for a
 //      game that is already out (o not in the future) and has no `d` and no `b` (a tbd PS5 listing included: ETS2), so the app can say
 //      "Released on PC, <date>" instead of TBA (ETS2).
+//   k  search aliases players type ("GTA V", "FF7", "COD"): IGDB alternative names plus franchise short forms (src/search-aliases.ts).
 // Known IGDB gaps are corrected from scripts/ps5-date-overrides.json, each with its evidence.
 // Cover tones already in the file are kept.
 //
 //   TWITCH_CLIENT_ID=… TWITCH_CLIENT_SECRET=… NODE_USE_ENV_PROXY=1 npm run ps5-index
 //   npm run ps5-index -- --inspect 1020,17269     # print every PS5/PS4 release_dates row for these ids
+//   npm run ps5-index -- --early-diagnostic       # read-only: list games whose earliest PS5 row (any status) is before `d`; writes nothing
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { Igdb } from '../src/ingest/igdb.ts'
 import { artworkFields, artworkOf, artworkTypes, squareCoverOf } from '../src/artwork.ts'
-import { day, ps5DatesOf, problemsOf, type Override, type ReleaseDate } from '../src/ps5-dates.ts'
+import { searchAliases } from '../src/search-aliases.ts'
+import { PS5_LAUNCH, day, ps5DatesOf, problemsOf, type Override, type ReleaseDate } from '../src/ps5-dates.ts'
 
 const OUT = new URL('../../ios/Playscribe/Resources/Data/ps5-index.json', import.meta.url)
 const { TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET } = process.env
@@ -98,20 +105,37 @@ for (let offset = 0; offset < 10000; offset += 500) {
 const old = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, 'utf8')) as { games: { i: number; t?: string[] }[] }) : { games: [] }
 const tones = new Map(old.games.filter((g) => g.t).map((g) => [g.i, g.t]))
 
-const games: { i: number; n: string; d?: string; q?: string; e?: true; f?: string; b?: string; o?: string; ow?: string; v?: string; p?: string; c?: string; a?: string; s?: string; t?: string[]; r: number }[] = []
+const aliasesField = (g: { name: string; alternative_names?: { name: string }[] }) => {
+  const k = searchAliases(g.name, (g.alternative_names ?? []).map((a) => a.name))
+  return k.length ? { k } : {}
+}
+const earlyRows: { i: number; n: string; first: string; firstStatus: string; d: string }[] = []
+const games: { i: number; n: string; d?: string; q?: string; e?: true; f?: string; b?: string; ea?: string; fr?: string; frq?: string; k?: string[]; o?: string; ow?: string; v?: string; p?: string; c?: string; a?: string; s?: string; t?: string[]; r: number }[] = []
 for (let offset = 0; ; offset += 500) {
   const page = await igdb.query<any>(
     'games',
     `fields name,first_release_date,cover.image_id,${artworkFields(artworkType)},release_dates.date,release_dates.platform,release_dates.status,release_dates.date_format,` +
-      'involved_companies.company.name,involved_companies.developer,involved_companies.publisher,total_rating_count;' +
+      'alternative_names.name,involved_companies.company.name,involved_companies.developer,involved_companies.publisher,total_rating_count;' +
       `where platforms = (${ps5.id}) & game_type = (${typeIds.join(',')}) & version_parent = null; sort id asc; limit 500; offset ${offset};`,
   )
   for (const g of page) {
     const company = (role: string) => (g.involved_companies ?? []).find((c: any) => c[role])?.company?.name
     const dates = datesOf(g.id, g.release_dates)
-    games.push({ i: g.id, n: g.name, ...dates, ...firstRelease(g, dates), v: company('developer'), p: company('publisher'), c: g.cover?.image_id, a: artOf(g.artworks), s: squareOf(g.artworks), t: tones.get(g.id), r: g.total_rating_count ?? 0 })
+    if (dates.d) {
+      const rows = (g.release_dates ?? []).filter((r: ReleaseDate) => r.platform === ps5.id && r.date && !/patch/i.test(statusName.get(r.status!) ?? '') && day(r.date)! >= PS5_LAUNCH).sort((a: ReleaseDate, b: ReleaseDate) => a.date! - b.date!)
+      const first = rows[0]
+      if (first && day(first.date)! < dates.d) earlyRows.push({ i: g.id, n: g.name, first: day(first.date)!, firstStatus: statusName.get(first.status!) ?? 'no status', d: dates.d })
+    }
+    games.push({ i: g.id, n: g.name, ...dates, ...firstRelease(g, dates), ...aliasesField(g), v: company('developer'), p: company('publisher'), c: g.cover?.image_id, a: artOf(g.artworks), s: squareOf(g.artworks), t: tones.get(g.id), r: g.total_rating_count ?? 0 })
   }
   if (page.length < 500) break
+}
+if (args.includes('--early-diagnostic')) {
+  const today = new Date().toISOString().slice(0, 10)
+  console.log(`early-diagnostic: ${earlyRows.length} of ${games.length} games have a PS5 row (any status) before their index date d`)
+  console.log(`  of those, d is still in the future for ${earlyRows.filter((r) => r.d > today).length}`)
+  for (const r of earlyRows.sort((a, b) => b.d.localeCompare(a.d))) console.log(`  ${r.i} ${r.n}: first PS5 row ${r.first} (${r.firstStatus}), index d ${r.d}`)
+  process.exit(0)
 }
 games.sort((a, b) => (rankOf.get(a.i) ?? Infinity) - (rankOf.get(b.i) ?? Infinity) || b.r - a.r)
 

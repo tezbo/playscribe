@@ -25,8 +25,9 @@ struct ModelTests {
         let dw = m.release("dawnwalker", "dawnwalker@1.1")
         #expect(dw?.ps5State == .onPS5)
         #expect(dw?.ps5Version == nil)
-        for r in m.releases("control-resonant") where r.ps5 == nil {
-            #expect(r.ps5State == .onPS5)
+        // A release with no PS5 row is not a PS5 update (r051-prelaunch-gate); a PS5 row never carries the PC version.
+        for r in m.releases("control-resonant") {
+            #expect(r.ps5State == (r.ps5 == nil ? .pending : .onPS5))
             #expect(r.ps5Version == nil)
         }
     }
@@ -159,6 +160,20 @@ struct ModelTests {
     func search() {
         let hits = PS5Index.shared.search("dawnwalker")
         #expect(!hits.isEmpty)
+    }
+
+    @Test("Short forms find the franchise in the top 10: 'ac' Assassin's Creed, 'ff' Final Fantasy, 'gta' Grand Theft Auto (#298)")
+    func searchAliases() {
+        for (query, title) in [("ac", "Assassin"), ("ff", "Final Fantasy"), ("gta", "Grand Theft Auto")] {
+            let top = PS5Index.shared.search(query, limit: 10).map(\.name)
+            #expect(top.contains { $0.localizedCaseInsensitiveContains(title) }, "\(query): \(top)")
+        }
+    }
+
+    @Test("A name hit outranks an alias-only hit for the same query (#298)")
+    func nameBeatsAlias() {
+        let hits = PS5Index.shared.search("dawnwalker", limit: 5)
+        #expect(hits.first?.name.localizedCaseInsensitiveContains("dawnwalker") == true)
     }
 }
 
@@ -461,8 +476,7 @@ struct ReadTimeTests {
 
 @MainActor
 struct OneUpdateDemoTests {
-    /// The `one-update` QA route: the Library hero shows (one fresh unread update) and the "Also new"
-    /// panel has nothing else to list, so it falls back to "What's new".
+    /// The `one-update` QA route: the Library hero shows (one fresh unread update).
     @Test func oneUpdateRouteLeavesExactlyOneFreshUpdate() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "one-\(UUID().uuidString).json"))
         m.resetToOneUpdateDemo()
@@ -471,7 +485,7 @@ struct OneUpdateDemoTests {
         #expect(hero != nil, "the hero shows")
         let unread = m.data.collection.flatMap { m.releases($0.gameID) }.filter(m.isUnread)
         #expect(unread.count == 1)
-        if let hero { #expect(m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
+        #expect(hero != nil)
     }
 
     /// The `two-update` QA route: exactly two fresh unread updates, from different games.
@@ -484,21 +498,17 @@ struct OneUpdateDemoTests {
         #expect(m.latestDeck.count == 2)
     }
 
-    @Test func demoRouteListsOtherUpdatesBesideTheHero() {
-        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
-        m.resetDemo()
-        if let hero = m.continueItem { #expect(!m.alsoNewReleases(excludingRelease: hero.release.id).isEmpty) }
-    }
-
-    /// Also new: one row per game, never the deck front card's game (Iris, 3548a21).
-    @Test func alsoNewHasOneRowPerGameAndSkipsTheFrontGame() {
-        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "demo-\(UUID().uuidString).json"))
-        m.resetDemo()
-        guard let front = m.latestDeck.first?.release else { return }
-        let rows = m.alsoNewReleases(excludingRelease: front.id)
-        let games = rows.map(\.gameID)
-        #expect(Set(games).count == games.count)
-        #expect(!games.contains(front.gameID))
+    /// The `three-update` and `four-update` QA routes: that many fresh unread updates from different games,
+    /// all in the one full-width deck (the Also new panel is gone, Terry 2026-11-06).
+    @Test func threeAndFourUpdateRoutesFillTheDeck() {
+        for (n, reset) in [(3, { (m: AppModel) in m.resetToUpdateDemo(count: 3) }), (4, { (m: AppModel) in m.resetToUpdateDemo(count: 4) })] {
+            let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "n\(n)-\(UUID().uuidString).json"))
+            reset(m)
+            let unread = m.data.collection.flatMap { m.releases($0.gameID) }.filter(m.isUnread)
+            #expect(unread.count == n)
+            #expect(Set(unread.map(\.gameID)).count == n)
+            #expect(m.latestDeck.count == n)
+        }
     }
 }
 
@@ -527,10 +537,46 @@ struct SpoilerWarningTests {
         #expect(g.reduce(0) { $0 + $1.count } == 2)
     }
 
+    @Test("Items with nothing to show (blank text) are not counted (#301)")
+    func emptyItemsAreNotCounted() {
+        let s = NoteSection(title: "Changes", items: [NoteItem(text: "Fixed a crash."), NoteItem(text: "   "), NoteItem(text: "")])
+        let g = ChangeKind.grouped([s], ps5Only: true)
+        #expect(g.reduce(0) { $0 + $1.count } == 1)
+    }
+
+    @Test("A section with only PC-only lines is left out of a PS5 page, not shown as 0 (#301)")
+    func pcOnlySectionIsHidden() {
+        let pc = NoteItem(text: "Fixed a PC plugin crash.", platforms: [.pc])
+        let s = NoteSection(title: "Plugin", items: [pc])
+        #expect(pc.isPCOnly)
+        #expect(ChangeKind.grouped([s], ps5Only: true).isEmpty)
+        #expect(ChangeKind.grouped([s], ps5Only: false).count == 1)
+    }
+
     @Test("Notes without a warning are untouched")
     func noWarningNoChange() {
         let s = NoteSection(title: "Fixes", items: [NoteItem(text: "Fixed a crash."), NoteItem(text: "Be advised: servers restart.")])
         #expect(s.items.allSatisfy { $0.spoiler == nil })
+    }
+}
+
+/// VoiceOver reads the playback position as time (R-11).
+struct PlayerTimeTests {
+    @Test("Spoken time is words, differs per second, never empty past zero")
+    func spoken() {
+        #expect(!PlayerTime.spoken(83).isEmpty)
+        #expect(PlayerTime.spoken(83) != PlayerTime.spoken(84))
+        #expect(PlayerTime.spoken(83).contains("minute"))
+        #expect(PlayerTime.format(83) == "1:23")
+    }
+}
+
+/// TT-2: VoiceOver hears where a section sits in the update.
+struct ReaderPositionTests {
+    @Test("Position reads as a place, from one")
+    func position() {
+        #expect(ReaderBody.position(0, of: 5) == "1 of 5")
+        #expect(ReaderBody.position(4, of: 5) == "5 of 5")
     }
 }
 
@@ -581,6 +627,59 @@ struct QARouteGuardTests {
         #expect(m.qaRoute == nil)
     }
 
+    @Test("The store set never loads in a distribution build (r052-store-set-content)")
+    func storeSetStaysOutOfDistribution() {
+        BuildChannel.overrideIsDistribution = true
+        defer { BuildChannel.overrideIsDistribution = nil }
+        let m = model()
+        let before = m.data.collection
+        m.handle(url: URL(string: "playscribe://store-set")!)
+        m.applyQALaunch(route: "store-set", overlay: false)
+        m.loadStoreSet()
+        #expect(m.data.collection == before)
+        #expect(m.data.customGames.isEmpty)
+    }
+
+    @Test("The store set loads five invented games in an internal build (r052-store-set-content)")
+    func storeSetLoadsInternally() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil; NotificationService.shared.qaForcedAuthorization = nil }
+        let m = model()
+        m.handle(url: URL(string: "playscribe://store-set")!)
+        #expect(m.data.collection.map(\.gameID) == StoreSet.gameIDs)
+        #expect(m.data.customGames.count == StoreSet.games().count + StoreSet.plusGames().count)
+        #expect(StoreSet.games().count == 5)
+        #expect(m.data.simulated.count == 3)
+    }
+
+    @Test("The store set's PS Plus card carries only invented titles with designed covers (r052-store-set-content)")
+    func storeSetPlusCardIsDesignedCovers() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil; NotificationService.shared.qaForcedAuthorization = nil }
+        let m = model()
+        m.loadStoreSet(plus: true)
+        #expect(m.data.plusCardOff != true)
+        let games = PlusStore.shared.months.first?.games ?? []
+        #expect(games.count == 3)
+        for g in games {
+            // Invented titles with designed covers; none is a tracked game or a real catalogue match.
+            let game = PlusCard.resolve(g, tracked: { m.game($0) })
+            #expect(game?.coverAsset?.hasPrefix("store-plus-") == true)
+            #expect(m.entry(g.gameId ?? "") == nil)
+        }
+    }
+
+    @Test("The store set hides the PS Plus and alerts cards by default so the update hero comes first (r052-store-set-content)")
+    func storeSetHeroFirst() {
+        BuildChannel.overrideIsDistribution = false
+        defer { BuildChannel.overrideIsDistribution = nil; NotificationService.shared.qaForcedAuthorization = nil }
+        let m = model()
+        m.loadStoreSet()
+        #expect(m.data.plusCardOff == true)
+        #expect(NotificationService.shared.authorization == .authorized)
+        #expect(!m.showsNotificationCard)
+    }
+
     @Test("A developer or simulator build still runs QA routes")
     func internalBuildRunsRoutes() {
         BuildChannel.overrideIsDistribution = false
@@ -601,6 +700,13 @@ struct BuildChannelTests {
         #expect(BuildChannel.isDistribution(receiptName: "receipt"))
         #expect(!BuildChannel.isDistribution(receiptName: nil))
         #expect(!BuildChannel.isDistribution(receiptName: "other"))
+    }
+
+    @Test("Team alerts show on development and TestFlight builds, never on the App Store")
+    func teamAlertsGuard() {
+        #expect(BuildChannel.showsTeamAlerts(receiptName: nil))
+        #expect(BuildChannel.showsTeamAlerts(receiptName: "sandboxReceipt"))
+        #expect(!BuildChannel.showsTeamAlerts(receiptName: "receipt"))
     }
 
     #if targetEnvironment(simulator)
@@ -637,6 +743,38 @@ struct ReaderSpoilerTests {
     }
 }
 
+/// r051-prelaunch-gate: a patch from before the PS5 launch has no PS5 row, so it is not a PS5 update.
+@MainActor
+struct PreLaunchGateTests {
+    private func steamOnly(_ id: String) -> Release {
+        let steam = PlatformRelease(platform: .pc, status: .live, verification: .official)
+        return Release(id: id, gameID: "valheim", displayName: id, kind: .patch, kindBasis: .inferred,
+                       announcedAt: Date(timeIntervalSince1970: 1_613_000_000), notes: [], sourceIDs: [], platforms: [steam])
+    }
+
+    @Test("Valheim 2021: a Steam-only patch is not On PS5, not listed, not unread")
+    func valheimSteamOnly() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "gate-\(UUID().uuidString).json"))
+        let r = steamOnly("valheim@0.147")
+        #expect(r.ps5State == .pending)
+        #expect(!r.isPS5Listed)
+        #expect(!model.isUnread(r))
+    }
+
+    @Test("From the PS5 launch on, a live official PS5 row is On PS5 as before")
+    func liveRowStillOnPS5() {
+        let ps5 = PlatformRelease(platform: .ps5, status: .live, liveAt: Field(value: .now, verification: .official, sourceID: "s", checkedAt: .now),
+                                  verification: .official)
+        let r = Release(id: "valheim@1.0", gameID: "valheim", displayName: "1.0", kind: .patch, kindBasis: .inferred,
+                        announcedAt: .now, notes: [], sourceIDs: [], platforms: [ps5])
+        #expect(r.ps5State == .onPS5)
+        #expect(r.isPS5Listed)
+        // New to the library: nothing read yet, so it is unread and (being On PS5) eligible for the alert.
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "gate-\(UUID().uuidString).json"))
+        #expect(model.isUnread(r))
+    }
+}
+
 /// r051-unread-flood: adding a game must not mark its back catalogue unread (0.5.1, Jun's review).
 @MainActor
 struct BackCatalogueTests {
@@ -665,5 +803,197 @@ struct BackCatalogueTests {
         let ported = release("g@port", patchedDaysAgo: 1_800, alertDaysAgo: 1)
         model.markPastAsRead([ported])
         #expect(model.data.read[ported.id] == nil)
+    }
+}
+
+/// Patch dates are the UTC calendar day on every device (Nadia, 7 Nov 2026). These swap the process time zone, so they run one at a time.
+@Suite("Patch dates in any time zone", .serialized)
+struct UTCDayTests {
+    nonisolated static let zones = ["UTC", "Australia/Sydney", "Pacific/Auckland", "America/Los_Angeles", "Pacific/Kiritimati"]
+
+    private func withZone(_ id: String, _ body: () -> Void) {
+        let saved = NSTimeZone.default
+        NSTimeZone.default = TimeZone(identifier: id)!
+        defer { NSTimeZone.default = saved }
+        body()
+    }
+
+    @Test("a patch posted late on 25 Jun UTC reads 25 Jun everywhere; the next UTC midnight reads 26 Jun", arguments: zones)
+    func sameDayEverywhere(_ zone: String) {
+        let late = Date(timeIntervalSince1970: 1_782_431_999)     // 2026-06-25T23:59:59Z
+        let next = Date(timeIntervalSince1970: 1_782_432_000)     // 2026-06-26T00:00:00Z
+        withZone(zone) {
+            #expect(late.shortDay == "25 Jun 2026", "\(zone)")
+            #expect(late.dayMonth == "25 Jun", "\(zone)")
+            #expect(next.shortDay == "26 Jun 2026", "\(zone)")
+        }
+    }
+
+    @Test("a plain release day (noon UTC) keeps its day in every zone", arguments: zones)
+    func releaseDayStable(_ zone: String) {
+        withZone(zone) { #expect("2026-06-25".isoDay?.shortDay == "25 Jun 2026", "\(zone)") }
+    }
+
+    @Test("sameUTCDay splits at UTC midnight, even where the local day differs (Sydney)")
+    func sameUTCDayInSydney() {
+        let before = Date(timeIntervalSince1970: 1_782_431_999)   // 2026-06-25T23:59:59Z, 09:59 on 26 Jun in Sydney
+        let after = Date(timeIntervalSince1970: 1_782_432_000)    // 2026-06-26T00:00:00Z
+        withZone("Australia/Sydney") {
+            #expect(!Date.sameUTCDay(before, after))
+            #expect(Date.sameUTCDay(before, before.addingTimeInterval(-86_000)))
+            #expect(Date.sameUTCDay(after, after.addingTimeInterval(86_000)))
+        }
+    }
+
+    @Test("the coming-this-week window is today and the next six UTC days in every zone (r060-utc-day-labels)", arguments: ["Pacific/Auckland", "UTC", "Pacific/Pago_Pago"])
+    func weekWindow(_ zone: String) {
+        let now = Date(timeIntervalSince1970: 1_782_431_999)      // 2026-06-25T23:59:59Z: already 26 Jun in Auckland, still 25 Jun in Pago Pago
+        withZone(zone) {
+            #expect("2026-06-25".isoDay!.isInUTCWeek(from: now), "today (UTC) is in the window [\(zone)]")
+            #expect("2026-07-01".isoDay!.isInUTCWeek(from: now), "the sixth day after is in [\(zone)]")
+            #expect(!"2026-07-02".isoDay!.isInUTCWeek(from: now), "the seventh day after is out [\(zone)]")
+            #expect(!"2026-06-24".isoDay!.isInUTCWeek(from: now), "yesterday (UTC) is out [\(zone)]")
+        }
+    }
+}
+
+@Suite("QAPose launch argument")
+struct QAPoseTests {
+    @Test("book and tabletop give DuoReader a synthetic fold of the right shape, closed and open give none")
+    func foldShapes() {
+        let landscape = CGSize(width: 867, height: 635)
+        let book = QAPose.regions(named: "book", size: landscape)
+        let ctxBook = DuoReader<EmptyView>.context(size: landscape, compact: false, division: book?.division, occlusions: [])
+        #expect(ctxBook.pose == .book)
+        let portrait = CGSize(width: 669, height: 835)
+        let table = QAPose.regions(named: "tabletop", size: portrait)
+        let ctxTable = DuoReader<EmptyView>.context(size: portrait, compact: false, division: table?.division, occlusions: [])
+        #expect(ctxTable.pose == .tabletop)
+        #expect(abs((table?.division?.minY ?? 0) - 835 * 0.447) < 0.5)
+        #expect(QAPose.regions(named: "open", size: portrait) == nil)
+        #expect(QAPose.regions(named: nil, size: portrait) == nil)
+    }
+
+    @Test("a distribution build ignores -qaPose")
+    func distributionIgnores() {
+        BuildChannel.overrideIsDistribution = true
+        QAPose.overrideName = "tabletop"
+        defer { BuildChannel.overrideIsDistribution = nil; QAPose.overrideName = nil }
+        #expect(QAPose.name == nil)
+        #expect(QAPose.injected(size: CGSize(width: 669, height: 835)) == nil)
+    }
+}
+
+
+@Suite("Roman numeral glue")
+struct RomanNumeralGlueTests {
+    @Test("a trailing numeral is tied to the word before it (r060-nbsp-roman-numerals)")
+    func gluesTrailingNumeral() {
+        #expect("Kingdom Come: Deliverance II".gluingTrailingNumeral == "Kingdom Come: Deliverance\u{00A0}II")
+        #expect("Final Fantasy X".gluingTrailingNumeral == "Final Fantasy\u{00A0}X")
+        #expect("Hades II".gluingTrailingNumeral.split(separator: " ").count == 1, "no breaking space is left")
+    }
+
+    @Test("other titles are unchanged")
+    func leavesOthers() {
+        for t in ["Hades", "X", "II", "Control Resonant", "Wukong 2", "Civilization VII Remastered", "Tower of Mix", "Alien: Isolation"] {
+            #expect(t.gluingTrailingNumeral == t, "\(t)")
+        }
+    }
+}
+
+@Suite("Library sort: recently updated (r053-sort-recent-updated)")
+struct RecentlyUpdatedSortTests {
+    private let now = Date(timeIntervalSince1970: 1_800_000_000)
+    private func day(_ d: Double) -> Date { now.addingTimeInterval(d * 86400) }   // negative: days ago
+    private func key(_ name: String, updated: Double? = nil, released: Double? = nil) -> AppModel.UpdatedKey {
+        AppModel.UpdatedKey(latest: updated.map(day), releaseDate: released.map(day), name: name)
+    }
+    private func order(_ keys: [AppModel.UpdatedKey]) -> [String] {
+        keys.sorted { AppModel.updatedFirst($0, $1, now: now) }.map(\.name)
+    }
+
+    @Test("games with an update come first, newest first; a newer release never outranks an update")
+    func updatesFirst() {
+        #expect(order([key("Out, no update", released: -1), key("Patched last week", updated: -7, released: -400), key("Patched today", updated: 0, released: -30)])
+                == ["Patched today", "Patched last week", "Out, no update"])
+    }
+
+    @Test("games with no update that are out follow, newest release first (Terry's 47 games)")
+    func releasedGroupByReleaseDate() {
+        let list = order([key("Mar 2025", released: -600), key("Oct 2025", released: -20), key("Aug 2025", released: -100), key("May 2025", released: -300)])
+        #expect(list == ["Oct 2025", "Aug 2025", "May 2025", "Mar 2025"])
+    }
+
+    @Test("games not out yet come after, soonest first, undated last")
+    func upcomingAfterReleased() {
+        let list = order([key("TBA"), key("31 Dec", released: 53), key("10 Nov", released: 2), key("Out", released: -5)])
+        #expect(list == ["Out", "10 Nov", "31 Dec", "TBA"])
+    }
+
+    @Test("a game with an update but no release date still sorts by its update, ahead of every game without one")
+    func updateWithoutReleaseDate() {
+        let list = order([key("Out, no update", released: -1), key("Dateless, patched long ago", updated: -90), key("Dateless, patched today", updated: 0), key("TBA")])
+        #expect(list == ["Dateless, patched today", "Dateless, patched long ago", "Out, no update", "TBA"])
+    }
+
+    @Test("equal dates fall back to name")
+    func tieByName() {
+        #expect(order([key("b", updated: -2), key("A", updated: -2)]) == ["A", "b"])
+        #expect(order([key("b"), key("A")]) == ["A", "b"])
+    }
+}
+
+@MainActor
+struct SearchTextColdLaunchTests {
+    private func url() -> URL { URL.temporaryDirectory.appending(path: "search-\(UUID().uuidString).json") }
+
+    @Test("a cold launch has an empty search and every game; selected game, filter and scroll anchors are still restored")
+    func coldLaunchClearsSearchOnly() throws {
+        let u = url()
+        let m = AppModel(storeURL: u)
+        m.data.collection = Fixtures.shared.seedCollection
+        let all = m.shownRows().count
+        try #require(all > 1)
+        m.nav.query = "dawn"
+        #expect(m.shownRows().count < all)   // the typed text is filtering, so the test can tell the difference
+        m.nav.gameID = "dawnwalker"
+        m.nav.filter = .wishlist
+        m.nav.anchors["library"] = "lib-kcd2"
+        m.saveNow()
+
+        let reopened = AppModel(storeURL: u)
+        #expect(reopened.nav.query == "")
+        #expect(reopened.nav.gameID == "dawnwalker")
+        #expect(reopened.nav.filter == .wishlist)
+        #expect(reopened.nav.anchors["library"] == "lib-kcd2")
+        reopened.nav.filter = .all
+        #expect(reopened.shownRows().count == all)
+    }
+
+    @Test("a saved Library anchor that is not a game tile (the search field) is dropped on a cold launch; a tile anchor is kept")
+    func nonTileAnchorDropped() {
+        let u = url()
+        let m = AppModel(storeURL: u)
+        m.data.collection = Fixtures.shared.seedCollection
+        m.nav.anchors["library"] = "library-search"
+        m.nav.anchors["other"] = "keep"
+        m.saveNow()
+        let reopened = AppModel(storeURL: u)
+        #expect(reopened.nav.anchors["library"] == nil)
+        #expect(reopened.nav.anchors["other"] == "keep")
+        reopened.nav.anchors["library"] = "lib-kcd2"
+        reopened.saveNow()
+        #expect(AppModel(storeURL: u).nav.anchors["library"] == "lib-kcd2")
+    }
+
+    @Test("a fold or unfold keeps the typed text: the model is not rebuilt, so the search is untouched")
+    func foldKeepsTypedText() {
+        let m = AppModel(storeURL: url())
+        m.data.collection = Fixtures.shared.seedCollection
+        m.nav.query = "dawn"
+        m.saveNow()
+        m.tick()          // what a pose change drives
+        #expect(m.nav.query == "dawn")
     }
 }

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf, studioKindOf } from '../src/ingest/classify.ts'
 import type { NoteSection } from '../src/types.ts'
-import { extractNotes, platformsFor, ps5PageOf, tagNotes } from '../src/ingest/notes.ts'
+import { extractNotes, isPromoLine, isPromoTitle, platformsFor, ps5PageOf, tagNotes } from '../src/ingest/notes.ts'
 
 test('only a post that says the update is out on PS5 counts as official PS5 evidence', () => {
   assert.ok(ps5LiveStated('Patch 1.04 is now live on PC, PS5 and Xbox Series X|S.'))
@@ -137,4 +137,98 @@ test('pcOnly: PC-specific headings and graphics-driver lines are PC; console-neu
   assert.ok(wilds[0]!.items.every((i) => i.pcOnly))
   const mixed = extractNotes('[list][*]Improved performance on PC and PS5[*]Fixed a crash on PS5[/list]')
   assert.ok(mixed[0]!.items.every((i) => !i.pcOnly))
+})
+
+test('promo and social lines are not patch notes, real changes that mention them are (r052-promo-filter)', () => {
+  const dropped = [
+    'Time to continue your adventure? The saga is on sale now',
+    'Follow Kingdom Come: Deliverance II on social media',
+    'Join our Discord community!',
+    'Wishlist the next game today',
+    '50% off until Monday',
+    'Check out our other game',
+    'Thank you for your patience and support!',
+    'Merry Christmas from the team',
+    'https://example.com/report-a-bug',
+  ]
+  for (const line of dropped) assert.equal(isPromoLine(line), true, line)
+  const kept = [
+    'Thanks for reporting, the stuck door is now fixed',
+    'We are aware of a crash in the lower mine and are working on a fix',
+    'Fixed a crash when opening the Discord overlay',
+    'Fixed the wishlist button not responding',
+    'Removed the discount banner from the main menu',
+    'Improved horse pathing',
+  ]
+  for (const line of kept) assert.equal(isPromoLine(line), false, line)
+  const notes = extractNotes('[h2]Other changes[/h2][list][*]Time to continue your adventure? The saga is on sale now[*]Follow Kingdom Come: Deliverance II on social media[*]Fixed a crash on load[/list][h2]Thanks[/h2][list][*]Thank you for playing![/list]')
+  assert.deepEqual(notes.map((n) => [n.title, n.items.map((i) => i.text)]), [['Other changes', ['Fixed a crash on load']]])
+  assert.deepEqual(tagNotes([{ title: 'Other changes', items: [{ text: 'The saga is on sale now', ps5ProOnly: false, pcOnly: false, category: 'other' }, { text: 'Fixed a door', ps5ProOnly: false, pcOnly: false, category: 'fixed' }] }]).map((n) => n.items.length), [1])
+})
+
+test('in-game store and economy lines are kept even when they say sale or discount (Quinn, #332)', () => {
+  for (const line of ['Merchants now have items on sale', 'Shop discounts now stack', 'Prices are 50% off in the arena', 'Items on sale in the Store display the correct discounted Iridescent Shard price.']) assert.equal(isPromoLine(line), false, line)
+  for (const line of ['The Monster Hunter series is now on sale!', 'Games from the Monster Hunter series now on sale!', 'On Sale Now!']) assert.equal(isPromoLine(line), true, line)
+})
+
+// r052-steam-playstation-tag (Quinn): on a Steam-only release a line that says only "PlayStation" or "PSN" is PC content.
+test('a bare PlayStation or PSN line on a Steam-only release tags pc, not ps5', () => {
+  const psn = 'Fixed an issue where in particular Steam Deck players who performed the initial boot while offline encountered a persistent PSN account link error message, preventing them from starting the game.'
+  assert.deepEqual(platformsFor(psn, undefined, true), ['pc'])
+  assert.deepEqual(platformsFor('Added support for displaying PlayStation friends and PlayStation user avatars.', undefined, true), ['pc'])
+  // Named PS5 still tags ps5 on Steam, and other sources keep the old rule.
+  assert.deepEqual(platformsFor('Fixed a crash on PS5 and PSN login', undefined, true), ['ps5'])
+  assert.deepEqual(platformsFor(psn), ['ps5', 'pc'])
+  assert.deepEqual(platformsFor('Fixed PlayStation trophies not unlocking'), ['ps5'])
+  // PS5 fixes written in Steam posts keep ps5: "PC and PlayStation" pairs and other consoles named on the line.
+  assert.deepEqual(platformsFor('Fixed a crash on PC and PlayStation', undefined, true), ['ps5', 'pc'])
+  assert.deepEqual(platformsFor('Xbox and PlayStation: fixed a stutter in the market', undefined, true), ['ps5', 'xboxSeries'])
+  assert.deepEqual(platformsFor('Fixed a crash on consoles and PlayStation', undefined, true), ['ps5'])
+})
+
+test('on read, a Steam-only release keeps ps5 tags once it has a PS5 row, and weakens them while it has none', async () => {
+  const { openDb } = await import('../src/db.ts')
+  const store = await import('../src/store.ts')
+  const db = openDb(':memory:')
+  store.upsertGame(db, { id: 'g', name: 'G' })
+  const note = (text: string) => [{ title: 'Changes', items: [{ text, ps5ProOnly: false, pcOnly: false, category: 'fixed' as const }] }]
+  const add = (key: string, text: string) =>
+    store.upsertRelease(db, { gameId: 'g', versionKey: key, displayName: key, kind: 'patch', kindBasis: 'inferred', announcedAt: '2026-01-01T00:00:00Z', notes: note(text), sourceId: 'g-steam' }).id
+  const psn = add('1', 'Fixed a persistent PSN account link error message.')
+  const both = add('2', 'Fixed a crash on PC and PlayStation')
+  const tags = (id: string) => store.getRelease(db, id)!.notes[0]!.items[0]!.platforms
+  assert.deepEqual(tags(psn), ['pc'])
+  assert.deepEqual(tags(both), ['ps5', 'pc'])
+  store.upsertPlatform(db, psn, 'ps5', { status: 'live', verification: 'official', liveAt: store.field('2026-01-01T00:00:00Z', 'official', 'g-steam') })
+  assert.deepEqual(tags(psn), ['ps5'])
+})
+
+test('stored notes with stray "[/*]" items (older parser) are cleaned when read', () => {
+  const item = (text: string) => ({ text, ps5ProOnly: false, pcOnly: false, category: 'other' as const })
+  const out = tagNotes([{ title: 'Changes', items: [item('Fixed a crash.'), item('[/*]'), item('Improved stability.[/*]'), item('')] }])
+  assert.deepEqual(out[0]!.items.map((i) => i.text), ['Fixed a crash.', 'Improved stability.'])
+  assert.deepEqual(tagNotes([{ title: 'Changes', items: [item('[/*]')] }]), [])
+})
+
+// r054-news-promo-merch-filter: headline judgement, titles only.
+test('isPromoTitle hides sale and merch headlines and keeps announcements and change headlines', () => {
+  for (const t of ['Get 20% Off CONTROL Resonant', 'Merch you might have Missed', 'Alexander, Warrior Jar Artisan Keycap has arrived!',
+                   'STARSCOURGE RADAHN JOINS THE ELDEN RING FIGUARTS MINI SERIES', '30% Off Coming Soon', 'Black Friday deals are live',
+                   'Pre-order a Lamb Plushie and Soundtrack Vinyl', 'Soundtrack Now on Sale', 'Steam Autumn Sale is Live!',
+                   // Nadia (11 Nov): nothing to know or do about the game. Milestone thank-yous and every sale are hidden.
+                   'THANK YOU FOR 4M UNITS SOLD!', 'Thank You for 6 Years of Love!', 'Franchise Sale', 'Assassin\u2019s Creed Anniversary Sale',
+                   // Quinn's leftovers (01359d7): a thank-you anywhere; a soundtrack even with a keep word.
+                   '2 Million Wishlists \u2013 Thank You!', 'Soundtrack - Out Now!', 'Soundtrack Release', 'ELDEN RING: SHADOW OF THE ERDTREE \u2013 Official Vinyl Soundtrack'])
+    assert.equal(isPromoTitle(t), true, t)
+  // Kept: announcements, change words, and the keep-list (update, patch, hotfix, out now, launch, release, servers, roadmap,
+  // free weekend). A free weekend shows even beside a sale (Nadia, Quinn).
+  for (const t of ['One Million Copies Sold!', 'CONTROL Resonant Receives Two Golden Joystick Award Nominations! Vote Now!', 'Developer roadmap for 2027',
+                   'Photo mode arrives next week', 'Update 1.2 fixes the 30% off store price bug', 'ELDEN RING - Community Quests',
+                   "New update for Dragon's Dogma 2 and on sale now!", "'They Came From Salem' DLC - Out Now!", 'Hunt Gets SA Servers, Starts Free Weekend',
+                   'Launching on Feb 27, 2026! Pre-order now!', 'Dead by Daylight hits a record peak player count; free weekend',
+                   'Titanfall 2 Free Weekend', 'Free weekend + sales up to 60% off!', 'Anniversary update brings free content',
+                   // A bare "sales" is business news, not a sale (Quinn); play-for-free weeks are free weekends.
+                   'Final Fantasy 7 Rebirth and other JRPGs help Square Enix to sales boost amid multi-platform pivot',
+                   'Borderlands 4 Free Play Weekend and anniversary sales happening now!', 'This week Play for free & Sales'])
+    assert.equal(isPromoTitle(t), false, t)
 })

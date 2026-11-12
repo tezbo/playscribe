@@ -1,3 +1,4 @@
+import os
 import SwiftUI
 
 /// Add a game (A-1 to A-9). Manual add only: PlayStation account import is a later milestone and
@@ -52,7 +53,18 @@ struct AddGameSheet: View {
             }
             .onAppear {
                 if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
-                if model.addSearchFocus { model.addSearchFocus = false; Task { try? await Task.sleep(for: .milliseconds(600)); searchFocused = true } }
+                if model.addSearchFocus {
+                    model.addSearchFocus = false
+                    // The field appears only after the method switch above, and in Open portrait the sheet is still settling at 600 ms
+                    // (7161347 gate: the one request was lost, the field never took focus). Ask again until it holds, up to 5 s.
+                    Task {
+                        for _ in 0..<10 {
+                            try? await Task.sleep(for: .milliseconds(500))
+                            if searchFocused { break }
+                            searchFocused = true
+                        }
+                    }
+                }
             }
             .navigationTitle(titleHidden || duo.pose == .tabletop ? "" : sheetTitle)
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillChangeFrameNotification)) { note in
@@ -214,6 +226,9 @@ struct AddGameSheet: View {
                         .submitLabel(.search)
                         .focused($searchFocused)
                         .frame(minHeight: 44)
+                        // The whole 44 pt row asks for focus, not only the glyphs: a tap in the row's padding did nothing.
+                        .contentShape(Rectangle())
+                        .onTapGesture { searchFocused = true }
                 }
                 // Offline state 7: rows keep their placeholder covers; say why.
                 if case .failed(offline: true) = model.checkState {
@@ -306,7 +321,7 @@ struct AddRow: View {
                 // One mark per row: the circle on the right becomes a tick (no badge on the cover).
                 CoverView(game: game, cornerRadius: 4).frame(width: 40)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
+                    Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).fixedSize(horizontal: false, vertical: true)
                     Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                 }
                 Spacer(minLength: 8)
@@ -341,13 +356,33 @@ struct AddRow: View {
 /// one ember button and six popular PS5 games to tap. Tabletop: art and headline on the standing
 /// half (display only), the button and covers on the flat half.
 struct OnboardingView: View {
+    @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.railWidth) private var railWidth
 
     /// Content width of the left page in Book (clear of the fold), nil in other poses.
     private var pageWidth: CGFloat? {
         guard duo.pose == .book, let fold = duo.division else { return nil }
         return max(0, fold.minX - 24 - 32)
+    }
+
+    /// The page scrolls to its foot when a toast shows: the inset alone only shrinks the viewport, so a page that fits would leave the
+    /// caption where the toast lands (d8dbafa, Closed).
+    @State private var scroll = ScrollPosition()
+    private func toastShown(_ now: Bool) {
+        guard now else { return }
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(80))   // after the inset has laid out
+            withAnimation(.snappy) { scroll.scrollTo(edge: .bottom) }
+        }
+    }
+
+    /// Room for the toast at the foot of the page while one shows, so the footer caption scrolls clear of it (Iris, #431: the
+    /// Added toast sat over "PlayStation account import is planned..."). Not tappable, and zero when no toast shows.
+    private var toastRoom: some View {
+        Color.clear.frame(height: model.toast == nil ? 0 : model.messageInset).allowsHitTesting(false)
+            .animation(.snappy, value: model.toast == nil)
     }
 
     var body: some View {
@@ -357,18 +392,27 @@ struct OnboardingView: View {
             } secondary: {
                 // The trailing rail sits over the lower half: keep the actions clear of it (0.2.0 gate).
                 ScrollView { OnboardingActions().padding(16) }
+                    .scrollPosition($scroll)
                     .contentMargins(.trailing, railWidth, for: .scrollContent)
+                    .safeAreaInset(edge: .bottom, spacing: 0) { toastRoom }
+                    .onChange(of: model.toast != nil) { _, now in toastShown(now) }
             }
             .arrangementViewStyle(.split)
         } else {
             HStack(alignment: .top, spacing: 0) {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {
-                        OnboardingStage().frame(height: duo.pose == .closed ? 220 : 280)
+                        OnboardingStage().frame(height: (duo.pose == .closed ? 220 : 280) + (typeSize.isAccessibilitySize ? 120 : 0))   // four AX headline lines fit
                         OnboardingActions(pageWidth: pageWidth, bookLeft: pageWidth != nil).padding(.horizontal, 16)
                     }
                     .padding(.bottom, 24)
                 }
+                .scrollPosition($scroll)
+                // Book: the left page is its own scroll view, so its top edge effect is a lighter slab with a hard right edge over the
+                // hero (Iris, 6a31718). No effect there: nothing tinted can have an edge (the seam would also show on a hand scroll).
+                .scrollEdgeEffectHidden(duo.pose == .book, for: .top)
+                .safeAreaInset(edge: .bottom, spacing: 0) { toastRoom }
+                .onChange(of: model.toast != nil) { _, now in toastShown(now) }
                 // Book: one page wide, so nothing crosses the fold (0.2.0 gate, first-run Library).
                 .frame(width: pageWidth.map { $0 + 32 })
                 if let fold = duo.division, duo.pose == .book {
@@ -400,6 +444,7 @@ struct OnboardingStage: View {
     @Environment(AppModel.self) private var model
     private var welcomeDone: Bool { model.data.welcomeDone ?? false }
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     /// The stage's bottom edge in screen space, before any clearance is applied.
     @State private var bottom: CGFloat = 0
 
@@ -413,12 +458,24 @@ struct OnboardingStage: View {
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            ArtView(asset: nil, game: nil)
+            if typeSize.isAccessibilitySize {
+                // The default header's sparkle is part of the art and lands on a headline line at AX (Iris, 517d94f), so accessibility
+                // sizes get the art's own colours without it.
+                LinearGradient(colors: [Color(hex: "#1b1d24"), Color(hex: "#0b0d12")], startPoint: .top, endPoint: .bottom)
+            } else {
+                ArtView(asset: nil, game: nil)
+            }
             LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .center, endPoint: .bottom)
-            Text(welcomeDone ? "Follow a game to get its PS5 patch notes in one place." : "Add your games to see every update")
-                .font(PlayscribeFont.title)
-                .foregroundStyle(PlayscribeColor.textPrimary)
-                .padding(20)
+            let headline = welcomeDone ? "Follow a game to get its PS5 patch notes in one place." : "Add your games to see every update"
+            Group {
+                // AX: at most four lines, and any ellipsis lands at a word boundary, never mid-word ("Follow a game to g...", Quinn, 6a31718).
+                if typeSize.isAccessibilitySize {
+                    WholeWordText(text: headline, font: PlayscribeFont.title, lines: 4, color: PlayscribeColor.textPrimary)
+                } else {
+                    Text(headline).font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
+                }
+            }
+            .padding(20)
         }
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
         .accessibilityElement(children: .combine)
@@ -500,12 +557,7 @@ struct OnboardingActions: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(PS5Index.shared.popular(limit: fit)) { g in
-                        Button { model.addGame(g, status: .owned) } label: {
-                            TileCover(game: g).frame(width: size, height: (size * 4 / 3).rounded())
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel("Add \(g.name)")
-                        .tappableFrame()
+                        PopularCover(game: g, width: size, height: (size * 4 / 3).rounded())
                     }
                 }
             }
@@ -518,7 +570,7 @@ struct OnboardingActions: View {
 }
 
 /// Book first-run, right page: Popular on PS5 as a 3-column grid of 3:4 tiles (10 pt gap), scrolling,
-/// with the account-import line at the foot. Tapping a cover adds it, as the strip does elsewhere.
+/// with the account-import line at the foot. Tapping a cover opens the game; the tick at its top right adds it (r053-tap-opens-tick-adds).
 struct OnboardingRightPage: View {
     @Environment(AppModel.self) private var model
     var width: CGFloat
@@ -530,12 +582,7 @@ struct OnboardingRightPage: View {
                 Text("Popular on PS5").font(PlayscribeFont.title3)
                 LazyVGrid(columns: Array(repeating: GridItem(.fixed(tile), spacing: 10, alignment: .top), count: 3), alignment: .leading, spacing: 10) {
                     ForEach(PS5Index.shared.popular(limit: 18)) { g in
-                        Button { model.addGame(g, status: .owned) } label: {
-                            TileCover(game: g).frame(width: tile, height: (tile * 4 / 3).rounded())
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel("Add \(g.name)")
-                        .tappableFrame()
+                        PopularCover(game: g, width: tile, height: (tile * 4 / 3).rounded())
                     }
                 }
                 Text("PlayStation account import is planned for a later version.")
@@ -544,5 +591,138 @@ struct OnboardingRightPage: View {
             .padding(.top, 16).padding(.bottom, 24)
         }
         .scrollIndicators(.hidden)
+    }
+}
+
+
+/// A cover in the first-run "Popular on PS5" strip and the Book right-page grid (r053-tap-opens-tick-adds, Iris): a tap on the cover
+/// opens the game and never adds it; adding is the deliberate tick at the bottom right (44 pt hit target, on the cover's outer corner, so
+/// it is never near the hinge). An upcoming game ticked in goes in as Wishlist (addGames). Opening is silent; the pop plays on the add.
+struct PopularCover: View {
+    @Environment(AppModel.self) private var model
+    var game: CatalogGame
+    var width: CGFloat
+    var height: CGFloat
+
+    /// Optimistic state (Iris, #431): the tick answers on the press, before the add runs.
+    private enum Phase { case idle, adding }
+    @State private var phase: Phase = .idle
+    /// True while a finger is down on the tick (a button's action only fires on release; Iris wants the check on the press).
+    @State private var pressing = false
+
+    var body: some View {
+        let inLibrary = model.entry(game.id) != nil
+        let marked = inLibrary || phase == .adding || pressing   // the check and the quiet word show on the press itself
+        let word = game.isUpcoming ? "Wishlist" : "Added"
+        // The word shares the bottom edge with the disc: on a narrow cover (the ~95 pt strip, AX5) the check alone says it, and
+        // VoiceOver still reads the label (Quinn, #431).
+        let showsWord = width >= 125
+        ZStack(alignment: .bottomTrailing) {
+            // While an add is in flight (and once added) the cover cannot open the game: a second tap must not fall through.
+            Button { coverTapped(inLibrary: inLibrary) } label: {
+                TileCover(game: game).frame(width: width, height: height)
+                    .overlay(alignment: .bottomLeading) {
+                        if marked && showsWord {
+                            Text(word)
+                                .font(PlayscribeFont.caption.weight(.semibold))
+                                .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+                                .lineLimit(1).minimumScaleFactor(0.7)
+                                .foregroundStyle(PlayscribeColor.onAccent)
+                                .padding(.horizontal, 8).padding(.vertical, 3)
+                                .background(PlayscribeColor.accent, in: Capsule())
+                                .padding(.leading, 6).padding(.bottom, 6)
+                                .accessibilityHidden(true)
+                        }
+                    }
+            }
+            .buttonStyle(.plain)
+            // Not `.disabled`: a disabled plain button dims to about 35 percent (Quinn's brightness check, 1ea80f2). A tap on a marked
+            // cover simply does nothing.
+            // The cover keeps one label and hint before and after the tick (it opens the game either way); the tick says "in your
+            // library" (Iris).
+            .accessibilityLabel(game.name)
+            .accessibilityHint("Opens the game")
+            .tappableFrame()
+
+            Button(action: tick) {
+                Image(systemName: marked ? "checkmark.circle.fill" : "plus.circle.fill")
+                    // A fixed-size glyph in a fixed 44 pt plate: Dynamic Type must not grow it past the plate (Quinn, #431).
+                    .font(.system(size: 22, weight: .semibold))
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(PlayscribeColor.onAccent, PlayscribeColor.accent)
+                    // Iris: a 1.5 pt dark ring keeps the disc legible over any cover art.
+                    .background(Circle().fill(Color.black.opacity(0.8)).frame(width: 25, height: 25))
+                    // The disc sits 8 pt from the corner; only the glyph moves, so the 44 pt hit frame stays inside the cover.
+                    .offset(x: width >= 44 ? 3 : 0, y: height >= 44 ? 3 : 0)
+                    .frame(width: min(44, width), height: min(44, height))
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(TickPressStyle(pressing: $pressing))
+            // Not `.disabled` either (it dims the plate); the action ignores a tap once the game is in or being added.
+            .accessibilityLabel(marked ? "\(game.name), in your library" : "Add \(game.name)")
+            // Inert once added: spoken as text, not as a button.
+            .accessibilityRemoveTraits(marked ? .isButton : [])
+            .accessibilityAddTraits(marked ? .isStaticText : [])
+            .accessibilityIdentifier("popularAdd")
+            .tappableFrame()
+        }
+        .frame(width: width, height: height)
+        .onChange(of: marked) { _, now in if now { logPressToCheck() } }
+        #if INTERNAL
+        .onChange(of: pressing) { _, now in if now { pressStamp = CACurrentMediaTime() } }
+        #endif
+    }
+
+    #if INTERNAL
+    @State private var pressStamp: CFTimeInterval = 0
+    #endif
+    /// INTERNAL: the Mac cannot shoot a held press inside 100 ms (Quinn's check), so the app timestamps the press and the frame the
+    /// "Added" word is built, and logs the gap (state to view; not the display's own latency).
+    private func logPressToCheck() {
+        #if INTERNAL
+        guard pressStamp > 0 else { return }
+        let ms = Int((CACurrentMediaTime() - pressStamp) * 1000)
+        pressStamp = 0
+        Logger(subsystem: "co.codeconnectors.playscribe", category: "add").info("press to check: \(ms) ms (\(game.name, privacy: .public))")
+        #endif
+    }
+
+    private func coverTapped(inLibrary: Bool) {
+        #if INTERNAL
+        Logger(subsystem: "co.codeconnectors.playscribe", category: "add")
+            .info("cover tap: \(game.name, privacy: .public) inLibrary=\(inLibrary) phase=\(phase == .adding ? "adding" : "idle") hold=\(model.firstRunHold) opens=\(inLibrary || phase == .idle)")
+        #endif
+        if inLibrary || phase == .idle { model.browseGame(game) }
+    }
+
+    private func tick() {
+        guard phase == .idle, model.entry(game.id) == nil else { return }
+        #if INTERNAL
+        Logger(subsystem: "co.codeconnectors.playscribe", category: "add").info("tick: \(game.name, privacy: .public) add begins")
+        #endif
+        phase = .adding                                    // renders before anything below runs
+        model.holdFirstRun()                               // the strip stays under the finger for a moment
+        Task { @MainActor in
+            // One run-loop turn so the pressed state, check and word are on screen before the add's synchronous work.
+            try? await Task.sleep(for: .milliseconds(30))
+            model.addGame(game, status: .owned)           // an upcoming game goes in as Wishlist; the pop plays here only
+            if model.entry(game.id) == nil {               // rolled back: say so, restore the tick
+                phase = .idle
+                model.show(Toast(text: "Couldn't add \(game.name)"))
+            }
+        }
+    }
+}
+
+/// The tick's pressed state: it dims and shrinks on the press, and reports the press so the cover shows the check and "Added" on the
+/// same frame (a cancelled press, the finger sliding off, clears it again).
+private struct TickPressStyle: ButtonStyle {
+    @Binding var pressing: Bool
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.86 : 1)
+            .opacity(configuration.isPressed ? 0.7 : 1)
+            .animation(.easeOut(duration: 0.08), value: configuration.isPressed)
+            .onChange(of: configuration.isPressed) { _, now in pressing = now }
     }
 }

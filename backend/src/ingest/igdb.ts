@@ -1,6 +1,10 @@
 import { USER_AGENT, type FetchFn } from '../http.ts'
 import { artworkFields, artworkOf, artworkTypes, squareCoverOf } from '../artwork.ts'
-import { PS5_LAUNCH, releaseDateOf, type Precision } from '../ps5-dates.ts'
+import overrides from '../../scripts/ps5-date-overrides.json' with { type: 'json' }
+import { PS5_LAUNCH, earlyAccessOf, releaseDateOf, type Precision } from '../ps5-dates.ts'
+
+/** Bump when the rules that turn IGDB rows into a game's dates change: the pipeline then asks IGDB again once for every game. */
+export const IGDB_REV = 2
 
 // IGDB, through a Twitch app token. Called only from the server: IGDB refuses browser calls and
 // the client secret must never reach the app. The limit is 4 requests a second.
@@ -14,6 +18,9 @@ export interface IgdbGame {
   squareCoverImageId: string | null
   ps5Release: string | null
   ps5ReleasePrecision: Precision | null
+  eaSince: string | null
+  fullRelease: string | null
+  fullReleasePrecision: Precision | null
   firstRelease: string | null
   steamAppId: number | null
   onPs5: boolean
@@ -95,6 +102,10 @@ export class Igdb {
     const { steam, ps5, status, format, artwork } = await this.lookups()
     // The same rules as the bundled index (src/ps5-dates.ts): no patch rows, nothing before launch.
     const ps5Date = releaseDateOf(g.release_dates, ps5, (i) => status.get(i!), PS5_LAUNCH, (i) => format.get(i!))
+    // Early Access before a later full release: ps5Release is the first playable day; while the 1.0 is ahead it is
+    // labelled. A hand-set date in the overrides wins, as in the index.
+    const access = (overrides as Record<string, { d?: string }>)[String(g.id)]?.d ? undefined : earlyAccessOf(g.release_dates, ps5, (i) => status.get(i!), PS5_LAUNCH, (i) => format.get(i!))
+    const ahead = access && access.full > new Date().toISOString().slice(0, 10)
     const steamUid = (g.external_games ?? []).find((e: any) => e.external_game_source === steam)?.uid
     return {
       igdbId: g.id,
@@ -103,8 +114,11 @@ export class Igdb {
       coverImageId: g.cover?.image_id ?? null,
       artworkImageId: artworkOf(g.artworks, (i) => artwork.get(i!)) ?? '',
       squareCoverImageId: squareCoverOf(g.artworks, (i) => artwork.get(i!)) ?? null,
-      ps5Release: ps5Date?.date ?? null,
-      ps5ReleasePrecision: ps5Date?.precision ?? null,
+      ps5Release: access?.since ?? ps5Date?.date ?? null,
+      ps5ReleasePrecision: access ? (access.precision ?? null) : (ps5Date?.precision ?? null),
+      eaSince: ahead ? access.since : null,
+      fullRelease: ahead ? access.full : null,
+      fullReleasePrecision: ahead ? (access.fullPrecision ?? null) : null,
       firstRelease: day(g.first_release_date),
       steamAppId: steamUid ? Number(steamUid) : null,
       onPs5: (g.platforms ?? []).includes(ps5),

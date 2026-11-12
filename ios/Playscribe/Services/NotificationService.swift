@@ -26,6 +26,12 @@ final class NotificationService: NSObject {
     @ObservationIgnored weak var model: AppModel?
     /// Set when the app is launched by tapping a notification, so the splash is skipped (L-3).
     var launchedFromNotification = false
+    /// QA (INTERNAL): what the last notification tap delivered ("game/release"), so a test can tell "the response never arrived"
+    /// from "it arrived and navigation did not follow" (96e0e39, eab123c: the tap brought the app up on the Library).
+    var qaLastResponse: String?
+    /// QA (INTERNAL): what schedule() decided for the last release and what the system reported ("added", "delivered=1"), so a
+    /// run that finds Notification Center empty can say whether the notification was never scheduled or vanished (2537997).
+    var qaScheduleLog = "none"
     /// The APNs device token, hex encoded, once registered. The backend thread owns delivery.
     private(set) var deviceToken: String?
 
@@ -52,6 +58,9 @@ final class NotificationService: NSObject {
         #endif
         if authorization == .authorized || authorization == .provisional {
             UIApplication.shared.registerForRemoteNotifications()
+        } else if authorization == .denied, PushRegistrar.appCallsEnabled {
+            // Alerts are off: the relay forgets this device (r052-device-delete). Retried here until it answers.
+            PushRegistrar.forgetDevice()
         }
     }
 
@@ -82,7 +91,8 @@ final class NotificationService: NSObject {
                 content.title = g.name
                 content.body = "Out today on PS5"
                 content.sound = .default
-                var parts = Calendar.current.dateComponents([.year, .month, .day], from: day)
+                // The UTC day number, at 09:00 on the device: "out today" never disagrees with the printed date.
+                var parts = Date.utcCalendar.dateComponents([.year, .month, .day], from: day)
                 parts.hour = 9
                 let trigger = UNCalendarNotificationTrigger(dateMatching: parts, repeats: false)
                 center.add(UNNotificationRequest(identifier: "release-day-\(g.id)", content: content, trigger: trigger))
@@ -155,10 +165,46 @@ final class NotificationService: NSObject {
         Task { try? await center.setBadgeCount(count) }
     }
 
+    #if INTERNAL
+    private var qaRequests: [String: UNNotificationRequest] = [:]
+    /// Adds, logs, and retries a refused add (the request is kept here because it is not Sendable and cannot ride the completion).
+    private func qaAdd(_ request: UNNotificationRequest, attempt: Int) {
+        qaRequests[request.identifier] = request
+        let id = request.identifier
+        center.add(request) { error in
+            let ns = error as NSError?
+            // Quinn's terms for #422: a refusal before this simulator ever accepted an add is "simulator refused"; one after a
+            // success is an app failure. The flag lives in the app's own defaults, so an erase or reinstall clears it.
+            let key = "qaNotifAddOK"
+            let hadSuccess = UserDefaults.standard.bool(forKey: key)
+            if ns == nil { UserDefaults.standard.set(true, forKey: key) }
+            let text = ns.map { ", error \($0.localizedDescription) [\($0.domain) \($0.code)] (earlier success on this sim: \(hadSuccess ? "yes" : "no"))" } ?? ""
+            Task { @MainActor in
+                self.qaScheduleLog += "; added" + text + " (try \(attempt))"
+                guard !text.isEmpty else { return }
+                // 0473bc2 (Mac, both sims): "Source is not authorized" at auth 2. Say what the system thinks the app may do right now.
+                self.center.getNotificationSettings { s in
+                    let line = "settings auth \(s.authorizationStatus.rawValue) alert \(s.alertSetting.rawValue) center \(s.notificationCenterSetting.rawValue) lock \(s.lockScreenSetting.rawValue) sound \(s.soundSetting.rawValue) badge \(s.badgeSetting.rawValue)"
+                    Task { @MainActor in self.qaScheduleLog += "; " + line }
+                }
+                if attempt < 5, let r = self.qaRequests[id] {
+                    try? await Task.sleep(for: .seconds(3))
+                    self.qaAdd(r, attempt: attempt + 1)
+                }
+            }
+        }
+    }
+    #endif
+
     /// Builds the notification for a release that reached On PS5 (N-4) and schedules it locally.
     /// Remote pushes from the backend carry the same fields.
     func schedule(release: Release, game: CatalogGame?, level: NotifyLevel, pauseAll: Bool, delay: TimeInterval, model: AppModel) {
-        guard let game, release.ps5State == .onPS5, !pauseAll else { return }
+        guard let game, release.ps5State == .onPS5, !pauseAll else {
+            #if INTERNAL
+            qaScheduleLog = "\(release.id): not scheduled (game \(game == nil ? "nil" : "ok"), state \(release.ps5State), pauseAll \(pauseAll))"
+            #endif
+            return
+        }
         guard level == .all || (level == .major && release.kind.countsAsMajor) else { return }
         if model.data.knownReported?.contains(release.id) == true, model.data.notified[release.id] != nil {
             // N-11: the quiet Reported alert was this release's one push. Replace it in place,
@@ -181,7 +227,29 @@ final class NotificationService: NSObject {
         }
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: max(1, delay), repeats: false)
         let request = UNNotificationRequest(identifier: release.id, content: content, trigger: trigger)
+        #if INTERNAL
+        qaScheduleLog = "\(release.id): adding, due in \(Int(max(1, delay))) s"
+        // "Source is not authorized" was seen at auth 2 right after a grant (5000f21): the daemon can lag the status. Retry the add
+        // up to 3 times, 2 s apart, and log every attempt, so the run shows whether a retry cures it.
+        qaAdd(request, attempt: 1)
+        // 0 not determined, 1 denied, 2 authorized, 3 provisional, 4 ephemeral. A denied or never-answered permission is why a fresh
+        // simulator can show no notification at all (r053-deflake-notification-tap), so the UI test reads it.
+        center.getNotificationSettings { s in
+            let status = s.authorizationStatus.rawValue   // the settings object is not Sendable; send only the Int
+            Task { @MainActor in self.qaScheduleLog += "; auth \(status)" }
+        }
+        let releaseID = release.id
+        DispatchQueue.main.asyncAfter(deadline: .now() + max(1, delay) + 2) { [center] in
+            center.getDeliveredNotifications { list in
+                let ids = list.map(\.request.identifier)
+                Task { @MainActor in
+                    self.qaScheduleLog += "; delivered after due: \(ids.contains(releaseID) ? "yes" : "no") (\(ids.count) in list)"
+                }
+            }
+        }
+        #else
         center.add(request)
+        #endif
 
         // Make the release visible once it is due, whether or not the notification is shown.
         Task { [weak model] in
@@ -255,23 +323,38 @@ final class NotificationService: NSObject {
 
 extension NotificationService: UNUserNotificationCenterDelegate {
     /// N-7: no banner in the foreground; the list and badge only, and the app shows its own pill.
-    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+    ///
+    /// The completion-handler form, with the handler called on the main actor. The `async` form let Swift's concurrency runtime call the
+    /// handler from a cooperative thread, and UIKit then aborted ("Call must be made on main thread", in
+    /// `_updateSnapshotAndStateRestorationWithAction`): tapping a release notification crashed the app (2e8f3d2 Mac crash report).
+    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification,
+                                            withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let info = notification.request.content.userInfo
         let gameID = info["gameId"] as? String
         let releaseID = info["releaseId"] as? String
-        await MainActor.run {
+        nonisolated(unsafe) let done = completionHandler
+        Task { @MainActor in
             if let gameID, let releaseID { self.model?.releaseArrivedInForeground(gameID: gameID, releaseID: releaseID) }
+            done([.badge, .list])
         }
-        return [.badge, .list]
     }
 
-    /// N-6: tapping opens that release in whatever pose the device is in.
-    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+    /// N-6: tapping opens that release in whatever pose the device is in. The handler is called on the main actor (see above).
+    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse,
+                                            withCompletionHandler completionHandler: @escaping () -> Void) {
         let info = response.notification.request.content.userInfo
-        guard let gameID = info["gameId"] as? String, let releaseID = info["releaseId"] as? String else { return }
-        await MainActor.run {
-            self.launchedFromNotification = true
-            self.model?.openRelease(gameID: gameID, releaseID: releaseID)
+        let gameID = info["gameId"] as? String
+        let releaseID = info["releaseId"] as? String
+        nonisolated(unsafe) let done = completionHandler
+        Task { @MainActor in
+            if let gameID, let releaseID {
+                self.launchedFromNotification = true
+                #if INTERNAL
+                self.qaLastResponse = "\(gameID)/\(releaseID); model \(self.model == nil ? "nil" : "set")"
+                #endif
+                self.model?.openRelease(gameID: gameID, releaseID: releaseID)
+            }
+            done()
         }
     }
 }
@@ -357,19 +440,44 @@ enum PushRegistrar {
     }
 
     /// Forgets what the client remembers between calls (tests start each case clean).
-    static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil }
+    static func resetForTests() { registration = nil; lastQuiet = nil; lastFollows = nil; lastTeam = nil
+        #if DEBUG
+        showsTeamForTests = nil
+        #endif
+    }
 
     /// What the last registration sent, so a 401 can register again without asking the app.
     private struct Registration { var token: String; var follows: [Follow] }
     nonisolated(unsafe) private static var registration: Registration?
     nonisolated(unsafe) private static var lastQuiet: QuietWindow?
+    /// Internal builds only: the "Team alerts" choice (UserDefaults `teamAlerts`), sent to the relay as `team`. Nil until the
+    /// tester has chosen, so a normal build never sends the field.
+    nonisolated(unsafe) private static var lastTeam: Bool?
+    static let teamKey = "teamAlerts"
+    #if DEBUG
+    /// Tests stand in for the receipt check (a test host is never an App Store build). Not compiled into a release build.
+    nonisolated(unsafe) static var showsTeamForTests: Bool?
+    private static var showsTeam: Bool { showsTeamForTests ?? BuildChannel.showsTeamAlerts }
+    #else
+    private static var showsTeam: Bool { BuildChannel.showsTeamAlerts }
+    #endif
 
     @discardableResult
     static func register(token: String, follows: [Follow], quietHours: QuietHours? = nil) -> Task<Void, Never>? {
         guard relayURL != nil else { return nil }
         lastQuiet = quietWindow(quietHours)
+        if showsTeam {
+            lastTeam = UserDefaults.standard.object(forKey: teamKey) as? Bool
+        } else {
+            // An App Store build installed over a TestFlight one: the tester's "on" is still in UserDefaults and the relay record
+            // still says team=true. Say team=false once; sendTeam clears the stored choice when the relay has it.
+            lastTeam = UserDefaults.standard.bool(forKey: teamKey) ? false : nil
+        }
         return Task {
-            if await registerNow(token: token, follows: follows) { await sendQuiet(lastQuiet, retry: true) }
+            if await registerNow(token: token, follows: follows) {
+                await sendQuiet(lastQuiet, retry: true)
+                if let team = lastTeam { await sendTeam(team, retry: true) }
+            }
         }
     }
 
@@ -403,9 +511,29 @@ enum PushRegistrar {
             keys.write(nil)
             guard await registerNow(token: r.token, follows: r.follows) else { return false }
             await sendQuiet(lastQuiet, retry: false)
+            if let team = lastTeam { await sendTeam(team, retry: false) }
             return await authed(retry: false, make)
         }
         return false
+    }
+
+    /// DELETE /v1/devices/me: asks the relay to forget this device (r052-device-delete), used when alerts go off. A 2xx means
+    /// done (the relay also answers 204 when the key is already gone) and a 401 means it no longer knows the key, so either
+    /// way the stored key and what the client remembers are dropped. Offline or any other answer keeps the key, so the next
+    /// time alerts are found off it tries again; it never blocks the toggle. Returns the task for tests.
+    @discardableResult
+    static func forgetDevice() -> Task<Void, Never>? {
+        guard let url = relayURL?.appending(path: "v1/devices/me"), let key = keys.read() else { return nil }
+        return Task {
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+            guard let (_, response) = try? await session.data(for: request), let http = response as? HTTPURLResponse else { return }
+            if (200..<300).contains(http.statusCode) || http.statusCode == 401 {
+                // Only if the key is still the one just deleted (a new registration may have stored another meanwhile).
+                if keys.read() == key { keys.write(nil); registration = nil; lastFollows = nil; lastQuiet = nil }
+            }
+        }
     }
 
     /// The last follows list sent, so an unchanged list costs no request (the relay's free plan allows 1,000 writes a day).
@@ -471,6 +599,34 @@ enum PushRegistrar {
             request.httpBody = try? JSONEncoder().encode(QuietBody(quietHours: window))
             return request
         }
+    }
+
+    private struct TeamBody: Encodable { var team: Bool }
+
+    @discardableResult
+    private static func sendTeam(_ on: Bool, retry: Bool) async -> Bool {
+        guard let url = relayURL?.appending(path: "v1/devices/me") else { return false }
+        let sent = await authed(retry: retry) { key in
+            var request = URLRequest(url: url)
+            request.httpMethod = "PATCH"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+            request.httpBody = try? JSONEncoder().encode(TeamBody(team: on))
+            return request
+        }
+        // The relay now has team=false for an App Store build: forget the old "on" so this is never sent again.
+        if sent, !on, !showsTeam { UserDefaults.standard.removeObject(forKey: teamKey) }
+        return sent
+    }
+
+    /// PATCH /v1/devices/me { team }: development and TestFlight builds only (the Settings "Team alerts" toggle; the relay sends
+    /// team-only pushes to devices that opted in). Does nothing on an App Store build, before the device is registered, or while
+    /// PlayscribeRelayURL is unset.
+    @discardableResult
+    static func syncTeam(_ on: Bool) -> Task<Void, Never>? {
+        guard showsTeam, relayURL != nil, keys.read() != nil else { return nil }
+        lastTeam = on
+        return Task { await sendTeam(on, retry: true) }
     }
 
     /// PATCH /v1/devices/me { quietHours }. Does nothing before the device is registered (no push can

@@ -24,7 +24,7 @@ on the Mac. Hosted runners are headless, so they cannot press it either.
 | 3 | `xcodegen` installed only if missing, Homebrew auto-update and cleanup off; job timeouts so a hang costs 30 min, not 6 hours | ~1 min, hang cost | this PR |
 | 4 | Gate: `STILLS=0` by default (stills only on request or for release tags). Stills are re-presses of the pose, about 15 s each, plus 4 captures per pose | ~25 min of the 80 | next, on the 0.5.0 gate.sh |
 | 5 | Gate tiers: PR tier = Closed + Tabletop (the two layouts that differ most), full five poses nightly and on `v*` tags | PR gate ~80 to ~25 min | next |
-| 6 | Pose without Device Hub: an internal-build launch argument `-qaPose book/tabletop/open` that feeds `DuoReader` a synthetic division. Pose-sensitive suites then run headless, in parallel (one job per pose, 6 jobs), on hosted runners; the real-fold gate stays for release only | PR gate ~80 to ~15 min, no Mac | needs Terry's call: it adds a debug hook to the layout path |
+| 6 | Pose without Device Hub: an internal-build launch argument `-qaPose book/tabletop/open` that feeds `DuoReader` a synthetic division. Pose-sensitive suites then run headless, in parallel (one job per pose, 6 jobs), on hosted runners; the real-fold gate stays for release only | PR gate ~80 to ~15 min, no Mac | Terry said yes (7 Nov 2026). Built as `QAPose` in `Duo.swift`, `-qaPose book` or `tabletop`, internal builds only. Mac scripts opt in with `QA_HEADLESS_POSE=1`. Limits: the fold is synthetic (a few percent off the real one until calibrated), and a script that relaunches the app once and then changes pose (posepath.sh) does not carry `-qaPose` to later poses |
 | 7 | Build once, test in shards: `build-for-testing` uploaded as an artifact, shards `test-without-building` | scales with suite size | after 6 |
 | 8 | Test selection by changed paths (docs, backend: no iOS jobs; already true via path filters) | n/a | done |
 
@@ -33,6 +33,16 @@ on the Mac. Hosted runners are headless, so they cannot press it either.
   Swift modules anyway. Revisit if packages are added.
 - Parallel simulator clones on the Mac for poses: Terry's notes say the Duo sim already overloads the Mac (load 800+).
 
+## Runner queue (measured 7 Nov)
+
+Per PR run, the `unit` job time was a median 9.4 min before #355 and 8.7 min after (no change), but the wait for a runner before it started went from 1.6 min to 8.1 min (22 and 9 runs). Each push costs several macOS runners on one shared pool (Precheck compile, unit, and formerly ui-build), so the UI-test compile now runs as the last step of `unit` instead of as its own job. Check after about 10 runs: queue wait should drop and job time rise ~1.5 min. To revert, restore the `ui-build` job from the git history of `.github/workflows/ios.yml`.
+
 ## Precheck (quiet compile check before a PR)
 
 `precheck.yml` runs on pushes to `claude/**` that touch `ios/**`. It runs `build-for-testing` for the `Playscribe` and `PlayscribeUI` schemes on the Xcode 27.1 runner and always finishes green, so GitHub sends no failed-run email. The verdict is the name of the `verdict` job (`PRECHECK PASS` or `PRECHECK FAIL <file>:<line> <error>`) and the `precheck` commit status. Engineers read it, fix, push again, and open the PR only on PASS (AGENTS.md, "Precheck first"). Compile errors then never reach the PR runs in `ios.yml`; test failures still do.
+
+## Relay check (quiet test run for relay changes)
+
+`.github/workflows/relay-check.yml` runs `relay/test/worker.test.mjs` on `claude/*` pushes that touch `relay/**`, because the
+iOS checks and Precheck only watch `ios/**`. Like Precheck it always finishes green (no failure email): read RELAY PASS or
+RELAY FAIL in the `verdict` job name, or the `relay-tests` commit status. Open or merge a relay PR only on RELAY PASS.

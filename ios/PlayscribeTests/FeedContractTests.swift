@@ -45,6 +45,20 @@ struct FeedContractTests {
         #expect(undated.date == nil)
     }
 
+    @Test("News tab: newest first, no game takes the page, the same story once per game, Reported vs Official")
+    @MainActor func newsMerge() throws {
+        func item(_ title: String, _ day: Int, _ v: String? = nil) -> NewsItem {
+            NewsItem(title: title, date: Date(timeIntervalSince1970: Double(day) * 86400), url: URL(string: "https://example.com/\(title.hashValue)-\(day)")!, verification: v)
+        }
+        let ac = (1...8).map { item("Assassin's Creed story \($0)", 100 + $0) }
+        let other = [item("Control Resonant patch", 50, "reported"), item("Control  resonant PATCH!", 49, "reported")]
+        let merged = NewsView.merge([("ac", ac), ("control", other)])
+        #expect(merged.filter { $0.game == "ac" }.count == NewsView.perGameCap)
+        #expect(merged.filter { $0.game == "control" }.count == 1, "a repeated headline is listed once")
+        #expect(merged.first?.game == "ac" && merged.last?.game == "control")
+        #expect(merged.last?.item.tagText == "Reported" && merged.first?.item.tagText == "Official")
+    }
+
     @Test("Similar games decode with an optional cover id")
     func similar() throws {
         let json = #"[{ "igdbId": 1020, "name": "Grand Theft Auto V", "coverId": "co2lbd" }, { "igdbId": 7, "name": "No cover" }]"#
@@ -58,6 +72,50 @@ struct FeedContractTests {
         #expect(full.new == 3 && full.fixed == 5 && full.topNew == ["A", "B"])
         let partial = try decoder.decode(Release.Digest.self, from: Data(#"{ "new": 2 }"#.utf8))
         #expect(partial.new == 2 && partial.fixed == 0 && partial.topNew == nil)
+    }
+
+    @Test("An external link says where it goes, from its host")
+    func linkHost() {
+        let steam = URL(string: "https://store.steampowered.com/news/app/3751260/view/1")!
+        let community = URL(string: "https://steamcommunity.com/games/1/announcements/detail/2")!
+        let studio = URL(string: "https://www.ubisoft.com/en-us/game/assassins-creed/news")!
+        #expect(LinkHost.label("Read full notes", steam) == "Read full notes on Steam")
+        #expect(LinkHost.label("Read full notes", community) == "Read full notes on Steam")
+        #expect(LinkHost.label("All patch notes", studio) == "All patch notes on Ubisoft")
+        #expect(LinkHost.label("PS5 update page", URL(string: "https://www.playstation.com/en-gb/games/x")!) == "PS5 update page on PlayStation")
+        // Known studio hosts map to brands; an unknown host never shows as a raw domain word.
+        #expect(LinkHost.label("All patch notes", URL(string: "https://www.remedygames.com/news")!) == "All patch notes on Remedy")
+        #expect(LinkHost.label("All patch notes", URL(string: "https://deepsilver.com/x")!) == "All patch notes on Deep Silver")
+        #expect(LinkHost.label("All patch notes", URL(string: "https://www.gamesci.cn/x")!) == "All patch notes on Game Science")
+        #expect(LinkHost.label("All patch notes", URL(string: "https://www.example.co.uk/a")!) == "All patch notes on the developer's site")
+        #expect(LinkHost.label("Read", URL(string: "mailto:x")!) == "Read")
+    }
+
+    @Test("R-2: a PS4 patch decodes with ps4 and is labelled 'PS4 update', never with a version")
+    func ps4Release() throws {
+        func release(_ extra: String) -> String {
+            #"{ "id": "r1", "gameId": "g", "displayName": "Patch 1.2", "kind": "patch", "announcedAt": "2021-03-04T10:00:00.000Z" \#(extra) }"#
+        }
+        let ps4 = try decoder.decode(Release.self, from: Data(release(#", "ps4": true"#).utf8))
+        #expect(ps4.ps4 == true && ps4.ps4Label == "PS4 update" && ps4.ps5Version == nil)
+        let plain = try decoder.decode(Release.self, from: Data(release("").utf8))
+        #expect(plain.ps4 == nil && plain.ps4Label == nil)
+        let off = try decoder.decode(Release.self, from: Data(release(#", "ps4": false"#).utf8))
+        #expect(off.ps4Label == nil)
+    }
+
+    @Test("R-2: a press-reported PS4 patch shows (read, no alert); a press-only PS5 release still does not")
+    func ps4ReportedShows() throws {
+        func release(_ id: String, _ extra: String) throws -> Release {
+            let json = #"{ "id": "\#(id)", "gameId": "zz-ps4-test", "displayName": "Patch", "kind": "patch", "announcedAt": "2019-05-01T10:00:00.000Z", "platforms": [{ "platform": "ps5", "status": "live", "verification": "reported", "liveAt": { "value": "2019-05-01T10:00:00.000Z", "verification": "reported", "sourceId": "pushsquare", "checkedAt": "2026-11-06T00:00:00.000Z" } }] \#(extra) }"#
+            return try decoder.decode(Release.self, from: Data(json.utf8))
+        }
+        let ps4 = try release("a", #", "ps4": true"#), plain = try release("b", "")
+        #expect(ps4.ps5State == .reported && plain.ps5State == .reported)
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "ps4rep-\(UUID().uuidString).json"))
+        m.data.simulated = [ps4, plain]
+        #expect(m.releases("zz-ps4-test").map(\.id) == ["a"])
+        #expect(m.isUnread(ps4) == false)
     }
 
     @Test("Upcoming shards decode every precision, ignore richer fields, and keep tbd undated")
@@ -75,6 +133,38 @@ struct FeedContractTests {
         #expect(shard.games.count == 3)
         #expect(shard.games["2"]?.datePrecision == "year")
         #expect(shard.games["3"]?.date == nil)
+    }
+
+    /// UX share: a game the app does not know still shares under its name, taken from the feed index.
+    @Test("gameDisplayName: catalogue name, else the feed index name, else empty")
+    func gameDisplayName() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "share-name-\(UUID().uuidString).json"))
+        m.feedIndexGames = nil
+        #expect(m.gameDisplayName("witcher-3") == "")
+        let idx = try decoder.decode(FeedClient.Index.self, from: Data(#"{ "updatedAt": "2026-11-08T00:00:00.000Z", "games": [ { "id": "witcher-3", "igdbId": 1942, "name": "The Witcher 3: Wild Hunt" } ] }"#.utf8))
+        m.feedIndexGames = idx.games
+        #expect(m.gameDisplayName("witcher-3") == "The Witcher 3: Wild Hunt")
+        #expect(m.gameDisplayName("not-in-the-feed") == "")
+    }
+
+    /// GR-1: a game the feed does not follow never says "No updates yet"; with no index seen yet it is treated as followed.
+    @Test("feedTracksGame: unknown until an index is seen, then by feed id or IGDB id")
+    func feedTracksGame() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "tracked-\(UUID().uuidString).json"))
+        m.feedIndexGames = nil
+        #expect(m.feedTracksGame("anything"))
+        let idx = try decoder.decode(FeedClient.Index.self, from: Data(#"{ "updatedAt": "2026-11-08T00:00:00.000Z", "games": [ { "id": "ninja-gaiden-4", "igdbId": 329130 } ] }"#.utf8))
+        m.feedIndexGames = idx.games
+        #expect(m.feedTracksGame("ninja-gaiden-4"))
+        #expect(!m.feedTracksGame("not-in-the-feed"))
+        // The IGDB branch: a catalogue game with a different local id, matched through its IGDB id.
+        m.data.customGames.append(CatalogGame(id: "local-ng4", name: "Ninja Gaiden 4", platforms: [.ps5], igdbID: 329130, coverage: .none))
+        #expect(m.feedTracksGame("local-ng4"))
+        m.data.customGames.append(CatalogGame(id: "local-other", name: "Other", platforms: [.ps5], igdbID: 1, coverage: .none))
+        #expect(!m.feedTracksGame("local-other"))
+        // A history the feed has served wins over a stale index that does not list the game yet.
+        m.gameReleases["local-other"] = []
+        #expect(m.feedTracksGame("local-other"))
     }
 }
 

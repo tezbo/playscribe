@@ -24,7 +24,7 @@ struct LibraryView: View {
 
     var body: some View {
         Group {
-            if model.data.collection.isEmpty {
+            if model.data.collection.isEmpty || model.firstRunHold {
                 OnboardingView()
             } else if duo.pose == .tabletop {
                 // D-5: the standing half shows the Continue art, display only; the grid is below.
@@ -78,7 +78,11 @@ struct LibraryStage: View {
 
     var body: some View {
         let deck = model.latestDeck
-        if let card = deck.first(where: { $0.id == model.deckSelection }) ?? deck.first {
+        // Upcoming tab: the stage fronts the soonest unreleased game, never an update of a game you already play.
+        if model.libraryTab == .upcoming, let g = model.upcomingWatched.first ?? model.upcomingMore.first {
+            DeckStage(card: DeckCard(game: g, release: nil, unread: false, date: g.releaseDate?.isoDay),
+                      upcomingLine: g.ps5DateLine ?? "Date to be announced")
+        } else if let card = deck.first(where: { $0.id == model.deckSelection }) ?? deck.first {
             DeckStage(card: card)
         } else {
             legacyStage
@@ -143,14 +147,11 @@ struct LibraryShelf: View {
         }
     }
 
-    /// Open (flat), 0.2.0 gate: the column count comes from the container width (tiles at least 124 pt,
-    /// 10 pt gaps) and the leftover is spread equally, so the grid fills the width between the 16 pt
+    /// Open (flat), 0.2.0 gate: the column count comes from the container width (tiles 120 to 168 pt,
+    /// 16 pt gaps) and the leftover is spread equally, so the grid fills the width between the 16 pt
     /// margins with no dead space on the trailing side.
     private var flatFit: (count: Int, size: CGFloat) {
-        let width = max(0, duo.size.width - railWidth - 32)
-        let n = max(2, Int((width + 10) / (124 + 10)))
-        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
-        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
+        Self.pageFit(width: max(0, duo.size.width - railWidth - 32))
     }
 
     /// Book: an even column count across both pages (Apple: prefer an even number of columns).
@@ -165,20 +166,24 @@ struct LibraryShelf: View {
             return [GridItem(.fixed(book.lead), spacing: 0)] + tiles(book.perPage) + [GridItem(.fixed(book.gap), spacing: 0)] + tiles(book.perPage)
         }
         if duo.pose == .flat {
-            return Array(repeating: GridItem(.fixed(flatFit.size), spacing: 10, alignment: .top), count: flatFit.count)
+            return Array(repeating: GridItem(.fixed(flatFit.size), spacing: Self.tileGap, alignment: .top), count: flatFit.count)
         }
         return [GridItem(.adaptive(minimum: tileSize, maximum: tileSize + 24), spacing: 10, alignment: .top)]
     }
 
-    /// Columns that fill a Book page: at least 124 pt tiles, 10 pt gaps, the leftover shared equally.
+    /// The one tile metric for Library and Upcoming (Iris, #287): tiles 120 to 168 pt, 16 pt gaps, at least
+    /// 3 columns (about 6 in Open landscape), the leftover shared equally, never stretched past 168.
+    static let tileGap: CGFloat = 16
     static func pageFit(width: CGFloat) -> (count: Int, size: CGFloat) {
-        let n = max(2, Int((width + 10) / 134))
-        return (n, (((width - CGFloat(n - 1) * 10) / CGFloat(n)) * 100).rounded(.down) / 100)
+        let n = max(3, Int((width + tileGap) / (120 + tileGap)))
+        // Rounded down to the hundredth so n tiles and n - 1 gaps never exceed the width.
+        let size = (((width - CGFloat(n - 1) * tileGap) / CGFloat(n)) * 100).rounded(.down) / 100
+        return (n, min(168, size))
     }
 
     /// One Book page's tiles, top to bottom, on that page's own columns.
     private func pageGrid(_ rows: [AppModel.LibraryRow], fit: (count: Int, size: CGFloat)) -> some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: 10, alignment: .top), count: fit.count),
+        LazyVGrid(columns: Array(repeating: GridItem(.fixed(fit.size), spacing: Self.tileGap, alignment: .top), count: fit.count),
                   alignment: .leading, spacing: 10) {
             ForEach(rows) { row in GameTile(row: row, size: fit.size).id("lib-\(row.id)") }
         }
@@ -237,6 +242,12 @@ struct LibraryShelf: View {
             && (!model.latestDeck.isEmpty || !model.data.collection.isEmpty)
     }
 
+    /// Open portrait and Closed (either orientation; Closed landscape keeps search in its header row): the deck and its dots head the page, then the filter chips and the tiles; the PS Plus
+    /// cards and search follow the tiles, so a first screen with 8 games shows games (Iris, v0.5.3).
+    private var portraitTilesFirst: Bool {
+        ((duo.pose == .flat && !duo.isLandscape) || duo.pose == .closed) && model.libraryTab != .upcoming
+    }
+
     /// Catch-up, PS Plus and notification cards. In Book they are one page wide and never cross the fold (G-4).
     @ViewBuilder
     private func topCards(_ all: [AppModel.LibraryRow]) -> some View {
@@ -273,20 +284,6 @@ struct LibraryShelf: View {
                     .padding(.top, 4)
     }
 
-    @State private var messagePad: CGFloat = 0
-    /// This view's frame in global coordinates. The pad sits inside it, so its bottom edge does not move with the pad.
-    @State private var libraryFrame: CGRect = .zero
-
-    /// One reserve: this page's scroll view ends 12 pt above the pill (or toast), and only where the pill overlaps the page
-    /// sideways (Book's right page gets none while the pill is on the left).
-    private func updateMessagePad() {
-        var pad: CGFloat = 0
-        if let m = model.messageFrame, libraryFrame.minX < m.maxX, libraryFrame.maxX > m.minX {
-            pad = max(0, libraryFrame.maxY - (m.minY - 12))
-        }
-        if abs(pad - messagePad) > 0.5 { messagePad = pad }
-    }
-
     var body: some View {
         @Bindable var model = model
         let rows = duo.pose == .tabletop && letter != nil
@@ -318,11 +315,9 @@ struct LibraryShelf: View {
                     }
                 }
                 // Book: these cards stay on the left page; with a hero they sit in the left column below.
-                if !heroOnRightPage && duo.pose != .book { topCards(all) }
-                if !all.isEmpty && duo.pose == .tabletop {
-                    // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
-                    TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4)
-                } else if !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                if !heroOnRightPage && duo.pose != .book && duo.pose != .tabletop && !portraitTilesFirst { topCards(all) }
+                // Tabletop: the search button and A to Z strip come after the tiles (see below), so a first view shows games.
+                if duo.pose != .tabletop, !portraitTilesFirst, !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 if !heroOnRightPage && duo.pose == .book { topCards(all) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
@@ -351,7 +346,7 @@ struct LibraryShelf: View {
                     let rightWidth = max(0, duo.size.width - railWidth - 16 - (fold.maxX + 24))
                     // Each page flows on its own (Iris, cf6c889): the left tiles start 16 pt under the filters, the
                     // right tiles under the deck; order is the left page top to bottom, then the right page. The
-                    // tiles share each page's width equally (min 124 pt, 10 pt gaps).
+                    // tiles share each page's width equally (120 to 168 pt, 16 pt gaps).
                     let left = Self.pageFit(width: leftWidth), right = Self.pageFit(width: rightWidth)
                     let proportional = min(rows.count, Int((Double(rows.count) * Double(left.count) / Double(left.count + right.count)).rounded(.up)))
                     // No hero: the caught-up card is short, so split for equal rows on both pages and, on a tie, as evenly as
@@ -369,7 +364,6 @@ struct LibraryShelf: View {
                             // Controls first, the offer second (Iris, Book compact card).
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                             topCards(all)
-                            NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                             if all.count >= 2 && layout == .tiles {
                                 FilterBar().frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
                             }
@@ -397,30 +391,17 @@ struct LibraryShelf: View {
                 // 0.5.0 item 1: the Latest updates deck replaces the single Continue hero. Tabletop
                 // shows the first card in the standing half and the page edge on this lower half.
                 if duo.pose == .flat && !duo.isLandscape && !model.latestDeck.isEmpty {
-                    // Open portrait (Iris, 0.5.0): the deck on the left at the 0.2.0 hero's width, the Also new
-                    // panel on the right at the same height, listing every update but the deck's front card.
-                    let deck = model.latestDeck
-                    let front = deck.first { $0.id == model.deckSelection } ?? deck.first
-                    let deckHeight = (duo.size.height * 0.38).rounded()
-                    if typeSize.isAccessibilitySize {
-                        // Accessibility sizes (Iris): the deck full width, Also new below it as a list.
-                        VStack(alignment: .leading, spacing: 14) {
-                            // Taller than the 38% side-by-side deck: the title needs up to 4 lines at AX3 (no ellipsis).
-                            LatestUpdatesDeck(cards: deck, compact: true, maxHeight: (duo.size.height * 0.46).rounded())
-                            AlsoNewPanel(hero: front?.release).frame(height: 460)
-                        }
+                    // Open portrait: the deck takes the full content width (Terry and Iris, 2026-11-06: the Also new
+                    // panel only repeated the carousel and its rows moved with every swipe, so it is gone).
+                    // The card carries headline, game, date and the summary line; taller at accessibility sizes.
+                    // Art at 16:9 across the content width (Iris: never cropped tighter than 16:10), plus the dots row.
+                    let contentWidth = max(0, duo.size.width - railWidth - 32)
+                    LatestUpdatesDeck(cards: model.latestDeck, compact: true,
+                                      maxHeight: min((contentWidth * 9 / 16).rounded() + 52,
+                                                     (duo.size.height * (typeSize.isAccessibilitySize ? 0.46 : 0.42)).rounded()),
+                                      moreCount: model.latestDeckOverflow)
                         .id(poseKey)
-                    } else {
-                    HStack(alignment: .top, spacing: 10) {
-                        LatestUpdatesDeck(cards: deck, compact: true, maxHeight: deckHeight)
-                            .frame(width: max(0, (duo.size.width - railWidth - 32 - 10) * 0.46), alignment: .leading)
-                        AlsoNewPanel(hero: front?.release)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                    }
-                    .frame(height: deckHeight)
-                    .id(poseKey)
-                    }
-                } else if duo.pose != .tabletop && !heroOnRightPage {
+                } else if duo.pose != .tabletop && !heroOnRightPage && !closedWide {
                     let deck = model.latestDeck
                     if !deck.isEmpty {
                         LatestUpdatesDeck(cards: deck)
@@ -429,12 +410,8 @@ struct LibraryShelf: View {
                         CaughtUpCard()
                             .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
                     }
-                } else if duo.pose == .tabletop {
-                    let deck = model.latestDeck
-                    if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
                 }
-                if !heroOnRightPage { NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading) }
-                if !heroOnRightPage && all.count >= 2 && layout == .tiles {
+                if !heroOnRightPage && duo.pose != .tabletop && all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
                     // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
                     // accessibility frame never reaches the fold either.
@@ -448,6 +425,8 @@ struct LibraryShelf: View {
                     }
                     .id(poseKey)
                 }
+                // Tabletop: the filter chips sit directly above the tiles, one row; tiles first wins if they would push it off (Iris, v0.5.3).
+                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles { FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey) }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
                 } else if heroOnRightPage {
@@ -470,6 +449,27 @@ struct LibraryShelf: View {
                     // (0.2.0 gate: Book showed the open-pose grid across the fold).
                     .id(poseKey)
                 }
+                // Open and Closed portrait (Iris, v0.5.3): the PS Plus cards and search come after the tiles.
+                if portraitTilesFirst && closedWide {
+                    // Closed landscape (Iris, v0.5.3): switch and search, chips, tiles, then the deck, the PS Plus card.
+                    if !model.latestDeck.isEmpty {
+                        LatestUpdatesDeck(cards: model.latestDeck).frame(maxWidth: .infinity, alignment: .leading)
+                    } else if !model.data.collection.isEmpty {
+                        CaughtUpCard().frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    topCards(all)
+                } else if portraitTilesFirst {
+                    topCards(all)
+                    if !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                }
+                // Tabletop lower half (Iris, v0.5.3): switch, filter chips, tiles, then the alerts card, PS Plus, search and
+                // A to Z and the page edge. Order only; nothing else moves in any pose.
+                if duo.pose == .tabletop {
+                    if !heroOnRightPage { topCards(all) }
+                    if !all.isEmpty { TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4) }
+                    let deck = model.latestDeck
+                    if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
+                }
                 }
             }
             .scrollTargetLayout()
@@ -478,20 +478,9 @@ struct LibraryShelf: View {
             .padding(.trailing, railWidth)
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
-        // The pill and toasts sit at the bottom edge. The scroll view itself ends above them (a safe-area inset would still let
-        // content scroll under the pill), so nothing is ever covered (0.5.1 spec 2, Iris).
-        // No `.mask` here: from #246 the Open portrait large "Library" title vanished (354d15c, 9914a80), with the picker still
-        // in its place. The mask on this scroll view is the prime suspect (a masked scroll view is no longer the one the
-        // navigation bar tracks); the soft edge returns once a Mac still shows the title back.
-        .padding(.bottom, messagePad)
-        // The page ends 8 pt above the pill wherever the pill actually sits. The pad is worked out from measured edges (this
-        // view's bottom without the pad, the pill's top), not from the pill's height and offsets, so it cannot leave a dead
-        // band or run under the pill in any pose (0.5.1 spec 2, ae0a608 Open portrait).
-        .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { libraryFrame = $0; updateMessagePad() }
-        .onChange(of: model.messageFrame) { _, _ in updateMessagePad() }
-        // The pad changes the moment the pill shows. It must not ride a running pose animation, or the old arrangement
-        // lingers faintly under the new one (Book, ad54f44 stills).
-        .transaction(value: messagePad) { $0.animation = nil }
+        // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.
+        // No soft-edge mask: it made the Open portrait large "Library" title vanish (354d15c, 9914a80), see MessageClearance.
+        .clearsMessages()
         .refreshable { await model.refreshFeed() }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
@@ -640,151 +629,6 @@ struct ContinueRow: View {
         .tappableFrame()
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(fresh ? "New update, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
-        .accessibilityAddTraits(.isButton)
-    }
-}
-
-/// Open portrait: the space beside the hero. The next three most recent updates across the library
-/// (not the hero's game), each opening that update; with none, the hero update's top three changes.
-struct AlsoNewPanel: View {
-    @Environment(AppModel.self) private var model
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @Environment(\.dynamicTypeSize) private var typeSize
-    /// The deck's front card's update: left out of the list, and the "What's new" source when it is alone.
-    var hero: Release?
-
-    private var others: [Release] { model.alsoNewReleases(excludingRelease: hero?.id) }
-
-    private var changes: [String] {
-        guard let hero else { return [] }
-        let key = (hero.keyChanges ?? []).filter { !$0.isEmpty }
-        if !key.isEmpty { return Array(key.prefix(5)) }
-        return Array(hero.notes.flatMap { $0.items.filter { $0.spoiler != true }.map(\.text) }.prefix(5))
-    }
-
-    private static let age: RelativeDateTimeFormatter = {
-        let f = RelativeDateTimeFormatter(); f.unitsStyle = .full; return f
-    }()
-
-    var body: some View {
-        let all = others
-        GeometryReader { geo in
-            // Iris's fill rule: 72 pt rows (3 to 6, what fits), grown evenly to 96 pt when 24 pt or more
-            // is spare, a heading block above and a pinned 56 pt footer below.
-            // Top padding 12, heading 26 + 12 to the first row, footer 56: the whole stack fits the panel exactly.
-            let headingH: CGFloat = typeSize.isAccessibilitySize ? 44 : 26
-            let avail = max(0, geo.size.height - 12 - (headingH + 12) - 56)
-            // Accessibility sizes (0.5.0 a11y): rows grow to 2-line names, so fewer fit (never a clipped row).
-            let unit: CGFloat = typeSize.isAccessibilitySize ? 104 : 72
-            let fit = min(6, max(typeSize.isAccessibilitySize ? 1 : 3, Int(avail / unit)))
-            let rows = Array(all.prefix(fit))
-            let spare = avail - CGFloat(rows.count) * unit
-            // Three rows are the floor: when they do not quite fit, they give up a few points each (never below 64).
-            let rowHeight: CGFloat = rows.isEmpty ? unit : spare < 0 ? max(typeSize.isAccessibilitySize ? 88 : 64, avail / CGFloat(rows.count))
-                : spare <= 24 ? unit : min(unit + 24, unit + spare / CGFloat(rows.count))
-            VStack(alignment: .leading, spacing: 0) {
-                Text(all.isEmpty ? "What's new" : "Also new").font(PlayscribeFont.title3.weight(.bold))
-                    .accessibilityAddTraits(.isHeader)
-                    .frame(minHeight: headingH, alignment: .topLeading)
-                    .padding(.bottom, 12)
-                if all.isEmpty {
-                    whatsNew(lines: shownChanges(width: geo.size.width - 24, available: avail), available: avail, width: geo.size.width - 24)
-                } else {
-                    ForEach(rows) { r in row(r, height: rowHeight).transition(.opacity) }
-                }
-                Spacer(minLength: 0)
-                if all.isEmpty {
-                    // Iris: a 56 pt row pinned to the bottom, so the panel never ends half empty.
-                    Button { if let hero { model.openGame(hero.gameID, chapter: .updates, releaseID: hero.id) } } label: {
-                        HStack {
-                            Text("Read the full update").font(PlayscribeFont.subheadline.weight(.semibold))
-                            Spacer(minLength: 0)
-                            Image(systemName: "chevron.right").font(PlayscribeFont.caption).accessibilityHidden(true)
-                        }
-                        .foregroundStyle(PlayscribeColor.accent)
-                        .frame(maxWidth: .infinity, minHeight: 56, alignment: .center)
-                        .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                    .tappableFrame()
-                } else {
-                    Button { model.nav.tab = .updates } label: {
-                        Text("See all updates").font(PlayscribeFont.subheadline.weight(.semibold))
-                            .foregroundStyle(PlayscribeColor.accent)
-                            .frame(maxWidth: .infinity, minHeight: 56, alignment: .center)
-                            .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                    .tappableFrame()
-                }
-            }
-            .padding(.horizontal, 12)
-            .padding(.top, 12)
-            .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
-            // Paging the deck swaps one row for another: a 200 ms cross fade, none under Reduce Motion.
-            .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: all.map(\.id))
-        }
-        .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .accessibilityElement(children: .contain)
-        .accessibilityLabel(all.isEmpty ? "What's new" : "Also new, \(min(all.count, 6)) updates")
-    }
-
-    /// Estimated height of one change line at 17 pt: up to three lines of 22 pt plus 16 pt around it.
-    private func estimate(_ line: String, width: CGFloat) -> CGFloat {
-        let perLine = max(12, width / 8.6)
-        let n = min(3, max(1, Int((Double(line.count) / Double(perLine)).rounded(.up))))
-        return CGFloat(n) * 22 + 16 + 1
-    }
-
-    /// Iris: the top 3 to 5 change lines, as many as fit above the footer.
-    private func shownChanges(width: CGFloat, available: CGFloat) -> [String] {
-        var used: CGFloat = 0, out: [String] = []
-        for line in changes.prefix(5) {
-            let h = estimate(line, width: width)
-            if out.count >= 3 && used + h > available { break }
-            out.append(line); used += h
-        }
-        return out
-    }
-
-    /// No ellipsis mid-sentence: each line wraps to up to three lines. Hairlines between, no bullets.
-    private func whatsNew(lines: [String], available: CGFloat, width: CGFloat) -> some View {
-        let used = lines.reduce(CGFloat(0)) { $0 + estimate($1, width: width) }
-        // Spare height goes to line spacing, up to 24 pt between lines, then to the footer.
-        let extra = lines.isEmpty ? 0 : min(4, max(0, (available - used) / CGFloat(lines.count * 2)))
-        return VStack(alignment: .leading, spacing: 0) {
-            ForEach(Array(lines.enumerated()), id: \.offset) { i, line in
-                if i > 0 { Rectangle().fill(PlayscribeColor.textPrimary.opacity(0.14)).frame(height: 1) }
-                Text(line).font(PlayscribeFont.body).lineLimit(3)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical, 8 + extra)
-            }
-        }
-    }
-
-    private func row(_ r: Release, height: CGFloat) -> some View {
-        let game = model.game(r.gameID)
-        let age = Self.age.localizedString(for: r.ps5Date, relativeTo: .now)
-        return Button { model.openGame(r.gameID, chapter: .updates, releaseID: r.id) } label: {
-            HStack(spacing: 10) {
-                if let g = game { CoverView(game: g, cornerRadius: 4).frame(width: 48) }
-                VStack(alignment: .leading, spacing: 1) {
-                    // Game names never truncate below two lines (0.5.0 a11y).
-                    Text(game?.name ?? "").font(PlayscribeFont.headline).lineLimit(2)
-                    Text("\(r.displayName), \(age)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                        .lineLimit(2).minimumScaleFactor(0.85)
-                }
-                Spacer(minLength: 0)
-                Image(systemName: "chevron.right").font(PlayscribeFont.caption).foregroundStyle(.secondary).accessibilityHidden(true)
-            }
-            .frame(minHeight: height)
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-        .tappableFrame()
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(game?.name ?? ""), \(r.displayName), \(age), opens update")
         .accessibilityAddTraits(.isButton)
     }
 }
@@ -941,7 +785,7 @@ struct GameMenuButton: View {
 
 /// Inner display tile: a fixed-size cover, name, a status dot and the unread count.
 /// Library tile (brand library-tiles, approved by Terry 26 Oct): a 3:4 cover with no text under
-/// it. Top right, a glass status circle; bottom left, a date pill that carries the update state.
+/// it. Under the cover: the status mark above the date or status, nothing on the art (Iris, #436: art lettering can be anywhere).
 /// Long-press opens the game's actions.
 struct GameTile: View {
     @Environment(AppModel.self) private var model
@@ -972,22 +816,15 @@ struct GameTile: View {
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             VStack(alignment: .leading, spacing: 4) {
                 tileFrame(TileCover(game: row.game))
-                    .overlay(alignment: .topTrailing) { StatusCircle(status: row.status).padding(6) }
-                    .overlay(alignment: .bottomLeading) { DatePill(row: row).padding(6) }
                     .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                // Accessibility sizes: the pill would cover the art, so the date or status sits under
-                // the cover instead, wrapping to two lines (GR-1, D-12; Iris, 0.5.0 a11y).
-                if typeSize.isAccessibilitySize {
-                    let state = model.tileDate(row)
-                    Text(state.text)
-                        .font(PlayscribeFont.caption.weight(.semibold))
-                        .foregroundStyle(state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .accessibilityHidden(true)
-                }
+                // Nothing sits on the art: art lettering can be anywhere (a pill hid the MINECRAFT logo, Quinn 38a4d59). The status
+                // mark sits above the date or status phrase, in a slot of one fixed height so the dates in a row share a baseline
+                // whatever the glyph (check, bookmark, eye). Amber only for an unread update, else the grey of the other dates;
+                // the spark and the dot are the non-colour cues. Wraps, never truncates; 11 pt or larger (Iris, #436).
+                TileCaption(row: row, width: size)
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility3)   // capped outside, so the scaled metrics inside are capped too
+                    .accessibilityHidden(true)   // the tile's own label already says the date and the status
             }
         }
         .buttonStyle(.plain)
@@ -1001,6 +838,53 @@ struct GameTile: View {
         .accessibilityValue(FoldAuditSwitch.enabled ? "probe id=\(Int((size ?? measuredWidth).rounded())) cover=\(Int(measuredWidth.rounded())) outer=\(Int(outerWidth.rounded()))" : "")
         .onGeometryChange(for: CGFloat.self) { FoldAuditSwitch.enabled ? $0.size.width : 0 } action: { outerWidth = $0 }
         .gameQuickActions(row.game)
+    }
+}
+
+/// Under a Library tile's cover: the status mark (check, bookmark, eye) in a fixed-height slot, then the date or status phrase.
+struct TileCaption: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
+    var row: AppModel.LibraryRow
+    /// The tile's width when it has a fixed one (nil: fills its column).
+    var width: CGFloat?
+    /// The mark scales with the text (the size is capped at AX3 by the caller, so this is too), and its slot is the glyph plus 5 pt: one
+    /// height for every glyph, so every caption's text starts at the same height, and the date sits right under the mark at any size
+    /// (Iris, 52f1425: a slot sized to the AX text line left the mark detached by 55 pt). At the default size the slot is 16 pt, as before.
+    @ScaledMetric(relativeTo: .caption2) private var glyph: CGFloat = 11
+    private var slot: CGFloat { glyph + 5 }
+
+    var body: some View {
+        let state = model.tileDate(row)
+        let ink = state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary
+        VStack(alignment: .leading, spacing: 1) {
+            HStack(spacing: 4) {
+                Image(systemName: StatusCircle.symbol(row.status)).font(.system(size: glyph, weight: .bold))
+                switch state.kind {
+                // The spark and the dot are the non-colour cues, so at AX they scale with the mark (the spark to about the bookmark's
+                // height), on the same centre line; at standard sizes they stay 9 and 6 pt.
+                case .unread: SparkShape().fill(ink).frame(width: typeSize.isAccessibilitySize ? glyph * 1.2 : 9, height: typeSize.isAccessibilitySize ? glyph * 1.2 : 9)
+                case .recent: Circle().fill(PlayscribeColor.accent).frame(width: typeSize.isAccessibilitySize ? glyph * 0.6 : 6, height: typeSize.isAccessibilitySize ? glyph * 0.6 : 6)
+                default: EmptyView()
+                }
+            }
+            // Accessibility sizes: one fixed-height slot for every glyph (the tallest, the filled bookmark at about 1.4 x the nominal
+            // size), each glyph and the spark CENTRED in it, so the centres share a line across a row and the gap above (cover to
+            // slot, the tile's 4 pt) and below (slot to date, 5 pt) is the same for every glyph. Standard sizes are unchanged
+            // (a slot of the glyph plus 5 pt, the mark centred).
+            .frame(height: typeSize.isAccessibilitySize ? glyph * 1.4 : slot, alignment: .leading)
+            Text(state.text)
+                .padding(.top, typeSize.isAccessibilitySize ? 4 : 0)
+                // Never scaled and never truncated: a date that does not fit one line wraps (the column is 84 pt or more, the
+                // caption is capped at AX3, so "22 Oct" fits one line at every size in practice).
+                .lineLimit(2)
+                .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .font((typeSize.isAccessibilitySize ? PlayscribeFont.caption : PlayscribeFont.caption2).weight(.semibold))
+        .foregroundStyle(ink)
+        .frame(maxWidth: width ?? .infinity, alignment: .leading)
+        .padding(.horizontal, 2)
     }
 }
 
@@ -1027,6 +911,8 @@ struct TileCover: View {
             }
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
+            // Art is decorative to VoiceOver: any title drawn in it is also the card's own label (never information only in the art).
+            .accessibilityHidden(true)
     }
 }
 
@@ -1056,39 +942,6 @@ struct StatusCircle: View {
     }
 }
 
-/// The date pill: solid ember with the spark for an unread update; glass with an ember dot for an
-/// update in the last 7 days; plain glass for older; "Out <date>" when there are no updates.
-struct DatePill: View {
-    @Environment(AppModel.self) private var model
-    @Environment(\.dynamicTypeSize) private var typeSize
-    var row: AppModel.LibraryRow
-    var body: some View {
-        let state = model.tileDate(row)
-        // Accessibility sizes: the pill would cover the art, so it is hidden; the date stays in the label
-        // and on the game page (Iris, 0.5.0 a11y).
-        if !typeSize.isAccessibilitySize {
-        HStack(spacing: 4) {
-            switch state.kind {
-            case .unread: SparkShape().fill(PlayscribeColor.onAccent).frame(width: 9, height: 9)
-            case .recent: Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
-            default: EmptyView()
-            }
-            Text(state.text)
-                .font(PlayscribeFont.caption2.weight(.semibold))
-                // Accessibility sizes: wrap to two lines inside the tile instead of running off it.
-                .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
-                .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
-                .foregroundStyle(state.kind == .unread ? PlayscribeColor.onAccent : (state.kind == .none || state.kind == .playsOnPS5 || state.kind == .notOnPS5) ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
-        }
-        .padding(.horizontal, 7).padding(.vertical, 3)
-        .background {
-            if state.kind == .unread { Capsule().fill(Color(red: 1, green: 0.69, blue: 0.31)) }
-            else { Capsule().fill(.clear).adaptiveGlass(in: Capsule()) }
-        }
-        }
-    }
-}
-
 extension AppModel {
     enum TileDateKind { case unread, recent, older, none, playsOnPS5, notOnPS5 }
 
@@ -1106,9 +959,9 @@ extension AppModel {
 
     /// "12 Oct" this year, "Jul 2025" before.
     static func tileDay(_ d: Date) -> String {
-        Calendar.current.isDate(d, equalTo: .now, toGranularity: .year)
+        Date.sameUTCYear(d, .now)
             ? d.dayMonth
-            : d.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB")).month(.abbreviated).year())
+            : d.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB"), timeZone: .gmt).month(.abbreviated).year())
     }
 
     /// "Elden Ring, last updated Jul 2025, owned".
@@ -1312,14 +1165,18 @@ struct FlowLayout: Layout {
     }
     func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
         for (i, p) in place(bounds.width, subviews).points.enumerated() {
-            let size = subviews[i].sizeThatFits(.unspecified)
+            let size = subviews[i].sizeThatFits(Self.fit(bounds.width))
             subviews[i].place(at: CGPoint(x: bounds.minX + p.x, y: bounds.minY + p.y), proposal: ProposedViewSize(size))
         }
     }
+    /// An item is never offered more than the row: a long label wraps inside it rather than widening the whole
+    /// layout past the screen (which clipped the page at the left edge at AX3).
+    private static func fit(_ width: CGFloat) -> ProposedViewSize { ProposedViewSize(width: width.isFinite ? width : nil, height: nil) }
+
     private func place(_ width: CGFloat, _ subviews: Subviews) -> (points: [CGPoint], size: CGSize) {
         var points: [CGPoint] = [], x: CGFloat = 0, y: CGFloat = 0, row: CGFloat = 0, maxX: CGFloat = 0
         for v in subviews {
-            let s = v.sizeThatFits(.unspecified)
+            let s = v.sizeThatFits(Self.fit(width))
             if x > 0 && x + s.width > width { x = 0; y += row + spacing; row = 0 }
             points.append(CGPoint(x: x, y: y))
             x += s.width + spacing; row = max(row, s.height); maxX = max(maxX, x - spacing)

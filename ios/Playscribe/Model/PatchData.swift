@@ -222,11 +222,15 @@ struct Release: Codable, Hashable, Identifiable {
         }
     }
     var digest: Digest?
+    /// A PS4 patch for a game that plays on PS5 through backward compatibility (feed `ps4`, docs/api.md).
+    var ps4: Bool?
+    /// The label the app shows on a PS4 patch; nil otherwise. Never a version number.
+    var ps4Label: String? { ps4 == true ? "PS4 update" : nil }
 
     // JSON keys follow docs/api.md (camelCase "Id").
     enum CodingKeys: String, CodingKey {
         case id, gameID = "gameId", displayName, kind, kindBasis, announcedAt, notes, sourceIDs = "sourceIds", platforms
-        case headline, summary, keyChanges, video, videoNote, pushLine, links, simulated, arrivesAt, digest
+        case headline, summary, keyChanges, video, videoNote, pushLine, links, simulated, arrivesAt, digest, ps4
     }
 
     init(id: String, gameID: String, displayName: String, kind: ReleaseKind, kindBasis: KindBasis, announcedAt: Date,
@@ -259,6 +263,7 @@ struct Release: Codable, Hashable, Identifiable {
         simulated = try c.decodeIfPresent(Bool.self, forKey: .simulated)
         arrivesAt = try c.decodeIfPresent(Date.self, forKey: .arrivesAt)
         digest = try? c.decodeIfPresent(Digest.self, forKey: .digest)
+        ps4 = try? c.decodeIfPresent(Bool.self, forKey: .ps4)
     }
 
     /// Combines a feed record with Playscribe's curated record for the same release: the feed's
@@ -353,7 +358,10 @@ extension Release {
         // Terry, 26 Oct: Steam is the source of truth. A release live on Steam counts as released
         // on PS5 unless we can confirm otherwise.
         let liveElsewhere = platforms.contains { $0.platform != .ps5 && $0.status == .live }
-        guard let p = ps5 else { return liveElsewhere ? .onPS5 : .pending }
+        // docs/ps5-patch-data.md: a Steam post that predates the PS5 release creates no PS5 row, and a release with
+        // no PS5 row at all (a PC port, a post before the PS5 launch) is not a PS5 update: no On PS5, no unread, no
+        // alert. It stays in the game's history. From the PS5 launch on the backend writes the row (Steam stays the source).
+        guard let p = ps5 else { return .pending }
         // Released (docs/ps5-patch-data.md): live and official, assumed, pending, or reported on
         // a release Steam or the studio has.
         if p.verification == .pending && p.status != .live { return .pending }

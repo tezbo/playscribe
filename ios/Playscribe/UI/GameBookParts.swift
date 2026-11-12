@@ -15,11 +15,20 @@ enum ReadingSide {
 struct PageView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @AppStorage(ReadingSide.key) private var pageOnLeft = false
     @State private var position = ScrollPosition(idType: String.self)
     @State private var liveOffset: CGFloat = 0
     var gameID: String
     /// Closed: one stacked book, the Contents below the Page.
     var withContents = false
+
+    /// Closed and Open portrait, Updates chapter: the Contents (bar, search, Mark read, All updates) between the release and About.
+    private var closedContents: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Divider().overlay(PlayscribeColor.ink700)
+            ContentsBody(gameID: gameID, addControl: false)
+        }
+    }
 
     var body: some View {
         let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
@@ -27,11 +36,22 @@ struct PageView: View {
             VStack(alignment: .leading, spacing: 16) {
                 PageArtBand(gameID: gameID)
                 StaleHint()
-                if withContents, let g = model.game(gameID) {
+                if withContents, !model.gameDisplayName(gameID).isEmpty {
                     VStack(alignment: .leading, spacing: 6) {
-                        GameTitleWithStatus(gameID: gameID, name: g.name)
+                        GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
+                        // Closed has no Contents header, so a browsed game (Upcoming, PS Plus) gets its add control here.
+                        if let g = model.game(gameID), model.entry(gameID) == nil {
+                            Button("Add to library") { model.addGame(g, status: .watching) }
+                                .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
+                                .accessibilityIdentifier("addToLibrary")
+                                // 20 pt clear of the title above and the page below (Iris, #442). The 44 pt hit frame leaves
+                                // 4 pt round the 36 pt pill, so the stack gaps (6 above, 16 below) plus the text's own leading
+                                // read as 15 and 25 on the Closed still; 5 each way evens them (0e10f45 still: 3/-14 overshot).
+                                .padding(.top, 5).padding(.bottom, -5)
+                        }
                     }
-                    .padding(.horizontal, 20)
+                    .padding(.leading, duo.hingeInset(20, facingHinge: !pageOnLeft))
+                    .padding(.trailing, duo.hingeInset(20, facingHinge: pageOnLeft))
                 }
                 Group {
                     switch chapter {
@@ -39,6 +59,9 @@ struct PageView: View {
                         if let r = model.selectedRelease(gameID) {
                             VStack(alignment: .leading, spacing: 16) {
                                 ReleasePage(release: r)
+                                // Closed and Open portrait (one column): All updates (the Contents) sits above About (Terry, 0.5.4), so the reader reaches
+                                // the game's other updates before its blurb; You might also like stays last.
+                                if withContents { closedContents }
                                 if let g = model.game(gameID) {
                                     Divider().overlay(PlayscribeColor.ink700)
                                     GameBasicsView(game: g)
@@ -46,7 +69,7 @@ struct PageView: View {
                             }
                             .pageTurn(key: r.id)
                         } else if let g = model.game(gameID) {
-                            NoNotesPage(game: g)
+                            NoNotesPage(game: g) { if withContents { closedContents } }
                         }
                     case .news: NewsChapter(gameID: gameID)
                     case .world, .companion: EntriesChapter(gameID: gameID, chapter: chapter)
@@ -56,14 +79,25 @@ struct PageView: View {
                 }
                 // Reading measure: 55 to 75 characters.
                 .frame(maxWidth: 620, alignment: .leading)
-                .padding(.horizontal, 20)
-                if withContents {
+                .padding(.leading, duo.hingeInset(20, facingHinge: !pageOnLeft))
+                .padding(.trailing, duo.hingeInset(20, facingHinge: pageOnLeft))
+                // The other chapters keep the Contents below the page (the Updates chapter draws it above About).
+                if withContents && chapter != .updates {
                     Divider().overlay(PlayscribeColor.ink700).padding(.top, 8)
-                    ContentsBody(gameID: gameID).padding(.horizontal, 16)
+                    ContentsBody(gameID: gameID, addControl: false).padding(.horizontal, 16)
                 }
             }
             .padding(.bottom, 24)
+            // The column is exactly what the scroll view proposes (its viewport beside the rail: 382 pt in Closed, 372 in Book) as
+            // long as every child can shrink to it. A vertical scroll view centres content wider than its viewport, so one child
+            // that could not (the PS4 update + Reported tag row at AX5, 514 pt) pushed the whole page 66 pt left under the screen
+            // edge: "atch 5.01", a clipped "9 Oct", the share button behind the rail (Closed AX5, frame dump on 805ceb3). The tags
+            // wrap (ReleaseTag) and the two links stack (SourceLinks) now, and a frame dump at e4833ee shows nothing wider than
+            // the viewport. Do not pin the column to a measured width instead: a Color probe inside the content measured the
+            // frame rail included (466; b8fbaad), and the scroll view's own geometry minus its insets came out 20 to 80 pt short
+            // (57227e2); each one moved the page in some pose (R-2).
         }
+        .clearsMessages()
         .scrollIndicators(.hidden)
         // D-2, T-5, D-10: the reading position is model state. Closing, opening, rotating or
         // swapping sides rebuilds this view; it comes back where the reader was.
@@ -195,18 +229,60 @@ struct CoverHeader: View {
 struct ReleasePage: View {
     @Environment(AppModel.self) private var model
     var release: Release
+    @Environment(\.dynamicTypeSize) private var typeSize
+    /// Lifts the dot from the first line's baseline to half the cap height (centred on line 1; Iris) (same idea as FeedRow's dotLift).
+    @ScaledMetric(relativeTo: .title3) private var dotLift: CGFloat = 7
+
+    /// The unread dot and the title block, the dot level with the title's FIRST line however many lines it wraps to.
+    @ViewBuilder private func dotAndTitle(_ r: Release) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 12) {   // 12 pt clear of the text (Iris)
+            if model.isUnread(r) {
+                UnreadDot().alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
+            }
+            TitleWithTags(release: r) {
+                // At accessibility sizes a plain Text wraps a word wider than the column by character and can leave a comma
+                // alone at the start of a line (r061, "Rebalancing" / ", Quality of"); WholeWordText cuts on a whole word.
+                if typeSize.isAccessibilitySize {
+                    WholeWordText(text: r.displayName, font: PlayscribeFont.title3, lines: 4, color: nil)
+                        .accessibilityIdentifier("releaseTitle")
+                } else {
+                    Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
+                }
+            }
+        }
+    }
 
     var body: some View {
         let r = release
         VStack(alignment: .leading, spacing: 12) {
+            // Accessibility sizes: the title and tags first, then the share button on its own row, its right edge on the
+            // text column's trailing line (the one the headline and body wrap to), so it is clear of the rail and the
+            // hinge band without extra padding; the VStack's 12 pt is the gap above and below (R-2, r060, Iris).
+            if typeSize.isAccessibilitySize {
+                if r.isPS5Listed {
+                    // A title that fits one line leaves room for the button beside it, level with that first line (Iris, #441);
+                    // a longer one keeps the button on its own row below, so the title never loses width.
+                    ViewThatFits(in: .horizontal) {
+                        HStack(alignment: .top, spacing: 8) {
+                            dotAndTitle(r)
+                            Spacer(minLength: 0)
+                            ShareUpdateButton(release: r)
+                        }
+                        VStack(alignment: .leading, spacing: 12) {
+                            dotAndTitle(r)
+                            HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
+                        }
+                    }
+                } else {
+                    dotAndTitle(r)
+                }
+            } else {
             HStack(spacing: 8) {
-                if model.isUnread(r) { UnreadDot() }
                 // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
-                Text(r.displayName).font(PlayscribeFont.title3)
-                    .accessibilityIdentifier("releaseTitle")
-                ReleaseTag(release: r)
+                dotAndTitle(r)
                 Spacer(minLength: 0)
                 if r.isPS5Listed { ShareUpdateButton(release: r) }
+            }
             }
             HStack(spacing: 8) {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
@@ -229,6 +305,7 @@ struct ReleasePage: View {
 /// D-6: "Story spoilers hidden" with a Show button, only when the release has spoilers.
 struct SpoilerLine: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
     var body: some View {
         let shown = model.spoilersShown(gameID)
@@ -236,10 +313,17 @@ struct SpoilerLine: View {
             model.setSpoilersShown(gameID, !shown)
             model.show(Toast(text: shown ? "Spoilers hidden" : "Spoilers shown"))
         } label: {
-            HStack(spacing: 8) {
-                Image(systemName: shown ? "eye" : "eye.slash")
-                Text(shown ? "Story spoilers shown" : "Story spoilers hidden").foregroundStyle(.secondary)
+            // At accessibility sizes the label takes the full width in whole words and the Show button sits under it,
+            // on its own 44 pt line, so the label never breaks by letter and the button is never cut by the next row.
+            let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4)) : AnyLayout(HStackLayout(spacing: 8))
+            layout {
+                HStack(spacing: 8) {
+                    Image(systemName: shown ? "eye" : "eye.slash")
+                    Text(shown ? "Story spoilers shown" : "Story spoilers hidden").foregroundStyle(PlayscribeColor.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
                 Text(shown ? "Hide" : "Show").fontWeight(.semibold)
+                    .frame(minHeight: 44, alignment: .leading)
             }
             .font(PlayscribeFont.subheadline)
             .foregroundStyle(PlayscribeColor.accent)
@@ -252,16 +336,23 @@ struct SpoilerLine: View {
 }
 
 /// GR-1: never an empty game.
-struct NoNotesPage: View {
+struct NoNotesPage<Contents: View>: View {
     @Environment(AppModel.self) private var model
     var game: CatalogGame
+    /// Closed: the Contents, drawn above About as on a page with notes.
+    @ViewBuilder var contents: () -> Contents
+    init(game: CatalogGame, @ViewBuilder contents: @escaping () -> Contents = { EmptyView() }) {
+        self.game = game
+        self.contents = contents
+    }
     var body: some View {
         // Terry: a game never opens blank. With no updates, it leads with its release.
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
                 Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
-                NoUpdatesLine()
+                NoUpdatesLine(gameID: game.id)
             }
+            contents()
             GameBasicsView(game: game)
         }
     }
@@ -272,26 +363,44 @@ struct NoNotesPage: View {
 /// In the Contents, so in Tabletop they're on the flat half.
 struct GameLinks: View {
     var game: CatalogGame
+    /// The row's available width and the width both links need side by side. FlowLayout reported one row's height
+    /// when asked with no width and then wrapped when placed, so the second link landed under the chip row
+    /// (Open and Book, std, r052-contents-chips-overlap). Here the stack is chosen from measured widths, so the
+    /// height always belongs to the layout that is drawn; until measured it is the tall, safe one.
+    @State private var available: CGFloat = 0
+    @State private var needed: CGFloat = .infinity
     var body: some View {
         let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
         if links?.official != nil || links?.patchNotes != nil {
-            // One row, a 24 pt gap and no separators; wraps to a second line rather than truncating (Iris 0.5.0).
-            FlowLayout(spacing: 24) {
-                if let url = links?.official {
-                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
-                }
-                if let url = links?.patchNotes {
-                    Link(destination: url) { Label("All patch notes", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
-                }
-            }
-            .font(PlayscribeFont.subheadline)
-            .foregroundStyle(PlayscribeColor.accent)
+            let layout = needed <= available ? AnyLayout(HStackLayout(spacing: 24)) : AnyLayout(VStackLayout(alignment: .leading, spacing: 0))
+            layout { items(links) }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { available = $0 }
+                .background(
+                    HStack(spacing: 24) { items(links) }
+                        .fixedSize()
+                        .hidden()
+                        .accessibilityHidden(true)
+                        .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { needed = $0 }
+                )
+                .font(PlayscribeFont.subheadline)
+                .foregroundStyle(PlayscribeColor.accent)
+        }
+    }
+
+    @ViewBuilder private func items(_ links: GameBasics.Links?) -> some View {
+        if let url = links?.official {
+            Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
+        }
+        if let url = links?.patchNotes {
+            Link(destination: url) { Label(LinkHost.label("All patch notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame().accessibilityHint("Opens in browser")
         }
     }
 }
 
 struct GameBasicsView: View {
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
     var game: CatalogGame
     @State private var storyOpen = false
@@ -316,13 +425,17 @@ struct GameBasicsView: View {
                 let unique = videos.reduce(into: [GameBasics.Video]()) { out, v in if !out.contains(where: { $0.name == v.name }) { out.append(v) } }
                 ForEach(unique.prefix(3), id: \.youtubeId) { v in
                     Button { model.trailer = (v.youtubeId, v.name) } label: {
-                        HStack(spacing: 12) {
+                        // At accessibility sizes the thumbnail sits above the title, so the title has the whole column and a word
+                        // like "Cinematic" is not cut by letter beside a 112 pt picture (Iris, r054 Closed AX5).
+                        let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 12))
+                        layout {
                             AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(v.youtubeId)/mqdefault.jpg")) { $0.resizable().scaledToFill() } placeholder: { Color.ink1 }
                                 .frame(width: 112, height: 63)
                                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                                 .overlay { Image(systemName: "play.fill").foregroundStyle(.white) }
-                            Text(v.name).font(PlayscribeFont.subheadline).lineLimit(2).multilineTextAlignment(.leading)
-                            Spacer(minLength: 0)
+                            // Whole words only (G-8): a plain lineLimit cut "E3 2018 Open Be…" mid-word (The Crew 2, Closed AX5).
+                            WholeWordText(text: v.name, font: PlayscribeFont.subheadline, lines: typeSize.isAccessibilitySize ? 4 : 2)
+                            if !typeSize.isAccessibilitySize { Spacer(minLength: 0) }
                         }
                         .frame(minHeight: 44)
                         .contentShape(Rectangle())
@@ -352,7 +465,9 @@ struct GameBasicsView: View {
             }
             if let story = info?.storyline {
                 Text("Story").font(PlayscribeFont.headline)
-                LinkedTextView(text: story).font(PlayscribeFont.body).lineLimit(storyOpen ? nil : 4)
+                // Collapsed: four lines ending on a whole word (G-8), never "conflicts swe…". Open: the full text with its links.
+                if storyOpen { LinkedTextView(text: story).font(PlayscribeFont.body) }
+                else { WholeWordText(text: LinkedText.clean(story), font: PlayscribeFont.body, lines: 4, color: nil) }
                 Button(storyOpen ? "Less" : "More") { withAnimation(.snappy) { storyOpen.toggle() } }
                     .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
             }
@@ -392,7 +507,7 @@ struct SimilarGamesRow: View {
                             }
                             .buttonStyle(.plain)
                             .accessibilityLabel(g.name)
-                            .accessibilityHint("Choose how to add it")
+                            .accessibilityHint("View it, or choose how to add it")
                             .tappableFrame()
                         }
                     }
@@ -401,6 +516,8 @@ struct SimilarGamesRow: View {
             }
             .confirmationDialog(choosing?.name ?? "", isPresented: Binding(get: { choosing != nil }, set: { if !$0 { choosing = nil } }), titleVisibility: .visible) {
                 if let g = choosing {
+                    // A plain look first (Terry, 0.5.4): opens the game page without filing it anywhere.
+                    Button("View game") { model.browseGame(g) }
                     Button("Add to library") { model.addGame(g, status: .owned); model.openGame(g.id) }
                     Button("Add to watchlist") { model.addGame(g, status: .wishlist); model.openGame(g.id) }
                 }
@@ -440,17 +557,22 @@ struct TrailerView: View {
 /// the release timeline, and in Tabletop the section outline with Previous and Next.
 struct ContentsView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     @Environment(\.railWidth) private var railWidth
+    @AppStorage(ReadingSide.key) private var pageOnLeft = false
     @State private var position = ScrollPosition(idType: String.self)
     var gameID: String
 
     var body: some View {
         ScrollView {
             ContentsBody(gameID: gameID)
-                .padding(.horizontal, 16)
+                // Book: the edge that faces the hinge keeps 24 pt clear of the division band (r054-book-gamepage-hinge-inset).
+                .padding(.leading, duo.hingeInset(16, facingHinge: pageOnLeft))
+                .padding(.trailing, duo.hingeInset(16, facingHinge: !pageOnLeft))
                 .padding(.vertical, 14)
                 .padding(.trailing, railWidth)
         }
+        .clearsMessages()
         .scrollPosition($position)
         .accessibilityIdentifier("contentsScroll")
         // J-1: Back from a pushed release (open portrait) lands on its row.
@@ -468,6 +590,8 @@ struct ContentsBody: View {
     @Environment(\.duo) private var duo
     @AppStorage(ReadingSide.key) private var pageOnLeft = false
     var gameID: String
+    /// False in the stacked book, where the Page header already carries it (the Contents sit far below the update).
+    var addControl = true
 
     var body: some View {
         let game = model.game(gameID)
@@ -475,18 +599,21 @@ struct ContentsBody: View {
             VStack(alignment: .leading, spacing: 14) {
                 if duo.pose != .closed { HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 4) {
-                        GameTitleWithStatus(gameID: gameID, name: game?.name ?? "")
+                        GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
                     }
                     Spacer(minLength: 8)
                 } }
                 // Once per page (Terry): closed, the links sit with the game's basics instead.
                 if duo.pose != .closed && duo.pose != .tabletop, let game { GameLinks(game: game) }
-                if model.entry(gameID) == nil, let game {
+                if addControl, model.entry(gameID) == nil, let game {
                     Button("Add to library") { model.addGame(game, status: .watching) }
                         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
                 }
                 ChapterBar(gameID: gameID, selected: chapter)
-                NotesSearchField(gameID: gameID)
+                // Tabletop, a game with no notes: search, the A to Z strip and Previous/Next have nothing to act on (Quinn, #426),
+                // so they are not drawn; the list below says why there is nothing (NoUpdatesLine).
+                let tabletopNoNotes = duo.pose == .tabletop && model.ps5Releases(gameID).isEmpty && model.pcOnlyReleases(gameID).isEmpty
+                if !tabletopNoNotes { NotesSearchField(gameID: gameID) }
                 if model.noteQuery.count >= 2 || (duo.pose == .tabletop && model.noteLetter != nil) {
                     InlineNoteResults(gameID: gameID)
                 } else if chapter == .updates {
@@ -499,7 +626,7 @@ struct ContentsBody: View {
                         }
                         .tappableFrame()
                     }
-                    if duo.pose == .tabletop {
+                    if duo.pose == .tabletop, !tabletopNoNotes {
                         TabletopOutline(gameID: gameID)
                     }
                     ReleaseTimeline(gameID: gameID)
@@ -538,14 +665,20 @@ struct SwapSidesButton: View {
 struct NotesSearchField: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
+    /// At accessibility sizes the placeholder is the short "Search notes" (Iris, r054 Tabletop AX5): "Search this game's n…" was cut
+    /// mid-word. Standard sizes keep the scoped wording.
+    private var prompt: String {
+        if typeSize.isAccessibilitySize { return "Search notes" }
+        return model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes"
+    }
     var body: some View {
         @Bindable var model = model
         if duo.pose == .tabletop {
             // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
             VStack(alignment: .leading, spacing: 8) {
-                TabletopSearch(letter: $model.noteLetter,
-                               prompt: model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes")
+                TabletopSearch(letter: $model.noteLetter, prompt: prompt)
                 if model.noteLetter != nil {
                     Picker("Search in", selection: $model.noteScope) {
                         ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
@@ -557,7 +690,7 @@ struct NotesSearchField: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                TextField(model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes", text: $model.noteQuery)
+                TextField(prompt, text: $model.noteQuery)
                     .autocorrectionDisabled()
                     .submitLabel(.search)
                     .onSubmit { model.rememberSearch(model.noteQuery) }
@@ -632,6 +765,7 @@ struct InlineNoteResults: View {
 struct ReleaseTimeline: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
 
     var body: some View {
@@ -642,6 +776,9 @@ struct ReleaseTimeline: View {
             Text("ALL UPDATES").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
             if ps5.isEmpty, let g = model.game(gameID) {
                 Text(g.ps5AvailabilityLine).font(PlayscribeFont.subheadline)
+                // Tabletop's lower half: the Page is the view-only stage above, so this list is where a reader looks for why there
+                // is nothing (untracked: "We don't track this game's updates yet."; tracked: "No updates yet." and Checked).
+                if pc.isEmpty, duo.pose == .tabletop { NoUpdatesLine(gameID: gameID).padding(.top, 2) }
             }
             ForEach(ps5) { row($0, selected: $0.id == selected) }
             ForEach(pc) { row($0, selected: $0.id == selected) }
@@ -659,12 +796,22 @@ struct ReleaseTimeline: View {
                 model.select(gameID, releaseID: r.id)
             }
         } label: {
-            HStack(spacing: 8) {
+            let title = TitleWithTags(release: r) {
+                Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular))
+                    .lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
+            }
+            let date = Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+            HStack(alignment: .top, spacing: 8) {
                 if model.isUnread(r) { UnreadDot() } else { Color.clear.frame(width: 8, height: 8) }
-                Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular)).lineLimit(1)
-                ReleaseTag(release: r)
-                Spacer(minLength: 4)
-                Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                if typeSize.isAccessibilitySize {
+                    // No trailing date column at AX: the date takes its own full-width line under the title and tags.
+                    VStack(alignment: .leading, spacing: 4) { title; date }
+                    Spacer(minLength: 0)
+                } else {
+                    title
+                    Spacer(minLength: 4)
+                    date
+                }
             }
             .padding(.horizontal, 10)
             .frame(minHeight: 44)
@@ -763,6 +910,7 @@ struct ReleaseDetailView: View {
             }
             .padding(.bottom, 24)
         }
+        .clearsMessages()
         .background(Color.ink0)
         .navigationTitle(model.release(gameID, releaseID)?.displayName ?? "")
         .toolbarTitleDisplayMode(.inline)
@@ -774,6 +922,7 @@ struct ReleaseDetailView: View {
 /// bookmark for Wishlist, an eye for Watching. Tapping the glyph opens the status choice.
 struct GameTitleWithStatus: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
     var name: String
 
@@ -787,22 +936,50 @@ struct GameTitleWithStatus: View {
     }
 
     private var titleRow: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 8) {
-            Text(name).font(PlayscribeFont.title2).lineLimit(2).accessibilityAddTraits(.isHeader)
-            if let e = model.entry(gameID) {
-                Menu { ActionMenuContent(sections: model.statusMenu(gameID)) } label: {
-                    Image(systemName: Self.symbol(e.status))
-                        .font(.system(size: 20))
-                        .foregroundStyle(e.status == .owned ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
+        // Accessibility sizes: the title wraps on whole words and the status glyph sits inline right after the last word,
+        // wrapping with it (Iris on #289: never on a line of its own, and "Deliverance" is never cut mid-word).
+        // The title text stops growing at AX3: at AX5 one long word is wider than a Closed portrait column.
+        if typeSize.isAccessibilitySize { return AnyView(inlineTitleRow) }
+        return AnyView(HStack(alignment: .firstTextBaseline, spacing: 8) {
+            Text(name.gluingTrailingNumeral).font(PlayscribeFont.title2).lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true).accessibilityAddTraits(.isHeader)
+                .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+            statusMenu
+        })
+    }
+
+    private var inlineTitleRow: some View {
+        let words = name.gluingTrailingNumeral.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
+        return WordFlow(hSpacing: 8, vSpacing: 0) {
+            ForEach(Array(words.enumerated()), id: \.offset) { i, w in
+                if i == words.count - 1 {
+                    HStack(alignment: .firstTextBaseline, spacing: 0) {
+                        Text(w).font(PlayscribeFont.title2).accessibilityHidden(true)
+                        statusMenu
+                    }
+                } else {
+                    Text(w).font(PlayscribeFont.title2).accessibilityHidden(true)
                 }
-                .padding(.vertical, -12)
-                .accessibilityLabel(e.status.label)
-                .accessibilityHint("Change status")
-                .accessibilityIdentifier("statusGlyph")
-                .tappableFrame()
             }
+        }
+        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+        .background(Color.clear.accessibilityElement().accessibilityLabel(name).accessibilityAddTraits(.isHeader))
+    }
+
+    @ViewBuilder private var statusMenu: some View {
+        if let e = model.entry(gameID) {
+            Menu { ActionMenuContent(sections: model.statusMenu(gameID)) } label: {
+                Image(systemName: Self.symbol(e.status))
+                    .font(.system(size: 20))
+                    .foregroundStyle(e.status == .owned ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .padding(.vertical, -12)
+            .accessibilityLabel(e.status.label)
+            .accessibilityHint("Change status")
+            .accessibilityIdentifier("statusGlyph")
+            .tappableFrame()
         }
     }
 
@@ -825,9 +1002,9 @@ struct LinksSheet: View {
         if let game = model.game(gameID) {
             let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
             if let u = links?.official { out.append(Row(id: "official", title: "Official website", url: u)) }
-            if let u = links?.patchNotes { out.append(Row(id: "notes", title: "All patch notes", url: u)) }
+            if let u = links?.patchNotes { out.append(Row(id: "notes", title: LinkHost.label("All patch notes", u), url: u)) }
         }
-        if let r = model.readerRelease(gameID), let u = r.links?.steamNotes { out.append(Row(id: "steam", title: "Open in Steam", url: u)) }
+        if let r = model.readerRelease(gameID), let u = r.links?.steamNotes { out.append(Row(id: "steam", title: LinkHost.label("Read full notes", u), url: u)) }
         return out
     }
 
@@ -867,5 +1044,31 @@ struct LinksSheet: View {
     static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool {
         let links = model.game(gameID)?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
         return links?.official != nil || links?.patchNotes != nil || model.readerRelease(gameID)?.links?.steamNotes != nil
+    }
+}
+
+
+/// Words flowing left to right and wrapping at the proposed width; a word wider than the width gets its own line.
+/// One subview per word (the caller uses ForEach), so the last one can carry an inline glyph.
+struct WordFlow: Layout {
+    var hSpacing: CGFloat = 8
+    var vSpacing: CGFloat = 0
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        place(proposal.width ?? .infinity, subviews).size
+    }
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        for (i, p) in place(bounds.width, subviews).points.enumerated() {
+            subviews[i].place(at: CGPoint(x: bounds.minX + p.x, y: bounds.minY + p.y), proposal: .unspecified)
+        }
+    }
+    private func place(_ width: CGFloat, _ subviews: Subviews) -> (points: [CGPoint], size: CGSize) {
+        var points: [CGPoint] = [], x: CGFloat = 0, y: CGFloat = 0, row: CGFloat = 0, maxX: CGFloat = 0
+        for v in subviews {
+            let s = v.sizeThatFits(.unspecified)
+            if x > 0 && x + s.width > width { x = 0; y += row + vSpacing; row = 0 }
+            points.append(CGPoint(x: x, y: y))
+            x += s.width + hSpacing; row = max(row, s.height); maxX = max(maxX, x - hSpacing)
+        }
+        return (points, CGSize(width: maxX, height: y + row))
     }
 }

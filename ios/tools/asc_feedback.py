@@ -4,7 +4,7 @@
 One issue per submission, labelled testflight-feedback, deduplicated by a hidden marker with the submission id.
 The repo is public, so an issue carries only: type, build, device, OS, locale, date and the tester's comment
 (switch off with INCLUDE_COMMENT=0). Never the tester's email or name, never a screenshot or crash-log URL
-(they expire and are tied to the key). Runs every 15 minutes; exits 0 always. Logs print counts and ids only. Needs ASC_KEY_ID, ASC_ISSUER_ID and
+(they expire and are tied to the key). Runs every 5 minutes; exits 0 always. Logs print counts and ids only. Needs ASC_KEY_ID, ASC_ISSUER_ID and
 ASC_KEY_P8 or ASC_KEY_P8_BASE64, GITHUB_TOKEN and GITHUB_REPOSITORY, plus pyjwt, cryptography and requests.
 
 Endpoints and attributes checked against Apple's App Store Connect OpenAPI 4.6:
@@ -18,7 +18,8 @@ ASC = "https://api.appstoreconnect.apple.com"
 GH = "https://api.github.com"
 LABEL = "testflight-feedback"
 ASSIGNEE = os.environ.get("FEEDBACK_ASSIGNEE", "tezbo")  # assigning him is what makes GitHub Mobile push to his phone
-BUNDLE_ID = os.environ.get("BUNDLE_ID", "co.codeconnectors.playscribe")
+# The TestFlight app's bundle id (the release lane overrides the project's co.codeconnectors one; docs/push-relay.md).
+BUNDLE_ID = os.environ.get("BUNDLE_ID", "tezbo.Playscribe")
 MIN_BUILD = int(os.environ.get("MIN_BUILD", "8"))  # backfill from 0.5.2 (8)
 MAX_NEW = int(os.environ.get("MAX_NEW", "30"))
 INCLUDE_COMMENT = os.environ.get("INCLUDE_COMMENT", "1") != "0"

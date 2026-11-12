@@ -3,7 +3,6 @@ import SwiftUI
 enum Brand {
     /// The product name. One constant, so a rename is one line.
     static let name = "Playscribe"
-    static let tagline = "The story of every update"
     static let trademarkNotice = "PlayStation, PS5, PlayStation Plus and the PlayStation Family Mark, and their logos, icons and branding, are trademarks of Sony Interactive Entertainment Inc. Playscribe is not affiliated with or endorsed by Sony Interactive Entertainment."
 }
 
@@ -58,6 +57,8 @@ struct Tag: View {
     var body: some View {
         Text(text)
             .font(PlayscribeFont.caption2.weight(.semibold))
+            // Never broken mid-word ("Reporte/d"): one line at its natural width; rows stack tags under the title at AX.
+            .lineLimit(1).fixedSize()
             .foregroundStyle(tint)
             .padding(.horizontal, 7)
             .padding(.vertical, 2)
@@ -89,13 +90,42 @@ extension Date {
     /// Playscribe writes dates day-first ("19 Nov 2026") in every locale, so copy reads the same
     /// everywhere and tests don't depend on the runner's region.
     private static let dayFirst = Locale(identifier: "en_GB")
-    var shortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated).year()) }
-    var dayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated)) }
-    /// "16 Oct" this year, "16 Oct 2025" before.
-    var dayMonthOrYear: String { Calendar.current.isDate(self, equalTo: .now, toGranularity: .year) ? dayMonth : shortDay }
+    private static let utc: Calendar = { var c = Calendar(identifier: .gregorian); c.timeZone = .gmt; return c }()
+    /// Patch and release dates are facts about the patch, not the reader: the UTC calendar day, whatever the device's zone
+    /// (Nadia, 7 Nov 2026; docs/decisions/release-date-timezone.md). The same patch reads the same on every phone, shared card and runner.
+    var shortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated).year()) }
+    var dayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated)) }
+    /// "16 Oct" this year, "16 Oct 2025" before (years counted in UTC too).
+    var dayMonthOrYear: String { Self.utc.isDate(self, equalTo: .now, toGranularity: .year) ? dayMonth : shortDay }
+    /// A moment on this device ("Checked 7 Nov, 11:20"): the device's own zone, not the patch rule above.
+    var localDayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated)) }
+    var localShortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst).day().month(.abbreviated).year()) }
+    /// The UTC calendar, for anything counted in days against a printed patch date ("Out today", "3 days ago"), so a label never disagrees with it.
+    static var utcCalendar: Calendar { utc }
+    /// Whether `a` and `b` fall on the same UTC calendar day.
+    static func sameUTCDay(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, inSameDayAs: b) }
+    /// Whether `a` and `b` fall in the same UTC calendar year.
+    static func sameUTCYear(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, equalTo: b, toGranularity: .year) }
+    /// Whether this release day is today or in the next six UTC days: the "coming this week" window. A day-precision release
+    /// date is a UTC day, so the window is counted in UTC days and never disagrees with the printed date (r060-utc-day-labels).
+    func isInUTCWeek(from now: Date = .now) -> Bool {
+        let start = Self.utc.startOfDay(for: now)
+        return self >= start && self < start.addingTimeInterval(7 * 86400)
+    }
 }
 
 extension String {
+    /// "Deliverance II" with a no-break space before a trailing Roman numeral, so the numeral never wraps onto a line of its own
+    /// (Open portrait showed "II ✓" alone under "Deliverance"; r060-nbsp-roman-numerals). Only a numeral up to XX after at least one
+    /// other word; every other title is returned unchanged.
+    var gluingTrailingNumeral: String {
+        guard let space = lastIndex(of: " ") else { return self }
+        let last = self[index(after: space)...]
+        let numerals: Set<Substring> = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"]
+        guard numerals.contains(last), self[..<space].contains(where: { !$0.isWhitespace }) else { return self }
+        return String(self[..<space]) + "\u{00A0}" + last
+    }
+
     /// ISO day ("2026-09-03") to a Date at noon UTC.
     var isoDay: Date? {
         var c = DateComponents()

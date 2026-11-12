@@ -120,6 +120,8 @@ enum ReaderBody {
         let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
         return cut.trimmingCharacters(in: .punctuationCharacters.union(.whitespaces)) + "…"
     }
+    /// VoiceOver: "2 of 5", for a section's place in the update.
+    static func position(_ index: Int, of count: Int) -> String { "\(index + 1) of \(count)" }
     static func isCapped(_ body: String) -> Bool { stage(body) != body }
     static func isCapped(title t: String, body: String) -> Bool { title(t) != t || isCapped(body) }
 }
@@ -127,6 +129,7 @@ enum ReaderBody {
 struct TabletopReaderStage: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     /// The stage's bottom edge in screen space; the text ends 24 pt above the division.
     @State private var stageBottom: CGFloat = 0
     var gameID: String
@@ -146,31 +149,45 @@ struct TabletopReaderStage: View {
                 .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { new in
                     if abs(new - stageBottom) > 0.5 { stageBottom = new }
                 }
-            if let section = sections[safe: index] {
+            // The text block sits in an overlay on a view that takes exactly the stage's proposed size, so however tall the block is
+            // it cannot grow the stage, and the art layer measured above cannot move with it. A sibling in the ZStack could: a block
+            // taller than the upper half (AX5, whole-word text that ignores the proposed height) grew the ZStack, which moved the
+            // art's bottom edge, which changed the clearance padding, which grew the block again, with the stage body (and its
+            // note parsing) re-run each time (hang at 2dbcd13, Mac sample). The block grows upward and is clipped by the stage.
+            Color.clear.overlay(alignment: .bottomLeading) { if let section = sections[safe: index] {
                 VStack(alignment: .leading, spacing: 14) {
                     // Eyebrow: the game and the date; the release itself is the title below.
+                    // At accessibility sizes the name is one line cut on a whole word ("The Blood of…"), never "The Blood of Daw…", and the date keeps its place.
                     HStack(spacing: 8) {
-                        Text(model.game(gameID)?.name ?? "")
-                        if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary) }
+                        if typeSize.isAccessibilitySize {
+                            WholeWordText(text: model.gameDisplayName(gameID), font: PlayscribeFont.subheadline.weight(.semibold), lines: 1, color: PlayscribeColor.accent)
+                        } else {
+                            Text(model.gameDisplayName(gameID))
+                        }
+                        if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary).fixedSize() }
                     }
                     .font(PlayscribeFont.subheadline.weight(.semibold))
                     .foregroundStyle(PlayscribeColor.accent)
+                    // One phrase ("Enshrouded, 5 November") instead of two stops.
+                    .accessibilityElement(children: .combine)
                     // The release name for VoiceOver (and J-4), when the title is a headline.
                     Color.clear.frame(width: 1, height: 1)
                         .accessibilityElement()
                         .accessibilityLabel(release?.displayName ?? "")
                         .accessibilityAddTraits(.isStaticText)
                         .accessibilityIdentifier("releaseTitle")
-                    Text(ReaderBody.title(section.title))
-                        .font(PlayscribeFont.title)
-                        .lineLimit(4)
-                        .minimumScaleFactor(0.8)
-                    Text(ReaderBody.stage(section.body))
-                        .font(PlayscribeFont.body)
-                        .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.92))
-                        .lineSpacing(4)
-                        .lineLimit(4)
-                        .minimumScaleFactor(0.7)
+                    // Whole words only (G-8): the stage plate ends on a word and "…", never a cut word.
+                    WholeWordText(text: ReaderBody.title(section.title), font: PlayscribeFont.title, lines: typeSize.isAccessibilitySize ? 2 : 4, color: nil)
+                        // The stage caps the title; VoiceOver reads all of it, as a heading.
+                        .accessibilityLabel(section.title)
+                        .accessibilityAddTraits(.isHeader)
+                    WholeWordText(text: ReaderBody.stage(section.body), font: PlayscribeFont.body, lines: typeSize.isAccessibilitySize ? 1 : 4,
+                                  color: PlayscribeColor.textPrimary.opacity(0.92))
+                        // At accessibility sizes the half-height stage has no room for a body line under a two-line title
+                        // and the eyebrow (the eyebrow was clipped at the top, fccccaa). The body is not drawn there; it stays
+                        // in the accessibility tree and the full text is one tap away.
+                        .frame(height: typeSize.isAccessibilitySize ? 0 : nil)
+                        .clipped()
                         .accessibilityLabel(section.body)
                         .accessibilityIdentifier("readerBody")
                 }
@@ -185,7 +202,9 @@ struct TabletopReaderStage: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
                 .id(section.id)
                 .transition(.opacity)
-            }
+            } }
+            // Clip the block, not the ZStack: the art above draws under the status bar on purpose.
+            .clipped()
         }
         .animation(.easeInOut(duration: 0.2), value: index)
         // Its parts stay separate elements, so the release title is findable (J-4).
@@ -196,6 +215,7 @@ struct TabletopReaderStage: View {
 struct TabletopReaderControls: View {
     @Environment(AppModel.self) private var model
     @Environment(\.railWidth) private var railWidth
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     var gameID: String
 
     var body: some View {
@@ -219,13 +239,15 @@ struct TabletopReaderControls: View {
                                 .contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
+                            .accessibilityLabel(s.title)
+                            .accessibilityValue(ReaderBody.position(i, of: sections.count))
                             .accessibilityAddTraits(i == index ? .isSelected : [])
                             .tappableFrame()
                             .id(i)
                         }
                     }
                 }
-                .onChange(of: index) { _, i in withAnimation { proxy.scrollTo(i, anchor: .center) } }
+                .onChange(of: index) { _, i in withAnimation(reduceMotion ? nil : .default) { proxy.scrollTo(i, anchor: .center) } }
             }
             HStack(spacing: 12) {
                 pageButton("Previous", "chevron.backward", enabled: index > 0) { go(index - 1) }
@@ -242,6 +264,11 @@ struct TabletopReaderControls: View {
     private func go(_ i: Int) {
         model.readerIndex[gameID] = i
         if let r = model.readerRelease(gameID), i > 0, model.isUnread(r) { model.markRead(r.id) }
+        // The page is on the stage, away from the button just pressed: say which section it is now.
+        let sections = model.readerRelease(gameID).map(model.readerSections) ?? []
+        if let s = sections[safe: i] {
+            UIAccessibility.post(notification: .announcement, argument: "\(s.title), \(ReaderBody.position(i, of: sections.count))")
+        }
     }
 
     private func pageButton(_ title: String, _ symbol: String, enabled: Bool, action: @escaping () -> Void) -> some View {
@@ -252,6 +279,7 @@ struct TabletopReaderControls: View {
                 .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(title + " section")
         .disabled(!enabled)
         .opacity(enabled ? 1 : 0.4)
         .tappableFrame()

@@ -2,8 +2,11 @@ name: Feed
 
 # The zero-cost backend: every hour, poll the sources and publish the static feed to the `feed`
 # branch, served at https://raw.githubusercontent.com/tezbo/playscribe/feed/v1/index.json.
-# The SQLite state travels with it (state/playscribe.db). The branch holds one commit, replaced on
+# The SQLite state travels with it (state/playscribe.db.gz, gzipped since 12 Nov 2026 because the raw file passed GitHub's 100 MB limit). The branch holds one commit, replaced on
 # every run, so it never grows. Free on a public repository.
+# GitHub's schedule fires late or skips for hours when its queue is busy (11 Nov 2026: one full poll in 4.5 h), so the relay
+# Worker's cron (relay/worker.js, :22 and :52) starts this workflow by workflow_dispatch whenever no run began in the last
+# 10 minutes; `hot: true` is its :52 run. Decision: docs/decisions/feed-cron-worker.md.
 # At :47 a short hot run polls only the hot set (backend/src/hot.ts: games with a patch in the last 14
 # days plus backend/src/sources/hot-pinned.json), so followed games get faster alerts. About 1 to 2
 # minutes a run, so roughly 1,000 to 1,500 extra Actions minutes a month, free on a public repository.
@@ -18,6 +21,10 @@ on:
         type: choice
         options: [poll, backfill, confirm, dismiss, info]
         default: poll
+      hot:
+        description: 'poll: hot set only (the :47 run), as the relay Worker cron sends it'
+        type: boolean
+        default: false
       release:
         description: 'confirm: release id, e.g. dawnwalker@1.1'
         required: false
@@ -71,6 +78,9 @@ jobs:
         run: |
           mkdir -p out
           if git fetch --depth 1 origin feed; then git --work-tree=out checkout FETCH_HEAD -- . && git reset -q; else echo "No feed branch yet; starting fresh"; fi
+          # The state database is published gzipped (state/playscribe.db.gz): the raw file passed GitHub's 100 MB limit on 12 Nov 2026.
+          # An older branch still holds the raw file; either is read.
+          if [ -f out/state/playscribe.db.gz ]; then gunzip -f out/state/playscribe.db.gz; fi
           ls -la out out/state 2>/dev/null || true
       - uses: actions/setup-node@v4
         with:
@@ -100,11 +110,19 @@ jobs:
         run: |
           echo "PUSH_DEFER=1" >> "$GITHUB_ENV"
           echo "::warning::Push skipped this run: the relay devices did not load. Releases stay unclaimed and are pushed on the next run that loads."
+      # Auto-onboarding (0.5.4): what the derived registry would follow, from the published info shards. Prints only.
+      - name: Auto-onboarding dry run
+        if: (github.event_name == 'schedule' && github.event.schedule != '47 * * * *') || (inputs.action == 'poll' && !inputs.hot)
+        working-directory: backend
+        run: npx tsx scripts/auto-registry.ts --info "$GITHUB_WORKSPACE/out/v1/info" --sample 20
       - name: Poll
         if: github.event_name == 'schedule' || inputs.action == 'poll'
         working-directory: backend
         env:
-          HOT_RUN: ${{ github.event.schedule == '47 * * * *' && '--hot' || '' }}
+          HOT_RUN: ${{ (github.event.schedule == '47 * * * *' || inputs.hot) && '--hot' || '' }}
+          # Auto-onboarding: games polled per full run from the derived registry. Unset or 0 = off (dry run only).
+          # Set the AUTO_SLICE repository variable (600 = a full cycle in about 9 runs) to turn it on.
+          AUTO_SLICE: ${{ vars.AUTO_SLICE }}
         run: npm run ingest --silent -- $HOT_RUN --export "$GITHUB_WORKSPACE/out"
       - name: Backfill
         if: inputs.action == 'backfill'
@@ -136,7 +154,7 @@ jobs:
       # Every game's description, genres, first release and trailers (v1/info), so no game page is
       # ever blank. Refreshed weekly, or now with the info action.
       - name: Game info
-        if: (github.event_name == 'schedule' && github.event.schedule != '47 * * * *') || inputs.action == 'poll' || inputs.action == 'info'
+        if: (github.event_name == 'schedule' && github.event.schedule != '47 * * * *') || (inputs.action == 'poll' && !inputs.hot) || inputs.action == 'info'
         working-directory: backend
         run: |
           stamp="$GITHUB_WORKSPACE/out/v1/info/fetched-at"
@@ -144,7 +162,7 @@ jobs:
           npm run game-info --silent -- "$GITHUB_WORKSPACE/out" && date -u +%FT%TZ > "$stamp"
       # Upcoming PS5 games for the watchlist (v1/upcoming), refreshed daily, or now with the info action.
       - name: Upcoming games
-        if: (github.event_name == 'schedule' && github.event.schedule != '47 * * * *') || inputs.action == 'poll' || inputs.action == 'info'
+        if: (github.event_name == 'schedule' && github.event.schedule != '47 * * * *') || (inputs.action == 'poll' && !inputs.hot) || inputs.action == 'info'
         working-directory: backend
         run: |
           stamp="$GITHUB_WORKSPACE/out/v1/upcoming/fetched-at"
@@ -161,6 +179,14 @@ jobs:
         run: |
           sqlite_wal="state/playscribe.db-wal"; [ -f "$sqlite_wal" ] && echo "WAL left behind" && exit 1
           rm -f state/*.db-shm
+          # GitHub rejects a file over 100 MB, and the database was 110 MB on 12 Nov 2026: publish it gzipped (about a fifth of the size).
+          gzip -9 -f state/playscribe.db
+          ls -la state
+          # Size guard: warn at 80 MB compressed, fail (after publishing, so the feed stays current) at 90 MB. GitHub's hard limit is 100 MB.
+          db_bytes=$(stat -c%s state/playscribe.db.gz); db_mb=$((db_bytes / 1000000))
+          echo "State database: ${db_mb} MB compressed (warn at 80, fail at 90, GitHub rejects at 100)"
+          echo "### State database: ${db_mb} MB compressed (warn 80, fail 90, limit 100)" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$db_bytes" -ge 80000000 ]; then echo "::warning title=Feed state database is ${db_mb} MB::Compressed state is over 80 MB; GitHub rejects 100 MB and the feed would stop. See docs/ps5-patch-data.md (state size)."; fi
           cat > README.md <<'MD'
           Generated by .github/workflows/feed.yml on main. Do not edit; every run replaces this branch.
           MD
@@ -169,3 +195,4 @@ jobs:
           git -c user.name="playscribe-feed[bot]" -c user.email="feed@users.noreply.github.com" commit -q -m "Feed $(date -u +%FT%TZ)"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" feed
           echo "Published $(find v1 -name '*.json' | wc -l) files"
+          if [ "$db_bytes" -ge 90000000 ]; then echo "::error title=Feed state database is ${db_mb} MB::Compressed state reached 90 MB (limit 100). Published this run; the next growth may stop the feed. Prune or move state now."; exit 1; fi

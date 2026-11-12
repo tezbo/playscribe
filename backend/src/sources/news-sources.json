@@ -1,5 +1,5 @@
 {
-  "$comment": "Roadmap 17. The only sources that may feed news headlines. Anything not listed here is never read for news (press sites included, except the one listed below with Terry's yes). We keep the title, date and link only, never article text, and the app shows no source names. Terms checked 2026-11-03 by Priya. The PlayStation Blog was removed from this list the same day: playstation.com's website terms (section on text and data mining) bar bots, scrapers and other automated tools from accessing or copying any part of the site, and it is not clear that the public RSS feed is carved out. Add it back only after Terry or Theo confirms in writing.",
+  "$comment": "Roadmap 17. The only sources that may feed news headlines. Anything not listed here is never read for news (press sites included, except the ones listed below with Terry's yes). We keep the title, date and link only, never article text, and the app shows no source names. Terms checked 2026-11-03 by Priya; the five outlets added in #443 were checked 2026-11-11 (see each entry). The PlayStation Blog was removed from this list the same day: playstation.com's website terms (section on text and data mining) bar bots, scrapers and other automated tools from accessing or copying any part of the site, and it is not clear that the public RSS feed is carved out. Add it back only after Terry or Theo confirms in writing.",
   "sources": {
     "steamNews": {
       "what": "Official posts on each game's own Steam news feed (Steam Web API ISteamNews, public, no key), the studio's own announcements.",
@@ -8,7 +8,38 @@
     "pushsquare-news": {
       "what": "Push Square's public RSS feed (/feeds/latest, linked in its footer): headlines that name a tracked game. Terry approved it as a news source on 2026-11-05.",
       "terms": "robots.txt allows the feed, Crawl-delay 5 is honoured, and its terms (/terms, read 2026-11-04) carry no bot or feed clause apart from competitions. Title, date and link only; never article text. Items are marked verification 'reported'.",
-      "verification": "reported"
+      "verification": "reported",
+      "newsOnly": true
+    },
+    "pcgamer-news": {
+      "what": "PC Gamer's public RSS feed (https://www.pcgamer.com/rss/): headlines that name a tracked game. Terry named it as a news source on 2026-11-09.",
+      "terms": "Terms read 2026-11-11 (Priya): Future plc UK terms (futureplc.com/terms-and-conditions-uk, last updated 07 April 2025) reserve rights against text and data mining and web scraping and bar any bot or automated tool that accesses, copies, monitors or republishes any portion of the sites; the US terms bar robots and crawlers that extract or collect information and say robots.txt is never permission. Linking to pages is allowed. No RSS clause either way. Terry's decision 2026-11-11 (\"Keep and don't ask for now\"): keep the feed, no permission email; revisit before 0.8 public testing (board card r080-news-outlet-terms). Title, date and link only; never article text. Items are marked verification 'reported'. robots.txt allows the feed path for PlayscribeBot (checked 2026-11-11).",
+      "verification": "reported",
+      "newsOnly": true
+    },
+    "ign-news": {
+      "what": "IGN's public RSS feed (https://feeds.feedburner.com/ign/games-all): headlines that name a tracked game. Terry named it as a news source on 2026-11-09.",
+      "terms": "Terms read 2026-11-11 (Priya): ign.com terms pages return 404 to our bot; the parent Ziff Davis terms of use (ziffdavis.com/terms-of-use, effective September 2026, lists IGN) bar any robot, spider or retrieval application that crawls, scrapes, retrieves or indexes any portion of the Services, and keep Content to personal, non-commercial use. No RSS clause either way. The feed itself is served by FeedBurner. Terry's decision 2026-11-11 (\"Keep and don't ask for now\"): keep the feed, no permission email; revisit before 0.8 public testing (board card r080-news-outlet-terms). Title, date and link only; never article text. Items are marked verification 'reported'. robots.txt allows the feed path for PlayscribeBot (checked 2026-11-11).",
+      "verification": "reported",
+      "newsOnly": true
+    },
+    "polygon-news": {
+      "what": "Polygon's public RSS feed (https://www.polygon.com/feed/): headlines that name a tracked game. Terry named it as a news source on 2026-11-09.",
+      "terms": "Terms read 2026-11-11 (Priya): polygon.com terms pages are blocked to our bot; the parent Valnet terms of use (valnetinc.com/en/terms-of-use, last updated 12 January 2026) expressly cover RSS feeds (section 7: a feed must not be modified, and Valnet may require any party to stop using its feeds at any time), allow reproducing extracts with a credit and a link to the site, limit use to personal and non-commercial, and bar crawling, spidering and automatic downloading of the sites. Our link row credits Polygon by name (V-3 exception). Terry's decision 2026-11-11 (\"Keep and don't ask for now\"): keep the feed, no permission email; revisit before 0.8 public testing (board card r080-news-outlet-terms). Title, date and link only; never article text. Items are marked verification 'reported'. robots.txt allows the feed path for PlayscribeBot (checked 2026-11-11).",
+      "verification": "reported",
+      "newsOnly": true
+    },
+    "gamespot-news": {
+      "what": "GameSpot's public RSS feed (https://www.gamespot.com/feeds/news/): headlines that name a tracked game. Terry named it as a news source on 2026-11-09.",
+      "terms": "Terms NOT read as of 2026-11-11 (Priya): gamespot.com and fandom.com terms pages return 403 to our bot and the web reader, so the Fandom terms are unverified. Terry's decision 2026-11-11 (\"Keep and don't ask for now\"): keep the feed, no permission email; revisit before 0.8 public testing (board card r080-news-outlet-terms). Title, date and link only; never article text. Items are marked verification 'reported'. robots.txt allows the feed path for PlayscribeBot (checked 2026-11-11).",
+      "verification": "reported",
+      "newsOnly": true
+    },
+    "gamesradar-news": {
+      "what": "GamesRadar+'s public RSS feed (https://www.gamesradar.com/feeds.xml): headlines that name a tracked game. Terry named it as a news source on 2026-11-09.",
+      "terms": "Terms read 2026-11-11 (Priya): same Future plc terms as PC Gamer (see pcgamer-news). Terry's decision 2026-11-11 (\"Keep and don't ask for now\"): keep the feed, no permission email; revisit before 0.8 public testing (board card r080-news-outlet-terms). Title, date and link only; never article text. Items are marked verification 'reported'. robots.txt allows the feed path for PlayscribeBot (checked 2026-11-11).",
+      "verification": "reported",
+      "newsOnly": true
     }
   }
 }

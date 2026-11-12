@@ -175,6 +175,7 @@ The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000
 ## 0.5.0 hot-set schedule (roadmap 11)
 
 - Follows live on devices, so the server does not know which games are followed. The **hot set** is the games with a patch in the last 14 days plus `backend/src/sources/hot-pinned.json`, capped at 12 (`src/hot.ts`).
+- Launch window (0.6.0, r060-dayone-patch-watch): a game whose exact PS5 day is from 2 days before to 7 days after today is in the hot set too, after the pinned list and ahead of recent patches, so its day-one patch is caught at the hot cadence. A derived (auto) game in its launch window is tracked for that week instead of waiting for the auto slice. A month, quarter, year or tbd date is not a launch; a game with nothing to poll is not either. The app-side alert is the release-day event in `upcoming/events.json` plus the normal N-3 push once the day-one patch is On PS5 (`dayOne` counts as major).
 - A second Actions schedule at :47 runs `npm run ingest -- --hot`: it polls only the hot games' sources (25 minute minimum interval, instead of 55) and skips the shared press sources. The hourly :17 run does everything as before and also uses the 25 minute interval for hot games. Hot games are therefore checked about every 30 minutes; the rest hourly.
 - Budget: each hot run takes about 1 to 2 minutes (cached install, up to 12 games), so roughly 1,000 to 1,500 extra Actions minutes a month. The repository is public, so this is free. GitHub may delay scheduled runs, so these are targets, not guarantees.
 
@@ -201,6 +202,16 @@ The PlayStation Blog's robots.txt allows `/feed/` (Crawl-delay 5), but playstati
 - The PlayStation Blog is not used for news headlines, and (below) not polled for patches either.
 - It is no longer polled at all: `playstation-blog` in `src/sources/registry.json` is `fetch: manual` (Theo's call, 2026-11-03). Re-enable only with written permission from Sony. Nothing else depends on it: PS5 versions and live times come from studio posts, Steam posts and other allowed sources, and a release's `links.ps5Page` comes from the Steam post or from a studio page, or is added by hand. Data already stored from it stays; it is not refreshed.
 - The same terms are why Sony's patch servers and PSN APIs are out (see the top of this file).
+
+## Auto-onboarding (0.5.4, Theo)
+
+The hand registry follows about 100 games; the PS5 index has 9,419. Every full poll derives a second, generated registry from the index and the published info shards (`v1/info`): each released game whose IGDB entry links a Steam store page gets one `steamNews` source (`auto-<appid>-steam`), the index's own cover, key art and PS5 date (no IGDB call), and `steamIsPcPort` when the publisher or developer is Sony or PlayStation. Hand entries always win: a game in `registry.json` (by IGDB id or Steam app id) is never auto-added, and an auto row never overwrites a hand row. Games not out yet, games with no Steam page (console exclusives, which stay link-only) and a second index entry for the same Steam app are skipped; the Feed log prints the counts and a fixed 20-game spot check every run (`scripts/auto-registry.ts`).
+
+Tiers: hand-registered and device-followed games are polled every run as before, and any game with a patch in the last 14 days is in the hourly hot set. Everything else is polled in a rotating slice of `AUTO_SLICE` games per full poll (never-polled first, then the longest ago), cut short at `AUTO_BUDGET_MS` (9 min) so the job stays inside its 20 min limit. With 600 a run, about 5,300 games cycle in 9 runs. Unset or 0 (the default until the first spot check is signed) runs only the dry run. The same Steam rules apply (`assumed` on PS5 unless a port, predating the PS5 release, or the post says otherwise); nothing from an auto entry is ever `official`. An auto game is published (`index.json`, `games/<id>.json`) only once it has a release, so the feed branch stays small; its news headlines are not kept.
+
+**Opt-in follow list (step 3).** A game outside the registry is polled hourly, not on the rotation, while a device that turned
+on "Help keep my games up to date" follows it: the relay holds ids only (docs/api.md "Follow list without alerts"), the Feed
+job reads the `hourly` flag, and the data rules above are unchanged (an auto game is still published only with a release).
 
 ## Link-only games and feed health (0.5.0)
 
@@ -244,3 +255,37 @@ Next step: parse the monthly "PS Plus Essential games for <month>" article from 
 ### Push Square patch tag (2026-11-06)
 
 `pushsquare-patches` reads Push Square's `/tags/Patches` list beside `/tags/updates`. The older list is where its PS4-era patch articles live (Assassin's Creed Odyssey 1.0.3 to 1.50, 2018 to 2019), tagged PS4. Same rules as the updates list: facts only, reported, one request per page at the site's Crawl-delay. PS4 posts in it count only for a game that plays on PS5 (no native PS5 release, or the post predates it) and are labelled `ps4`.
+
+### Search aliases in the PS5 index (field `k`, #298)
+
+Each index entry may carry `k`, a list of up to 5 aliases players type: IGDB alternative names plus franchise short forms ("GTA V", "GTA5", "COD: Modern Warfare II", "AC Odyssey", "FF7", "BG3"); built by `src/search-aliases.ts`. The app folds them like the name and only checks them when the name did not match; an alias equal to the query or starting with it ranks like a name prefix, so "ac" and "ff" surface the franchise, and a name hit always outranks an alias for the same game.
+
+## Trust audit rules (r050)
+
+Two store passes run every ingest, after the press posts are read:
+- `dropPreLaunchPs5`: Steam-only PS5 rows dated before the game's PS5 release are dropped. A game with no PS5 date uses the PS5 launch day (12 Nov 2020), so Stardew Valley's and Monster Hunter: World's 2016 to 2020 Steam patches no longer read as PS5 updates.
+- `labelPreLaunchPs4`: a press-reported PS5 row before the PS5 era, or before the game's PS5 release for a game that had a PS4 release by then, becomes a "PS4 update" with no PS5 version. A game with no PS5 date at all counts as a PS4 game.
+The PS4 release days come from the bundled index (`b`); a bare checkout without the index relabels nothing.
+
+A PS5 row is never dropped because it is dated long before the game's recorded PS5 release: that date can be a full-release or re-release date, not the first PS5 availability (early access, or a wrong IGDB date), so an early-row pass would drop real rows. A post within a week of the PS5 release is a day-one patch and is never relabelled.
+
+## Early Access before a later 1.0 (r052-early-access-dates)
+
+Only IGDB status "Early Access" counts, never Advanced Access (a few days of paid head start), Beta or Alpha. When a PS5 Early Access row comes before a later Full Release row, the game's PS5 date (`ps5Release`, `d` in the index) is the first playable day, so Steam patches from that period get PS5 rows. While the 1.0 is still ahead the feed and the index also carry `eaSince`/`fullRelease` (`ea`/`fr`). A game whose IGDB data mixes builds is set by hand in `scripts/ps5-date-overrides.json`. Games are refreshed from IGDB once when `IGDB_REV` (src/ingest/igdb.ts) is raised, and again while a 1.0 is still ahead. Diagnostic: the PS5 index workflow with `diagnose` lists every game whose earliest PS5 row precedes `d`; it writes nothing.
+
+## What a post claims about PS5 (r050-feed-ps5-claim-fixes)
+
+From Quinn's spot-check of 25 rows. The feed claims less when a post says less (`backend/src/ingest/claims.ts`):
+
+- **A stated later time is the live time.** "At 02:00 UTC+0 on November 10 the updates ... will be available", "starting on November 12, 2026 at 06:00 (UTC+0)", "Tomorrow, October 27th ... @ 14:00 UTC": the PS5 row is `announced` with that time as `liveAt` and flips to `live` (and earns its one alert from then) when the time has passed (`promoteStated`). A date with no clock time is held to the end of that UTC day. It fires only when one sentence has a future marker (will, tomorrow, starting, arrives...) and this update's own words (update, patch, hotfix, version, season), and none of event, DLC, store, warbond, test, stream, before, by and the like; a sentence naming PS5, PlayStation or consoles wins over the others; maintenance counts only in a post titled as an update, plus its stated duration. A sentence that puts the release on the post's own day, or is about "the next patch/update", never holds a row. A date with no clock time holds to 23:59 UTC that day, so a morning release can show live up to 11 hours late. Known limit: a post about one patch that says another hotfix ships tomorrow (DbD 9.1.1 / hotfix) is held a day. Dates in the past, over 14 days out, or the post's own day (date only) are ignored. It fails toward live: a live patch held back costs more than an alert 90 minutes early (Quinn's scan of 2,664 real posts fired it on 96, down from 296). An official post keeps its `official` verification while it waits.
+- **Test builds are not releases.** A title with PTB, public test, test build, beta, preview or playtest makes no PS5 row (a multi-platform test post is dropped; a Steam one keeps its PC row only).
+- **No PS5 assumption from PC-scoped posts.** Two or more other platforms' builds with no PlayStation named ("Windows: v1.0.6.2132 / Mac: v1.0.6.776"), or "added on PC, rolling out soon to other platforms", gives no assumed PS5 row.
+- **Announcement headlines are news.** "Palworld's next major update, Feybreak, releases on Dec. 23", "Title Update coming this week!", "Season Echo Coming Soon": a title naming the next/upcoming update, or one coming/releasing soon, tomorrow or on a date, makes no release and no PS5 row; the notes post that follows is the release. (Quinn's scan of 2,664 posts: 7 titles, all announcements.) Releases already stored from such a post are not removed by the backfill.
+- **The studio's whole version string is kept** ("10.2.2a", not "10.2.2").
+- **Repair.** A backfill (`--backfill <since>`) re-reads official posts and corrects only the PS5 row that post itself made under the old rules (same source, `liveAt` equal to the post time); rows from other sources and confirmed rows are left alone. The backfill also reads every derived (auto-onboarded) game that has a PS5 row, one Steam request each, 250 ms apart, because the hourly slice never re-reads a post it has seen (about 2,200 games, roughly 15 minutes), and it never adds news headlines for them. Steam's feed returns its last 100 posts per source, so older rows are not reached. A release already stored under a wrong name (for example `dead-by-daylight@10.2`) keeps its id and name; remove it by hand if it matters.
+
+## State size (feed branch)
+
+The feed branch carries the state database gzipped (`state/playscribe.db.gz`). GitHub rejects a file over 100 MB. Publish prints the compressed size on every run, adds a warning annotation at 80 MB and, at 90 MB, publishes and then fails the job so the feed stays current but the failure is loud. Measured 12 Nov 2026: 186 MB raw, 38.7 MB compressed; `releases` is 145 MB of it (notes 116 MB). Release notes are not pruned: they are the product and are only removable if they can be restored exactly from the published game files.
+
+Backfill also removes the release an announcement headline made under the old rules (only when that post is its sole source and day), and no pass moves a stated PS5 time back to the Steam post: the old `repairAssumedLiveAt` pass is retired because it undid every stated time after its first run (found by Quinn on DDV Season of Scares, 12 Nov).

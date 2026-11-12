@@ -42,6 +42,19 @@ struct DuoContext: Equatable {
         guard pose == .tabletop, let d = division, bottom > 0 else { return 0 }
         return max(0, bottom - (d.minY - gap))
     }
+
+    /// Book: how far a page's text and controls stay clear of the division band: the 24 pt keep-out used everywhere else, plus 1 pt
+    /// because the band starts at a half point (455.5 on the Duo) and a pane's frame is reported rounded up (456), so 24 from the
+    /// pane edge read as 432 against a limit of 431 (Mac frame dump on 12f0b47).
+    static let hingeGap: CGFloat = 25
+
+    /// The inset for the edge of a page that faces the hinge in Book: the page's own inset, or the keep-out if that is more.
+    /// The two panes meet the band exactly (the left one ends where it starts, the right one starts where it ends), so the
+    /// band's width is not part of the inset. Every other pose, and the edges that face the screen, keep `base`.
+    func hingeInset(_ base: CGFloat, facingHinge: Bool) -> CGFloat {
+        guard pose == .book, division != nil, facingHinge else { return base }
+        return max(base, Self.hingeGap)
+    }
 }
 
 private struct DuoKey: EnvironmentKey {
@@ -73,6 +86,37 @@ extension EnvironmentValues {
     }
 }
 
+/// QA (internal builds only): `-qaPose book` or `-qaPose tabletop` gives DuoReader a synthetic fold in the container it is
+/// already in, so a pose can be set at launch with no Device Hub clicks and no focus change (docs/ci.md item 6). The fold
+/// sits where the real one did in the Mac stills (its leading edge at 0.525 of the width for Book and its top edge at 0.447 of the height for Tabletop, 40 pt thick, the PoseCatalog numbers; the real device may differ by a few percent until the calibration pair is read).
+/// Launch on the inner display, landscape for book and portrait for tabletop. Closed and Open need no fold, so they are not
+/// arguments. Ignored in a distribution build, like `-qaRoute`.
+enum QAPose {
+    /// Tests only: stands in for the launch argument.
+    nonisolated(unsafe) static var overrideName: String?
+
+    static var name: String? {
+        #if INTERNAL
+        guard BuildChannel.showsInternalTools else { return nil }
+        return overrideName ?? UserDefaults.standard.string(forKey: "qaPose")
+        #else
+        return nil
+        #endif
+    }
+
+    static func injected(size: CGSize) -> InjectedRegions? {
+        regions(named: name, size: size)
+    }
+
+    static func regions(named name: String?, size: CGSize) -> InjectedRegions? {
+        switch name {
+        case "book": InjectedRegions(division: CGRect(x: size.width * 0.525, y: 0, width: 40, height: size.height))
+        case "tabletop": InjectedRegions(division: CGRect(x: 0, y: size.height * 0.447, width: size.width, height: 40))
+        default: nil
+        }
+    }
+}
+
 /// Reads the scene-level container and its reserved regions, and publishes the pose.
 struct DuoReader<Content: View>: View {
     @Environment(\.horizontalSizeClass) private var hSize
@@ -92,6 +136,11 @@ struct DuoReader<Content: View>: View {
         if let injected {
             ctx = context(size: proxy.size, compact: compact, division: injected.division, occlusions: injected.occlusions)
         } else {
+            if let qa = QAPose.injected(size: proxy.size) {
+                var ctx = context(size: proxy.size, compact: compact, division: qa.division, occlusions: qa.occlusions)
+                ctx.safeArea = proxy.safeAreaInsets
+                return ctx
+            }
             let divisions = proxy.reservedRegions(kind: .division).filter(\.isActive)
             let occlusions = proxy.reservedRegions(kind: .occlusion).filter(\.isActive).map(\.frame)
             ctx = context(size: proxy.size, compact: compact, division: divisions.first?.frame, occlusions: occlusions)
@@ -281,5 +330,54 @@ struct DebugOverlay: View {
         }
         .allowsHitTesting(false)
         .ignoresSafeArea()
+    }
+}
+
+private struct HarnessSplitKey: EnvironmentKey {
+    static let defaultValue = false
+}
+
+extension EnvironmentValues {
+    /// Tests only (fold harness): lay out `SplitArrangement` by the injected division instead of the system's ArrangementView,
+    /// which only splits against a real reserved region. Never set in the app. Triage, not a sign-off (r052-harness-book-split).
+    var harnessSplit: Bool {
+        get { self[HarnessSplitKey.self] }
+        set { self[HarnessSplitKey.self] = newValue }
+    }
+}
+
+/// `ArrangementView(.split)` in the app; under the harness a stand-in that gives the primary the area before the division and
+/// the secondary the area after it, so a headless still can show the Book split.
+struct SplitArrangement<Primary: View, Secondary: View>: View {
+    @Environment(\.harnessSplit) private var standIn
+    @Environment(\.injectedRegions) private var injected
+    @ViewBuilder var primary: () -> Primary
+    @ViewBuilder var secondary: () -> Secondary
+
+    /// The Mac's right page is about 9 pt wider than the plain split gives (Quinn, KCD II Book AX5, e6fd747: the system reserves
+    /// less for the side rail). Harness-only calibration; re-measure if the Mac still moves.
+    private static var railReserveTrim: CGFloat { 9 }
+
+    var body: some View {
+        if standIn, let d = injected?.division {
+            GeometryReader { proxy in
+                if d.height > d.width { // vertical bar: primary left, secondary right (Book, Open landscape)
+                    HStack(spacing: 0) {
+                        primary().frame(width: max(0, d.minX))
+                        Color.clear.frame(width: d.width)
+                        secondary().frame(width: max(0, proxy.size.width - d.maxX + Self.railReserveTrim))
+                    }
+                } else { // horizontal bar: primary above, secondary below (Tabletop)
+                    VStack(spacing: 0) {
+                        primary().frame(height: max(0, d.minY))
+                        Color.clear.frame(height: d.height)
+                        secondary().frame(height: max(0, proxy.size.height - d.maxY))
+                    }
+                }
+            }
+        } else {
+            ArrangementView { primary() } secondary: { secondary() }
+                .arrangementViewStyle(.split)
+        }
     }
 }

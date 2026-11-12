@@ -9,6 +9,8 @@ struct UpdatesView: View {
     var body: some View {
         let ids = model.data.collection.map(\.gameID)
         let items = ids.flatMap { model.ps5Releases($0) }.sorted { $0.ps5Date > $1.ps5Date }
+        let badgeExtra = duo.occlusions.filter { $0.minY < 190 && $0.maxY > 40 }
+            .map { max(0, duo.size.width - $0.minX) }.max() ?? 0
         Group {
             if ids.isEmpty {
                 ContentUnavailableView {
@@ -33,13 +35,17 @@ struct UpdatesView: View {
                     .padding(.horizontal, 16)
 
                 }
+                .clearsMessages()
                 .frame(width: duo.size.width)
             } else {
                 List {
                     ForEach(items) { r in FeedRow(release: r) }
 
                 }
-                .contentMargins(.trailing, railWidth, for: .scrollContent)
+                // The inset is on the list itself: row backgrounds, separators and tap frames all stop at the
+                // rail and the time/Wi-Fi badge; scroll-content margins left them running underneath.
+                .padding(.trailing, railWidth + (duo.pose == .tabletop ? 0 : badgeExtra))
+                .clearsMessages()
             }
         }
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
@@ -56,28 +62,61 @@ struct UpdatesView: View {
 
 struct FeedRow: View {
     @Environment(AppModel.self) private var model
+    /// Half the title's cap height: lifts the dot's centre to the middle of the first line at every text size.
+    @ScaledMetric(relativeTo: .subheadline) private var dotLift: CGFloat = 5
+    @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
 
     var body: some View {
         let unread = model.isUnread(release)
         Button { model.openGame(release.gameID, chapter: .updates, releaseID: release.id) } label: {
-            HStack(spacing: 12) {
+            // At accessibility sizes the thumbnail sits above the text so the column gets the row's full width: a game
+            // name never breaks inside a word and a date stays whole (Iris, AX5).
+            let rowLayout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 28))
+            rowLayout {
                 if let g = model.game(release.gameID) { CoverView(game: g, cornerRadius: 4).frame(width: 40) }
                 VStack(alignment: .leading, spacing: 3) {
-                    HStack(spacing: 6) {
-                        if unread { UnreadDot() }
+                    // At accessibility sizes the row stacks: the title takes the full width in whole words,
+                    // the tags and date each get their own line, the summary goes under.
+                    // The dot hangs in the gutter left of the text (12 pt clear of the first letter, centred on the title's first
+                    // line), so read and unread rows share one title edge (Iris, Quinn).
+                    TitleWithTags(release: release) {
                         Text(release.displayName).font(PlayscribeFont.subheadline.weight(unread ? .bold : .semibold))
-                        ReleaseTag(release: release)
                     }
-                    HStack(spacing: 8) {
-                        Text(model.game(release.gameID)?.name ?? "")
-                        Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
+                    .overlay(alignment: Alignment(horizontal: .leading, vertical: .firstTextBaseline)) {
+                        if unread {
+                            UnreadDot()
+                                .alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
+                                // A plain offset, not a leading guide (Mac, fd23684: the guide left the dot on the first letter's stem):
+                                // the dot's right edge sits 12 pt left of the title's left edge, its left edge 8 pt right of the cover.
+                                .offset(x: -(8 + 12))
+                        }
                     }
-                    .font(PlayscribeFont.caption)
-                    if let h = release.headline { Text(h).font(PlayscribeFont.footnote).lineLimit(2) }
+                    if typeSize.isAccessibilitySize {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
+                            Text(release.ps5Date.shortDay).foregroundStyle(.secondary).fixedSize()
+                        }
+                        .font(PlayscribeFont.caption)
+                    } else {
+                        HStack(spacing: 8) {
+                            Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
+                            Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
+                        }
+                        .font(PlayscribeFont.caption)
+                    }
+                    if let h = release.headline {
+                        // Whole words only: a capped summary ends "…" at a word boundary (Iris, AX3).
+                        if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.footnote, lines: 4) }
+                        else { Text(h).font(PlayscribeFont.footnote).lineLimit(2) }
+                    }
                 }
                 Spacer(minLength: 0)
             }
+            // One rule for every pose: at accessibility sizes there is no cover beside the text for the hung unread dot to sit
+            // against, so the row keeps its own 12 pt margin + 8 pt dot + 12 pt clearance (32 pt) before the text. The dot is then
+            // 12 pt inside the card's edge in Closed, Open and Book alike (Mac, 99a1f3b: flush with the edge in Closed and Open).
+            .padding(.leading, typeSize.isAccessibilitySize ? 32 : 0)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -260,6 +299,7 @@ struct SearchView: View {
             }
         }
         .contentMargins(.trailing, railWidth + (tabletop ? 0 : badgeExtra), for: .scrollContent)
+        .clearsMessages()
         // Book: Search lives on the right page, never across the fold (0.2.0 gate: field and hint ran full width).
         .padding(.leading, duo.pose == .book ? (duo.division.map { $0.maxX + 8 } ?? 0) : 0)
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.

@@ -42,18 +42,28 @@ const TERMS = JSON.parse(readFileSync(new URL('./platform-terms.json', import.me
 const any = (list: string[]) => new RegExp(list.map((p) => `(?:${p})`).join('|'), 'i')
 const NAMES = { pc: any([...TERMS.pcNames, ...TERMS.pc]), ps5: any(TERMS.ps5), xboxSeries: any(TERMS.xboxSeries), consoles: any(TERMS.consoles) }
 
+// "PlayStation" not followed by a generation, and "PSN": the weak PS5 terms.
+const BARE_PLAYSTATION = /\bPlayStation\b(?!\s*®?\s*[45]\b)|\bPSN\b/gi
+
+const PC_PLAYSTATION_PAIR = /\bPC\s*(?:and|&|\/|,|or|\+)\s*PlayStation|\bPlayStation\s*(?:and|&|\/|,|or|\+)\s*PC\b/i
+
 /**
  * Which platforms an item is about, or undefined for every platform. A section heading ("PC",
  * "PS5 fixes") decides for its items; otherwise the item's own words do. PC-only words (FrameGen,
  * DLSS, AMD, Steam Deck, mouse and keyboard…) tag it PC unless it also names a console.
  */
-export const platformsFor = (text: string, section?: Platform[]): Platform[] | undefined => {
+export const platformsFor = (text: string, section?: Platform[], steamOnly = false): Platform[] | undefined => {
   if (section) return section
   const p: Platform[] = []
-  const ps5 = NAMES.ps5.test(text)
+  // On a Steam-only release a line that says only "PlayStation" or "PSN" (SDK, trophies, friends, account link) is about
+  // the PC build, not PS5 content: it tags PC (Quinn, r052-steam-playstation-tag).
+  // Not when the line also names another console, or pairs PC with PlayStation ("PC and PlayStation"): Steam posts for games that
+  // are on PS5 write their fixes that way, and those stay PS5 content.
+  const weakOnly = steamOnly && NAMES.ps5.test(text) && !NAMES.ps5.test(text.replace(BARE_PLAYSTATION, '')) && !NAMES.xboxSeries.test(text) && !NAMES.consoles.test(text) && !/\bSwitch\b/i.test(text) && !PC_PLAYSTATION_PAIR.test(text)
+  const ps5 = weakOnly ? false : NAMES.ps5.test(text)
   const xbox = NAMES.xboxSeries.test(text)
   if (ps5) p.push('ps5')
-  if (PC.test(text) || (NAMES.pc.test(text) && !NAMES.consoles.test(text))) p.push('pc')
+  if (weakOnly || PC.test(text) || (NAMES.pc.test(text) && !NAMES.consoles.test(text))) p.push('pc')
   if (xbox) p.push('xboxSeries')
   return p.length ? p : undefined
 }
@@ -90,7 +100,60 @@ const sectionPlatforms = (title: string): Platform[] | undefined => {
   return named?.length === 1 ? named : undefined
 }
 
-export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSection[] => {
+// Studio and Steam promo lines are not changes: sale calls, follow-us and community calls, wishlist or buy prompts, "check
+// out our other game", giveaways, greetings and bare thank-yous. A line that states a change is always kept, even when it
+// mentions a sale or a thanks ("Thanks for reporting, the door is now fixed"), and "we are aware of X" stays (a known
+// issue). Whole lines only; the studio's words are never rewritten. Agreed with Ezra, r052-promo-filter.
+const CHANGE_WORD = /\b(fix(?:ed|es)?|add(?:ed|s)?|improv(?:ed|es|ement)s?|remov(?:ed|es)|chang(?:ed|es)|updat(?:ed|es)|resolv(?:ed|es)|reduc(?:ed|es)|increas(?:ed|es)|adjust(?:ed|s)?|correct(?:ed|s)|enabl(?:ed|es)|disabl(?:ed|es)|tweak(?:ed|s)?|rework(?:ed|s)?|crash(?:es)?|bug|aware of|working on|known issue|introduc(?:ed|es|ing)|rebalanc(?:ed|es|ing)|nerf(?:ed|s)?|buff(?:ed|s)?)\b/i
+const PROMO_LINE = new RegExp(
+  [
+    '\\bon sale\\b',
+    '\\b\\d+\\s?% off\\b',
+    '\\b(?:discount|special offer|limited[- ]time offer|steam sale|daily deal|publisher sale)\\b',
+    '\\bfollow (?:us|the (?:dev|studio|team)s?)\\b',
+    '\\bfollow .{0,80} on (?:social media|twitter|x|instagram|facebook|tiktok|youtube|twitch|bluesky|steam)\\b',
+    '\\b(?:join|visit) (?:us|our|the) .{0,40}(?:discord|community|newsletter|socials?)\\b',
+    '\\b(?:subscribe to|sign up for) (?:our |the )?(?:newsletter|channel|mailing list)\\b',
+    '\\bwish ?list (?:it|now|today|on steam|the next)\\b|\\bto your wish ?list\\b',
+    '\\b(?:buy now|pre-?order(?: \\w+){0,5} now)\\b',
+    '\\bcheck out our (?:other|new|latest|upcoming)\\b',
+    '\\bgiveaway\\b',
+    "\\b(?:merry christmas|happy (?:holidays|new year|halloween)|season'?s greetings)\\b",
+    '\\bcontinue your (?:adventure|journey)\\b',
+    '^(?:a big |a huge |many |so much )?thank(?:s| you)\\b[^.!?]{0,80}[.!]?$',
+  ].join('|'),
+  'i',
+)
+// Gameplay and in-game store lines can say "on sale" or "discount" without a change word ("Items on sale in the Store display
+// the correct price", "Prices are 50% off in the arena"). A line that names the in-game economy is kept, so the rule errs
+// towards leaving a promo line in rather than hiding a real note (Quinn, #332).
+const GAME_ECONOMY = /\b(?:vendors?|merchants?|shops?|stores?|traders?|stalls?|prices?|gold|coins?|shards?|cost|costs|currency|purchas(?:e|ed|es|able)|bundles?|coupons?|costumes?|outfits?|skins?|no longer|correct(?:ly)?|now (?:have|find|stack|show|display|appear|cost|sell))\b/i
+// A news headline that is a sale or merch call is not news (Nadia, r054-news-promo-merch-filter; Quinn on #443: "Get 20% Off",
+// "Merch you might have missed", keycaps and figures showed as Official news). Same promo patterns as the note lines, plus
+// merchandise words. Only headlines are judged here, never a patch note (those never reach the news table), and hidden
+// titles are logged for Quinn. Two guards keep the filter cautious (Quinn's dry run on 8,036 rows, 11 Nov):
+// - KEEP_TITLE: a headline that says update, patch, hotfix, out now, launch, release, servers or roadmap is news whatever else
+//   it says ("New update for Dragon's Dogma 2 and on sale now!", "Launching on Feb 27! Pre-order now!").
+// - Nadia's test (11 Nov, Iris agreed): does the post give the player something to know or do about their game? Free weekends
+//   do, so they are kept even beside a sale ("Free weekend + sales up to 60% off!"); milestone thank-yous, soundtracks and every
+//   sale ("Franchise Sale", "Anniversary Sale") do not. See docs/decisions/r054-news-promo-merch-filter.md.
+// Quinn's leftovers on #461 (dry run at 01359d7, 560 of 8,036 rows): a bare "sales" is business news ("Square Enix sales boost")
+// and stays; a thank-you anywhere in the title hides it ("2 Million Wishlists – Thank You!"); a soundtrack is judged before the
+// keep-list ("Soundtrack - Out Now!", "Soundtrack Release"); "play for free" is a free weekend by another name.
+const KEEP_TITLE = /\b(?:updates?|updated|patch(?:es|ed)?|hotfix(?:es)?|out now|launch(?:es|ed|ing)?|releas(?:e|es|ed)|servers?|roadmap|free (?:play )?weekend|play (?:for )?free)\b/i
+const SOUNDTRACK_TITLE = /\b(?:soundtracks?|ost|vinyl)\b/i
+const THANKS_TITLE = /\bthank(?:s| you)\b/i
+const MERCH_TITLE = /\b(?:merch(?:andise)?|figures?|figurines?|statues?|keycaps?|replicas?|figuarts|plush(?:ies|ie)?|t-?shirts?|hoodies?|apparel|collectibles?|art ?book|sale|(?:anniversary|franchise|holiday|weekend|steam|publisher|seasonal|autumn|summer|winter|spring|fall|midweek|big|launch) sales|(?:official )?store (?:is )?(?:now )?(?:open|live)|(?:now )?available (?:at|on|from) (?:the )?(?:store|shop)|\d+\s?% off|coming soon to the store|black friday|cyber monday|bundle (?:now )?available)\b/i
+export const isPromoTitle = (title: string) => {
+  if (CHANGE_WORD.test(title)) return false
+  if (SOUNDTRACK_TITLE.test(title)) return true
+  if (KEEP_TITLE.test(title)) return false
+  return PROMO_LINE.test(title) || MERCH_TITLE.test(title) || THANKS_TITLE.test(title)
+}
+
+export const isPromoLine = (text: string) => /^\s*https?:\/\/\S+\s*$/i.test(text) || (PROMO_LINE.test(text) && !CHANGE_WORD.test(text) && !GAME_ECONOMY.test(text))
+
+export const extractNotes = (body: string, fallbackTitle = 'Changes', steamOnly = false): NoteSection[] => {
   const sections: NoteSection[] = []
   let current: NoteSection | null = null
   let currentPlatforms: Platform[] | undefined
@@ -124,9 +187,10 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSecti
       continue
     }
     if (bullet) inList = true
+    if (isPromoLine(text)) continue
     if (!current) open(fallbackTitle)
     const item: NoteItem = { text, ps5ProOnly: currentPro || PRO.test(text), pcOnly: false, category: itemCategoryOf(text, categoryOf(current!.title)) }
-    const platforms = platformsFor(text, currentPlatforms)
+    const platforms = platformsFor(text, currentPlatforms, steamOnly)
     if (platforms) item.platforms = platforms
     item.pcOnly = isPcOnly(platforms)
     current!.items.push(item)
@@ -135,19 +199,26 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes'): NoteSecti
   return sections.filter((s) => s.items.length)
 }
 
+const STRAY_MARKUP = /\[\/(?:\*|[a-z0-9]+)\]|\[\*\]/gi
+/** Stray BBCode left in stored text by an older parser ("[/*]" items): strip it, and drop what it leaves empty. */
+const stripStray = (items: NoteItem[]): NoteItem[] =>
+  items.map((i) => ({ ...i, text: i.text.replace(STRAY_MARKUP, '').replace(/\s+/g, ' ').trim() })).filter((i) => i.text.length > 0)
+
 /**
  * Re-applies the platform rules to notes stored earlier, so a rule change reaches old releases. Also keeps source
  * names out of the notes (Terry's rule): a line that names one (a quoted review in a studio's post, say) is dropped,
  * a heading that names one becomes "Changes", and a section left empty goes.
  */
-export const tagNotes = (sections: NoteSection[]): NoteSection[] =>
-  sections.map((s) => {
+
+export const tagNotes = (sections: NoteSection[], steamOnly = false): NoteSection[] =>
+  sections.map((s0) => {
+    const s = { ...s0, items: stripStray(s0.items) }
     const section = sectionPlatforms(s.title)
     return {
       ...s,
       title: SOURCE_NAMES.test(s.title) ? 'Changes' : s.title,
-      items: s.items.filter((i) => !SOURCE_NAMES.test(i.text)).map(({ platforms: _old, ...i }) => {
-        const platforms = platformsFor(i.text, section)
+      items: s.items.filter((i) => !SOURCE_NAMES.test(i.text) && !isPromoLine(i.text)).map(({ platforms: _old, ...i }) => {
+        const platforms = platformsFor(i.text, section, steamOnly)
         const category = itemCategoryOf(i.text, categoryOf(s.title))
         return platforms ? { ...i, platforms, pcOnly: isPcOnly(platforms), category } : { ...i, pcOnly: false, category }
       }),

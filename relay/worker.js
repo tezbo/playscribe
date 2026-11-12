@@ -9,9 +9,21 @@
 //   POST /v1/devices                    register (idempotent per APNs token), returns { deviceId, deviceKey, follows, unknown }
 //   PATCH /v1/devices/me                token, environment, locale, quietHours
 //   GET|PUT /v1/devices/me/follows      the followed games
+//   DELETE /v1/devices/me               forget this device: record, token, key and team entry are removed (204; idempotent)
+//   POST /v1/follows                    0.5.4 "Help keep my games up to date": a record WITHOUT a token, follow ids only,
+//                                       hourly polling; returns { deviceKey, follows }. The body may hold nothing but follows.
 //   GET /admin/devices?cursor=          Feed job only (Bearer ADMIN_TOKEN), 40 devices a page
 //
-// KV keys: d:<id> device record, t:<apnsToken> -> id, k:<sha256 deviceKey> -> id.
+// Cron (scheduled handler): GitHub's own schedule for the Feed workflow fires late or not at all for hours at a time
+// (11 Nov 2026: one full poll in 4.5 hours, no hot runs), so this Worker's cron triggers, at :22 and :52, start the Feed
+// workflow by workflow_dispatch when GitHub has not started a run in the last 10 minutes. Needs FEED_DISPATCH_TOKEN
+// (fine-grained GitHub token, this repository only, Actions read and write); without it the handler does nothing.
+// Decision: docs/decisions/feed-cron-worker.md.
+//
+// KV keys: d:<id> device record, t:<apnsToken> -> id, k:<sha256 deviceKey> -> id, n:<UTC date> new devices that day.
+// A record with no APNs token (the follow-list opt-in, or a push device whose token was cleared) expires 90 days after
+// its last write; the app's weekly "still here" is the same PUT of its list, which is rewritten once a week even when
+// unchanged. A record with a token is kept until the device deletes it, as before.
 // Free-plan limits this is sized for: 1,000 KV writes a day (a relaunch with nothing changed writes nothing),
 // 50 KV operations per request (hence the 40 device page).
 
@@ -20,6 +32,15 @@ const MINUTES = 24 * 60
 const PAGE = 40
 const MAX_BODY = 64 * 1024
 const MAX_FOLLOWS = 500
+const MAX_TEAM = 20
+/** A record without a token lives this long after its last write (docs/api.md "Follow list without alerts"). */
+export const FOLLOWS_TTL_SECONDS = 90 * 86400
+/** The "still here" cadence: an unchanged follow list is written again once this much time has passed. */
+const STILL_HERE_MS = 7 * 86400 * 1000
+// A new device costs 4 KV writes (record, token, key, and the day counter); relaunches cost none. 150 new devices a day
+// is about 600 of the free plan's 1,000 writes, leaving the rest for changes by existing devices, so a flood of fake
+// registrations cannot starve real users. Existing devices are never refused.
+export const MAX_NEW_PER_DAY = 150
 
 const enc = new TextEncoder()
 const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('')
@@ -59,6 +80,23 @@ export const parseFollows = (v) => {
   return { follows: out }
 }
 
+/** The follow-list opt-in sends ids and nothing else: each item is exactly { gameId } or { igdbId }. Anything more is a 400,
+ *  so a build that adds a field cannot slip it past the relay (the app has the same test on its side). */
+export const parseIdFollows = (v) => {
+  if (!Array.isArray(v)) return { error: 'follows must be an array' }
+  if (v.length > MAX_FOLLOWS) return { error: `follows holds at most ${MAX_FOLLOWS} games` }
+  const out = []
+  for (const f of v) {
+    if (!f || typeof f !== 'object' || Array.isArray(f)) return { error: 'each follow must be an object' }
+    const keys = Object.keys(f)
+    if (keys.length !== 1) return { error: 'each follow is exactly { gameId } or { igdbId }' }
+    if (keys[0] === 'gameId' && typeof f.gameId === 'string' && /^[a-z0-9][a-z0-9._-]{0,99}$/i.test(f.gameId)) out.push({ gameId: f.gameId })
+    else if (keys[0] === 'igdbId' && Number.isInteger(f.igdbId) && f.igdbId > 0) out.push({ igdbId: f.igdbId })
+    else return { error: 'each follow is exactly { gameId } or { igdbId }' }
+  }
+  return { follows: out }
+}
+
 const readJson = async (request) => {
   const text = await request.text()
   if (text.length > MAX_BODY) return { tooBig: true }
@@ -73,11 +111,24 @@ const readJson = async (request) => {
 
 const validToken = (t) => typeof t === 'string' && /^[0-9a-f]{64,200}$/i.test(t)
 const putJson = (kv, key, value) => kv.put(key, JSON.stringify(value))
+/** Writes a device record; one with no token also gets its expiry, and its key entry is renewed with it. */
+const putDevice = async (kv, d) => {
+  if (d.token) return putJson(kv, `d:${d.id}`, d)
+  await kv.put(`d:${d.id}`, JSON.stringify(d), { expirationTtl: FOLLOWS_TTL_SECONDS })
+  await kv.put(`k:${await sha(d.key)}`, d.id, { expirationTtl: FOLLOWS_TTL_SECONDS })
+}
 const getJson = async (kv, key) => {
   const raw = await kv.get(key)
   return raw ? JSON.parse(raw) : null
 }
 const now = () => new Date().toISOString()
+
+/** tm:<id> lists the team devices, so an alert reads a handful of keys and never walks every device (50 KV operations a request). */
+const syncTeamIndex = async (kv, id, team) => {
+  const has = (await kv.get(`tm:${id}`)) !== null
+  if (team && !has) await kv.put(`tm:${id}`, '1')
+  else if (!team && has) await kv.delete(`tm:${id}`)
+}
 
 const deviceFor = async (kv, request) => {
   const auth = request.headers.get('authorization') ?? ''
@@ -98,6 +149,30 @@ const isAdmin = async (env, request) => {
 
 const publicView = (d) => ({ deviceId: d.id, deviceKey: d.key, follows: d.follows, unknown: [] })
 
+// r070-relay-block-list: BLOCKLIST is a Worker secret (never a repo file or the feed branch) holding device ids and
+// addresses, separated by whitespace or commas. A blocked address gets 403 on every /v1 route; a blocked device id gets
+// 403 on everything but DELETE /v1/devices/me, so it can still be forgotten, and the Feed job never sees it.
+export const parseBlocklist = (v) => {
+  const ids = new Set()
+  const ips = new Set()
+  for (const raw of String(v ?? '').split(/[\s,]+/)) {
+    const e = raw.trim().toLowerCase()
+    if (!e) continue
+    if (/^[0-9a-f:.]+$/.test(e) && /[.:]/.test(e)) ips.add(e)
+    else ids.add(e)
+  }
+  return { ids, ips }
+}
+// Parsed once per Worker instance; cached at module level keyed on the secret's text, so env is never written to.
+let blocklistCache
+const blocklistOf = (env) => {
+  if (!blocklistCache || blocklistCache.src !== env.BLOCKLIST) blocklistCache = { src: env.BLOCKLIST, list: parseBlocklist(env.BLOCKLIST) }
+  return blocklistCache.list
+}
+const blockedAddress = (env, request) => blocklistOf(env).ips.has((request.headers.get('cf-connecting-ip') ?? '').toLowerCase())
+const blockedId = (env, id) => !!id && blocklistOf(env).ids.has(String(id).toLowerCase())
+const BLOCKED = () => bad('blocked', 403)
+
 /** A token moves to the newest registration: whoever held it before loses it. */
 const claimToken = async (kv, token, id) => {
   const holder = await kv.get(`t:${token}`)
@@ -105,10 +180,53 @@ const claimToken = async (kv, token, id) => {
     const old = await getJson(kv, `d:${holder}`)
     if (old) {
       await kv.delete(`d:${holder}`)
+      await kv.delete(`tm:${holder}`)
       await kv.delete(`k:${await sha(old.key)}`)
     }
   }
   if (holder !== id) await kv.put(`t:${token}`, id)
+}
+
+/** The two limits every new record passes. A new device also passes a per-address limit (Workers Rate Limiting binding: no KV
+ *  writes, so it cannot spend the budget it protects). Known devices relaunching are never limited. Without the binding (tests,
+ *  a deploy that omits it) that part is skipped. Then the day counter: at most MAX_NEW_PER_DAY new records a day. */
+const newDeviceLimit = async (env, request) => {
+  if (env.REGISTER_LIMIT) {
+    const ip = request.headers.get('cf-connecting-ip') ?? 'unknown'
+    const { success } = await env.REGISTER_LIMIT.limit({ key: ip })
+    if (!success) {
+      const r = bad('too many registrations from this address, try again in a minute', 429)
+      r.headers.set('retry-after', '60')
+      return r
+    }
+  }
+  const dayKey = `n:${now().slice(0, 10)}`
+  const todays = Number((await env.KV.get(dayKey)) ?? 0)
+  if (todays >= MAX_NEW_PER_DAY) {
+    const r = bad('too many new devices today, try again tomorrow', 429)
+    r.headers.set('retry-after', '3600')
+    return r
+  }
+  await env.KV.put(dayKey, String(todays + 1), { expirationTtl: 172800 }) // gone after two days, so old counters never pile up
+  return null
+}
+
+/** POST /v1/follows: the follow-list opt-in. Stores the ids and a fresh key, nothing else; the body may hold nothing but
+ *  `follows`. The record has no token, so it expires 90 days after its last write (see putDevice). */
+const registerFollows = async (env, request) => {
+  const parsed = await readJson(request)
+  if (parsed.tooBig) return bad('body too large', 413)
+  const extra = Object.keys(parsed.body).filter((k) => k !== 'follows')
+  if (extra.length) return bad(`only follows may be sent here, not ${extra.sort().join(', ')}`)
+  const f = parseIdFollows(parsed.body.follows)
+  if ('error' in f) return bad(f.error)
+  const limited = await newDeviceLimit(env, request)
+  if (limited) return limited
+  const id = crypto.randomUUID()
+  const key = b64url(crypto.getRandomValues(new Uint8Array(32)))
+  const rec = { id, key, token: null, follows: f.follows, hourly: true, created: now(), updated: now() }
+  await putDevice(env.KV, rec)
+  return json({ deviceKey: key, follows: rec.follows }, 201)
 }
 
 const register = async (env, request) => {
@@ -129,9 +247,11 @@ const register = async (env, request) => {
     follows = f.follows
   }
   const locale = typeof body.locale === 'string' ? body.locale.slice(0, 35) : null
+  const team = typeof body.team === 'boolean' ? body.team : undefined
 
   const existingId = await kv.get(`t:${token}`)
   const existing = existingId ? await getJson(kv, `d:${existingId}`) : null
+  if (existing && blockedId(env, existing.id)) return BLOCKED()
   if (existing) {
     // Same device registering again (every launch does): write only what changed.
     const next = {
@@ -140,16 +260,21 @@ const register = async (env, request) => {
       locale: locale ?? existing.locale,
       follows: follows ?? existing.follows,
       quiet: quiet === undefined ? existing.quiet : quiet,
+      team: team ?? existing.team ?? false,
     }
     if (JSON.stringify(next) !== JSON.stringify(existing)) await putJson(kv, `d:${existing.id}`, { ...next, updated: now() })
+    if (team !== undefined) await syncTeamIndex(kv, existing.id, team)
     return json(publicView(next), 200)
   }
+  const limited = await newDeviceLimit(env, request)
+  if (limited) return limited
   const id = crypto.randomUUID()
   const key = b64url(crypto.getRandomValues(new Uint8Array(32)))
-  const rec = { id, key, token, environment, locale, follows: follows ?? [], quiet: quiet ?? null, created: now(), updated: now() }
+  const rec = { id, key, token, environment, locale, follows: follows ?? [], quiet: quiet ?? null, team: team ?? false, created: now(), updated: now() }
   await claimToken(kv, token, id)
   await putJson(kv, `d:${id}`, rec)
   await kv.put(`k:${await sha(key)}`, id)
+  if (team) await syncTeamIndex(kv, id, true)
   return json(publicView(rec), 201)
 }
 
@@ -157,9 +282,16 @@ const patchMe = async (env, request) => {
   const kv = env.KV
   const d = await deviceFor(kv, request)
   if (!d) return bad('unknown device key', 401)
+  if (blockedId(env, d.id)) return BLOCKED()
   const parsed = await readJson(request)
   if (parsed.tooBig) return bad('body too large', 413)
   const body = parsed.body
+  // A record without a token holds ids and the hourly flag only. It takes the alert fields (environment, locale, quiet hours,
+  // team) only in the PATCH that gives it a token, so an opt-in record can never quietly grow a field the promise excludes.
+  if (!d.token && !body.apnsToken) {
+    const extra = Object.keys(body).filter((k) => k !== 'hourly')
+    if (extra.length) return bad(`a record without alerts takes only hourly, not ${extra.sort().join(', ')}`)
+  }
   if (body.environment !== undefined && body.environment !== 'sandbox' && body.environment !== 'production') return bad('environment must be sandbox or production')
   if (body.apnsToken && !validToken(body.apnsToken)) return bad('apnsToken must be hex')
   const quiet = body.quietHours === undefined ? undefined : parseQuietHours(body.quietHours)
@@ -168,6 +300,9 @@ const patchMe = async (env, request) => {
   if (body.environment) next.environment = body.environment
   if (typeof body.locale === 'string') next.locale = body.locale.slice(0, 35)
   if (quiet !== undefined) next.quiet = quiet
+  if (typeof body.team === 'boolean') next.team = body.team
+  // The follow-list opt-in on a device that also has alerts: its follows join the hourly tier while this is true.
+  if (typeof body.hourly === 'boolean') next.hourly = body.hourly
   if (body.apnsToken !== undefined) {
     const token = body.apnsToken ? body.apnsToken.toLowerCase() : null
     if (token !== d.token) {
@@ -176,18 +311,46 @@ const patchMe = async (env, request) => {
       next.token = token
     }
   }
-  if (JSON.stringify(next) !== JSON.stringify(d)) await putJson(kv, `d:${d.id}`, { ...next, updated: now() })
+  if (JSON.stringify(next) !== JSON.stringify(d)) await putDevice(kv, { ...next, updated: now() })
+  if (typeof body.team === 'boolean') await syncTeamIndex(kv, d.id, body.team)
   return json({ deviceId: d.id })
+}
+
+/** The device's own request to be forgotten (alerts switched off, app reset). Removes every key that names it. A key the
+ *  relay no longer knows means it is already gone, so that is 204 too and the app can treat any 204 as done. */
+const deleteMe = async (env, request) => {
+  const kv = env.KV
+  const auth = request.headers.get('authorization') ?? ''
+  const key = auth.startsWith('Bearer ') ? auth.slice(7) : ''
+  if (!key) return bad('missing device key', 401)
+  const d = await deviceFor(kv, request)
+  if (d) {
+    await kv.delete(`d:${d.id}`)
+    await kv.delete(`k:${await sha(d.key)}`)
+    if (d.token && (await kv.get(`t:${d.token}`)) === d.id) await kv.delete(`t:${d.token}`)
+    if ((await kv.get(`tm:${d.id}`)) !== null) await kv.delete(`tm:${d.id}`)
+  }
+  return new Response(null, { status: 204, headers: { 'cache-control': 'no-store' } })
 }
 
 const putFollows = async (env, request) => {
   const d = await deviceFor(env.KV, request)
   if (!d) return bad('unknown device key', 401)
+  if (blockedId(env, d.id)) return BLOCKED()
   const parsed = await readJson(request)
   if (parsed.tooBig) return bad('body too large', 413)
-  const f = parseFollows(parsed.body.follows)
+  // A record without a token holds ids only, and is rewritten once a week even when unchanged (the "still here"), which
+  // renews its expiry. A push device's list is written only when it changes.
+  const idsOnly = !d.token
+  if (idsOnly) {
+    const extra = Object.keys(parsed.body).filter((k) => k !== 'follows')
+    if (extra.length) return bad(`only follows may be sent here, not ${extra.sort().join(', ')}`)
+  }
+  const f = idsOnly ? parseIdFollows(parsed.body.follows) : parseFollows(parsed.body.follows)
   if ('error' in f) return bad(f.error)
-  if (JSON.stringify(f.follows) !== JSON.stringify(d.follows)) await putJson(env.KV, `d:${d.id}`, { ...d, follows: f.follows, updated: now() })
+  const changed = JSON.stringify(f.follows) !== JSON.stringify(d.follows)
+  const stale = idsOnly && Date.now() - Date.parse(d.updated) >= STILL_HERE_MS
+  if (changed || stale) await putDevice(env.KV, { ...d, follows: f.follows, updated: now() })
   return json({ follows: f.follows, unknown: [] })
 }
 
@@ -198,24 +361,136 @@ const adminDevices = async (env, request) => {
   const devices = []
   for (const k of page.keys) {
     const d = await getJson(env.KV, k.name)
-    if (d?.token) devices.push({ id: d.id, token: d.token, environment: d.environment, locale: d.locale, quiet: d.quiet, follows: d.follows, updated: d.updated })
+    if (d && blockedId(env, d.id)) continue
+    if (d) devices.push({ id: d.id, token: d.token ?? null, environment: d.environment ?? null, locale: d.locale ?? null, quiet: d.quiet ?? null, team: d.team === true, hourly: d.hourly === true, follows: d.follows, updated: d.updated })
   }
   return json({ devices, cursor: page.list_complete ? null : page.cursor })
 }
 
+// ---- Team alerts: App Store Connect webhook -> a push to the devices that switched "Team alerts" on (internal builds). ----
+// The alert text is fixed. It never carries the tester's words, because the push is not the place for them.
+const hexToBytes = (h) => new Uint8Array((h.match(/../g) ?? []).map((x) => parseInt(x, 16)))
+
+/** HMAC-SHA256 of the raw body against ASC_WEBHOOK_SECRET. Fails closed: no secret, no header or a mismatch all say no.
+ *  The header name and format are read from Apple's docs and confirmed by the first webhookPing; the check accepts
+ *  either "hmacsha256=<hex>" or bare hex. */
+export const signatureOk = async (env, request, raw) => {
+  if (!env.ASC_WEBHOOK_SECRET) return false
+  const header = request.headers.get('x-apple-signature') ?? ''
+  const hexSig = header.replace(/^hmacsha256=/i, '').trim().toLowerCase()
+  if (!/^[0-9a-f]{64}$/.test(hexSig)) return false
+  const key = await crypto.subtle.importKey('raw', enc.encode(env.ASC_WEBHOOK_SECRET), { name: 'HMAC', hash: 'SHA-256' }, false, ['verify'])
+  return crypto.subtle.verify('HMAC', key, hexToBytes(hexSig), enc.encode(raw))
+}
+
+const pemBytes = (pem) => Uint8Array.from(atob(pem.replace(/-----[^-]+-----|\s/g, '')), (c) => c.charCodeAt(0))
+const apnsJwt = async (env) => {
+  const key = await crypto.subtle.importKey('pkcs8', pemBytes(env.APNS_KEY), { name: 'ECDSA', namedCurve: 'P-256' }, false, ['sign'])
+  const part = (o) => b64url(enc.encode(JSON.stringify(o)))
+  const head = `${part({ alg: 'ES256', kid: env.APNS_KEY_ID })}.${part({ iss: env.APNS_TEAM_ID, iat: Math.floor(Date.now() / 1000) })}`
+  const sig = await crypto.subtle.sign({ name: 'ECDSA', hash: 'SHA-256' }, key, enc.encode(head))
+  return `${head}.${b64url(new Uint8Array(sig))}`
+}
+
+const ALERT = { crash: 'New TestFlight crash report', screenshot: 'New TestFlight feedback' }
+const sendTeamAlert = async (env, kind) => {
+  if (!env.APNS_KEY || !env.APNS_KEY_ID || !env.APNS_TEAM_ID) return { sent: 0, skipped: 'push key not set' }
+  const jwt = await apnsJwt(env)
+  let sent = 0
+  // At most MAX_TEAM devices: each send is a subrequest and the free plan allows 50 a request.
+  const ids = (await env.KV.list({ prefix: 'tm:', limit: MAX_TEAM })).keys.map((k) => k.name.slice(3))
+  for (const id of ids) {
+    const d = await getJson(env.KV, `d:${id}`)
+    if (!d?.team || !d.token) continue
+    const host = d.environment === 'sandbox' ? 'api.sandbox.push.apple.com' : 'api.push.apple.com'
+    const r = await fetch(`https://${host}/3/device/${d.token}`, {
+      method: 'POST',
+      headers: { authorization: `bearer ${jwt}`, 'apns-topic': env.APNS_TOPIC ?? 'tezbo.Playscribe', 'apns-push-type': 'alert', 'apns-priority': '10' },
+      body: JSON.stringify({ aps: { alert: { title: 'Playscribe', body: ALERT[kind] ?? ALERT.screenshot }, sound: 'default' } }),
+    })
+    if (r.ok) sent++
+  }
+  return { sent }
+}
+
+const ascWebhook = async (env, request) => {
+  const raw = await request.text()
+  if (raw.length > MAX_BODY) return bad('body too large', 413)
+  if (!(await signatureOk(env, request, raw))) {
+    return bad('not allowed', 401)
+  }
+  let ev
+  try { ev = JSON.parse(raw) } catch { return bad('bad json') }
+  const type = String(ev?.data?.attributes?.eventType ?? ev?.eventType ?? '')
+  const id = String(ev?.data?.id ?? '')
+  if (!/FEEDBACK/.test(type)) return json({ ok: true, ignored: true })
+  if (id) {
+    if (await env.KV.get(`w:${id}`)) return json({ ok: true, duplicate: true })
+  }
+  // Marked done only after the send, so a failure part-way is retried by Apple rather than swallowed.
+  const result = await sendTeamAlert(env, /CRASH/.test(type) ? 'crash' : 'screenshot')
+  if (id) await env.KV.put(`w:${id}`, '1', { expirationTtl: 86400 })
+  return json({ ok: true, ...result })
+}
+
+/** The Feed workflow's repository and file; the dispatch and the "already running" check both name them. */
+const FEED_REPO = 'tezbo/playscribe'
+const FEED_WORKFLOW = 'feed.yml'
+/** A Feed run created this recently means GitHub's own schedule fired, so the cron does not start a second one. */
+const FEED_RECENT_MS = 10 * 60_000
+/** The Worker's hot cron; anything else is a full poll. deploy.sh registers both. */
+export const FEED_HOT_CRON = '52 * * * *'
+export const FEED_FULL_CRON = '22 * * * *'
+
+/**
+ * Starts the Feed workflow for a cron tick, unless a run began in the last 10 minutes. `hot` follows the cron that fired.
+ * Returns what it did, for tests and the Worker log; never throws, because a cron handler has no one to answer.
+ */
+export async function dispatchFeed(env, cron, now = Date.now(), fetchImpl = fetch) {
+  const token = env.FEED_DISPATCH_TOKEN
+  if (!token) return { dispatched: false, reason: 'no FEED_DISPATCH_TOKEN' }
+  const hot = cron === FEED_HOT_CRON
+  const headers = { authorization: `Bearer ${token}`, accept: 'application/vnd.github+json', 'user-agent': 'playscribe-relay', 'x-github-api-version': '2022-11-28' }
+  const base = `https://api.github.com/repos/${FEED_REPO}/actions/workflows/${FEED_WORKFLOW}`
+  try {
+    const recent = await fetchImpl(`${base}/runs?per_page=1`, { headers })
+    if (recent.ok) {
+      const { workflow_runs: runs = [] } = await recent.json()
+      const last = runs[0]?.created_at ? Date.parse(runs[0].created_at) : 0
+      if (now - last < FEED_RECENT_MS) return { dispatched: false, reason: 'a run started in the last 10 minutes', hot }
+    }
+    const r = await fetchImpl(`${base}/dispatches`, {
+      method: 'POST', headers: { ...headers, 'content-type': 'application/json' },
+      body: JSON.stringify({ ref: 'main', inputs: { action: 'poll', hot: hot ? 'true' : 'false' } }),
+    })
+    return r.status === 204 ? { dispatched: true, hot } : { dispatched: false, reason: `GitHub answered ${r.status}`, hot }
+  } catch (e) {
+    return { dispatched: false, reason: 'GitHub unreachable', hot }
+  }
+}
+
 export default {
+  async scheduled(controller, env, ctx) {
+    const result = await dispatchFeed(env, controller.cron)
+    console.log(`feed cron ${controller.cron}: ${JSON.stringify(result)}`)
+  },
   async fetch(request, env) {
     const { pathname } = new URL(request.url)
     const m = request.method
     try {
       if (pathname === '/' || pathname === '/health') return json({ ok: true })
+      if (pathname.startsWith('/v1/') && blockedAddress(env, request)) return BLOCKED()
       if (pathname === '/v1/devices' && m === 'POST') return await register(env, request)
       if (pathname === '/v1/devices/me' && m === 'PATCH') return await patchMe(env, request)
+      if (pathname === '/v1/devices/me' && m === 'DELETE') return await deleteMe(env, request)
+      if (pathname === '/v1/follows' && m === 'POST') return await registerFollows(env, request)
       if (pathname === '/v1/devices/me/follows' && m === 'PUT') return await putFollows(env, request)
       if (pathname === '/v1/devices/me/follows' && m === 'GET') {
         const d = await deviceFor(env.KV, request)
-        return d ? json({ follows: d.follows }) : bad('unknown device key', 401)
+        if (!d) return bad('unknown device key', 401)
+        return blockedId(env, d.id) ? BLOCKED() : json({ follows: d.follows })
       }
+      if (pathname === '/v1/webhooks/asc' && m === 'POST') return await ascWebhook(env, request)
       if (pathname === '/admin/devices' && m === 'GET') return await adminDevices(env, request)
       return bad('not found', 404)
     } catch (e) {

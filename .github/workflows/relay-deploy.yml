@@ -26,4 +26,12 @@ jobs:
       - name: Deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Bound to the Worker as secrets only for internal Team alerts (TestFlight feedback pushes); see docs/push-relay.md.
+          APNS_KEY: ${{ secrets.APNS_KEY_P8 }}
+          APNS_KEY_ID: ${{ secrets.APNS_KEY_ID }}
+          APNS_TEAM_ID: ${{ secrets.APNS_TEAM_ID }}
+          # Fine-grained GitHub token (this repository, Actions read and write) so the Worker's cron can start the Feed workflow.
+          FEED_DISPATCH_TOKEN: ${{ secrets.FEED_DISPATCH_TOKEN }}
+          # Device ids and addresses the relay refuses (docs/push-relay.md "Block list"); edit the secret and rerun this workflow.
+          RELAY_BLOCKLIST: ${{ secrets.RELAY_BLOCKLIST }}
         run: relay/deploy.sh
