@@ -256,12 +256,27 @@ struct LibraryShelf: View {
             if model.showsNotificationCard, let first = all.first {
                 NotificationInviteCard(gameName: first.game.name)
             }
+            // N-9: one ask per screen. Shows only once the alerts card has been answered, on a later Library appearance (Iris).
+            // Book and Tabletop place it higher up (keepCurrentAsk); Closed and Open keep it here.
+            if model.showsKeepCurrentCard && duo.pose != .book && duo.pose != .tabletop { KeepCurrentCard() }
             CatchUpCard()
             PlusCard()
         }
         // Never wider than the column it sits in (Iris: the card ran past the left page's search field in Book).
         .frame(maxWidth: pageWidth, alignment: .leading)
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    /// N-9 in Book and Tabletop (Iris, #455 at f55062a). Book: at the top of the left page above the search field, one page
+    /// wide, so its right edge stays 24 pt clear of the hinge band. Tabletop: directly under the Playing/Upcoming switch, in
+    /// the lower half, with the first tile row still in view below it.
+    @ViewBuilder private var keepCurrentAsk: some View {
+        if model.showsKeepCurrentCard && (duo.pose == .book || duo.pose == .tabletop) {
+            let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
+            KeepCurrentCard(compactTabletop: duo.pose == .tabletop)
+                .frame(width: pageWidth, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
 
     /// The library search field; one page wide in Book, and reported to the fold audit.
@@ -299,9 +314,14 @@ struct LibraryShelf: View {
                         if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.data.nav.query) }
                     }
                 } else if !heroOnRightPage {
+                    // Tabletop at AX5 (Iris, #455 at 0877dfc and a8859d3): the compact card keeps the lower half to itself, first; the
+                    // switch and the chips follow by normal page scroll. Below AX5 it sits under the switch as signed.
+                    let cardFirst = duo.pose == .tabletop && typeSize >= .accessibility5
+                    if cardFirst && model.libraryTab == .playing { keepCurrentAsk }
                     LibraryTabPicker()
                         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                    if !cardFirst && model.libraryTab == .playing { keepCurrentAsk }
                 }
                 if model.libraryTab == .upcoming {
                     UpcomingView()
@@ -361,6 +381,8 @@ struct LibraryShelf: View {
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
                             LibraryTabPicker()
+                            // N-9 above the search field (Iris, #455); the other cards stay below it.
+                            keepCurrentAsk
                             // Controls first, the offer second (Iris, Book compact card).
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                             topCards(all)
@@ -1094,6 +1116,7 @@ struct NotificationInviteCard: View {
                 snooze()
                 if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
             } else {
+                model.alertsAnsweredThisSession = true
                 Task { if !(await NotificationService.shared.requestAuthorization()) { snooze() } }
             }
         } label: {
