@@ -131,6 +131,14 @@ CREATE TABLE IF NOT EXISTS news (
   PRIMARY KEY (game_id, url)
 );
 
+-- r071: devices whose APNs token came back dead in this run, for scripts/relay-dead.ts to report to the relay. Holds the
+-- token's sha256, never the token, and is emptied by scrubDevices with the devices, so the published file never keeps a row.
+CREATE TABLE IF NOT EXISTS dead_tokens (
+  device_id TEXT PRIMARY KEY,
+  token_sha TEXT NOT NULL,
+  found_at TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS push_log (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   release_id TEXT NOT NULL,
