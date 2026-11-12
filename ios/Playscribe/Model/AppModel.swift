@@ -230,8 +230,10 @@ final class AppModel {
     var qaPadDeck = false
     /// QA (routes "one-update", "two-update") and tests: how many fresh unread updates the demo has; 0 is the normal demo.
     var qaUpdateCount = 0
+    /// QA (route "cover"): keep every card in the deck, read ones too, instead of only the `qaUpdateCount` fresh ones.
+    var qaKeepReadCards = false
     var qaSingleUpdate: Bool {
-        get { qaUpdateCount > 0 }
+        get { qaUpdateCount > 0 && !qaKeepReadCards }
         set { qaUpdateCount = newValue ? 1 : 0 }
     }
     /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
@@ -697,7 +699,7 @@ final class AppModel {
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
         case "cover":   // 0.7 front cover preview (duo-closed-cover): a full deck, or cover/one for a lone update
-            if parts.first == "one" { resetToOneUpdateDemo() } else { resetToManyUpdatesDemo() }
+            if parts.first == "one" { resetToOneUpdateDemo() } else { resetToCoverDemo() }
             FrontCoverPreview.shared.open = true
             settingsOpen = true
         case "settings":
@@ -1120,6 +1122,7 @@ final class AppModel {
 
     func resetDemo() {
         qaPadDeck = false
+        qaKeepReadCards = false
         qaUpdateCount = 0
         qaFreshCache = nil
         data = PersistedState(collection: fixtures.seedCollection)
@@ -1171,6 +1174,16 @@ final class AppModel {
         let more = fixtures.games.filter { !have.contains($0.id) && !ps5Releases($0.id).filter { $0.ps5State == .onPS5 }.isEmpty }
         addGames(more, status: .owned)
         qaPadDeck = true
+    }
+
+    /// QA (route "cover", #467): the full deck with the newest update fresh and unread, leading, and the rest read, so the
+    /// cover shows NEW UPDATE pages and pages without it. The fresh one is pinned (`qaUpdateCount`): with the plain
+    /// many-updates demo, the first feed refresh after a reset marks every update older than 72 hours read, so the
+    /// eyebrow came and went with network timing (Mac, Closed landscape AX5, 8597112).
+    func resetToCoverDemo() {
+        resetToManyUpdatesDemo()
+        qaUpdateCount = 1
+        qaKeepReadCards = true
     }
 
     /// QA (routes "three-update", "four-update"): `count` fresh updates from different games, so the deck

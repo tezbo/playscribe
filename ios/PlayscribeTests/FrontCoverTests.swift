@@ -52,6 +52,22 @@ struct FrontCoverTests {
         }
     }
 
+    /// #467 (Mac, 8597112): the cover route's NEW UPDATE pages survive the feed's 72 hour rule, which marks every older
+    /// update read after a reset; the deck keeps its read pages too, which show no eyebrow.
+    @Test func coverRouteKeepsItsUnreadPages() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "cover-\(UUID().uuidString).json"))
+        m.handle(url: URL(string: "playscribe://cover")!)
+        m.notifyNewlyOnPS5()   // what the first feed refresh after a reset does
+        let deck = m.latestDeck
+        #expect(deck.count > 1)
+        #expect(deck.first?.unread == true)
+        // Only the pinned update is unread (the deck repeats it as padding); every other update is read.
+        let unreadGames = Set(deck.filter(\.unread).map(\.game.id))
+        #expect(unreadGames == [deck.first!.game.id])
+        #expect(FrontCoverPreview.shared.open)
+        FrontCoverPreview.shared.open = false
+    }
+
     /// The chips: the PS5 version and "On PS5" first, then the day, then the change count; never a PC version.
     @Test func chipsLeadWithThePS5Version() {
         let deck = demoModel().latestDeck
