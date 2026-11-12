@@ -75,7 +75,7 @@ struct FrontCoverPage: View {
             else { model.openGame(card.game.id, chapter: .updates) }
         } label: {
             ZStack(alignment: .bottomLeading) {
-                ArtView(asset: card.game.keyArtAsset, game: card.game)
+                ArtView(asset: card.game.keyArtAsset, game: card.game, focusX: card.game.coverFocusX)
                 if !solid { fade }
                 VStack(alignment: .leading, spacing: 18) {
                     FrontCoverPlate(card: card)
@@ -292,6 +292,9 @@ struct FrontCoverPreviewScreen: View {
                 .accessibilityHidden(true)
         }
         .background(Color.ink0)
+        // Iris (#467): white text on the shade in both modes, so the status bar is light content over the cover whatever
+        // the system appearance. The Library wrap does the same while the cover is on screen.
+        .preferredColorScheme(.dark)
     }
 }
 

@@ -51,6 +51,8 @@ struct ArtView: View {
     var asset: String?
     var game: CatalogGame?
     var drift = false
+    /// Where the crop centres horizontally, 0 to 1 (the front cover's per-game focal point); nil keeps the centre crop.
+    var focusX: Double? = nil
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var phase = false
 
@@ -94,8 +96,18 @@ struct ArtView: View {
         Color.clear
             .frame(width: size.width, height: size.height)
             .overlay {
-                image.scaledToFill()
-                    .scaleEffect(drift && !reduceMotion ? (phase ? 1.06 : 1.0) : 1.0)
+                if let fx = focusX {
+                    // The focal point goes to the frame's centre, clamped so the image always covers the frame.
+                    image.scaledToFill()
+                        .alignmentGuide(HorizontalAlignment.center) { d in
+                            min(max(d.width * min(max(fx, 0), 1), size.width / 2), max(size.width / 2, d.width - size.width / 2))
+                        }
+                        .frame(width: size.width, height: size.height)
+                        .scaleEffect(drift && !reduceMotion ? (phase ? 1.06 : 1.0) : 1.0)
+                } else {
+                    image.scaledToFill()
+                        .scaleEffect(drift && !reduceMotion ? (phase ? 1.06 : 1.0) : 1.0)
+                }
             }
             .clipped()
     }
