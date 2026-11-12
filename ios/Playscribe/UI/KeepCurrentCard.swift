@@ -151,11 +151,15 @@ struct KeepCurrentCard: View {
 struct KeepCurrentDetailsSheet: View {
     @Environment(\.panelClose) private var panelClose
     @Environment(\.dismiss) private var systemDismiss
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            HStack {
+            // Iris (Closed AX5 at cb12f54): an opaque header, so scrolled text never shows under the two-line title, and at
+            // AX3 and above Done sits level with the title's first line, not halfway down it.
+            HStack(alignment: typeSize >= .accessibility3 ? .top : .center) {
                 Text(KeepCurrentCopy.whatIsSent).font(PlayscribeFont.title3).accessibilityAddTraits(.isHeader)
+                    .fixedSize(horizontal: false, vertical: true)
                 Spacer()
                 Button { if let panelClose { panelClose() } else { systemDismiss() } } label: {
                     Text("Done").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
@@ -164,7 +168,11 @@ struct KeepCurrentDetailsSheet: View {
             }
             .frame(minHeight: 52)
             .padding(.horizontal, 20)
+            .padding(.bottom, 4)
+            .background(Color.ink0)
+            .zIndex(1)
             KeepCurrentDetailsContent()
+                .clipped()
         }
         .padding(.top, 8)
         .background(Color.ink0)
