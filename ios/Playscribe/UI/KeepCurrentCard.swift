@@ -11,7 +11,7 @@ enum KeepCurrentCopy {
     static let sentItems = [
         "The games you follow.",
         "A random code that our server makes for your phone. It is not linked to your name, email, Apple ID or phone, and it only lets you update or delete your own record.",
-        "Once a week while you use the app, a tiny \"still here\" note, so the record can expire.",
+        "Once a week, a short check-in, so we can remove records from phones that stopped using the app.",
     ]
     static let neverHeading = "What is never sent"
     static let neverBody = "Your name or email, your location, what you read or search, your Owned or Wishlist marks, photos, contacts or feedback you write."
@@ -19,8 +19,8 @@ enum KeepCurrentCopy {
     static let connectionHeading = "What every connection carries"
     static let connectionBody = "Like any app that connects to a server, the request also carries your IP address, the app and iOS version, and your language setting. We do not store them."
     static let keptHeading = "How long it is kept"
-    // Ezra v2 (12 Nov): no "reset the app", which only internal builds have.
-    static let keptBody = "Up to 90 days after your last \"still here\" note. It is deleted straight away when you turn this off, or when you delete the app and install it again. If you delete the app for good, it expires on its own within 90 days. If you also have alerts on, the games you follow stay on our server for your alerts until you turn alerts off too."
+    // Ezra v2 (12 Nov): no "reset the app", which only internal builds have. v3 (12 Nov): no "still here" (Terry did not follow it).
+    static let keptBody = "Until you turn this off. If you stop using the app, it is removed after 90 days. Deleting the app and installing it again also removes it. If you also have alerts on, the games you follow stay on our server for your alerts until you turn alerts off too."
     static let turnOn = "Turn on"
     static let notNow = "Not now"
     static let cardVoiceOver = "Help keep your games up to date? \(Brand.name) can send the games you follow, and a random code, to our server. Details follow."
