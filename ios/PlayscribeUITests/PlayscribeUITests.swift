@@ -1091,6 +1091,55 @@ final class Release050Tests: XCTestCase {
                    withVelocity: .slow, thenHoldForDuration: 0.2)
     }
 
+    /// Tabletop Settings (Mac on #455 at f55062a: a row near the bottom "could not be reached"): the form's last line is
+    /// reached by dragging inside the lower-half panel, at the standard size and at AX5, and it sits in the lower half.
+    /// `-qaPose tabletop` injects the fold, so this also runs on a Closed simulator; on the Mac in a real Tabletop the
+    /// device's own fold gives the same pose. Nothing here taps a control, so no relay call is made.
+    /// It drags until the line is hittable or the form stops moving: a form that stops short of its last line is the bug,
+    /// running out of drags is not (Mac 0a6f226: 16 short drags in a 350 pt panel only reached the Testing section).
+    func testTabletopSettingsLastLineIsReachable() throws {
+        for ax5 in [false, true] {
+            let app = XCUIApplication()
+            app.launchArguments = ["-qaRoute", "settings", "-qaPose", "tabletop"]
+                + (ax5 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] : [])
+            app.launch()
+            sleep(3)
+            let size = ax5 ? "AX5" : "std"
+            let pose = ReleaseRowTests.pose(app)
+            XCTAssertTrue(pose.contains("pose: tabletop"), "runs in Tabletop [\(size), \(pose)]")
+            let form = app.collectionViews.firstMatch
+            XCTAssertTrue(form.waitForExistence(timeout: 5), "the Settings form is on screen [\(size)]")
+            let last = app.staticTexts["settingsLastLine"]
+            var drags = 0, still = 0
+            // Long, slow drags inside the form (never at the screen centre, which is the view-only stage, 48404f1).
+            while !(last.exists && last.isHittable) && still < 3 && drags < 120 {
+                let before = form.cells.firstMatch.exists ? form.cells.firstMatch.frame : .zero
+                let firstLabel = form.cells.firstMatch.exists ? form.cells.firstMatch.debugDescription.prefix(200) : ""
+                form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.9))
+                    .press(forDuration: 0.1, thenDragTo: form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.1)),
+                           withVelocity: .slow, thenHoldForDuration: 0.3)
+                drags += 1
+                let after = form.cells.firstMatch.exists ? form.cells.firstMatch.frame : .zero
+                let afterLabel = form.cells.firstMatch.exists ? form.cells.firstMatch.debugDescription.prefix(200) : ""
+                // The first visible cell neither moved nor changed: the form is at its end.
+                still = (before == after && firstLabel == afterLabel) ? still + 1 : 0
+            }
+            if !(last.exists && last.isHittable) {
+                let tree = XCTAttachment(string: app.debugDescription); tree.name = "tabletop-settings-\(size)-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "tabletop-settings-\(size)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            XCTAssertTrue(last.exists && last.isHittable,
+                          still >= 3 ? "the form stopped moving before its last line, after \(drags) drags [\(size), \(pose)]"
+                                     : "ran out of drags (\(drags)) before the last line [\(size), \(pose)]")
+            if last.exists {
+                // G-4: in Tabletop the panel, and so the line, is in the lower half, and on screen.
+                XCTAssertGreaterThanOrEqual(last.frame.minY, form.frame.minY - 1, "the last line is inside the panel \(last.frame) vs \(form.frame) [\(size)]")
+                XCTAssertLessThanOrEqual(last.frame.maxY, app.frame.maxY + 1, "the last line is on screen \(last.frame) [\(size)]")
+            }
+            app.terminate()
+        }
+    }
+
     /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and
     /// of the status bar, in every pose; the cog opens Settings, which shows a semantic version.
     /// Fast on its own: -only-testing:PlayscribeUITests/Release050Tests/testLibraryToolbarCogAndAdd
