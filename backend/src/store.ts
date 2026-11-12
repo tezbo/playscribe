@@ -529,25 +529,20 @@ export const dropSupersededRelease = (db: DB, oldId: string, newId: string, sour
 }
 
 /**
- * Repair for the later-post bug: a Steam-assumed PS5 row dated after the Steam release it assumes. The PC row's date is the
- * Steam post, so the PS5 row takes it. Rows promoted from announced already carry it.
+ * Backfill repair: a release that an announcement headline ("Title Update coming this week!") made is removed when this post
+ * is its only source and its day; a release other posts also feed only loses the PS5 row this post made.
  */
-export const repairAssumedLiveAt = (db: DB) => {
-  const rows = db
-    .prepare(
-      `SELECT p.release_id, p.live_at AS ps_live, c.live_at AS pc_live FROM platform_releases p
-       JOIN platform_releases c ON c.release_id = p.release_id AND c.platform = 'pc'
-       WHERE p.platform = 'ps5' AND p.status = 'live' AND p.verification = 'assumed' AND p.alert_from IS NULL`,
-    )
-    .all() as { release_id: string; ps_live: string | null; pc_live: string | null }[]
-  let n = 0
-  for (const r of rows) {
-    const ps = json<Field<string> | null>(r.ps_live, null)
-    const pc = json<Field<string> | null>(r.pc_live, null)
-    if (!ps || !pc || ps.verification !== 'assumed' || !(ps.value > pc.value)) continue
-    db.prepare("UPDATE platform_releases SET live_at = ? WHERE release_id = ? AND platform = 'ps5'").run(JSON.stringify({ ...ps, value: pc.value }), r.release_id)
-    db.prepare('UPDATE releases SET updated_at = ? WHERE id = ?').run(now(), r.release_id)
-    n++
+export const dropAnnouncementRelease = (db: DB, releaseId: string, sourceId: string, publishedAt: string) => {
+  const r = db.prepare('SELECT * FROM releases WHERE id = ?').get(releaseId) as Row | undefined
+  if (!r) return false
+  const sources = json<string[]>(r.source_ids, [])
+  if (sources.length !== 1 || sources[0] !== sourceId || r.announced_at !== publishedAt) {
+    dropOwnPs5Row(db, releaseId, sourceId, publishedAt)
+    return false
   }
-  return n
+  db.prepare('UPDATE review_items SET release_id = NULL WHERE release_id = ?').run(releaseId)
+  db.prepare('UPDATE seen_posts SET release_id = NULL WHERE release_id = ?').run(releaseId)
+  db.prepare('DELETE FROM platform_releases WHERE release_id = ?').run(releaseId)
+  db.prepare('DELETE FROM releases WHERE id = ?').run(releaseId)
+  return true
 }
