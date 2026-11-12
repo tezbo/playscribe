@@ -7,7 +7,7 @@ Board card `duo-closed-cover`. IDs below are proposed for `docs/ux-acceptance.md
 ## What it is
 When the Duo is closed, the outer display is the app's whole canvas. The Library's Continue hero grows to a full-bleed **cover** of the
 game you were in: key art, eyebrow ("New update" when unread, else "Continue"), game name, chips (`v1.1 · On PS5` in accent, date,
-change count), the invite line, the page-edge leaves, and the Playscribe wordmark. The rail keeps every control (G-4 spirit; the art is
+change count), the page-edge leaves, and the Playscribe lockup (brand/logo/lockup-on-dark.svg) bottom-left. No invite line (Terry, 12 Nov 07:29 UTC). The rail keeps every control (G-4 spirit; the art is
 never tappable except as the Continue target). The cover is the same view in Closed portrait and Closed landscape (compact width).
 
 ## The three motion modes (Settings > Appearance > "Cover motion")
