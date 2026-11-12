@@ -287,3 +287,5 @@ From Quinn's spot-check of 25 rows. The feed claims less when a post says less (
 ## State size (feed branch)
 
 The feed branch carries the state database gzipped (`state/playscribe.db.gz`). GitHub rejects a file over 100 MB. Publish prints the compressed size on every run, adds a warning annotation at 80 MB and, at 90 MB, publishes and then fails the job so the feed stays current but the failure is loud. Measured 12 Nov 2026: 186 MB raw, 38.7 MB compressed; `releases` is 145 MB of it (notes 116 MB). Release notes are not pruned: they are the product and are only removable if they can be restored exactly from the published game files.
+
+Backfill also removes the release an announcement headline made under the old rules (only when that post is its sole source and day), and no pass moves a stated PS5 time back to the Steam post: the old `repairAssumedLiveAt` pass is retired because it undid every stated time after its first run (found by Quinn on DDV Season of Scares, 12 Nov).

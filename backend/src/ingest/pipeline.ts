@@ -300,6 +300,10 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   // An announcement headline ("the next major update ... releases on Dec. 23") is news; its release comes with its notes.
   if (isAnnouncementTitle(post.title)) {
     held('announcement')
+    if (deps.repairClaims) {
+      const old = (db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id
+      if (old && store.dropAnnouncementRelease(db, old, s.id, post.publishedAt)) deps.log?.(`backfill: dropped ${old}, an announcement`)
+    }
     return null
   }
   if (!pcOnly && testBuild) {
@@ -497,8 +501,6 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   const pruned = store.pruneNews(deps.db, isPromoTitle)
   for (const r of pruned) deps.log?.(`news hidden (promo, pruned) ${r.gameId}: ${r.title}`)
   deps.log?.(`ingest: news hidden (promo) ${summary.newsHidden ?? 0} new, ${pruned.length} pruned`)
-  const repaired = store.repairAssumedLiveAt(deps.db)
-  if (repaired) deps.log?.(`ingest: moved ${repaired} Steam-assumed PS5 dates back to their Steam post`)
   const promoted = store.promoteAnnounced(deps.db, new Date(), !!opts.until) + store.promoteStated(deps.db, new Date(), !!opts.until)
   const settled = store.settleOldAnnouncements(deps.db)
   if (settled) deps.log?.(`ingest: ${settled} press announcements older than 30 days, with a later PS5 release live, now read as live`)

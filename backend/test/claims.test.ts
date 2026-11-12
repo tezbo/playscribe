@@ -191,3 +191,23 @@ test('backfill also repairs derived (auto-onboarded) games, which the slice neve
   assert.ok(s.polled.includes('steam-111'))
   assert.equal(store.newsOf(db, 'alpha-1').length, 0)
 })
+
+test('backfill removes the release an announcement headline made before, and a stated live row survives later runs', async () => {
+  const date = ago(100)
+  const { db, deps } = await setup([
+    { gid: '1', title: 'Title Update coming this week!', date, contents: 'Fixes and new content, now on PC and PS5.', tags: ['patchnotes'] },
+    { gid: '2', title: 'Patch 1.3', date: ago(20), contents: `At 02:00 UTC+0 on ${monthDay(day(2))}, the updates for Xbox Series X|S and PlayStation 5 will be available.`, tags: ['patchnotes'] },
+  ])
+  const at = date
+  // The old rules: an announcement made a release with an assumed live PS5 row.
+  const id = store.upsertRelease(db, { gameId: 'dawnwalker', versionKey: 'major-announce', displayName: 'Title Update coming this week!', kind: 'major', kindBasis: 'inferred', announcedAt: at, notes: [], sourceId: 'dawnwalker-steam' }).id
+  store.upsertPlatform(db, id, 'ps5', { status: 'live', verification: 'assumed', liveAt: store.field(at, 'assumed', 'dawnwalker-steam') })
+  db.prepare("UPDATE seen_posts SET release_id = ? WHERE post_id = '1'").run(id)
+  await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  assert.ok(!store.getRelease(db, id))
+  // A stated time that passed keeps its own time: no pass moves it back to the post.
+  const held = ps5Of(db, 'dawnwalker@1.3')!.liveAt!.value
+  assert.equal(store.promoteStated(db, day(3)), 1)
+  await runIngest(deps, { force: true })
+  assert.equal(ps5Of(db, 'dawnwalker@1.3')!.liveAt!.value, held)
+})
