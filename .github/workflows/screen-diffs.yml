@@ -99,8 +99,6 @@ jobs:
             echo "0.0.0.0 $h" | sudo tee -a /etc/hosts >/dev/null
           done
           sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder 2>/dev/null || true
-          # Boot now and let it finish during the build (a cold boot took about 4 min in run 3); Reduce Motion is set once it is up.
-          xcrun simctl boot "${{ steps.sim.outputs.udid }}" 2>/dev/null || true
           curl -sS -m 5 -o /dev/null -w 'igdb from runner: %{http_code}\n' https://images.igdb.com/ || echo "igdb from runner: blocked"
       - name: Render the matrix
         env:
@@ -116,9 +114,11 @@ jobs:
           render() {
             rm -rf stills; mkdir -p stills
             t=$SECONDS
+            # Build first, then boot: run 4 booted during the build and the build took 640 s instead of about 150 (CPU contention).
             xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme Playscribe \
-              -destination "id=$udid" -derivedDataPath dd CODE_SIGNING_ALLOWED=NO > stills/build.log 2>&1 || true
+              -destination 'generic/platform=iOS Simulator' -derivedDataPath dd CODE_SIGNING_ALLOWED=NO > stills/build.log 2>&1 || true
             echo "build $(( SECONDS - t )) s"; t=$SECONDS
+            xcrun simctl boot "$udid" 2>/dev/null || true
             xcrun simctl bootstatus "$udid" -b >/dev/null 2>&1 || true
             xcrun simctl spawn "$udid" defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
             echo "boot wait $(( SECONDS - t )) s; ReduceMotionEnabled=$(xcrun simctl spawn "$udid" defaults read com.apple.Accessibility ReduceMotionEnabled 2>&1)"
