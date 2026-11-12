@@ -42,8 +42,11 @@ struct VideoReflection: View {
     }
 
     /// True when the frame is (nearly) all black: the mean brightness of an 8 x 8 thumbnail of it is under 4%.
-    static func isBlank(_ image: UIImage) -> Bool {
-        guard let cg = image.cgImage else { return true }
+    static func isBlank(_ image: UIImage) -> Bool { meanBrightness(image) < 0.04 }
+
+    /// Mean luminance, 0 to 1, of an 8 x 8 thumbnail of the image (0 when it cannot be drawn).
+    static func meanBrightness(_ image: UIImage) -> Double {
+        guard let cg = image.cgImage else { return 0 }
         let side = 8
         var px = [UInt8](repeating: 0, count: side * side * 4)
         let drawn: Bool = px.withUnsafeMutableBytes { buf in
@@ -54,13 +57,17 @@ struct VideoReflection: View {
             ctx.draw(cg, in: CGRect(x: 0, y: 0, width: side, height: side))
             return true
         }
-        guard drawn else { return true }
+        guard drawn else { return 0 }
         var sum = 0.0
         for i in stride(from: 0, to: px.count, by: 4) {
             sum += 0.2126 * Double(px[i]) + 0.7152 * Double(px[i + 1]) + 0.0722 * Double(px[i + 2])
         }
-        return sum / Double(side * side) / 255 < 0.04
+        return sum / Double(side * side) / 255
     }
+
+    /// QA (INTERNAL, `-qaMirrorRaw YES`): the mirror at full strength, no fade, no plate behind text, so a still shows what the
+    /// picture is. With it, each snapshot logs `mirror-probe` lines (mean brightness of the live frame and the still).
+    static var raw: Bool { BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaMirrorRaw") }
 
     var controller: YouTubeController
     var mode: Mode
@@ -78,19 +85,27 @@ struct VideoReflection: View {
         Color.clear
             .frame(maxWidth: .infinity)
             .frame(height: Self.height)
-            .overlay(alignment: .bottom) {
-                if let image = shown {
-                    Image(uiImage: image).resizable().aspectRatio(16 / 9, contentMode: .fit)
-                        .id(image)
-                        .transition(.opacity)
+            .overlay {
+                // The picture is as wide as the column and 16:9, its last rows land in the 120 pt window (the view is flipped
+                // below, so they sit at the video's bottom edge). Fitting it inside the window instead drew a small centred
+                // thumbnail, which is why the band measured 1 to 6% (12 Nov).
+                GeometryReader { g in
+                    if let image = shown {
+                        Image(uiImage: image).resizable().scaledToFill()
+                            .frame(width: g.size.width, height: g.size.width * 9 / 16)
+                            .frame(width: g.size.width, height: g.size.height, alignment: .bottom)
+                            .clipped()
+                            .id(image)
+                            .transition(.opacity)
+                    }
                 }
             }
             .clipped()
             .animation(.easeInOut(duration: 0.2), value: shown)
             .scaleEffect(x: 1, y: -1)
-            .blur(radius: 6)
-            .opacity(Self.opacity)
-            .mask(LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom))
+            .blur(radius: Self.raw ? 0 : 6)
+            .opacity(Self.raw ? 1 : Self.opacity)
+            .mask(Self.raw ? LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom) : LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom))
             .allowsHitTesting(false)
             .accessibilityHidden(true)
             .task(id: youtubeID) {
@@ -105,6 +120,10 @@ struct VideoReflection: View {
                     cfg.snapshotWidth = 320
                     if let img = try? await controller.webView.takeSnapshot(configuration: cfg) {
                         let frame = Self.forceBlankFrame ? UIGraphicsImageRenderer(size: img.size).image { c in UIColor.black.setFill(); c.fill(CGRect(origin: .zero, size: img.size)) } : img
+                        if Self.raw {
+                            NSLog("mirror-probe live=%.3f still=%@ size=%dx%d forcedBlank=%d", Self.meanBrightness(frame),
+                                  still.map { String(format: "%.3f", Self.meanBrightness($0)) } ?? "none", Int(frame.size.width), Int(frame.size.height), Self.forceBlankFrame ? 1 : 0)
+                        }
                         if !Self.isBlank(frame) { live = frame }
                     }
                     try? await Task.sleep(for: .milliseconds(250))
@@ -117,7 +136,7 @@ extension View {
     /// Text that sits over the mirror (R-11, Max and Iris, 12 Nov): a soft-edged black plate at 92% behind it, so grey text keeps
     /// 4.5:1 on any frame, bright ones included. The plate adds no layout room and takes no touches.
     @ViewBuilder func overMirror(_ on: Bool) -> some View {
-        if on {
+        if on, !VideoReflection.raw {
             background {
                 RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Color.black.opacity(0.92))
                     .padding(-8).blur(radius: 6).allowsHitTesting(false)
