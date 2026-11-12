@@ -42,7 +42,7 @@ phone ──POST /v1/devices──▶ relay (KV)          Feed job (GitHub Actio
   (`scripts/relay-dead.ts`) sends those notes to `POST /admin/devices/dead` (admin token, at most 6 a request, the free plan's
   50 KV operations). The relay acts only while the record still holds that token, so a device that has registered a new one
   since the run loaded is untouched. A push-only record is removed with its token, key and team entries; if the app is still
-  installed, its next request gets 401 and it registers again. A follow-list opt-in (`hourly`) keeps helping: it becomes the
+  installed, its next request gets 401 and it registers again. A follow-list record that lost its token takes it back on the app's next launch: the app PATCHes `{ apnsToken, environment }` with its key before registering, so it is the same record (bug-relay-optin-cleared-token). A follow-list opt-in (`hourly`) keeps helping: it becomes the
   ids-only record `POST /v1/follows` makes, with the 90-day expiry. The step is never fatal and the notes are scrubbed with
   the devices; a report that did not arrive is made again the next time a push to that token fails (r071).
 

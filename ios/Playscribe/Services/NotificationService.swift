@@ -628,6 +628,11 @@ enum PushRegistrar {
                 if let team = lastTeam { await sendTeam(team, retry: true) }
                 return
             }
+            // bug-relay-optin-cleared-token: the record this key names may have lost its token (the Feed job reports dead
+            // tokens and the relay clears them; a follow-list record keeps only its ids). Put this launch's token back on the
+            // same record first, so the registration below finds it and no second record is made. Token and environment only;
+            // unchanged, it costs the relay no write. A failure (401: the record is gone) falls through to registering afresh.
+            if keys.read() != nil { await sendToken(token) }
             if await registerNow(token: token, follows: follows) {
                 await sendQuiet(lastQuiet, retry: true)
                 if let team = lastTeam { await sendTeam(team, retry: true) }
@@ -638,10 +643,9 @@ enum PushRegistrar {
 
     private struct TokenBody: Encodable { var apnsToken: String; var environment: String }
 
-    /// PATCH /v1/devices/me { apnsToken, environment } on a record that had no alerts: it becomes this device's push record and
-    /// then takes the list with its levels. False (so the caller registers afresh) when the relay no longer knows the key.
-    private static func addToken(_ token: String, follows: [Follow]) async -> Bool {
-        guard let url = relayURL?.appending(path: "v1/devices/me"), let key = keys.read() else { return false }
+    /// PATCH /v1/devices/me { apnsToken, environment } with the stored key: the one request that puts a token on a record.
+    private static func tokenRequest(_ token: String) -> URLRequest? {
+        guard let url = relayURL?.appending(path: "v1/devices/me"), let key = keys.read() else { return nil }
         #if DEBUG
         let environment = "sandbox"
         #else
@@ -652,6 +656,19 @@ enum PushRegistrar {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
         request.httpBody = try? JSONEncoder().encode(TokenBody(apnsToken: token, environment: environment))
+        return request
+    }
+
+    /// A push device's launch: its token back on its own record (see `register`). No retry and no re-registration here.
+    private static func sendToken(_ token: String) async {
+        guard let request = tokenRequest(token) else { return }
+        _ = try? await session.data(for: request)
+    }
+
+    /// PATCH /v1/devices/me { apnsToken, environment } on a record that had no alerts: it becomes this device's push record and
+    /// then takes the list with its levels. False (so the caller registers afresh) when the relay no longer knows the key.
+    private static func addToken(_ token: String, follows: [Follow]) async -> Bool {
+        guard let request = tokenRequest(token) else { return false }
         guard let (_, response) = try? await session.data(for: request), let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode) else {
             keys.write(nil)
             recordIsFollowsOnly = false
