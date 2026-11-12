@@ -850,6 +850,7 @@ struct ReleaseTimeline: View {
         .id("row-\(r.id)")
         .accessibilityAddTraits(selected ? .isSelected : [])
         .tappableFrame()
+        .readToggleActions(r)
     }
 }
 

@@ -9,8 +9,10 @@ struct DeckCard: Identifiable, Hashable {
     var date: Date?
     var id: String { release.map { "u-" + $0.id } ?? "r-" + game.id }
 
-    static func == (a: DeckCard, b: DeckCard) -> Bool { a.id == b.id }
-    func hash(into h: inout Hasher) { h.combine(id) }
+    // `unread` is part of equality: SwiftUI skips re-rendering a view whose Equatable inputs compare equal, so a card that
+    // went from unread to read (opened, or Mark as read) kept its "New update" chip on the Library deck (Mac, 9c62a8b).
+    static func == (a: DeckCard, b: DeckCard) -> Bool { a.id == b.id && a.unread == b.unread }
+    func hash(into h: inout Hasher) { h.combine(id); h.combine(unread) }
 
     /// The line under a hero headline for a card with no release: the headline is already the game name, so the line
     /// never repeats it (r053-hero-duplicate-title-no-notes). A game the feed does not follow says so, as the Page does.

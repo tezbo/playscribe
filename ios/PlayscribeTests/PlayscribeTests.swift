@@ -1013,3 +1013,21 @@ struct SearchTextColdLaunchTests {
         #expect(m.nav.query == "dawn")
     }
 }
+
+@MainActor
+struct OpenMarksReadTests {
+    /// R-6a: opening an unread update reads it at once; Mark as unread puts it back.
+    @Test func openingAnUnreadUpdateMarksItReadAndItCanBeUnmarked() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "r6a-\(UUID().uuidString).json"))
+        m.resetDemo()
+        guard let r = m.data.collection.flatMap({ m.releases($0.gameID) }).first(where: { m.isUnread($0) }) else {
+            Issue.record("the demo has no unread update"); return
+        }
+        m.openGame(r.gameID, chapter: .updates, releaseID: r.id)
+        #expect(!m.isUnread(r), "opened on purpose, so read (R-6a)")
+        m.markRead(r.id, false)
+        #expect(m.isUnread(r), "Mark as unread (R-6a)")
+        // The cover's NEW UPDATE eyebrow and the deck's "New update" chip read isUnread, so they come back with it.
+        #expect(m.unreadCount(r.gameID) >= 1)
+    }
+}
