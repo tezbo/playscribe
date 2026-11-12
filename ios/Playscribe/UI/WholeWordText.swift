@@ -74,11 +74,11 @@ struct WholeWordText: View {
                 Text(v).font(font).foregroundStyle(color ?? .primary).fixedSize(horizontal: false, vertical: true)
                     // One word wider than the column shrinks (to 70%) before the layout would break it by letter.
                     .minimumScaleFactor(Self.overWideFloor)
-                    .frame(minWidth: 0, minHeight: 0, alignment: .topLeading).clipped()
+                    .frame(minWidth: 0, minHeight: 0, alignment: .topLeading).clipped().accessibilityHidden(true)
             }
             ForEach(Array(words.enumerated()), id: \.offset) { _, w in
                 Text(w).font(font).fixedSize()
-                    .frame(minWidth: 0, minHeight: 0, alignment: .topLeading).clipped()
+                    .frame(minWidth: 0, minHeight: 0, alignment: .topLeading).clipped().accessibilityHidden(true)
             }
         }
         .clipped()
