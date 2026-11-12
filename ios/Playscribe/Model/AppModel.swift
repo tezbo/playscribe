@@ -615,6 +615,10 @@ final class AppModel {
         }
         nav = n
         readerIndex[gameID] = 0
+        // R-6a: opening a specific update (a notification, an Updates row, a deep link) reads it at once, on every path;
+        // the 1 s on-screen rule only covers an update the reader lands on without picking it. Mark as unread undoes it.
+        // Opening the game itself (a tile, the hero) reads the update it lands on: the newest, expanded at the top (R-1).
+        if n.chapter == .updates, let r = releaseID.flatMap({ release(gameID, $0) }) ?? selectedRelease(gameID), isUnread(r) { markRead(r.id) }
         // N-7: the pill goes only when the page it points to is the one now showing.
         if let p = pill, isViewing(p.gameID, p.releaseID) { pill = nil }
         focusReleaseID = releaseID
