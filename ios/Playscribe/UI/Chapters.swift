@@ -112,6 +112,7 @@ struct GalleryEmpty: View {
 
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
 
     var body: some View {
@@ -119,7 +120,11 @@ struct GalleryEmpty: View {
         let links = game?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
         let search = game.flatMap { Self.trailerSearchURL($0.name) }
         VStack(alignment: .leading, spacing: 8) {
-            Text("No pictures or videos here yet").font(PlayscribeFont.headline)
+            // Tabletop at accessibility sizes: the stage has room under its header art for about three AX5 lines and cannot
+            // scroll, so the headline (two lines at AX5) gives way to the line that says where the control is (Mac, 0a7830d).
+            if !(duo.pose == .tabletop && typeSize.isAccessibilitySize) {
+                Text("No pictures or videos here yet").font(PlayscribeFont.headline)
+            }
             if duo.pose == .tabletop {
                 // The stage is view-only and cannot scroll, so no grey stand-in rows that look like buttons and push the line off
                 // the stage at AX5 (Mac, #493). The controls are on the Links panel; the rail shows an ellipsis, not the word
