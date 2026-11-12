@@ -7,6 +7,7 @@ import * as store from '../store.ts'
 import type { PlatformStatus, Post } from '../types.ts'
 import newsSources from '../sources/news-sources.json' with { type: 'json' }
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
+import { isTestBuildPost, pcScopedPost, statedLiveTime } from './claims.ts'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import { IGDB_REV, type Igdb } from './igdb.ts'
 import { extractNotes, mentionsPs4, mentionsPs5, ps5PageOf, isPromoTitle } from './notes.ts'
@@ -29,6 +30,8 @@ export interface IngestDeps {
   fetchFn: FetchFn
   igdb: Igdb | null
   log?: (msg: string) => void
+  /** Backfill: rows this same post made earlier under the old rules are corrected (store.repairOwnLiveAt, dropOwnPs5Row). */
+  repairClaims?: boolean
 }
 
 export interface IngestSummary {
@@ -250,17 +253,23 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
 
   // A studio post that says the update is live on PS5: official without a person, so the release
   // is On PS5 and its pending review items are closed.
+  // A post that gives a later time ("at 02:00 UTC on November 10 the updates ... will be available") is official too,
+  // but the row is announced, dated to that time, until it passes (store.promoteStated).
+  const stated = statedLiveTime(text, post.publishedAt)
   const officialPs5 = (releaseId: string, ps5Only = true) => {
     db.prepare('UPDATE releases SET ps4 = 0 WHERE id = ? AND ps4 = 1').run(releaseId)
     const version = consoleVersionOf(text, { ps5Only })
     const size = sizeBytesOf(text)
-    store.upsertPlatform(db, releaseId, 'ps5', {
-      status: 'live',
-      verification: 'official',
+    const input = {
+      status: stated ? ('announced' as const) : ('live' as const),
+      verification: 'official' as const,
       version: version ? store.field(version, 'official', s.id) : null,
       sizeBytes: size ? store.field(size, 'official', s.id) : null,
-      liveAt: store.field(post.publishedAt, 'official', s.id),
-    })
+      liveAt: store.field(stated ?? post.publishedAt, 'official', s.id),
+    }
+    if (deps.repairClaims) store.repairOwnLiveAt(db, releaseId, s.id, post.publishedAt, input.liveAt, input.status)
+    store.upsertPlatform(db, releaseId, 'ps5', input)
+    if (stated) return
     db.prepare(`UPDATE review_items SET resolved_at = ?, resolution = 'autoConfirmed' WHERE release_id = ? AND platform = 'ps5' AND resolved_at IS NULL`).run(now(), releaseId)
   }
   // A studio's own post that names PS5 is that update's PS5 page; a Steam post may link to one.
@@ -269,6 +278,9 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   const pcOnly = s.platforms.every((p) => p === 'pc')
   const namesPs5 = s.ps5Signal === 'always' || mentionsPs5(text)
   if (!pcOnly && !namesPs5) return null // an official multi-platform post that doesn't name PS5 says nothing about PS5
+  // A PTB, public test, test build, beta or preview is not a release: no PS5 claim from it at all.
+  const testBuild = isTestBuildPost(post.title)
+  if (!pcOnly && testBuild) return null
 
   const k = kind()
   // A studio or Steam post spelling a version another way ("1.4.0" for "1.4") joins the release already stored.
@@ -278,11 +290,19 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   if (pcOnly) {
     store.upsertPlatform(db, releaseId, 'pc', { status: 'live', verification: 'official', liveAt: store.field(post.publishedAt, 'official', s.id) })
     store.addLinks(db, releaseId, links())
+    // A test build, or a post listing other platforms' builds without PlayStation, says nothing about PS5.
+    if (testBuild || (pcScopedPost(text) && !ps5LiveStated(text))) {
+      if (deps.repairClaims) store.dropOwnPs5Row(db, releaseId, s.id, post.publishedAt)
+      return releaseId
+    }
     if (ps5LiveStated(text)) officialPs5(releaseId)
     else if (!registry.games[game.id]?.steamIsPcPort && !game.steam_is_pc_port && !(game.ps5_release && post.publishedAt.slice(0, 10) < game.ps5_release)) {
       // Taken as out on PS5 too, unless the post says otherwise. Never the PC version or size: those are PC facts.
-      const status = ps5StatusOf(text)
-      store.upsertPlatform(db, releaseId, 'ps5', { status, verification: 'assumed', liveAt: status === 'live' ? store.field(post.publishedAt, 'assumed', s.id) : null })
+      // A later time stated in the post holds the row as announced until then.
+      const status = stated ? 'announced' : ps5StatusOf(text)
+      const liveAt = stated ? store.field(stated, 'assumed', s.id) : status === 'live' ? store.field(post.publishedAt, 'assumed', s.id) : null
+      if (deps.repairClaims) store.repairOwnLiveAt(db, releaseId, s.id, post.publishedAt, liveAt, status)
+      store.upsertPlatform(db, releaseId, 'ps5', { status, verification: 'assumed', liveAt })
       if (mentionsPs5(text)) review(releaseId, 'steamMentionsPs5')
     }
     return releaseId
@@ -330,6 +350,7 @@ export interface IngestOpts {
 }
 
 export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promise<IngestSummary> => {
+  if (opts.until) deps = { ...deps, repairClaims: true }
   const summary: IngestSummary = { polled: [], skipped: [], errors: [], created: [], revised: [], review: 0 }
   const hot = hotGameIds(deps.db)
   const games = trackedGames(deps.db).filter((g) => !opts.hot || hot.has(g.id))
@@ -441,7 +462,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   deps.log?.(`ingest: news hidden (promo) ${summary.newsHidden ?? 0} new, ${pruned.length} pruned`)
   const repaired = store.repairAssumedLiveAt(deps.db)
   if (repaired) deps.log?.(`ingest: moved ${repaired} Steam-assumed PS5 dates back to their Steam post`)
-  const promoted = store.promoteAnnounced(deps.db)
+  const promoted = store.promoteAnnounced(deps.db) + store.promoteStated(deps.db)
   const settled = store.settleOldAnnouncements(deps.db)
   if (settled) deps.log?.(`ingest: ${settled} press announcements older than 30 days, with a later PS5 release live, now read as live`)
   deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)

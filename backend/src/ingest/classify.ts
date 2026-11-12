@@ -5,7 +5,7 @@ import type { KindBasis, NoteSection, PlatformStatus, ReleaseKind } from '../typ
 
 // A number followed by a slash or AM/PM is a date or time ("Latest Update 5/14", "Update 5PM PT"), not a version.
 const VERSION = /\b(?:update|patch|hotfix|version|ver\.?|v)\s*#?\s*(\d+(?:\.\d+){0,3}[a-z]?)\b(?!\s*\/|\s*[ap]\.?m\b)/i
-const BARE_VERSION = /\b(\d+\.\d+(?:\.\d+){0,2})\b/
+const BARE_VERSION = /\b(\d+\.\d+(?:\.\d+){0,2}[a-z]?)\b/
 
 export interface Naming {
   displayName: string

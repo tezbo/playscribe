@@ -272,3 +272,13 @@ A PS5 row is never dropped because it is dated long before the game's recorded P
 ## Early Access before a later 1.0 (r052-early-access-dates)
 
 Only IGDB status "Early Access" counts, never Advanced Access (a few days of paid head start), Beta or Alpha. When a PS5 Early Access row comes before a later Full Release row, the game's PS5 date (`ps5Release`, `d` in the index) is the first playable day, so Steam patches from that period get PS5 rows. While the 1.0 is still ahead the feed and the index also carry `eaSince`/`fullRelease` (`ea`/`fr`). A game whose IGDB data mixes builds is set by hand in `scripts/ps5-date-overrides.json`. Games are refreshed from IGDB once when `IGDB_REV` (src/ingest/igdb.ts) is raised, and again while a 1.0 is still ahead. Diagnostic: the PS5 index workflow with `diagnose` lists every game whose earliest PS5 row precedes `d`; it writes nothing.
+
+## What a post claims about PS5 (r050-feed-ps5-claim-fixes)
+
+From Quinn's spot-check of 25 rows. The feed claims less when a post says less (`backend/src/ingest/claims.ts`):
+
+- **A stated later time is the live time.** "At 02:00 UTC+0 on November 10 the updates ... will be available", "starting on November 12, 2026 at 06:00 (UTC+0)", "Tomorrow, October 27th ... @ 14:00 UTC": the PS5 row is `announced` with that time as `liveAt` and flips to `live` (and earns its one alert from then) when the time has passed (`promoteStated`). A date with no clock time is held to the end of that UTC day. Past dates, dates over 60 days out, and sale/event/maintenance dates are ignored. An official post keeps its `official` verification while it waits.
+- **Test builds are not releases.** A title with PTB, public test, test build, beta, preview or playtest makes no PS5 row (a multi-platform test post is dropped; a Steam one keeps its PC row only).
+- **No PS5 assumption from PC-scoped posts.** Two or more other platforms' builds with no PlayStation named ("Windows: v1.0.6.2132 / Mac: v1.0.6.776"), or "added on PC, rolling out soon to other platforms", gives no assumed PS5 row.
+- **The studio's whole version string is kept** ("10.2.2a", not "10.2.2").
+- **Repair.** A backfill (`--backfill <since>`) re-reads official posts and corrects only the PS5 row that post itself made under the old rules (same source, `liveAt` equal to the post time); rows from other sources and confirmed rows are left alone. Steam's feed returns its last 100 posts per source, so older rows are not reached. A release already stored under a wrong name (for example `dead-by-daylight@10.2`) keeps its id and name; remove it by hand if it matters.
