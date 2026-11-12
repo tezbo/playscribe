@@ -289,3 +289,7 @@ From Quinn's spot-check of 25 rows. The feed claims less when a post says less (
 The feed branch carries the state database gzipped (`state/playscribe.db.gz`). GitHub rejects a file over 100 MB. Publish prints the compressed size on every run, adds a warning annotation at 80 MB and, at 90 MB, publishes and then fails the job so the feed stays current but the failure is loud. Measured 12 Nov 2026: 186 MB raw, 38.7 MB compressed; `releases` is 145 MB of it (notes 116 MB). Release notes are not pruned: they are the product and are only removable if they can be restored exactly from the published game files.
 
 Backfill also removes the release an announcement headline made under the old rules (only when that post is its sole source and day), and no pass moves a stated PS5 time back to the Steam post: the old `repairAssumedLiveAt` pass is retired because it undid every stated time after its first run (found by Quinn on DDV Season of Scares, 12 Nov).
+
+### Alert age
+
+The 72 h alert guard counts from `alert_from` (the moment a console-later update went live on PS5), else from the live date. `alert_from` is ignored when the update's own live date is more than 30 days old, so promoting a years-old announced row never opens a fresh alert window, in the push job or in the feed's `alert.from` (`alertFromOf`). Found 12 Nov 2026: 11 rows with 2023 to 2026 live dates were promoted at 17:05Z with alert_from = now and were claimed by the push job in the same second; no follower devices matched, so nothing was sent.

@@ -211,3 +211,14 @@ test('backfill removes the release an announcement headline made before, and a s
   await runIngest(deps, { force: true })
   assert.equal(ps5Of(db, 'dawnwalker@1.3')!.liveAt!.value, held)
 })
+
+test('alert age: a promoted row whose own live date is old keeps no fresh alert window (feed and push)', async () => {
+  const { alertFromOf } = await import('../src/alerts.ts')
+  const now = Date.parse('2026-11-12T17:05:00.000Z')
+  const live = (v: string) => JSON.stringify({ value: v })
+  // Years-old patch promoted today: the alert counts from its own date, so the 72 h guard stops it.
+  assert.equal(alertFromOf({ alert_from: '2026-11-12T17:05:01.005Z', live_at: live('2025-06-11T22:50:42.000Z') }, now), '2025-06-11T22:50:42.000Z')
+  // A console-later update a few days after its Steam post still counts from the moment it went live on PS5.
+  assert.equal(alertFromOf({ alert_from: '2026-11-12T17:05:01.005Z', live_at: live('2026-11-02T10:00:00.000Z') }, now), '2026-11-12T17:05:01.005Z')
+  assert.equal(alertFromOf({ alert_from: null, live_at: live('2026-11-12T10:00:00.000Z') }, now), '2026-11-12T10:00:00.000Z')
+})
