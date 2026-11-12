@@ -1,4 +1,5 @@
 import SwiftUI
+import OSLog
 
 /// Contract v2 §11: a game is the Page (the release being read) and the Contents (the game's
 /// chapters, search, releases and actions). The game book is one ArrangementView(.split), so the
@@ -1046,6 +1047,11 @@ struct LinksSheet: View {
             Spacer(minLength: 0)
         }
         .background(Color.ink1)
+        // One log line per opened row, so a QA run can confirm the tap reached the system (#493: the simulator showed black).
+        .environment(\.openURL, OpenURLAction { url in
+            Logger(subsystem: "co.codeconnectors.playscribe", category: "links").info("links open: \(url.host() ?? "?", privacy: .public)")
+            return .systemAction
+        })
     }
 
     static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool { !rows(model, gameID).isEmpty }
