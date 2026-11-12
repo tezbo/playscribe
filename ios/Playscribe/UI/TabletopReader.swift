@@ -183,6 +183,11 @@ struct TabletopReaderStage: View {
                         .accessibilityAddTraits(.isHeader)
                     WholeWordText(text: ReaderBody.stage(section.body), font: PlayscribeFont.body, lines: typeSize.isAccessibilitySize ? 1 : 4,
                                   color: PlayscribeColor.textPrimary.opacity(0.92))
+                        // At accessibility sizes the half-height stage has no room for a body line under a two-line title
+                        // and the eyebrow (the eyebrow was clipped at the top, fccccaa). The body is not drawn there; it stays
+                        // in the accessibility tree and the full text is one tap away.
+                        .frame(height: typeSize.isAccessibilitySize ? 0 : nil)
+                        .clipped()
                         .accessibilityLabel(section.body)
                         .accessibilityIdentifier("readerBody")
                 }
