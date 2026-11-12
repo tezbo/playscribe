@@ -997,3 +997,26 @@ struct SearchTextColdLaunchTests {
         #expect(m.nav.query == "dawn")
     }
 }
+
+/// 0.5.5 (r054-tabletop-find-trailers): in Tabletop the empty Gallery's "Find trailers online" is view-only text, so the
+/// Links panel in the lower half carries the same search for every game whose Gallery is empty, and only for those.
+@MainActor
+struct TabletopFindTrailersTests {
+    @Test func linksPanelCarriesTheTrailerSearchForAnEmptyGallery() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "links-\(UUID().uuidString).json"))
+        m.resetDemo()
+        let games = m.fixtures.games
+        let empty = games.filter { m.gallery($0.id).isEmpty }
+        #expect(!empty.isEmpty)
+        for g in games {
+            let row = LinksSheet.rows(m, g.id).first { $0.id == "trailers" }
+            if m.gallery(g.id).isEmpty {
+                #expect(row?.title == "Find trailers online")
+                #expect(row?.url == GalleryEmpty.trailerSearchURL(g.name))
+                #expect(LinksSheet.hasLinks(m, g.id))   // so Tabletop's More menu offers Links
+            } else {
+                #expect(row == nil)
+            }
+        }
+    }
+}
