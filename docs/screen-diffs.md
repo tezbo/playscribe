@@ -9,7 +9,7 @@ Workflow: `.github/workflows/screen-diffs.yml`. Compare step: `ios/tools/qa/scre
 1. `scope` checks whether the PR touches anything that can change a still: `ios/Playscribe`, `ios/Shared`,
    `ios/PlayscribeWidget`, `ios/project.yml` or `ios/PlayscribeTests/Harness`. If not, the comment says nothing changed and
    no macOS runner is used.
-2. Two `render` jobs run side by side on the free `xcode-27` runner. **Before** is main's latest commit (the merge ref's
+2. Four `render` jobs run side by side on the free `xcode-27` runner, two pose groups for each side. **Before** is main's latest commit (the merge ref's
    first parent) and **after** is the PR merged into main. Both use the PR's fold harness, so only the app code differs. If
    the PR's tests don't build against main, main falls back to its own tests, and the comment says so.
 3. Both render the matrix with `HARNESS_STABLE=1`. The workflow blocks the app's art and feed hosts in the runner's
