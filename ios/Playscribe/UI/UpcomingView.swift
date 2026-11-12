@@ -41,7 +41,6 @@ struct LibraryTabPicker: View {
         }
         .pickerStyle(.segmented)
         .frame(minHeight: 44)
-        .offset(x: 8) // THROWAWAY (#485): a known 8 pt shift so Iris can sign the changed-screen comment; reverted next commit.
         .accessibilityIdentifier("libraryTabPicker")
         // Book: exactly the left page wide, so the control never crosses the fold (AX3, 7fe84f4).
         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
