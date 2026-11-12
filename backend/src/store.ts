@@ -353,6 +353,10 @@ export const promoteStated = (db: DB, at = new Date(), quiet = false) => {
   return n
 }
 
+/** PS5 rows held announced until a time their post stated (r050, #466): promoteStated takes each live once the time passes. */
+export const heldPs5Rows = (db: DB) =>
+  (db.prepare("SELECT COUNT(*) AS n FROM platform_releases WHERE platform = 'ps5' AND status = 'announced' AND live_at IS NOT NULL AND live_at != 'null'").get() as { n: number }).n
+
 /** The PS5 row this very post (source and post date) created under the old rules, if it is still untouched by anyone else. */
 const ownPs5Row = (db: DB, releaseId: string, sourceId: string, publishedAt: string) => {
   const row = getPlatformRow(db, releaseId, 'ps5')

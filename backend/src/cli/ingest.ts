@@ -50,6 +50,9 @@ const apns = process.env.PUSH_ENABLED === '1' && keyId && teamId && key ? new Ap
 const alerts = process.env.PUSH_DEFER === '1' ? [] : await pushNewPs5(db, apns, { maxAgeHours: config.pushMaxAgeHours })
 if (process.env.PUSH_DEFER === '1') console.log('push deferred: relay devices not loaded')
 if (alerts.length) console.log('alerts:', JSON.stringify(alerts))
+// feed-log-lines-to-step: how many relay devices this run could alert, as counts only (never ids or tokens).
+const dev = db.prepare('SELECT COUNT(*) AS n, COUNT(apns_token) AS t FROM devices').get() as { n: number; t: number }
+console.log(`push: ${dev.n} devices from the relay, ${dev.t} with a token; ${alerts.reduce((n, a) => n + a.sent, 0)} alerts sent`)
 apns?.close()
 if (exportDir) console.log('exported', exportStatic(db, exportDir))
 // Feed health: sources failing 3 polls in a row, and the exported data's quality rules.
