@@ -7,7 +7,7 @@ import * as store from '../store.ts'
 import type { PlatformStatus, Post } from '../types.ts'
 import newsSources from '../sources/news-sources.json' with { type: 'json' }
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
-import { isTestBuildPost, pcScopedPost, statedLiveTime } from './claims.ts'
+import { isAnnouncementTitle, isTestBuildPost, pcScopedPost, statedLiveTime } from './claims.ts'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import { IGDB_REV, type Igdb } from './igdb.ts'
 import { extractNotes, mentionsPs4, mentionsPs5, ps5PageOf, isPromoTitle } from './notes.ts'
@@ -47,7 +47,7 @@ export interface IngestSummary {
   /** News headlines hidden by the promo rule this run (new posts), so a jump shows in the job log (Nadia, r054). */
   newsHidden?: number
   /** PS5 claims withheld this run by the r050 rules, so their real cost shows in the job log: held to a stated time, test build, PC-scoped. */
-  held?: { stated: number; testBuild: number; pcScoped: number }
+  held?: { stated: number; testBuild: number; pcScoped: number; announcement: number }
 }
 
 const MIN_POLL_MS = 55 * 60_000
@@ -258,8 +258,8 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   // A post that gives a later time ("at 02:00 UTC on November 10 the updates ... will be available") is official too,
   // but the row is announced, dated to that time, until it passes (store.promoteStated).
   const stated = statedLiveTime(text, post.publishedAt)
-  const held = (k: 'stated' | 'testBuild' | 'pcScoped') => {
-    const h = (summary.held ??= { stated: 0, testBuild: 0, pcScoped: 0 })
+  const held = (k: 'stated' | 'testBuild' | 'pcScoped' | 'announcement') => {
+    const h = (summary.held ??= { stated: 0, testBuild: 0, pcScoped: 0, announcement: 0 })
     h[k]++
     deps.log?.(`ps5 claim withheld (${k}) ${game.id}: ${post.title}`)
   }
@@ -288,6 +288,11 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   if (!pcOnly && !namesPs5) return null // an official multi-platform post that doesn't name PS5 says nothing about PS5
   // A PTB, public test, test build, beta or preview is not a release: no PS5 claim from it at all.
   const testBuild = isTestBuildPost(post.title)
+  // An announcement headline ("the next major update ... releases on Dec. 23") is news; its release comes with its notes.
+  if (isAnnouncementTitle(post.title)) {
+    held('announcement')
+    return null
+  }
   if (!pcOnly && testBuild) {
     held('testBuild')
     return null
@@ -479,7 +484,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   const settled = store.settleOldAnnouncements(deps.db)
   if (settled) deps.log?.(`ingest: ${settled} press announcements older than 30 days, with a later PS5 release live, now read as live`)
   deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)
-  if (summary.held) deps.log?.(`ingest: PS5 claims withheld this run: ${summary.held.stated} held to a stated time, ${summary.held.testBuild} test builds, ${summary.held.pcScoped} PC-scoped`)
+  if (summary.held) deps.log?.(`ingest: PS5 claims withheld this run: ${summary.held.stated} held to a stated time, ${summary.held.testBuild} test builds, ${summary.held.pcScoped} PC-scoped, ${summary.held.announcement} announcements`)
   deps.log?.(`ingest: polled ${summary.polled.length}, new ${summary.created.length}, revised ${summary.revised.length}, review +${summary.review}, errors ${summary.errors.length}`)
   return summary
 }

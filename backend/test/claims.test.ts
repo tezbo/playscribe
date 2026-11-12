@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
-import { isTestBuildPost, pcScopedPost, statedLiveTime } from '../src/ingest/claims.ts'
+import { isAnnouncementTitle, isTestBuildPost, pcScopedPost, statedLiveTime } from '../src/ingest/claims.ts'
 import { nameRelease } from '../src/ingest/classify.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import * as store from '../src/store.ts'
@@ -16,6 +16,14 @@ test('a PTB, public test, test build, beta or preview post is not a release', ()
   assert.ok(isTestBuildPost('Patch 2.0 Preview Notes'))
   assert.ok(!isTestBuildPost('10.2.2a Backend Bugfix Patch'))
   assert.ok(!isTestBuildPost('AC Black Flag Resynced Title Update 1.0.8 – Patch Notes'))
+})
+
+test('a headline announcing a not-yet-shipped update is not a release (Palworld Feybreak)', () => {
+  assert.ok(isAnnouncementTitle("Palworld's next major update, Feybreak, releases on Dec. 23"))
+  assert.ok(isAnnouncementTitle('Update 1.2 Coming Tomorrow'))
+  assert.ok(!isAnnouncementTitle('Update 1.2 Patch Notes'))
+  assert.ok(!isAnnouncementTitle('Hotfix 1.0.5 is now live'))
+  assert.ok(!isAnnouncementTitle('10.2.2a Backend Bugfix Patch'))
 })
 
 test('a post listing platform builds without PlayStation, or rolling out to other platforms later, is PC-scoped', () => {
@@ -111,7 +119,7 @@ test('ingest: test builds and PC-scoped posts make no PS5 row; a stated later ti
   assert.deepEqual([held.status, held.verification, held.liveAt?.value], ['announced', 'official', `${when.toISOString().slice(0, 10)}T02:00:00.000Z`])
   assert.equal(held.alert, undefined)
   assert.ok(store.getRelease(db, 'dawnwalker@10.2.2a'))
-  assert.deepEqual(summary.held, { stated: 1, testBuild: 1, pcScoped: 1 })
+  assert.deepEqual(summary.held, { stated: 1, testBuild: 1, pcScoped: 1, announcement: 0 })
   // Nothing happens early; once the time has passed the row is live and earns its one alert from now.
   assert.equal(store.promoteStated(db, day(1)), 0)
   assert.equal(store.promoteStated(db, day(3)), 1)

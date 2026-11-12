@@ -5,6 +5,14 @@
 export const isTestBuildPost = (title: string) =>
   /\b(ptb|public\s+test(?:ing)?(?:\s+(?:realm|build|server|branch))?|test\s+(?:build|server|realm|branch)|(?:open\s+|closed\s+)?beta|preview(?:\s+build)?|playtest|experimental\s+branch)\b/i.test(title)
 
+/**
+ * A headline announcing an update that has not shipped ("Palworld's next major update, Feybreak, releases on Dec. 23",
+ * "Update 1.2 Coming Tomorrow") is news, not a release: no release and no PS5 row from it. The notes post that follows is the release.
+ */
+export const isAnnouncementTitle = (title: string) =>
+  /\b(?:next|upcoming)\s+(?:major\s+|big\s+|free\s+)?(?:update|patch|hotfix|season|expansion)\b/i.test(title) ||
+  /\b(?:update|patch|hotfix|season|expansion)\b[^|]{0,40}\b(?:is\s+)?(?:coming|arrives?|arriving|releases?|launch(?:es|ing)?|drops?)\s+(?:soon|tomorrow|next\b|this\s+(?:week|month)|(?:on|in)\s+(?:\d|(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+\d))/i.test(title)
+
 const PLAYSTATION = /\b(ps5|ps4|playstation)\b/i
 
 /**
