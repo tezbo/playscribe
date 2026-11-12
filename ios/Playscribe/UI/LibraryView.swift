@@ -273,11 +273,7 @@ struct LibraryShelf: View {
     @ViewBuilder private var keepCurrentAsk: some View {
         if model.showsKeepCurrentCard && (duo.pose == .book || duo.pose == .tabletop) {
             let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
-            // Tabletop at accessibility sizes (Iris and Quinn, #455): the card takes the lower half left under the
-            // Playing/Upcoming switch (44 pt plus its spacing and the panel's margins, 32 pt), its text scrolls in what the
-            // pinned buttons leave, so both stay in the lower half. The card ignores this below accessibility sizes.
-            let lowerHalf: CGFloat? = duo.pose == .tabletop ? duo.division.map { max(0, duo.size.height - $0.maxY) } : nil
-            KeepCurrentCard(pinnedHeight: lowerHalf.map { max(0, $0 - 44 - 32) })
+            KeepCurrentCard(compactTabletop: duo.pose == .tabletop)
                 .frame(width: pageWidth, alignment: .leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -318,10 +314,14 @@ struct LibraryShelf: View {
                         if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.data.nav.query) }
                     }
                 } else if !heroOnRightPage {
+                    // Tabletop at AX3+ (Iris, #455 at 0877dfc): the compact card keeps the lower half to itself, first; the
+                    // switch and the chips follow by normal page scroll. Below AX3 it sits under the switch as signed.
+                    let cardFirst = duo.pose == .tabletop && typeSize >= .accessibility3
+                    if cardFirst && model.libraryTab == .playing { keepCurrentAsk }
                     LibraryTabPicker()
                         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    if model.libraryTab == .playing { keepCurrentAsk }
+                    if !cardFirst && model.libraryTab == .playing { keepCurrentAsk }
                 }
                 if model.libraryTab == .upcoming {
                     UpcomingView()

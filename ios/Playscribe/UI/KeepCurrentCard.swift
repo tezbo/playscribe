@@ -62,10 +62,9 @@ struct KeepCurrentCard: View {
     /// Tabletop at accessibility sizes (Iris and Quinn, #455): the text scrolls inside this height with faded edges, and
     /// Turn on and Not now pin below it, so both stay in the lower half. Nil everywhere else (Closed AX5 sits in the page
     /// scroll, which is fine).
-    /// The height the whole card may take (Tabletop: the lower half left under the Playing/Upcoming switch). The text box
-    /// takes all of it that the pinned buttons and the card's padding leave (Iris at e9bd204: 40% left one readable line).
-    var pinnedHeight: CGFloat? = nil
-    @State private var buttonsHeight: CGFloat = 0
+    /// Tabletop at AX3 and above (Iris, #455 at 0877dfc): compact, with no inner scroll. Only the headline (whole words, up to
+    /// four lines), "What is sent" and the two buttons, full width; the short line lives in the sheet.
+    var compactTabletop = false
     @Environment(AppModel.self) private var model
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -77,16 +76,12 @@ struct KeepCurrentCard: View {
     var body: some View {
         let ax = typeSize.isAccessibilitySize
         VStack(alignment: .leading, spacing: 8) {
-            if ax, let pinnedHeight {
-                // Unscrolled when it fits; otherwise the headline and text scroll with faded edges (each at most one line,
-                // or 15% of the box) and the buttons stay put below. Text box = card height - padding - gap - buttons.
-                ViewThatFits(in: .vertical) {
-                    textBlock(ax: ax)
-                    FadedEdgeScroll(edgeCapFraction: 0.15, capAtOneLine: true, edgeColor: Color.ink2) { textBlock(ax: ax) }
-                }
-                .frame(maxHeight: max(120, pinnedHeight - 28 - 8 - buttonsHeight), alignment: .top)
+            if compactTabletop && typeSize >= .accessibility3 {
+                WholeWordText(text: KeepCurrentCopy.cardTitle, font: PlayscribeFont.headline, lines: 4, color: nil)
+                    .accessibilityLabel(KeepCurrentCopy.cardVoiceOver)
+                    .accessibilityAddTraits(.isHeader)
+                whatIsSent
                 VStack(alignment: .leading, spacing: 12) { buttons }.padding(.top, 2)
-                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { buttonsHeight = $0 }
             } else {
                 textBlock(ax: ax)
                 if ax {
