@@ -5,7 +5,7 @@ name: Delete leftover branches
 # grant (12 Nov 2026). The guards below are what keep it safe.
 #
 # Guards, all checked for every branch before anything is deleted:
-#   - never the default branch or a kept data/backup branch (`feed`, `ps5-index-update`, `backup/*`, `release/*`, `rc/*`);
+#   - never the default branch or a kept data/backup branch (`feed`, `gh-pages`, `ps5-index-update`, `backup/*`, `release/*`, `rc/*`);
 #   - the tip must equal the SHA given (so you delete exactly what was reviewed);
 #   - a branch with an open PR is refused;
 #   - the tip must already be in main (merged, so nothing is lost) unless `allow_unmerged` is true.
@@ -56,7 +56,7 @@ jobs:
             n=$((n + 1)); [ "$n" -le 50 ] || refuse "more than 50 branches in one run"
             name=${pair%@*}; sha=${pair##*@}
             [ "$name" != "$pair" ] || refuse "$pair is not name@sha"
-            case "$name" in "$DEFAULT"|feed|ps5-index-update|backup/*|release/*|rc/*) refuse "$name is kept";; esac
+            case "$name" in "$DEFAULT"|feed|gh-pages|ps5-index-update|backup/*|release/*|rc/*) refuse "$name is kept";; esac
             [[ "$sha" =~ ^[0-9a-f]{40}$ ]] || refuse "$name: sha must be 40 lowercase hex characters"
             tip=$(gh api "repos/$REPO/git/ref/heads/$name" --jq .object.sha) || refuse "$name does not exist"
             [ "$tip" = "$sha" ] || refuse "$name tip is $tip, not $sha"
@@ -89,7 +89,7 @@ jobs:
           # Every guard runs again right before the delete, in case a branch moved since the check job.
           for pair in $BRANCHES; do
             name=${pair%@*}; sha=${pair##*@}
-            case "$name" in "$DEFAULT"|feed|ps5-index-update|backup/*|release/*|rc/*) refuse "$name is kept";; esac
+            case "$name" in "$DEFAULT"|feed|gh-pages|ps5-index-update|backup/*|release/*|rc/*) refuse "$name is kept";; esac
             tip=$(gh api "repos/$REPO/git/ref/heads/$name" --jq .object.sha) || refuse "$name does not exist"
             [ "$tip" = "$sha" ] || refuse "$name tip is now $tip, not $sha"
             open=$(gh pr list --repo "$REPO" --head "$name" --state open --json number --jq length)

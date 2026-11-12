@@ -52,7 +52,7 @@ No App Store Connect app record is needed for the widget.
 Agents' git pushes cannot delete remote branches (the proxy returns 403), so any agent runs **Delete leftover
 branches** (`branch-delete.yml`, workflow_dispatch on `main`) with `branches` (space-separated `name@sha` pairs, up to
 50), `approval` (the id or a quote of Terry's yes) and `dry_run` (run `true` first). It refuses kept branches (main,
-`feed`, `ps5-index-update`, `backup/*`, `release/*`, `rc/*`), a moved tip, an open PR, and an unmerged branch unless
+`feed`, `gh-pages`, `ps5-index-update`, `backup/*`, `release/*`, `rc/*`), a moved tip, an open PR, and an unmerged branch unless
 `allow_unmerged` is true, re-checks just before deleting, and prints a restore command per branch. `approval` quotes
 Terry's yes or the coordinator's, under Terry's cloud admin grant (12 Nov 2026).
 
