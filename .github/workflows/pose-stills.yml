@@ -125,8 +125,9 @@ jobs:
           n = 0
           for test in manifest:
               for a in test.get("attachments", []):
-                  name = a.get("suggestedHumanReadableName") or a["exportedFileName"]
-                  name = re.sub(r"_\d+_[0-9A-Fa-f-]{36}", "", os.path.splitext(name)[0])
+                  # Not splitext: route names hold dots (dawnwalker@1.1), so only a trailing .png comes off.
+                  name = re.sub(r"\.png$", "", a.get("suggestedHumanReadableName") or a["exportedFileName"])
+                  name = re.sub(r"_\d+_[0-9A-Fa-f-]{36}$", "", name)
                   shutil.copy(os.path.join("raw", a["exportedFileName"]), os.path.join("out", name + ".png")); n += 1
           print(f"{n} PNG")
           open(os.environ["GITHUB_OUTPUT"], "a").write(f"n={n}\n")

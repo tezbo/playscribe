@@ -13,21 +13,24 @@ echo "displays before:"; xcrun devicectl device info displays --device $udid 2>&
 case $pose in
   closed|closedLandscape) echo "pose $pose: outer panel, nothing to press" ;;
   *)
+    # Run 1 (88f02f7): the runner trusted the driver for Accessibility and Device Hub was running, but it had no windows, so
+    # "Open" was never found. Show the device first (Simulator.app, then Device Hub), and dump the tree before pressing.
+    label=Open; [[ $pose == book || $pose == tabletop ]] && label="Partially Open"
     hub=$(xcode-select -p)/../Applications/DeviceHub.app
     [[ -d $hub ]] || hub=$(mdfind "kMDItemCFBundleIdentifier == '*DeviceHub*'" 2>/dev/null | head -1)
-    echo "device hub: ${hub:-not found}"
-    open -a "$hub" 2>&1; sleep 8
-    swiftc -O $here/../posedriver/main.swift -o /tmp/posedriver 2>&1 | tail -3
+    sim=$(xcode-select -p)/Applications/Simulator.app
+    echo "device hub: ${hub:-not found}; simulator app: $([[ -d $sim ]] && echo $sim || echo none)"
+    [[ -d $sim ]] && { open -a "$sim" --args -CurrentDeviceUDID $udid 2>&1; sleep 10; }
+    open -a "$hub" 2>&1; sleep 15
+    swiftc -O $here/../posedriver/main.swift -o /tmp/posedriver 2>&1 | grep -E "error" | head -3
+    (/tmp/posedriver tree 8 400 >/dev/null 2>&1 & q=$!; sleep 40; kill $q 2>/dev/null); echo "tree:"; head -60 /tmp/posedriver.txt 2>/dev/null
     for i in 1 2 3; do
-      /tmp/posedriver press Open >/dev/null 2>&1 & q=$!; sleep 15; kill $q 2>/dev/null
-      cat /tmp/posedriver.txt 2>/dev/null
+      /tmp/posedriver press "$label" >/dev/null 2>&1 & q=$!; sleep 15; kill $q 2>/dev/null
+      echo "press $label: $(cat /tmp/posedriver.txt 2>/dev/null | tail -2)"
       [[ $(panel) == LCD-1 ]] && break
-      sleep 3
+      open -a "$hub" 2>&1; sleep 5
     done
-    if [[ $(panel) != LCD-1 ]]; then
-      echo "inner panel not selected; the Device Hub tree, for the next attempt:"
-      (/tmp/posedriver tree 6 300 >/dev/null 2>&1 & q=$!; sleep 15; kill $q 2>/dev/null); head -80 /tmp/posedriver.txt 2>/dev/null
-    fi
+    [[ $(panel) == LCD-1 ]] || echo "inner panel not selected"
     ;;
 esac
 echo "displays after:"; xcrun devicectl device info displays --device $udid 2>&1 | grep -E "LCD|active|Orientation" | head -12
