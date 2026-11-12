@@ -120,26 +120,23 @@ struct GalleryEmpty: View {
         let search = game.flatMap { Self.trailerSearchURL($0.name) }
         VStack(alignment: .leading, spacing: 8) {
             Text("No pictures or videos here yet").font(PlayscribeFont.headline)
-            Text("You can find trailers and screenshots elsewhere.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
-            FlowLayout(spacing: 24) {
-                if let url = links?.official {
-                    if duo.pose == .tabletop {
-                        // View only: read as plain text, no link or button trait and no action (Iris, 7 Nov); the Official website link is on Tabletop's Links panel.
-                        Text("Official website").frame(minHeight: 44).foregroundStyle(Color.secondary)   // grey, not amber, no arrow: it must not look tappable. Color.secondary, not .secondary: the hierarchical style would derive from the accent set on the FlowLayout below and come out dimmed amber (f452dd8)
-                    } else {
+            if duo.pose == .tabletop {
+                // The stage is view-only and cannot scroll, so no grey stand-in rows that look like buttons and push the line off
+                // the stage at AX5 (Mac, #493). The controls are on the Links panel; the rail shows an ellipsis, not the word
+                // "More", so the line names what the person sees (Iris, 12 Nov).
+                Text("Find trailers online in Links, in the menu below.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            } else {
+                Text("You can find trailers and screenshots elsewhere.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                FlowLayout(spacing: 24) {
+                    if let url = links?.official {
                         Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                     }
-                }
-                if let url = search {
-                    if duo.pose == .tabletop {
-                        // View only: read as plain text, no link or button trait and no action (Iris, 7 Nov); the trailer search is on Tabletop's Links panel too.
-                        Text("Find trailers online").frame(minHeight: 44).foregroundStyle(Color.secondary)   // grey, not amber, no arrow: it must not look tappable. Color.secondary, not .secondary: the hierarchical style would derive from the accent set on the FlowLayout below and come out dimmed amber (f452dd8)
-                    } else {
+                    if let url = search {
                         Link(destination: url) { Label("Find trailers online", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                     }
                 }
+                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.accent)
             }
-            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.accent)
         }
         .accessibilityElement(children: .contain)
     }
