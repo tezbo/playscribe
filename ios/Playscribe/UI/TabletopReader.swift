@@ -129,6 +129,7 @@ enum ReaderBody {
 struct TabletopReaderStage: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     /// The stage's bottom edge in screen space; the text ends 24 pt above the division.
     @State private var stageBottom: CGFloat = 0
     var gameID: String
@@ -151,8 +152,14 @@ struct TabletopReaderStage: View {
             if let section = sections[safe: index] {
                 VStack(alignment: .leading, spacing: 14) {
                     // Eyebrow: the game and the date; the release itself is the title below.
-                    HStack(spacing: 8) {
-                        Text(model.gameDisplayName(gameID))
+                    // At accessibility sizes the date drops under the name, which is cut on a whole word (never "The Blood of Daw…").
+                    let eyebrow = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 2)) : AnyLayout(HStackLayout(spacing: 8))
+                    eyebrow {
+                        if typeSize.isAccessibilitySize {
+                            WholeWordText(text: model.gameDisplayName(gameID), font: PlayscribeFont.subheadline.weight(.semibold), lines: 2, color: PlayscribeColor.accent)
+                        } else {
+                            Text(model.gameDisplayName(gameID))
+                        }
                         if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary) }
                     }
                     .font(PlayscribeFont.subheadline.weight(.semibold))
@@ -165,19 +172,13 @@ struct TabletopReaderStage: View {
                         .accessibilityLabel(release?.displayName ?? "")
                         .accessibilityAddTraits(.isStaticText)
                         .accessibilityIdentifier("releaseTitle")
-                    Text(ReaderBody.title(section.title))
-                        .font(PlayscribeFont.title)
-                        .lineLimit(4)
-                        .minimumScaleFactor(0.8)
+                    // Whole words only (G-8): the stage plate ends on a word and "…", never a cut word.
+                    WholeWordText(text: ReaderBody.title(section.title), font: PlayscribeFont.title, lines: 4, color: nil)
                         // The stage caps the title; VoiceOver reads all of it, as a heading.
                         .accessibilityLabel(section.title)
                         .accessibilityAddTraits(.isHeader)
-                    Text(ReaderBody.stage(section.body))
-                        .font(PlayscribeFont.body)
-                        .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.92))
-                        .lineSpacing(4)
-                        .lineLimit(4)
-                        .minimumScaleFactor(0.7)
+                    WholeWordText(text: ReaderBody.stage(section.body), font: PlayscribeFont.body, lines: 4,
+                                  color: PlayscribeColor.textPrimary.opacity(0.92))
                         .accessibilityLabel(section.body)
                         .accessibilityIdentifier("readerBody")
                 }

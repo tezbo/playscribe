@@ -653,14 +653,20 @@ struct SwapSidesButton: View {
 struct NotesSearchField: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
+    /// At accessibility sizes the placeholder is the short "Search notes" (Iris, r054 Tabletop AX5): "Search this game's n…" was cut
+    /// mid-word. Standard sizes keep the scoped wording.
+    private var prompt: String {
+        if typeSize.isAccessibilitySize { return "Search notes" }
+        return model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes"
+    }
     var body: some View {
         @Bindable var model = model
         if duo.pose == .tabletop {
             // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
             VStack(alignment: .leading, spacing: 8) {
-                TabletopSearch(letter: $model.noteLetter,
-                               prompt: model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes")
+                TabletopSearch(letter: $model.noteLetter, prompt: prompt)
                 if model.noteLetter != nil {
                     Picker("Search in", selection: $model.noteScope) {
                         ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
@@ -672,7 +678,7 @@ struct NotesSearchField: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                TextField(model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes", text: $model.noteQuery)
+                TextField(prompt, text: $model.noteQuery)
                     .autocorrectionDisabled()
                     .submitLabel(.search)
                     .onSubmit { model.rememberSearch(model.noteQuery) }
