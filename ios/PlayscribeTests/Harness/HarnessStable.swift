@@ -5,7 +5,8 @@ import SwiftUI
 /// PR's stills with main's and list only the screens that changed (Quinn's pass bar, qa-screen-diffs-on-prs):
 ///   - no network: every http(s) request fails at once, so remote art always falls back to the bundled art or the title plate
 ///     (never "loaded on one run, not on the other");
-///   - motion off: Reduce Motion is on, so the drifting key art (ArtView) sits still instead of being caught mid-drift;
+///   - motion off: every animation in the hosted tree is dropped, so the drifting key art (ArtView) and fades jump to their end
+///     state instead of being caught mid-way (SwiftUI's Reduce Motion value is read-only, so a transaction does this);
 ///   - an extra pause before each shot, after layout has settled, so image fades and fallbacks have finished.
 /// Off by default: other harness tests and the plain stills are unchanged.
 enum HarnessStable {
@@ -31,9 +32,14 @@ nonisolated final class HarnessNoNetwork: URLProtocol {
     override func stopLoading() {}
 }
 
-/// Reduce Motion on in stable mode; nothing otherwise.
+/// No animations in stable mode; nothing otherwise.
 struct HarnessStableMotion: ViewModifier {
     func body(content: Content) -> some View {
-        if HarnessStable.on { content.environment(\.accessibilityReduceMotion, true) } else { content }
+        if HarnessStable.on {
+            content.transaction { t in
+                t.animation = nil
+                t.disablesAnimations = true
+            }
+        } else { content }
     }
 }

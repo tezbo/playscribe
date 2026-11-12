@@ -11,7 +11,7 @@ import UIKit
 ///   HARNESS_ROUTE      a playscribe:// host and path to open first, e.g. game/dawnwalker (default: the Library)
 ///   HARNESS_SCREENS    comma list of named screens for a whole matrix in one job (see `screens`); overrides ROUTE and VIEW
 ///   HARNESS_AX3_POSES  comma list: AX3 only in these poses (std and AX5 stay in every pose)
-///   HARNESS_STABLE=1   same pixels for the same code: no network, Reduce Motion on, a pause before each shot (HarnessStable.swift)
+///   HARNESS_STABLE=1   same pixels for the same code: no network, animations off, a pause before each shot (HarnessStable.swift)
 ///   HARNESS_SPLIT=1    lay Book and Tabletop pages out by the injected division (stand-in, triage only); without it the Book PNG's
 ///                      left page is clipped at x 0 and reads as a false alarm (Quinn, matrix 7fb7d89)
 /// Beside every PNG: one index.txt line (pose, live pose, safe area, fold, occlusions, split, settled) and <file>-frames.txt.
