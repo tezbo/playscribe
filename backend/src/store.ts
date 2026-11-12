@@ -307,7 +307,7 @@ export const promoteAnnounced = (db: DB, at = new Date()) => {
     .prepare(
       `SELECT p.release_id, c.live_at AS pc_live FROM platform_releases p
        JOIN platform_releases c ON c.release_id = p.release_id AND c.platform = 'pc' AND c.status = 'live'
-       WHERE p.platform = 'ps5' AND p.status = 'announced' AND p.verification = 'assumed'`,
+       WHERE p.platform = 'ps5' AND p.status = 'announced' AND p.verification = 'assumed' AND (p.live_at IS NULL OR p.live_at = 'null')`,
     )
     .all() as { release_id: string; pc_live: string | null }[]
   let n = 0
@@ -322,6 +322,46 @@ export const promoteAnnounced = (db: DB, at = new Date()) => {
     n++
   }
   return n
+}
+
+/**
+ * A post that stated a later time for the update (r050-feed-ps5-claim-fixes) left the PS5 row announced with that time as
+ * live_at. Once the time has passed the row is live, and it earns its one alert from now. Official rows stay official:
+ * this is the time the studio gave, not a person's confirmation, so it is a direct update.
+ */
+export const promoteStated = (db: DB, at = new Date()) => {
+  const rows = db.prepare("SELECT release_id, live_at FROM platform_releases WHERE platform = 'ps5' AND status = 'announced' AND live_at IS NOT NULL").all() as { release_id: string; live_at: string }[]
+  let n = 0
+  for (const r of rows) {
+    const f = json<Field<string> | null>(r.live_at, null)
+    if (!f?.value || !(Date.parse(f.value) <= at.getTime())) continue
+    db.prepare("UPDATE platform_releases SET status = 'live', alert_from = ?, updated_at = ? WHERE release_id = ? AND platform = 'ps5'").run(at.toISOString(), at.toISOString(), r.release_id)
+    db.prepare('UPDATE releases SET updated_at = ? WHERE id = ?').run(at.toISOString(), r.release_id)
+    n++
+  }
+  return n
+}
+
+/** The PS5 row this very post (source and post date) created under the old rules, if it is still untouched by anyone else. */
+const ownPs5Row = (db: DB, releaseId: string, sourceId: string, publishedAt: string) => {
+  const row = getPlatformRow(db, releaseId, 'ps5')
+  const f = json<Field<string> | null>(row?.live_at, null)
+  return row && f && f.sourceId === sourceId && f.value === publishedAt ? row : null
+}
+
+/** Backfill repair: the post's old claim ("live at the post time") is replaced by what it really says. */
+export const repairOwnLiveAt = (db: DB, releaseId: string, sourceId: string, publishedAt: string, liveAt: Field<string> | null, status: PlatformStatus) => {
+  if (status === 'live' && liveAt?.value === publishedAt) return
+  if (!ownPs5Row(db, releaseId, sourceId, publishedAt)) return
+  db.prepare("UPDATE platform_releases SET status = ?, live_at = ?, alert_from = NULL, updated_at = ? WHERE release_id = ? AND platform = 'ps5'").run(status, JSON.stringify(liveAt), now(), releaseId)
+  db.prepare('UPDATE releases SET updated_at = ? WHERE id = ?').run(now(), releaseId)
+}
+
+/** Backfill repair: a PS5 row that a test build or a PC-only post made is removed. */
+export const dropOwnPs5Row = (db: DB, releaseId: string, sourceId: string, publishedAt: string) => {
+  if (!ownPs5Row(db, releaseId, sourceId, publishedAt)) return
+  db.prepare("DELETE FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").run(releaseId)
+  db.prepare('UPDATE releases SET updated_at = ? WHERE id = ?').run(now(), releaseId)
 }
 
 /**
@@ -476,7 +516,7 @@ export const repairAssumedLiveAt = (db: DB) => {
     .prepare(
       `SELECT p.release_id, p.live_at AS ps_live, c.live_at AS pc_live FROM platform_releases p
        JOIN platform_releases c ON c.release_id = p.release_id AND c.platform = 'pc'
-       WHERE p.platform = 'ps5' AND p.status = 'live' AND p.verification = 'assumed'`,
+       WHERE p.platform = 'ps5' AND p.status = 'live' AND p.verification = 'assumed' AND p.alert_from IS NULL`,
     )
     .all() as { release_id: string; ps_live: string | null; pc_live: string | null }[]
   let n = 0
