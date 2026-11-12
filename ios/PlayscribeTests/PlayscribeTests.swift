@@ -797,6 +797,18 @@ struct BackCatalogueTests {
         #expect(model.data.read[fresh.id] == nil)
     }
 
+    @Test("A newly added game keeps only its latest update unread, even when several are recent")
+    func onlyLatestStaysUnread() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
+        let a = release("g@a", patchedDaysAgo: 2, alertDaysAgo: 2)
+        let b = release("g@b", patchedDaysAgo: 1, alertDaysAgo: 1)
+        let c = release("g@c", patchedDaysAgo: 0.2, alertDaysAgo: 0.2)
+        model.markPastAsRead([a, b, c], backCatalogue: true)
+        #expect(model.data.read[a.id] != nil)
+        #expect(model.data.read[b.id] != nil)
+        #expect(model.data.read[c.id] == nil)
+    }
+
     @Test("Without the back-catalogue rule the alert date still decides (an update for a followed game)")
     func followedGameUnchanged() {
         let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))

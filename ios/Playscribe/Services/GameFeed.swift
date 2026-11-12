@@ -115,6 +115,17 @@ extension AppModel {
             known.insert(r.id)
             if data.read[r.id] == nil { data.read[r.id] = .now }
         }
+        // A game seen for the first time shows at most its latest update as unread: a few patches inside the 72 hours are
+        // still its back catalogue, not news (Terry, 12 Nov). The older ones are read and never alert.
+        if backCatalogue {
+            let recent = releases.filter { $0.ps5State == .onPS5 && data.read[$0.id] == nil && !known.contains($0.id) }
+            for (_, group) in Dictionary(grouping: recent, by: \.gameID) {
+                for r in group.sorted(by: { $0.ps5Date > $1.ps5Date }).dropFirst() {
+                    known.insert(r.id)
+                    data.read[r.id] = .now
+                }
+            }
+        }
         data.knownOnPS5 = known
     }
 }
