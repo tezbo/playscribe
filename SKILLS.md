@@ -62,6 +62,9 @@ Claude Code loads these on its own in any session that checks out the repo, and 
 | `decision-review` | About to add, change, remove or reverse anything: goal, still needed, worth, alternatives, decide, log the learning (`docs/decisions/TEMPLATE.md`). |
 | `workaround-first` | About to say "can't", "only", "missing" or "needs Terry": check repo, other thread, build it, then report the route. |
 | `playscribe-code-review` | Reviewing a diff with the repo rules first. |
+| `swiftui-pro` | Writing or reviewing SwiftUI (modern API, data flow, layout as the window resizes incl. iPhone Duo, Dynamic Type/VoiceOver). Vendored, MIT, Paul Hudson; Playscribe rules win. |
+| `swiftui-accessibility-auditor` | Auditing a SwiftUI view for VoiceOver, Dynamic Type, focus, touch targets; P0/P1/P2 findings. Vendored, MIT, rgmez; does not replace the AX5 stills gate. |
+| `swift-testing-pro` | Writing or reviewing `import Testing` unit and logic tests (UI tests stay XCTest). Vendored, MIT, Paul Hudson. |
 
 **General skills.** Teammates also see the shared design, engineering, marketing and product-management skills (for example `engineering:code-review`, `design:accessibility-review`, `marketing:brand-review`, `product-management:write-spec`). Say "Skill: <name>" in the reply when you use one.
 
