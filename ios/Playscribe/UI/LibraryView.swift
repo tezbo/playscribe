@@ -500,6 +500,9 @@ struct LibraryShelf: View {
             .padding(.trailing, railWidth)
         }
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
+        // Tabletop only (Quinn, a8859d3): scrolled, the lower half's top edge cut a headline through its glyphs. The same edge as
+        // the "What is sent" sheet. Not in other poses: a soft-edge mask there hid the Open portrait title (see below).
+        .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink0))
         // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.
         // No soft-edge mask: it made the Open portrait large "Library" title vanish (354d15c, 9914a80), see MessageClearance.
         .clearsMessages()
@@ -1256,4 +1259,45 @@ private struct SqueezePop: ViewModifier {
 
 extension View {
     func squeezePop(id: String, isNew: Bool) -> some View { modifier(SqueezePop(id: id, isNew: isNew)) }
+}
+
+/// A scroll view's top edge once it is scrolled: a hairline, an opaque band one text line tall, then a fade over one line, so a
+/// line the edge cuts is wholly covered and the next reads through the fade. Each part capped at 15% of the visible height, so
+/// at least four lines read clear at AX5. Same treatment as the "What is sent" sheet (N-9).
+struct ScrolledTopEdge: ViewModifier {
+    var active: Bool
+    var ink: Color
+    @ScaledMetric(relativeTo: .body) private var edgeBand: CGFloat = 28
+    @ScaledMetric(relativeTo: .body) private var edgeFade: CGFloat = 24
+    @State private var scrolled = false
+    @State private var visibleHeight: CGFloat = 0
+
+    private var heights: (band: CGFloat, fade: CGFloat) {
+        guard visibleHeight > 0 else { return (edgeBand, edgeFade) }
+        let k = min(1, visibleHeight * 0.15 / (edgeBand + edgeFade))
+        return (edgeBand * k, edgeFade * k)
+    }
+
+    func body(content: Content) -> some View {
+        if active {
+            content
+                .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.y + $0.contentInsets.top > 1 } action: { _, now in scrolled = now }
+                .onScrollGeometryChange(for: CGFloat.self) { $0.visibleRect.height } action: { _, h in visibleHeight = h }
+                .overlay(alignment: .top) {
+                    if scrolled {
+                        VStack(spacing: 0) {
+                            Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5).background(ink)
+                            ink.frame(height: heights.band)
+                            LinearGradient(stops: [.init(color: ink, location: 0), .init(color: ink.opacity(0.85), location: 0.35),
+                                                   .init(color: ink.opacity(0), location: 1)], startPoint: .top, endPoint: .bottom)
+                                .frame(height: heights.fade)
+                        }
+                        .allowsHitTesting(false)
+                        .accessibilityHidden(true)
+                    }
+                }
+        } else {
+            content
+        }
+    }
 }
