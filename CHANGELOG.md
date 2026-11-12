@@ -20,6 +20,7 @@ Known issues in this build:
 - Tabletop: for a game with no videos, "Find trailers online" can't be tapped.
 - Adding a game can show all of its past updates as unread.
 - Tapping a notification while the app is already open has not been checked in this build.
+- Some dates on News and in Library "Last update" can show a day earlier or later than the post date, depending on your time zone.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
 
