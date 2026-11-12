@@ -107,6 +107,19 @@ struct FrontCoverTests {
         #expect(small.height >= cover.height - 0.001)
     }
 
+    /// Iris (0a4230d): at accessibility sizes the shade is 88 percent or more from the plate's top edge down, ordered stops.
+    @Test func accessibilityShadeStartsAtThePlate() {
+        for top in [0.2, 0.385, 0.5, 0.9] {
+            let stops = FrontCoverPage.fadeStops(accessibility: true, plateTop: top)
+            #expect(zip(stops, stops.dropFirst()).allSatisfy { $0.location <= $1.location })
+            let atPlate = stops.filter { $0.location >= top - 0.0001 }
+            #expect(atPlate.allSatisfy { $0.opacity >= 0.88 })
+            #expect(stops.first?.location == 0 && stops.last?.location == 1)
+        }
+        // Standard sizes keep the signed shade.
+        #expect(FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.4).map(\.location) == [0, 0.18, 0.45, 0.85, 1])
+    }
+
     /// Iris (#467): Wukong's cover keeps the figure, not the left of the mural, in view.
     @Test func wukongCarriesItsFocalPoint() {
         let g = Fixtures.shared.games.first { $0.id == "wukong" }

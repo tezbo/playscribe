@@ -87,6 +87,8 @@ struct FrontCoverPage: View {
     var railInset: CGFloat = 0
     /// The cover's own safe area: the page is drawn under it, the plate is kept inside it.
     var safeArea: EdgeInsets = EdgeInsets()
+    @State private var plateTop: CGFloat = 0
+    @State private var pageHeight: CGFloat = 0
 
     var body: some View {
         Button {
@@ -102,6 +104,10 @@ struct FrontCoverPage: View {
                     FrontCoverPlate(card: card)
                     CoverLockup()
                 }
+                // Where the plate starts (the eyebrow's top edge), for the scrim at accessibility sizes.
+                .onGeometryChange(for: CGFloat.self) { $0.frame(in: .named("coverPage")).minY } action: { y in
+                    if abs(y - plateTop) > 0.5 { plateTop = y }
+                }
                 .padding(.leading, 20 + leadingInset + safeArea.leading)
                 .padding(.trailing, (typeSize.isAccessibilitySize ? 20 + railInset : 20) + safeArea.trailing)
                 .padding(.top, solid ? 20 : 0)
@@ -110,6 +116,8 @@ struct FrontCoverPage: View {
                 // Increase Contrast / Reduce Transparency: a solid scrim behind the plate, not a fade (as the deck cards).
                 .background { if solid { PlayscribeColor.ink950.opacity(0.92) } }
             }
+            .coordinateSpace(.named("coverPage"))
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in if abs(h - pageHeight) > 0.5 { pageHeight = h } }
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -127,13 +135,24 @@ struct FrontCoverPage: View {
     /// CM-5: the shade is part of the cover, not the art, so the caption meets AA over any art (and, later, any loop
     /// frame). The top darkens a little for the status bar and the rail.
     private var fade: some View {
-        LinearGradient(stops: [
-            .init(color: PlayscribeColor.ink950.opacity(0.55), location: 0),
-            .init(color: .clear, location: 0.18),
-            .init(color: .clear, location: typeSize.isAccessibilitySize ? 0.25 : 0.45),
-            .init(color: PlayscribeColor.ink950.opacity(0.92), location: typeSize.isAccessibilitySize ? 0.7 : 0.85),
-            .init(color: PlayscribeColor.ink950, location: 1),
-        ], startPoint: .top, endPoint: .bottom)
+        LinearGradient(stops: Self.fadeStops(accessibility: typeSize.isAccessibilitySize,
+                                             plateTop: pageHeight > 0 && plateTop > 0 ? Double(plateTop / pageHeight) : nil)
+                        .map { .init(color: PlayscribeColor.ink950.opacity($0.opacity), location: $0.location) },
+                       startPoint: .top, endPoint: .bottom)
+    }
+
+    /// The shade's stops, as (opacity, location). Standard sizes: unchanged (signed). Accessibility sizes (Iris, 0a4230d): the
+    /// plate covers the lower half and its eyebrow sat on pale art at about 40 percent, so the shade follows the plate: clear
+    /// until just above it, 88 percent black at the eyebrow's top edge (the accent holds 4.5:1 over art up to about 60 percent
+    /// luminance there), 92 percent by the title, solid at the foot.
+    static func fadeStops(accessibility: Bool, plateTop: Double?) -> [(opacity: Double, location: Double)] {
+        guard accessibility else {
+            return [(0.55, 0), (0, 0.18), (0, 0.45), (0.92, 0.85), (1, 1)]
+        }
+        guard let top = plateTop.map({ min(max($0, 0.2), 0.9) }) else {
+            return [(0.55, 0), (0, 0.18), (0, 0.25), (0.92, 0.7), (1, 1)]
+        }
+        return [(0.55, 0), (0, min(0.18, top - 0.1)), (0, top - 0.06), (0.88, top), (0.92, min(0.98, top + 0.08)), (1, 1)]
     }
 
     /// CM-7: "<Game> cover, update 1.1 on PS5, 22 Oct". A card with no release says when the game came out.
