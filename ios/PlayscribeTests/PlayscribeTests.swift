@@ -592,10 +592,26 @@ struct AutoplayTests {
     @Test("Reflection is on by default and accessibility settings win (R-11, G-9)")
     @MainActor func reflectionDefault() {
         #expect(VideoReflection.defaultOn)
-        #expect(VideoReflection.isShown(setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false))
-        #expect(!VideoReflection.isShown(setting: true, reduceMotion: true, reduceTransparency: false))
-        #expect(!VideoReflection.isShown(setting: true, reduceMotion: false, reduceTransparency: true))
-        #expect(!VideoReflection.isShown(setting: false, reduceMotion: false, reduceTransparency: false))
+        #expect(VideoReflection.mode(setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false) == .live)
+        // Reduce Motion keeps the mirror on the still, never live frames (G-9, Iris 12 Nov).
+        #expect(VideoReflection.mode(setting: true, reduceMotion: true, reduceTransparency: false) == .still)
+        #expect(VideoReflection.mode(setting: true, reduceMotion: false, reduceTransparency: true) == .off)
+        #expect(VideoReflection.mode(setting: false, reduceMotion: false, reduceTransparency: false) == .off)
+    }
+
+    private func solid(_ color: UIColor) -> UIImage {
+        UIGraphicsImageRenderer(size: CGSize(width: 32, height: 18)).image { ctx in color.setFill(); ctx.fill(CGRect(x: 0, y: 0, width: 32, height: 18)) }
+    }
+
+    @Test("A black live frame never replaces the still (R-11; Terry 12 Nov, reflections don't work)")
+    @MainActor func blackFrameKeepsTheStill() {
+        let black = solid(.black), poster = solid(UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 1)), frame = solid(.gray)
+        #expect(VideoReflection.isBlank(black))
+        #expect(!VideoReflection.isBlank(poster))
+        #expect(VideoReflection.pick(live: black, still: poster) === poster)
+        #expect(VideoReflection.pick(live: nil, still: poster) === poster)
+        #expect(VideoReflection.pick(live: frame, still: poster) === frame)
+        #expect(VideoReflection.thumbnailURL("abc")?.host == "i.ytimg.com")
     }
 }
 

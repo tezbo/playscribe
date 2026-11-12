@@ -533,13 +533,29 @@ struct TrailerView: View {
     var videoID: String
     var name: String
     @State private var controller: YouTubeController?
+    @Environment(\.duo) private var duo
+    @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 12) {
                 Color.black.aspectRatio(16 / 9, contentMode: .fit)
                     .overlay { if let controller { WebSurface(webView: controller.webView) } }
-                Text(name).font(PlayscribeFont.headline).padding(.horizontal, 16)
-                Spacer()
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(name).font(PlayscribeFont.headline).padding(.horizontal, 16)
+                    Spacer(minLength: 0)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                // R-11: in Tabletop the trailer gets the same mirror as an update video, under the title. It takes no
+                // layout room and no touches (Terry, 12 Nov: trailers never had one).
+                .background(alignment: .top) {
+                    let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
+                    if duo.pose == .tabletop, mode != .off, let controller {
+                        VideoReflection(controller: controller, mode: mode, posterAsset: nil, youtubeID: videoID)
+                    }
+                }
+                .clipped()
             }
             .background(Color.black)
             .toolbar {
