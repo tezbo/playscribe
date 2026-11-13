@@ -839,8 +839,10 @@ struct ReleaseTimeline: View {
                 // is nothing (untracked: "We don't track this game's updates yet."; tracked: "No updates yet." and Checked).
                 if pc.isEmpty, duo.pose == .tabletop { NoUpdatesLine(gameID: gameID).padding(.top, 2) }
             }
-            ForEach(ps5) { row($0, selected: $0.id == selected) }
-            ForEach(pc) { row($0, selected: $0.id == selected) }
+            // One column pushes the update, so no row stands for an open page: plain rows, as in s3.png. Book and Tabletop
+            // keep the selected row filled, beside the page that shows it.
+            ForEach(ps5) { row($0, selected: !duo.oneColumn && $0.id == selected) }
+            ForEach(pc) { row($0, selected: !duo.oneColumn && $0.id == selected) }
         }
     }
 
