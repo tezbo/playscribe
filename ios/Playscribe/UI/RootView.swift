@@ -34,7 +34,7 @@ struct BookPagePanel: View {
                     .environment(\.panelClose, { model.settingsOpen = false })
                     .environment(\.railWidth, 0)
                     .frame(width: max(0, fold.minX), height: duo.size.height)
-                    .background(Color.ink0)
+                    .background(PlayscribeRole.bg)
                     .clipShape(UnevenRoundedRectangle(bottomTrailingRadius: 20, topTrailingRadius: 20))
                     .accessibilityAddTraits(.isModal)
             }
@@ -69,7 +69,7 @@ struct RightPagePanel: View {
                     .environment(\.panelClose, { model.addSheetOpen = false })
                     .environment(\.railWidth, 0)
                     .frame(width: max(0, panelWidth), height: duo.size.height)
-                    .background(Color.ink0)
+                    .background(PlayscribeRole.bg)
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                     .padding(.trailing, trailingInset)
                     .accessibilityAddTraits(.isModal)
@@ -109,14 +109,14 @@ struct LowerHalfPanel: View {
                 .frame(width: duo.size.width, height: height)
                 // Solid through the bottom safe area too: the Library's tiles used to show, and take
                 // taps, in the strip under the sheet.
-                .background(Color.ink0.ignoresSafeArea(edges: .bottom))
+                .background(PlayscribeRole.bg.ignoresSafeArea(edges: .bottom))
                 .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20))
                 .accessibilityAddTraits(.isModal)
             }
             // The panel stops at the bottom safe area, so the Library's chips showed, and took taps,
             // in the strip below it. A solid filler hangs below the panel's bottom edge (outside the
             // clip) to cover it; the panel itself still starts exactly at the fold.
-            .overlay(alignment: .bottom) { Color.ink0.frame(height: 120).offset(y: 120) }
+            .overlay(alignment: .bottom) { PlayscribeRole.bg.frame(height: 120).offset(y: 120) }
             .transition(.move(edge: .bottom))
             .zIndex(5)
         }
@@ -199,7 +199,7 @@ struct RootView: View {
                 #endif
             }
         }
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
         .onAppear {
             // §2: the branded splash plays only on the first launch, never from a notification (L-3).
             // Terry, 2 Nov: every cold launch, not only the first.
@@ -416,10 +416,10 @@ struct TabletopRail: View {
             Image(systemName: symbol)
                 .font(PlayscribeFont.title3)
                 .symbolVariant(model.nav.tab == t ? .fill : .none)
-                .foregroundStyle(model.nav.tab == t ? PlayscribeColor.accent : Color.primary)
+                .foregroundStyle(model.nav.tab == t ? PlayscribeRole.action : Color.primary)
                 .frame(width: 44, height: 44)
                 // The same selected treatment as the rail's action buttons (RailButton), so the rail reads as one style.
-                .background(Circle().fill(PlayscribeColor.accent.opacity(model.nav.tab == t ? 0.18 : 0)))
+                .background(Circle().fill(PlayscribeRole.action.opacity(model.nav.tab == t ? 0.18 : 0)))
                 .overlay(alignment: .topTrailing) {
                     if badge > 0 {
                         Text("\(badge)").font(PlayscribeFont.caption2.bold()).padding(.horizontal, 4)
@@ -517,7 +517,7 @@ struct LowerMessages: View {
                     .frame(minHeight: 44)
                     // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
                     // A 24 pt corner: a full capsule on one line, a rounded rectangle on two or more.
-                    .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(PlayscribeColor.ink700))
+                    .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(PlayscribeRole.chipFill))
                     .adaptiveGlass(in: RoundedRectangle(cornerRadius: 24, style: .continuous), interactive: true)
                 }
                 .buttonStyle(.plain)
@@ -540,7 +540,7 @@ struct LowerMessages: View {
                 }
                 .padding(.horizontal, 16)
                 .frame(minHeight: 44)
-                .background(PlayscribeColor.ink700, in: Capsule())
+                .background(PlayscribeRole.chipFill, in: Capsule())
                 .overlay(Capsule().strokeBorder(PlayscribeColor.vellum300.opacity(0.2)))
                 .shadow(color: .black.opacity(0.5), radius: 12, y: 4)
                 // Clear of the rows' trailing menu buttons.

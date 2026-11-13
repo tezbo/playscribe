@@ -23,7 +23,7 @@ struct CameraAddView: View {
                 unavailable.onAppear { Haptics.warning() }
             } else if !simulated && access == .notDetermined {
                 VStack(spacing: 12) {
-                    Image(systemName: "camera.viewfinder").font(.system(size: 44)).foregroundStyle(PlayscribeColor.accent)
+                    Image(systemName: "camera.viewfinder").font(.system(size: 44)).foregroundStyle(PlayscribeRole.action)
                         .accessibilityHidden(true)
                     Text("Let Playscribe see your games").font(PlayscribeFont.headline).multilineTextAlignment(.center)
                     Text("Playscribe reads the titles on boxes and shelf spines on your phone, then asks you which ones to add.")
@@ -31,9 +31,9 @@ struct CameraAddView: View {
                     Button {
                         Task { _ = await AVCaptureDevice.requestAccess(for: .video); access = AVCaptureDevice.authorizationStatus(for: .video) }
                     } label: {
-                        Text("Continue").font(PlayscribeFont.headline).foregroundStyle(PlayscribeColor.onAccent)
+                        Text("Continue").font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.onAction)
                             .frame(maxWidth: .infinity, minHeight: 52)
-                            .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                            .background(PlayscribeRole.action, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
                     .buttonStyle(.plain).tappableFrame()
                     .accessibilityHint("Shows the system permission request")
@@ -47,7 +47,7 @@ struct CameraAddView: View {
                 Group {
                     if simulated {
                         // QA route add/scan: simulators have no camera, so a fixed feed stands in.
-                        RoundedRectangle(cornerRadius: 16, style: .continuous).fill(Color.ink1)
+                        RoundedRectangle(cornerRadius: 16, style: .continuous).fill(PlayscribeRole.surface)
                             .overlay { Image(systemName: "camera.viewfinder").font(.largeTitle).foregroundStyle(.secondary) }
                             .onAppear { seen = ["Hades", "Celeste", "Blue Prince"] }
                     } else {
@@ -62,9 +62,9 @@ struct CameraAddView: View {
                 Text(seen.isEmpty ? "Looking for titles" : "Seen \(seen.count) line\(seen.count == 1 ? "" : "s") of text")
                     .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                 Button { find(seen) } label: {
-                    Text("Find these games").font(PlayscribeFont.headline).foregroundStyle(PlayscribeColor.onAccent)
+                    Text("Find these games").font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.onAction)
                         .frame(maxWidth: .infinity, minHeight: 52)
-                        .background(PlayscribeColor.accent.opacity(seen.isEmpty ? 0.4 : 1), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                        .background(PlayscribeRole.action.opacity(seen.isEmpty ? 0.4 : 1), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 }
                 .buttonStyle(.plain).disabled(seen.isEmpty).tappableFrame().padding(.horizontal, 16).padding(.bottom, 8)
             }

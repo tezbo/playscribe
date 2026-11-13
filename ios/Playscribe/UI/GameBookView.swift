@@ -35,7 +35,7 @@ struct GameBookView: View {
                 }
             }
         }
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
         .navigationTitle(game?.name ?? "")
         .toolbar(removing: .title)
         .toolbarTitleDisplayMode(.inline)
@@ -93,7 +93,7 @@ struct GameBookView: View {
                 .overlay(alignment: .bottom) {
                     // A 24 pt fade left a half line readable at the edge (0c93f25); 44 pt, solid for the last 8 pt,
                     // so a line cut by the sheet is faded out, never shown half drawn.
-                    LinearGradient(stops: [.init(color: .clear, location: 0), .init(color: Color.ink0, location: 0.82)],
+                    LinearGradient(stops: [.init(color: .clear, location: 0), .init(color: PlayscribeRole.bg, location: 0.82)],
                                    startPoint: .top, endPoint: .bottom)
                         .frame(height: 44)
                         .allowsHitTesting(false)
@@ -130,7 +130,7 @@ struct ChapterBar: View {
             .lineLimit(1)
             .padding(.horizontal, 12)
             .frame(minHeight: 44)
-            .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
+            .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(on ? .isSelected : [])

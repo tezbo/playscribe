@@ -56,7 +56,7 @@ struct CheckedLine: View {
                 RetryButton()
             }
         }
-        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
     }
 }
 
@@ -65,7 +65,7 @@ struct RetryButton: View {
     var body: some View {
         Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
             .font(PlayscribeFont.subheadline.weight(.semibold))
-            .foregroundStyle(PlayscribeColor.accent)
+            .foregroundStyle(PlayscribeRole.action)
             .tappableFrame()
     }
 }
@@ -84,10 +84,10 @@ struct NoUpdatesLine: View {
                 }
                 CheckedLine()
             }
-            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
         } else {
             Text("We don't track this game's updates yet.")
-                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
         }
     }
 }
@@ -104,7 +104,7 @@ struct StaleHint: View {
                 RetryButton()
             }
             .font(PlayscribeFont.footnote)
-            .foregroundStyle(PlayscribeColor.textSecondary)
+            .foregroundStyle(PlayscribeRole.textSecondary)
             .padding(.horizontal, 20)
             .accessibilityElement(children: .contain)
         }
@@ -128,7 +128,7 @@ struct CaughtUpCard: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
-        .background(PlayscribeColor.ink800, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .accessibilityElement(children: .combine)
     }
 }

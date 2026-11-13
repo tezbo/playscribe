@@ -81,7 +81,7 @@ struct NewsChapter: View {
                         Text("Couldn't load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                         Spacer(minLength: 0)
                         Button { Task { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
-                            .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                            .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
                             .tappableFrame(when: duo.pose != .tabletop)
                             .accessibilityHidden(duo.pose == .tabletop)  // view only on the standing half
                     }
@@ -171,7 +171,7 @@ struct NewsView: View {
                 ContentUnavailableView {
                     Label("News for your games will appear here", systemImage: "newspaper")
                 } actions: {
-                    Button("Add a game") { model.nav.tab = .library }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
+                    Button("Add a game") { model.nav.tab = .library }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeRole.onAction)
                 }
             } else if list.isEmpty {
                 // Never a blank page: loading, then the empty copy, or Retry when nothing could be fetched.
@@ -182,7 +182,7 @@ struct NewsView: View {
                     } else if ids.contains(where: { store.failed.contains($0) }) {
                         Text("Couldn't load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
                         Button { Task { await load() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
-                            .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                            .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
                             .tappableFrame(when: duo.pose != .tabletop)
                             .accessibilityHidden(duo.pose == .tabletop)
                     } else {
@@ -203,7 +203,7 @@ struct NewsView: View {
                         ForEach(Array(list.enumerated()), id: \.element.item.id) { i, post in
                             NewsRow(gameID: post.game, item: post.item)
                                 .padding(12)
-                                .background(PlayscribeColor.ink700.opacity(0.5), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                .background(PlayscribeRole.chipFill.opacity(0.5), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                             if i.isMultiple(of: 2) { Color.clear.frame(height: 1).accessibilityHidden(true) }
                         }
                     }
