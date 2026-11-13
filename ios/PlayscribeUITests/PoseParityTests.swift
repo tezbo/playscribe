@@ -61,7 +61,9 @@ final class PoseParityTests: XCTestCase {
                       || app.staticTexts.matching(NSPredicate(format: "label == 'ALL UPDATES' OR label == 'All updates'")).count > 0,
                       "the route never opened the game page [\(route)]")
 
-        var lines: [String] = []
+        // The game's library state as a fact in the dump: a tracked game has the status glyph in its title, an untracked one the add button.
+        let tracked = app.descendants(matching: .any)["statusGlyph"].exists
+        var lines: [String] = ["STATE tracked=\(tracked) pose=\(poseName)"]
         for item in items {
             let found = item.query(app).matching(item.predicate)
             // Reachable: Tabletop counts only what is in the lower half; every other pose counts anything on the page. An item far
@@ -88,7 +90,7 @@ final class PoseParityTests: XCTestCase {
 
     func testDump() throws {
         let env = ProcessInfo.processInfo.environment
-        let route = env["PARITY_ROUTE"] ?? "gamepage/dawnwalker"
+        let route = env["PARITY_ROUTE"] ?? "parity/dawnwalker/tracked"
         try dump(route: route, pose: env["PARITY_POSE"])
     }
 }

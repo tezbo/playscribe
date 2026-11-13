@@ -8,18 +8,24 @@ Same-game dumps only: run it once per game (A tracked with notes, B tracked with
 import re, sys
 from collections import defaultdict
 
+STATE = re.compile(r"STATE tracked=(true|false) pose=(\S+)")
 LINE = re.compile(r"ITEM (\S+) present=(true|false) reachable=(true|false) half=(\S+) pose=(\S+)")
 
 def main(paths):
     poses = defaultdict(dict)  # pose -> item -> reachable
+    states = {}  # pose -> tracked
     for p in paths:
         for line in open(p, encoding="utf-8"):
+            st = STATE.search(line)
+            if st: states[st.group(2)] = st.group(1)
             m = LINE.search(line)
             if m:
                 item, present, reachable, half, pose = m.groups()
                 poses[pose][item] = (reachable == "true", half)
     if len(poses) < 2:
         print("need dumps from at least two poses"); return 2
+    if len(set(states.values())) > 1:
+        print(f"FAIL state: the game is tracked in some poses and not others: {states}"); return 1
     items = sorted({i for d in poses.values() for i in d})
     bad = 0
     for item in items:

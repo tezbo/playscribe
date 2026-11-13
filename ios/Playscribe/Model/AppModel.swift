@@ -782,6 +782,18 @@ final class AppModel {
             nav.tab = .library; nav.gameID = nil
         // QA (INTERNAL): "no-notes/<game>": only that game in the Library with its update history hidden from the deck, so the
         // hero is the no-release card ("No patch notes yet", or the untracked line). The game needs a past release date.
+        // QA (INTERNAL, PP-1 guard): "parity/<game>/<tracked|untracked>[/nonotes][/nofeed]" sets the library on purpose, then opens the
+        // game's page. tracked = the game is in the collection; untracked = browsed, not in it. nonotes hides the update history;
+        // nofeed shows the "we don't track this game's updates yet" line.
+        case "parity" where parts.count >= 2:
+            resetDemo()
+            data = PersistedState(collection: [])
+            guard let g = games[parts[0]] else { break }
+            if parts[1] == "tracked" { addGames([g], status: .owned) }
+            qaNoReleases = parts.contains("nonotes")
+            qaUntracked = parts.contains("nofeed")
+            if parts[1] == "tracked" { openGame(g.id, chapter: .updates) } else { browseGame(g) }
+            nav.detailReleaseID = nil; linksSheetOpen = false
         // "no-notes-page/<game>[/untracked]": the same, then the game's page itself (the pose parity guard needs the page, PP-1).
         case "no-notes", "no-notes-page":
             guard parts.count == 1 || parts.count == 2 else { break }
