@@ -1195,6 +1195,36 @@ final class Release050Tests: XCTestCase {
         }
     }
 
+    /// G-4, bug-rail-menu-unlabelled-buttons: the rail's Notifications and Status menus stay inside the window at AX5 (a system
+    /// dialog ran to y 1032 on a 951 pt window, clipping "Off" and "Remove"). The list's frame ends inside the window, and its last
+    /// row is reachable by scrolling the list.
+    func testTabletopRailMenusStayOnScreenAtAX5() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "gamepage/dawnwalker", "-qaPose", "tabletop",
+                               "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launch()
+        XCTAssertTrue(app.buttons["gameBack"].waitForExistence(timeout: 30), "the game page is up")
+        let window = app.windows.firstMatch.frame
+        for prefix in ["Notifications", "Status"] {
+            let opener = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", prefix)).firstMatch
+            XCTAssertTrue(opener.waitForExistence(timeout: 10), "\(prefix) is on the rail")
+            opener.tap()
+            let list = app.descendants(matching: .any)["railMenuList"]
+            XCTAssertTrue(list.waitForExistence(timeout: 10), "\(prefix) opens its list")
+            XCTAssertLessThanOrEqual(list.frame.maxY, window.maxY, "\(prefix) list ends inside the window \(list.frame) in \(window)")
+            XCTAssertGreaterThanOrEqual(list.frame.minY, 0, "\(prefix) list starts inside the window")
+            let rows = app.buttons.matching(identifier: "railMenuRow")
+            XCTAssertGreaterThan(rows.count, 0, "\(prefix) has rows")
+            let last = rows.element(boundBy: rows.count - 1)
+            var tries = 0
+            while !last.isHittable && tries < 4 { list.swipeUp(); tries += 1 }
+            XCTAssertTrue(last.isHittable, "\(prefix): the last row is reachable")
+            XCTAssertGreaterThanOrEqual(last.frame.height, 43.5, "\(prefix): rows are at least 44 pt")
+            app.windows.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.1, dy: 0.1)).tap()
+        }
+        app.terminate()
+    }
+
     /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and
     /// of the status bar, in every pose; the cog opens Settings, which shows a semantic version.
     /// Fast on its own: -only-testing:PlayscribeUITests/Release050Tests/testLibraryToolbarCogAndAdd
