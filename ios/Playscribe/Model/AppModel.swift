@@ -752,6 +752,9 @@ final class AppModel {
         case "three-update": resetToUpdateDemo(count: 3); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "four-update": resetToUpdateDemo(count: 4); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "caught-up": resetToCaughtUpDemo()
+        // QA (INTERNAL, qa-route-add-game-3-updates): add a game that has three PS5 updates from the last 72 hours, through the
+        // real add path, so #480 shows: one "New update" mark on its tile and a badge of 1. `add-game-3-updates/<game>` picks it.
+        case "add-game-3-updates": resetToAddGameDemo(gameID: parts.first)
         // QA (INTERNAL, #436): "tile-states" is the one-update demo plus a "Plays on PS5" tile, a "Not on PS5" tile, and the
         // unread game turned into a Wishlist tile, so every tile pill kind shows in the Library.
         case "tile-states":
@@ -1230,6 +1233,41 @@ final class AppModel {
         resetDemo()
         qaUpdateCount = 1
         qaFreshCache = []
+    }
+
+    /// QA and tests (route "add-game-3-updates"): the demo library with everything read, then one game added the way a person
+    /// adds it, carrying three On PS5 updates from the last 72 hours (60 h, 30 h and 2 h ago). #480 keeps only the newest unread,
+    /// so the tile shows one "New update" and the badge reads 1. The game is `gameID` when given (taken out of the library first),
+    /// else the first fixture game not in the seed library. Returns the game's id.
+    @discardableResult
+    func resetToAddGameDemo(gameID: String? = nil, now: Date = .now) -> String? {
+        resetDemo()
+        let seeded = Set(data.collection.map(\.gameID))
+        guard let game = gameID.flatMap({ id in fixtures.games.first { $0.id == id } })
+                ?? fixtures.games.first(where: { !seeded.contains($0.id) }) else { return nil }
+        data.collection.removeAll { $0.gameID == game.id }
+        for e in data.collection { for r in releases(e.gameID) where data.read[r.id] == nil { data.read[r.id] = now } }
+        var version = ps5Releases(game.id).first?.ps5Version
+        for (i, hours) in [60.0, 30.0, 2.0].enumerated() {
+            let at = now.addingTimeInterval(-hours * 3600)
+            version = Self.bumpConsoleVersion(version, major: false)
+            let release = Release(
+                id: "qa-add3-\(game.id)-\(i + 1)", gameID: game.id, displayName: "Hotfix \(i + 1) (QA)", kind: .hotfix, kindBasis: .studio,
+                announcedAt: at, notes: [NoteSection(title: "Fixes (QA)", items: [NoteItem(text: "QA fixture. Not a real release.")])],
+                sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: Field(value: version ?? "01.000.001", verification: .official, sourceID: "qa", checkedAt: at),
+                                            liveAt: Field(value: at, verification: .official, sourceID: "qa", checkedAt: at),
+                                            bundles: [], verification: .official)],
+                headline: "QA hotfix \(i + 1) of 3", summary: "QA fixture for adding a game with three recent updates.",
+                simulated: true, arrivesAt: at)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+        }
+        addGames([game], status: .owned)
+        nav.tab = .library; nav.gameID = nil
+        NotificationService.shared.updateBadge(badgeCount)
+        return game.id
     }
 
     /// QA and tests (route "two-update"): as the one-update demo with two fresh updates, from different games.
