@@ -144,7 +144,7 @@ struct FrontCoverPage: View {
         // CM-7: one element; the motion mode is never announced.
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(FrontCoverPage.label(card))
-        .accessibilityValue(card.unread ? "New update" : "")
+        .accessibilityValue(card.unread ? card.chipText : "")
         .accessibilityAddTraits(.isButton)
         .accessibilityIdentifier("frontCover")
     }
@@ -196,7 +196,8 @@ struct FrontCoverPlate: View {
             // Iris (#467): NEW UPDATE until the person opens that update; read pages show no eyebrow. CONTINUE (partly
             // read, a resume point) waits for a resume-point model; the app only records read or unread today.
             if card.unread {
-                Text("NEW UPDATE")
+                // r060: DAY-ONE PATCH for an unread day-one patch (same eyebrow rules).
+                Text(card.chipText.uppercased())
                     .font(PlayscribeFont.caption.weight(.semibold))
                     .tracking(12 * 0.12)
                     .foregroundStyle(PlayscribeColor.accent)

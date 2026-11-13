@@ -643,7 +643,7 @@ struct ContinueRow: View {
         Button { model.openGame(game.id, chapter: .updates, releaseID: release.id) } label: {
             VStack(alignment: .leading, spacing: 10) {
                 HeroFrame(asset: game.keyArtAsset, game: game)
-                ContinueText(game: game, release: release, fresh: fresh)
+                ContinueText(game: game, release: release, fresh: fresh, freshText: model.freshLabel(release) ?? FreshCopy.newUpdate)
             }
             // Iris: the caption's last line sat 2 pt from the hero frame's bottom edge.
             .padding(.bottom, 8)
@@ -653,7 +653,7 @@ struct ContinueRow: View {
         .frame(minHeight: 44)
         .tappableFrame()
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(fresh ? "New update, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
+        .accessibilityLabel(fresh ? "\(model.freshLabel(release) ?? FreshCopy.newUpdate), \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
         .accessibilityAddTraits(.isButton)
     }
 }
@@ -662,10 +662,12 @@ struct ContinueText: View {
     var game: CatalogGame
     var release: Release
     var fresh: Bool
+    /// "New update", or "Day-one patch" (r060-dayone-patch-alert-app).
+    var freshText: String = FreshCopy.newUpdate
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(spacing: 8) {
-                Text(fresh ? "NEW UPDATE" : "CONTINUE")
+                Text(fresh ? freshText.uppercased() : "CONTINUE")
                     .font(PlayscribeFont.caption)
                     .tracking(12 * 0.08)
                     .foregroundStyle(PlayscribeColor.accent)
@@ -1161,7 +1163,7 @@ struct ContinueTile: View {
                 }
                 .overlay(alignment: .bottomLeading) {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(fresh ? "NEW UPDATE" : "CONTINUE").font(PlayscribeFont.caption2).tracking(1).foregroundStyle(PlayscribeColor.accent)
+                        Text(fresh ? (model.freshLabel(release) ?? FreshCopy.newUpdate).uppercased() : "CONTINUE").font(PlayscribeFont.caption2).tracking(1).foregroundStyle(PlayscribeColor.accent)
                         Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
                         Text(release.displayName).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     }
@@ -1177,7 +1179,7 @@ struct ContinueTile: View {
         .clipped()
         .accessibilityElement(children: .ignore)
         .accessibilityIdentifier("continueHero")
-        .accessibilityLabel(fresh ? "New update, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
+        .accessibilityLabel(fresh ? "\(model.freshLabel(release) ?? FreshCopy.newUpdate), \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
     }

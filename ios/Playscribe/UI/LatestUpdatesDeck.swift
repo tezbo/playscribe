@@ -9,6 +9,8 @@ struct DeckCard: Identifiable, Hashable {
     var date: Date?
     /// The chip on an unread card: "New update", or "Day-one patch" (r060-dayone-patch-alert-app); nil once read.
     var freshLabel: String? = nil
+    /// The unread chip's words: "Day-one patch" for a day-one patch, else "New update".
+    var chipText: String { freshLabel ?? FreshCopy.newUpdate }
     var id: String { release.map { "u-" + $0.id } ?? "r-" + game.id }
 
     // `unread` is part of equality: SwiftUI skips re-rendering a view whose Equatable inputs compare equal, so a card that
@@ -328,7 +330,7 @@ struct DeckCardView: View {
     private var label: String {
         if let r = card.release {
             let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
-            return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
+            return "\(card.unread ? card.chipText + ", " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
         }
         return "\(card.game.name), released \(dateText), \(DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id)).lowercased())"
     }
@@ -469,7 +471,7 @@ struct DeckChips: View {
     private var items: [(text: String, filled: Bool)] {
         var list: [(text: String, filled: Bool)] = []
         if let v = card.release?.versionChip { list.append((v, false)) }
-        if card.unread { list.append(("New update", true)) }
+        if card.unread { list.append((card.chipText, true)) }
         if card.release == nil, let d = card.date { list.append(("Released " + AppModel.tileDay(d), false)) }
         return list
     }
@@ -573,7 +575,7 @@ struct WideDeckCard: View {
 
     private var accessibilityCard: some View {
         VStack(alignment: .leading, spacing: 6) {
-            if card.unread { chip("New update", filled: true) }
+            if card.unread { chip(card.chipText, filled: true) }
             Text(card.game.name).font(PlayscribeFont.title2.bold())
                 .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
             headline
@@ -604,7 +606,7 @@ struct WideDeckCard: View {
                 LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.55), .clear],
                                startPoint: .leading, endPoint: .trailing)
                 VStack(alignment: .leading, spacing: 6) {
-                    if card.unread { chip("New update", filled: true) }
+                    if card.unread { chip(card.chipText, filled: true) }
                     Text(card.game.name).font(PlayscribeFont.title2.bold())
                         .foregroundStyle(PlayscribeColor.textPrimary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
@@ -661,7 +663,7 @@ struct DeckCardArt: View {
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
             .overlay(alignment: .topLeading) {
                 HStack(spacing: 6) {
-                    if card.unread { chip("New update", filled: true) }
+                    if card.unread { chip(card.chipText, filled: true) }
                     if let v = card.release?.versionChip { chip(v, filled: false) }
                     if card.release == nil, let d = card.date { chip("Released " + AppModel.tileDay(d), filled: false) }
                 }
@@ -757,7 +759,7 @@ struct DeckStage: View {
                 // Wraps instead of squeezing "New update" away at accessibility sizes (28c6063 Tabletop AX3).
                 FlowLayout(spacing: 8) {
                     if upcomingLine != nil { Text("Coming soon").foregroundStyle(PlayscribeColor.accent) }
-                    if card.unread { Text("New update").foregroundStyle(PlayscribeColor.accent) }
+                    if card.unread { Text(card.chipText).foregroundStyle(PlayscribeColor.accent) }
                     if let v = card.release?.versionChip { Text(v).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
                 .font(PlayscribeFont.caption)

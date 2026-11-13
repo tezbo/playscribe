@@ -12,16 +12,18 @@ enum FreshCopy {
 extension AppModel {
     /// Whether `r` shows as a day-one patch: unread, kind dayOne, and its PS5 row itself live and official.
     func isDayOneAlert(_ r: Release) -> Bool {
-        false
+        guard r.kind == .dayOne, let p = r.ps5, p.status == .live, p.verification == .official else { return false }
+        return isUnread(r)
     }
 
     /// The chip on a fresh update ("New update", or "Day-one patch"); nil once read.
     func freshLabel(_ r: Release) -> String? {
-        isUnread(r) ? FreshCopy.newUpdate : nil
+        guard isUnread(r) else { return nil }
+        return isDayOneAlert(r) ? FreshCopy.dayOne : FreshCopy.newUpdate
     }
 
     /// The game page's one line under the header while a day-one patch is unread.
     func dayOneNote(_ r: Release) -> String? {
-        nil
+        isDayOneAlert(r) ? FreshCopy.dayOneNote : nil
     }
 }

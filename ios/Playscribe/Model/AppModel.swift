@@ -821,6 +821,23 @@ final class AppModel {
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
         case "links" where parts.count == 1: openGame(parts[0]); linksSheetOpen = true
+        // QA (INTERNAL): "dayone/<game>" adds an unread day-one patch, live and official on PS5, to that game and stays on the
+        // Library, so the deck shows "Day-one patch" beside a normal "New update" card and the game page shows the one-line note
+        // (r060-dayone-patch-alert-app, Iris's 6 stills).
+        case "dayone" where parts.count == 1:
+            let gameID = parts[0]
+            let now = Date.now
+            let release = Release(
+                id: "qa-dayone-\(gameID)", gameID: gameID, displayName: "Day one patch", kind: .dayOne, kindBasis: .studio,
+                announcedAt: now, notes: [NoteSection(title: "Fixes", items: [NoteItem(text: "Fixes a crash on first load.")])], sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: Field(value: "1.001", verification: .official, sourceID: "simulated", checkedAt: now),
+                                            liveAt: Field(value: now, verification: .official, sourceID: "simulated", checkedAt: now),
+                                            bundles: [], verification: .official)],
+                headline: "Stability and performance fixes for launch", summary: "QA fixture. Not a real release.", keyChanges: [],
+                simulated: true, arrivesAt: now)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
         // QA (INTERNAL): a PS5 update with a very long invented title, to exercise the share-button guard on the release page
         // (r054: a title past 4 lines at AX drops the button to its own row).
         case "long-title" where parts.count == 1:
