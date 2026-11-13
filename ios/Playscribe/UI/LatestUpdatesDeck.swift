@@ -820,7 +820,9 @@ struct BrightArtScrim: ViewModifier {
     var strength: Double
     /// One text line and a half above the block, well under the Tabletop cap of 15% of the stage (about 56 pt).
     var ramp: CGFloat = 40
+    /// Full strength holds this far under the last line, then eases out over `fade` more, so the bottom is no hard edge either.
     var tail: CGFloat = 8
+    var fade: CGFloat = 28
     var feather: CGFloat = 40
 
     /// An eased (smoothstep-like) ramp so there is no visible edge where the scrim starts.
@@ -836,6 +838,7 @@ struct BrightArtScrim: ViewModifier {
             VStack(spacing: 0) {
                 LinearGradient(stops: eased(strength), startPoint: .top, endPoint: .bottom).frame(height: ramp)
                 Color.black.opacity(strength)
+                LinearGradient(stops: eased(strength), startPoint: .bottom, endPoint: .top).frame(height: fade)
             }
             .mask {
                 HStack(spacing: 0) {
@@ -844,7 +847,7 @@ struct BrightArtScrim: ViewModifier {
                     LinearGradient(stops: eased(1), startPoint: .trailing, endPoint: .leading).frame(width: feather)
                 }
             }
-            .padding(.top, -ramp).padding(.bottom, -tail).padding(.horizontal, -feather)
+            .padding(.top, -ramp).padding(.bottom, -(tail + fade)).padding(.horizontal, -feather)
             .allowsHitTesting(false)
             .accessibilityHidden(true)
         }
