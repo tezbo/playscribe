@@ -432,7 +432,7 @@ struct TabletopGameTail: View {
                 .accessibilityIdentifier("aboutMore")
             }
             GameLinks(game: game)
-            SimilarGamesRow(game: game)
+            SimilarGamesRow(game: game, limit: 3)
         }
         .padding(.top, 4)
         .task(id: game.igdbID) { if let id = game.igdbID { await GameInfoStore.shared.load(igdbID: id) } }
@@ -530,7 +530,10 @@ struct GameBasicsView: View {
 /// Hidden when empty; a failed load shows nothing (0.5.0 item 18).
 struct SimilarGamesRow: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var game: CatalogGame
+    /// Tabletop shows up to 3 (Iris, bug-tabletop-game-details-missing); AX3 and up as a vertical list of 55 pt rows.
+    var limit = 8
     @State private var choosing: CatalogGame?
 
     private var games: [CatalogGame] {
@@ -540,7 +543,7 @@ struct SimilarGamesRow: View {
             guard s.igdbId != game.igdbID, !inLibrary.contains(s.igdbId),
                   let e = PS5Index.shared.entry(igdb: s.igdbId) else { return nil }
             return PS5Index.shared.game(e)
-        }.prefix(8).map { $0 }
+        }.prefix(limit).map { $0 }
     }
 
     var body: some View {
@@ -548,6 +551,24 @@ struct SimilarGamesRow: View {
         if !list.isEmpty {
             VStack(alignment: .leading, spacing: 10) {
                 Text("You might also like").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                if typeSize >= .accessibility3 && limit < 8 {
+                    VStack(alignment: .leading, spacing: 8) {
+                        ForEach(list) { g in
+                            Button { choosing = g } label: {
+                                HStack(spacing: 12) {
+                                    TileCover(game: g).frame(width: 42, height: 56)
+                                    WholeWordText(text: g.name, font: PlayscribeFont.subheadline, lines: 4)
+                                    Spacer(minLength: 0)
+                                }
+                                .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading).contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel(g.name)
+                            .accessibilityHint("View it, or choose how to add it")
+                            .tappableFrame()
+                        }
+                    }
+                } else {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
                         ForEach(list) { g in
@@ -562,6 +583,7 @@ struct SimilarGamesRow: View {
                     }
                 }
                 .edgeFade(40)
+                }
             }
             .confirmationDialog(choosing?.name ?? "", isPresented: Binding(get: { choosing != nil }, set: { if !$0 { choosing = nil } }), titleVisibility: .visible) {
                 if let g = choosing {
