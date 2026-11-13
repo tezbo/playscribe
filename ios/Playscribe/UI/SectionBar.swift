@@ -43,7 +43,9 @@ struct SectionBar: View {
     private static let tabFontOn = Font.custom("InstrumentSans-Bold", size: 14, relativeTo: .subheadline)
 
     private func tabs(_ sections: [Chapter], _ current: Chapter) -> some View {
-        HStack(spacing: 0) {
+        // Packed from the leading edge with even gaps, as in s3.png: spread across a 600 pt column they read as unrelated
+        // labels (fold harness, ab38d5c, Open and Tabletop).
+        HStack(spacing: 10) {
             ForEach(sections) { s in
                 let on = s == current
                 Button { select(s) } label: {
@@ -63,7 +65,6 @@ struct SectionBar: View {
                 .accessibilityAddTraits(on ? .isSelected : [])
                 .tappableFrame()
                 .id("section-\(s.rawValue)")
-                if s != sections.last { Spacer(minLength: 0) }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -80,8 +81,11 @@ struct SectionBar: View {
             }
         } label: {
             HStack(spacing: 12) {
+                // Whole words on one line, as in s3.png: title2 capped at AX2 is about 40 pt, so "What's new" and "Companion" fit a
+                // Closed column (title at AX5 broke "What's / new" over two lines, fold harness ab38d5c).
                 Text(current.title)
-                    .font(PlayscribeFont.title)
+                    .font(PlayscribeFont.title2)
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility2)
                     .foregroundStyle(PlayscribeColor.textPrimary)
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
@@ -93,6 +97,7 @@ struct SectionBar: View {
             .frame(maxWidth: .infinity, minHeight: 76, alignment: .leading)
             .contentShape(Rectangle())
         }
+        .dynamicTypeSize(...DynamicTypeSize.accessibility2)
         .accessibilityLabel("\(current.title), section picker")
         .accessibilityValue("\(index) of \(sections.count)")
         .tappableFrame()
