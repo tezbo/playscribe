@@ -1200,7 +1200,7 @@ final class Release050Tests: XCTestCase {
     /// row is reachable by scrolling the list.
     func testTabletopRailMenusStayOnScreenAtAX5() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", "gamepage/dawnwalker", "-qaPose", "tabletop",
+        app.launchArguments = ["-qaRoute", "parity/kcd2/tracked/nonotes", "-qaPose", "tabletop",
                                "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
         app.launch()
         XCTAssertTrue(app.buttons["gameBack"].waitForExistence(timeout: 30), "the game page is up")
