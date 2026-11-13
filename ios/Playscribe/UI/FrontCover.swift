@@ -6,13 +6,13 @@ import SwiftUI
 // below. LibraryView wraps it after #424 and #455 merge, so until then it shows only in the internal preview
 // (Settings > Front cover, or `-qaRoute cover` / `cover/one`). Nothing here is reachable in a TestFlight or App Store build.
 
-/// The three motion modes (Settings > "Cover motion"). Only Still is built; the others land in their own PRs.
+/// The three motion modes (Settings > "Cover motion"). Still and Key-art motion are built; the Trailer loop lands in its own PR.
 enum CoverMotion: String, CaseIterable, Identifiable {
     case trailer, keyArt, still
     var id: String { rawValue }
 
     static let key = "coverMotion"
-    /// Nadia, 12 Nov: the default is Key-art motion.
+    /// Nadia, 12 Nov (confirmed 13 Nov): the default is Key-art motion; Still and Trailer loop are choices in Settings.
     static let defaultMode: CoverMotion = .keyArt
 
     var label: String {
@@ -24,7 +24,7 @@ enum CoverMotion: String, CaseIterable, Identifiable {
     }
 
     /// Built so far. The Settings row lists only these, and a stored mode that is not built yet shows Still.
-    var isBuilt: Bool { self == .still }
+    var isBuilt: Bool { self != .trailer }
 
     /// The next mode down: a Trailer loop that cannot play shows Key-art motion, and Key-art motion falls back to Still.
     var fallback: CoverMotion {
@@ -98,7 +98,10 @@ struct FrontCoverPage: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.qaSolid) private var qaSolid
+    @AppStorage(CoverMotion.key) private var stored: CoverMotion = CoverMotion.defaultMode
+    @AppStorage(YouTubeController.autoplayKey) private var autoplay = false
     var card: DeckCard
     /// Leading room kept clear for the leaves, and trailing room for the rail at accessibility sizes (the plate never
     /// sits under the rail, Iris condition 5).
@@ -108,6 +111,7 @@ struct FrontCoverPage: View {
     var safeArea: EdgeInsets = EdgeInsets()
     @State private var plateTop: CGFloat = 0
     @State private var pageHeight: CGFloat = 0
+    @State private var pageWide = false
 
     var body: some View {
         Button {
@@ -116,8 +120,10 @@ struct FrontCoverPage: View {
         } label: {
             ZStack(alignment: .bottomLeading) {
                 // Iris (#467): at accessibility sizes the plate covers the lower half, so the focal point goes to the top half.
-                ArtView(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
-                        focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5)
+                // Key-art motion (s-07) moves only this layer; the shade and the plate below stay still.
+                KeyArtMotionArt(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
+                                focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5,
+                                maxFocalY: typeSize.isAccessibilitySize ? 0.5 : 1, moving: moving)
                 if !solid { fade }
                 VStack(alignment: .leading, spacing: 18) {
                     FrontCoverPlate(card: card)
@@ -136,7 +142,10 @@ struct FrontCoverPage: View {
                 .background { if solid { PlayscribeColor.ink950.opacity(0.92) } }
             }
             .coordinateSpace(.named("coverPage"))
-            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in if abs(h - pageHeight) > 0.5 { pageHeight = h } }
+            .onGeometryChange(for: CGSize.self) { $0.size } action: { s in
+                if abs(s.height - pageHeight) > 0.5 { pageHeight = s.height }
+                if (s.width > s.height) != pageWide { pageWide = s.width > s.height }
+            }
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -151,10 +160,27 @@ struct FrontCoverPage: View {
 
     private var solid: Bool { contrast == .increased || reduceTransparency || qaSolid }
 
+    /// QA (internal builds, launch with `-qaReduceMotion YES`): the cover resolves as under Reduce Motion (CM-1), for CI stills,
+    /// where the simulator's switch can't be set per launch. Read here, not from the environment: the preview is a full-screen
+    /// cover presented from Settings, outside RootView's environment.
+    static var qaReduceMotion: Bool {
+        #if INTERNAL
+        return UserDefaults.standard.bool(forKey: "qaReduceMotion")
+        #else
+        return false
+        #endif
+    }
+
+    /// Key-art motion runs when it is the resolved mode (Reduce Motion forces Still, CM-1) and the art passes the murky check.
+    private var moving: Bool {
+        guard stored.resolved(reduceMotion: reduceMotion || Self.qaReduceMotion, autoplay: autoplay) == .keyArt, let asset = card.game.keyArtAsset else { return false }
+        return !KeyArtQuality.isMurky(asset: asset)
+    }
+
     /// CM-5: the shade is part of the cover, not the art, so the caption meets AA over any art (and, later, any loop
     /// frame). The top darkens a little for the status bar and the rail.
     private var fade: some View {
-        LinearGradient(stops: Self.fadeStops(accessibility: typeSize.isAccessibilitySize,
+        LinearGradient(stops: Self.fadeStops(accessibility: typeSize.isAccessibilitySize || pageWide,
                                              plateTop: pageHeight > 0 && plateTop > 0 ? Double(plateTop / pageHeight) : nil)
                         .map { .init(color: PlayscribeColor.ink950.opacity($0.opacity), location: $0.location) },
                        startPoint: .top, endPoint: .bottom)
@@ -164,6 +190,9 @@ struct FrontCoverPage: View {
     /// plate covers the lower half and its eyebrow sat on pale art at about 40 percent, so the shade follows the plate: clear
     /// until just above it, 88 percent black at the eyebrow's top edge (the accent holds 4.5:1 over art up to about 60 percent
     /// luminance there), 92 percent by the title, solid at the foot.
+    /// A wide page (Closed landscape) takes the same plate-following shade at every size (Quinn, 0e77e33 landscape still): the
+    /// plate fills most of the height, so the signed portrait shade left the NEW UPDATE eyebrow on bright art at 3.1:1 (the
+    /// fix #514 used for bright art: a bottom-weighted scrim reaching up to the eyebrow). Portrait keeps the signed shade.
     static func fadeStops(accessibility: Bool, plateTop: Double?) -> [(opacity: Double, location: Double)] {
         guard accessibility else {
             return [(0.55, 0), (0, 0.18), (0, 0.45), (0.92, 0.85), (1, 1)]
