@@ -1,4 +1,5 @@
 import SwiftUI
+import OSLog
 
 /// Contract v2 §11: a game is the Page (the release being read) and the Contents (the game's
 /// chapters, search, releases and actions). The game book is one ArrangementView(.split), so the
@@ -399,6 +400,16 @@ struct GameLinks: View {
 }
 
 struct GameBasicsView: View {
+    /// The game's trailers as About lists them: up to three, one per title (the feed can carry two cuts named "Launch
+    /// Trailer"). Also Tabletop's stage tile and "Play trailer" (bug-tabletop-trailer-tile-missing).
+    @MainActor static func trailers(_ game: CatalogGame) -> [GameBasics.Video] {
+        let info = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }
+        let fallback = game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }
+        let videos = info?.videos ?? fallback?.trailerId.map { [GameBasics.Video(youtubeId: $0, name: "Trailer")] } ?? []
+        let unique = videos.reduce(into: [GameBasics.Video]()) { out, v in if !out.contains(where: { $0.name == v.name }) { out.append(v) } }
+        return Array(unique.prefix(3))
+    }
+
     @Environment(\.duo) private var duo
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
@@ -412,7 +423,7 @@ struct GameBasicsView: View {
         let fallback = game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }
         let genres = info?.genres ?? fallback?.genres ?? []
         let summary = info?.summary ?? fallback?.summary
-        let videos = info?.videos ?? fallback?.trailerId.map { [GameBasics.Video(youtubeId: $0, name: "Trailer")] } ?? []
+        let videos = Self.trailers(game)
         VStack(alignment: .leading, spacing: 14) {
             if let move = fallback?.move?.line {
                 Text(move).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
@@ -421,9 +432,7 @@ struct GameBasicsView: View {
                 Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
             if !videos.isEmpty {
-                // One video per title: the feed can carry two cuts named "Launch Trailer".
-                let unique = videos.reduce(into: [GameBasics.Video]()) { out, v in if !out.contains(where: { $0.name == v.name }) { out.append(v) } }
-                ForEach(unique.prefix(3), id: \.youtubeId) { v in
+                ForEach(videos, id: \.youtubeId) { v in
                     Button { model.trailer = (v.youtubeId, v.name) } label: {
                         // At accessibility sizes the thumbnail sits above the title, so the title has the whole column and a word
                         // like "Cinematic" is not cut by letter beside a 112 pt picture (Iris, r054 Closed AX5).
@@ -533,13 +542,32 @@ struct TrailerView: View {
     var videoID: String
     var name: String
     @State private var controller: YouTubeController?
+    @Environment(\.duo) private var duo
+    @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 0) {
                 Color.black.aspectRatio(16 / 9, contentMode: .fit)
                     .overlay { if let controller { WebSurface(webView: controller.webView) } }
-                Text(name).font(PlayscribeFont.headline).padding(.horizontal, 16)
-                Spacer()
+                    .overlay { if VideoReflection.fixture { Image(uiImage: VideoReflection.fixtureFrame(0)).resizable() } }
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(name).font(PlayscribeFont.headline)
+                        .overMirror(VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off)
+                        .padding(.horizontal, 16).padding(.top, 12)
+                    Spacer(minLength: 0)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                // R-11: the trailer gets the same mirror as an update video in every pose, flush under the video. It takes no
+                // layout room and no touches (Terry, 12 Nov: trailers never had one).
+                .background(alignment: .top) {
+                    let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
+                    if mode != .off, let controller {
+                        VideoReflection(controller: controller, mode: mode, posterAsset: nil, youtubeID: videoID)
+                    }
+                }
+                .clipped()
             }
             .background(Color.black)
             .toolbar {
@@ -572,6 +600,9 @@ struct ContentsView: View {
                 .padding(.vertical, 14)
                 .padding(.trailing, railWidth)
         }
+        // Tabletop only, as the Library shelf (#487): scrolled, the lower half's top edge cut a Contents row through its glyphs at
+        // AX5 (Iris, 21efef8 still: "Better targeting, look-on…"). The panel is ink1, so the edge is too.
+        .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink1))
         .clearsMessages()
         .scrollPosition($position)
         .accessibilityIdentifier("contentsScroll")
@@ -823,6 +854,7 @@ struct ReleaseTimeline: View {
         .id("row-\(r.id)")
         .accessibilityAddTraits(selected ? .isSelected : [])
         .tappableFrame()
+        .readToggleActions(r)
     }
 }
 
@@ -878,6 +910,31 @@ struct TabletopOutline: View {
                 pageButton("Next", "chevron.forward", enabled: index < sections.count - 1) { model.readerIndex[gameID] = index + 1 }
             }
             .padding(.top, 6)
+            // R-11 (bug-tabletop-trailer-tile-missing, Iris): About is not on the Tabletop stage, so the game's trailer had no
+            // control at all. The stage shows its poster, view only; this is the control, in the lower half, and it plays in
+            // the lower-half player like the update video.
+            if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first {
+                Button { model.trailer = (v.youtubeId, v.name) } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "play.fill").accessibilityHidden(true)
+                        Text("Play trailer").font(PlayscribeFont.subheadline.weight(.semibold))
+                            .fixedSize(horizontal: false, vertical: true)
+                        Spacer(minLength: 0)
+                    }
+                    .foregroundStyle(PlayscribeColor.accent)
+                    .padding(.horizontal, 10).frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Play trailer")
+                .accessibilityIdentifier("playTrailer")
+                .tappableFrame()
+                .padding(.top, 4)
+            }
+        }
+        // The trailer list comes from the game's basics, which About loads when it appears. About is not on the Tabletop stage,
+        // so the outline loads them itself, or "Play trailer" and the stage tile never show (Mac, #486 at a2eeb67).
+        .task(id: model.game(gameID)?.igdbID) {
+            if let id = model.game(gameID)?.igdbID { await GameInfoStore.shared.load(igdbID: id) }
         }
     }
 
@@ -995,14 +1052,21 @@ struct LinksSheet: View {
     @Environment(\.panelClose) private var panelClose
     var gameID: String
 
-    private struct Row: Identifiable { var id: String; var title: String; var url: URL }
+    struct Row: Identifiable { var id: String; var title: String; var url: URL }
 
-    private var rows: [Row] {
+    private var rows: [Row] { Self.rows(model, gameID) }
+
+    static func rows(_ model: AppModel, _ gameID: String) -> [Row] {
         var out: [Row] = []
         if let game = model.game(gameID) {
             let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
             if let u = links?.official { out.append(Row(id: "official", title: "Official website", url: u)) }
             if let u = links?.patchNotes { out.append(Row(id: "notes", title: LinkHost.label("All patch notes", u), url: u)) }
+            // The empty Gallery's "Find trailers online" is view-only text in Tabletop (nothing tappable on the stage), so its
+            // control lives here, in the lower half, as "Official website" does (0.5.5, r054-tabletop-find-trailers).
+            if model.gallery(gameID).isEmpty, let u = GalleryEmpty.trailerSearchURL(game.name) {
+                out.append(Row(id: "trailers", title: "Find trailers online", url: u))
+            }
         }
         if let r = model.readerRelease(gameID), let u = r.links?.steamNotes { out.append(Row(id: "steam", title: LinkHost.label("Read full notes", u), url: u)) }
         return out
@@ -1039,12 +1103,14 @@ struct LinksSheet: View {
             Spacer(minLength: 0)
         }
         .background(Color.ink1)
+        // One log line per opened row, so a QA run can confirm the tap reached the system (#493: the simulator showed black).
+        .environment(\.openURL, OpenURLAction { url in
+            Logger(subsystem: "co.codeconnectors.playscribe", category: "links").info("links open: \(url.host() ?? "?", privacy: .public)")
+            return .systemAction
+        })
     }
 
-    static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool {
-        let links = model.game(gameID)?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
-        return links?.official != nil || links?.patchNotes != nil || model.readerRelease(gameID)?.links?.steamNotes != nil
-    }
+    static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool { !rows(model, gameID).isEmpty }
 }
 
 

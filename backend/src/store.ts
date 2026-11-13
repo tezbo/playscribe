@@ -303,6 +303,9 @@ export const isSeen = (db: DB, sourceId: string, postId: string) => !!db.prepare
  * from Steam, so no update stays PC only. It earns its one alert when it goes live (alert_from), but only while the Steam post is
  * under 30 days old: for an older one the alert counts from the Steam date and stays silent (alerts.ts alertFromOf).
  */
+/** A console-later Steam patch counts as live on PS5 this long after its Steam post (Terry, 2026-10-27). */
+export const PS5_LIVE_AFTER_MS = 7 * 86400e3
+
 export const promoteAnnounced = (db: DB, at = new Date(), quiet = false) => {
   const rows = db
     .prepare(
@@ -316,11 +319,14 @@ export const promoteAnnounced = (db: DB, at = new Date(), quiet = false) => {
     const pc = json<Field<string> | null>(r.pc_live, null)
     if (!pc?.value) continue
     const age = at.getTime() - Date.parse(pc.value)
-    if (!(age >= 7 * 86400e3)) continue
+    if (!(age >= PS5_LIVE_AFTER_MS)) continue
     upsertPlatform(db, r.release_id, 'ps5', { status: 'live', verification: 'assumed', liveAt: field(pc.value, 'assumed', pc.sourceId) })
-    // Roadmap 11: the update goes live on PS5 now, so its one alert (and the 72 h guard) counts from now, not from Steam's date.
+    // Roadmap 11: its one alert (and the 72 h guard) counts from the moment it went live on PS5, a week after Steam, not from
+    // Steam's date. Never from `at`: a run that reads the post long after that week (the first poll of an auto-onboarded game,
+    // feed-stale-announced-rows) would otherwise publish a years-old patch as news. An hourly run promotes within the hour.
     // `quiet` (a backfill reading old posts): the alert counts from the Steam date, so the 72 h guard keeps it silent.
-    db.prepare("UPDATE platform_releases SET alert_from = ? WHERE release_id = ? AND platform = 'ps5'").run(quiet ? pc.value : at.toISOString(), r.release_id)
+    const wentLive = new Date(Date.parse(pc.value) + PS5_LIVE_AFTER_MS).toISOString()
+    db.prepare("UPDATE platform_releases SET alert_from = ? WHERE release_id = ? AND platform = 'ps5'").run(quiet ? pc.value : wentLive, r.release_id)
     n++
   }
   return n
@@ -346,6 +352,10 @@ export const promoteStated = (db: DB, at = new Date(), quiet = false) => {
   }
   return n
 }
+
+/** PS5 rows held announced until a time their post stated (r050, #466): promoteStated takes each live once the time passes. */
+export const heldPs5Rows = (db: DB) =>
+  (db.prepare("SELECT COUNT(*) AS n FROM platform_releases WHERE platform = 'ps5' AND status = 'announced' AND live_at IS NOT NULL AND live_at != 'null'").get() as { n: number }).n
 
 /** The PS5 row this very post (source and post date) created under the old rules, if it is still untouched by anyone else. */
 const ownPs5Row = (db: DB, releaseId: string, sourceId: string, publishedAt: string) => {

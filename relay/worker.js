@@ -13,6 +13,8 @@
 //   POST /v1/follows                    0.5.4 "Help keep my games up to date": a record WITHOUT a token, follow ids only,
 //                                       hourly polling; returns { deviceKey, follows }. The body may hold nothing but follows.
 //   GET /admin/devices?cursor=          Feed job only (Bearer ADMIN_TOKEN), 40 devices a page
+//   POST /admin/devices/dead            Feed job only: devices whose APNs token is dead are removed, or cleared to ids only
+//                                       when they opted in to the follow list (r071; see adminDead)
 //
 // Cron (scheduled handler): GitHub's own schedule for the Feed workflow fires late or not at all for hours at a time
 // (11 Nov 2026: one full poll in 4.5 hours, no hot runs), so this Worker's cron triggers, at :22 and :52, start the Feed
@@ -312,6 +314,9 @@ const patchMe = async (env, request) => {
     }
   }
   if (JSON.stringify(next) !== JSON.stringify(d)) await putDevice(kv, { ...next, updated: now() })
+  // A record without a token had a key entry with the 90-day expiry. Once it holds a token it is kept until deleted, so its
+  // key entry is written again without one; otherwise the app would get 401 after 90 days and make a second record.
+  if (!d.token && next.token) await kv.put(`k:${await sha(d.key)}`, d.id)
   if (typeof body.team === 'boolean') await syncTeamIndex(kv, d.id, body.team)
   return json({ deviceId: d.id })
 }
@@ -365,6 +370,44 @@ const adminDevices = async (env, request) => {
     if (d) devices.push({ id: d.id, token: d.token ?? null, environment: d.environment ?? null, locale: d.locale ?? null, quiet: d.quiet ?? null, team: d.team === true, hourly: d.hourly === true, follows: d.follows, updated: d.updated })
   }
   return json({ devices, cursor: page.list_complete ? null : page.cursor })
+}
+
+/** r071-relay-dead-tokens: the Feed job reports devices whose APNs token came back dead (410, or 400 BadDeviceToken or
+ *  DeviceTokenNotForTopic). Body { devices: [{ id, tokenSha }] }, tokenSha = sha256 hex of the lower-case token that failed.
+ *  A record acts only while it still holds that token, so a device that registered a new token since the run loaded is left
+ *  alone. A record without the follow-list opt-in is removed like DELETE /v1/devices/me (if the app is still installed, its
+ *  next request gets 401 and it registers again). An opt-in record (hourly) keeps helping: it becomes the ids-only record
+ *  POST /v1/follows makes (no token, environment, locale, quiet hours, team or alert levels), with the 90-day expiry.
+ *  At most DEAD_BATCH ids a request: each costs up to 7 KV operations against the 50 a request allows. */
+export const DEAD_BATCH = 6
+const adminDead = async (env, request) => {
+  if (!(await isAdmin(env, request))) return bad('not allowed', 401)
+  const parsed = await readJson(request)
+  if (parsed.tooBig) return bad('body too large', 413)
+  const list = parsed.body.devices
+  if (!Array.isArray(list) || list.length > DEAD_BATCH) return bad(`devices must be an array of at most ${DEAD_BATCH}`)
+  if (!list.every((e) => e && typeof e.id === 'string' && /^[0-9a-f]{64}$/.test(e.tokenSha ?? ''))) return bad('each entry is { id, tokenSha }')
+  const kv = env.KV
+  const out = { removed: 0, cleared: 0, skipped: 0 }
+  for (const { id, tokenSha } of list) {
+    const d = await getJson(kv, `d:${id}`)
+    if (!d || !d.token || (await sha(d.token)) !== tokenSha) {
+      out.skipped++
+      continue
+    }
+    if ((await kv.get(`t:${d.token}`)) === d.id) await kv.delete(`t:${d.token}`)
+    if ((await kv.get(`tm:${d.id}`)) !== null) await kv.delete(`tm:${d.id}`)
+    if (d.hourly === true) {
+      const follows = d.follows.map((f) => (f.gameId ? { gameId: f.gameId } : { igdbId: f.igdbId }))
+      await putDevice(kv, { id: d.id, key: d.key, token: null, follows, hourly: true, created: d.created, updated: now() })
+      out.cleared++
+    } else {
+      await kv.delete(`d:${d.id}`)
+      await kv.delete(`k:${await sha(d.key)}`)
+      out.removed++
+    }
+  }
+  return json(out)
 }
 
 // ---- Team alerts: App Store Connect webhook -> a push to the devices that switched "Team alerts" on (internal builds). ----
@@ -492,6 +535,7 @@ export default {
       }
       if (pathname === '/v1/webhooks/asc' && m === 'POST') return await ascWebhook(env, request)
       if (pathname === '/admin/devices' && m === 'GET') return await adminDevices(env, request)
+      if (pathname === '/admin/devices/dead' && m === 'POST') return await adminDead(env, request)
       return bad('not found', 404)
     } catch (e) {
       return bad('relay error', 500)

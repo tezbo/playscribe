@@ -439,3 +439,80 @@ test('block list: a blocked device id is refused everywhere but DELETE, and the 
   assert.equal((await call(env, 'DELETE', '/v1/devices/me', undefined, reg.deviceKey)).status, 204)
   assert.equal(await env.KV.get(`d:${reg.deviceId}`), null)
 })
+
+// r071-relay-dead-tokens
+const shaHex = async (s) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)))].map((b) => b.toString(16).padStart(2, '0')).join('')
+const dead = (env, devices, key = ADMIN) => call(env, 'POST', '/admin/devices/dead', { devices }, key)
+
+test('dead tokens: a push device is removed with its token, key and team entries; its key then gets 401 so the app registers again', async () => {
+  const { env } = setup()
+  const b = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), environment: 'production', team: true, follows: [{ gameId: 'dawnwalker', notify: 'major' }] })).json()
+  await call(env, 'PATCH', '/v1/devices/me', { team: true }, b.deviceKey)
+  assert.equal(env.KV.raw.has(`tm:${b.deviceId}`), true)
+  const r = await dead(env, [{ id: b.deviceId, tokenSha: await shaHex(token('a')) }])
+  assert.deepEqual(await r.json(), { removed: 1, cleared: 0, skipped: 0 })
+  assert.deepEqual([...env.KV.raw.keys()].filter((k) => !k.startsWith('n:')), [])
+  assert.equal((await call(env, 'GET', '/v1/devices/me/follows', undefined, b.deviceKey)).status, 401)
+})
+
+test('dead tokens: a follow-list opt-in keeps helping as an ids-only record with the 90-day expiry', async () => {
+  const { env } = setup()
+  const b = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('b'), environment: 'sandbox', locale: 'en-AU', quietHours: { from: 1320, until: 420, timeZone: 'Australia/Sydney' }, follows: [{ gameId: 'dawnwalker', notify: 'major' }, { igdbId: 338121 }] })).json()
+  await call(env, 'PATCH', '/v1/devices/me', { hourly: true }, b.deviceKey)
+  const r = await dead(env, [{ id: b.deviceId, tokenSha: await shaHex(token('b')) }])
+  assert.deepEqual(await r.json(), { removed: 0, cleared: 1, skipped: 0 })
+  const rec = JSON.parse(env.KV.raw.get(`d:${b.deviceId}`))
+  assert.deepEqual(Object.keys(rec).sort(), ['created', 'follows', 'hourly', 'id', 'key', 'token', 'updated'])
+  assert.equal(rec.token, null)
+  assert.deepEqual(rec.follows, [{ gameId: 'dawnwalker' }, { igdbId: 338121 }])
+  assert.equal(env.KV.raw.has(`t:${token('b')}`), false)
+  assert.equal(env.KV.ttl.get(`d:${b.deviceId}`), FOLLOWS_TTL_SECONDS)
+  // The app's key still works, and a later PATCH with a fresh token brings alerts back.
+  assert.equal((await call(env, 'PATCH', '/v1/devices/me', { apnsToken: token('c'), environment: 'production' }, b.deviceKey)).status, 200)
+  assert.equal(env.KV.raw.get(`t:${token('c')}`), b.deviceId)
+})
+
+test('dead tokens: a device that registered a new token since the run, an unknown id, or a token-less record is left alone', async () => {
+  const { env } = setup()
+  const b = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('d'), environment: 'production', follows: [] })).json()
+  await call(env, 'PATCH', '/v1/devices/me', { apnsToken: token('e') }, b.deviceKey)
+  const opt = await (await call(env, 'POST', '/v1/follows', { follows: [{ gameId: 'dawnwalker' }] })).json()
+  const optId = env.KV.raw.get(`k:${await shaHex(opt.deviceKey)}`)
+  const writes = env.KV.writes
+  const r = await dead(env, [{ id: b.deviceId, tokenSha: await shaHex(token('d')) }, { id: 'nobody', tokenSha: await shaHex(token('f')) }, { id: optId, tokenSha: await shaHex(token('d')) }])
+  assert.deepEqual(await r.json(), { removed: 0, cleared: 0, skipped: 3 })
+  assert.equal(env.KV.writes, writes)
+  assert.equal(env.KV.raw.get(`t:${token('e')}`), b.deviceId)
+})
+
+test('dead tokens: admin only, and the body is checked', async () => {
+  const { env } = setup()
+  const sha = await shaHex(token('a'))
+  assert.equal((await dead(env, [{ id: 'x', tokenSha: sha }], 'wrong')).status, 401)
+  assert.equal((await call(env, 'POST', '/admin/devices/dead', { devices: [] })).status, 401)
+  assert.equal((await dead(env, Array.from({ length: 7 }, (_, i) => ({ id: `x${i}`, tokenSha: sha })))).status, 400)
+  assert.equal((await dead(env, [{ id: 'x', tokenSha: 'abc' }])).status, 400)
+  assert.equal((await dead(env, [{ id: 'x', tokenSha: sha }])).status, 200)
+})
+
+test('bug-relay-optin-cleared-token: after a dead push, the app\'s launch puts its token back on the same record; no second record', async () => {
+  const { env } = setup()
+  const b = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), environment: 'production', follows: [{ gameId: 'dawnwalker', notify: 'major' }] })).json()
+  await call(env, 'PATCH', '/v1/devices/me', { hourly: true }, b.deviceKey)
+  await dead(env, [{ id: b.deviceId, tokenSha: await shaHex(token('a')) }])
+  // Launch: the token PATCH first (token and environment only), then the usual registration.
+  assert.equal((await call(env, 'PATCH', '/v1/devices/me', { apnsToken: token('a'), environment: 'production' }, b.deviceKey)).status, 200)
+  const again = await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), environment: 'production', follows: [{ gameId: 'dawnwalker', notify: 'major' }] })
+  assert.equal(again.status, 200, 'the same record, not a new one')
+  assert.equal((await again.json()).deviceId, b.deviceId)
+  assert.deepEqual([...env.KV.raw.keys()].filter((k) => k.startsWith('d:')), [`d:${b.deviceId}`])
+  const rec = JSON.parse(env.KV.raw.get(`d:${b.deviceId}`))
+  assert.equal(rec.hourly, true)
+  assert.deepEqual(rec.follows, [{ gameId: 'dawnwalker', notify: 'major' }], 'alert levels come back with the registration')
+  assert.equal(env.KV.ttl.get(`d:${b.deviceId}`), null, 'a record with a token no longer expires')
+  assert.equal(env.KV.ttl.get(`k:${await shaHex(b.deviceKey)}`), null, 'nor does its key entry, or the app would get a 401 in 90 days')
+  // The next launch, nothing changed: the token PATCH writes nothing.
+  const writes = env.KV.writes
+  await call(env, 'PATCH', '/v1/devices/me', { apnsToken: token('a'), environment: 'production' }, b.deviceKey)
+  assert.equal(env.KV.writes, writes)
+})

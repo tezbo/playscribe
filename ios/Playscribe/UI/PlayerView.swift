@@ -153,16 +153,23 @@ struct PlayerView: View {
     private func layout(duo: DuoContext, release: Release, video: ReleaseVideo, controller: YouTubeController) -> some View {
         // A web view has no intrinsic size, so a 16:9 box carries the size and the view fills it.
         let surface = Color.black.aspectRatio(16 / 9, contentMode: .fit).overlay { WebSurface(webView: controller.webView) }
+            // QA (-qaMirrorFixture): the video area shows the same generated frame the mirror is fed, so the band is measured
+            // against a bright edge like for like.
+            .overlay { if VideoReflection.fixture { Image(uiImage: VideoReflection.fixtureFrame(0)).resizable() } }
         let gameName = model.game(gameID)?.name ?? ""
+        let overMirror = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off
         switch duo.pose {
         case .tabletop:
             // TT-4: the standing half shows only the video; the flat half holds the transport.
             ArrangementView {
                 TabletopTransport(controller: controller, video: video, game: gameName, release: release, onClose: close)
-                    .background(alignment: .top) { if VideoReflection.isShown(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) { VideoReflection(controller: controller, poster: video.posterAsset) } }
+                    .background(alignment: .top) {
+                        let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
+                        if mode != .off { VideoReflection(controller: controller, mode: mode, posterAsset: video.posterAsset, youtubeID: video.youtubeID) }
+                    }
             } secondary: {
                 surface
-                    .overlay { if !controller.started { PosterCover(video: video) } }
+                    .overlay { if !controller.started, !VideoReflection.fixture { PosterCover(video: video) } }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(.black)
                     .allowsHitTesting(false)
@@ -172,10 +179,11 @@ struct PlayerView: View {
             // VB-2: the video and its details on the left page; Watch along on the right.
             if let fold = duo.division {
                 HStack(alignment: .top, spacing: 0) {
-                    VStack(alignment: .leading, spacing: 12) {
+                    VStack(alignment: .leading, spacing: 0) {
                         surface
-                        VideoCaption(video: video, game: gameName)
-                            .padding(.horizontal, 16)
+                        VideoCaption(video: video, game: gameName, overMirror: overMirror)
+                            .padding(.horizontal, 16).padding(.top, 12)
+                            .background(alignment: .top) { mirror(controller, video) }
                         Spacer(minLength: 0)
                     }
                     .frame(width: fold.minX)
@@ -186,57 +194,25 @@ struct PlayerView: View {
             }
         case .closed, .flat:
             // VB-3: full display, the player's own controls.
-            VStack(spacing: 12) {
+            VStack(spacing: 0) {
                 surface.frame(maxWidth: .infinity)
-                VideoCaption(video: video, game: gameName).padding(.horizontal, 16)
+                VideoCaption(video: video, game: gameName, overMirror: overMirror).padding(.horizontal, 16).padding(.top, 12)
+                    .background(alignment: .top) { mirror(controller, video) }
             }
             .frame(maxHeight: .infinity, alignment: duo.pose == .closed ? .top : .center)
         }
     }
 
+    /// The mirror under the video, same view in every pose (R-11).
+    @ViewBuilder
+    private func mirror(_ controller: YouTubeController, _ video: ReleaseVideo) -> some View {
+        let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
+        if mode != .off { VideoReflection(controller: controller, mode: mode, posterAsset: video.posterAsset, youtubeID: video.youtubeID) }
+    }
+
     private func close() {
         controller?.stop()
         dismiss()
-    }
-}
-
-/// Reflection mode: a faint, blurred mirror of the playing video under the controls on the flat
-/// half of the Tabletop pose. This is drawn by the app from snapshots of the player, not a system
-/// feature (no public API exists for one). View only: it never takes touches (tabletop rule).
-struct VideoReflection: View {
-    static let key = "reflectionMode"
-    /// On unless the person turns it off (Terry, 2026-11-06). The Settings toggle reads the same value.
-    static let defaultOn = true
-    /// Reduce Motion and Reduce Transparency always win over the setting (G-9).
-    static func isShown(setting: Bool, reduceMotion: Bool, reduceTransparency: Bool) -> Bool {
-        setting && !reduceMotion && !reduceTransparency
-    }
-    var controller: YouTubeController
-    /// Shown until the first snapshot lands, the same still the stage shows before playback.
-    var poster: String?
-    @State private var frame: UIImage?
-
-    var body: some View {
-        Group {
-            if let image = frame ?? poster.flatMap({ UIImage(named: $0) }) {
-                Image(uiImage: image).resizable().aspectRatio(16 / 9, contentMode: .fit)
-                    .scaleEffect(x: 1, y: -1)
-                    .blur(radius: 14)
-                    .opacity(0.35)
-                    .mask(LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom))
-            }
-        }
-        .allowsHitTesting(false)
-        .accessibilityHidden(true)
-        .task(id: controller.isPlaying) {
-            guard controller.isPlaying else { return }
-            while !Task.isCancelled {
-                let cfg = WKSnapshotConfiguration()
-                cfg.snapshotWidth = 320
-                if let img = try? await controller.webView.takeSnapshot(configuration: cfg) { frame = img }
-                try? await Task.sleep(for: .milliseconds(250))
-            }
-        }
     }
 }
 
@@ -254,12 +230,18 @@ struct PosterCover: View {
 struct VideoCaption: View {
     var video: ReleaseVideo
     var game: String
+    /// True when the mirror sits behind the caption: the plate hugs the text, not the whole row, so the mirror shows beside
+    /// and below it (the full-width plate darkened the band to 10 to 12 of 255, 12 Nov).
+    var overMirror = false
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
             Text(video.label).font(PlayscribeFont.headline).foregroundStyle(.white)
             Text([game, video.duration].compactMap { $0 }.joined(separator: ", "))
-                .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                .font(PlayscribeFont.subheadline)
+                // Over the mirror the grey is lifted so it keeps 4.5:1 on any frame (Mac, 12 Nov: 4.1 and 3.2 with .secondary).
+                .foregroundStyle(overMirror ? AnyShapeStyle(Color.white.opacity(0.8)) : AnyShapeStyle(.secondary))
         }
+        .overMirror(overMirror)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
@@ -302,11 +284,17 @@ struct TabletopTransport: View {
     var game: String
     var release: Release
     var onClose: () -> Void
+    @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
 
     var body: some View {
+        // The mirror sits behind this whole column, so the text on it gets the plate and the lifted grey (R-11; Mac 12 Nov:
+        // the Tabletop subtitle measured 3.3:1 median, 2.3:1 worst).
+        let over = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off
         HStack(alignment: .top, spacing: 0) {
             VStack(alignment: .leading, spacing: 10) {
-                VideoCaption(video: video, game: game)
+                VideoCaption(video: video, game: game, overMirror: over)
                 Slider(value: Binding(get: { controller.current }, set: { controller.seek(to: $0) }), in: 0...max(1, controller.duration))
                     .accessibilityLabel("Playback position")
                     // Spoken as time, not a percent, and the printed times below are not read a second time.
@@ -318,7 +306,8 @@ struct TabletopTransport: View {
                     Text("-" + PlayerTime.format(max(0, controller.duration - controller.current)))
                 }
                 .font(PlayscribeFont.caption.monospacedDigit())
-                .foregroundStyle(.secondary)
+                .foregroundStyle(over ? AnyShapeStyle(Color.white.opacity(0.8)) : AnyShapeStyle(.secondary))
+                .overMirror(over)
                 .accessibilityHidden(true)
                 HStack(spacing: 0) {
                     transportButton(controller.captionsOn ? "captions.bubble.fill" : "captions.bubble", "Captions", action: controller.toggleCaptions)
