@@ -422,7 +422,7 @@ struct TabletopGameTail: View {
         let summary = info?.summary ?? game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }?.summary
         VStack(alignment: .leading, spacing: 14) {
             if let summary {
-                Text("ABOUT").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+                Text("About").textCase(.uppercase).font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
                 if open { LinkedTextView(text: summary).font(PlayscribeFont.body) }
                 else { WholeWordText(text: LinkedText.clean(summary), font: PlayscribeFont.body, lines: 3, color: nil) }
                 Button(open ? "Less" : "More") {
