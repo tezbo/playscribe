@@ -723,6 +723,7 @@ struct NotesSearchField: View {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
                 TextField(prompt, text: $model.noteQuery)
                     .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
                     .submitLabel(.search)
                     .onSubmit { model.rememberSearch(model.noteQuery) }
                 if !model.noteQuery.isEmpty {

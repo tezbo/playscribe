@@ -223,6 +223,8 @@ struct AddGameSheet: View {
                     statusPicker
                     TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
                         .autocorrectionDisabled()
+                        .textInputAutocapitalization(.never)
+                        .accessibilityIdentifier("addSearchField")
                         .submitLabel(.search)
                         .focused($searchFocused)
                         .frame(minHeight: 44)

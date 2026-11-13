@@ -288,6 +288,8 @@ struct LibraryShelf: View {
                         TextField("Search your library", text: binding)
                             .submitLabel(.search)
                             .autocorrectionDisabled()
+                            .textInputAutocapitalization(.never)
+                            .accessibilityIdentifier("librarySearchField")
                     }
                     .padding(.horizontal, 12)
                     .padding(.vertical, typeSize.isAccessibilitySize ? 12 : 0)
