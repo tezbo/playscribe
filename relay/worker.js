@@ -435,6 +435,19 @@ const apnsJwt = async (env) => {
   return `${head}.${b64url(new Uint8Array(sig))}`
 }
 
+/** True when `at` falls in the device's quiet window [from, until) in its own zone; until < from wraps past midnight. Same rule as backend/src/push/quiet.ts. */
+export const inQuietHours = (q, at = new Date()) => {
+  if (!q) return false
+  try {
+    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: q.timeZone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(at)
+    const get = (t) => Number(parts.find((p) => p.type === t)?.value)
+    const m = get('hour') * 60 + get('minute')
+    return q.from < q.until ? m >= q.from && m < q.until : m >= q.from || m < q.until
+  } catch {
+    return false
+  }
+}
+
 const ALERT = { crash: 'New TestFlight crash report', screenshot: 'New TestFlight feedback' }
 const sendTeamAlert = async (env, kind) => {
   if (!env.APNS_KEY || !env.APNS_KEY_ID || !env.APNS_TEAM_ID) return { sent: 0, skipped: 'push key not set' }
@@ -449,7 +462,8 @@ const sendTeamAlert = async (env, kind) => {
     const r = await fetch(`https://${host}/3/device/${d.token}`, {
       method: 'POST',
       headers: { authorization: `bearer ${jwt}`, 'apns-topic': env.APNS_TOPIC ?? 'tezbo.Playscribe', 'apns-push-type': 'alert', 'apns-priority': '10' },
-      body: JSON.stringify({ aps: { alert: { title: 'Playscribe', body: ALERT[kind] ?? ALERT.screenshot }, sound: 'default' } }),
+      // Inside the device's quiet hours the alert is passive and silent, like every other push.
+      body: JSON.stringify({ aps: { alert: { title: 'Playscribe', body: ALERT[kind] ?? ALERT.screenshot }, ...(inQuietHours(d.quiet) ? { 'interruption-level': 'passive' } : { sound: 'default' }) } }),
     })
     if (r.ok) sent++
   }

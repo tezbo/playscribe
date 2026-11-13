@@ -357,11 +357,24 @@ export const promoteStated = (db: DB, at = new Date(), quiet = false) => {
 export const heldPs5Rows = (db: DB) =>
   (db.prepare("SELECT COUNT(*) AS n FROM platform_releases WHERE platform = 'ps5' AND status = 'announced' AND live_at IS NOT NULL AND live_at != 'null'").get() as { n: number }).n
 
-/** The PS5 row this very post (source and post date) created under the old rules, if it is still untouched by anyone else. */
+/**
+ * The PS5 row this very post (source and post date) created under the old rules, if it is still untouched by anyone else.
+ * Two posts of one source on the same day share a release (DDV: two Steam posts a minute apart): an assumed row written by
+ * the later one, on the same UTC day and not before this post, is this post's as well.
+ */
 const ownPs5Row = (db: DB, releaseId: string, sourceId: string, publishedAt: string) => {
   const row = getPlatformRow(db, releaseId, 'ps5')
   const f = json<Field<string> | null>(row?.live_at, null)
-  return row && f && f.sourceId === sourceId && f.value === publishedAt ? row : null
+  if (!row || !f || f.sourceId !== sourceId) return null
+  if (f.value === publishedAt) return row
+  return f.verification === 'assumed' && f.value > publishedAt && f.value.slice(0, 10) === publishedAt.slice(0, 10) ? row : null
+}
+
+/** True when this release's PS5 row is an assumed claim held announced until a time this source's post stated. */
+export const heldByStatedTime = (db: DB, releaseId: string, sourceId: string) => {
+  const row = getPlatformRow(db, releaseId, 'ps5')
+  const f = json<Field<string> | null>(row?.live_at, null)
+  return !!row && row.status === 'announced' && row.verification === 'assumed' && !!f?.value && f.sourceId === sourceId
 }
 
 /** Backfill repair: the post's old claim ("live at the post time") is replaced by what it really says. */
@@ -431,19 +444,15 @@ export const newsOf = (db: DB, gameId: string, limit = 20) =>
  * row was made before IGDB gave the PS5 date. Only rows taken as out on PS5 from Steam alone (`assumed`) are
  * dropped. A release whose only sources are Steam posts, announced more than a day before the PS5 launch (Steam re-dated old posts; BG3's 2021 patches), loses its PS5 row whatever its tag; launch-day patches stay. Anything a press source said about PS5 stays. Safe to run every ingest.
  */
-export const dropPreLaunchPs5 = (db: DB) =>
-  Number(
-    db
-      .prepare(
-        `DELETE FROM platform_releases WHERE platform = 'ps5' AND release_id IN (
-           SELECT r.id FROM releases r JOIN games g ON g.id = r.game_id
-           WHERE r.ps4 = 0 AND (
+// Each PS5 row looks up its own release by id (feed-hot-run-slow): the IN list it replaced was correlated on the row's
+// verification, so SQLite read every release once per PS5 row, about 15 minutes of every run on the 12 Nov feed.
+export const DROP_PRE_LAUNCH_PS5_SQL = `DELETE FROM platform_releases WHERE platform = 'ps5' AND EXISTS (
+           SELECT 1 FROM releases r JOIN games g ON g.id = r.game_id
+           WHERE r.id = platform_releases.release_id AND r.ps4 = 0 AND (
              (platform_releases.verification = 'assumed' AND substr(r.announced_at, 1, 10) < COALESCE(g.ps5_release, ?))
              OR (json_array_length(r.source_ids) > 0 AND NOT EXISTS (SELECT 1 FROM json_each(r.source_ids) WHERE value NOT LIKE '%-steam')
-                 AND substr(r.announced_at, 1, 10) < date(COALESCE(g.ps5_release, ?), '-1 day'))))`,
-      )
-      .run(PS5_LAUNCH, PS5_LAUNCH).changes,
-  )
+                 AND substr(r.announced_at, 1, 10) < date(COALESCE(g.ps5_release, ?), '-1 day'))))`
+export const dropPreLaunchPs5 = (db: DB) => Number(db.prepare(DROP_PRE_LAUNCH_PS5_SQL).run(PS5_LAUNCH, PS5_LAUNCH).changes)
 
 /**
  * Data trust audit (r050): a PS5 row that a press source reported for a post dated before the game's PS5 release (or
