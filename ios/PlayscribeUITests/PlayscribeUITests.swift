@@ -580,8 +580,8 @@ final class JourneyTests: XCTestCase {
         sleep(2)
         XCTAssertTrue(title.exists, "Patch 1.4 still showing after unfolding [\(audit.exists ? audit.label : "unknown")]")
         if app.navigationBars["Patch 1.4"].exists { ReleaseRowTests.goBack(app); sleep(1) }
-        ReleaseRowTests.reveal(row, in: app)
-        XCTAssertTrue(row.isSelected, "Patch 1.4 row selected")
+        // Open is one column: Back lands on the row, in view. A pushed update leaves no selected fill (s-06, s3.png).
+        XCTAssertTrue(row.isHittable, "back to the Patch 1.4 row, in view")
         let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "journey-open-patch-1.4"; shot.lifetime = .keepAlways; add(shot)
     }
 }
