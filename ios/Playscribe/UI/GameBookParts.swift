@@ -548,26 +548,37 @@ struct TrailerView: View {
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 0) {
-                Color.black.aspectRatio(16 / 9, contentMode: .fit)
-                    .overlay { if let controller { WebSurface(webView: controller.webView) } }
-                    .overlay { if VideoReflection.fixture { Image(uiImage: VideoReflection.fixtureFrame(0)).resizable() } }
-                VStack(alignment: .leading, spacing: 0) {
-                    Text(name).font(PlayscribeFont.headline)
-                        .overMirror(VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off)
-                        .padding(.horizontal, 16).padding(.top, 12)
-                    Spacer(minLength: 0)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                // R-11: the trailer gets the same mirror as an update video in every pose, flush under the video. It takes no
-                // layout room and no touches (Terry, 12 Nov: trailers never had one).
-                .background(alignment: .top) {
-                    let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
-                    if mode != .off, let controller {
-                        VideoReflection(controller: controller, mode: mode, posterAsset: nil, youtubeID: videoID)
+            // R-11 (Iris, 13 Nov): the player is always 16:9 and sized to the open area, the width of the area or, where the area is
+            // short (the Tabletop lower half), as wide as the height allows after a two-line caption. Centred, with the caption
+            // centred under it; the reflection below stays.
+            GeometryReader { geo in
+                // Room kept under the video: a two-line caption (64 pt) and the reflection's 120 pt fade.
+                let captionRoom: CGFloat = 64 + 120
+                let h = max(0, min(geo.size.width * 9 / 16, geo.size.height - captionRoom))
+                let w = h * 16 / 9
+                VStack(spacing: 0) {
+                    Color.black.frame(width: w, height: h)
+                        .overlay { if let controller { WebSurface(webView: controller.webView) } }
+                        .overlay { if VideoReflection.fixture { Image(uiImage: VideoReflection.fixtureFrame(0)).resizable() } }
+                        .frame(maxWidth: .infinity)
+                    VStack(spacing: 0) {
+                        Text(name).font(PlayscribeFont.headline)
+                            .multilineTextAlignment(.center)
+                            .overMirror(VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off)
+                            .padding(.horizontal, 16).padding(.top, 12)
+                        Spacer(minLength: 0)
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                    // R-11: the trailer gets the same mirror as an update video in every pose, flush under the video. It takes no
+                    // layout room and no touches (Terry, 12 Nov: trailers never had one).
+                    .background(alignment: .top) {
+                        let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
+                        if mode != .off, let controller {
+                            VideoReflection(controller: controller, mode: mode, posterAsset: nil, youtubeID: videoID)
+                        }
+                    }
+                    .clipped()
                 }
-                .clipped()
             }
             .background(Color.black)
             .toolbar {
@@ -867,6 +878,26 @@ struct TabletopOutline: View {
         let sections = model.readerRelease(gameID).map(model.readerSections) ?? []
         let index = min(model.readerIndex[gameID] ?? 0, max(0, sections.count - 1))
         VStack(spacing: 2) {
+            // R-11 (bug-tabletop-trailer-tile-missing, Iris): About is not on the Tabletop stage, so the game's trailer had no
+            // control at all. The stage shows its poster, view only; this is the control, in the lower half, and it plays in
+            // the lower-half player like the update video. First row of the panel, so it is on screen without scrolling.
+            if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first {
+                Button { model.trailer = (v.youtubeId, v.name) } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "play.fill").accessibilityHidden(true)
+                        Text("Play trailer").font(PlayscribeFont.subheadline.weight(.semibold))
+                            .fixedSize(horizontal: false, vertical: true)
+                        Spacer(minLength: 0)
+                    }
+                    .foregroundStyle(PlayscribeColor.accent)
+                    .padding(.horizontal, 10).frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Play trailer")
+                .accessibilityIdentifier("playTrailer")
+                .tappableFrame()
+                .padding(.bottom, 4)
+            }
             ForEach(Array(sections.enumerated()), id: \.element.id) { i, s in
                 Button { model.readerIndex[gameID] = i } label: {
                     HStack {
@@ -910,26 +941,6 @@ struct TabletopOutline: View {
                 pageButton("Next", "chevron.forward", enabled: index < sections.count - 1) { model.readerIndex[gameID] = index + 1 }
             }
             .padding(.top, 6)
-            // R-11 (bug-tabletop-trailer-tile-missing, Iris): About is not on the Tabletop stage, so the game's trailer had no
-            // control at all. The stage shows its poster, view only; this is the control, in the lower half, and it plays in
-            // the lower-half player like the update video.
-            if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first {
-                Button { model.trailer = (v.youtubeId, v.name) } label: {
-                    HStack(spacing: 8) {
-                        Image(systemName: "play.fill").accessibilityHidden(true)
-                        Text("Play trailer").font(PlayscribeFont.subheadline.weight(.semibold))
-                            .fixedSize(horizontal: false, vertical: true)
-                        Spacer(minLength: 0)
-                    }
-                    .foregroundStyle(PlayscribeColor.accent)
-                    .padding(.horizontal, 10).frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel("Play trailer")
-                .accessibilityIdentifier("playTrailer")
-                .tappableFrame()
-                .padding(.top, 4)
-            }
         }
         // The trailer list comes from the game's basics, which About loads when it appears. About is not on the Tabletop stage,
         // so the outline loads them itself, or "Play trailer" and the stage tile never show (Mac, #486 at a2eeb67).
