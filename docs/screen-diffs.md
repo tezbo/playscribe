@@ -20,9 +20,13 @@ Workflow: `.github/workflows/screen-diffs.yml`. Compare step: `ios/tools/qa/scre
    - Matrix: library, game, updates, settings and upcoming screens.
    - Poses and sizes: every pose at std and AX5, plus AX3 in Closed and Tabletop only. That is 70 stills a side.
 4. `compare` diffs the two sets. It pushes the changed images to the `screen-diffs` branch, then writes the PR comment.
-   - Only this workflow writes the branch. Each run adds a commit (never a force push), and the comment links its images by
-     that commit's SHA, so links in older comments and run pages keep working. Keep the branch: it is never merged, so the
-     merged-only branch delete (#490) leaves it alone.
+   - Only this workflow writes the branch. Each run adds a commit, and the comment links its images by that commit's SHA, so
+     links in older comments and run pages keep working. Keep the branch: it is never merged, so the merged-only branch
+     delete (#490) leaves it alone.
+   - Each run adds about 5 MB, so `runs.txt` on the branch counts runs. On the 51st run the workflow starts the branch again
+     as one commit holding only the current folders, and force-pushes it with a lease (a run that pushed meanwhile makes the
+     reset fail rather than be lost). After a reset, images in comments from earlier runs stop loading once GitHub drops the
+     old commits; an open PR gets working images again on its next push.
    - When one side writes no stills (it did not build), the comment says so instead of listing every screen as gone.
    - The comment names the main SHA it compared against.
 

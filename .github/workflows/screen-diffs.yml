@@ -242,9 +242,25 @@ jobs:
           cp "$GITHUB_WORKSPACE"/diffs/*.png "pr-$PR/${HEAD_SHA:0:7}/"
           date +%s > "pr-$PR/when.txt"
           printf 'Images for the Screen diffs PR comments. Written only by .github/workflows/screen-diffs.yml; safe to delete.\n' > README.md
+          # Each run adds about 5 MB of history. Every 50 runs, start the branch again from one commit holding only the current
+          # folders (card qa-screen-diffs-branch-reset). Older comment images then stop loading once GitHub drops the old commits;
+          # the open PRs' comments are refreshed by their next push. The lease stops a reset from dropping a run that pushed meanwhile.
+          base=$(git rev-parse -q --verify HEAD || true)
+          runs=$(( $(cat runs.txt 2>/dev/null || echo 0) + 1 ))
+          reset=0
+          if [ -n "$base" ] && [ "$runs" -gt 50 ]; then
+            reset=1; runs=1
+            git checkout -q --orphan fresh
+          fi
+          echo "$runs" > runs.txt
           git add -A
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "Screen diffs for #$PR at ${HEAD_SHA:0:7}"
-          git push -q "$remote" HEAD:screen-diffs
+          if [ "$reset" = 1 ]; then
+            echo "Resetting the screen-diffs branch to one commit (was $base)"
+            git push -q --force-with-lease="screen-diffs:$base" "$remote" HEAD:screen-diffs
+          else
+            git push -q "$remote" HEAD:screen-diffs
+          fi
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Post or update the PR comment
         if: hashFiles('diffs/comment.md') != ''
