@@ -552,9 +552,8 @@ struct TrailerView: View {
             // short (the Tabletop lower half), as wide as the height allows after a two-line caption. Centred, with the caption
             // centred under it; the reflection below stays.
             GeometryReader { geo in
-                // Room kept under the video: a two-line caption (64 pt) and the first 60 pt of the reflection's fade. The Tabletop
-                // area measures about 354 pt tall (Mac, c375d0f), so this gives about 409 x 230.
-                let captionRoom: CGFloat = 64 + 60
+                // Room kept under the video: a two-line caption (64 pt) and the reflection's 120 pt fade.
+                let captionRoom: CGFloat = 64 + 120
                 let h = max(0, min(geo.size.width * 9 / 16, geo.size.height - captionRoom))
                 let w = h * 16 / 9
                 VStack(spacing: 0) {
