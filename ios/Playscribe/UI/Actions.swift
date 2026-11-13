@@ -97,7 +97,8 @@ struct RailButton: View {
     /// removed it), so there is one element here by construction (bug-rail-menu-unlabelled-buttons).
     @State private var choosing = false
     // At AX sizes the title cost a row's height and pushed the fourth row ("Off") off the window; the rows carry the meaning there.
-    @Environment(\.dynamicTypeSize) private var typeSize
+    // The rail caps its own Dynamic Type at large, so the environment cannot say; the dialog uses the system's setting.
+    private var axText: Bool { UIApplication.shared.preferredContentSizeCategory.isAccessibilityCategory }
     var body: some View {
         Group {
             switch action.kind {
@@ -107,7 +108,7 @@ struct RailButton: View {
             case .menu(let sections):
                 Button { choosing = true } label: { icon }
                     .buttonStyle(RailPressStyle())
-                    .confirmationDialog(action.title, isPresented: $choosing, titleVisibility: typeSize.isAccessibilitySize ? .hidden : .visible) {
+                    .confirmationDialog(action.title, isPresented: $choosing, titleVisibility: axText ? .hidden : .visible) {
                         ActionMenuContent(sections: sections, inDialog: true)
                     }
                     .id(sections.tickKey)
