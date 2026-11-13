@@ -104,6 +104,12 @@ struct GalleryChapter: View {
 
 /// A game with no pictures or videos (Terry, 0.2.0 build 5, Fortnite): say so, and point to media elsewhere.
 struct GalleryEmpty: View {
+    /// "Find trailers online": a video search for the game's PS5 trailer. Also Tabletop's Links panel row.
+    static func trailerSearchURL(_ name: String) -> URL? {
+        "https://www.youtube.com/results?search_query=\(name) PS5 trailer"
+            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed).flatMap(URL.init(string:))
+    }
+
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     var gameID: String
@@ -111,32 +117,26 @@ struct GalleryEmpty: View {
     var body: some View {
         let game = model.game(gameID)
         let links = game?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
-        let search = game.flatMap { g in
-            "https://www.youtube.com/results?search_query=\(g.name) PS5 trailer"
-                .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed).flatMap(URL.init(string:))
-        }
+        let search = game.flatMap { Self.trailerSearchURL($0.name) }
         VStack(alignment: .leading, spacing: 8) {
-            Text("No pictures or videos here yet").font(PlayscribeFont.headline)
-            Text("You can find trailers and screenshots elsewhere.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
-            FlowLayout(spacing: 24) {
-                if let url = links?.official {
-                    if duo.pose == .tabletop {
-                        // View only: read as plain text, no link or button trait and no action (Iris, 7 Nov); the Official website link is on Tabletop's Links panel.
-                        Text("Official website").frame(minHeight: 44).foregroundStyle(Color.secondary)   // grey, not amber, no arrow: it must not look tappable. Color.secondary, not .secondary: the hierarchical style would derive from the accent set on the FlowLayout below and come out dimmed amber (f452dd8)
-                    } else {
+            if duo.pose == .tabletop {
+                // The stage is view-only and cannot scroll: one sentence, no headline and no grey stand-in rows that look like
+                // buttons, so it fits in three lines at AX5 (Mac, 0a7830d). The controls are on the Links panel; the rail shows an
+                // ellipsis, not the word "More", so the line names what the person sees (Iris, 12 Nov).
+                Text("No trailers yet. Find them in Links, in the menu below.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            } else {
+                Text("No pictures or videos here yet").font(PlayscribeFont.headline)
+                Text("You can find trailers and screenshots elsewhere.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                FlowLayout(spacing: 24) {
+                    if let url = links?.official {
                         Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                     }
-                }
-                if let url = search {
-                    if duo.pose == .tabletop {
-                        // View only: read as plain text, no link or button trait and no action (Iris, 7 Nov); the trailer search has no Tabletop control (pre-existing, carded).
-                        Text("Find trailers online").frame(minHeight: 44).foregroundStyle(Color.secondary)   // grey, not amber, no arrow: it must not look tappable. Color.secondary, not .secondary: the hierarchical style would derive from the accent set on the FlowLayout below and come out dimmed amber (f452dd8)
-                    } else {
+                    if let url = search {
                         Link(destination: url) { Label("Find trailers online", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                     }
                 }
+                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.accent)
             }
-            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.accent)
         }
         .accessibilityElement(children: .contain)
     }

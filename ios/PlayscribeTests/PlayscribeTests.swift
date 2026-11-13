@@ -813,6 +813,36 @@ struct BackCatalogueTests {
         #expect(model.data.read[fresh.id] == nil)
     }
 
+    @Test("A newly added game keeps only its latest update unread, even when several are recent")
+    func onlyLatestStaysUnread() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
+        let a = release("g@a", patchedDaysAgo: 2, alertDaysAgo: 2)
+        let b = release("g@b", patchedDaysAgo: 1, alertDaysAgo: 1)
+        let c = release("g@c", patchedDaysAgo: 0.2, alertDaysAgo: 0.2)
+        model.markPastAsRead([a, b, c], backCatalogue: true)
+        #expect(model.data.read[a.id] != nil)
+        #expect(model.data.read[b.id] != nil)
+        #expect(model.data.read[c.id] == nil)
+    }
+
+    @Test("An alert needs the patch itself inside 72 h, not just the alert date")
+    func alertGuardChecksPatchDate() {
+        #expect(release("g@today", patchedDaysAgo: 1, alertDaysAgo: 1).isAlertWorthy())
+        #expect(!release("g@port", patchedDaysAgo: 1_800, alertDaysAgo: 1).isAlertWorthy(), "folded history is the past")
+        #expect(!release("g@stale", patchedDaysAgo: 5, alertDaysAgo: 5).isAlertWorthy())
+    }
+
+    @Test("Each game keeps its own latest update unread when several are added together")
+    func perGameGrouping() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
+        func rel(_ id: String, _ game: String, _ days: Double) -> Release {
+            var r = release(id, patchedDaysAgo: days, alertDaysAgo: days); r.gameID = game; return r
+        }
+        let all = [rel("a@1", "a", 2), rel("a@2", "a", 0.5), rel("b@1", "b", 1.5), rel("b@2", "b", 0.2), rel("b@3", "b", 1)]
+        model.markPastAsRead(all, backCatalogue: true)
+        #expect(all.filter { model.data.read[$0.id] == nil }.map(\.id).sorted() == ["a@2", "b@2"])
+    }
+
     @Test("Without the back-catalogue rule the alert date still decides (an update for a followed game)")
     func followedGameUnchanged() {
         let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
@@ -1011,5 +1041,46 @@ struct SearchTextColdLaunchTests {
         m.saveNow()
         m.tick()          // what a pose change drives
         #expect(m.nav.query == "dawn")
+    }
+}
+
+/// 0.5.5 (r054-tabletop-find-trailers): in Tabletop the empty Gallery's "Find trailers online" is view-only text, so the
+/// Links panel in the lower half carries the same search for every game whose Gallery is empty, and only for those.
+@MainActor
+struct TabletopFindTrailersTests {
+    @Test func linksPanelCarriesTheTrailerSearchForAnEmptyGallery() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "links-\(UUID().uuidString).json"))
+        m.resetDemo()
+        let games = m.fixtures.games
+        let empty = games.filter { m.gallery($0.id).isEmpty }
+        #expect(!empty.isEmpty)
+        for g in games {
+            let row = LinksSheet.rows(m, g.id).first { $0.id == "trailers" }
+            if m.gallery(g.id).isEmpty {
+                #expect(row?.title == "Find trailers online")
+                #expect(row?.url == GalleryEmpty.trailerSearchURL(g.name))
+                #expect(LinksSheet.hasLinks(m, g.id))   // so Tabletop's More menu offers Links
+            } else {
+                #expect(row == nil)
+            }
+        }
+    }
+}
+
+@MainActor
+struct OpenMarksReadTests {
+    /// R-6a: opening an unread update reads it at once; Mark as unread puts it back.
+    @Test func openingAnUnreadUpdateMarksItReadAndItCanBeUnmarked() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "r6a-\(UUID().uuidString).json"))
+        m.resetDemo()
+        guard let r = m.data.collection.flatMap({ m.releases($0.gameID) }).first(where: { m.isUnread($0) }) else {
+            Issue.record("the demo has no unread update"); return
+        }
+        m.openGame(r.gameID, chapter: .updates, releaseID: r.id)
+        #expect(!m.isUnread(r), "opened on purpose, so read (R-6a)")
+        m.markRead(r.id, false)
+        #expect(m.isUnread(r), "Mark as unread (R-6a)")
+        // The cover's NEW UPDATE eyebrow and the deck's "New update" chip read isUnread, so they come back with it.
+        #expect(m.unreadCount(r.gameID) >= 1)
     }
 }

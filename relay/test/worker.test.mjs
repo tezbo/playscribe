@@ -184,6 +184,33 @@ test('webhook: 60 non-team devices and 2 team devices alert exactly the 2, with 
   }
 })
 
+test('webhook: a team device inside its quiet hours gets a passive, silent alert; one outside (or without) gets the normal alert (r050-quiet-hours-push)', async () => {
+  const env = { KV: fakeKv(), ASC_WEBHOOK_SECRET: 's3cret', APNS_KEY: 'x', APNS_KEY_ID: 'k', APNS_TEAM_ID: 't' }
+  const mins = new Date().getUTCHours() * 60 + new Date().getUTCMinutes()
+  const wrap = (m) => ((m % 1440) + 1440) % 1440
+  const inside = { from: wrap(mins - 60), until: wrap(mins + 60), timeZone: 'UTC' }
+  const outside = { from: wrap(mins + 120), until: wrap(mins + 180), timeZone: 'UTC' }
+  await call(env, 'POST', '/v1/devices', { apnsToken: 'aa'.repeat(32), team: true, quietHours: inside })
+  await call(env, 'POST', '/v1/devices', { apnsToken: 'bb'.repeat(32), team: true, quietHours: outside })
+  await call(env, 'POST', '/v1/devices', { apnsToken: 'cc'.repeat(32), team: true })
+  const sent = {}
+  const realFetch = globalThis.fetch
+  globalThis.fetch = async (url, init) => { sent[String(url).split('/').pop()] = JSON.parse(init.body).aps; return new Response('', { status: 200 }) }
+  try {
+    const kp = await crypto.subtle.generateKey({ name: 'ECDSA', namedCurve: 'P-256' }, true, ['sign'])
+    const der = new Uint8Array(await crypto.subtle.exportKey('pkcs8', kp.privateKey))
+    env.APNS_KEY = `-----BEGIN PRIVATE KEY-----\n${btoa(String.fromCharCode(...der))}\n-----END PRIVATE KEY-----`
+    const body = JSON.stringify({ data: { id: 'q1', attributes: { eventType: 'BETA_FEEDBACK_SCREENSHOT_SUBMISSION_CREATED' } } })
+    assert.equal((await (await hook(env, body, await hmacHex('s3cret', body))).json()).sent, 3)
+  } finally {
+    globalThis.fetch = realFetch
+  }
+  assert.equal(sent['aa'.repeat(32)]['interruption-level'], 'passive')
+  assert.equal(sent['aa'.repeat(32)].sound, undefined)
+  for (const t of ['bb', 'cc']) assert.equal(sent[t.repeat(32)].sound, 'default')
+  assert.equal(sent['bb'.repeat(32)]['interruption-level'], undefined)
+})
+
 test('register: past the daily cap new devices get 429, existing devices still register', async () => {
   const { env } = setup()
   const hexTok = (i) => i.toString(16).padStart(64, '0')
@@ -493,4 +520,26 @@ test('dead tokens: admin only, and the body is checked', async () => {
   assert.equal((await dead(env, Array.from({ length: 7 }, (_, i) => ({ id: `x${i}`, tokenSha: sha })))).status, 400)
   assert.equal((await dead(env, [{ id: 'x', tokenSha: 'abc' }])).status, 400)
   assert.equal((await dead(env, [{ id: 'x', tokenSha: sha }])).status, 200)
+})
+
+test('bug-relay-optin-cleared-token: after a dead push, the app\'s launch puts its token back on the same record; no second record', async () => {
+  const { env } = setup()
+  const b = await (await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), environment: 'production', follows: [{ gameId: 'dawnwalker', notify: 'major' }] })).json()
+  await call(env, 'PATCH', '/v1/devices/me', { hourly: true }, b.deviceKey)
+  await dead(env, [{ id: b.deviceId, tokenSha: await shaHex(token('a')) }])
+  // Launch: the token PATCH first (token and environment only), then the usual registration.
+  assert.equal((await call(env, 'PATCH', '/v1/devices/me', { apnsToken: token('a'), environment: 'production' }, b.deviceKey)).status, 200)
+  const again = await call(env, 'POST', '/v1/devices', { apnsToken: token('a'), environment: 'production', follows: [{ gameId: 'dawnwalker', notify: 'major' }] })
+  assert.equal(again.status, 200, 'the same record, not a new one')
+  assert.equal((await again.json()).deviceId, b.deviceId)
+  assert.deepEqual([...env.KV.raw.keys()].filter((k) => k.startsWith('d:')), [`d:${b.deviceId}`])
+  const rec = JSON.parse(env.KV.raw.get(`d:${b.deviceId}`))
+  assert.equal(rec.hourly, true)
+  assert.deepEqual(rec.follows, [{ gameId: 'dawnwalker', notify: 'major' }], 'alert levels come back with the registration')
+  assert.equal(env.KV.ttl.get(`d:${b.deviceId}`), null, 'a record with a token no longer expires')
+  assert.equal(env.KV.ttl.get(`k:${await shaHex(b.deviceKey)}`), null, 'nor does its key entry, or the app would get a 401 in 90 days')
+  // The next launch, nothing changed: the token PATCH writes nothing.
+  const writes = env.KV.writes
+  await call(env, 'PATCH', '/v1/devices/me', { apnsToken: token('a'), environment: 'production' }, b.deviceKey)
+  assert.equal(env.KV.writes, writes)
 })

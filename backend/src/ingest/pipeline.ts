@@ -48,6 +48,8 @@ export interface IngestSummary {
   newsHidden?: number
   /** PS5 claims withheld this run by the r050 rules, so their real cost shows in the job log: held to a stated time, test build, PC-scoped. */
   held?: { stated: number; testBuild: number; pcScoped: number; announcement: number }
+  /** Backfill repairs this run (feed-log-lines-to-step): releases dropped, and announcement releases kept because other posts feed them. */
+  backfill?: { dropped: number; kept: number }
 }
 
 const MIN_POLL_MS = 55 * 60_000
@@ -303,7 +305,12 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     if (deps.repairClaims) {
       const old = (db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id
       const dropped = old ? store.dropAnnouncementRelease(db, old, s.id, post.publishedAt) : null
-      if (old) deps.log?.(dropped ? `backfill: dropped ${old}, an announcement` : `backfill: kept ${old} (other posts feed it), removed only its announcement PS5 row`)
+      if (old) {
+        deps.log?.(dropped ? `backfill: dropped ${old}, an announcement` : `backfill: kept ${old} (other posts feed it), removed only its announcement PS5 row`)
+        const b = (summary.backfill ??= { dropped: 0, kept: 0 })
+        if (dropped) b.dropped++
+        else b.kept++
+      }
     }
     return null
   }
@@ -334,7 +341,9 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
       const liveAt = stated ? store.field(stated, 'assumed', s.id) : status === 'live' ? store.field(post.publishedAt, 'assumed', s.id) : null
       if (stated) held('stated')
       if (deps.repairClaims) store.repairOwnLiveAt(db, releaseId, s.id, post.publishedAt, liveAt, status)
-      store.upsertPlatform(db, releaseId, 'ps5', { status, verification: 'assumed', liveAt })
+      // An earlier post of this release held the row until a time it stated: a later plain post (a hotfix note minutes after) does not release it.
+      const heldBefore = !stated && store.heldByStatedTime(db, releaseId, s.id)
+      if (!heldBefore) store.upsertPlatform(db, releaseId, 'ps5', { status, verification: 'assumed', liveAt })
       if (mentionsPs5(text)) review(releaseId, 'steamMentionsPs5')
     }
     return releaseId
@@ -384,11 +393,20 @@ export interface IngestOpts {
 export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promise<IngestSummary> => {
   if (opts.until) deps = { ...deps, repairClaims: true }
   const summary: IngestSummary = { polled: [], skipped: [], errors: [], created: [], revised: [], review: 0 }
+  // feed-hot-run-slow: how long each phase took, printed as one line at the end (durations only).
+  const timings: [string, number][] = []
+  let mark = performance.now()
+  const lap = (phase: string) => {
+    const t = performance.now()
+    timings.push([phase, t - mark])
+    mark = t
+  }
   const hot = hotGameIds(deps.db)
   const tracked = trackedGames(deps.db).filter((g) => !opts.hot || hot.has(g.id))
   const repairOnly = new Set<string>()
   if (opts.until && !opts.hot) for (const g of autoRepairGames(deps.db, new Set(tracked.map((t) => t.id)))) (tracked.push(g), repairOnly.add(g.id))
   const games = tracked
+  lap('games')
 
   for (const game of games) {
     // One Steam request each for the derived games a backfill repairs: spaced out, so the whole pass stays polite.
@@ -415,12 +433,16 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
           const before = deps.repairClaims ? (deps.db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id : null
           const releaseId = handlePost(deps, game, s, post, summary)
           store.markSeen(deps.db, s.id, post.postId, releaseId)
-          if (before && releaseId && before !== releaseId && store.dropSupersededRelease(deps.db, before, releaseId, s.id)) deps.log?.(`backfill: dropped ${before}, superseded by ${releaseId}`)
+          if (before && releaseId && before !== releaseId && store.dropSupersededRelease(deps.db, before, releaseId, s.id)) {
+            deps.log?.(`backfill: dropped ${before}, superseded by ${releaseId}`)
+            ;(summary.backfill ??= { dropped: 0, kept: 0 }).dropped++
+          }
         })
       }
     }
   }
 
+  lap('tracked')
   // Auto-onboarding (0.5.4): a rotating slice of the derived games, Steam only, oldest poll first. One request each, so
   // the slice is the run's cost ceiling; a game that gets a patch joins the 14-day hot set and is then polled hourly.
   if (!opts.hot && !opts.until && (opts.autoSlice ?? 0) > 0) {
@@ -443,6 +465,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
     }
   }
 
+  lap('auto')
   for (const s of opts.hot ? [] : registry.shared) {
     if (!due(deps.db, s, !!opts.force)) {
       summary.skipped.push(s.id)
@@ -490,27 +513,54 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       })
     }
   }
+  lap('shared')
   const folded = store.mergeSilentDuplicates(deps.db)
+  lap('mergeDuplicates')
   if (folded) deps.log?.(`ingest: folded ${folded} press-only duplicates into the release they report`)
   const dropped = store.dropPreLaunchPs5(deps.db)
+  lap('dropPreLaunch')
   if (dropped) deps.log?.(`ingest: dropped ${dropped} Steam-assumed PS5 rows dated before the game's PS5 launch`)
   const ps4Since = ps4SinceFromIndex()
   if (ps4Since) {
     const relabelled = store.labelPreLaunchPs4(deps.db, ps4Since)
     if (relabelled) deps.log?.(`ingest: labelled ${relabelled} press-reported releases dated before the PS5 era as PS4 updates`)
   } else deps.log?.('ingest: PS5 index not readable, skipped the PS4 relabel pass (fail closed)')
+  lap('ps4Relabel')
   const pruned = store.pruneNews(deps.db, isPromoTitle)
+  lap('pruneNews')
   for (const r of pruned) deps.log?.(`news hidden (promo, pruned) ${r.gameId}: ${r.title}`)
   deps.log?.(`ingest: news hidden (promo) ${summary.newsHidden ?? 0} new, ${pruned.length} pruned`)
   const promoted = store.promoteAnnounced(deps.db, new Date(), !!opts.until) + store.promoteStated(deps.db, new Date(), !!opts.until)
+  lap('promote')
   const settled = store.settleOldAnnouncements(deps.db)
+  lap('settle')
   if (settled) deps.log?.(`ingest: ${settled} press announcements older than 30 days, with a later PS5 release live, now read as live`)
-  deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)
-  if (opts.until) deps.log?.(`ingest: backfill read ${repairOnly.size} derived games; ${summary.created.length} releases created, ${summary.revised.length} revised`)
-  if (summary.held) deps.log?.(`ingest: PS5 claims withheld this run: ${summary.held.stated} held to a stated time, ${summary.held.testBuild} test builds, ${summary.held.pcScoped} PC-scoped, ${summary.held.announcement} announcements`)
+  for (const line of countLines(summary, { heldRows: store.heldPs5Rows(deps.db), derivedRead: (summary.auto ?? 0) + repairOnly.size, promoted })) deps.log?.(line)
+  deps.log?.(timingLine(timings))
   deps.log?.(`ingest: polled ${summary.polled.length}, new ${summary.created.length}, revised ${summary.revised.length}, review +${summary.review}, errors ${summary.errors.length}`)
   return summary
 }
+
+/**
+ * The count lines every run prints to the job log, zeros included (feed-log-lines-to-step), so Quinn can check dropped
+ * against kept and the r050 holds (#466) show: claims withheld by kind, PS5 rows held announced until a stated time,
+ * backfill releases dropped and kept, derived (auto-onboarded) games read, and console-later promotions.
+ */
+export const countLines = (summary: IngestSummary, n: { heldRows: number; derivedRead: number; promoted: number }) => {
+  const h = summary.held ?? { stated: 0, testBuild: 0, pcScoped: 0, announcement: 0 }
+  const b = summary.backfill ?? { dropped: 0, kept: 0 }
+  return [
+    `ingest: claims withheld: ${h.stated} held to a stated time, ${h.testBuild} test builds, ${h.pcScoped} PC-scoped, ${h.announcement} announcements`,
+    `ingest: held rows: ${n.heldRows} PS5 rows announced until a stated time`,
+    `ingest: backfill: dropped ${b.dropped}, kept ${b.kept}`,
+    `ingest: derived games read: ${n.derivedRead}`,
+    `ingest: promoted ${n.promoted} console-later Steam updates to live`,
+  ]
+}
+
+/** One job-log line with each runIngest phase's duration (feed-hot-run-slow). */
+export const timingLine = (timings: [string, number][]) =>
+  `ingest: timings ${timings.map(([p, ms]) => `${p} ${ms < 10 ? ms.toFixed(1) : Math.round(ms)} ms`).join(', ')}; total ${Math.round(timings.reduce((n, [, ms]) => n + ms, 0))} ms`
 
 // One ingest at a time per process, whether the scheduler or an admin call started it.
 let running: Promise<IngestSummary> | null = null
