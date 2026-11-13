@@ -143,18 +143,13 @@ struct TabletopReaderStage: View {
         // Accessibility sizes: the label is larger, so the poster gets smaller rather than the tile being cut by the stage.
         return room >= 140 ? min(typeSize.isAccessibilitySize ? 160 : 240, room) : 0
     }
-    /// No side room (the Duo stage is about 700 pt wide): the tile stacks above the text panel, 120 pt wide, only while it fits
-    /// under the status bar band with the panel's current height. At accessibility sizes the stage has no room; "Play trailer"
-    /// in the lower half is always there.
-    private var stackedTileWidth: CGFloat { 120 }
-    /// With its "Trailer" label the tile is about 112 pt tall; without it, 84 pt. The label goes first when the room above the
-    /// text panel is short (the Duo stage with a four-line plate), and the tile is left out only when even the poster does not fit.
-    private func stackedTileLabel(clearance: CGFloat) -> Bool? {
-        guard !typeSize.isAccessibilitySize, trailerTileWidth == 0, panelHeight > 0 else { return nil }
-        let room = stageHeight - 56 - (clearance + panelHeight + 8)
-        let withLabel = stackedTileWidth * 9 / 16 + 6 + 22 + 16
-        let posterOnly = stackedTileWidth * 9 / 16 + 16
-        return room >= withLabel ? true : (room >= posterOnly ? false : nil)
+    /// No side room (the Duo stage is about 670 pt wide): Iris's stacked poster, 120 x 84 pt on the leading edge, the same in every
+    /// game, no label. It sits at least 8 pt under the status band and 12 pt above the stage text, and is left out when the room
+    /// above the text is shorter than that, and at every accessibility size. "Play trailer" in the lower half is always there.
+    private let stackedPosterSize = CGSize(width: 120, height: 84)
+    private func stackedPosterFits(clearance: CGFloat) -> Bool {
+        guard !typeSize.isAccessibilitySize, trailerTileWidth == 0, panelHeight > 0 else { return false }
+        return stageHeight - 56 - (clearance + panelHeight + 12) >= stackedPosterSize.height + 8
     }
     var gameID: String
 
@@ -241,12 +236,12 @@ struct TabletopReaderStage: View {
                         .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 }
                 .clipped()
-            } else if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first, let label = stackedTileLabel(clearance: duo.clearance(forBottom: stageBottom)) {
-                // R-11: no side room, so the poster sits on the panel's leading edge, 8 pt above it. View only.
+            } else if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first, stackedPosterFits(clearance: duo.clearance(forBottom: stageBottom)) {
+                // R-11: no side room, so the poster sits on the panel's leading edge, 12 pt above it. View only.
                 Color.clear.overlay(alignment: .bottomLeading) {
-                    StageTrailerTile(youtubeID: v.youtubeId, width: stackedTileWidth, showsLabel: label)
+                    StageTrailerTile(youtubeID: v.youtubeId, width: stackedPosterSize.width, posterHeight: stackedPosterSize.height)
                         .padding(.leading, 16)
-                        .padding(.bottom, duo.clearance(forBottom: stageBottom) + panelHeight + 8)
+                        .padding(.bottom, duo.clearance(forBottom: stageBottom) + panelHeight + 12)
                 }
                 .clipped()
             }
@@ -342,31 +337,49 @@ extension Array {
 struct StageTrailerTile: View {
     var youtubeID: String
     var width: CGFloat
-    /// False in the stacked variant when the room above the text is short: the poster alone, still one "Trailer" element for VoiceOver.
-    var showsLabel = true
+    /// Set for the stacked variant: the poster alone in a fixed box (width x posterHeight), no label, the whole 16:9 frame inside it.
+    var posterHeight: CGFloat? = nil
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(youtubeID)/mqdefault.jpg")) { $0.resizable().aspectRatio(16 / 9, contentMode: .fit) } placeholder: { Color.ink1 }
-                .frame(width: width, height: width * 9 / 16)
-                .background(Color.ink1)
-                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                .overlay {
-                    Image(systemName: "play.fill").font(.title2).foregroundStyle(.white)
-                        .padding(12).background(PlayscribeColor.ink950.opacity(0.6), in: Circle())
-                }
-            if showsLabel {
-                Text("Trailer").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.textPrimary)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
+        Group {
+            if let posterHeight { stackedPoster(posterHeight) } else { sideTile }
         }
-        .frame(width: width, alignment: .leading)
-        .padding(8)
-        .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
         .allowsHitTesting(false)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Trailer")
         .accessibilityAddTraits(.isStaticText)
         .accessibilityIdentifier("stageTrailerTile")
+    }
+
+    private func image() -> some View {
+        AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(youtubeID)/mqdefault.jpg")) { $0.resizable().aspectRatio(16 / 9, contentMode: .fit) } placeholder: { Color.ink1 }
+    }
+
+    private func glyph() -> some View {
+        Image(systemName: "play.fill").font(.system(size: 28)).foregroundStyle(.white)
+            .padding(12).background(PlayscribeColor.ink950.opacity(0.6), in: Circle())
+    }
+
+    private func stackedPoster(_ height: CGFloat) -> some View {
+        image()
+            .frame(width: width, height: height)
+            .background(Color.ink1)
+            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+            .overlay { glyph() }
+    }
+
+    private var sideTile: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            image()
+                .frame(width: width, height: width * 9 / 16)
+                .background(Color.ink1)
+                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .overlay { glyph() }
+            Text("Trailer").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(width: width, alignment: .leading)
+        .padding(8)
+        .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 }
