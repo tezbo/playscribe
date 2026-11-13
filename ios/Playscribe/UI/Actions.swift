@@ -48,7 +48,8 @@ struct ActionMenuContent: View {
                         if item.checked && inDialog { Text("\u{2713} \(item.title)") }
                         else if item.checked { Label(item.title, systemImage: "checkmark") } else { Text(item.title) }
                     }
-                    .accessibilityLabel(item.title)
+                    // A system dialog drops the selected trait (Mac, 3bb7345c), so in the dialog the label says it; menus keep the trait.
+                    .accessibilityLabel(item.checked && inDialog ? "\(item.title), selected" : item.title)
                     .accessibilityAddTraits(item.checked ? .isSelected : [])
                 }
             }
