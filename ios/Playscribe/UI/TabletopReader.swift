@@ -147,10 +147,14 @@ struct TabletopReaderStage: View {
     /// under the status bar band with the panel's current height. At accessibility sizes the stage has no room; "Play trailer"
     /// in the lower half is always there.
     private var stackedTileWidth: CGFloat { 120 }
-    private func stackedTileFits(clearance: CGFloat) -> Bool {
-        let tileHeight = stackedTileWidth * 9 / 16 + 6 + 22 + 16
-        return !typeSize.isAccessibilitySize && trailerTileWidth == 0 && panelHeight > 0
-            && clearance + panelHeight + 8 + tileHeight <= stageHeight - 56
+    /// With its "Trailer" label the tile is about 112 pt tall; without it, 84 pt. The label goes first when the room above the
+    /// text panel is short (the Duo stage with a four-line plate), and the tile is left out only when even the poster does not fit.
+    private func stackedTileLabel(clearance: CGFloat) -> Bool? {
+        guard !typeSize.isAccessibilitySize, trailerTileWidth == 0, panelHeight > 0 else { return nil }
+        let room = stageHeight - 56 - (clearance + panelHeight + 8)
+        let withLabel = stackedTileWidth * 9 / 16 + 6 + 22 + 16
+        let posterOnly = stackedTileWidth * 9 / 16 + 16
+        return room >= withLabel ? true : (room >= posterOnly ? false : nil)
     }
     var gameID: String
 
@@ -237,10 +241,10 @@ struct TabletopReaderStage: View {
                         .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 }
                 .clipped()
-            } else if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first, stackedTileFits(clearance: duo.clearance(forBottom: stageBottom)) {
+            } else if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first, let label = stackedTileLabel(clearance: duo.clearance(forBottom: stageBottom)) {
                 // R-11: no side room, so the poster sits on the panel's leading edge, 8 pt above it. View only.
                 Color.clear.overlay(alignment: .bottomLeading) {
-                    StageTrailerTile(youtubeID: v.youtubeId, width: stackedTileWidth)
+                    StageTrailerTile(youtubeID: v.youtubeId, width: stackedTileWidth, showsLabel: label)
                         .padding(.leading, 16)
                         .padding(.bottom, duo.clearance(forBottom: stageBottom) + panelHeight + 8)
                 }
@@ -338,6 +342,8 @@ extension Array {
 struct StageTrailerTile: View {
     var youtubeID: String
     var width: CGFloat
+    /// False in the stacked variant when the room above the text is short: the poster alone, still one "Trailer" element for VoiceOver.
+    var showsLabel = true
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
@@ -349,8 +355,10 @@ struct StageTrailerTile: View {
                     Image(systemName: "play.fill").font(.title2).foregroundStyle(.white)
                         .padding(12).background(PlayscribeColor.ink950.opacity(0.6), in: Circle())
                 }
-            Text("Trailer").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.textPrimary)
-                .fixedSize(horizontal: false, vertical: true)
+            if showsLabel {
+                Text("Trailer").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.textPrimary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         }
         .frame(width: width, alignment: .leading)
         .padding(8)
