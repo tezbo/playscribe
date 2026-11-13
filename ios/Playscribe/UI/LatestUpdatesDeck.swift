@@ -345,6 +345,8 @@ struct CompactDeckCard: View {
         // The caller gives a `height` that already holds the whole caption at accessibility sizes (measured by the deck's
         // ruler), so nothing can overflow the card; the art and its scrim are the background.
         AdaptiveCaption(card: card)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .brightArtScrim(0.6)
             .frame(maxWidth: .infinity, alignment: .bottomLeading)
             .frame(height: height, alignment: .bottomLeading)
             .background {
@@ -794,6 +796,8 @@ struct DeckStage: View {
                 }
                 .font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
             }
+            // bug-text-on-bright-art: 75% black behind the block, since the ember eyebrow needs more than white lines (Iris 2b).
+            .brightArtScrim(0.75)
             .padding(20)
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             // The caption ends 24 pt above the division, measured in screen space (as in 0.2.0 #174/#176).
@@ -805,4 +809,51 @@ struct DeckStage: View {
         .allowsHitTesting(false)
         .accessibilityElement(children: .contain)
     }
+}
+
+
+/// bug-text-on-bright-art (Iris spec 2b): a fixed black scrim behind a text block over key art, so small text keeps 4.5:1 on
+/// the brightest art. 0% a line and a half above the block, eased, full `strength` from the block's top to 8 pt under its last line, soft
+/// side edges, no box. It belongs to the text, not the art, so it does not move under key-art motion. `strength` is at least
+/// 0.6 behind white lines and 0.75 behind the ember eyebrow ("New update", "Coming soon").
+struct BrightArtScrim: ViewModifier {
+    var strength: Double
+    /// One text line and a half above the block, well under the Tabletop cap of 15% of the stage (about 56 pt).
+    var ramp: CGFloat = 40
+    /// Full strength holds this far under the last line, then eases out over `fade` more, so the bottom is no hard edge either.
+    var tail: CGFloat = 8
+    var fade: CGFloat = 28
+    var feather: CGFloat = 40
+
+    /// An eased (smoothstep-like) ramp so there is no visible edge where the scrim starts.
+    private func eased(_ top: Double) -> [Gradient.Stop] {
+        [0.0, 0.2, 0.4, 0.6, 0.8, 1.0].map { t in
+            let k = t * t * (3 - 2 * t)
+            return Gradient.Stop(color: .black.opacity(top * k), location: t)
+        }
+    }
+
+    func body(content: Content) -> some View {
+        content.background(alignment: .bottom) {
+            VStack(spacing: 0) {
+                LinearGradient(stops: eased(strength), startPoint: .top, endPoint: .bottom).frame(height: ramp)
+                Color.black.opacity(strength)
+                LinearGradient(stops: eased(strength), startPoint: .bottom, endPoint: .top).frame(height: fade)
+            }
+            .mask {
+                HStack(spacing: 0) {
+                    LinearGradient(stops: eased(1), startPoint: .leading, endPoint: .trailing).frame(width: feather)
+                    Color.black
+                    LinearGradient(stops: eased(1), startPoint: .trailing, endPoint: .leading).frame(width: feather)
+                }
+            }
+            .padding(.top, -ramp).padding(.bottom, -(tail + fade)).padding(.horizontal, -feather)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+        }
+    }
+}
+
+extension View {
+    func brightArtScrim(_ strength: Double) -> some View { modifier(BrightArtScrim(strength: strength)) }
 }
