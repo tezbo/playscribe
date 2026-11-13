@@ -96,6 +96,9 @@ test('a hotfix or another version announced inside a post is a different release
   // The sentence for this very version or this very hotfix still holds.
   assert.ok(statedLiveTime('Patch 1.3 Notes\nPatch 1.3 will be available on November 12.', '2026-11-10T10:00:00.000Z'))
   assert.ok(statedLiveTime('Hotfix 9.1.2 Notes\nTomorrow (August 6) we are releasing this hotfix on all platforms.', pub))
+  // A sentence about the console keeps its own build number: "PS5 version 1.05.000" under "Update 1.5" still holds, and so does a console hotfix line.
+  assert.ok(statedLiveTime('Update 1.5\nPS5 version 1.05.000 will be available on November 12 at 02:00 UTC.', '2026-11-10T10:00:00.000Z'))
+  assert.ok(statedLiveTime('Update 1.5 Notes\nThe PlayStation 5 hotfix will be available on November 12.', '2026-11-10T10:00:00.000Z'))
   // A sentence that names no version, in a post that is not a hotfix and says nothing of hotfixes, still holds (DDV).
   assert.ok(statedLiveTime('Season of Scares Update Patch Notes\nOur Season of Scares free update arrives on November 12, 2026.', '2026-11-10T10:00:00.000Z'))
 })

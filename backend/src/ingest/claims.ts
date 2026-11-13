@@ -95,9 +95,11 @@ export const statedLiveTime = (raw: string, publishedAt: string): string | null 
     // "The next patch will be on January 3" is a different release from the one this post is about.
     if (NEXT_RELEASE.test(sentence)) continue
     // A hotfix announced inside a post that is not a hotfix, or a named version that is not this post's, is another release's time.
-    if (!titleHotfix && HOTFIX.test(sentence)) continue
+    // Not when the sentence is about PS5, PlayStation or consoles: its build numbers ("PS5 version 1.05.000") are the console's, not another release's.
+    const aboutConsoles = /\b(ps5|playstation|consoles?)\b/i.test(sentence)
+    if (!aboutConsoles && !titleHotfix && HOTFIX.test(sentence)) continue
     const named = versionsIn(sentence)
-    if (named.size && titleVersions.size && ![...named].some((v) => titleVersions.has(v))) continue
+    if (!aboutConsoles && named.size && titleVersions.size && ![...named].some((v) => titleVersions.has(v))) continue
     const ownDay = !(TIME.test(sentence) && /utc|gmt/i.test(sentence)) && new Date(Date.UTC(yearText ? Number(yearText) : new Date(published).getUTCFullYear(), mi, day)).toISOString().slice(0, 10) === publishedAt.slice(0, 10)
     // A sentence that puts the release on the post's own day says the post is the release: nothing else in it is a hold.
     if (ownDay && RELEASE_WORDS.test(sentence) && !NOT_A_RELEASE.test(sentence)) return null
