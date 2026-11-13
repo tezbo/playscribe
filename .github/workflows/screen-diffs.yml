@@ -141,6 +141,8 @@ jobs:
           note=""
           # If the PR's tests use app code main doesn't have yet, main can't build with them: use main's own tests instead.
           if [ "$n" -eq 0 ] && [ "${{ matrix.side }}" = before ]; then
+            # Test files the PR adds are not on main; checkout alone leaves them behind and the build still fails on them.
+            git diff --name-only --diff-filter=A "${{ needs.scope.outputs.base }}" HEAD -- ios/PlayscribeTests | xargs -r rm -f
             git checkout "${{ needs.scope.outputs.base }}" -- ios/PlayscribeTests
             (cd ios && xcodegen generate)
             render
