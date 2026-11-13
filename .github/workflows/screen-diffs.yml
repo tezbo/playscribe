@@ -1,0 +1,316 @@
+name: Screen diffs
+
+# On every pull request: render the fold-harness screen matrix for main and for the PR (two parallel jobs on the free xcode-27
+# runner), compare them, and keep one PR comment that lists only the screens that changed, with before, after and diff images.
+# Pass bar (Quinn and Iris, card qa-screen-diffs-on-prs) is in ios/tools/qa/screen_diff.py; docs/screen-diffs.md has the rest.
+#  - "Before" is always main's latest commit (the merge ref's first parent), rendered in this run, so the comparison is on the
+#    same runner image minutes apart and names the main SHA it used. References change only by merging to main.
+#  - Advisory, like Precheck: every job finishes green (no failed-run email); the verdict is the last job's name.
+#  - Unchanged does not mean signed. Release gates stay Mac stills of the exact SHA.
+#  - Images for the comment are committed to the screen-diffs branch (pr-<n>/<sha>/), which the workflow owns. The comment
+#    links them by that commit's SHA, so a link keeps working after later runs (Iris: branch-name links went 404).
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency:
+  group: screen-diffs-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  XCODE_APP: /Applications/Xcode_27.1.app
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+  HOMEBREW_NO_ANALYTICS: 1
+  # The matrix: every pose at std and AX5, AX3 in Closed and Tabletop only (Iris), five screens.
+  SIZES: std,ax3,ax5
+  AX3_POSES: closed,tabletop
+  SCREENS: library,game,updates,settings,upcoming
+
+jobs:
+  scope:
+    # Same-repo PRs only: a fork's token cannot comment.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      app: ${{ steps.s.outputs.app }}
+      base: ${{ steps.s.outputs.base }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 2 }
+      - id: s
+        run: |
+          base=$(git rev-parse HEAD^1)
+          echo "base=$base" >> "$GITHUB_OUTPUT"
+          # Anything that can change a still: the app, shared code, the project file, the harness itself.
+          if git diff --quiet "$base" HEAD -- ios/Playscribe ios/Shared ios/PlayscribeWidget ios/project.yml ios/PlayscribeTests/Harness; then
+            echo "app=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "app=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  render:
+    needs: scope
+    if: needs.scope.outputs.app == 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        side: [before, after]
+        # One job a side. Run 3 tried two pose groups a side (four jobs): the free pool gave three macOS runners at once, so the
+        # fourth job waited 13 min and the run took longer, not shorter.
+        group: [all]
+        poses: ['closed,closedLandscape,open,openPortrait,book,tabletop']
+    runs-on: xcode-27
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 2 }
+      - name: "Before side: put main's app sources in place (the PR's harness stays, so both sides use the same harness)"
+        if: matrix.side == 'before'
+        run: |
+          base=${{ needs.scope.outputs.base }}
+          for p in ios/Playscribe ios/Shared ios/PlayscribeWidget; do
+            git diff --name-only --diff-filter=A "$base" HEAD -- "$p" | xargs -r rm -f
+          done
+          git checkout "$base" -- ios/Playscribe ios/Shared ios/PlayscribeWidget ios/project.yml
+          git status --short | head -20
+      - run: command -v xcodegen >/dev/null || brew install xcodegen; (cd ios && xcodegen generate)
+      - run: sudo xcode-select -s "$XCODE_APP" && xcodebuild -version
+      - name: Pick an iOS 27.1 simulator
+        id: sim
+        run: |
+          udid=$(xcrun simctl list devices available -j | python3 -c "
+          import json, sys
+          d = json.load(sys.stdin)['devices']
+          phones = [x for k in d if 'iOS-27-1' in k for x in d[k] if 'iPhone' in x['name']]
+          phones.sort(key=lambda x: 'Duo' not in x['name'])
+          print(phones[0]['udid'] if phones else '')
+          ")
+          echo "udid=$udid" >> "$GITHUB_OUTPUT"
+      - name: "Steady shots: no art or feed network, Reduce Motion on"
+        run: |
+          # Remote art loads on one run and not the other, and drifting key art is caught mid-move: both make false alarms
+          # (first #485 run). Block the app's hosts so remote art falls back to bundled art or the title plate on both sides,
+          # and turn Reduce Motion on in the simulator so ArtView never drifts.
+          # The feed (PlayscribeAPIBaseURL) is on raw.githubusercontent.com: run 9 had the KCD II page with its Steam link on
+          # one side only, because the per-game feed loaded on one side and not the other. Block it and the relay too.
+          for h in images.igdb.com www.youtube.com www.youtube-nocookie.com i.ytimg.com playscribe.app playscribe.codeconnectors.co \
+                   raw.githubusercontent.com playscribe-relay.playscribe.workers.dev; do
+            echo "0.0.0.0 $h" | sudo tee -a /etc/hosts >/dev/null
+          done
+          sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder 2>/dev/null || true
+          curl -sS -m 5 -o /dev/null -w 'igdb from runner: %{http_code}\n' https://images.igdb.com/ || echo "igdb from runner: blocked"
+          curl -sS -m 5 -o /dev/null -w 'feed from runner: %{http_code}\n' https://raw.githubusercontent.com/tezbo/playscribe/feed/v1/latest.json || echo "feed from runner: blocked"
+      - name: Render the matrix
+        env:
+          TEST_RUNNER_HARNESS_PNG_DIR: ${{ github.workspace }}/stills
+          TEST_RUNNER_HARNESS_POSES: ${{ matrix.poses }}
+          TEST_RUNNER_HARNESS_SIZES: ${{ env.SIZES }}
+          TEST_RUNNER_HARNESS_AX3_POSES: ${{ env.AX3_POSES }}
+          TEST_RUNNER_HARNESS_SCREENS: ${{ env.SCREENS }}
+          TEST_RUNNER_HARNESS_SPLIT: '1'
+          TEST_RUNNER_HARNESS_STABLE: '1'
+          # Same-day games (Coming to PS5) came out in a different order on each side in run 7: Swift seeds hashing per process.
+          TEST_RUNNER_SWIFT_DETERMINISTIC_HASHING: '1'
+        run: |
+          udid=${{ steps.sim.outputs.udid }}
+          render() {
+            rm -rf stills; mkdir -p stills
+            t=$SECONDS
+            # Build first, then boot: run 4 booted during the build and the build took 640 s instead of about 150 (CPU contention).
+            xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme Playscribe \
+              -destination 'generic/platform=iOS Simulator' -derivedDataPath dd CODE_SIGNING_ALLOWED=NO > stills/build.log 2>&1 || true
+            echo "build $(( SECONDS - t )) s"; t=$SECONDS
+            xcrun simctl boot "$udid" 2>/dev/null || true
+            xcrun simctl bootstatus "$udid" -b >/dev/null 2>&1 || true
+            xcrun simctl spawn "$udid" defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
+            echo "boot wait $(( SECONDS - t )) s; ReduceMotionEnabled=$(xcrun simctl spawn "$udid" defaults read com.apple.Accessibility ReduceMotionEnabled 2>&1)"
+            t=$SECONDS
+            xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme Playscribe \
+              -destination "id=$udid" -derivedDataPath dd \
+              -only-testing:PlayscribeTests/HarnessStillsTests \
+              CODE_SIGNING_ALLOWED=NO >> stills/build.log 2>&1 || true
+            echo "render $(( SECONDS - t )) s"
+          }
+          render
+          n=$(ls stills/*.png 2>/dev/null | wc -l | tr -d ' ')
+          note=""
+          # If the PR's tests use app code main doesn't have yet, main can't build with them: use main's own tests instead.
+          if [ "$n" -eq 0 ] && [ "${{ matrix.side }}" = before ]; then
+            git checkout "${{ needs.scope.outputs.base }}" -- ios/PlayscribeTests
+            (cd ios && xcodegen generate)
+            render
+            n=$(ls stills/*.png 2>/dev/null | wc -l | tr -d ' ')
+            note="main rendered with main's own harness (the PR's tests did not build against main)"
+          fi
+          grep -E 'harness still|error:|\*\* TEST' stills/build.log | grep -v '\[info' | tail -40 || true
+          {
+            echo "side=${{ matrix.side }}"
+            echo "sha=$([ '${{ matrix.side }}' = before ] && echo '${{ needs.scope.outputs.base }}' || echo '${{ github.event.pull_request.head.sha }}')"
+            echo "image=${ImageOS:-?} ${ImageVersion:-?}"
+            echo "xcode=$(xcodebuild -version | tr '\n' ' ')"
+            echo "stills=$n"
+            echo "note=$note"
+            echo "poses=${{ matrix.poses }}"
+          } > stills/meta-${{ matrix.group }}.txt
+          cat stills/meta-${{ matrix.group }}.txt
+          exit 0
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screens-${{ matrix.side }}-${{ matrix.group }}
+          path: stills/
+          if-no-files-found: ignore
+          retention-days: 14
+
+  compare:
+    needs: [scope, render]
+    # Not after a cancel: a newer push cancels this run, and a comment from half a run would say no stills were written.
+    if: ${{ !cancelled() && needs.scope.outputs.app == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    # One writer at a time for the screen-diffs branch.
+    concurrency:
+      group: screen-diffs-branch
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      verdict: ${{ steps.diff.outputs.verdict }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ github.event.pull_request.number }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/download-artifact@v4
+        with: { pattern: screens-before-*, path: shots/before, merge-multiple: true }
+        continue-on-error: true
+      - uses: actions/download-artifact@v4
+        with: { pattern: screens-after-*, path: shots/after, merge-multiple: true }
+        continue-on-error: true
+      - name: Compare
+        id: diff
+        run: |
+          pip install -q pillow
+          short() { echo "${1:0:7}"; }
+          # The images' commit isn't known yet: the publish step swaps @@IMAGES@@ for its SHA-pinned URL.
+          prefix="@@IMAGES@@"
+          notes=()
+          for side in before after; do
+            for g in all; do
+              f=shots/$side/meta-$g.txt
+              [ -f $f ] || { notes+=(--note "The $side render did not finish; see the run log."); continue; }
+              n=$(grep '^note=' $f | cut -d= -f2-); [ -n "$n" ] && notes+=(--note "$n")
+            done
+          done
+          images=$(cat shots/*/meta-*.txt 2>/dev/null | grep '^image=' | cut -d= -f2- | sort -u | paste -sd ';' -)
+          case "$images" in *';'*) notes+=(--note "The jobs ran on different runner images ($images), so font or system changes may show as false alarms.");; esac
+          set +e
+          out=$(python3 ios/tools/qa/screen_diff.py shots/before shots/after diffs \
+            --base-sha "$(short ${{ needs.scope.outputs.base }})" --head-sha "$(short $HEAD_SHA)" \
+            --image-url "$prefix" --run-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" "${notes[@]}")
+          rc=$?
+          set -e
+          echo "$out"
+          if [ $rc -eq 0 ]; then echo "verdict=$out" >> "$GITHUB_OUTPUT"; else echo "verdict=SCREENS compare failed (see log)" >> "$GITHUB_OUTPUT"; fi
+      - name: Publish the images to the screen-diffs branch
+        id: publish
+        if: hashFiles('diffs/*.png') != ''
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -rf ../site
+          # Add a commit on top (never force): earlier comments link earlier commits by SHA, so those must stay reachable.
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git clone -q --depth 1 --branch screen-diffs "$remote" ../site 2>/dev/null || { mkdir ../site && git -C ../site init -q -b screen-diffs; }
+          cd ../site
+          # Keep the other PRs' folders for 21 days after their last run; this PR keeps only its latest SHA (older ones stay in
+          # history, which is what the older comments link).
+          for d in pr-*/; do
+            [ -d "$d" ] || continue
+            [ -f "$d/when.txt" ] && [ $(( $(date +%s) - $(cat "$d/when.txt") )) -gt 1814400 ] && rm -rf "$d"
+          done
+          rm -rf "pr-$PR"; mkdir -p "pr-$PR/${HEAD_SHA:0:7}"
+          cp "$GITHUB_WORKSPACE"/diffs/*.png "pr-$PR/${HEAD_SHA:0:7}/"
+          date +%s > "pr-$PR/when.txt"
+          printf 'Images for the Screen diffs PR comments. Written only by .github/workflows/screen-diffs.yml; safe to delete.\n' > README.md
+          # Each run adds about 5 MB of history. Every 50 runs, start the branch again from one commit holding only the current
+          # folders (card qa-screen-diffs-branch-reset). Older comment images then stop loading once GitHub drops the old commits;
+          # the open PRs' comments are refreshed by their next push. The lease stops a reset from dropping a run that pushed meanwhile.
+          base=$(git rev-parse -q --verify HEAD || true)
+          runs=$(( $(cat runs.txt 2>/dev/null || echo 0) + 1 ))
+          reset=0
+          if [ -n "$base" ] && [ "$runs" -gt 50 ]; then
+            reset=1; runs=1
+            git checkout -q --orphan fresh
+          fi
+          echo "$runs" > runs.txt
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "Screen diffs for #$PR at ${HEAD_SHA:0:7}"
+          if [ "$reset" = 1 ]; then
+            echo "Resetting the screen-diffs branch to one commit (was $base)"
+            git push -q --force-with-lease="screen-diffs:$base" "$remote" HEAD:screen-diffs
+          else
+            git push -q "$remote" HEAD:screen-diffs
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Post or update the PR comment
+        if: hashFiles('diffs/comment.md') != ''
+        continue-on-error: true
+        run: |
+          ref=${{ steps.publish.outputs.sha }}; ref=${ref:-screen-diffs}
+          sed -i "s#@@IMAGES@@#https://raw.githubusercontent.com/${{ github.repository }}/$ref/pr-$PR/${HEAD_SHA:0:7}#g" diffs/comment.md
+          # The run page keeps this comment as it was for this SHA, after later runs edit the PR comment.
+          cat diffs/comment.md >> "$GITHUB_STEP_SUMMARY"
+          id=$(gh api "repos/${{ github.repository }}/issues/$PR/comments" --paginate \
+            --jq '.[] | select(.user.login == "github-actions[bot]") | select(.body | startswith("<!-- screen-diffs -->")) | .id' | head -1)
+          if [ -n "$id" ]; then gh api -X PATCH "repos/${{ github.repository }}/issues/comments/$id" -F body=@diffs/comment.md >/dev/null
+          else gh api "repos/${{ github.repository }}/issues/$PR/comments" -F body=@diffs/comment.md >/dev/null; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screen-diffs
+          path: diffs/
+          if-no-files-found: ignore
+          retention-days: 14
+
+  no-app-change:
+    needs: scope
+    if: needs.scope.outputs.app == 'false'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ github.event.pull_request.number }}
+    steps:
+      - name: Post or update the PR comment
+        continue-on-error: true
+        run: |
+          printf '%s\n' '<!-- screen-diffs -->' '### Screen diffs: nothing changed' '' \
+            "This PR changes no app, shared, project or harness files against main \`${{ needs.scope.outputs.base }}\`, so no screen can have changed. No stills were rendered." \
+            '' '---' '_Generated by the Screen diffs workflow (.github/workflows/screen-diffs.yml)_' > comment.md
+          id=$(gh api "repos/${{ github.repository }}/issues/$PR/comments" --paginate \
+            --jq '.[] | select(.user.login == "github-actions[bot]") | select(.body | startswith("<!-- screen-diffs -->")) | .id' | head -1)
+          if [ -n "$id" ]; then gh api -X PATCH "repos/${{ github.repository }}/issues/comments/$id" -F body=@comment.md >/dev/null
+          else gh api "repos/${{ github.repository }}/issues/$PR/comments" -F body=@comment.md >/dev/null; fi
+
+  verdict:
+    needs: [scope, compare, no-app-change]
+    if: always()
+    name: ${{ needs.compare.outputs.verdict || (needs.scope.outputs.app == 'false' && 'SCREENS nothing to compare (no app files changed)') || 'SCREENS did not run (runner problem)' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "$V"
+        env:
+          V: ${{ needs.compare.outputs.verdict }}

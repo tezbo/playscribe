@@ -1,0 +1,175 @@
+name: Release to TestFlight
+
+# Manual only. Tags a green main commit vX.Y.Z and builds it for TestFlight, so no one has to push a tag from a Mac
+# (agents' git pushes cannot create tags: the proxy returns 403). This removes a manual step; it does NOT replace
+# Terry's go. Publishing to TestFlight still needs Terry's plain yes for that version, quoted in `approval`.
+#
+# Guards, all before anything is created:
+#   - the workflow itself runs from main;
+#   - version is X.Y.Z, sha is a full 40-character SHA, approval is at least 10 characters;
+#   - the SHA is on main (main is that commit or a descendant of it);
+#   - the SHA is green: every push-triggered workflow run on it finished success/skipped/neutral (none failed,
+#     was cancelled or is still running), and an iOS (ios.yml) run succeeded on it or on a recent main commit with
+#     an identical ios/ tree (a docs-only commit gets no iOS run of its own). An earlier
+#     TestFlight build of the same tag is left out, so a failed upload can be re-run;
+#   - CHANGELOG.md at that SHA has a `## X.Y.Z` section with no "candidate" in its heading;
+#   - tag vX.Y.Z does not exist, or already points at exactly this SHA (re-running a failed build).
+# Then the tag job waits for Terry's Approve (environment "testflight", required reviewer tezbo), tags with the
+# workflow token (which fires no push event, so this workflow calls testflight.yml itself), and after a successful
+# upload creates the GitHub release with the CHANGELOG section as notes.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release, e.g. 0.5.4 (tag becomes v0.5.4)'
+        required: true
+      sha:
+        description: 'Full 40-character main commit SHA that was signed off'
+        required: true
+      approval:
+        description: "Where Terry said go for this version (message id or quote), at least 10 characters"
+        required: true
+      dry_run:
+        description: 'true runs every guard and stops before tagging; set false for the real release'
+        type: boolean
+        default: true
+      notes_only:
+        description: 'true only creates the GitHub release for a tag that already exists at sha (no tag, no build)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency: release
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      tag: ${{ steps.guards.outputs.tag }}
+      existing: ${{ steps.guards.outputs.existing }}
+    steps:
+      - name: Check every guard
+        id: guards
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          VERSION: ${{ inputs.version }}
+          SHA: ${{ inputs.sha }}
+          APPROVAL: ${{ inputs.approval }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          NOTES_ONLY: ${{ inputs.notes_only }}
+        run: |
+          set -euo pipefail
+          refuse() { echo "::error::refused: $*"; echo "Refused: $*" >> "$GITHUB_STEP_SUMMARY"; exit 1; }
+
+          [ "$GITHUB_REF" = "refs/heads/main" ] || refuse "run this workflow from main, not $GITHUB_REF"
+          [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || refuse "version must look like 0.5.4"
+          [[ "$SHA" =~ ^[0-9a-f]{40}$ ]] || refuse "sha must be 40 lowercase hex characters"
+          [ "${#APPROVAL}" -ge 10 ] || refuse "approval reference must be at least 10 characters"
+          tag="v$VERSION"
+
+          # On main: compare SHA...main is "identical" (main is the SHA) or "ahead" (main descends from it).
+          rel=$(gh api "repos/$REPO/compare/$SHA...main" --jq .status) || refuse "cannot compare $SHA with main"
+          case "$rel" in identical|ahead) ;; *) refuse "$SHA is not on main (main is $rel)";; esac
+
+          # Green: every push-triggered run on the SHA finished cleanly, and iOS passed on it.
+          runs=$(gh api --paginate "repos/$REPO/actions/runs?head_sha=$SHA&per_page=100" \
+            --jq '.workflow_runs[] | [.event, .path, .status, (.conclusion // "none"), .html_url] | @tsv')
+          echo "Runs on $SHA:"; echo "${runs:-  (none)}"
+          bad=$(printf '%s\n' "$runs" | awk -F'\t' '$1=="push" && $2!=".github/workflows/testflight.yml" && !($3=="completed" && ($4=="success" || $4=="skipped" || $4=="neutral"))')
+          [ -z "$bad" ] || refuse "not green, these push runs did not pass: $(printf '%s' "$bad" | cut -f2,3,4 | tr '\t\n' ' ;')"
+          ios=$(printf '%s\n' "$runs" | awk -F'\t' '$2==".github/workflows/ios.yml" && $3=="completed" && $4=="success"' | wc -l)
+          if [ "$ios" -lt 1 ]; then
+            # A docs-only commit gets no iOS run. Accept it when its ios/ tree is identical to a main commit whose
+            # iOS run succeeded (same app code, already tested).
+            ios_tree() { gh api "repos/$REPO/git/trees/$(gh api "repos/$REPO/commits/$1" --jq .commit.tree.sha)" --jq '.tree[] | select(.path == "ios") | .sha'; }
+            want=$(ios_tree "$SHA")
+            [ -n "$want" ] || refuse "$SHA has no ios/ directory"
+            for c in $(gh api "repos/$REPO/actions/workflows/ios.yml/runs?branch=main&status=success&per_page=15" --jq '.workflow_runs[].head_sha' | awk '!seen[$0]++'); do
+              if [ "$(ios_tree "$c")" = "$want" ]; then echo "No iOS run on $SHA, but its ios/ tree matches $c, whose iOS run passed."; ios=1; break; fi
+            done
+          fi
+          [ "$ios" -ge 1 ] || refuse "no successful iOS run on $SHA or on a main commit with the same ios/ tree. If it is main's tip, run ios.yml on main first, then retry"
+
+          # The release notes at that SHA.
+          gh api "repos/$REPO/contents/CHANGELOG.md?ref=$SHA" --jq .content | base64 -d > CHANGELOG.md
+          heading=$(grep -E "^## ${VERSION//./\\.}( |$)" CHANGELOG.md | head -1 || true)
+          [ -n "$heading" ] || refuse "CHANGELOG.md at $SHA has no '## $VERSION' section"
+          case "$heading" in *candidate*) refuse "the '## $VERSION' heading still says candidate";; esac
+
+          # The tag: new, or already exactly this SHA.
+          existing=$(gh api "repos/$REPO/git/matching-refs/tags/$tag" --jq ".[] | select(.ref == \"refs/tags/$tag\") | .object.sha")
+          if [ -n "$existing" ]; then
+            # An annotated tag points at a tag object; peel it to its commit.
+            peeled=$(gh api "repos/$REPO/commits/$tag" --jq .sha)
+            [ "$peeled" = "$SHA" ] || refuse "$tag already exists at $peeled"
+            echo "$tag already points at $SHA; rebuilding it."
+          fi
+
+          if [ "$NOTES_ONLY" = "true" ] && [ -z "$existing" ]; then refuse "notes_only needs $tag to exist already"; fi
+
+          {
+            echo "### $tag at \`$SHA\`"
+            echo "Every guard passed. Approval: $APPROVAL"
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "$DRY_RUN" = "true" ]; then echo "Dry run: every guard passed, nothing tagged or built." | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; fi
+
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "existing=$existing" >> "$GITHUB_OUTPUT"
+
+  # Waits here for Terry's Approve when the "testflight" environment has him as a required reviewer
+  # (Settings > Environments). Nothing is tagged or built before that tap.
+  tag:
+    needs: check
+    if: needs.check.outputs.tag != '' && !inputs.notes_only
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: testflight
+    outputs:
+      tag: ${{ needs.check.outputs.tag }}
+    steps:
+      - name: Tag the commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          TAG: ${{ needs.check.outputs.tag }}
+          SHA: ${{ inputs.sha }}
+          EXISTING: ${{ needs.check.outputs.existing }}
+          APPROVAL: ${{ inputs.approval }}
+        run: |
+          set -euo pipefail
+          if [ -n "$EXISTING" ]; then echo "$TAG already at $SHA"; exit 0; fi
+          gh api -X POST "repos/$REPO/git/refs" -f ref="refs/tags/$TAG" -f sha="$SHA" > /dev/null
+          echo "Tagged $TAG at $SHA. Approval: $APPROVAL" | tee -a "$GITHUB_STEP_SUMMARY"
+
+  testflight:
+    needs: tag
+    uses: ./.github/workflows/testflight.yml
+    with:
+      tag: ${{ needs.tag.outputs.tag }}
+    secrets: inherit
+
+  # The GitHub release for the tag, with the CHANGELOG section as its notes (kept if one already exists).
+  github-release:
+    needs: [check, tag, testflight]
+    if: ${{ !cancelled() && needs.check.outputs.tag != '' && (inputs.notes_only || needs.testflight.result == 'success') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          TAG: ${{ needs.check.outputs.tag }}
+          SHA: ${{ inputs.sha }}
+        run: |
+          set -euo pipefail
+          if gh release view "$TAG" --repo "$REPO" > /dev/null 2>&1; then echo "Release $TAG already exists"; exit 0; fi
+          gh api "repos/$REPO/contents/CHANGELOG.md?ref=$SHA" --jq .content | base64 -d > CHANGELOG.md
+          version="${TAG#v}"
+          awk -v h="## $version" 'index($0, h) == 1 && (length($0) == length(h) || substr($0, length(h) + 1, 1) == " ") {on=1; next} on && /^## / {exit} on {print}' CHANGELOG.md > notes.md
+          gh release create "$TAG" --repo "$REPO" --verify-tag --title "$TAG" --notes-file notes.md

@@ -115,6 +115,27 @@ struct SettingsView: View {
                              : "Alerts arrive silently during these hours.")
                     }
                 }
+                // 0.5.4, N-9: the follow list without alerts. Off until the player chooses; the copy is KeepCurrentCopy (Ezra).
+                Section {
+                    Toggle(KeepCurrentCopy.settingsTitle, isOn: Binding(get: { model.data.keepCurrent == true }, set: { model.setKeepCurrent($0) }))
+                        .frame(minHeight: 52)
+                        .accessibilityValue(model.data.keepCurrent == true ? "on. \(KeepCurrentCopy.settingsOnVoiceOver)" : "off")
+                        .accessibilityHint(KeepCurrentCopy.settingsHint)
+                        .accessibilityIdentifier("keepCurrent")
+                    NavigationLink(KeepCurrentCopy.whatIsSent) { KeepCurrentDetailsView() }
+                        .frame(minHeight: 44)
+                        .accessibilityIdentifier("keepCurrentWhatIsSent")
+                } header: {
+                    Text("Keep my games up to date")
+                } footer: {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(KeepCurrentCopy.settingsCaption)
+                        // "Last sent: today", so you can see it working; nothing before the first follow is sent.
+                        if model.data.keepCurrent == true, let line = KeepCurrentCopy.lastSent(PushRegistrar.keepCurrentLastSent) {
+                            Text(line).accessibilityIdentifier("keepCurrentLastSent")
+                        }
+                    }
+                }
                 Section {
                     // Not everyone has PS Plus: the Library card is on by default and can be hidden. Off also stops the reminder.
                     Toggle("PS Plus card in Library", isOn: Binding(get: { model.data.plusCardOff != true }, set: { model.data.plusCardOff = $0 ? nil : true }))
@@ -158,8 +179,11 @@ struct SettingsView: View {
                 } header: {
                     Text("Video")
                 } footer: {
-                    Text("Trailers and update videos start as soon as they open. Reflection mode adds a soft mirror of the video under the controls when the Duo stands folded like a laptop. Both are off when Reduce Motion is on.")
+                    Text("Trailers and update videos start as soon as they open. Reflection mode adds a soft mirror of the video under the controls when the Duo stands folded like a laptop. With Reduce Motion on, videos never start on their own and the mirror stays still.")
                 }
+
+                // 0.7 front cover (duo-closed-cover): internal preview only until the Library wraps it.
+                CoverMotionSection()
 
                 #if INTERNAL
                 if BuildChannel.showsTeamAlerts {
@@ -222,6 +246,8 @@ struct SettingsView: View {
                     }
                 } footer: {
                     Text("Artwork and trailers belong to their publishers. \(Brand.trademarkNotice)")
+                        // The form's last line: the UI tests scroll to it to prove every row above is reachable.
+                        .accessibilityIdentifier("settingsLastLine")
                 }
             }
             // 24 pt between a footer and the next section's title (Iris, 0.5.1 spec 1).
@@ -238,6 +264,8 @@ struct SettingsView: View {
                 }
             }
             .onAppear { if simGame.isEmpty { simGame = model.libraryRows.first?.id ?? "" } }
+            // 0.7 front cover preview (internal): opened by -qaRoute cover or the button in the cover section.
+            .frontCoverPreview()
         }
         .presentationPlacement(duo.pose == .closed ? .automatic : .trailing)
     }

@@ -5,8 +5,13 @@ import { join } from 'node:path'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
 import { seedGames, trackedGames } from '../src/ingest/pipeline.ts'
-import { deviceRows, scrubDevices, syncDevices, type RelayDevice } from '../src/push/relay.ts'
-import { fakeFetch } from './helpers.ts'
+import { deadTokens, deviceRows, reportDead, scrubDevices, syncDevices, type RelayDevice } from '../src/push/relay.ts'
+import { createHash } from 'node:crypto'
+import { confirmPlatform } from '../src/confirm.ts'
+import { runIngest } from '../src/ingest/pipeline.ts'
+import { pushPs5Release, tokenSha } from '../src/push/notify.ts'
+import type { Apns } from '../src/push/apns.ts'
+import { fakeFetch, rss } from './helpers.ts'
 
 const dev = (id: string, c: string, over: Partial<RelayDevice> = {}): RelayDevice => ({
   id, token: c.repeat(64), environment: 'production', locale: null, quiet: null, follows: [{ gameId: 'dawnwalker', notify: 'all' }], updated: '2026-11-05T00:00:00.000Z', ...over,
@@ -66,4 +71,57 @@ test('relay: a follow-list opt-in record (no token, ids only) loads, puts its ga
   assert.equal(deviceRows(db), 2)
   scrubDevices(db)
   assert.equal(deviceRows(db), 0)
+})
+
+// r071-relay-dead-tokens
+test('relay dead tokens: a dead push is noted by token hash (never the token), reported in batches of 6, and scrubbed', async () => {
+  const dir = mkdtempSync(join(tmpdir(), 'relay-dead-'))
+  const path = join(dir, 'state.db')
+  const db = openDb(path)
+  const fetchFn = fakeFetch({
+    'https://blog.playstation.com/feed/': rss([{ title: 'Black Myth: Wukong Update 1.2 detailed for PS5', link: 'https://blog.playstation.com/wukong', date: new Date().toISOString(), body: '<ul><li>Added new boss</li></ul>' }]),
+  })
+  await seedGames({ db, fetchFn, igdb: null })
+  await runIngest({ db, fetchFn, igdb: null })
+  const tokens = { gone: 'a1'.repeat(32), bad: 'b2'.repeat(32), wrongTopic: 'c3'.repeat(32), ok: 'd4'.repeat(32), busy: 'e5'.repeat(32) }
+  syncDevices(db, Object.entries(tokens).map(([id, t]) => dev(id, 'x', { token: t, follows: [{ gameId: 'wukong', notify: 'all' }] })))
+  const answers: Record<string, { status: number; reason?: string }> = {
+    [tokens.gone]: { status: 410, reason: 'Unregistered' },
+    [tokens.bad]: { status: 400, reason: 'BadDeviceToken' },
+    [tokens.wrongTopic]: { status: 400, reason: 'DeviceTokenNotForTopic' },
+    [tokens.ok]: { status: 200 },
+    [tokens.busy]: { status: 429, reason: 'TooManyRequests' },
+  }
+  const apns = { send: async (t: string) => answers[t] } as unknown as Apns
+  const id = (db.prepare("SELECT id FROM releases WHERE game_id = 'wukong'").get() as { id: string }).id
+  confirmPlatform(db, id, 'ps5', { sourceId: 'playstation-blog', version: '01.006.000' })
+  const out = await pushPs5Release(db, apns, id, { maxAgeHours: 72 })
+  assert.deepEqual([out.sent, out.failed], [1, 4])
+  const reports = deadTokens(db)
+  assert.deepEqual(reports.map((r) => r.id), ['bad', 'gone', 'wrongTopic'], 'a 429 is not a dead token')
+  assert.equal(reports.find((r) => r.id === 'gone')!.tokenSha, createHash('sha256').update(tokens.gone).digest('hex'))
+  assert.equal(tokenSha(tokens.gone.toUpperCase()), reports.find((r) => r.id === 'gone')!.tokenSha, 'hashed lower-case, as the relay stores it')
+  assert.ok(reports.every((r) => !Object.values(tokens).some((t) => JSON.stringify(r).includes(t))), 'no token in a report')
+
+  // Twelve reports go as two batches of 6; a refused batch is counted, not thrown.
+  const many = Array.from({ length: 13 }, (_, i) => ({ id: `d${i}`, tokenSha: '0'.repeat(64) }))
+  const bodies: any[] = []
+  const relay = (async (url: string, init: RequestInit) => {
+    const body = JSON.parse(String(init.body))
+    bodies.push({ url, auth: (init.headers as Record<string, string>).authorization, n: body.devices.length })
+    if (bodies.length === 3) return new Response('{"error":"nope"}', { status: 500 })
+    return Response.json({ removed: body.devices.length - 1, cleared: 1, skipped: 0 })
+  }) as typeof fetch
+  const r = await reportDead(many, 'https://relay.test', 'adm', relay)
+  assert.deepEqual(bodies.map((b) => b.n), [6, 6, 1])
+  assert.ok(bodies.every((b) => b.url === 'https://relay.test/admin/devices/dead' && b.auth === 'Bearer adm'))
+  assert.deepEqual(r, { removed: 10, cleared: 2, skipped: 0, failedBatches: 1 })
+
+  // The notes go with the devices, before anything is published.
+  assert.equal(deviceRows(db), 8)
+  scrubDevices(db)
+  assert.equal(deviceRows(db), 0)
+  db.close()
+  const bytes = readFileSync(path)
+  for (const rep of reports) assert.ok(!bytes.includes(rep.tokenSha), 'no token hash survives the scrub')
 })
