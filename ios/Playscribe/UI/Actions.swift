@@ -97,43 +97,52 @@ struct RailMenuList: View {
     var done: () -> Void
     @State private var contentHeight: CGFloat = 0
     @State private var moreBelow = false
-    private let cap: CGFloat = 300
+    private let cap: CGFloat = 340
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                Text(title).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                    .padding(.horizontal, 16).padding(.top, 12).padding(.bottom, 4)
-                    .accessibilityAddTraits(.isHeader)
-                ForEach(sections) { section in
-                    if let t = section.title, !t.isEmpty {
-                        Text(t).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                            .padding(.horizontal, 16).padding(.top, 8)
-                    }
-                    ForEach(section.items) { item in
-                        Button(role: item.destructive ? .destructive : nil) { done(); item.action() } label: {
-                            HStack(spacing: 8) {
-                                Text(item.title).multilineTextAlignment(.leading)
-                                Spacer(minLength: 8)
-                                if item.checked { Image(systemName: "checkmark").accessibilityHidden(true) }
-                            }
-                            .padding(.horizontal, 16).frame(minHeight: 44).contentShape(Rectangle())
+        // The title is pinned outside the scroll area so it can never fill the list (Mac, 4318d26: at AX5 it filled all 300 pt and no
+        // row showed). Text is held at AX2 inside: the rows stay whole words and the four choices fit without a drag where they can.
+        VStack(alignment: .leading, spacing: 0) {
+            Text(title).font(PlayscribeFont.footnote).foregroundStyle(.secondary).lineLimit(1)
+                .padding(.horizontal, 16).padding(.top, 12).padding(.bottom, 4)
+                .accessibilityAddTraits(.isHeader)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    ForEach(sections) { section in
+                        if let t = section.title, !t.isEmpty {
+                            Text(t).font(PlayscribeFont.footnote).foregroundStyle(.secondary).lineLimit(2)
+                                .padding(.horizontal, 16).padding(.top, 4).padding(.bottom, 2)
                         }
-                        .accessibilityAddTraits(item.checked ? .isSelected : [])
-                        .accessibilityIdentifier("railMenuRow")
+                        ForEach(section.items) { item in
+                            Button(role: item.destructive ? .destructive : nil) { done(); item.action() } label: {
+                                HStack(spacing: 8) {
+                                    Text(item.title).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                                    Spacer(minLength: 8)
+                                    if item.checked { Image(systemName: "checkmark").accessibilityHidden(true) }
+                                }
+                                .foregroundStyle(item.destructive ? Color.red : Color.primary)
+                                .padding(.horizontal, 16).padding(.vertical, 6).frame(minHeight: 44).contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityAddTraits(item.checked ? .isSelected : [])
+                            .accessibilityIdentifier("railMenuRow")
+                        }
                     }
                 }
+                .padding(.bottom, 8)
+                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { contentHeight = $0 }
             }
-            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { contentHeight = $0 }
+            .frame(height: contentHeight > 0 ? min(contentHeight, cap) : 120)
+            .scrollBounceBehavior(.basedOnSize)
+            .onScrollGeometryChange(for: Bool.self) { g in
+                g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1
+            } action: { _, more in moreBelow = more }
+            .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.88 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
+                                 startPoint: .top, endPoint: .bottom))
+            .accessibilityIdentifier("railMenuList")
         }
-        .frame(width: 300, height: contentHeight > 0 ? min(contentHeight, cap) : cap)
-        .scrollBounceBehavior(.basedOnSize)
-        .onScrollGeometryChange(for: Bool.self) { g in
-            g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1
-        } action: { _, more in moreBelow = more }
-        .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.88 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
-                             startPoint: .top, endPoint: .bottom))
-        .accessibilityIdentifier("railMenuList")
+        .frame(width: 320)
+        .dynamicTypeSize(...DynamicTypeSize.accessibility2)
     }
 }
 

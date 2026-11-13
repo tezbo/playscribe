@@ -1217,7 +1217,14 @@ final class Release050Tests: XCTestCase {
             XCTAssertGreaterThan(rows.count, 0, "\(prefix) has rows")
             let last = rows.element(boundBy: rows.count - 1)
             var tries = 0
-            while !last.isHittable && tries < 4 { list.swipeUp(); tries += 1 }
+            // Drag inside the list from low to high: swipeUp() on an element whose frame is empty throws.
+            while !last.isHittable && tries < 4 {
+                let from = list.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.85))
+                from.press(forDuration: 0.05, thenDragTo: list.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.15)))
+                tries += 1
+            }
+            XCTAssertGreaterThan(list.frame.height, 100, "\(prefix): the list shows rows, not only a header \(list.frame)")
+            XCTAssertTrue(rows.element(boundBy: 0).frame.height >= 43.5, "\(prefix): rows are at least 44 pt")
             XCTAssertTrue(last.isHittable, "\(prefix): the last row is reachable")
             XCTAssertGreaterThanOrEqual(last.frame.height, 43.5, "\(prefix): rows are at least 44 pt")
             app.windows.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.1, dy: 0.1)).tap()
