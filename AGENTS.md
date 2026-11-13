@@ -9,7 +9,7 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 | Terry | Owner | | |
 | Nadia | Product owner (the Editor) | Terry | Own the Playscribe product roadmap |
 | Sam | Delivery lead and scrum master | Terry | Project chat (coordinator) |
-| Theo | Senior iOS engineer, release manager, backend lead (the Printer) | Sam | Build backend and release pipeline |
+| Theo | Senior iOS engineer, backend lead (the Printer) | Sam | Build backend and release pipeline |
 | Priya | Backend iOS and integration engineer (the Archivist) | Theo | Connect game data APIs |
 | Leo | Full-stack iOS and web engineer (the Bookbinder) | Theo | Build the SwiftUI app in Xcode (runs on Terry's Mac) |
 | Iris | Senior iOS design manager (the Illuminator) | Sam | Redesign library game tiles |
@@ -25,9 +25,11 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
   Terry, Sam and Nadia aligned on the vision, and brings Terry only real product calls.
 - **Sam** delivers Nadia's vision. Grooms the backlog with Nadia, turns each release into a sprint, runs the release
   cycle (`docs/roadmap.md`), keeps the dashboard current, and is the only one who starts threads or posts in project chat.
-- **Theo** owns release scope (with Nadia), the build, test and release cycle, the TestFlight pipeline, architecture
-  and engineering reviews. Assigns work to Priya and Leo, merges PRs, names each RC SHA, and tags only after the
-  sign-offs and Terry's go (`docs/release.md`).
+- **Theo** owns the build, test and TestFlight pipeline, architecture and engineering reviews. Assigns work to Priya
+  and Leo, merges PRs, and names each RC SHA.
+- **Release manager: Ollie** (the Mac tester thread; Terry, 2026-11-12, cmsg_0158fPo4KUquo5U1yUvNer8vEQcKfxLJswDh96Ugfo8sHG).
+  Holds release scope with Nadia and is the only one with git CLI rights to tag, push tags, and create GitHub releases,
+  under the `release-manager` skill, after the sign-offs and Terry's go (`docs/release.md`).
 - **Priya** owns `backend/` (feed, ingest, alerts, push), the data sources (Steam, IGDB, studio PS5 pages; see
   `docs/api.md`, `docs/ps5-patch-data.md`), and the app's feed client and integrations.
 - **Leo** owns `ios/` and its tests, the web prototype and any web pages, and runs on Terry's Mac for the simulator,

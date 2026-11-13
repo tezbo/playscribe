@@ -67,10 +67,7 @@ final class UpcomingStore {
             g.releasePrecision = precision
             return g
         }
-        games = mapped.sorted {
-            ($0.releaseDate?.isoDay ?? .distantFuture, $0.name) < ($1.releaseDate?.isoDay ?? .distantFuture, $1.name)
-        }
-        .prefix(120).map { $0 }
+        games = mapped.sorted { CatalogGame.upcomingOrder($0, $1) }.prefix(120).map { $0 }
         NotificationService.shared.notifyDateMoves()
     }
 }

@@ -121,6 +121,46 @@ struct FeedRow: View {
         }
         .buttonStyle(.plain)
         .tappableFrame()
+        .readToggleActions(release, swipe: true)
+    }
+}
+
+extension View {
+    /// R-6a: "Mark as unread" / "Mark as read" on a release row: a long-press menu everywhere, plus a deliberate
+    /// (no full) swipe where the row is a List row. Only On PS5 releases can be unread.
+    func readToggleActions(_ release: Release, swipe: Bool = false) -> some View {
+        modifier(ReadToggleActions(release: release, swipe: swipe))
+    }
+}
+
+private struct ReadToggleActions: ViewModifier {
+    @Environment(AppModel.self) private var model
+    var release: Release
+    var swipe: Bool
+
+    func body(content: Content) -> some View {
+        if release.ps5State == .onPS5 {
+            let unread = model.isUnread(release)
+            let toggle = { model.markRead(release.id, unread) }
+            let menuItem = Button(action: toggle) {
+                Label(unread ? "Mark as read" : "Mark as unread", systemImage: unread ? "envelope.open" : "envelope.badge")
+            }
+            // The swipe says one word with its icon ("Unread" / "Read"), so it wraps whole at AX5.
+            let swipeItem = Button(action: toggle) {
+                Label(unread ? "Read" : "Unread", systemImage: unread ? "envelope.open" : "envelope.badge")
+            }
+            .tint(PlayscribeColor.accent)
+            let base = content
+                .contextMenu { menuItem }
+                .accessibilityAction(named: unread ? "Mark as read" : "Mark as unread", toggle)
+            if swipe {
+                base.swipeActions(edge: .leading, allowsFullSwipe: false) { swipeItem }
+            } else {
+                base
+            }
+        } else {
+            content
+        }
     }
 }
 

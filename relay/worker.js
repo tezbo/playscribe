@@ -13,6 +13,14 @@
 //   POST /v1/follows                    0.5.4 "Help keep my games up to date": a record WITHOUT a token, follow ids only,
 //                                       hourly polling; returns { deviceKey, follows }. The body may hold nothing but follows.
 //   GET /admin/devices?cursor=          Feed job only (Bearer ADMIN_TOKEN), 40 devices a page
+//   POST /admin/devices/dead            Feed job only: devices whose APNs token is dead are removed, or cleared to ids only
+//                                       when they opted in to the follow list (r071; see adminDead)
+//
+// Cron (scheduled handler): GitHub's own schedule for the Feed workflow fires late or not at all for hours at a time
+// (11 Nov 2026: one full poll in 4.5 hours, no hot runs), so this Worker's cron triggers, at :22 and :52, start the Feed
+// workflow by workflow_dispatch when GitHub has not started a run in the last 10 minutes. Needs FEED_DISPATCH_TOKEN
+// (fine-grained GitHub token, this repository only, Actions read and write); without it the handler does nothing.
+// Decision: docs/decisions/feed-cron-worker.md.
 //
 // KV keys: d:<id> device record, t:<apnsToken> -> id, k:<sha256 deviceKey> -> id, n:<UTC date> new devices that day.
 // A record with no APNs token (the follow-list opt-in, or a push device whose token was cleared) expires 90 days after
@@ -143,6 +151,30 @@ const isAdmin = async (env, request) => {
 
 const publicView = (d) => ({ deviceId: d.id, deviceKey: d.key, follows: d.follows, unknown: [] })
 
+// r070-relay-block-list: BLOCKLIST is a Worker secret (never a repo file or the feed branch) holding device ids and
+// addresses, separated by whitespace or commas. A blocked address gets 403 on every /v1 route; a blocked device id gets
+// 403 on everything but DELETE /v1/devices/me, so it can still be forgotten, and the Feed job never sees it.
+export const parseBlocklist = (v) => {
+  const ids = new Set()
+  const ips = new Set()
+  for (const raw of String(v ?? '').split(/[\s,]+/)) {
+    const e = raw.trim().toLowerCase()
+    if (!e) continue
+    if (/^[0-9a-f:.]+$/.test(e) && /[.:]/.test(e)) ips.add(e)
+    else ids.add(e)
+  }
+  return { ids, ips }
+}
+// Parsed once per Worker instance; cached at module level keyed on the secret's text, so env is never written to.
+let blocklistCache
+const blocklistOf = (env) => {
+  if (!blocklistCache || blocklistCache.src !== env.BLOCKLIST) blocklistCache = { src: env.BLOCKLIST, list: parseBlocklist(env.BLOCKLIST) }
+  return blocklistCache.list
+}
+const blockedAddress = (env, request) => blocklistOf(env).ips.has((request.headers.get('cf-connecting-ip') ?? '').toLowerCase())
+const blockedId = (env, id) => !!id && blocklistOf(env).ids.has(String(id).toLowerCase())
+const BLOCKED = () => bad('blocked', 403)
+
 /** A token moves to the newest registration: whoever held it before loses it. */
 const claimToken = async (kv, token, id) => {
   const holder = await kv.get(`t:${token}`)
@@ -221,6 +253,7 @@ const register = async (env, request) => {
 
   const existingId = await kv.get(`t:${token}`)
   const existing = existingId ? await getJson(kv, `d:${existingId}`) : null
+  if (existing && blockedId(env, existing.id)) return BLOCKED()
   if (existing) {
     // Same device registering again (every launch does): write only what changed.
     const next = {
@@ -251,6 +284,7 @@ const patchMe = async (env, request) => {
   const kv = env.KV
   const d = await deviceFor(kv, request)
   if (!d) return bad('unknown device key', 401)
+  if (blockedId(env, d.id)) return BLOCKED()
   const parsed = await readJson(request)
   if (parsed.tooBig) return bad('body too large', 413)
   const body = parsed.body
@@ -280,6 +314,9 @@ const patchMe = async (env, request) => {
     }
   }
   if (JSON.stringify(next) !== JSON.stringify(d)) await putDevice(kv, { ...next, updated: now() })
+  // A record without a token had a key entry with the 90-day expiry. Once it holds a token it is kept until deleted, so its
+  // key entry is written again without one; otherwise the app would get 401 after 90 days and make a second record.
+  if (!d.token && next.token) await kv.put(`k:${await sha(d.key)}`, d.id)
   if (typeof body.team === 'boolean') await syncTeamIndex(kv, d.id, body.team)
   return json({ deviceId: d.id })
 }
@@ -304,6 +341,7 @@ const deleteMe = async (env, request) => {
 const putFollows = async (env, request) => {
   const d = await deviceFor(env.KV, request)
   if (!d) return bad('unknown device key', 401)
+  if (blockedId(env, d.id)) return BLOCKED()
   const parsed = await readJson(request)
   if (parsed.tooBig) return bad('body too large', 413)
   // A record without a token holds ids only, and is rewritten once a week even when unchanged (the "still here"), which
@@ -328,9 +366,48 @@ const adminDevices = async (env, request) => {
   const devices = []
   for (const k of page.keys) {
     const d = await getJson(env.KV, k.name)
+    if (d && blockedId(env, d.id)) continue
     if (d) devices.push({ id: d.id, token: d.token ?? null, environment: d.environment ?? null, locale: d.locale ?? null, quiet: d.quiet ?? null, team: d.team === true, hourly: d.hourly === true, follows: d.follows, updated: d.updated })
   }
   return json({ devices, cursor: page.list_complete ? null : page.cursor })
+}
+
+/** r071-relay-dead-tokens: the Feed job reports devices whose APNs token came back dead (410, or 400 BadDeviceToken or
+ *  DeviceTokenNotForTopic). Body { devices: [{ id, tokenSha }] }, tokenSha = sha256 hex of the lower-case token that failed.
+ *  A record acts only while it still holds that token, so a device that registered a new token since the run loaded is left
+ *  alone. A record without the follow-list opt-in is removed like DELETE /v1/devices/me (if the app is still installed, its
+ *  next request gets 401 and it registers again). An opt-in record (hourly) keeps helping: it becomes the ids-only record
+ *  POST /v1/follows makes (no token, environment, locale, quiet hours, team or alert levels), with the 90-day expiry.
+ *  At most DEAD_BATCH ids a request: each costs up to 7 KV operations against the 50 a request allows. */
+export const DEAD_BATCH = 6
+const adminDead = async (env, request) => {
+  if (!(await isAdmin(env, request))) return bad('not allowed', 401)
+  const parsed = await readJson(request)
+  if (parsed.tooBig) return bad('body too large', 413)
+  const list = parsed.body.devices
+  if (!Array.isArray(list) || list.length > DEAD_BATCH) return bad(`devices must be an array of at most ${DEAD_BATCH}`)
+  if (!list.every((e) => e && typeof e.id === 'string' && /^[0-9a-f]{64}$/.test(e.tokenSha ?? ''))) return bad('each entry is { id, tokenSha }')
+  const kv = env.KV
+  const out = { removed: 0, cleared: 0, skipped: 0 }
+  for (const { id, tokenSha } of list) {
+    const d = await getJson(kv, `d:${id}`)
+    if (!d || !d.token || (await sha(d.token)) !== tokenSha) {
+      out.skipped++
+      continue
+    }
+    if ((await kv.get(`t:${d.token}`)) === d.id) await kv.delete(`t:${d.token}`)
+    if ((await kv.get(`tm:${d.id}`)) !== null) await kv.delete(`tm:${d.id}`)
+    if (d.hourly === true) {
+      const follows = d.follows.map((f) => (f.gameId ? { gameId: f.gameId } : { igdbId: f.igdbId }))
+      await putDevice(kv, { id: d.id, key: d.key, token: null, follows, hourly: true, created: d.created, updated: now() })
+      out.cleared++
+    } else {
+      await kv.delete(`d:${d.id}`)
+      await kv.delete(`k:${await sha(d.key)}`)
+      out.removed++
+    }
+  }
+  return json(out)
 }
 
 // ---- Team alerts: App Store Connect webhook -> a push to the devices that switched "Team alerts" on (internal builds). ----
@@ -358,6 +435,19 @@ const apnsJwt = async (env) => {
   return `${head}.${b64url(new Uint8Array(sig))}`
 }
 
+/** True when `at` falls in the device's quiet window [from, until) in its own zone; until < from wraps past midnight. Same rule as backend/src/push/quiet.ts. */
+export const inQuietHours = (q, at = new Date()) => {
+  if (!q) return false
+  try {
+    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: q.timeZone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(at)
+    const get = (t) => Number(parts.find((p) => p.type === t)?.value)
+    const m = get('hour') * 60 + get('minute')
+    return q.from < q.until ? m >= q.from && m < q.until : m >= q.from || m < q.until
+  } catch {
+    return false
+  }
+}
+
 const ALERT = { crash: 'New TestFlight crash report', screenshot: 'New TestFlight feedback' }
 const sendTeamAlert = async (env, kind) => {
   if (!env.APNS_KEY || !env.APNS_KEY_ID || !env.APNS_TEAM_ID) return { sent: 0, skipped: 'push key not set' }
@@ -372,7 +462,8 @@ const sendTeamAlert = async (env, kind) => {
     const r = await fetch(`https://${host}/3/device/${d.token}`, {
       method: 'POST',
       headers: { authorization: `bearer ${jwt}`, 'apns-topic': env.APNS_TOPIC ?? 'tezbo.Playscribe', 'apns-push-type': 'alert', 'apns-priority': '10' },
-      body: JSON.stringify({ aps: { alert: { title: 'Playscribe', body: ALERT[kind] ?? ALERT.screenshot }, sound: 'default' } }),
+      // Inside the device's quiet hours the alert is passive and silent, like every other push.
+      body: JSON.stringify({ aps: { alert: { title: 'Playscribe', body: ALERT[kind] ?? ALERT.screenshot }, ...(inQuietHours(d.quiet) ? { 'interruption-level': 'passive' } : { sound: 'default' }) } }),
     })
     if (r.ok) sent++
   }
@@ -399,12 +490,53 @@ const ascWebhook = async (env, request) => {
   return json({ ok: true, ...result })
 }
 
+/** The Feed workflow's repository and file; the dispatch and the "already running" check both name them. */
+const FEED_REPO = 'tezbo/playscribe'
+const FEED_WORKFLOW = 'feed.yml'
+/** A Feed run created this recently means GitHub's own schedule fired, so the cron does not start a second one. */
+const FEED_RECENT_MS = 10 * 60_000
+/** The Worker's hot cron; anything else is a full poll. deploy.sh registers both. */
+export const FEED_HOT_CRON = '52 * * * *'
+export const FEED_FULL_CRON = '22 * * * *'
+
+/**
+ * Starts the Feed workflow for a cron tick, unless a run began in the last 10 minutes. `hot` follows the cron that fired.
+ * Returns what it did, for tests and the Worker log; never throws, because a cron handler has no one to answer.
+ */
+export async function dispatchFeed(env, cron, now = Date.now(), fetchImpl = fetch) {
+  const token = env.FEED_DISPATCH_TOKEN
+  if (!token) return { dispatched: false, reason: 'no FEED_DISPATCH_TOKEN' }
+  const hot = cron === FEED_HOT_CRON
+  const headers = { authorization: `Bearer ${token}`, accept: 'application/vnd.github+json', 'user-agent': 'playscribe-relay', 'x-github-api-version': '2022-11-28' }
+  const base = `https://api.github.com/repos/${FEED_REPO}/actions/workflows/${FEED_WORKFLOW}`
+  try {
+    const recent = await fetchImpl(`${base}/runs?per_page=1`, { headers })
+    if (recent.ok) {
+      const { workflow_runs: runs = [] } = await recent.json()
+      const last = runs[0]?.created_at ? Date.parse(runs[0].created_at) : 0
+      if (now - last < FEED_RECENT_MS) return { dispatched: false, reason: 'a run started in the last 10 minutes', hot }
+    }
+    const r = await fetchImpl(`${base}/dispatches`, {
+      method: 'POST', headers: { ...headers, 'content-type': 'application/json' },
+      body: JSON.stringify({ ref: 'main', inputs: { action: 'poll', hot: hot ? 'true' : 'false' } }),
+    })
+    return r.status === 204 ? { dispatched: true, hot } : { dispatched: false, reason: `GitHub answered ${r.status}`, hot }
+  } catch (e) {
+    return { dispatched: false, reason: 'GitHub unreachable', hot }
+  }
+}
+
 export default {
+  async scheduled(controller, env, ctx) {
+    const result = await dispatchFeed(env, controller.cron)
+    console.log(`feed cron ${controller.cron}: ${JSON.stringify(result)}`)
+  },
   async fetch(request, env) {
     const { pathname } = new URL(request.url)
     const m = request.method
     try {
       if (pathname === '/' || pathname === '/health') return json({ ok: true })
+      if (pathname.startsWith('/v1/') && blockedAddress(env, request)) return BLOCKED()
       if (pathname === '/v1/devices' && m === 'POST') return await register(env, request)
       if (pathname === '/v1/devices/me' && m === 'PATCH') return await patchMe(env, request)
       if (pathname === '/v1/devices/me' && m === 'DELETE') return await deleteMe(env, request)
@@ -412,10 +544,12 @@ export default {
       if (pathname === '/v1/devices/me/follows' && m === 'PUT') return await putFollows(env, request)
       if (pathname === '/v1/devices/me/follows' && m === 'GET') {
         const d = await deviceFor(env.KV, request)
-        return d ? json({ follows: d.follows }) : bad('unknown device key', 401)
+        if (!d) return bad('unknown device key', 401)
+        return blockedId(env, d.id) ? BLOCKED() : json({ follows: d.follows })
       }
       if (pathname === '/v1/webhooks/asc' && m === 'POST') return await ascWebhook(env, request)
       if (pathname === '/admin/devices' && m === 'GET') return await adminDevices(env, request)
+      if (pathname === '/admin/devices/dead' && m === 'POST') return await adminDead(env, request)
       return bad('not found', 404)
     } catch (e) {
       return bad('relay error', 500)

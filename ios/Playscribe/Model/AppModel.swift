@@ -114,6 +114,11 @@ struct PersistedState: Codable {
     var plusLeavingSoonOff: Bool?
     var notificationCardShows = 0
     var notificationCardDismissed = false
+    /// "Help keep my games up to date" (0.5.4): true while the switch is on, nil otherwise. Off by default; the one-time card
+    /// or the Settings switch turns it on. The relay record exists only while this is true.
+    var keepCurrent: Bool?
+    /// True once the one-time card was answered (Turn on, Not now or a swipe): it never shows again; Settings is the way back.
+    var keepCurrentCardDismissed: Bool?
     /// N-1 re-ask: how many times "Not now" was chosen, and until when the card rests. Optional so older saved state decodes.
     var notificationAsks: Int?
     var notificationSnoozedUntil: Date?
@@ -164,8 +169,18 @@ final class AppModel {
     func leaveSearch() { if nav.tab == .search { nav.tab = searchReturnTab == .search ? .library : searchReturnTab } }
     var pill: (gameID: String, releaseID: String)?
     var addSheetOpen = false {
-        didSet { if addSheetOpen && !oldValue { addIsSystemSheet = livePose != .tabletop && !liveRightPage } }
+        didSet {
+            if addSheetOpen && !oldValue { addIsSystemSheet = livePose != .tabletop && !liveRightPage }
+            if addSheetOpen != oldValue { addDraft = nil; addKeyboardWanted = false }
+        }
     }
+    /// What the Add UI held when its form switched (sheet, right-page panel or Tabletop panel) while still open, so the typed
+    /// query and the picks come back in the new form. Cleared whenever Add opens or closes.
+    @ObservationIgnored var addDraft: AddDraft?
+    /// True while the person has the Add search field up and has not put the keyboard away. A form switch (fold, unfold) rebuilds
+    /// AddGameSheet and its field resigns on the way out; this survives that, so the rebuilt sheet asks for the keyboard again.
+    /// Cleared whenever Add opens or closes, and when the person puts the keyboard away (tap outside, scroll, Return).
+    @ObservationIgnored var addKeyboardWanted = false
     /// How the Add UI was presented when it opened: the system sheet, or the right-page panel. Kept while it is open, because at
     /// launch the pose resolves closed, then Open landscape, then Open portrait, and following the raw pose dismissed and
     /// re-presented the sheet mid-focus, which killed the search field's keyboard (a98e710 Mac log, testPinnedAddBar).
@@ -196,6 +211,8 @@ final class AppModel {
     var linksSheetOpen = false
     /// The verification tag whose explainer is open (0.5.0).
     var tagExplainer: Verification?
+    /// N-9: the follow-list card's "What is sent" sheet, the full wording, one tap from the choice (Iris, #455).
+    var keepCurrentDetailsOpen = false
     var libraryTab: LibraryTab = .playing
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
@@ -230,8 +247,12 @@ final class AppModel {
     var qaPadDeck = false
     /// QA (routes "one-update", "two-update") and tests: how many fresh unread updates the demo has; 0 is the normal demo.
     var qaUpdateCount = 0
+    /// QA (route "cover"): keep every card in the deck, read ones too, instead of only the `qaUpdateCount` fresh ones.
+    var qaKeepReadCards = false
+    /// QA (route `cover/<game>`): the fresh update is this game's newest, so its page leads the cover.
+    var qaFreshGame: String?
     var qaSingleUpdate: Bool {
-        get { qaUpdateCount > 0 }
+        get { qaUpdateCount > 0 && !qaKeepReadCards }
         set { qaUpdateCount = newValue ? 1 : 0 }
     }
     /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
@@ -250,7 +271,7 @@ final class AppModel {
     private func qaFreshIDs() -> Set<String> {
         if let ids = qaFreshCache { return ids }
         var newestPerGame: [Release] = []
-        for entry in data.collection {
+        for entry in data.collection where qaFreshGame == nil || entry.gameID == qaFreshGame {
             let best = releases(entry.gameID).filter { $0.ps5State == .onPS5 }.max { $0.ps5Date < $1.ps5Date }
             if let best { newestPerGame.append(best) }
         }
@@ -298,6 +319,9 @@ final class AppModel {
             } else {
                 data = PersistedState(collection: [])
             }
+            // No saved state, so a fresh install: a relay key still in the Keychain belongs to an earlier install. Its record
+            // is deleted before this launch makes any relay call (PushRegistrar.dropStaleKey; Quinn's #455 stale-key capture).
+            if storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.dropStaleKey() }
         }
         // A6: remember the previous open for the catch-up card, then stamp this one.
         catchUpSince = data.lastOpenedAt
@@ -365,7 +389,10 @@ final class AppModel {
             guard !Task.isCancelled else { return }
             self?.saveNow()
             // Only the app's own model speaks for this device; a model on a scratch store (tests, previews) never does.
-            if let self, self.storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.syncFollows(self.follows) }
+            if let self, self.storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled {
+                // With the keep-current switch on, the first follow also makes the relay record (ids only).
+                if self.data.keepCurrent == true { PushRegistrar.syncKeepCurrent(true, follows: self.follows) } else { PushRegistrar.syncFollows(self.follows, pushOnly: true) }
+            }
         }
     }
 
@@ -447,7 +474,9 @@ final class AppModel {
     }
 
     func ps5Releases(_ gameID: String) -> [Release] {
-        releases(gameID).filter(\.isPS5Listed).sorted { Self.newer($0, $1, by: \.ps5Date) }
+        // QA (INTERNAL): "no-notes/<game>" hides the whole update history, so the hero, the tile and the game page agree.
+        if qaNoReleases { return [] }
+        return releases(gameID).filter(\.isPS5Listed).sorted { Self.newer($0, $1, by: \.ps5Date) }
     }
 
     func pcOnlyReleases(_ gameID: String) -> [Release] {
@@ -613,6 +642,10 @@ final class AppModel {
         }
         nav = n
         readerIndex[gameID] = 0
+        // R-6a: opening a specific update (a notification, an Updates row, a deep link) reads it at once, on every path;
+        // the 1 s on-screen rule only covers an update the reader lands on without picking it. Mark as unread undoes it.
+        // Opening the game itself (a tile, the hero) reads the update it lands on: the newest, expanded at the top (R-1).
+        if n.chapter == .updates, let r = releaseID.flatMap({ release(gameID, $0) }) ?? selectedRelease(gameID), isUnread(r) { markRead(r.id) }
         // N-7: the pill goes only when the page it points to is the one now showing.
         if let p = pill, isViewing(p.gameID, p.releaseID) { pill = nil }
         focusReleaseID = releaseID
@@ -696,6 +729,12 @@ final class AppModel {
             addSheetOpen = true
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
+        case "cover":   // 0.7 front cover preview (duo-closed-cover): a full deck, or cover/one for a lone update
+            // cover/<game> (Iris, focal-point check): that game's newest update leads the deck, unread.
+            if parts.first == "one" { resetToOneUpdateDemo() } else { resetToCoverDemo(leading: parts.first) }
+            FrontCoverPreview.shared.open = true
+            FrontCoverPreview.shared.openedByRoute = true
+            settingsOpen = true
         case "settings":
             settingsOpen = true
             if parts.first == "quiet" { data.quietHours = QuietHours() }
@@ -723,6 +762,9 @@ final class AppModel {
         case "three-update": resetToUpdateDemo(count: 3); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "four-update": resetToUpdateDemo(count: 4); if parts.first == "updates" { nav.tab = .updates }   // e.g. two-update/updates: unread rows, Updates tab
         case "caught-up": resetToCaughtUpDemo()
+        // QA (INTERNAL, qa-route-add-game-3-updates): add a game that has three PS5 updates from the last 72 hours, through the
+        // real add path, so #480 shows: one "New update" mark on its tile and a badge of 1. `add-game-3-updates/<game>` picks it.
+        case "add-game-3-updates": resetToAddGameDemo(gameID: parts.first)
         // QA (INTERNAL, #436): "tile-states" is the one-update demo plus a "Plays on PS5" tile, a "Not on PS5" tile, and the
         // unread game turned into a Wishlist tile, so every tile pill kind shows in the Library.
         case "tile-states":
@@ -740,12 +782,27 @@ final class AppModel {
             nav.tab = .library; nav.gameID = nil
         // QA (INTERNAL): "no-notes/<game>": only that game in the Library with its update history hidden from the deck, so the
         // hero is the no-release card ("No patch notes yet", or the untracked line). The game needs a past release date.
-        case "no-notes" where parts.count == 1 || parts.count == 2:
+        // QA (INTERNAL, PP-1 guard): "parity/<game>/<tracked|untracked>[/nonotes][/nofeed]" sets the library on purpose, then opens the
+        // game's page. tracked = the game is in the collection; untracked = browsed, not in it. nonotes hides the update history;
+        // nofeed shows the "we don't track this game's updates yet" line.
+        case "parity" where parts.count >= 2:
+            resetDemo()
+            data = PersistedState(collection: [])
+            guard let g = games[parts[0]] else { break }
+            if parts[1] == "tracked" { addGames([g], status: .owned) }
+            qaNoReleases = parts.contains("nonotes")
+            qaUntracked = parts.contains("nofeed")
+            if parts[1] == "tracked" { openGame(g.id, chapter: .updates) } else { browseGame(g) }
+            nav.detailReleaseID = nil; linksSheetOpen = false
+        // "no-notes-page/<game>[/untracked]": the same, then the game's page itself (the pose parity guard needs the page, PP-1).
+        case "no-notes", "no-notes-page":
+            guard parts.count == 1 || parts.count == 2 else { break }
             resetDemo()
             data = PersistedState(collection: [])
             if let g = fixtures.games.first(where: { $0.id == parts[0] }) { addGames([g], status: .owned) }
             qaNoReleases = true
             qaUntracked = parts.count == 2 && parts[1] == "untracked"
+            if url.host() == "no-notes-page" { openGame(parts[0], chapter: .updates); nav.detailReleaseID = nil; linksSheetOpen = false }
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
         // QA (INTERNAL, B-10): "quick/tip" shows the press-and-hold tip; "quick/undo" removes the first game so the
@@ -843,7 +900,7 @@ final class AppModel {
             openGame(parts[0], chapter: .updates)
             nav.detailReleaseID = nil
             linksSheetOpen = false
-        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; addSearchFocus = false
+        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; keepCurrentDetailsOpen = false; addSearchFocus = false
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
             if let n = Int(parts[0]) {
@@ -862,6 +919,19 @@ final class AppModel {
             // QA: the Library with the alerts card showing, undecided or denied (N-1).
             resetDemo()
             NotificationService.shared.qaForcedAuthorization = url.host() == "alerts" ? .notDetermined : .denied
+        case "keep-current":
+            // QA: the Library with the "Help keep your games up to date?" card (N-9); `keep-current/on` has the switch on, so
+            // Settings shows the row on with its "Last sent" line, and the model's next save sends the real request.
+            resetDemo()
+            data.keepCurrentCardDismissed = nil
+            // The alerts card was answered Not now on an earlier day, so the follow-list card shows alone (one ask per screen).
+            data.notificationAsks = 1
+            data.notificationSnoozedUntil = Calendar.current.date(byAdding: .day, value: NotificationAsk.snoozeDays, to: .now)
+            alertsAnsweredThisSession = false
+            // `keep-current/sent`: the card's "What is sent" sheet open; `keep-current/settings`: Settings open, switch off.
+            if parts.first == "on" { data.keepCurrent = true }
+            if parts.first == "sent" { keepCurrentDetailsOpen = true }
+            if parts.first == "settings" { settingsOpen = true }
         case "ask-notifications": Task { await NotificationService.shared.requestAuthorization() }
         default: break
         }
@@ -1100,13 +1170,45 @@ final class AppModel {
                               asks: data.notificationAsks ?? 0, snoozedUntil: data.notificationSnoozedUntil)
     }
 
+    /// The one-time "Help keep your games up to date?" card (N-9): once a game is in the Library and the alerts card (N-1) has been
+    /// answered, on a later Library appearance than the answer, until it is answered itself or the switch is on. One ask per screen.
+    var showsKeepCurrentCard: Bool {
+        KeepCurrentAsk.shows(hasGames: !data.collection.isEmpty, on: data.keepCurrent == true, dismissed: data.keepCurrentCardDismissed == true,
+                             alertsCardShows: showsNotificationCard, alertsAnswered: alertsAnswered, answeredThisSession: alertsAnsweredThisSession)
+    }
+
+    /// The alerts card has had an answer: Not now at least once, or the system prompt decided (authorized, denied or provisional).
+    private var alertsAnswered: Bool { (data.notificationAsks ?? 0) > 0 || NotificationService.shared.authorization != .notDetermined }
+
+    /// Set when the alerts card is answered in this launch (Turn on or Not now), so the follow-list card waits for the next one.
+    var alertsAnsweredThisSession = false
+
+    /// The switch (Settings) and the card's Turn on. The relay call is made only by the app's own model (never a scratch store).
+    func setKeepCurrent(_ on: Bool) {
+        data.keepCurrent = on ? true : nil
+        if on { data.keepCurrentCardDismissed = true }
+        if storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.syncKeepCurrent(on, follows: follows) }
+    }
+
+    /// "Not now" or a swipe on the card: it never shows again; Settings is the way back.
+    func dismissKeepCurrentCard() { data.keepCurrentCardDismissed = true }
+
+    /// On becoming active: the weekly "still here" for a record without alerts, so the relay can renew its 90-day expiry.
+    func keepCurrentStillHere() {
+        guard data.keepCurrent == true, storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled else { return }
+        PushRegistrar.syncKeepCurrent(true, follows: follows)
+    }
+
     /// "Not now", a swipe, or a declined system prompt: ask again in a week (N-1).
     func snoozeNotificationCard() {
+        alertsAnsweredThisSession = true
         data.notificationAsks = (data.notificationAsks ?? 0) + 1
         data.notificationSnoozedUntil = Calendar.current.date(byAdding: .day, value: NotificationAsk.snoozeDays, to: .now)
     }
 
     func resetToFirstRun() {
+        // The follow-list record is deleted with the reset (its promise: gone at once when you reset the app).
+        if data.keepCurrent == true { setKeepCurrent(false) }
         data = PersistedState(collection: [])
         UserDefaults.standard.set(false, forKey: "didOnboard")
         toast = nil
@@ -1115,9 +1217,14 @@ final class AppModel {
     }
 
     func resetDemo() {
+        // Like a reset to first run: an alerts-free follow-list record is deleted, never left on the relay with the switch
+        // shown off (Mac at eb42735: `-qaRoute keep-current/settings` turned the switch off and sent no DELETE).
+        if data.keepCurrent == true { setKeepCurrent(false) }
         qaPadDeck = false
+        qaKeepReadCards = false
         qaUpdateCount = 0
         qaFreshCache = nil
+        qaFreshGame = nil
         data = PersistedState(collection: fixtures.seedCollection)
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
@@ -1153,6 +1260,41 @@ final class AppModel {
         qaFreshCache = []
     }
 
+    /// QA and tests (route "add-game-3-updates"): the demo library with everything read, then one game added the way a person
+    /// adds it, carrying three On PS5 updates from the last 72 hours (60 h, 30 h and 2 h ago). #480 keeps only the newest unread,
+    /// so the tile shows one "New update" and the badge reads 1. The game is `gameID` when given (taken out of the library first),
+    /// else the first fixture game not in the seed library. Returns the game's id.
+    @discardableResult
+    func resetToAddGameDemo(gameID: String? = nil, now: Date = .now) -> String? {
+        resetDemo()
+        let seeded = Set(data.collection.map(\.gameID))
+        guard let game = gameID.flatMap({ id in fixtures.games.first { $0.id == id } })
+                ?? fixtures.games.first(where: { !seeded.contains($0.id) }) else { return nil }
+        data.collection.removeAll { $0.gameID == game.id }
+        for e in data.collection { for r in releases(e.gameID) where data.read[r.id] == nil { data.read[r.id] = now } }
+        var version = ps5Releases(game.id).first?.ps5Version
+        for (i, hours) in [60.0, 30.0, 2.0].enumerated() {
+            let at = now.addingTimeInterval(-hours * 3600)
+            version = Self.bumpConsoleVersion(version, major: false)
+            let release = Release(
+                id: "qa-add3-\(game.id)-\(i + 1)", gameID: game.id, displayName: "Hotfix \(i + 1) (QA)", kind: .hotfix, kindBasis: .studio,
+                announcedAt: at, notes: [NoteSection(title: "Fixes (QA)", items: [NoteItem(text: "QA fixture. Not a real release.")])],
+                sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: Field(value: version ?? "01.000.001", verification: .official, sourceID: "qa", checkedAt: at),
+                                            liveAt: Field(value: at, verification: .official, sourceID: "qa", checkedAt: at),
+                                            bundles: [], verification: .official)],
+                headline: "QA hotfix \(i + 1) of 3", summary: "QA fixture for adding a game with three recent updates.",
+                simulated: true, arrivesAt: at)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+        }
+        addGames([game], status: .owned)
+        nav.tab = .library; nav.gameID = nil
+        NotificationService.shared.updateBadge(badgeCount)
+        return game.id
+    }
+
     /// QA and tests (route "two-update"): as the one-update demo with two fresh updates, from different games.
     func resetToTwoUpdateDemo() {
         resetDemo()
@@ -1167,6 +1309,17 @@ final class AppModel {
         let more = fixtures.games.filter { !have.contains($0.id) && !ps5Releases($0.id).filter { $0.ps5State == .onPS5 }.isEmpty }
         addGames(more, status: .owned)
         qaPadDeck = true
+    }
+
+    /// QA (route "cover", #467): the full deck with the newest update fresh and unread, leading, and the rest read, so the
+    /// cover shows NEW UPDATE pages and pages without it. The fresh one is pinned (`qaUpdateCount`): with the plain
+    /// many-updates demo, the first feed refresh after a reset marks every update older than 72 hours read, so the
+    /// eyebrow came and went with network timing (Mac, Closed landscape AX5, 8597112).
+    func resetToCoverDemo(leading gameID: String? = nil) {
+        resetToManyUpdatesDemo()
+        qaUpdateCount = 1
+        qaKeepReadCards = true
+        if let gameID, data.collection.contains(where: { $0.gameID == gameID }) { qaFreshGame = gameID }
     }
 
     /// QA (routes "three-update", "four-update"): `count` fresh updates from different games, so the deck

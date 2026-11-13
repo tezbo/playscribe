@@ -36,7 +36,7 @@ npm run confirm -- dawnwalker@1.1 --source dawnwalker-news --version 01.004.000
 | `APNS_KEY_ID`, `APNS_TEAM_ID`, `APNS_KEY_P8` | APNs token auth. `APNS_KEY_P8` is the .p8 file as base64 (`base64 -i AuthKey_X.p8`). |
 | `APNS_TOPIC` | Bundle id, default `co.codeconnectors.playscribe` |
 | `ADMIN_TOKEN` | Bearer token for `/v1/admin` (`openssl rand -base64 32`) |
-| `DATABASE_PATH` | Default `./data/playscribe.db`. The feed job keeps it at `state/playscribe.db` on the `feed` branch. |
+| `DATABASE_PATH` | Default `./data/playscribe.db`. The feed job keeps it at `state/playscribe.db.gz` (gzipped; `gunzip` it to open) on the `feed` branch. |
 | `INGEST_INTERVAL_MINUTES` | Local server only, default 30. Each source is polled at most once an hour, whatever this is set to. |
 | `PUSH_ENABLED` | `1` turns APNs on. Off by default, because APNs needs the paid Apple Developer Program. |
 | `PUSH_MAX_AGE_HOURS` | Default 72 |
@@ -44,7 +44,7 @@ npm run confirm -- dawnwalker@1.1 --source dawnwalker-news --version 01.004.000
 ## The free feed
 
 `.github/workflows/feed.yml` runs at 17 minutes past every hour. Each run:
-1. Restores `state/playscribe.db` from the `feed` branch.
+1. Restores `state/playscribe.db.gz` from the `feed` branch (a raw `state/playscribe.db` from before 12 Nov 2026 also works).
 2. Polls the sources.
 3. Writes `v1/*.json`.
 4. Force-pushes the branch as a single commit, so it never grows.

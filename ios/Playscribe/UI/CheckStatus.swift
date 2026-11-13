@@ -74,12 +74,14 @@ struct RetryButton: View {
 /// at all (it is outside the tracked set): then it says so, and shows no Checked line, since nothing was checked for it.
 struct NoUpdatesLine: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
     var body: some View {
         if model.feedTracksGame(gameID) {
             VStack(alignment: .leading, spacing: 2) {
                 switch model.checkState {
-                case .checked: Text("No updates yet.")
+                // Tabletop's lower half is the only place a reader looks for why there is nothing (Iris, bug-tabletop-game-details-missing).
+                case .checked: Text(duo.pose == .tabletop ? "No updates yet. We'll tell you when the first one lands." : "No updates yet.")
                 case .failed, .notChecked: Text("Couldn't check yet.")
                 }
                 CheckedLine()
@@ -123,7 +125,7 @@ struct CaughtUpCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text("You're all caught up").font(PlayscribeFont.headline)
-            Text(lastUpdate.map { "Last update \($0.formatted(.dateTime.day().month(.abbreviated)))" } ?? "Nothing new in 90 days")
+            Text(lastUpdate.map { "Last update \($0.dayMonth)" } ?? "Nothing new in 90 days")
                 .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)

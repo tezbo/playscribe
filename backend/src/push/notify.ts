@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto'
 import type { Digest } from '../digest.ts'
 import { inQuietHours } from './quiet.ts'
 import { alertFromOf, alertStyleOf, type AlertStyle } from '../alerts.ts'
@@ -12,6 +13,9 @@ import { tokenIsDead } from './apns.ts'
 // alert and is not shown; if Steam or the studio later has it, it alerts then, once.
 // A later confirmation does not alert again.
 // Followers with notify "major" only hear about major updates.
+/** The relay matches a dead report by this, so the token itself never has to be stored or sent back. */
+export const tokenSha = (token: string) => createHash('sha256').update(token.toLowerCase()).digest('hex')
+
 export interface PushOutcome {
   releaseId: string
   sent: number
@@ -103,7 +107,11 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
       if (r.status === 200) out.sent++
       else {
         out.failed++
-        if (tokenIsDead(r)) db.prepare('UPDATE devices SET apns_token = NULL, updated_at = ? WHERE id = ?').run(now(), t.id)
+        if (tokenIsDead(r)) {
+          // Dropped for the rest of this run, and noted so relay-dead.ts can tell the relay, which holds the lasting copy (r071).
+          db.prepare('UPDATE devices SET apns_token = NULL, updated_at = ? WHERE id = ?').run(now(), t.id)
+          db.prepare('INSERT OR REPLACE INTO dead_tokens (device_id, token_sha, found_at) VALUES (?, ?, ?)').run(t.id, tokenSha(t.apns_token), now())
+        }
       }
     } catch (e) {
       out.failed++
