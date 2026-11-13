@@ -323,6 +323,144 @@ final class ReleaseFeatureTests: XCTestCase {
         assertFrames("add-bar")
     }
 
+    /// A-1, v0.5.3 (Terry, 8 Nov; cc04658 Mac hand check 1): a tap inside the typed text keeps the keyboard and moves the caret; typing
+    /// goes on; a tap on a bare area puts the keyboard away.
+    func testAddSearchKeepsFocusOnTextTapAndDismissesOnOutsideTap() throws {
+        launch("add/keyboard")
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard") }
+        let search = app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10))
+        func focused() -> Bool { (search.value(forKey: "hasKeyboardFocus") as? Bool) == true }
+        func waitFocus(_ want: Bool) -> Bool {
+            let end = Date.now.addingTimeInterval(4)
+            while focused() != want && Date.now < end { usleep(200_000) }
+            return focused() == want
+        }
+        if !waitFocus(true) { search.tap() }
+        XCTAssertTrue(waitFocus(true), "the add search has keyboard focus")
+        search.typeText("elden")
+        // Tap at the leading edge of the typed text, then type again: focus must hold and the caret must have moved to the start.
+        // Not mid-word: the 6ef2f42 A/B showed a plain TextField in the same sheet, with none of our code, also leaves the caret at
+        // the end after a tap 20 pt into "elden" (likely iOS snapping a single tap to a word boundary). The start is a boundary either way.
+        search.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0.5)).withOffset(CGVector(dx: 2, dy: 0)).tap()
+        usleep(600_000)
+        XCTAssertTrue(focused(), "a tap inside the typed text keeps the keyboard")
+        XCTAssertTrue(app.keyboards.firstMatch.exists, "the keyboard is still up after a tap in the text")
+        search.typeText("x")
+        let value = (search.value as? String) ?? ""
+        XCTAssertTrue(value.lowercased().contains("x") && value.count == 6, "typing continues after the tap, got '\(value)'")
+        XCTAssertEqual(value.lowercased(), "xelden", "the caret moved to the start of the text")
+        // A tap on a bare area (the sheet title bar) puts the keyboard away.
+        app.navigationBars.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        if !waitFocus(false) {
+            // 69d27ce Mac run, Open portrait: the sheet's bar centre did not dismiss. Fall back to a bare list area, the section header.
+            let header = app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] 'Best matches' OR label CONTAINS[c] 'Popular on PS5'")).firstMatch
+            if header.exists { header.tap() }
+        }
+        XCTAssertTrue(waitFocus(false), "a tap outside the field dismisses the keyboard")
+    }
+
+    /// A-1, v0.5.3 (Quinn, 9d41ce0 hand check): a tap on the field's row padding right after the keyboard was put away must bring it
+    /// back, every time. Ten rounds of title tap, then padding tap; the focus state is read from UIKit each time.
+    func testAddSearchPaddingTapAfterDismissAlwaysFocuses() throws {
+        launch("add/keyboard")
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard") }
+        let search = app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10))
+        func focused() -> Bool { (search.value(forKey: "hasKeyboardFocus") as? Bool) == true }
+        func wait(_ want: Bool, _ secs: Double = 3) -> Bool {
+            let end = Date.now.addingTimeInterval(secs)
+            while focused() != want && Date.now < end { usleep(100_000) }
+            return focused() == want
+        }
+        if !wait(true, 5) { search.tap() }
+        XCTAssertTrue(wait(true, 5), "the add search starts focused")
+        // VoiceOver: the row is one "Search" field, not a field plus a second tappable element.
+        // Only the Add sheet's own field: the Library's "Search your library" field sits behind the sheet in the same window and is
+        // in the element tree too (36d340c Mac run counted 2 on bbcbbe2 as well, so it is not a duplicate in the Add row).
+        let addFields = app.textFields.matching(NSPredicate(format: "placeholderValue CONTAINS 'PS5 games'"))
+        XCTAssertEqual(addFields.count, 1, "one Add search field; Search fields in the tree: \(app.textFields.allElementsBoundByIndex.map { $0.placeholderValue ?? "?" })")
+        // Scoped to the field's own row: the tab bar's Search tab (b880cc8 Mac run) is also a "Search" button, elsewhere on screen.
+        let overlapping = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Search'")).allElementsBoundByIndex
+            .filter { $0.frame.intersects(search.frame) }
+        XCTAssertEqual(overlapping.count, 0, "no second Search element over the field: \(overlapping.map(\.label))")
+        var misses: [Int] = []
+        var log: [String] = []
+        // Row geometry for the 60.7 pt question (Quinn): the field, its list cell, and the controls around it.
+        let cell = app.cells.containing(.textField, identifier: nil).firstMatch
+        log.append("geometry: field=\(search.frame) cell=\(cell.exists ? "\(cell.frame)" : "none") segmented=\(app.segmentedControls.firstMatch.exists ? "\(app.segmentedControls.firstMatch.frame)" : "none") window=\(app.windows.firstMatch.frame)")
+        let geo = XCTAttachment(screenshot: app.screenshot()); geo.name = "add-search-row-geometry"; geo.lifetime = .keepAlways; add(geo)
+        func shot(_ name: String) {
+            let a = XCTAttachment(screenshot: app.screenshot()); a.name = name; a.lifetime = .keepAlways; add(a)
+        }
+        func state(_ tag: String) -> String {
+            "\(tag): focus=\(focused()) keyboard=\(app.keyboards.firstMatch.exists) fieldFrame=\(search.frame)"
+        }
+        for round in 1...10 {
+            let before = state("r\(round) start")
+            let bar = app.navigationBars.firstMatch
+            let titlePoint = bar.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+            titlePoint.tap()
+            let titleDismissed = wait(false)
+            let afterTitle = state("r\(round) after title tap (bar \(bar.frame), dismissed=\(titleDismissed))")
+            if !titleDismissed { shot("r\(round)-title-did-not-dismiss"); log += [before, afterTitle]; misses.append(round); continue }
+            // Padding: just outside the field's leading edge, inside the row.
+            let f = search.frame
+            // Rounds cycle through the four sides of the row padding: leading, trailing, above and below the field (the row has
+            // 4 pt of vertical padding; the horizontal strips are kept inside the window).
+            let windowMaxX = app.windows.firstMatch.frame.maxX
+            let side = ["leading", "trailing", "above", "below"][(round - 1) % 4]
+            let paddingX: CGFloat, paddingY: CGFloat
+            switch side {
+            case "leading": (paddingX, paddingY) = (f.minX - 8, f.midY)
+            case "trailing": (paddingX, paddingY) = (min(f.maxX + 8, windowMaxX - 2), f.midY)
+            case "above": (paddingX, paddingY) = (f.midX, f.minY - 2)
+            default: (paddingX, paddingY) = (f.midX, f.maxY + 2)
+            }
+            app.windows.firstMatch.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(dx: paddingX, dy: paddingY)).tap()
+            let refocused = wait(true)
+            let afterPadding = state("r\(round) after \(side) padding tap at (\(paddingX), \(paddingY)), insideFieldFrame=\(f.contains(CGPoint(x: paddingX, y: paddingY))), refocused=\(refocused)")
+            log += [before, afterTitle, afterPadding]
+            if !refocused {
+                shot("r\(round)-padding-did-not-focus")
+                misses.append(round)
+                // Recover so each round is measured on its own: a tap inside the field.
+                search.tap(); _ = wait(true)
+            }
+        }
+        print("PADDINGTAP LOG\n" + log.joined(separator: "\n"))
+        let logAttachment = XCTAttachment(string: log.joined(separator: "\n")); logAttachment.name = "padding-tap-log"; logAttachment.lifetime = .keepAlways; add(logAttachment)
+        XCTAssertTrue(misses.isEmpty, "title tap then padding tap failed in rounds \(misses); see the padding-tap-log attachment")
+    }
+
+    /// A-1, v0.5.3 (Mac, 8c59c39 hand run): on a cold launch of add/keyboard the keyboard is up in the first frame and about 5 s later
+    /// it is down with no caret. Sample focus and keyboard every 500 ms for 10 s and fail if focus is lost after it was gained, with the
+    /// whole timeline attached, so the moment of the drop can be matched to the launch pose settling.
+    func testAddSearchHoldsFocusThroughLaunchSettling() throws {
+        launch("add/keyboard")
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard") }
+        let search = app.textFields.matching(NSPredicate(format: "placeholderValue CONTAINS 'PS5 games'")).firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10))
+        let start = Date()
+        var timeline: [String] = []
+        var gainedAt: Double?
+        var lostAt: Double?
+        while Date().timeIntervalSince(start) < 10 {
+            let t = Date().timeIntervalSince(start)
+            let f = (search.value(forKey: "hasKeyboardFocus") as? Bool) == true
+            let k = app.keyboards.firstMatch.exists
+            timeline.append(String(format: "%.1fs focus=%@ keyboard=%@ field=%@", t, "\(f)", "\(k)", "\(search.frame)"))
+            if f && gainedAt == nil { gainedAt = t }
+            if !f && gainedAt != nil && lostAt == nil { lostAt = t }
+            usleep(500_000)
+        }
+        let a = XCTAttachment(string: timeline.joined(separator: "\n")); a.name = "launch-focus-timeline"; a.lifetime = .keepAlways; add(a)
+        print("LAUNCHFOCUS TIMELINE\n" + timeline.joined(separator: "\n"))
+        XCTAssertNotNil(gainedAt, "the search took focus at launch")
+        XCTAssertNil(lostAt, "focus was lost at \(lostAt ?? 0) s after the launch route gained it; see the launch-focus-timeline attachment")
+        XCTAssertTrue((search.value(forKey: "hasKeyboardFocus") as? Bool) == true && app.keyboards.firstMatch.exists, "still focused with the keyboard up after 10 s")
+    }
+
     // MARK: - Accessibility (G-7, G-10)
 
     /// The new screens pass the system audit for hit regions and element descriptions.
