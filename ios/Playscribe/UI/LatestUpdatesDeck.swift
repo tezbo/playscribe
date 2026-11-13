@@ -345,6 +345,8 @@ struct CompactDeckCard: View {
         // The caller gives a `height` that already holds the whole caption at accessibility sizes (measured by the deck's
         // ruler), so nothing can overflow the card; the art and its scrim are the background.
         AdaptiveCaption(card: card)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .brightArtScrim(0.6)
             .frame(maxWidth: .infinity, alignment: .bottomLeading)
             .frame(height: height, alignment: .bottomLeading)
             .background {
@@ -794,6 +796,8 @@ struct DeckStage: View {
                 }
                 .font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
             }
+            // bug-text-on-bright-art: 75% black behind the block, since the ember eyebrow needs more than white lines (Iris 2b).
+            .brightArtScrim(0.75)
             .padding(20)
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             // The caption ends 24 pt above the division, measured in screen space (as in 0.2.0 #174/#176).
@@ -805,4 +809,40 @@ struct DeckStage: View {
         .allowsHitTesting(false)
         .accessibilityElement(children: .contain)
     }
+}
+
+
+/// bug-text-on-bright-art (Iris spec 2b): a fixed black scrim behind a text block over key art, so small text keeps 4.5:1 on
+/// the brightest art. 0% one line above the block, full `strength` from the block's top to 8 pt under its last line, soft
+/// side edges, no box. It belongs to the text, not the art, so it does not move under key-art motion. `strength` is at least
+/// 0.6 behind white lines and 0.75 behind the ember eyebrow ("New update", "Coming soon").
+struct BrightArtScrim: ViewModifier {
+    var strength: Double
+    var ramp: CGFloat = 24
+    var tail: CGFloat = 8
+    var feather: CGFloat = 20
+
+    func body(content: Content) -> some View {
+        content.background(alignment: .bottom) {
+            VStack(spacing: 0) {
+                LinearGradient(colors: [.black.opacity(0), .black.opacity(strength)], startPoint: .top, endPoint: .bottom)
+                    .frame(height: ramp)
+                Color.black.opacity(strength)
+            }
+            .mask {
+                HStack(spacing: 0) {
+                    LinearGradient(colors: [.clear, .black], startPoint: .leading, endPoint: .trailing).frame(width: feather)
+                    Color.black
+                    LinearGradient(colors: [.black, .clear], startPoint: .leading, endPoint: .trailing).frame(width: feather)
+                }
+            }
+            .padding(.top, -ramp).padding(.bottom, -tail).padding(.horizontal, -feather)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+        }
+    }
+}
+
+extension View {
+    func brightArtScrim(_ strength: Double) -> some View { modifier(BrightArtScrim(strength: strength)) }
 }
