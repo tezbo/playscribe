@@ -74,8 +74,9 @@ final class PoseParityTests: XCTestCase {
             var reachable = present
             var half = "n/a"
             if tabletop, present {
-                let el = found.firstMatch
-                let lower = el.frame.minY >= foldBottom - 0.5
+                // The stage can carry a same-named label (a release's own "Story" section, drawn in the view-only upper half), and
+                // firstMatch returned that one. Reachable means any match sits in the lower half (docs/ux-acceptance.md PP-1, G-4).
+                let lower = found.allElementsBoundByIndex.contains { $0.frame.minY >= foldBottom - 0.5 }
                 half = lower ? "lower" : "upper"
                 reachable = lower
             }
