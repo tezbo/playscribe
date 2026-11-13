@@ -111,6 +111,7 @@ struct FrontCoverPage: View {
     var safeArea: EdgeInsets = EdgeInsets()
     @State private var plateTop: CGFloat = 0
     @State private var pageHeight: CGFloat = 0
+    @State private var pageWide = false
 
     var body: some View {
         Button {
@@ -141,7 +142,10 @@ struct FrontCoverPage: View {
                 .background { if solid { PlayscribeColor.ink950.opacity(0.92) } }
             }
             .coordinateSpace(.named("coverPage"))
-            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in if abs(h - pageHeight) > 0.5 { pageHeight = h } }
+            .onGeometryChange(for: CGSize.self) { $0.size } action: { s in
+                if abs(s.height - pageHeight) > 0.5 { pageHeight = s.height }
+                if (s.width > s.height) != pageWide { pageWide = s.width > s.height }
+            }
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -176,7 +180,7 @@ struct FrontCoverPage: View {
     /// CM-5: the shade is part of the cover, not the art, so the caption meets AA over any art (and, later, any loop
     /// frame). The top darkens a little for the status bar and the rail.
     private var fade: some View {
-        LinearGradient(stops: Self.fadeStops(accessibility: typeSize.isAccessibilitySize,
+        LinearGradient(stops: Self.fadeStops(accessibility: typeSize.isAccessibilitySize || pageWide,
                                              plateTop: pageHeight > 0 && plateTop > 0 ? Double(plateTop / pageHeight) : nil)
                         .map { .init(color: PlayscribeColor.ink950.opacity($0.opacity), location: $0.location) },
                        startPoint: .top, endPoint: .bottom)
@@ -186,6 +190,9 @@ struct FrontCoverPage: View {
     /// plate covers the lower half and its eyebrow sat on pale art at about 40 percent, so the shade follows the plate: clear
     /// until just above it, 88 percent black at the eyebrow's top edge (the accent holds 4.5:1 over art up to about 60 percent
     /// luminance there), 92 percent by the title, solid at the foot.
+    /// A wide page (Closed landscape) takes the same plate-following shade at every size (Quinn, 0e77e33 landscape still): the
+    /// plate fills most of the height, so the signed portrait shade left the NEW UPDATE eyebrow on bright art at 3.1:1 (the
+    /// fix #514 used for bright art: a bottom-weighted scrim reaching up to the eyebrow). Portrait keeps the signed shade.
     static func fadeStops(accessibility: Bool, plateTop: Double?) -> [(opacity: Double, location: Double)] {
         guard accessibility else {
             return [(0.55, 0), (0, 0.18), (0, 0.45), (0.92, 0.85), (1, 1)]

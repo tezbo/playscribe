@@ -127,7 +127,8 @@ struct FrontCoverTests {
             #expect(atPlate.allSatisfy { $0.opacity >= 0.88 })
             #expect(stops.first?.location == 0 && stops.last?.location == 1)
         }
-        // Standard sizes keep the signed shade.
+        // Standard sizes keep the signed shade in portrait. A wide page passes accessibility: true (FrontCoverPage.fade), so
+        // Closed landscape's eyebrow sits on 88 percent black at any size (Quinn, 0e77e33 landscape still).
         #expect(FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.4).map(\.location) == [0, 0.18, 0.45, 0.85, 1])
     }
 
