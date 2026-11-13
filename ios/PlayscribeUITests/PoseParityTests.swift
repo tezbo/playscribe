@@ -16,6 +16,8 @@ final class PoseParityTests: XCTestCase {
     private struct Item { let name: String; let query: (XCUIApplication) -> XCUIElementQuery; let predicate: NSPredicate }
 
     private let items: [Item] = [
+        // Present only for a game with a storyline; the comparer fails when a pose lacks an item another pose has.
+        Item(name: "story", query: { $0.staticTexts }, predicate: NSPredicate(format: "label == 'Story'")),
         Item(name: "about", query: { $0.staticTexts }, predicate: NSPredicate(format: "label == 'About'")),
         Item(name: "genres", query: { $0.staticTexts }, predicate: NSPredicate(
             format: "label MATCHES '.*(RPG|Role-playing|Action|Adventure|Shooter|Strategy|Simulator|Puzzle|Platform|Indie|Fighting|Racing|Sport).*' AND label CONTAINS[c] ', '")),
@@ -72,8 +74,9 @@ final class PoseParityTests: XCTestCase {
             var reachable = present
             var half = "n/a"
             if tabletop, present {
-                let el = found.firstMatch
-                let lower = el.frame.minY >= foldBottom - 0.5
+                // The stage can carry a same-named label (a release's own "Story" section, drawn in the view-only upper half), and
+                // firstMatch returned that one. Reachable means any match sits in the lower half (docs/ux-acceptance.md PP-1, G-4).
+                let lower = found.allElementsBoundByIndex.contains { $0.frame.minY >= foldBottom - 0.5 }
                 half = lower ? "lower" : "upper"
                 reachable = lower
             }

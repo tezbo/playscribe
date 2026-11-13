@@ -416,6 +416,7 @@ struct GameGenresLine: View {
 struct TabletopGameTail: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var open = false
+    @State private var storyOpen = false
     var game: CatalogGame
     var body: some View {
         let info = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }
@@ -430,6 +431,17 @@ struct TabletopGameTail: View {
                 }
                 .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
                 .accessibilityIdentifier("aboutMore")
+            }
+            // Story, as the Page's About section carries it in every other pose (PP-1: Closed had it, Tabletop did not).
+            if let story = info?.storyline {
+                Text("Story").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                if storyOpen { LinkedTextView(text: story).font(PlayscribeFont.body) }
+                else { WholeWordText(text: LinkedText.clean(story), font: PlayscribeFont.body, lines: 4, color: nil) }
+                Button(storyOpen ? "Less" : "More") {
+                    if reduceMotion { storyOpen.toggle() } else { withAnimation(.snappy) { storyOpen.toggle() } }
+                }
+                .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
+                .accessibilityIdentifier("storyMore")
             }
             GameLinks(game: game)
             SimilarGamesRow(game: game, limit: 3)
