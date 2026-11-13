@@ -76,12 +76,17 @@ struct NoUpdatesLine: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     var gameID: String
+    /// The "checked, nothing yet" line. Only a game in the library promises to tell the reader (Tabletop's lower half, Iris): a game
+    /// that is only being browsed has no alert to promise, so it says the plain fact.
+    static func checkedCopy(tabletop: Bool, inLibrary: Bool) -> String {
+        tabletop && inLibrary ? "No updates yet. We'll tell you when the first one lands." : "No updates yet."
+    }
     var body: some View {
         if model.feedTracksGame(gameID) {
             VStack(alignment: .leading, spacing: 2) {
                 switch model.checkState {
                 // Tabletop's lower half is the only place a reader looks for why there is nothing (Iris, bug-tabletop-game-details-missing).
-                case .checked: Text(duo.pose == .tabletop ? "No updates yet. We'll tell you when the first one lands." : "No updates yet.")
+                case .checked: Text(Self.checkedCopy(tabletop: duo.pose == .tabletop, inLibrary: model.entry(gameID) != nil))
                 case .failed, .notChecked: Text("Couldn't check yet.")
                 }
                 CheckedLine()
