@@ -53,7 +53,7 @@ set and tune from App Store Connect analytics after launch.
 3. Reader leading with what changed, with the unread mark: "Read it like a book." Opening an update marks it read; use a Library with a mix of read and unread (R-6a).
 4. PS5 tag and verification: "Know if it's on your PS5."
 5. Alerts and widget: "Told when it lands."
-6. Follow list (N-9): "Tell it which games to keep up to date." Frame must show the opt-in wording as shipped, including what leaves the phone and the Settings toggle. Terry sees the wording before it ships; no frame until he has.
+6. Follow list (N-9): "Tell it which games to keep up to date." Frame must show the opt-in wording as shipped, including what leaves the phone and the Settings toggle. Terry approved the wording on 12 Nov 2026 (#455); use it as shipped.
 7. Duo Tabletop: "Made for the fold." Stage above shows the trailer poster, controls below (R-11).
 8. Duo Open/Book: "Two pages, one story." Video reflections show in the mirror in all three poses (R-11, G-9); pick the pose where the reflection reads best.
 9. Library and add flow: "Your games, in seconds."
