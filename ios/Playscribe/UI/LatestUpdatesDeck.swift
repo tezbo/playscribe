@@ -813,27 +813,35 @@ struct DeckStage: View {
 
 
 /// bug-text-on-bright-art (Iris spec 2b): a fixed black scrim behind a text block over key art, so small text keeps 4.5:1 on
-/// the brightest art. 0% one line above the block, full `strength` from the block's top to 8 pt under its last line, soft
+/// the brightest art. 0% a line and a half above the block, eased, full `strength` from the block's top to 8 pt under its last line, soft
 /// side edges, no box. It belongs to the text, not the art, so it does not move under key-art motion. `strength` is at least
 /// 0.6 behind white lines and 0.75 behind the ember eyebrow ("New update", "Coming soon").
 struct BrightArtScrim: ViewModifier {
     var strength: Double
-    var ramp: CGFloat = 24
+    /// One text line and a half above the block, well under the Tabletop cap of 15% of the stage (about 56 pt).
+    var ramp: CGFloat = 40
     var tail: CGFloat = 8
-    var feather: CGFloat = 20
+    var feather: CGFloat = 40
+
+    /// An eased (smoothstep-like) ramp so there is no visible edge where the scrim starts.
+    private func eased(_ top: Double) -> [Gradient.Stop] {
+        [0.0, 0.2, 0.4, 0.6, 0.8, 1.0].map { t in
+            let k = t * t * (3 - 2 * t)
+            return Gradient.Stop(color: .black.opacity(top * k), location: t)
+        }
+    }
 
     func body(content: Content) -> some View {
         content.background(alignment: .bottom) {
             VStack(spacing: 0) {
-                LinearGradient(colors: [.black.opacity(0), .black.opacity(strength)], startPoint: .top, endPoint: .bottom)
-                    .frame(height: ramp)
+                LinearGradient(stops: eased(strength), startPoint: .top, endPoint: .bottom).frame(height: ramp)
                 Color.black.opacity(strength)
             }
             .mask {
                 HStack(spacing: 0) {
-                    LinearGradient(colors: [.clear, .black], startPoint: .leading, endPoint: .trailing).frame(width: feather)
+                    LinearGradient(stops: eased(1), startPoint: .leading, endPoint: .trailing).frame(width: feather)
                     Color.black
-                    LinearGradient(colors: [.black, .clear], startPoint: .leading, endPoint: .trailing).frame(width: feather)
+                    LinearGradient(stops: eased(1), startPoint: .trailing, endPoint: .leading).frame(width: feather)
                 }
             }
             .padding(.top, -ramp).padding(.bottom, -tail).padding(.horizontal, -feather)
