@@ -14,3 +14,12 @@ struct CoverCacheTests {
         #expect(CoverImageCache.downsample(Data([1, 2, 3]), maxPixel: 240) == nil)
     }
 }
+
+struct DayLabelTests {
+    @Test func memoisedLabelsMatchTheirFormat() throws {
+        let d = try #require("2027-02-05".isoDay)
+        #expect(d.shortDay == "5 Feb 2027")
+        #expect(d.shortDay == "5 Feb 2027")
+        #expect(d.dayMonth == "5 Feb")
+    }
+}

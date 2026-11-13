@@ -5,7 +5,7 @@ so write it for testers. Release steps are in docs/release.md.
 
 ## 0.6.0 (in progress)
 
-- The Library scrolls more smoothly: game covers are kept ready at the size the tiles need, so scrolling back up no longer reloads them.
+- The Library scrolls more smoothly, Upcoming most of all: game covers are kept ready at the size the tiles need, and release dates are worked out once instead of on every redraw.
 
 ## 0.5.5 (candidate, not released)
 
