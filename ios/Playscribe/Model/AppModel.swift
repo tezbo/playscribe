@@ -782,12 +782,15 @@ final class AppModel {
             nav.tab = .library; nav.gameID = nil
         // QA (INTERNAL): "no-notes/<game>": only that game in the Library with its update history hidden from the deck, so the
         // hero is the no-release card ("No patch notes yet", or the untracked line). The game needs a past release date.
-        case "no-notes" where parts.count == 1 || parts.count == 2:
+        // "no-notes-page/<game>[/untracked]": the same, then the game's page itself (the pose parity guard needs the page, PP-1).
+        case "no-notes", "no-notes-page":
+            guard parts.count == 1 || parts.count == 2 else { break }
             resetDemo()
             data = PersistedState(collection: [])
             if let g = fixtures.games.first(where: { $0.id == parts[0] }) { addGames([g], status: .owned) }
             qaNoReleases = true
             qaUntracked = parts.count == 2 && parts[1] == "untracked"
+            if url.host() == "no-notes-page" { openGame(parts[0], chapter: .updates); nav.detailReleaseID = nil; linksSheetOpen = false }
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
         // QA (INTERNAL, B-10): "quick/tip" shows the press-and-hold tip; "quick/undo" removes the first game so the

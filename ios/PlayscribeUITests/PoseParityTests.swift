@@ -8,8 +8,8 @@ import XCTest
 ///   ITEM <name> present=<bool> reachable=<bool> half=<upper|lower|n/a> pose=<pose>
 /// `tools/qa/pose_parity.py` compares the dumps of one game across poses and fails when a pose lacks an item another pose has.
 /// Run it once per pose (Closed, Open portrait, Open landscape, Book via -qaPose book, Tabletop via -qaPose tabletop) and per
-/// game: A tracked with notes (`gamepage/dawnwalker`), B tracked with no notes (`no-notes/<game>`), C untracked
-/// (`no-notes/<game>/untracked`). Set PARITY_ROUTE and PARITY_POSE in the scheme's environment (or pass -qaRoute as usual).
+/// game: A tracked with notes (`gamepage/dawnwalker`), B tracked with no notes (`no-notes-page/<game>`), C untracked
+/// (`no-notes-page/<game>/untracked`; the plain `no-notes` routes stay on the Library and never reach the page). Set PARITY_ROUTE and PARITY_POSE in the scheme's environment (or pass -qaRoute as usual).
 @MainActor
 final class PoseParityTests: XCTestCase {
     /// The items of docs/ux-acceptance.md PP-1 and how each is found. Labels are what VoiceOver reads.
@@ -19,10 +19,11 @@ final class PoseParityTests: XCTestCase {
         Item(name: "about", query: { $0.staticTexts }, predicate: NSPredicate(format: "label == 'About'")),
         Item(name: "genres", query: { $0.staticTexts }, predicate: NSPredicate(
             format: "label MATCHES '.*(RPG|Role-playing|Action|Adventure|Shooter|Strategy|Simulator|Puzzle|Platform|Indie|Fighting|Racing|Sport).*' AND label CONTAINS[c] ', '")),
-        Item(name: "trailerRows", query: { $0.buttons }, predicate: NSPredicate(format: "label BEGINSWITH 'Play ' AND NOT label BEGINSWITH 'Play trailer'")),
-        Item(name: "playTrailer", query: { $0.buttons }, predicate: NSPredicate(format: "label == 'Play trailer'")),
-        Item(name: "officialLink", query: { $0.buttons }, predicate: NSPredicate(format: "label == 'Official website'")),
-        Item(name: "patchNotesLink", query: { $0.buttons }, predicate: NSPredicate(format: "label BEGINSWITH 'All patch notes'")),
+        // One item: Tabletop's "Play trailer" row stands for the trailer rows (Iris spec); other poses list each trailer.
+        Item(name: "trailers", query: { $0.buttons }, predicate: NSPredicate(format: "label BEGINSWITH 'Play '")),
+        // Link rows read "<title>, opens in browser" in the sheet and "Official website" inline, as buttons or links: any element.
+        Item(name: "officialLink", query: { $0.descendants(matching: .any) }, predicate: NSPredicate(format: "label BEGINSWITH 'Official website'")),
+        Item(name: "patchNotesLink", query: { $0.descendants(matching: .any) }, predicate: NSPredicate(format: "label BEGINSWITH 'All patch notes'")),
         Item(name: "youMightAlsoLike", query: { $0.staticTexts }, predicate: NSPredicate(format: "label == 'You might also like'")),
         Item(name: "addToLibrary", query: { $0.buttons }, predicate: NSPredicate(format: "label == 'Add to library'")),
     ]
@@ -45,9 +46,12 @@ final class PoseParityTests: XCTestCase {
         app.launch()
         XCTAssertTrue(app.descendants(matching: .any)["foldAudit"].waitForExistence(timeout: 40), "the game page did not load")
         let poseLabel = ReleaseRowTests.pose(app)
-        let poseName = poseLabel.components(separatedBy: "pose: ").last?.components(separatedBy: ";").first?
+        let base = poseLabel.components(separatedBy: "pose: ").last?.components(separatedBy: ";").first?
             .trimmingCharacters(in: .whitespaces) ?? "unknown"
-        let tabletop = poseName == "tabletop"
+        let tabletop = base == "tabletop"
+        // Both Open orientations report pose=flat; the window's shape tells them apart so the dumps do not merge.
+        let win = app.windows.firstMatch.frame
+        let poseName = base == "flat" ? (win.width > win.height ? "openLandscape" : "openPortrait") : base
         let foldBottom = tabletop ? tabletopFoldBottom(app) : 0
         sleep(3) // the page's details load asynchronously (GameInfoStore)
 
