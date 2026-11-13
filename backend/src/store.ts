@@ -431,9 +431,11 @@ export const newsOf = (db: DB, gameId: string, limit = 20) =>
  * row was made before IGDB gave the PS5 date. Only rows taken as out on PS5 from Steam alone (`assumed`) are
  * dropped. A release whose only sources are Steam posts, announced more than a day before the PS5 launch (Steam re-dated old posts; BG3's 2021 patches), loses its PS5 row whatever its tag; launch-day patches stay. Anything a press source said about PS5 stays. Safe to run every ingest.
  */
-export const DROP_PRE_LAUNCH_PS5_SQL = `DELETE FROM platform_releases WHERE platform = 'ps5' AND release_id IN (
-           SELECT r.id FROM releases r JOIN games g ON g.id = r.game_id
-           WHERE r.ps4 = 0 AND (
+// Each PS5 row looks up its own release by id (feed-hot-run-slow): the IN list it replaced was correlated on the row's
+// verification, so SQLite read every release once per PS5 row, about 15 minutes of every run on the 12 Nov feed.
+export const DROP_PRE_LAUNCH_PS5_SQL = `DELETE FROM platform_releases WHERE platform = 'ps5' AND EXISTS (
+           SELECT 1 FROM releases r JOIN games g ON g.id = r.game_id
+           WHERE r.id = platform_releases.release_id AND r.ps4 = 0 AND (
              (platform_releases.verification = 'assumed' AND substr(r.announced_at, 1, 10) < COALESCE(g.ps5_release, ?))
              OR (json_array_length(r.source_ids) > 0 AND NOT EXISTS (SELECT 1 FROM json_each(r.source_ids) WHERE value NOT LIKE '%-steam')
                  AND substr(r.announced_at, 1, 10) < date(COALESCE(g.ps5_release, ?), '-1 day'))))`
