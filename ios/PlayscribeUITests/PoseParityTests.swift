@@ -25,7 +25,8 @@ final class PoseParityTests: XCTestCase {
         Item(name: "officialLink", query: { $0.descendants(matching: .any) }, predicate: NSPredicate(format: "label BEGINSWITH 'Official website'")),
         Item(name: "patchNotesLink", query: { $0.descendants(matching: .any) }, predicate: NSPredicate(format: "label BEGINSWITH 'All patch notes'")),
         Item(name: "youMightAlsoLike", query: { $0.staticTexts }, predicate: NSPredicate(format: "label == 'You might also like'")),
-        Item(name: "addToLibrary", query: { $0.buttons }, predicate: NSPredicate(format: "label == 'Add to library'")),
+        // Drawn only while the game is not in the library; by identifier, as Closed's PageView header and the Contents both set it.
+        Item(name: "addToLibrary", query: { $0.descendants(matching: .any) }, predicate: NSPredicate(format: "identifier == 'addToLibrary' OR label == 'Add to library'")),
     ]
 
     /// The fold's lower edge in the app's coordinates, from the probe JSON (`division`), or 0 when the pose has no horizontal fold.
@@ -54,6 +55,11 @@ final class PoseParityTests: XCTestCase {
         let poseName = base == "flat" ? (win.width > win.height ? "openLandscape" : "openPortrait") : base
         let foldBottom = tabletop ? tabletopFoldBottom(app) : 0
         sleep(3) // the page's details load asynchronously (GameInfoStore)
+        // A guard that never reached the game page would pass vacuously: fail instead.
+        XCTAssertTrue(app.descendants(matching: .any)["statusGlyph"].exists
+                      || app.descendants(matching: .any).matching(NSPredicate(format: "label == 'Add to library' OR label == 'Check for updates' OR label BEGINSWITH 'Official website'")).count > 0
+                      || app.staticTexts.matching(NSPredicate(format: "label == 'ALL UPDATES' OR label == 'All updates'")).count > 0,
+                      "the route never opened the game page [\(route)]")
 
         var lines: [String] = []
         for item in items {
