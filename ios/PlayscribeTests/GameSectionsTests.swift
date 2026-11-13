@@ -84,7 +84,7 @@ struct GameSectionsTests {
         #expect(m.nav.anchors[AppModel.bookKey("dawnwalker", .companion)] == "entry-\(tip.id)")
     }
 
-    @Test func worldRouteOpensCompanionOnWorld() {
+    @Test func worldChapterOpensCompanion() {
         let m = model()
         m.openGame("dawnwalker", chapter: .world)
         #expect(m.nav.chapter == .companion)
