@@ -258,7 +258,11 @@ struct TabRoot: View {
                 NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search)
             }
         }
-        .onChange(of: model.data.nav.tab) { old, new in if new == .search && old != .search { model.searchReturnTab = old } }
+        .onChange(of: model.data.nav.tab) { old, new in
+            if new == .search && old != .search { model.searchReturnTab = old }
+            // D-1: leaving the Library by its tab drops the open game's way back, so a later Back goes to the Library.
+            if new != .library { model.nav.returnTab = nil }
+        }
     }
 }
 
@@ -282,6 +286,8 @@ struct LibraryRoot: View {
         NavigationStack(path: Binding(
             get: { (model.nav.gameID.map { [$0] } ?? []) + (model.nav.gameID != nil ? model.nav.detailReleaseID.map { ["release:" + $0] } ?? [] : []) },
             set: { path in
+                // A swipe back from the game leaves it the way the Back button does (D-1: to where it was opened from).
+                if path.isEmpty, model.nav.gameID != nil { model.closeGame(); return }
                 model.nav.gameID = path.first
                 model.nav.detailReleaseID = path.count > 1 ? String(path[1].dropFirst("release:".count)) : nil
             }
@@ -322,7 +328,7 @@ struct TabletopRail: View {
               VStack(spacing: 6) {
             if let id = model.nav.gameID, model.nav.tab == .library {
                 // The same name and id as the other poses' back button ("Library, back", gameBack); a bare "Library" read as the tab.
-                RailButton(action: ScreenAction(id: "back", title: "Library, back", systemImage: "chevron.backward",
+                RailButton(action: ScreenAction(id: "back", title: model.backTitle, systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
                     .accessibilityIdentifier("gameBack")
                 // Only five buttons fit the lower half (297a799): Check for updates and Links go in a More menu.

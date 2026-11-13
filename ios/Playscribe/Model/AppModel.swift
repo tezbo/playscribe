@@ -4,7 +4,17 @@ import os
 import SwiftUI
 import UserNotifications
 
-enum AppTab: String, Codable, Hashable { case library, updates, news, search }
+enum AppTab: String, Codable, Hashable {
+    case library, updates, news, search
+    var title: String {
+        switch self {
+        case .library: "Library"
+        case .updates: "Updates"
+        case .news: "News"
+        case .search: "Search"
+        }
+    }
+}
 
 enum Chapter: String, Codable, CaseIterable, Hashable, Identifiable {
     case updates, news, world, companion, gallery, mybook
@@ -87,6 +97,9 @@ struct NavState: Codable, Hashable {
     var chapters: [String: Chapter]?
     /// R-7 (0.5.6): the Companion section's World / Tips filter, per game (only used when the game has both kinds).
     var companionKind: [String: BookEntry.Chapter]?
+    /// D-1 (0.5.6, Card D): the tab the open game was reached from, when it was not the Library. Back from the game returns
+    /// there. nil: Back goes to the Library.
+    var returnTab: AppTab?
 }
 
 struct PersistedState: Codable {
@@ -654,6 +667,9 @@ final class AppModel {
         let gameID = game(gameID) == nil ? (canonicalGameID(gameID) ?? gameID) : gameID
         var n = nav
         let sameGame = n.gameID == gameID
+        // D-1 (0.5.6, Card D): Back from the game goes to where it was opened from. Sections are siblings, so switching one
+        // never adds history; a second game opened from inside the Library keeps the Library as its way back.
+        if n.tab != .library { n.returnTab = n.tab } else if n.gameID == nil { n.returnTab = nil }
         n.tab = .library
         if !sameGame { n.detailReleaseID = nil }
         n.gameID = gameID
@@ -705,9 +721,20 @@ final class AppModel {
 
     static func bookKey(_ gameID: String, _ chapter: Chapter) -> String { "book-\(gameID)-\(chapter.rawValue)" }
 
+    /// Back from the game page (rail, toolbar, swipe): leaves the game for where it was opened from (D-1, Card D).
     func closeGame() {
+        let back = nav.returnTab
         nav.gameID = nil
+        nav.detailReleaseID = nil
+        nav.returnTab = nil
+        if let back { nav.tab = back }
     }
+
+    /// The Back control's label: the screen it returns to (HIG: the previous screen's title).
+    var backTitle: String { "\((nav.returnTab ?? .library).title), back" }
+
+    /// J-1: Closed and Open portrait push an update as its own page; side by side and Tabletop the Page shows it in place.
+    var pushesReleases: Bool { livePose == .closed || (livePose == .flat && !liveRightPage) }
 
     /// Deep link from a notification or URL (N-6, N-9).
     func openRelease(gameID: String, releaseID: String) {
@@ -721,14 +748,24 @@ final class AppModel {
             Task {
                 await refreshHistories([gameID])
                 if release(gameID, releaseID) != nil {
-                    openGame(gameID, chapter: .updates, releaseID: releaseID)
+                    openPushed(gameID, releaseID)
                 } else {
                     show(Toast(text: "That update is no longer available"))
                 }
             }
         } else {
-            openGame(gameID, chapter: .updates, releaseID: releaseID)
+            openPushed(gameID, releaseID)
         }
+    }
+
+    /// N-6 (0.5.6, Card D): a notification or link opens the update page itself. Back goes to the game's What's new, then
+    /// the Library, whatever tab was showing.
+    private func openPushed(_ gameID: String, _ releaseID: String) {
+        nav.tab = .library
+        nav.returnTab = nil
+        openGame(gameID, chapter: .updates, releaseID: releaseID)
+        nav.returnTab = nil
+        if pushesReleases { nav.detailReleaseID = releaseID }
     }
 
     func handle(url: URL) {

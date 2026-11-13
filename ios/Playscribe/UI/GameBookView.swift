@@ -55,7 +55,7 @@ struct GameBookView: View {
                         .background(Circle().fill(.regularMaterial))
                         .contentShape(Rectangle())
                 }
-                .accessibilityLabel("Library, back")
+                .accessibilityLabel(model.backTitle)
                 .accessibilityIdentifier("gameBack")
             }
             .sharedBackgroundVisibility(.hidden)
