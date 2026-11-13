@@ -319,9 +319,7 @@ struct SearchView: View {
                 Section("In game books") {
                     ForEach(entryHits) { e in
                         Button {
-                            let ch: Chapter = e.chapter == .world ? .world : .companion
-                            model.openGame(e.gameID, chapter: ch)
-                            model.nav.anchors[AppModel.bookKey(e.gameID, ch)] = "entry-\(e.id)"
+                            model.openEntry(e)
                         } label: {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(e.title).font(PlayscribeFont.subheadline.weight(.semibold))

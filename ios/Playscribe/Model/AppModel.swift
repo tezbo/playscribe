@@ -85,6 +85,8 @@ struct NavState: Codable, Hashable {
     var detailReleaseID: String?
     /// D-13: the chapter last opened, per game.
     var chapters: [String: Chapter]?
+    /// R-7 (0.5.6): the Companion section's World / Tips filter, per game (only used when the game has both kinds).
+    var companionKind: [String: BookEntry.Chapter]?
 }
 
 struct PersistedState: Codable {
@@ -585,14 +587,40 @@ final class AppModel {
         return ids.lazy.compactMap { id in self.entry(id) != nil ? self.game(id) : nil }.first
     }
 
+    /// R-7 (0.5.6): what the game has, for which sections show (GameSections).
+    func sectionContent(_ gameID: String) -> GameSections.Content {
+        let entries = fixtures.book.filter { $0.gameID == gameID }
+        let news = NewsStore.shared
+        return GameSections.Content(
+            worldEntries: entries.filter { $0.chapter == .world }.count,
+            tipEntries: entries.filter { $0.chapter == .companion }.count,
+            newsCount: news.loaded.contains(gameID) && !news.failed.contains(gameID) ? (news.items[gameID] ?? []).count : nil,
+            galleryItems: gallery(gameID).count)
+    }
+
+    /// R-7: the game page's sections, in order; empty ones hidden.
     func chapters(_ gameID: String) -> [Chapter] {
-        Chapter.allCases.filter { c in
-            switch c {
-            case .updates, .news, .mybook, .gallery: true
-            case .world: fixtures.book.contains { $0.gameID == gameID && $0.chapter == .world }
-            case .companion: fixtures.book.contains { $0.gameID == gameID && $0.chapter == .companion }
-            }
-        }
+        GameSections.visible(sectionContent(gameID), current: nav.gameID == gameID ? GameSections.canonical(nav.chapter) : nil)
+    }
+
+    /// The section the game page shows: the stored one (World reads as Companion) when it shows, else What's new.
+    func section(_ gameID: String) -> Chapter { GameSections.resolve(nav.chapter, in: chapters(gameID)) }
+
+    /// The kind the Companion section lists, or nil for every entry (the game has one kind, so no filter shows).
+    func companionKind(_ gameID: String) -> BookEntry.Chapter? {
+        GameSections.companionKind(nav.companionKind?[gameID], sectionContent(gameID))
+    }
+
+    func setCompanionKind(_ gameID: String, _ kind: BookEntry.Chapter) {
+        nav.companionKind = (nav.companionKind ?? [:]).merging([gameID: kind]) { $1 }
+    }
+
+    /// Opens a Companion entry (a bookmark, a search hit): the game's Companion section, filtered to the entry's kind,
+    /// scrolled to it.
+    func openEntry(_ e: BookEntry) {
+        if nav.gameID != e.gameID { openGame(e.gameID, chapter: .companion) } else { nav.chapter = .companion }
+        setCompanionKind(e.gameID, e.chapter)
+        nav.anchors[Self.bookKey(e.gameID, .companion)] = "entry-\(e.id)"
     }
 
     func gallery(_ gameID: String) -> [GalleryItem] {
@@ -631,7 +659,8 @@ final class AppModel {
         n.gameID = gameID
         n.lastGameID = gameID
         // D-13: each game reopens on the chapter last opened in it.
-        n.chapter = chapter ?? (sameGame ? n.chapter : (n.chapters?[gameID] ?? .updates))
+        // R-7 (0.5.6): World is part of Companion; a saved or routed World opens Companion.
+        n.chapter = GameSections.canonical(chapter ?? (sameGame ? n.chapter : (n.chapters?[gameID] ?? .updates)))
         if let releaseID {
             n.selected = (n.selected ?? [:]).merging([gameID: releaseID]) { $1 }
             n.expanded["rel:\(releaseID)"] = true
@@ -657,7 +686,7 @@ final class AppModel {
     func isViewing(_ gameID: String, _ releaseID: String) -> Bool {
         guard nav.tab == .library, nav.gameID == gameID else { return false }
         if nav.detailReleaseID != nil { return nav.detailReleaseID == releaseID }
-        return nav.chapter == .updates && selectedRelease(gameID)?.id == releaseID
+        return section(gameID) == .updates && selectedRelease(gameID)?.id == releaseID
     }
 
     /// D-2/D-3: the release the Page shows: the one picked, else the newest On PS5 release.
@@ -749,7 +778,10 @@ final class AppModel {
         case "news": nav.tab = .news   // QA: the News tab
         case "search": nav.tab = .search
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
-        case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
+        case "chapter" where parts.count == 2:
+            openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
+            // R-7: `chapter/<game>/world` opens Companion on its World filter.
+            if parts[1] == Chapter.world.rawValue { setCompanionKind(parts[0], .world) }
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
         case "store-set":

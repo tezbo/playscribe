@@ -1,15 +1,32 @@
 import SwiftUI
 
+/// R-7 (0.5.6): Companion, the World and Tips entries in one section. A World / Tips filter shows only when the game has
+/// both kinds; in Tabletop the section sits on the view-only standing half, so there is no filter and every entry shows,
+/// grouped by kind (G-4).
 struct EntriesChapter: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
-    var chapter: Chapter
 
     var body: some View {
-        let entries = model.fixtures.book.filter { $0.gameID == gameID && $0.chapter.rawValue == chapter.rawValue }
+        let content = model.sectionContent(gameID)
+        let filters = GameSections.companionFilters(content)
+        let touchable = duo.pose != .tabletop
+        let kind = touchable ? model.companionKind(gameID) : nil
+        let entries = model.fixtures.book.filter { $0.gameID == gameID && (kind == nil || $0.chapter == kind) }
+            .sorted { ($0.chapter == .world ? 0 : 1) < ($1.chapter == .world ? 0 : 1) }
         var sections: [String] = []
         for e in entries where !sections.contains(e.section) { sections.append(e.section) }
         return VStack(alignment: .leading, spacing: 14) {
+            if touchable && !filters.isEmpty {
+                Picker("Show", selection: Binding(get: { kind ?? filters[0] }, set: { model.setCompanionKind(gameID, $0) })) {
+                    ForEach(filters, id: \.self) { Text(GameSections.filterTitle($0)).tag($0) }
+                }
+                .pickerStyle(.segmented)
+                .frame(minHeight: 44)
+                .tappableFrame()
+                .accessibilityIdentifier("companionFilter")
+            }
             ForEach(sections, id: \.self) { sec in
                 SectionHeader(title: sec).id("sec-\(sec)")
                 ForEach(entries.filter { $0.section == sec }) { EntryCard(entry: $0).id("entry-\($0.id)") }
@@ -159,11 +176,7 @@ struct MyBookChapter: View {
                 HStack {
                     Button {
                         if b.kind == .release { model.openGame(gameID, chapter: .updates, releaseID: b.id) }
-                        else if let e = model.fixtures.book.first(where: { $0.id == b.id }) {
-                            let ch: Chapter = e.chapter == .world ? .world : .companion
-                            model.nav.chapter = ch
-                            model.nav.anchors[AppModel.bookKey(gameID, ch)] = "entry-\(e.id)"
-                        }
+                        else if let e = model.fixtures.book.first(where: { $0.id == b.id }) { model.openEntry(e) }
                     } label: {
                         Label(title ?? "Removed item", systemImage: b.kind == .release ? "list.bullet.rectangle.portrait" : "bookmark")
                             .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)

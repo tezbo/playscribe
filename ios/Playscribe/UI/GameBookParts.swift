@@ -32,7 +32,7 @@ struct PageView: View {
     }
 
     var body: some View {
-        let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
+        let chapter = model.section(gameID)
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 PageArtBand(gameID: gameID)
@@ -73,7 +73,7 @@ struct PageView: View {
                             NoNotesPage(game: g) { if withContents { closedContents } }
                         }
                     case .news: NewsChapter(gameID: gameID)
-                    case .world, .companion: EntriesChapter(gameID: gameID, chapter: chapter)
+                    case .world, .companion: EntriesChapter(gameID: gameID)
                     case .gallery: GalleryChapter(gameID: gameID)
                     case .mybook: MyBookChapter(gameID: gameID)
                     }
@@ -137,7 +137,7 @@ struct PageView: View {
         .foldAudited()
     }
 
-    private var anchorKey: String { "page-\(gameID)-\(model.nav.chapter.rawValue)" }
+    private var anchorKey: String { "page-\(gameID)-\(model.section(gameID).rawValue)" }
 
     private func restore() {
         guard let y = model.nav.anchors[anchorKey].flatMap(Double.init), y > 0 else { return }
@@ -166,7 +166,7 @@ struct PageArtBand: View {
     private var slim: Bool { duo.isLandscape && duo.pose == .closed }
     var body: some View {
         let game = model.game(gameID)
-        let asset = model.backdrop(gameID, chapter: model.nav.chapter, tall: false)
+        let asset = model.backdrop(gameID, chapter: model.section(gameID), tall: false)
         let coverOnly = asset != nil && asset == game?.coverAsset && asset != game?.heroAsset
         let hasArt = asset != nil || game?.heroArtURL != nil || game?.coverURL != nil
         Group {
@@ -637,7 +637,7 @@ struct ContentsBody: View {
 
     var body: some View {
         let game = model.game(gameID)
-        let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
+        let chapter = model.section(gameID)
             VStack(alignment: .leading, spacing: 14) {
                 if duo.pose != .closed { HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 4) {
