@@ -100,7 +100,6 @@ struct FrontCoverPage: View {
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.qaSolid) private var qaSolid
-    @Environment(\.qaReduceMotion) private var qaReduceMotion
     @AppStorage(CoverMotion.key) private var stored: CoverMotion = CoverMotion.defaultMode
     @AppStorage(YouTubeController.autoplayKey) private var autoplay = false
     var card: DeckCard
@@ -157,9 +156,20 @@ struct FrontCoverPage: View {
 
     private var solid: Bool { contrast == .increased || reduceTransparency || qaSolid }
 
+    /// QA (internal builds, launch with `-qaReduceMotion YES`): the cover resolves as under Reduce Motion (CM-1), for CI stills,
+    /// where the simulator's switch can't be set per launch. Read here, not from the environment: the preview is a full-screen
+    /// cover presented from Settings, outside RootView's environment.
+    static var qaReduceMotion: Bool {
+        #if INTERNAL
+        return UserDefaults.standard.bool(forKey: "qaReduceMotion")
+        #else
+        return false
+        #endif
+    }
+
     /// Key-art motion runs when it is the resolved mode (Reduce Motion forces Still, CM-1) and the art passes the murky check.
     private var moving: Bool {
-        guard stored.resolved(reduceMotion: reduceMotion || qaReduceMotion, autoplay: autoplay) == .keyArt, let asset = card.game.keyArtAsset else { return false }
+        guard stored.resolved(reduceMotion: reduceMotion || Self.qaReduceMotion, autoplay: autoplay) == .keyArt, let asset = card.game.keyArtAsset else { return false }
         return !KeyArtQuality.isMurky(asset: asset)
     }
 
