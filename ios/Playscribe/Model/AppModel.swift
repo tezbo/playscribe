@@ -862,6 +862,10 @@ final class AppModel {
                 simulated: true, arrivesAt: now)
             data.simulated.removeAll { $0.id == release.id }
             data.simulated.insert(release, at: 0)
+            // releases() hides anything arriving after the model's clock, which was set before this release existed (CI unit run
+            // 43372143693: no day-one card). Move the clock on, and choose the fresh cards again now the release is there.
+            tick()
+            qaFreshCache = nil
         // QA (INTERNAL): a PS5 update with a very long invented title, to exercise the share-button guard on the release page
         // (r054: a title past 4 lines at AX drops the button to its own row).
         case "long-title" where parts.count == 1:
