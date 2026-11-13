@@ -370,8 +370,9 @@ struct TabletopRail: View {
             .scrollBounceBehavior(.basedOnSize)
             .scrollIndicators(.hidden)
             // When the lower half is short the controls scroll: fade the edge so a cut-off button reads as "more",
-            // and leave room so the last one scrolls clear of the tab capsule.
-            .contentMargins(.bottom, 8, for: .scrollContent)
+            // and leave room so the last one (More) rests fully clear of the tab capsule and of the edge fade at the end of the scroll
+            // (Iris, bug-tabletop-rail-more-hidden: 8 pt left More under the fade on KCD II).
+            .contentMargins(.bottom, 32, for: .scrollContent)
             .onScrollGeometryChange(for: Bool.self) { g in
                 g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1
             } action: { _, more in moreBelow = more }
