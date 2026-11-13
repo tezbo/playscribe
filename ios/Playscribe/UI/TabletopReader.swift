@@ -94,7 +94,8 @@ extension AppModel {
             facts.append("Download: " + ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal) + (size.verification == .reported ? " (reported)" : ""))
         }
         if let v = r.video { facts.append("Video: \(v.label)" + (v.duration.map { ", \($0)" } ?? "")) }
-        out.append(ReaderSection(id: "facts", title: "On your PS5", body: facts.joined(separator: "\n")))
+        // Never "On your PS5": the app cannot know what a player has installed (Terry).
+        out.append(ReaderSection(id: "facts", title: "On PS5", body: facts.joined(separator: "\n")))
         return out
     }
 }
