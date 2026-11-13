@@ -794,7 +794,7 @@ struct NotesSearchField: View {
     /// mid-word. Standard sizes keep the scoped wording.
     private var prompt: String {
         if typeSize.isAccessibilitySize { return "Search notes" }
-        return model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes"
+        return model.noteScope == .thisGame ? "Search this game’s notes" : "Search all my games’ notes"
     }
     var body: some View {
         @Bindable var model = model
@@ -851,7 +851,7 @@ struct InlineNoteResults: View {
                     .accessibilityLabel("\(hits.count) results")
             }
             if hits.isEmpty {
-                let none = model.noteScope == .thisGame ? "Nothing in this game's notes matches" : "Nothing in your games' notes matches"
+                let none = model.noteScope == .thisGame ? "Nothing in this game’s notes matches" : "Nothing in your games’ notes matches"
                 Text(byLetter.map { "No notes start with \($0)" } ?? none)
                     .font(PlayscribeFont.headline)
                 if model.noteScope == .thisGame {

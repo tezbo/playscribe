@@ -12,7 +12,7 @@ struct DeckNoReleaseLineTests {
     }
 
     @Test func anUntrackedGameSaysWeDoNotTrackIt() {
-        #expect(DeckCard.noReleaseLine(tracked: false) == "We don't track this game's updates yet")
+        #expect(DeckCard.noReleaseLine(tracked: false) == "We don’t track this game’s updates yet")
     }
 
     @Test func theTwoStatesStayDistinctAndNeverEchoTheName() {

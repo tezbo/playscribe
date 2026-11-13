@@ -52,7 +52,7 @@ enum StoreSet {
             return Release(
                 id: id, gameID: e.id, displayName: u.name, kind: u.name.hasPrefix("Hotfix") ? .hotfix : .major, kindBasis: .studio,
                 announcedAt: at,
-                notes: [NoteSection(title: "What's changed", items: u.changes.map { NoteItem(text: $0.prefix(1).uppercased() + $0.dropFirst() + ".") })],
+                notes: [NoteSection(title: "What’s changed", items: u.changes.map { NoteItem(text: $0.prefix(1).uppercased() + $0.dropFirst() + ".") })],
                 sourceIDs: [],
                 platforms: [PlatformRelease(platform: .ps5, status: .live,
                                             version: Field(value: "01.00\(u.unread ? 3 : 1).000", verification: .official, sourceID: "store-set", checkedAt: at),

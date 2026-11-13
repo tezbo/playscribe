@@ -1048,7 +1048,7 @@ extension PlayscribeUITests {
         sleep(3)
         let find = app.buttons["Find these games"]
         if !find.waitForExistence(timeout: 8),
-           app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS[c] \"can't scan\" OR label CONTAINS[c] \"cannot scan\"")).firstMatch.exists
+           app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS[c] \"can’t scan\" OR label CONTAINS[c] \"cannot scan\"")).firstMatch.exists
             || ReleaseRowTests.pose(app).contains("pose: tabletop") {
             app.terminate(); throw XCTSkip("no camera in this simulator pose, so the scan view shows its unsupported state")
         }

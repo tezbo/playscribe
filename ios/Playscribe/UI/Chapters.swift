@@ -59,7 +59,7 @@ struct GalleryChapter: View {
         let picked = model.data.selectedArtwork[gameID]
         VStack(alignment: .leading, spacing: 14) {
             if items.isEmpty { GalleryEmpty(gameID: gameID) }
-            if !art.isEmpty { Text("Choose a picture to use as this game's backdrop.").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
+            if !art.isEmpty { Text("Choose a picture to use as this game’s backdrop.").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 10)], spacing: 10) {
                 ForEach(art) { item in
                     Button { model.selectArtwork(gameID, item.id) } label: {

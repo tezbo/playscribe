@@ -250,7 +250,7 @@ struct UpcomingView: View {
         VStack(alignment: .leading, spacing: 14) {
             if UpcomingStore.shared.failed && more.isEmpty {
                 HStack {
-                    Text("Couldn't load upcoming games. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Text("Couldn’t load upcoming games. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
                     Button { Task { await UpcomingStore.shared.load() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                         .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
@@ -260,7 +260,7 @@ struct UpcomingView: View {
             if watched.isEmpty {
                 VStack(spacing: 8) {
                     Text("Nothing on your watchlist yet").font(PlayscribeFont.headline)
-                    Text("Watch a game that isn't out yet and Playscribe will tell you when its first update lands.")
+                    Text("Watch a game that isn’t out yet and Playscribe will tell you when its first update lands.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
                 }
                 // Book: the empty state stays on the left page, centred there, never across the spine (Quinn, #348).
