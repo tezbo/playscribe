@@ -168,10 +168,12 @@ struct TabletopReaderStage: View {
                     // Eyebrow: the game and the date; the release itself is the title below.
                     // At accessibility sizes the name is one line cut on a whole word ("The Blood of…"), never "The Blood of Daw…", and the date keeps its place.
                     HStack(spacing: 8) {
+                        // r060 day-one (Iris): a day-one patch's eyebrow says so on the visit it is new; the game name is in the lower half.
+                        let eyebrow = release.flatMap { model.dayOneNote($0) } != nil ? FreshCopy.dayOne : model.gameDisplayName(gameID)
                         if typeSize.isAccessibilitySize {
-                            WholeWordText(text: model.gameDisplayName(gameID), font: PlayscribeFont.subheadline.weight(.semibold), lines: 1, color: PlayscribeColor.accent)
+                            WholeWordText(text: eyebrow, font: PlayscribeFont.subheadline.weight(.semibold), lines: 1, color: PlayscribeColor.accent)
                         } else {
-                            Text(model.gameDisplayName(gameID))
+                            Text(eyebrow)
                         }
                         if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary).fixedSize() }
                     }
