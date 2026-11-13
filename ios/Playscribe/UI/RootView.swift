@@ -179,6 +179,7 @@ struct RootView: View {
                 }
             }
             .environment(\.qaSolid, BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaReduceTransparency"))
+            .environment(\.qaReduceMotion, BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaReduceMotion"))
             .onPreferenceChange(TappableFrameKey.self) { frames = $0 }
             .onPreferenceChange(NamedFrameKey.self) { named = $0 }
             .overlay {

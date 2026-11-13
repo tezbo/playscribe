@@ -148,6 +148,16 @@ extension EnvironmentValues {
     }
 }
 
+/// QA (internal builds, launch with `-qaReduceMotion YES`): the front cover resolves as under Reduce Motion (CM-1), for CI stills
+/// where the simulator's Reduce Motion switch can't be set per launch.
+private struct QAReduceMotionKey: EnvironmentKey { static let defaultValue = false }
+extension EnvironmentValues {
+    var qaReduceMotion: Bool {
+        get { self[QAReduceMotionKey.self] }
+        set { self[QAReduceMotionKey.self] = newValue }
+    }
+}
+
 /// Glass that becomes solid ink with a 1 pt vellum border under Reduce Transparency or Increase
 /// Contrast (Iris, 0.5.0 accessibility pass).
 private struct AdaptiveGlass<S: InsettableShape>: ViewModifier {

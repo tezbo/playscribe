@@ -1,0 +1,6 @@
+# #515 Key-art motion stills (Quinn, Iris): 1-3 portrait std t=0/12/24, 4 AX5 t=24, 6 Reduce Motion, 7 no -coverMotion t=12.
+# Still 5 (Closed landscape) is on the Mac. Every entry runs at std and ax5; the brief's stills are the std ones plus ax5 t=24.
+POSES=closed
+SIZES=std,ax5
+WAIT=5
+ROUTES="cover/kcd2 -coverMotion keyArt -qaMotionTime 0,cover/kcd2 -coverMotion keyArt -qaMotionTime 12,cover/kcd2 -coverMotion keyArt -qaMotionTime 24,cover/kcd2 -coverMotion keyArt -qaReduceMotion YES -qaMotionTime 12,cover/kcd2 -qaMotionTime 12"

@@ -100,6 +100,7 @@ struct FrontCoverPage: View {
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.qaSolid) private var qaSolid
+    @Environment(\.qaReduceMotion) private var qaReduceMotion
     @AppStorage(CoverMotion.key) private var stored: CoverMotion = CoverMotion.defaultMode
     @AppStorage(YouTubeController.autoplayKey) private var autoplay = false
     var card: DeckCard
@@ -158,7 +159,7 @@ struct FrontCoverPage: View {
 
     /// Key-art motion runs when it is the resolved mode (Reduce Motion forces Still, CM-1) and the art passes the murky check.
     private var moving: Bool {
-        guard stored.resolved(reduceMotion: reduceMotion, autoplay: autoplay) == .keyArt, let asset = card.game.keyArtAsset else { return false }
+        guard stored.resolved(reduceMotion: reduceMotion || qaReduceMotion, autoplay: autoplay) == .keyArt, let asset = card.game.keyArtAsset else { return false }
         return !KeyArtQuality.isMurky(asset: asset)
     }
 
