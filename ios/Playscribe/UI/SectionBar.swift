@@ -2,7 +2,8 @@ import SwiftUI
 
 /// R-7 (0.5.6 redesign, Card C; spec.md "Game page", s3.png, poses-g1.png): the game page's section bar.
 /// - Up to AX2: text tabs, 48 pt tall, 14 pt semibold; the current tab bold with a 3 pt underline in the action colour, and a
-///   hairline under the bar. Tabs never turn into the picker: 10 pt padding, else 6 pt, else they scroll sideways with
+///   hairline under the bar. Tabs never turn into the picker: 10 pt padding, else 6 pt, else 4 pt with the spare room shared
+///   evenly (a 44 pt tap width each), else they scroll sideways with
 ///   faded edges (design sign, 13 Nov).
 /// - AX3 and up: one picker, 76 pt tall, showing the current section on one line with a chevron; it lists all five, the
 ///   current one ticked. VoiceOver reads "What's new, section picker, 1 of 5".
@@ -31,6 +32,10 @@ struct SectionBar: View {
                     ViewThatFits(in: .horizontal) {
                         tabRow(sections, current, padding: 10).fixedSize(horizontal: true, vertical: false)
                         tabRow(sections, current, padding: 6).fixedSize(horizontal: true, vertical: false)
+                        // A Closed column (338 pt beside the rail) with five sections: 4 pt padding, the room left over shared
+                        // out evenly between the tabs, so every tab stays whole (design sign: a half-hidden tab is what Terry
+                        // complained about). Each tab keeps a 44 pt tap width.
+                        tabRow(sections, current, padding: 4, spread: true)
                         scrollingTabs(sections, current)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -49,7 +54,7 @@ struct SectionBar: View {
     private static let tabFontOn = Font.custom("InstrumentSans-Bold", size: 14, relativeTo: .subheadline)
 
     /// The tabs packed from the leading edge, as in s3.png (spread across a 600 pt column they read as unrelated labels).
-    private func tabRow(_ sections: [Chapter], _ current: Chapter, padding: CGFloat) -> some View {
+    private func tabRow(_ sections: [Chapter], _ current: Chapter, padding: CGFloat, spread: Bool = false) -> some View {
         HStack(spacing: 0) {
             ForEach(sections) { s in
                 let on = s == current
@@ -60,7 +65,7 @@ struct SectionBar: View {
                         .lineLimit(1)
                         .fixedSize()
                         .padding(.horizontal, padding)
-                        .frame(minHeight: 48)
+                        .frame(minWidth: 44, minHeight: 48)
                         .overlay(alignment: .bottom) {
                             if on { Rectangle().fill(PlayscribeColor.accent).frame(height: 3).padding(.horizontal, padding) }
                         }
@@ -70,6 +75,7 @@ struct SectionBar: View {
                 .accessibilityAddTraits(on ? .isSelected : [])
                 .tappableFrame()
                 .id("section-\(s.rawValue)")
+                if spread && s != sections.last { Spacer(minLength: 0) }
             }
         }
     }
