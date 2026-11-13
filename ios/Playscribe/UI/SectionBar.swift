@@ -28,6 +28,8 @@ struct SectionBar: View {
                 // scroll sideways with faded edges, so five sections in a Closed column stay tabs at standard sizes.
                 if typeSize >= .accessibility3 {
                     picker(sections, current)
+                } else if Self.qaTabsScroll {
+                    scrollingTabs(sections, current).overlay(alignment: .bottom) { hairline }
                 } else {
                     ViewThatFits(in: .horizontal) {
                         tabRow(sections, current, padding: 10).fixedSize(horizontal: true, vertical: false)
@@ -49,6 +51,16 @@ struct SectionBar: View {
     }
 
     private func select(_ s: Chapter) { model.nav.chapter = s }
+
+    /// QA (internal builds, launch with `-qaTabsScroll YES`): the bar goes straight to its last tab step, scrolling with faded
+    /// edges, which a Duo column with five sections never reaches at standard sizes (Quinn, #521).
+    static var qaTabsScroll: Bool {
+        #if INTERNAL
+        return UserDefaults.standard.bool(forKey: "qaTabsScroll")
+        #else
+        return false
+        #endif
+    }
 
     private static let tabFont = Font.custom("InstrumentSans-SemiBold", size: 14, relativeTo: .subheadline)
     private static let tabFontOn = Font.custom("InstrumentSans-Bold", size: 14, relativeTo: .subheadline)
