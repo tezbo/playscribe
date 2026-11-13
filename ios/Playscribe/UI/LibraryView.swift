@@ -267,6 +267,17 @@ struct LibraryShelf: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
+    @FocusState private var searchFocused: Bool
+    @State private var searchWasFocused = false
+    @State private var scrollInteracting = false
+
+    /// Closed portrait, field focused or holding text: the deck steps aside like News and the cards, so the matches get the room and
+    /// the card is not squeezed by the keyboard's safe area (its title clipped under the badge, Mac 0027a78 Closed). Open portrait keeps
+    /// its hero (Quinn and Iris). It returns when the field is empty and unfocused.
+    private var closedSearchCollapse: Bool {
+        duo.pose == .closed && (searchFocused || !model.data.nav.query.trimmingCharacters(in: .whitespaces).isEmpty)
+    }
+
     /// N-9 in Book and Tabletop (Iris, #455 at f55062a). Book: at the top of the left page above the search field, one page
     /// wide, so its right edge stays 24 pt clear of the hinge band. Tabletop: directly under the Playing/Upcoming switch, in
     /// the lower half, with the first tile row still in view below it.
@@ -288,15 +299,81 @@ struct LibraryShelf: View {
                         TextField("Search your library", text: binding)
                             .submitLabel(.search)
                             .autocorrectionDisabled()
+                            .focused($searchFocused)
+                        // The standard clear control, shown only with text: the way back to News and the cards, which stay
+                        // hidden while the field has text. A button of its own, so the row's tap target is untouched.
+                        if !binding.wrappedValue.isEmpty {
+                            Button {
+                                binding.wrappedValue = ""
+                                // Cleared with the keyboard away: the deck and News return above, so the page goes to its top, once.
+                                // Focused, the field stays pinned and nothing scrolls to the top.
+                                if !searchFocused, portraitTilesFirst {
+                                    Task { @MainActor in
+                                        try? await Task.sleep(for: .milliseconds(60))
+                                        if !searchFocused { model.nav.anchors["library"] = "library-top" }
+                                    }
+                                }
+                            } label: {
+                                Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
+                                    .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+                                    .keepsKeyboardInFrame("library-search-clear")
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel("Clear search")
+                            .padding(.trailing, -12)
+                        }
                     }
                     .padding(.horizontal, 12)
                     .padding(.vertical, typeSize.isAccessibilitySize ? 12 : 0)
                     .frame(minHeight: 44)
+                    // A tap in the padding or on the magnifier focuses the field (as Add's row does): a gesture on a clear layer
+                    // behind the field, never on the field itself, which would change how the caret is placed.
+                    .background { Color.clear.contentShape(Rectangle()).onTapGesture { searchFocused = true }.accessibilityHidden(true) }
                     .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     // Book: one page wide (like the chip row), and reported to the fold audit.
                     .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                     .tappableFrame()
                     .padding(.top, 4)
+                    .id("library-search")
+                    // The keyboard covers a field that sits low on the page (Open portrait: below the cards, half hidden at the
+                    // keyboard's top edge, Mac 018b515). Bring it into view once the keyboard is up: to the top where results follow it,
+                    // to the bottom edge where it is the last block (tiles-first portrait).
+                    // One task per (focus, text), and it runs only while the field is focused: a new key cancels the previous run. Once
+                    // the layout for this text is in, the field is aligned to the bottom again (the result count moves it). nil first, so the
+                    // same id scrolls again.
+                    .task(id: "\(searchFocused)|\(binding.wrappedValue)") {
+                        // Tiles-first portrait only: the other poses were signed with the single scroll on focus below.
+                        guard searchFocused, portraitTilesFirst, duo.pose != .tabletop else { return }
+                        try? await Task.sleep(for: .milliseconds(60))
+                        if Task.isCancelled { return }
+                        model.nav.anchors["library"] = nil
+                        try? await Task.sleep(for: .milliseconds(30))
+                        // Never leave the position nil while the field is focused: a cancel after the nil write (the next key) still
+                        // writes the id, and the next run starts again. Blur writes its own state, so it is not overridden here.
+                        if searchFocused { model.nav.anchors["library"] = "library-search" }
+                    }
+                    .onChange(of: searchFocused) { _, f in
+                        // On blur the position id is dropped, so the flip of the anchor back to .top cannot re-align the page
+                        // to the field and jump it to the top as the keyboard goes.
+                        if !f, model.nav.anchors["library"] == "library-search" { model.nav.anchors["library"] = nil }
+                        if f { searchWasFocused = true }
+                        // Blur with no text: the deck returns, so the page goes to its top, never left at the old bottom position.
+                        // (With text the matches stay where they are.) Once per blur; a later focus makes it stale, so it checks.
+                        if !f, searchWasFocused, portraitTilesFirst, binding.wrappedValue.trimmingCharacters(in: .whitespaces).isEmpty {
+                            searchWasFocused = false
+                            Task { @MainActor in
+                                try? await Task.sleep(for: .milliseconds(60))
+                                // A drag-down dismissal may still have the finger on the page: no scroll then.
+                                if !searchFocused, !scrollInteracting { model.nav.anchors["library"] = "library-top" }
+                            }
+                        }
+                        guard f, duo.pose != .tabletop else { return }
+                        Task { @MainActor in
+                            try? await Task.sleep(for: .milliseconds(350))
+                            guard searchFocused else { return }
+                            model.nav.anchors["library"] = "library-search"
+                        }
+                    }
     }
 
     var body: some View {
@@ -321,6 +398,7 @@ struct LibraryShelf: View {
                     LibraryTabPicker()
                         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .id("library-top")
                     if !cardFirst && model.libraryTab == .playing { keepCurrentAsk }
                 }
                 if model.libraryTab == .upcoming {
@@ -424,14 +502,19 @@ struct LibraryShelf: View {
                                       moreCount: model.latestDeckOverflow)
                         .id(poseKey)
                 } else if duo.pose != .tabletop && !heroOnRightPage && !closedWide {
+                    // Closed, field focused or holding text: the deck stays MOUNTED but takes no room, no taps and no VoiceOver. Removing it
+                    // changed the tree under the focused field and dropped the keyboard after the third key (Mac dd82a22, 3 of 3).
                     let deck = model.latestDeck
-                    if !deck.isEmpty {
-                        LatestUpdatesDeck(cards: deck)
-                            .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
-                    } else if !model.data.collection.isEmpty {
-                        CaughtUpCard()
-                            .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                    Group {
+                        if !deck.isEmpty {
+                            LatestUpdatesDeck(cards: deck)
+                                .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                        } else if !model.data.collection.isEmpty {
+                            CaughtUpCard()
+                                .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                        }
                     }
+                    .stepsAside(closedSearchCollapse)
                 }
                 if !heroOnRightPage && duo.pose != .tabletop && all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
@@ -469,7 +552,9 @@ struct LibraryShelf: View {
                     }
                     // A pose or fold change rebuilds the grid: lazily cached cells kept their old frames
                     // (0.2.0 gate: Book showed the open-pose grid across the fold).
-                    .id(poseKey)
+                    // The search text is part of the identity: a fast "control" in Closed left the grid blank (1 tile, nothing drawn, and
+                    // deleting a letter did not bring it back, Mac 677e7eb run 3 of 10): a stuck lazy grid, rebuilt on every query change.
+                    .id("\(poseKey)|\(model.data.nav.query)")
                 }
                 // Open and Closed portrait (Iris, v0.5.3): the PS Plus cards and search come after the tiles.
                 if portraitTilesFirst && closedWide {
@@ -481,7 +566,16 @@ struct LibraryShelf: View {
                     }
                     topCards(all)
                 } else if portraitTilesFirst {
-                    topCards(all)
+                    // While the field is focused or has text, News and the alerts / PS Plus cards step aside (not in the tree, so
+                    // hidden from VoiceOver too, and no animation to reduce): deck, chips, tiles, then the field, so the matching
+                    // tiles sit right above it and the keyboard. They return only when the field is empty AND unfocused, so
+                    // dismissing the keyboard with text in it keeps the matches on screen (Quinn and Iris, 9d7cd15 stills).
+                    // Mounted but taking no room (not removed): the tree under the focused field must not change while typing.
+                    // News is its own tab now (#443), so only the cards step aside.
+                    VStack(alignment: .leading, spacing: 14) {
+                        topCards(all)
+                    }
+                    .stepsAside(searchFocused || !model.data.nav.query.trimmingCharacters(in: .whitespaces).isEmpty)
                     if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 }
                 // Tabletop lower half (Iris, v0.5.3): switch, filter chips, tiles, then the alerts card, PS Plus, search and
@@ -499,7 +593,13 @@ struct LibraryShelf: View {
             .padding(.vertical, 12)
             .padding(.trailing, railWidth)
         }
-        .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
+        // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap outside the field.
+        .dismissesKeyboardOnOutsideTap()
+        .onScrollPhaseChange { _, phase in scrollInteracting = (phase == .interacting) }
+        // Focused search: the field must always show above the keyboard. Where it is the last block (tiles-first portrait) it is
+        // aligned to the bottom of the visible area, with as many tiles above it as fit; elsewhere it sits above the results, top.
+        .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }),
+                        anchor: searchFocused && portraitTilesFirst ? .bottom : .top)
         // Tabletop only (Quinn, a8859d3): scrolled, the lower half's top edge cut a headline through its glyphs. The same edge as
         // the "What is sent" sheet. Not in other poses: a soft-edge mask there hid the Open portrait title (see below).
         .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: PlayscribeRole.bg))
@@ -1259,6 +1359,23 @@ private struct SqueezePop: ViewModifier {
 
 extension View {
     func squeezePop(id: String, isNew: Bool) -> some View { modifier(SqueezePop(id: id, isNew: isNew)) }
+}
+
+
+extension View {
+    /// Out of the layout but still in the tree: zero height, no taps, hidden from VoiceOver, and the stack spacing it would add is
+    /// taken back. Used where removing a view would change the tree under the focused search field and drop the keyboard.
+    func stepsAside(_ aside: Bool) -> some View {
+        // Aside, the children are dropped from the accessibility tree outright and the wrapper is hidden too: hiding alone left two deck
+        // cards in the tree (Mac 7561ac3, SearchAsideTests). Shown, .contain only groups the children and exposes nothing new.
+        self.accessibilityElement(children: aside ? .ignore : .contain)
+            .frame(height: aside ? 0 : nil, alignment: .top)
+            .clipped()
+            .opacity(aside ? 0 : 1)
+            .allowsHitTesting(!aside)
+            .accessibilityHidden(aside)
+            .padding(.bottom, aside ? -14 : 0)
+    }
 }
 
 /// A scroll view's top edge once it is scrolled: a hairline, an opaque band one text line tall, then a fade over one line, so a

@@ -175,6 +175,11 @@ struct RootView: View {
                 guard wide else { return }
                 unlatchTask = Task { @MainActor in
                     try? await Task.sleep(for: .seconds(10))
+                    // Not while the person has the keyboard up: moving the form rebuilds the sheet and drops the field's focus
+                    // (probe log bc6bd42: the yield at 25.35 s was the focus loss; wanted was true). Wait until they put it away.
+                    while !Task.isCancelled && model.addSheetOpen && model.addKeyboardWanted {
+                        try? await Task.sleep(for: .seconds(1))
+                    }
                     if !Task.isCancelled && model.addSheetOpen { model.addIsSystemSheet = false }
                 }
             }

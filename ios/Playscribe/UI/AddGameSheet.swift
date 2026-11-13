@@ -1,6 +1,20 @@
 import os
 import SwiftUI
 
+/// The Add UI's state, carried across a form switch while Add stays open (AppModel.addDraft).
+struct AddDraft {
+    var status: OwnershipStatus
+    var query: String
+    var picked: [String: CatalogGame]
+    var pickOrder: [String]
+    var method: AddMethod?
+    var matches: [AddMatch]?
+    var custom: Bool
+    var customName: String
+    var customPlatform: Platform
+    var letter: String?
+}
+
 /// Add a game (A-1 to A-9). Manual add only: PlayStation account import is a later milestone and
 /// nothing here asks for credentials.
 struct AddGameSheet: View {
@@ -29,6 +43,9 @@ struct AddGameSheet: View {
     /// keyboard leaves under 200 pt, hide the title and keep Done and search only).
     @State private var keyboardHeight: CGFloat = 0
     @FocusState private var searchFocused: Bool
+    private var draftKey: String {
+        "\(status)|\(query)|\(pickOrder)|\(String(describing: method))|\(matches?.count ?? -1)|\(custom)|\(customName)|\(customPlatform)|\(letter ?? "")"
+    }
     private var titleHidden: Bool {
         guard duo.pose == .tabletop, keyboardHeight > 0 else { return false }
         let lowerHalf = duo.size.height - (duo.division?.maxY ?? duo.size.height / 2)
@@ -51,8 +68,23 @@ struct AddGameSheet: View {
                     }
                 } else { AddEntryView { method = $0 } }
             }
+            // Kept as it changes (not on disappear): the new form can appear before the old one is gone.
+            .onChange(of: draftKey) { _, _ in
+                guard model.addSheetOpen else { return }
+                model.addDraft = AddDraft(status: status, query: query, picked: picked, pickOrder: pickOrder, method: method,
+                                          matches: matches, custom: custom, customName: customName, customPlatform: customPlatform, letter: letter)
+            }
             .onAppear {
+                if let d = model.addDraft {
+                    status = d.status; query = d.query; debounced = d.query; picked = d.picked; pickOrder = d.pickOrder
+                    method = d.method; matches = d.matches; custom = d.custom; customName = d.customName
+                    customPlatform = d.customPlatform; letter = d.letter
+                    // Not consumed: a fold can build two or three sheets in a row (Mac log, 2be7e23: onAppear at 12.88 s and again at
+                    // 14.02 s), and the one that stays must still find the draft. It is dropped when Add opens or closes.
+                }
                 if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
+                // A rebuilt sheet (form switch, pose settling) gives the keyboard back if the person had it up.
+                if model.addKeyboardWanted && method == .typeIt { model.addSearchFocus = true }
                 if model.addSearchFocus {
                     model.addSearchFocus = false
                     // The field appears only after the method switch above, and in Open portrait the sheet is still settling at 600 ms
@@ -60,7 +92,11 @@ struct AddGameSheet: View {
                     Task {
                         for _ in 0..<10 {
                             try? await Task.sleep(for: .milliseconds(500))
-                            if searchFocused { break }
+                            // SwiftUI can say "focused" while the field never became first responder (sheet still settling, hand check
+                            // 1de7e9e: cold launch, no caret until a tap). Trust UIKit: if the keyboard isn't really up, toggle and ask again.
+                            if searchFocused && KeyboardState.fieldIsFirstResponder { break }
+                            searchFocused = false
+                            try? await Task.sleep(for: .milliseconds(60))
                             searchFocused = true
                         }
                     }
@@ -72,6 +108,17 @@ struct AddGameSheet: View {
                 keyboardHeight = end.minY >= UIScreen.main.bounds.height ? 0 : end.height
             }
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in keyboardHeight = 0 }
+            .onChange(of: searchFocused) { _, f in
+                // Wanted is set when the field takes focus. It is NOT cleared when focus is lost: a sheet that is rebuilt or
+                // re-presented loses focus on the way out, sometimes well before onDisappear (the launch re-presentation at
+                // about 6 s, ccf69f3 timeline: focus false while the sheet is still sliding away), and that must not count as the person putting the keyboard away. Only what the person does clears it.
+                if f && model.addSheetOpen { model.addKeyboardWanted = true }
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .keyboardPutAwayByTap)) { _ in model.addKeyboardWanted = false }
+            .onScrollPhaseChange { _, phase in if phase == .interacting { model.addKeyboardWanted = false } }
+            .onSubmit(of: .text) { model.addKeyboardWanted = false }
+            // Leaving Type it for Say it, a photo or the camera is the person moving on; the keyboard is not wanted back.
+            .onChange(of: method) { _, m in if m != .typeIt { model.addKeyboardWanted = false } }
             .toolbarTitleDisplayMode(.inline)
             // Tabletop (0.2.0 gate): the empty nav bar cost about 100 pt of the lower half, so the
             // bar is hidden and Close sits in the search row instead; three rows then fit.
@@ -221,14 +268,29 @@ struct AddGameSheet: View {
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                 } else {
                     statusPicker
+                    // The whole row takes focus, not just the UITextField's own frame: a tap in the row padding did nothing once the
+                    // field lost its tap gesture (86f771c Mac log: taps at x=20 and x=36 outside the field frame never focused it).
+                    // The tap gesture is on a clear view BEHIND the field, not on the field: a tap on the field itself goes to the
+                    // UITextField (caret as before) and only a tap in the padding reaches the background. Hidden from VoiceOver so
+                    // the row stays one "Search" field. Row insets are moved inside so no dead strip is left.
                     TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
                         .autocorrectionDisabled()
                         .submitLabel(.search)
                         .focused($searchFocused)
                         .frame(minHeight: 44)
-                        // The whole 44 pt row asks for focus, not only the glyphs: a tap in the row's padding did nothing.
-                        .contentShape(Rectangle())
-                        .onTapGesture { searchFocused = true }
+                        .padding(.horizontal, 20)
+                        // 15 pt a side restores the row height the List's default insets gave (main: card 133 pt; with 4 pt it was 112,
+                        // Mac 2198fa7; 14.5 was 1 pt short, Mac 9cebaa9), with the whole row still the tap target.
+                        .padding(.vertical, 15)
+                        .frame(maxWidth: .infinity)
+                        .background {
+                            Color.clear
+                                .contentShape(Rectangle())
+                                .onTapGesture { searchFocused = true }
+                                .accessibilityHidden(true)
+                        }
+                        .keepsKeyboardOnTap()   // a tap in this row's padding while typing must not dismiss the keyboard it just asked for
+                        .listRowInsets(EdgeInsets())
                 }
                 // Offline state 7: rows keep their placeholder covers; say why.
                 if case .failed(offline: true) = model.checkState {
@@ -253,6 +315,8 @@ struct AddGameSheet: View {
                 Text("PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password.")
             }
         }
+        // Terry, 8 Nov: the keyboard could not be put away. Scrolling dismisses it, and so does a tap outside the field and rows.
+        .dismissesKeyboardOnOutsideTap()
     }
 
     private var customForm: some View {
@@ -333,6 +397,7 @@ struct AddRow: View {
             .frame(minHeight: 64)
             .contentShape(Rectangle())
         }
+        .keepsKeyboardOnTap()
         .buttonStyle(.plain)
         .disabled(added)
         .accessibilityElement(children: .ignore)
