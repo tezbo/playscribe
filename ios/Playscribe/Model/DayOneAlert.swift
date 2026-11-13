@@ -22,8 +22,9 @@ extension AppModel {
         return isDayOneAlert(r) ? FreshCopy.dayOne : FreshCopy.newUpdate
     }
 
-    /// The game page's one line under the header while a day-one patch is unread.
+    /// The one line under the update's headline on the game page (its Updates chapter) while a day-one patch is unread, or
+    /// on the visit that read it: opening the page reads it before the page appears (R-6a), so that visit still shows it.
     func dayOneNote(_ r: Release) -> String? {
-        isDayOneAlert(r) ? FreshCopy.dayOneNote : nil
+        isDayOneAlert(r) || dayOneVisit == r.id ? FreshCopy.dayOneNote : nil
     }
 }

@@ -253,6 +253,9 @@ final class AppModel {
     /// can be shot before and after. Only reads made here count: the feed refresh after launch marks the fixtures' old
     /// updates read (markPastAsRead), which emptied the deck when this checked data.read (Mac, dab2f51).
     var qaHonourRead = false
+    /// r060 day-one: the day-one patch this visit to a game opened while it was still unread. Opening or picking an update
+    /// reads it at once (R-6a), before its page appears, so the page asks this for its one-line note.
+    var dayOneVisit: String?
     @ObservationIgnored private var qaReadIDs: Set<String> = []
     /// QA (route `cover/<game>`): the fresh update is this game's newest, so its page leads the cover.
     var qaFreshGame: String?
@@ -650,7 +653,13 @@ final class AppModel {
         // R-6a: opening a specific update (a notification, an Updates row, a deep link) reads it at once, on every path;
         // the 1 s on-screen rule only covers an update the reader lands on without picking it. Mark as unread undoes it.
         // Opening the game itself (a tile, the hero) reads the update it lands on: the newest, expanded at the top (R-1).
-        if n.chapter == .updates, let r = releaseID.flatMap({ release(gameID, $0) }) ?? selectedRelease(gameID), isUnread(r) { markRead(r.id) }
+        // r060 day-one: opening reads the update, so remember first whether this visit shows the day-one line (a new visit
+        // starts with none, so the line is gone on the next one).
+        dayOneVisit = nil
+        if n.chapter == .updates, let r = releaseID.flatMap({ release(gameID, $0) }) ?? selectedRelease(gameID), isUnread(r) {
+            if isDayOneAlert(r) { dayOneVisit = r.id }
+            markRead(r.id)
+        }
         // N-7: the pill goes only when the page it points to is the one now showing.
         if let p = pill, isViewing(p.gameID, p.releaseID) { pill = nil }
         focusReleaseID = releaseID
@@ -676,7 +685,10 @@ final class AppModel {
     func select(_ gameID: String, releaseID: String) {
         nav.selected = (nav.selected ?? [:]).merging([gameID: releaseID]) { $1 }
         readerIndex[gameID] = 0
-        if let r = release(gameID, releaseID), isUnread(r) { markRead(r.id) }
+        if let r = release(gameID, releaseID), isUnread(r) {
+            if isDayOneAlert(r) { dayOneVisit = r.id }
+            markRead(r.id)
+        }
     }
 
     static func bookKey(_ gameID: String, _ chapter: Chapter) -> String { "book-\(gameID)-\(chapter.rawValue)" }

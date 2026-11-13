@@ -54,9 +54,15 @@ struct DayOneAlertTests {
         #expect(labels.sorted() == ["Day-one patch", "New update"], "deck labels \(labels)")
         let r = try #require(m.latestDeck.first { $0.freshLabel == "Day-one patch" }?.release)
         #expect(m.dayOneNote(r) == "Install this before you first play.")
-        m.markRead(r.id)
-        #expect(m.dayOneNote(r) == nil)
+        // Opening the update reads it before its page appears (R-6a); that visit still shows the line (Mac, 2597a48).
+        m.openGame(gameID, chapter: .updates, releaseID: r.id)
+        #expect(m.freshLabel(r) == nil)
+        #expect(m.dayOneNote(r) == "Install this before you first play.")
         #expect(m.latestDeck.first { $0.release?.id == r.id }?.freshLabel != "Day-one patch")
+        // The next visit: the line is gone too.
+        m.closeGame()
+        m.openGame(gameID, chapter: .updates, releaseID: r.id)
+        #expect(m.dayOneNote(r) == nil)
     }
 
     @Test func anyOtherKindKeepsNewUpdate() throws {
