@@ -143,10 +143,10 @@ struct TabletopReaderStage: View {
         // Accessibility sizes: the label is larger, so the poster gets smaller rather than the tile being cut by the stage.
         return room >= 140 ? min(typeSize.isAccessibilitySize ? 160 : 240, room) : 0
     }
-    /// No side room (the Duo stage is about 670 pt wide): Iris's stacked poster, 120 x 84 pt on the leading edge, the same in every
+    /// No side room (the Duo stage is about 670 pt wide): Iris's stacked poster, 120 x 67.5 pt (exactly 16:9, no bars, no crop) on the leading edge, the same in every
     /// game, no label. It sits at least 8 pt under the status band and 12 pt above the stage text, and is left out when the room
     /// above the text is shorter than that, and at every accessibility size. "Play trailer" in the lower half is always there.
-    private let stackedPosterSize = CGSize(width: 120, height: 84)
+    private let stackedPosterSize = CGSize(width: 120, height: 120 * 9 / 16)
     private func stackedPosterFits(clearance: CGFloat) -> Bool {
         guard !typeSize.isAccessibilitySize, trailerTileWidth == 0, panelHeight > 0 else { return false }
         return stageHeight - 56 - (clearance + panelHeight + 12) >= stackedPosterSize.height + 8
@@ -364,7 +364,7 @@ struct StageTrailerTile: View {
         image()
             .frame(width: width, height: height)
             .background(Color.ink1)
-            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
             .overlay { glyph() }
     }
 
