@@ -341,7 +341,9 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
       const liveAt = stated ? store.field(stated, 'assumed', s.id) : status === 'live' ? store.field(post.publishedAt, 'assumed', s.id) : null
       if (stated) held('stated')
       if (deps.repairClaims) store.repairOwnLiveAt(db, releaseId, s.id, post.publishedAt, liveAt, status)
-      store.upsertPlatform(db, releaseId, 'ps5', { status, verification: 'assumed', liveAt })
+      // An earlier post of this release held the row until a time it stated: a later plain post (a hotfix note minutes after) does not release it.
+      const heldBefore = !stated && store.heldByStatedTime(db, releaseId, s.id)
+      if (!heldBefore) store.upsertPlatform(db, releaseId, 'ps5', { status, verification: 'assumed', liveAt })
       if (mentionsPs5(text)) review(releaseId, 'steamMentionsPs5')
     }
     return releaseId
