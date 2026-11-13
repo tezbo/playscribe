@@ -169,8 +169,18 @@ final class AppModel {
     func leaveSearch() { if nav.tab == .search { nav.tab = searchReturnTab == .search ? .library : searchReturnTab } }
     var pill: (gameID: String, releaseID: String)?
     var addSheetOpen = false {
-        didSet { if addSheetOpen && !oldValue { addIsSystemSheet = livePose != .tabletop && !liveRightPage } }
+        didSet {
+            if addSheetOpen && !oldValue { addIsSystemSheet = livePose != .tabletop && !liveRightPage }
+            if addSheetOpen != oldValue { addDraft = nil; addKeyboardWanted = false }
+        }
     }
+    /// What the Add UI held when its form switched (sheet, right-page panel or Tabletop panel) while still open, so the typed
+    /// query and the picks come back in the new form. Cleared whenever Add opens or closes.
+    @ObservationIgnored var addDraft: AddDraft?
+    /// True while the person has the Add search field up and has not put the keyboard away. A form switch (fold, unfold) rebuilds
+    /// AddGameSheet and its field resigns on the way out; this survives that, so the rebuilt sheet asks for the keyboard again.
+    /// Cleared whenever Add opens or closes, and when the person puts the keyboard away (tap outside, scroll, Return).
+    @ObservationIgnored var addKeyboardWanted = false
     /// How the Add UI was presented when it opened: the system sheet, or the right-page panel. Kept while it is open, because at
     /// launch the pose resolves closed, then Open landscape, then Open portrait, and following the raw pose dismissed and
     /// re-presented the sheet mid-focus, which killed the search field's keyboard (a98e710 Mac log, testPinnedAddBar).
