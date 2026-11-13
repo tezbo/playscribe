@@ -1171,6 +1171,29 @@ final class Release050Tests: XCTestCase {
         }
     }
 
+    /// bug-rail-menu-unlabelled-buttons (0.5.5): VoiceOver landed on three buttons with no label and no id on Tabletop's rail, at the
+    /// frames of Notifications, Status and More (a Menu's inner button, labelled only from outside). Every hittable button in the
+    /// rail's column carries a label, at std and AX5.
+    func testTabletopRailButtonsAllHaveLabels() throws {
+        for ax5 in [false, true] {
+            let app = XCUIApplication()
+            app.launchArguments = ["-qaRoute", "gamepage/dawnwalker", "-qaPose", "tabletop"]
+                + (ax5 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] : [])
+            app.launch()
+            let size = ax5 ? "AX5" : "std"
+            let pose = ReleaseRowTests.pose(app)
+            XCTAssertTrue(pose.contains("pose: tabletop"), "runs in Tabletop [\(size), \(pose)]")
+            XCTAssertTrue(app.buttons["gameBack"].waitForExistence(timeout: 30), "the game page is up [\(size)]")
+            let window = app.windows.firstMatch.frame
+            var unlabelled: [String] = []
+            for b in app.buttons.allElementsBoundByIndex where b.exists && b.isHittable && b.frame.minX > window.width * 0.8 {
+                if b.label.trimmingCharacters(in: .whitespaces).isEmpty { unlabelled.append("\(b.frame)") }
+            }
+            XCTAssertTrue(unlabelled.isEmpty, "rail buttons without a label [\(size)]: \(unlabelled)")
+            app.terminate()
+        }
+    }
+
     /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and
     /// of the status bar, in every pose; the cog opens Settings, which shows a semantic version.
     /// Fast on its own: -only-testing:PlayscribeUITests/Release050Tests/testLibraryToolbarCogAndAdd
