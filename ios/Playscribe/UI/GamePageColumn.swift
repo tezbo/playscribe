@@ -21,7 +21,7 @@ struct GamePageColumn: View {
         let section = model.section(gameID)
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 0, pinnedViews: .sectionHeaders) {
-                PageArtBand(gameID: gameID)
+                PageArtBand(gameID: gameID, extendsUnderRail: false)
                 VStack(alignment: .leading, spacing: 16) {
                     StaleHint()
                     titleBlock

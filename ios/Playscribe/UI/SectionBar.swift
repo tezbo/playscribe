@@ -1,9 +1,10 @@
 import SwiftUI
 
 /// R-7 (0.5.6 redesign, Card C; spec.md "Game page", s3.png, poses-g1.png): the game page's section bar.
-/// - Standard sizes: text tabs, 48 pt tall, 14 pt semibold; the current tab bold with a 3 pt underline in the action colour,
-///   and a hairline under the bar. When the five don't fit on one line (a narrow column), the picker below.
-/// - Accessibility sizes: one picker, 76 pt tall, showing the current section with a chevron; it lists all five, the
+/// - Up to AX2: text tabs, 48 pt tall, 14 pt semibold; the current tab bold with a 3 pt underline in the action colour, and a
+///   hairline under the bar. Tabs never turn into the picker: 10 pt padding, else 6 pt, else they scroll sideways with
+///   faded edges (design sign, 13 Nov).
+/// - AX3 and up: one picker, 76 pt tall, showing the current section on one line with a chevron; it lists all five, the
 ///   current one ticked. VoiceOver reads "What's new, section picker, 1 of 5".
 /// - Book: the same sections as a table of contents on the left page, one 48 pt row each.
 /// Switching a section adds nothing to Back (Card D): it only changes `nav.chapter`.
@@ -22,13 +23,18 @@ struct SectionBar: View {
             switch style {
             case .contents: contents(sections, current)
             case .bar:
-                if typeSize.isAccessibilitySize {
+                // Design sign (13 Nov): tabs up to AX2, the picker only from AX3. Tabs try 10 pt padding, then 6 pt, then
+                // scroll sideways with faded edges, so five sections in a Closed column stay tabs at standard sizes.
+                if typeSize >= .accessibility3 {
                     picker(sections, current)
                 } else {
                     ViewThatFits(in: .horizontal) {
-                        tabs(sections, current)
-                        picker(sections, current)
+                        tabRow(sections, current, padding: 10).fixedSize(horizontal: true, vertical: false)
+                        tabRow(sections, current, padding: 6).fixedSize(horizontal: true, vertical: false)
+                        scrollingTabs(sections, current)
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .overlay(alignment: .bottom) { hairline }
                 }
             }
         }
@@ -42,10 +48,9 @@ struct SectionBar: View {
     private static let tabFont = Font.custom("InstrumentSans-SemiBold", size: 14, relativeTo: .subheadline)
     private static let tabFontOn = Font.custom("InstrumentSans-Bold", size: 14, relativeTo: .subheadline)
 
-    private func tabs(_ sections: [Chapter], _ current: Chapter) -> some View {
-        // Packed from the leading edge with even gaps, as in s3.png: spread across a 600 pt column they read as unrelated
-        // labels (fold harness, ab38d5c, Open and Tabletop).
-        HStack(spacing: 10) {
+    /// The tabs packed from the leading edge, as in s3.png (spread across a 600 pt column they read as unrelated labels).
+    private func tabRow(_ sections: [Chapter], _ current: Chapter, padding: CGFloat) -> some View {
+        HStack(spacing: 0) {
             ForEach(sections) { s in
                 let on = s == current
                 Button { select(s) } label: {
@@ -54,10 +59,10 @@ struct SectionBar: View {
                         .foregroundStyle(on ? PlayscribeColor.textPrimary : PlayscribeColor.textSecondary)
                         .lineLimit(1)
                         .fixedSize()
-                        .padding(.horizontal, 8)
+                        .padding(.horizontal, padding)
                         .frame(minHeight: 48)
                         .overlay(alignment: .bottom) {
-                            if on { Rectangle().fill(PlayscribeColor.accent).frame(height: 3).padding(.horizontal, 8) }
+                            if on { Rectangle().fill(PlayscribeColor.accent).frame(height: 3).padding(.horizontal, padding) }
                         }
                         .contentShape(Rectangle())
                 }
@@ -67,8 +72,26 @@ struct SectionBar: View {
                 .id("section-\(s.rawValue)")
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .overlay(alignment: .bottom) { hairline }
+    }
+
+    /// Last step before the picker: the tabs scroll sideways, with 20 pt fades at the edges, and the current tab is scrolled
+    /// into view whenever it changes.
+    private func scrollingTabs(_ sections: [Chapter], _ current: Chapter) -> some View {
+        ScrollViewReader { proxy in
+            ScrollView(.horizontal) {
+                tabRow(sections, current, padding: 6).padding(.horizontal, 14)
+            }
+            .scrollIndicators(.hidden)
+            .mask {
+                HStack(spacing: 0) {
+                    LinearGradient(colors: [.clear, .black], startPoint: .leading, endPoint: .trailing).frame(width: 20)
+                    Rectangle()
+                    LinearGradient(colors: [.black, .clear], startPoint: .leading, endPoint: .trailing).frame(width: 20)
+                }
+            }
+            .onAppear { proxy.scrollTo("section-\(current.rawValue)", anchor: .center) }
+            .onChange(of: current) { withAnimation { proxy.scrollTo("section-\(current.rawValue)", anchor: .center) } }
+        }
     }
 
     private func picker(_ sections: [Chapter], _ current: Chapter) -> some View {
@@ -81,14 +104,13 @@ struct SectionBar: View {
             }
         } label: {
             HStack(spacing: 12) {
-                // Whole words on one line, as in s3.png: title2 capped at AX2 is about 40 pt, so "What's new" and "Companion" fit a
-                // Closed column (title at AX5 broke "What's / new" over two lines, fold harness ab38d5c).
-                Text(current.title)
-                    .font(PlayscribeFont.title2)
-                    .dynamicTypeSize(...DynamicTypeSize.accessibility2)
-                    .foregroundStyle(PlayscribeColor.textPrimary)
-                    .multilineTextAlignment(.leading)
-                    .fixedSize(horizontal: false, vertical: true)
+                // One line, whole words, never wrapped (design sign, 13 Nov): the largest size that fits, from the reader's own
+                // down to AX3, and never below AX3. The chevron is always kept.
+                ViewThatFits(in: .horizontal) {
+                    pickerTitle(current, cap: .accessibility5)
+                    pickerTitle(current, cap: .accessibility4)
+                    pickerTitle(current, cap: .accessibility3)
+                }
                 Spacer(minLength: 8)
                 Image(systemName: "chevron.down").font(.system(size: 20, weight: .semibold))
                     .foregroundStyle(PlayscribeColor.textPrimary)
@@ -97,11 +119,19 @@ struct SectionBar: View {
             .frame(maxWidth: .infinity, minHeight: 76, alignment: .leading)
             .contentShape(Rectangle())
         }
-        .dynamicTypeSize(...DynamicTypeSize.accessibility2)
         .accessibilityLabel("\(current.title), section picker")
         .accessibilityValue("\(index) of \(sections.count)")
         .tappableFrame()
         .overlay(alignment: .bottom) { hairline }
+    }
+
+    private func pickerTitle(_ current: Chapter, cap: DynamicTypeSize) -> some View {
+        Text(current.title)
+            .font(PlayscribeFont.title2)
+            .foregroundStyle(PlayscribeColor.textPrimary)
+            .lineLimit(1)
+            .fixedSize()
+            .dynamicTypeSize(...cap)
     }
 
     private func contents(_ sections: [Chapter], _ current: Chapter) -> some View {

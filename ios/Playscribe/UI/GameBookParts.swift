@@ -119,6 +119,9 @@ struct PageArtBand: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     var gameID: String
+    /// The art drawn on under the rail with the system's extension effect. The one-column page turns it off: there the
+    /// effect showed as a blurred smear at the band's trailing edge (design sign on the ab38d5c harness still).
+    var extendsUnderRail = true
     /// Closed landscape is wide and short (594 x 432 pt): a fixed 170 pt band took 40% of the screen and the
     /// extension effect stretched catalogue art past it (Terry, 0.5.0 build 6). There it is a slim, clipped band.
     private var slim: Bool { duo.isLandscape && duo.pose == .closed }
@@ -138,7 +141,7 @@ struct PageArtBand: View {
         .frame(height: slim ? 96 : 170)
         .frame(maxWidth: .infinity)
         .clipped()
-        .modifier(ExtensionUnlessSlim(slim: slim))
+        .modifier(ExtensionUnlessSlim(slim: slim || !extendsUnderRail))
         .accessibilityHidden(true)
     }
 }
