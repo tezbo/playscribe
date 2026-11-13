@@ -12,8 +12,8 @@ enum CoverMotion: String, CaseIterable, Identifiable {
     var id: String { rawValue }
 
     static let key = "coverMotion"
-    /// Still stays the default; Key-art motion is the person's choice (Iris's spec and the s-07 card, 13 Nov).
-    static let defaultMode: CoverMotion = .still
+    /// Nadia, 12 Nov (confirmed 13 Nov): the default is Key-art motion; Still and Trailer loop are choices in Settings.
+    static let defaultMode: CoverMotion = .keyArt
 
     var label: String {
         switch self {
