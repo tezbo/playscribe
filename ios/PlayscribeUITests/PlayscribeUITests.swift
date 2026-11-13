@@ -571,12 +571,15 @@ final class JourneyTests: XCTestCase {
         row.tap()
         sleep(1)
         let pushed = XCTAttachment(screenshot: app.screenshot()); pushed.name = "journey-closed-pushed"; pushed.lifetime = .keepAlways; add(pushed)
-        // Wait for the unfold: the pushed screen pops and the Page shows the release.
+        // Wait for the unfold. Open is one column since 0.5.6 (R-7, Card C), so the pushed page stays and still shows 1.4; Back
+        // returns to its row, selected. (Before 0.5.6 Open landscape was side by side and the push popped onto the Page.)
         let title = app.staticTexts.matching(identifier: "releaseTitle").matching(NSPredicate(format: "label == %@", "Patch 1.4")).firstMatch
+        let audit = app.descendants(matching: .any)["foldAudit"]
         let deadline = Date.now.addingTimeInterval(150)
-        while (app.navigationBars["Patch 1.4"].exists || !title.exists) && Date.now < deadline { sleep(2) }
+        while ReleaseRowTests.pose(app).contains("closed") && Date.now < deadline { sleep(2) }
         sleep(2)
-        XCTAssertTrue(title.exists && !app.navigationBars["Patch 1.4"].exists, "Page shows Patch 1.4 after unfolding")
+        XCTAssertTrue(title.exists, "Patch 1.4 still showing after unfolding [\(audit.exists ? audit.label : "unknown")]")
+        if app.navigationBars["Patch 1.4"].exists { ReleaseRowTests.goBack(app); sleep(1) }
         ReleaseRowTests.reveal(row, in: app)
         XCTAssertTrue(row.isSelected, "Patch 1.4 row selected")
         let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "journey-open-patch-1.4"; shot.lifetime = .keepAlways; add(shot)

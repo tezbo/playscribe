@@ -256,9 +256,9 @@ struct TabRoot: View {
                         }
                 }
                 .auditActive(model.nav.tab == .updates)
-                // Only Closed and Open portrait push. Unfolding to side by side or Tabletop (where the standing half is view
+                // Only the one-column poses (Closed, Open both ways) push. Folding to Book or Tabletop (where the standing half is view
                 // only, G-4) moves the update to the game's Page, with Back still leading to Updates.
-                .onChange(of: duo.pose == .closed || (duo.pose == .flat && !duo.isLandscape), initial: true) { _, pushes in
+                .onChange(of: duo.oneColumn, initial: true) { _, pushes in
                     if !pushes, let u = model.nav.updatesRelease {
                         model.nav.updatesRelease = nil
                         if model.nav.tab == .updates { model.openGame(u.gameID, chapter: .updates, releaseID: u.releaseID) }
@@ -319,10 +319,10 @@ struct LibraryRoot: View {
                     }
                 }
         }
-        // J-1: a pushed release only exists where pushing is the layout (Closed, open portrait).
-        // Unfolding to side by side or Tabletop pops it; the Page already shows it, because the
+        // J-1: a pushed release only exists where pushing is the layout (one column: Closed, Open both ways).
+        // Folding to Book or Tabletop pops it; the Page already shows it, because the
         // push selected it. Here, not in the game book, which is hidden under the push.
-        .onChange(of: duo.pose != .closed && (duo.isLandscape || duo.pose == .tabletop), initial: true) { _, onPage in
+        .onChange(of: !duo.oneColumn, initial: true) { _, onPage in
             if onPage { model.nav.detailReleaseID = nil }
         }
     }

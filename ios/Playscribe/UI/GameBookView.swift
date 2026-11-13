@@ -1,7 +1,7 @@
 import SwiftUI
 
-/// The game book (D-3, D-4): Contents and Page in one ArrangementView(.split), so the system
-/// places them for every pose; closed, the Page with the Contents below it.
+/// The game book (D-3, D-4, R-7). One column (GamePageColumn) in Closed and Open; in Book and Tabletop, Contents and Page in
+/// one ArrangementView(.split), so the system places them on the fold.
 struct GameBookView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
@@ -11,23 +11,21 @@ struct GameBookView: View {
     var body: some View {
         let game = model.game(gameID)
         Group {
-            if duo.pose == .closed || (duo.pose == .flat && !duo.isLandscape) {
-                // Closed, or the inner display flat in portrait (no fold, so nothing to split on):
-                // one page that scrolls as one, the Contents below the Page. Two panes scrolling
-                // separately, with the Page cut off mid-line, was wrong on a flat screen.
-                PageView(gameID: gameID, withContents: true)
-            } else if sideBySide {
-                // Side by side: Contents left, Page right by default (D-10).
-                // Layout direction doesn't move ArrangementView's regions, so the swap places the
-                // pieces explicitly. Their state lives in the model (selection, search, scroll
-                // anchors), so it carries across.
+            if duo.oneColumn {
+                // R-7 (0.5.6, Card C): Closed and the open display in both orientations: one column, art and title scrolling
+                // away, the section bar pinned, an update pushed as its own page.
+                GamePageColumn(gameID: gameID)
+            } else if duo.pose == .book {
+                // Book: the left page is the game (art, title, the sections as a table of contents, the updates), the right
+                // page the open update (spec, poses-g1). Swap sides flips them (D-10). Layout direction doesn't move
+                // ArrangementView's regions, so the swap places the pieces explicitly; their state lives in the model.
                 SplitArrangement {
                     if pageOnLeft { page } else { ContentsView(gameID: gameID) }
                 } secondary: {
                     if pageOnLeft { ContentsView(gameID: gameID) } else { page }
                 }
             } else {
-                // Stacked: the Page on top (the standing half in Tabletop), the Contents below.
+                // Tabletop: the Page is the view-only standing half; the lower half starts with the section bar.
                 SplitArrangement {
                     page
                 } secondary: {
@@ -72,8 +70,8 @@ struct GameBookView: View {
 
     }
 
-    /// Open landscape and Book in a regular-width scene (D-11).
-    private var sideBySide: Bool { duo.pose != .closed && duo.pose != .tabletop && duo.isLandscape }
+    /// Book, the one pose with Contents and Page side by side (D-11; Open landscape is one column since 0.5.6, R-7).
+    private var sideBySide: Bool { duo.pose == .book }
 
     /// TT-2: in Tabletop the Page is the paged, display-only reader.
     @ViewBuilder private var page: some View {
@@ -85,20 +83,6 @@ struct GameBookView: View {
             .allowsHitTesting(false)
             // Not touchable, so not audited as tappable: a frame here is never a fold crossing (TT-1).
             .auditActive(false)
-        } else if duo.pose == .flat && !duo.isLandscape {
-            // Open portrait (Iris): the Page above the sheet. A whole line, not half a line, at the sheet's edge at
-            // rest: 12 pt of bottom room and a 24 pt fade to the sheet colour.
-            PageView(gameID: gameID)
-                .contentMargins(.bottom, 12, for: .scrollContent)
-                .overlay(alignment: .bottom) {
-                    // A 24 pt fade left a half line readable at the edge (0c93f25); 44 pt, solid for the last 8 pt,
-                    // so a line cut by the sheet is faded out, never shown half drawn.
-                    LinearGradient(stops: [.init(color: .clear, location: 0), .init(color: Color.ink0, location: 0.82)],
-                                   startPoint: .top, endPoint: .bottom)
-                        .frame(height: 44)
-                        .allowsHitTesting(false)
-                        .accessibilityHidden(true)
-                }
         } else {
             PageView(gameID: gameID)
         }
@@ -111,48 +95,5 @@ extension GameBookView {
         let words = g.name.split(separator: " ")
         guard words.count > 2 else { return g.name }
         return words.last.map(String.init)?.trimmingCharacters(in: .punctuationCharacters) ?? g.name
-    }
-}
-
-/// R-7: chapters in one row when they fit, wrapped onto a second row when they do not.
-struct ChapterBar: View {
-    @Environment(AppModel.self) private var model
-    var gameID: String
-    var selected: Chapter
-
-    private func chip(_ c: Chapter, icons: Bool) -> some View {
-        let on = c == selected
-        return Button { model.nav.chapter = c } label: {
-            Group {
-                if icons { Label(c.title, systemImage: c.symbol) } else { Text(c.title) }
-            }
-            .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
-            .lineLimit(1)
-            .padding(.horizontal, 12)
-            .frame(minHeight: 44)
-            .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
-        }
-        .buttonStyle(.plain)
-        .accessibilityAddTraits(on ? .isSelected : [])
-        .tappableFrame()
-        .id(c)
-    }
-
-    private func row(icons: Bool) -> some View {
-        HStack(spacing: 8) { ForEach(model.chapters(gameID)) { chip($0, icons: icons) } }
-            .padding(.horizontal, 2)
-    }
-
-    var body: some View {
-        // Every chapter is always in view (Quinn, #331): one row with icons, else one row of titles, else the
-        // chips wrap onto a second row (AX sizes, narrow columns). Nothing hides behind a scroll.
-        ViewThatFits(in: .horizontal) {
-            row(icons: true).fixedSize(horizontal: true, vertical: false)
-            row(icons: false).fixedSize(horizontal: true, vertical: false)
-            FlowLayout(spacing: 8) {
-                ForEach(model.chapters(gameID)) { chip($0, icons: false) }
-            }
-            .padding(.horizontal, 2)
-        }
     }
 }

@@ -243,7 +243,7 @@ struct TabletopReaderControls: View {
         let sections = model.readerRelease(gameID).map(model.readerSections) ?? []
         let index = min(model.readerIndex[gameID] ?? 0, max(0, sections.count - 1))
         VStack(alignment: .leading, spacing: 10) {
-            ChapterBar(gameID: gameID, selected: .updates)
+            SectionBar(gameID: gameID)
             ScrollViewReader { proxy in
                 ScrollView {
                     VStack(spacing: 2) {

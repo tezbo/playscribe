@@ -124,4 +124,17 @@ struct NavBackTests {
         #expect(m.selectedRelease("kcd2")?.id == r.id)
         #expect(m.backTitle == "Updates, back")
     }
+
+    /// R-7 (0.5.6, Card C): the open display is one column in both orientations, so an update is pushed there too, as in Closed.
+    @Test func openLandscapeIsOneColumnAndPushes() throws {
+        let m = model()
+        m.livePose = .flat
+        m.liveRightPage = true
+        #expect(m.pushesReleases)
+        let r = try #require(m.ps5Releases("kcd2").first)
+        m.openRelease(gameID: "kcd2", releaseID: r.id)
+        #expect(m.nav.detailReleaseID == r.id)
+        m.livePose = .tabletop
+        #expect(!m.pushesReleases)
+    }
 }

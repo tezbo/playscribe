@@ -753,8 +753,9 @@ final class AppModel {
     /// previous screen's title). Glyph only on the rail, with this as its label, in every pose.
     var backTitle: String { "\((nav.returnTab ?? .library).title), back" }
 
-    /// J-1: Closed and Open portrait push an update as its own page; side by side and Tabletop the Page shows it in place.
-    var pushesReleases: Bool { livePose == .closed || (livePose == .flat && !liveRightPage) }
+    /// J-1, R-7 (0.5.6): the one-column poses (Closed, Open both ways) push an update as its own page; Book and Tabletop show it
+    /// in place on the Page.
+    var pushesReleases: Bool { livePose == .closed || livePose == .flat }
 
     /// Deep link from a notification or URL (N-6, N-9).
     func openRelease(gameID: String, releaseID: String) {

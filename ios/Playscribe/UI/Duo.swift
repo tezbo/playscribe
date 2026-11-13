@@ -46,6 +46,10 @@ struct DuoContext: Equatable {
         return s.width > s.height
     }
     var isFolded: Bool { division != nil }
+    /// R-7 (0.5.6, Card C): the game page is one column, with the section bar pinned and updates pushed, in Closed and on the
+    /// open inner display in both orientations (spec: "Open and Open portrait: same column, reading width capped at 600 pt").
+    /// Book and Tabletop split on the fold.
+    var oneColumn: Bool { pose == .closed || pose == .flat }
     func withStableSize(_ s: CGSize) -> DuoContext { var c = self; c.stableSize = s; return c }
 
     /// Tabletop: how far content whose bottom edge is at `bottom` (screen coordinates) must be
