@@ -99,6 +99,11 @@ struct RailMenuList: View {
     @State private var moreBelow = false
     private let cap: CGFloat = 340
 
+    static func keepTail(_ t: String) -> String {
+        guard let i = t.lastIndex(of: " ") else { return t }
+        return t.replacingCharacters(in: i...i, with: "\u{00A0}")
+    }
+
     var body: some View {
         // The title is pinned outside the scroll area so it can never fill the list (Mac, 4318d26: at AX5 it filled all 300 pt and no
         // row showed). Text is held at AX2 inside: the rows stay whole words and the four choices fit without a drag where they can.
@@ -110,13 +115,15 @@ struct RailMenuList: View {
                 VStack(alignment: .leading, spacing: 0) {
                     ForEach(sections) { section in
                         if let t = section.title, !t.isEmpty {
-                            Text(t).font(PlayscribeFont.footnote).foregroundStyle(.secondary).lineLimit(2)
+                            Text(t).font(PlayscribeFont.footnote).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                                 .padding(.horizontal, 16).padding(.top, 4).padding(.bottom, 2)
                         }
                         ForEach(section.items) { item in
                             Button(role: item.destructive ? .destructive : nil) { done(); item.action() } label: {
                                 HStack(spacing: 8) {
-                                    Text(item.title).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                                    // The last two words stay together ("Deliverance II" does not split across lines); the spoken label stays the plain title.
+                                    Text(RailMenuList.keepTail(item.title)).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                                        .accessibilityLabel(item.title)
                                     Spacer(minLength: 8)
                                     if item.checked { Image(systemName: "checkmark").accessibilityHidden(true) }
                                 }
