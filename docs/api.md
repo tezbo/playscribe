@@ -181,7 +181,7 @@ Alert copy (Iris): counts in the title, body `Update <version>: <headline>`, whe
 
 ### Quiet hours on the relay (r050-quiet-hours-push)
 
-`POST /v1/devices` and `PATCH /v1/devices/me` accept `quietHours: { from, until, timeZone } | null` (whole minutes after local midnight, `from` may be after `until` to cross midnight, IANA zone; `from == until` or an unknown zone is a 400; `null` clears; an absent field leaves it as is). Stored as three columns on the device: a window and a zone, no identity, and the zone (not an offset) so daylight saving is right. When a push is sent, a device whose local time is inside `[from, until)` gets `interruption-level: passive` and no `sound`; the copy, `thread-id`, 72-hour guard and once-only claim are unchanged. A device with no window behaves as before.
+`POST /v1/devices` and `PATCH /v1/devices/me` accept `quietHours: { from, until, timeZone } | null` (whole minutes after local midnight, `from` may be after `until` to cross midnight, IANA zone; `from == until` or an unknown zone is a 400; `null` clears; an absent field leaves it as is). Stored as three columns on the device: a window and a zone, no identity, and the zone (not an offset) so daylight saving is right. When a push is sent, a device whose local time is inside `[from, until)` gets `interruption-level: passive` and no `sound`; the copy, `thread-id`, 72-hour guard and once-only claim are unchanged. A device with no window behaves as before. The relay Worker's own TestFlight crash and feedback alerts to team devices follow the same window (passive, no sound).
 
 ### PS Plus monthly games: `v1/plus.json` (r050-plus-card)
 
