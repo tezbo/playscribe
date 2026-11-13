@@ -53,6 +53,11 @@ const NOT_A_RELEASE = /\b(ends?|ending|until|through|expires?|deadline|sale|even
 const MAINTENANCE = /\b(maintenance|downtime|restraining order|servers? (?:will )?(?:be )?(?:down|offline|unavailable))\b/i
 const RELEASEY_TITLE = /\b(update|version|patch|hotfix)\b/i
 
+// A later time inside a post can belong to another release: a hotfix the patch notes say follows tomorrow, or a named other version.
+const HOTFIX = /\bhot\s*-?fix(?:es)?\b/i
+const VERSION_TOKEN = /(?<![\d$.\/])\d{1,3}(?:\.\d+){1,3}[a-z]?(?![\d.\/])/gi
+const versionsIn = (t: string) => new Set([...t.matchAll(VERSION_TOKEN)].map((m) => m[0].toLowerCase()))
+
 const monthIndex = (m: string) => MONTHS.findIndex((x) => x.startsWith(m.toLowerCase().slice(0, 3)))
 
 /**
@@ -68,7 +73,10 @@ export const statedLiveTime = (raw: string, publishedAt: string): string | null 
   if (Number.isNaN(published)) return null
   let best: number | null = null
   let bestNamesPs5 = false
-  const titleReleasey = RELEASEY_TITLE.test(text.split('\n')[0] ?? '')
+  const title = text.split('\n')[0] ?? ''
+  const titleReleasey = RELEASEY_TITLE.test(title)
+  const titleHotfix = HOTFIX.test(title)
+  const titleVersions = versionsIn(title)
   for (const m of text.matchAll(DATE)) {
     const monthName = m[1] ?? m[5]
     const day = Number(m[2] ?? m[4])
@@ -86,6 +94,10 @@ export const statedLiveTime = (raw: string, publishedAt: string): string | null 
     const maintenance = titleReleasey && MAINTENANCE.test(sentence)
     // "The next patch will be on January 3" is a different release from the one this post is about.
     if (NEXT_RELEASE.test(sentence)) continue
+    // A hotfix announced inside a post that is not a hotfix, or a named version that is not this post's, is another release's time.
+    if (!titleHotfix && HOTFIX.test(sentence)) continue
+    const named = versionsIn(sentence)
+    if (named.size && titleVersions.size && ![...named].some((v) => titleVersions.has(v))) continue
     const ownDay = !(TIME.test(sentence) && /utc|gmt/i.test(sentence)) && new Date(Date.UTC(yearText ? Number(yearText) : new Date(published).getUTCFullYear(), mi, day)).toISOString().slice(0, 10) === publishedAt.slice(0, 10)
     // A sentence that puts the release on the post's own day says the post is the release: nothing else in it is a hold.
     if (ownDay && RELEASE_WORDS.test(sentence) && !NOT_A_RELEASE.test(sentence)) return null
