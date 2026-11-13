@@ -86,13 +86,13 @@ struct PlusCard: View {
                 let extra = Array(month.games.dropFirst(limit))
                 ForEach(Array(extra.filter { opensPage($0) }.enumerated()), id: \.offset) { _, g in nameRow(g) }
                 if let line = Self.plusLine(extra.filter { !opensPage($0) }.map(\.name)) {
-                    Text(line).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                    Text(line).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("plusCard")
             }
@@ -110,7 +110,7 @@ struct PlusCard: View {
             PlusBadge(height: 20).accessibilityHidden(true)
             Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
                 .font(PlayscribeFont.subheadline.weight(.semibold))
-                .foregroundStyle(lastChance ? PlayscribeColor.ember500 : PlayscribeColor.textPrimary)
+                .foregroundStyle(lastChance ? PlayscribeColor.ember500 : PlayscribeRole.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityLabel(lastChance ? "PS Plus, last chance, claim by \(claimBy)" : "PS Plus, this month, claim by \(claimBy)")
                 .accessibilityAddTraits(.isHeader)
@@ -124,9 +124,9 @@ struct PlusCard: View {
                 if !rest.isEmpty {
                     Text("+\(rest.count)")
                         .font(PlayscribeFont.subheadline.weight(.semibold))
-                        .foregroundStyle(PlayscribeColor.textSecondary)
+                        .foregroundStyle(PlayscribeRole.textSecondary)
                         .frame(minWidth: 44, minHeight: 44)
-                        .background(Color.ink1, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        .background(PlayscribeRole.surface, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .accessibilityElement()
                         .accessibilityLabel("And \(rest.count) more: " + rest.map(\.name).joined(separator: ", "))
                 }
@@ -134,7 +134,7 @@ struct PlusCard: View {
         }
         .padding(8)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("plusCard")
     }
@@ -169,7 +169,7 @@ struct PlusCard: View {
             Text(lastChance ? "Last chance" : "This month").font(PlayscribeFont.title3)
                 .accessibilityLabel(lastChance ? "PS Plus, last chance" : "PS Plus, this month")
                 .accessibilityAddTraits(.isHeader)
-            Text("Claim by \(claimBy)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+            Text("Claim by \(claimBy)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
         }
     }
 
@@ -192,7 +192,7 @@ struct PlusCard: View {
                 HStack(spacing: 8) {
                     Text(lead + g.name).fixedSize(horizontal: false, vertical: true)
                     Spacer(minLength: 8)
-                    Image(systemName: "chevron.right").foregroundStyle(PlayscribeColor.textSecondary).accessibilityHidden(true)
+                    Image(systemName: "chevron.right").foregroundStyle(PlayscribeRole.textSecondary).accessibilityHidden(true)
                 }
                 .font(PlayscribeFont.subheadline)
                 .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading).contentShape(Rectangle())
@@ -235,13 +235,13 @@ struct PlusCover: View {
         Group {
             if let game { TileCover(game: game) }
             else {
-                RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.ink1)
+                RoundedRectangle(cornerRadius: 10, style: .continuous).fill(PlayscribeRole.surface)
                     // Never cut mid-title (Iris, AX3): a fixed 13 pt, wrapped in full, so it also stays above 12 pt.
                     // A word wider than the plate scales down (never below 11 pt) before it would break; the plate is
                     // a fixed 72 pt tall in the compact row, so the text is also capped at four lines.
                     .overlay(Text(name).font(.system(size: 13, weight: .semibold)).multilineTextAlignment(.center)
                         .lineLimit(wide ? 4 : nil).minimumScaleFactor(wide ? 0.85 : 1)
-                        .fixedSize(horizontal: false, vertical: !wide).padding(wide ? 5 : 8).foregroundStyle(PlayscribeColor.textPrimary))
+                        .fixedSize(horizontal: false, vertical: !wide).padding(wide ? 5 : 8).foregroundStyle(PlayscribeRole.textPrimary))
                     .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
             }
         }
@@ -267,7 +267,7 @@ struct PlusBadge: View {
     }
     private var label: some View {
         Text("PlayStation Plus").font(.system(size: 13, weight: .semibold))
-            .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
+            .foregroundStyle(PlayscribeRole.textPrimary).fixedSize(horizontal: false, vertical: true)
     }
 }
 

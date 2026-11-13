@@ -256,11 +256,11 @@ struct WatchAlong: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
-                Text("WATCH ALONG").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+                Text("WATCH ALONG").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeRole.textTertiary)
                     .accessibilityAddTraits(.isHeader)
                 ForEach(Array((release.keyChanges ?? []).enumerated()), id: \.offset) { _, k in
                     HStack(alignment: .firstTextBaseline, spacing: 10) {
-                        Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6).accessibilityHidden(true)
+                        Circle().fill(PlayscribeRole.action).frame(width: 6, height: 6).accessibilityHidden(true)
                         Text(k).font(PlayscribeFont.subheadline)
                     }
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
@@ -319,8 +319,8 @@ struct TabletopTransport: View {
                         Image(systemName: controller.isPlaying ? "pause.fill" : "play.fill")
                             .font(.system(size: 26, weight: .semibold))
                             .frame(width: 64, height: 64)
-                            .background(PlayscribeColor.accent, in: Circle())
-                            .foregroundStyle(PlayscribeColor.onAccent)
+                            .background(PlayscribeRole.action, in: Circle())
+                            .foregroundStyle(PlayscribeRole.onAction)
                     }
                     .accessibilityLabel(controller.isPlaying ? "Pause" : "Play")
                     .tappableFrame()
@@ -382,7 +382,7 @@ struct VideoUnavailable: View {
     var body: some View {
         VStack(spacing: 16) {
             ContentUnavailableView("Video unavailable", systemImage: "play.slash")
-            if let url { Button("Watch on YouTube") { openURL(url) }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent) }
+            if let url { Button("Watch on YouTube") { openURL(url) }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeRole.onAction) }
             Button("Close", action: onClose).hitTarget()
         }
     }

@@ -16,7 +16,7 @@ struct UpdatesView: View {
                 ContentUnavailableView {
                     Label("Updates for your games will appear here", systemImage: "book.closed")
                 } actions: {
-                    Button("Add a game") { model.nav.tab = .library }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
+                    Button("Add a game") { model.nav.tab = .library }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeRole.onAction)
                 }
             } else if duo.pose == .book, let fold = duo.division {
                 // TT-0: in the book pose the rows are cards on either page, never across the fold.
@@ -28,7 +28,7 @@ struct UpdatesView: View {
                         ForEach(Array(items.enumerated()), id: \.element.id) { i, r in
                             FeedRow(release: r)
                                 .padding(12)
-                                .background(PlayscribeColor.ink700.opacity(0.5), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                .background(PlayscribeRole.chipFill.opacity(0.5), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                             if i.isMultiple(of: 2) { Color.clear.frame(height: 1).accessibilityHidden(true) }
                         }
                     }
@@ -149,7 +149,7 @@ private struct ReadToggleActions: ViewModifier {
             let swipeItem = Button(action: toggle) {
                 Label(unread ? "Read" : "Unread", systemImage: unread ? "envelope.open" : "envelope.badge")
             }
-            .tint(PlayscribeColor.accent)
+            .tint(PlayscribeRole.action)
             let base = content
                 .contextMenu { menuItem }
                 .accessibilityAction(named: unread ? "Mark as read" : "Mark as unread", toggle)
@@ -237,7 +237,7 @@ struct SearchView: View {
                 }
                 .padding(.horizontal, 12)
                 .frame(minHeight: 44)
-                .background(PlayscribeColor.ink700, in: Capsule())
+                .background(PlayscribeRole.chipFill, in: Capsule())
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
                 .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 4, trailing: 16))
@@ -262,7 +262,7 @@ struct SearchView: View {
                     // (a list row's own background ran to the screen edge in every pose).
                     .padding(12)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets(top: 8, leading: tabletop ? 0 : 16, bottom: 8, trailing: tabletop ? 0 : 16))
@@ -271,7 +271,7 @@ struct SearchView: View {
                 ContentUnavailableView.search(text: tabletop ? (letter ?? "") : query)
                     .padding(12)
                     .frame(maxWidth: .infinity)
-                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets(top: 8, leading: tabletop ? 0 : 16, bottom: 8, trailing: tabletop ? 0 : 16))

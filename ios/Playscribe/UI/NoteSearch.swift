@@ -91,7 +91,7 @@ struct NoteSearchResults: View {
             }
         }
         .scrollContentBackground(.hidden)
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
     }
 
     @ViewBuilder private func group(_ hits: [NoteHit]) -> some View {
@@ -142,7 +142,7 @@ extension NoteHit {
         var a = AttributedString(line)
         if let r = a.range(of: query, options: [.caseInsensitive, .diacriticInsensitive]) {
             a[r].font = PlayscribeFont.subheadline.bold()
-            a[r].foregroundColor = PlayscribeColor.accent
+            a[r].foregroundColor = PlayscribeRole.action
         }
         return a
     }

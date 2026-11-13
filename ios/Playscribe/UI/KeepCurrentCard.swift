@@ -101,7 +101,7 @@ struct KeepCurrentCard: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(14)
-        .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .gesture(DragGesture(minimumDistance: 30).onEnded { v in
             if abs(v.translation.width) > 60 { answer(false) }
         })
@@ -117,7 +117,7 @@ struct KeepCurrentCard: View {
             // Accessibility sizes drop the icon, so the text and buttons use the card's full width (Iris: no icon gutter).
             HStack(alignment: .firstTextBaseline, spacing: 10) {
                 if !ax {
-                    Image(systemName: "arrow.triangle.2.circlepath").font(PlayscribeFont.headline).foregroundStyle(PlayscribeColor.accent)
+                    Image(systemName: "arrow.triangle.2.circlepath").font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.action)
                         .accessibilityHidden(true)
                 }
                 Text(KeepCurrentCopy.cardTitle).font(PlayscribeFont.headline)
@@ -126,7 +126,7 @@ struct KeepCurrentCard: View {
                     .accessibilityAddTraits(.isHeader)
             }
             Text(KeepCurrentCopy.shortLine)
-                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
             if ax { whatIsSent }
         }
@@ -140,7 +140,7 @@ struct KeepCurrentCard: View {
                 Image(systemName: "chevron.right").font(PlayscribeFont.footnote.weight(.semibold)).accessibilityHidden(true)
             }
             .font(PlayscribeFont.subheadline.weight(.semibold))
-            .foregroundStyle(PlayscribeColor.accent)
+            .foregroundStyle(PlayscribeRole.action)
             .frame(minHeight: 44)
             .contentShape(Rectangle())
         }
@@ -155,7 +155,7 @@ struct KeepCurrentCard: View {
             Text(KeepCurrentCopy.turnOn).frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
         }
         .buttonStyle(.borderedProminent).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
-        .foregroundStyle(PlayscribeColor.onAccent)
+        .foregroundStyle(PlayscribeRole.onAction)
         .accessibilityLabel(KeepCurrentCopy.turnOnVoiceOver)
         .accessibilityIdentifier("keepCurrentTurnOn")
         .hitTarget()
@@ -193,14 +193,14 @@ struct KeepCurrentDetailsSheet: View {
             .frame(minHeight: 52)
             .padding(.horizontal, 20)
             .padding(.bottom, 4)
-            .background(Color.ink0)
+            .background(PlayscribeRole.bg)
             .zIndex(1)
             // Tabletop shows this sheet in the lower-half panel, the only place that sets panelClose.
             KeepCurrentDetailsContent(edgeCapFraction: panelClose == nil ? nil : 0.15)
                 .clipped()
         }
         .padding(.top, 8)
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
         .accessibilityIdentifier("keepCurrentDetails")
     }
 }
@@ -224,13 +224,13 @@ struct KeepCurrentList: View {
             section(KeepCurrentCopy.keptHeading) { Text(KeepCurrentCopy.keptBody).fixedSize(horizontal: false, vertical: true) }
         }
         .font(compact ? PlayscribeFont.footnote : PlayscribeFont.body)
-        .foregroundStyle(compact ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
+        .foregroundStyle(compact ? PlayscribeRole.textSecondary : PlayscribeRole.textPrimary)
     }
 
     @ViewBuilder private func section<Body: View>(_ heading: String, @ViewBuilder body: () -> Body) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(heading).font(compact ? PlayscribeFont.footnote.weight(.semibold) : PlayscribeFont.headline)
-                .foregroundStyle(PlayscribeColor.textPrimary)
+                .foregroundStyle(PlayscribeRole.textPrimary)
                 .accessibilityAddTraits(.isHeader)
             body()
         }
@@ -241,7 +241,7 @@ struct KeepCurrentList: View {
 struct KeepCurrentDetailsView: View {
     var body: some View {
         KeepCurrentDetailsContent()
-            .background(Color.ink0)
+            .background(PlayscribeRole.bg)
             .navigationTitle(KeepCurrentCopy.whatIsSent)
             .navigationBarTitleDisplayMode(.inline)
     }
@@ -258,7 +258,7 @@ struct KeepCurrentDetailsContent: View {
             VStack(alignment: .leading, spacing: 16) {
                 Text(KeepCurrentCopy.cardIntro).font(PlayscribeFont.body).fixedSize(horizontal: false, vertical: true)
                 KeepCurrentList()
-                Text(KeepCurrentCopy.shortLine).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeColor.textSecondary)
+                Text(KeepCurrentCopy.shortLine).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                     .fixedSize(horizontal: false, vertical: true)
             }
             .padding(20)
@@ -281,7 +281,7 @@ struct FadedEdgeScroll<Content: View>: View {
     /// Also cap each edge at one text line (Iris, Tabletop AX5 card at e9bd204: three full lines must read clear mid-scroll).
     var capAtOneLine = false
     /// The colour behind the scroll, which the edges fade into (the card sits on ink2, the sheet on ink0).
-    var edgeColor: Color = Color.ink0
+    var edgeColor: Color = PlayscribeRole.bg
     @ViewBuilder var content: Content
 
     @ScaledMetric(relativeTo: .body) private var edgeBand: CGFloat = 28
@@ -323,7 +323,7 @@ struct FadedEdgeScroll<Content: View>: View {
         .overlay(alignment: .top) {
             if scrolled {
                 VStack(spacing: 0) {
-                    Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5).background(edgeColor)
+                    Rectangle().fill(PlayscribeRole.textSecondary.opacity(0.25)).frame(height: 0.5).background(edgeColor)
                     edgeColor.frame(height: topHeights.band)
                     LinearGradient(stops: [.init(color: edgeColor, location: 0), .init(color: edgeColor.opacity(0.85), location: 0.35),
                                            .init(color: edgeColor.opacity(0), location: 1)], startPoint: .top, endPoint: .bottom)

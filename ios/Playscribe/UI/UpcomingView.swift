@@ -192,7 +192,7 @@ struct UpcomingView: View {
                     Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                     if let move = moveLine(g) {
                         // Status on its own row, 24 pt clear of the rail; the name and date keep the full column.
-                        Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).fixedSize(horizontal: false, vertical: true)
+                        Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeRole.action).fixedSize(horizontal: false, vertical: true)
                             .padding(.trailing, 24)
                     }
                 }
@@ -232,7 +232,7 @@ struct UpcomingView: View {
                 WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
                 Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                 if let move = moveLine(g) {
-                    Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).lineLimit(2)
+                    Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeRole.action).lineLimit(2)
                 }
             }
         }
@@ -253,7 +253,7 @@ struct UpcomingView: View {
                     Text("Couldn't load upcoming games. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
                     Button { Task { await UpcomingStore.shared.load() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
-                        .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                        .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
                         .tappableFrame()
                 }
             }

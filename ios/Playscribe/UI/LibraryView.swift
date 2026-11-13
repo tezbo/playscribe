@@ -39,7 +39,7 @@ struct LibraryView: View {
                 LibraryShelf()
             }
         }
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
         .task {
             // Quick actions tip, twice only; after the launch splash has gone.
             try? await Task.sleep(for: .seconds(1.5))
@@ -292,7 +292,7 @@ struct LibraryShelf: View {
                     .padding(.horizontal, 12)
                     .padding(.vertical, typeSize.isAccessibilitySize ? 12 : 0)
                     .frame(minHeight: 44)
-                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     // Book: one page wide (like the chip row), and reported to the fold audit.
                     .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                     .tappableFrame()
@@ -502,7 +502,7 @@ struct LibraryShelf: View {
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
         // Tabletop only (Quinn, a8859d3): scrolled, the lower half's top edge cut a headline through its glyphs. The same edge as
         // the "What is sent" sheet. Not in other poses: a soft-edge mask there hid the Open portrait title (see below).
-        .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink0))
+        .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: PlayscribeRole.bg))
         // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.
         // No soft-edge mask: it made the Open portrait large "Library" title vanish (354d15c, 9914a80), see MessageClearance.
         .clearsMessages()
@@ -588,7 +588,7 @@ struct FilterBar: View {
                 .padding(.horizontal, 10)
                 .padding(.vertical, typeSize.isAccessibilitySize ? 6 : 0)
                 .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil, minHeight: 44)
-                .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
+                .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(on ? .isSelected : [])
@@ -668,21 +668,21 @@ struct ContinueText: View {
                 Text(fresh ? "NEW UPDATE" : "CONTINUE")
                     .font(PlayscribeFont.caption)
                     .tracking(12 * 0.08)
-                    .foregroundStyle(PlayscribeColor.accent)
+                    .foregroundStyle(PlayscribeRole.action)
                 if fresh, let v = release.versionChip {
                     Text(v)
                         .font(PlayscribeFont.caption)
                         .monospacedDigit()
-                        .foregroundStyle(PlayscribeColor.accent)
+                        .foregroundStyle(PlayscribeRole.action)
                         .padding(.horizontal, 8)
                         .frame(height: 19)
-                        .overlay(Capsule().strokeBorder(PlayscribeColor.accent.opacity(0.7), lineWidth: 1))
+                        .overlay(Capsule().strokeBorder(PlayscribeRole.action.opacity(0.7), lineWidth: 1))
                 }
             }
-            Text(game.name).font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.textPrimary)
+            Text(game.name).font(PlayscribeFont.title2).foregroundStyle(PlayscribeRole.textPrimary)
                 .lineLimit(2).fixedSize(horizontal: false, vertical: true)
             Text(fresh ? "\(release.displayName) is here. Catch up, then jump back in." : release.displayName)
-                .font(PlayscribeFont.body).foregroundStyle(PlayscribeColor.textSecondary)
+                .font(PlayscribeFont.body).foregroundStyle(PlayscribeRole.textSecondary)
         }
         .padding(.horizontal, 4)
     }
@@ -766,7 +766,7 @@ struct GameRow: View {
             .buttonStyle(.plain)
             .tappableFrame()
             .gameQuickActions(row.game)
-            .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.15) : .clear)
+            .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeRole.action.opacity(0.15) : .clear)
             .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
             GameMenuButton(gameID: row.id)
         }
@@ -790,8 +790,8 @@ struct UnreadBadge: View {
             .monospacedDigit()
             .padding(.horizontal, 6)
             .frame(minWidth: 20, minHeight: 20)
-            .background(PlayscribeColor.accent, in: Capsule())
-            .foregroundStyle(PlayscribeColor.onAccent)
+            .background(PlayscribeRole.action, in: Capsule())
+            .foregroundStyle(PlayscribeRole.onAction)
             .accessibilityLabel("\(count) unread")
     }
 }
@@ -841,7 +841,7 @@ struct GameTile: View {
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             VStack(alignment: .leading, spacing: 4) {
                 tileFrame(TileCover(game: row.game))
-                    .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
+                    .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeRole.action.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 // Nothing sits on the art: art lettering can be anywhere (a pill hid the MINECRAFT logo, Quinn 38a4d59). The status
                 // mark sits above the date or status phrase, in a slot of one fixed height so the dates in a row share a baseline
@@ -881,7 +881,7 @@ struct TileCaption: View {
 
     var body: some View {
         let state = model.tileDate(row)
-        let ink = state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary
+        let ink = state.kind == .unread ? PlayscribeRole.action : PlayscribeRole.textSecondary
         VStack(alignment: .leading, spacing: 1) {
             HStack(spacing: 4) {
                 Image(systemName: StatusCircle.symbol(row.status)).font(.system(size: glyph, weight: .bold))
@@ -889,7 +889,7 @@ struct TileCaption: View {
                 // The spark and the dot are the non-colour cues, so at AX they scale with the mark (the spark to about the bookmark's
                 // height), on the same centre line; at standard sizes they stay 9 and 6 pt.
                 case .unread: SparkShape().fill(ink).frame(width: typeSize.isAccessibilitySize ? glyph * 1.2 : 9, height: typeSize.isAccessibilitySize ? glyph * 1.2 : 9)
-                case .recent: Circle().fill(PlayscribeColor.accent).frame(width: typeSize.isAccessibilitySize ? glyph * 0.6 : 6, height: typeSize.isAccessibilitySize ? glyph * 0.6 : 6)
+                case .recent: Circle().fill(PlayscribeRole.action).frame(width: typeSize.isAccessibilitySize ? glyph * 0.6 : 6, height: typeSize.isAccessibilitySize ? glyph * 0.6 : 6)
                 default: EmptyView()
                 }
             }
@@ -918,7 +918,7 @@ struct TileCaption: View {
 struct TileCover: View {
     var game: CatalogGame
     var body: some View {
-        Color.ink1
+        PlayscribeRole.surface
             .overlay {
                 if game.coverAsset != nil || game.coverURL != nil {
                     CoverView(game: game, cornerRadius: 0)
@@ -949,7 +949,7 @@ struct StatusCircle: View {
         if status == .wishlist {
             Image(systemName: Self.symbol(status))
                 .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(Color.ink0)
+                .foregroundStyle(PlayscribeColor.ink950)
                 .offset(y: 0.5)
                 .frame(width: 20, height: 20)
                 .background(Circle().fill(Color.wishlist))
@@ -1073,7 +1073,7 @@ struct NotificationInviteCard: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.accent)
+            Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeRole.action)
             VStack(alignment: .leading, spacing: 8) {
                 Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
                     .fixedSize(horizontal: false, vertical: true)
@@ -1085,11 +1085,11 @@ struct NotificationInviteCard: View {
                     Text(denied
                          ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
                          : "Get a note the moment any game in your library gets an update on PS5.")
-                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
                 } else if denied {
                     Text("Turn notifications on in Settings.")
-                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 // Accessibility sizes stack the buttons outright: ViewThatFits let a label squeeze to "Turn on al…" (AX3, Closed).
@@ -1105,7 +1105,7 @@ struct NotificationInviteCard: View {
             Spacer(minLength: 0)
         }
         .padding(16)
-        .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .gesture(DragGesture(minimumDistance: 30).onEnded { v in
             if abs(v.translation.width) > 60 { snooze() }
         })
@@ -1126,7 +1126,7 @@ struct NotificationInviteCard: View {
             Text(denied ? "Open Settings" : "Turn on alerts").frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
         }
         .buttonStyle(.borderedProminent).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
-        .foregroundStyle(PlayscribeColor.onAccent)
+        .foregroundStyle(PlayscribeRole.onAction)
         .hitTarget()
         .tappableFrame()
         Button { snooze() } label: {
@@ -1161,7 +1161,7 @@ struct ContinueTile: View {
                 }
                 .overlay(alignment: .bottomLeading) {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(fresh ? "NEW UPDATE" : "CONTINUE").font(PlayscribeFont.caption2).tracking(1).foregroundStyle(PlayscribeColor.accent)
+                        Text(fresh ? "NEW UPDATE" : "CONTINUE").font(PlayscribeFont.caption2).tracking(1).foregroundStyle(PlayscribeRole.action)
                         Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
                         Text(release.displayName).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     }
@@ -1228,7 +1228,7 @@ private struct SqueezePop: ViewModifier {
             .overlay {
                 if !reduceMotion {
                     RoundedRectangle(cornerRadius: 12, style: .continuous)
-                        .strokeBorder(PlayscribeColor.accent, lineWidth: 3)
+                        .strokeBorder(PlayscribeRole.action, lineWidth: 3)
                         .opacity(ring ? 1 : 0)
                         .allowsHitTesting(false)
                         .accessibilityHidden(true)
@@ -1286,7 +1286,7 @@ struct ScrolledTopEdge: ViewModifier {
                 .overlay(alignment: .top) {
                     if scrolled {
                         VStack(spacing: 0) {
-                            Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5).background(ink)
+                            Rectangle().fill(PlayscribeRole.textSecondary.opacity(0.25)).frame(height: 0.5).background(ink)
                             ink.frame(height: heights.band)
                             LinearGradient(stops: [.init(color: ink, location: 0), .init(color: ink.opacity(0.85), location: 0.35),
                                                    .init(color: ink.opacity(0), location: 1)], startPoint: .top, endPoint: .bottom)

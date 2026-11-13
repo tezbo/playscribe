@@ -125,7 +125,7 @@ struct ReleaseEntry: View {
             }
         }
         .padding(14)
-        .background(model.highlight == r.id ? PlayscribeColor.accent.opacity(0.18) : Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .background(model.highlight == r.id ? PlayscribeRole.action.opacity(0.18) : PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .task(id: model.highlight) {
             guard model.highlight == r.id else { return }
             try? await Task.sleep(for: .milliseconds(300))
@@ -237,7 +237,7 @@ struct ReleaseBody: View {
                     Text("What's new").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
                     ForEach(keys, id: \.self) { k in
                         HStack(alignment: .firstTextBaseline, spacing: 10) {
-                            Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
+                            Circle().fill(PlayscribeRole.action).frame(width: 6, height: 6)
                             Text(k).font(PlayscribeFont.subheadline)
                         }
                     }
@@ -342,7 +342,7 @@ struct FactsCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) { Facts(release: release) }
             .padding(12)
-            .background(Color.ink1.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .background(PlayscribeRole.surface.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 }
 
@@ -408,7 +408,7 @@ struct Facts: View {
     @ViewBuilder private func row(_ label: String, _ value: some View) -> some View {
         if stacked {
             VStack(alignment: .leading, spacing: 3) {
-                Text(label).font(PlayscribeFont.caption).foregroundStyle(PlayscribeColor.textTertiary)
+                Text(label).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textTertiary)
                 value
             }
         } else {
@@ -430,7 +430,7 @@ struct VideoFact: View {
             Button { model.player = (release.gameID, release.id) } label: {
                 HStack(spacing: 10) {
                     ZStack {
-                        if let poster = v.posterAsset { Image(poster).resizable().scaledToFill() } else { Color.ink3 }
+                        if let poster = v.posterAsset { Image(poster).resizable().scaledToFill() } else { PlayscribeRole.chipFill }
                         Image(systemName: "play.fill").font(PlayscribeFont.caption).padding(8).background(.ultraThinMaterial, in: Circle())
                     }
                     .frame(width: 88, height: 50)
@@ -522,7 +522,7 @@ struct NoteSectionView: View {
             }
         }
         .padding(.horizontal, 10)
-        .background(Color.ink1.opacity(0.6), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .background(PlayscribeRole.surface.opacity(0.6), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
     }
 }
 
@@ -592,7 +592,7 @@ struct SourceLinks: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .font(PlayscribeFont.subheadline)
-        .foregroundStyle(PlayscribeColor.accent)
+        .foregroundStyle(PlayscribeRole.action)
     }
 
     @ViewBuilder private var links: some View {

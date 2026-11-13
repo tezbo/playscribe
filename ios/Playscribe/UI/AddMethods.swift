@@ -97,7 +97,7 @@ struct AddEntryView: View {
                         HStack(spacing: 14) {
                             stack {
                                 Image(systemName: m.symbol).font(.title3).frame(width: ax ? nil : iconColumn, alignment: .leading)
-                                    .foregroundStyle(PlayscribeColor.accent)
+                                    .foregroundStyle(PlayscribeRole.action)
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text(m.title).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true)
                                     Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
@@ -130,7 +130,7 @@ struct AddEntryView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 20).padding(.vertical, compact ? 8 : 12)
                     .frame(minHeight: compact ? 56 : 0)
-                    .background(Color.ink0)
+                    .background(PlayscribeRole.bg)
             }
         }
     }
