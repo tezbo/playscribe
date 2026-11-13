@@ -17,6 +17,8 @@ struct ScreenAction: Identifiable {
         var title: String
         var checked = false
         var destructive = false
+        /// What VoiceOver reads when it differs from the visible title ("Remove from library" reads with the game's name).
+        var spoken: String?
         var action: () -> Void
     }
 
@@ -49,7 +51,7 @@ struct ActionMenuContent: View {
                         else if item.checked { Label(item.title, systemImage: "checkmark") } else { Text(item.title) }
                     }
                     // A system dialog drops the selected trait (Mac, 3bb7345c), so in the dialog the label says it; menus keep the trait.
-                    .accessibilityLabel(item.checked && inDialog ? "\(item.title), selected" : item.title)
+                    .accessibilityLabel(item.checked && inDialog ? "\(item.title), selected" : (item.spoken ?? item.title))
                     .accessibilityAddTraits(item.checked ? .isSelected : [])
                 }
             }
@@ -123,7 +125,7 @@ struct RailMenuList: View {
                                 HStack(spacing: 8) {
                                     // The last two words stay together ("Deliverance II" does not split across lines); the spoken label stays the plain title.
                                     Text(RailMenuList.keepTail(item.title)).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
-                                        .accessibilityLabel(item.title)
+                                        .accessibilityLabel(item.spoken ?? item.title)
                                     Spacer(minLength: 8)
                                     if item.checked { Image(systemName: "checkmark").accessibilityHidden(true) }
                                 }
@@ -225,7 +227,7 @@ extension AppModel {
             .init(title: "Status", items: OwnershipStatus.allCases.map { s in
                 .init(id: s.rawValue, title: s.label, checked: s == current) { [weak self] in self?.setStatus(gameID, s) }
             }),
-            .init(items: [.init(id: "remove", title: "Remove \(name)", destructive: true) { [weak self] in self?.removeGame(gameID) }]),
+            .init(items: [.init(id: "remove", title: "Remove from library", destructive: true, spoken: "Remove \(name) from library") { [weak self] in self?.removeGame(gameID) }]),
         ]
     }
 
