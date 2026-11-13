@@ -39,13 +39,15 @@ struct UpdateRowText: Equatable {
 }
 
 /// One row of a game's update list (s3.png). "New" in accent text, not colour alone, at the end of the patch name's line
-/// while unread; a hairline under each row. At accessibility sizes the date and PS5 line stack when they do not share a
+/// while unread; a hairline between rows. At accessibility sizes the date and PS5 line stack when they do not share a
 /// line, and every line ends on a whole word.
 struct UpdateRowLabel: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
     var unread: Bool
     var selected: Bool
+    /// A hairline above this row, set on every row but the first.
+    var divided = false
 
     static let nameFont = Font.custom("InstrumentSans-Bold", size: 17, relativeTo: .headline)
     static let newFont = Font.custom("InstrumentSans-Bold", size: 13, relativeTo: .footnote)
@@ -90,8 +92,9 @@ struct UpdateRowLabel: View {
         .padding(.vertical, 10)
         .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
         .background(selected ? PlayscribeColor.ink700 : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-        .overlay(alignment: .bottom) {
-            Rectangle().fill(PlayscribeColor.ink700).frame(height: 1).padding(.horizontal, 10).accessibilityHidden(true)
+        .overlay(alignment: .top) {
+            // Between rows only: the list's first row has none, and the Divider before About marks the end (design, #526).
+            if divided { Rectangle().fill(PlayscribeColor.ink700).frame(height: 1).padding(.horizontal, 10).accessibilityHidden(true) }
         }
         .contentShape(Rectangle())
         .accessibilityElement(children: .ignore)

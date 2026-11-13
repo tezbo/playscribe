@@ -841,12 +841,13 @@ struct ReleaseTimeline: View {
             }
             // One column pushes the update, so no row stands for an open page: plain rows, as in s3.png. Book and Tabletop
             // keep the selected row filled, beside the page that shows it.
-            ForEach(ps5) { row($0, selected: !duo.oneColumn && $0.id == selected) }
-            ForEach(pc) { row($0, selected: !duo.oneColumn && $0.id == selected) }
+            let first = (ps5.first ?? pc.first)?.id
+            ForEach(ps5) { row($0, selected: !duo.oneColumn && $0.id == selected, divided: $0.id != first) }
+            ForEach(pc) { row($0, selected: !duo.oneColumn && $0.id == selected, divided: $0.id != first) }
         }
     }
 
-    private func row(_ r: Release, selected: Bool) -> some View {
+    private func row(_ r: Release, selected: Bool, divided: Bool) -> some View {
         Button {
             // J-1: Book (and Tabletop, where the Page is the standing half) the Page shows it; the one-column
             // poses (Closed, Open both ways) push it as its own screen.
@@ -858,7 +859,7 @@ struct ReleaseTimeline: View {
             }
         } label: {
             // s-06: patch name first, headline second, then the date and the PS5 line (UpdateRow.swift).
-            UpdateRowLabel(release: r, unread: model.isUnread(r), selected: selected)
+            UpdateRowLabel(release: r, unread: model.isUnread(r), selected: selected, divided: divided)
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("releaseRow-\(r.displayName)")
