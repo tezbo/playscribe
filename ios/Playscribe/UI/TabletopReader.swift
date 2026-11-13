@@ -133,10 +133,6 @@ struct TabletopReaderStage: View {
     /// The stage's bottom edge in screen space; the text ends 24 pt above the division.
     @State private var stageBottom: CGFloat = 0
     @State private var stageWidth: CGFloat = 0
-    @State private var stageHeight: CGFloat = 0
-    @State private var panelHeight: CGFloat = 0
-    @State private var panelMinY: CGFloat = 0
-    @State private var panelMaxY: CGFloat = 0
 
     /// The room right of the text panel (16 pt margin, up to 560 pt, 24 pt gap, 16 pt margin): the tile is 240 pt at most and
     /// is left out below 140 pt, so it never sits under the text.
@@ -144,23 +140,6 @@ struct TabletopReaderStage: View {
         let room = stageWidth - 16 - 560 - 24 - 16
         // Accessibility sizes: the label is larger, so the poster gets smaller rather than the tile being cut by the stage.
         return room >= 140 ? min(typeSize.isAccessibilitySize ? 160 : 240, room) : 0
-    }
-    /// No side room (the Duo stage is about 670 pt wide): Iris's stacked poster, 120 x 67.5 pt (exactly 16:9, no bars, no crop) on the leading edge, the same in every
-    /// game, no label. It sits at least 8 pt under the status band and 12 pt above the stage text, and is left out when the room
-    /// above the text is shorter than that, and at every accessibility size. "Play trailer" in the lower half is always there.
-    private let stackedPosterSize = CGSize(width: 120, height: 120 * 9 / 16)
-    /// The room above the stage text for the stacked poster: from the status band (56 pt) down to 12 pt above the panel's top, in
-    /// the stage's own coordinates. The panel's top is measured on the panel itself.
-    private var stackedPosterRoom: CGFloat { (panelMinY - 12) - ((stageBottom - stageHeight) + 56) }
-    private func stackedPosterFits() -> Bool {
-        guard !typeSize.isAccessibilitySize, trailerTileWidth == 0, panelMinY > 0 else { return false }
-        return stackedPosterRoom >= stackedPosterSize.height
-    }
-    /// QA (internal builds with the debug overlay): the fit test's inputs, read by the Mac frame dump as the label of
-    /// "stagePosterFit".
-    private var stackedPosterLog: String {
-        "stageBottom=\(stageBottom) stageHeight=\(stageHeight) panelMinY=\(panelMinY) panelMaxY=\(panelMaxY) panelHeight=\(panelHeight) " +
-        "trailerTileWidth=\(trailerTileWidth) ax=\(typeSize.isAccessibilitySize) room=\(stackedPosterRoom) need=\(stackedPosterSize.height) fits=\(stackedPosterFits())"
     }
     var gameID: String
 
@@ -227,12 +206,6 @@ struct TabletopReaderStage: View {
                 .padding(12)
                 .frame(maxWidth: 560, alignment: .leading)
                 .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                // The panel's own height (before the margin and the full-stage frame), for the stacked poster above it.
-                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in if abs(h - panelHeight) > 0.5 { panelHeight = h } }
-                .onGeometryChange(for: CGPoint.self) { CGPoint(x: $0.frame(in: .global).minY, y: $0.frame(in: .global).maxY) } action: { p in
-                    if abs(p.x - panelMinY) > 0.5 { panelMinY = p.x }
-                    if abs(p.y - panelMaxY) > 0.5 { panelMaxY = p.y }
-                }
                 .padding(.horizontal, 16)
                 .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
@@ -251,24 +224,9 @@ struct TabletopReaderStage: View {
                         .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 }
                 .clipped()
-            } else if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first, stackedPosterFits() {
-                // R-11: no side room, so the poster sits on the panel's leading edge, 12 pt above it. View only.
-                Color.clear.overlay(alignment: .bottomLeading) {
-                    StageTrailerTile(youtubeID: v.youtubeId, width: stackedPosterSize.width, posterHeight: stackedPosterSize.height)
-                        .padding(.leading, 16)
-                        .padding(.bottom, stageBottom - panelMinY + 12)
-                }
-                .clipped()
-            }
-            if model.showDebugOverlay {
-                Color.clear.frame(width: 1, height: 1)
-                    .accessibilityElement()
-                    .accessibilityLabel(stackedPosterLog)
-                    .accessibilityIdentifier("stagePosterFit")
             }
         }
         .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { w in if abs(w - stageWidth) > 0.5 { stageWidth = w } }
-        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in if abs(h - stageHeight) > 0.5 { stageHeight = h } }
         .animation(.easeInOut(duration: 0.2), value: index)
         // Its parts stay separate elements, so the release title is findable (J-4).
         .accessibilityElement(children: .contain)
@@ -358,49 +316,27 @@ extension Array {
 struct StageTrailerTile: View {
     var youtubeID: String
     var width: CGFloat
-    /// Set for the stacked variant: the poster alone in a fixed box (width x posterHeight), no label, the whole 16:9 frame inside it.
-    var posterHeight: CGFloat? = nil
 
     var body: some View {
-        Group {
-            if let posterHeight { stackedPoster(posterHeight) } else { sideTile }
-        }
-        .allowsHitTesting(false)
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel("Trailer")
-        .accessibilityAddTraits(.isStaticText)
-        .accessibilityIdentifier("stageTrailerTile")
-    }
-
-    private func image() -> some View {
-        AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(youtubeID)/mqdefault.jpg")) { $0.resizable().aspectRatio(16 / 9, contentMode: .fit) } placeholder: { Color.ink1 }
-    }
-
-    private func glyph() -> some View {
-        Image(systemName: "play.fill").font(.system(size: 28)).foregroundStyle(.white)
-            .padding(12).background(PlayscribeColor.ink950.opacity(0.6), in: Circle())
-    }
-
-    private func stackedPoster(_ height: CGFloat) -> some View {
-        image()
-            .frame(width: width, height: height)
-            .background(Color.ink1)
-            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .overlay { glyph() }
-    }
-
-    private var sideTile: some View {
         VStack(alignment: .leading, spacing: 6) {
-            image()
+            AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(youtubeID)/mqdefault.jpg")) { $0.resizable().aspectRatio(16 / 9, contentMode: .fit) } placeholder: { Color.ink1 }
                 .frame(width: width, height: width * 9 / 16)
                 .background(Color.ink1)
                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                .overlay { glyph() }
+                .overlay {
+                    Image(systemName: "play.fill").font(.title2).foregroundStyle(.white)
+                        .padding(12).background(PlayscribeColor.ink950.opacity(0.6), in: Circle())
+                }
             Text("Trailer").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)
         }
         .frame(width: width, alignment: .leading)
         .padding(8)
         .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .allowsHitTesting(false)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Trailer")
+        .accessibilityAddTraits(.isStaticText)
+        .accessibilityIdentifier("stageTrailerTile")
     }
 }
