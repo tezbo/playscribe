@@ -135,6 +135,8 @@ struct TabletopReaderStage: View {
     @State private var stageWidth: CGFloat = 0
     @State private var stageHeight: CGFloat = 0
     @State private var panelHeight: CGFloat = 0
+    @State private var panelMinY: CGFloat = 0
+    @State private var panelMaxY: CGFloat = 0
 
     /// The room right of the text panel (16 pt margin, up to 560 pt, 24 pt gap, 16 pt margin): the tile is 240 pt at most and
     /// is left out below 140 pt, so it never sits under the text.
@@ -147,9 +149,18 @@ struct TabletopReaderStage: View {
     /// game, no label. It sits at least 8 pt under the status band and 12 pt above the stage text, and is left out when the room
     /// above the text is shorter than that, and at every accessibility size. "Play trailer" in the lower half is always there.
     private let stackedPosterSize = CGSize(width: 120, height: 120 * 9 / 16)
-    private func stackedPosterFits(clearance: CGFloat) -> Bool {
-        guard !typeSize.isAccessibilitySize, trailerTileWidth == 0, panelHeight > 0 else { return false }
-        return stageHeight - 56 - (clearance + panelHeight + 12) >= stackedPosterSize.height + 8
+    /// The room above the stage text for the stacked poster: from the status band (56 pt) down to 12 pt above the panel's top, in
+    /// the stage's own coordinates. The panel's top is measured on the panel itself.
+    private var stackedPosterRoom: CGFloat { (panelMinY - 12) - ((stageBottom - stageHeight) + 56) }
+    private func stackedPosterFits() -> Bool {
+        guard !typeSize.isAccessibilitySize, trailerTileWidth == 0, panelMinY > 0 else { return false }
+        return stackedPosterRoom >= stackedPosterSize.height
+    }
+    /// QA (internal builds with the debug overlay): the fit test's inputs, read by the Mac frame dump as the label of
+    /// "stagePosterFit".
+    private var stackedPosterLog: String {
+        "stageBottom=\(stageBottom) stageHeight=\(stageHeight) panelMinY=\(panelMinY) panelMaxY=\(panelMaxY) panelHeight=\(panelHeight) " +
+        "trailerTileWidth=\(trailerTileWidth) ax=\(typeSize.isAccessibilitySize) room=\(stackedPosterRoom) need=\(stackedPosterSize.height) fits=\(stackedPosterFits())"
     }
     var gameID: String
 
@@ -218,6 +229,10 @@ struct TabletopReaderStage: View {
                 .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 // The panel's own height (before the margin and the full-stage frame), for the stacked poster above it.
                 .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in if abs(h - panelHeight) > 0.5 { panelHeight = h } }
+                .onGeometryChange(for: CGPoint.self) { CGPoint(x: $0.frame(in: .global).minY, y: $0.frame(in: .global).maxY) } action: { p in
+                    if abs(p.x - panelMinY) > 0.5 { panelMinY = p.x }
+                    if abs(p.y - panelMaxY) > 0.5 { panelMaxY = p.y }
+                }
                 .padding(.horizontal, 16)
                 .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
@@ -236,14 +251,20 @@ struct TabletopReaderStage: View {
                         .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 }
                 .clipped()
-            } else if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first, stackedPosterFits(clearance: duo.clearance(forBottom: stageBottom)) {
+            } else if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first, stackedPosterFits() {
                 // R-11: no side room, so the poster sits on the panel's leading edge, 12 pt above it. View only.
                 Color.clear.overlay(alignment: .bottomLeading) {
                     StageTrailerTile(youtubeID: v.youtubeId, width: stackedPosterSize.width, posterHeight: stackedPosterSize.height)
                         .padding(.leading, 16)
-                        .padding(.bottom, duo.clearance(forBottom: stageBottom) + panelHeight + 12)
+                        .padding(.bottom, stageBottom - panelMinY + 12)
                 }
                 .clipped()
+            }
+            if model.showDebugOverlay {
+                Color.clear.frame(width: 1, height: 1)
+                    .accessibilityElement()
+                    .accessibilityLabel(stackedPosterLog)
+                    .accessibilityIdentifier("stagePosterFit")
             }
         }
         .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { w in if abs(w - stageWidth) > 0.5 { stageWidth = w } }
