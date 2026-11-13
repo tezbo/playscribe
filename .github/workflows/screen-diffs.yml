@@ -47,7 +47,8 @@ jobs:
           base=$(git rev-parse HEAD^1)
           echo "base=$base" >> "$GITHUB_OUTPUT"
           # Anything that can change a still: the app, shared code, the project file, the harness itself.
-          if git diff --quiet "$base" HEAD -- ios/Playscribe ios/Shared ios/PlayscribeWidget ios/project.yml ios/PlayscribeTests/Harness; then
+          if git diff --quiet "$base" HEAD -- ios/Playscribe ios/Shared ios/PlayscribeWidget ios/project.yml ios/PlayscribeTests/Harness \
+               .github/workflows/screen-diffs.yml ios/tools/qa/screen_diff.py; then
             echo "app=false" >> "$GITHUB_OUTPUT"
           else
             echo "app=true" >> "$GITHUB_OUTPUT"
@@ -125,16 +126,21 @@ jobs:
             xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme Playscribe \
               -destination 'generic/platform=iOS Simulator' -derivedDataPath dd CODE_SIGNING_ALLOWED=NO > stills/build.log 2>&1 || true
             echo "build $(( SECONDS - t )) s"; t=$SECONDS
+            # Boot cost on this 3-core runner (sim-boot-probe, 13 Nov): bootstatus waits about 210 s for the system to settle, and a
+            # simctl spawn defaults write into the settling sim took 70 to 180 s more. So Reduce Motion is written into the
+            # device's preferences on the host before it boots (instant), and the boot isn't waited for: test-without-building
+            # waits only as long as it needs to launch the test host.
+            prefs="$HOME/Library/Developer/CoreSimulator/Devices/$udid/data/Library/Preferences/com.apple.Accessibility"
+            mkdir -p "$(dirname "$prefs")"; defaults write "$prefs" ReduceMotionEnabled -bool true
             xcrun simctl boot "$udid" 2>/dev/null || true
-            xcrun simctl bootstatus "$udid" -b >/dev/null 2>&1 || true
-            xcrun simctl spawn "$udid" defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
-            echo "boot wait $(( SECONDS - t )) s; ReduceMotionEnabled=$(xcrun simctl spawn "$udid" defaults read com.apple.Accessibility ReduceMotionEnabled 2>&1)"
+            echo "boot command $(( SECONDS - t )) s; ReduceMotionEnabled=$(defaults read "$prefs" ReduceMotionEnabled 2>&1)"
             t=$SECONDS
             xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme Playscribe \
               -destination "id=$udid" -derivedDataPath dd \
               -only-testing:PlayscribeTests/HarnessStillsTests \
               CODE_SIGNING_ALLOWED=NO >> stills/build.log 2>&1 || true
-            echo "render $(( SECONDS - t )) s"
+            echo "boot and render $(( SECONDS - t )) s"
+            echo "Reduce Motion as the booted sim sees it: $(xcrun simctl spawn "$udid" defaults read com.apple.Accessibility ReduceMotionEnabled 2>&1)"
           }
           render
           n=$(ls stills/*.png 2>/dev/null | wc -l | tr -d ' ')
