@@ -96,6 +96,8 @@ struct RailButton: View {
     /// unlabelled button to XCUITest and VoiceOver (Mac frame dumps at f78ee25, 40c142a and cc89583, and no accessibility modifier
     /// removed it), so there is one element here by construction (bug-rail-menu-unlabelled-buttons).
     @State private var choosing = false
+    // At AX sizes the title cost a row's height and pushed the fourth row ("Off") off the window; the rows carry the meaning there.
+    @Environment(\.dynamicTypeSize) private var typeSize
     var body: some View {
         Group {
             switch action.kind {
@@ -105,7 +107,7 @@ struct RailButton: View {
             case .menu(let sections):
                 Button { choosing = true } label: { icon }
                     .buttonStyle(RailPressStyle())
-                    .confirmationDialog(action.title, isPresented: $choosing, titleVisibility: .visible) {
+                    .confirmationDialog(action.title, isPresented: $choosing, titleVisibility: typeSize.isAccessibilitySize ? .hidden : .visible) {
                         ActionMenuContent(sections: sections, inDialog: true)
                     }
                     .id(sections.tickKey)
