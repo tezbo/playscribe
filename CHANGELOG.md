@@ -6,6 +6,7 @@ so write it for testers. Release steps are in docs/release.md.
 ## 0.5.5 (candidate, not released)
 
 - New in Settings: "Help keep my games up to date". Off until you turn it on. When on, the app sends our server the games you follow and a random code, so those games are checked every hour instead of about every 14 hours. The card in the Library explains exactly what is sent, what never is, and that the record is deleted when you turn it off.
+- The update deck at the top of the Library shows one card per game: its newest unread update, or its newest if all are read. Games with something unread come first, then the rest, up to five, and the dots match the cards.
 - Dates on News and the Library's "Last update" line now show the day the post went up, wherever you are.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.

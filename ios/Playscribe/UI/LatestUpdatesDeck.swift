@@ -22,7 +22,7 @@ struct DeckCard: Identifiable, Hashable {
 }
 
 extension AppModel {
-    /// Up to 5 cards (one dot each): unread On PS5 updates first, then the rest from the last 90 days, newest first.
+    /// Up to 5 cards, one per game (one dot each): games with an unread On PS5 update first, then the rest from the last 90 days, newest first.
     /// With nothing in 90 days, the newest release dates of the library's games.
     static let deckLimit = 5
     var latestDeck: [DeckCard] { Array(latestDeckAll.prefix(Self.deckLimit)) }
@@ -52,12 +52,11 @@ extension AppModel {
         cards.sort { a, b in
             a.unread != b.unread ? a.unread : (a.date ?? .distantPast) > (b.date ?? .distantPast)
         }
-        // At most 2 cards per game, so one busy game cannot fill the deck (Quinn, PR 55).
-        var perGame: [String: Int] = [:]
-        let spread = cards.filter { c in
-            perGame[c.game.id, default: 0] += 1
-            return perGame[c.game.id]! <= 2
-        }
+        // One card per game (bug-hero-deck-one-per-game, Iris 13 Nov): the sort above puts a game's unread updates first, newest
+        // first, then its read ones, so the first card seen for a game is its newest unread update, or its newest if none is unread.
+        // Older hotfixes of the same game never take a card, and the page dots equal the games shown.
+        var seen = Set<String>()
+        let spread = cards.filter { seen.insert($0.game.id).inserted }
         guard qaPadDeck, !spread.isEmpty else { return spread }
         var padded = spread, n = 0
         while padded.count < 12 {
