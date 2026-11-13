@@ -120,6 +120,7 @@ struct FeedRow: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("feedRow")
         .tappableFrame()
         .readToggleActions(release, swipe: true)
     }
