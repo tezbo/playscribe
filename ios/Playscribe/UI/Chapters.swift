@@ -19,7 +19,7 @@ struct EntriesChapter: View {
         for e in entries where !sections.contains(e.section) { sections.append(e.section) }
         return VStack(alignment: .leading, spacing: 14) {
             if touchable && !filters.isEmpty {
-                Picker("Show", selection: Binding(get: { kind ?? filters[0] }, set: { model.setCompanionKind(gameID, $0) })) {
+                Picker("Companion shows", selection: Binding(get: { kind ?? filters[0] }, set: { model.setCompanionKind(gameID, $0) })) {
                     ForEach(filters, id: \.self) { Text(GameSections.filterTitle($0)).tag($0) }
                 }
                 .pickerStyle(.segmented)
