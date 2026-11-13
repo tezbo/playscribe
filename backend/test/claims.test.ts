@@ -87,6 +87,19 @@ test('a post that is itself the release, or talks about the next one, is not hel
   assert.equal(statedLiveTime('Weekly Patch 53\nThe next patch will be on January 3, 2019.', '2018-12-21T18:00:00.000Z'), null)
 })
 
+test('a hotfix or another version announced inside a post is a different release: it does not hold this one (Dead by Daylight 9.1.1)', () => {
+  const pub = '2025-08-05T18:03:00.000Z'
+  // The real wording: patch notes for 9.1.1 that say a hotfix follows tomorrow.
+  assert.equal(statedLiveTime('Bug Fix Status Update + 9.1.1 Patch Notes\nTomorrow (August 6) we are releasing a hotfix to address a number of issues\nintroduced recently.', pub), null)
+  // A post that names another version for the later time is about that version.
+  assert.equal(statedLiveTime('Patch 1.3 Notes\nPatch 1.4 will be available on November 12.', '2026-11-10T10:00:00.000Z'), null)
+  // The sentence for this very version or this very hotfix still holds.
+  assert.ok(statedLiveTime('Patch 1.3 Notes\nPatch 1.3 will be available on November 12.', '2026-11-10T10:00:00.000Z'))
+  assert.ok(statedLiveTime('Hotfix 9.1.2 Notes\nTomorrow (August 6) we are releasing this hotfix on all platforms.', pub))
+  // A sentence that names no version, in a post that is not a hotfix and says nothing of hotfixes, still holds (DDV).
+  assert.ok(statedLiveTime('Season of Scares Update Patch Notes\nOur Season of Scares free update arrives on November 12, 2026.', '2026-11-10T10:00:00.000Z'))
+})
+
 test('a letter after the version stays in its name (10.2.2a)', () => {
   const n = nameRelease('10.2.2a Backend Bugfix Patch', '2026-11-02T10:00:00.000Z')
   assert.deepEqual([n.displayName, n.versionKey], ['Patch 10.2.2a', '10.2.2a'])
