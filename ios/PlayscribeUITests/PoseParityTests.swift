@@ -16,6 +16,8 @@ final class PoseParityTests: XCTestCase {
     private struct Item { let name: String; let query: (XCUIApplication) -> XCUIElementQuery; let predicate: NSPredicate }
 
     private let items: [Item] = [
+        // Present only for a game with a storyline; the comparer fails when a pose lacks an item another pose has.
+        Item(name: "story", query: { $0.staticTexts }, predicate: NSPredicate(format: "label == 'Story'")),
         Item(name: "about", query: { $0.staticTexts }, predicate: NSPredicate(format: "label == 'About'")),
         Item(name: "genres", query: { $0.staticTexts }, predicate: NSPredicate(
             format: "label MATCHES '.*(RPG|Role-playing|Action|Adventure|Shooter|Strategy|Simulator|Puzzle|Platform|Indie|Fighting|Racing|Sport).*' AND label CONTAINS[c] ', '")),
