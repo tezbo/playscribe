@@ -86,6 +86,10 @@ struct RailPressStyle: ButtonStyle {
 /// A rail button: icon with the title as its accessibility label, 44 pt hit target.
 struct RailButton: View {
     var action: ScreenAction
+    /// A rail menu is a plain labelled Button that presents a dialog with the same choices. A SwiftUI Menu always exposed a second,
+    /// unlabelled button to XCUITest and VoiceOver (Mac frame dumps at f78ee25, 40c142a and cc89583, and no accessibility modifier
+    /// removed it), so there is one element here by construction (bug-rail-menu-unlabelled-buttons).
+    @State private var choosing = false
     var body: some View {
         Group {
             switch action.kind {
@@ -93,13 +97,12 @@ struct RailButton: View {
                 Button(action: run) { icon }
                     .buttonStyle(RailPressStyle())
             case .menu(let sections):
-                // A Menu draws an inner button of its own, which stayed in the tree with no label or id beside the labelled outer one
-                // (Tabletop rail: Notifications, Status and More; Mac frame dumps at f78ee25 and 40c142a, bug-rail-menu-unlabelled-buttons).
-                // One element: the Menu is read as the labelled button, and its inner button is not exposed.
-                Menu { ActionMenuContent(sections: sections) } label: { icon }
+                Button { choosing = true } label: { icon }
+                    .buttonStyle(RailPressStyle())
+                    .confirmationDialog(action.title, isPresented: $choosing, titleVisibility: .visible) {
+                        ActionMenuContent(sections: sections)
+                    }
                     .id(sections.tickKey)
-                    .accessibilityElement(children: .ignore)
-                    .accessibilityAddTraits(.isButton)
             }
         }
         .accessibilityLabel(action.title)
