@@ -89,6 +89,54 @@ struct RailPressStyle: ButtonStyle {
     }
 }
 
+/// The rail menus' choices, in a popover that never outgrows the lower half: the list scrolls inside a capped height with a bottom
+/// fade while more lies below. A system confirmation dialog grew past the window at AX5 and clipped "Off" and "Remove" (Mac, dc3bc407).
+struct RailMenuList: View {
+    var title: String
+    var sections: [ScreenAction.MenuSection]
+    var done: () -> Void
+    @State private var contentHeight: CGFloat = 0
+    @State private var moreBelow = false
+    private let cap: CGFloat = 300
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 0) {
+                Text(title).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    .padding(.horizontal, 16).padding(.top, 12).padding(.bottom, 4)
+                    .accessibilityAddTraits(.isHeader)
+                ForEach(sections) { section in
+                    if let t = section.title, !t.isEmpty {
+                        Text(t).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                            .padding(.horizontal, 16).padding(.top, 8)
+                    }
+                    ForEach(section.items) { item in
+                        Button(role: item.destructive ? .destructive : nil) { done(); item.action() } label: {
+                            HStack(spacing: 8) {
+                                Text(item.title).multilineTextAlignment(.leading)
+                                Spacer(minLength: 8)
+                                if item.checked { Image(systemName: "checkmark").accessibilityHidden(true) }
+                            }
+                            .padding(.horizontal, 16).frame(minHeight: 44).contentShape(Rectangle())
+                        }
+                        .accessibilityAddTraits(item.checked ? .isSelected : [])
+                        .accessibilityIdentifier("railMenuRow")
+                    }
+                }
+            }
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { contentHeight = $0 }
+        }
+        .frame(width: 300, height: contentHeight > 0 ? min(contentHeight, cap) : cap)
+        .scrollBounceBehavior(.basedOnSize)
+        .onScrollGeometryChange(for: Bool.self) { g in
+            g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1
+        } action: { _, more in moreBelow = more }
+        .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.88 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
+                             startPoint: .top, endPoint: .bottom))
+        .accessibilityIdentifier("railMenuList")
+    }
+}
+
 /// A rail button: icon with the title as its accessibility label, 44 pt hit target.
 struct RailButton: View {
     var action: ScreenAction
@@ -96,9 +144,6 @@ struct RailButton: View {
     /// unlabelled button to XCUITest and VoiceOver (Mac frame dumps at f78ee25, 40c142a and cc89583, and no accessibility modifier
     /// removed it), so there is one element here by construction (bug-rail-menu-unlabelled-buttons).
     @State private var choosing = false
-    // At AX sizes the title cost a row's height and pushed the fourth row ("Off") off the window; the rows carry the meaning there.
-    // The rail caps its own Dynamic Type at large, so the environment cannot say; the dialog uses the system's setting.
-    private var axText: Bool { UIApplication.shared.preferredContentSizeCategory.isAccessibilityCategory }
     var body: some View {
         Group {
             switch action.kind {
@@ -108,8 +153,9 @@ struct RailButton: View {
             case .menu(let sections):
                 Button { choosing = true } label: { icon }
                     .buttonStyle(RailPressStyle())
-                    .confirmationDialog(action.title, isPresented: $choosing, titleVisibility: axText ? .hidden : .visible) {
-                        ActionMenuContent(sections: sections, inDialog: true)
+                    .popover(isPresented: $choosing) {
+                        RailMenuList(title: action.title, sections: sections) { choosing = false }
+                            .presentationCompactAdaptation(.popover)
                     }
                     .id(sections.tickKey)
             }
