@@ -855,7 +855,8 @@ final class AppModel {
         // game (added to the library if it is not there), staying on the Library: the deck shows "Day-one patch" beside a normal
         // "New update" card and the game page shows the one-line note. Reading still clears it (qaHonourRead), so the
         // second-visit still shows the line and chip gone (r060-dayone-patch-alert-app, Iris's 7 stills).
-        case "dayone" where parts.count == 1:
+        // `dayone/<game>/open` then opens that update on the game page, as a tap on its card does (the Tabletop UI test).
+        case "dayone" where parts.count == 1 || (parts.count == 2 && parts[1] == "open"):
             let gameID = parts[0]
             resetToTwoUpdateDemo()
             qaHonourRead = true
@@ -878,6 +879,7 @@ final class AppModel {
             // 43372143693: no day-one card). Move the clock on, and choose the fresh cards again now the release is there.
             tick()
             qaFreshCache = nil
+            if parts.count == 2 { openGame(gameID, chapter: .updates, releaseID: release.id) }
         // QA (INTERNAL): a PS5 update with a very long invented title, to exercise the share-button guard on the release page
         // (r054: a title past 4 lines at AX drops the button to its own row).
         case "long-title" where parts.count == 1:
