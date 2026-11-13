@@ -399,6 +399,46 @@ struct GameLinks: View {
     }
 }
 
+/// Tabletop: the genres line under the title (Iris, bug-tabletop-game-details-missing). Whole words, wraps, hidden with no genres.
+struct GameGenresLine: View {
+    var game: CatalogGame
+    var body: some View {
+        let info = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }
+        let genres = info?.genres ?? game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }?.genres ?? []
+        if !genres.isEmpty {
+            Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+}
+
+/// Tabletop's end of the lower panel, after Contents: About (three lines, More in place), the link rows, You might also like.
+struct TabletopGameTail: View {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var open = false
+    var game: CatalogGame
+    var body: some View {
+        let info = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }
+        let summary = info?.summary ?? game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }?.summary
+        VStack(alignment: .leading, spacing: 14) {
+            if let summary {
+                Text("ABOUT").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+                if open { LinkedTextView(text: summary).font(PlayscribeFont.body) }
+                else { WholeWordText(text: LinkedText.clean(summary), font: PlayscribeFont.body, lines: 3, color: nil) }
+                Button(open ? "Less" : "More") {
+                    if reduceMotion { open.toggle() } else { withAnimation(.snappy) { open.toggle() } }
+                }
+                .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
+                .accessibilityIdentifier("aboutMore")
+            }
+            GameLinks(game: game)
+            SimilarGamesRow(game: game)
+        }
+        .padding(.top, 4)
+        .task(id: game.igdbID) { if let id = game.igdbID { await GameInfoStore.shared.load(igdbID: id) } }
+    }
+}
+
 struct GameBasicsView: View {
     /// The game's trailers as About lists them: up to three, one per title (the feed can carry two cuts named "Launch
     /// Trailer"). Also Tabletop's stage tile and "Play trailer" (bug-tabletop-trailer-tile-missing).
@@ -647,9 +687,15 @@ struct ContentsBody: View {
                 } }
                 // Once per page (Terry): closed, the links sit with the game's basics instead.
                 if duo.pose != .closed && duo.pose != .tabletop, let game { GameLinks(game: game) }
+                // Tabletop (Iris, bug-tabletop-game-details-missing): genres under the title; About, links and similar games at the end.
+                if duo.pose == .tabletop, let game { GameGenresLine(game: game) }
                 if addControl, model.entry(gameID) == nil, let game {
                     Button("Add to library") { model.addGame(game, status: .watching) }
                         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
+                }
+                // A game with no notes has no outline, so its Play trailer row sits here, above the chips (Iris order: trailer first).
+                if duo.pose == .tabletop, model.ps5Releases(gameID).isEmpty, model.pcOnlyReleases(gameID).isEmpty {
+                    TabletopTrailerRow(gameID: gameID)
                 }
                 ChapterBar(gameID: gameID, selected: chapter)
                 // Tabletop, a game with no notes: search, the A to Z strip and Previous/Next have nothing to act on (Quinn, #426),
@@ -672,6 +718,7 @@ struct ContentsBody: View {
                         TabletopOutline(gameID: gameID)
                     }
                     ReleaseTimeline(gameID: gameID)
+                    if duo.pose == .tabletop, let game { TabletopGameTail(game: game) }
                 }
             }
     }
@@ -870,17 +917,12 @@ struct ReleaseTimeline: View {
 }
 
 /// TT-2 in the Contents: the section outline with Previous and Next.
-struct TabletopOutline: View {
-    @State private var fullText = false
+/// R-11: "Play trailer", first row of Tabletop's lower panel, for every game (also one with no notes, which has no outline).
+struct TabletopTrailerRow: View {
     @Environment(AppModel.self) private var model
     var gameID: String
     var body: some View {
-        let sections = model.readerRelease(gameID).map(model.readerSections) ?? []
-        let index = min(model.readerIndex[gameID] ?? 0, max(0, sections.count - 1))
-        VStack(spacing: 2) {
-            // R-11 (bug-tabletop-trailer-tile-missing, Iris): About is not on the Tabletop stage, so the game's trailer had no
-            // control at all. The stage shows its poster, view only; this is the control, in the lower half, and it plays in
-            // the lower-half player like the update video. First row of the panel, so it is on screen without scrolling.
+        Group {
             if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first {
                 Button { model.trailer = (v.youtubeId, v.name) } label: {
                     HStack(spacing: 8) {
@@ -896,8 +938,25 @@ struct TabletopOutline: View {
                 .accessibilityLabel("Play trailer")
                 .accessibilityIdentifier("playTrailer")
                 .tappableFrame()
-                .padding(.bottom, 4)
             }
+        }
+        // The trailer list comes from the game's basics, which About loads when it appears. About is not on the Tabletop stage,
+        // so this row loads them itself, or "Play trailer" and the stage tile never show (Mac, #486 at a2eeb67).
+        .task(id: model.game(gameID)?.igdbID) {
+            if let id = model.game(gameID)?.igdbID { await GameInfoStore.shared.load(igdbID: id) }
+        }
+    }
+}
+
+struct TabletopOutline: View {
+    @State private var fullText = false
+    @Environment(AppModel.self) private var model
+    var gameID: String
+    var body: some View {
+        let sections = model.readerRelease(gameID).map(model.readerSections) ?? []
+        let index = min(model.readerIndex[gameID] ?? 0, max(0, sections.count - 1))
+        VStack(spacing: 2) {
+            TabletopTrailerRow(gameID: gameID).padding(.bottom, 4)
             ForEach(Array(sections.enumerated()), id: \.element.id) { i, s in
                 Button { model.readerIndex[gameID] = i } label: {
                     HStack {
@@ -941,11 +1000,6 @@ struct TabletopOutline: View {
                 pageButton("Next", "chevron.forward", enabled: index < sections.count - 1) { model.readerIndex[gameID] = index + 1 }
             }
             .padding(.top, 6)
-        }
-        // The trailer list comes from the game's basics, which About loads when it appears. About is not on the Tabletop stage,
-        // so the outline loads them itself, or "Play trailer" and the stage tile never show (Mac, #486 at a2eeb67).
-        .task(id: model.game(gameID)?.igdbID) {
-            if let id = model.game(gameID)?.igdbID { await GameInfoStore.shared.load(igdbID: id) }
         }
     }
 
