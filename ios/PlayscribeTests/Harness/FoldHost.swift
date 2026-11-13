@@ -143,7 +143,8 @@ enum FoldHost {
             .preferredColorScheme(.dark)
             .font(PlayscribeFont.body)
             .tint(PlayscribeColor.accent)
-            .foregroundStyle(PlayscribeColor.textPrimary))
+            .foregroundStyle(PlayscribeColor.textPrimary)
+            .modifier(HarnessStableMotion()))
         let hc = UIHostingController(rootView: root)
         hc.traitOverrides.horizontalSizeClass = pose.compactWidth ? .compact : .regular
         // The hosting window is a small square, so UIKit gave the tab view a compact vertical size class and drew its tab bar

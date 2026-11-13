@@ -10,6 +10,8 @@ import UIKit
 ///   HARNESS_SIZES      comma list of std, ax3, ax5 (default: all three)
 ///   HARNESS_ROUTE      a playscribe:// host and path to open first, e.g. game/dawnwalker (default: the Library)
 ///   HARNESS_SCREENS    comma list of named screens for a whole matrix in one job (see `screens`); overrides ROUTE and VIEW
+///   HARNESS_AX3_POSES  comma list: AX3 only in these poses (std and AX5 stay in every pose)
+///   HARNESS_STABLE=1   same pixels for the same code: animations off, a pause before each shot (HarnessStable.swift)
 ///   HARNESS_SPLIT=1    lay Book and Tabletop pages out by the injected division (stand-in, triage only); without it the Book PNG's
 ///                      left page is clipped at x 0 and reads as a false alarm (Quinn, matrix 7fb7d89)
 /// Beside every PNG: one index.txt line (pose, live pose, safe area, fold, occlusions, split, settled) and <file>-frames.txt.
@@ -37,6 +39,8 @@ struct HarnessStillsTests {
             return list.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }.contains(value)
         }
         guard wanted("HARNESS_POSES", id), wanted("HARNESS_SIZES", size) else { return }
+        // HARNESS_AX3_POSES: AX3 only in these poses (screen diffs: Closed and Tabletop, Iris's pass bar); AX5 and std stay in all.
+        if size == "ax3", env["HARNESS_AX3_POSES"].map({ !$0.isEmpty }) == true, !wanted("HARNESS_AX3_POSES", id) { return }
         let category = try #require(Self.sizes.first { $0.0 == size }?.1)
         let tall = Double(env["HARNESS_TALL"] ?? "") ?? 1
         if let list = env["HARNESS_SCREENS"], !list.isEmpty {
@@ -58,8 +62,11 @@ struct HarnessStillsTests {
 
     private func still(_ id: String, _ size: String, _ category: UIContentSizeCategory, route: String?, view: String?, tall: Double,
                        dir: String, file: String) async throws {
+        // Seconds per phase (model and render, then PNG), in the index line, so the screen-diffs run time can be read per still.
+        let clock = ContinuousClock(), t0 = clock.now
         let model = FoldHost.demoModel()
         if let route, !route.isEmpty, let url = URL(string: "playscribe://\(route)") { model.handle(url: url) }
+        HarnessStable.settleReadState(model, route: route)
         // Whether a QA route (one-update, many-updates, ...) took effect: it must show in the log, not only in the still.
         print("harness route: \(route ?? "none") qaRoute \(model.qaRoute ?? "nil") games \(model.data.collection.count) hero \(model.continueItem?.release.id ?? "none")")
         // A view (settings): host that screen's view directly (the app presents it as a system sheet in Closed, which the capture of
@@ -80,8 +87,15 @@ struct HarnessStillsTests {
             rendered = try #require(await FoldHost.render(pose, type: category, model: model), "\(id) did not render")
         }
         defer { FoldHost.dispose(rendered) }
+        if HarnessStable.on {
+            try? await Task.sleep(for: HarnessStable.pause)
+            rendered.window.layoutIfNeeded()
+        }
         try FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true)
+        let t1 = clock.now
         let data = try #require(FoldHost.png(rendered))
+        let t2 = clock.now
+        func secs(_ d: Duration) -> String { String(format: "%.1f", Double(d.components.seconds) + Double(d.components.attoseconds) / 1e18) }
         try data.write(to: URL(fileURLWithPath: dir).appending(path: "\(file).png"))
         // One index line per still. The PNG is the pose's window (container plus safe area) at 1 px per pt. The pose label, the fold
         // (division) and the occlusions are the catalog's, in container points, so a Book or Tabletop PNG can be read against its
@@ -91,6 +105,7 @@ struct HarnessStillsTests {
         let line = "\(file).png \(Int(p.windowSize.width))x\(Int(p.windowSize.height)) pose \(p.id) expected \(p.expected) live \(rendered.livePose)"
             + " safe \(Int(p.safeArea.top)),\(Int(p.safeArea.left)),\(Int(p.safeArea.bottom)),\(Int(p.safeArea.right))"
             + " fold \(p.division.map(Self.rect) ?? "none") occlusions \(p.occlusions.isEmpty ? "none" : p.occlusions.map(Self.rect).joined(separator: ";"))"
+            + " render \(secs(t1 - t0))s png \(secs(t2 - t1))s"
             + " split \(split ? 1 : 0) settled \(rendered.settled) after \(rendered.passes) passes route \(route ?? "-") view \(view ?? "-")"
         print("harness still: \(line)")
         Self.append(line, toIndexIn: dir)
