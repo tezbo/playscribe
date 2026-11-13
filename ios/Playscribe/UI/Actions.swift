@@ -93,10 +93,13 @@ struct RailButton: View {
                 Button(action: run) { icon }
                     .buttonStyle(RailPressStyle())
             case .menu(let sections):
-                // The label sits on the icon inside the Menu: the Menu's own inner button is the element VoiceOver lands on, and a label
-                // only on the outside left it empty (Tabletop rail: Notifications, Status and More, bug-rail-menu-unlabelled-buttons).
-                Menu { ActionMenuContent(sections: sections) } label: { icon.accessibilityLabel(action.title) }
+                // A Menu draws an inner button of its own, which stayed in the tree with no label or id beside the labelled outer one
+                // (Tabletop rail: Notifications, Status and More; Mac frame dumps at f78ee25 and 40c142a, bug-rail-menu-unlabelled-buttons).
+                // One element: the Menu is read as the labelled button, and its inner button is not exposed.
+                Menu { ActionMenuContent(sections: sections) } label: { icon }
                     .id(sections.tickKey)
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityAddTraits(.isButton)
             }
         }
         .accessibilityLabel(action.title)
