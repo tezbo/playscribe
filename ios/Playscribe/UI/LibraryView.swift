@@ -270,6 +270,15 @@ struct LibraryShelf: View {
     @FocusState private var searchFocused: Bool
     @State private var searchWasFocused = false
     @State private var scrollInteracting = false
+    /// Where the page is scrolled to. Local state: bound straight to `model.nav.anchors` it wrote the model on every scroll step, which
+    /// re-ran this whole body once or twice per swipe (Mac timing of #513: 37 body runs in 20 Tabletop swipes). Only a programmatic move
+    /// (search focus, back to top) goes through `setAnchor`, which also records it in the model; the model gets the scrolled position
+    /// when the Library goes away, so it still reopens where it was.
+    @State private var scrollID: String?
+    private func setAnchor(_ id: String?) {
+        scrollID = id
+        model.nav.anchors["library"] = id
+    }
 
     /// Closed portrait, field focused or holding text: the deck steps aside like News and the cards, so the matches get the room and
     /// the card is not squeezed by the keyboard's safe area (its title clipped under the badge, Mac 0027a78 Closed). Open portrait keeps
@@ -310,7 +319,7 @@ struct LibraryShelf: View {
                                 if !searchFocused, portraitTilesFirst {
                                     Task { @MainActor in
                                         try? await Task.sleep(for: .milliseconds(60))
-                                        if !searchFocused { model.nav.anchors["library"] = "library-top" }
+                                        if !searchFocused { setAnchor("library-top") }
                                     }
                                 }
                             } label: {
@@ -346,16 +355,16 @@ struct LibraryShelf: View {
                         guard searchFocused, portraitTilesFirst, duo.pose != .tabletop else { return }
                         try? await Task.sleep(for: .milliseconds(60))
                         if Task.isCancelled { return }
-                        model.nav.anchors["library"] = nil
+                        setAnchor(nil)
                         try? await Task.sleep(for: .milliseconds(30))
                         // Never leave the position nil while the field is focused: a cancel after the nil write (the next key) still
                         // writes the id, and the next run starts again. Blur writes its own state, so it is not overridden here.
-                        if searchFocused { model.nav.anchors["library"] = "library-search" }
+                        if searchFocused { setAnchor("library-search") }
                     }
                     .onChange(of: searchFocused) { _, f in
                         // On blur the position id is dropped, so the flip of the anchor back to .top cannot re-align the page
                         // to the field and jump it to the top as the keyboard goes.
-                        if !f, model.nav.anchors["library"] == "library-search" { model.nav.anchors["library"] = nil }
+                        if !f, scrollID == "library-search" { setAnchor(nil) }
                         if f { searchWasFocused = true }
                         // Blur with no text: the deck returns, so the page goes to its top, never left at the old bottom position.
                         // (With text the matches stay where they are.) Once per blur; a later focus makes it stale, so it checks.
@@ -364,14 +373,14 @@ struct LibraryShelf: View {
                             Task { @MainActor in
                                 try? await Task.sleep(for: .milliseconds(60))
                                 // A drag-down dismissal may still have the finger on the page: no scroll then.
-                                if !searchFocused, !scrollInteracting { model.nav.anchors["library"] = "library-top" }
+                                if !searchFocused, !scrollInteracting { setAnchor("library-top") }
                             }
                         }
                         guard f, duo.pose != .tabletop else { return }
                         Task { @MainActor in
                             try? await Task.sleep(for: .milliseconds(350))
                             guard searchFocused else { return }
-                            model.nav.anchors["library"] = "library-search"
+                            setAnchor("library-search")
                         }
                     }
     }
@@ -595,10 +604,17 @@ struct LibraryShelf: View {
         }
         // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap outside the field.
         .dismissesKeyboardOnOutsideTap()
-        .onScrollPhaseChange { _, phase in scrollInteracting = (phase == .interacting) }
+        .onScrollPhaseChange { _, phase in
+            scrollInteracting = (phase == .interacting)
+            // Once the page has come to rest, not on every step, the scrolled position goes to the model (it is saved with the app's state).
+            if phase == .idle, model.nav.anchors["library"] != scrollID { model.nav.anchors["library"] = scrollID }
+        }
+        // A move made elsewhere (QA routes, a game added) reaches the page; this view's own moves already match and do nothing.
+        .onChange(of: model.nav.anchors["library"]) { _, id in if id != scrollID { scrollID = id } }
+        .onAppear { if scrollID == nil { scrollID = model.nav.anchors["library"] } }
         // Focused search: the field must always show above the keyboard. Where it is the last block (tiles-first portrait) it is
         // aligned to the bottom of the visible area, with as many tiles above it as fit; elsewhere it sits above the results, top.
-        .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }),
+        .scrollPosition(id: $scrollID,
                         anchor: searchFocused && portraitTilesFirst ? .bottom : .top)
         // Tabletop only (Quinn, a8859d3): scrolled, the lower half's top edge cut a headline through its glyphs. The same edge as
         // the "What is sent" sheet. Not in other poses: a soft-edge mask there hid the Open portrait title (see below).
