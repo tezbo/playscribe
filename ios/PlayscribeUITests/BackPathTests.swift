@@ -2,7 +2,7 @@ import XCTest
 
 /// D-1 (0.5.6, Card D; Nadia, 13 Nov): an Updates-tab row opens the update page. In Closed and Open portrait it is pushed
 /// over the list and Back returns to the list in one step, at the same scroll; side by side the game opens with that update
-/// and its Back ("Back to Updates") returns to the Updates tab.
+/// and its Back ("Updates, back") returns to the Updates tab.
 @MainActor
 final class BackPathTests: XCTestCase {
     func testAnUpdatesRowOpensTheUpdateAndBackReturnsToUpdates() throws {
@@ -29,7 +29,7 @@ final class BackPathTests: XCTestCase {
         } else {
             let back = app.buttons["gameBack"].firstMatch
             XCTAssertTrue(back.waitForExistence(timeout: 5), "the game's Back")
-            XCTAssertEqual(back.label, "Back to Updates")
+            XCTAssertEqual(back.label, "Updates, back")
             back.tap()
         }
         let updates = app.tabBars.buttons["Updates"].firstMatch

@@ -343,7 +343,7 @@ struct TabletopRail: View {
             ScrollView {
               VStack(spacing: 6) {
             if let id = model.nav.gameID, model.nav.tab == .library {
-                // The same name and id as the other poses' back button ("Back to Library", gameBack); a bare "Library" read as the tab.
+                // The same name and id as the other poses' back button ("Library, back", gameBack); a bare "Library" read as the tab.
                 RailButton(action: ScreenAction(id: "back", title: model.backTitle, systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
                     .accessibilityIdentifier("gameBack")

@@ -31,7 +31,7 @@ struct NavBackTests {
         let r = try #require(m.ps5Releases("kcd2").first)
         m.openGame("kcd2", chapter: .updates, releaseID: r.id)
         #expect(m.nav.tab == .library)
-        #expect(m.backTitle == "Back to Updates")
+        #expect(m.backTitle == "Updates, back")
         m.closeGame()
         #expect(m.nav.gameID == nil)
         #expect(m.nav.tab == .updates)
@@ -41,7 +41,7 @@ struct NavBackTests {
     @Test func fromTheLibraryBackIsTheLibrary() {
         let m = model()
         m.openGame("kcd2")
-        #expect(m.backTitle == "Back to Library")
+        #expect(m.backTitle == "Library, back")
         m.closeGame()
         #expect(m.nav.tab == .library)
     }
@@ -81,7 +81,7 @@ struct NavBackTests {
         // Back: What's new.
         m.nav.detailReleaseID = nil
         #expect(m.section("kcd2") == .updates)
-        #expect(m.backTitle == "Back to Library")
+        #expect(m.backTitle == "Library, back")
         // Back: the Library, not the tab that was showing when the alert came in.
         m.closeGame()
         #expect(m.nav.tab == .library)
@@ -122,6 +122,6 @@ struct NavBackTests {
         #expect(m.nav.updatesRelease == nil)
         #expect(m.nav.gameID == "kcd2")
         #expect(m.selectedRelease("kcd2")?.id == r.id)
-        #expect(m.backTitle == "Back to Updates")
+        #expect(m.backTitle == "Updates, back")
     }
 }

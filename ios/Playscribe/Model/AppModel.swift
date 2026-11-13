@@ -749,9 +749,9 @@ final class AppModel {
         if let p = pill, isViewing(p.gameID, p.releaseID) { pill = nil }
     }
 
-    /// The Back control's label: what it does and where it goes ("Back to Updates"; redesign thread, 13 Nov: says what
-    /// happens, and Voice Control can say it). The rail button is glyph only, with this as its label, in every pose.
-    var backTitle: String { "Back to \((nav.returnTab ?? .library).title)" }
+    /// The Back control's label: the screen it returns to, as the app's other Backs read ("Updates, back"; HIG: the
+    /// previous screen's title). Glyph only on the rail, with this as its label, in every pose.
+    var backTitle: String { "\((nav.returnTab ?? .library).title), back" }
 
     /// J-1: Closed and Open portrait push an update as its own page; side by side and Tabletop the Page shows it in place.
     var pushesReleases: Bool { livePose == .closed || (livePose == .flat && !liveRightPage) }
