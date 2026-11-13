@@ -416,6 +416,7 @@ struct GameGenresLine: View {
 struct TabletopGameTail: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var open = false
+    @State private var storyOpen = false
     var game: CatalogGame
     var body: some View {
         let info = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }
@@ -430,6 +431,17 @@ struct TabletopGameTail: View {
                 }
                 .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
                 .accessibilityIdentifier("aboutMore")
+            }
+            // Story, as the Page's About section carries it in every other pose (PP-1: Closed had it, Tabletop did not).
+            if let story = info?.storyline {
+                Text("Story").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                if storyOpen { LinkedTextView(text: story).font(PlayscribeFont.body) }
+                else { WholeWordText(text: LinkedText.clean(story), font: PlayscribeFont.body, lines: 4, color: nil) }
+                Button(storyOpen ? "Less" : "More") {
+                    if reduceMotion { storyOpen.toggle() } else { withAnimation(.snappy) { storyOpen.toggle() } }
+                }
+                .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
+                .accessibilityIdentifier("storyMore")
             }
             GameLinks(game: game)
             SimilarGamesRow(game: game, limit: 3)
@@ -782,7 +794,7 @@ struct NotesSearchField: View {
     /// mid-word. Standard sizes keep the scoped wording.
     private var prompt: String {
         if typeSize.isAccessibilitySize { return "Search notes" }
-        return model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes"
+        return model.noteScope == .thisGame ? "Search this game’s notes" : "Search all my games’ notes"
     }
     var body: some View {
         @Bindable var model = model
@@ -839,7 +851,7 @@ struct InlineNoteResults: View {
                     .accessibilityLabel("\(hits.count) results")
             }
             if hits.isEmpty {
-                let none = model.noteScope == .thisGame ? "Nothing in this game's notes matches" : "Nothing in your games' notes matches"
+                let none = model.noteScope == .thisGame ? "Nothing in this game’s notes matches" : "Nothing in your games’ notes matches"
                 Text(byLetter.map { "No notes start with \($0)" } ?? none)
                     .font(PlayscribeFont.headline)
                 if model.noteScope == .thisGame {

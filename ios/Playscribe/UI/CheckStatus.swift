@@ -28,7 +28,7 @@ extension AppModel {
         let text: String
         switch checkState {
         case .checked(let d): text = "Checked \(Self.checkedStamp(d))"
-        case .failed(let offline): text = offline ? "Couldn't check. Offline" : "Couldn't check"
+        case .failed(let offline): text = offline ? "Couldn’t check. Offline" : "Couldn’t check"
         case .notChecked: text = "Not checked yet"
         }
         AccessibilityNotification.Announcement(text).post()
@@ -49,7 +49,7 @@ struct CheckedLine: View {
             case .checked(let d):
                 Text("Checked \(AppModel.checkedStamp(d))")
             case .failed(let offline):
-                Text(offline ? "Couldn't check. Offline" : "Couldn't check")
+                Text(offline ? "Couldn’t check. Offline" : "Couldn’t check")
                 RetryButton()
             case .notChecked:
                 Text("Not checked yet")
@@ -76,19 +76,24 @@ struct NoUpdatesLine: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     var gameID: String
+    /// The "checked, nothing yet" line. Only a game in the library promises to tell the reader (Tabletop's lower half, Iris): a game
+    /// that is only being browsed has no alert to promise, so it says the plain fact.
+    static func checkedCopy(tabletop: Bool, inLibrary: Bool) -> String {
+        tabletop && inLibrary ? "No updates yet. We’ll tell you when the first one lands." : "No updates yet."
+    }
     var body: some View {
         if model.feedTracksGame(gameID) {
             VStack(alignment: .leading, spacing: 2) {
                 switch model.checkState {
                 // Tabletop's lower half is the only place a reader looks for why there is nothing (Iris, bug-tabletop-game-details-missing).
-                case .checked: Text(duo.pose == .tabletop ? "No updates yet. We'll tell you when the first one lands." : "No updates yet.")
-                case .failed, .notChecked: Text("Couldn't check yet.")
+                case .checked: Text(Self.checkedCopy(tabletop: duo.pose == .tabletop, inLibrary: model.entry(gameID) != nil))
+                case .failed, .notChecked: Text("Couldn’t check yet.")
                 }
                 CheckedLine()
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
         } else {
-            Text("We don't track this game's updates yet.")
+            Text("We don’t track this game’s updates yet.")
                 .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
         }
     }
@@ -101,7 +106,7 @@ struct StaleHint: View {
         if case .failed(let offline) = model.checkState {
             HStack(spacing: 8) {
                 Image(systemName: offline ? "wifi.slash" : "exclamationmark.circle")
-                Text(offline ? "Showing saved updates, you're offline" : "Showing saved updates")
+                Text(offline ? "Showing saved updates, you’re offline" : "Showing saved updates")
                 Spacer(minLength: 0)
                 RetryButton()
             }
@@ -124,7 +129,7 @@ struct CaughtUpCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text("You're all caught up").font(PlayscribeFont.headline)
+            Text("You’re all caught up").font(PlayscribeFont.headline)
             Text(lastUpdate.map { "Last update \($0.dayMonth)" } ?? "Nothing new in 90 days")
                 .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
         }

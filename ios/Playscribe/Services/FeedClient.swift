@@ -121,7 +121,7 @@ extension AppModel {
     var feedStatusLine: String? {
         switch feedStatus {
         case .offline(let d): "Offline" + (d.map { ". Updated \($0.formatted(.relative(presentation: .named)))." } ?? "")
-        case .failed: "Couldn't refresh"
+        case .failed: "Couldn’t refresh"
         default: nil
         }
     }

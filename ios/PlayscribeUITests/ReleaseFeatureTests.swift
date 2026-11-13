@@ -132,12 +132,12 @@ final class ReleaseFeatureTests: XCTestCase {
     func testNewsChapterIsNeverBlank() throws {
         launch("chapter/dawnwalker/news")
         let states = ["No news yet", "Loading news", "Official", "Reported"]
-        let failed = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH \"Couldn't load news\"")).firstMatch
+        let failed = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH \"Couldn’t load news\"")).firstMatch
         func shown() -> Bool {
             // Tabletop (Iris): the stage is read only, never hidden from VoiceOver. A headline row is one combined text element
             // ("<title>, <date>, Official"), so look for the tag in any element's label.
             if inTabletop {
-                let row = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS ', Official' OR label CONTAINS ', Reported' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news' OR label BEGINSWITH \"Couldn't load news\"")).firstMatch
+                let row = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS ', Official' OR label CONTAINS ', Reported' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news' OR label BEGINSWITH \"Couldn’t load news\"")).firstMatch
                 return row.waitForExistence(timeout: 5)
             }
             return states.contains { app.staticTexts[$0].waitForExistence(timeout: 3) } || failed.exists
@@ -292,7 +292,7 @@ final class ReleaseFeatureTests: XCTestCase {
         scan.tap()
         let explainer = app.staticTexts["Let Playscribe see your games"]
         let denied = app.staticTexts["Scan with camera is off"]
-        let unsupported = app.staticTexts["This device can't scan titles."]
+        let unsupported = app.staticTexts["This device can’t scan titles."]
         XCTAssertTrue(explainer.waitForExistence(timeout: 5) || denied.exists || unsupported.exists || app.buttons["Find these games"].exists)
         if explainer.exists { XCTAssertTrue(app.buttons["Continue"].exists && app.buttons["Not now"].exists) }
         if denied.exists || unsupported.exists { XCTAssertTrue(app.buttons["Type it"].exists, "Type it is always offered first") }

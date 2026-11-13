@@ -87,7 +87,7 @@ struct FeedContractTests {
         #expect(LinkHost.label("All patch notes", URL(string: "https://www.remedygames.com/news")!) == "All patch notes on Remedy")
         #expect(LinkHost.label("All patch notes", URL(string: "https://deepsilver.com/x")!) == "All patch notes on Deep Silver")
         #expect(LinkHost.label("All patch notes", URL(string: "https://www.gamesci.cn/x")!) == "All patch notes on Game Science")
-        #expect(LinkHost.label("All patch notes", URL(string: "https://www.example.co.uk/a")!) == "All patch notes on the developer's site")
+        #expect(LinkHost.label("All patch notes", URL(string: "https://www.example.co.uk/a")!) == "All patch notes on the developer’s site")
         #expect(LinkHost.label("Read", URL(string: "mailto:x")!) == "Read")
     }
 

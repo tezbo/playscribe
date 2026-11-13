@@ -17,7 +17,7 @@ struct DeckCard: Identifiable, Hashable {
     /// The line under a hero headline for a card with no release: the headline is already the game name, so the line
     /// never repeats it (r053-hero-duplicate-title-no-notes). A game the feed does not follow says so, as the Page does.
     static func noReleaseLine(tracked: Bool) -> String {
-        tracked ? "No patch notes yet" : "We don't track this game's updates yet"
+        tracked ? "No patch notes yet" : "We don’t track this game’s updates yet"
     }
 }
 
@@ -780,7 +780,7 @@ struct DeckStage: View {
                                     Text("Released " + dateText).foregroundStyle(PlayscribeColor.vellum100)
                                 }
                             } else {
-                                Text("\(Text(line).foregroundStyle(PlayscribeColor.textPrimary))  \u{00B7}  \(Text("Released " + dateText).foregroundStyle(PlayscribeColor.vellum100))")
+                                Text("\(Text(line).foregroundStyle(PlayscribeColor.textPrimary))  \(Text("Released " + dateText).foregroundStyle(PlayscribeColor.vellum100))")
                                     .lineLimit(1).minimumScaleFactor(0.85)
                             }
                         } else {

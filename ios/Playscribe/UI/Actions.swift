@@ -17,6 +17,8 @@ struct ScreenAction: Identifiable {
         var title: String
         var checked = false
         var destructive = false
+        /// What VoiceOver reads when it differs from the visible title ("Remove from library" reads with the game's name).
+        var spoken: String?
         var action: () -> Void
     }
 
@@ -38,13 +40,19 @@ extension Array where Element == ScreenAction.MenuSection {
 
 struct ActionMenuContent: View {
     var sections: [ScreenAction.MenuSection]
+    /// A confirmation dialog drops button icons, so the tick is drawn in the title there and also set as the selected trait.
+    var inDialog = false
     var body: some View {
         ForEach(sections) { section in
             Section(section.title ?? "") {
                 ForEach(section.items) { item in
                     Button(role: item.destructive ? .destructive : nil, action: item.action) {
-                        if item.checked { Label(item.title, systemImage: "checkmark") } else { Text(item.title) }
+                        if item.checked && inDialog { Text("\u{2713} \(item.title)") }
+                        else if item.checked { Label(item.title, systemImage: "checkmark") } else { Text(item.title) }
                     }
+                    // A system dialog drops the selected trait (Mac, 3bb7345c), so in the dialog the label says it; menus keep the trait.
+                    .accessibilityLabel(item.checked && inDialog ? "\(item.title), selected" : (item.spoken ?? item.title))
+                    .accessibilityAddTraits(item.checked ? .isSelected : [])
                 }
             }
         }
@@ -83,9 +91,77 @@ struct RailPressStyle: ButtonStyle {
     }
 }
 
+/// The rail menus' choices, in a popover that never outgrows the lower half: the list scrolls inside a capped height with a bottom
+/// fade while more lies below. A system confirmation dialog grew past the window at AX5 and clipped "Off" and "Remove" (Mac, dc3bc407).
+struct RailMenuList: View {
+    var title: String
+    var sections: [ScreenAction.MenuSection]
+    var done: () -> Void
+    @State private var contentHeight: CGFloat = 0
+    @State private var moreBelow = false
+    private let cap: CGFloat = 340
+
+    static func keepTail(_ t: String) -> String {
+        guard let i = t.lastIndex(of: " ") else { return t }
+        return t.replacingCharacters(in: i...i, with: "\u{00A0}")
+    }
+
+    var body: some View {
+        // The title is pinned outside the scroll area so it can never fill the list (Mac, 4318d26: at AX5 it filled all 300 pt and no
+        // row showed). Text is held at AX2 inside: the rows stay whole words and the four choices fit without a drag where they can.
+        VStack(alignment: .leading, spacing: 0) {
+            Text(title).font(PlayscribeFont.footnote).foregroundStyle(.secondary).lineLimit(1)
+                .padding(.horizontal, 16).padding(.top, 12).padding(.bottom, 4)
+                .accessibilityAddTraits(.isHeader)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    ForEach(sections) { section in
+                        if let t = section.title, !t.isEmpty {
+                            Text(t).font(PlayscribeFont.footnote).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                                .padding(.horizontal, 16).padding(.top, 4).padding(.bottom, 2)
+                        }
+                        ForEach(section.items) { item in
+                            Button(role: item.destructive ? .destructive : nil) { done(); item.action() } label: {
+                                HStack(spacing: 8) {
+                                    // The last two words stay together ("Deliverance II" does not split across lines); the spoken label stays the plain title.
+                                    Text(RailMenuList.keepTail(item.title)).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                                        .accessibilityLabel(item.spoken ?? item.title)
+                                    Spacer(minLength: 8)
+                                    if item.checked { Image(systemName: "checkmark").accessibilityHidden(true) }
+                                }
+                                .foregroundStyle(item.destructive ? Color.red : Color.primary)
+                                .padding(.horizontal, 16).padding(.vertical, 6).frame(minHeight: 44).contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityAddTraits(item.checked ? .isSelected : [])
+                            .accessibilityIdentifier("railMenuRow")
+                        }
+                    }
+                }
+                .padding(.bottom, 8)
+                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { contentHeight = $0 }
+            }
+            .frame(height: contentHeight > 0 ? min(contentHeight, cap) : 120)
+            .scrollBounceBehavior(.basedOnSize)
+            .onScrollGeometryChange(for: Bool.self) { g in
+                g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1
+            } action: { _, more in moreBelow = more }
+            .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.88 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
+                                 startPoint: .top, endPoint: .bottom))
+            .accessibilityIdentifier("railMenuList")
+        }
+        .frame(width: 320)
+        .dynamicTypeSize(...DynamicTypeSize.accessibility2)
+    }
+}
+
 /// A rail button: icon with the title as its accessibility label, 44 pt hit target.
 struct RailButton: View {
     var action: ScreenAction
+    /// A rail menu is a plain labelled Button that presents a dialog with the same choices. A SwiftUI Menu always exposed a second,
+    /// unlabelled button to XCUITest and VoiceOver (Mac frame dumps at f78ee25, 40c142a and cc89583, and no accessibility modifier
+    /// removed it), so there is one element here by construction (bug-rail-menu-unlabelled-buttons).
+    @State private var choosing = false
     var body: some View {
         Group {
             switch action.kind {
@@ -93,7 +169,12 @@ struct RailButton: View {
                 Button(action: run) { icon }
                     .buttonStyle(RailPressStyle())
             case .menu(let sections):
-                Menu { ActionMenuContent(sections: sections) } label: { icon }
+                Button { choosing = true } label: { icon }
+                    .buttonStyle(RailPressStyle())
+                    .popover(isPresented: $choosing) {
+                        RailMenuList(title: action.title, sections: sections) { choosing = false }
+                            .presentationCompactAdaptation(.popover)
+                    }
                     .id(sections.tickKey)
             }
         }
@@ -146,7 +227,7 @@ extension AppModel {
             .init(title: "Status", items: OwnershipStatus.allCases.map { s in
                 .init(id: s.rawValue, title: s.label, checked: s == current) { [weak self] in self?.setStatus(gameID, s) }
             }),
-            .init(items: [.init(id: "remove", title: "Remove \(name)", destructive: true) { [weak self] in self?.removeGame(gameID) }]),
+            .init(items: [.init(id: "remove", title: "Remove from library", destructive: true, spoken: "Remove \(name) from library") { [weak self] in self?.removeGame(gameID) }]),
         ]
     }
 
