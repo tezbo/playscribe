@@ -217,10 +217,11 @@ struct TabletopReaderStage: View {
                 .padding(12)
                 .frame(maxWidth: 560, alignment: .leading)
                 .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                // The panel's own height (before the margin and the full-stage frame), for the stacked poster above it.
+                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in if abs(h - panelHeight) > 0.5 { panelHeight = h } }
                 .padding(.horizontal, 16)
                 .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in if abs(h - panelHeight) > 0.5 { panelHeight = h } }
                 .id(section.id)
                 .transition(.opacity)
             } }
