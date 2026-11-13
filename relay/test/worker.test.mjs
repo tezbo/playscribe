@@ -184,6 +184,33 @@ test('webhook: 60 non-team devices and 2 team devices alert exactly the 2, with 
   }
 })
 
+test('webhook: a team device inside its quiet hours gets a passive, silent alert; one outside (or without) gets the normal alert (r050-quiet-hours-push)', async () => {
+  const env = { KV: fakeKv(), ASC_WEBHOOK_SECRET: 's3cret', APNS_KEY: 'x', APNS_KEY_ID: 'k', APNS_TEAM_ID: 't' }
+  const mins = new Date().getUTCHours() * 60 + new Date().getUTCMinutes()
+  const wrap = (m) => ((m % 1440) + 1440) % 1440
+  const inside = { from: wrap(mins - 60), until: wrap(mins + 60), timeZone: 'UTC' }
+  const outside = { from: wrap(mins + 120), until: wrap(mins + 180), timeZone: 'UTC' }
+  await call(env, 'POST', '/v1/devices', { apnsToken: 'aa'.repeat(32), team: true, quietHours: inside })
+  await call(env, 'POST', '/v1/devices', { apnsToken: 'bb'.repeat(32), team: true, quietHours: outside })
+  await call(env, 'POST', '/v1/devices', { apnsToken: 'cc'.repeat(32), team: true })
+  const sent = {}
+  const realFetch = globalThis.fetch
+  globalThis.fetch = async (url, init) => { sent[String(url).split('/').pop()] = JSON.parse(init.body).aps; return new Response('', { status: 200 }) }
+  try {
+    const kp = await crypto.subtle.generateKey({ name: 'ECDSA', namedCurve: 'P-256' }, true, ['sign'])
+    const der = new Uint8Array(await crypto.subtle.exportKey('pkcs8', kp.privateKey))
+    env.APNS_KEY = `-----BEGIN PRIVATE KEY-----\n${btoa(String.fromCharCode(...der))}\n-----END PRIVATE KEY-----`
+    const body = JSON.stringify({ data: { id: 'q1', attributes: { eventType: 'BETA_FEEDBACK_SCREENSHOT_SUBMISSION_CREATED' } } })
+    assert.equal((await (await hook(env, body, await hmacHex('s3cret', body))).json()).sent, 3)
+  } finally {
+    globalThis.fetch = realFetch
+  }
+  assert.equal(sent['aa'.repeat(32)]['interruption-level'], 'passive')
+  assert.equal(sent['aa'.repeat(32)].sound, undefined)
+  for (const t of ['bb', 'cc']) assert.equal(sent[t.repeat(32)].sound, 'default')
+  assert.equal(sent['bb'.repeat(32)]['interruption-level'], undefined)
+})
+
 test('register: past the daily cap new devices get 429, existing devices still register', async () => {
   const { env } = setup()
   const hexTok = (i) => i.toString(16).padStart(64, '0')
