@@ -222,3 +222,21 @@ test('alert age: a promoted row whose own live date is old keeps no fresh alert 
   assert.equal(alertFromOf({ alert_from: '2026-11-12T17:05:01.005Z', live_at: live('2026-11-02T10:00:00.000Z') }, now), '2026-11-12T17:05:01.005Z')
   assert.equal(alertFromOf({ alert_from: null, live_at: live('2026-11-12T10:00:00.000Z') }, now), '2026-11-12T10:00:00.000Z')
 })
+
+test('backfill applies a post\'s stated time even when a second post of the same day wrote the assumed row (DDV Season of Scares)', async () => {
+  const when = day(2)
+  const first = ago(30), second = new Date(Math.floor(Date.parse(first) / 1000) * 1000 + 36e3).toISOString()
+  const { db, deps } = await setup([
+    { gid: '1', title: 'Season of Scares Update Patch Notes', date: first, contents: `Our Season of Scares free update arrives on ${monthDay(when)}, 2026. Details below.`, tags: ['patchnotes'] },
+    { gid: '2', title: 'Season of Scares Update Patch Notes', date: second, contents: 'Hotfix notes. More details soon.', tags: ['patchnotes'] },
+  ])
+  const id = [...(db.prepare('SELECT DISTINCT release_id AS id FROM seen_posts WHERE release_id IS NOT NULL').all() as { id: string }[])][0]!.id
+  // Read forward, the later plain post does not release the row the first one held.
+  assert.equal(ps5Of(db, id)!.status, 'announced')
+  // The old rules: the second post wrote the assumed live row, at its own time.
+  db.prepare("DELETE FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").run(id)
+  store.upsertPlatform(db, id, 'ps5', { status: 'live', verification: 'assumed', liveAt: store.field(second, 'assumed', 'dawnwalker-steam') })
+  await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  const row = ps5Of(db, id)!
+  assert.deepEqual([row.status, row.liveAt?.value.slice(0, 10)], ['announced', when.toISOString().slice(0, 10)])
+})

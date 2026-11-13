@@ -357,11 +357,24 @@ export const promoteStated = (db: DB, at = new Date(), quiet = false) => {
 export const heldPs5Rows = (db: DB) =>
   (db.prepare("SELECT COUNT(*) AS n FROM platform_releases WHERE platform = 'ps5' AND status = 'announced' AND live_at IS NOT NULL AND live_at != 'null'").get() as { n: number }).n
 
-/** The PS5 row this very post (source and post date) created under the old rules, if it is still untouched by anyone else. */
+/**
+ * The PS5 row this very post (source and post date) created under the old rules, if it is still untouched by anyone else.
+ * Two posts of one source on the same day share a release (DDV: two Steam posts a minute apart): an assumed row written by
+ * the later one, on the same UTC day and not before this post, is this post's as well.
+ */
 const ownPs5Row = (db: DB, releaseId: string, sourceId: string, publishedAt: string) => {
   const row = getPlatformRow(db, releaseId, 'ps5')
   const f = json<Field<string> | null>(row?.live_at, null)
-  return row && f && f.sourceId === sourceId && f.value === publishedAt ? row : null
+  if (!row || !f || f.sourceId !== sourceId) return null
+  if (f.value === publishedAt) return row
+  return f.verification === 'assumed' && f.value > publishedAt && f.value.slice(0, 10) === publishedAt.slice(0, 10) ? row : null
+}
+
+/** True when this release's PS5 row is an assumed claim held announced until a time this source's post stated. */
+export const heldByStatedTime = (db: DB, releaseId: string, sourceId: string) => {
+  const row = getPlatformRow(db, releaseId, 'ps5')
+  const f = json<Field<string> | null>(row?.live_at, null)
+  return !!row && row.status === 'announced' && row.verification === 'assumed' && !!f?.value && f.sourceId === sourceId
 }
 
 /** Backfill repair: the post's old claim ("live at the post time") is replaced by what it really says. */
