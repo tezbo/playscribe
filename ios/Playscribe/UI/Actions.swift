@@ -38,13 +38,18 @@ extension Array where Element == ScreenAction.MenuSection {
 
 struct ActionMenuContent: View {
     var sections: [ScreenAction.MenuSection]
+    /// A confirmation dialog drops button icons, so the tick is drawn in the title there and also set as the selected trait.
+    var inDialog = false
     var body: some View {
         ForEach(sections) { section in
             Section(section.title ?? "") {
                 ForEach(section.items) { item in
                     Button(role: item.destructive ? .destructive : nil, action: item.action) {
-                        if item.checked { Label(item.title, systemImage: "checkmark") } else { Text(item.title) }
+                        if item.checked && inDialog { Text("\u{2713} \(item.title)") }
+                        else if item.checked { Label(item.title, systemImage: "checkmark") } else { Text(item.title) }
                     }
+                    .accessibilityLabel(item.title)
+                    .accessibilityAddTraits(item.checked ? .isSelected : [])
                 }
             }
         }
@@ -100,7 +105,7 @@ struct RailButton: View {
                 Button { choosing = true } label: { icon }
                     .buttonStyle(RailPressStyle())
                     .confirmationDialog(action.title, isPresented: $choosing, titleVisibility: .visible) {
-                        ActionMenuContent(sections: sections)
+                        ActionMenuContent(sections: sections, inDialog: true)
                     }
                     .id(sections.tickKey)
             }
