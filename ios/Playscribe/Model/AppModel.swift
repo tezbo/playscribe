@@ -239,6 +239,8 @@ final class AppModel {
     var qaUpdateCount = 0
     /// QA (route "cover"): keep every card in the deck, read ones too, instead of only the `qaUpdateCount` fresh ones.
     var qaKeepReadCards = false
+    /// QA (route `dayone/<game>`): the pinned fresh updates still clear when read, so a page can be shot before and after.
+    var qaHonourRead = false
     /// QA (route `cover/<game>`): the fresh update is this game's newest, so its page leads the cover.
     var qaFreshGame: String?
     var qaSingleUpdate: Bool {
@@ -474,7 +476,7 @@ final class AppModel {
     }
 
     func isUnread(_ r: Release) -> Bool {
-        if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) }
+        if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) && (!qaHonourRead || data.read[r.id] == nil) }
         return r.ps5State == .onPS5 && data.read[r.id] == nil
     }
 
@@ -821,11 +823,17 @@ final class AppModel {
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
         case "links" where parts.count == 1: openGame(parts[0]); linksSheetOpen = true
-        // QA (INTERNAL): "dayone/<game>" adds an unread day-one patch, live and official on PS5, to that game and stays on the
-        // Library, so the deck shows "Day-one patch" beside a normal "New update" card and the game page shows the one-line note
-        // (r060-dayone-patch-alert-app, Iris's 6 stills).
+        // QA (INTERNAL): "dayone/<game>" is the two-update demo plus an unread day-one patch, live and official on PS5, for that
+        // game (added to the library if it is not there), staying on the Library: the deck shows "Day-one patch" beside a normal
+        // "New update" card and the game page shows the one-line note. Reading still clears it (qaHonourRead), so the
+        // second-visit still shows the line and chip gone (r060-dayone-patch-alert-app, Iris's 7 stills).
         case "dayone" where parts.count == 1:
             let gameID = parts[0]
+            resetToTwoUpdateDemo()
+            qaHonourRead = true
+            if !data.collection.contains(where: { $0.gameID == gameID }), let game = fixtures.games.first(where: { $0.id == gameID }) {
+                addGames([game], status: .owned)
+            }
             let now = Date.now
             let release = Release(
                 id: "qa-dayone-\(gameID)", gameID: gameID, displayName: "Day one patch", kind: .dayOne, kindBasis: .studio,
@@ -1211,6 +1219,7 @@ final class AppModel {
         if data.keepCurrent == true { setKeepCurrent(false) }
         qaPadDeck = false
         qaKeepReadCards = false
+        qaHonourRead = false
         qaUpdateCount = 0
         qaFreshCache = nil
         qaFreshGame = nil

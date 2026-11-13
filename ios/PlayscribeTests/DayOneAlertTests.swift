@@ -42,6 +42,21 @@ struct DayOneAlertTests {
         #expect(m.dayOneNote(r) == nil)
     }
 
+    /// The Mac's QA route: a day-one card beside a normal "New update" card, and reading clears the day-one one (Iris's
+    /// second-visit still).
+    @Test func theQARouteShowsADayOneCardBesideANormalOneAndReadingClearsIt() throws {
+        let m = model()
+        let gameID = try #require(m.data.collection.first?.gameID)
+        m.applyQALaunch(route: "dayone/\(gameID)", overlay: false)
+        let labels = m.latestDeck.compactMap(\.freshLabel)
+        #expect(labels.sorted() == ["Day-one patch", "New update"])
+        let r = try #require(m.latestDeck.first { $0.freshLabel == "Day-one patch" }?.release)
+        #expect(m.dayOneNote(r) == "Install this before you first play.")
+        m.markRead(r.id)
+        #expect(m.dayOneNote(r) == nil)
+        #expect(m.latestDeck.first { $0.release?.id == r.id }?.freshLabel != "Day-one patch")
+    }
+
     @Test func anyOtherKindKeepsNewUpdate() throws {
         let m = model()
         let gameID = try #require(m.data.collection.first?.gameID)
