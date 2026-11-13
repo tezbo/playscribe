@@ -88,7 +88,7 @@ struct LowerHalfPanel: View {
     var duo: DuoContext
     var fold: CGRect
 
-    private var open: Bool { model.addSheetOpen || model.settingsOpen || model.trailer != nil || model.linksSheetOpen || model.tagExplainer != nil }
+    private var open: Bool { model.addSheetOpen || model.settingsOpen || model.trailer != nil || model.linksSheetOpen || model.tagExplainer != nil || model.keepCurrentDetailsOpen }
 
     var body: some View {
         if open {
@@ -102,8 +102,9 @@ struct LowerHalfPanel: View {
                     else if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
                     else if model.linksSheetOpen, let id = model.nav.gameID { LinksSheet(gameID: id) }
                     else if let k = model.tagExplainer { VerificationExplainer(kind: k) }
+                    else if model.keepCurrentDetailsOpen { KeepCurrentDetailsSheet() }
                 }
-                .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil; model.linksSheetOpen = false; model.tagExplainer = nil })
+                .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil; model.linksSheetOpen = false; model.tagExplainer = nil; model.keepCurrentDetailsOpen = false })
                 .environment(\.railWidth, 0)
                 .frame(width: duo.size.width, height: height)
                 // Solid through the bottom safe area too: the Library's tiles used to show, and take
@@ -142,11 +143,11 @@ struct RootView: View {
             ZStack {
                 TabRoot(duo: duo)
                     .environment(\.railWidth, duo.pose == .tabletop ? TabletopRail.width : 0)
-                    .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.tagExplainer == nil && model.player == nil)
+                    .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.tagExplainer == nil && !model.keepCurrentDetailsOpen && model.player == nil)
 
                 if duo.pose == .tabletop, let fold = duo.division {
                     TabletopRail(duo: duo)
-                        .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.tagExplainer == nil && model.player == nil)
+                        .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.tagExplainer == nil && !model.keepCurrentDetailsOpen && model.player == nil)
                         .frame(width: TabletopRail.width, height: max(0, duo.size.height - fold.maxY))
                         .position(x: duo.size.width - TabletopRail.width / 2, y: fold.maxY + (duo.size.height - fold.maxY) / 2)
                 }
@@ -220,6 +221,10 @@ struct RootView: View {
         .sheet(item: Binding(get: { model.livePose == .tabletop ? nil : model.tagExplainer }, set: { if $0 == nil && model.livePose != .tabletop { model.tagExplainer = nil } })) { kind in
             VerificationExplainer(kind: kind).presentationDetents([.medium])
         }
+        // N-9's "What is sent" (Iris, #455): a system sheet, except Tabletop, where the lower-half panel shows it.
+        .sheet(isPresented: Binding(get: { model.keepCurrentDetailsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.keepCurrentDetailsOpen = false } })) {
+            KeepCurrentDetailsSheet().presentationDetents([.medium, .large])
+        }
         .fullScreenCover(isPresented: Binding(get: { model.player != nil }, set: { if !$0 { model.player = nil } })) {
             if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID) }
         }
@@ -243,6 +248,10 @@ struct TabRoot: View {
 
             Tab("Updates", systemImage: "newspaper", value: AppTab.updates) {
                 NavigationStack { UpdatesView().tabletopChrome(duo) }.auditActive(model.nav.tab == .updates)
+            }
+
+            Tab("News", systemImage: "megaphone", value: AppTab.news) {
+                NavigationStack { NewsView().tabletopChrome(duo) }.auditActive(model.nav.tab == .news)
             }
 
             Tab(value: AppTab.search, role: .search) {
@@ -372,6 +381,7 @@ struct TabletopRail: View {
             VStack(spacing: 0) {
                 tab(.library, "Library", "books.vertical", badge: model.totalUnread)
                 tab(.updates, "Updates", "newspaper")
+                tab(.news, "News", "megaphone")
                 tab(.search, "Search", "magnifyingglass")
             }
             .padding(.vertical, 4)

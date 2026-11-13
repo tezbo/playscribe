@@ -40,6 +40,9 @@ struct FoldHarnessTests {
         #expect(HarnessRules.overlappingPairs([a, CGRect(x: 60, y: 20, width: 100, height: 40)]).count == 1)
         #expect(HarnessRules.overlappingPairs([a, CGRect(x: 10, y: 5, width: 30, height: 30)]).isEmpty)
         #expect(HarnessRules.overlappingPairs([a, CGRect(x: 0, y: 60, width: 100, height: 40)]).isEmpty)
+        // The same control reported twice, 7 pt apart, is not an overlap; two different controls offset by half a width are.
+        #expect(HarnessRules.overlappingPairs([CGRect(x: 23, y: 65, width: 131, height: 44), CGRect(x: 16, y: 65, width: 131, height: 44)]).isEmpty)
+        #expect(HarnessRules.overlappingPairs([CGRect(x: 0, y: 65, width: 131, height: 44), CGRect(x: 60, y: 65, width: 131, height: 44)]).count == 1)
     }
 
     @Test func libraryToolbarItemsEachHaveTheirOwnSlot() {
@@ -173,6 +176,9 @@ enum HarnessRules {
                 let a = fs[i], b = fs[j], x = a.intersection(b)
                 guard !x.isNull, x.width > 4, x.height > 4 else { continue }
                 if a.insetBy(dx: -2, dy: -2).contains(b) || b.insetBy(dx: -2, dy: -2).contains(a) { continue }
+                // One control reported twice (same size, origin within 8 pt): the constant Open/Book pairs at 23,65 vs 16,65 and
+                // 178,65 vs 171,65 (r054-probe-constant-pairs). Not two controls on top of each other.
+                if abs(a.width - b.width) < 2, abs(a.height - b.height) < 2, abs(a.minX - b.minX) <= 8, abs(a.minY - b.minY) <= 8 { continue }
                 pairs.append("\(brief(a)) x \(brief(b))")
             }
         }

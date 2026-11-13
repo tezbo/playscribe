@@ -6,7 +6,11 @@ struct NewsItem: Codable, Hashable, Identifiable {
     var title: String
     var date: Date?
     var url: URL
+    /// "official" (the studio's own post) or "reported" (a press headline). The tag says which; there is no source name.
+    var verification: String?
     var id: String { url.absoluteString }
+    var isReported: Bool { verification == "reported" }
+    var tagText: String { isReported ? "Reported" : "Official" }
 }
 
 @MainActor @Observable
@@ -91,7 +95,7 @@ struct NewsChapter: View {
                 } else {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("No news yet").font(PlayscribeFont.headline)
-                        Text("Official posts from the studio will appear here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("Headlines about this game will appear here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     }
                     .padding(.vertical, 20)
                 }
@@ -100,8 +104,8 @@ struct NewsChapter: View {
                 let row = VStack(alignment: .leading, spacing: 4) {
                     Text(item.title).font(PlayscribeFont.headline).multilineTextAlignment(.leading)
                     HStack(spacing: 8) {
-                        if let d = item.date { Text(d.formatted(.dateTime.day().month(.abbreviated).year())) }
-                        Tag(text: "Official")
+                        if let d = item.date { Text(d.shortDay) }
+                        Tag(text: item.tagText)
                     }
                     .font(PlayscribeFont.caption).foregroundStyle(.secondary)
                 }
@@ -124,51 +128,156 @@ struct NewsChapter: View {
     }
 }
 
-/// Library "News" strip (0.5.0 item 17, PR 2): up to 5 official headlines across the library,
-/// newest first, game name above each title. Hidden when empty or when loading failed.
-struct NewsStrip: View {
-    @Environment(\.dynamicTypeSize) private var typeSize
+/// The News tab (Terry, 9 Nov): headlines about the games in the library, newest first, from the studios' own posts and the
+/// press. One row per story, a cover and the game's name, "Official" or "Reported" (V-3: never an outlet name). No game takes
+/// the page: each is capped, so a run of near-identical posts from one franchise cannot push every other game out.
+struct NewsView: View {
+    static let perGameCap = 3
+    static let totalCap = 60
     @Environment(AppModel.self) private var model
-    @Environment(\.openURL) private var openURL
+    @Environment(\.railWidth) private var railWidth
+    @Environment(\.duo) private var duo
     private var store: NewsStore { .shared }
 
     private var ids: [String] { model.data.collection.map(\.gameID) }
 
-    private var posts: [(game: String, item: NewsItem)] {
-        ids.flatMap { id in (store.items[id] ?? []).map { (model.game(id)?.name ?? "", $0) } }
-            .sorted { ($0.item.date ?? .distantPast) > ($1.item.date ?? .distantPast) }
-            .prefix(5).map { $0 }
+    /// Newest first across the library, at most `perGameCap` per game, the same story (same words) listed once per game.
+    static func merge(_ perGame: [(game: String, items: [NewsItem])]) -> [(game: String, item: NewsItem)] {
+        var out: [(game: String, item: NewsItem)] = []
+        for (game, items) in perGame {
+            var seen = Set<String>()
+            for item in items.sorted(by: { ($0.date ?? .distantPast) > ($1.date ?? .distantPast) }) {
+                let key = item.title.lowercased().filter { $0.isLetter || $0.isNumber }
+                guard seen.insert(key).inserted else { continue }
+                out.append((game, item))
+                if seen.count >= perGameCap { break }
+            }
+        }
+        return Array(out.sorted { ($0.item.date ?? .distantPast) > ($1.item.date ?? .distantPast) }.prefix(totalCap))
     }
+
+    private var posts: [(game: String, item: NewsItem)] {
+        Self.merge(ids.map { ($0, store.items[$0] ?? []) })
+    }
+
+    private var stillLoading: Bool { ids.contains { !store.loaded.contains($0) } }
 
     var body: some View {
         let list = posts
+        let badgeExtra = duo.occlusions.filter { $0.minY < 190 && $0.maxY > 40 }
+            .map { max(0, duo.size.width - $0.minX) }.max() ?? 0
         Group {
-            if !list.isEmpty {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("News").font(PlayscribeFont.title3).accessibilityAddTraits(.isHeader)
-                    ForEach(list, id: \.item.id) { post in
-                        Button { openURL(post.item.url) } label: {
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text(post.game).font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                                // Whole words then "…", never a cut word like "Award N…" (G-8; Iris): 4 lines at accessibility sizes.
-                                WholeWordText(text: post.item.title, font: PlayscribeFont.subheadline.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 2)
-                                HStack(spacing: 8) {
-                                    if let d = post.item.date { Text(d.formatted(.dateTime.day().month(.abbreviated))) }
-                                    Tag(text: "Official")
-                                }
-                                .font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                            }
-                            .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-                            .contentShape(Rectangle())
-                        }
-                        .buttonStyle(.plain)
-                        .tappableFrame()
-                        .accessibilityElement(children: .ignore)
-                        .accessibilityAddTraits(.isLink)
-                        .accessibilityLabel("\(post.game), \(post.item.title), Official, opens in browser")
+            if ids.isEmpty {
+                ContentUnavailableView {
+                    Label("News for your games will appear here", systemImage: "newspaper")
+                } actions: {
+                    Button("Add a game") { model.nav.tab = .library }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
+                }
+            } else if list.isEmpty {
+                // Never a blank page: loading, then the empty copy, or Retry when nothing could be fetched.
+                VStack(spacing: 12) {
+                    if stillLoading {
+                        ProgressView()
+                        Text("Loading news").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    } else if ids.contains(where: { store.failed.contains($0) }) {
+                        Text("Couldn't load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                        Button { Task { await load() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
+                            .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                            .tappableFrame(when: duo.pose != .tabletop)
+                            .accessibilityHidden(duo.pose == .tabletop)
+                    } else {
+                        Text("No news yet").font(PlayscribeFont.headline)
+                        Text("Headlines about your games will appear here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
                     }
                 }
+                .padding(24)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .accessibilityElement(children: .combine)
+            } else if duo.pose == .book, let fold = duo.division {
+                // TT-0: in the book pose the rows are cards on either page, never across the fold.
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.fixed(max(0, fold.minX - 32)), spacing: 0, alignment: .top),
+                                        GridItem(.fixed(fold.width + 32), spacing: 0),
+                                        GridItem(.flexible(), spacing: 0, alignment: .top)],
+                              alignment: .leading, spacing: 12) {
+                        ForEach(Array(list.enumerated()), id: \.element.item.id) { i, post in
+                            NewsRow(gameID: post.game, item: post.item)
+                                .padding(12)
+                                .background(PlayscribeColor.ink700.opacity(0.5), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                            if i.isMultiple(of: 2) { Color.clear.frame(height: 1).accessibilityHidden(true) }
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                }
+                .clearsMessages()
+                .frame(width: duo.size.width)
+            } else {
+                List {
+                    ForEach(list, id: \.item.id) { post in NewsRow(gameID: post.game, item: post.item) }
+                }
+                .padding(.trailing, railWidth + (duo.pose == .tabletop ? 0 : badgeExtra))
+                .clearsMessages()
+                .refreshable { await load(force: true) }
             }
         }
+        // Tabletop: the list lives on the flat half; the standing half only titles it (G-4, TT-0).
+        .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
+        .frame(maxHeight: .infinity, alignment: .bottom)
+        .overlay(alignment: .topLeading) {
+            if duo.pose == .tabletop {
+                Text("News").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
+            }
+        }
+        .navigationTitle("News")
+        .task(id: ids) { await load() }
+    }
+
+    private func load(force: Bool = false) async {
+        for id in ids.prefix(40) where force || !store.loaded.contains(id) || store.failed.contains(id) {
+            await NewsStore.shared.load(gameID: id, igdbID: model.game(id)?.igdbID)
+        }
+    }
+}
+
+struct NewsRow: View {
+    var gameID: String
+    var item: NewsItem
+    @Environment(AppModel.self) private var model
+    @Environment(\.openURL) private var openURL
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    var body: some View {
+        let g = model.game(gameID)
+        let game = g?.name ?? ""
+        Button { openURL(item.url) } label: {
+            let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(alignment: .top, spacing: 16))
+            layout {
+                if let g { CoverView(game: g, cornerRadius: 4).frame(width: 40) }
+                VStack(alignment: .leading, spacing: 4) {
+                    // Whole words then "…", never a cut word (G-8; Iris): 4 lines at accessibility sizes.
+                    WholeWordText(text: item.title, font: PlayscribeFont.subheadline.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 3)
+                    Text(game).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                    // Chips wrap, never drop, at accessibility sizes.
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: 8) { meta }
+                        VStack(alignment: .leading, spacing: 4) { meta }
+                    }
+                    .font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                }
+                Spacer(minLength: 0)
+            }
+            .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .tappableFrame()
+        .accessibilityElement(children: .ignore)
+        .accessibilityAddTraits(.isLink)
+        .accessibilityLabel("\(game), \(item.title), \(item.tagText), opens in browser")
+    }
+
+    @ViewBuilder private var meta: some View {
+        if let d = item.date { Text(d.shortDay) }
+        Tag(text: item.tagText)
     }
 }

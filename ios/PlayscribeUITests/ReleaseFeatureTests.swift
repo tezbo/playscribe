@@ -131,13 +131,13 @@ final class ReleaseFeatureTests: XCTestCase {
     /// News strip and News chapter: never a blank page; one of the three states is always shown.
     func testNewsChapterIsNeverBlank() throws {
         launch("chapter/dawnwalker/news")
-        let states = ["No news yet", "Loading news", "Official"]
+        let states = ["No news yet", "Loading news", "Official", "Reported"]
         let failed = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH \"Couldn't load news\"")).firstMatch
         func shown() -> Bool {
             // Tabletop (Iris): the stage is read only, never hidden from VoiceOver. A headline row is one combined text element
             // ("<title>, <date>, Official"), so look for the tag in any element's label.
             if inTabletop {
-                let row = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS ', Official' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news' OR label BEGINSWITH \"Couldn't load news\"")).firstMatch
+                let row = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS ', Official' OR label CONTAINS ', Reported' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news' OR label BEGINSWITH \"Couldn't load news\"")).firstMatch
                 return row.waitForExistence(timeout: 5)
             }
             return states.contains { app.staticTexts[$0].waitForExistence(timeout: 3) } || failed.exists
@@ -185,7 +185,7 @@ final class ReleaseFeatureTests: XCTestCase {
         launch("chapter/dawnwalker/news")
         guard inTabletop else { throw XCTSkip("the stage is a Tabletop surface") }
         let any = app.descendants(matching: .any)
-        let row = any.matching(NSPredicate(format: "label CONTAINS ', Official' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news'")).firstMatch
+        let row = any.matching(NSPredicate(format: "label CONTAINS ', Official' OR label CONTAINS ', Reported' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news'")).firstMatch
         XCTAssertTrue(row.waitForExistence(timeout: 10), "News (headline row, or its empty or loading copy) is in the tree")
         XCTAssertFalse(row.label.isEmpty)
         XCTAssertNotEqual(row.elementType, .button, "a News headline is text, not a button, in Tabletop")
@@ -479,7 +479,7 @@ final class ReleaseFeatureTests: XCTestCase {
     /// Every 0.5.0 surface keeps the frame rules in the current pose: no frame crosses a division,
     /// and in Tabletop nothing tappable sits above the fold. Upcoming is reached from the rail.
     func testNewSurfacesKeepFrameRules() throws {
-        let routes = ["demo", "chapter/dawnwalker/news", "updates", "release/dawnwalker/dawnwalker@1.1",
+        let routes = ["demo", "chapter/dawnwalker/news", "updates", "news", "release/dawnwalker/dawnwalker@1.1",
                       "add", "settings", "first-run"]
         for route in routes {
             app.launchArguments = ["-qaRoute", route]

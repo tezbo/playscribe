@@ -242,7 +242,7 @@ struct LibraryShelf: View {
             && (!model.latestDeck.isEmpty || !model.data.collection.isEmpty)
     }
 
-    /// Open portrait and Closed (either orientation; Closed landscape keeps search in its header row): the deck and its dots head the page, then the filter chips and the tiles; News, the PS Plus
+    /// Open portrait and Closed (either orientation; Closed landscape keeps search in its header row): the deck and its dots head the page, then the filter chips and the tiles; the PS Plus
     /// cards and search follow the tiles, so a first screen with 8 games shows games (Iris, v0.5.3).
     private var portraitTilesFirst: Bool {
         ((duo.pose == .flat && !duo.isLandscape) || duo.pose == .closed) && model.libraryTab != .upcoming
@@ -256,6 +256,9 @@ struct LibraryShelf: View {
             if model.showsNotificationCard, let first = all.first {
                 NotificationInviteCard(gameName: first.game.name)
             }
+            // N-9: one ask per screen. Shows only once the alerts card has been answered, on a later Library appearance (Iris).
+            // Book and Tabletop place it higher up (keepCurrentAsk); Closed and Open keep it here.
+            if model.showsKeepCurrentCard && duo.pose != .book && duo.pose != .tabletop { KeepCurrentCard() }
             CatchUpCard()
             PlusCard()
         }
@@ -273,6 +276,18 @@ struct LibraryShelf: View {
     /// its hero (Quinn and Iris). It returns when the field is empty and unfocused.
     private var closedSearchCollapse: Bool {
         duo.pose == .closed && (searchFocused || !model.data.nav.query.trimmingCharacters(in: .whitespaces).isEmpty)
+    }
+
+    /// N-9 in Book and Tabletop (Iris, #455 at f55062a). Book: at the top of the left page above the search field, one page
+    /// wide, so its right edge stays 24 pt clear of the hinge band. Tabletop: directly under the Playing/Upcoming switch, in
+    /// the lower half, with the first tile row still in view below it.
+    @ViewBuilder private var keepCurrentAsk: some View {
+        if model.showsKeepCurrentCard && (duo.pose == .book || duo.pose == .tabletop) {
+            let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
+            KeepCurrentCard(compactTabletop: duo.pose == .tabletop)
+                .frame(width: pageWidth, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
 
     /// The library search field; one page wide in Book, and reported to the fold audit.
@@ -376,10 +391,15 @@ struct LibraryShelf: View {
                         if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.data.nav.query) }
                     }
                 } else if !heroOnRightPage {
+                    // Tabletop at AX5 (Iris, #455 at 0877dfc and a8859d3): the compact card keeps the lower half to itself, first; the
+                    // switch and the chips follow by normal page scroll. Below AX5 it sits under the switch as signed.
+                    let cardFirst = duo.pose == .tabletop && typeSize >= .accessibility5
+                    if cardFirst && model.libraryTab == .playing { keepCurrentAsk }
                     LibraryTabPicker()
                         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .id("library-top")
+                    if !cardFirst && model.libraryTab == .playing { keepCurrentAsk }
                 }
                 if model.libraryTab == .upcoming {
                     UpcomingView()
@@ -439,10 +459,11 @@ struct LibraryShelf: View {
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
                             LibraryTabPicker()
+                            // N-9 above the search field (Iris, #455); the other cards stay below it.
+                            keepCurrentAsk
                             // Controls first, the offer second (Iris, Book compact card).
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                             topCards(all)
-                            NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                             if all.count >= 2 && layout == .tiles {
                                 FilterBar().frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
                             }
@@ -495,7 +516,6 @@ struct LibraryShelf: View {
                     }
                     .stepsAside(closedSearchCollapse)
                 }
-                if !heroOnRightPage && duo.pose != .tabletop && !portraitTilesFirst { NewsStrip().frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading) }
                 if !heroOnRightPage && duo.pose != .tabletop && all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
                     // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
@@ -536,37 +556,35 @@ struct LibraryShelf: View {
                     // deleting a letter did not bring it back, Mac 677e7eb run 3 of 10): a stuck lazy grid, rebuilt on every query change.
                     .id("\(poseKey)|\(model.data.nav.query)")
                 }
-                // Open and Closed portrait (Iris, v0.5.3): News, the PS Plus cards and search come after the tiles.
+                // Open and Closed portrait (Iris, v0.5.3): the PS Plus cards and search come after the tiles.
                 if portraitTilesFirst && closedWide {
-                    // Closed landscape (Iris, v0.5.3): switch and search, chips, tiles, then the deck, the PS Plus card and News.
+                    // Closed landscape (Iris, v0.5.3): switch and search, chips, tiles, then the deck, the PS Plus card.
                     if !model.latestDeck.isEmpty {
                         LatestUpdatesDeck(cards: model.latestDeck).frame(maxWidth: .infinity, alignment: .leading)
                     } else if !model.data.collection.isEmpty {
                         CaughtUpCard().frame(maxWidth: .infinity, alignment: .leading)
                     }
                     topCards(all)
-                    NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                 } else if portraitTilesFirst {
                     // While the field is focused or has text, News and the alerts / PS Plus cards step aside (not in the tree, so
                     // hidden from VoiceOver too, and no animation to reduce): deck, chips, tiles, then the field, so the matching
                     // tiles sit right above it and the keyboard. They return only when the field is empty AND unfocused, so
                     // dismissing the keyboard with text in it keeps the matches on screen (Quinn and Iris, 9d7cd15 stills).
                     // Mounted but taking no room (not removed): the tree under the focused field must not change while typing.
+                    // News is its own tab now (#443), so only the cards step aside.
                     VStack(alignment: .leading, spacing: 14) {
-                        NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                         topCards(all)
                     }
                     .stepsAside(searchFocused || !model.data.nav.query.trimmingCharacters(in: .whitespaces).isEmpty)
                     if !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 }
                 // Tabletop lower half (Iris, v0.5.3): switch, filter chips, tiles, then the alerts card, PS Plus, search and
-                // A to Z, the page edge and News. Order only; nothing else moves in any pose.
+                // A to Z and the page edge. Order only; nothing else moves in any pose.
                 if duo.pose == .tabletop {
                     if !heroOnRightPage { topCards(all) }
                     if !all.isEmpty { TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4) }
                     let deck = model.latestDeck
                     if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
-                    NewsStrip().frame(maxWidth: .infinity, alignment: .leading)
                 }
                 }
             }
@@ -582,15 +600,13 @@ struct LibraryShelf: View {
         // aligned to the bottom of the visible area, with as many tiles above it as fit; elsewhere it sits above the results, top.
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }),
                         anchor: searchFocused && portraitTilesFirst ? .bottom : .top)
+        // Tabletop only (Quinn, a8859d3): scrolled, the lower half's top edge cut a headline through its glyphs. The same edge as
+        // the "What is sent" sheet. Not in other poses: a soft-edge mask there hid the Open portrait title (see below).
+        .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink0))
         // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.
         // No soft-edge mask: it made the Open portrait large "Library" title vanish (354d15c, 9914a80), see MessageClearance.
         .clearsMessages()
         .refreshable { await model.refreshFeed() }
-        // The News strip's headlines load from here, not from the strip: a task on a view that is empty
-        // until the headlines arrive never runs, so the strip stayed hidden (TestFlight build 8, Mac 9506116).
-        .task(id: model.data.collection.map(\.gameID)) {
-            for id in model.data.collection.map(\.gameID).prefix(12) { await NewsStore.shared.load(gameID: id, igdbID: model.game(id)?.igdbID) }
-        }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
                 ZStack {
@@ -1203,6 +1219,7 @@ struct NotificationInviteCard: View {
                 snooze()
                 if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
             } else {
+                model.alertsAnsweredThisSession = true
                 Task { if !(await NotificationService.shared.requestAuthorization()) { snooze() } }
             }
         } label: {
@@ -1358,5 +1375,46 @@ extension View {
             .allowsHitTesting(!aside)
             .accessibilityHidden(aside)
             .padding(.bottom, aside ? -14 : 0)
+    }
+}
+
+/// A scroll view's top edge once it is scrolled: a hairline, an opaque band one text line tall, then a fade over one line, so a
+/// line the edge cuts is wholly covered and the next reads through the fade. Each part capped at 15% of the visible height, so
+/// at least four lines read clear at AX5. Same treatment as the "What is sent" sheet (N-9).
+struct ScrolledTopEdge: ViewModifier {
+    var active: Bool
+    var ink: Color
+    @ScaledMetric(relativeTo: .body) private var edgeBand: CGFloat = 28
+    @ScaledMetric(relativeTo: .body) private var edgeFade: CGFloat = 24
+    @State private var scrolled = false
+    @State private var visibleHeight: CGFloat = 0
+
+    private var heights: (band: CGFloat, fade: CGFloat) {
+        guard visibleHeight > 0 else { return (edgeBand, edgeFade) }
+        let k = min(1, visibleHeight * 0.15 / (edgeBand + edgeFade))
+        return (edgeBand * k, edgeFade * k)
+    }
+
+    func body(content: Content) -> some View {
+        if active {
+            content
+                .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.y + $0.contentInsets.top > 1 } action: { _, now in scrolled = now }
+                .onScrollGeometryChange(for: CGFloat.self) { $0.visibleRect.height } action: { _, h in visibleHeight = h }
+                .overlay(alignment: .top) {
+                    if scrolled {
+                        VStack(spacing: 0) {
+                            Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5).background(ink)
+                            ink.frame(height: heights.band)
+                            LinearGradient(stops: [.init(color: ink, location: 0), .init(color: ink.opacity(0.85), location: 0.35),
+                                                   .init(color: ink.opacity(0), location: 1)], startPoint: .top, endPoint: .bottom)
+                                .frame(height: heights.fade)
+                        }
+                        .allowsHitTesting(false)
+                        .accessibilityHidden(true)
+                    }
+                }
+        } else {
+            content
+        }
     }
 }

@@ -9,8 +9,10 @@ struct DeckCard: Identifiable, Hashable {
     var date: Date?
     var id: String { release.map { "u-" + $0.id } ?? "r-" + game.id }
 
-    static func == (a: DeckCard, b: DeckCard) -> Bool { a.id == b.id }
-    func hash(into h: inout Hasher) { h.combine(id) }
+    // `unread` is part of equality: SwiftUI skips re-rendering a view whose Equatable inputs compare equal, so a card that
+    // went from unread to read (opened, or Mark as read) kept its "New update" chip on the Library deck (Mac, 9c62a8b).
+    static func == (a: DeckCard, b: DeckCard) -> Bool { a.id == b.id && a.unread == b.unread }
+    func hash(into h: inout Hasher) { h.combine(id); h.combine(unread) }
 
     /// The line under a hero headline for a card with no release: the headline is already the game name, so the line
     /// never repeats it (r053-hero-duplicate-title-no-notes). A game the feed does not follow says so, as the Page does.
@@ -20,12 +22,13 @@ struct DeckCard: Identifiable, Hashable {
 }
 
 extension AppModel {
-    /// Up to 8 cards: unread On PS5 updates first, then the rest from the last 90 days, newest first.
+    /// Up to 5 cards (one dot each): unread On PS5 updates first, then the rest from the last 90 days, newest first.
     /// With nothing in 90 days, the newest release dates of the library's games.
-    var latestDeck: [DeckCard] { Array(latestDeckAll.prefix(8)) }
+    static let deckLimit = 5
+    var latestDeck: [DeckCard] { Array(latestDeckAll.prefix(Self.deckLimit)) }
 
-    /// Updates beyond the deck's 8 cards: the Open portrait "+N more updates" chip opens the Updates list.
-    var latestDeckOverflow: Int { max(0, latestDeckAll.count - 8) }
+    /// Updates beyond the deck's 5 cards: the Open portrait "+N more updates" chip opens the Updates list.
+    var latestDeckOverflow: Int { max(0, latestDeckAll.count - Self.deckLimit) }
 
     private var latestDeckAll: [DeckCard] {
         let cutoff = Date.now.addingTimeInterval(-90 * 86400)

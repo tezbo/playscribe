@@ -1,4 +1,5 @@
 import SwiftUI
+import OSLog
 
 /// Contract v2 §11: a game is the Page (the release being read) and the Contents (the game's
 /// chapters, search, releases and actions). The game book is one ArrangementView(.split), so the
@@ -15,11 +16,20 @@ enum ReadingSide {
 struct PageView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @AppStorage(ReadingSide.key) private var pageOnLeft = false
     @State private var position = ScrollPosition(idType: String.self)
     @State private var liveOffset: CGFloat = 0
     var gameID: String
     /// Closed: one stacked book, the Contents below the Page.
     var withContents = false
+
+    /// Closed and Open portrait, Updates chapter: the Contents (bar, search, Mark read, All updates) between the release and About.
+    private var closedContents: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Divider().overlay(PlayscribeColor.ink700)
+            ContentsBody(gameID: gameID, addControl: false)
+        }
+    }
 
     var body: some View {
         let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
@@ -27,11 +37,22 @@ struct PageView: View {
             VStack(alignment: .leading, spacing: 16) {
                 PageArtBand(gameID: gameID)
                 StaleHint()
-                if withContents, let g = model.game(gameID) {
+                if withContents, !model.gameDisplayName(gameID).isEmpty {
                     VStack(alignment: .leading, spacing: 6) {
-                        GameTitleWithStatus(gameID: gameID, name: g.name)
+                        GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
+                        // Closed has no Contents header, so a browsed game (Upcoming, PS Plus) gets its add control here.
+                        if let g = model.game(gameID), model.entry(gameID) == nil {
+                            Button("Add to library") { model.addGame(g, status: .watching) }
+                                .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
+                                .accessibilityIdentifier("addToLibrary")
+                                // 20 pt clear of the title above and the page below (Iris, #442). The 44 pt hit frame leaves
+                                // 4 pt round the 36 pt pill, so the stack gaps (6 above, 16 below) plus the text's own leading
+                                // read as 15 and 25 on the Closed still; 5 each way evens them (0e10f45 still: 3/-14 overshot).
+                                .padding(.top, 5).padding(.bottom, -5)
+                        }
                     }
-                    .padding(.horizontal, 20)
+                    .padding(.leading, duo.hingeInset(20, facingHinge: !pageOnLeft))
+                    .padding(.trailing, duo.hingeInset(20, facingHinge: pageOnLeft))
                 }
                 Group {
                     switch chapter {
@@ -39,6 +60,9 @@ struct PageView: View {
                         if let r = model.selectedRelease(gameID) {
                             VStack(alignment: .leading, spacing: 16) {
                                 ReleasePage(release: r)
+                                // Closed and Open portrait (one column): All updates (the Contents) sits above About (Terry, 0.5.4), so the reader reaches
+                                // the game's other updates before its blurb; You might also like stays last.
+                                if withContents { closedContents }
                                 if let g = model.game(gameID) {
                                     Divider().overlay(PlayscribeColor.ink700)
                                     GameBasicsView(game: g)
@@ -46,7 +70,7 @@ struct PageView: View {
                             }
                             .pageTurn(key: r.id)
                         } else if let g = model.game(gameID) {
-                            NoNotesPage(game: g)
+                            NoNotesPage(game: g) { if withContents { closedContents } }
                         }
                     case .news: NewsChapter(gameID: gameID)
                     case .world, .companion: EntriesChapter(gameID: gameID, chapter: chapter)
@@ -56,13 +80,23 @@ struct PageView: View {
                 }
                 // Reading measure: 55 to 75 characters.
                 .frame(maxWidth: 620, alignment: .leading)
-                .padding(.horizontal, 20)
-                if withContents {
+                .padding(.leading, duo.hingeInset(20, facingHinge: !pageOnLeft))
+                .padding(.trailing, duo.hingeInset(20, facingHinge: pageOnLeft))
+                // The other chapters keep the Contents below the page (the Updates chapter draws it above About).
+                if withContents && chapter != .updates {
                     Divider().overlay(PlayscribeColor.ink700).padding(.top, 8)
-                    ContentsBody(gameID: gameID).padding(.horizontal, 16)
+                    ContentsBody(gameID: gameID, addControl: false).padding(.horizontal, 16)
                 }
             }
             .padding(.bottom, 24)
+            // The column is exactly what the scroll view proposes (its viewport beside the rail: 382 pt in Closed, 372 in Book) as
+            // long as every child can shrink to it. A vertical scroll view centres content wider than its viewport, so one child
+            // that could not (the PS4 update + Reported tag row at AX5, 514 pt) pushed the whole page 66 pt left under the screen
+            // edge: "atch 5.01", a clipped "9 Oct", the share button behind the rail (Closed AX5, frame dump on 805ceb3). The tags
+            // wrap (ReleaseTag) and the two links stack (SourceLinks) now, and a frame dump at e4833ee shows nothing wider than
+            // the viewport. Do not pin the column to a measured width instead: a Color probe inside the content measured the
+            // frame rail included (466; b8fbaad), and the scroll view's own geometry minus its insets came out 20 to 80 pt short
+            // (57227e2); each one moved the page in some pose (R-2).
         }
         .clearsMessages()
         .scrollIndicators(.hidden)
@@ -226,9 +260,22 @@ struct ReleasePage: View {
             // text column's trailing line (the one the headline and body wrap to), so it is clear of the rail and the
             // hinge band without extra padding; the VStack's 12 pt is the gap above and below (R-2, r060, Iris).
             if typeSize.isAccessibilitySize {
-                dotAndTitle(r)
                 if r.isPS5Listed {
-                    HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
+                    // A title that fits one line leaves room for the button beside it, level with that first line (Iris, #441);
+                    // a longer one keeps the button on its own row below, so the title never loses width.
+                    ViewThatFits(in: .horizontal) {
+                        HStack(alignment: .top, spacing: 8) {
+                            dotAndTitle(r)
+                            Spacer(minLength: 0)
+                            ShareUpdateButton(release: r)
+                        }
+                        VStack(alignment: .leading, spacing: 12) {
+                            dotAndTitle(r)
+                            HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
+                        }
+                    }
+                } else {
+                    dotAndTitle(r)
                 }
             } else {
             HStack(spacing: 8) {
@@ -290,9 +337,15 @@ struct SpoilerLine: View {
 }
 
 /// GR-1: never an empty game.
-struct NoNotesPage: View {
+struct NoNotesPage<Contents: View>: View {
     @Environment(AppModel.self) private var model
     var game: CatalogGame
+    /// Closed: the Contents, drawn above About as on a page with notes.
+    @ViewBuilder var contents: () -> Contents
+    init(game: CatalogGame, @ViewBuilder contents: @escaping () -> Contents = { EmptyView() }) {
+        self.game = game
+        self.contents = contents
+    }
     var body: some View {
         // Terry: a game never opens blank. With no updates, it leads with its release.
         VStack(alignment: .leading, spacing: 16) {
@@ -300,6 +353,7 @@ struct NoNotesPage: View {
                 Text(game.ps5AvailabilityLine).font(PlayscribeFont.title3)
                 NoUpdatesLine(gameID: game.id)
             }
+            contents()
             GameBasicsView(game: game)
         }
     }
@@ -346,6 +400,16 @@ struct GameLinks: View {
 }
 
 struct GameBasicsView: View {
+    /// The game's trailers as About lists them: up to three, one per title (the feed can carry two cuts named "Launch
+    /// Trailer"). Also Tabletop's stage tile and "Play trailer" (bug-tabletop-trailer-tile-missing).
+    @MainActor static func trailers(_ game: CatalogGame) -> [GameBasics.Video] {
+        let info = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }
+        let fallback = game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }
+        let videos = info?.videos ?? fallback?.trailerId.map { [GameBasics.Video(youtubeId: $0, name: "Trailer")] } ?? []
+        let unique = videos.reduce(into: [GameBasics.Video]()) { out, v in if !out.contains(where: { $0.name == v.name }) { out.append(v) } }
+        return Array(unique.prefix(3))
+    }
+
     @Environment(\.duo) private var duo
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
@@ -359,7 +423,7 @@ struct GameBasicsView: View {
         let fallback = game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }
         let genres = info?.genres ?? fallback?.genres ?? []
         let summary = info?.summary ?? fallback?.summary
-        let videos = info?.videos ?? fallback?.trailerId.map { [GameBasics.Video(youtubeId: $0, name: "Trailer")] } ?? []
+        let videos = Self.trailers(game)
         VStack(alignment: .leading, spacing: 14) {
             if let move = fallback?.move?.line {
                 Text(move).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
@@ -368,18 +432,19 @@ struct GameBasicsView: View {
                 Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
             if !videos.isEmpty {
-                // One video per title: the feed can carry two cuts named "Launch Trailer".
-                let unique = videos.reduce(into: [GameBasics.Video]()) { out, v in if !out.contains(where: { $0.name == v.name }) { out.append(v) } }
-                ForEach(unique.prefix(3), id: \.youtubeId) { v in
+                ForEach(videos, id: \.youtubeId) { v in
                     Button { model.trailer = (v.youtubeId, v.name) } label: {
-                        HStack(spacing: 12) {
+                        // At accessibility sizes the thumbnail sits above the title, so the title has the whole column and a word
+                        // like "Cinematic" is not cut by letter beside a 112 pt picture (Iris, r054 Closed AX5).
+                        let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 12))
+                        layout {
                             AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(v.youtubeId)/mqdefault.jpg")) { $0.resizable().scaledToFill() } placeholder: { Color.ink1 }
                                 .frame(width: 112, height: 63)
                                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                                 .overlay { Image(systemName: "play.fill").foregroundStyle(.white) }
                             // Whole words only (G-8): a plain lineLimit cut "E3 2018 Open Be…" mid-word (The Crew 2, Closed AX5).
                             WholeWordText(text: v.name, font: PlayscribeFont.subheadline, lines: typeSize.isAccessibilitySize ? 4 : 2)
-                            Spacer(minLength: 0)
+                            if !typeSize.isAccessibilitySize { Spacer(minLength: 0) }
                         }
                         .frame(minHeight: 44)
                         .contentShape(Rectangle())
@@ -409,7 +474,9 @@ struct GameBasicsView: View {
             }
             if let story = info?.storyline {
                 Text("Story").font(PlayscribeFont.headline)
-                LinkedTextView(text: story).font(PlayscribeFont.body).lineLimit(storyOpen ? nil : 4)
+                // Collapsed: four lines ending on a whole word (G-8), never "conflicts swe…". Open: the full text with its links.
+                if storyOpen { LinkedTextView(text: story).font(PlayscribeFont.body) }
+                else { WholeWordText(text: LinkedText.clean(story), font: PlayscribeFont.body, lines: 4, color: nil) }
                 Button(storyOpen ? "Less" : "More") { withAnimation(.snappy) { storyOpen.toggle() } }
                     .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
             }
@@ -449,7 +516,7 @@ struct SimilarGamesRow: View {
                             }
                             .buttonStyle(.plain)
                             .accessibilityLabel(g.name)
-                            .accessibilityHint("Choose how to add it")
+                            .accessibilityHint("View it, or choose how to add it")
                             .tappableFrame()
                         }
                     }
@@ -458,6 +525,8 @@ struct SimilarGamesRow: View {
             }
             .confirmationDialog(choosing?.name ?? "", isPresented: Binding(get: { choosing != nil }, set: { if !$0 { choosing = nil } }), titleVisibility: .visible) {
                 if let g = choosing {
+                    // A plain look first (Terry, 0.5.4): opens the game page without filing it anywhere.
+                    Button("View game") { model.browseGame(g) }
                     Button("Add to library") { model.addGame(g, status: .owned); model.openGame(g.id) }
                     Button("Add to watchlist") { model.addGame(g, status: .wishlist); model.openGame(g.id) }
                 }
@@ -473,13 +542,32 @@ struct TrailerView: View {
     var videoID: String
     var name: String
     @State private var controller: YouTubeController?
+    @Environment(\.duo) private var duo
+    @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 0) {
                 Color.black.aspectRatio(16 / 9, contentMode: .fit)
                     .overlay { if let controller { WebSurface(webView: controller.webView) } }
-                Text(name).font(PlayscribeFont.headline).padding(.horizontal, 16)
-                Spacer()
+                    .overlay { if VideoReflection.fixture { Image(uiImage: VideoReflection.fixtureFrame(0)).resizable() } }
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(name).font(PlayscribeFont.headline)
+                        .overMirror(VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off)
+                        .padding(.horizontal, 16).padding(.top, 12)
+                    Spacer(minLength: 0)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                // R-11: the trailer gets the same mirror as an update video in every pose, flush under the video. It takes no
+                // layout room and no touches (Terry, 12 Nov: trailers never had one).
+                .background(alignment: .top) {
+                    let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
+                    if mode != .off, let controller {
+                        VideoReflection(controller: controller, mode: mode, posterAsset: nil, youtubeID: videoID)
+                    }
+                }
+                .clipped()
             }
             .background(Color.black)
             .toolbar {
@@ -497,17 +585,24 @@ struct TrailerView: View {
 /// the release timeline, and in Tabletop the section outline with Previous and Next.
 struct ContentsView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     @Environment(\.railWidth) private var railWidth
+    @AppStorage(ReadingSide.key) private var pageOnLeft = false
     @State private var position = ScrollPosition(idType: String.self)
     var gameID: String
 
     var body: some View {
         ScrollView {
             ContentsBody(gameID: gameID)
-                .padding(.horizontal, 16)
+                // Book: the edge that faces the hinge keeps 24 pt clear of the division band (r054-book-gamepage-hinge-inset).
+                .padding(.leading, duo.hingeInset(16, facingHinge: pageOnLeft))
+                .padding(.trailing, duo.hingeInset(16, facingHinge: !pageOnLeft))
                 .padding(.vertical, 14)
                 .padding(.trailing, railWidth)
         }
+        // Tabletop only, as the Library shelf (#487): scrolled, the lower half's top edge cut a Contents row through its glyphs at
+        // AX5 (Iris, 21efef8 still: "Better targeting, look-on…"). The panel is ink1, so the edge is too.
+        .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink1))
         .clearsMessages()
         .scrollPosition($position)
         .accessibilityIdentifier("contentsScroll")
@@ -526,6 +621,8 @@ struct ContentsBody: View {
     @Environment(\.duo) private var duo
     @AppStorage(ReadingSide.key) private var pageOnLeft = false
     var gameID: String
+    /// False in the stacked book, where the Page header already carries it (the Contents sit far below the update).
+    var addControl = true
 
     var body: some View {
         let game = model.game(gameID)
@@ -533,13 +630,13 @@ struct ContentsBody: View {
             VStack(alignment: .leading, spacing: 14) {
                 if duo.pose != .closed { HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 4) {
-                        GameTitleWithStatus(gameID: gameID, name: game?.name ?? "")
+                        GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
                     }
                     Spacer(minLength: 8)
                 } }
                 // Once per page (Terry): closed, the links sit with the game's basics instead.
                 if duo.pose != .closed && duo.pose != .tabletop, let game { GameLinks(game: game) }
-                if model.entry(gameID) == nil, let game {
+                if addControl, model.entry(gameID) == nil, let game {
                     Button("Add to library") { model.addGame(game, status: .watching) }
                         .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
                 }
@@ -599,14 +696,20 @@ struct SwapSidesButton: View {
 struct NotesSearchField: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
+    /// At accessibility sizes the placeholder is the short "Search notes" (Iris, r054 Tabletop AX5): "Search this game's n…" was cut
+    /// mid-word. Standard sizes keep the scoped wording.
+    private var prompt: String {
+        if typeSize.isAccessibilitySize { return "Search notes" }
+        return model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes"
+    }
     var body: some View {
         @Bindable var model = model
         if duo.pose == .tabletop {
             // Tabletop: no keyboard; a read-only button and an A to Z strip (Iris, 0.2.0 ruling).
             VStack(alignment: .leading, spacing: 8) {
-                TabletopSearch(letter: $model.noteLetter,
-                               prompt: model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes")
+                TabletopSearch(letter: $model.noteLetter, prompt: prompt)
                 if model.noteLetter != nil {
                     Picker("Search in", selection: $model.noteScope) {
                         ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
@@ -618,7 +721,7 @@ struct NotesSearchField: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                TextField(model.noteScope == .thisGame ? "Search this game's notes" : "Search all my games' notes", text: $model.noteQuery)
+                TextField(prompt, text: $model.noteQuery)
                     .autocorrectionDisabled()
                     .submitLabel(.search)
                     .onSubmit { model.rememberSearch(model.noteQuery) }
@@ -751,6 +854,7 @@ struct ReleaseTimeline: View {
         .id("row-\(r.id)")
         .accessibilityAddTraits(selected ? .isSelected : [])
         .tappableFrame()
+        .readToggleActions(r)
     }
 }
 
@@ -806,6 +910,31 @@ struct TabletopOutline: View {
                 pageButton("Next", "chevron.forward", enabled: index < sections.count - 1) { model.readerIndex[gameID] = index + 1 }
             }
             .padding(.top, 6)
+            // R-11 (bug-tabletop-trailer-tile-missing, Iris): About is not on the Tabletop stage, so the game's trailer had no
+            // control at all. The stage shows its poster, view only; this is the control, in the lower half, and it plays in
+            // the lower-half player like the update video.
+            if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first {
+                Button { model.trailer = (v.youtubeId, v.name) } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "play.fill").accessibilityHidden(true)
+                        Text("Play trailer").font(PlayscribeFont.subheadline.weight(.semibold))
+                            .fixedSize(horizontal: false, vertical: true)
+                        Spacer(minLength: 0)
+                    }
+                    .foregroundStyle(PlayscribeColor.accent)
+                    .padding(.horizontal, 10).frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Play trailer")
+                .accessibilityIdentifier("playTrailer")
+                .tappableFrame()
+                .padding(.top, 4)
+            }
+        }
+        // The trailer list comes from the game's basics, which About loads when it appears. About is not on the Tabletop stage,
+        // so the outline loads them itself, or "Play trailer" and the stage tile never show (Mac, #486 at a2eeb67).
+        .task(id: model.game(gameID)?.igdbID) {
+            if let id = model.game(gameID)?.igdbID { await GameInfoStore.shared.load(igdbID: id) }
         }
     }
 
@@ -923,14 +1052,21 @@ struct LinksSheet: View {
     @Environment(\.panelClose) private var panelClose
     var gameID: String
 
-    private struct Row: Identifiable { var id: String; var title: String; var url: URL }
+    struct Row: Identifiable { var id: String; var title: String; var url: URL }
 
-    private var rows: [Row] {
+    private var rows: [Row] { Self.rows(model, gameID) }
+
+    static func rows(_ model: AppModel, _ gameID: String) -> [Row] {
         var out: [Row] = []
         if let game = model.game(gameID) {
             let links = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
             if let u = links?.official { out.append(Row(id: "official", title: "Official website", url: u)) }
             if let u = links?.patchNotes { out.append(Row(id: "notes", title: LinkHost.label("All patch notes", u), url: u)) }
+            // The empty Gallery's "Find trailers online" is view-only text in Tabletop (nothing tappable on the stage), so its
+            // control lives here, in the lower half, as "Official website" does (0.5.5, r054-tabletop-find-trailers).
+            if model.gallery(gameID).isEmpty, let u = GalleryEmpty.trailerSearchURL(game.name) {
+                out.append(Row(id: "trailers", title: "Find trailers online", url: u))
+            }
         }
         if let r = model.readerRelease(gameID), let u = r.links?.steamNotes { out.append(Row(id: "steam", title: LinkHost.label("Read full notes", u), url: u)) }
         return out
@@ -967,12 +1103,14 @@ struct LinksSheet: View {
             Spacer(minLength: 0)
         }
         .background(Color.ink1)
+        // One log line per opened row, so a QA run can confirm the tap reached the system (#493: the simulator showed black).
+        .environment(\.openURL, OpenURLAction { url in
+            Logger(subsystem: "co.codeconnectors.playscribe", category: "links").info("links open: \(url.host() ?? "?", privacy: .public)")
+            return .systemAction
+        })
     }
 
-    static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool {
-        let links = model.game(gameID)?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
-        return links?.official != nil || links?.patchNotes != nil || model.readerRelease(gameID)?.links?.steamNotes != nil
-    }
+    static func hasLinks(_ model: AppModel, _ gameID: String) -> Bool { !rows(model, gameID).isEmpty }
 }
 
 

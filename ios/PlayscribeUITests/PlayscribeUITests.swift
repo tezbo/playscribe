@@ -133,7 +133,7 @@ final class PlayscribeUITests: XCTestCase {
 
     /// G-7 and G-10: the system accessibility audit on the main screens.
     func testAccessibilityAudit() throws {
-        for route in ["demo", "release/dawnwalker/dawnwalker@1.1", "add", "updates"] {
+        for route in ["demo", "release/dawnwalker/dawnwalker@1.1", "add", "updates", "news"] {
             app.launchArguments = ["-qaRoute", route]
             app.launch()
             sleep(2)
@@ -1089,6 +1089,86 @@ final class Release050Tests: XCTestCase {
         form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.8))
             .press(forDuration: 0.1, thenDragTo: form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.45)),
                    withVelocity: .slow, thenHoldForDuration: 0.2)
+    }
+
+    /// Tabletop Settings (Mac on #455 at f55062a: a row near the bottom "could not be reached"): the form's last line is
+    /// reached by dragging inside the lower-half panel, at the standard size and at AX5, until its bottom edge is inside
+    /// the panel. `-qaPose tabletop` injects the fold, so this also runs on a Closed simulator; on the Mac in a real
+    /// Tabletop the device's own fold gives the same pose. Nothing here taps a control, so no relay call is made.
+    /// The end is judged on the last line itself: once it exists, a drag that moves it under 1 pt means the form is at its
+    /// end. Ending with the line's bottom still below the panel is the bug; running out of drags is not. (Mac runs:
+    /// 0a6f226, 16 short drags only reached Testing; a0e0134, the AX5 footer is 717 pt tall, so its top shows long before
+    /// its bottom; 55dc9ff, a stillness check on the first cell never settled.)
+    func testTabletopSettingsLastLineIsReachable() throws {
+        for ax5 in [false, true] {
+            let app = XCUIApplication()
+            app.launchArguments = ["-qaRoute", "settings", "-qaPose", "tabletop"]
+                + (ax5 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] : [])
+            app.launch()
+            sleep(3)
+            let size = ax5 ? "AX5" : "std"
+            let pose = ReleaseRowTests.pose(app)
+            XCTAssertTrue(pose.contains("pose: tabletop"), "runs in Tabletop [\(size), \(pose)]")
+            let form = app.collectionViews.firstMatch
+            XCTAssertTrue(form.waitForExistence(timeout: 5), "the Settings form is on screen [\(size)]")
+            let panel = form.frame
+            let last = app.staticTexts["settingsLastLine"]
+            var drags = 0, atEnd = false
+            var previous: CGRect?
+            func done() -> Bool { last.exists && last.isHittable && last.frame.maxY <= panel.maxY + 1 }
+            // Long, slow drags inside the form (never at the screen centre, which is the view-only stage, 48404f1).
+            while !done() && !atEnd && drags < 40 {
+                form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.9))
+                    .press(forDuration: 0.05, thenDragTo: form.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.1)),
+                           withVelocity: .slow, thenHoldForDuration: 0.2)
+                drags += 1
+                if last.exists {
+                    let now = last.frame
+                    if let p = previous, abs(p.minY - now.minY) < 1 { atEnd = true }
+                    previous = now
+                }
+            }
+            let reached = done()
+            if !reached {
+                let tree = XCTAttachment(string: app.debugDescription); tree.name = "tabletop-settings-\(size)-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "tabletop-settings-\(size)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            // G-4: the whole last line, bottom edge included, ends up inside the lower-half panel.
+            XCTAssertTrue(reached, atEnd
+                ? "the form stopped with its last line's bottom below the panel: \(last.frame) vs panel \(panel), \(drags) drags [\(size), \(pose)]"
+                : "ran out of drags (\(drags)) before the last line's bottom was inside the panel [\(size), \(pose)]")
+            app.terminate()
+        }
+    }
+
+    /// R-11, bug-tabletop-trailer-tile-missing (Mac at c54003b: no "Play" control anywhere in Tabletop's game page): the lower half
+    /// carries "Play trailer", hittable and wholly below the fold, at std and AX5; tapping it opens the trailer in the lower-half
+    /// panel; nothing tappable on the stage names the trailer. Needs the game's basics (network) for its trailer list.
+    func testTabletopGamePageTrailerIsPlayable() throws {
+        for ax5 in [false, true] {
+            let app = XCUIApplication()
+            app.launchArguments = ["-qaRoute", "gamepage/dawnwalker", "-qaPose", "tabletop"]
+                + (ax5 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] : [])
+            app.launch()
+            let size = ax5 ? "AX5" : "std"
+            let pose = ReleaseRowTests.pose(app)
+            XCTAssertTrue(pose.contains("pose: tabletop"), "runs in Tabletop [\(size), \(pose)]")
+            let window = app.windows.firstMatch.frame
+            let play = app.buttons["playTrailer"]
+            // The basics arrive after launch on a fresh install: wait for the row before scrolling (Mac, #486 at 89fcce0).
+            XCTAssertTrue(play.waitForExistence(timeout: 30), "Play trailer appears once the basics load [\(size), \(pose)]")
+            // Read the frame before tapping: the row sits below the fold until the tap scrolls it into view. Flicks and drags
+            // did not move the lower panel on the Mac (e47cd11), so the tap is what scrolls it.
+            let frame = play.frame
+            XCTAssertGreaterThanOrEqual(frame.minY, window.midY, "Play trailer sits below the fold [\(size)]: \(frame)")
+            XCTAssertGreaterThanOrEqual(frame.height, 44, "Play trailer is 44 pt or taller [\(size)]")
+            // The stage tile, when it fits, is one static element, never a button.
+            XCTAssertFalse(app.buttons["stageTrailerTile"].exists, "the stage tile takes no touches [\(size)]")
+            play.tap()
+            sleep(2)
+            XCTAssertTrue(app.buttons["Close"].waitForExistence(timeout: 5), "the trailer opens in the lower-half panel [\(size)]")
+            app.terminate()
+        }
     }
 
     /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and

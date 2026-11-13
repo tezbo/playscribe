@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs'
-import { hotGameIds, HOT_POLL_MS } from '../hot.ts'
+import { hotGameIds, launchingGameIds, HOT_POLL_MS } from '../hot.ts'
 import { now, tx, type DB } from '../db.ts'
 import { Blocked, allowedByRobots, type FetchFn } from '../http.ts'
 import { registry, type SourceDef } from '../registry.ts'
@@ -7,9 +7,10 @@ import * as store from '../store.ts'
 import type { PlatformStatus, Post } from '../types.ts'
 import newsSources from '../sources/news-sources.json' with { type: 'json' }
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
+import { isAnnouncementTitle, isTestBuildPost, pcScopedPost, statedLiveTime } from './claims.ts'
 import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import { IGDB_REV, type Igdb } from './igdb.ts'
-import { extractNotes, mentionsPs4, mentionsPs5, ps5PageOf } from './notes.ts'
+import { extractNotes, mentionsPs4, mentionsPs5, ps5PageOf, isPromoTitle } from './notes.ts'
 
 // The poll job from docs/ps5-patch-data.md. Rules that matter:
 //  - An official source that names PS5 decides its PS5 row. When the post says outright that
@@ -29,6 +30,8 @@ export interface IngestDeps {
   fetchFn: FetchFn
   igdb: Igdb | null
   log?: (msg: string) => void
+  /** Backfill: rows this same post made earlier under the old rules are corrected (store.repairOwnLiveAt, dropOwnPs5Row). */
+  repairClaims?: boolean
 }
 
 export interface IngestSummary {
@@ -38,6 +41,15 @@ export interface IngestSummary {
   created: string[]
   revised: string[]
   review: number
+  /** Auto-onboarding: auto games polled this run, and whether the time budget cut the slice short. */
+  auto?: number
+  autoStopped?: boolean
+  /** News headlines hidden by the promo rule this run (new posts), so a jump shows in the job log (Nadia, r054). */
+  newsHidden?: number
+  /** PS5 claims withheld this run by the r050 rules, so their real cost shows in the job log: held to a stated time, test build, PC-scoped. */
+  held?: { stated: number; testBuild: number; pcScoped: number; announcement: number }
+  /** Backfill repairs this run (feed-log-lines-to-step): releases dropped, and announcement releases kept because other posts feed them. */
+  backfill?: { dropped: number; kept: number }
 }
 
 const MIN_POLL_MS = 55 * 60_000
@@ -80,9 +92,24 @@ export const pressStatusOf = (title: string, body: string): PlatformStatus => {
   return ps5StatusOf(body.slice(0, 600) || title)
 }
 
-/** Registry games are always tracked; any other game is tracked while a device follows it. */
-export const trackedGames = (db: DB) =>
-  db.prepare(`SELECT * FROM games WHERE id IN (${Object.keys(registry.games).map(() => '?').join(',') || "''"}) OR id IN (SELECT game_id FROM follows)`).all(...Object.keys(registry.games)) as Record<string, any>[]
+/** Registry games are always tracked (hourly). Any other game joins the hourly tier while a device that opted in to "Help keep
+ *  my games up to date" (devices.hourly, the relay's flag) follows it; a push-only device's follows address alerts, nothing more.
+ *  A derived game in its launch window (hot.ts) is tracked too, so its day-one patch does not wait for the auto slice. */
+export const trackedGames = (db: DB, at = new Date()) => {
+  const launching = launchingGameIds(db, at)
+  return db.prepare(`SELECT * FROM games WHERE id IN (${Object.keys(registry.games).map(() => '?').join(',') || "''"})
+    OR id IN (SELECT f.game_id FROM follows f JOIN devices d ON d.id = f.device_id WHERE d.hourly = 1)
+    OR id IN (${launching.map(() => '?').join(',') || "''"})`).all(...Object.keys(registry.games), ...launching) as Record<string, any>[]
+}
+
+/**
+ * Backfill only: derived (auto-onboarded) games that already have a PS5 row. Their stored rows came from the slice's single
+ * newest-posts read, so a rule change reaches them only if the backfill reads their history too (r050-feed-ps5-claim-fixes:
+ * 2,166 of the 2,259 games with a PS5 row are derived).
+ */
+export const autoRepairGames = (db: DB, tracked: Set<string>) =>
+  (db.prepare(`SELECT * FROM games WHERE auto > 0 AND auto <> 2 AND steam_app_id IS NOT NULL
+    AND id IN (SELECT r.game_id FROM releases r JOIN platform_releases p ON p.release_id = r.id AND p.platform = 'ps5') ORDER BY id`).all() as Record<string, any>[]).filter((g) => !tracked.has(g.id))
 
 export const sourcesFor = (game: Record<string, any>): SourceDef[] => {
   const reg = registry.games[game.id]
@@ -239,17 +266,29 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
 
   // A studio post that says the update is live on PS5: official without a person, so the release
   // is On PS5 and its pending review items are closed.
+  // A post that gives a later time ("at 02:00 UTC on November 10 the updates ... will be available") is official too,
+  // but the row is announced, dated to that time, until it passes (store.promoteStated).
+  const stated = statedLiveTime(text, post.publishedAt)
+  const held = (k: 'stated' | 'testBuild' | 'pcScoped' | 'announcement') => {
+    const h = (summary.held ??= { stated: 0, testBuild: 0, pcScoped: 0, announcement: 0 })
+    h[k]++
+    deps.log?.(`ps5 claim withheld (${k}) ${game.id}: ${post.title}`)
+  }
   const officialPs5 = (releaseId: string, ps5Only = true) => {
     db.prepare('UPDATE releases SET ps4 = 0 WHERE id = ? AND ps4 = 1').run(releaseId)
     const version = consoleVersionOf(text, { ps5Only })
     const size = sizeBytesOf(text)
-    store.upsertPlatform(db, releaseId, 'ps5', {
-      status: 'live',
-      verification: 'official',
+    const input = {
+      status: stated ? ('announced' as const) : ('live' as const),
+      verification: 'official' as const,
       version: version ? store.field(version, 'official', s.id) : null,
       sizeBytes: size ? store.field(size, 'official', s.id) : null,
-      liveAt: store.field(post.publishedAt, 'official', s.id),
-    })
+      liveAt: store.field(stated ?? post.publishedAt, 'official', s.id),
+    }
+    if (stated) held('stated')
+    if (deps.repairClaims) store.repairOwnLiveAt(db, releaseId, s.id, post.publishedAt, input.liveAt, input.status)
+    store.upsertPlatform(db, releaseId, 'ps5', input)
+    if (stated) return
     db.prepare(`UPDATE review_items SET resolved_at = ?, resolution = 'autoConfirmed' WHERE release_id = ? AND platform = 'ps5' AND resolved_at IS NULL`).run(now(), releaseId)
   }
   // A studio's own post that names PS5 is that update's PS5 page; a Steam post may link to one.
@@ -258,6 +297,27 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   const pcOnly = s.platforms.every((p) => p === 'pc')
   const namesPs5 = s.ps5Signal === 'always' || mentionsPs5(text)
   if (!pcOnly && !namesPs5) return null // an official multi-platform post that doesn't name PS5 says nothing about PS5
+  // A PTB, public test, test build, beta or preview is not a release: no PS5 claim from it at all.
+  const testBuild = isTestBuildPost(post.title)
+  // An announcement headline ("the next major update ... releases on Dec. 23") is news; its release comes with its notes.
+  if (isAnnouncementTitle(post.title)) {
+    held('announcement')
+    if (deps.repairClaims) {
+      const old = (db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id
+      const dropped = old ? store.dropAnnouncementRelease(db, old, s.id, post.publishedAt) : null
+      if (old) {
+        deps.log?.(dropped ? `backfill: dropped ${old}, an announcement` : `backfill: kept ${old} (other posts feed it), removed only its announcement PS5 row`)
+        const b = (summary.backfill ??= { dropped: 0, kept: 0 })
+        if (dropped) b.dropped++
+        else b.kept++
+      }
+    }
+    return null
+  }
+  if (!pcOnly && testBuild) {
+    held('testBuild')
+    return null
+  }
 
   const k = kind()
   // A studio or Steam post spelling a version another way ("1.4.0" for "1.4") joins the release already stored.
@@ -267,11 +327,21 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   if (pcOnly) {
     store.upsertPlatform(db, releaseId, 'pc', { status: 'live', verification: 'official', liveAt: store.field(post.publishedAt, 'official', s.id) })
     store.addLinks(db, releaseId, links())
+    // A test build, or a post listing other platforms' builds without PlayStation, says nothing about PS5.
+    if (testBuild || (pcScopedPost(text) && !ps5LiveStated(text))) {
+      held(testBuild ? 'testBuild' : 'pcScoped')
+      if (deps.repairClaims) store.dropOwnPs5Row(db, releaseId, s.id, post.publishedAt)
+      return releaseId
+    }
     if (ps5LiveStated(text)) officialPs5(releaseId)
-    else if (!registry.games[game.id]?.steamIsPcPort && !(game.ps5_release && post.publishedAt.slice(0, 10) < game.ps5_release)) {
+    else if (!registry.games[game.id]?.steamIsPcPort && !game.steam_is_pc_port && !(game.ps5_release && post.publishedAt.slice(0, 10) < game.ps5_release)) {
       // Taken as out on PS5 too, unless the post says otherwise. Never the PC version or size: those are PC facts.
-      const status = ps5StatusOf(text)
-      store.upsertPlatform(db, releaseId, 'ps5', { status, verification: 'assumed', liveAt: status === 'live' ? store.field(post.publishedAt, 'assumed', s.id) : null })
+      // A later time stated in the post holds the row as announced until then.
+      const status = stated ? 'announced' : ps5StatusOf(text)
+      const liveAt = stated ? store.field(stated, 'assumed', s.id) : status === 'live' ? store.field(post.publishedAt, 'assumed', s.id) : null
+      if (stated) held('stated')
+      if (deps.repairClaims) store.repairOwnLiveAt(db, releaseId, s.id, post.publishedAt, liveAt, status)
+      store.upsertPlatform(db, releaseId, 'ps5', { status, verification: 'assumed', liveAt })
       if (mentionsPs5(text)) review(releaseId, 'steamMentionsPs5')
     }
     return releaseId
@@ -296,20 +366,40 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   return releaseId
 }
 
+/** A sale or merch headline is not news: hidden and logged for Quinn (r054-news-promo-merch-filter). */
+const addNewsUnlessPromo = (deps: IngestDeps, summary: IngestSummary, gameId: string, post: Post) => {
+  if (isPromoTitle(post.title)) {
+    summary.newsHidden = (summary.newsHidden ?? 0) + 1
+    deps.log?.(`news hidden (promo) ${gameId}: ${post.title}`)
+    return
+  }
+  store.addNews(deps.db, gameId, post)
+}
+
 export interface IngestOpts {
   force?: boolean
   /** Backfill: read each source's history back to this date (Steam's last 100 posts, press list pages). */
   until?: string
   /** Poll only the hot set (hot.ts), at the shorter hot interval, and skip the shared press sources. */
   hot?: boolean
+  /** Auto-onboarding: how many auto games (store.nextAutoSlice) to poll after the tracked ones, 0 for none. */
+  autoSlice?: number
+  /** Auto-onboarding: stop the slice once the whole run has taken this long (the job has a 20 min limit). */
+  autoBudgetMs?: number
 }
 
 export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promise<IngestSummary> => {
+  if (opts.until) deps = { ...deps, repairClaims: true }
   const summary: IngestSummary = { polled: [], skipped: [], errors: [], created: [], revised: [], review: 0 }
   const hot = hotGameIds(deps.db)
-  const games = trackedGames(deps.db).filter((g) => !opts.hot || hot.has(g.id))
+  const tracked = trackedGames(deps.db).filter((g) => !opts.hot || hot.has(g.id))
+  const repairOnly = new Set<string>()
+  if (opts.until && !opts.hot) for (const g of autoRepairGames(deps.db, new Set(tracked.map((t) => t.id)))) (tracked.push(g), repairOnly.add(g.id))
+  const games = tracked
 
   for (const game of games) {
+    // One Steam request each for the derived games a backfill repairs: spaced out, so the whole pass stays polite.
+    if (repairOnly.has(game.id)) await new Promise((r) => setTimeout(r, 250))
     for (const s of sourcesFor(game)) {
       if (!due(deps.db, s, !!opts.force, hot.has(game.id) ? HOT_POLL_MS : MIN_POLL_MS)) {
         summary.skipped.push(s.id)
@@ -323,11 +413,41 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       if (store.isSeen(deps.db, s.id, post.postId) && !(opts.until && s.trust === 'official')) continue
         if (post.news) {
           tx(deps.db, () => {
-            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources) store.addNews(deps.db, game.id, post)
+            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources && !repairOnly.has(game.id)) addNewsUnlessPromo(deps, summary, game.id, post)
             store.markSeen(deps.db, s.id, post.postId, null)
           })
           continue
         }
+        tx(deps.db, () => {
+          const before = deps.repairClaims ? (deps.db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id : null
+          const releaseId = handlePost(deps, game, s, post, summary)
+          store.markSeen(deps.db, s.id, post.postId, releaseId)
+          if (before && releaseId && before !== releaseId && store.dropSupersededRelease(deps.db, before, releaseId, s.id)) {
+            deps.log?.(`backfill: dropped ${before}, superseded by ${releaseId}`)
+            ;(summary.backfill ??= { dropped: 0, kept: 0 }).dropped++
+          }
+        })
+      }
+    }
+  }
+
+  // Auto-onboarding (0.5.4): a rotating slice of the derived games, Steam only, oldest poll first. One request each, so
+  // the slice is the run's cost ceiling; a game that gets a patch joins the 14-day hot set and is then polled hourly.
+  if (!opts.hot && !opts.until && (opts.autoSlice ?? 0) > 0) {
+    const started = Date.now()
+    const tracked = new Set(games.map((g) => g.id))
+    for (const game of store.nextAutoSlice(deps.db, opts.autoSlice!, tracked)) {
+      if (opts.autoBudgetMs && Date.now() - started > opts.autoBudgetMs) { summary.autoStopped = true; break }
+      const [s] = sourcesFor(game)
+      if (!s) continue
+      summary.auto = (summary.auto ?? 0) + 1
+      store.markAutoPolled(deps.db, game.id)
+      if (!due(deps.db, s, false)) { summary.skipped.push(s.id); continue }
+      const posts = await poll(deps, s, summary, {})
+      for (const post of (posts ?? []).sort((a, b) => a.publishedAt.localeCompare(b.publishedAt))) {
+        if (store.isSeen(deps.db, s.id, post.postId)) continue
+        // News headlines are kept for hand-registered games only: thousands of news files would swell the feed branch.
+        if (post.news) { tx(deps.db, () => store.markSeen(deps.db, s.id, post.postId, null)); continue }
         tx(deps.db, () => store.markSeen(deps.db, s.id, post.postId, handlePost(deps, game, s, post, summary)))
       }
     }
@@ -345,10 +465,11 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       // Shared feeds cover every game: a post counts only if it names the game and reads like a patch;
       // a press list counts only posts about PS5.
       // A news-listed shared feed's non-patch posts that name a tracked game are news headlines (title, date, link); the
-      // Push Square news feed is news only, its patch articles come through the press index.
-      if (s.id in newsSources.sources && (!looksLikePatch(post.title) || s.id === 'pushsquare-news')) {
+      // press outlets' news feeds (newsOnly in news-sources.json) are news only; Push Square's patch articles come through the press index.
+      const newsOnly = (newsSources.sources as Record<string, { newsOnly?: boolean }>)[s.id]?.newsOnly === true
+      if (s.id in newsSources.sources && (!looksLikePatch(post.title) || newsOnly)) {
         tx(deps.db, () => {
-          for (const g of games.filter((g) => matchesPost(g, post))) store.addNews(deps.db, g.id, post)
+          for (const g of games.filter((g) => matchesPost(g, post))) addNewsUnlessPromo(deps, summary, g.id, post)
           store.markSeen(deps.db, s.id, post.postId, null)
         })
         continue
@@ -388,14 +509,32 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
     const relabelled = store.labelPreLaunchPs4(deps.db, ps4Since)
     if (relabelled) deps.log?.(`ingest: labelled ${relabelled} press-reported releases dated before the PS5 era as PS4 updates`)
   } else deps.log?.('ingest: PS5 index not readable, skipped the PS4 relabel pass (fail closed)')
-  const repaired = store.repairAssumedLiveAt(deps.db)
-  if (repaired) deps.log?.(`ingest: moved ${repaired} Steam-assumed PS5 dates back to their Steam post`)
-  const promoted = store.promoteAnnounced(deps.db)
+  const pruned = store.pruneNews(deps.db, isPromoTitle)
+  for (const r of pruned) deps.log?.(`news hidden (promo, pruned) ${r.gameId}: ${r.title}`)
+  deps.log?.(`ingest: news hidden (promo) ${summary.newsHidden ?? 0} new, ${pruned.length} pruned`)
+  const promoted = store.promoteAnnounced(deps.db, new Date(), !!opts.until) + store.promoteStated(deps.db, new Date(), !!opts.until)
   const settled = store.settleOldAnnouncements(deps.db)
   if (settled) deps.log?.(`ingest: ${settled} press announcements older than 30 days, with a later PS5 release live, now read as live`)
-  deps.log?.(`ingest: promoted ${promoted} console-later Steam updates to live`)
+  for (const line of countLines(summary, { heldRows: store.heldPs5Rows(deps.db), derivedRead: (summary.auto ?? 0) + repairOnly.size, promoted })) deps.log?.(line)
   deps.log?.(`ingest: polled ${summary.polled.length}, new ${summary.created.length}, revised ${summary.revised.length}, review +${summary.review}, errors ${summary.errors.length}`)
   return summary
+}
+
+/**
+ * The count lines every run prints to the job log, zeros included (feed-log-lines-to-step), so Quinn can check dropped
+ * against kept and the r050 holds (#466) show: claims withheld by kind, PS5 rows held announced until a stated time,
+ * backfill releases dropped and kept, derived (auto-onboarded) games read, and console-later promotions.
+ */
+export const countLines = (summary: IngestSummary, n: { heldRows: number; derivedRead: number; promoted: number }) => {
+  const h = summary.held ?? { stated: 0, testBuild: 0, pcScoped: 0, announcement: 0 }
+  const b = summary.backfill ?? { dropped: 0, kept: 0 }
+  return [
+    `ingest: claims withheld: ${h.stated} held to a stated time, ${h.testBuild} test builds, ${h.pcScoped} PC-scoped, ${h.announcement} announcements`,
+    `ingest: held rows: ${n.heldRows} PS5 rows announced until a stated time`,
+    `ingest: backfill: dropped ${b.dropped}, kept ${b.kept}`,
+    `ingest: derived games read: ${n.derivedRead}`,
+    `ingest: promoted ${n.promoted} console-later Steam updates to live`,
+  ]
 }
 
 // One ingest at a time per process, whether the scheduler or an admin call started it.

@@ -4,7 +4,7 @@ import os
 import SwiftUI
 import UserNotifications
 
-enum AppTab: String, Codable, Hashable { case library, updates, search }
+enum AppTab: String, Codable, Hashable { case library, updates, news, search }
 
 enum Chapter: String, Codable, CaseIterable, Hashable, Identifiable {
     case updates, news, world, companion, gallery, mybook
@@ -114,6 +114,11 @@ struct PersistedState: Codable {
     var plusLeavingSoonOff: Bool?
     var notificationCardShows = 0
     var notificationCardDismissed = false
+    /// "Help keep my games up to date" (0.5.4): true while the switch is on, nil otherwise. Off by default; the one-time card
+    /// or the Settings switch turns it on. The relay record exists only while this is true.
+    var keepCurrent: Bool?
+    /// True once the one-time card was answered (Turn on, Not now or a swipe): it never shows again; Settings is the way back.
+    var keepCurrentCardDismissed: Bool?
     /// N-1 re-ask: how many times "Not now" was chosen, and until when the card rests. Optional so older saved state decodes.
     var notificationAsks: Int?
     var notificationSnoozedUntil: Date?
@@ -206,6 +211,8 @@ final class AppModel {
     var linksSheetOpen = false
     /// The verification tag whose explainer is open (0.5.0).
     var tagExplainer: Verification?
+    /// N-9: the follow-list card's "What is sent" sheet, the full wording, one tap from the choice (Iris, #455).
+    var keepCurrentDetailsOpen = false
     var libraryTab: LibraryTab = .playing
     /// GR-7: games just added together, highlighted in the Library.
     var highlightSet: Set<String> = []
@@ -240,8 +247,12 @@ final class AppModel {
     var qaPadDeck = false
     /// QA (routes "one-update", "two-update") and tests: how many fresh unread updates the demo has; 0 is the normal demo.
     var qaUpdateCount = 0
+    /// QA (route "cover"): keep every card in the deck, read ones too, instead of only the `qaUpdateCount` fresh ones.
+    var qaKeepReadCards = false
+    /// QA (route `cover/<game>`): the fresh update is this game's newest, so its page leads the cover.
+    var qaFreshGame: String?
     var qaSingleUpdate: Bool {
-        get { qaUpdateCount > 0 }
+        get { qaUpdateCount > 0 && !qaKeepReadCards }
         set { qaUpdateCount = newValue ? 1 : 0 }
     }
     /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
@@ -260,7 +271,7 @@ final class AppModel {
     private func qaFreshIDs() -> Set<String> {
         if let ids = qaFreshCache { return ids }
         var newestPerGame: [Release] = []
-        for entry in data.collection {
+        for entry in data.collection where qaFreshGame == nil || entry.gameID == qaFreshGame {
             let best = releases(entry.gameID).filter { $0.ps5State == .onPS5 }.max { $0.ps5Date < $1.ps5Date }
             if let best { newestPerGame.append(best) }
         }
@@ -308,6 +319,9 @@ final class AppModel {
             } else {
                 data = PersistedState(collection: [])
             }
+            // No saved state, so a fresh install: a relay key still in the Keychain belongs to an earlier install. Its record
+            // is deleted before this launch makes any relay call (PushRegistrar.dropStaleKey; Quinn's #455 stale-key capture).
+            if storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.dropStaleKey() }
         }
         // A6: remember the previous open for the catch-up card, then stamp this one.
         catchUpSince = data.lastOpenedAt
@@ -375,7 +389,10 @@ final class AppModel {
             guard !Task.isCancelled else { return }
             self?.saveNow()
             // Only the app's own model speaks for this device; a model on a scratch store (tests, previews) never does.
-            if let self, self.storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.syncFollows(self.follows) }
+            if let self, self.storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled {
+                // With the keep-current switch on, the first follow also makes the relay record (ids only).
+                if self.data.keepCurrent == true { PushRegistrar.syncKeepCurrent(true, follows: self.follows) } else { PushRegistrar.syncFollows(self.follows, pushOnly: true) }
+            }
         }
     }
 
@@ -396,6 +413,25 @@ final class AppModel {
 
     /// Games opened from Upcoming without being filed anywhere. Memory only: never in the library or the saved data.
     var browsedGames: [String: CatalogGame] = [:]
+
+    /// The id the app keeps a game under when it is opened by an id the catalogue lacks (a feed id from a route, an alert or
+    /// a search hit): the library or catalogue game with the same IGDB id if there is one (never a second copy, Quinn #445),
+    /// else the PS5 index game, browsed under its own "igdb-N" id so a later add files it the way the Add sheet does and its
+    /// feed history re-keys to it by IGDB id (`refreshHistories`). The IGDB id comes from the feed index, else an exact title
+    /// match on the id's words in the PS5 index (never a near miss). nil: nothing known, the id stands.
+    func canonicalGameID(_ gameID: String) -> String? {
+        var igdb = feedIndexGames?.first(where: { $0.id == gameID })?.igdbId
+        if igdb == nil {
+            let name = gameID.replacingOccurrences(of: "-", with: " ")
+            igdb = PlusCard.resolve(PlusMonth.Game(name: name, gameId: nil), tracked: { _ in nil })?.igdbID
+        }
+        guard let igdb else { return nil }
+        if let known = games.values.first(where: { $0.igdbID == igdb }) { return known.id }
+        guard let e = PS5Index.shared.entry(igdb: igdb) else { return nil }
+        let g = PS5Index.shared.game(e)
+        browsedGames[g.id] = g
+        return g.id
+    }
 
     /// Opens a game page without adding it to the library (opening is not a watchlist action).
     func browseGame(_ game: CatalogGame) {
@@ -438,7 +474,9 @@ final class AppModel {
     }
 
     func ps5Releases(_ gameID: String) -> [Release] {
-        releases(gameID).filter(\.isPS5Listed).sorted { Self.newer($0, $1, by: \.ps5Date) }
+        // QA (INTERNAL): "no-notes/<game>" hides the whole update history, so the hero, the tile and the game page agree.
+        if qaNoReleases { return [] }
+        return releases(gameID).filter(\.isPS5Listed).sorted { Self.newer($0, $1, by: \.ps5Date) }
     }
 
     func pcOnlyReleases(_ gameID: String) -> [Release] {
@@ -582,6 +620,10 @@ final class AppModel {
     // MARK: - Navigation
 
     func openGame(_ gameID: String, chapter: Chapter? = nil, releaseID: String? = nil) {
+        // A game the catalogue does not hold yet (a feed id from a route, an alert or a search hit) opens as the game the
+        // app already keeps for it, or the PS5 index game browsed (never added), so its page has a title, basics and the
+        // Add to library control instead of opening blank (Quinn, #442: gamepage/alan-wake-2 in Closed).
+        let gameID = game(gameID) == nil ? (canonicalGameID(gameID) ?? gameID) : gameID
         var n = nav
         let sameGame = n.gameID == gameID
         n.tab = .library
@@ -600,6 +642,10 @@ final class AppModel {
         }
         nav = n
         readerIndex[gameID] = 0
+        // R-6a: opening a specific update (a notification, an Updates row, a deep link) reads it at once, on every path;
+        // the 1 s on-screen rule only covers an update the reader lands on without picking it. Mark as unread undoes it.
+        // Opening the game itself (a tile, the hero) reads the update it lands on: the newest, expanded at the top (R-1).
+        if n.chapter == .updates, let r = releaseID.flatMap({ release(gameID, $0) }) ?? selectedRelease(gameID), isUnread(r) { markRead(r.id) }
         // N-7: the pill goes only when the page it points to is the one now showing.
         if let p = pill, isViewing(p.gameID, p.releaseID) { pill = nil }
         focusReleaseID = releaseID
@@ -657,7 +703,14 @@ final class AppModel {
     }
 
     func handle(url: URL) {
-        // playscribe://release/<gameID>/<releaseID>
+        // playscribe://release/<gameID>/<releaseID>, or the shared universal link
+        // https://playscribe.codeconnectors.co/r/<gameID>/<releaseID>
+        if url.scheme == "https", url.host() == ShareText.host {
+            let p = url.pathComponents.filter { $0 != "/" }
+            if p.count == 3, p[0] == "r" { openRelease(gameID: p[1], releaseID: p[2]) }
+            else if p.count == 2, p[0] == "g" { openGame(p[1]) }
+            return
+        }
         guard url.scheme == "playscribe" else { return }
         let parts = url.pathComponents.filter { $0 != "/" }
         if url.host() == "release", parts.count == 2 {
@@ -676,6 +729,12 @@ final class AppModel {
             addSheetOpen = true
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
+        case "cover":   // 0.7 front cover preview (duo-closed-cover): a full deck, or cover/one for a lone update
+            // cover/<game> (Iris, focal-point check): that game's newest update leads the deck, unread.
+            if parts.first == "one" { resetToOneUpdateDemo() } else { resetToCoverDemo(leading: parts.first) }
+            FrontCoverPreview.shared.open = true
+            FrontCoverPreview.shared.openedByRoute = true
+            settingsOpen = true
         case "settings":
             settingsOpen = true
             if parts.first == "quiet" { data.quietHours = QuietHours() }
@@ -687,6 +746,7 @@ final class AppModel {
             if parts.first == "upcoming-seeded" { resetDemo(); seedUpcomingWatchlist(); libraryTab = .upcoming }
             else if let t = parts.first.flatMap(LibraryTab.init(rawValue:)) { libraryTab = t }
         case "updates": nav.tab = .updates
+        case "news": nav.tab = .news   // QA: the News tab
         case "search": nav.tab = .search
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
         case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
@@ -791,6 +851,17 @@ final class AppModel {
             openRelease(gameID: gameID, releaseID: release.id)
         // QA (INTERNAL): a PS5 update whose headline holds one word wider than the AX5 column, shown in the Updates tab
         // (WholeWordText must cut before that word, never mid-word).
+        // QA (INTERNAL): "share-card/<game>/<release>" opens that update and writes its rendered share card, at full size, to
+        // Documents/share-cards/<game>-<release>.png (Iris: judge the card, not the share-sheet thumbnail). Pull it with
+        // `xcrun simctl get_app_container booted co.codeconnectors.playscribe data`, then Documents/share-cards/.
+        case "share-card" where parts.count == 2:
+            openGame(parts[0], releaseID: parts[1])
+            // An untracked game's history is not loaded on a cold launch (Mac, 9dcb197: Witcher wrote nothing first time):
+            // fetch it, then write, exactly as a cold notification tap resolves its release.
+            Task {
+                if releases(parts[0]).isEmpty { await refreshHistories([parts[0]]) }
+                if let r = releases(parts[0]).first(where: { $0.id == parts[1] }) ?? selectedRelease(parts[0]) { writeQAShareCard(r) }
+            }
         case "long-word" where parts.count == 1:
             let gameID = parts[0]
             let now = Date.now
@@ -811,7 +882,7 @@ final class AppModel {
             openGame(parts[0], chapter: .updates)
             nav.detailReleaseID = nil
             linksSheetOpen = false
-        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; addSearchFocus = false
+        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; keepCurrentDetailsOpen = false; addSearchFocus = false
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
             if let n = Int(parts[0]) {
@@ -830,6 +901,19 @@ final class AppModel {
             // QA: the Library with the alerts card showing, undecided or denied (N-1).
             resetDemo()
             NotificationService.shared.qaForcedAuthorization = url.host() == "alerts" ? .notDetermined : .denied
+        case "keep-current":
+            // QA: the Library with the "Help keep your games up to date?" card (N-9); `keep-current/on` has the switch on, so
+            // Settings shows the row on with its "Last sent" line, and the model's next save sends the real request.
+            resetDemo()
+            data.keepCurrentCardDismissed = nil
+            // The alerts card was answered Not now on an earlier day, so the follow-list card shows alone (one ask per screen).
+            data.notificationAsks = 1
+            data.notificationSnoozedUntil = Calendar.current.date(byAdding: .day, value: NotificationAsk.snoozeDays, to: .now)
+            alertsAnsweredThisSession = false
+            // `keep-current/sent`: the card's "What is sent" sheet open; `keep-current/settings`: Settings open, switch off.
+            if parts.first == "on" { data.keepCurrent = true }
+            if parts.first == "sent" { keepCurrentDetailsOpen = true }
+            if parts.first == "settings" { settingsOpen = true }
         case "ask-notifications": Task { await NotificationService.shared.requestAuthorization() }
         default: break
         }
@@ -1068,13 +1152,45 @@ final class AppModel {
                               asks: data.notificationAsks ?? 0, snoozedUntil: data.notificationSnoozedUntil)
     }
 
+    /// The one-time "Help keep your games up to date?" card (N-9): once a game is in the Library and the alerts card (N-1) has been
+    /// answered, on a later Library appearance than the answer, until it is answered itself or the switch is on. One ask per screen.
+    var showsKeepCurrentCard: Bool {
+        KeepCurrentAsk.shows(hasGames: !data.collection.isEmpty, on: data.keepCurrent == true, dismissed: data.keepCurrentCardDismissed == true,
+                             alertsCardShows: showsNotificationCard, alertsAnswered: alertsAnswered, answeredThisSession: alertsAnsweredThisSession)
+    }
+
+    /// The alerts card has had an answer: Not now at least once, or the system prompt decided (authorized, denied or provisional).
+    private var alertsAnswered: Bool { (data.notificationAsks ?? 0) > 0 || NotificationService.shared.authorization != .notDetermined }
+
+    /// Set when the alerts card is answered in this launch (Turn on or Not now), so the follow-list card waits for the next one.
+    var alertsAnsweredThisSession = false
+
+    /// The switch (Settings) and the card's Turn on. The relay call is made only by the app's own model (never a scratch store).
+    func setKeepCurrent(_ on: Bool) {
+        data.keepCurrent = on ? true : nil
+        if on { data.keepCurrentCardDismissed = true }
+        if storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled { PushRegistrar.syncKeepCurrent(on, follows: follows) }
+    }
+
+    /// "Not now" or a swipe on the card: it never shows again; Settings is the way back.
+    func dismissKeepCurrentCard() { data.keepCurrentCardDismissed = true }
+
+    /// On becoming active: the weekly "still here" for a record without alerts, so the relay can renew its 90-day expiry.
+    func keepCurrentStillHere() {
+        guard data.keepCurrent == true, storeURL == AppModel.defaultStoreURL, PushRegistrar.appCallsEnabled else { return }
+        PushRegistrar.syncKeepCurrent(true, follows: follows)
+    }
+
     /// "Not now", a swipe, or a declined system prompt: ask again in a week (N-1).
     func snoozeNotificationCard() {
+        alertsAnsweredThisSession = true
         data.notificationAsks = (data.notificationAsks ?? 0) + 1
         data.notificationSnoozedUntil = Calendar.current.date(byAdding: .day, value: NotificationAsk.snoozeDays, to: .now)
     }
 
     func resetToFirstRun() {
+        // The follow-list record is deleted with the reset (its promise: gone at once when you reset the app).
+        if data.keepCurrent == true { setKeepCurrent(false) }
         data = PersistedState(collection: [])
         UserDefaults.standard.set(false, forKey: "didOnboard")
         toast = nil
@@ -1083,9 +1199,14 @@ final class AppModel {
     }
 
     func resetDemo() {
+        // Like a reset to first run: an alerts-free follow-list record is deleted, never left on the relay with the switch
+        // shown off (Mac at eb42735: `-qaRoute keep-current/settings` turned the switch off and sent no DELETE).
+        if data.keepCurrent == true { setKeepCurrent(false) }
         qaPadDeck = false
+        qaKeepReadCards = false
         qaUpdateCount = 0
         qaFreshCache = nil
+        qaFreshGame = nil
         data = PersistedState(collection: fixtures.seedCollection)
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
@@ -1137,6 +1258,17 @@ final class AppModel {
         qaPadDeck = true
     }
 
+    /// QA (route "cover", #467): the full deck with the newest update fresh and unread, leading, and the rest read, so the
+    /// cover shows NEW UPDATE pages and pages without it. The fresh one is pinned (`qaUpdateCount`): with the plain
+    /// many-updates demo, the first feed refresh after a reset marks every update older than 72 hours read, so the
+    /// eyebrow came and went with network timing (Mac, Closed landscape AX5, 8597112).
+    func resetToCoverDemo(leading gameID: String? = nil) {
+        resetToManyUpdatesDemo()
+        qaUpdateCount = 1
+        qaKeepReadCards = true
+        if let gameID, data.collection.contains(where: { $0.gameID == gameID }) { qaFreshGame = gameID }
+    }
+
     /// QA (routes "three-update", "four-update"): `count` fresh updates from different games, so the deck
     /// has that many unread cards.
     func resetToUpdateDemo(count: Int) {
@@ -1145,6 +1277,14 @@ final class AppModel {
     }
 
     #if INTERNAL
+    /// QA (INTERNAL): the share card exactly as the share sheet gets it, written to disk at 1080 x 1350.
+    @MainActor private func writeQAShareCard(_ r: Release) {
+        guard let png = shareCardImage(for: r)?.pngData() else { return }
+        let dir = URL.documentsDirectory.appending(path: "share-cards")
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        try? png.write(to: dir.appending(path: "\(r.gameID)-\(r.id.replacingOccurrences(of: "/", with: "_")).png"))
+    }
+
     /// The `-qaRoute` / `-qaOverlay` launch arguments. Ignored in a distribution build (one with a
     /// TestFlight or App Store receipt), exactly like the playscribe:// QA routes.
     func applyQALaunch(route: String?, overlay: Bool) {
