@@ -982,6 +982,7 @@ struct ReleaseDetailView: View {
         .background(Color.ink0)
         .navigationTitle(model.release(gameID, releaseID)?.displayName ?? "")
         .toolbarTitleDisplayMode(.inline)
+        .accessibilityIdentifier("releaseDetail")
         .foldAudited()
     }
 }

@@ -100,6 +100,14 @@ struct NavState: Codable, Hashable {
     /// D-1 (0.5.6, Card D): the tab the open game was reached from, when it was not the Library. Back from the game returns
     /// there. nil: Back goes to the Library.
     var returnTab: AppTab?
+    /// D-1 (0.5.6, Card D): an update pushed from the Updates tab (Closed, Open portrait). Back returns to the list.
+    var updatesRelease: ReleaseRef?
+}
+
+/// One update, as a navigation value.
+struct ReleaseRef: Codable, Hashable {
+    var gameID: String
+    var releaseID: String
 }
 
 struct PersistedState: Codable {
@@ -700,6 +708,7 @@ final class AppModel {
     /// True when the update page for this release is the one on screen: its game is open and the release is the one
     /// the Page shows or the pushed detail screen.
     func isViewing(_ gameID: String, _ releaseID: String) -> Bool {
+        if nav.tab == .updates, let u = nav.updatesRelease { return u == ReleaseRef(gameID: gameID, releaseID: releaseID) }
         guard nav.tab == .library, nav.gameID == gameID else { return false }
         if nav.detailReleaseID != nil { return nav.detailReleaseID == releaseID }
         return section(gameID) == .updates && selectedRelease(gameID)?.id == releaseID
@@ -730,8 +739,19 @@ final class AppModel {
         if let back { nav.tab = back }
     }
 
-    /// The Back control's label: the screen it returns to (HIG: the previous screen's title).
-    var backTitle: String { "\((nav.returnTab ?? .library).title), back" }
+    /// D-1 (0.5.6, Card D, Nadia 13 Nov): an Updates-tab row pushes the update page over the list in Closed and Open
+    /// portrait, so Back returns to the list in one step, at the same scroll. Side by side and in Tabletop it opens the
+    /// game with that update on the Page. Opening it reads it (R-6a).
+    func openFromUpdates(_ r: Release) {
+        guard pushesReleases else { openGame(r.gameID, chapter: .updates, releaseID: r.id); return }
+        nav.updatesRelease = ReleaseRef(gameID: r.gameID, releaseID: r.id)
+        if isUnread(r) { markRead(r.id) }
+        if let p = pill, isViewing(p.gameID, p.releaseID) { pill = nil }
+    }
+
+    /// The Back control's label: what it does and where it goes ("Back to Updates"; redesign thread, 13 Nov: says what
+    /// happens, and Voice Control can say it). The rail button is glyph only, with this as its label, in every pose.
+    var backTitle: String { "Back to \((nav.returnTab ?? .library).title)" }
 
     /// J-1: Closed and Open portrait push an update as its own page; side by side and Tabletop the Page shows it in place.
     var pushesReleases: Bool { livePose == .closed || (livePose == .flat && !liveRightPage) }
@@ -1002,6 +1022,7 @@ final class AppModel {
     func startFresh() {
         nav.gameID = nil
         nav.detailReleaseID = nil
+        nav.updatesRelease = nil
         nav.tab = .library
         addSheetOpen = false
         settingsOpen = false

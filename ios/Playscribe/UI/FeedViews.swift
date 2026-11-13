@@ -69,7 +69,7 @@ struct FeedRow: View {
 
     var body: some View {
         let unread = model.isUnread(release)
-        Button { model.openGame(release.gameID, chapter: .updates, releaseID: release.id) } label: {
+        Button { model.openFromUpdates(release) } label: {
             // At accessibility sizes the thumbnail sits above the text so the column gets the row's full width: a game
             // name never breaks inside a word and a date stays whole (Iris, AX5).
             let rowLayout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 28))

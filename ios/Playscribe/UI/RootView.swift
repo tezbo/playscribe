@@ -247,7 +247,23 @@ struct TabRoot: View {
             .badge(model.totalUnread)
 
             Tab("Updates", systemImage: "newspaper", value: AppTab.updates) {
-                NavigationStack { UpdatesView().tabletopChrome(duo) }.auditActive(model.nav.tab == .updates)
+                // D-1 (0.5.6, Card D): an update pushed from a row; Back pops to the list at the same scroll.
+                NavigationStack(path: Binding(get: { model.nav.updatesRelease.map { [$0] } ?? [] },
+                                              set: { model.nav.updatesRelease = $0.last })) {
+                    UpdatesView().tabletopChrome(duo)
+                        .navigationDestination(for: ReleaseRef.self) { ref in
+                            ReleaseDetailView(gameID: ref.gameID, releaseID: ref.releaseID).tabletopChrome(duo)
+                        }
+                }
+                .auditActive(model.nav.tab == .updates)
+                // Only Closed and Open portrait push. Unfolding to side by side or Tabletop (where the standing half is view
+                // only, G-4) moves the update to the game's Page, with Back still leading to Updates.
+                .onChange(of: duo.pose == .closed || (duo.pose == .flat && !duo.isLandscape), initial: true) { _, pushes in
+                    if !pushes, let u = model.nav.updatesRelease {
+                        model.nav.updatesRelease = nil
+                        if model.nav.tab == .updates { model.openGame(u.gameID, chapter: .updates, releaseID: u.releaseID) }
+                    }
+                }
             }
 
             Tab("News", systemImage: "megaphone", value: AppTab.news) {
@@ -327,7 +343,7 @@ struct TabletopRail: View {
             ScrollView {
               VStack(spacing: 6) {
             if let id = model.nav.gameID, model.nav.tab == .library {
-                // The same name and id as the other poses' back button ("Library, back", gameBack); a bare "Library" read as the tab.
+                // The same name and id as the other poses' back button ("Back to Library", gameBack); a bare "Library" read as the tab.
                 RailButton(action: ScreenAction(id: "back", title: model.backTitle, systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
                     .accessibilityIdentifier("gameBack")

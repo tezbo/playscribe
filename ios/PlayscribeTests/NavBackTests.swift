@@ -31,7 +31,7 @@ struct NavBackTests {
         let r = try #require(m.ps5Releases("kcd2").first)
         m.openGame("kcd2", chapter: .updates, releaseID: r.id)
         #expect(m.nav.tab == .library)
-        #expect(m.backTitle == "Updates, back")
+        #expect(m.backTitle == "Back to Updates")
         m.closeGame()
         #expect(m.nav.gameID == nil)
         #expect(m.nav.tab == .updates)
@@ -41,7 +41,7 @@ struct NavBackTests {
     @Test func fromTheLibraryBackIsTheLibrary() {
         let m = model()
         m.openGame("kcd2")
-        #expect(m.backTitle == "Library, back")
+        #expect(m.backTitle == "Back to Library")
         m.closeGame()
         #expect(m.nav.tab == .library)
     }
@@ -81,7 +81,7 @@ struct NavBackTests {
         // Back: What's new.
         m.nav.detailReleaseID = nil
         #expect(m.section("kcd2") == .updates)
-        #expect(m.backTitle == "Library, back")
+        #expect(m.backTitle == "Back to Library")
         // Back: the Library, not the tab that was showing when the alert came in.
         m.closeGame()
         #expect(m.nav.tab == .library)
@@ -95,5 +95,33 @@ struct NavBackTests {
         m.openRelease(gameID: "kcd2", releaseID: r.id)
         #expect(m.nav.detailReleaseID == nil)
         #expect(m.selectedRelease("kcd2")?.id == r.id)
+    }
+
+    @Test func anUpdatesRowPushesTheUpdateOverTheListInClosed() throws {
+        let m = model()
+        m.nav.tab = .updates
+        let r = try #require(m.ps5Releases("kcd2").first)
+        m.markRead(r.id, false)
+        m.openFromUpdates(r)
+        #expect(m.nav.tab == .updates)
+        #expect(m.nav.updatesRelease == ReleaseRef(gameID: "kcd2", releaseID: r.id))
+        #expect(m.nav.gameID == nil)
+        #expect(!m.isUnread(r))
+        #expect(m.isViewing("kcd2", r.id))
+        // Back: the list, in one step.
+        m.nav.updatesRelease = nil
+        #expect(m.nav.tab == .updates)
+    }
+
+    @Test func sideBySideAnUpdatesRowOpensTheGameWithTheUpdate() throws {
+        let m = model()
+        m.livePose = .book
+        m.nav.tab = .updates
+        let r = try #require(m.ps5Releases("kcd2").first)
+        m.openFromUpdates(r)
+        #expect(m.nav.updatesRelease == nil)
+        #expect(m.nav.gameID == "kcd2")
+        #expect(m.selectedRelease("kcd2")?.id == r.id)
+        #expect(m.backTitle == "Back to Updates")
     }
 }
