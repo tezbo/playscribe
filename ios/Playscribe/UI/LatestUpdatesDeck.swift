@@ -7,6 +7,8 @@ struct DeckCard: Identifiable, Hashable {
     var release: Release?
     var unread: Bool
     var date: Date?
+    /// The chip on an unread card: "New update", or "Day-one patch" (r060-dayone-patch-alert-app); nil once read.
+    var freshLabel: String? = nil
     var id: String { release.map { "u-" + $0.id } ?? "r-" + game.id }
 
     // `unread` is part of equality: SwiftUI skips re-rendering a view whose Equatable inputs compare equal, so a card that
@@ -37,7 +39,7 @@ extension AppModel {
             guard let g = game(c.gameID) else { continue }
             for r in ps5Releases(c.gameID) where r.ps5State == .onPS5 && !qaNoReleases {
                 let unread = isUnread(r)
-                if unread || r.ps5Date > cutoff { cards.append(DeckCard(game: g, release: r, unread: unread, date: r.ps5Date)) }
+                if unread || r.ps5Date > cutoff { cards.append(DeckCard(game: g, release: r, unread: unread, date: r.ps5Date, freshLabel: freshLabel(r))) }
             }
         }
         if cards.isEmpty {
