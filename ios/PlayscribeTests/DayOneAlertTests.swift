@@ -48,6 +48,8 @@ struct DayOneAlertTests {
         let m = model()
         let gameID = try #require(m.data.collection.first?.gameID)
         m.applyQALaunch(route: "dayone/\(gameID)", overlay: false)
+        // The feed refresh after launch marks the fixtures' old updates read (markPastAsRead); the route must not care (Mac, dab2f51).
+        for r in m.data.collection.flatMap({ m.releases($0.gameID) }) { m.data.read[r.id] = .now }
         let labels = m.latestDeck.compactMap(\.freshLabel)
         #expect(labels.sorted() == ["Day-one patch", "New update"])
         let r = try #require(m.latestDeck.first { $0.freshLabel == "Day-one patch" }?.release)

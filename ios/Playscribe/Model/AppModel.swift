@@ -239,8 +239,11 @@ final class AppModel {
     var qaUpdateCount = 0
     /// QA (route "cover"): keep every card in the deck, read ones too, instead of only the `qaUpdateCount` fresh ones.
     var qaKeepReadCards = false
-    /// QA (route `dayone/<game>`): the pinned fresh updates still clear when read, so a page can be shot before and after.
+    /// QA (route `dayone/<game>`): the pinned fresh updates still clear when the person reads one in this launch, so a page
+    /// can be shot before and after. Only reads made here count: the feed refresh after launch marks the fixtures' old
+    /// updates read (markPastAsRead), which emptied the deck when this checked data.read (Mac, dab2f51).
     var qaHonourRead = false
+    @ObservationIgnored private var qaReadIDs: Set<String> = []
     /// QA (route `cover/<game>`): the fresh update is this game's newest, so its page leads the cover.
     var qaFreshGame: String?
     var qaSingleUpdate: Bool {
@@ -476,7 +479,7 @@ final class AppModel {
     }
 
     func isUnread(_ r: Release) -> Bool {
-        if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) && (!qaHonourRead || data.read[r.id] == nil) }
+        if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) && !(qaHonourRead && qaReadIDs.contains(r.id)) }
         return r.ps5State == .onPS5 && data.read[r.id] == nil
     }
 
@@ -952,6 +955,7 @@ final class AppModel {
 
     func markRead(_ releaseID: String, _ read: Bool = true) {
         if read { data.read[releaseID] = .now } else { data.read[releaseID] = nil }
+        if qaHonourRead { if read { qaReadIDs.insert(releaseID) } else { qaReadIDs.remove(releaseID) } }
         if read, pill?.releaseID == releaseID { pill = nil }
         NotificationService.shared.updateBadge(badgeCount)
     }
@@ -1220,6 +1224,7 @@ final class AppModel {
         qaPadDeck = false
         qaKeepReadCards = false
         qaHonourRead = false
+        qaReadIDs = []
         qaUpdateCount = 0
         qaFreshCache = nil
         qaFreshGame = nil
