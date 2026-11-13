@@ -6,14 +6,14 @@ import SwiftUI
 // below. LibraryView wraps it after #424 and #455 merge, so until then it shows only in the internal preview
 // (Settings > Front cover, or `-qaRoute cover` / `cover/one`). Nothing here is reachable in a TestFlight or App Store build.
 
-/// The three motion modes (Settings > "Cover motion"). Only Still is built; the others land in their own PRs.
+/// The three motion modes (Settings > "Cover motion"). Still and Key-art motion are built; the Trailer loop lands in its own PR.
 enum CoverMotion: String, CaseIterable, Identifiable {
     case trailer, keyArt, still
     var id: String { rawValue }
 
     static let key = "coverMotion"
-    /// Nadia, 12 Nov: the default is Key-art motion.
-    static let defaultMode: CoverMotion = .keyArt
+    /// Still stays the default; Key-art motion is the person's choice (Iris's spec and the s-07 card, 13 Nov).
+    static let defaultMode: CoverMotion = .still
 
     var label: String {
         switch self {
@@ -24,7 +24,7 @@ enum CoverMotion: String, CaseIterable, Identifiable {
     }
 
     /// Built so far. The Settings row lists only these, and a stored mode that is not built yet shows Still.
-    var isBuilt: Bool { self == .still }
+    var isBuilt: Bool { self != .trailer }
 
     /// The next mode down: a Trailer loop that cannot play shows Key-art motion, and Key-art motion falls back to Still.
     var fallback: CoverMotion {
@@ -98,7 +98,10 @@ struct FrontCoverPage: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.qaSolid) private var qaSolid
+    @AppStorage(CoverMotion.key) private var stored: CoverMotion = CoverMotion.defaultMode
+    @AppStorage(YouTubeController.autoplayKey) private var autoplay = false
     var card: DeckCard
     /// Leading room kept clear for the leaves, and trailing room for the rail at accessibility sizes (the plate never
     /// sits under the rail, Iris condition 5).
@@ -116,8 +119,10 @@ struct FrontCoverPage: View {
         } label: {
             ZStack(alignment: .bottomLeading) {
                 // Iris (#467): at accessibility sizes the plate covers the lower half, so the focal point goes to the top half.
-                ArtView(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
-                        focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5)
+                // Key-art motion (s-07) moves only this layer; the shade and the plate below stay still.
+                KeyArtMotionArt(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
+                                focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5,
+                                maxFocalY: typeSize.isAccessibilitySize ? 0.5 : 1, moving: moving)
                 if !solid { fade }
                 VStack(alignment: .leading, spacing: 18) {
                     FrontCoverPlate(card: card)
@@ -150,6 +155,12 @@ struct FrontCoverPage: View {
     }
 
     private var solid: Bool { contrast == .increased || reduceTransparency || qaSolid }
+
+    /// Key-art motion runs when it is the resolved mode (Reduce Motion forces Still, CM-1) and the art passes the murky check.
+    private var moving: Bool {
+        guard stored.resolved(reduceMotion: reduceMotion, autoplay: autoplay) == .keyArt, let asset = card.game.keyArtAsset else { return false }
+        return !KeyArtQuality.isMurky(asset: asset)
+    }
 
     /// CM-5: the shade is part of the cover, not the art, so the caption meets AA over any art (and, later, any loop
     /// frame). The top darkens a little for the status bar and the rail.
