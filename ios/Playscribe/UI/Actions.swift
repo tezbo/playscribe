@@ -93,7 +93,9 @@ struct RailButton: View {
                 Button(action: run) { icon }
                     .buttonStyle(RailPressStyle())
             case .menu(let sections):
-                Menu { ActionMenuContent(sections: sections) } label: { icon }
+                // The label sits on the icon inside the Menu: the Menu's own inner button is the element VoiceOver lands on, and a label
+                // only on the outside left it empty (Tabletop rail: Notifications, Status and More, bug-rail-menu-unlabelled-buttons).
+                Menu { ActionMenuContent(sections: sections) } label: { icon.accessibilityLabel(action.title) }
                     .id(sections.tickKey)
             }
         }
