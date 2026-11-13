@@ -214,12 +214,12 @@ struct FrontCoverPlate: View {
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
     }
 
-    /// "v1.1 On PS5" (accent), the UTC day, and the change count. The version is always the PS5 one: the deck holds
+    /// "v1.1 on PS5" (accent), or "On PS5" when the release has no version, the UTC day, and the change count. The version is always the PS5 one: the deck holds
     /// only releases live on PS5, and `versionChip` comes from the PS5 release's own name.
     static func chips(_ card: DeckCard) -> [(text: String, live: Bool)] {
         var list: [(text: String, live: Bool)] = []
         if let r = card.release {
-            list.append(((r.versionChip.map { $0 + " " } ?? "") + "On PS5", true))
+            list.append((r.versionChip.map { $0 + " on PS5" } ?? "On PS5", true))
             if let d = card.date { list.append((AppModel.tileDay(d), false)) }
             let n = r.noteCount
             if n > 0 { list.append((n == 1 ? "1 change" : "\(n) changes", false)) }

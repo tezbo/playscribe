@@ -149,7 +149,7 @@ struct FrontCoverTests {
             let chips = FrontCoverPlate.chips(card)
             guard let r = card.release else { continue }
             #expect(chips.first?.live == true)
-            #expect(chips.first?.text.hasSuffix("On PS5") == true)
+            #expect(chips.first?.text.lowercased().hasSuffix("on ps5") == true)
             if let v = r.versionChip { #expect(chips.first?.text.hasPrefix(v) == true) }
             #expect(chips.filter { $0.live }.count == 1)
             if r.noteCount > 1 { #expect(chips.contains { $0.text == "\(r.noteCount) changes" }) }
