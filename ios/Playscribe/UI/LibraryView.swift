@@ -1021,7 +1021,7 @@ struct TileCover: View {
         Color.ink1
             .overlay {
                 if game.coverAsset != nil || game.coverURL != nil {
-                    CoverView(game: game, cornerRadius: 0)
+                    CoverView(game: game, cornerRadius: 0, maxPixel: 480)
                 } else if let art = game.keyArtAsset {
                     Image(art).resizable().scaledToFill()
                         .overlay(alignment: .top) {
@@ -1031,7 +1031,7 @@ struct TileCover: View {
                                 .background(LinearGradient(colors: [.black.opacity(0.7), .clear], startPoint: .top, endPoint: .bottom))
                         }
                 } else {
-                    CoverView(game: game, cornerRadius: 0)
+                    CoverView(game: game, cornerRadius: 0, maxPixel: 480)
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))

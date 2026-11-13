@@ -5,6 +5,8 @@ import SwiftUI
 struct CoverView: View {
     var game: CatalogGame
     var cornerRadius: CGFloat = 8
+    /// Longest side, in pixels, the cover is decoded at. Tiles pass a small one; 800 keeps the full 528 x 748 cover.
+    var maxPixel: Int = 800
 
     var body: some View {
         ZStack {
@@ -12,9 +14,7 @@ struct CoverView: View {
             if let asset = game.coverAsset {
                 Image(asset).resizable().scaledToFill()
             } else if let url = game.coverURL {
-                AsyncImage(url: url, transaction: Transaction(animation: .easeOut(duration: 0.2))) { phase in
-                    if let image = phase.image { image.resizable().scaledToFill() }
-                }
+                CachedCoverImage(url: url, maxPixel: maxPixel)
             }
         }
         .aspectRatio(3 / 4, contentMode: .fit)

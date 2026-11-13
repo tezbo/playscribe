@@ -3,6 +3,10 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
+## 0.6.0 (in progress)
+
+- The Library scrolls more smoothly: game covers are kept ready at the size the tiles need, so scrolling back up no longer reloads them.
+
 ## 0.5.5 (candidate, not released)
 
 - New in Settings: "Help keep my games up to date". Off until you turn it on. When on, the app sends our server the games you follow and a random code, so those games are checked every hour instead of about every 14 hours. The card in the Library explains exactly what is sent, what never is, and that the record is deleted when you turn it off.
