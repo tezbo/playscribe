@@ -193,6 +193,8 @@ struct ReleaseBody: View {
     @Environment(\.marginReleaseID) private var marginReleaseID
     @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
+    /// The update page draws the headline and read time itself, in Card A's order.
+    var headerInPage = false
     /// D-13: facts expanded or collapsed persists.
     @AppStorage("factsOpen") private var factsOpen = false
     @State private var summaryOpen = false
@@ -201,11 +203,11 @@ struct ReleaseBody: View {
         let r = release
         let ps5Page = r.isPS5Listed
         VStack(alignment: .leading, spacing: 14) {
-            if let h = ps5Page ? r.ps5Headline : r.headline {
+            if !headerInPage, let h = ps5Page ? r.ps5Headline : r.headline {
                 // At accessibility sizes: the standing 4 whole-word line cap, "…" only when it still overflows.
                 if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.title3, lines: 4) }
                 else { Text(h).font(PlayscribeFont.title3) }
-            } else if !r.notes.isEmpty {
+            } else if !headerInPage, !r.notes.isEmpty {
                 Text("Fixes and tuning").font(PlayscribeFont.title3)
             }
             if let summary = ps5Page ? r.ps5Summary : r.summary {
@@ -227,7 +229,7 @@ struct ReleaseBody: View {
                     }
                 }
             }
-            if let minutes = r.readMinutes {
+            if !headerInPage, let minutes = r.readMinutes {
                 Text("\(minutes) min read").font(PlayscribeFont.footnote.weight(.semibold)).foregroundStyle(.secondary)
                     .accessibilityLabel("About \(minutes) minute\(minutes == 1 ? "" : "s") to read")
             }
@@ -246,28 +248,15 @@ struct ReleaseBody: View {
             if marginReleaseID != r.id {
                 Button { withAnimation(.snappy) { factsOpen.toggle() } } label: {
                     let chevron = Image(systemName: "chevron.down").rotationEffect(.degrees(factsOpen ? 180 : 0)).foregroundStyle(.secondary)
-                    if typeSize.isAccessibilitySize {
-                        // AX: one block, "Released ...", then the size, then the chevron, full width (R-2, Iris on #288 at AX3).
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
-                            if let d = FactsLine.detail(for: r) {
-                                Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary)
-                                    .fixedSize(horizontal: false, vertical: true)
-                            }
-                            HStack { Spacer(minLength: 0); chevron }
-                        }
-                        .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-                        .contentShape(Rectangle())
-                    } else {
-                        HStack {
-                            Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline)
-                            if let d = FactsLine.detail(for: r) { Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary) }
-                            Spacer()
-                            chevron
-                        }
-                        .frame(minHeight: 44)
-                        .contentShape(Rectangle())
+                    // Card A (Iris, #529): the collapsed row says only "Details" and the chevron. The date and status are in the
+                    // header above; a bare version beside "Released" read as a PC version.
+                    HStack {
+                        Text("Details").font(PlayscribeFont.subheadline)
+                        Spacer()
+                        chevron
                     }
+                    .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .accessibilityHint(factsOpen ? "Hides the PS5 facts" : "Shows the PS5 facts")
@@ -309,30 +298,6 @@ struct ReleaseBody: View {
                 }
             }
         }
-    }
-}
-
-/// "Released 22 Oct" (GR-3), with the version and size as secondary detail.
-enum FactsLine {
-    static func text(for r: Release) -> String {
-        // "19 Apr 2025" once the year is not this one, so an old update never reads as recent.
-        let date = (r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear
-        switch r.ps5State {
-        case .onPS5, .pending: return "Released \(date)"
-        case .announced: return "Announced for PS5, \(date)"
-        case .reported: return "Released \(date)"
-        case .notPlanned: return "Not planned for PS5"
-        }
-    }
-
-    static func detail(for r: Release) -> String? {
-        var parts: [String] = []
-        if let v = r.ps5Version { parts.append(v.keepingVersionsTogether) }
-        if let size = r.ps5?.sizeBytes {
-            let text = ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal)
-            parts.append(text)
-        }
-        return parts.isEmpty ? nil : parts.joined(separator: ", ")
     }
 }
 
