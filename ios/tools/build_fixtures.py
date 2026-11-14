@@ -110,7 +110,7 @@ releases = [
         "platforms": [plat("ps5", "live", "official", "2026-09-03", "dawnwalker-news")]
                      + [plat(p, "live", "reported", "2026-09-03", "shacknews") for p in ("pc", "xboxSeries")],
         "headline": "Available on PC, PlayStation 5 and Xbox Series X|S",
-        "summary": "The game launched worldwide. Playscribe has not tracked any launch-window hotfixes, so this entry marks where the journal starts rather than listing changes.",
+        "summary": "The game launched worldwide on PC, PlayStation 5 and Xbox Series X|S.",
         "keyChanges": [],
     },
 ]
