@@ -56,6 +56,8 @@ enum ReaderTitle {
 extension AppModel {
     /// The release the Reader shows: the focused one, else the newest On PS5 release.
     func readerRelease(_ gameID: String) -> Release? {
+        // QA "no-notes" hides the whole history, so the stage agrees with the lower half (it showed a real release headline over "No updates yet").
+        if qaNoReleases { return nil }
         if let id = focusReleaseID, let r = release(gameID, id) { return r }
         // J-1: the release picked in the list, as on every other Page.
         return selectedRelease(gameID) ?? releases(gameID).first
