@@ -254,6 +254,29 @@ extension AppModel {
 
     /// D-6: the rail holds only actions that visibly do something: Notifications and Status.
     /// Spoilers live inline on the Page; Mark read lives in the Contents next to the unread rows.
+    /// The Companion entries the page shows now (the World / Tips filter applied), in the page's order.
+    func companionEntries(_ gameID: String) -> [BookEntry] {
+        let kind = companionKind(gameID)
+        return fixtures.book.filter { $0.gameID == gameID && (kind == nil || $0.chapter == kind) }
+            .sorted { ($0.chapter == .world ? 0 : 1) < ($1.chapter == .world ? 0 : 1) }
+    }
+
+    /// Tabletop, Companion: bookmarking an entry from the lower half, since the stage above is view only (G-4, design on #521).
+    /// One item per entry the stage shows, ticked when bookmarked; nil with no entries.
+    func companionBookmarkAction(_ gameID: String) -> ScreenAction? {
+        let entries = companionEntries(gameID)
+        guard !entries.isEmpty else { return nil }
+        let items = entries.map { e in
+            let marked = isBookmarked(kind: .entry, id: e.id)
+            return ScreenAction.MenuItem(id: e.id, title: e.title, checked: marked,
+                                         spoken: marked ? "Remove bookmark: \(e.title)" : "Bookmark \(e.title)") { [weak self] in
+                self?.toggleBookmark(kind: .entry, id: e.id, gameID: gameID)
+            }
+        }
+        return ScreenAction(id: "bookmarks", title: "Bookmarks", systemImage: "bookmark",
+                            kind: .menu([ScreenAction.MenuSection(title: "Bookmark an entry", items: items)]))
+    }
+
     func gameActions(_ gameID: String) -> [ScreenAction] {
         let name = game(gameID)?.name ?? "this game"
         let level = notifyLevel(gameID)

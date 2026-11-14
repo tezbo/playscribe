@@ -378,13 +378,27 @@ struct GameBookStateTests {
         let url = URL.temporaryDirectory.appending(path: "d13-\(UUID().uuidString).json")
         let m = AppModel(storeURL: url)
         m.openGame("dawnwalker")
-        m.nav.chapter = .world
+        m.nav.chapter = .companion
         m.openGame("kcd2")
         #expect(m.nav.chapter == .updates)
         m.saveNow()
         let again = AppModel(storeURL: url)
         again.openGame("dawnwalker")
-        #expect(again.nav.chapter == .world)
+        #expect(again.nav.chapter == .companion)
+    }
+
+    @Test("D-13, R-7 (0.5.6): a World chapter saved by 0.5.5 reopens as Companion")
+    func savedWorldReopensAsCompanion() {
+        let url = URL.temporaryDirectory.appending(path: "d13w-\(UUID().uuidString).json")
+        let m = AppModel(storeURL: url)
+        m.openGame("dawnwalker")
+        m.nav.chapter = .world
+        m.openGame("kcd2")
+        m.saveNow()
+        let again = AppModel(storeURL: url)
+        again.openGame("dawnwalker")
+        #expect(again.nav.chapter == .companion)
+        #expect(again.section("dawnwalker") == .companion)
     }
 
     @Test("D-4: with nothing selected the Page shows the newest PS5 release")

@@ -183,7 +183,11 @@ struct TabletopReaderStage: View {
                         } else {
                             Text(model.gameDisplayName(gameID))
                         }
-                        if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary).fixedSize() }
+                        // Near-white at 80%, not the accent's .secondary: that was dim brown on the scrim, 3.6:1 (Quinn, #526).
+                        if let r = release {
+                            Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear)
+                                .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.8)).fixedSize()
+                        }
                     }
                     .font(PlayscribeFont.subheadline.weight(.semibold))
                     .foregroundStyle(PlayscribeColor.accent)
@@ -262,7 +266,7 @@ struct TabletopReaderControls: View {
         let sections = model.readerRelease(gameID).map(model.readerSections) ?? []
         let index = min(model.readerIndex[gameID] ?? 0, max(0, sections.count - 1))
         VStack(alignment: .leading, spacing: 10) {
-            ChapterBar(gameID: gameID, selected: .updates)
+            SectionBar(gameID: gameID)
             ScrollViewReader { proxy in
                 ScrollView {
                     VStack(spacing: 2) {
