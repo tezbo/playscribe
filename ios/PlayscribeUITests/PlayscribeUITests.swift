@@ -1648,7 +1648,7 @@ final class FinalFixTests: XCTestCase {
 final class VersionStaysWholeTests: XCTestCase {
     func testVersionOnOneLineAtAX5() {
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", "release/dawnwalker/dawnwalker@1.1", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launchArguments = ["-qaRoute", "spoiler-demo/shown", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
         app.launch()
         let version = app.staticTexts["releaseVersion"].firstMatch
         XCTAssertTrue(version.waitForExistence(timeout: 15), "the release page shows a version")
