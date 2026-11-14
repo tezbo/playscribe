@@ -1,0 +1,105 @@
+import XCTest
+
+/// 0.5.6 hotfix, bug-055-rail-icons-shift (Terry, 14 Nov: the icons changed between poses, and in Tabletop they were half hidden
+/// and scrolled). Iris's set, the same in every pose and at every text size: Back, Notifications, Status (absent for an untracked
+/// game), More. More holds Check for updates, Links, Share, and Swap sides only while the pages are side by side.
+/// Every button is whole and tappable without scrolling. In Tabletop every one sits below the fold and above the tab capsule.
+/// Closed runs as-is; Book and Tabletop run on the synthetic fold (-qaPose). Open runs on the Mac.
+@MainActor
+final class RailSetTests: XCTestCase {
+    private static let ax5 = ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+
+    private func launch(pose: String?, ax5: Bool, route: String = "gamepage/dawnwalker") -> XCUIApplication {
+        continueAfterFailure = true
+        let app = XCUIApplication()
+        var args = ["-qaRoute", route]
+        if let pose { args += ["-qaPose", pose] }
+        if ax5 { args += Self.ax5 }
+        app.launchArguments = args
+        app.launch()
+        XCTAssertTrue(app.descendants(matching: .any)["foldAudit"].waitForExistence(timeout: 40), "the game page did not load")
+        sleep(2)
+        return app
+    }
+
+    /// The fold's lower edge from the pose probe, or nil when the pose has no horizontal fold.
+    private func foldBottom(_ app: XCUIApplication) -> CGFloat? {
+        let probe = app.descendants(matching: .any)["poseProbe"]
+        guard probe.exists, let data = probe.label.data(using: .utf8),
+              let obj = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+              let d = obj["division"] as? [Double], d.count == 4, d[2] > d[3] else { return nil }
+        return CGFloat(d[1] + d[3])
+    }
+
+    private func check(pose: String?, ax5: Bool, tracked: Bool = true) {
+        let route = tracked ? "gamepage/dawnwalker" : "no-notes-page/dawnwalker/untracked"
+        let app = launch(pose: pose, ax5: ax5, route: route)
+        let tag = "\(pose ?? "closed") \(ax5 ? "AX5" : "std") \(tracked ? "tracked" : "untracked")"
+        let window = app.windows.firstMatch.frame
+        let ids = tracked ? ["gameBack", "rail.notify", "rail.status", "rail.more"] : ["gameBack", "rail.notify", "rail.more"]
+        var frames: [CGRect] = []
+        for id in ids {
+            let all = app.descendants(matching: .any).matching(identifier: id).allElementsBoundByIndex.filter { $0.frame.width > 0 }
+            XCTAssertEqual(all.count, 1, "\(tag): \(id) should be on the rail exactly once, found \(all.count)")
+            guard let e = all.first else { frames.append(.null); continue }
+            XCTAssertTrue(e.isHittable, "\(tag): \(id) is not tappable without scrolling")
+            XCTAssertTrue(window.contains(e.frame), "\(tag): \(id) is cut by the window edge, \(e.frame)")
+            frames.append(e.frame)
+        }
+        // Labels, in Iris's words.
+        XCTAssertEqual(app.descendants(matching: .any)["gameBack"].label, "Back to Library", tag)
+        XCTAssertEqual(app.descendants(matching: .any)["rail.notify"].label, "Notifications", tag)
+        if tracked { XCTAssertTrue(app.descendants(matching: .any)["rail.status"].label.hasPrefix("Status: "), tag) }
+        else { XCTAssertFalse(app.descendants(matching: .any)["rail.status"].exists, "\(tag): an untracked game has no Status button") }
+        XCTAssertEqual(app.descendants(matching: .any)["rail.more"].label, "More", tag)
+
+        // None of these are rail buttons in any pose: they live behind More now.
+        for gone in ["swapSides", "rail.refresh"] {
+            XCTAssertFalse(app.descendants(matching: .any)[gone].exists, "\(tag): \(gone) is still a rail button")
+        }
+
+        let valid = frames.filter { !$0.isNull }
+        guard valid.count == ids.count else { return }
+        if let fold = foldBottom(app) {
+            // Tabletop: one column, top to bottom, all below the fold and above the tab capsule.
+            XCTAssertEqual(valid, valid.sorted { $0.minY < $1.minY }, "\(tag): the rail order changed")
+            for (id, f) in zip(ids, valid) { XCTAssertGreaterThanOrEqual(f.minY, fold - 0.5, "\(tag): \(id) sits above the fold") }
+            let tabs = app.buttons.matching(NSPredicate(format: "label == 'Library'")).allElementsBoundByIndex
+                .filter { $0.frame.minX > window.width - 80 }
+            if let capsule = tabs.first?.frame {
+                XCTAssertLessThanOrEqual(valid.last!.maxY, capsule.minY, "\(tag): More runs into the tab capsule")
+            } else {
+                XCTFail("\(tag): no tab capsule on the rail")
+            }
+        } else {
+            // A toolbar: Back leads, then the actions left to right in the same order.
+            XCTAssertEqual(valid, valid.sorted { $0.minX < $1.minX }, "\(tag): the toolbar order changed")
+        }
+        app.terminate()
+    }
+
+    func testClosedStd() { check(pose: nil, ax5: false) }
+    func testClosedAX5() { check(pose: nil, ax5: true) }
+    func testBookStd() { check(pose: "book", ax5: false) }
+    func testBookAX5() { check(pose: "book", ax5: true) }
+    func testTabletopStd() { check(pose: "tabletop", ax5: false) }
+    func testTabletopAX5() { check(pose: "tabletop", ax5: true) }
+    func testTabletopUntrackedAX5() { check(pose: "tabletop", ax5: true, tracked: false) }
+    func testClosedUntracked() { check(pose: nil, ax5: false, tracked: false) }
+
+    /// D-10 survives behind More while the pages are side by side, and is listed nowhere else (Iris).
+    func testSwapSidesBehindMoreOnlyInBook() {
+        for pose in ["book", "tabletop", nil] as [String?] {
+            let app = launch(pose: pose, ax5: false)
+            let more = app.descendants(matching: .any)["rail.more"]
+            XCTAssertTrue(more.waitForExistence(timeout: 5), "no More in \(pose ?? "closed")")
+            more.tap()
+            let check = app.buttons["Check for updates"]
+            XCTAssertTrue(check.waitForExistence(timeout: 5), "More did not open in \(pose ?? "closed")")
+            let swap = app.buttons["Swap sides"]
+            if pose == "book" { XCTAssertTrue(swap.exists, "Book's More lacks Swap sides") }
+            else { XCTAssertFalse(swap.exists, "Swap sides listed outside Book in \(pose ?? "closed")") }
+            app.terminate()
+        }
+    }
+}
