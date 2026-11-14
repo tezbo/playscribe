@@ -13,10 +13,14 @@ struct HotfixNavTests {
         return m
     }
 
+    /// The bundled game with the longest PS5 history (at least two updates), added to the library if the demo lacks it.
     private func gameWithHistory(_ m: AppModel) throws -> (id: String, newest: Release, older: Release) {
-        let entry = try #require(m.data.collection.first { m.ps5Releases($0.gameID).count >= 3 })
-        let all = m.ps5Releases(entry.gameID)
-        return (entry.gameID, all[0], all[2])
+        let id = try #require(m.games.keys.sorted()
+            .filter { m.ps5Releases($0).count >= 2 }
+            .max { m.ps5Releases($0).count < m.ps5Releases($1).count }, "no bundled game has two PS5 updates")
+        if m.entry(id) == nil, let g = m.game(id) { m.addGame(g, status: .owned) }
+        let all = m.ps5Releases(id)
+        return (id, all[0], all[all.count - 1])
     }
 
     @Test("R-1: reopening a game shows its newest update, not one picked on an earlier visit")
