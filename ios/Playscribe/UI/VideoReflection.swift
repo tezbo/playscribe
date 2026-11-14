@@ -106,3 +106,19 @@ extension View {
         } else { self }
     }
 }
+
+/// QA (INTERNAL builds only): the mirror's state as an accessibility label ("mirror: on" or "mirror: off"), so a UI test reads it
+/// in any pose. A screenshot cannot: it shows only one display, and video pixels are not readable on the simulator.
+struct MirrorAudit: View {
+    var on: Bool
+    var body: some View {
+        #if INTERNAL
+        Text("mirror")
+            .font(.system(size: 1))
+            .opacity(0.01)
+            .accessibilityIdentifier("mirrorAudit")
+            .accessibilityLabel("mirror: \(on ? "on" : "off")")
+            .allowsHitTesting(false)
+        #endif
+    }
+}

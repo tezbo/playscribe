@@ -164,10 +164,10 @@ struct PlayerView: View {
             // behind the arrangement, at the frame its stage placeholder measures, inside a replicator whose mirror lands at the
             // top of the lower half (the hinge band stays unpainted), under the fade and behind the transport.
             let mirror = VideoReflection.shows(pose: duo.pose, setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
+            let live = mirror && controller.started
             ZStack(alignment: .topLeading) {
                 if let v = stageVideo {
                     let top = lowerTop ?? v.maxY
-                    let live = mirror && controller.started
                     MirroredVideoSurface(webView: controller.webView, mirrored: live, gap: max(0, top - v.maxY))
                         .background(.black)
                         .overlay { if !controller.started { PosterCover(video: video) } }
@@ -191,6 +191,7 @@ struct PlayerView: View {
                         .allowsHitTesting(false)
                 }
                 .arrangementViewStyle(.overlay)
+                MirrorAudit(on: live && stageVideo != nil)
             }
             .coordinateSpace(.named("player"))
         case .book:
@@ -208,6 +209,7 @@ struct PlayerView: View {
                     WatchAlong(controller: controller, release: release) { close(); model.openGame(gameID, chapter: .updates, releaseID: releaseID) }
                         .frame(maxWidth: .infinity)
                 }
+                .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
             }
         case .closed, .flat:
             // VB-3: full display, the player's own controls.
@@ -216,6 +218,7 @@ struct PlayerView: View {
                 VideoCaption(video: video, game: gameName).padding(.horizontal, 16).padding(.top, 12)
             }
             .frame(maxHeight: .infinity, alignment: duo.pose == .closed ? .top : .center)
+            .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
         }
     }
 

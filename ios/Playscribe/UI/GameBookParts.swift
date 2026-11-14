@@ -651,6 +651,7 @@ struct TrailerView: View {
                 }
             }
             .background(Color.black)
+            .overlay(alignment: .topLeading) { MirrorAudit(on: live) }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button { model.trailer = nil } label: { Label("Close", systemImage: "xmark") }
