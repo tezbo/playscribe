@@ -674,6 +674,13 @@ final class AppModel {
         if let r = release(gameID, releaseID), isUnread(r) { markRead(r.id) }
     }
 
+    /// J-1: a tap on an All updates row. Side by side (and Tabletop) the Page shows the release in place; where pushing is the
+    /// layout (Closed, open portrait) the release is pushed as its own screen.
+    func listTap(_ gameID: String, releaseID: String, pushes: Bool) {
+        select(gameID, releaseID: releaseID)
+        if pushes { nav.detailReleaseID = releaseID }
+    }
+
     static func bookKey(_ gameID: String, _ chapter: Chapter) -> String { "book-\(gameID)-\(chapter.rawValue)" }
 
     func closeGame() {
