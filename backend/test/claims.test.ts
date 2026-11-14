@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
-import { isAnnouncementTitle, isTestBuildPost, pcScopedPost, statedLiveTime } from '../src/ingest/claims.ts'
+import { isNewsOnlyTitle, isAnnouncementTitle, isTestBuildPost, pcScopedPost, statedLiveTime } from '../src/ingest/claims.ts'
 import { nameRelease } from '../src/ingest/classify.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import * as store from '../src/store.ts'
@@ -255,4 +255,39 @@ test('backfill applies a post\'s stated time even when a second post of the same
   await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
   const row = ps5Of(db, id)!
   assert.deepEqual([row.status, row.liveAt?.value.slice(0, 10)], ['announced', when.toISOString().slice(0, 10)])
+})
+
+// P0 (bug-055-feed-steam-announcements): Cyberpunk's "Check out what's coming ... Update!" and the REDstreams "is coming!" post
+// were ingested as releases and opened as update pages. They are news.
+test('a preview, stream or system-requirements headline is news, not a release; real update posts are not', () => {
+  assert.ok(isNewsOnlyTitle("Check out what's coming to Cyberpunk 2077 in the Edgerunners 2 Update!"))
+  assert.ok(isNewsOnlyTitle('REDstreams \u2014 Cyberpunk 2077: Edgerunners 2 Update (2.5) is coming!'))
+  assert.ok(isNewsOnlyTitle('REDstreams \u2013 Cyberpunk: Edgerunners 2'))
+  assert.ok(isNewsOnlyTitle('System requirements for Cyberpunk 2077 - UPDATE!'))
+  assert.ok(isNewsOnlyTitle('Update to PC System Requirements'))
+  assert.ok(isNewsOnlyTitle("Palworld's next major update, Feybreak, releases on Dec. 23"))
+  for (const real of ["Cyberpunk 2077's Edgerunners 2 Update (2.5) is out now!", 'Update 2.5', 'Patch 2.31', 'Hotfix available', 'Update 1.2 Patch Notes', 'Hotfix 1.0.5 is now live', 'DLSS 3 & Reflex PC Update']) {
+    assert.ok(!isNewsOnlyTitle(real), real)
+  }
+})
+
+test('ingest: announcement and stream posts are news and make no release; backfill drops the ones made before', async () => {
+  const preview = { gid: '1', title: "Check out what's coming to Dawnwalker in the Edgerunners 2 Update!", date: ago(12), contents: 'Patch notes for the Edgerunners 2 Update (2.5) are now available before the update hits on October 22nd.\n- Added a quest', tags: ['patchnotes'] }
+  const stream = { gid: '2', title: 'REDstreams \u2014 Dawnwalker: Edgerunners 2 Update (2.5) is coming!', date: ago(13), contents: 'Join us on Twitch for a closer look.' }
+  const real = { gid: '3', title: "Dawnwalker's Edgerunners 2 Update (2.5) is out now!", date: ago(11), contents: 'The update is live on PC and PS5.\n- Fixed a crash', tags: ['patchnotes'] }
+  const { db, deps } = await setup([preview, stream, real])
+  assert.deepEqual(store.getRelease(db, 'dawnwalker@2.5') ? ['2.5'] : [], ['2.5'], 'the real post makes release 2.5')
+  const ids = (db.prepare('SELECT id FROM releases').all() as { id: string }[]).map((r) => r.id)
+  assert.deepEqual(ids, ['dawnwalker@2.5'], `only the real update is a release: ${ids}`)
+  // The old rules made releases from the preview and the stream post, each its own source and its own day.
+  for (const [post, key, name] of [[preview, 'major-' + preview.date.slice(0, 10), preview.title], [stream, 'major-' + stream.date.slice(0, 10), stream.title]] as const) {
+    const id = store.upsertRelease(db, { gameId: 'dawnwalker', versionKey: key, displayName: name, kind: 'major', kindBasis: 'inferred', announcedAt: post.date, notes: [], sourceId: 'dawnwalker-steam' }).id
+    store.upsertPlatform(db, id, 'ps5', { status: 'live', verification: 'assumed', liveAt: store.field(post.date, 'assumed', 'dawnwalker-steam') })
+    db.prepare('UPDATE seen_posts SET release_id = ? WHERE post_id = ?').run(id, post.gid)
+  }
+  await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  const after = (db.prepare('SELECT id FROM releases').all() as { id: string }[]).map((r) => r.id)
+  assert.deepEqual(after, ['dawnwalker@2.5'], `backfill removes the announcement releases: ${after}`)
+  const titles = store.newsOf(db, 'dawnwalker').map((n: { title: string }) => n.title)
+  assert.ok(titles.some((t: string) => /what.s coming/i.test(t)), 'the preview is kept as news')
 })

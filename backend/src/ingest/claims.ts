@@ -133,3 +133,6 @@ export const statedLiveTime = (raw: string, publishedAt: string): string | null 
   }
   return best === null ? null : new Date(best).toISOString()
 }
+
+/** Placeholder (red test first): today only the announcement rule counts. */
+export const isNewsOnlyTitle = (title: string) => isAnnouncementTitle(title)
