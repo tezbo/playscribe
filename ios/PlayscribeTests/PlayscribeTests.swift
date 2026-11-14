@@ -945,6 +945,17 @@ struct QAPoseTests {
 }
 
 
+@Suite("Version glue")
+struct VersionGlueTests {
+    @Test("a version never breaks at its dots (G-14)")
+    func keepsVersionWhole() {
+        #expect("01.004.000".keepingVersionsTogether == "01.\u{2060}004.\u{2060}000")
+        #expect("v1.1".keepingVersionsTogether == "v1.\u{2060}1")
+        #expect("Hades II".keepingVersionsTogether == "Hades II")
+        #expect("Fixed. Next".keepingVersionsTogether == "Fixed. Next", "a full stop between words is left alone")
+    }
+}
+
 @Suite("Roman numeral glue")
 struct RomanNumeralGlueTests {
     @Test("a trailing numeral is tied to the word before it (r060-nbsp-roman-numerals)")

@@ -248,7 +248,7 @@ struct ReleasePage: View {
             }
             HStack(spacing: 8) {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
-                if let v = r.ps5Version { Text(v).monospacedDigit() }
+                if let v = r.ps5Version { Text(v.keepingVersionsTogether).monospacedDigit() }
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             SourceLinks(release: r)

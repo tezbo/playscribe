@@ -770,7 +770,7 @@ struct ContinueText: View {
                     .tracking(12 * 0.08)
                     .foregroundStyle(PlayscribeColor.accent)
                 if fresh, let v = release.versionChip {
-                    Text(v)
+                    Text(v.keepingVersionsTogether)
                         .font(PlayscribeFont.caption)
                         .monospacedDigit()
                         .foregroundStyle(PlayscribeColor.accent)

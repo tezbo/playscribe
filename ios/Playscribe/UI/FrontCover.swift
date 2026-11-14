@@ -230,7 +230,7 @@ struct FrontCoverPlate: View {
     }
 
     private func chip(_ text: String, live: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption.weight(.semibold)).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption.weight(.semibold)).monospacedDigit()
             .foregroundStyle(live ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)
             .padding(.horizontal, 8).padding(.vertical, 3).frame(minHeight: 24)
             .background(RoundedRectangle(cornerRadius: 6, style: .continuous)

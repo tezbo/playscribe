@@ -477,7 +477,7 @@ struct DeckChips: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -625,7 +625,7 @@ struct WideDeckCard: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -669,7 +669,7 @@ struct DeckCardArt: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -756,7 +756,7 @@ struct DeckStage: View {
                 FlowLayout(spacing: 8) {
                     if upcomingLine != nil { Text("Coming soon").foregroundStyle(PlayscribeColor.accent) }
                     if card.unread { Text("New update").foregroundStyle(PlayscribeColor.accent) }
-                    if let v = card.release?.versionChip { Text(v).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
+                    if let v = card.release?.versionChip { Text(v.keepingVersionsTogether).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
                 .font(PlayscribeFont.caption)
                 .shadow(color: .black.opacity(0.6), radius: 3)
