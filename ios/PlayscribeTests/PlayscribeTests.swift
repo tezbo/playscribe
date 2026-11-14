@@ -606,11 +606,24 @@ struct AutoplayTests {
     @Test("The mirror instance lands flipped, its bottom row at the gap below the video (R-11)")
     @MainActor func mirrorTransform() {
         let t = VideoReflection.instanceTransform(videoHeight: 200, gap: 30)
-        // About the replicator's centre (y 100): the bottom row (y 200) lands at 230, the top row (y 0) at 430.
+        // About the replicator's centre (y 100), squashed to a quarter: the bottom row (y 200) lands at 230, the top row (y 0)
+        // at 280, so the whole picture fits in 50 pt and text in it is flattened past reading (Iris on #533).
         func map(_ y: CGFloat) -> CGFloat { 100 + (y - 100) * t.m22 + t.m42 }
-        #expect(map(200) == 230)
-        #expect(map(0) == 430)
+        #expect(abs(map(200) - 230) < 0.001)
+        #expect(abs(map(0) - 280) < 0.001)
         #expect(t.m11 == 1)
+        // Unsquashed it is a plain flip.
+        let flat = VideoReflection.instanceTransform(videoHeight: 200, gap: 30, squash: 1)
+        #expect(abs(100 + (0 - 100) * flat.m22 + flat.m42 - 430) < 0.001)
+    }
+
+    @Test("The audit reports what the replicator draws, not the intent (R-11, Mac at 95d9f3b)")
+    @MainActor func mirrorRendering() {
+        #expect(VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0.3, onScreen: true))
+        #expect(!VideoReflection.rendering(instanceCount: 1, height: 200, mirrorAlpha: 0.3, onScreen: true))
+        #expect(!VideoReflection.rendering(instanceCount: 2, height: 0, mirrorAlpha: 0.3, onScreen: true))
+        #expect(!VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0, onScreen: true))
+        #expect(!VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0.3, onScreen: false))
     }
 
     @Test("The mirror is at most 30% and its band at most 15% of the lower half, never over 120 pt (R-11, Iris on #533)")

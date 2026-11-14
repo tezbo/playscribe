@@ -620,6 +620,9 @@ struct TrailerView: View {
     @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    /// What the replicator reports it is drawing (QA audit, R-11).
+    @State private var mirrorDrawn = false
+    @State private var areaHeight: CGFloat = 0
     var body: some View {
         NavigationStack {
             // R-11 (Iris, 13 Nov): the player is always 16:9 and sized to the open area, the width of the area or, where the area is
@@ -634,7 +637,7 @@ struct TrailerView: View {
                 let w = h * 16 / 9
                 VStack(spacing: 0) {
                     Color.black.frame(width: w, height: h)
-                        .overlay { if let controller { MirroredVideoSurface(webView: controller.webView, mirrored: live) } }
+                        .overlay { if let controller { MirroredVideoSurface(webView: controller.webView, mirrored: live) { mirrorDrawn = $0 } } }
                         .frame(maxWidth: .infinity)
                     VStack(spacing: 0) {
                         Text(name).font(PlayscribeFont.headline)
@@ -651,7 +654,8 @@ struct TrailerView: View {
                 }
             }
             .background(Color.black)
-            .overlay(alignment: .topLeading) { MirrorAudit(on: live) }
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { areaHeight = $0 }
+            .overlay(alignment: .topLeading) { MirrorAudit(on: mirrorDrawn && VideoReflection.band(lowerHalf: areaHeight) > 0) }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button { model.trailer = nil } label: { Label("Close", systemImage: "xmark") }

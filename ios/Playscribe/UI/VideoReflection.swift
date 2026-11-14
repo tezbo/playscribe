@@ -29,11 +29,23 @@ enum VideoReflection {
         pose == .tabletop && setting && !reduceMotion && !reduceTransparency
     }
 
-    /// The second instance's transform, in the replicator's own space (about its centre): flipped top to bottom, then moved
-    /// down so the video's bottom row lands `gap` below the video's bottom edge (at the top of the lower half in Tabletop).
-    /// A point at y maps to `2 * height + gap - y`.
-    static func instanceTransform(videoHeight h: CGFloat, gap: CGFloat) -> CATransform3D {
-        CATransform3DConcat(CATransform3DMakeScale(1, -1, 1), CATransform3DMakeTranslation(0, h + gap, 0))
+    /// The mirror is squashed to a quarter of the video's height, so text in the picture (the player's own chrome, captions, an age
+    /// rating) is flattened past reading while its light and colour still move with the video. This stands in for a blur: the
+    /// system's only backdrop blur (a material) lifts black to grey and buried the mirror entirely (Mac at 95d9f3b: the band read
+    /// the same 20 of 255 with the video changing), and no public API blurs one replicator instance.
+    static let squash: CGFloat = 0.25
+
+    /// The second instance's transform, in the replicator's own space (about its centre): flipped top to bottom and squashed by
+    /// `squash`, then moved down so the video's bottom row lands `gap` below the video's bottom edge (at the top of the lower half
+    /// in Tabletop). A point at y maps to `h + gap + squash * (h - y)`.
+    static func instanceTransform(videoHeight h: CGFloat, gap: CGFloat, squash s: CGFloat = squash) -> CATransform3D {
+        CATransform3DConcat(CATransform3DMakeScale(1, -s, 1), CATransform3DMakeTranslation(0, h * (1 + s) / 2 + gap, 0))
+    }
+
+    /// True when the replicator is drawing a mirror a person can see: two instances, a picture with height, a second instance with
+    /// some alpha, on screen. The audit reports this, not the intent (Mac at 95d9f3b: the audit said on while the band was blank).
+    static func rendering(instanceCount: Int, height: CGFloat, mirrorAlpha: Float, onScreen: Bool) -> Bool {
+        instanceCount >= 2 && height > 0 && mirrorAlpha > 0.05 && onScreen
     }
 }
 
@@ -44,11 +56,15 @@ struct MirroredVideoSurface: UIViewRepresentable {
     var webView: WKWebView
     var mirrored: Bool
     var gap: CGFloat = 0
+    /// Called with what the layer is actually drawing (`VideoReflection.rendering`), whenever that changes. For the QA audit.
+    var report: (Bool) -> Void = { _ in }
 
     final class Host: UIView {
         override class var layerClass: AnyClass { CAReplicatorLayer.self }
         var mirrored = false { didSet { if mirrored != oldValue { setNeedsLayout() } } }
         var gap: CGFloat = 0 { didSet { if gap != oldValue { setNeedsLayout() } } }
+        var report: (Bool) -> Void = { _ in }
+        private var reported: Bool?
 
         override func layoutSubviews() {
             super.layoutSubviews()
@@ -58,6 +74,24 @@ struct MirroredVideoSurface: UIViewRepresentable {
             r.instanceCount = mirrored ? 2 : 1
             r.instanceTransform = VideoReflection.instanceTransform(videoHeight: bounds.height, gap: gap)
             r.instanceAlphaOffset = Float(VideoReflection.opacity - 1)
+            publish()
+        }
+
+        override func didMoveToWindow() {
+            super.didMoveToWindow()
+            setNeedsLayout()
+            publish()
+        }
+
+        private func publish() {
+            guard let r = layer as? CAReplicatorLayer else { return }
+            let now = VideoReflection.rendering(instanceCount: r.instanceCount, height: bounds.height,
+                                                mirrorAlpha: 1 + r.instanceAlphaOffset, onScreen: window != nil && !subviews.isEmpty)
+            guard now != reported else { return }
+            reported = now
+            let report = report
+            // Out of the layout pass: the callback writes SwiftUI state.
+            DispatchQueue.main.async { report(now) }
         }
     }
 
@@ -72,6 +106,7 @@ struct MirroredVideoSurface: UIViewRepresentable {
     func updateUIView(_ host: Host, context: Context) {
         // The one web view moves between poses (P-2): take it back if another surface held it.
         if webView.superview !== host { host.addSubview(webView); host.setNeedsLayout() }
+        host.report = report
         host.mirrored = mirrored
         host.gap = gap
     }
@@ -82,36 +117,21 @@ struct MirroredVideoSurface: UIViewRepresentable {
     }
 }
 
-/// Over the mirror (R-11): the system's blur first, heavy enough that nothing in the picture can be read (the player's own
-/// chrome, captions, upside down), then a fade that is clear for the first 35% of the band and the page's black at its end, and
-/// black below, so only the video's last rows show, as soft light, strongest at the edge. Takes no touches; hidden from VoiceOver.
+/// Over the mirror (R-11): a fade that is clear for the first 35% of the band and the page's black at its end, and black below,
+/// so only the squashed picture's light shows, strongest at the edge. No material: it lifts black to grey (Mac at 95d9f3b).
+/// Takes no touches; hidden from VoiceOver.
 struct MirrorFade: View {
     var band: CGFloat
     var body: some View {
         VStack(spacing: 0) {
-            ZStack {
-                SystemBlur()
-                LinearGradient(stops: [.init(color: .black.opacity(0), location: 0), .init(color: .black.opacity(0), location: 0.35),
-                                       .init(color: .black, location: 1)], startPoint: .top, endPoint: .bottom)
-            }
-            .frame(height: band)
+            LinearGradient(stops: [.init(color: .black.opacity(0), location: 0), .init(color: .black.opacity(0), location: 0.35),
+                                   .init(color: .black, location: 1)], startPoint: .top, endPoint: .bottom)
+                .frame(height: band)
             Color.black
         }
         .allowsHitTesting(false)
         .accessibilityHidden(true)
     }
-}
-
-/// A `UIVisualEffectView` blur (the thinnest dark material): it blurs what the compositor drew under it, the mirror included.
-struct SystemBlur: UIViewRepresentable {
-    func makeUIView(context: Context) -> UIVisualEffectView {
-        let v = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
-        v.isUserInteractionEnabled = false
-        v.isAccessibilityElement = false
-        v.accessibilityElementsHidden = true
-        return v
-    }
-    func updateUIView(_ v: UIVisualEffectView, context: Context) {}
 }
 
 extension View {

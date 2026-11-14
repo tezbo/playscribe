@@ -122,6 +122,8 @@ struct PlayerView: View {
     @State private var stageVideo: CGRect?
     @State private var lowerTop: CGFloat?
     @State private var playerHeight: CGFloat = 0
+    /// What the replicator reports it is drawing (QA audit, R-11).
+    @State private var mirrorDrawn = false
 
     var body: some View {
         NavigationStack {
@@ -169,7 +171,7 @@ struct PlayerView: View {
             ZStack(alignment: .topLeading) {
                 if let v = stageVideo {
                     let top = lowerTop ?? v.maxY
-                    MirroredVideoSurface(webView: controller.webView, mirrored: live, gap: max(0, top - v.maxY))
+                    MirroredVideoSurface(webView: controller.webView, mirrored: live, gap: max(0, top - v.maxY)) { mirrorDrawn = $0 }
                         .background(.black)
                         .overlay { if !controller.started { PosterCover(video: video) } }
                         .frame(width: v.width, height: v.height)
@@ -192,7 +194,7 @@ struct PlayerView: View {
                         .allowsHitTesting(false)
                 }
                 .arrangementViewStyle(.overlay)
-                MirrorAudit(on: live && stageVideo != nil)
+                MirrorAudit(on: mirrorDrawn && VideoReflection.band(lowerHalf: playerHeight - (lowerTop ?? playerHeight)) > 0)
             }
             .coordinateSpace(.named("player"))
             .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { playerHeight = $0 }
