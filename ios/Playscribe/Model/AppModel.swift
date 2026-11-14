@@ -957,6 +957,35 @@ final class AppModel {
             data.simulated.removeAll { $0.id == release.id }
             data.simulated.insert(release, at: 0)
             openRelease(gameID: gameID, releaseID: release.id)
+        // QA (INTERNAL, 0.5.6 Card B): "ps5-state/<game>/<live|live-version|announced|not-planned|none>" opens a simulated update in
+        // that PS5 state, so every status wording can be shot without the network. live-version carries a PS5 number (01.004.000)
+        // and a PC number is on the page's PC row (never shown as PS5's). The name is neutral so no PC number reads as PS5's.
+        // "none" (no PS5 row) is `.pending`, which `releases()` hides, so no page opens: that wording is unit-tested only.
+        case "ps5-state" where parts.count == 2:
+            let gameID = parts[0], state = parts[1]
+            let now = Date.now
+            func text(_ v: String) -> Field<String> { Field(value: v, verification: .official, sourceID: "simulated", checkedAt: now) }
+            let liveAt = Field(value: now, verification: .official, sourceID: "simulated", checkedAt: now)
+            var platforms = [PlatformRelease(platform: .pc, status: .live, version: text("3.2.1"), liveAt: liveAt, verification: .official)]
+            switch state {
+            case "live": platforms.append(PlatformRelease(platform: .ps5, status: .live, liveAt: liveAt, verification: .official))
+            case "live-version": platforms.append(PlatformRelease(platform: .ps5, status: .live, version: text("01.004.000"), liveAt: liveAt, verification: .official))
+            case "announced": platforms.append(PlatformRelease(platform: .ps5, status: .announced, verification: .official))
+            case "not-planned": platforms.append(PlatformRelease(platform: .ps5, status: .notPlanned, verification: .official))
+            default: break
+            }
+            let release = Release(
+                id: "qa-ps5-state-\(gameID)-\(state)", gameID: gameID, displayName: "Simulated update", kind: .patch, kindBasis: .studio,
+                announcedAt: now, notes: [], sourceIDs: [], platforms: platforms,
+                headline: "A simulated update for \(state)", summary: "QA fixture. Not a real release.", keyChanges: [],
+                simulated: true, arrivesAt: now)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+            openRelease(gameID: gameID, releaseID: release.id)
+        // QA (INTERNAL, 0.5.6): "index-game/<igdbID>" opens a PS5-index game that the catalogue lacks, browsed, as a search hit or
+        // an Upcoming tile would: no catalogue details, so its page shows "More about this game soon." (igdb 335660 is My Little Puppy).
+        case "index-game" where parts.count == 1:
+            if let id = Int(parts[0]), let e = PS5Index.shared.entry(igdb: id) { browseGame(PS5Index.shared.game(e)) }
         // QA (INTERNAL): a PS5 update whose headline holds one word wider than the AX5 column, shown in the Updates tab
         // (WholeWordText must cut before that word, never mid-word).
         // QA (INTERNAL): "share-card/<game>/<release>" opens that update and writes its rendered share card, at full size, to

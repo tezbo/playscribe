@@ -125,6 +125,14 @@ struct PageArtBand: View {
     /// Closed landscape is wide and short (594 x 432 pt): a fixed 170 pt band took 40% of the screen and the
     /// extension effect stretched catalogue art past it (Terry, 0.5.0 build 6). There it is a slim, clipped band.
     private var slim: Bool { duo.isLandscape && duo.pose == .closed }
+    @Environment(\.dynamicTypeSize) private var typeSize
+    /// Iris, #529 (std / AX5): Closed portrait 130 / 84, Closed landscape 88 / 52, Open, Open portrait and Book 170 / 110.
+    static func height(pose: Pose, landscape: Bool, ax: Bool) -> CGFloat {
+        switch pose {
+        case .closed: landscape ? (ax ? 52 : 88) : (ax ? 84 : 130)
+        default: ax ? 110 : 170
+        }
+    }
     var body: some View {
         let game = model.game(gameID)
         let asset = model.backdrop(gameID, chapter: model.section(gameID), tall: false)
@@ -138,7 +146,7 @@ struct PageArtBand: View {
                     .modifier(hasArt ? FadeMask() : FadeMask(enabled: false))
             }
         }
-        .frame(height: slim ? 96 : 170)
+        .frame(height: Self.height(pose: duo.pose, landscape: duo.isLandscape, ax: typeSize.isAccessibilitySize))
         .frame(maxWidth: .infinity)
         .clipped()
         .modifier(ExtensionUnlessSlim(slim: slim || !extendsUnderRail))
@@ -190,73 +198,69 @@ struct CoverHeader: View {
 /// One release on the Page: header, then GR-3's story-first body, with spoilers inline (D-6).
 struct ReleasePage: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var release: Release
     @Environment(\.dynamicTypeSize) private var typeSize
-    /// Lifts the dot from the first line's baseline to half the cap height (centred on line 1; Iris) (same idea as FeedRow's dotLift).
-    @ScaledMetric(relativeTo: .title3) private var dotLift: CGFloat = 7
+    /// Card A: the patch name is the page's largest text, "New" ends its row only while unread, then headline, one row with the
+    /// date and read time, one PS5 status block, then the notes. No dot separators, no game line (the art names the game).
+    static let nameFont = Font.custom("InstrumentSans-Bold", size: 40, relativeTo: .largeTitle)
 
-    /// The unread dot and the title block, the dot level with the title's FIRST line however many lines it wraps to.
-    @ViewBuilder private func dotAndTitle(_ r: Release) -> some View {
-        HStack(alignment: .firstTextBaseline, spacing: 12) {   // 12 pt clear of the text (Iris)
-            if model.isUnread(r) {
-                UnreadDot().alignmentGuide(.firstTextBaseline) { $0[VerticalAlignment.center] + dotLift }
-            }
-            TitleWithTags(release: r) {
-                // At accessibility sizes a plain Text wraps a word wider than the column by character and can leave a comma
-                // alone at the start of a line (r061, "Rebalancing" / ", Quality of"); WholeWordText cuts on a whole word.
-                if typeSize.isAccessibilitySize {
-                    WholeWordText(text: r.displayName, font: PlayscribeFont.title3, lines: 4, color: nil)
-                        .accessibilityIdentifier("releaseTitle")
-                } else {
-                    Text(r.displayName).font(PlayscribeFont.title3).accessibilityIdentifier("releaseTitle")
-                }
+    @ViewBuilder private func nameRow(_ r: Release) -> some View {
+        let unread = model.isUnread(r)
+        // Whole words always; the name never shrinks below the headline (22 pt).
+        VStack(alignment: .leading, spacing: 6) {
+            WholeWordText(text: r.displayName, font: Self.nameFont, lines: 4, color: nil)
+                .accessibilityAddTraits(.isHeader).accessibilityIdentifier("releaseTitle")
+            if unread {
+                Text("New").font(PlayscribeFont.caption.weight(.bold)).foregroundStyle(PlayscribeColor.accent)
+                    .accessibilityIdentifier("releaseNew")
             }
         }
     }
 
     var body: some View {
         let r = release
+        let ps5Page = r.isPS5Listed
+        let status = PS5StatusLines(r)
         VStack(alignment: .leading, spacing: 12) {
-            // Accessibility sizes: the title and tags first, then the share button on its own row, its right edge on the
-            // text column's trailing line (the one the headline and body wrap to), so it is clear of the rail and the
-            // hinge band without extra padding; the VStack's 12 pt is the gap above and below (R-2, r060, Iris).
-            if typeSize.isAccessibilitySize {
-                if r.isPS5Listed {
-                    // A title that fits one line leaves room for the button beside it, level with that first line (Iris, #441);
-                    // a longer one keeps the button on its own row below, so the title never loses width.
-                    ViewThatFits(in: .horizontal) {
-                        HStack(alignment: .top, spacing: 8) {
-                            dotAndTitle(r)
-                            Spacer(minLength: 0)
-                            ShareUpdateButton(release: r)
-                        }
-                        VStack(alignment: .leading, spacing: 12) {
-                            dotAndTitle(r)
-                            HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) }
-                        }
-                    }
-                } else {
-                    dotAndTitle(r)
-                }
-            } else {
-            HStack(spacing: 8) {
-                // Roles (Iris, PR #32): game name title2, update name title3, in every pose.
-                dotAndTitle(r)
+            // Tabletop only: the header is capped at AX3 when the setting is AX4 or AX5, so the lower half is not all header; the notes
+            // below keep the reader's full size (Iris, #529: AX5 still gates).
+            VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .top, spacing: 8) {
+                nameRow(r)
                 Spacer(minLength: 0)
-                if r.isPS5Listed { ShareUpdateButton(release: r) }
+                if r.isPS5Listed && !typeSize.isAccessibilitySize { ShareUpdateButton(release: r) }
             }
+            if r.isPS5Listed && typeSize.isAccessibilitySize { HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) } }
+            if let h = ps5Page ? r.ps5Headline : r.headline {
+                WholeWordText(text: h, font: PlayscribeFont.title2, lines: typeSize.isAccessibilitySize ? 4 : 3, color: nil)
+            } else if !r.notes.isEmpty {
+                Text("Fixes and tuning").font(PlayscribeFont.title2)
             }
-            HStack(spacing: 8) {
+            // Date and read time share one row (a gap, not a dot); at AX sizes they stack.
+            let dateRow = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 2)) : AnyLayout(HStackLayout(spacing: 12))
+            dateRow {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
-                if let v = r.ps5Version { Text(v).monospacedDigit() }
+                if let minutes = r.readMinutes {
+                    Text("\(minutes) min read").accessibilityLabel("About \(minutes) minute\(minutes == 1 ? "" : "s") to read")
+                }
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
-            SourceLinks(release: r)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
+                if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary) }
+            }
+            .accessibilityElement(children: .ignore).accessibilityLabel(status.spoken)
+            .accessibilityIdentifier("ps5Status")
+            }
+            .dynamicTypeSize(...(duo.pose == .tabletop ? DynamicTypeSize.accessibility3 : DynamicTypeSize.accessibility5))
             ForYouCard(release: r)
             if r.notes.contains(where: { $0.items.contains { $0.spoiler == true } }) {
                 SpoilerLine(gameID: r.gameID)
             }
-            ReleaseBody(release: r)
+            ReleaseBody(release: r, headerInPage: true)
+            // The link row ends the notes (V-3: it names its destination by brand).
+            SourceLinks(release: r)
         }
         .id(r.id)
     }
@@ -423,6 +427,13 @@ struct GameBasicsView: View {
         return Array(unique.prefix(3))
     }
 
+    static let noDetailsLine = "More about this game soon."
+    /// True when nothing about the game can be shown: no About, no Story, no genres, no trailer, no links.
+    static func hasNoDetails(info: GameBasics?, summary: String?, trailers: Int) -> Bool {
+        summary == nil && info?.storyline == nil && (info?.genres ?? []).isEmpty && trailers == 0
+            && info?.links?.official == nil && info?.links?.patchNotes == nil
+    }
+
     @Environment(\.duo) private var duo
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(AppModel.self) private var model
@@ -492,6 +503,12 @@ struct GameBasicsView: View {
                 else { WholeWordText(text: LinkedText.clean(story), font: PlayscribeFont.body, lines: 4, color: nil) }
                 Button(storyOpen ? "Less" : "More") { withAnimation(.snappy) { storyOpen.toggle() } }
                     .font(PlayscribeFont.subheadline.weight(.semibold)).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()).tappableFrame()
+            }
+            // A game with no details is never blank: one line says more is coming.
+            if Self.hasNoDetails(info: info, summary: summary, trailers: Self.trailers(game).count),
+               !(game.igdbID.map { store.failedShards.contains($0 % 100) } ?? false) {
+                Text(Self.noDetailsLine).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    .accessibilityIdentifier("noDetailsLine")
             }
             SimilarGamesRow(game: game)
         }
@@ -1079,7 +1096,9 @@ struct ReleaseDetailView: View {
         }
         .clearsMessages()
         .background(Color.ink0)
-        .navigationTitle(model.release(gameID, releaseID)?.displayName ?? "")
+        // The patch name is the page's own heading right below the art, so the bar carries no title: at AX5 the system cut it
+        // mid-word ("The Grand Autumn Rebalancing, Qu…"). VoiceOver reads the heading; Back keeps the list's name.
+        .navigationTitle("")
         .toolbarTitleDisplayMode(.inline)
         .accessibilityIdentifier("releaseDetail")
         .foldAudited()
