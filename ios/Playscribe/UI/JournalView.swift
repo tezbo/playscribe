@@ -563,7 +563,7 @@ struct SpoilerText: View {
             Button { model.reveal(key) } label: {
                 ZStack(alignment: .leading) {
                     Text(LinkedText.clean(text)).blur(radius: 6).accessibilityHidden(true)
-                    Label("Spoiler. Tap to show", systemImage: "eye.slash")
+                    Label("Spoiler. Tap to show.", systemImage: "eye.slash")
                         .font(PlayscribeFont.caption.weight(.semibold))
                         .padding(.horizontal, 8).padding(.vertical, 4)
                         .background(.ultraThinMaterial, in: Capsule())
@@ -572,7 +572,8 @@ struct SpoilerText: View {
                 .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
-            .accessibilityLabel("Story spoiler. Double-tap to show.")
+            .accessibilityLabel("Spoiler")
+            .accessibilityHint("Tap to show")
             .tappableFrame()
         }
     }
