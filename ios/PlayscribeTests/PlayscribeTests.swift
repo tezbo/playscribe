@@ -1101,4 +1101,12 @@ struct ReaderStageTitleTests {
         #expect(overview(name: "Update 1.1", headline: nil)?.title == "Update 1.1")
         #expect(overview(name: " ", headline: "Photo mode and a new hunt")?.title == "Photo mode and a new hunt")
     }
+
+    @Test("TT-2: the headline is the overview's secondary line, dropped when it repeats the title")
+    @MainActor func headlineIsSecondary() {
+        #expect(overview(name: "Update 1.1", headline: "Photo mode and a new hunt")?.subtitle == "Photo mode and a new hunt")
+        #expect(overview(name: "Update 1.1", headline: nil)?.subtitle == nil)
+        #expect(overview(name: " ", headline: "Photo mode and a new hunt")?.subtitle == nil)
+        #expect(overview(name: "Update 1.1", headline: "Update 1.1")?.subtitle == nil)
+    }
 }
