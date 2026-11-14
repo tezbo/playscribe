@@ -62,7 +62,7 @@ struct GameBookView: View {
             }
             .sharedBackgroundVisibility(.hidden)
             // Back, Notifications, Status, More in every pose (Iris, 0.5.6 hotfix); D-10's Swap sides is in More while side by side.
-            ActionToolbar(actions: model.gameActions(gameID))
+            ActionToolbar(actions: model.gameActions(gameID, sideBySide: sideBySide))
         }
         .onChange(of: model.swapSidesRequest) { _, _ in
             guard sideBySide else { return }

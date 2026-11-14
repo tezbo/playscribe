@@ -32,7 +32,8 @@ final class RailSetTests: XCTestCase {
     }
 
     private func check(pose: String?, ax5: Bool, tracked: Bool = true) {
-        let route = tracked ? "gamepage/dawnwalker" : "no-notes-page/dawnwalker/untracked"
+        // Untracked = not in the library, so no Status (Iris). The game page opens with Add to library (Quinn, #442).
+        let route = tracked ? "gamepage/dawnwalker" : "gamepage/alan-wake-2"
         let app = launch(pose: pose, ax5: ax5, route: route)
         let tag = "\(pose ?? "closed") \(ax5 ? "AX5" : "std") \(tracked ? "tracked" : "untracked")"
         let window = app.windows.firstMatch.frame
@@ -72,8 +73,10 @@ final class RailSetTests: XCTestCase {
                 XCTFail("\(tag): no tab capsule on the rail")
             }
         } else {
-            // A toolbar: Back leads, then the actions left to right in the same order.
-            XCTAssertEqual(valid, valid.sorted { $0.minX < $1.minX }, "\(tag): the toolbar order changed")
+            // A bar or a column (Closed's rail is a column): top to bottom, then leading to trailing on one line (Mac, 909fe8b:
+            // Closed's column put Status at x 398.7 and Notifications at 399, so x alone misread the order).
+            XCTAssertEqual(valid, valid.sorted { abs($0.minY - $1.minY) > 1 ? $0.minY < $1.minY : $0.minX < $1.minX },
+                           "\(tag): the rail order changed")
         }
         app.terminate()
     }
