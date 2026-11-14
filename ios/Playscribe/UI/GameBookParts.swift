@@ -12,7 +12,7 @@ enum ReadingSide {
     static let key = "pageOnLeft"
 }
 
-/// D-3: the selected release (or chapter) with its art band.
+/// D-3: the selected release (or section) with its art band: Book's right page and Tabletop's standing half (R-7, 0.5.6).
 struct PageView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
@@ -20,49 +20,19 @@ struct PageView: View {
     @State private var position = ScrollPosition(idType: String.self)
     @State private var liveOffset: CGFloat = 0
     var gameID: String
-    /// Closed: one stacked book, the Contents below the Page.
-    var withContents = false
-
-    /// Closed and Open portrait, Updates chapter: the Contents (bar, search, Mark read, All updates) between the release and About.
-    private var closedContents: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Divider().overlay(PlayscribeColor.ink700)
-            ContentsBody(gameID: gameID, addControl: false)
-        }
-    }
 
     var body: some View {
-        let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
+        let chapter = model.section(gameID)
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 PageArtBand(gameID: gameID)
                 StaleHint()
-                if withContents, !model.gameDisplayName(gameID).isEmpty {
-                    VStack(alignment: .leading, spacing: 6) {
-                        GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
-                        // Closed has no Contents header, so a browsed game (Upcoming, PS Plus) gets its add control here.
-                        if let g = model.game(gameID), model.entry(gameID) == nil {
-                            Button("Add to library") { model.addGame(g, status: .watching) }
-                                .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
-                                .accessibilityIdentifier("addToLibrary")
-                                // 20 pt clear of the title above and the page below (Iris, #442). The 44 pt hit frame leaves
-                                // 4 pt round the 36 pt pill, so the stack gaps (6 above, 16 below) plus the text's own leading
-                                // read as 15 and 25 on the Closed still; 5 each way evens them (0e10f45 still: 3/-14 overshot).
-                                .padding(.top, 5).padding(.bottom, -5)
-                        }
-                    }
-                    .padding(.leading, duo.hingeInset(20, facingHinge: !pageOnLeft))
-                    .padding(.trailing, duo.hingeInset(20, facingHinge: pageOnLeft))
-                }
                 Group {
                     switch chapter {
                     case .updates:
                         if let r = model.selectedRelease(gameID) {
                             VStack(alignment: .leading, spacing: 16) {
                                 ReleasePage(release: r)
-                                // Closed and Open portrait (one column): All updates (the Contents) sits above About (Terry, 0.5.4), so the reader reaches
-                                // the game's other updates before its blurb; You might also like stays last.
-                                if withContents { closedContents }
                                 if let g = model.game(gameID) {
                                     Divider().overlay(PlayscribeColor.ink700)
                                     GameBasicsView(game: g)
@@ -70,10 +40,10 @@ struct PageView: View {
                             }
                             .pageTurn(key: r.id)
                         } else if let g = model.game(gameID) {
-                            NoNotesPage(game: g) { if withContents { closedContents } }
+                            NoNotesPage(game: g)
                         }
                     case .news: NewsChapter(gameID: gameID)
-                    case .world, .companion: EntriesChapter(gameID: gameID, chapter: chapter)
+                    case .world, .companion: EntriesChapter(gameID: gameID)
                     case .gallery: GalleryChapter(gameID: gameID)
                     case .mybook: MyBookChapter(gameID: gameID)
                     }
@@ -82,11 +52,6 @@ struct PageView: View {
                 .frame(maxWidth: 620, alignment: .leading)
                 .padding(.leading, duo.hingeInset(20, facingHinge: !pageOnLeft))
                 .padding(.trailing, duo.hingeInset(20, facingHinge: pageOnLeft))
-                // The other chapters keep the Contents below the page (the Updates chapter draws it above About).
-                if withContents && chapter != .updates {
-                    Divider().overlay(PlayscribeColor.ink700).padding(.top, 8)
-                    ContentsBody(gameID: gameID, addControl: false).padding(.horizontal, 16)
-                }
             }
             .padding(.bottom, 24)
             // The column is exactly what the scroll view proposes (its viewport beside the rail: 382 pt in Closed, 372 in Book) as
@@ -107,18 +72,11 @@ struct PageView: View {
         // A stacked Page ends at the Contents' edge: dissolve the last lines instead of cutting
         // them mid-letter under the game title.
         .mask {
-            if withContents || duo.pose == .closed { Rectangle() } else {
+            if duo.pose == .closed { Rectangle() } else {
                 VStack(spacing: 0) {
                     Rectangle()
                     LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom).frame(height: 28)
                 }
-            }
-        }
-        // J-1: Back from a pushed release lands on its row (Closed shares this scroll).
-        .onChange(of: model.nav.detailReleaseID) { old, new in
-            // After the restore of the saved offset, which no longer points at the row.
-            if withContents, new == nil, let old {
-                Task { try? await Task.sleep(for: .milliseconds(250)); position.scrollTo(id: "row-\(old)", anchor: .center) }
             }
         }
         // Track the offset locally and persist it only when scrolling settles: writing model
@@ -131,13 +89,13 @@ struct PageView: View {
         }
         .onAppear(perform: restore)
         .onChange(of: duo.pose) { restore() }
-        // Closed, the list shares this scroll; jumping to the top would lose the tapped row (J-1).
-        .onChange(of: model.nav.selected?[gameID]) { if !withContents { position.scrollTo(edge: .top) } }
+        // A new update on the Page starts at its top.
+        .onChange(of: model.nav.selected?[gameID]) { position.scrollTo(edge: .top) }
         .background(Color.ink0)
         .foldAudited()
     }
 
-    private var anchorKey: String { "page-\(gameID)-\(model.nav.chapter.rawValue)" }
+    private var anchorKey: String { "page-\(gameID)-\(model.section(gameID).rawValue)" }
 
     private func restore() {
         guard let y = model.nav.anchors[anchorKey].flatMap(Double.init), y > 0 else { return }
@@ -161,12 +119,15 @@ struct PageArtBand: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     var gameID: String
+    /// The art drawn on under the rail with the system's extension effect. The one-column page turns it off: there the
+    /// effect showed as a blurred smear at the band's trailing edge (design sign on the ab38d5c harness still).
+    var extendsUnderRail = true
     /// Closed landscape is wide and short (594 x 432 pt): a fixed 170 pt band took 40% of the screen and the
     /// extension effect stretched catalogue art past it (Terry, 0.5.0 build 6). There it is a slim, clipped band.
     private var slim: Bool { duo.isLandscape && duo.pose == .closed }
     var body: some View {
         let game = model.game(gameID)
-        let asset = model.backdrop(gameID, chapter: model.nav.chapter, tall: false)
+        let asset = model.backdrop(gameID, chapter: model.section(gameID), tall: false)
         let coverOnly = asset != nil && asset == game?.coverAsset && asset != game?.heroAsset
         let hasArt = asset != nil || game?.heroArtURL != nil || game?.coverURL != nil
         Group {
@@ -180,7 +141,7 @@ struct PageArtBand: View {
         .frame(height: slim ? 96 : 170)
         .frame(maxWidth: .infinity)
         .clipped()
-        .modifier(ExtensionUnlessSlim(slim: slim))
+        .modifier(ExtensionUnlessSlim(slim: slim || !extendsUnderRail))
         .accessibilityHidden(true)
     }
 }
@@ -666,72 +627,138 @@ struct TrailerView: View {
     }
 }
 
-/// D-4: the Contents, top to bottom: title and status, chapters, search in notes, Mark n read,
-/// the release timeline, and in Tabletop the section outline with Previous and Next.
+/// D-4, R-7 (0.5.6): the Contents, in Book and Tabletop (the one-column poses use GamePageColumn).
+/// - Book, the left page: the game's art and title, the sections as a table of contents, search, Mark n read, the updates.
+/// - Tabletop, the lower half: the section bar first and pinned (Card C), then (Companion) the World / Tips filter, which drives
+///   the view-only stage above, then title, search, the section outline with Previous and Next, and the updates.
 struct ContentsView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @Environment(\.railWidth) private var railWidth
     @AppStorage(ReadingSide.key) private var pageOnLeft = false
     @State private var position = ScrollPosition(idType: String.self)
+    @State private var anchorY: CGFloat = 0
+    @State private var tocPinned = false
     var gameID: String
 
+    private var leading: CGFloat { duo.hingeInset(16, facingHinge: pageOnLeft) }
+    private var trailing: CGFloat { duo.hingeInset(16, facingHinge: !pageOnLeft) + railWidth }
+
     var body: some View {
-        ScrollView {
-            ContentsBody(gameID: gameID)
-                // Book: the edge that faces the hinge keeps 24 pt clear of the division band (r054-book-gamepage-hinge-inset).
-                .padding(.leading, duo.hingeInset(16, facingHinge: pageOnLeft))
-                .padding(.trailing, duo.hingeInset(16, facingHinge: !pageOnLeft))
-                .padding(.vertical, 14)
-                .padding(.trailing, railWidth)
+        VStack(spacing: 0) {
+            if duo.pose == .tabletop {
+                VStack(alignment: .leading, spacing: 8) {
+                    SectionBar(gameID: gameID)
+                    CompanionFilter(gameID: gameID)
+                }
+                .padding(.leading, leading)
+                .padding(.trailing, trailing)
+                .padding(.top, 6)
+                .background(Color.ink1)
+                .zIndex(1)
+            }
+            ScrollView {
+                // Book: the table of contents is pinned under the title once it reaches the top, as the bar is in one column
+                // (Card C: the sections never scroll away). Tabletop pins the bar above this scroll instead.
+                LazyVStack(alignment: .leading, spacing: 14, pinnedViews: duo.pose == .book ? .sectionHeaders : []) {
+                    // Book: the left page opens with the game's art, as the one-column page does.
+                    if duo.pose == .book { PageArtBand(gameID: gameID) }
+                    // Book: the edge that faces the hinge keeps 24 pt clear of the division band (r054-book-gamepage-hinge-inset).
+                    ContentsHead(gameID: gameID).padding(.leading, leading).padding(.trailing, trailing)
+                        .background(alignment: .bottom) {
+                            Color.clear.frame(height: 0)
+                                .onGeometryChange(for: CGFloat.self) { $0.frame(in: .scrollView).minY } action: { anchorY = $0 }
+                        }
+                    Section {
+                        ContentsBody(gameID: gameID).padding(.leading, leading).padding(.trailing, trailing)
+                    } header: {
+                        if duo.pose == .book {
+                            // Pinned, the list fades out under it as in one column (Quinn, #521: "Patch 1.7" was sliced).
+                            PinnedSectionHeader(gameID: gameID, ink: Color.ink0, inset: 0, style: .contents, vertical: 6,
+                                                anchorY: anchorY, gap: 14, pinned: $tocPinned)
+                                .padding(.leading, leading).padding(.trailing, trailing)
+                                .background(Color.ink0)
+                        }
+                    }
+                }
+                .padding(.top, duo.pose == .book ? 0 : 14)
+                .padding(.bottom, 14)
+            }
+            // Tabletop only, as the Library shelf (#487): scrolled, the list's top edge cut a Contents row through its glyphs at
+            // AX5 (Iris, 21efef8 still: "Better targeting, look-on…"). The panel is ink1, so the edge is too.
+            .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink1))
+            .clearsMessages()
+            .scrollPosition($position)
+            .accessibilityIdentifier("contentsScroll")
+            .scrollIndicators(.hidden)
         }
-        // Tabletop only, as the Library shelf (#487): scrolled, the lower half's top edge cut a Contents row through its glyphs at
-        // AX5 (Iris, 21efef8 still: "Better targeting, look-on…"). The panel is ink1, so the edge is too.
-        .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink1))
-        .clearsMessages()
-        .scrollPosition($position)
-        .accessibilityIdentifier("contentsScroll")
-        // J-1: Back from a pushed release (open portrait) lands on its row.
-        .onChange(of: model.nav.detailReleaseID) { old, new in
-            if new == nil, let old { position.scrollTo(id: "row-\(old)", anchor: .center) }
-        }
-        .scrollIndicators(.hidden)
-        .background(Color.ink1)
+        // Book: the page colour, so the art fades into it as on the right page; Tabletop's lower half stays ink1.
+        .background(duo.pose == .book ? Color.ink0 : Color.ink1)
         .foldAudited()
     }
 }
 
-struct ContentsBody: View {
+/// R-7 (0.5.6): Companion's World / Tips filter, only when the game has both kinds. On the page in Book and the one-column poses
+/// (EntriesChapter); in Tabletop, where Companion sits on the view-only standing half, here in the lower half under the bar.
+struct CompanionFilter: View {
+    @Environment(AppModel.self) private var model
+    var gameID: String
+
+    var body: some View {
+        let filters = GameSections.companionFilters(model.sectionContent(gameID))
+        if model.section(gameID) == .companion, !filters.isEmpty {
+            Picker("Companion shows", selection: Binding(get: { model.companionKind(gameID) ?? filters[0] },
+                                                         set: { model.setCompanionKind(gameID, $0) })) {
+                ForEach(filters, id: \.self) { Text(GameSections.filterTitle($0)).tag($0) }
+            }
+            .pickerStyle(.segmented)
+            .frame(minHeight: 44)
+            .tappableFrame()
+            .accessibilityIdentifier("companionFilter")
+        }
+    }
+}
+
+/// The Contents' head in Book and Tabletop: title and status, the game's links (Book), Add to library for a browsed game.
+struct ContentsHead: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
-    @AppStorage(ReadingSide.key) private var pageOnLeft = false
     var gameID: String
-    /// False in the stacked book, where the Page header already carries it (the Contents sit far below the update).
-    var addControl = true
 
     var body: some View {
         let game = model.game(gameID)
-        let chapter = model.chapters(gameID).contains(model.nav.chapter) ? model.nav.chapter : .updates
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .top) {
+                GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
+                Spacer(minLength: 8)
+            }
+            // Once per page (Terry): in Tabletop the links are on the Links panel instead.
+            if duo.pose != .tabletop, let game { GameLinks(game: game) }
+            // Tabletop (Iris, bug-tabletop-game-details-missing, #511): genres under the title; About, links and similar games at the end.
+            if duo.pose == .tabletop, let game { GameGenresLine(game: game) }
+            if model.entry(gameID) == nil, let game {
+                Button("Add to library") { model.addGame(game, status: .watching) }
+                    .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
+            }
+        }
+    }
+}
+
+/// The Contents' list: search, Mark n read, (Tabletop) the section outline, the updates.
+struct ContentsBody: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
+    var gameID: String
+
+    var body: some View {
+        let chapter = model.section(gameID)
+        let game = model.game(gameID)
             VStack(alignment: .leading, spacing: 14) {
-                if duo.pose != .closed { HStack(alignment: .top) {
-                    VStack(alignment: .leading, spacing: 4) {
-                        GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
-                    }
-                    Spacer(minLength: 8)
-                } }
-                // Once per page (Terry): closed, the links sit with the game's basics instead.
-                if duo.pose != .closed && duo.pose != .tabletop, let game { GameLinks(game: game) }
-                // Tabletop (Iris, bug-tabletop-game-details-missing): genres under the title; About, links and similar games at the end.
-                if duo.pose == .tabletop, let game { GameGenresLine(game: game) }
-                if addControl, model.entry(gameID) == nil, let game {
-                    Button("Add to library") { model.addGame(game, status: .watching) }
-                        .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
-                }
-                // A game with no notes has no outline, so its Play trailer row sits here, above the chips (Iris order: trailer first).
+                // A game with no notes has no outline, so its Play trailer row sits here, first in the lower panel (Iris order:
+                // trailer first, #511). The section bar is pinned above this scroll in Tabletop (R-7).
                 if duo.pose == .tabletop, model.ps5Releases(gameID).isEmpty, model.pcOnlyReleases(gameID).isEmpty {
                     TabletopTrailerRow(gameID: gameID)
                 }
-                ChapterBar(gameID: gameID, selected: chapter)
                 // Tabletop, a game with no notes: search, the A to Z strip and Previous/Next have nothing to act on (Quinn, #426),
                 // so they are not drawn; the list below says why there is nothing (NoUpdatesLine).
                 let tabletopNoNotes = duo.pose == .tabletop && model.ps5Releases(gameID).isEmpty && model.pcOnlyReleases(gameID).isEmpty
@@ -910,9 +937,9 @@ struct ReleaseTimeline: View {
 
     private func row(_ r: Release, selected: Bool) -> some View {
         Button {
-            // J-1: side by side (and Tabletop, where the Page is the standing half) the Page shows
-            // it; Closed and open portrait push it as its own screen.
-            if duo.pose == .closed || (duo.pose == .flat && !duo.isLandscape) {
+            // J-1: Book (and Tabletop, where the Page is the standing half) the Page shows it; the one-column
+            // poses (Closed, Open both ways) push it as its own screen.
+            if duo.oneColumn {
                 model.select(gameID, releaseID: r.id)
                 model.nav.detailReleaseID = r.id
             } else {
@@ -1070,6 +1097,7 @@ struct ReleaseDetailView: View {
         .background(Color.ink0)
         .navigationTitle(model.release(gameID, releaseID)?.displayName ?? "")
         .toolbarTitleDisplayMode(.inline)
+        .accessibilityIdentifier("releaseDetail")
         .foldAudited()
     }
 }

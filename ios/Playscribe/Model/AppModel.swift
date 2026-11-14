@@ -4,7 +4,17 @@ import os
 import SwiftUI
 import UserNotifications
 
-enum AppTab: String, Codable, Hashable { case library, updates, news, search }
+enum AppTab: String, Codable, Hashable {
+    case library, updates, news, search
+    var title: String {
+        switch self {
+        case .library: "Library"
+        case .updates: "Updates"
+        case .news: "News"
+        case .search: "Search"
+        }
+    }
+}
 
 enum Chapter: String, Codable, CaseIterable, Hashable, Identifiable {
     case updates, news, world, companion, gallery, mybook
@@ -85,6 +95,19 @@ struct NavState: Codable, Hashable {
     var detailReleaseID: String?
     /// D-13: the chapter last opened, per game.
     var chapters: [String: Chapter]?
+    /// R-7 (0.5.6): the Companion section's World / Tips filter, per game (only used when the game has both kinds).
+    var companionKind: [String: BookEntry.Chapter]?
+    /// D-1 (0.5.6, Card D): the tab the open game was reached from, when it was not the Library. Back from the game returns
+    /// there. nil: Back goes to the Library.
+    var returnTab: AppTab?
+    /// D-1 (0.5.6, Card D): an update pushed from the Updates tab (Closed, Open portrait). Back returns to the list.
+    var updatesRelease: ReleaseRef?
+}
+
+/// One update, as a navigation value.
+struct ReleaseRef: Codable, Hashable {
+    var gameID: String
+    var releaseID: String
 }
 
 struct PersistedState: Codable {
@@ -585,14 +608,40 @@ final class AppModel {
         return ids.lazy.compactMap { id in self.entry(id) != nil ? self.game(id) : nil }.first
     }
 
+    /// R-7 (0.5.6): what the game has, for which sections show (GameSections).
+    func sectionContent(_ gameID: String) -> GameSections.Content {
+        let entries = fixtures.book.filter { $0.gameID == gameID }
+        let news = NewsStore.shared
+        return GameSections.Content(
+            worldEntries: entries.filter { $0.chapter == .world }.count,
+            tipEntries: entries.filter { $0.chapter == .companion }.count,
+            newsCount: news.loaded.contains(gameID) && !news.failed.contains(gameID) ? (news.items[gameID] ?? []).count : nil,
+            galleryItems: gallery(gameID).count)
+    }
+
+    /// R-7: the game page's sections, in order; empty ones hidden.
     func chapters(_ gameID: String) -> [Chapter] {
-        Chapter.allCases.filter { c in
-            switch c {
-            case .updates, .news, .mybook, .gallery: true
-            case .world: fixtures.book.contains { $0.gameID == gameID && $0.chapter == .world }
-            case .companion: fixtures.book.contains { $0.gameID == gameID && $0.chapter == .companion }
-            }
-        }
+        GameSections.visible(sectionContent(gameID), current: nav.gameID == gameID ? GameSections.canonical(nav.chapter) : nil)
+    }
+
+    /// The section the game page shows: the stored one (World reads as Companion) when it shows, else What's new.
+    func section(_ gameID: String) -> Chapter { GameSections.resolve(nav.chapter, in: chapters(gameID)) }
+
+    /// The kind the Companion section lists, or nil for every entry (the game has one kind, so no filter shows).
+    func companionKind(_ gameID: String) -> BookEntry.Chapter? {
+        GameSections.companionKind(nav.companionKind?[gameID], sectionContent(gameID))
+    }
+
+    func setCompanionKind(_ gameID: String, _ kind: BookEntry.Chapter) {
+        nav.companionKind = (nav.companionKind ?? [:]).merging([gameID: kind]) { $1 }
+    }
+
+    /// Opens a Companion entry (a bookmark, a search hit): the game's Companion section, filtered to the entry's kind,
+    /// scrolled to it.
+    func openEntry(_ e: BookEntry) {
+        if nav.gameID != e.gameID { openGame(e.gameID, chapter: .companion) } else { nav.chapter = .companion }
+        setCompanionKind(e.gameID, e.chapter)
+        nav.anchors[Self.bookKey(e.gameID, .companion)] = "entry-\(e.id)"
     }
 
     func gallery(_ gameID: String) -> [GalleryItem] {
@@ -626,12 +675,16 @@ final class AppModel {
         let gameID = game(gameID) == nil ? (canonicalGameID(gameID) ?? gameID) : gameID
         var n = nav
         let sameGame = n.gameID == gameID
+        // D-1 (0.5.6, Card D): Back from the game goes to where it was opened from. Sections are siblings, so switching one
+        // never adds history; a second game opened from inside the Library keeps the Library as its way back.
+        if n.tab != .library { n.returnTab = n.tab } else if n.gameID == nil { n.returnTab = nil }
         n.tab = .library
         if !sameGame { n.detailReleaseID = nil }
         n.gameID = gameID
         n.lastGameID = gameID
         // D-13: each game reopens on the chapter last opened in it.
-        n.chapter = chapter ?? (sameGame ? n.chapter : (n.chapters?[gameID] ?? .updates))
+        // R-7 (0.5.6): World is part of Companion; a saved or routed World opens Companion.
+        n.chapter = GameSections.canonical(chapter ?? (sameGame ? n.chapter : (n.chapters?[gameID] ?? .updates)))
         if let releaseID {
             n.selected = (n.selected ?? [:]).merging([gameID: releaseID]) { $1 }
             n.expanded["rel:\(releaseID)"] = true
@@ -655,9 +708,10 @@ final class AppModel {
     /// True when the update page for this release is the one on screen: its game is open and the release is the one
     /// the Page shows or the pushed detail screen.
     func isViewing(_ gameID: String, _ releaseID: String) -> Bool {
+        if nav.tab == .updates, let u = nav.updatesRelease { return u == ReleaseRef(gameID: gameID, releaseID: releaseID) }
         guard nav.tab == .library, nav.gameID == gameID else { return false }
         if nav.detailReleaseID != nil { return nav.detailReleaseID == releaseID }
-        return nav.chapter == .updates && selectedRelease(gameID)?.id == releaseID
+        return section(gameID) == .updates && selectedRelease(gameID)?.id == releaseID
     }
 
     /// D-2/D-3: the release the Page shows: the one picked, else the newest On PS5 release.
@@ -676,9 +730,32 @@ final class AppModel {
 
     static func bookKey(_ gameID: String, _ chapter: Chapter) -> String { "book-\(gameID)-\(chapter.rawValue)" }
 
+    /// Back from the game page (rail, toolbar, swipe): leaves the game for where it was opened from (D-1, Card D).
     func closeGame() {
+        let back = nav.returnTab
         nav.gameID = nil
+        nav.detailReleaseID = nil
+        nav.returnTab = nil
+        if let back { nav.tab = back }
     }
+
+    /// D-1 (0.5.6, Card D, Nadia 13 Nov): an Updates-tab row pushes the update page over the list in Closed and Open
+    /// portrait, so Back returns to the list in one step, at the same scroll. Side by side and in Tabletop it opens the
+    /// game with that update on the Page. Opening it reads it (R-6a).
+    func openFromUpdates(_ r: Release) {
+        guard pushesReleases else { openGame(r.gameID, chapter: .updates, releaseID: r.id); return }
+        nav.updatesRelease = ReleaseRef(gameID: r.gameID, releaseID: r.id)
+        if isUnread(r) { markRead(r.id) }
+        if let p = pill, isViewing(p.gameID, p.releaseID) { pill = nil }
+    }
+
+    /// The Back control's label: the screen it returns to, as the app's other Backs read ("Updates, back"; HIG: the
+    /// previous screen's title). Glyph only on the rail, with this as its label, in every pose.
+    var backTitle: String { "\((nav.returnTab ?? .library).title), back" }
+
+    /// J-1, R-7 (0.5.6): the one-column poses (Closed, Open both ways) push an update as its own page; Book and Tabletop show it
+    /// in place on the Page.
+    var pushesReleases: Bool { livePose == .closed || livePose == .flat }
 
     /// Deep link from a notification or URL (N-6, N-9).
     func openRelease(gameID: String, releaseID: String) {
@@ -692,14 +769,24 @@ final class AppModel {
             Task {
                 await refreshHistories([gameID])
                 if release(gameID, releaseID) != nil {
-                    openGame(gameID, chapter: .updates, releaseID: releaseID)
+                    openPushed(gameID, releaseID)
                 } else {
                     show(Toast(text: "That update is no longer available"))
                 }
             }
         } else {
-            openGame(gameID, chapter: .updates, releaseID: releaseID)
+            openPushed(gameID, releaseID)
         }
+    }
+
+    /// N-6 (0.5.6, Card D): a notification or link opens the update page itself. Back goes to the game's What's new, then
+    /// the Library, whatever tab was showing.
+    private func openPushed(_ gameID: String, _ releaseID: String) {
+        nav.tab = .library
+        nav.returnTab = nil
+        openGame(gameID, chapter: .updates, releaseID: releaseID)
+        nav.returnTab = nil
+        if pushesReleases { nav.detailReleaseID = releaseID }
     }
 
     func handle(url: URL) {
@@ -749,7 +836,10 @@ final class AppModel {
         case "news": nav.tab = .news   // QA: the News tab
         case "search": nav.tab = .search
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
-        case "chapter" where parts.count == 2: openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
+        case "chapter" where parts.count == 2:
+            openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
+            // R-7: `chapter/<game>/world` opens Companion on its World filter.
+            if parts[1] == Chapter.world.rawValue { setCompanionKind(parts[0], .world) }
         case "first-run": resetToFirstRun()
         case "demo": resetDemo()
         case "store-set":
@@ -948,6 +1038,7 @@ final class AppModel {
     func startFresh() {
         nav.gameID = nil
         nav.detailReleaseID = nil
+        nav.updatesRelease = nil
         nav.tab = .library
         addSheetOpen = false
         settingsOpen = false
