@@ -915,27 +915,30 @@ struct InlineNoteResults: View {
 struct ReleaseTimeline: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
-    @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
 
     var body: some View {
         let selected = model.selectedRelease(gameID)?.id
         let ps5 = model.ps5Releases(gameID)
         let pc = model.pcOnlyReleases(gameID)
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: 0) {
             Text("ALL UPDATES").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+                .padding(.bottom, 4)
             if ps5.isEmpty, let g = model.game(gameID) {
                 Text(g.ps5AvailabilityLine).font(PlayscribeFont.subheadline)
                 // Tabletop's lower half: the Page is the view-only stage above, so this list is where a reader looks for why there
                 // is nothing (untracked: "We don't track this game's updates yet."; tracked: "No updates yet." and Checked).
                 if pc.isEmpty, duo.pose == .tabletop { NoUpdatesLine(gameID: gameID).padding(.top, 2) }
             }
-            ForEach(ps5) { row($0, selected: $0.id == selected) }
-            ForEach(pc) { row($0, selected: $0.id == selected) }
+            // One column pushes the update, so no row stands for an open page: plain rows, as in s3.png. Book and Tabletop
+            // keep the selected row filled, beside the page that shows it.
+            let first = (ps5.first ?? pc.first)?.id
+            ForEach(ps5) { row($0, selected: !duo.oneColumn && $0.id == selected, divided: $0.id != first) }
+            ForEach(pc) { row($0, selected: !duo.oneColumn && $0.id == selected, divided: $0.id != first) }
         }
     }
 
-    private func row(_ r: Release, selected: Bool) -> some View {
+    private func row(_ r: Release, selected: Bool, divided: Bool) -> some View {
         Button {
             // J-1: Book (and Tabletop, where the Page is the standing half) the Page shows it; the one-column
             // poses (Closed, Open both ways) push it as its own screen.
@@ -946,27 +949,8 @@ struct ReleaseTimeline: View {
                 model.select(gameID, releaseID: r.id)
             }
         } label: {
-            let title = TitleWithTags(release: r) {
-                Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular))
-                    .lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
-            }
-            let date = Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).font(PlayscribeFont.caption).foregroundStyle(.secondary)
-            HStack(alignment: .top, spacing: 8) {
-                if model.isUnread(r) { UnreadDot() } else { Color.clear.frame(width: 8, height: 8) }
-                if typeSize.isAccessibilitySize {
-                    // No trailing date column at AX: the date takes its own full-width line under the title and tags.
-                    VStack(alignment: .leading, spacing: 4) { title; date }
-                    Spacer(minLength: 0)
-                } else {
-                    title
-                    Spacer(minLength: 4)
-                    date
-                }
-            }
-            .padding(.horizontal, 10)
-            .frame(minHeight: 44)
-            .background(selected ? PlayscribeColor.ink700 : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-            .contentShape(Rectangle())
+            // s-06: patch name first, headline second, then the date and the PS5 line (UpdateRow.swift).
+            UpdateRowLabel(release: r, unread: model.isUnread(r), selected: selected, divided: divided)
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("releaseRow-\(r.displayName)")
