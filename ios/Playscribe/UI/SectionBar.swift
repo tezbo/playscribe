@@ -187,24 +187,52 @@ struct PinnedSectionHeader: View {
     var ink: Color
     var inset: CGFloat = 20
     var maxWidth: CGFloat = .infinity
-    @State private var pinned = false
+    var style: SectionBar.Style = .bar
+    /// Space above and below the bar, inside its ink.
+    var vertical: CGFloat = 0
+    /// The minY, in the scroll view, of a zero-height anchor placed just above this header's Section.
+    var anchorY: CGFloat
+    /// The anchor's distance above the header at rest (the stack's spacing, if any).
+    var gap: CGFloat = 0
+    /// Out: true once the header is pinned (it has stopped moving while the anchor scrolls on above it).
+    @Binding var pinned: Bool
+    @State private var headerY: CGFloat = 0
 
     var body: some View {
-        SectionBar(gameID: gameID)
+        SectionBar(gameID: gameID, style: style)
             .frame(maxWidth: maxWidth)
+            .padding(.vertical, vertical)
             .padding(.horizontal, inset)
             .frame(maxWidth: .infinity)
             .background(ink)
-            .overlay(alignment: .bottom) {
-                if pinned {
-                    LinearGradient(colors: [ink, ink.opacity(0)], startPoint: .top, endPoint: .bottom)
-                        .frame(height: 26)
-                        .offset(y: 26)
-                        .allowsHitTesting(false)
-                        .accessibilityHidden(true)
-                }
-            }
-            .onGeometryChange(for: Bool.self) { $0.frame(in: .scrollView).minY <= 0.5 } action: { pinned = $0 }
+            .modifier(PinnedFade(ink: ink, active: pinned))
+            .onGeometryChange(for: CGFloat.self) { $0.frame(in: .scrollView).minY } action: { headerY = $0; update() }
+            .onChange(of: anchorY) { update() }
             .zIndex(1)
+    }
+
+    /// Pinned when the anchor above the Section has scrolled past the header. Comparing the two, not the header against 0,
+    /// holds where the scroll view has a top inset: the header pins at the inset, not at 0, so "minY <= 0.5" never fired in
+    /// Open landscape or Book and the list was cut with no fade (Quinn, #521 at 9cd4775).
+    private func update() {
+        let now = headerY - anchorY > gap + 0.5
+        if now != pinned { pinned = now }
+    }
+}
+
+/// R-7: the list fades out 26 pt beneath a pinned bar, in the bar's own ink, so no row is sliced at full brightness.
+struct PinnedFade: ViewModifier {
+    var ink: Color
+    var active: Bool
+    func body(content: Content) -> some View {
+        content.overlay(alignment: .bottom) {
+            if active {
+                LinearGradient(colors: [ink, ink.opacity(0)], startPoint: .top, endPoint: .bottom)
+                    .frame(height: 26)
+                    .offset(y: 26)
+                    .allowsHitTesting(false)
+                    .accessibilityHidden(true)
+            }
+        }
     }
 }

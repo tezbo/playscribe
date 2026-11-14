@@ -9,9 +9,7 @@ struct EntriesChapter: View {
     var gameID: String
 
     var body: some View {
-        let kind = model.companionKind(gameID)
-        let entries = model.fixtures.book.filter { $0.gameID == gameID && (kind == nil || $0.chapter == kind) }
-            .sorted { ($0.chapter == .world ? 0 : 1) < ($1.chapter == .world ? 0 : 1) }
+        let entries = model.companionEntries(gameID)
         var sections: [String] = []
         for e in entries where !sections.contains(e.section) { sections.append(e.section) }
         return VStack(alignment: .leading, spacing: 14) {
@@ -26,6 +24,7 @@ struct EntriesChapter: View {
 
 struct EntryCard: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.viewOnlyStage) private var viewOnly
     var entry: BookEntry
 
     var body: some View {
@@ -35,12 +34,15 @@ struct EntryCard: View {
                 Text(entry.title).font(PlayscribeFont.headline)
                 if entry.verification == "illustrative" { Tag(text: "Illustrative", tint: .ember) }
                 Spacer()
-                Button { model.toggleBookmark(kind: .entry, id: entry.id, gameID: entry.gameID) } label: {
-                    Image(systemName: marked ? "bookmark.fill" : "bookmark").hitTarget()
+                // Tabletop's stage is view only: no glyph at all here; the rail's Bookmarks menu does it (design, #521).
+                if !viewOnly {
+                    Button { model.toggleBookmark(kind: .entry, id: entry.id, gameID: entry.gameID) } label: {
+                        Image(systemName: marked ? "bookmark.fill" : "bookmark").hitTarget()
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(marked ? "Remove bookmark: \(entry.title)" : "Bookmark \(entry.title)")
+                    .tappableFrame()
                 }
-                .buttonStyle(.plain)
-                .accessibilityLabel(marked ? "Remove bookmark: \(entry.title)" : "Bookmark \(entry.title)")
-                .tappableFrame()
             }
             if entry.spoiler {
                 SpoilerText(text: entry.body, gameID: entry.gameID, key: "entry:\(entry.id)")

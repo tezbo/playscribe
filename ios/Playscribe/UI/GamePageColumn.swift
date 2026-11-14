@@ -12,6 +12,8 @@ struct GamePageColumn: View {
     @State private var liveOffset: CGFloat = 0
     /// True once the bar has reached the top and is pinned.
     @State private var barPinned = false
+    /// Where the zero-height anchor above the Section sits in the scroll view; the header compares itself with it.
+    @State private var anchorY: CGFloat = 0
     var gameID: String
 
     /// Spec: "reading width capped at 600 pt" on the open display; Closed is narrower than that anyway.
@@ -31,7 +33,7 @@ struct GamePageColumn: View {
                 .frame(maxWidth: Self.readingWidth + 40, alignment: .leading)
                 .frame(maxWidth: .infinity)
                 Color.clear.frame(height: 0).id("sectionTop")
-                    .onGeometryChange(for: Bool.self) { $0.frame(in: .scrollView).minY <= 0.5 } action: { barPinned = $0 }
+                    .onGeometryChange(for: CGFloat.self) { $0.frame(in: .scrollView).minY } action: { anchorY = $0 }
                 Section {
                     content(section)
                         .padding(.top, 16)
@@ -39,7 +41,7 @@ struct GamePageColumn: View {
                         .frame(maxWidth: Self.readingWidth + 40, alignment: .leading)
                         .frame(maxWidth: .infinity)
                 } header: {
-                    PinnedSectionHeader(gameID: gameID, ink: Color.ink0, maxWidth: Self.readingWidth)
+                    PinnedSectionHeader(gameID: gameID, ink: Color.ink0, maxWidth: Self.readingWidth, anchorY: anchorY, pinned: $barPinned)
                 }
             }
             .padding(.bottom, 24)

@@ -404,3 +404,13 @@ struct SplitArrangement<Primary: View, Secondary: View>: View {
         }
     }
 }
+
+/// G-4, TT-1: true inside Tabletop's view-only standing half. Views there draw no controls at all (a dead glyph above the fold
+/// invites taps, and XCUITest and VoiceOver still find a Button under allowsHitTesting(false)); the lower half carries them.
+private struct ViewOnlyStageKey: EnvironmentKey { static let defaultValue = false }
+extension EnvironmentValues {
+    var viewOnlyStage: Bool {
+        get { self[ViewOnlyStageKey.self] }
+        set { self[ViewOnlyStageKey.self] = newValue }
+    }
+}

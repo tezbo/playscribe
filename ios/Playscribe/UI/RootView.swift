@@ -349,6 +349,8 @@ struct TabletopRail: View {
                     .accessibilityIdentifier("gameBack")
                 // Only five buttons fit the lower half (297a799): Check for updates and Links go in a More menu.
                 ForEach(model.gameActions(id).filter { $0.id != "refresh" }) { RailButton(action: $0) }
+                // Companion's stage cards carry no bookmark glyph in Tabletop; bookmarking is here, in the lower half.
+                if model.section(id) == .companion, let a = model.companionBookmarkAction(id) { RailButton(action: a) }
                 // Share the open update as a card (lower rail, 44 pt target; TT-0).
                 if let r = model.readerRelease(id), r.isPS5Listed { ShareUpdateButton(release: r) }
             } else if model.nav.tab == .search {
