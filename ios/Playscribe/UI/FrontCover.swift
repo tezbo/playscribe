@@ -203,7 +203,7 @@ struct FrontCoverPlate: View {
             }
             // Iris (#467): the game name is never cut on a cover. It takes the lines it needs (four at most for real names
             // at the AX3 cap) and pushes the plate up; the art gives way, never the name.
-            Text(card.game.name)
+            Text(card.game.name.gluingTrailingNumeral)
                 .font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)
             FlowLayout(spacing: 6) {
@@ -214,12 +214,14 @@ struct FrontCoverPlate: View {
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
     }
 
-    /// "v1.1 · On PS5" (accent), the UTC day, and the change count. The version is always the PS5 one: the deck holds
+    /// "Out on PS5" (accent), the PS5 version chip when there is one, the UTC day, and the change count. The version is always the PS5 one: the deck holds
     /// only releases live on PS5, and `versionChip` comes from the PS5 release's own name.
     static func chips(_ card: DeckCard) -> [(text: String, live: Bool)] {
         var list: [(text: String, live: Bool)] = []
         if let r = card.release {
-            list.append(((r.versionChip.map { $0 + " · " } ?? "") + "On PS5", true))
+            // "Out on PS5", then the PS5 version as its own chip, only when the PS5 row has one (Card B, no dot separators).
+            list.append(("Out on PS5", true))
+            if let v = r.ps5Version { list.append((v, false)) }
             if let d = card.date { list.append((AppModel.tileDay(d), false)) }
             let n = r.noteCount
             if n > 0 { list.append((n == 1 ? "1 change" : "\(n) changes", false)) }
@@ -230,7 +232,7 @@ struct FrontCoverPlate: View {
     }
 
     private func chip(_ text: String, live: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption.weight(.semibold)).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption.weight(.semibold)).monospacedDigit()
             .foregroundStyle(live ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)
             .padding(.horizontal, 8).padding(.vertical, 3).frame(minHeight: 24)
             .background(RoundedRectangle(cornerRadius: 6, style: .continuous)

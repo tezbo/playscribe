@@ -149,8 +149,9 @@ struct FrontCoverTests {
             let chips = FrontCoverPlate.chips(card)
             guard let r = card.release else { continue }
             #expect(chips.first?.live == true)
-            #expect(chips.first?.text.hasSuffix("On PS5") == true)
-            if let v = r.versionChip { #expect(chips.first?.text.hasPrefix(v) == true) }
+            #expect(chips.first?.text == "Out on PS5")
+            if let v = r.ps5Version { #expect(chips.contains { $0.text == v }) }
+            #expect(chips.allSatisfy { !$0.text.contains("·") }) // dot-ok: asserts the dot is absent
             #expect(chips.filter { $0.live }.count == 1)
             if r.noteCount > 1 { #expect(chips.contains { $0.text == "\(r.noteCount) changes" }) }
         }

@@ -125,7 +125,7 @@ final class NotificationService: NSObject {
             for m in PlusStore.shared.months {
                 guard let fire = PlusLogic.leavingSoonFire(m) else { continue }
                 items.append(Item(id: "plus-leaving-\(m.month)",
-                                  body: "This month's games can be claimed until \(PlusLogic.claimByText(m)).",
+                                  body: "This month’s games can be claimed until \(PlusLogic.claimByText(m)).",
                                   passive: quiet?.contains(fire) == true,
                                   parts: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: fire)))
             }

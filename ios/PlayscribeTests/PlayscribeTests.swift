@@ -311,10 +311,10 @@ struct DatePrecisionTests {
         func g(_ o: String?, _ on: String? = nil, _ p: DatePrecision? = .tbd) -> CatalogGame {
             CatalogGame(id: "t", name: "T", platforms: [.ps5], releaseDate: nil, releasePrecision: p, playableSince: nil, releasedElsewhere: o, releasedElsewhereOn: on, coverage: .none)
         }
-        #expect(g("2012-10-16", "PC").ps5DateLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-16", "PC").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-19", "PC (Microsoft Windows)").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-16").ps5AvailabilityLine == "Not on PS5 · 2012")
+        #expect(g("2012-10-16", "PC").ps5DateLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-16", "PC").ps5AvailabilityLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-19", "PC (Microsoft Windows)").ps5AvailabilityLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-16").ps5AvailabilityLine == "Not on PS5 (2012)")
         #expect(g("2012-10-16").ps5ShortLine == "Not on PS5")
         // Truly no release anywhere, or a release still to come, stays TBA.
         #expect(g(nil).ps5AvailabilityLine == "Release date TBA")
@@ -378,13 +378,27 @@ struct GameBookStateTests {
         let url = URL.temporaryDirectory.appending(path: "d13-\(UUID().uuidString).json")
         let m = AppModel(storeURL: url)
         m.openGame("dawnwalker")
-        m.nav.chapter = .world
+        m.nav.chapter = .companion
         m.openGame("kcd2")
         #expect(m.nav.chapter == .updates)
         m.saveNow()
         let again = AppModel(storeURL: url)
         again.openGame("dawnwalker")
-        #expect(again.nav.chapter == .world)
+        #expect(again.nav.chapter == .companion)
+    }
+
+    @Test("D-13, R-7 (0.5.6): a World chapter saved by 0.5.5 reopens as Companion")
+    func savedWorldReopensAsCompanion() {
+        let url = URL.temporaryDirectory.appending(path: "d13w-\(UUID().uuidString).json")
+        let m = AppModel(storeURL: url)
+        m.openGame("dawnwalker")
+        m.nav.chapter = .world
+        m.openGame("kcd2")
+        m.saveNow()
+        let again = AppModel(storeURL: url)
+        again.openGame("dawnwalker")
+        #expect(again.nav.chapter == .companion)
+        #expect(again.section("dawnwalker") == .companion)
     }
 
     @Test("D-4: with nothing selected the Page shows the newest PS5 release")
@@ -931,6 +945,17 @@ struct QAPoseTests {
 }
 
 
+@Suite("Version glue")
+struct VersionGlueTests {
+    @Test("a version never breaks at its dots (G-14)")
+    func keepsVersionWhole() {
+        #expect("01.004.000".keepingVersionsTogether == "01.\u{2060}004.\u{2060}000")
+        #expect("v1.1".keepingVersionsTogether == "v1.\u{2060}1")
+        #expect("Hades II".keepingVersionsTogether == "Hades II")
+        #expect("Fixed. Next".keepingVersionsTogether == "Fixed. Next", "a full stop between words is left alone")
+    }
+}
+
 @Suite("Roman numeral glue")
 struct RomanNumeralGlueTests {
     @Test("a trailing numeral is tied to the word before it (r060-nbsp-roman-numerals)")
@@ -1082,5 +1107,31 @@ struct OpenMarksReadTests {
         #expect(m.isUnread(r), "Mark as unread (R-6a)")
         // The cover's NEW UPDATE eyebrow and the deck's "New update" chip read isUnread, so they come back with it.
         #expect(m.unreadCount(r.gameID) >= 1)
+    }
+}
+
+/// TT-2 (Iris, 0.5.6): the Tabletop stage leads with the patch name in the largest type, not the headline.
+struct ReaderStageTitleTests {
+    @MainActor
+    private func overview(name: String, headline: String?) -> ReaderSection? {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "rt-\(UUID().uuidString).json"))
+        let r = Release(id: "r", gameID: "g", displayName: name, kind: .major, kindBasis: .studio, announcedAt: Date(timeIntervalSince1970: 1_745_020_800),
+                        notes: [], sourceIDs: [], platforms: [], headline: headline)
+        return m.readerSections(r).first { $0.id == "overview" }
+    }
+
+    @Test("TT-2: the overview's title is the patch name, with or without a headline")
+    @MainActor func overviewLeadsWithThePatchName() {
+        #expect(overview(name: "Update 1.1", headline: "Photo mode and a new hunt")?.title == "Update 1.1")
+        #expect(overview(name: "Update 1.1", headline: nil)?.title == "Update 1.1")
+        #expect(overview(name: " ", headline: "Photo mode and a new hunt")?.title == "Photo mode and a new hunt")
+    }
+
+    @Test("TT-2: the headline is the overview's secondary line, dropped when it repeats the title")
+    @MainActor func headlineIsSecondary() {
+        #expect(overview(name: "Update 1.1", headline: "Photo mode and a new hunt")?.subtitle == "Photo mode and a new hunt")
+        #expect(overview(name: "Update 1.1", headline: nil)?.subtitle == nil)
+        #expect(overview(name: " ", headline: "Photo mode and a new hunt")?.subtitle == nil)
+        #expect(overview(name: "Update 1.1", headline: "Update 1.1")?.subtitle == nil)
     }
 }
