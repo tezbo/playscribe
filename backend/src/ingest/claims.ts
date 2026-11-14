@@ -134,5 +134,15 @@ export const statedLiveTime = (raw: string, publishedAt: string): string | null 
   return best === null ? null : new Date(best).toISOString()
 }
 
-/** Placeholder (red test first): today only the announcement rule counts. */
-export const isNewsOnlyTitle = (title: string) => isAnnouncementTitle(title)
+/**
+ * A Steam post that talks about an update without being it: a preview of what is coming ("Check out what's coming to Cyberpunk 2077 in
+ * the Edgerunners 2 Update!"), a stream or event ("REDstreams: ... Update (2.5) is coming!"), or system requirements ("Update to PC
+ * System Requirements"), plus every announcement headline above. It is news; the release is the post that says the update is out
+ * (bug-055-feed-steam-announcements). A post saying "is out now" or carrying "Update 2.5" is never matched.
+ */
+export const isNewsOnlyTitle = (title: string) =>
+  isAnnouncementTitle(title) ||
+  /\bwhat['\u2019]?s\s+coming\b/i.test(title) ||
+  /\b(?:update|patch|hotfix|season|expansion)\b[^|]{0,40}\bis\s+coming\b/i.test(title) ||
+  /\b(?:red\s*streams?|live\s*streams?|dev\s*streams?|twitch)\b/i.test(title) ||
+  /\bsystem\s+requirements?\b/i.test(title)

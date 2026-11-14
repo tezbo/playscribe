@@ -425,6 +425,15 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
         if (post.news) {
           tx(deps.db, () => {
             if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources && !repairOnly.has(game.id)) addNewsUnlessPromo(deps, summary, game.id, post)
+            // Backfill: an earlier rule made a release from this news-only post (a preview, a stream, an announcement): drop it.
+            const old = deps.repairClaims ? (deps.db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id : null
+            if (old) {
+              const dropped = store.dropAnnouncementRelease(deps.db, old, s.id, post.publishedAt)
+              deps.log?.(dropped ? `backfill: dropped ${old}, news not a release` : `backfill: kept ${old} (other posts feed it), removed only its PS5 row`)
+              const b = (summary.backfill ??= { dropped: 0, kept: 0 })
+              if (dropped) b.dropped++
+              else b.kept++
+            }
             store.markSeen(deps.db, s.id, post.postId, null)
           })
           continue

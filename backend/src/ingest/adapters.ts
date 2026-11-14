@@ -3,6 +3,7 @@ import { getJson, getText, type FetchFn } from '../http.ts'
 import type { SourceDef } from '../registry.ts'
 import { steamAppIdOf } from '../registry.ts'
 import type { Post } from '../types.ts'
+import { isNewsOnlyTitle } from './claims.ts'
 
 // Source adapters. Each turns one registry source into posts that look like patch notes.
 // Steam's patch posts are not always tagged "patchnotes", so titles count too. "Community
@@ -43,7 +44,7 @@ const steam = async (fetchFn: FetchFn, s: SourceDef, count: number, until?: stri
       title: n.title,
       publishedAt: new Date(n.date * 1000).toISOString(),
       body: n.contents,
-      ...(n.tags?.includes('patchnotes') || looksLikePatch(n.title) ? {} : { news: true }),
+      ...(!isNewsOnlyTitle(n.title) && (n.tags?.includes('patchnotes') || looksLikePatch(n.title)) ? {} : { news: true }),
     }))
 }
 
