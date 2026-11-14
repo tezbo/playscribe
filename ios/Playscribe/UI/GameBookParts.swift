@@ -125,6 +125,14 @@ struct PageArtBand: View {
     /// Closed landscape is wide and short (594 x 432 pt): a fixed 170 pt band took 40% of the screen and the
     /// extension effect stretched catalogue art past it (Terry, 0.5.0 build 6). There it is a slim, clipped band.
     private var slim: Bool { duo.isLandscape && duo.pose == .closed }
+    @Environment(\.dynamicTypeSize) private var typeSize
+    /// Iris, #529 (std / AX5): Closed portrait 130 / 84, Closed landscape 88 / 52, Open, Open portrait and Book 170 / 110.
+    static func height(pose: Pose, landscape: Bool, ax: Bool) -> CGFloat {
+        switch pose {
+        case .closed: landscape ? (ax ? 52 : 88) : (ax ? 84 : 130)
+        default: ax ? 110 : 170
+        }
+    }
     var body: some View {
         let game = model.game(gameID)
         let asset = model.backdrop(gameID, chapter: model.section(gameID), tall: false)
@@ -138,7 +146,7 @@ struct PageArtBand: View {
                     .modifier(hasArt ? FadeMask() : FadeMask(enabled: false))
             }
         }
-        .frame(height: slim ? 96 : 170)
+        .frame(height: Self.height(pose: duo.pose, landscape: duo.isLandscape, ax: typeSize.isAccessibilitySize))
         .frame(maxWidth: .infinity)
         .clipped()
         .modifier(ExtensionUnlessSlim(slim: slim || !extendsUnderRail))
@@ -190,6 +198,7 @@ struct CoverHeader: View {
 /// One release on the Page: header, then GR-3's story-first body, with spoilers inline (D-6).
 struct ReleasePage: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var release: Release
     @Environment(\.dynamicTypeSize) private var typeSize
     /// Card A: the patch name is the page's largest text, "New" ends its row only while unread, then headline, one row with the
@@ -214,6 +223,9 @@ struct ReleasePage: View {
         let ps5Page = r.isPS5Listed
         let status = PS5StatusLines(r)
         VStack(alignment: .leading, spacing: 12) {
+            // Tabletop only: the header is capped at AX3 when the setting is AX4 or AX5, so the lower half is not all header; the notes
+            // below keep the reader's full size (Iris, #529: AX5 still gates).
+            VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top, spacing: 8) {
                 nameRow(r)
                 Spacer(minLength: 0)
@@ -240,6 +252,8 @@ struct ReleasePage: View {
             }
             .accessibilityElement(children: .ignore).accessibilityLabel(status.spoken)
             .accessibilityIdentifier("ps5Status")
+            }
+            .dynamicTypeSize(...(duo.pose == .tabletop ? DynamicTypeSize.accessibility3 : DynamicTypeSize.accessibility5))
             ForYouCard(release: r)
             if r.notes.contains(where: { $0.items.contains { $0.spoiler == true } }) {
                 SpoilerLine(gameID: r.gameID)

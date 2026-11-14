@@ -85,3 +85,17 @@ struct PS5StatusCardBTests {
         #expect(!GameBasicsView.hasNoDetails(info: nil, summary: nil, trailers: 1))
     }
 }
+
+/// Iris's final hero heights for the update page (#529), std then AX5. Tabletop has no band (the art is the stage).
+struct HeroBandHeightTests {
+    @Test func heightsPerPose() {
+        #expect(PageArtBand.height(pose: .closed, landscape: false, ax: false) == 130)
+        #expect(PageArtBand.height(pose: .closed, landscape: false, ax: true) == 84)
+        #expect(PageArtBand.height(pose: .closed, landscape: true, ax: false) == 88)
+        #expect(PageArtBand.height(pose: .closed, landscape: true, ax: true) == 52)
+        #expect(PageArtBand.height(pose: .flat, landscape: false, ax: false) == 170)
+        #expect(PageArtBand.height(pose: .flat, landscape: true, ax: true) == 110)
+        #expect(PageArtBand.height(pose: .book, landscape: true, ax: false) == 170)
+        #expect(PageArtBand.height(pose: .book, landscape: true, ax: true) == 110)
+    }
+}
