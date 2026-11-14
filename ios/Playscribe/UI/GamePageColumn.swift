@@ -46,6 +46,15 @@ struct GamePageColumn: View {
             }
             .padding(.bottom, 24)
         }
+        // The list fades out over its last 24 pt where the scroll view ends above the floating tab bar, instead of cutting a row
+        // at full brightness (Quinn, #526 at feaff25, Open portrait). The page ends 24 pt lower, so its last row rests clear.
+        // An overlay in the page's ink, not a mask, so nothing that extends past the scroll view's frame is clipped.
+        .overlay(alignment: .bottom) {
+            LinearGradient(colors: [Color.ink0.opacity(0), Color.ink0], startPoint: .top, endPoint: .bottom)
+                .frame(height: 24)
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
+        }
         .clearsMessages()
         .scrollIndicators(.hidden)
         .scrollPosition($position)
