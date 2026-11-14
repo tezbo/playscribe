@@ -209,6 +209,10 @@ final class AppModel {
     var deckSelection: String?
     /// Tabletop's Links sheet (J-11).
     var linksSheetOpen = false
+    /// More > Share (0.5.6 hotfix): the update whose card the share sheet is showing.
+    var shareReleaseID: String?
+    /// More > Swap sides (D-10, 0.5.6 hotfix): each bump flips Contents and Page.
+    var swapSidesRequest = 0
     /// The verification tag whose explainer is open (0.5.0).
     var tagExplainer: Verification?
     /// N-9: the follow-list card's "What is sent" sheet, the full wording, one tap from the choice (Iris, #455).
@@ -637,6 +641,9 @@ final class AppModel {
             n.expanded["rel:\(releaseID)"] = true
             n.anchors[Self.bookKey(gameID, .updates)] = "rel-\(releaseID)"
         } else if !sameGame, let first = ps5Releases(gameID).first {
+            // R-1 (Terry, 14 Nov: Cyberpunk opened on Patch 2.31, an earlier pick, not Update 2.5): a game opened afresh shows
+            // its newest update; a pick only lasts for the visit.
+            n.selected?[gameID] = nil
             // R-1: newest On PS5 release expanded, at the top.
             if n.expanded["rel:\(first.id)"] == nil { n.expanded["rel:\(first.id)"] = true }
         }
@@ -672,6 +679,16 @@ final class AppModel {
         nav.selected = (nav.selected ?? [:]).merging([gameID: releaseID]) { $1 }
         readerIndex[gameID] = 0
         if let r = release(gameID, releaseID), isUnread(r) { markRead(r.id) }
+    }
+
+    /// J-1: a tap on an All updates row. Side by side (and Tabletop) the Page shows the release in place; where pushing is the
+    /// layout (Closed, open portrait) the release is pushed as its own screen.
+    /// Pushed, the Page underneath keeps its release, so Back returns to the update the reader was on (Terry, 14 Nov: Back
+    /// showed the pushed update again, with the full page); opening it still reads it (R-6a).
+    func listTap(_ gameID: String, releaseID: String, pushes: Bool) {
+        guard pushes else { return select(gameID, releaseID: releaseID) }
+        if let r = release(gameID, releaseID), isUnread(r) { markRead(r.id) }
+        nav.detailReleaseID = releaseID
     }
 
     static func bookKey(_ gameID: String, _ chapter: Chapter) -> String { "book-\(gameID)-\(chapter.rawValue)" }

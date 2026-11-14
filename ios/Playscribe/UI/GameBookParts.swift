@@ -913,12 +913,7 @@ struct ReleaseTimeline: View {
         Button {
             // J-1: side by side (and Tabletop, where the Page is the standing half) the Page shows
             // it; Closed and open portrait push it as its own screen.
-            if duo.pose == .closed || (duo.pose == .flat && !duo.isLandscape) {
-                model.select(gameID, releaseID: r.id)
-                model.nav.detailReleaseID = r.id
-            } else {
-                model.select(gameID, releaseID: r.id)
-            }
+            model.listTap(gameID, releaseID: r.id, pushes: duo.pose == .closed || (duo.pose == .flat && !duo.isLandscape))
         } label: {
             let title = TitleWithTags(release: r) {
                 Text(r.displayName).font(PlayscribeFont.subheadline.weight(selected ? .semibold : .regular))

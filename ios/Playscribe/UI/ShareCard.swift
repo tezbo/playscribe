@@ -155,3 +155,12 @@ enum ShareText {
         return c.url
     }
 }
+
+/// More > Share (0.5.6 hotfix): the system share sheet with the update's card and its text, the same as the Share button's link.
+struct ShareActivitySheet: UIViewControllerRepresentable {
+    var items: [Any]
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
+    func updateUIViewController(_ vc: UIActivityViewController, context: Context) {}
+}
