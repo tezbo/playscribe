@@ -29,7 +29,8 @@ struct PS5StatusCardBTests {
     func liveWithVersion() {
         let s = PS5StatusLines(release(ps5: .live, ps5Version: "01.004.000"))
         #expect(s.primary == "Out on PS5")
-        #expect(s.version == "This update is 01.004.000 on PS5")
+        #expect(s.version == "This update is 01.\u{2060}004.\u{2060}000 on PS5") // a version never breaks at its dots
+        #expect(s.version?.replacingOccurrences(of: "\u{2060}", with: "") == "This update is 01.004.000 on PS5")
         #expect(s.spoken == "Out on PS5. This update is 01.004.000 on PS5")
     }
 

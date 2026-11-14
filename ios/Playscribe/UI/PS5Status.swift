@@ -8,7 +8,7 @@ struct PS5StatusLines: Equatable {
     var version: String?
 
     /// Both lines in one VoiceOver element.
-    var spoken: String { [primary, version].compactMap { $0 }.joined(separator: ". ") }
+    var spoken: String { [primary, version].compactMap { $0 }.joined(separator: ". ").replacingOccurrences(of: "\u{2060}", with: "") }
 
     init(_ r: Release) {
         switch r.ps5State {
@@ -16,7 +16,8 @@ struct PS5StatusLines: Equatable {
             primary = "Out on PS5"
             version = r.ps5Version.flatMap { v in
                 let n = v.trimmingCharacters(in: .whitespaces)
-                return n.isEmpty ? nil : "This update is \(n) on PS5"
+                // A word joiner after each dot: a version number never breaks at its dots (Redesign rule). Stripped for VoiceOver.
+                return n.isEmpty ? nil : "This update is \(n.replacingOccurrences(of: ".", with: ".\u{2060}")) on PS5"
             }
         case .announced: primary = "Announced for PS5"
         case .reported: primary = "Reported on PS5"
