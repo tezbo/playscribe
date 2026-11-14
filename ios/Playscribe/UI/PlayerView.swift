@@ -256,7 +256,7 @@ struct WatchAlong: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
-                Text("WATCH ALONG").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+                Text("Watch along").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
                     .accessibilityAddTraits(.isHeader)
                 ForEach(Array((release.keyChanges ?? []).enumerated()), id: \.offset) { _, k in
                     HStack(alignment: .firstTextBaseline, spacing: 10) {

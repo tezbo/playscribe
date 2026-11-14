@@ -28,7 +28,7 @@ struct CatchUpCard: View {
                         HStack(spacing: 12) {
                             CoverView(game: item.game, cornerRadius: 6).frame(width: 40)
                             VStack(alignment: .leading, spacing: 2) {
-                                Text(item.game.name).font(PlayscribeFont.headline).lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
+                                Text(item.game.name.gluingTrailingNumeral).font(PlayscribeFont.headline).lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
                                 HStack(spacing: 8) {
                                     Text(item.release.displayName)
                                     if let l = item.release.ps4Label { Text(l).fontWeight(.semibold) }

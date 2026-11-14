@@ -190,7 +190,7 @@ struct PlusCard: View {
         if let game = Self.resolve(g, tracked: { model.game($0) }) {
             Button { model.browseGame(game) } label: {
                 HStack(spacing: 8) {
-                    Text(lead + g.name).fixedSize(horizontal: false, vertical: true)
+                    Text(lead + g.name.gluingTrailingNumeral).fixedSize(horizontal: false, vertical: true)
                     Spacer(minLength: 8)
                     Image(systemName: "chevron.right").foregroundStyle(PlayscribeColor.textSecondary).accessibilityHidden(true)
                 }
@@ -201,7 +201,7 @@ struct PlusCard: View {
             .tappableFrame()
             .accessibilityHint("Opens the game")
         } else {
-            Text(lead + g.name).font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
+            Text(lead + g.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, minHeight: 28, alignment: .leading)
         }
     }

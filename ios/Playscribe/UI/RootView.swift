@@ -531,7 +531,7 @@ struct LowerMessages: View {
                 } label: {
                     HStack(spacing: 8) {
                         UnreadDot()
-                        Text("New on PS5: \(game.name) \(r.displayName)")
+                        Text("New on PS5: \(game.name.gluingTrailingNumeral) \(r.displayName)")
                             .font(PlayscribeFont.subheadline.weight(.semibold))
                             // Never cut: up to three lines at the capped size (Iris, 0.5.1 spec 2).
                             .lineLimit(3)

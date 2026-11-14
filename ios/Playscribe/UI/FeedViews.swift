@@ -284,7 +284,7 @@ struct SearchView: View {
                             HStack(spacing: 12) {
                                 CoverView(game: g, cornerRadius: 4).frame(width: 36)
                                 VStack(alignment: .leading) {
-                                    Text(g.name).font(PlayscribeFont.subheadline.weight(.semibold))
+                                    Text(g.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline.weight(.semibold))
                                     Text(library.contains(g.id) ? (model.entry(g.id)?.status.label ?? "") : "Not in your library").font(PlayscribeFont.caption).foregroundStyle(.secondary)
                                 }
                             }

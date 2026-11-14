@@ -385,7 +385,7 @@ struct AddRow: View {
                 // One mark per row: the circle on the right becomes a tick (no badge on the cover).
                 CoverView(game: game, cornerRadius: 4).frame(width: 40)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).fixedSize(horizontal: false, vertical: true)
+                    Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline.weight(.semibold)).fixedSize(horizontal: false, vertical: true)
                     Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                 }
                 Spacer(minLength: 8)
@@ -773,7 +773,7 @@ struct PopularCover: View {
             model.addGame(game, status: .owned)           // an upcoming game goes in as Wishlist; the pop plays here only
             if model.entry(game.id) == nil {               // rolled back: say so, restore the tick
                 phase = .idle
-                model.show(Toast(text: "Couldn’t add \(game.name)"))
+                model.show(Toast(text: "Couldn’t add \(game.name.gluingTrailingNumeral)"))
             }
         }
     }

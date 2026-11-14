@@ -96,7 +96,7 @@ struct LibraryStage: View {
             LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 8) {
                 if let game {
-                    Text(game.name).font(PlayscribeFont.title2.bold()).lineLimit(3)
+                    Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold()).lineLimit(3)
                     if let c = model.continueItem, c.game.id == game.id {
                         Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     }
@@ -779,7 +779,7 @@ struct ContinueText: View {
                         .overlay(Capsule().strokeBorder(PlayscribeColor.accent.opacity(0.7), lineWidth: 1))
                 }
             }
-            Text(game.name).font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.textPrimary)
+            Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.textPrimary)
                 .lineLimit(2).fixedSize(horizontal: false, vertical: true)
             Text(fresh ? "\(release.displayName) is here. Catch up, then jump back in." : release.displayName)
                 .font(PlayscribeFont.body).foregroundStyle(PlayscribeColor.textSecondary)
@@ -851,7 +851,7 @@ struct GameRow: View {
                 layout {
                     CoverView(game: row.game, cornerRadius: 6).frame(width: 44)
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(row.game.name).font(PlayscribeFont.headline).lineLimit(stacked ? nil : 2).multilineTextAlignment(.leading)
+                        Text(row.game.name.gluingTrailingNumeral).font(PlayscribeFont.headline).lineLimit(stacked ? nil : 2).multilineTextAlignment(.leading)
                         HStack(spacing: 6) {
                             StatusPill(status: row.status)
                             Text(model.shelfLine(row)).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
@@ -1025,7 +1025,7 @@ struct TileCover: View {
                 } else if let art = game.keyArtAsset {
                     Image(art).resizable().scaledToFill()
                         .overlay(alignment: .top) {
-                            Text(game.name).font(PlayscribeFont.title3)
+                            Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.title3)
                                 .multilineTextAlignment(.center).lineLimit(3).padding(8)
                                 .frame(maxWidth: .infinity)
                                 .background(LinearGradient(colors: [.black.opacity(0.7), .clear], startPoint: .top, endPoint: .bottom))
@@ -1262,7 +1262,7 @@ struct ContinueTile: View {
                 .overlay(alignment: .bottomLeading) {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(fresh ? "NEW UPDATE" : "CONTINUE").font(PlayscribeFont.caption2).tracking(1).foregroundStyle(PlayscribeColor.accent)
-                        Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
+                        Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
                         Text(release.displayName).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                     }
                     .padding(10)

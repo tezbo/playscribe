@@ -203,7 +203,7 @@ struct FrontCoverPlate: View {
             }
             // Iris (#467): the game name is never cut on a cover. It takes the lines it needs (four at most for real names
             // at the AX3 cap) and pushes the plate up; the art gives way, never the name.
-            Text(card.game.name)
+            Text(card.game.name.gluingTrailingNumeral)
                 .font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)
             FlowLayout(spacing: 6) {
