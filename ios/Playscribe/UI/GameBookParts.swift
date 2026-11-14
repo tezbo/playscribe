@@ -637,6 +637,8 @@ struct ContentsView: View {
     @Environment(\.railWidth) private var railWidth
     @AppStorage(ReadingSide.key) private var pageOnLeft = false
     @State private var position = ScrollPosition(idType: String.self)
+    @State private var anchorY: CGFloat = 0
+    @State private var tocPinned = false
     var gameID: String
 
     private var leading: CGFloat { duo.hingeInset(16, facingHinge: pageOnLeft) }
@@ -663,12 +665,18 @@ struct ContentsView: View {
                     if duo.pose == .book { PageArtBand(gameID: gameID) }
                     // Book: the edge that faces the hinge keeps 24 pt clear of the division band (r054-book-gamepage-hinge-inset).
                     ContentsHead(gameID: gameID).padding(.leading, leading).padding(.trailing, trailing)
+                        .background(alignment: .bottom) {
+                            Color.clear.frame(height: 0)
+                                .onGeometryChange(for: CGFloat.self) { $0.frame(in: .scrollView).minY } action: { anchorY = $0 }
+                        }
                     Section {
                         ContentsBody(gameID: gameID).padding(.leading, leading).padding(.trailing, trailing)
                     } header: {
                         if duo.pose == .book {
-                            SectionBar(gameID: gameID, style: .contents)
-                                .padding(.leading, leading).padding(.trailing, trailing).padding(.vertical, 6)
+                            // Pinned, the list fades out under it as in one column (Quinn, #521: "Patch 1.7" was sliced).
+                            PinnedSectionHeader(gameID: gameID, ink: Color.ink0, inset: 0, style: .contents, vertical: 6,
+                                                anchorY: anchorY, gap: 14, pinned: $tocPinned)
+                                .padding(.leading, leading).padding(.trailing, trailing)
                                 .background(Color.ink0)
                         }
                     }

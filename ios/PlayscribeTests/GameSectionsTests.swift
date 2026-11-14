@@ -84,6 +84,26 @@ struct GameSectionsTests {
         #expect(m.nav.anchors[AppModel.bookKey("dawnwalker", .companion)] == "entry-\(tip.id)")
     }
 
+    /// G-4 (#521): Tabletop's stage draws no bookmark glyph; the rail's Bookmarks menu lists what the stage shows and toggles it.
+    @Test func railBookmarksListTheShownEntriesAndToggle() throws {
+        let m = model()
+        let shown = m.companionEntries("dawnwalker")
+        #expect(!shown.isEmpty)
+        #expect(shown.allSatisfy { $0.chapter == .world })   // World filter by default
+        let action = try #require(m.companionBookmarkAction("dawnwalker"))
+        #expect(action.title == "Bookmarks")
+        guard case .menu(let sections) = action.kind else { Issue.record("Bookmarks is a menu"); return }
+        let items = sections.flatMap(\.items)
+        #expect(items.map(\.id) == shown.map(\.id))
+        #expect(items.allSatisfy { !$0.checked })
+        items[0].action()
+        #expect(m.isBookmarked(kind: .entry, id: shown[0].id))
+        let again = try #require(m.companionBookmarkAction("dawnwalker"))
+        guard case .menu(let s2) = again.kind else { return }
+        #expect(s2.flatMap(\.items).first?.checked == true)
+        #expect(m.companionBookmarkAction("kcd2") == nil)
+    }
+
     @Test func worldChapterOpensCompanion() {
         let m = model()
         m.openGame("dawnwalker", chapter: .world)
