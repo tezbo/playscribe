@@ -566,3 +566,11 @@ export const dropAnnouncementRelease = (db: DB, releaseId: string, sourceId: str
   db.prepare('DELETE FROM releases WHERE id = ?').run(releaseId)
   return true
 }
+
+/** Backfill: a release the old rules named after a PC build number gets the plain name. The key and everything else stay. */
+export const renameRelease = (db: DB, releaseId: string, displayName: string) => {
+  const r = db.prepare('SELECT display_name, notes FROM releases WHERE id = ?').get(releaseId) as { display_name: string; notes: string } | undefined
+  if (!r || r.display_name === displayName) return false
+  db.prepare('UPDATE releases SET display_name = ?, content_hash = ?, revision = revision + 1, updated_at = ? WHERE id = ?').run(displayName, hashNotes(displayName, json<NoteSection[]>(r.notes, [])), now(), releaseId)
+  return true
+}

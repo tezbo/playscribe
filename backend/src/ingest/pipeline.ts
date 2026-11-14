@@ -8,7 +8,7 @@ import type { PlatformStatus, Post } from '../types.ts'
 import newsSources from '../sources/news-sources.json' with { type: 'json' }
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
 import { isAnnouncementTitle, isTestBuildPost, pcScopedPost, statedLiveTime } from './claims.ts'
-import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
+import { classify, consoleVersionOf, pcBuildTitle, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import { IGDB_REV, type Igdb } from './igdb.ts'
 import { extractNotes, mentionsPs4, mentionsPs5, ps5PageOf, isPromoTitle } from './notes.ts'
 
@@ -213,6 +213,10 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   }
 
   let naming = nameRelease(post.title, post.publishedAt)
+  // A title that is only the PC build number ("Update - 12.1.247768", with "BUILD: 12.1.247768" in the post) is just "Update": the
+  // number is a PC build, not a PS5 version, and the date row tells the updates apart. The stored key keeps the number (bug-056).
+  const pcBuildNamed = s.kind === 'steamNews' && pcBuildTitle(post.title, post.body)
+  if (pcBuildNamed) naming = { ...naming, displayName: naming.displayName.replace(/\s+\S+$/, '') || 'Update' }
   const notes = extractNotes(post.body, 'Changes', s.kind === 'steamNews' && (!game.ps5_release || post.publishedAt.slice(0, 10) < game.ps5_release))
   const kind = () =>
     classify({ title: post.title, notes, announcedAt: post.publishedAt, previousAnnouncedAt: store.previousAnnouncedAt(db, game.id, post.publishedAt), platformReleaseDate: game.ps5_release })
@@ -323,6 +327,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   // A studio or Steam post spelling a version another way ("1.4.0" for "1.4") joins the release already stored.
   const versionKey = store.equivalentRelease(db, game.id, naming.versionKey, post.publishedAt)?.version_key ?? naming.versionKey
   const releaseId = track(store.upsertRelease(db, { gameId: game.id, versionKey, displayName: naming.displayName, kind: k.kind, kindBasis: k.kindBasis, announcedAt: post.publishedAt, notes, sourceId: s.id }))
+  if (deps.repairClaims && pcBuildNamed && store.renameRelease(db, releaseId, naming.displayName)) deps.log?.(`backfill: renamed ${releaseId} to "${naming.displayName}", a PC build number`)
 
   if (pcOnly) {
     store.upsertPlatform(db, releaseId, 'pc', { status: 'live', verification: 'official', liveAt: store.field(post.publishedAt, 'official', s.id) })
