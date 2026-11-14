@@ -140,7 +140,7 @@ struct SettingsView: View {
                     // Not everyone has PS Plus: the Library card is on by default and can be hidden. Off also stops the reminder.
                     Toggle("PS Plus card in Library", isOn: Binding(get: { model.data.plusCardOff != true }, set: { model.data.plusCardOff = $0 ? nil : true }))
                         .frame(minHeight: 52)
-                        .accessibilityHint("Shows this month's PS Plus games in the Library, with a reminder before they leave")
+                        .accessibilityHint("Shows this month’s PS Plus games in the Library, with a reminder before they leave")
                         .accessibilityIdentifier("plusCardToggle")
                         .onChange(of: model.data.plusCardOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
                     // Shown only while a PS Plus month exists and the card is on, the same condition as the Library card.
@@ -154,7 +154,7 @@ struct SettingsView: View {
                             .frame(minHeight: 52, alignment: .leading)
                         }
                             .accessibilityLabel("PS Plus games leaving soon")
-                            .accessibilityHint("A reminder in the last three days before this month's PS Plus games leave")
+                            .accessibilityHint("A reminder in the last three days before this month’s PS Plus games leave")
                             .accessibilityIdentifier("plusLeavingSoon")
                             .onChange(of: model.data.plusLeavingSoonOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
                             .onChange(of: model.data.pauseAll) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
@@ -195,7 +195,7 @@ struct SettingsView: View {
                 } header: {
                     Text("Team alerts (TestFlight and development builds)")
                 } footer: {
-                    Text("Also receive the team's test notifications from the push relay. Off by default; it never appears in an App Store build.")
+                    Text("Also receive the team’s test notifications from the push relay. Off by default; it never appears in an App Store build.")
                 }
 
                 }

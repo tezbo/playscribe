@@ -58,7 +58,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
   - the line "Follow a game to get its PS5 patch notes in one place."
   - a search field focused only when tapped
   - "Popular on PS5", a list of 12 titles with cover, name and an Add button
-  - the link "Add a game that isn't listed".
+  - the link "Add a game that isn’t listed".
 - **F-2** Filter chips and Sort are hidden until the library has 2 or more games. The library search field is hidden until it has 6 or more.
 - **F-3** The empty-state glyph is a book, not a magnifying glass.
 - **F-4** The Updates tab with an empty library says "Updates for your games will appear here" and has a button "Add a game" that switches to Library.
@@ -88,9 +88,9 @@ Decision: the native launch screen is a plain background colour matching the Lib
   - "Popular on PS5", which excludes games already in the library.
 - **A-3** Search starts at 2 characters, debounced 250 ms, and matches the IGDB PS5 catalogue. There is one row per IGDB id: no duplicates, and the record with art wins. Games already added show "In library" (disabled) and are listed after the others.
 - **A-4** No results: "No PS5 game matches '<query>'" plus "Add '<query>' yourself", which opens custom entry with the name prefilled.
-- **A-5** Add closes the sheet, scrolls the library to the new game, highlights it for 1 s, and shows the toast "Added <Game> · Undo".
+- **A-5** Add closes the sheet, scrolls the library to the new game, highlights it for 1 s, and shows the toast "Added <Game>" with an Undo button.
 - **A-6** Custom game: a name (required) and platform (default PS5). It shows a placeholder cover with the title and "No PS5 notes yet".
-- **A-7** Search failure (offline or server error): "Can't search right now" plus Retry. Popular titles come from the bundled catalogue and still show.
+- **A-7** Search failure (offline or server error): "Can’t search right now" plus Retry. Popular titles come from the bundled catalogue and still show.
 - **A-8** While the sheet is open, everything behind it is inert, and the rail "+" is hidden or disabled.
 - **A-9** The newly added game's default notification level is **All updates** for Owned and **Major only** for Wishlist and Watching.
 
@@ -104,9 +104,9 @@ Decision: the native launch screen is a plain background colour matching the Lib
   - **Download:** size, with "Reported" if from the press
   - **Includes:** bundled PC releases, as links to them within the PC only group
   - **Video**
-  - the line "Gamebook can't see what's installed on your console."
+  - the line "Gamebook can’t see what’s installed on your console."
 - **R-4** Notes are grouped by section. Items flagged `ps5ProOnly` carry a "PS5 Pro" tag. PC-only items inside a console release are hidden behind "Show PC-only changes (n)".
-- **R-5** Spoiler items are blurred with the label "Spoiler · tap to show". A per-game toggle (eye symbol) reveals all of them.
+- **R-5** Spoiler items are blurred with the text "Spoiler. Tap to show." (VoiceOver: label "Spoiler", hint "Tap to show"). A per-game toggle (eye symbol) reveals all of them.
 - **R-6** A release becomes **read** when its expanded body has been at least 50% on screen for 1 s, or via "Mark all read". The app icon badge and the Library tab badge update at once.
 - **R-6a** Opening an update on purpose reads it at once, on every path (notification tap cold or warm, Updates row, Library tile or hero, deep link, Contents row): the update the Page lands on is marked read as the game opens, and the badges update. Every release row (Updates, Contents) has "Mark as unread" in its long-press menu ("Mark as read" while unread); Updates rows also take a deliberate leading swipe (no full swipe); the release body keeps its button.
 - **R-7** Sections (0.5.6 redesign, Card C; amends the chapter list): five, in a fixed order, What's new, News, Companion, Gallery, My book. World and Companion are one section, Companion, with a World / Tips filter inside it only when the game has both kinds (in Tabletop, where the section is on the view-only stage, the filter sits in the lower half under the bar and drives the stage). Empty sections hide: Companion with no entries, Gallery with no items, News once it has loaded with no headlines (it shows while loading or after a failure, and never vanishes while on screen). What's new and My book always show. A saved or routed World opens Companion on its World filter. Model: `GameSections` (GameSectionsTests). Layout (s-06-gamepage-nav-layout): Closed and Open in both orientations are one column (`GamePageColumn`): art and title scroll away, the section bar is pinned under them and never scrolls away, and the list fades out 26 pt beneath it. Up to AX2 the bar is text tabs, 48 pt tall, the current tab bold with a 3 pt accent underline and the selected trait; they never become the picker (10 pt padding, else 6 pt, else 4 pt with the spare room shared evenly and a 44 pt tap width each, else they scroll sideways with 20 pt edge fades and the current tab scrolled into view). From AX3, one 76 pt picker showing the current section on one line (never below the AX3 size) with a chevron, listing all five with the current one ticked ("What's new, section picker, 1 of 5"). What's new is the list of updates: search first, Mark n read, the updates (each opens as a pushed page, J-1), then the game's basics; the open display caps it at a 600 pt reading width. Book: the left page is the game (art, title, the sections as a table of contents pinned once it reaches the top, the updates), the right page the open update. Tabletop: the stage is view only; the bar is the first thing in the lower half, pinned above its list. Pinned, the bar (the table of contents in Book) fades the list out 26 pt beneath it in every pose, whatever the scroll view's top inset. Tabletop's stage draws no controls: Companion cards there have no bookmark glyph, and the rail's Bookmarks menu (lower half) lists the entries the stage shows, ticked when bookmarked (UI test: TabletopStageTests). Each section keeps its own scroll position within the session; switching keeps the bar where it is. UI test: SectionBarTests. Update rows (s-06-list-rows-patch-first, s3.png): the patch name first, bold, with "New" in accent text at the end of its line while unread; the headline second; then the date and the PS5 line ("Out on PS5", "Announced for PS5", "Reported on PS5", "Not planned for PS5", from the PS5 row's state only, never a version number); a hairline between rows (none after the last, where the Divider before About marks the end); whole-word ellipsis, no dot separators; at accessibility sizes the date and the PS5 line stack when they do not share a line. A release with no patch name leads with its headline alone, never a blank row. Model: `UpdateRowText` (UpdateRowTextTests).
@@ -126,21 +126,21 @@ Decision: the native launch screen is a plain background colour matching the Lib
 | **Reported on PS5** (press only) | main list, "Unconfirmed" group (V-4) | no | quiet alert, once (N-11) | "Unconfirmed" chip (V-4); version only if the press gave one |
 | **Silent** (reported, no notes) | main list | no | quiet alert, once (N-11) | "Reported" + "Silent update" + "No official notes" |
 | **Pending** | **nowhere** | no | no | none |
-| **PC only so far** | collapsed group "PC only so far · n updates" at the end of the journal | never | never | "PC" tag; never in the Updates tab (footnote count only) |
+| **PC only so far** | collapsed group "PC only so far (n updates)" at the end of the journal | never | never | "PC" tag; never in the Updates tab (footnote count only) |
 | **Not coming to PS5** (official notPlanned) | inside the PC only group | never | never | "Not planned for PS5" |
 
 - **V-1** Moving from Reported to On PS5 updates the item in place, removes the tag, makes it unread and pushes once, if notifications allow. Moving from On PS5 to anything else never happens in the UI; corrections edit facts silently.
 - **V-2** A PC version number never appears as a PS5 version anywhere.
-- **V-3** No source names, URLs or credits appear in the UI. Tags are the only provenance signal. One exception (Terry, 2026-11-05): a link row names the destination it opens by brand, from the link host ("Read full notes on Steam", "PS5 update page on PlayStation", "All patch notes on Ubisoft"), never an address; a host not in the brand map reads "on the developer's site". The external-link glyph stays; the label wraps and never truncates, at AX sizes too; VoiceOver reads the whole label plus "opens in browser".
-- **V-4 Unconfirmed is always labelled and visibly separate** (Terry, 2026-10-26: "make sure it's tagged/visually separate, i.e. 'Unconfirmed' or similar"). Every Reported or Silent release is shown to users as **Unconfirmed**. The internal state keeps its name. The treatment never borrows the confirmed look (ember, unread dot, "Update" badge).
+- **V-3** No source names, URLs or credits appear in the UI. Tags are the only provenance signal. One exception (Terry, 2026-11-05): a link row names the destination it opens by brand, from the link host ("Read full notes on Steam", "PS5 update page on PlayStation", "All patch notes on Ubisoft"), never an address; a host not in the brand map reads "on the developer’s site". The external-link glyph stays; the label wraps and never truncates, at AX sizes too; VoiceOver reads the whole label plus "opens in browser".
+- **V-4 Unconfirmed is always labelled and visibly separate** (Terry, 2026-10-26: "make sure it’s tagged/visually separate, i.e. 'Unconfirmed' or similar"). Every Reported or Silent release is shown to users as **Unconfirmed**. The internal state keeps its name. The treatment never borrows the confirmed look (ember, unread dot, "Update" badge).
   - **Chip:** "Unconfirmed", in tertiary text (#A39BAE) inside a 1 pt *dashed* outline, with no fill and no ember. Confirmed releases never have a dashed outline. VoiceOver reads "Unconfirmed on PS5, from press reports" (G-10 updated).
-  - **Alert (N-11):** the title starts "Unconfirmed:", for example "Unconfirmed: Kingdom Come: Deliverance II Patch 1.6 on PS5". The body is "From press reports. We'll tell you when it's official."
+  - **Alert (N-11):** the title starts "Unconfirmed:", for example "Unconfirmed: Kingdom Come: Deliverance II Patch 1.6 on PS5". The body is "From press reports. We’ll tell you when it’s official."
     - It uses its own `threadIdentifier` ("unconfirmed"), so the system groups these apart from confirmed updates.
     - It has a separate notification category, so the long-press preview shows the chip.
     - On confirmation, the silent replacement takes the confirmed text, with no "Unconfirmed".
-  - **Library tile and row:** no ember "Update" badge and no unread count. A small dashed "Unconfirmed" chip sits on the tile's lower-left corner, and the caption reads "Patch 1.6 · Unconfirmed". If a game has both, the confirmed badge wins and the chip is dropped, so there's only one mark per tile.
+  - **Library tile and row:** no ember "Update" badge and no unread count. A small dashed "Unconfirmed" chip sits on the tile's lower-left corner, and the caption reads "Patch 1.6 (Unconfirmed)". If a game has both, the confirmed badge wins and the chip is dropped, so there's only one mark per tile.
   - **Game book, Contents:** the release timeline shows an "Unconfirmed" subheader above the confirmed releases whenever any exist. Its rows use the dashed outline and chip, never the unread dot.
-  - **Game book, Page:** an unconfirmed release opens with a full-width band under the header that reads "Unconfirmed · From press reports, not in official PS5 notes yet", with a dashed top and bottom rule. The facts line reads "Unconfirmed on PS5 · 7 GB (reported) · 25 Jun".
+  - **Game book, Page:** an unconfirmed release opens with a full-width band under the header that reads "Unconfirmed. From press reports, not in official PS5 notes yet.", with a dashed top and bottom rule. The facts line reads "Unconfirmed on PS5, 7 GB (reported), 25 Jun".
   - **Updates tab, search results, the Tabletop reader and the Open Margin** use the same chip.
   - **When a release is confirmed,** the chip, the band and the group membership disappear in place, and the release becomes unread with the normal ember treatment (V-1).
   - Acceptance:
@@ -178,14 +178,14 @@ Decision: the native launch screen is a plain background colour matching the Lib
 ## 7. Updates tab
 
 - **U-1** Updates is a reverse-chronological feed of On PS5, Announced and Reported releases for library games. Each row has cover, game, display name, tag and date. Unread rows are bold with a dot.
-- **U-2** The footnote "<n> PC-only updates aren't listed because they're not confirmed on PS5" appears when n > 0.
+- **U-2** The footnote "<n> PC-only updates aren’t listed because they’re not confirmed on PS5" appears when n > 0.
 - **U-3** Tapping a row opens the game book on that release (same as N-6).
 
 ## 8. Errors and offline
 
-- **E-1** Offline: all cached content works. The Library shows a quiet line under the title, "Offline · updated <relative time>". Pull to refresh is disabled with that message. There is no alert.
-- **E-2** Refresh failure: the same line, "Couldn't refresh · Retry". It is never a modal alert, and never a notification.
-- **E-3** A game's notes fail to load (no cache): inline "Can't load updates" plus Retry, in the reading pane.
+- **E-1** Offline: all cached content works. The Library shows a quiet line under the title, "Offline. Updated <relative time>.". Pull to refresh is disabled with that message. There is no alert.
+- **E-2** Refresh failure: the same line, "Couldn’t refresh" with a Retry button. It is never a modal alert, and never a notification.
+- **E-3** A game's notes fail to load (no cache): inline "Can’t load updates" plus Retry, in the reading pane.
 - **E-4** Image failure: a placeholder cover with the game title in the display font. Layout never shifts.
 - **E-5** Errors that block a user action (for example, adding a game fails) use a system alert with one action.
 - **E-6** Stale data: if a release was checked more than 24 h ago, its facts show "Checked <date>" in the secondary text style.
@@ -239,7 +239,7 @@ Apple basis (fetched 2026-10-25, unchanged from baseline): show an extra level o
 
 Source: the gamer review of 2026-10-25, ranked. Apple basis, fetched 2026-10-25:
 - Designing for iPhone Duo: "Labels that include text stay in a horizontal bar, so prefer a symbol wherever one works", and "Provide both a title and a symbol for each toolbar item".
-- Toolbars: "Make sure the meaning of each control is clear. Don't make people guess".
+- Toolbars: "Make sure the meaning of each control is clear. Don’t make people guess".
 - Searching: "Clearly display the current scope of a search", and "Provide suggestions".
 - SwiftUI: `accessibilityShowsLargeContentViewer()`, `searchScopes(_:scopes:)` and `searchSuggestions(_:)`.
 
@@ -247,11 +247,11 @@ Source: the gamer review of 2026-10-25, ranked. Apple basis, fetched 2026-10-25:
 
 - **GR-1 Never an empty game.** A game with no notes still shows a per-game timeline in the Updates chapter.
   - Each known PS5 release is a row: the PS5 version (never a PC version, V-2), the PS5 date, the reported size, and its tag.
-  - Under the rows is the line "Watching for PS5 notes · checked <relative time>".
+  - Under the rows is the line "Watching for PS5 notes. Checked <relative time>.".
   - If no PS5 release is known at all, show the PS5 launch date ("Out on PS5 since 4 Feb 2025", or "Out 19 Nov" for a future game) plus the watching line.
   - Library rows (B-2) show the latest known PS5 version and date with "No notes", not "No PS5 notes yet".
   - Acceptance: no game in the demo set renders an empty Updates chapter.
-  - A game outside the feed's tracked set (not listed in `index.json`) says "We don't track this game's updates yet." with no Checked line. A tracked game with no notes keeps "No updates yet." and the Checked line. Until an index has been seen, the app treats every game as tracked.
+  - A game outside the feed's tracked set (not listed in `index.json`) says "We don’t track this game’s updates yet." with no Checked line. A tracked game with no notes keeps "No updates yet." and the Checked line. Until an index has been seen, the app treats every game as tracked.
   - Tabletop, a game with no notes (tracked or not): the lower half shows the same line under the release line, and does not draw search, the A to Z strip or Previous/Next, which would have nothing to act on.
 - **GR-2 PS5 pages show PS5 content only.** On a console page, these use only items that apply to PS5:
   - the headline, the summary, the key changes, push text (N-4), and Help / known issues.
@@ -261,13 +261,13 @@ Source: the gamer review of 2026-10-25, ranked. Apple basis, fetched 2026-10-25:
   - Acceptance: a test fails if FrameGen, DLSS, FSR, XeSS, AMD, NVIDIA, Intel Arc, Steam, Steam Deck, mouse, keyboard or ultrawide appears on a PS5 page outside the PC-only group. Native fixtures must pass the same test. The data rules belong to the backend thread.
 - **GR-3 Reading order: story first.**
   - A release opens with the headline (display font), then the summary (at most 3 lines), then the key changes, then the full notes.
-  - Facts collapse to one line under the key changes: "Live on PS5 · 13 GB · 22 Oct". Tapping it expands the full R-3 list in place.
+  - Facts collapse to one line under the key changes: "Live on PS5, 13 GB, 22 Oct". Tapping it expands the full R-3 list in place.
   - Tags are chips (PS5 Pro, Reported, Spoiler).
   - Remove the inline provenance legends and explainer paragraphs. Tags stay the only provenance signal (V-3).
-  - The "can't see your console" line moves to the expanded facts.
+  - The "can’t see your console" line moves to the expanded facts.
   - Open keeps its Margin (O-4), with the same one-line summary at its top.
 - **GR-4 Search inside notes ("did they fix X?").**
-  - The Search tab and an in-book search field use `.searchable`, with `searchScopes` "This game" and "All my games". The in-book field defaults to "This game", and the placeholder names the scope: "Search Dawnwalker's notes".
+  - The Search tab and an in-book search field use `.searchable`, with `searchScopes` "This game" and "All my games". The in-book field defaults to "This game", and the placeholder names the scope: "Search Dawnwalker’s notes".
   - Matching starts at 2 characters, is case- and accent-insensitive, and covers PS5 items' text and section names.
   - Results are grouped by release, newest first. Each shows the matching line with the term in bold, the release name, the date and the tag.
   - Tapping a result opens the release with that item highlighted for 1 s at the reading anchor.
@@ -287,13 +287,13 @@ Source: the gamer review of 2026-10-25, ranked. Apple basis, fetched 2026-10-25:
     - Status: a symbol for the current status, `gamecontroller` (Owned), `star` (Wishlist) or `binoculars` (Watching), instead of `tag`.
     - Mark all read: `envelope.open`, instead of a bare checkmark.
     - Updates tab: `newspaper`, instead of `clock`.
-  - (c) Each one-tap item confirms by name: "Spoilers shown", or "3 updates marked read · Undo". Menus (bell, status) show their title as the menu header.
+  - (c) Each one-tap item confirms by name: "Spoilers shown", or "3 updates marked read" with an Undo button. Menus (bell, status) show their title as the menu header.
   - (d) In open portrait's horizontal bars, items show title and symbol where the system allows text.
   - Acceptance: the five symbols, a title on every item, and the confirmations.
 - **GR-7 Add several at once.**
   - In the Add sheet, tapping a Popular tile or a search row toggles selection (a checkmark badge, plus a selected trait for VoiceOver). Selection persists while the query changes.
   - A `confirmationAction` "Add n" appears when n ≥ 1, after Close at the top of the rail (A-1).
-  - Adding closes the sheet and shows "Added 3 games · Undo". Undo removes all of them. The library highlights all the new games.
+  - Adding closes the sheet and shows "Added 3 games" with an Undo button. Undo removes all of them. The library highlights all the new games.
   - Single add is the same flow with n = 1. Games already in the library stay disabled (A-3).
 
 ## 11. One layout, every pose (v2.0)
@@ -309,7 +309,7 @@ Source: the gamer review of 2026-10-25, ranked. Apple basis, fetched 2026-10-25:
 He's right. We gave every pose its own layout (the Spread, a sidebar, a stage), which Apple tells us not to do.
 
 **Apple basis (fetched 2026-10-25):**
-- "Don't reinvent your app when it resizes; allow the existing layout to expand."
+- "Don’t reinvent your app when it resizes; allow the existing layout to expand."
 - "Avoid extreme layout changes as people fold the device."
 - "Keep functionality and the state of elements the same between displays."
 - A split arrangement puts the primary view "in the leading position" in landscape and "in the top position" in portrait, and when the device is closed in landscape it "only shows the primary view".
@@ -367,7 +367,7 @@ Open becomes Book, and Open portrait becomes Tabletop, with nothing moving excep
   - Notifications (a bell menu headed "Notify me about <Game>").
   - Status (a menu headed "<Game> is in your library as…", showing the current status symbol, GR-6).
 
-  That's all. Spoilers move inline to the Page's "Story spoilers hidden · Show" line, shown only when the release has spoilers. Mark all read moves to the Contents (D-4), next to the unread rows it changes. Each action shows its result where you're looking (the Page or the Contents), and the toast confirms by name (GR-6c).
+  That's all. Spoilers move inline to the Page's "Story spoilers hidden" line with a Show button, shown only when the release has spoilers. Mark all read moves to the Contents (D-4), next to the unread rows it changes. Each action shows its result where you're looking (the Page or the Contents), and the toast confirms by name (GR-6c).
 - **D-7 Nothing app-drawn is empty or decorative.**
   - No pill, card or bar renders without content. The N-7 pill exists only while it has a game to name.
   - Nothing is designed around the system home indicator.
@@ -387,7 +387,7 @@ Open becomes Book, and Open portrait becomes Tabletop, with nothing moving excep
   - Acceptance: swap, change game, close and reopen, relaunch: the side holds every time.
 - **D-11 Sharing the screen with another app (Split View).** Apple, fetched 2026-10-25:
   - "When two apps share the inner display with Split View multitasking, each one places controls along its outer edge, so the left app has controls on the left."
-  - "Use safe areas to make sure controls don't cover your content, including controls on the opposite edge."
+  - "Use safe areas to make sure controls don’t cover your content, including controls on the opposite edge."
   - From the iPhone Duo tech talk: "All apps participate in multitasking", in side-by-side and stacked layouts, decided with "size classes and scene geometry".
 
   Rules:

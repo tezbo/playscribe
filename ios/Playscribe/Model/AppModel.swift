@@ -21,7 +21,7 @@ enum Chapter: String, Codable, CaseIterable, Hashable, Identifiable {
     var id: String { rawValue }
     var title: String {
         switch self {
-        case .updates: "What's new"
+        case .updates: "What’s new"
         case .news: "News"
         case .world: "World"
         case .companion: "Companion"
@@ -1451,7 +1451,7 @@ final class AppModel {
                      "Fixed the lab camera lock when the machine is reactivated on later days.",
                      "Fixed the ending letter not appearing for players who skipped the parlour scene.",
                      "Fixed a story note that could be read twice in the archive room.",
-                     "Fixed the keeper's dialogue repeating after the second reveal.",
+                     "Fixed the keeper’s dialogue repeating after the second reveal.",
                      "Fixed the epilogue map not showing the secret room.",
                      "Misc. typo and text format fixes."].map { NoteItem(text: $0) } + [pcLine]
         let release = Release(

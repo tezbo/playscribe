@@ -23,7 +23,7 @@ enum ReaderTitle {
     static func parse(_ text: String, maxWords: Int = 7) -> Parsed {
         var t = text.trimmingCharacters(in: .whitespacesAndNewlines)
         // Leading bullets, then a list number such as "3." or "3)".
-        t = String(t.drop { "•-–—*· \t".contains($0) })
+        t = String(t.drop { "•-–—*\u{00B7} \t".contains($0) }) // dot-ok: strips a pasted bullet from imported text, never shown
         if let r = t.range(of: #"^\d+[.)]\s+"#, options: .regularExpression) { t.removeSubrange(r) }
         // A group prefix such as "Fixed:".
         var group: String?

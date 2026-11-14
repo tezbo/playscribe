@@ -311,10 +311,10 @@ struct DatePrecisionTests {
         func g(_ o: String?, _ on: String? = nil, _ p: DatePrecision? = .tbd) -> CatalogGame {
             CatalogGame(id: "t", name: "T", platforms: [.ps5], releaseDate: nil, releasePrecision: p, playableSince: nil, releasedElsewhere: o, releasedElsewhereOn: on, coverage: .none)
         }
-        #expect(g("2012-10-16", "PC").ps5DateLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-16", "PC").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-19", "PC (Microsoft Windows)").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-16").ps5AvailabilityLine == "Not on PS5 · 2012")
+        #expect(g("2012-10-16", "PC").ps5DateLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-16", "PC").ps5AvailabilityLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-19", "PC (Microsoft Windows)").ps5AvailabilityLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-16").ps5AvailabilityLine == "Not on PS5 (2012)")
         #expect(g("2012-10-16").ps5ShortLine == "Not on PS5")
         // Truly no release anywhere, or a release still to come, stays TBA.
         #expect(g(nil).ps5AvailabilityLine == "Release date TBA")
