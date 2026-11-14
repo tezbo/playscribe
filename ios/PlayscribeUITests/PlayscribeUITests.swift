@@ -1265,7 +1265,8 @@ final class Release050Tests: XCTestCase {
     func testUpdatePagePS5StatusWording() throws {
         let cases: [(String, String)] = [
             ("live", "Out on PS5"), ("live-version", "Out on PS5. This update is 01.004.000 on PS5"),
-            ("announced", "Announced for PS5"), ("not-planned", "Not planned for PS5"), ("none", "Not on PS5 yet"),
+            ("announced", "Announced for PS5"), ("not-planned", "Not planned for PS5"),
+            // "none" (no PS5 row) is hidden from every history, so no update page opens for it; PS5StatusCardBTests covers its wording.
         ]
         for (state, spoken) in cases {
             let app = XCUIApplication()
