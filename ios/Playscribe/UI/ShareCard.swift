@@ -115,7 +115,7 @@ struct ShareUpdateButton: View {
                 .buttonStyle(RailPressStyle())
             } else if failed {
                 Button { render() } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
-                    .accessibilityHint("Couldn't make the card. Try again.")
+                    .accessibilityHint("Couldn’t make the card. Try again.")
             } else {
                 ProgressView().frame(width: 44, height: 44).accessibilityLabel("Making your card")
             }

@@ -61,6 +61,6 @@ struct UpdateRowTextTests {
         let t = UpdateRowText(r)
         let spoken = UpdateRowLabel.spoken(t, unread: true, release: r)
         #expect(spoken == "Patch 1.7.3, New, Fixes and tuning, \(t.date), Out on PS5, PS4 update")
-        for s in [t.title, t.headline ?? "", t.date, t.status ?? "", spoken] { #expect(!s.contains("·")) }
+        for s in [t.title, t.headline ?? "", t.date, t.status ?? "", spoken] { #expect(!s.contains("·")) } // dot-ok
     }
 }

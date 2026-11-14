@@ -114,7 +114,7 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         return "Plays on PS5 since " + b.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB")).month(.abbreviated).year())
     }
 
-    /// Out elsewhere, not on PS5 or PS4: "Not on PS5 · PC, 2012". Nil when the game has a PS5 or PS4
+    /// Out elsewhere, not on PS5 or PS4: "Not on PS5 (PC, 2012)". Nil when the game has a PS5 or PS4
     /// release, or no release anywhere (that one is genuinely TBA).
     var notOnPS5Line: String? {
         guard releaseDate?.isoDay == nil, playableSince?.isoDay == nil,
@@ -124,7 +124,7 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         let year = cal.component(.year, from: o)
         // "PC (Microsoft Windows)" reads "PC": drop the parenthetical.
         let platform = releasedElsewhereOn.map { String($0.split(separator: "(").first ?? "").trimmingCharacters(in: .whitespaces) }.flatMap { $0.isEmpty ? nil : $0 }
-        return "Not on PS5 · " + [platform, String(year)].compactMap { $0 }.joined(separator: ", ")
+        return "Not on PS5 (" + [platform, String(year)].compactMap { $0 }.joined(separator: ", ") + ")"
     }
 
     /// A PS4-only game that plays on PS5: no PS5 release date, but not "TBA".

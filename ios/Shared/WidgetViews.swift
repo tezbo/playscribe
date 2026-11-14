@@ -101,13 +101,13 @@ struct WidgetView: View {
                     lockText(r.game, r.update + (r.unread ? ", new" : ""))
                 }
             } else if family == .accessoryInline {
-                Text("You're all caught up")
+                Text("You’re all caught up")
             } else {
-                lockText("You're all caught up", "Playscribe will show new updates here.")
+                lockText("You’re all caught up", "Playscribe will show new updates here.")
             }
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(row.map(voice) ?? (snap.hasGames ? "You're all caught up" : "Add your games, open Playscribe to build your library"))
+        .accessibilityLabel(row.map(voice) ?? (snap.hasGames ? "You’re all caught up" : "Add your games, open Playscribe to build your library"))
         .widgetURL(row?.url)
         .containerBackground(for: .widget) { Color.clear }
     }

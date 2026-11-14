@@ -78,7 +78,7 @@ struct NewsChapter: View {
             if list.isEmpty {
                 if store.failed.contains(gameID) {
                     HStack {
-                        Text("Couldn't load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("Couldn’t load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                         Spacer(minLength: 0)
                         Button { Task { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                             .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
@@ -180,7 +180,7 @@ struct NewsView: View {
                         ProgressView()
                         Text("Loading news").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     } else if ids.contains(where: { store.failed.contains($0) }) {
-                        Text("Couldn't load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                        Text("Couldn’t load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
                         Button { Task { await load() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                             .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
                             .tappableFrame(when: duo.pose != .tabletop)

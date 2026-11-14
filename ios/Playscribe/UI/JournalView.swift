@@ -236,7 +236,7 @@ struct ReleaseBody: View {
             let keys = ps5Page ? r.ps5KeyChanges : (r.keyChanges ?? [])
             if !keys.isEmpty {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("What's new").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                    Text("What’s new").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
                     ForEach(keys, id: \.self) { k in
                         HStack(alignment: .firstTextBaseline, spacing: 10) {
                             Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
@@ -528,7 +528,7 @@ struct SpoilerText: View {
             Button { model.reveal(key) } label: {
                 ZStack(alignment: .leading) {
                     Text(LinkedText.clean(text)).blur(radius: 6).accessibilityHidden(true)
-                    Label("Spoiler. Tap to show", systemImage: "eye.slash")
+                    Label("Spoiler. Tap to show.", systemImage: "eye.slash")
                         .font(PlayscribeFont.caption.weight(.semibold))
                         .padding(.horizontal, 8).padding(.vertical, 4)
                         .background(.ultraThinMaterial, in: Capsule())
@@ -537,7 +537,8 @@ struct SpoilerText: View {
                 .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
-            .accessibilityLabel("Story spoiler. Double-tap to show.")
+            .accessibilityLabel("Spoiler")
+            .accessibilityHint("Tap to show")
             .tappableFrame()
         }
     }
@@ -634,7 +635,7 @@ enum LinkHost {
         "activision": "Activision", "2k": "2K", "warhorsestudios": "Warhorse Studios", "konami": "Konami",
         "pushsquare": "Push Square", "playstationlifestyle": "PlayStation LifeStyle"
     ]
-    static let unknown = "the developer's site"
+    static let unknown = "the developer’s site"
 
     /// The brand for a known host; nil for one we don't know or a URL with no host.
     static func name(_ url: URL) -> String? {

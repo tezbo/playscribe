@@ -75,7 +75,7 @@ struct CameraAddView: View {
     private var unavailable: some View {
         VStack(spacing: 12) {
             Image(systemName: "camera.fill").font(.system(size: 44)).foregroundStyle(.secondary).accessibilityHidden(true)
-            Text(supported ? "Scan with camera is off" : "This device can't scan titles.")
+            Text(supported ? "Scan with camera is off" : "This device can’t scan titles.")
                 .font(PlayscribeFont.headline).multilineTextAlignment(.center)
             if supported {
                 Text("You can turn on the camera for Playscribe in Settings, or pick a photo instead.")

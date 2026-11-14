@@ -164,7 +164,7 @@ struct AddResultsView: View {
             ForEach(matches.filter { !$0.sure }) { m in
                 Section {
                     if m.guesses.isEmpty {
-                        Text("No PS5 game matches '\(m.title)'").foregroundStyle(.secondary)
+                        Text("No PS5 game matches ‘\(m.title)’").foregroundStyle(.secondary)
                     }
                     ForEach(m.guesses) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
                 } header: {
