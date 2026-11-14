@@ -13,9 +13,15 @@ enum VideoReflection {
     /// On unless the person turns it off (Terry, 2026-11-06). The Settings toggle reads the same value.
     static let defaultOn = true
 
-    /// Strength at the video's bottom edge, and the band it fades out over (Iris and Quinn, 12 Nov).
-    static let opacity = 0.6
+    /// Strength at the video's bottom edge, at most 30%, and the band it fades out over: at most 120 pt and never more than 15%
+    /// of the lower half, the Tabletop edge-band cap (Iris on #533, 14 Nov: the 60%, 120 pt mirror was 20% of the half and the
+    /// player's own chrome read upside down in it).
+    static let opacity = 0.3
     static let height: CGFloat = 120
+    static let maxShare: CGFloat = 0.15
+
+    /// The band for a lower half this tall.
+    static func band(lowerHalf: CGFloat) -> CGFloat { max(0, min(height, lowerHalf * maxShare)) }
 
     /// True when the mirror shows: Tabletop, the setting on, Reduce Transparency off, and Reduce Motion off (a live mirror
     /// moves; G-9). There is no still mirror any more.
@@ -76,19 +82,36 @@ struct MirroredVideoSurface: UIViewRepresentable {
     }
 }
 
-/// The fade over the mirror (R-11): clear for the first 35% of the band, then to the page's black at 120 pt, and black
-/// below, so only the video's last rows show, strongest at the edge. Takes no touches.
+/// Over the mirror (R-11): the system's blur first, heavy enough that nothing in the picture can be read (the player's own
+/// chrome, captions, upside down), then a fade that is clear for the first 35% of the band and the page's black at its end, and
+/// black below, so only the video's last rows show, as soft light, strongest at the edge. Takes no touches; hidden from VoiceOver.
 struct MirrorFade: View {
+    var band: CGFloat
     var body: some View {
         VStack(spacing: 0) {
-            LinearGradient(stops: [.init(color: .black.opacity(0), location: 0), .init(color: .black.opacity(0), location: 0.35),
-                                   .init(color: .black, location: 1)], startPoint: .top, endPoint: .bottom)
-                .frame(height: VideoReflection.height)
+            ZStack {
+                SystemBlur()
+                LinearGradient(stops: [.init(color: .black.opacity(0), location: 0), .init(color: .black.opacity(0), location: 0.35),
+                                       .init(color: .black, location: 1)], startPoint: .top, endPoint: .bottom)
+            }
+            .frame(height: band)
             Color.black
         }
         .allowsHitTesting(false)
         .accessibilityHidden(true)
     }
+}
+
+/// A `UIVisualEffectView` blur (the thinnest dark material): it blurs what the compositor drew under it, the mirror included.
+struct SystemBlur: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        let v = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
+        v.isUserInteractionEnabled = false
+        v.isAccessibilityElement = false
+        v.accessibilityElementsHidden = true
+        return v
+    }
+    func updateUIView(_ v: UIVisualEffectView, context: Context) {}
 }
 
 extension View {

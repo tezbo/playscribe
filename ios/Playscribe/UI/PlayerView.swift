@@ -121,6 +121,7 @@ struct PlayerView: View {
     /// and its mirror can be drawn behind the arrangement, in one replicator, across the fold.
     @State private var stageVideo: CGRect?
     @State private var lowerTop: CGFloat?
+    @State private var playerHeight: CGFloat = 0
 
     var body: some View {
         NavigationStack {
@@ -176,7 +177,7 @@ struct PlayerView: View {
                         // The stage is view only: the video behind it takes no touches either (TT-1).
                         .allowsHitTesting(false)
                     if live {
-                        MirrorFade()
+                        MirrorFade(band: VideoReflection.band(lowerHalf: playerHeight - top))
                             .frame(width: v.width, height: v.height)
                             .offset(x: v.minX, y: top)
                     }
@@ -194,6 +195,7 @@ struct PlayerView: View {
                 MirrorAudit(on: live && stageVideo != nil)
             }
             .coordinateSpace(.named("player"))
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { playerHeight = $0 }
         case .book:
             // VB-2: the video and its details on the left page; Watch along on the right.
             if let fold = duo.division {

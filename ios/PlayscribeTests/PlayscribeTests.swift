@@ -612,6 +612,14 @@ struct AutoplayTests {
         #expect(map(0) == 430)
         #expect(t.m11 == 1)
     }
+
+    @Test("The mirror is at most 30% and its band at most 15% of the lower half, never over 120 pt (R-11, Iris on #533)")
+    @MainActor func mirrorBand() {
+        #expect(VideoReflection.opacity <= 0.3)
+        #expect(VideoReflection.band(lowerHalf: 380) == 57)
+        #expect(VideoReflection.band(lowerHalf: 2000) == 120)
+        #expect(VideoReflection.band(lowerHalf: -10) == 0)
+    }
 }
 
 /// Release also defines INTERNAL, so the QA routes must be switched off by the build channel:

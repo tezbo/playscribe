@@ -628,7 +628,7 @@ struct TrailerView: View {
             let mirror = VideoReflection.shows(pose: duo.pose, setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
             let live = mirror && controller?.started == true
             GeometryReader { geo in
-                // Room kept under the video: a two-line caption (64 pt) and the reflection's 120 pt fade.
+                // Room kept under the video: a two-line caption (64 pt) and the reflection's fade (at most 120 pt).
                 let captionRoom: CGFloat = 64 + 120
                 let h = max(0, min(geo.size.width * 9 / 16, geo.size.height - captionRoom))
                 let w = h * 16 / 9
@@ -646,7 +646,7 @@ struct TrailerView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     // R-11: the mirror lands flush under the video and shows through this fade, under the caption. It takes no
                     // layout room and no touches.
-                    .background(alignment: .top) { if live { MirrorFade() } else { Color.black } }
+                    .background(alignment: .top) { if live { MirrorFade(band: VideoReflection.band(lowerHalf: geo.size.height)) } else { Color.black } }
                     .clipped()
                 }
             }
