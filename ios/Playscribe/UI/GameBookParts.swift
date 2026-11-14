@@ -246,9 +246,17 @@ struct ReleasePage: View {
                 if r.isPS5Listed { ShareUpdateButton(release: r) }
             }
             }
-            HStack(spacing: 8) {
-                Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
-                if let v = r.ps5Version { Text(v.keepingVersionsTogether).monospacedDigit() }
+            // The version is one unbreakable word (G-14): when the date and version do not fit on one line, the version drops to
+            // its own line whole. A word joiner alone did not hold at AX5 ("01.002." then "000"), so the layout decides.
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 8) {
+                    Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay).accessibilityIdentifier("releaseDate")
+                    if let v = r.ps5Version { Text(v).monospacedDigit().lineLimit(1).fixedSize().accessibilityIdentifier("releaseVersion") }
+                }
+                VStack(alignment: .leading, spacing: 2) {
+                    Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay).accessibilityIdentifier("releaseDate")
+                    if let v = r.ps5Version { Text(v).monospacedDigit().lineLimit(1).minimumScaleFactor(0.7).accessibilityIdentifier("releaseVersion") }
+                }
             }
             .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             SourceLinks(release: r)
