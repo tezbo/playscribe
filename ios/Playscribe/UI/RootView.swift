@@ -298,9 +298,12 @@ struct LibraryRoot: View {
                 }
         }
         // J-1: a pushed release only exists where pushing is the layout (Closed, open portrait).
-        // Unfolding to side by side or Tabletop pops it; the Page already shows it, because the
-        // push selected it. Here, not in the game book, which is hidden under the push.
+        // Unfolding to side by side or Tabletop pops it and selects it on the Page, so the reader
+        // keeps reading the same update. The push itself never selects, so Back from it lands on
+        // the page that was underneath (0.5.6 hotfix). Here, not in the game book, which is hidden
+        // under the push.
         .onChange(of: duo.pose != .closed && (duo.isLandscape || duo.pose == .tabletop), initial: true) { _, onPage in
+            if onPage, let id = model.nav.detailReleaseID, let gameID = model.nav.gameID { model.select(gameID, releaseID: id) }
             if onPage { model.nav.detailReleaseID = nil }
         }
     }
