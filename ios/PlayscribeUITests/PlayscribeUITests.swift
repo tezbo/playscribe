@@ -1235,6 +1235,19 @@ final class Release050Tests: XCTestCase {
         app.terminate()
     }
 
+    /// 0.5.6 Card A (bug-update-navtitle-midword-ax5): the pushed update page carries no inline navigation title. At AX5 the system
+    /// cut it mid-word ("The Grand Autumn Rebalancing, Qu..."); the patch name is the page's own heading right below the art.
+    func testUpdatePageHasNoInlineNavTitleAtAX5() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "long-title/dawnwalker", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launch()
+        XCTAssertTrue(app.descendants(matching: .any)["releaseTitle"].waitForExistence(timeout: 30), "the update page is up")
+        let barTexts = app.navigationBars.firstMatch.staticTexts.allElementsBoundByIndex.map(\.label).filter { $0.contains("Rebalancing") }
+        XCTAssertTrue(barTexts.isEmpty, "the bar shows no patch name: \(barTexts)")
+        XCTAssertTrue(app.descendants(matching: .any)["ps5Status"].exists, "the PS5 status block is on the page")
+        app.terminate()
+    }
+
     /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and
     /// of the status bar, in every pose; the cog opens Settings, which shows a semantic version.
     /// Fast on its own: -only-testing:PlayscribeUITests/Release050Tests/testLibraryToolbarCogAndAdd
