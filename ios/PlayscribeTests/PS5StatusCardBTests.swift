@@ -59,7 +59,7 @@ struct PS5StatusCardBTests {
     func noInstalledClaims() {
         for r in [release(ps5: .live, ps5Version: "01.004.000"), release(ps5: .announced), release(ps5: nil)] {
             let all = PS5StatusLines(r).spoken.lowercased()
-            #expect(!all.contains("installed") && !all.contains("your ps5") && !all.contains("settings") && !all.contains("·"))
+            #expect(!all.contains("installed") && !all.contains("your ps5") && !all.contains("settings") && !all.contains("·")) // dot-ok: asserts the dot is absent
         }
     }
 
@@ -74,7 +74,7 @@ struct PS5StatusCardBTests {
                                                      unread: true, date: day))
         #expect(without.first?.text == "Out on PS5")
         #expect(!without.contains { $0.text.contains("1.1") })
-        #expect((with + without).allSatisfy { !$0.text.contains("·") })
+        #expect((with + without).allSatisfy { !$0.text.contains("·") }) // dot-ok: asserts the dot is absent
     }
 
     @Test("A game with no details gets one line, never blank")
