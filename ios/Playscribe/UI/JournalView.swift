@@ -196,6 +196,9 @@ struct ReleaseBody: View {
     /// D-13: facts expanded or collapsed persists.
     @AppStorage("factsOpen") private var factsOpen = false
     @State private var summaryOpen = false
+    /// r060-dayone-patch-alert-app: "Install this before you first play." while the day-one patch is unread. Taken when the
+    /// page appears, so reading it (R-6 marks it read after a second on screen) clears it on the next visit, not under the reader's eyes.
+    @State private var dayOneNote: String?
 
     var body: some View {
         let r = release
@@ -207,6 +210,11 @@ struct ReleaseBody: View {
                 else { Text(h).font(PlayscribeFont.title3) }
             } else if !r.notes.isEmpty {
                 Text("Fixes and tuning").font(PlayscribeFont.title3)
+            }
+            if let note = dayOneNote {
+                Text(note).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityIdentifier("dayOneNote")
             }
             if let summary = ps5Page ? r.ps5Summary : r.summary {
                 VStack(alignment: .leading, spacing: 4) {
@@ -309,6 +317,7 @@ struct ReleaseBody: View {
                 }
             }
         }
+        .onAppear { dayOneNote = model.dayOneNote(r) }
     }
 }
 

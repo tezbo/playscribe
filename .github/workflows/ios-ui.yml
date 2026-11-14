@@ -54,6 +54,7 @@ jobs:
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
             -destination "id=$UDID" -derivedDataPath build/dd \
             -only-testing:PlayscribeUITests/ReleaseFeatureTests \
+            -only-testing:PlayscribeUITests/TabletopDayOneTests \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
           grep -E 'error:|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
           [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"

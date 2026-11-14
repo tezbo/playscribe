@@ -715,6 +715,16 @@ struct ContentsBody: View {
             VStack(alignment: .leading, spacing: 14) {
                 if duo.pose != .closed { HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 4) {
+                        // r060 day-one (Iris): in Tabletop the install line is the lower half's first line, above the game title,
+                        // plain secondary text; the standing half already carries the eyebrow and headline. Gone on the next visit.
+                        if duo.pose == .tabletop, let note = model.readerRelease(gameID).flatMap(model.dayOneNote) {
+                            Text(note)
+                                .font(PlayscribeFont.subheadline)
+                                .foregroundStyle(.secondary)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .accessibilityIdentifier("dayOneNote")
+                                .accessibilitySortPriority(1)
+                        }
                         GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
                     }
                     Spacer(minLength: 8)

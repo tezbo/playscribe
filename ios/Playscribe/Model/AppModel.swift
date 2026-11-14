@@ -249,6 +249,14 @@ final class AppModel {
     var qaUpdateCount = 0
     /// QA (route "cover"): keep every card in the deck, read ones too, instead of only the `qaUpdateCount` fresh ones.
     var qaKeepReadCards = false
+    /// QA (route `dayone/<game>`): the pinned fresh updates still clear when the person reads one in this launch, so a page
+    /// can be shot before and after. Only reads made here count: the feed refresh after launch marks the fixtures' old
+    /// updates read (markPastAsRead), which emptied the deck when this checked data.read (Mac, dab2f51).
+    var qaHonourRead = false
+    /// r060 day-one: the day-one patch this visit to a game opened while it was still unread. Opening or picking an update
+    /// reads it at once (R-6a), before its page appears, so the page asks this for its one-line note.
+    var dayOneVisit: String?
+    @ObservationIgnored private var qaReadIDs: Set<String> = []
     /// QA (route `cover/<game>`): the fresh update is this game's newest, so its page leads the cover.
     var qaFreshGame: String?
     var qaSingleUpdate: Bool {
@@ -484,7 +492,7 @@ final class AppModel {
     }
 
     func isUnread(_ r: Release) -> Bool {
-        if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) }
+        if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) && !(qaHonourRead && qaReadIDs.contains(r.id)) }
         return r.ps5State == .onPS5 && data.read[r.id] == nil
     }
 
@@ -645,7 +653,13 @@ final class AppModel {
         // R-6a: opening a specific update (a notification, an Updates row, a deep link) reads it at once, on every path;
         // the 1 s on-screen rule only covers an update the reader lands on without picking it. Mark as unread undoes it.
         // Opening the game itself (a tile, the hero) reads the update it lands on: the newest, expanded at the top (R-1).
-        if n.chapter == .updates, let r = releaseID.flatMap({ release(gameID, $0) }) ?? selectedRelease(gameID), isUnread(r) { markRead(r.id) }
+        // r060 day-one: opening reads the update, so remember first whether this visit shows the day-one line (a new visit
+        // starts with none, so the line is gone on the next one).
+        dayOneVisit = nil
+        if n.chapter == .updates, let r = releaseID.flatMap({ release(gameID, $0) }) ?? selectedRelease(gameID), isUnread(r) {
+            if isDayOneAlert(r) { dayOneVisit = r.id }
+            markRead(r.id)
+        }
         // N-7: the pill goes only when the page it points to is the one now showing.
         if let p = pill, isViewing(p.gameID, p.releaseID) { pill = nil }
         focusReleaseID = releaseID
@@ -671,7 +685,10 @@ final class AppModel {
     func select(_ gameID: String, releaseID: String) {
         nav.selected = (nav.selected ?? [:]).merging([gameID: releaseID]) { $1 }
         readerIndex[gameID] = 0
-        if let r = release(gameID, releaseID), isUnread(r) { markRead(r.id) }
+        if let r = release(gameID, releaseID), isUnread(r) {
+            if isDayOneAlert(r) { dayOneVisit = r.id }
+            markRead(r.id)
+        }
     }
 
     static func bookKey(_ gameID: String, _ chapter: Chapter) -> String { "book-\(gameID)-\(chapter.rawValue)" }
@@ -849,6 +866,35 @@ final class AppModel {
                 simulateUpdate(gameID: parts[0], kind: parts[1] == "hotfix" ? .hotfix : .major, delay: 3)
             }
         case "links" where parts.count == 1: openGame(parts[0]); linksSheetOpen = true
+        // QA (INTERNAL): "dayone/<game>" is the two-update demo plus an unread day-one patch, live and official on PS5, for that
+        // game (added to the library if it is not there), staying on the Library: the deck shows "Day-one patch" beside a normal
+        // "New update" card and the game page shows the one-line note. Reading still clears it (qaHonourRead), so the
+        // second-visit still shows the line and chip gone (r060-dayone-patch-alert-app, Iris's 7 stills).
+        // `dayone/<game>/open` then opens that update on the game page, as a tap on its card does (the Tabletop UI test).
+        case "dayone" where parts.count == 1 || (parts.count == 2 && parts[1] == "open"):
+            let gameID = parts[0]
+            resetToTwoUpdateDemo()
+            qaHonourRead = true
+            if !data.collection.contains(where: { $0.gameID == gameID }), let game = fixtures.games.first(where: { $0.id == gameID }) {
+                addGames([game], status: .owned)
+            }
+            let now = Date.now
+            let release = Release(
+                id: "qa-dayone-\(gameID)", gameID: gameID, displayName: "Day one patch", kind: .dayOne, kindBasis: .studio,
+                announcedAt: now, notes: [NoteSection(title: "Fixes", items: [NoteItem(text: "Fixes a crash on first load.")])], sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: Field(value: "1.001", verification: .official, sourceID: "simulated", checkedAt: now),
+                                            liveAt: Field(value: now, verification: .official, sourceID: "simulated", checkedAt: now),
+                                            bundles: [], verification: .official)],
+                headline: "Stability and performance fixes for launch", summary: "QA fixture. Not a real release.", keyChanges: [],
+                simulated: true, arrivesAt: now)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+            // releases() hides anything arriving after the model's clock, which was set before this release existed (CI unit run
+            // 43372143693: no day-one card). Move the clock on, and choose the fresh cards again now the release is there.
+            tick()
+            qaFreshCache = nil
+            if parts.count == 2 { openGame(gameID, chapter: .updates, releaseID: release.id) }
         // QA (INTERNAL): a PS5 update with a very long invented title, to exercise the share-button guard on the release page
         // (r054: a title past 4 lines at AX drops the button to its own row).
         case "long-title" where parts.count == 1:
@@ -955,6 +1001,7 @@ final class AppModel {
 
     func markRead(_ releaseID: String, _ read: Bool = true) {
         if read { data.read[releaseID] = .now } else { data.read[releaseID] = nil }
+        if qaHonourRead { if read { qaReadIDs.insert(releaseID) } else { qaReadIDs.remove(releaseID) } }
         if read, pill?.releaseID == releaseID { pill = nil }
         NotificationService.shared.updateBadge(badgeCount)
     }
@@ -1222,6 +1269,8 @@ final class AppModel {
         if data.keepCurrent == true { setKeepCurrent(false) }
         qaPadDeck = false
         qaKeepReadCards = false
+        qaHonourRead = false
+        qaReadIDs = []
         qaUpdateCount = 0
         qaFreshCache = nil
         qaFreshGame = nil
