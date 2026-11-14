@@ -1,4 +1,5 @@
 import Foundation
+import QuartzCore
 import Testing
 import SwiftUI
 import UserNotifications
@@ -589,29 +590,27 @@ struct AutoplayTests {
         #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
     }
 
-    @Test("Reflection is on by default and accessibility settings win (R-11, G-9)")
-    @MainActor func reflectionDefault() {
+    @Test("Reflection is on by default, in Tabletop only, and accessibility settings win (R-11, G-9; Terry 14 Nov)")
+    @MainActor func reflectionOnlyInTabletop() {
         #expect(VideoReflection.defaultOn)
-        #expect(VideoReflection.mode(setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false) == .live)
-        // Reduce Motion keeps the mirror on the still, never live frames (G-9, Iris 12 Nov).
-        #expect(VideoReflection.mode(setting: true, reduceMotion: true, reduceTransparency: false) == .still)
-        #expect(VideoReflection.mode(setting: true, reduceMotion: false, reduceTransparency: true) == .off)
-        #expect(VideoReflection.mode(setting: false, reduceMotion: false, reduceTransparency: false) == .off)
+        #expect(VideoReflection.shows(pose: .tabletop, setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false))
+        for pose in [Pose.closed, .flat, .book] {
+            #expect(!VideoReflection.shows(pose: pose, setting: true, reduceMotion: false, reduceTransparency: false))
+        }
+        // A live mirror moves, so Reduce Motion turns it off; there is no still mirror any more (G-9).
+        #expect(!VideoReflection.shows(pose: .tabletop, setting: true, reduceMotion: true, reduceTransparency: false))
+        #expect(!VideoReflection.shows(pose: .tabletop, setting: true, reduceMotion: false, reduceTransparency: true))
+        #expect(!VideoReflection.shows(pose: .tabletop, setting: false, reduceMotion: false, reduceTransparency: false))
     }
 
-    private func solid(_ color: UIColor) -> UIImage {
-        UIGraphicsImageRenderer(size: CGSize(width: 32, height: 18)).image { ctx in color.setFill(); ctx.fill(CGRect(x: 0, y: 0, width: 32, height: 18)) }
-    }
-
-    @Test("A black live frame never replaces the still (R-11; Terry 12 Nov, reflections don't work)")
-    @MainActor func blackFrameKeepsTheStill() {
-        let black = solid(.black), poster = solid(UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 1)), frame = solid(.gray)
-        #expect(VideoReflection.isBlank(black))
-        #expect(!VideoReflection.isBlank(poster))
-        #expect(VideoReflection.pick(live: black, still: poster) === poster)
-        #expect(VideoReflection.pick(live: nil, still: poster) === poster)
-        #expect(VideoReflection.pick(live: frame, still: poster) === frame)
-        #expect(VideoReflection.thumbnailURL("abc")?.host == "i.ytimg.com")
+    @Test("The mirror instance lands flipped, its bottom row at the gap below the video (R-11)")
+    @MainActor func mirrorTransform() {
+        let t = VideoReflection.instanceTransform(videoHeight: 200, gap: 30)
+        // About the replicator's centre (y 100): the bottom row (y 200) lands at 230, the top row (y 0) at 430.
+        func map(_ y: CGFloat) -> CGFloat { 100 + (y - 100) * t.m22 + t.m42 }
+        #expect(map(200) == 230)
+        #expect(map(0) == 430)
+        #expect(t.m11 == 1)
     }
 }
 

@@ -117,6 +117,10 @@ struct PlayerView: View {
     @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    /// Tabletop (R-11): the video's frame on the stage and the top of the lower half, both in the "player" space, so the video
+    /// and its mirror can be drawn behind the arrangement, in one replicator, across the fold.
+    @State private var stageVideo: CGRect?
+    @State private var lowerTop: CGFloat?
 
     var body: some View {
         NavigationStack {
@@ -153,37 +157,50 @@ struct PlayerView: View {
     private func layout(duo: DuoContext, release: Release, video: ReleaseVideo, controller: YouTubeController) -> some View {
         // A web view has no intrinsic size, so a 16:9 box carries the size and the view fills it.
         let surface = Color.black.aspectRatio(16 / 9, contentMode: .fit).overlay { WebSurface(webView: controller.webView) }
-            // QA (-qaMirrorFixture): the video area shows the same generated frame the mirror is fed, so the band is measured
-            // against a bright edge like for like.
-            .overlay { if VideoReflection.fixture { Image(uiImage: VideoReflection.fixtureFrame(0)).resizable() } }
         let gameName = model.game(gameID)?.name ?? ""
-        let overMirror = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off
         switch duo.pose {
         case .tabletop:
-            // TT-4: the standing half shows only the video; the flat half holds the transport.
-            ArrangementView {
-                TabletopTransport(controller: controller, video: video, game: gameName, release: release, onClose: close)
-                    .background(alignment: .top) {
-                        let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
-                        if mode != .off { VideoReflection(controller: controller, mode: mode, posterAsset: video.posterAsset, youtubeID: video.youtubeID) }
+            // TT-4: the standing half shows only the video; the flat half holds the transport. R-11: the video itself is drawn
+            // behind the arrangement, at the frame its stage placeholder measures, inside a replicator whose mirror lands at the
+            // top of the lower half (the hinge band stays unpainted), under the fade and behind the transport.
+            let mirror = VideoReflection.shows(pose: duo.pose, setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
+            ZStack(alignment: .topLeading) {
+                if let v = stageVideo {
+                    let top = lowerTop ?? v.maxY
+                    let live = mirror && controller.started
+                    MirroredVideoSurface(webView: controller.webView, mirrored: live, gap: max(0, top - v.maxY))
+                        .background(.black)
+                        .overlay { if !controller.started { PosterCover(video: video) } }
+                        .frame(width: v.width, height: v.height)
+                        .offset(x: v.minX, y: v.minY)
+                        // The stage is view only: the video behind it takes no touches either (TT-1).
+                        .allowsHitTesting(false)
+                    if live {
+                        MirrorFade()
+                            .frame(width: v.width, height: v.height)
+                            .offset(x: v.minX, y: top)
                     }
-            } secondary: {
-                surface
-                    .overlay { if !controller.started, !VideoReflection.fixture { PosterCover(video: video) } }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.black)
-                    .allowsHitTesting(false)
+                }
+                ArrangementView {
+                    TabletopTransport(controller: controller, video: video, game: gameName, release: release, overMirror: mirror, onClose: close)
+                        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .named("player")).minY } action: { lowerTop = $0 }
+                } secondary: {
+                    Color.clear.aspectRatio(16 / 9, contentMode: .fit)
+                        .onGeometryChange(for: CGRect.self) { $0.frame(in: .named("player")) } action: { stageVideo = $0 }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .allowsHitTesting(false)
+                }
+                .arrangementViewStyle(.overlay)
             }
-            .arrangementViewStyle(.overlay)
+            .coordinateSpace(.named("player"))
         case .book:
             // VB-2: the video and its details on the left page; Watch along on the right.
             if let fold = duo.division {
                 HStack(alignment: .top, spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
                         surface
-                        VideoCaption(video: video, game: gameName, overMirror: overMirror)
+                        VideoCaption(video: video, game: gameName)
                             .padding(.horizontal, 16).padding(.top, 12)
-                            .background(alignment: .top) { mirror(controller, video) }
                         Spacer(minLength: 0)
                     }
                     .frame(width: fold.minX)
@@ -196,18 +213,10 @@ struct PlayerView: View {
             // VB-3: full display, the player's own controls.
             VStack(spacing: 0) {
                 surface.frame(maxWidth: .infinity)
-                VideoCaption(video: video, game: gameName, overMirror: overMirror).padding(.horizontal, 16).padding(.top, 12)
-                    .background(alignment: .top) { mirror(controller, video) }
+                VideoCaption(video: video, game: gameName).padding(.horizontal, 16).padding(.top, 12)
             }
             .frame(maxHeight: .infinity, alignment: duo.pose == .closed ? .top : .center)
         }
-    }
-
-    /// The mirror under the video, same view in every pose (R-11).
-    @ViewBuilder
-    private func mirror(_ controller: YouTubeController, _ video: ReleaseVideo) -> some View {
-        let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
-        if mode != .off { VideoReflection(controller: controller, mode: mode, posterAsset: video.posterAsset, youtubeID: video.youtubeID) }
     }
 
     private func close() {
@@ -283,15 +292,14 @@ struct TabletopTransport: View {
     var video: ReleaseVideo
     var game: String
     var release: Release
+    /// True when the mirror sits behind this column (R-11), so its text gets the plate and the lifted grey.
+    var overMirror = false
     var onClose: () -> Void
-    @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
 
     var body: some View {
         // The mirror sits behind this whole column, so the text on it gets the plate and the lifted grey (R-11; Mac 12 Nov:
         // the Tabletop subtitle measured 3.3:1 median, 2.3:1 worst).
-        let over = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off
+        let over = overMirror
         HStack(alignment: .top, spacing: 0) {
             VStack(alignment: .leading, spacing: 10) {
                 VideoCaption(video: video, game: game, overMirror: over)

@@ -624,7 +624,9 @@ struct TrailerView: View {
         NavigationStack {
             // R-11 (Iris, 13 Nov): the player is always 16:9 and sized to the open area, the width of the area or, where the area is
             // short (the Tabletop lower half), as wide as the height allows after a two-line caption. Centred, with the caption
-            // centred under it; the reflection below stays.
+            // centred under it. In Tabletop only, the live video is mirrored under it (Terry, 14 Nov).
+            let mirror = VideoReflection.shows(pose: duo.pose, setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
+            let live = mirror && controller?.started == true
             GeometryReader { geo in
                 // Room kept under the video: a two-line caption (64 pt) and the reflection's 120 pt fade.
                 let captionRoom: CGFloat = 64 + 120
@@ -632,25 +634,19 @@ struct TrailerView: View {
                 let w = h * 16 / 9
                 VStack(spacing: 0) {
                     Color.black.frame(width: w, height: h)
-                        .overlay { if let controller { WebSurface(webView: controller.webView) } }
-                        .overlay { if VideoReflection.fixture { Image(uiImage: VideoReflection.fixtureFrame(0)).resizable() } }
+                        .overlay { if let controller { MirroredVideoSurface(webView: controller.webView, mirrored: live) } }
                         .frame(maxWidth: .infinity)
                     VStack(spacing: 0) {
                         Text(name).font(PlayscribeFont.headline)
                             .multilineTextAlignment(.center)
-                            .overMirror(VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off)
+                            .overMirror(mirror)
                             .padding(.horizontal, 16).padding(.top, 12)
                         Spacer(minLength: 0)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                    // R-11: the trailer gets the same mirror as an update video in every pose, flush under the video. It takes no
-                    // layout room and no touches (Terry, 12 Nov: trailers never had one).
-                    .background(alignment: .top) {
-                        let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
-                        if mode != .off, let controller {
-                            VideoReflection(controller: controller, mode: mode, posterAsset: nil, youtubeID: videoID)
-                        }
-                    }
+                    // R-11: the mirror lands flush under the video and shows through this fade, under the caption. It takes no
+                    // layout room and no touches.
+                    .background(alignment: .top) { if live { MirrorFade() } else { Color.black } }
                     .clipped()
                 }
             }
