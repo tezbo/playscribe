@@ -467,7 +467,7 @@ struct GameBasicsView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                                 .overlay { Image(systemName: "play.fill").foregroundStyle(.white) }
                             // Whole words only (G-8): a plain lineLimit cut "E3 2018 Open Be…" mid-word (The Crew 2, Closed AX5).
-                            WholeWordText(text: v.name, font: PlayscribeFont.subheadline, lines: typeSize.isAccessibilitySize ? 4 : 2)
+                            WholeWordText(text: v.name.gluingTrailingNumeral, font: PlayscribeFont.subheadline, lines: typeSize.isAccessibilitySize ? 4 : 2)
                             if !typeSize.isAccessibilitySize { Spacer(minLength: 0) }
                         }
                         .frame(minHeight: 44)
@@ -547,7 +547,7 @@ struct SimilarGamesRow: View {
                             Button { choosing = g } label: {
                                 HStack(spacing: 12) {
                                     TileCover(game: g).frame(width: 42, height: 56)
-                                    WholeWordText(text: g.name, font: PlayscribeFont.subheadline, lines: 4)
+                                    WholeWordText(text: g.name.gluingTrailingNumeral, font: PlayscribeFont.subheadline, lines: 4)
                                     Spacer(minLength: 0)
                                 }
                                 .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading).contentShape(Rectangle())
@@ -575,7 +575,7 @@ struct SimilarGamesRow: View {
                 .edgeFade(40)
                 }
             }
-            .confirmationDialog(choosing?.name ?? "", isPresented: Binding(get: { choosing != nil }, set: { if !$0 { choosing = nil } }), titleVisibility: .visible) {
+            .confirmationDialog((choosing?.name ?? "").gluingTrailingNumeral, isPresented: Binding(get: { choosing != nil }, set: { if !$0 { choosing = nil } }), titleVisibility: .visible) {
                 if let g = choosing {
                     // A plain look first (Terry, 0.5.4): opens the game page without filing it anywhere.
                     Button("View game") { model.browseGame(g) }
@@ -939,7 +939,7 @@ struct ReleaseTimeline: View {
         let ps5 = model.ps5Releases(gameID)
         let pc = model.pcOnlyReleases(gameID)
         VStack(alignment: .leading, spacing: 0) {
-            Text("ALL UPDATES").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+            Text("All updates").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
                 .padding(.bottom, 4)
             if ps5.isEmpty, let g = model.game(gameID) {
                 Text(g.ps5AvailabilityLine).font(PlayscribeFont.subheadline)

@@ -188,7 +188,7 @@ struct UpcomingView: View {
             layout {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit).frame(width: duo.pose == .closed ? 72 : 84)
                 VStack(alignment: .leading, spacing: 6) {
-                    WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
+                    WholeWordText(text: g.name.gluingTrailingNumeral, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
                     Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                     if let move = moveLine(g) {
                         // Status on its own row, 24 pt clear of the rail; the name and date keep the full column.
@@ -229,7 +229,7 @@ struct UpcomingView: View {
         } label: {
             VStack(alignment: .leading, spacing: 6) {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit)
-                WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
+                WholeWordText(text: g.name.gluingTrailingNumeral, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
                 Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                 if let move = moveLine(g) {
                     Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).lineLimit(2)

@@ -205,7 +205,7 @@ struct SettingsView: View {
                 if BuildChannel.showsInternalTools {
                 Section {
                     Picker("Game", selection: $simGame) {
-                        ForEach(model.libraryRows) { Text($0.game.name).tag($0.id) }
+                        ForEach(model.libraryRows) { Text($0.game.name.gluingTrailingNumeral).tag($0.id) }
                     }
                     Picker("Kind", selection: $simKind) {
                         ForEach(AppModel.SimKind.allCases) { Text($0.label).tag($0) }
