@@ -1084,3 +1084,21 @@ struct OpenMarksReadTests {
         #expect(m.unreadCount(r.gameID) >= 1)
     }
 }
+
+/// TT-2 (Iris, 0.5.6): the Tabletop stage leads with the patch name in the largest type, not the headline.
+struct ReaderStageTitleTests {
+    @MainActor
+    private func overview(name: String, headline: String?) -> ReaderSection? {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "rt-\(UUID().uuidString).json"))
+        let r = Release(id: "r", gameID: "g", displayName: name, kind: .major, kindBasis: .studio, announcedAt: Date(timeIntervalSince1970: 1_745_020_800),
+                        notes: [], sourceIDs: [], platforms: [], headline: headline)
+        return m.readerSections(r).first { $0.id == "overview" }
+    }
+
+    @Test("TT-2: the overview's title is the patch name, with or without a headline")
+    @MainActor func overviewLeadsWithThePatchName() {
+        #expect(overview(name: "Update 1.1", headline: "Photo mode and a new hunt")?.title == "Update 1.1")
+        #expect(overview(name: "Update 1.1", headline: nil)?.title == "Update 1.1")
+        #expect(overview(name: " ", headline: "Photo mode and a new hunt")?.title == "Photo mode and a new hunt")
+    }
+}
