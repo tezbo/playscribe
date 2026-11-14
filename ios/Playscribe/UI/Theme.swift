@@ -93,8 +93,12 @@ extension Date {
     private static let utc: Calendar = { var c = Calendar(identifier: .gregorian); c.timeZone = .gmt; return c }()
     /// Patch and release dates are facts about the patch, not the reader: the UTC calendar day, whatever the device's zone
     /// (Nadia, 7 Nov 2026; docs/decisions/release-date-timezone.md). The same patch reads the same on every phone, shared card and runner.
-    var shortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated).year()) }
-    var dayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated)) }
+    /// Building a Date.FormatStyle and formatting with it costs far more than a tile can spare while scrolling (Upcoming formats
+    /// two dates per tile on every redraw), and the result depends only on the date, so it is remembered (scroll lag, 13 Nov).
+    var shortDay: String { DayLabelMemo.shared.label(self, short: true) }
+    var dayMonth: String { DayLabelMemo.shared.label(self, short: false) }
+    fileprivate var shortDayUncached: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated).year()) }
+    fileprivate var dayMonthUncached: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated)) }
     /// "16 Oct" this year, "16 Oct 2025" before (years counted in UTC too).
     var dayMonthOrYear: String { Self.utc.isDate(self, equalTo: .now, toGranularity: .year) ? dayMonth : shortDay }
     /// A moment on this device ("Checked 7 Nov, 11:20"): the device's own zone, not the patch rule above.
@@ -114,6 +118,25 @@ extension Date {
     }
 }
 
+/// Remembers the printed day for each date (UTC day, en_GB), so the same date is formatted once.
+final class DayLabelMemo: @unchecked Sendable {
+    static let shared = DayLabelMemo()
+    private let lock = NSLock()
+    private var short: [Date: String] = [:]
+    private var medium: [Date: String] = [:]
+
+    func label(_ d: Date, short isShort: Bool) -> String {
+        lock.lock(); let hit = isShort ? short[d] : medium[d]; lock.unlock()
+        if let hit { return hit }
+        let text = isShort ? d.shortDayUncached : d.dayMonthUncached
+        lock.lock()
+        if short.count + medium.count > 2000 { short.removeAll(); medium.removeAll() }
+        if isShort { short[d] = text } else { medium[d] = text }
+        lock.unlock()
+        return text
+    }
+}
+
 extension String {
     /// "Deliverance II" with a no-break space before a trailing Roman numeral, so the numeral never wraps onto a line of its own
     /// (Open portrait showed "II ✓" alone under "Deliverance"; r060-nbsp-roman-numerals). Only a numeral up to XX after at least one
@@ -126,6 +149,7 @@ extension String {
         return String(self[..<space]) + "\u{00A0}" + last
     }
 
+    private static let isoDayCalendar = Calendar(identifier: .gregorian)
     /// ISO day ("2026-09-03") to a Date at noon UTC.
     var isoDay: Date? {
         var c = DateComponents()
@@ -133,7 +157,8 @@ extension String {
         guard p.count == 3 else { return nil }
         c.year = p[0]; c.month = p[1]; c.day = p[2]; c.hour = 12
         c.timeZone = .gmt
-        return Calendar(identifier: .gregorian).date(from: c)
+        // One shared calendar: a new one per call was the cost when a list sorted or labelled many games.
+        return Self.isoDayCalendar.date(from: c)
     }
 }
 
