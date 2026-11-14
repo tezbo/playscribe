@@ -22,6 +22,14 @@ final class SectionBarTests: XCTestCase {
         XCTAssertTrue(bar.exists, "bar still in the tree at the end of the list")
         XCTAssertTrue(window.contains(bar.frame), "bar on screen at the end: \(bar.frame) in \(window)")
         XCTAssertTrue(bar.buttons.firstMatch.isHittable, "a section is tappable at the end of the list [\(ReleaseRowTests.pose(app))]")
+        // Nothing scrolls, sliced, above the pinned bar (Mac at ad665e9: "Hotfix 1.0.3" above the bar in Open landscape, "Patch 1.7"
+        // in Book). The 4 pt strip just above the bar is page ink: no text there. Tabletop pins the bar outside its scroll, under the
+        // stage, so the strip above it is the fold, not the list. The strip starts 6 pt up, past Book's header padding.
+        if !ReleaseRowTests.pose(app).contains("tabletop") {
+            let strip = CGRect(x: bar.frame.minX, y: bar.frame.minY - 10, width: bar.frame.width, height: 4)
+            let lum = Self.maxLuminance(in: strip, of: app.screenshot().image)
+            XCTAssertLessThan(lum, 0.25, "no list text in the 4 pt strip just above the pinned bar: max luminance \(lum) in \(strip) [\(ReleaseRowTests.pose(app))]")
+        }
         let shot = XCTAttachment(screenshot: app.screenshot())
         shot.name = "section-bar-end [\(ReleaseRowTests.pose(app))]"; shot.lifetime = .keepAlways; add(shot)
 
@@ -35,5 +43,25 @@ final class SectionBarTests: XCTestCase {
             XCTAssertTrue(bar.buttons.firstMatch.isHittable, "bar on screen after switching to News")
             if let backLabel { XCTAssertEqual(back.label, backLabel, "switching a section leaves Back as it was") }
         }
+    }
+
+    /// The brightest pixel (relative luminance, 0 to 1) in `rect`, given in points, of a screenshot.
+    static func maxLuminance(in rect: CGRect, of image: UIImage) -> Double {
+        guard let cg = image.cgImage else { return 1 }
+        let scale = CGFloat(cg.width) / image.size.width
+        let px = CGRect(x: rect.minX * scale, y: rect.minY * scale, width: rect.width * scale, height: rect.height * scale)
+            .integral.intersection(CGRect(x: 0, y: 0, width: cg.width, height: cg.height))
+        guard px.width > 0, px.height > 0, let crop = cg.cropping(to: px) else { return 1 }
+        let w = crop.width, h = crop.height
+        var bytes = [UInt8](repeating: 0, count: w * h * 4)
+        guard let ctx = CGContext(data: &bytes, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
+                                  space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return 1 }
+        ctx.draw(crop, in: CGRect(x: 0, y: 0, width: w, height: h))
+        var top = 0.0
+        for i in stride(from: 0, to: bytes.count, by: 4) {
+            let l = (0.2126 * Double(bytes[i]) + 0.7152 * Double(bytes[i + 1]) + 0.0722 * Double(bytes[i + 2])) / 255
+            top = max(top, l)
+        }
+        return top
     }
 }

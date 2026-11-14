@@ -197,6 +197,8 @@ struct PinnedSectionHeader: View {
     /// Out: true once the header is pinned (it has stopped moving while the anchor scrolls on above it).
     @Binding var pinned: Bool
     @State private var headerY: CGFloat = 0
+    /// More than any top inset (status bar, toolbar, hinge-free Book margin).
+    static let coverAbove: CGFloat = 400
 
     var body: some View {
         SectionBar(gameID: gameID, style: style)
@@ -204,7 +206,10 @@ struct PinnedSectionHeader: View {
             .padding(.vertical, vertical)
             .padding(.horizontal, inset)
             .frame(maxWidth: .infinity)
-            .background(ink)
+            // Pinned, the ink also runs up from the bar over whatever the scroll view shows above it. Where the scroll view has a
+            // top inset (Open landscape, Book) the bar pins at the inset and rows went on scrolling, sliced, in the strip above
+            // it (Mac, ad665e9: "Hotfix 1.0.3", "Patch 1.7"). The scroll view clips this at its own top edge.
+            .background(ink.padding(.top, pinned ? -Self.coverAbove : 0))
             .modifier(PinnedFade(ink: ink, active: pinned))
             .onGeometryChange(for: CGFloat.self) { $0.frame(in: .scrollView).minY } action: { headerY = $0; update() }
             .onChange(of: anchorY) { update() }

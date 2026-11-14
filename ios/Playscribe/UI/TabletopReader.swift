@@ -175,7 +175,11 @@ struct TabletopReaderStage: View {
                         } else {
                             Text(model.gameDisplayName(gameID))
                         }
-                        if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary).fixedSize() }
+                        // Near-white at 80%, not the accent's .secondary: that was dim brown on the scrim, 3.6:1 (Quinn, #526).
+                        if let r = release {
+                            Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear)
+                                .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.8)).fixedSize()
+                        }
                     }
                     .font(PlayscribeFont.subheadline.weight(.semibold))
                     .foregroundStyle(PlayscribeColor.accent)
