@@ -90,19 +90,19 @@ final class RailSetTests: XCTestCase {
     func testTabletopUntrackedAX5() { check(pose: "tabletop", ax5: true, tracked: false) }
     func testClosedUntracked() { check(pose: nil, ax5: false, tracked: false) }
 
-    /// D-10 survives behind More while the pages are side by side, and is listed nowhere else (Iris).
-    func testSwapSidesBehindMoreOnlyInBook() {
-        for pose in ["book", "tabletop", nil] as [String?] {
-            let app = launch(pose: pose, ax5: false)
-            let more = app.descendants(matching: .any)["rail.more"]
-            XCTAssertTrue(more.waitForExistence(timeout: 5), "no More in \(pose ?? "closed")")
-            more.tap()
-            let check = app.buttons["Check for updates"]
-            XCTAssertTrue(check.waitForExistence(timeout: 5), "More did not open in \(pose ?? "closed")")
-            let swap = app.buttons["Swap sides"]
-            if pose == "book" { XCTAssertTrue(swap.exists, "Book's More lacks Swap sides") }
-            else { XCTAssertFalse(swap.exists, "Swap sides listed outside Book in \(pose ?? "closed")") }
-            app.terminate()
-        }
+    /// D-10 survives behind More while the pages are side by side, and is listed nowhere else (Iris). One pose per test, so the
+    /// Mac runs each in its matching simulator pose (-qaPose switches the app, not the simulator's fold: Mac, 729eaa5).
+    private func moreLists(swapSides expected: Bool, pose: String?) {
+        let app = launch(pose: pose, ax5: false)
+        let more = app.descendants(matching: .any)["rail.more"]
+        XCTAssertTrue(more.waitForExistence(timeout: 5), "no More in \(pose ?? "closed")")
+        more.tap()
+        XCTAssertTrue(app.buttons["Check for updates"].waitForExistence(timeout: 5), "More did not open in \(pose ?? "closed")")
+        XCTAssertEqual(app.buttons["Swap sides"].exists, expected, "Swap sides in \(pose ?? "closed")'s More")
+        app.terminate()
     }
+
+    func testMoreListsSwapSidesInBook() { moreLists(swapSides: true, pose: "book") }
+    func testMoreHasNoSwapSidesInClosed() { moreLists(swapSides: false, pose: nil) }
+    func testMoreHasNoSwapSidesInTabletop() { moreLists(swapSides: false, pose: "tabletop") }
 }
