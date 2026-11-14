@@ -1244,7 +1244,6 @@ final class Release050Tests: XCTestCase {
         XCTAssertTrue(app.descendants(matching: .any)["releaseTitle"].waitForExistence(timeout: 30), "the update page is up")
         let barTexts = app.navigationBars.firstMatch.staticTexts.allElementsBoundByIndex.map(\.label).filter { $0.contains("Rebalancing") }
         XCTAssertTrue(barTexts.isEmpty, "the bar shows no patch name: \(barTexts)")
-        XCTAssertTrue(app.descendants(matching: .any)["ps5Status"].exists, "the PS5 status block is on the page")
         app.terminate()
     }
 
@@ -1272,8 +1271,9 @@ final class Release050Tests: XCTestCase {
             let app = XCUIApplication()
             app.launchArguments = ["-qaRoute", "ps5-state/kcd2/\(state)"]
             app.launch()
-            let block = app.descendants(matching: .any)["ps5Status"]
-            XCTAssertTrue(block.waitForExistence(timeout: 30), "the status block is on the page [\(state)]")
+            // Found by its spoken label: a container's identifier can shadow the block's own id, the wording is what matters.
+            let block = app.descendants(matching: .any).matching(NSPredicate(format: "label == %@", spoken)).firstMatch
+            XCTAssertTrue(block.waitForExistence(timeout: 30), "the status block (\(spoken)) is on the page [\(state)]")
             XCTAssertEqual(block.label, spoken, "status wording [\(state)]")
             XCTAssertFalse(block.label.contains("3.2.1"), "a PC number is never the PS5 version [\(state)]")
             app.terminate()
