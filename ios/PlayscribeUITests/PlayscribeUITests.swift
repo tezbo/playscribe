@@ -1642,3 +1642,17 @@ final class FinalFixTests: XCTestCase {
         app.terminate()
     }
 }
+
+/// G-14: a version number is never split across lines, at AX5 included ("01.002." then "000" was seen in Book AX5, 14 Nov).
+/// The version's frame is far wider than tall when it is on one line (about 6:1 for "01.002.000"); a split one is about 2:1.
+final class VersionStaysWholeTests: XCTestCase {
+    func testVersionOnOneLineAtAX5() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "release/dawnwalker/dawnwalker@1.1", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launch()
+        let version = app.staticTexts["releaseVersion"].firstMatch
+        XCTAssertTrue(version.waitForExistence(timeout: 15), "the release page shows a version")
+        let f = version.frame
+        XCTAssertGreaterThan(f.width, f.height * 4, "the version stays on one line: \(f)")
+    }
+}
