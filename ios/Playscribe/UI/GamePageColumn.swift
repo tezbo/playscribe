@@ -133,6 +133,10 @@ struct WhatsNewList: View {
         VStack(alignment: .leading, spacing: 16) {
             if !hasNotes, let g = model.game(gameID) {
                 NoNotesPage(game: g)
+            } else if !hasNotes {
+                // A game nothing is known about is never a blank page (s-056).
+                Text(GameBasicsView.noDetailsLine).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    .accessibilityIdentifier("noDetailsLine")
             } else {
                 NotesSearchField(gameID: gameID)
                 if model.noteQuery.count >= 2 {

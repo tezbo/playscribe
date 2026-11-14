@@ -1248,6 +1248,38 @@ final class Release050Tests: XCTestCase {
         app.terminate()
     }
 
+    /// 0.5.6 (s-056): a PS5-index game the catalogue lacks has no details to show, and its page is never blank: one line says so.
+    /// Route index-game/335660 (My Little Puppy). With no network the details never load; with it they may, so the test accepts
+    /// either the line or real About text, but never an empty page.
+    func testIndexOnlyGamePageIsNeverBlank() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "index-game/335660"]
+        app.launch()
+        let line = app.descendants(matching: .any)["noDetailsLine"]
+        let about = app.staticTexts["About"]
+        XCTAssertTrue(line.waitForExistence(timeout: 30) || about.waitForExistence(timeout: 5),
+                      "the index-only game's page shows the no-details line or its About")
+        app.terminate()
+    }
+
+    /// 0.5.6 Card B: each PS5 state shows its own words on the update page, from the simulated update (no network needed).
+    func testUpdatePagePS5StatusWording() throws {
+        let cases: [(String, String)] = [
+            ("live", "Out on PS5"), ("live-version", "Out on PS5. This update is 01.004.000 on PS5"),
+            ("announced", "Announced for PS5"), ("not-planned", "Not planned for PS5"), ("none", "Not on PS5 yet"),
+        ]
+        for (state, spoken) in cases {
+            let app = XCUIApplication()
+            app.launchArguments = ["-qaRoute", "ps5-state/kcd2/\(state)"]
+            app.launch()
+            let block = app.descendants(matching: .any)["ps5Status"]
+            XCTAssertTrue(block.waitForExistence(timeout: 30), "the status block is on the page [\(state)]")
+            XCTAssertEqual(block.label, spoken, "status wording [\(state)]")
+            XCTAssertFalse(block.label.contains("3.2.1"), "a PC number is never the PS5 version [\(state)]")
+            app.terminate()
+        }
+    }
+
     /// TB-1: the Library's Add and Settings controls are both there, hittable, 44 pt, clear of each other and
     /// of the status bar, in every pose; the cog opens Settings, which shows a semantic version.
     /// Fast on its own: -only-testing:PlayscribeUITests/Release050Tests/testLibraryToolbarCogAndAdd
